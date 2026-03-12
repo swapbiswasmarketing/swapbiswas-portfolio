@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import ContactCTA from '../components/ContactCTA.astro';
-import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
 import BlogPreview from '../components/BlogPreview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -9,6 +8,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
+
+// Extract unique categories sorted by frequency
+const categoryCount = new Map<string, number>();
+posts.forEach((post) => {
+	post.data.category.forEach((cat) => {
+		categoryCount.set(cat, (categoryCount.get(cat) || 0) + 1);
+	});
+});
+const categories = [...categoryCount.entries()]
+	.sort((a, b) => b[1] - a[1])
+	.map(([cat]) => cat);
+
+const POSTS_PER_PAGE = 9;
 ---
 
 <BaseLayout
@@ -23,16 +35,254 @@ const posts = (await getCollection('blog')).sort(
 				tagline="Thoughts on marketing, AI, SEO, and growth strategy."
 				align="start"
 			/>
-			<Grid variant="offset">
-				{
-					posts.map((post) => (
-						<li>
-							<BlogPreview post={post} />
-						</li>
-					))
-				}
-			</Grid>
+
+			<!-- Category Filters -->
+			<div class="filter-bar">
+				<button class="filter-btn active" data-category="all">All</button>
+				{categories.map((cat) => (
+					<button class="filter-btn" data-category={cat}>
+						{cat} <span class="filter-count">{categoryCount.get(cat)}</span>
+					</button>
+				))}
+			</div>
+
+			<!-- Blog Grid -->
+			<ul class="blog-grid">
+				{posts.map((post) => (
+					<li class="blog-item" data-categories={post.data.category.join(',')}>
+						<BlogPreview post={post} />
+					</li>
+				))}
+			</ul>
+
+			<!-- Pagination -->
+			<nav class="pagination" aria-label="Blog pagination">
+				<button class="page-btn prev" disabled>&larr; Previous</button>
+				<div class="page-numbers"></div>
+				<button class="page-btn next">Next &rarr;</button>
+			</nav>
+
+			<!-- Empty state -->
+			<div class="empty-state" style="display:none">
+				<p>No articles found in this category yet.</p>
+			</div>
 		</main>
 		<ContactCTA />
 	</div>
 </BaseLayout>
+
+<script define:vars={{ POSTS_PER_PAGE }}>
+	const items = Array.from(document.querySelectorAll('.blog-item'));
+	const filterBtns = document.querySelectorAll('.filter-btn');
+	const pagination = document.querySelector('.pagination');
+	const pageNumbers = document.querySelector('.page-numbers');
+	const prevBtn = document.querySelector('.page-btn.prev');
+	const nextBtn = document.querySelector('.page-btn.next');
+	const emptyState = document.querySelector('.empty-state');
+
+	let currentCategory = 'all';
+	let currentPage = 1;
+
+	function getFilteredItems() {
+		if (currentCategory === 'all') return items;
+		return items.filter((item) => {
+			const cats = item.getAttribute('data-categories')?.split(',') || [];
+			return cats.includes(currentCategory);
+		});
+	}
+
+	function render() {
+		const filtered = getFilteredItems();
+		const totalPages = Math.max(1, Math.ceil(filtered.length / POSTS_PER_PAGE));
+		if (currentPage > totalPages) currentPage = totalPages;
+
+		const start = (currentPage - 1) * POSTS_PER_PAGE;
+		const end = start + POSTS_PER_PAGE;
+
+		// Show/hide items
+		items.forEach((item) => item.style.display = 'none');
+		filtered.slice(start, end).forEach((item) => item.style.display = '');
+
+		// Empty state
+		emptyState.style.display = filtered.length === 0 ? 'block' : 'none';
+
+		// Pagination visibility
+		pagination.style.display = totalPages <= 1 ? 'none' : 'flex';
+
+		// Page numbers
+		pageNumbers.innerHTML = '';
+		for (let i = 1; i <= totalPages; i++) {
+			const btn = document.createElement('button');
+			btn.className = 'page-num' + (i === currentPage ? ' active' : '');
+			btn.textContent = String(i);
+			btn.addEventListener('click', () => {
+				currentPage = i;
+				render();
+				document.querySelector('.filter-bar')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+			});
+			pageNumbers.appendChild(btn);
+		}
+
+		// Prev/Next states
+		prevBtn.disabled = currentPage <= 1;
+		nextBtn.disabled = currentPage >= totalPages;
+	}
+
+	// Filter click handlers
+	filterBtns.forEach((btn) => {
+		btn.addEventListener('click', () => {
+			filterBtns.forEach((b) => b.classList.remove('active'));
+			btn.classList.add('active');
+			currentCategory = btn.getAttribute('data-category') || 'all';
+			currentPage = 1;
+			render();
+		});
+	});
+
+	// Prev/Next handlers
+	prevBtn?.addEventListener('click', () => { if (currentPage > 1) { currentPage--; render(); } });
+	nextBtn?.addEventListener('click', () => { currentPage++; render(); });
+
+	// Initial render
+	render();
+</script>
+
+<style>
+	/* Filter Bar */
+	.filter-bar {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.filter-btn {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: var(--gray-999_40);
+		color: var(--gray-300);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.filter-btn:hover {
+		border-color: var(--gray-700);
+		color: var(--gray-0);
+	}
+
+	.filter-btn.active {
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		border-color: transparent;
+	}
+
+	.filter-count {
+		font-size: 0.7rem;
+		padding: 0.1rem 0.4rem;
+		border-radius: 999rem;
+		background: rgba(255, 255, 255, 0.15);
+	}
+
+	.filter-btn.active .filter-count {
+		background: rgba(255, 255, 255, 0.25);
+	}
+
+	/* Blog Grid */
+	.blog-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		list-style: none;
+		padding: 0;
+	}
+
+	@media (min-width: 50em) {
+		.blog-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.5rem;
+		}
+	}
+
+	@media (min-width: 72em) {
+		.blog-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	/* Pagination */
+	.pagination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	.page-btn {
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-300);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	.page-btn:hover:not(:disabled) {
+		border-color: var(--gray-700);
+		color: var(--gray-0);
+	}
+
+	.page-btn:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+	}
+
+	:global(.page-numbers) {
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	:global(.page-num) {
+		width: 2.25rem;
+		height: 2.25rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-300);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	:global(.page-num:hover) {
+		border-color: var(--gray-700);
+		color: var(--gray-0);
+	}
+
+	:global(.page-num.active) {
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		border-color: transparent;
+	}
+
+	/* Empty State */
+	.empty-state {
+		text-align: center;
+		padding: 3rem 1rem;
+		color: var(--gray-400);
+		font-size: var(--text-lg);
+	}
+</style>

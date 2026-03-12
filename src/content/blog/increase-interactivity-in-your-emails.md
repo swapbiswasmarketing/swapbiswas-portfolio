@@ -3,7 +3,7 @@ title: "7 Most Productive Ways to Increase Interactivity in Your Emails"
 description: "Boost email engagement with interactive elements like social proof, surveys, and targeted recommendations for better click-through and conversions."
 publishDate: 2024-06-22
 category: [Marketing]
-img: /assets/blog/email-interactivity.webp
+img: /assets/stock-3.webp
 img_alt: Email interactivity strategies illustration
 ---
 

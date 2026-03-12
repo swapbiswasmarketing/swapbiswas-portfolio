@@ -3,7 +3,7 @@ title: "Product Positioning: How to Define Where Your Product Stands in the Mark
 description: "Learn what product positioning is, why it matters, and how to create a positioning statement that differentiates your product. With frameworks, examples, and a step-by-step process."
 publishDate: 2026-03-08
 category: [Product Marketing, Marketing]
-img: /assets/blog/marketing-research.webp
+img: /assets/stock-3.webp
 img_alt: Product positioning strategy framework
 ---
 

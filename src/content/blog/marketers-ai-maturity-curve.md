@@ -3,7 +3,7 @@ title: "The Marketer's AI Maturity Curve: Where Are You on It?"
 description: "Discover where you stand on the AI maturity curve as a marketer. From AI-curious to AI-native - with real data, practical frameworks, and actionable steps to level up."
 publishDate: 2026-03-06
 category: [AI, Marketing, Thought Leadership]
-img: /assets/blog/ai-maturity-curve.webp
+img: /assets/stock-2.webp
 img_alt: AI maturity curve for marketers illustration
 ---
 

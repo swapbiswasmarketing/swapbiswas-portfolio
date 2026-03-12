@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map((post) => ({
 		params: { slug: post.id },
-		props: { title: post.data.title, categories: post.data.category },
+		props: { title: post.data.title, categories: post.data.category, img: post.data.img },
 	}));
 }
 
@@ -56,23 +56,19 @@ const categoryConfig: Record<string, { bg: string; glow: string }> = {
 	'Thought Leadership': { bg: '#b45309', glow: 'rgba(180, 83, 9, 0.35)' },
 };
 
-// All available stock images — cycled per post based on title hash
-const stockImages = ['stock-1.jpg', 'stock-2.jpg', 'stock-3.jpg', 'stock-4.jpg'];
-
-function getStockForTitle(title: string): string {
-	let hash = 0;
-	for (let i = 0; i < title.length; i++) {
-		hash = ((hash << 5) - hash + title.charCodeAt(i)) | 0;
-	}
-	return stockImages[Math.abs(hash) % stockImages.length];
+// Map frontmatter .webp paths to .jpg filenames for OG image rendering
+function getStockFromFrontmatter(img: string): string {
+	const match = img.match(/stock-(\d)\.webp$/);
+	if (match) return `stock-${match[1]}.jpg`;
+	return 'stock-1.jpg'; // fallback
 }
 
 export async function GET({ props }: APIContext) {
-	const { title, categories } = props as { title: string; categories: string[] };
+	const { title, categories, img } = props as { title: string; categories: string[]; img: string };
 	const fonts = await getFonts();
 	const primaryCategory = categories[0] || 'Marketing';
 	const config = categoryConfig[primaryCategory] || categoryConfig.Marketing;
-	const bgImageUri = getStockImageDataUri(getStockForTitle(title));
+	const bgImageUri = getStockImageDataUri(getStockFromFrontmatter(img));
 	const avatarUri = getStockImageDataUri('avatar-crop.jpg');
 
 	const svg = await satori(
@@ -348,7 +344,7 @@ export async function GET({ props }: APIContext) {
 	const pngData = resvg.render();
 	const pngBuffer = pngData.asPng();
 
-	return new Response(pngBuffer, {
+	return new Response(Buffer.from(pngBuffer), {
 		headers: {
 			'Content-Type': 'image/png',
 			'Cache-Control': 'public, max-age=31536000, immutable',

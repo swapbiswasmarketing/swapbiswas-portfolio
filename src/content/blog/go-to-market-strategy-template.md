@@ -3,7 +3,7 @@ title: "Go-To-Market Strategy Template: A Step-by-Step Framework for 2026"
 description: "Build a go-to-market strategy that works. This step-by-step GTM template covers audience, positioning, channels, pricing, and launch execution with real examples."
 publishDate: 2026-03-08
 category: [Product Marketing, Marketing]
-img: /assets/blog/sustainable-modern-architectural.webp
+img: /assets/stock-2.webp
 img_alt: Go-to-market strategy template and framework
 ---
 

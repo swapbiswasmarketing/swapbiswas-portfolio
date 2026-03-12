@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 750">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="arrow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="750" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="52" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="36" font-weight="700" text-anchor="middle">ICP vs Buyer Persona: How They Work Together</text>
+  <text x="700" y="82" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" text-anchor="middle">ICP filters the right companies. Personas guide the right conversations.</text>
+
+  <!-- Left side: ICP -->
+  <rect x="40" y="110" width="620" height="520" rx="20" fill="#151b23" stroke="#60a5fa" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="40" y="110" width="620" height="8" rx="4" fill="#60a5fa"/>
+  <text x="350" y="160" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="700" text-anchor="middle">Ideal Customer Profile (ICP)</text>
+  <text x="350" y="190" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="18" text-anchor="middle">Organization-level - "Which companies to target"</text>
+
+  <!-- ICP criteria cards -->
+  <rect x="70" y="215" width="270" height="90" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="90" y="248" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="700">Firmographic</text>
+  <text x="90" y="272" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Industry, size, revenue,</text>
+  <text x="90" y="292" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">geography, company stage</text>
+
+  <rect x="360" y="215" width="270" height="90" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="380" y="248" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="700">Technographic</text>
+  <text x="380" y="272" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Tech stack, IT spend,</text>
+  <text x="380" y="292" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">digital maturity, integrations</text>
+
+  <rect x="70" y="320" width="270" height="90" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="90" y="353" fill="#fb923c" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="700">Behavioral</text>
+  <text x="90" y="377" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Purchase patterns, sales</text>
+  <text x="90" y="397" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">cycle, decision timeline</text>
+
+  <rect x="360" y="320" width="270" height="90" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="380" y="353" fill="#f5a0a1" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="700">Environmental</text>
+  <text x="380" y="377" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Market trends, regulatory,</text>
+  <text x="380" y="397" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">competitive pressures</text>
+
+  <!-- ICP stat -->
+  <rect x="70" y="430" width="560" height="80" rx="12" fill="#0d1117" stroke="#60a5fa" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="350" y="465" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" text-anchor="middle">68% higher account win rates</text>
+  <text x="350" y="492" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="15" text-anchor="middle">Companies with a strong ICP - SiriusDecisions/Forrester</text>
+
+  <!-- ICP output -->
+  <rect x="70" y="525" width="560" height="80" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="350" y="555" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle">OUTPUT</text>
+  <text x="350" y="580" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="16" text-anchor="middle">"B2B SaaS, 100-500 employees, $10M+ rev, uses Salesforce"</text>
+
+  <!-- Right side: Buyer Persona -->
+  <rect x="740" y="110" width="620" height="520" rx="20" fill="#151b23" stroke="#c084fc" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="740" y="110" width="620" height="8" rx="4" fill="#c084fc"/>
+  <text x="1050" y="160" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="700" text-anchor="middle">Buyer Persona</text>
+  <text x="1050" y="190" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="18" text-anchor="middle">Individual-level - "How to talk to each stakeholder"</text>
+
+  <!-- Persona criteria cards -->
+  <rect x="770" y="215" width="270" height="90" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="790" y="248" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="700">Goals &amp; Motivations</text>
+  <text x="790" y="272" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">KPIs, success metrics,</text>
+  <text x="790" y="292" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">professional aspirations</text>
+
+  <rect x="1060" y="215" width="270" height="90" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="1080" y="248" fill="#d98ee0" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="700">Pain Points</text>
+  <text x="1080" y="272" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Workflow frustrations,</text>
+  <text x="1080" y="292" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">failed tools, daily friction</text>
+
+  <rect x="770" y="320" width="270" height="90" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="790" y="353" fill="#b388f2" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="700">Decision Behavior</text>
+  <text x="790" y="377" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">How they research, who</text>
+  <text x="790" y="397" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">they involve, objections</text>
+
+  <rect x="1060" y="320" width="270" height="90" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="1080" y="353" fill="#f87171" font-family="Segoe UI, system-ui, sans-serif" font-size="16" font-weight="700">Info Consumption</text>
+  <text x="1080" y="377" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">Podcasts, platforms,</text>
+  <text x="1080" y="397" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14">content format preferences</text>
+
+  <!-- Persona stat -->
+  <rect x="770" y="430" width="560" height="80" rx="12" fill="#0d1117" stroke="#c084fc" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="1050" y="465" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" text-anchor="middle">73% higher conversions</text>
+  <text x="1050" y="492" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="15" text-anchor="middle">Marketers using personas - Aberdeen Research</text>
+
+  <!-- Persona output -->
+  <rect x="770" y="525" width="560" height="80" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="1050" y="555" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle">OUTPUT</text>
+  <text x="1050" y="580" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="16" text-anchor="middle">"VP Marketing, measured on pipeline, reads Exit Five podcast"</text>
+
+  <!-- Bottom connector bar -->
+  <rect x="40" y="655" width="1320" height="75" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <text x="700" y="685" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Together: ICP narrows 10,000 companies to 500 accounts → Personas guide conversations with 13+ stakeholders per account</text>
+  <text x="700" y="715" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="16" text-anchor="middle">Build ICP first (company filter), then personas (people guide) → Review both quarterly</text>
+</svg>

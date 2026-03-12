@@ -1,30 +1,40 @@
-# Astro Starter Kit: Portfolio
+# Swapnil Biswas - Product Marketing & Growth
 
-```sh
-npm create astro@latest -- --template portfolio
-```
+Portfolio site for Swapnil Biswas - Product Marketing Manager, Growth Strategist, and AI enthusiast.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/portfolio/devcontainer.json)
+**[swapbiswas.com](https://swapbiswas.com)**
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## About Me
 
-![portfolio](https://user-images.githubusercontent.com/357379/210779178-a98f0fb7-6b1a-4068-894c-8e1403e26654.jpg)
+I'm a Product Marketing & Growth Strategist with experience across B2B SaaS, e-commerce, and consumer tech. Currently pursuing my Postgraduate Degree in Digital Marketing & Growth Strategy at IIM Visakhapatnam.
 
-## 🧞 Commands
+**What I do:**
+- Product Marketing - positioning, messaging, GTM strategy, competitive intelligence
+- Growth & SEO - content strategy, organic acquisition, conversion optimization
+- AI & Automation - building AI agents, marketing automation, data-driven decision making
 
-All commands are run from the root of the project, from a terminal:
+**Results:**
+- 657K+ leads generated
+- 18.2M+ website traffic driven
+- 10x conversion improvements
+- 15+ people mentored
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Previously At
 
-## 👀 Want to learn more?
+Samsung | LambdaTest | Appknox | Sociowash | Lido Learning
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## What's on the Blog
+
+I write about product marketing, SEO, AI in marketing, and growth strategy - with real data, verified sources, and actionable frameworks. No fluff.
+
+Topics include: product positioning, go-to-market strategy, competitive battlecards, ICP & buyer personas, AI tools for marketers, technical SEO, and more.
+
+## Built With
+
+Astro 5 | Netlify | Satori (OG images) | Google Analytics | Microsoft Clarity
+
+## Get in Touch
+
+- **Website:** [swapbiswas.com](https://swapbiswas.com)
+- **Email:** swapbiswas.marketing@gmail.com
+- **LinkedIn:** [linkedin.com/in/swapbiswas](https://linkedin.com/in/swapbiswas)

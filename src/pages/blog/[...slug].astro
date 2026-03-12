@@ -49,6 +49,7 @@ const blogPostSchema = {
 	"description": entry.data.description,
 	"image": `https://swapbiswas.com/og/${entry.id}.png`,
 	"datePublished": entry.data.publishDate.toISOString(),
+	"dateModified": (entry.data.updatedDate || entry.data.publishDate).toISOString(),
 	"author": {
 		"@type": "Person",
 		"@id": "https://swapbiswas.com/#person",
@@ -143,6 +144,9 @@ const blogPostSchema = {
 		</div>
 		<ContactCTA />
 	</div>
+
+	<!-- Back to top button -->
+	<button class="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
 </BaseLayout>
 
 <style>
@@ -307,6 +311,11 @@ const blogPostSchema = {
 		border-bottom: 1px solid var(--gray-800);
 	}
 
+	.content :global(td:first-child),
+	.content :global(th:first-child) {
+		min-width: 8rem;
+	}
+
 	.content :global(tbody tr:hover) {
 		background: var(--gray-999_40);
 	}
@@ -386,6 +395,47 @@ const blogPostSchema = {
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
+		cursor: zoom-in;
+		transition: opacity 0.2s ease;
+	}
+
+	.content :global(img:hover) {
+		opacity: 0.85;
+	}
+
+	/* Image lightbox overlay */
+	:global(.lightbox) {
+		position: fixed;
+		inset: 0;
+		z-index: 9999;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(0, 0, 0, 0.85);
+		backdrop-filter: blur(8px);
+		cursor: zoom-out;
+		opacity: 0;
+		transition: opacity 0.25s ease;
+		pointer-events: none;
+	}
+
+	:global(.lightbox.active) {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	:global(.lightbox img) {
+		max-width: 90vw;
+		max-height: 90vh;
+		object-fit: contain;
+		border-radius: 0.75rem;
+		box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+		transform: scale(0.95);
+		transition: transform 0.25s ease;
+	}
+
+	:global(.lightbox.active img) {
+		transform: scale(1);
 	}
 
 	.content :global(blockquote) {
@@ -590,6 +640,37 @@ const blogPostSchema = {
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
+
+	/* Back to top button */
+	:global(.back-to-top) {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		z-index: 100;
+		width: 3rem;
+		height: 3rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 50%;
+		background: var(--gray-999);
+		color: var(--gray-200);
+		font-size: 1.25rem;
+		cursor: pointer;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
+		box-shadow: var(--shadow-sm);
+	}
+
+	:global(.back-to-top.visible) {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	:global(.back-to-top:hover) {
+		box-shadow: var(--shadow-md);
+		transform: translateY(-2px);
+		color: var(--gray-0);
+	}
 </style>
 
 <script>
@@ -696,4 +777,39 @@ const blogPostSchema = {
 		});
 		pre.appendChild(btn);
 	});
+
+	// Image lightbox
+	const lightbox = document.createElement('div');
+	lightbox.className = 'lightbox';
+	const lightboxImg = document.createElement('img');
+	lightbox.appendChild(lightboxImg);
+	document.body.appendChild(lightbox);
+
+	function closeLightbox() {
+		lightbox.classList.remove('active');
+	}
+
+	lightbox.addEventListener('click', closeLightbox);
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') closeLightbox();
+	});
+
+	document.querySelectorAll('.content img').forEach((img) => {
+		img.addEventListener('click', () => {
+			lightboxImg.src = (img as HTMLImageElement).src;
+			lightboxImg.alt = (img as HTMLImageElement).alt;
+			lightbox.classList.add('active');
+		});
+	});
+
+	// Back to top button
+	const backToTop = document.querySelector('.back-to-top') as HTMLButtonElement | null;
+	if (backToTop) {
+		window.addEventListener('scroll', () => {
+			backToTop.classList.toggle('visible', window.scrollY > 400);
+		}, { passive: true });
+		backToTop.addEventListener('click', () => {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		});
+	}
 </script>

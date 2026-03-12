@@ -3,7 +3,7 @@ title: "AI SEO Strategy: How to Use AI to Rank Higher in 2026"
 description: "A practical, no-fluff guide to using AI for SEO - from keyword research to content optimization to technical audits. With real data on what actually moves rankings."
 publishDate: 2026-03-07
 category: [AI, SEO, Marketing]
-img: /assets/blog/ai-marketing.webp
+img: /assets/stock-4.webp
 img_alt: AI SEO strategy illustration
 ---
 

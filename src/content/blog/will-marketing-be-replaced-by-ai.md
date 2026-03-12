@@ -3,7 +3,7 @@ title: "Will Marketing Be Replaced By AI?"
 description: "Discover why AI is a companion to marketers, not a competitor. Explore AI's capabilities, limitations, and the future of marketing in an AI-driven world."
 publishDate: 2024-06-23
 category: [Marketing, AI]
-img: /assets/blog/ai-marketing.webp
+img: /assets/stock-2.webp
 img_alt: AI and marketing illustration
 ---
 

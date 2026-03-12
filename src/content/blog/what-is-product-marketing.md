@@ -3,7 +3,7 @@ title: "What Is Product Marketing? A PMM's Honest Guide (2026)"
 description: "What product marketing actually is, what PMMs do all day, how it's different from other marketing roles, and what the career path really looks like - from someone who does it."
 publishDate: 2026-03-07
 category: [Marketing, Product Marketing, Career]
-img: /assets/blog/marketing-research.webp
+img: /assets/stock-4.webp
 img_alt: Product marketing guide illustration
 ---
 

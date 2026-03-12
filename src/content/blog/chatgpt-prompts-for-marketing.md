@@ -3,7 +3,7 @@ title: "ChatGPT Prompts for Marketing: 50+ Ready-to-Use Templates (2026)"
 description: "Stop writing lazy prompts. Here are 50+ battle-tested ChatGPT prompt templates for content, email, SEO, social media, and strategy - with the prompting techniques that make them work."
 publishDate: 2026-03-07
 category: [AI, Marketing, Tools]
-img: /assets/blog/ai-marketing.webp
+img: /assets/stock-3.webp
 img_alt: ChatGPT prompts for marketing illustration
 ---
 

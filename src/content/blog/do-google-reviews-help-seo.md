@@ -3,7 +3,7 @@ title: "Do Google Reviews Help SEO? The Ultimate Guide (2025 Edition)"
 description: "Learn how Google Reviews impact your local SEO rankings in 2025. Discover strategies to leverage customer reviews for better search visibility."
 publishDate: 2025-03-23
 category: [SEO]
-img: /assets/blog/google-reviews-seo.webp
+img: /assets/stock-4.webp
 img_alt: Google Reviews and SEO guide illustration
 ---
 

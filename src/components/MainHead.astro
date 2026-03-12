@@ -20,6 +20,7 @@ const absoluteImageUrl = new URL(image, Astro.site).href;
 
 <meta charset="UTF-8" />
 <meta name="description" content={description} />
+<meta name="author" content="Swapnil Biswas" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark" />
 {noindex && <meta name="robots" content="noindex, nofollow" />}
@@ -28,6 +29,9 @@ const absoluteImageUrl = new URL(image, Astro.site).href;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={Astro.url.href} />
+
+<!-- RSS Feed -->
+<link rel="alternate" type="application/rss+xml" title="Swapnil Biswas - Blog" href="/rss.xml" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />

@@ -3,7 +3,7 @@ title: "Marketing Strategy for New Product: The Complete Launch Playbook (2026)"
 description: "A step-by-step marketing strategy for launching a new product. Covers market research, positioning, channel selection, launch tactics, and post-launch optimization with real data."
 publishDate: 2026-03-08
 category: [Marketing, Product Marketing]
-img: /assets/blog/ai-marketing.webp
+img: /assets/stock-4.webp
 img_alt: Marketing strategy for new product launch
 ---
 

@@ -7,16 +7,7 @@ interface Props {
 
 const { data, id, body } = Astro.props.post;
 
-// Use the same stock image logic as OG image generator
-const stockImages = ['stock-1.jpg', 'stock-2.jpg', 'stock-3.jpg', 'stock-4.jpg'];
-function getStockForTitle(title: string): string {
-	let hash = 0;
-	for (let i = 0; i < title.length; i++) {
-		hash = ((hash << 5) - hash + title.charCodeAt(i)) | 0;
-	}
-	return stockImages[Math.abs(hash) % stockImages.length];
-}
-const cardImage = `/assets/${getStockForTitle(data.title)}`;
+const cardImage = data.img;
 
 const wordCount = body ? body.split(/\s+/).length : 0;
 const readingTime = Math.max(1, Math.ceil(wordCount / 220));

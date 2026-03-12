@@ -3,7 +3,7 @@ title: "Free AI Tools for Marketing: The Only List You Actually Need (2026)"
 description: "Cut through the noise. Here are the best genuinely free AI tools for marketing - organized by use case, tested in real workflows, with honest takes on what works."
 publishDate: 2026-03-07
 category: [AI, Marketing, Tools]
-img: /assets/blog/ai-marketing.webp
+img: /assets/stock-2.webp
 img_alt: Free AI tools for marketing illustration
 ---
 

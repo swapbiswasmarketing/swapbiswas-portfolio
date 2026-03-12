@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="820" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="55" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="36" font-weight="700" text-anchor="middle">The 10 Sections of a Competitive Battlecard</text>
+  <text x="700" y="85" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" text-anchor="middle">Everything your sales team needs to win - on one page</text>
+
+  <!-- Row 1: 5 cards -->
+  <!-- Card 1: Competitor Overview -->
+  <rect x="40" y="115" width="248" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="40" y="115" width="248" height="6" rx="3" fill="#60a5fa"/>
+  <text x="164" y="155" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0.08em">01</text>
+  <text x="164" y="182" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Competitor</text>
+  <text x="164" y="204" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Overview</text>
+  <text x="164" y="235" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">Positioning, funding,</text>
+  <text x="164" y="255" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">target market, and</text>
+  <text x="164" y="275" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">their own messaging</text>
+
+  <!-- Card 2: Product Comparison -->
+  <rect x="308" y="115" width="248" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="308" y="115" width="248" height="6" rx="3" fill="#c084fc"/>
+  <text x="432" y="155" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0.08em">02</text>
+  <text x="432" y="182" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Product</text>
+  <text x="432" y="204" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Comparison</text>
+  <text x="432" y="235" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">Side-by-side features</text>
+  <text x="432" y="255" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">framed around what</text>
+  <text x="432" y="275" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">buyers care about</text>
+
+  <!-- Card 3: Strengths & Weaknesses -->
+  <rect x="576" y="115" width="248" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="576" y="115" width="248" height="6" rx="3" fill="#fb923c"/>
+  <text x="700" y="155" fill="#fb923c" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0.08em">03</text>
+  <text x="700" y="182" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Strengths &amp;</text>
+  <text x="700" y="204" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Weaknesses</text>
+  <text x="700" y="235" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">Honest assessment of</text>
+  <text x="700" y="255" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">where they win and</text>
+  <text x="700" y="275" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">where they fall short</text>
+
+  <!-- Card 4: Win/Loss Zones -->
+  <rect x="844" y="115" width="248" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="844" y="115" width="248" height="6" rx="3" fill="#5eead4"/>
+  <text x="968" y="155" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0.08em">04</text>
+  <text x="968" y="182" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Win/Loss</text>
+  <text x="968" y="204" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Zones</text>
+  <text x="968" y="235" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">Where you win, battle,</text>
+  <text x="968" y="255" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">and lose based on</text>
+  <text x="968" y="275" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">actual deal data</text>
+
+  <!-- Card 5: Objection Handling -->
+  <rect x="1112" y="115" width="248" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="1112" y="115" width="248" height="6" rx="3" fill="#f5a0a1"/>
+  <text x="1236" y="155" fill="#f5a0a1" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0.08em">05</text>
+  <text x="1236" y="182" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Objection</text>
+  <text x="1236" y="204" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Handling</text>
+  <text x="1236" y="235" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">Top 5-7 objections</text>
+  <text x="1236" y="255" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">with scripted</text>
+  <text x="1236" y="275" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">responses</text>
+
+  <!-- Row 2: 5 cards -->
+  <!-- Card 6: Talk Tracks -->
+  <rect x="40" y="345" width="248" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="40" y="345" width="248" height="6" rx="3" fill="#d98ee0"/>
+  <text x="164" y="385" fill="#d98ee0" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0.08em">06</text>
+  <text x="164" y="412" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Talk Tracks</text>
+  <text x="164" y="448" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">Natural, conversational</text>
+  <text x="164" y="468" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">phrases reps can use</text>
+  <text x="164" y="488" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">on live calls</text>
+
+  <!-- Card 7: Trap-Setting Questions -->
+  <rect x="308" y="345" width="248" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="308" y="345" width="248" height="6" rx="3" fill="#b388f2"/>
+  <text x="432" y="385" fill="#b388f2" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0.08em">07</text>
+  <text x="432" y="412" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Trap-Setting</text>
+  <text x="432" y="434" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Questions</text>
+  <text x="432" y="468" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">Questions that expose</text>
+  <text x="432" y="488" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">competitor weaknesses</text>
+  <text x="432" y="508" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">naturally</text>
+
+  <!-- Card 8: Pricing Intelligence -->
+  <rect x="576" y="345" width="248" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="576" y="345" width="248" height="6" rx="3" fill="#f87171"/>
+  <text x="700" y="385" fill="#f87171" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0.08em">08</text>
+  <text x="700" y="412" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Pricing</text>
+  <text x="700" y="434" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Intelligence</text>
+  <text x="700" y="468" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">Their pricing model,</text>
+  <text x="700" y="488" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">hidden costs, and how</text>
+  <text x="700" y="508" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">to reframe on TCO</text>
+
+  <!-- Card 9: Proof Points -->
+  <rect x="844" y="345" width="248" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="844" y="345" width="248" height="6" rx="3" fill="#60a5fa"/>
+  <text x="968" y="385" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0.08em">09</text>
+  <text x="968" y="412" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Proof Points</text>
+  <text x="968" y="448" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">Case studies, analyst</text>
+  <text x="968" y="468" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">quotes, benchmarks,</text>
+  <text x="968" y="488" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">and peer reviews</text>
+
+  <!-- Card 10: Recent Moves -->
+  <rect x="1112" y="345" width="248" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="1112" y="345" width="248" height="6" rx="3" fill="#fb923c"/>
+  <text x="1236" y="385" fill="#fb923c" font-family="Segoe UI, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="0.08em">10</text>
+  <text x="1236" y="412" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Recent</text>
+  <text x="1236" y="434" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Competitor Moves</text>
+  <text x="1236" y="468" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">Product launches,</text>
+  <text x="1236" y="488" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">pricing changes,</text>
+  <text x="1236" y="508" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="14" text-anchor="middle">and news updates</text>
+
+  <!-- Bottom bar with key stats -->
+  <rect x="40" y="580" width="1320" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+
+  <text x="700" y="620" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" text-anchor="middle">Key Frameworks</text>
+
+  <!-- Framework 1 -->
+  <rect x="80" y="645" width="380" height="130" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="270" y="678" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Know, Say, Show</text>
+  <text x="270" y="708" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="15" text-anchor="middle">Know the context. Say the right words.</text>
+  <text x="270" y="730" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="15" text-anchor="middle">Show the proof.</text>
+  <text x="270" y="758" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="13" text-anchor="middle">100% of top-performing battlecards use this</text>
+
+  <!-- Framework 2 -->
+  <rect x="510" y="645" width="380" height="130" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="700" y="678" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Fact, Impact, Act</text>
+  <text x="700" y="708" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="15" text-anchor="middle">State the fact. Explain the impact.</text>
+  <text x="700" y="730" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="15" text-anchor="middle">Define the action.</text>
+  <text x="700" y="758" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="13" text-anchor="middle">Best for fast competitive updates</text>
+
+  <!-- Speed stat -->
+  <rect x="940" y="645" width="380" height="130" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="1130" y="678" fill="#fb923c" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Speed Matters</text>
+  <text x="1130" y="708" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="15" text-anchor="middle">Intel delivered in under 27 min:</text>
+  <text x="1130" y="730" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" text-anchor="middle">32% → 67% win rate</text>
+  <text x="1130" y="758" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="13" text-anchor="middle">Source: Crayon State of CI 2025</text>
+</svg>

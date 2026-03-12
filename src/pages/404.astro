@@ -1,8 +1,97 @@
 ---
+import { getCollection } from 'astro:content';
 import Hero from '../components/Hero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPreview from '../components/BlogPreview.astro';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.slice(0, 3);
 ---
 
-<BaseLayout title="Not Found" description="404 Error — this page was not found">
-	<Hero title="Page Not Found" tagline="Not found" />
+<BaseLayout title="Page Not Found | Swapnil Biswas" description="404 Error — this page was not found" noindex={true}>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero title="Page Not Found" tagline="Sorry, the page you're looking for doesn't exist or has been moved." align="start" />
+
+			<div class="actions">
+				<a href="/" class="action-link">
+					<span class="action-icon">&#8592;</span>
+					Go to Homepage
+				</a>
+				<a href="/blog/" class="action-link">
+					<span class="action-icon">&#9998;</span>
+					Browse Blog
+				</a>
+				<a href="/contact/" class="action-link">
+					<span class="action-icon">&#9993;</span>
+					Contact Me
+				</a>
+			</div>
+
+			<section class="recent-posts">
+				<h2>Recent Articles</h2>
+				<div class="post-grid">
+					{posts.map((post) => (
+						<BlogPreview post={post} />
+					))}
+				</div>
+			</section>
+		</main>
+	</div>
 </BaseLayout>
+
+<style>
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.action-link {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.5rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: var(--gradient-subtle);
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-weight: 500;
+		text-decoration: none;
+		transition: box-shadow var(--theme-transition), color var(--theme-transition);
+	}
+
+	.action-link:hover {
+		box-shadow: var(--shadow-md);
+		color: var(--gray-0);
+	}
+
+	.action-icon {
+		font-size: 1.2em;
+	}
+
+	.recent-posts {
+		margin-top: 1rem;
+	}
+
+	.recent-posts h2 {
+		font-size: var(--text-xl);
+		margin-bottom: 1.5rem;
+	}
+
+	.post-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		list-style: none;
+		padding: 0;
+	}
+
+	@media (min-width: 50em) {
+		.post-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>
