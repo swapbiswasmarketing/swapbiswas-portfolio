@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="700" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="52" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">New Product Marketing: 4 Phases</text>
+  <text x="700" y="84" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">A timeline from research to post-launch optimization</text>
+
+  <!-- Phase 1 -->
+  <rect x="30" y="120" width="320" height="540" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="30" y="120" width="320" height="5" rx="3" fill="#f5a0a1"/>
+  <text x="190" y="168" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">PHASE 1</text>
+  <text x="190" y="204" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Research</text>
+  <text x="190" y="234" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="19">8-12 weeks before</text>
+  <line x1="70" y1="258" x2="310" y2="258" stroke="#30363d" stroke-width="1"/>
+  <text x="60" y="295" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="60" dy="0">Customer discovery</tspan>
+    <tspan x="60" dy="36">interviews (15-20)</tspan>
+    <tspan x="60" dy="50">Search demand</tspan>
+    <tspan x="60" dy="36">analysis</tspan>
+    <tspan x="60" dy="50">Competitive landscape</tspan>
+    <tspan x="60" dy="36">mapping</tspan>
+    <tspan x="60" dy="50">ICP and persona</tspan>
+    <tspan x="60" dy="36">definition</tspan>
+  </text>
+
+  <!-- Arrow 1->2 -->
+  <polygon points="350,390 362,385 362,395" fill="#484f58"/>
+
+  <!-- Phase 2 -->
+  <rect x="370" y="120" width="310" height="540" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="370" y="120" width="310" height="5" rx="3" fill="#fb923c"/>
+  <text x="525" y="168" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">PHASE 2</text>
+  <text x="525" y="204" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Build</text>
+  <text x="525" y="234" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="19">4-8 weeks before</text>
+  <line x1="410" y1="258" x2="640" y2="258" stroke="#30363d" stroke-width="1"/>
+  <text x="400" y="295" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="400" dy="0">Landing page and</tspan>
+    <tspan x="400" dy="36">website</tspan>
+    <tspan x="400" dy="50">Launch content</tspan>
+    <tspan x="400" dy="36">(blogs, video, docs)</tspan>
+    <tspan x="400" dy="50">Sales enablement</tspan>
+    <tspan x="400" dy="36">materials</tspan>
+    <tspan x="400" dy="50">Waitlist and pre-launch</tspan>
+    <tspan x="400" dy="36">buzz</tspan>
+  </text>
+
+  <!-- Arrow 2->3 -->
+  <polygon points="680,390 692,385 692,395" fill="#484f58"/>
+
+  <!-- Phase 3 -->
+  <rect x="700" y="120" width="310" height="540" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="700" y="120" width="310" height="5" rx="3" fill="#c084fc"/>
+  <text x="855" y="168" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">PHASE 3</text>
+  <text x="855" y="204" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Launch</text>
+  <text x="855" y="234" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="19">Launch week</text>
+  <line x1="740" y1="258" x2="970" y2="258" stroke="#30363d" stroke-width="1"/>
+  <text x="730" y="295" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="730" dy="0">Email blast to waitlist</tspan>
+    <tspan x="730" dy="50">Social announcements</tspan>
+    <tspan x="730" dy="36">and Product Hunt</tspan>
+    <tspan x="730" dy="50">Paid campaign</tspan>
+    <tspan x="730" dy="36">activation</tspan>
+    <tspan x="730" dy="50">Real-time monitoring</tspan>
+    <tspan x="730" dy="36">and feedback</tspan>
+  </text>
+
+  <!-- Arrow 3->4 -->
+  <polygon points="1010,390 1022,385 1022,395" fill="#484f58"/>
+
+  <!-- Phase 4 -->
+  <rect x="1030" y="120" width="340" height="540" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1030" y="120" width="340" height="5" rx="3" fill="#5eead4"/>
+  <text x="1200" y="168" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">PHASE 4</text>
+  <text x="1200" y="204" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Optimize</text>
+  <text x="1200" y="234" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="19">Weeks 2-12</text>
+  <line x1="1070" y1="258" x2="1330" y2="258" stroke="#30363d" stroke-width="1"/>
+  <text x="1060" y="295" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="1060" dy="0">Analyze channel</tspan>
+    <tspan x="1060" dy="36">performance</tspan>
+    <tspan x="1060" dy="50">Iterate messaging</tspan>
+    <tspan x="1060" dy="36">and positioning</tspan>
+    <tspan x="1060" dy="50">Build content</tspan>
+    <tspan x="1060" dy="36">marketing engine</tspan>
+    <tspan x="1060" dy="50">Customer stories</tspan>
+    <tspan x="1060" dy="36">and case studies</tspan>
+  </text>
+</svg>

@@ -1,0 +1,123 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	post: CollectionEntry<'blog'>;
+}
+
+const { data, id, body } = Astro.props.post;
+
+// Use the same stock image logic as OG image generator
+const stockImages = ['stock-1.jpg', 'stock-2.jpg', 'stock-3.jpg', 'stock-4.jpg'];
+function getStockForTitle(title: string): string {
+	let hash = 0;
+	for (let i = 0; i < title.length; i++) {
+		hash = ((hash << 5) - hash + title.charCodeAt(i)) | 0;
+	}
+	return stockImages[Math.abs(hash) % stockImages.length];
+}
+const cardImage = `/assets/${getStockForTitle(data.title)}`;
+
+const wordCount = body ? body.split(/\s+/).length : 0;
+const readingTime = Math.max(1, Math.ceil(wordCount / 220));
+
+const publishDate = data.publishDate.toLocaleDateString('en-US', {
+	year: 'numeric',
+	month: 'short',
+	day: 'numeric',
+});
+---
+
+<a class="card" href={`/blog/${id}`}>
+	<img src={cardImage} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+	<div class="card-body">
+		<span class="title">{data.title}</span>
+		<div class="card-meta">
+			<span>{publishDate}</span>
+			<span class="sep">&middot;</span>
+			<span>{readingTime} min read</span>
+		</div>
+		<div class="card-tags">
+			{data.category.slice(0, 2).map((cat) => (
+				<span class="tag">{cat}</span>
+			))}
+		</div>
+	</div>
+</a>
+
+<style>
+	.card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		background: var(--gradient-subtle);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		overflow: hidden;
+		box-shadow: var(--shadow-sm);
+		text-decoration: none;
+		transition: box-shadow var(--theme-transition);
+	}
+
+	.card:hover {
+		box-shadow: var(--shadow-md);
+	}
+
+	img {
+		width: 100%;
+		height: 11rem;
+		object-fit: cover;
+	}
+
+	.card-body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 0.75rem 1rem 1rem;
+	}
+
+	.title {
+		font-family: var(--font-brand);
+		font-size: var(--text-md);
+		font-weight: 600;
+		color: var(--gray-200);
+		line-height: 1.4;
+	}
+
+	.card-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+	}
+
+	.card-tags {
+		display: flex;
+		gap: 0.35rem;
+		flex-wrap: wrap;
+	}
+
+	.tag {
+		font-size: 0.7rem;
+		padding: 0.15rem 0.5rem;
+		border-radius: 1rem;
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		color: var(--gray-300);
+	}
+
+	@media (min-width: 50em) {
+		img {
+			height: 14rem;
+		}
+
+		.card {
+			border-radius: 1rem;
+		}
+
+		.title {
+			font-size: var(--text-lg);
+		}
+	}
+</style>

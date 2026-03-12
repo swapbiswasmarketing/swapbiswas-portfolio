@@ -1,0 +1,439 @@
+---
+const tabs = ['Skills', 'Experience', 'Education', 'Certifications', 'Awards'];
+
+const skills = [
+	{ name: 'Product & GTM Strategy', percentage: 95, description: 'Go-to-market campaigns, product launches, positioning, and competitive strategy for B2B SaaS.' },
+	{ name: 'SaaS & B2B Marketing', percentage: 93, description: 'End-to-end marketing for SaaS products — from acquisition funnels to retention loops.' },
+	{ name: 'AI & Marketing Automation', percentage: 92, description: 'AI agents, workflow automation, and predictive analytics to scale marketing operations.' },
+	{ name: 'Content & SEO', percentage: 90, description: 'Content strategy, web content creation, search engine marketing, and technical writing.' },
+	{ name: 'Data Analytics & Growth', percentage: 88, description: 'Growth hacking, market research, conversion rate optimization, and data-driven decision making.' },
+	{ name: 'User Research & CX', percentage: 85, description: 'User experience research, customer personas, and behavioral data analysis.' },
+];
+
+const experience = [
+	{ title: 'Product Marketing Manager', subtitle: 'LambdaTest (now TestMu AI)', period: 'Apr 2024 – Present', description: 'Leading product marketing for KaneAI and HyperExecute — orchestrating GTM campaigns, product launches, and partner marketing strategies.' },
+	{ title: 'Marketing Specialist', subtitle: 'LambdaTest (now TestMu AI)', period: 'Apr 2023 – Apr 2024', description: 'Drove content marketing, CRO, and product-led growth initiatives. Managed agencies and in-house team to double content delivery.' },
+	{ title: 'Digital Marketing Executive', subtitle: 'LambdaTest (now TestMu AI)', period: 'Dec 2021 – Apr 2023', description: 'Executed SEO, social media, and video marketing strategies. Achieved 100% increase in social media reach and impressions.' },
+	{ title: 'Marketing Associate', subtitle: 'LIDO Learning', period: 'Jun 2021 – Nov 2021', description: 'Full-time role in EdTech marketing — campaigns, content, and growth strategies for online learning platform.' },
+	{ title: 'Marketing Intern', subtitle: 'Sociowash', period: 'Nov 2018 – Jun 2019', description: 'Social media marketing and content creation at one of India\'s leading digital marketing agencies.' },
+	{ title: 'Marketing Intern', subtitle: 'Samsung India', period: 'Nov 2018 – Jun 2019', description: 'Brand marketing support for Samsung India\'s consumer electronics division.' },
+];
+
+const education = [
+	{ title: 'PG, Digital Marketing & Growth Strategy', subtitle: 'Indian Institute of Management Visakhapatnam', period: 'May 2025 – May 2026', description: 'Postgraduate program focused on digital marketing, growth strategy, and data analytics.' },
+	{ title: 'BBA, Marketing', subtitle: 'Amity University', period: '2018 – 2021', description: 'Bachelor of Business Administration with a specialization in Marketing Management.' },
+];
+
+const certifications = [
+	{ name: 'Google Analytics Certification', issuer: 'Google', date: 'Dec 2023' },
+	{ name: 'Inbound Marketing', issuer: 'HubSpot', date: 'Nov 2021' },
+	{ name: 'Search Engine Optimization', issuer: 'IIDE - The Digital School', date: 'Jul 2021' },
+	{ name: 'The Fundamentals of Digital Marketing', issuer: 'Google', date: 'May 2021' },
+	{ name: 'Google Analytics Individual Qualification', issuer: 'Google', date: 'May 2021' },
+	{ name: 'Advanced Google Analytics', issuer: 'Google', date: 'May 2021' },
+	{ name: 'Google Analytics for Beginners', issuer: 'Google', date: 'May 2021' },
+	{ name: 'Marketing in a Digital World', issuer: 'Coursera — University of Illinois', date: 'Apr 2021' },
+	{ name: 'SEO Training + SEO for WordPress', issuer: 'Udemy', date: 'Apr 2021' },
+	{ name: 'The Ultimate MySQL Bootcamp', issuer: 'Udemy', date: 'May 2021' },
+];
+
+const awards = [
+	{ name: 'Value of Agility Award', issuer: 'LambdaTest', date: 'Aug 2024' },
+	{ name: 'Top Performer', issuer: 'LambdaTest', date: 'Oct 2023' },
+	{ name: 'Buddy of the Month', issuer: 'LambdaTest', date: 'Aug 2023' },
+	{ name: 'Best Mentor of the Month', issuer: 'LambdaTest', date: 'Aug 2023' },
+	{ name: 'Wall of Fame', issuer: 'LambdaTest', date: 'Nov 2022' },
+];
+---
+
+<section class="resume-section">
+	<header class="resume-header">
+		<h3>My Resume</h3>
+		<p class="resume-subtitle">Qualifications</p>
+	</header>
+
+	<div class="tab-buttons">
+		{tabs.map((tab, i) => (
+			<button class:list={['tab-btn', { active: i === 0 }]} data-tab={i}>
+				{tab}
+			</button>
+		))}
+	</div>
+
+	<div class="tab-panels">
+		<!-- Skills -->
+		<div class="tab-panel active" data-panel="0">
+			<div class="skills-grid">
+				{skills.map((skill) => (
+					<div class="skill-item">
+						<div class="skill-header">
+							<h4>{skill.name}</h4>
+							<span class="skill-pct">{skill.percentage}%</span>
+						</div>
+						<div class="skill-track">
+							<div class="skill-fill" style={`--pct: ${skill.percentage}%`} />
+						</div>
+						<p class="skill-desc">{skill.description}</p>
+					</div>
+				))}
+			</div>
+		</div>
+
+		<!-- Experience -->
+		<div class="tab-panel" data-panel="1">
+			<div class="timeline">
+				{experience.map((item) => (
+					<div class="timeline-item">
+						<div class="timeline-dot" />
+						<span class="timeline-period">{item.period}</span>
+						<h4>{item.title}</h4>
+						<p class="timeline-subtitle">{item.subtitle}</p>
+						<p class="timeline-desc">{item.description}</p>
+					</div>
+				))}
+			</div>
+		</div>
+
+		<!-- Education -->
+		<div class="tab-panel" data-panel="2">
+			<div class="timeline">
+				{education.map((item) => (
+					<div class="timeline-item">
+						<div class="timeline-dot" />
+						<span class="timeline-period">{item.period}</span>
+						<h4>{item.title}</h4>
+						<p class="timeline-subtitle">{item.subtitle}</p>
+						<p class="timeline-desc">{item.description}</p>
+					</div>
+				))}
+			</div>
+		</div>
+
+		<!-- Certifications -->
+		<div class="tab-panel" data-panel="3">
+			<div class="card-grid">
+				{certifications.map((cert, i) => (
+					<div class="resume-card">
+						<span class="card-index">{String(i + 1).padStart(2, '0')}</span>
+						<h4>{cert.name}</h4>
+						<p class="card-meta">{cert.issuer} &middot; {cert.date}</p>
+					</div>
+				))}
+			</div>
+		</div>
+
+		<!-- Awards -->
+		<div class="tab-panel" data-panel="4">
+			<div class="card-grid">
+				{awards.map((award, i) => (
+					<div class="resume-card">
+						<span class="card-index">{String(i + 1).padStart(2, '0')}</span>
+						<h4>{award.name}</h4>
+						<p class="card-meta">{award.issuer} &middot; {award.date}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const buttons = document.querySelectorAll('.tab-btn');
+		const panels = document.querySelectorAll('.tab-panel');
+
+		buttons.forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const idx = btn.getAttribute('data-tab');
+				buttons.forEach((b) => b.classList.remove('active'));
+				panels.forEach((p) => p.classList.remove('active'));
+				btn.classList.add('active');
+				const panel = document.querySelector(`.tab-panel[data-panel="${idx}"]`);
+				if (panel) panel.classList.add('active');
+
+				// Animate skill bars when switching to skills tab
+				if (idx === '0') {
+					const fills = panel?.querySelectorAll('.skill-fill') as NodeListOf<HTMLElement>;
+					fills?.forEach((fill) => {
+						fill.style.width = '0';
+						requestAnimationFrame(() => {
+							requestAnimationFrame(() => {
+								fill.style.width = fill.style.getPropertyValue('--pct');
+							});
+						});
+					});
+				}
+			});
+		});
+
+		// Initial animation for skill bars
+		const fills = document.querySelectorAll('.tab-panel.active .skill-fill') as NodeListOf<HTMLElement>;
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					fills.forEach((fill) => {
+						fill.style.width = fill.style.getPropertyValue('--pct');
+					});
+					observer.disconnect();
+				}
+			});
+		}, { threshold: 0.2 });
+
+		const section = document.querySelector('.resume-section');
+		if (section) observer.observe(section);
+	});
+</script>
+
+<style>
+	.resume-section {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.resume-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 0.5rem;
+	}
+
+	.resume-header h3 {
+		font-size: var(--text-2xl);
+		color: var(--gray-0);
+	}
+
+	.resume-subtitle {
+		font-size: var(--text-lg);
+		color: var(--gray-300);
+	}
+
+	/* Tab Buttons */
+	.tab-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem;
+	}
+
+	.tab-btn {
+		padding: 0.5rem 1.25rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: var(--gray-999_40);
+		color: var(--gray-300);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: all var(--theme-transition);
+	}
+
+	.tab-btn:hover {
+		color: var(--gray-0);
+		border-color: var(--gray-700);
+	}
+
+	.tab-btn.active {
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		border-color: transparent;
+	}
+
+	/* Tab Panels */
+	.tab-panels {
+		min-height: 20rem;
+	}
+
+	.tab-panel {
+		display: none;
+	}
+
+	.tab-panel.active {
+		display: block;
+		animation: fadeIn 0.3s ease;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; transform: translateY(8px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+
+	/* Skills */
+	.skills-grid {
+		display: grid;
+		gap: 1.5rem;
+	}
+
+	.skill-item {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.skill-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.skill-header h4 {
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		font-weight: 500;
+	}
+
+	.skill-pct {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		font-family: var(--font-brand);
+	}
+
+	.skill-track {
+		width: 100%;
+		height: 0.375rem;
+		background: var(--gray-800);
+		border-radius: 999rem;
+		overflow: hidden;
+	}
+
+	.skill-fill {
+		height: 100%;
+		width: 0;
+		background: var(--gradient-accent-orange);
+		border-radius: 999rem;
+		transition: width 1s ease-out;
+	}
+
+	.skill-desc {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		line-height: 1.5;
+	}
+
+	/* Timeline */
+	.timeline {
+		max-width: 42rem;
+	}
+
+	.timeline-item {
+		position: relative;
+		padding-left: 2rem;
+		padding-bottom: 2rem;
+		border-left: 1px solid var(--gray-800);
+	}
+
+	.timeline-item:last-child {
+		padding-bottom: 0;
+		border-left-color: transparent;
+	}
+
+	.timeline-dot {
+		position: absolute;
+		left: 0;
+		top: 0.35rem;
+		width: 0.75rem;
+		height: 0.75rem;
+		transform: translateX(-50%);
+		border-radius: 50%;
+		background: var(--accent-regular);
+		box-shadow: 0 0 0 3px var(--accent-overlay);
+	}
+
+	.timeline-period {
+		display: block;
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		margin-bottom: 0.25rem;
+		font-family: var(--font-brand);
+	}
+
+	.timeline-item h4 {
+		font-size: var(--text-lg);
+		color: var(--gray-0);
+		font-weight: 500;
+		margin-bottom: 0.125rem;
+	}
+
+	.timeline-subtitle {
+		font-size: var(--text-base);
+		color: var(--gray-300);
+		margin-bottom: 0.5rem;
+	}
+
+	.timeline-desc {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		line-height: 1.6;
+	}
+
+	/* Cards */
+	.card-grid {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.resume-card {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.25rem;
+		background: var(--gray-999_40);
+		transition: border-color var(--theme-transition);
+	}
+
+	.resume-card:hover {
+		border-color: var(--gray-700);
+	}
+
+	.card-index {
+		display: block;
+		font-size: var(--text-sm);
+		color: var(--gray-500);
+		font-family: var(--font-brand);
+		margin-bottom: 0.75rem;
+	}
+
+	.resume-card h4 {
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		font-weight: 500;
+		margin-bottom: 0.25rem;
+	}
+
+	.card-meta {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+	}
+
+	/* Desktop */
+	@media (min-width: 50em) {
+		.resume-header {
+			flex-direction: row;
+			justify-content: space-between;
+			text-align: left;
+		}
+
+		.resume-header h3 {
+			font-size: var(--text-4xl);
+		}
+
+		.tab-buttons {
+			justify-content: flex-start;
+		}
+
+		.tab-btn {
+			padding: 0.625rem 1.5rem;
+			font-size: var(--text-base);
+		}
+
+		.skills-grid {
+			grid-template-columns: 1fr 1fr;
+			gap: 2rem 3rem;
+		}
+
+		.card-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>

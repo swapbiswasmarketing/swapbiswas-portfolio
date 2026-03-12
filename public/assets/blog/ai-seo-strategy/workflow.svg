@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f5a0a1"/><stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#5eead4"/>
+    </linearGradient>
+    <linearGradient id="accent3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#b388f2"/>
+    </linearGradient>
+    <linearGradient id="accent4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5eead4"/><stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="accent5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="accent6" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#f5a0a1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="820" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="52" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">The 6-Part AI SEO Strategy</text>
+  <text x="700" y="84" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">A complete workflow from research to monitoring</text>
+
+  <!-- ROW 1 -->
+  <!-- Card 1: Keyword Research -->
+  <rect x="40" y="115" width="420" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="115" width="420" height="5" rx="3" fill="url(#accent1)"/>
+  <circle cx="80" cy="170" r="26" fill="#3b2020" stroke="#f5a0a1" stroke-width="1.5"/>
+  <text x="80" y="180" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">1</text>
+  <text x="120" y="180" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Keyword Research</text>
+  <text x="70" y="225" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21" line-spacing="32">
+    <tspan x="70" dy="0">AI clusters keywords by semantic</tspan>
+    <tspan x="70" dy="32">intent, not just volume. Target</tspan>
+    <tspan x="70" dy="32">clusters, not individual keywords.</tspan>
+  </text>
+  <text x="70" y="355" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19">Ahrefs + ChatGPT / Claude</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="460" y1="255" x2="490" y2="255" stroke="#484f58" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <polygon points="488,250 498,255 488,260" fill="#484f58"/>
+
+  <!-- Card 2: Content Optimization -->
+  <rect x="500" y="115" width="400" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="500" y="115" width="400" height="5" rx="3" fill="url(#accent2)"/>
+  <circle cx="540" cy="170" r="26" fill="#1a2a3a" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="540" y="180" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">2</text>
+  <text x="580" y="180" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Content Optimization</text>
+  <text x="530" y="225" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="530" dy="0">Write from experience. Use AI to</tspan>
+    <tspan x="530" dy="32">optimize, not originate. Check</tspan>
+    <tspan x="530" dy="32">topical coverage vs. competitors.</tspan>
+  </text>
+  <text x="530" y="355" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="19">Surfer SEO / Clearscope / Frase</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="900" y1="255" x2="930" y2="255" stroke="#484f58" stroke-width="2"/>
+  <polygon points="928,250 938,255 928,260" fill="#484f58"/>
+
+  <!-- Card 3: Technical SEO -->
+  <rect x="940" y="115" width="420" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="940" y="115" width="420" height="5" rx="3" fill="url(#accent3)"/>
+  <circle cx="980" cy="170" r="26" fill="#2a1a3a" stroke="#c084fc" stroke-width="1.5"/>
+  <text x="980" y="180" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">3</text>
+  <text x="1020" y="180" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Technical SEO</text>
+  <text x="970" y="225" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="970" dy="0">Automate schema markup, crawl</tspan>
+    <tspan x="970" dy="32">analysis, log file analysis, and</tspan>
+    <tspan x="970" dy="32">Core Web Vitals diagnosis.</tspan>
+  </text>
+  <text x="970" y="355" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19">Screaming Frog + AI</text>
+
+  <!-- Curved arrow from row 1 to row 2 -->
+  <path d="M1360,395 C1370,440 1370,460 1360,490 L1360,490 C1350,510 1320,520 1300,520 L480,520 C460,520 440,510 430,490" stroke="#484f58" stroke-width="2" fill="none"/>
+  <polygon points="425,495 430,483 435,495" fill="#484f58"/>
+
+  <!-- ROW 2 -->
+  <!-- Card 4: Link Building Intel -->
+  <rect x="40" y="520" width="420" height="260" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="520" width="420" height="5" rx="3" fill="url(#accent4)"/>
+  <circle cx="80" cy="575" r="26" fill="#1a2a2a" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="80" y="585" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">4</text>
+  <text x="120" y="585" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Link Building Intel</text>
+  <text x="70" y="630" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="70" dy="0">AI analyzes competitor backlinks,</tspan>
+    <tspan x="70" dy="32">identifies replicable opportunities,</tspan>
+    <tspan x="70" dy="32">personalizes outreach at scale.</tspan>
+  </text>
+  <text x="70" y="745" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="19">Ahrefs export + AI analysis</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="460" y1="650" x2="490" y2="650" stroke="#484f58" stroke-width="2"/>
+  <polygon points="488,645 498,650 488,655" fill="#484f58"/>
+
+  <!-- Card 5: AI Overviews -->
+  <rect x="500" y="520" width="400" height="260" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="500" y="520" width="400" height="5" rx="3" fill="url(#accent5)"/>
+  <circle cx="540" cy="575" r="26" fill="#1a2a3a" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="540" y="585" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">5</text>
+  <text x="580" y="585" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">AI Overviews</text>
+  <text x="530" y="630" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="530" dy="0">Optimize for answer engines.</tspan>
+    <tspan x="530" dy="32">Direct answers, FAQ structure,</tspan>
+    <tspan x="530" dy="32">original data, topical authority.</tspan>
+  </text>
+  <text x="530" y="745" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19">+35% organic clicks when cited</text>
+
+  <!-- Arrow 5→6 -->
+  <line x1="900" y1="650" x2="930" y2="650" stroke="#484f58" stroke-width="2"/>
+  <polygon points="928,645 938,650 928,655" fill="#484f58"/>
+
+  <!-- Card 6: Performance Monitor -->
+  <rect x="940" y="520" width="420" height="260" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="940" y="520" width="420" height="5" rx="3" fill="url(#accent6)"/>
+  <circle cx="980" cy="575" r="26" fill="#2a1a1a" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="980" y="585" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">6</text>
+  <text x="1020" y="585" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Performance Monitor</text>
+  <text x="970" y="630" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="970" dy="0">AI analyzes GSC data weekly.</tspan>
+    <tspan x="970" dy="32">Find quick wins (pos 5-15), detect</tspan>
+    <tspan x="970" dy="32">content decay, spot new trends.</tspan>
+  </text>
+  <text x="970" y="745" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="19">GSC + Looker Studio + AI</text>
+</svg>

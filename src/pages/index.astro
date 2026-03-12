@@ -1,0 +1,721 @@
+---
+import { getCollection } from 'astro:content';
+// Component Imports
+import CallToAction from '../components/CallToAction.astro';
+// Page section components
+import ContactCTA from '../components/ContactCTA.astro';
+import Grid from '../components/Grid.astro';
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import Pill from '../components/Pill.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import BlogPreview from '../components/BlogPreview.astro';
+import ResumeSection from '../components/ResumeSection.astro';
+import Skills from '../components/Skills.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = (await getCollection('work'))
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.slice(0, 4);
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.slice(0, 3);
+---
+
+<BaseLayout
+	description="Swapnil Biswas — Product Marketing & Growth Strategist specializing in AI, SEO, and content. 657K+ leads generated, 18M+ traffic driven. Explore my work and blog."
+	image="/og/home.png"
+>
+	<script type="application/ld+json" set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "WebSite",
+				"@id": "https://swapbiswas.com/#website",
+				"url": "https://swapbiswas.com",
+				"name": "Swapnil Biswas",
+				"description": "Product Marketing & Growth Strategist specializing in AI, SEO, and content.",
+				"publisher": { "@id": "https://swapbiswas.com/#person" }
+			},
+			{
+				"@type": "Person",
+				"@id": "https://swapbiswas.com/#person",
+				"name": "Swapnil Biswas",
+				"url": "https://swapbiswas.com",
+				"image": "https://swapbiswas.com/assets/portrait-new.webp",
+				"jobTitle": "Product Marketing Manager",
+				"worksFor": {
+					"@type": "Organization",
+					"name": "LambdaTest / TestMu AI"
+				},
+				"alumniOf": [
+					{
+						"@type": "CollegeOrUniversity",
+						"name": "Indian Institute of Management Visakhapatnam"
+					},
+					{
+						"@type": "CollegeOrUniversity",
+						"name": "Amity University"
+					}
+				],
+				"sameAs": [
+					"https://linkedin.com/in/swapbiswas/",
+					"https://twitter.com/swapbiswas",
+					"https://github.com/swapbiswas"
+				],
+				"knowsAbout": ["Product Marketing", "Growth Strategy", "AI", "SEO", "Content Marketing", "SaaS Marketing"]
+			}
+		]
+	})} />
+	<div class="stack gap-20 lg:gap-48">
+		<div class="wrapper stack gap-8 lg:gap-20">
+			<header class="hero">
+				<Hero
+					title="Hello, my name is Swapnil Biswas"
+					tagline="I mix AI agents, people, and a few clever strategies to get your product or service the results it deserves."
+					align="start"
+				>
+					<div class="roles">
+						<Pill><Icon icon="strategy" size="1.33em" /> Product Marketing</Pill>
+						<Pill><Icon icon="trophy" size="1.33em" /> Growth Strategy</Pill>
+						<Pill><Icon icon="pencil-line" size="1.33em" /> Content & SEO</Pill>
+					</div>
+				</Hero>
+
+				<img
+					alt="Swapnil Biswas - AI, Product & Digital Growth Marketer"
+					width="480"
+					height="620"
+					src="/assets/portrait-new.webp"
+				/>
+			</header>
+
+			<Skills />
+
+			<section class="stats">
+				<div class="stat" data-count="657" data-suffix="K">
+					<div class="stat-number">
+						<span class="stat-value">0</span><span class="stat-suffix">K</span>
+					</div>
+					<span class="stat-label">Leads Generated</span>
+				</div>
+				<div class="stat" data-count="18.2" data-suffix="M" data-decimal="1">
+					<div class="stat-number">
+						<span class="stat-value">0</span><span class="stat-suffix">M</span>
+					</div>
+					<span class="stat-label">Website Traffic</span>
+				</div>
+				<div class="stat" data-count="10" data-suffix="x">
+					<div class="stat-number">
+						<span class="stat-value">0</span><span class="stat-suffix">x</span>
+					</div>
+					<span class="stat-label">Conversion Results</span>
+				</div>
+				<div class="stat" data-count="15" data-suffix="+">
+					<div class="stat-number">
+						<span class="stat-value">0</span><span class="stat-suffix">+</span>
+					</div>
+					<span class="stat-label">People Mentored</span>
+				</div>
+				<div class="stat" data-count="20" data-suffix="+">
+					<div class="stat-number">
+						<span class="stat-value">0</span><span class="stat-suffix">+</span>
+					</div>
+					<span class="stat-label">AI Agents & Apps Created</span>
+				</div>
+			</section>
+		</div>
+
+		<main class="wrapper stack gap-20 lg:gap-48">
+			<!-- Selected Work section hidden - work case studies don't have final data yet
+			<section class="section with-background with-cta">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Selected Work</h3>
+					<p>Take a look below at some of my featured marketing and branding projects.</p>
+				</header>
+
+				<div class="gallery">
+					<Grid variant="offset">
+						{
+							projects.map((project) => (
+								<li>
+									<PortfolioPreview project={project} />
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+
+				<div class="cta">
+					<CallToAction href="/work/">
+						View All
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
+			</section>
+			-->
+
+			<section class="section with-background with-cta">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Latest Posts</h3>
+					<p>Read my latest thoughts on marketing, AI, SEO, and growth strategy.</p>
+				</header>
+
+				<div class="gallery">
+					<Grid variant="offset">
+						{
+							posts.map((post) => (
+								<li>
+									<BlogPreview post={post} />
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+
+				<div class="cta">
+					<CallToAction href="/blog/">
+						View All
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
+			</section>
+
+			<section class="section with-background">
+				<div class="resume-wrapper">
+					<ResumeSection />
+				</div>
+			</section>
+
+			<section class="section with-background bg-variant">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Trusted By</h3>
+					<p>
+						I have had the privilege of working with some amazing brands and companies throughout my career.
+					</p>
+				</header>
+
+				<div class="gallery">
+					<Grid variant="small">
+						{
+							[
+								{ name: 'LambdaTest', logo: '/assets/brands/lambdatest.webp' },
+								{ name: 'Samsung', logo: '/assets/brands/samsung.webp' },
+								{ name: 'Sociowash', logo: '/assets/brands/sociowash.png' },
+								{ name: 'Medilife', logo: '/assets/brands/medilife.webp' },
+								{ name: 'Appknox', logo: '/assets/brands/appknox.svg' },
+								{ name: 'Lido Learning', logo: '/assets/brands/lido.webp' },
+							].map((brand) => (
+								<li class="mention-card">
+									<img src={brand.logo} alt={brand.name} class="brand-logo" />
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+			</section>
+		</main>
+
+		<!-- Newsletter / Get Updates -->
+		<section class="newsletter-section">
+			<div class="wrapper newsletter-wrapper">
+				<div class="newsletter-content">
+					<h2>Get Updates</h2>
+					<p>Subscribe for insights on marketing, AI, SEO, and growth strategy. No spam, just value.</p>
+				</div>
+				<form id="newsletter-form" class="newsletter-form" action="https://app.kit.com/forms/9145889/subscriptions" method="post" data-sv-form="9145889" data-uid="e4f2ff34aa" data-format="inline" data-version="5">
+					<input
+						type="email"
+						name="email_address"
+						placeholder="Your email address"
+						required
+						autocomplete="email"
+						aria-label="Email address for newsletter"
+					/>
+					<button type="submit">Subscribe</button>
+				</form>
+				<p class="newsletter-status" id="newsletter-status"></p>
+			</div>
+		</section>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const stats = document.querySelectorAll('.stat[data-count]');
+		let animated = false;
+
+		const animateCountUp = () => {
+			if (animated) return;
+			animated = true;
+
+			stats.forEach((stat) => {
+				const target = parseFloat(stat.getAttribute('data-count') || '0');
+				const hasDecimal = stat.hasAttribute('data-decimal');
+				const valueEl = stat.querySelector('.stat-value') as HTMLElement;
+				if (!valueEl) return;
+
+				const duration = 2000;
+				const startTime = performance.now();
+
+				const update = (currentTime: number) => {
+					const elapsed = currentTime - startTime;
+					const progress = Math.min(elapsed / duration, 1);
+					const eased = 1 - Math.pow(1 - progress, 3);
+					const current = eased * target;
+
+					valueEl.textContent = hasDecimal
+						? current.toFixed(1)
+						: Math.floor(current).toString();
+
+					if (progress < 1) {
+						requestAnimationFrame(update);
+					} else {
+						valueEl.textContent = hasDecimal
+							? target.toFixed(1)
+							: target.toString();
+					}
+				};
+
+				requestAnimationFrame(update);
+			});
+		};
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						animateCountUp();
+						observer.disconnect();
+					}
+				});
+			},
+			{ threshold: 0.3 }
+		);
+
+		const section = document.querySelector('.stats');
+		if (section) observer.observe(section);
+
+		// Newsletter form (Kit / ConvertKit)
+		const nlForm = document.getElementById('newsletter-form') as HTMLFormElement;
+		const nlStatus = document.getElementById('newsletter-status') as HTMLElement;
+		if (nlForm) {
+			nlForm.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				const subscriberEmail = (nlForm.querySelector('input[name="email_address"]') as HTMLInputElement).value;
+				const btn = nlForm.querySelector('button') as HTMLButtonElement;
+				btn.textContent = 'Subscribing...';
+				btn.disabled = true;
+
+				try {
+					const kitHeaders = {
+						'Content-Type': 'application/json',
+						'X-Kit-Api-Key': 'REDACTED_KIT_API_KEY',
+					};
+
+					// Step 1: Create subscriber
+					const createRes = await fetch('https://api.kit.com/v4/subscribers', {
+						method: 'POST',
+						headers: kitHeaders,
+						body: JSON.stringify({ email_address: subscriberEmail, state: 'active' }),
+					});
+					if (!createRes.ok) throw new Error('Failed to create subscriber');
+
+					// Step 2: Add subscriber to form
+					await fetch('https://api.kit.com/v4/forms/9145889/subscribers', {
+						method: 'POST',
+						headers: kitHeaders,
+						body: JSON.stringify({ email_address: subscriberEmail }),
+					});
+
+					nlStatus.textContent = 'Subscribed! You\'ll hear from me soon.';
+					nlStatus.style.color = 'var(--accent-regular)';
+					nlForm.reset();
+				} catch {
+					nlStatus.textContent = 'Something went wrong. Please try again.';
+					nlStatus.style.color = '#ca7879';
+				}
+				btn.textContent = 'Subscribe';
+				btn.disabled = false;
+			});
+		}
+	});
+</script>
+
+<style>
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.roles {
+		display: none;
+	}
+
+	.hero img {
+		aspect-ratio: 5 / 4;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	@media (min-width: 50em) {
+		.hero {
+			display: grid;
+			grid-template-columns: 6fr 4fr;
+			padding-inline: 2.5rem;
+			gap: 3.75rem;
+		}
+
+		.roles {
+			margin-top: 0.5rem;
+			display: flex;
+			gap: 0.5rem;
+		}
+
+		.hero img {
+			aspect-ratio: 3 / 4;
+			border-radius: 4.5rem;
+			object-fit: cover;
+		}
+	}
+
+	/* ====================================================== */
+
+	.stats {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.25rem;
+		text-align: center;
+		padding: 2rem 0;
+	}
+
+	.stat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 1.5rem 0.75rem;
+		position: relative;
+	}
+
+	.stat-number {
+		display: flex;
+		align-items: baseline;
+		gap: 0.1em;
+	}
+
+	.stat-value {
+		font-size: var(--text-3xl);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		line-height: 1;
+		background: var(--gradient-accent-orange);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.stat-suffix {
+		font-size: var(--text-xl);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		background: var(--gradient-accent-orange);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.stat-label {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		letter-spacing: 0.02em;
+	}
+
+	@media (min-width: 50em) {
+		.stats {
+			grid-template-columns: repeat(5, 1fr);
+			gap: 0;
+			padding: 3rem 0;
+		}
+
+		.stat {
+			padding: 1.5rem 2rem;
+			border-right: 1px solid var(--gray-800);
+		}
+
+		.stat:last-child {
+			border-right: none;
+		}
+
+		.stat-value {
+			font-size: var(--text-5xl);
+		}
+
+		.stat-suffix {
+			font-size: var(--text-2xl);
+		}
+
+		.stat-label {
+			font-size: var(--text-sm);
+		}
+	}
+
+	/* ====================================================== */
+
+	.section {
+		display: grid;
+		gap: 2rem;
+	}
+
+	.with-background {
+		position: relative;
+	}
+
+	.with-background::before {
+		--hero-bg: var(--bg-image-subtle-2);
+
+		content: '';
+		position: absolute;
+		pointer-events: none;
+		left: 50%;
+		width: 100vw;
+		aspect-ratio: calc(2.25 / var(--bg-scale));
+		top: 0;
+		transform: translateY(-75%) translateX(-50%);
+		background:
+			url('/assets/backgrounds/noise.png') top center/220px repeat,
+			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+			var(--gray-999);
+		background-blend-mode: overlay, normal, normal, normal;
+		mix-blend-mode: var(--bg-blend-mode);
+		z-index: -1;
+	}
+
+	.with-background.bg-variant::before {
+		--hero-bg: var(--bg-image-subtle-1);
+	}
+
+	.section-header {
+		justify-self: center;
+		text-align: center;
+		max-width: 50ch;
+		font-size: var(--text-md);
+		color: var(--gray-300);
+	}
+
+	.section-header h3 {
+		font-size: var(--text-2xl);
+	}
+
+	@media (min-width: 50em) {
+		.section {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
+			gap: 5rem;
+		}
+
+		.section.with-cta {
+			grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
+		}
+
+		.section-header {
+			grid-area: header;
+			font-size: var(--text-lg);
+		}
+
+		.section-header h3 {
+			font-size: var(--text-4xl);
+		}
+
+		.with-cta .section-header {
+			justify-self: flex-start;
+			text-align: left;
+		}
+
+		.gallery {
+			grid-area: gallery;
+		}
+
+		.cta {
+			grid-area: cta;
+		}
+	}
+
+	/* ====================================================== */
+
+	.resume-wrapper {
+		grid-column: 1 / -1;
+	}
+
+	/* ====================================================== */
+
+	.mention-card {
+		display: flex;
+		height: 7rem;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		color: var(--gray-300);
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.brand-logo {
+		max-width: 75%;
+		max-height: 4rem;
+		object-fit: contain;
+		filter: brightness(0) opacity(0.5);
+		transition: filter var(--theme-transition);
+	}
+
+	.mention-card:hover .brand-logo {
+		filter: brightness(0) opacity(0.85);
+	}
+
+	:global(.theme-dark) .brand-logo {
+		filter: brightness(0) invert(1) opacity(0.6);
+	}
+
+	:global(.theme-dark) .mention-card:hover .brand-logo {
+		filter: brightness(0) invert(1) opacity(1);
+	}
+
+	@media (min-width: 50em) {
+		.mention-card {
+			border-radius: 1.5rem;
+			height: 9.5rem;
+		}
+
+		.brand-logo {
+			max-height: 5rem;
+		}
+	}
+
+	/* ====================================================== */
+
+	.newsletter-section {
+		padding: 2rem 1.5rem;
+		background: var(--gradient-accent-orange);
+		position: relative;
+		overflow: hidden;
+		border-radius: 1rem;
+		max-width: 64rem;
+		margin: 0 auto;
+		width: calc(100% - 3rem);
+	}
+
+	.newsletter-section::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: var(--gray-999);
+		opacity: 0.85;
+		border-radius: 1rem;
+	}
+
+	.newsletter-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 1rem;
+		max-width: 600px;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	.newsletter-content h2 {
+		font-size: var(--text-2xl);
+		background: var(--gradient-accent-orange);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		margin-bottom: 0.25rem;
+	}
+
+	.newsletter-content p {
+		color: var(--gray-300);
+		font-size: var(--text-sm);
+	}
+
+	.newsletter-form {
+		display: flex;
+		gap: 0.75rem;
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.newsletter-form input[type="email"] {
+		flex: 1;
+		padding: 0.75rem 1.25rem;
+		border-radius: 999px;
+		border: 1px solid var(--gray-700);
+		background: var(--gray-999);
+		color: var(--gray-0);
+		font-size: var(--text-md);
+		font-family: var(--font-body);
+		outline: none;
+		transition: border-color var(--theme-transition);
+	}
+
+	.newsletter-form input[type="email"]:focus {
+		border-color: var(--accent-regular);
+	}
+
+	.newsletter-form input[type="email"]::placeholder {
+		color: var(--gray-400);
+	}
+
+	.newsletter-form button {
+		padding: 0.75rem 2rem;
+		border-radius: 999px;
+		border: none;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-size: var(--text-md);
+		font-weight: 600;
+		font-family: var(--font-brand);
+		cursor: pointer;
+		transition: transform 0.2s ease, opacity var(--theme-transition);
+		white-space: nowrap;
+	}
+
+	.newsletter-form button:hover {
+		opacity: 0.9;
+		transform: translateY(-1px);
+	}
+
+	.newsletter-form button:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+		transform: none;
+	}
+
+	.newsletter-status {
+		font-size: var(--text-sm);
+		min-height: 1.25rem;
+	}
+
+	@media (min-width: 50em) {
+		.newsletter-section {
+			padding: 2.5rem 3rem;
+		}
+
+		.newsletter-content h2 {
+			font-size: var(--text-2xl);
+		}
+
+		.newsletter-form {
+			flex-direction: row;
+		}
+	}
+</style>

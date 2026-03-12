@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="52" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">Go-To-Market Strategy: 8-Step Framework</text>
+  <text x="700" y="84" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">From market research to launch execution and beyond</text>
+
+  <!-- ROW 1: Steps 1-4 -->
+  <!-- Step 1 -->
+  <rect x="30" y="115" width="320" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="30" y="115" width="320" height="5" rx="3" fill="#f5a0a1"/>
+  <text x="60" y="158" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">STEP 1</text>
+  <text x="60" y="194" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Target Market</text>
+  <text x="60" y="234" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="60" dy="0">Define ICP and buyer</tspan>
+    <tspan x="60" dy="32">personas. Map the</tspan>
+    <tspan x="60" dy="32">buying committee.</tspan>
+  </text>
+  <text x="60" y="360" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19">Who are we selling to?</text>
+
+  <!-- Arrow -->
+  <polygon points="350,255 360,250 360,260" fill="#484f58"/>
+
+  <!-- Step 2 -->
+  <rect x="370" y="115" width="310" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="370" y="115" width="310" height="5" rx="3" fill="#fb923c"/>
+  <text x="400" y="158" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">STEP 2</text>
+  <text x="400" y="194" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Problem Validation</text>
+  <text x="400" y="234" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="400" dy="0">Customer interviews,</tspan>
+    <tspan x="400" dy="32">search demand, and</tspan>
+    <tspan x="400" dy="32">competitive analysis.</tspan>
+  </text>
+  <text x="400" y="360" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19">Is this problem real?</text>
+
+  <!-- Arrow -->
+  <polygon points="680,255 690,250 690,260" fill="#484f58"/>
+
+  <!-- Step 3 -->
+  <rect x="700" y="115" width="310" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="700" y="115" width="310" height="5" rx="3" fill="#c084fc"/>
+  <text x="730" y="158" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">STEP 3</text>
+  <text x="730" y="194" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Positioning</text>
+  <text x="730" y="234" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="730" dy="0">Category, differentiation,</tspan>
+    <tspan x="730" dy="32">and value proposition.</tspan>
+    <tspan x="730" dy="32">Test with real buyers.</tspan>
+  </text>
+  <text x="730" y="360" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19">Why choose us?</text>
+
+  <!-- Arrow -->
+  <polygon points="1010,255 1020,250 1020,260" fill="#484f58"/>
+
+  <!-- Step 4 -->
+  <rect x="1030" y="115" width="340" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1030" y="115" width="340" height="5" rx="3" fill="#60a5fa"/>
+  <text x="1060" y="158" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">STEP 4</text>
+  <text x="1060" y="194" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Pricing Model</text>
+  <text x="1060" y="234" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="1060" dy="0">Freemium, free trial,</tspan>
+    <tspan x="1060" dy="32">usage-based, or per-seat.</tspan>
+    <tspan x="1060" dy="32">Price on value delivered.</tspan>
+  </text>
+  <text x="1060" y="360" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19">How do we charge?</text>
+
+  <!-- Curved arrow row 1 to row 2 -->
+  <path d="M1370,395 C1380,440 1380,460 1370,490 L1370,490 C1360,510 1340,520 1320,520 L100,520 C80,520 60,510 50,490" stroke="#484f58" stroke-width="2" fill="none"/>
+  <polygon points="45,495 50,483 55,495" fill="#484f58"/>
+
+  <!-- ROW 2: Steps 5-8 -->
+  <!-- Step 5 -->
+  <rect x="30" y="525" width="320" height="260" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="30" y="525" width="320" height="5" rx="3" fill="#5eead4"/>
+  <text x="60" y="568" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">STEP 5</text>
+  <text x="60" y="604" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Channels</text>
+  <text x="60" y="644" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="60" dy="0">Pick 2-3 channels max.</tspan>
+    <tspan x="60" dy="32">Inbound, outbound, or</tspan>
+    <tspan x="60" dy="32">product-led growth.</tspan>
+  </text>
+  <text x="60" y="750" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="19">Where do we reach them?</text>
+
+  <!-- Arrow -->
+  <polygon points="350,655 360,650 360,660" fill="#484f58"/>
+
+  <!-- Step 6 -->
+  <rect x="370" y="525" width="310" height="260" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="370" y="525" width="310" height="5" rx="3" fill="#d98ee0"/>
+  <text x="400" y="568" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">STEP 6</text>
+  <text x="400" y="604" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Sales Motion</text>
+  <text x="400" y="644" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="400" dy="0">Self-serve, inside sales,</tspan>
+    <tspan x="400" dy="32">or enterprise. Match to</tspan>
+    <tspan x="400" dy="32">your price point.</tspan>
+  </text>
+  <text x="400" y="750" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="19">How do we convert?</text>
+
+  <!-- Arrow -->
+  <polygon points="680,655 690,650 690,660" fill="#484f58"/>
+
+  <!-- Step 7 -->
+  <rect x="700" y="525" width="310" height="260" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="700" y="525" width="310" height="5" rx="3" fill="#60a5fa"/>
+  <text x="730" y="568" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">STEP 7</text>
+  <text x="730" y="604" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Launch Timeline</text>
+  <text x="730" y="644" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="730" dy="0">Pre-launch, launch week,</tspan>
+    <tspan x="730" dy="32">and post-launch phases.</tspan>
+    <tspan x="730" dy="32">Plan all three.</tspan>
+  </text>
+  <text x="730" y="750" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="19">When do we execute?</text>
+
+  <!-- Arrow -->
+  <polygon points="1010,655 1020,650 1020,660" fill="#484f58"/>
+
+  <!-- Step 8 -->
+  <rect x="1030" y="525" width="340" height="260" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1030" y="525" width="340" height="5" rx="3" fill="#fb923c"/>
+  <text x="1060" y="568" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700">STEP 8</text>
+  <text x="1060" y="604" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Success Metrics</text>
+  <text x="1060" y="644" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="1060" dy="0">Awareness, activation,</tspan>
+    <tspan x="1060" dy="32">and revenue metrics.</tspan>
+    <tspan x="1060" dy="32">Pick 3-5 max.</tspan>
+  </text>
+  <text x="1060" y="750" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="19">How do we know it works?</text>
+</svg>

@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="center-ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5a0a1"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="820" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="52" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">The Positioning Framework</text>
+  <text x="700" y="84" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">Six elements that define how your product is positioned in the market</text>
+
+  <!-- Center circle -->
+  <circle cx="700" cy="430" r="90" fill="none" stroke="url(#center-ring)" stroke-width="3"/>
+  <circle cx="700" cy="430" r="70" fill="#151b23"/>
+  <text x="700" y="420" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Product</text>
+  <text x="700" y="452" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Position</text>
+
+  <!-- Dashed connector lines from center to cards -->
+  <line x1="610" y1="350" x2="480" y2="240" stroke="#30363d" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="610" y1="430" x2="480" y2="430" stroke="#30363d" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="610" y1="510" x2="480" y2="620" stroke="#30363d" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="790" y1="350" x2="920" y2="240" stroke="#30363d" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="790" y1="430" x2="920" y2="430" stroke="#30363d" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="790" y1="510" x2="920" y2="620" stroke="#30363d" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- LEFT COLUMN -->
+  <!-- Card: Category (top-left) - Grid icon -->
+  <rect x="40" y="120" width="440" height="190" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="120" width="5" height="190" rx="3" fill="#fb923c"/>
+  <circle cx="90" cy="175" r="26" fill="#2a1a0a" stroke="#fb923c" stroke-width="1.5"/>
+  <g transform="translate(76, 161)" fill="none" stroke="#fb923c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="12" height="12" rx="2"/>
+    <rect x="16" y="0" width="12" height="12" rx="2"/>
+    <rect x="0" y="16" width="12" height="12" rx="2"/>
+    <rect x="16" y="16" width="12" height="12" rx="2"/>
+  </g>
+  <text x="130" y="185" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Category</text>
+  <text x="70" y="230" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">What market do you compete in?</text>
+  <text x="70" y="270" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19">Define your competitive arena</text>
+
+  <!-- Card: Target Audience (mid-left) - People icon -->
+  <rect x="40" y="335" width="440" height="190" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="335" width="5" height="190" rx="3" fill="#5eead4"/>
+  <circle cx="90" cy="390" r="26" fill="#0a2a2a" stroke="#5eead4" stroke-width="1.5"/>
+  <g transform="translate(74, 375)" fill="none" stroke="#5eead4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10" cy="7" r="5"/>
+    <path d="M0 26c0-5.5 4.5-10 10-10s10 4.5 10 10"/>
+    <circle cx="24" cy="9" r="4"/>
+    <path d="M22 26c3-1 6-4 6-8s-2-4-4.5-4"/>
+  </g>
+  <text x="130" y="400" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Target Audience</text>
+  <text x="70" y="445" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">Who is this for?</text>
+  <text x="70" y="485" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="19">Be specific, not generic</text>
+
+  <!-- Card: Pain Point (bottom-left) - Warning triangle icon -->
+  <rect x="40" y="550" width="440" height="190" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="550" width="5" height="190" rx="3" fill="#c084fc"/>
+  <circle cx="90" cy="605" r="26" fill="#2a1a3a" stroke="#c084fc" stroke-width="1.5"/>
+  <g transform="translate(76, 589)" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12.6 2.4L25.5 25a2.5 2.5 0 01-2.2 3.7H4.7a2.5 2.5 0 01-2.2-3.7L15.4 2.4a2.5 2.5 0 014.2 0z" fill="none"/>
+    <line x1="14" y1="12" x2="14" y2="18"/>
+    <circle cx="14" cy="23" r="0.5" fill="#c084fc"/>
+  </g>
+  <text x="130" y="615" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Pain Point</text>
+  <text x="70" y="660" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">What problem are they solving?</text>
+  <text x="70" y="700" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="19">Customer's words, not yours</text>
+
+  <!-- RIGHT COLUMN -->
+  <!-- Card: Solution (top-right) - Lightbulb icon -->
+  <rect x="920" y="120" width="440" height="190" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1355" y="120" width="5" height="190" rx="3" fill="#60a5fa"/>
+  <text x="950" y="185" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Solution</text>
+  <circle cx="1310" cy="175" r="26" fill="#1a1a3a" stroke="#60a5fa" stroke-width="1.5"/>
+  <g transform="translate(1296, 159)" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 24h18"/>
+    <path d="M8 28h12"/>
+    <path d="M14 0a12 12 0 00-8 21c1.5 1.5 2 3.5 2 5.5h12c0-2 .5-4 2-5.5A12 12 0 0014 0z"/>
+  </g>
+  <text x="950" y="230" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">How does your product solve it?</text>
+  <text x="950" y="270" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19">Feature to benefit translation</text>
+
+  <!-- Card: Differentiation (mid-right) - Diamond/star icon -->
+  <rect x="920" y="335" width="440" height="190" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1355" y="335" width="5" height="190" rx="3" fill="#5eead4"/>
+  <text x="950" y="400" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Differentiation</text>
+  <circle cx="1310" cy="390" r="26" fill="#0a2a2a" stroke="#5eead4" stroke-width="1.5"/>
+  <g transform="translate(1296, 376)" fill="none" stroke="#5eead4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="14,0 17.5,10 28,10 19.5,17 22.5,28 14,21 5.5,28 8.5,17 0,10 10.5,10"/>
+  </g>
+  <text x="950" y="445" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">Why is your approach better?</text>
+  <text x="950" y="485" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="19">vs. alternatives, not just competitors</text>
+
+  <!-- Card: Proof / Evidence (bottom-right) - Shield/check icon -->
+  <rect x="920" y="550" width="440" height="190" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1355" y="550" width="5" height="190" rx="3" fill="#fb923c"/>
+  <text x="950" y="615" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Proof / Evidence</text>
+  <circle cx="1310" cy="605" r="26" fill="#2a1a0a" stroke="#fb923c" stroke-width="1.5"/>
+  <g transform="translate(1296, 589)" fill="none" stroke="#fb923c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 1L2 7v8c0 7.7 5.1 14.9 12 17 6.9-2.1 12-9.3 12-17V7L14 1z"/>
+    <polyline points="9,16 12.5,20 19,12"/>
+  </g>
+  <text x="950" y="660" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">What evidence supports claims?</text>
+  <text x="950" y="700" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="19">Case studies, data, testimonials</text>
+
+  <!-- Footer tagline -->
+  <text x="700" y="790" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21" font-style="italic">Get positioning right, and everything downstream gets easier.</text>
+</svg>

@@ -1,0 +1,165 @@
+---
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About | Swapnil Biswas" description="About Swapnil Biswas - AI, Product & Digital Growth Marketer" breadcrumbs={[{ name: "About" }]}>
+	<script type="application/ld+json" set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "ProfilePage",
+		"mainEntity": {
+			"@type": "Person",
+			"@id": "https://swapbiswas.com/#person",
+			"name": "Swapnil Biswas",
+			"url": "https://swapbiswas.com",
+			"image": "https://swapbiswas.com/assets/portrait-new.webp",
+			"jobTitle": "Product Marketing Manager",
+			"description": "Product Marketing & Growth Strategist specializing in AI, SEO, and content. 4+ years in B2B and SaaS Marketing.",
+			"worksFor": {
+				"@type": "Organization",
+				"name": "LambdaTest / TestMu AI"
+			},
+			"alumniOf": [
+				{
+					"@type": "CollegeOrUniversity",
+					"name": "Indian Institute of Management Visakhapatnam"
+				},
+				{
+					"@type": "CollegeOrUniversity",
+					"name": "Amity University"
+				}
+			],
+			"sameAs": [
+				"https://linkedin.com/in/swapbiswas/",
+				"https://twitter.com/swapbiswas",
+				"https://github.com/swapbiswas"
+			],
+			"knowsAbout": ["Product Marketing", "Growth Strategy", "AI", "SEO", "Content Marketing", "SaaS Marketing", "Data Analytics"]
+		}
+	})} />
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Born in Uttarakhand and raised in Mumbai, I'm a Marketer who loves turning products into compelling stories."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/portrait-new.webp"
+					alt="Swapnil Biswas"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						I am a dynamic critical thinker with a passion for crafting actionable strategies
+						to drive growth and excel in marketing endeavors. With over 4 years of extensive
+						experience in B2B and SaaS Marketing, I specialize in devising comprehensive plans
+						integrating paid and organic methodologies such as SEO, Content, and Social Media
+						Marketing to achieve tangible results.
+					</p>
+					<p>
+						Currently serving as a Product Marketing Manager at LambdaTest (now TestMu AI) and
+						pursuing a postgraduate degree from IIM Visakhapatnam, I specialize in AI-driven
+						marketing, data analytics, and strategic growth. I enjoy reading books, watching
+						football, exploring cafes, and trekking through mountain trails.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Experience</h2>
+				<div class="content">
+					<p><strong>Product Marketing Manager</strong> — LambdaTest / TestMu AI (Apr 2024 – Present)</p>
+					<p><strong>Marketing Specialist</strong> — LambdaTest / TestMu AI (Apr 2023 – Apr 2024)</p>
+					<p><strong>Digital Marketing Executive</strong> — LambdaTest / TestMu AI (Dec 2021 – Apr 2023)</p>
+					<p><strong>Marketing Associate</strong> — LIDO Learning (Jun 2021 – Nov 2021)</p>
+					<p><strong>Marketing Intern</strong> — Sociowash (Nov 2018 – Jun 2019)</p>
+					<p><strong>Marketing Intern</strong> — Samsung India (Nov 2018 – Jun 2019)</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p><strong>PG, Digital Marketing & Growth Strategy</strong> — Indian Institute of Management Visakhapatnam (2025 – 2026)</p>
+					<p><strong>BBA, Marketing</strong> — Amity University (2018 – 2021)</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Certifications</h2>
+				<div class="content">
+					<p>Google Analytics Certification (Google) · Inbound Marketing (HubSpot) · Fundamentals of Digital Marketing (Google) · Advanced Google Analytics (Google) · Marketing in a Digital World (Coursera / UIUC)</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>SaaS · Strategic Marketing · Growth Hacking · Market Research · Product Strategy · Go-to-Market Strategy · Growth Marketing · Product Launch · Web Content Creation · Search Engine Marketing · User Experience · User Research · Critical Thinking · Problem Solving</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
