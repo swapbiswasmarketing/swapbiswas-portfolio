@@ -3,7 +3,6 @@ import { type CollectionEntry, getCollection, render } from 'astro:content';
 
 import ContactCTA from '../../components/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
-import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -35,11 +34,19 @@ const publishDate = entry.data.publishDate.toLocaleDateString('en-US', {
 	day: 'numeric',
 });
 
+const updatedDate = entry.data.updatedDate
+	? entry.data.updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+	: null;
+
 // Related posts (same category, excluding current)
 const allPosts = await getCollection('blog');
 const relatedPosts = allPosts
 	.filter((p) => p.id !== entry.id && p.data.category.some((c) => entry.data.category.includes(c)))
-	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.sort((a, b) => {
+		const aScore = a.data.category.filter((c) => entry.data.category.includes(c)).length;
+		const bScore = b.data.category.filter((c) => entry.data.category.includes(c)).length;
+		return bScore - aScore || b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+	})
 	.slice(0, 3);
 
 const blogPostSchema = {
@@ -67,15 +74,29 @@ const blogPostSchema = {
 	},
 	"keywords": entry.data.category.join(", ")
 };
+
+const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": entry.data.faqs.map((faq) => ({
+		"@type": "Question",
+		"name": faq.q,
+		"acceptedAnswer": {
+			"@type": "Answer",
+			"text": faq.a
+		}
+	}))
+} : null;
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description} image={`/og/${entry.id}.png`} breadcrumbs={[{ name: "Blog", url: "/blog/" }, { name: entry.data.title }]}>
+	<div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar"></div></div>
 	<script type="application/ld+json" set:html={JSON.stringify(blogPostSchema)} />
+	{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 	<div class="stack gap-20">
 		<div class="stack gap-15">
 			<header>
 				<div class="wrapper stack gap-2">
-					<a class="back-link" href="/blog/"><Icon icon="arrow-left" /> Blog</a>
 					<Hero title={entry.data.title} align="start">
 						<div class="details">
 							<div class="tags">
@@ -83,7 +104,10 @@ const blogPostSchema = {
 									<Pill>{cat}</Pill>
 								))}
 							</div>
-							<p class="meta-line">{publishDate} &middot; {readingTime} min read</p>
+							<p class="meta-line">
+								{publishDate} &middot; {readingTime} min read
+								{updatedDate && <span class="updated-badge">Updated {updatedDate}</span>}
+							</p>
 							<p class="description">{entry.data.description}</p>
 						</div>
 					</Hero>
@@ -115,6 +139,24 @@ const blogPostSchema = {
 						</div>
 						<ShareButtons title={entry.data.title} url={`https://swapbiswas.com/blog/${entry.id}/`} />
 
+						<!-- FAQ Section -->
+						{entry.data.faqs && entry.data.faqs.length > 0 && (
+							<section class="faq-section" aria-labelledby="faq-heading">
+								<h2 id="faq-heading" class="faq-heading">Frequently Asked Questions</h2>
+								<div class="faq-list">
+									{entry.data.faqs.map((faq, i) => (
+										<details class="faq-item" open={i === 0}>
+											<summary class="faq-question">
+												<span>{faq.q}</span>
+												<svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+											</summary>
+											<p class="faq-answer">{faq.a}</p>
+										</details>
+									))}
+								</div>
+							</section>
+						)}
+
 						<!-- Author Bio -->
 						<a href="/about/" class="author-bio">
 							<img src="/assets/portrait-new.webp" alt="Swapnil Biswas" class="author-avatar" width="64" height="64" loading="lazy" />
@@ -131,7 +173,7 @@ const blogPostSchema = {
 								<div class="related-grid">
 									{relatedPosts.map((post) => (
 										<a href={`/blog/${post.id}/`} class="related-card">
-											<img src={`/og/${post.id}.png`} alt="" loading="lazy" decoding="async" />
+											<img src={`/og/${post.id}.png`} alt={post.data.title} loading="lazy" decoding="async" />
 											<span class="related-title">{post.data.title}</span>
 										</a>
 									))}
@@ -150,13 +192,39 @@ const blogPostSchema = {
 </BaseLayout>
 
 <style>
+	/* Reading Progress Bar */
+	.reading-progress {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		z-index: 9998;
+		background: transparent;
+	}
+
+	.reading-progress-bar {
+		height: 100%;
+		width: 0%;
+		background: var(--gradient-accent-orange);
+		transition: width 0.1s linear;
+	}
+
+	/* Updated Badge */
+	.updated-badge {
+		display: inline-block;
+		margin-left: 0.5rem;
+		padding: 0.1rem 0.5rem;
+		font-size: 0.75rem;
+		border-radius: 999rem;
+		background: var(--accent-overlay);
+		color: var(--accent-dark);
+		font-weight: 500;
+	}
+
 	header {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid var(--gray-800);
-	}
-
-	.back-link {
-		display: none;
 	}
 
 	.details {
@@ -241,6 +309,7 @@ const blogPostSchema = {
 		max-height: 80vh;
 		margin-top: 0.75rem;
 		overflow-y: auto;
+		padding-right: 0.35rem;
 	}
 
 	.toc-item a {
@@ -269,27 +338,34 @@ const blogPostSchema = {
 	}
 
 	.content-column {
-		max-width: 65ch;
+		max-width: min(65ch, 100%);
 		margin-inline: auto;
 		min-width: 0;
 	}
 
 	.content {
-		max-width: 65ch;
+		max-width: 100%;
 		margin-inline: auto;
 		overflow-wrap: break-word;
 		word-break: break-word;
 	}
 
 	.content :global(table) {
-		display: block;
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
+		display: table;
 		border-collapse: collapse;
-		width: 100%;
+		min-width: 100%;
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
 		font-size: var(--text-sm);
+	}
+
+	/* Wrap tables in a scrollable container via JS */
+	.content :global(.table-wrap) {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		border-radius: 0.75rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 
 	.content :global(thead) {
@@ -309,6 +385,7 @@ const blogPostSchema = {
 		padding: 0.75rem 1rem;
 		color: var(--gray-200);
 		border-bottom: 1px solid var(--gray-800);
+		min-width: 6rem;
 	}
 
 	.content :global(td:first-child),
@@ -391,6 +468,8 @@ const blogPostSchema = {
 	}
 
 	.content :global(img) {
+		max-width: 100%;
+		height: auto;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
@@ -455,26 +534,18 @@ const blogPostSchema = {
 		margin: 0;
 	}
 
-	.back-link,
 	.content :global(a) {
 		text-decoration: 1px solid underline transparent;
 		text-underline-offset: 0.25em;
 		transition: text-decoration-color var(--theme-transition);
 	}
 
-	.back-link:hover,
-	.back-link:focus,
 	.content :global(a:hover),
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
 	}
 
 	@media (min-width: 50em) {
-		.back-link {
-			display: block;
-			align-self: flex-start;
-		}
-
 		.details {
 			flex-direction: row;
 			gap: 2.5rem;
@@ -517,6 +588,7 @@ const blogPostSchema = {
 			margin-top: 0.75rem;
 			max-height: calc(100vh - 10rem);
 			overflow-y: auto;
+			padding-right: 0.5rem;
 		}
 
 		/* Thin scrollbar for TOC */
@@ -541,6 +613,86 @@ const blogPostSchema = {
 	.meta-line {
 		font-size: var(--text-sm);
 		color: var(--gray-400);
+	}
+
+	/* FAQ Section */
+	.faq-section {
+		margin-top: 2rem;
+		padding-top: 2rem;
+		border-top: 1px solid var(--gray-800);
+	}
+
+	.faq-heading {
+		font-family: var(--font-brand);
+		font-size: var(--text-xl);
+		font-weight: 600;
+		color: var(--gray-0);
+		margin-bottom: 1.25rem;
+	}
+
+	.faq-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.faq-item {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		background: var(--gray-999_40);
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.faq-item[open] {
+		border-color: var(--gray-700);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.faq-question {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 1rem 1.25rem;
+		cursor: pointer;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-100);
+		list-style: none;
+		user-select: none;
+		transition: color 0.2s ease;
+	}
+
+	.faq-question::-webkit-details-marker {
+		display: none;
+	}
+
+	.faq-question::marker {
+		content: '';
+	}
+
+	.faq-question:hover {
+		color: var(--gray-0);
+	}
+
+	.faq-chevron {
+		flex-shrink: 0;
+		color: var(--gray-400);
+		transition: transform 0.25s ease, color 0.2s ease;
+	}
+
+	.faq-item[open] .faq-chevron {
+		transform: rotate(180deg);
+		color: var(--accent-regular);
+	}
+
+	.faq-answer {
+		padding: 0 1.25rem 1.25rem;
+		margin: 0;
+		font-size: var(--text-sm);
+		line-height: 1.7;
+		color: var(--gray-300);
 	}
 
 	/* Author Bio */
@@ -666,6 +818,13 @@ const blogPostSchema = {
 		pointer-events: auto;
 	}
 
+	@media (max-width: 480px) {
+		:global(.back-to-top) {
+			left: 1.5rem;
+			right: auto;
+		}
+	}
+
 	:global(.back-to-top:hover) {
 		box-shadow: var(--shadow-md);
 		transform: translateY(-2px);
@@ -763,6 +922,14 @@ const blogPostSchema = {
 	window.addEventListener('scroll', onScroll, { passive: true });
 	window.addEventListener('resize', () => { positionToc(); onScroll(); }, { passive: true });
 
+	// Wrap tables in scrollable container
+	document.querySelectorAll('.content table').forEach((table) => {
+		const wrapper = document.createElement('div');
+		wrapper.className = 'table-wrap';
+		table.parentNode!.insertBefore(wrapper, table);
+		wrapper.appendChild(table);
+	});
+
 	// Copy button for code blocks
 	document.querySelectorAll('.content pre').forEach((pre) => {
 		const btn = document.createElement('button');
@@ -801,6 +968,19 @@ const blogPostSchema = {
 			lightbox.classList.add('active');
 		});
 	});
+
+	// Reading progress bar
+	const progressBar = document.querySelector('.reading-progress-bar') as HTMLElement | null;
+	if (progressBar && contentEl) {
+		window.addEventListener('scroll', () => {
+			const contentRect = contentEl.getBoundingClientRect();
+			const contentTop = contentRect.top + window.scrollY;
+			const contentHeight = contentEl.offsetHeight;
+			const scrolled = window.scrollY - contentTop;
+			const progress = Math.min(100, Math.max(0, (scrolled / (contentHeight - window.innerHeight)) * 100));
+			progressBar.style.width = `${progress}%`;
+		}, { passive: true });
+	}
 
 	// Back to top button
 	const backToTop = document.querySelector('.back-to-top') as HTMLButtonElement | null;

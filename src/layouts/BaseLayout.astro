@@ -2,6 +2,7 @@
 // Learn about using Astro layouts:
 // https://docs.astro.build/en/basics/layouts/
 
+import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/Footer.astro';
 // Component Imports
 import MainHead from '../components/MainHead.astro';
@@ -41,22 +42,326 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 	<head>
 		<MainHead title={title} description={description} image={image} noindex={noindex} />
 		{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+		<ViewTransitions />
+		<slot name="head" />
 	</head>
 	<body>
+		<a href="#main-content" class="skip-link">Skip to content</a>
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGNTLP2R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="stack backgrounds">
 			<Nav />
-			<slot />
+			<div id="main-content">
+				{breadcrumbs && breadcrumbs.length > 0 && (
+					<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+						<ol class="breadcrumb-list">
+							<li class="breadcrumb-item">
+								<a href="/" aria-label="Home">
+									<svg class="breadcrumb-home" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+								</a>
+								<svg class="breadcrumb-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+							</li>
+							{breadcrumbs.map((crumb, i) => (
+								<li class="breadcrumb-item">
+									{crumb.url && i < breadcrumbs.length - 1 ? (
+										<>
+											<a href={crumb.url}>{crumb.name}</a>
+											<svg class="breadcrumb-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+										</>
+									) : (
+										<span class="breadcrumb-current" aria-current="page">{crumb.name}</span>
+									)}
+								</li>
+							))}
+						</ol>
+					</nav>
+				)}
+				<slot />
+			</div>
 			<Footer />
 		</div>
 
+		<!-- Newsletter Slide-in Popup -->
+		<div class="nl-popup" id="nl-popup" role="dialog" aria-label="Subscribe to newsletter">
+			<button class="nl-popup-close" aria-label="Close newsletter popup">&times;</button>
+			<p class="nl-popup-title">Get Marketing & AI Insights</p>
+			<p class="nl-popup-desc">Join the newsletter. No spam, just value.</p>
+			<form class="nl-popup-form" id="nl-popup-form">
+				<input type="email" name="email_address" placeholder="Your email" required autocomplete="email" aria-label="Email address" />
+				<button type="submit">Subscribe</button>
+			</form>
+			<p class="nl-popup-status" id="nl-popup-status"></p>
+		</div>
+
 		<script>
-			// Add “loaded” class once the document has completely loaded.
+			// Add "loaded" class once the document has completely loaded.
 			addEventListener('load', () => document.documentElement.classList.add('loaded'));
 		</script>
 
+		<script is:inline>
+			(function() {
+				var popup = document.getElementById('nl-popup');
+				var closeBtn = popup && popup.querySelector('.nl-popup-close');
+				var form = document.getElementById('nl-popup-form');
+				var statusEl = document.getElementById('nl-popup-status');
+				if (!popup) return;
+				if (localStorage.getItem('nl-popup-dismissed')) return;
+
+				var shown = false;
+				function showPopup() {
+					if (shown) return;
+					shown = true;
+					popup.classList.add('visible');
+				}
+				function dismiss() {
+					popup.classList.remove('visible');
+					localStorage.setItem('nl-popup-dismissed', '1');
+				}
+
+				var scrollHandler = function() {
+					var pct = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+					if (pct > 0.6) { showPopup(); window.removeEventListener('scroll', scrollHandler); }
+				};
+				window.addEventListener('scroll', scrollHandler, { passive: true });
+				setTimeout(function() { showPopup(); window.removeEventListener('scroll', scrollHandler); }, 30000);
+
+				if (closeBtn) closeBtn.addEventListener('click', dismiss);
+
+				if (form) {
+					form.addEventListener('submit', function(e) {
+						e.preventDefault();
+						var emailInput = form.querySelector('input[name="email_address"]');
+						var email = emailInput ? emailInput.value : '';
+						var btn = form.querySelector('button[type="submit"]');
+						if (btn) { btn.textContent = 'Subscribing...'; btn.disabled = true; }
+						var headers = { 'Content-Type': 'application/json', 'X-Kit-Api-Key': 'REDACTED_KIT_API_KEY' };
+						fetch('https://api.kit.com/v4/subscribers', {
+							method: 'POST', headers: headers,
+							body: JSON.stringify({ email_address: email, state: 'active' })
+						}).then(function(res) {
+							if (!res.ok) throw new Error();
+							return fetch('https://api.kit.com/v4/forms/9145889/subscribers', {
+								method: 'POST', headers: headers,
+								body: JSON.stringify({ email_address: email })
+							});
+						}).then(function() {
+							if (statusEl) { statusEl.textContent = 'Subscribed!'; statusEl.style.color = 'var(--accent-regular)'; }
+							form.reset();
+							setTimeout(dismiss, 2000);
+						}).catch(function() {
+							if (statusEl) { statusEl.textContent = 'Something went wrong.'; statusEl.style.color = '#ca7879'; }
+						}).finally(function() {
+							if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
+						});
+					});
+				}
+			})();
+		</script>
+
 		<style>
+			/* Newsletter Popup */
+			.nl-popup {
+				position: fixed;
+				bottom: 1.5rem;
+				right: 1.5rem;
+				z-index: 9990;
+				width: 320px;
+				max-width: calc(100vw - 2rem);
+				padding: 1.5rem;
+				background: var(--gray-999);
+				border: 1px solid var(--gray-800);
+				border-radius: 1rem;
+				box-shadow: var(--shadow-lg);
+				transform: translateY(120%);
+				opacity: 0;
+				transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+				pointer-events: none;
+			}
+
+			.nl-popup.visible {
+				transform: translateY(0);
+				opacity: 1;
+				pointer-events: auto;
+			}
+
+			.nl-popup-close {
+				position: absolute;
+				top: 0.5rem;
+				right: 0.75rem;
+				background: none;
+				border: none;
+				color: var(--gray-400);
+				font-size: 1.5rem;
+				cursor: pointer;
+				line-height: 1;
+				padding: 0.25rem;
+			}
+
+			.nl-popup-close:hover {
+				color: var(--gray-0);
+			}
+
+			.nl-popup-title {
+				font-family: var(--font-brand);
+				font-weight: 600;
+				font-size: var(--text-md);
+				color: var(--gray-0);
+				margin-bottom: 0.25rem;
+			}
+
+			.nl-popup-desc {
+				font-size: var(--text-sm);
+				color: var(--gray-400);
+				margin-bottom: 0.75rem;
+			}
+
+			.nl-popup-form {
+				display: flex;
+				gap: 0.5rem;
+			}
+
+			.nl-popup-form input {
+				flex: 1;
+				padding: 0.5rem 0.75rem;
+				border: 1px solid var(--gray-800);
+				border-radius: 0.5rem;
+				background: var(--gray-999_40);
+				color: var(--gray-0);
+				font-size: var(--text-sm);
+				font-family: var(--font-body);
+				outline: none;
+				min-width: 0;
+			}
+
+			.nl-popup-form input:focus {
+				border-color: var(--accent-dark);
+			}
+
+			.nl-popup-form input::placeholder {
+				color: var(--gray-400);
+			}
+
+			.nl-popup-form button {
+				padding: 0.5rem 1rem;
+				border: none;
+				border-radius: 0.5rem;
+				background: var(--gradient-accent-orange);
+				color: var(--accent-text-over);
+				font-size: var(--text-sm);
+				font-weight: 600;
+				font-family: var(--font-brand);
+				cursor: pointer;
+				white-space: nowrap;
+				transition: opacity 0.2s ease;
+			}
+
+			.nl-popup-form button:hover {
+				opacity: 0.9;
+			}
+
+			.nl-popup-form button:disabled {
+				opacity: 0.6;
+				cursor: not-allowed;
+			}
+
+			.nl-popup-status {
+				font-size: var(--text-sm);
+				margin-top: 0.5rem;
+				min-height: 1rem;
+			}
+
+			@media (max-width: 480px) {
+				.nl-popup {
+					bottom: 0;
+					right: 0;
+					left: 0;
+					width: 100%;
+					max-width: 100%;
+					border-radius: 1rem 1rem 0 0;
+					transform: translateY(100%);
+				}
+			}
+
+			/* Breadcrumb Navigation */
+			.breadcrumb-nav {
+				max-width: 83rem;
+				margin-inline: auto;
+				padding: 1.25rem 1.5rem 0;
+			}
+
+			.breadcrumb-list {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 0;
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				font-size: var(--text-sm);
+			}
+
+			.breadcrumb-item {
+				display: flex;
+				align-items: center;
+			}
+
+			.breadcrumb-home {
+				display: block;
+			}
+
+			.breadcrumb-item a {
+				display: flex;
+				align-items: center;
+				color: var(--gray-400);
+				text-decoration: none;
+				transition: color 0.2s ease;
+			}
+
+			.breadcrumb-item a:hover {
+				color: var(--accent-regular);
+			}
+
+			.breadcrumb-chevron {
+				margin: 0 0.4rem;
+				color: var(--gray-600);
+				flex-shrink: 0;
+			}
+
+			.breadcrumb-current {
+				color: var(--gray-200);
+				font-weight: 500;
+				max-width: 35ch;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			@media (max-width: 480px) {
+				.breadcrumb-current {
+					max-width: 20ch;
+				}
+			}
+
+			.skip-link {
+				position: absolute;
+				top: -100%;
+				left: 50%;
+				transform: translateX(-50%);
+				z-index: 10000;
+				padding: 0.75rem 1.5rem;
+				background: var(--accent-regular);
+				color: var(--accent-text-over);
+				font-family: var(--font-brand);
+				font-weight: 600;
+				border-radius: 0 0 0.5rem 0.5rem;
+				text-decoration: none;
+				transition: top 0.2s ease;
+			}
+
+			.skip-link:focus {
+				top: 0;
+			}
+
 			:root {
 				--_placeholder-bg: linear-gradient(transparent, transparent);
 				--bg-image-main: url('/assets/backgrounds/bg-main-light-800w.jpg');

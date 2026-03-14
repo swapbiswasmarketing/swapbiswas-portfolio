@@ -5,6 +5,13 @@ publishDate: 2024-06-23
 category: [Marketing, AI]
 img: /assets/stock-2.webp
 img_alt: AI and marketing illustration
+faqs:
+  - q: "Will AI replace marketers?"
+    a: "No. AI automates repetitive marketing tasks like data analysis, ad optimization, and content drafting, but it cannot replace human creativity, strategic thinking, emotional intelligence, and relationship building that are core to effective marketing."
+  - q: "What marketing jobs are most at risk from AI?"
+    a: "Roles focused on repetitive execution - like basic copywriting, simple data reporting, and manual ad bidding - are most likely to be automated. Strategic roles like brand strategy, creative direction, and product marketing are least at risk."
+  - q: "How should marketers prepare for AI?"
+    a: "Learn to use AI tools as productivity multipliers, focus on developing strategic and creative skills that AI cannot replicate, and position yourself as someone who can leverage AI to drive better results rather than competing against it."
 ---
 
 Like a coin, whether AI will replace marketing has two sides. On one, we have the possibility, and on the other, we have reality. But the reality is more complex.

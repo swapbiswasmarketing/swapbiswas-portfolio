@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="840" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">The 7-Step Startup GTM Framework</text>
+  <text x="700" y="108" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">Sequential steps - each builds on the previous one</text>
+
+  <!-- ROW 1: Steps 1-3 -->
+
+  <!-- Step 1 -->
+  <rect x="40" y="145" width="360" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="145" width="360" height="5" rx="3" fill="#f5a0a1"/>
+  <circle cx="78" cy="198" r="24" fill="#3b2020" stroke="#f5a0a1" stroke-width="1.5"/>
+  <text x="78" y="207" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">1</text>
+  <text x="116" y="207" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Validate Your ICP</text>
+  <text x="70" y="248" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">
+    <tspan x="70" dy="0">Talk to 15-20 potential customers.</tspan>
+    <tspan x="70" dy="28">Validate willingness to pay.</tspan>
+  </text>
+
+  <!-- Arrow 1 to 2 -->
+  <line x1="400" y1="220" x2="430" y2="220" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="428,213 442,220 428,227" fill="#5eead4"/>
+
+  <!-- Step 2 -->
+  <rect x="440" y="145" width="360" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="440" y="145" width="360" height="5" rx="3" fill="#60a5fa"/>
+  <circle cx="478" cy="198" r="24" fill="#1a2a3a" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="478" y="207" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">2</text>
+  <text x="516" y="207" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Positioning</text>
+  <text x="470" y="248" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">
+    <tspan x="470" dy="0">Define category, differentiation,</tspan>
+    <tspan x="470" dy="28">and why your ICP should care.</tspan>
+  </text>
+
+  <!-- Arrow 2 to 3 -->
+  <line x1="800" y1="220" x2="830" y2="220" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="828,213 842,220 828,227" fill="#5eead4"/>
+
+  <!-- Step 3 -->
+  <rect x="840" y="145" width="520" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="840" y="145" width="520" height="5" rx="3" fill="#c084fc"/>
+  <circle cx="878" cy="198" r="24" fill="#2a1a3a" stroke="#c084fc" stroke-width="1.5"/>
+  <text x="878" y="207" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">3</text>
+  <text x="916" y="207" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Choose GTM Motion</text>
+  <text x="870" y="248" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">
+    <tspan x="870" dy="0">PLG, Sales-Led, or Community-Led.</tspan>
+    <tspan x="870" dy="28">Match to product complexity and ACV.</tspan>
+  </text>
+
+  <!-- Arrow 3 to 4: bottom center of 3 goes down to top center of 4 -->
+  <line x1="1100" y1="295" x2="1100" y2="330" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1100" y1="330" x2="220" y2="330" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="220" y1="330" x2="220" y2="365" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="213,363 220,377 227,363" fill="#5eead4"/>
+
+  <!-- ROW 2: Steps 4-6 -->
+
+  <!-- Step 4 -->
+  <rect x="40" y="375" width="360" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="375" width="360" height="5" rx="3" fill="#5eead4"/>
+  <circle cx="78" cy="428" r="24" fill="#1a2a2a" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="78" y="437" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">4</text>
+  <text x="116" y="437" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Pick Channels</text>
+  <text x="70" y="478" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">
+    <tspan x="70" dy="0">Two channels max. One high-effort,</tspan>
+    <tspan x="70" dy="28">one fast-feedback. Go deep.</tspan>
+  </text>
+
+  <!-- Arrow 4 to 5 -->
+  <line x1="400" y1="450" x2="430" y2="450" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="428,443 442,450 428,457" fill="#5eead4"/>
+
+  <!-- Step 5 -->
+  <rect x="440" y="375" width="360" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="440" y="375" width="360" height="5" rx="3" fill="#fb923c"/>
+  <circle cx="478" cy="428" r="24" fill="#2a1a0a" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="478" y="437" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">5</text>
+  <text x="516" y="437" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Set Pricing</text>
+  <text x="470" y="478" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">
+    <tspan x="470" dy="0">Value-based pricing. 10x rule.</tspan>
+    <tspan x="470" dy="28">Start higher than you think.</tspan>
+  </text>
+
+  <!-- Arrow 5 to 6 -->
+  <line x1="800" y1="450" x2="830" y2="450" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="828,443 842,450 828,457" fill="#5eead4"/>
+
+  <!-- Step 6 -->
+  <rect x="840" y="375" width="520" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="840" y="375" width="520" height="5" rx="3" fill="#d98ee0"/>
+  <circle cx="878" cy="428" r="24" fill="#2a1a2a" stroke="#d98ee0" stroke-width="1.5"/>
+  <text x="878" y="437" text-anchor="middle" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">6</text>
+  <text x="916" y="437" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Build Launch Plan</text>
+  <text x="870" y="478" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">
+    <tspan x="870" dy="0">2-4 week campaign, not one day.</tspan>
+    <tspan x="870" dy="28">Coordinate channels simultaneously.</tspan>
+  </text>
+
+  <!-- Arrow 6 to 7: bottom center of 6 goes down to top center of 7 -->
+  <line x1="1100" y1="525" x2="1100" y2="560" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1100" y1="560" x2="700" y2="560" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="700" y1="560" x2="700" y2="595" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,593 700,607 707,593" fill="#5eead4"/>
+
+  <!-- Step 7 (centered) -->
+  <rect x="200" y="605" width="1000" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="200" y="605" width="1000" height="5" rx="3" fill="#b388f2"/>
+  <circle cx="248" cy="658" r="24" fill="#2a1a3a" stroke="#b388f2" stroke-width="1.5"/>
+  <text x="248" y="667" text-anchor="middle" fill="#b388f2" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">7</text>
+  <text x="286" y="667" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Measure, Learn, Iterate</text>
+  <text x="248" y="710" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">
+    <tspan x="248" dy="0">Weekly GTM review. Track activation, conversion, CAC by channel, and retention at 30/60/90 days.</tspan>
+    <tspan x="248" dy="28">The startup advantage is speed - pivot weekly while competitors take quarters.</tspan>
+  </text>
+</svg>

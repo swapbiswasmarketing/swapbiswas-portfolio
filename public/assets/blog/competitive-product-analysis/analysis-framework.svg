@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="880" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">Competitive Product Analysis: 6-Step Framework</text>
+  <text x="700" y="96" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">From evaluation criteria to actionable intelligence</text>
+
+  <!-- ROW 1: Steps 1-3 -->
+
+  <!-- Step 1 -->
+  <rect x="40" y="130" width="400" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="130" width="400" height="5" rx="3" fill="#f5a0a1"/>
+  <circle cx="80" cy="185" r="26" fill="#3b2020" stroke="#f5a0a1" stroke-width="1.5"/>
+  <text x="80" y="195" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">1</text>
+  <text x="120" y="195" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Define Criteria</text>
+  <text x="70" y="240" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="70" dy="0">Map evaluation criteria to what</tspan>
+    <tspan x="70" dy="32">your buyers actually care about.</tspan>
+    <tspan x="70" dy="32">Build a weighted scoring rubric.</tspan>
+  </text>
+  <text x="70" y="370" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="19" font-weight="500">Win/loss data + ICP jobs-to-be-done</text>
+
+  <!-- Arrow 1 to 2 -->
+  <line x1="440" y1="270" x2="475" y2="270" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="473,263 487,270 473,277" fill="#5eead4"/>
+
+  <!-- Step 2 -->
+  <rect x="490" y="130" width="400" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="490" y="130" width="400" height="5" rx="3" fill="#60a5fa"/>
+  <circle cx="530" cy="185" r="26" fill="#1a2a3a" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="530" y="195" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">2</text>
+  <text x="570" y="195" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Gather Intelligence</text>
+  <text x="520" y="240" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="520" dy="0">Product trials, win/loss interviews,</tspan>
+    <tspan x="520" dy="32">sales call recordings, review</tspan>
+    <tspan x="520" dy="32">mining, competitor job postings.</tspan>
+  </text>
+  <text x="520" y="370" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="19" font-weight="500">Primary sources over secondary research</text>
+
+  <!-- Arrow 2 to 3 -->
+  <line x1="890" y1="270" x2="925" y2="270" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="923,263 937,270 923,277" fill="#5eead4"/>
+
+  <!-- Step 3 -->
+  <rect x="940" y="130" width="420" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="940" y="130" width="420" height="5" rx="3" fill="#c084fc"/>
+  <circle cx="980" cy="185" r="26" fill="#2a1a3a" stroke="#c084fc" stroke-width="1.5"/>
+  <text x="980" y="195" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">3</text>
+  <text x="1020" y="195" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Map Feature Gaps</text>
+  <text x="970" y="240" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="970" dy="0">Score each capability 0-3.</tspan>
+    <tspan x="970" dy="32">Weight by buyer importance.</tspan>
+    <tspan x="970" dy="32">Calculate composite scores.</tspan>
+  </text>
+  <text x="970" y="370" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="19" font-weight="500">Score: 0 (Absent) to 3 (Best-in-class)</text>
+
+  <!-- Arrow 3 to 4: bottom center of 3, down, left, down to top of 4 -->
+  <line x1="1150" y1="410" x2="1150" y2="450" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1150" y1="450" x2="250" y2="450" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="250" y1="450" x2="250" y2="480" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="243,478 250,492 257,478" fill="#5eead4"/>
+
+  <!-- ROW 2: Steps 4-6 -->
+
+  <!-- Step 4 -->
+  <rect x="40" y="490" width="400" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="490" width="400" height="5" rx="3" fill="#5eead4"/>
+  <circle cx="80" cy="545" r="26" fill="#1a2a2a" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="80" y="555" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">4</text>
+  <text x="120" y="555" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Analyze Positioning</text>
+  <text x="70" y="600" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="70" dy="0">Document competitor headlines,</tspan>
+    <tspan x="70" dy="32">key claims, proof points, and</tspan>
+    <tspan x="70" dy="32">category framing vs. yours.</tspan>
+  </text>
+  <text x="70" y="730" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19" font-weight="500">Find differentiation opportunities</text>
+
+  <!-- Arrow 4 to 5 -->
+  <line x1="440" y1="630" x2="475" y2="630" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="473,623 487,630 473,637" fill="#5eead4"/>
+
+  <!-- Step 5 -->
+  <rect x="490" y="490" width="400" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="490" y="490" width="400" height="5" rx="3" fill="#fb923c"/>
+  <circle cx="530" cy="545" r="26" fill="#2a1a0a" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="530" y="555" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">5</text>
+  <text x="570" y="555" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Synthesize Insights</text>
+  <text x="520" y="600" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="520" dy="0">Where we win, where we lose,</tspan>
+    <tspan x="520" dy="32">where it's a toss-up, and</tspan>
+    <tspan x="520" dy="32">recommended actions.</tspan>
+  </text>
+  <text x="520" y="730" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="19" font-weight="500">Be honest about weaknesses</text>
+
+  <!-- Arrow 5 to 6 -->
+  <line x1="890" y1="630" x2="925" y2="630" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="923,623 937,630 923,637" fill="#5eead4"/>
+
+  <!-- Step 6 -->
+  <rect x="940" y="490" width="420" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="940" y="490" width="420" height="5" rx="3" fill="#d98ee0"/>
+  <circle cx="980" cy="545" r="26" fill="#2a1a2a" stroke="#d98ee0" stroke-width="1.5"/>
+  <text x="980" y="555" text-anchor="middle" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">6</text>
+  <text x="1020" y="555" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="600">Distribute &amp; Update</text>
+  <text x="970" y="600" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">
+    <tspan x="970" dy="0">Battlecards for sales. Gap analysis</tspan>
+    <tspan x="970" dy="32">for product. Positioning insights</tspan>
+    <tspan x="970" dy="32">for marketing. Quarterly cadence.</tspan>
+  </text>
+  <text x="970" y="730" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="19" font-weight="500">Tier 1 competitors: update quarterly</text>
+</svg>

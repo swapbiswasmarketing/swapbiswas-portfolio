@@ -27,6 +27,7 @@ const posts = (await getCollection('blog'))
 	description="Swapnil Biswas — Product Marketing & Growth Strategist specializing in AI, SEO, and content. 657K+ leads generated, 18M+ traffic driven. Explore my work and blog."
 	image="/og/home.png"
 >
+	<link slot="head" rel="preload" as="image" href="/assets/portrait-new.webp" />
 	<script type="application/ld+json" set:html={JSON.stringify({
 		"@context": "https://schema.org",
 		"@graph": [

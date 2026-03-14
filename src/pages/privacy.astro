@@ -17,16 +17,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				<p>Our website address is: <a href="https://swapbiswas.com">https://swapbiswas.com</a></p>
 
 				<h2>Information We Collect</h2>
-				<p>We collect personal information from our users, including names, email addresses, and project descriptions. We collect this information through the contact form on our website.</p>
+				<p>We collect personal information from our users, including names, email addresses, and project descriptions. We collect this information through the contact form and newsletter signup on our website.</p>
 
 				<h2>How We Use Your Information</h2>
-				<p>We use the information we collect to respond to enquiries and to help improve our website. We do not share this information with third parties.</p>
+				<p>We use the information we collect to respond to enquiries, send newsletter updates, and to help improve our website. We do not sell this information to third parties.</p>
+
+				<h2>Third-Party Services</h2>
+				<p>We use the following third-party services to operate and improve this website:</p>
+				<ul>
+					<li><strong>Google Analytics (GA4)</strong> - Collects anonymized usage data such as pages visited, session duration, and traffic sources to help us understand how visitors use our site.</li>
+					<li><strong>Google Tag Manager (GTM)</strong> - Manages and deploys marketing and analytics tags on our website.</li>
+					<li><strong>Microsoft Clarity</strong> - Records anonymized session replays and heatmaps to help us improve user experience. Clarity does not collect personal information.</li>
+					<li><strong>Kit (formerly ConvertKit)</strong> - Processes newsletter subscriptions. Your email address is stored by Kit when you subscribe.</li>
+					<li><strong>FormSubmit</strong> - Processes contact form submissions via email.</li>
+				</ul>
+				<p>Each of these services has its own privacy policy governing how they handle data.</p>
 
 				<h2>How We Protect Your Information</h2>
-				<p>We take reasonable steps to protect the personal information we collect. Our website's contact form is powered by FormSubmit, and we use email to process the information that we collect.</p>
+				<p>We take reasonable steps to protect the personal information we collect. All data is transmitted over HTTPS. We use trusted third-party services for form processing and email management.</p>
 
 				<h2>Cookies</h2>
-				<p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment.</p>
+				<p>This website uses cookies and similar technologies for the following purposes:</p>
+				<ul>
+					<li><strong>Theme preference</strong> - Remembers your light/dark mode choice (stored in localStorage).</li>
+					<li><strong>Analytics cookies</strong> - Google Analytics sets cookies to distinguish users and track sessions. These expire after 2 years of inactivity.</li>
+					<li><strong>Microsoft Clarity</strong> - Sets cookies to track sessions and generate heatmaps. These typically expire within 1 year.</li>
+				</ul>
+				<p>You can disable cookies through your browser settings. Disabling cookies may affect some features of this website.</p>
+
+				<h2>Data Retention</h2>
+				<p>Contact form submissions are retained in email indefinitely unless you request deletion. Newsletter subscriber data is retained by Kit until you unsubscribe. Analytics data is retained for 14 months (Google Analytics default).</p>
 
 				<h2>Embedded Content From Other Websites</h2>
 				<p>Pages on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>
@@ -77,6 +97,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		color: var(--gray-300);
 		line-height: 1.7;
 		margin-bottom: 1rem;
+	}
+
+	.content ul {
+		color: var(--gray-300);
+		line-height: 1.7;
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+	}
+
+	.content li {
+		margin-bottom: 0.5rem;
 	}
 
 	.content a {

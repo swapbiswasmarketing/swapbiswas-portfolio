@@ -20,7 +20,23 @@ img_alt: Descriptive alt text
 ```
 
 - **Categories used so far:** AI, SEO, Marketing, Tools, Product Marketing, Career, Email, Design, Travel
-- **Images available for reuse:** `ai-marketing.webp`, `google-reviews-seo.webp`, `marketing-research.webp`, `email-interactivity.webp`, `kerala-winter.webp`
+
+### Hero Images (Blog Cards + OG Images)
+
+Only use these 4 stock images for the `img` frontmatter field:
+```
+/assets/stock-1.webp
+/assets/stock-2.webp
+/assets/stock-3.webp
+/assets/stock-4.webp
+```
+
+**Rules:**
+- No two adjacent posts on the blog listing page should use the same image
+- Posts are sorted by `publishDate` descending; posts with the same date sort alphabetically by filename
+- When adding a new post, check what image the most recent post uses and pick a different one
+- The OG image generator reads this `img` field and uses the matching stock background automatically
+- **Do NOT use any other images** (e.g., `ai-marketing.webp`, `kerala-winter.webp`) for the hero - only `stock-1` through `stock-4`
 
 ## 2. Writing Standards
 
@@ -41,6 +57,8 @@ img_alt: Descriptive alt text
 
 ### Data & Citations
 - **Every stat must be verifiable.** Check the cited URL actually contains the claimed data
+- **Sources must be less than 5 years old.** Do not cite studies, reports, or data older than 5 years. Find a recent equivalent or rewrite without the specific number
+- **Every number needs a source where it makes sense.** Stats, percentages, dollar amounts, and data points should have an inline citation link. Exceptions: obvious/general numbers (e.g., "3-5 emails", "under 40 characters") that aren't research claims
 - Use markdown link format: `([Source Name](URL))`
 - Prefer primary sources over aggregator sites
 - If a stat can't be verified, either remove it or state it without specific numbers
@@ -114,6 +132,22 @@ const png = resvg.render().asPng();
 await sharp(png).webp({ quality: 90 }).toFile('output.webp');
 ```
 
+### Arrows & Connectors Between Cards
+- **Color:** Use `#5eead4` (teal) for all arrows - never use `#484f58` (nearly invisible on dark bg)
+- **Stroke width:** `2.5` minimum for lines
+- **Arrowheads:** Use polygon triangles (14px wide, 14px tall) in the same teal color, e.g. `<polygon points="428,213 442,220 428,227" fill="#5eead4"/>`
+- **Horizontal arrows:** Place a `<line>` + `<polygon>` in the gap between cards. Never overlap card boundaries
+- **Row transitions (e.g. step 3→4):** Draw from the bottom-center of the source card, go down, across horizontally, then down into the top-center of the target card. Use 3 separate `<line>` elements + 1 downward `<polygon>`
+- **Never use:** SVG `<marker>` definitions (resvg renders them inconsistently), tiny triangles, curved `<path>` arrows, or `#484f58` colored arrows
+- **Flow must be logical:** Arrows connect sequential steps only (1→2→3→4...). No skip connections, no iterate loops unless the blog content explicitly describes one
+
+### Padding for Border-Radius Clipping
+The blog template applies `border-radius: 1.5rem` to content images. To prevent clipping:
+- Title text should start at `y="62"` minimum (not `y="52"`)
+- First row of cards should start at `y="130"` minimum (not `y="115"`)
+- Add `40-60px` bottom padding below the last content element
+- ViewBox height should accommodate this padding
+
 ### Examples
 - `public/assets/blog/ai-maturity-curve/maturity-stages.svg` - Staircase chart with curve
 - `public/assets/blog/ai-maturity-curve/spar-framework.svg` - 4 cards in a row with arrows
@@ -123,11 +157,12 @@ await sharp(png).webp({ quality: 90 }).toFile('output.webp');
 
 ## 4. OG Images
 
-OG images are auto-generated at build time via `src/pages/og/[...slug].png.ts` using Satori.
+OG images are auto-generated at build time via `src/pages/og/[...slug].png.ts` using Satori + resvg.
 
 - Each blog post gets a branded OG image at `/og/{slug}.png`
-- Design: dark background, purple gradient accent bar, title, category pill
-- No manual action needed - just publish the blog post and the OG image generates automatically
+- **The OG image background matches the blog card hero image** - it reads the `img` field from frontmatter and uses the corresponding stock `.jpg` file
+- Mapping: `stock-1.webp` -> `stock-1.jpg`, `stock-2.webp` -> `stock-2.jpg`, etc. (handled by `getStockFromFrontmatter()` in the generator)
+- No manual action needed - set the `img` field in frontmatter and both the blog card and OG image use the same stock background
 - The blog page template at `src/pages/blog/[...slug].astro` already passes `image={/og/${entry.id}.png}` to the layout
 
 ## 5. Blog Page Features
@@ -139,31 +174,94 @@ The blog post template (`src/pages/blog/[...slug].astro`) includes:
 - **Breadcrumbs:** Auto-generated in BaseLayout
 - **Content styling:** Tables, code blocks, blockquotes, images all have dark-theme styles
 
-## 6. Pre-Publish Checklist
+## 6. Post-Write Fact-Checking (Mandatory)
+
+After writing a blog post, **every single fact, number, quote, and claim must be verified** before publishing. This step is non-negotiable.
+
+### Process
+1. Extract every stat, number, percentage, dollar amount, and factual claim from the post
+2. Visit each cited URL and verify the exact data point exists on that page
+3. For any stat that cannot be verified:
+   - **Remove it entirely**, or
+   - **Replace with a verifiable alternative**, or
+   - **Rewrite the sentence without the specific number**
+4. Check tool pricing against official pricing pages (pricing changes frequently)
+5. Verify company names, product names, and feature descriptions are current
+6. Confirm all external links are not broken (return 200, not 404)
+
+### Common Fact-Checking Failures
+- Stats that are AI-hallucinated (no source exists)
+- Stats from secondary sources that misquote the original
+- Outdated pricing or feature information
+- Paywalled sources (Gartner, Forrester) cited as if publicly accessible
+- Rounding or misattributing percentages
+- Citing a source that says something different from what you claim
+
+### What to Do When a Stat Fails Verification
+Do NOT leave unverified stats in the post. Either find a real source or rewrite the sentence to make the point without a specific number. A post with fewer stats that are all accurate is better than a post full of impressive-sounding numbers that can't be verified.
+
+## 7. Pre-Publish Checklist
 
 - [ ] Target keyword in title, first paragraph, and 2+ H2s
-- [ ] All stats fact-checked against cited URLs
+- [ ] **All stats fact-checked against cited URLs (Section 6)**
 - [ ] No emdashes anywhere in the file
 - [ ] All external links have descriptive anchor text
 - [ ] Internal links to 2-3 other blog posts
 - [ ] SVG diagram(s) created for key frameworks/processes
 - [ ] Frontmatter complete (title, description, publishDate, category, img, img_alt)
+- [ ] Hero image uses only `stock-1` through `stock-4.webp` and doesn't duplicate adjacent posts
 - [ ] Run `npx astro build` to verify no errors
-- [ ] Check OG image generates correctly at `/og/{slug}.png`
+- [ ] Check OG image generates correctly at `/og/{slug}.png` (should match the hero image)
+- [ ] FAQ schema added for question-based or high-value posts (Section 8)
 
-## 7. Content Schema Reference
+## 8. FAQ Schema (Optional)
+
+Add FAQ structured data to blog posts that target question-based queries or cover topics where FAQ rich results would boost SERP visibility.
+
+### When to Add FAQs
+- Posts with question-based titles ("What is...", "How to...", "Do X help Y?")
+- High-value posts targeting competitive keywords
+- Posts that naturally answer common questions in the topic area
+
+### How to Add
+Add a `faqs` array to the post's frontmatter:
+
+```yaml
+faqs:
+  - q: "What is product marketing?"
+    a: "Product marketing is the function that connects a product to its market. It owns positioning, messaging, go-to-market strategy, competitive intelligence, and sales enablement."
+  - q: "What does a PMM do?"
+    a: "A PMM defines positioning, launches products, creates sales enablement materials, conducts competitive analysis, and gathers customer insights."
+```
+
+### Guidelines
+- 3-5 FAQs per post (Google may ignore posts with too many)
+- Questions should be real queries people search for, not made-up filler
+- Answers should be concise (1-3 sentences) and directly answer the question
+- The FAQ schema auto-generates as `FAQPage` JSON-LD at build time via `src/pages/blog/[...slug].astro`
+- Posts without `faqs` in frontmatter simply don't get FAQ schema - no action needed
+
+### Posts with FAQ Schema
+- `what-is-product-marketing.md` (4 FAQs)
+- `will-marketing-be-replaced-by-ai.md` (3 FAQs)
+- `do-google-reviews-help-seo.md` (3 FAQs)
+- `icp-vs-buyer-persona.md` (3 FAQs)
+
+## 9. Content Schema Reference
 
 From `src/content.config.ts`:
 ```
 title: string (required)
 description: string (required)
 publishDate: date (required)
+updatedDate: date (required)
 category: string[] (required)
 img: string (required)
 img_alt: string (optional)
+faqs: { q: string, a: string }[] (optional)
 ```
 
-## 8. Memory File
+## 10. Memory File
 
 A project memory file is kept in sync at two locations:
 - **Repo copy:** `.claude/MEMORY.md` (committed to git)

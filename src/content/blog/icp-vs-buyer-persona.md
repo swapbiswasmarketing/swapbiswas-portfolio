@@ -5,6 +5,13 @@ publishDate: 2026-03-12
 category: [Product Marketing, Marketing]
 img: /assets/stock-4.webp
 img_alt: ICP vs buyer persona comparison for product marketers
+faqs:
+  - q: "What is the difference between an ICP and a buyer persona?"
+    a: "An ICP (Ideal Customer Profile) describes the type of company that is the best fit for your product - based on firmographics like industry, company size, and revenue. A buyer persona describes the individual person within that company who makes or influences the purchase decision - based on demographics, job role, goals, and pain points."
+  - q: "Do I need both an ICP and buyer personas?"
+    a: "Yes. The ICP tells your team which accounts to target, while buyer personas tell them how to communicate with the people inside those accounts. Without an ICP, you waste resources on bad-fit companies. Without personas, your messaging falls flat."
+  - q: "How do I build an ideal customer profile?"
+    a: "Analyze your best existing customers by looking at shared firmographic traits (industry, size, revenue, tech stack), identify patterns in deal size and retention rates, and validate with sales and customer success teams. Start with your top 10 accounts and work outward."
 ---
 
 **71% of companies that regularly exceed their revenue and lead goals** use ideal customer profiles as a key part of their sales and marketing process ([OneUpWeb via SuperOffice](https://www.superoffice.com/blog/why-ideal-customer-profiles-matter/)). Meanwhile, **81% of B2B buyers select a preferred vendor before they ever speak to sales** ([6sense 2024 Buyer Experience Report](https://6sense.com/science-of-b2b/2024-buyer-experience-report/)).

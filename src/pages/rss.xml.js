@@ -9,11 +9,16 @@ export async function GET(context) {
 		site: context.site,
 		items: blog
 			.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
-			.map((post) => ({
-				title: post.data.title,
-				pubDate: post.data.publishDate,
-				description: post.data.description,
-				link: `/blog/${post.id}/`,
-			})),
+			.map((post) => {
+				const wordCount = post.body ? post.body.split(/\s+/).length : 0;
+				const readingTime = Math.max(1, Math.ceil(wordCount / 220));
+				return {
+					title: post.data.title,
+					pubDate: post.data.publishDate,
+					description: `${post.data.description} (${readingTime} min read)`,
+					link: `/blog/${post.id}/`,
+					categories: post.data.category,
+				};
+			}),
 	});
 }

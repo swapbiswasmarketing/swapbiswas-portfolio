@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="720" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="52" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">SaaS Product Marketing: 6 Pillars</text>
+  <text x="700" y="84" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">Each pillar maps to a stage of the customer lifecycle</text>
+
+  <!-- Lifecycle bar -->
+  <rect x="40" y="110" width="1320" height="48" rx="12" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="110" width="220" height="48" rx="12" fill="#3b2020"/>
+  <text x="150" y="140" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">PRE-AWARENESS</text>
+  <rect x="260" y="110" width="220" height="48" rx="0" fill="#1a2a3a"/>
+  <text x="370" y="140" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">EVALUATION</text>
+  <rect x="480" y="110" width="220" height="48" rx="0" fill="#2a1a3a"/>
+  <text x="590" y="140" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">ACQUISITION</text>
+  <rect x="700" y="110" width="220" height="48" rx="0" fill="#1a2a2a"/>
+  <text x="810" y="140" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">DECISION</text>
+  <rect x="920" y="110" width="220" height="48" rx="0" fill="#2a1a0a"/>
+  <text x="1030" y="140" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">ACTIVATION</text>
+  <rect x="1140" y="110" width="220" height="48" rx="12" fill="#2a1a2a"/>
+  <text x="1250" y="140" text-anchor="middle" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">GROWTH</text>
+
+  <!-- Connector lines from bar to cards -->
+  <line x1="150" y1="158" x2="150" y2="190" stroke="#f5a0a1" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="370" y1="158" x2="370" y2="190" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="590" y1="158" x2="590" y2="190" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="810" y1="158" x2="810" y2="190" stroke="#5eead4" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="1030" y1="158" x2="1030" y2="190" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="1250" y1="158" x2="1250" y2="190" stroke="#d98ee0" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Pillar 1: Positioning -->
+  <rect x="40" y="190" width="206" height="490" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="190" width="206" height="5" rx="3" fill="#f5a0a1"/>
+  <text x="143" y="240" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Positioning</text>
+  <text x="143" y="264" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">&amp; Messaging</text>
+  <line x1="70" y1="285" x2="216" y2="285" stroke="#30363d" stroke-width="1"/>
+  <text x="143" y="320" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="143" dy="0">Category</tspan>
+    <tspan x="143" dy="26">positioning</tspan>
+  </text>
+  <text x="143" y="390" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="143" dy="0">Competitive</tspan>
+    <tspan x="143" dy="26">positioning</tspan>
+  </text>
+  <text x="143" y="460" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="143" dy="0">Messaging</tspan>
+    <tspan x="143" dy="26">architecture</tspan>
+  </text>
+  <text x="143" y="530" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="143" dy="0">Pricing</tspan>
+    <tspan x="143" dy="26">positioning</tspan>
+  </text>
+  <text x="143" y="620" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">
+    <tspan x="143" dy="0">Why should</tspan>
+    <tspan x="143" dy="22">anyone care?</tspan>
+  </text>
+
+  <!-- Pillar 2: Competitive Intel -->
+  <rect x="260" y="190" width="206" height="490" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="260" y="190" width="206" height="5" rx="3" fill="#60a5fa"/>
+  <text x="363" y="240" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Competitive</text>
+  <text x="363" y="264" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">Intelligence</text>
+  <line x1="290" y1="285" x2="436" y2="285" stroke="#30363d" stroke-width="1"/>
+  <text x="363" y="320" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="363" dy="0">Battlecards</tspan>
+  </text>
+  <text x="363" y="370" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="363" dy="0">Win/loss</tspan>
+    <tspan x="363" dy="26">analysis</tspan>
+  </text>
+  <text x="363" y="440" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="363" dy="0">Feature gap</tspan>
+    <tspan x="363" dy="26">tracking</tspan>
+  </text>
+  <text x="363" y="620" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">
+    <tspan x="363" dy="0">Why us over</tspan>
+    <tspan x="363" dy="22">alternatives?</tspan>
+  </text>
+
+  <!-- Pillar 3: Launch Strategy -->
+  <rect x="480" y="190" width="206" height="490" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="480" y="190" width="206" height="5" rx="3" fill="#c084fc"/>
+  <text x="583" y="240" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Launch</text>
+  <text x="583" y="264" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">Strategy</text>
+  <line x1="510" y1="285" x2="656" y2="285" stroke="#30363d" stroke-width="1"/>
+  <text x="583" y="320" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="583" dy="0">Tier 1/2/3</tspan>
+    <tspan x="583" dy="26">launch system</tspan>
+  </text>
+  <text x="583" y="390" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="583" dy="0">Feature</tspan>
+    <tspan x="583" dy="26">launches</tspan>
+  </text>
+  <text x="583" y="460" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="583" dy="0">Campaign</tspan>
+    <tspan x="583" dy="26">launches</tspan>
+  </text>
+  <text x="583" y="620" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">
+    <tspan x="583" dy="0">How do we</tspan>
+    <tspan x="583" dy="22">generate demand?</tspan>
+  </text>
+
+  <!-- Pillar 4: Sales Enablement -->
+  <rect x="700" y="190" width="206" height="490" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="700" y="190" width="206" height="5" rx="3" fill="#5eead4"/>
+  <text x="803" y="240" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Sales</text>
+  <text x="803" y="264" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">Enablement</text>
+  <line x1="730" y1="285" x2="876" y2="285" stroke="#30363d" stroke-width="1"/>
+  <text x="803" y="320" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="803" dy="0">Demo scripts</tspan>
+  </text>
+  <text x="803" y="370" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="803" dy="0">Objection</tspan>
+    <tspan x="803" dy="26">handling</tspan>
+  </text>
+  <text x="803" y="440" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="803" dy="0">One-pagers</tspan>
+    <tspan x="803" dy="26">&amp; case studies</tspan>
+  </text>
+  <text x="803" y="620" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">
+    <tspan x="803" dy="0">How do we close</tspan>
+    <tspan x="803" dy="22">deals faster?</tspan>
+  </text>
+
+  <!-- Pillar 5: Adoption -->
+  <rect x="920" y="190" width="206" height="490" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="920" y="190" width="206" height="5" rx="3" fill="#fb923c"/>
+  <text x="1023" y="240" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Adoption</text>
+  <text x="1023" y="264" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">&amp; Onboarding</text>
+  <line x1="950" y1="285" x2="1096" y2="285" stroke="#30363d" stroke-width="1"/>
+  <text x="1023" y="320" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="1023" dy="0">Activation</tspan>
+    <tspan x="1023" dy="26">events</tspan>
+  </text>
+  <text x="1023" y="390" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="1023" dy="0">Behavioral</tspan>
+    <tspan x="1023" dy="26">triggers</tspan>
+  </text>
+  <text x="1023" y="460" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="1023" dy="0">Time to</tspan>
+    <tspan x="1023" dy="26">first value</tspan>
+  </text>
+  <text x="1023" y="620" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">
+    <tspan x="1023" dy="0">How do we deliver</tspan>
+    <tspan x="1023" dy="22">first value?</tspan>
+  </text>
+
+  <!-- Pillar 6: Expansion -->
+  <rect x="1140" y="190" width="220" height="490" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1140" y="190" width="220" height="5" rx="3" fill="#d98ee0"/>
+  <text x="1250" y="240" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Expansion</text>
+  <text x="1250" y="264" text-anchor="middle" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">&amp; Retention</text>
+  <line x1="1170" y1="285" x2="1330" y2="285" stroke="#30363d" stroke-width="1"/>
+  <text x="1250" y="320" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="1250" dy="0">Usage reports</tspan>
+  </text>
+  <text x="1250" y="370" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="1250" dy="0">Feature adoption</tspan>
+    <tspan x="1250" dy="26">campaigns</tspan>
+  </text>
+  <text x="1250" y="440" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="17">
+    <tspan x="1250" dy="0">NRR</tspan>
+    <tspan x="1250" dy="26">optimization</tspan>
+  </text>
+  <text x="1250" y="620" text-anchor="middle" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="15" font-weight="500">
+    <tspan x="1250" dy="0">How do we grow</tspan>
+    <tspan x="1250" dy="22">existing accounts?</tspan>
+  </text>
+</svg>
