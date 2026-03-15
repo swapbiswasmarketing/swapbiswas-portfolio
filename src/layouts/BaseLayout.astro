@@ -101,11 +101,15 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 		<!-- Analytics Event Tracking -->
 		<script is:inline>
 		(function() {
+			if (window._analyticsInit) return;
+			window._analyticsInit = true;
+
 			var dl = window.dataLayer = window.dataLayer || [];
 			function track(event, params) {
 				dl.push(Object.assign({ event: event }, params || {}));
 			}
 
+			// Click tracking (runs once, delegates via document)
 			document.addEventListener('click', function(e) {
 				var link = e.target.closest('a');
 				if (!link) return;
@@ -137,51 +141,64 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				}
 			});
 
-			// Newsletter homepage form
-			var nlForm = document.getElementById('newsletter-form');
-			if (nlForm) {
-				nlForm.addEventListener('submit', function() {
-					track('newsletter_signup', { signup_location: 'homepage' });
-				});
-			}
-
-			// Newsletter popup form
-			var nlPopup = document.getElementById('nl-popup-form');
-			if (nlPopup) {
-				nlPopup.addEventListener('submit', function() {
-					track('newsletter_signup', { signup_location: 'popup' });
-				});
-			}
-
-			// Blog reading progress milestones
-			var article = document.querySelector('article') || document.querySelector('.content-column');
-			if (article) {
-				var milestones = { 25: false, 50: false, 75: false, 100: false };
-				window.addEventListener('scroll', function() {
-					var rect = article.getBoundingClientRect();
-					var articleTop = rect.top + window.scrollY;
-					var articleHeight = rect.height;
-					var scrollPos = window.scrollY + window.innerHeight - articleTop;
-					var pct = Math.min(Math.round((scrollPos / articleHeight) * 100), 100);
-					for (var m in milestones) {
-						if (!milestones[m] && pct >= parseInt(m)) {
-							milestones[m] = true;
-							track('blog_read_progress', { read_percent: parseInt(m), blog_title: document.title });
-						}
-					}
-				}, { passive: true });
-			}
-
-			// Theme toggle tracking
-			var themeObs = new MutationObserver(function(mutations) {
-				mutations.forEach(function(m) {
-					if (m.attributeName === 'class') {
-						var isDark = document.documentElement.classList.contains('theme-dark');
-						track('theme_toggle', { theme: isDark ? 'dark' : 'light' });
-					}
-				});
+			// Theme toggle tracking - only track actual user clicks, not initial load
+			var lastTheme = document.documentElement.classList.contains('theme-dark') ? 'dark' : 'light';
+			var pageReady = false;
+			window.addEventListener('load', function() { pageReady = true; });
+			var themeObs = new MutationObserver(function() {
+				var isDark = document.documentElement.classList.contains('theme-dark');
+				var newTheme = isDark ? 'dark' : 'light';
+				if (!pageReady || newTheme === lastTheme) return;
+				lastTheme = newTheme;
+				track('theme_toggle', { theme: newTheme });
 			});
 			themeObs.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+			// Re-init page-specific tracking on every navigation (View Transitions)
+			function initPageTracking() {
+				// Newsletter homepage form
+				var nlForm = document.getElementById('newsletter-form');
+				if (nlForm && !nlForm._tracked) {
+					nlForm._tracked = true;
+					nlForm.addEventListener('submit', function() {
+						track('newsletter_signup', { signup_location: 'homepage' });
+					});
+				}
+
+				// Newsletter popup form
+				var nlPopup = document.getElementById('nl-popup-form');
+				if (nlPopup && !nlPopup._tracked) {
+					nlPopup._tracked = true;
+					nlPopup.addEventListener('submit', function() {
+						track('newsletter_signup', { signup_location: 'popup' });
+					});
+				}
+
+				// Blog reading progress milestones
+				var article = document.querySelector('.content-column') || document.querySelector('article');
+				if (article && !article._tracked) {
+					article._tracked = true;
+					var milestones = { 25: false, 50: false, 75: false, 100: false };
+					var scrollHandler = function() {
+						var rect = article.getBoundingClientRect();
+						var articleTop = rect.top + window.scrollY;
+						var articleHeight = rect.height;
+						var scrollPos = window.scrollY + window.innerHeight - articleTop;
+						var pct = Math.min(Math.round((scrollPos / articleHeight) * 100), 100);
+						for (var m in milestones) {
+							if (!milestones[m] && pct >= parseInt(m)) {
+								milestones[m] = true;
+								track('blog_read_progress', { read_percent: parseInt(m), blog_title: document.title });
+							}
+						}
+					};
+					window.addEventListener('scroll', scrollHandler, { passive: true });
+				}
+			}
+
+			// Run on initial load and on every View Transition navigation
+			initPageTracking();
+			document.addEventListener('astro:page-load', initPageTracking);
 		})();
 		</script>
 
