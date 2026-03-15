@@ -12,7 +12,7 @@
 - Blog posts: `src/content/blog/{slug}.md`
 - Blog template: `src/pages/blog/[...slug].astro` (TOC, author bio, related posts, copy button, share buttons)
 - Blog preview: `src/components/BlogPreview.astro` (card with date, reading time, category tags)
-- OG image generator: `src/pages/og/[...slug].png.ts` (Satori + resvg)
+- OG image generator: `src/pages/og/[...slug].webp.ts` (Satori + resvg + sharp)
 - Content schema: `src/content.config.ts`
 - Blog instructions: `BLOG_INSTRUCTIONS.md` (comprehensive guide for writing blogs)
 - Meta head: `src/components/MainHead.astro`

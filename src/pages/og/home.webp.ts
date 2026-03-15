@@ -1,6 +1,7 @@
 import type { APIContext } from 'astro';
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
+import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -312,9 +313,14 @@ export async function GET(_context: APIContext) {
 	const pngData = resvg.render();
 	const pngBuffer = pngData.asPng();
 
-	return new Response(pngBuffer, {
+	// Convert PNG to WebP for smaller file size
+	const webpBuffer = await sharp(Buffer.from(pngBuffer))
+		.webp({ quality: 82 })
+		.toBuffer();
+
+	return new Response(new Uint8Array(webpBuffer), {
 		headers: {
-			'Content-Type': 'image/png',
+			'Content-Type': 'image/webp',
 			'Cache-Control': 'public, max-age=31536000, immutable',
 		},
 	});

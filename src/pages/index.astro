@@ -25,7 +25,7 @@ const posts = (await getCollection('blog'))
 
 <BaseLayout
 	description="Swapnil Biswas — Product Marketing & Growth Strategist specializing in AI, SEO, and content. 657K+ leads generated, 18M+ traffic driven. Explore my work and blog."
-	image="/og/home.png"
+	image="/og/home.webp"
 >
 	<link slot="head" rel="preload" as="image" href="/assets/portrait-new.webp" />
 	<script type="application/ld+json" set:html={JSON.stringify({
@@ -63,7 +63,7 @@ const posts = (await getCollection('blog'))
 				"sameAs": [
 					"https://linkedin.com/in/swapbiswas/",
 					"https://twitter.com/swapbiswas",
-					"https://github.com/swapbiswas"
+					"https://github.com/swapbiswasmarketing/"
 				],
 				"knowsAbout": ["Product Marketing", "Growth Strategy", "AI", "SEO", "Content Marketing", "SaaS Marketing"]
 			}
@@ -87,8 +87,11 @@ const posts = (await getCollection('blog'))
 				<img
 					alt="Swapnil Biswas - AI, Product & Digital Growth Marketer"
 					width="480"
-					height="620"
-					src="/assets/portrait-new.webp"
+					height="720"
+					src="/assets/portrait-new-480w.webp"
+					srcset="/assets/portrait-new-480w.webp 480w, /assets/portrait-new.webp 1024w"
+					sizes="(max-width: 50em) 100vw, 480px"
+					fetchpriority="high"
 				/>
 			</header>
 

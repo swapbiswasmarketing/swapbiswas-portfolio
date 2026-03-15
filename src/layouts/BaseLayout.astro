@@ -98,6 +98,93 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 			addEventListener('load', () => document.documentElement.classList.add('loaded'));
 		</script>
 
+		<!-- Analytics Event Tracking -->
+		<script is:inline>
+		(function() {
+			var dl = window.dataLayer = window.dataLayer || [];
+			function track(event, params) {
+				dl.push(Object.assign({ event: event }, params || {}));
+			}
+
+			document.addEventListener('click', function(e) {
+				var link = e.target.closest('a');
+				if (!link) return;
+				var href = link.getAttribute('href') || '';
+
+				// Mailto CTA clicks
+				if (href.indexOf('mailto:') === 0) {
+					track('cta_click', { cta_type: 'email', cta_text: link.textContent.trim() });
+				}
+
+				// Share button clicks
+				if (link.classList.contains('share-btn')) {
+					var platform = 'unknown';
+					var label = link.getAttribute('aria-label') || '';
+					if (label.indexOf('Twitter') > -1) platform = 'twitter';
+					else if (label.indexOf('LinkedIn') > -1) platform = 'linkedin';
+					else if (label.indexOf('Facebook') > -1) platform = 'facebook';
+					track('share_click', { share_platform: platform, share_url: window.location.pathname });
+				}
+
+				// Footer social links
+				if (link.closest('footer') && link.getAttribute('target') === '_blank') {
+					track('social_click', { social_platform: link.textContent.trim().toLowerCase(), social_url: href });
+				}
+
+				// CTA navigation buttons
+				if (link.closest('.cta')) {
+					track('cta_click', { cta_type: 'navigation', cta_text: link.textContent.trim(), cta_url: href });
+				}
+			});
+
+			// Newsletter homepage form
+			var nlForm = document.getElementById('newsletter-form');
+			if (nlForm) {
+				nlForm.addEventListener('submit', function() {
+					track('newsletter_signup', { signup_location: 'homepage' });
+				});
+			}
+
+			// Newsletter popup form
+			var nlPopup = document.getElementById('nl-popup-form');
+			if (nlPopup) {
+				nlPopup.addEventListener('submit', function() {
+					track('newsletter_signup', { signup_location: 'popup' });
+				});
+			}
+
+			// Blog reading progress milestones
+			var article = document.querySelector('article') || document.querySelector('.content-column');
+			if (article) {
+				var milestones = { 25: false, 50: false, 75: false, 100: false };
+				window.addEventListener('scroll', function() {
+					var rect = article.getBoundingClientRect();
+					var articleTop = rect.top + window.scrollY;
+					var articleHeight = rect.height;
+					var scrollPos = window.scrollY + window.innerHeight - articleTop;
+					var pct = Math.min(Math.round((scrollPos / articleHeight) * 100), 100);
+					for (var m in milestones) {
+						if (!milestones[m] && pct >= parseInt(m)) {
+							milestones[m] = true;
+							track('blog_read_progress', { read_percent: parseInt(m), blog_title: document.title });
+						}
+					}
+				}, { passive: true });
+			}
+
+			// Theme toggle tracking
+			var themeObs = new MutationObserver(function(mutations) {
+				mutations.forEach(function(m) {
+					if (m.attributeName === 'class') {
+						var isDark = document.documentElement.classList.contains('theme-dark');
+						track('theme_toggle', { theme: isDark ? 'dark' : 'light' });
+					}
+				});
+			});
+			themeObs.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+		})();
+		</script>
+
 		<script is:inline>
 			(function() {
 				var popup = document.getElementById('nl-popup');
@@ -134,16 +221,12 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 						var email = emailInput ? emailInput.value : '';
 						var btn = form.querySelector('button[type="submit"]');
 						if (btn) { btn.textContent = 'Subscribing...'; btn.disabled = true; }
-						var headers = { 'Content-Type': 'application/json', 'X-Kit-Api-Key': 'REDACTED_KIT_API_KEY' };
-						fetch('https://api.kit.com/v4/subscribers', {
-							method: 'POST', headers: headers,
-							body: JSON.stringify({ email_address: email, state: 'active' })
-						}).then(function(res) {
-							if (!res.ok) throw new Error();
-							return fetch('https://api.kit.com/v4/forms/9145889/subscribers', {
-								method: 'POST', headers: headers,
-								body: JSON.stringify({ email_address: email })
-							});
+						var formData = new FormData();
+						formData.append('email_address', email);
+						fetch('https://app.kit.com/forms/9145889/subscriptions', {
+							method: 'POST',
+							body: formData,
+							mode: 'no-cors'
 						}).then(function() {
 							if (statusEl) { statusEl.textContent = 'Subscribed!'; statusEl.style.color = 'var(--accent-regular)'; }
 							form.reset();

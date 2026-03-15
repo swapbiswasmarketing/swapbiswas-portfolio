@@ -1,7 +1,68 @@
 ---
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import Pill from '../components/Pill.astro';
+import Grid from '../components/Grid.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const skills = [
+	{ name: 'Product & GTM Strategy', percentage: 98, description: 'Go-to-market campaigns, product launches, positioning, and competitive strategy for B2B SaaS.', icon: 'strategy' },
+	{ name: 'SaaS & B2B Marketing', percentage: 96, description: 'End-to-end marketing for SaaS products - from acquisition funnels to retention loops.', icon: 'trophy' },
+	{ name: 'AI & Marketing Automation', percentage: 95, description: 'AI agents, workflow automation, and predictive analytics to scale marketing operations.', icon: 'terminal-window' },
+	{ name: 'Content & SEO', percentage: 94, description: 'Content strategy, web content creation, search engine marketing, and technical writing.', icon: 'pencil-line' },
+	{ name: 'Data Analytics & Growth', percentage: 92, description: 'Growth hacking, market research, conversion rate optimization, and data-driven decision making.', icon: 'trophy' },
+	{ name: 'User Research & CX', percentage: 90, description: 'User experience research, customer personas, and behavioral data analysis.', icon: 'strategy' },
+];
+
+const experience = [
+	{ title: 'Product Marketing Manager', company: 'LambdaTest (now TestMu AI)', period: 'Apr 2024 - Present', description: 'Leading product marketing for KaneAI and HyperExecute - orchestrating GTM campaigns, product launches, and partner marketing strategies.', current: true },
+	{ title: 'Marketing Specialist', company: 'LambdaTest (now TestMu AI)', period: 'Apr 2023 - Apr 2024', description: 'Drove content marketing, CRO, and product-led growth initiatives. Managed agencies and in-house team to double content delivery.' },
+	{ title: 'Digital Marketing Executive', company: 'LambdaTest (now TestMu AI)', period: 'Dec 2021 - Apr 2023', description: 'Executed SEO, social media, and video marketing strategies. Achieved 100% increase in social media reach and impressions.' },
+	{ title: 'Marketing Associate', company: 'LIDO Learning', period: 'Jun 2021 - Nov 2021', description: 'Full-time role in EdTech marketing - campaigns, content, and growth strategies for online learning platform.' },
+	{ title: 'Marketing Intern', company: 'Sociowash', period: 'Nov 2018 - Jun 2019', description: 'Social media marketing and content creation at one of India\'s leading digital marketing agencies.' },
+	{ title: 'Marketing Intern', company: 'Samsung India', period: 'Nov 2018 - Jun 2019', description: 'Brand marketing support for Samsung India\'s consumer electronics division.' },
+];
+
+const education = [
+	{ degree: 'PG, Digital Marketing & Growth Strategy', school: 'Indian Institute of Management Visakhapatnam', period: 'May 2025 - May 2026', description: 'Postgraduate program focused on digital marketing, growth strategy, and data analytics.' },
+	{ degree: 'BBA, Marketing', school: 'Amity University', period: '2018 - 2021', description: 'Bachelor of Business Administration with a specialization in Marketing Management.' },
+];
+
+const certifications = [
+	{ name: 'Google Analytics Certification', issuer: 'Google', date: 'Dec 2023' },
+	{ name: 'Inbound Marketing', issuer: 'HubSpot', date: 'Nov 2021' },
+	{ name: 'Search Engine Optimization', issuer: 'IIDE', date: 'Jul 2021' },
+	{ name: 'Fundamentals of Digital Marketing', issuer: 'Google', date: 'May 2021' },
+	{ name: 'Advanced Google Analytics', issuer: 'Google', date: 'May 2021' },
+	{ name: 'Google Analytics for Beginners', issuer: 'Google', date: 'May 2021' },
+	{ name: 'Marketing in a Digital World', issuer: 'Coursera / UIUC', date: 'Apr 2021' },
+	{ name: 'SEO Training + SEO for WordPress', issuer: 'Udemy', date: 'Apr 2021' },
+	{ name: 'The Ultimate MySQL Bootcamp', issuer: 'Udemy', date: 'May 2021' },
+];
+
+const awards = [
+	{ name: 'Value of Agility Award', issuer: 'LambdaTest', date: 'Aug 2024' },
+	{ name: 'Top Performer', issuer: 'LambdaTest', date: 'Oct 2023' },
+	{ name: 'Buddy of the Month', issuer: 'LambdaTest', date: 'Aug 2023' },
+	{ name: 'Best Mentor of the Month', issuer: 'LambdaTest', date: 'Aug 2023' },
+	{ name: 'Wall of Fame', issuer: 'LambdaTest', date: 'Nov 2022' },
+];
+
+const socials = [
+	{ name: 'LinkedIn', url: 'https://linkedin.com/in/swapbiswas/', icon: 'M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z M4 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z' },
+	{ name: 'X (Twitter)', url: 'https://twitter.com/swapbiswas', icon: 'M4 4l7.2 10.3L4 21h2l6-5.6L17 21h5l-7.6-10.8L21 4h-2l-5.5 5.1L9 4H4zm2.5 1.5h2.1l9 12h-2.1l-9-12z' },
+	{ name: 'GitHub', url: 'https://github.com/swapbiswasmarketing/', icon: 'M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22' },
+];
+
+const brands = [
+	{ name: 'LambdaTest', logo: '/assets/brands/lambdatest.webp' },
+	{ name: 'Samsung', logo: '/assets/brands/samsung.webp' },
+	{ name: 'Sociowash', logo: '/assets/brands/sociowash.png' },
+	{ name: 'Medilife', logo: '/assets/brands/medilife.webp' },
+	{ name: 'Appknox', logo: '/assets/brands/appknox.svg' },
+	{ name: 'Lido Learning', logo: '/assets/brands/lido.webp' },
+];
 ---
 
 <BaseLayout title="About | Swapnil Biswas" description="About Swapnil Biswas - AI, Product & Digital Growth Marketer" breadcrumbs={[{ name: "About" }]}>
@@ -33,71 +94,224 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			"sameAs": [
 				"https://linkedin.com/in/swapbiswas/",
 				"https://twitter.com/swapbiswas",
-				"https://github.com/swapbiswas"
+				"https://github.com/swapbiswasmarketing/"
 			],
 			"knowsAbout": ["Product Marketing", "Growth Strategy", "AI", "SEO", "Content Marketing", "SaaS Marketing", "Data Analytics"]
 		}
 	})} />
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About"
-				tagline="Born in Uttarakhand and raised in Mumbai, I'm a Marketer who loves turning products into compelling stories."
-			>
+	<div class="stack gap-20 lg:gap-48">
+		<!-- Hero -->
+		<div class="wrapper stack gap-8 lg:gap-20">
+			<header class="hero">
+				<Hero
+					title="About Me"
+					tagline="Born in Uttarakhand and raised in Mumbai, I'm a Marketer who loves turning products into compelling stories."
+					align="start"
+				>
+					<div class="roles">
+						<Pill><Icon icon="strategy" size="1.33em" /> Product Marketing</Pill>
+						<Pill><Icon icon="trophy" size="1.33em" /> Growth Strategy</Pill>
+						<Pill><Icon icon="pencil-line" size="1.33em" /> Content & SEO</Pill>
+					</div>
+				</Hero>
+
 				<img
-					width="1553"
-					height="873"
-					src="/assets/portrait-new.webp"
+					width="480"
+					height="720"
+					src="/assets/portrait-new-480w.webp"
+					srcset="/assets/portrait-new-480w.webp 480w, /assets/portrait-new.webp 1024w"
+					sizes="(max-width: 50em) 100vw, 480px"
 					alt="Swapnil Biswas"
 				/>
-			</Hero>
+			</header>
 
-			<section>
-				<h2 class="section-title">Background</h2>
-				<div class="content">
+			<!-- Social Links -->
+			<div class="social-row">
+				{socials.map((s) => (
+					<a href={s.url} target="_blank" rel="noopener noreferrer" class="social-link" aria-label={s.name}>
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={s.icon}/></svg>
+						<span>{s.name}</span>
+					</a>
+				))}
+			</div>
+
+			<!-- Stats -->
+			<section class="stats">
+				<div class="stat" data-count="657" data-suffix="K">
+					<div class="stat-number">
+						<span class="stat-value">0</span><span class="stat-suffix">K</span>
+					</div>
+					<span class="stat-label">Leads Generated</span>
+				</div>
+				<div class="stat" data-count="18.2" data-suffix="M" data-decimal="1">
+					<div class="stat-number">
+						<span class="stat-value">0</span><span class="stat-suffix">M</span>
+					</div>
+					<span class="stat-label">Website Traffic</span>
+				</div>
+				<div class="stat" data-count="10" data-suffix="x">
+					<div class="stat-number">
+						<span class="stat-value">0</span><span class="stat-suffix">x</span>
+					</div>
+					<span class="stat-label">Conversion Results</span>
+				</div>
+				<div class="stat" data-count="4" data-suffix="+">
+					<div class="stat-number">
+						<span class="stat-value">0</span><span class="stat-suffix">+</span>
+					</div>
+					<span class="stat-label">Years Experience</span>
+				</div>
+			</section>
+		</div>
+
+		<!-- Background -->
+		<main class="wrapper stack gap-20 lg:gap-48">
+			<section class="section with-background">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Background</h3>
 					<p>
-						I am a dynamic critical thinker with a passion for crafting actionable strategies
-						to drive growth and excel in marketing endeavors. With over 4 years of extensive
-						experience in B2B and SaaS Marketing, I specialize in devising comprehensive plans
-						integrating paid and organic methodologies such as SEO, Content, and Social Media
-						Marketing to achieve tangible results.
+						With over 4 years in B2B SaaS marketing, I've helped drive 18M+ organic traffic
+						and generate 657K+ leads through a mix of SEO, content strategy, AI automation,
+						and product-led growth. I focus on making complex products easy to understand
+						and impossible to ignore.
 					</p>
 					<p>
-						Currently serving as a Product Marketing Manager at LambdaTest (now TestMu AI) and
-						pursuing a postgraduate degree from IIM Visakhapatnam, I specialize in AI-driven
-						marketing, data analytics, and strategic growth. I enjoy reading books, watching
-						football, exploring cafes, and trekking through mountain trails.
+						Currently a Product Marketing Manager at LambdaTest (TestMu AI) and pursuing
+						my postgraduate degree at IIM Visakhapatnam. Outside work, you'll find me
+						reading, watching football, exploring cafes, or trekking through mountain trails.
 					</p>
+				</header>
+			</section>
+
+			<!-- Skills -->
+			<section class="section with-background bg-variant">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Skills</h3>
+					<p>Core competencies I bring to every project and engagement.</p>
+				</header>
+
+				<div class="gallery">
+					<div class="skills-grid">
+						{skills.map((skill) => (
+							<div class="skill-card">
+								<div class="skill-card-header">
+									<Icon icon={skill.icon} color="var(--accent-regular)" size="1.5rem" gradient />
+									<div class="skill-card-info">
+										<h4>{skill.name}</h4>
+										<span class="skill-pct">{skill.percentage}%</span>
+									</div>
+								</div>
+								<div class="skill-track">
+									<div class="skill-fill" style={`--pct: ${skill.percentage}%`} />
+								</div>
+								<p class="skill-desc">{skill.description}</p>
+							</div>
+						))}
+					</div>
 				</div>
 			</section>
-			<section>
-				<h2 class="section-title">Experience</h2>
-				<div class="content">
-					<p><strong>Product Marketing Manager</strong> — LambdaTest / TestMu AI (Apr 2024 – Present)</p>
-					<p><strong>Marketing Specialist</strong> — LambdaTest / TestMu AI (Apr 2023 – Apr 2024)</p>
-					<p><strong>Digital Marketing Executive</strong> — LambdaTest / TestMu AI (Dec 2021 – Apr 2023)</p>
-					<p><strong>Marketing Associate</strong> — LIDO Learning (Jun 2021 – Nov 2021)</p>
-					<p><strong>Marketing Intern</strong> — Sociowash (Nov 2018 – Jun 2019)</p>
-					<p><strong>Marketing Intern</strong> — Samsung India (Nov 2018 – Jun 2019)</p>
+
+			<!-- Experience -->
+			<section class="section with-background">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Experience</h3>
+					<p>My professional journey through marketing, growth, and product strategy.</p>
+				</header>
+
+				<div class="gallery">
+					<div class="timeline">
+						{experience.map((item) => (
+							<div class:list={['timeline-item', { current: item.current }]}>
+								<div class="timeline-dot" />
+								<span class="timeline-period">{item.period}</span>
+								<h4>{item.title}</h4>
+								<p class="timeline-company">{item.company}</p>
+								<p class="timeline-desc">{item.description}</p>
+							</div>
+						))}
+					</div>
 				</div>
 			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p><strong>PG, Digital Marketing & Growth Strategy</strong> — Indian Institute of Management Visakhapatnam (2025 – 2026)</p>
-					<p><strong>BBA, Marketing</strong> — Amity University (2018 – 2021)</p>
+
+			<!-- Education -->
+			<section class="section with-background bg-variant">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Education</h3>
+					<p>Academic foundation in marketing and business administration.</p>
+				</header>
+
+				<div class="gallery">
+					<div class="timeline">
+						{education.map((item) => (
+							<div class="timeline-item">
+								<div class="timeline-dot" />
+								<span class="timeline-period">{item.period}</span>
+								<h4>{item.degree}</h4>
+								<p class="timeline-company">{item.school}</p>
+								<p class="timeline-desc">{item.description}</p>
+							</div>
+						))}
+					</div>
 				</div>
 			</section>
-			<section>
-				<h2 class="section-title">Certifications</h2>
-				<div class="content">
-					<p>Google Analytics Certification (Google) · Inbound Marketing (HubSpot) · Fundamentals of Digital Marketing (Google) · Advanced Google Analytics (Google) · Marketing in a Digital World (Coursera / UIUC)</p>
+
+			<!-- Certifications -->
+			<section class="section with-background">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Certifications</h3>
+					<p>Industry-recognized credentials and professional development.</p>
+				</header>
+
+				<div class="gallery">
+					<div class="card-grid">
+						{certifications.map((cert, i) => (
+							<div class="cert-card">
+								<span class="card-index">{String(i + 1).padStart(2, '0')}</span>
+								<h4>{cert.name}</h4>
+								<p class="card-meta">{cert.issuer} &middot; {cert.date}</p>
+							</div>
+						))}
+					</div>
 				</div>
 			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>SaaS · Strategic Marketing · Growth Hacking · Market Research · Product Strategy · Go-to-Market Strategy · Growth Marketing · Product Launch · Web Content Creation · Search Engine Marketing · User Experience · User Research · Critical Thinking · Problem Solving</p>
+
+			<!-- Awards -->
+			<section class="section with-background bg-variant">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Awards & Recognition</h3>
+					<p>Highlights from my professional career.</p>
+				</header>
+
+				<div class="gallery">
+					<div class="card-grid award-grid">
+						{awards.map((award) => (
+							<div class="award-card">
+								<div class="award-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+								</div>
+								<h4>{award.name}</h4>
+								<p class="card-meta">{award.issuer} &middot; {award.date}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<!-- Brands -->
+			<section class="section with-background">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Brands I've Worked With</h3>
+					<p>Had the privilege of working with these companies throughout my career.</p>
+				</header>
+
+				<div class="gallery">
+					<Grid variant="small">
+						{brands.map((brand) => (
+							<li class="mention-card">
+								<img src={brand.logo} alt={brand.name} class="brand-logo" loading="lazy" decoding="async" />
+							</li>
+						))}
+					</Grid>
 				</div>
 			</section>
 		</main>
@@ -106,60 +320,567 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	</div>
 </BaseLayout>
 
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		// Animate stat counters
+		const stats = document.querySelectorAll('.stat[data-count]');
+		let animated = false;
+
+		const animateCountUp = () => {
+			if (animated) return;
+			animated = true;
+
+			stats.forEach((stat) => {
+				const target = parseFloat(stat.getAttribute('data-count') || '0');
+				const hasDecimal = stat.hasAttribute('data-decimal');
+				const valueEl = stat.querySelector('.stat-value') as HTMLElement;
+				if (!valueEl) return;
+
+				const duration = 2000;
+				const startTime = performance.now();
+
+				const update = (currentTime: number) => {
+					const elapsed = currentTime - startTime;
+					const progress = Math.min(elapsed / duration, 1);
+					const eased = 1 - Math.pow(1 - progress, 3);
+					const current = eased * target;
+
+					valueEl.textContent = hasDecimal
+						? current.toFixed(1)
+						: Math.floor(current).toString();
+
+					if (progress < 1) {
+						requestAnimationFrame(update);
+					} else {
+						valueEl.textContent = hasDecimal
+							? target.toFixed(1)
+							: target.toString();
+					}
+				};
+
+				requestAnimationFrame(update);
+			});
+		};
+
+		const statsObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						animateCountUp();
+						statsObserver.disconnect();
+					}
+				});
+			},
+			{ threshold: 0.3 }
+		);
+
+		const statsSection = document.querySelector('.stats');
+		if (statsSection) statsObserver.observe(statsSection);
+
+		// Animate skill bars on scroll
+		const skillFills = document.querySelectorAll('.skill-fill') as NodeListOf<HTMLElement>;
+		const skillsObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						skillFills.forEach((fill) => {
+							fill.style.width = fill.style.getPropertyValue('--pct');
+						});
+						skillsObserver.disconnect();
+					}
+				});
+			},
+			{ threshold: 0.2 }
+		);
+
+		const skillsSection = document.querySelector('.skills-grid');
+		if (skillsSection) skillsObserver.observe(skillsSection);
+	});
+</script>
+
 <style>
-	.about {
+	/* Hero */
+	.hero {
 		display: flex;
 		flex-direction: column;
-		gap: 3.5rem;
+		align-items: center;
+		gap: 2rem;
 	}
 
-	img {
-		margin-top: 1.5rem;
+	.roles {
+		display: none;
+	}
+
+	.hero img {
+		aspect-ratio: 5 / 4;
+		object-fit: cover;
+		object-position: top;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);
 	}
 
-	section {
+	@media (min-width: 50em) {
+		.hero {
+			display: grid;
+			grid-template-columns: 6fr 4fr;
+			padding-inline: 2.5rem;
+			gap: 3.75rem;
+		}
+
+		.roles {
+			margin-top: 0.5rem;
+			display: flex;
+			gap: 0.5rem;
+		}
+
+		.hero img {
+			aspect-ratio: 3 / 4;
+			border-radius: 4.5rem;
+			object-fit: cover;
+		}
+	}
+
+	/* Social Links */
+	.social-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		justify-content: center;
+	}
+
+	.social-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.5rem 1.25rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: var(--gray-999_40);
+		color: var(--gray-300);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		text-decoration: none;
+		transition: all 0.2s ease;
+	}
+
+	.social-link:hover {
+		border-color: var(--accent-regular);
+		color: var(--gray-0);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.social-link svg {
+		flex-shrink: 0;
+	}
+
+	/* Stats */
+	.stats {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.25rem;
+		text-align: center;
+		padding: 2rem 0;
+	}
+
+	.stat {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		gap: 0.5rem;
-		color: var(--gray-200);
+		padding: 1.5rem 0.75rem;
 	}
 
-	.section-title {
-		grid-column-start: 1;
+	.stat-number {
+		display: flex;
+		align-items: baseline;
+		gap: 0.1em;
+	}
+
+	.stat-value {
+		font-size: var(--text-3xl);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		line-height: 1;
+		background: var(--gradient-accent-orange);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.stat-suffix {
 		font-size: var(--text-xl);
-		color: var(--gray-0);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		background: var(--gradient-accent-orange);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
 	}
 
-	.content {
-		grid-column: 2 / 4;
-	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
+	.stat-label {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		letter-spacing: 0.02em;
 	}
 
 	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
+		.stats {
+			grid-template-columns: repeat(4, 1fr);
+			gap: 0;
+			padding: 3rem 0;
 		}
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
+		.stat {
+			padding: 1.5rem 2rem;
+			border-right: 1px solid var(--gray-800);
 		}
 
-		section {
-			display: contents;
+		.stat:last-child {
+			border-right: none;
+		}
+
+		.stat-value {
+			font-size: var(--text-5xl);
+		}
+
+		.stat-suffix {
+			font-size: var(--text-2xl);
+		}
+	}
+
+	/* Sections (matching homepage) */
+	.section {
+		display: grid;
+		gap: 2rem;
+	}
+
+	.with-background {
+		position: relative;
+	}
+
+	.with-background::before {
+		--hero-bg: var(--bg-image-subtle-2);
+
+		content: '';
+		position: absolute;
+		pointer-events: none;
+		left: 50%;
+		width: 100vw;
+		aspect-ratio: calc(2.25 / var(--bg-scale));
+		top: 0;
+		transform: translateY(-75%) translateX(-50%);
+		background:
+			url('/assets/backgrounds/noise.png') top center/220px repeat,
+			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+			var(--gray-999);
+		background-blend-mode: overlay, normal, normal, normal;
+		mix-blend-mode: var(--bg-blend-mode);
+		z-index: -1;
+	}
+
+	.with-background.bg-variant::before {
+		--hero-bg: var(--bg-image-subtle-1);
+	}
+
+	.section-header {
+		justify-self: center;
+		text-align: center;
+		max-width: 50ch;
+		font-size: var(--text-md);
+		color: var(--gray-300);
+	}
+
+	.section-header h3 {
+		font-size: var(--text-2xl);
+	}
+
+	@media (min-width: 50em) {
+		.section {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
+			gap: 5rem;
+		}
+
+		.section-header {
+			grid-area: header;
 			font-size: var(--text-lg);
+		}
+
+		.section-header h3 {
+			font-size: var(--text-4xl);
+		}
+
+		.gallery {
+			grid-area: gallery;
+		}
+	}
+
+	/* Skills Grid */
+	.skills-grid {
+		display: grid;
+		gap: 1.25rem;
+	}
+
+	.skill-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		padding: 1.5rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		background: var(--gray-999_40);
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.skill-card:hover {
+		border-color: var(--gray-700);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skill-card-header {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.skill-card-info {
+		display: flex;
+		flex: 1;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.skill-card-info h4 {
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		font-weight: 500;
+	}
+
+	.skill-pct {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		font-family: var(--font-brand);
+	}
+
+	.skill-track {
+		width: 100%;
+		height: 0.375rem;
+		background: var(--gray-800);
+		border-radius: 999rem;
+		overflow: hidden;
+	}
+
+	.skill-fill {
+		height: 100%;
+		width: 0;
+		background: var(--gradient-accent-orange);
+		border-radius: 999rem;
+		transition: width 1s ease-out;
+	}
+
+	.skill-desc {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		line-height: 1.5;
+	}
+
+	@media (min-width: 50em) {
+		.skills-grid {
+			grid-template-columns: 1fr 1fr;
+			gap: 1.5rem;
+		}
+
+		.skill-card {
+			border-radius: 1rem;
+			padding: 2rem;
+		}
+	}
+
+	/* Timeline */
+	.timeline {
+		max-width: 42rem;
+	}
+
+	.timeline-item {
+		position: relative;
+		padding-left: 2rem;
+		padding-bottom: 2rem;
+		border-left: 1px solid var(--gray-800);
+	}
+
+	.timeline-item:last-child {
+		padding-bottom: 0;
+		border-left-color: transparent;
+	}
+
+	.timeline-dot {
+		position: absolute;
+		left: 0;
+		top: 0.35rem;
+		width: 0.75rem;
+		height: 0.75rem;
+		transform: translateX(-50%);
+		border-radius: 50%;
+		background: var(--gray-600);
+		border: 2px solid var(--gray-900);
+	}
+
+	.timeline-item.current .timeline-dot {
+		background: var(--accent-regular);
+		box-shadow: 0 0 0 3px var(--accent-overlay);
+	}
+
+	.timeline-period {
+		display: block;
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		margin-bottom: 0.25rem;
+		font-family: var(--font-brand);
+	}
+
+	.timeline-item h4 {
+		font-size: var(--text-lg);
+		color: var(--gray-0);
+		font-weight: 500;
+		margin-bottom: 0.125rem;
+	}
+
+	.timeline-company {
+		font-size: var(--text-base);
+		color: var(--gray-300);
+		margin-bottom: 0.5rem;
+	}
+
+	.timeline-desc {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		line-height: 1.6;
+	}
+
+	/* Certification Cards */
+	.card-grid {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.cert-card {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.25rem;
+		background: var(--gray-999_40);
+		transition: border-color 0.2s ease;
+	}
+
+	.cert-card:hover {
+		border-color: var(--gray-700);
+	}
+
+	.card-index {
+		display: block;
+		font-size: var(--text-sm);
+		color: var(--gray-500);
+		font-family: var(--font-brand);
+		margin-bottom: 0.75rem;
+	}
+
+	.cert-card h4,
+	.award-card h4 {
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		font-weight: 500;
+		margin-bottom: 0.25rem;
+	}
+
+	.card-meta {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.card-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	/* Award Cards */
+	.award-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.award-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background: var(--gray-999_40);
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.award-card:hover {
+		border-color: var(--gray-700);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.award-icon {
+		color: var(--accent-regular);
+	}
+
+	@media (min-width: 30em) {
+		.award-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 50em) {
+		.award-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	/* Brand Cards */
+	.mention-card {
+		display: flex;
+		height: 7rem;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		color: var(--gray-300);
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.brand-logo {
+		max-width: 75%;
+		max-height: 4rem;
+		object-fit: contain;
+		filter: brightness(0) opacity(0.5);
+		transition: filter var(--theme-transition);
+	}
+
+	.mention-card:hover .brand-logo {
+		filter: brightness(0) opacity(0.85);
+	}
+
+	:global(.theme-dark) .brand-logo {
+		filter: brightness(0) invert(1) opacity(0.6);
+	}
+
+	:global(.theme-dark) .mention-card:hover .brand-logo {
+		filter: brightness(0) invert(1) opacity(1);
+	}
+
+	@media (min-width: 50em) {
+		.mention-card {
+			height: 9.5rem;
+		}
+
+		.brand-logo {
+			max-height: 5rem;
 		}
 	}
 </style>

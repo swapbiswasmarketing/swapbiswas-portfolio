@@ -54,7 +54,7 @@ const blogPostSchema = {
 	"@type": "BlogPosting",
 	"headline": entry.data.title,
 	"description": entry.data.description,
-	"image": `https://swapbiswas.com/og/${entry.id}.png`,
+	"image": `https://swapbiswas.com/og/${entry.id}.webp`,
 	"datePublished": entry.data.publishDate.toISOString(),
 	"dateModified": (entry.data.updatedDate || entry.data.publishDate).toISOString(),
 	"author": {
@@ -89,7 +89,7 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 } : null;
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description} image={`/og/${entry.id}.png`} breadcrumbs={[{ name: "Blog", url: "/blog/" }, { name: entry.data.title }]}>
+<BaseLayout title={entry.data.title} description={entry.data.description} image={`/og/${entry.id}.webp`} breadcrumbs={[{ name: "Blog", url: "/blog/" }, { name: entry.data.title }]}>
 	<div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar"></div></div>
 	<script type="application/ld+json" set:html={JSON.stringify(blogPostSchema)} />
 	{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
@@ -133,7 +133,7 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 						</aside>
 					)}
 					<div class="stack gap-10 content-column">
-						<img src={`/og/${entry.id}.png`} alt={entry.data.img_alt || ''} />
+						<img src={`/og/${entry.id}.webp`} alt={entry.data.img_alt || ''} width="1200" height="630" fetchpriority="high" />
 						<div class="content">
 							<Content />
 						</div>
@@ -173,7 +173,7 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 								<div class="related-grid">
 									{relatedPosts.map((post) => (
 										<a href={`/blog/${post.id}/`} class="related-card">
-											<img src={`/og/${post.id}.png`} alt={post.data.title} loading="lazy" decoding="async" />
+											<img src={`/og/${post.id}.webp`} alt={post.data.title} width="1200" height="630" loading="lazy" decoding="async" />
 											<span class="related-title">{post.data.title}</span>
 										</a>
 									))}
@@ -830,6 +830,124 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 		transform: translateY(-2px);
 		color: var(--gray-0);
 	}
+
+	/* Print styles */
+	@media print {
+		/* Hide non-content elements */
+		:global(nav),
+		:global(footer),
+		:global(.nl-popup),
+		:global(.nl-overlay),
+		:global(.back-to-top),
+		:global(.reading-progress),
+		:global(.breadcrumb-nav),
+		.toc-sidebar,
+		.share-buttons,
+		.related-posts,
+		.author-bio,
+		.faq-section {
+			display: none !important;
+		}
+
+		/* Reset backgrounds for ink saving */
+		:global(body),
+		:global(.backgrounds) {
+			background: white !important;
+			color: black !important;
+		}
+
+		/* Content readable in print */
+		.content-column {
+			max-width: 100% !important;
+		}
+
+		.blog-layout {
+			display: block !important;
+		}
+
+		.content :global(h1),
+		.content :global(h2),
+		.content :global(h3) {
+			color: black !important;
+			break-after: avoid;
+		}
+
+		.content :global(p),
+		.content :global(li) {
+			color: #222 !important;
+			line-height: 1.6;
+		}
+
+		.content :global(a) {
+			color: black !important;
+			text-decoration: underline;
+		}
+
+		.content :global(a)::after {
+			content: " (" attr(href) ")";
+			font-size: 0.8em;
+			color: #555;
+		}
+
+		.content :global(a[href^="#"])::after,
+		.content :global(a[href^="javascript"])::after {
+			content: "";
+		}
+
+		.content :global(img) {
+			max-width: 100% !important;
+			box-shadow: none !important;
+			border: 1px solid #ccc !important;
+			break-inside: avoid;
+		}
+
+		.content :global(pre),
+		.content :global(code) {
+			background: #f5f5f5 !important;
+			color: black !important;
+			border: 1px solid #ddd !important;
+			white-space: pre-wrap !important;
+			word-break: break-word !important;
+			break-inside: avoid;
+		}
+
+		.content :global(blockquote) {
+			border-left: 3px solid #333 !important;
+			color: #333 !important;
+			background: none !important;
+		}
+
+		.content :global(table) {
+			border-collapse: collapse !important;
+		}
+
+		.content :global(td),
+		.content :global(th) {
+			border: 1px solid #ccc !important;
+			color: black !important;
+			padding: 0.5rem !important;
+		}
+
+		/* Header info */
+		.details .description {
+			color: #333 !important;
+		}
+
+		:global(.pill) {
+			border: 1px solid #999 !important;
+			background: none !important;
+			color: black !important;
+		}
+
+		.meta-line {
+			color: #555 !important;
+		}
+
+		/* Print URL at bottom */
+		@page {
+			margin: 2cm;
+		}
+	}
 </style>
 
 <script>
@@ -949,6 +1067,7 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 	const lightbox = document.createElement('div');
 	lightbox.className = 'lightbox';
 	const lightboxImg = document.createElement('img');
+	lightboxImg.alt = 'Enlarged image';
 	lightbox.appendChild(lightboxImg);
 	document.body.appendChild(lightbox);
 

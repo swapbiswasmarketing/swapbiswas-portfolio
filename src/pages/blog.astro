@@ -36,6 +36,10 @@ const POSTS_PER_PAGE = 9;
 				align="start"
 			/>
 
+			<a href="/rss.xml" class="rss-link" target="_blank" rel="noopener noreferrer" aria-label="RSS Feed">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+			</a>
+
 			<!-- Search + Filter Toolbar -->
 			<div class="toolbar">
 				<div class="search-bar">
@@ -401,5 +405,17 @@ const POSTS_PER_PAGE = 9;
 		padding: 3rem 1rem;
 		color: var(--gray-400);
 		font-size: var(--text-lg);
+	}
+
+	/* RSS Link */
+	.rss-link {
+		display: inline-flex;
+		color: var(--gray-400);
+		transition: color 0.2s ease;
+		margin-top: -1rem;
+	}
+
+	.rss-link:hover {
+		color: #f97316;
 	}
 </style>

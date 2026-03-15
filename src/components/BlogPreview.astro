@@ -8,6 +8,7 @@ interface Props {
 const { data, id, body } = Astro.props.post;
 
 const cardImage = data.img;
+const cardImage400 = cardImage.replace(/\.webp$/, '-400w.webp');
 
 const wordCount = body ? body.split(/\s+/).length : 0;
 const readingTime = Math.max(1, Math.ceil(wordCount / 220));
@@ -20,7 +21,7 @@ const publishDate = data.publishDate.toLocaleDateString('en-US', {
 ---
 
 <a class="card" href={`/blog/${id}`}>
-	<img src={cardImage} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+	<img src={cardImage400} srcset={`${cardImage400} 400w, ${cardImage} 1472w`} sizes="(max-width: 50em) 100vw, 400px" alt={data.img_alt || ''} width="400" height="237" loading="lazy" decoding="async" />
 	<div class="card-body">
 		<span class="title">{data.title}</span>
 		<div class="card-meta">

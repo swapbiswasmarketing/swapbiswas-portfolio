@@ -11,7 +11,7 @@ interface Props {
 const {
 	title = 'Swapnil Biswas: AI, Product & Digital Growth Marketer',
 	description = 'Swapnil Biswas — Product Marketing & Growth Strategist specializing in AI, SEO, and content. 657K+ leads generated, 18M+ traffic driven. Explore my work and blog.',
-	image = '/og/home.png',
+	image = '/og/home.webp',
 	noindex = false,
 } = Astro.props;
 
@@ -56,12 +56,21 @@ const absoluteImageUrl = new URL(image, Astro.site).href;
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://scripts.clarity.ms" crossorigin />
 <link rel="dns-prefetch" href="https://www.clarity.ms" />
 <link rel="dns-prefetch" href="https://api.kit.com" />
 <link
+	rel="preload"
+	as="style"
 	href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
-	rel="stylesheet"
+	onload="this.onload=null;this.rel='stylesheet'"
 />
+<noscript>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
+		rel="stylesheet"
+	/>
+</noscript>
 <!-- Google Tag Manager -->
 <script is:inline>
 	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

@@ -119,6 +119,7 @@ Red:            #f87171
 - Save WebP files to `public/assets/blog/{post-slug}/filename.webp`
 - Reference in markdown as `![Alt text](/assets/blog/{post-slug}/filename.webp "Title")`
 - ViewBox: typically `0 0 1400 680-800` (wide format, large for readability)
+- **Mobile responsiveness:** All blog content images automatically scale to `max-width: 100%` via CSS. No extra attributes needed in markdown. If an image appears too wide on mobile, the blog template handles it.
 
 ### SVG to WebP Conversion
 ```js
@@ -157,13 +158,13 @@ The blog template applies `border-radius: 1.5rem` to content images. To prevent 
 
 ## 4. OG Images
 
-OG images are auto-generated at build time via `src/pages/og/[...slug].png.ts` using Satori + resvg.
+OG images are auto-generated at build time via `src/pages/og/[...slug].webp.ts` using Satori + resvg + sharp (PNG → WebP conversion).
 
-- Each blog post gets a branded OG image at `/og/{slug}.png`
+- Each blog post gets a branded OG image at `/og/{slug}.webp`
 - **The OG image background matches the blog card hero image** - it reads the `img` field from frontmatter and uses the corresponding stock `.jpg` file
 - Mapping: `stock-1.webp` -> `stock-1.jpg`, `stock-2.webp` -> `stock-2.jpg`, etc. (handled by `getStockFromFrontmatter()` in the generator)
 - No manual action needed - set the `img` field in frontmatter and both the blog card and OG image use the same stock background
-- The blog page template at `src/pages/blog/[...slug].astro` already passes `image={/og/${entry.id}.png}` to the layout
+- The blog page template at `src/pages/blog/[...slug].astro` already passes `image={/og/${entry.id}.webp}` to the layout
 
 ## 5. Blog Page Features
 
@@ -211,7 +212,7 @@ Do NOT leave unverified stats in the post. Either find a real source or rewrite 
 - [ ] Frontmatter complete (title, description, publishDate, category, img, img_alt)
 - [ ] Hero image uses only `stock-1` through `stock-4.webp` and doesn't duplicate adjacent posts
 - [ ] Run `npx astro build` to verify no errors
-- [ ] Check OG image generates correctly at `/og/{slug}.png` (should match the hero image)
+- [ ] Check OG image generates correctly at `/og/{slug}.webp` (should match the hero image)
 - [ ] FAQ schema added for question-based or high-value posts (Section 8)
 
 ## 8. FAQ Schema (Optional)
