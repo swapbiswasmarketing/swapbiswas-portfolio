@@ -248,14 +248,17 @@ const posts = (await getCollection('blog'))
 </BaseLayout>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
+	function initHomePage() {
 		const stats = document.querySelectorAll('.stat[data-count]');
-		let animated = false;
+		if (!stats.length) return;
+
+		// Reset stat values for re-animation
+		stats.forEach((stat) => {
+			const valueEl = stat.querySelector('.stat-value') as HTMLElement;
+			if (valueEl) valueEl.textContent = '0';
+		});
 
 		const animateCountUp = () => {
-			if (animated) return;
-			animated = true;
-
 			stats.forEach((stat) => {
 				const target = parseFloat(stat.getAttribute('data-count') || '0');
 				const hasDecimal = stat.hasAttribute('data-decimal');
@@ -306,7 +309,8 @@ const posts = (await getCollection('blog'))
 		// Newsletter form (Kit / ConvertKit)
 		const nlForm = document.getElementById('newsletter-form') as HTMLFormElement;
 		const nlStatus = document.getElementById('newsletter-status') as HTMLElement;
-		if (nlForm) {
+		if (nlForm && !(nlForm as any)._nlInit) {
+			(nlForm as any)._nlInit = true;
 			nlForm.addEventListener('submit', async (e) => {
 				e.preventDefault();
 				const subscriberEmail = (nlForm.querySelector('input[name="email_address"]') as HTMLInputElement).value;
@@ -346,7 +350,8 @@ const posts = (await getCollection('blog'))
 				btn.disabled = false;
 			});
 		}
-	});
+	}
+	document.addEventListener('astro:page-load', initHomePage);
 </script>
 
 <style>

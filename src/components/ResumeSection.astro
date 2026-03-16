@@ -138,9 +138,20 @@ const awards = [
 </section>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const buttons = document.querySelectorAll('.tab-btn');
-		const panels = document.querySelectorAll('.tab-panel');
+	function initResumeSection() {
+		const section = document.querySelector('.resume-section');
+		if (!section) return;
+
+		const buttons = section.querySelectorAll('.tab-btn');
+		const panels = section.querySelectorAll('.tab-panel');
+
+		// Reset tabs to initial state
+		buttons.forEach((b, i) => {
+			b.classList.toggle('active', i === 0);
+		});
+		panels.forEach((p, i) => {
+			p.classList.toggle('active', i === 0);
+		});
 
 		buttons.forEach((btn) => {
 			btn.addEventListener('click', () => {
@@ -166,22 +177,24 @@ const awards = [
 			});
 		});
 
-		// Initial animation for skill bars
-		const fills = document.querySelectorAll('.tab-panel.active .skill-fill') as NodeListOf<HTMLElement>;
+		// Reset and animate skill bars on scroll
+		const fills = section.querySelectorAll('.tab-panel.active .skill-fill') as NodeListOf<HTMLElement>;
+		fills.forEach((fill) => { (fill as HTMLElement).style.width = '0'; });
+
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					fills.forEach((fill) => {
-						fill.style.width = fill.style.getPropertyValue('--pct');
+						(fill as HTMLElement).style.width = (fill as HTMLElement).style.getPropertyValue('--pct');
 					});
 					observer.disconnect();
 				}
 			});
 		}, { threshold: 0.2 });
 
-		const section = document.querySelector('.resume-section');
-		if (section) observer.observe(section);
-	});
+		observer.observe(section);
+	}
+	document.addEventListener('astro:page-load', initResumeSection);
 </script>
 
 <style>

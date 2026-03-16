@@ -321,15 +321,17 @@ const brands = [
 </BaseLayout>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
-		// Animate stat counters
+	function initAboutPage() {
 		const stats = document.querySelectorAll('.stat[data-count]');
-		let animated = false;
+		if (!stats.length) return;
+
+		// Reset values for re-animation
+		stats.forEach((stat) => {
+			const valueEl = stat.querySelector('.stat-value') as HTMLElement;
+			if (valueEl) valueEl.textContent = '0';
+		});
 
 		const animateCountUp = () => {
-			if (animated) return;
-			animated = true;
-
 			stats.forEach((stat) => {
 				const target = parseFloat(stat.getAttribute('data-count') || '0');
 				const hasDecimal = stat.hasAttribute('data-decimal');
@@ -377,8 +379,10 @@ const brands = [
 		const statsSection = document.querySelector('.stats');
 		if (statsSection) statsObserver.observe(statsSection);
 
-		// Animate skill bars on scroll
+		// Reset and animate skill bars on scroll
 		const skillFills = document.querySelectorAll('.skill-fill') as NodeListOf<HTMLElement>;
+		skillFills.forEach((fill) => { fill.style.width = '0'; });
+
 		const skillsObserver = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
@@ -395,7 +399,8 @@ const brands = [
 
 		const skillsSection = document.querySelector('.skills-grid');
 		if (skillsSection) skillsObserver.observe(skillsSection);
-	});
+	}
+	document.addEventListener('astro:page-load', initAboutPage);
 </script>
 
 <style>

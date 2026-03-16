@@ -51,8 +51,11 @@ const faqs = [
 			<div class="contact-grid">
 				<section class="form-section">
 					<h2>It all starts with hello..</h2>
-					<form id="contact-form" data-send-to="swapbiswas.marketing@gmail.com">
+					<form id="contact-form" action="https://formsubmit.co/swapbiswas.marketing@gmail.com" method="POST" data-send-to="swapbiswas.marketing@gmail.com">
 						<input type="hidden" name="_subject" value="Message from swapbiswas.com" />
+						<input type="hidden" name="_captcha" value="false" />
+						<input type="hidden" name="_template" value="table" />
+						<input type="hidden" name="_next" value="https://swapbiswas.com/contact/?success=true" />
 						<div class="form-group">
 							<label for="full_name">Name</label>
 							<input
@@ -119,8 +122,10 @@ const faqs = [
 </BaseLayout>
 
 <script>
-	document.addEventListener("DOMContentLoaded", () => {
+	function initContactPage() {
 		const form = document.querySelector("#contact-form") as HTMLFormElement;
+		if (!form || (form as any)._contactInit) return;
+		(form as any)._contactInit = true;
 		const successEl = document.querySelector("#form-success") as HTMLElement;
 		const errorEl = document.querySelector("#form-error") as HTMLElement;
 		const sendBtn = document.querySelector("#send-button") as HTMLButtonElement;
@@ -184,7 +189,17 @@ const faqs = [
 				}
 			});
 		});
-	});
+	}
+	initContactPage();
+	document.addEventListener("astro:page-load", initContactPage);
+
+	// Show success message if redirected back from FormSubmit
+	if (window.location.search.includes('success=true')) {
+		const successEl = document.querySelector("#form-success") as HTMLElement;
+		if (successEl) successEl.style.display = "block";
+		// Clean URL
+		window.history.replaceState({}, '', window.location.pathname);
+	}
 </script>
 
 <style>
