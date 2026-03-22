@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="520" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">The New Search Ecosystem in 2026</text>
+  <text x="700" y="94" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">Your content now needs to work across 3 surfaces</text>
+
+  <!-- Column 1: Traditional Search -->
+  <rect x="40" y="130" width="420" height="320" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="130" width="420" height="5" rx="3" fill="#60a5fa"/>
+  <text x="250" y="172" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">TRADITIONAL ORGANIC</text>
+  <text x="250" y="200" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Google Rankings</text>
+
+  <text x="70" y="240" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600">HOW YOU GET VISIBLE:</text>
+  <text x="70" y="265" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="16">Backlinks + domain authority</text>
+  <text x="70" y="288" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="16">Keyword optimization</text>
+  <text x="70" y="311" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="16">Technical SEO + Core Web Vitals</text>
+
+  <line x1="70" y1="330" x2="430" y2="330" stroke="#30363d" stroke-width="1"/>
+  <text x="70" y="355" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="14">Zero-click rate: 34%</text>
+  <text x="70" y="378" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="14">Still the largest traffic source</text>
+  <text x="70" y="401" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600">Strategy: SEO fundamentals</text>
+
+  <!-- Column 2: AI Overviews -->
+  <rect x="490" y="130" width="420" height="320" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="490" y="130" width="420" height="5" rx="3" fill="#fb923c"/>
+  <text x="700" y="172" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">AI OVERVIEWS</text>
+  <text x="700" y="200" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Google AI Summaries</text>
+
+  <text x="520" y="240" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600">HOW YOU GET CITED:</text>
+  <text x="520" y="265" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="16">Structured data + schema</text>
+  <text x="520" y="288" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="16">Clear definitions + data points</text>
+  <text x="520" y="311" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="16">E-E-A-T signals + authority</text>
+
+  <line x1="520" y1="330" x2="880" y2="330" stroke="#30363d" stroke-width="1"/>
+  <text x="520" y="355" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="14">Zero-click rate: 43% (with AIO)</text>
+  <text x="520" y="378" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="14">Peaked at ~25% of searches</text>
+  <text x="520" y="401" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600">Strategy: GEO optimization</text>
+
+  <!-- Column 3: AI Chatbots -->
+  <rect x="940" y="130" width="420" height="320" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="940" y="130" width="420" height="5" rx="3" fill="#c084fc"/>
+  <text x="1150" y="172" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">AI CHATBOTS</text>
+  <text x="1150" y="200" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">ChatGPT · Perplexity · Claude</text>
+
+  <text x="970" y="240" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600">HOW YOU GET REFERENCED:</text>
+  <text x="970" y="265" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="16">Multi-platform brand presence</text>
+  <text x="970" y="288" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="16">Original research + data</text>
+  <text x="970" y="311" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="16">Community + forum visibility</text>
+
+  <line x1="970" y1="330" x2="1330" y2="330" stroke="#30363d" stroke-width="1"/>
+  <text x="970" y="355" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="14">AI traffic up 527% in early 2025</text>
+  <text x="970" y="378" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="14">40-60% of citations change monthly</text>
+  <text x="970" y="401" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600">Strategy: Entity + content clarity</text>
+
+  <text x="700" y="490" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="16">Optimize for all three surfaces - not just traditional rankings</text>
+</svg>

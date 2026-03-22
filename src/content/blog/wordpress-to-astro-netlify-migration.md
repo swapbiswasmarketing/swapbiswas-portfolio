@@ -2,6 +2,7 @@
 title: "How I Moved My Website from WordPress to Astro and Saved ₹12,000/Year"
 description: "A step-by-step guide on how I migrated from WordPress to Astro with Netlify — going from ₹12K/year to ₹0 with better performance, speed, and security."
 publishDate: 2026-03-01
+updatedDate: 2026-03-21
 category: [Marketing]
 img: /assets/stock-3.webp
 img_alt: WordPress to Astro migration illustration

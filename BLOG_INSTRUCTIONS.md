@@ -62,11 +62,14 @@ Only use these 4 stock images for the `img` frontmatter field:
 - Use markdown link format: `([Source Name](URL))`
 - Prefer primary sources over aggregator sites
 - If a stat can't be verified, either remove it or state it without specific numbers
+- **Verification means visiting the exact cited URL.** Confirming a stat "exists on the internet" is NOT verification. You must open the linked URL and confirm the exact number appears on that specific page. If the number is real but not on the page you linked, find the correct URL or use the actual primary source
 - **Common traps to avoid:**
+  - "Zombie stats" - numbers repeated across hundreds of blogs but with no traceable primary source (e.g., Annuitas Group "47% larger purchases"). If you cannot find the original study/report page, do not use the stat
   - Stats that sound too clean/round (often fabricated)
-  - Secondary sources misattributing original research
-  - Outdated tool pricing/feature limits (check before publishing)
+  - Secondary sources misattributing original research (e.g., Sender.net citing Omnisend data - link to Omnisend, not Sender)
+  - Outdated tool pricing/feature limits (check official pricing pages before publishing)
   - Gartner/Forrester stats that are behind paywalls and unverifiable
+  - Competitor homepage headlines and taglines change frequently - verify on the day of publishing
 
 ### SEO Optimization
 - Target keyword in: title, H1, first paragraph, at least 2 H2s, conclusion
@@ -142,12 +145,29 @@ await sharp(png).webp({ quality: 90 }).toFile('output.webp');
 - **Never use:** SVG `<marker>` definitions (resvg renders them inconsistently), tiny triangles, curved `<path>` arrows, or `#484f58` colored arrows
 - **Flow must be logical:** Arrows connect sequential steps only (1→2→3→4...). No skip connections, no iterate loops unless the blog content explicitly describes one
 
+### Text Overflow Prevention
+SVG text does NOT auto-wrap or auto-shrink. Every text element must be manually checked against its container.
+- **Circle containers:** Text must fit within the circle diameter. For `r="65"` circles (130px wide), limit subtitle text to ~12 characters at `font-size="12"`. Shorten labels (e.g., "Clean PM + integrations" → "PM + integrations")
+- **Rectangular cards:** Measure text width roughly as `character_count × font_size × 0.55`. If wider than the card, either shorten the text, split into two `<text>` lines, or widen the card
+- **Arrow/connector labels:** Never place labels at the same y-coordinate as adjacent card tops - they will overlap. Place labels above the cards (e.g., `y="132"` when cards start at `y="140"`) or centered in the gap between cards
+- **Long sentences in cards:** Split into two `<text>` elements on separate lines (e.g., y="280" and y="300") rather than one long line. Increase the card height to fit
+- **Bottom text/footer:** If a bottom summary box has long text, widen the box (use 600-800px width) and split text across 2-3 lines
+
 ### Padding for Border-Radius Clipping
 The blog template applies `border-radius: 1.5rem` to content images. To prevent clipping:
 - Title text should start at `y="62"` minimum (not `y="52"`)
 - First row of cards should start at `y="130"` minimum (not `y="115"`)
 - Add `40-60px` bottom padding below the last content element
 - ViewBox height should accommodate this padding
+
+### Visual Verification Checklist
+After converting SVG to WebP, **always view the WebP image** to verify:
+- [ ] No text overflows its container (circles, cards, boxes)
+- [ ] No text is clipped at image edges (especially right and bottom)
+- [ ] Arrow labels are not hidden behind adjacent cards
+- [ ] Bottom footer text is fully visible and not cut off
+- [ ] All text is readable at the rendered size (minimum 12px for subtitles, 16px for body)
+- [ ] If the SVG source was updated (e.g., pricing changes), the WebP was re-rendered
 
 ### Examples
 - `public/assets/blog/ai-maturity-curve/maturity-stages.svg` - Staircase chart with curve

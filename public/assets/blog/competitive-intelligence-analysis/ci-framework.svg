@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="520" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">5-Step CI Analysis Framework</text>
+  <text x="700" y="94" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">From priorities to stakeholder distribution</text>
+
+  <!-- Step 1 -->
+  <rect x="40" y="130" width="240" height="300" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="130" width="240" height="5" rx="3" fill="#5eead4"/>
+  <text x="160" y="172" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="0.08em">STEP 1</text>
+  <text x="160" y="205" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Define</text>
+  <text x="160" y="232" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Priorities</text>
+  <line x1="70" y1="250" x2="250" y2="250" stroke="#30363d" stroke-width="1"/>
+  <text x="70" y="278" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">What decisions need</text>
+  <text x="70" y="298" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">competitive data?</text>
+  <text x="70" y="330" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="13">3-5 priorities/quarter</text>
+  <text x="70" y="355" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Ask: Product, Sales,</text>
+  <text x="70" y="375" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Marketing, Leadership</text>
+
+  <!-- Arrow -->
+  <line x1="280" y1="280" x2="300" y2="280" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="298,273 312,280 298,287" fill="#5eead4"/>
+
+  <!-- Step 2 -->
+  <rect x="310" y="130" width="240" height="300" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="310" y="130" width="240" height="5" rx="3" fill="#fb923c"/>
+  <text x="430" y="172" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="0.08em">STEP 2</text>
+  <text x="430" y="205" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Identify</text>
+  <text x="430" y="232" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Sources</text>
+  <line x1="340" y1="250" x2="520" y2="250" stroke="#30363d" stroke-width="1"/>
+  <text x="340" y="278" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Public: websites, jobs,</text>
+  <text x="340" y="298" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">filings, news, reviews</text>
+  <text x="340" y="330" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="13">Customer: win/loss,</text>
+  <text x="340" y="350" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="13">G2, analyst reports</text>
+  <text x="340" y="375" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Sales: objections, RFPs</text>
+
+  <!-- Arrow -->
+  <line x1="550" y1="280" x2="570" y2="280" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="568,273 582,280 568,287" fill="#5eead4"/>
+
+  <!-- Step 3 -->
+  <rect x="580" y="130" width="240" height="300" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="580" y="130" width="240" height="5" rx="3" fill="#c084fc"/>
+  <text x="700" y="172" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="0.08em">STEP 3</text>
+  <text x="700" y="205" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Collect &amp;</text>
+  <text x="700" y="232" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Organize</text>
+  <line x1="610" y1="250" x2="790" y2="250" stroke="#30363d" stroke-width="1"/>
+  <text x="610" y="278" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Competitor profiles</text>
+  <text x="610" y="298" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">in searchable system</text>
+  <text x="610" y="330" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="13">Product, positioning,</text>
+  <text x="610" y="350" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="13">content, sales, talent</text>
+  <text x="610" y="375" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Wiki, Notion, or CI tool</text>
+
+  <!-- Arrow -->
+  <line x1="820" y1="280" x2="840" y2="280" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="838,273 852,280 838,287" fill="#5eead4"/>
+
+  <!-- Step 4 -->
+  <rect x="850" y="130" width="240" height="300" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="850" y="130" width="240" height="5" rx="3" fill="#60a5fa"/>
+  <text x="970" y="172" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="0.08em">STEP 4</text>
+  <text x="970" y="205" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Analyze</text>
+  <text x="970" y="232" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Patterns</text>
+  <line x1="880" y1="250" x2="1060" y2="250" stroke="#30363d" stroke-width="1"/>
+  <text x="880" y="278" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Convergence signals</text>
+  <text x="880" y="298" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Divergence signals</text>
+  <text x="880" y="330" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="13">Hiring patterns</text>
+  <text x="880" y="350" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="13">Review sentiment</text>
+  <text x="880" y="375" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Pricing movement</text>
+
+  <!-- Arrow -->
+  <line x1="1090" y1="280" x2="1110" y2="280" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1108,273 1122,280 1108,287" fill="#5eead4"/>
+
+  <!-- Step 5 -->
+  <rect x="1120" y="130" width="240" height="300" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1120" y="130" width="240" height="5" rx="3" fill="#f5a0a1"/>
+  <text x="1240" y="172" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="0.08em">STEP 5</text>
+  <text x="1240" y="205" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Distribute</text>
+  <text x="1240" y="232" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Insights</text>
+  <line x1="1150" y1="250" x2="1330" y2="250" stroke="#30363d" stroke-width="1"/>
+  <text x="1150" y="278" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Sales: Battlecards</text>
+  <text x="1150" y="298" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Product: Monthly briefs</text>
+  <text x="1150" y="330" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="13">Marketing: Positioning</text>
+  <text x="1150" y="350" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="13">updates + gap analysis</text>
+  <text x="1150" y="375" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Leadership: Quarterly review</text>
+
+  <text x="700" y="480" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="16">Weekly alerts · Monthly briefings · Quarterly strategic reviews</text>
+</svg>

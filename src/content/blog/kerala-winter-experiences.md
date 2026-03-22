@@ -2,6 +2,7 @@
 title: "Five Winter Experiences You Cannot Miss in God's Own Country"
 description: "Uncover the beauty of Kerala during winter through these five unforgettable experiences, from tranquil backwaters to vibrant festivals."
 publishDate: 2024-06-18
+updatedDate: 2026-03-21
 category: [Travel]
 img: /assets/stock-4.webp
 img_alt: Kerala winter travel experiences

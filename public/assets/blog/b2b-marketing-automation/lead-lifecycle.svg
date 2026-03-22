@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="520" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">B2B Lead Lifecycle &amp; Automation</text>
+  <text x="700" y="94" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">From anonymous visitor to closed deal</text>
+
+  <!-- Stage 1: Visitor -->
+  <rect x="40" y="140" width="180" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="140" width="180" height="5" rx="3" fill="#6e7681"/>
+  <text x="130" y="185" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">ANONYMOUS</text>
+  <text x="130" y="215" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Visitor</text>
+  <text x="130" y="245" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Browses site</text>
+  <text x="130" y="265" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">No identity yet</text>
+
+  <!-- Arrow -->
+  <line x1="220" y1="220" x2="240" y2="220" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="238,213 252,220 238,227" fill="#5eead4"/>
+  <text x="235" y="132" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="11">Form fill</text>
+
+  <!-- Stage 2: Known Lead -->
+  <rect x="260" y="140" width="180" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="260" y="140" width="180" height="5" rx="3" fill="#5eead4"/>
+  <text x="350" y="185" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">KNOWN</text>
+  <text x="350" y="215" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Lead</text>
+  <text x="350" y="245" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Welcome series</text>
+  <text x="350" y="265" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Begin scoring</text>
+
+  <!-- Arrow -->
+  <line x1="440" y1="220" x2="460" y2="220" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="458,213 472,220 458,227" fill="#5eead4"/>
+  <text x="455" y="132" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="11">Engagement</text>
+
+  <!-- Stage 3: Engaged -->
+  <rect x="480" y="140" width="180" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="480" y="140" width="180" height="5" rx="3" fill="#fb923c"/>
+  <text x="570" y="185" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">ENGAGED</text>
+  <text x="570" y="215" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Nurturing</text>
+  <text x="570" y="245" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Content drip</text>
+  <text x="570" y="265" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Score building</text>
+
+  <!-- Arrow -->
+  <line x1="660" y1="220" x2="680" y2="220" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="678,213 692,220 678,227" fill="#5eead4"/>
+  <text x="675" y="132" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="11">Score 75+</text>
+
+  <!-- Stage 4: MQL -->
+  <rect x="700" y="140" width="180" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="700" y="140" width="180" height="5" rx="3" fill="#c084fc"/>
+  <text x="790" y="185" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">QUALIFIED</text>
+  <text x="790" y="215" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">MQL</text>
+  <text x="790" y="245" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Alert sales team</text>
+  <text x="790" y="265" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Create CRM task</text>
+
+  <!-- Arrow -->
+  <line x1="880" y1="220" x2="900" y2="220" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="898,213 912,220 898,227" fill="#5eead4"/>
+  <text x="895" y="132" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="11">Sales accepts</text>
+
+  <!-- Stage 5: SQL -->
+  <rect x="920" y="140" width="180" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="920" y="140" width="180" height="5" rx="3" fill="#60a5fa"/>
+  <text x="1010" y="185" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">SALES</text>
+  <text x="1010" y="215" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">SQL</text>
+  <text x="1010" y="245" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Demo + follow-up</text>
+  <text x="1010" y="265" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Proposal stage</text>
+
+  <!-- Arrow -->
+  <line x1="1100" y1="220" x2="1120" y2="220" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1118,213 1132,220 1118,227" fill="#5eead4"/>
+  <text x="1115" y="132" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="11">Closed won</text>
+
+  <!-- Stage 6: Customer -->
+  <rect x="1140" y="140" width="220" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1140" y="140" width="220" height="5" rx="3" fill="#f5a0a1"/>
+  <text x="1250" y="185" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">WON</text>
+  <text x="1250" y="215" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Customer</text>
+  <text x="1250" y="245" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Onboarding flow</text>
+  <text x="1250" y="265" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="14">Expansion nurture</text>
+
+  <!-- Bottom labels -->
+  <rect x="40" y="340" width="620" height="80" rx="12" fill="#151b23" stroke="#c084fc" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="350" y="372" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">MARKETING OWNS</text>
+  <text x="350" y="396" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">Automation drives scoring, nurturing &amp; qualification</text>
+
+  <rect x="740" y="340" width="620" height="80" rx="12" fill="#151b23" stroke="#60a5fa" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="1050" y="372" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600">SALES OWNS</text>
+  <text x="1050" y="396" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">Personal outreach, demos &amp; closing</text>
+
+  <text x="700" y="480" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="16">Automation handles stages 1-4 · Sales takes over at SQL · Handoff is the critical moment</text>
+</svg>

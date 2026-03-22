@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="480" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">5 Types of Competitive Intelligence</text>
+  <text x="700" y="94" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">Monitor all five for a complete competitive picture</text>
+
+  <!-- Column 1: Product -->
+  <rect x="40" y="130" width="248" height="290" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="130" width="248" height="5" rx="3" fill="#5eead4"/>
+  <text x="164" y="172" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">Product</text>
+
+  <text x="70" y="210" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Feature launches</text>
+  <text x="70" y="235" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Roadmap signals</text>
+  <text x="70" y="260" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Integration ecosystem</text>
+  <text x="70" y="285" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Changelog tracking</text>
+
+  <line x1="70" y1="310" x2="258" y2="310" stroke="#30363d" stroke-width="1"/>
+  <text x="70" y="338" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600">KEY SIGNAL</text>
+  <text x="70" y="360" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Job postings for specific</text>
+  <text x="70" y="380" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">skill sets = roadmap hints</text>
+
+  <!-- Column 2: Marketing -->
+  <rect x="308" y="130" width="248" height="290" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="308" y="130" width="248" height="5" rx="3" fill="#fb923c"/>
+  <text x="432" y="172" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">Marketing</text>
+
+  <text x="338" y="210" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Messaging changes</text>
+  <text x="338" y="235" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Content strategy</text>
+  <text x="338" y="260" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Ad spend + channels</text>
+  <text x="338" y="285" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Event strategy</text>
+
+  <line x1="338" y1="310" x2="526" y2="310" stroke="#30363d" stroke-width="1"/>
+  <text x="338" y="338" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600">KEY SIGNAL</text>
+  <text x="338" y="360" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Homepage copy changes</text>
+  <text x="338" y="380" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">= positioning shift</text>
+
+  <!-- Column 3: Sales -->
+  <rect x="576" y="130" width="248" height="290" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="576" y="130" width="248" height="5" rx="3" fill="#c084fc"/>
+  <text x="700" y="172" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">Sales</text>
+
+  <text x="606" y="210" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Pricing + packaging</text>
+  <text x="606" y="235" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Win/loss patterns</text>
+  <text x="606" y="260" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Objection handling</text>
+  <text x="606" y="285" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Sales process</text>
+
+  <line x1="606" y1="310" x2="794" y2="310" stroke="#30363d" stroke-width="1"/>
+  <text x="606" y="338" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600">KEY SIGNAL</text>
+  <text x="606" y="360" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Pricing page changes</text>
+  <text x="606" y="380" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">= strategy shift</text>
+
+  <!-- Column 4: Talent -->
+  <rect x="844" y="130" width="248" height="290" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="844" y="130" width="248" height="5" rx="3" fill="#60a5fa"/>
+  <text x="968" y="172" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">Talent</text>
+
+  <text x="874" y="210" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Key hires</text>
+  <text x="874" y="235" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Departures</text>
+  <text x="874" y="260" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Open roles</text>
+  <text x="874" y="285" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Team size changes</text>
+
+  <line x1="874" y1="310" x2="1062" y2="310" stroke="#30363d" stroke-width="1"/>
+  <text x="874" y="338" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600">KEY SIGNAL</text>
+  <text x="874" y="360" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">10 ML engineer hires</text>
+  <text x="874" y="380" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">= AI investment coming</text>
+
+  <!-- Column 5: Financial -->
+  <rect x="1112" y="130" width="248" height="290" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1112" y="130" width="248" height="5" rx="3" fill="#f5a0a1"/>
+  <text x="1236" y="172" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">Financial</text>
+
+  <text x="1142" y="210" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Funding rounds</text>
+  <text x="1142" y="235" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Revenue signals</text>
+  <text x="1142" y="260" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Market share</text>
+  <text x="1142" y="285" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">SEC filings</text>
+
+  <line x1="1142" y1="310" x2="1330" y2="310" stroke="#30363d" stroke-width="1"/>
+  <text x="1142" y="338" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600">KEY SIGNAL</text>
+  <text x="1142" y="360" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">New funding round</text>
+  <text x="1142" y="380" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">= expansion ahead</text>
+
+  <text x="700" y="455" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="16">Track all 5 types · Product and talent intel are the strongest leading indicators</text>
+</svg>

@@ -2,6 +2,7 @@
 title: "Marketing Strategy for New Product: The Complete Launch Playbook (2026)"
 description: "A step-by-step marketing strategy for launching a new product. Covers market research, positioning, channel selection, launch tactics, and post-launch optimization with real data."
 publishDate: 2026-03-08
+updatedDate: 2026-03-21
 category: [Marketing, Product Marketing]
 img: /assets/stock-4.webp
 img_alt: Marketing strategy for new product launch
@@ -47,7 +48,7 @@ Before spending a dollar on marketing, confirm that the market actually wants wh
 - Look for rising trends, not just current volume
 
 **Competitive Landscape:**
-- Map every alternative (including spreadsheets, agencies, and "doing nothing")
+- Map every alternative (including spreadsheets, agencies, and "doing nothing") - our [competitive analysis examples](/blog/competitive-analysis-examples/) provide ready-to-use frameworks for this
 - Identify gaps in their positioning and product
 - Read their 1-2 star reviews - that's where unmet needs live
 
@@ -67,7 +68,7 @@ Before spending a dollar on marketing, confirm that the market actually wants wh
 - Frustrations with current solutions
 - Where they consume information
 
-**Start narrow.** It's better to be the obvious choice for 1,000 companies than a maybe-option for 100,000.
+**Start narrow.** It's better to be the obvious choice for 1,000 companies than a maybe-option for 100,000. For a complete framework on building both your ICP and buyer personas, see our guide on [ICP vs buyer persona](/blog/icp-vs-buyer-persona/).
 
 ### Craft Your Product Positioning
 
@@ -253,3 +254,4 @@ The companies that launch successfully in 2026 aren't the ones with the biggest 
 - [Go-To-Market Strategy Template](/blog/go-to-market-strategy-template/) - The complete GTM framework
 - [What Is Product Marketing?](/blog/what-is-product-marketing/) - The role that drives new product launches
 - [Free AI Tools for Marketing](/blog/free-ai-tools-for-marketing/) - Tools to accelerate your launch
+- [SaaS Product Marketing Strategy](/blog/saas-product-marketing-strategy/) - PMM playbook for SaaS launches specifically

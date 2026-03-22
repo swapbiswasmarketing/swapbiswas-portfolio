@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 620">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="620" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">12 Marketing Automation Workflows</text>
+  <text x="700" y="94" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">Organized by funnel stage</text>
+
+  <!-- Column 1: Acquisition -->
+  <rect x="40" y="130" width="320" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="130" width="320" height="5" rx="3" fill="#5eead4"/>
+  <text x="200" y="172" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">ACQUISITION</text>
+
+  <rect x="70" y="195" width="260" height="50" rx="10" fill="#1a2a2a" stroke="#5eead4" stroke-width="1"/>
+  <text x="85" y="218" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">1</text>
+  <text x="110" y="218" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Welcome Series</text>
+  <text x="110" y="236" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">New subscriber → 5 emails</text>
+
+  <rect x="70" y="260" width="260" height="50" rx="10" fill="#1a2a2a" stroke="#5eead4" stroke-width="1"/>
+  <text x="85" y="283" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">2</text>
+  <text x="110" y="283" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Lead Magnet Nurture</text>
+  <text x="110" y="301" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">Download → deliver + nurture</text>
+
+  <rect x="70" y="325" width="260" height="50" rx="10" fill="#1a2a2a" stroke="#5eead4" stroke-width="1"/>
+  <text x="85" y="348" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">3</text>
+  <text x="110" y="348" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Event Follow-Up</text>
+  <text x="110" y="366" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">Webinar → attendee/no-show paths</text>
+
+  <!-- Column 2: Nurture -->
+  <rect x="380" y="130" width="320" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="380" y="130" width="320" height="5" rx="3" fill="#fb923c"/>
+  <text x="540" y="172" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">NURTURE</text>
+
+  <rect x="410" y="195" width="260" height="50" rx="10" fill="#2a1a0a" stroke="#fb923c" stroke-width="1"/>
+  <text x="425" y="218" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">4</text>
+  <text x="450" y="218" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Lead Scoring</text>
+  <text x="450" y="236" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">Continuous → MQL at threshold</text>
+
+  <rect x="410" y="260" width="260" height="50" rx="10" fill="#2a1a0a" stroke="#fb923c" stroke-width="1"/>
+  <text x="425" y="283" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">5</text>
+  <text x="450" y="283" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Content Drip</text>
+  <text x="450" y="301" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">Interest tag → topic track</text>
+
+  <rect x="410" y="325" width="260" height="50" rx="10" fill="#2a1a0a" stroke="#fb923c" stroke-width="1"/>
+  <text x="425" y="348" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">6</text>
+  <text x="450" y="348" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Trial to Paid</text>
+  <text x="450" y="366" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">Trial start → 14-day conversion</text>
+
+  <!-- Column 3: Retention -->
+  <rect x="720" y="130" width="320" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="720" y="130" width="320" height="5" rx="3" fill="#c084fc"/>
+  <text x="880" y="172" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">RETENTION</text>
+
+  <rect x="750" y="195" width="260" height="50" rx="10" fill="#2a1a3a" stroke="#c084fc" stroke-width="1"/>
+  <text x="765" y="218" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">7</text>
+  <text x="790" y="218" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Onboarding</text>
+  <text x="790" y="236" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">New customer → 30-day activation</text>
+
+  <rect x="750" y="260" width="260" height="50" rx="10" fill="#2a1a3a" stroke="#c084fc" stroke-width="1"/>
+  <text x="765" y="283" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">8</text>
+  <text x="790" y="283" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Re-engagement</text>
+  <text x="790" y="301" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">60 days inactive → 3-email win-back</text>
+
+  <rect x="750" y="325" width="260" height="50" rx="10" fill="#2a1a3a" stroke="#c084fc" stroke-width="1"/>
+  <text x="765" y="348" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">9</text>
+  <text x="790" y="348" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Review Request</text>
+  <text x="790" y="366" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">Success milestone → G2/Capterra</text>
+
+  <!-- Column 4: Revenue -->
+  <rect x="1060" y="130" width="300" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1060" y="130" width="300" height="5" rx="3" fill="#f5a0a1"/>
+  <text x="1210" y="172" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700">REVENUE</text>
+
+  <rect x="1090" y="195" width="240" height="50" rx="10" fill="#2a1515" stroke="#f5a0a1" stroke-width="1"/>
+  <text x="1105" y="218" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">10</text>
+  <text x="1135" y="218" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Cart Abandonment</text>
+  <text x="1135" y="236" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">Abandoned → 3-email recovery</text>
+
+  <rect x="1090" y="260" width="240" height="50" rx="10" fill="#2a1515" stroke="#f5a0a1" stroke-width="1"/>
+  <text x="1105" y="283" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">11</text>
+  <text x="1135" y="283" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Upsell / Cross-sell</text>
+  <text x="1135" y="301" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">Purchase + 14 days → recommend</text>
+
+  <rect x="1090" y="325" width="240" height="50" rx="10" fill="#2a1515" stroke="#f5a0a1" stroke-width="1"/>
+  <text x="1105" y="348" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">12</text>
+  <text x="1135" y="348" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="16">Renewal Reminder</text>
+  <text x="1135" y="366" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="12">60 days before → value recap</text>
+
+  <!-- Bottom recommendation -->
+  <text x="200" y="510" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="15" font-weight="600">Start here →</text>
+  <text x="540" y="510" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="15" font-weight="600">Add next →</text>
+  <text x="880" y="510" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="15" font-weight="600">Then this →</text>
+  <text x="1210" y="510" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="15" font-weight="600">Scale last</text>
+
+  <text x="700" y="580" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="16">Start with Welcome + Lead Scoring + Re-engagement · Add the rest as you grow</text>
+</svg>

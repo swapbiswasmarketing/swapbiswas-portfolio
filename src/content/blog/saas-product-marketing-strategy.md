@@ -2,6 +2,7 @@
 title: "SaaS Product Marketing Strategy: The Complete PMM Playbook (2026)"
 description: "Build a SaaS product marketing strategy that drives pipeline and retention. Covers positioning, launch, adoption, and expansion with frameworks PMMs actually use."
 publishDate: 2026-03-14
+updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
 img_alt: SaaS product marketing strategy framework and playbook
@@ -23,7 +24,7 @@ A SaaS customer who churns after three months destroys your unit economics. The 
 
 ### The Product Is the Marketing Channel
 
-**58% of B2B SaaS companies now run a product-led growth motion** ([ProductLed](https://productled.com/blog/product-led-growth-benchmarks)). When users can try before they buy, the in-product experience becomes your most powerful marketing asset. PMMs must collaborate with product teams to optimize onboarding flows, activation milestones, and upgrade prompts.
+**58% of B2B SaaS companies now run a product-led growth motion** ([ProductLed](https://productled.com/blog/product-led-growth-benchmarks)). See our [product-led growth examples](/blog/product-led-growth-examples/) for how top companies like Slack, Figma, and Canva execute this. When users can try before they buy, the in-product experience becomes your most powerful marketing asset. PMMs must collaborate with product teams to optimize onboarding flows, activation milestones, and upgrade prompts.
 
 ### Buyers and Users Are Often Different People
 
@@ -160,7 +161,7 @@ If you're starting from scratch or rebuilding your approach, here's the sequence
 
 - **Nail your positioning.** Interview 15-20 customers and 5-10 churned customers. Understand why people buy, stay, and leave.
 - **Build your ICP.** Define your [ideal customer profile](/blog/icp-vs-buyer-persona) based on data, not assumptions. Look at your highest-NRR accounts for patterns.
-- **Audit your competitive landscape.** Create [battlecards](/blog/competitive-battlecard-template) for your top three competitors. Update them quarterly.
+- **Audit your competitive landscape.** Create [battlecards](/blog/competitive-battlecard-template) for your top three competitors using insights from your [competitive intelligence analysis](/blog/competitive-intelligence-analysis/). Update them quarterly.
 
 ### Phase 2: Enablement (Months 2-3)
 
@@ -185,6 +186,6 @@ If you're starting from scratch or rebuilding your approach, here's the sequence
 
 A strong SaaS product marketing strategy is not just about launching features or creating sales decks. It's a system that spans the entire customer lifecycle - from first awareness through expansion and renewal. The PMMs who drive the most impact are the ones who obsess over what happens after the sale, not just before it.
 
-Start with positioning and customer research. Build enablement that helps your sales team tell a consistent story. Then invest heavily in adoption, activation, and expansion - because in SaaS, the real revenue comes from customers who stay and grow.
+Start with positioning and customer research. Build enablement that helps your sales team tell a consistent story. Then invest heavily in adoption, activation, and expansion - because in SaaS, the real revenue comes from customers who stay and grow. For the full picture of scaling beyond your PMM foundation, see our [SaaS growth strategy](/blog/saas-growth-strategy/) playbooks and our guide on [marketing automation strategy](/blog/marketing-automation-strategy/) to systematize your nurture and retention workflows.
 
 The benchmarks are clear: **companies with strong NRR outperform on every dimension**. Your SaaS product marketing strategy is the engine that makes that happen.

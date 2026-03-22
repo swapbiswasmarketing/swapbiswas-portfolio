@@ -19,9 +19,36 @@ interface Props {
 	image?: string | undefined;
 	noindex?: boolean | undefined;
 	breadcrumbs?: BreadcrumbItem[];
+	article?: {
+		publishedTime: string;
+		modifiedTime?: string;
+		author?: string;
+		tags?: string[];
+	};
+	profile?: {
+		firstName: string;
+		lastName: string;
+		username?: string;
+	};
 }
 
-const { title, description, image, noindex, breadcrumbs } = Astro.props;
+const { title, description, image, noindex, breadcrumbs, article, profile } = Astro.props;
+
+const navItems = [
+	{ name: "Home", url: "https://swapbiswas.com/" },
+	{ name: "Blog", url: "https://swapbiswas.com/blog/" },
+	{ name: "Reading List", url: "https://swapbiswas.com/reading-list/" },
+	{ name: "About", url: "https://swapbiswas.com/about/" },
+	{ name: "Contact", url: "https://swapbiswas.com/contact/" },
+];
+const siteNavSchema = {
+	"@context": "https://schema.org",
+	"@graph": navItems.map((item) => ({
+		"@type": "SiteNavigationElement",
+		"name": item.name,
+		"url": item.url,
+	})),
+};
 
 const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 	"@context": "https://schema.org",
@@ -40,8 +67,9 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 
 <html lang="en">
 	<head>
-		<MainHead title={title} description={description} image={image} noindex={noindex} />
+		<MainHead title={title} description={description} image={image} noindex={noindex} article={article} profile={profile} />
 		{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+		<script type="application/ld+json" set:html={JSON.stringify(siteNavSchema)} />
 		<ViewTransitions />
 		<slot name="head" />
 	</head>

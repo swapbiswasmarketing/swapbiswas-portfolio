@@ -89,7 +89,18 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 } : null;
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description} image={`/og/${entry.id}.webp`} breadcrumbs={[{ name: "Blog", url: "/blog/" }, { name: entry.data.title }]}>
+<BaseLayout
+	title={entry.data.title}
+	description={entry.data.description}
+	image={`/og/${entry.id}.webp`}
+	breadcrumbs={[{ name: "Blog", url: "/blog/" }, { name: entry.data.title }]}
+	article={{
+		publishedTime: entry.data.publishDate.toISOString(),
+		modifiedTime: (entry.data.updatedDate || entry.data.publishDate).toISOString(),
+		author: "https://swapbiswas.com/about/",
+		tags: entry.data.category,
+	}}
+>
 	<div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar"></div></div>
 	<script type="application/ld+json" set:html={JSON.stringify(blogPostSchema)} />
 	{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
@@ -132,7 +143,7 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 							</nav>
 						</aside>
 					)}
-					<div class="stack gap-10 content-column">
+					<div class="stack gap-10 content-column" data-pagefind-body>
 						<img src={`/og/${entry.id}.webp`} alt={entry.data.img_alt || ''} width="1200" height="630" fetchpriority="high" />
 						<div class="content">
 							<Content />
@@ -262,6 +273,13 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
 		background: var(--gradient-subtle);
+		margin-inline: 0.5rem;
+	}
+
+	@media (min-width: 50em) {
+		.toc {
+			margin-inline: 0;
+		}
 	}
 
 	.toc-toggle {
@@ -453,6 +471,33 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 	.content :global(h2),
 	.content :global(h3) {
 		scroll-margin-top: 5rem;
+		position: relative;
+	}
+
+	.content :global(.heading-anchor) {
+		position: absolute;
+		left: -1.5em;
+		top: 50%;
+		transform: translateY(-50%);
+		color: var(--gray-600);
+		text-decoration: none;
+		font-weight: 400;
+		font-size: 0.8em;
+		opacity: 0;
+		transition: opacity 0.2s ease, color 0.2s ease;
+		line-height: 1;
+	}
+
+	.content :global(h2:hover .heading-anchor),
+	.content :global(h3:hover .heading-anchor),
+	.content :global(.heading-anchor:focus) {
+		opacity: 1;
+		color: var(--accent-regular);
+	}
+
+	.content :global(.heading-anchor.copied) {
+		opacity: 1;
+		color: #22c55e;
 	}
 
 	.content > :global(* + *) {
@@ -580,6 +625,7 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 			border-radius: 0;
 			background: none;
 			padding: 0;
+			margin-inline: 0;
 		}
 
 		.toc-list {
@@ -988,7 +1034,8 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 	function positionToc() {
 		if (!tocSidebar || !wrapper || !isDesktop()) return;
 		const wrapperRect = wrapper.getBoundingClientRect();
-		tocSidebar.style.left = `${wrapperRect.left}px`;
+		const wrapperPadding = parseFloat(getComputedStyle(wrapper).paddingLeft) || 0;
+		tocSidebar.style.left = `${Math.max(16, wrapperRect.left + wrapperPadding)}px`;
 	}
 
 	function onScroll() {
@@ -1039,6 +1086,29 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 	onScroll();
 	window.addEventListener('scroll', onScroll, { passive: true });
 	window.addEventListener('resize', () => { positionToc(); onScroll(); }, { passive: true });
+
+	// Add anchor links to headings (click copies URL)
+	document.querySelectorAll('.content h2[id], .content h3[id]').forEach((heading) => {
+		const id = heading.getAttribute('id');
+		if (!id || heading.querySelector('.heading-anchor')) return;
+		const anchor = document.createElement('a');
+		anchor.className = 'heading-anchor';
+		anchor.href = `#${id}`;
+		anchor.setAttribute('aria-label', `Copy link to ${heading.textContent}`);
+		anchor.textContent = '#';
+		anchor.addEventListener('click', (e) => {
+			e.preventDefault();
+			const url = `${window.location.origin}${window.location.pathname}#${id}`;
+			navigator.clipboard.writeText(url).then(() => {
+				anchor.textContent = '✓';
+				anchor.classList.add('copied');
+				setTimeout(() => { anchor.textContent = '#'; anchor.classList.remove('copied'); }, 1500);
+			});
+			history.replaceState(null, '', `#${id}`);
+			heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		});
+		heading.prepend(anchor);
+	});
 
 	// Wrap tables in scrollable container
 	document.querySelectorAll('.content table').forEach((table) => {

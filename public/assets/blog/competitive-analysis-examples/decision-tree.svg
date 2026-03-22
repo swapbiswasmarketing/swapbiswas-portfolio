@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="600" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">Which Framework Do You Need?</text>
+  <text x="700" y="94" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">Pick the right competitive analysis for your question</text>
+
+  <!-- Central question -->
+  <rect x="400" y="120" width="600" height="60" rx="30" fill="#2a1a0a" stroke="#fb923c" stroke-width="2"/>
+  <text x="700" y="158" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">What competitive question are you answering?</text>
+
+  <!-- Branch lines from question pill -->
+  <line x1="400" y1="150" x2="170" y2="240" stroke="#5eead4" stroke-width="2"/>
+  <polygon points="165,232 162,248 178,240" fill="#5eead4"/>
+
+  <line x1="500" y1="180" x2="420" y2="240" stroke="#fb923c" stroke-width="2"/>
+  <polygon points="414,234 416,250 428,238" fill="#fb923c"/>
+
+  <line x1="700" y1="180" x2="700" y2="240" stroke="#c084fc" stroke-width="2"/>
+  <polygon points="693,238 700,252 707,238" fill="#c084fc"/>
+
+  <line x1="900" y1="180" x2="980" y2="240" stroke="#60a5fa" stroke-width="2"/>
+  <polygon points="974,234 988,238 980,250" fill="#60a5fa"/>
+
+  <line x1="1000" y1="150" x2="1230" y2="240" stroke="#f5a0a1" stroke-width="2"/>
+  <polygon points="1225,232 1238,240 1226,248" fill="#f5a0a1"/>
+
+  <!-- Card 1: Feature Comparison -->
+  <rect x="40" y="250" width="248" height="130" rx="16" fill="#151b23" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="164" y="282" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em">LOSING ON FEATURES?</text>
+  <text x="164" y="312" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Feature Comparison</text>
+  <text x="164" y="340" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="15">Score matrix (0-3 scale)</text>
+  <text x="164" y="362" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Identify product gaps</text>
+
+  <!-- Card 2: Pricing Analysis -->
+  <rect x="308" y="250" width="248" height="130" rx="16" fill="#151b23" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="432" y="282" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em">PRICING PRESSURE?</text>
+  <text x="432" y="312" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Pricing Analysis</text>
+  <text x="432" y="340" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="15">Tier + model comparison</text>
+  <text x="432" y="362" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Find pricing positioning</text>
+
+  <!-- Card 3: Positioning Audit -->
+  <rect x="576" y="250" width="248" height="130" rx="16" fill="#151b23" stroke="#c084fc" stroke-width="1.5"/>
+  <text x="700" y="282" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em">UNCLEAR DIFFERENTIATION?</text>
+  <text x="700" y="312" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Positioning Audit</text>
+  <text x="700" y="340" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="15">Messaging + 2x2 map</text>
+  <text x="700" y="362" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Find open positioning lanes</text>
+
+  <!-- Card 4: SEO Gap Analysis -->
+  <rect x="844" y="250" width="248" height="130" rx="16" fill="#151b23" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="968" y="282" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em">BEHIND IN SEARCH?</text>
+  <text x="968" y="312" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">SEO Gap Analysis</text>
+  <text x="968" y="340" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="15">Keyword + content gaps</text>
+  <text x="968" y="362" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Steal competitor traffic</text>
+
+  <!-- Card 5: Win/Loss Analysis -->
+  <rect x="1112" y="250" width="248" height="130" rx="16" fill="#151b23" stroke="#f5a0a1" stroke-width="1.5"/>
+  <text x="1236" y="282" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" letter-spacing="0.06em">WHY DO WE WIN/LOSE?</text>
+  <text x="1236" y="312" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Win/Loss Analysis</text>
+  <text x="1236" y="340" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="15">Interviews + patterns</text>
+  <text x="1236" y="362" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">Understand deal outcomes</text>
+
+  <!-- Bottom: best starting point -->
+  <rect x="300" y="430" width="800" height="85" rx="16" fill="#151b23" stroke="#d98ee0" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="700" y="462" text-anchor="middle" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="17" font-weight="600">Best starting point if unsure?</text>
+  <text x="700" y="488" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="15">Win/Loss Analysis - answers "why customers choose us or not"</text>
+  <text x="700" y="506" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="13">better than any other method</text>
+
+  <text x="700" y="565" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="16">The best competitive analysis is the one that changes a decision this quarter</text>
+</svg>

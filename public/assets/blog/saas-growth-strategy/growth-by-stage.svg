@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="480" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">SaaS Growth Strategy by Stage</text>
+  <text x="700" y="94" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">Layer playbooks as you scale</text>
+
+  <!-- Stage 1: Pre-PMF -->
+  <rect x="40" y="130" width="420" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="130" width="420" height="5" rx="3" fill="#5eead4"/>
+  <text x="250" y="170" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="0.08em">PRE-PMF</text>
+  <text x="250" y="200" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">$0 - $1M ARR</text>
+  <text x="250" y="230" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="16">Focus: Find product-market fit</text>
+
+  <rect x="80" y="255" width="340" height="45" rx="10" fill="#1a2a2a" stroke="#5eead4" stroke-width="1.5"/>
+  <text x="250" y="284" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="17">1 playbook (Content or Outbound)</text>
+
+  <text x="250" y="330" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="15" font-weight="600">Target: 100%+ growth</text>
+  <text x="250" y="355" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">NRR: 90-100%</text>
+  <text x="250" y="378" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">Churn: Under 5%</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="460" y1="270" x2="480" y2="270" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="478,263 492,270 478,277" fill="#5eead4"/>
+
+  <!-- Stage 2: Growth -->
+  <rect x="490" y="130" width="420" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="490" y="130" width="420" height="5" rx="3" fill="#fb923c"/>
+  <text x="700" y="170" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="0.08em">GROWTH</text>
+  <text x="700" y="200" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">$1M - $10M ARR</text>
+  <text x="700" y="230" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="16">Focus: Scale what works</text>
+
+  <rect x="530" y="255" width="340" height="45" rx="10" fill="#2a1a0a" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="700" y="284" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="17">2 playbooks + Customer Success</text>
+
+  <text x="700" y="330" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="15" font-weight="600">Target: 40-80% growth</text>
+  <text x="700" y="355" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">NRR: 105-115%</text>
+  <text x="700" y="378" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">Churn: Under 3%</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="910" y1="270" x2="930" y2="270" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="928,263 942,270 928,277" fill="#5eead4"/>
+
+  <!-- Stage 3: Scale -->
+  <rect x="940" y="130" width="420" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="940" y="130" width="420" height="5" rx="3" fill="#c084fc"/>
+  <text x="1150" y="170" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="0.08em">SCALE</text>
+  <text x="1150" y="200" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">$10M+ ARR</text>
+  <text x="1150" y="230" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="16">Focus: Efficient multi-channel</text>
+
+  <rect x="980" y="255" width="340" height="45" rx="10" fill="#2a1a3a" stroke="#c084fc" stroke-width="1.5"/>
+  <text x="1150" y="284" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="17">3-4 playbooks + Expansion focus</text>
+
+  <text x="1150" y="330" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="15" font-weight="600">Target: 20-40% growth</text>
+  <text x="1150" y="355" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">NRR: 115-130%</text>
+  <text x="1150" y="378" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">Churn: Under 1.5%</text>
+
+  <text x="700" y="450" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="16">At scale, expansion revenue should exceed new logo revenue</text>
+</svg>

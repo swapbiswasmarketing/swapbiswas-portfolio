@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 420">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="420" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">Customer Journey Map</text>
+  <text x="700" y="94" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">Automate the right message at every stage</text>
+
+  <!-- Stage 1 -->
+  <rect x="30" y="130" width="200" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="30" y="130" width="200" height="5" rx="3" fill="#5eead4"/>
+  <text x="130" y="168" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">STAGE 1</text>
+  <text x="130" y="196" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Awareness</text>
+  <text x="130" y="228" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Content, ads,</text>
+  <text x="130" y="248" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">referrals</text>
+  <text x="130" y="280" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="13">Goal: Capture lead</text>
+
+  <!-- Arrow -->
+  <line x1="230" y1="230" x2="250" y2="230" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="248,223 262,230 248,237" fill="#5eead4"/>
+
+  <!-- Stage 2 -->
+  <rect x="260" y="130" width="200" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="260" y="130" width="200" height="5" rx="3" fill="#fb923c"/>
+  <text x="360" y="168" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">STAGE 2</text>
+  <text x="360" y="196" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Engagement</text>
+  <text x="360" y="228" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Downloads,</text>
+  <text x="360" y="248" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">subscribes, webinar</text>
+  <text x="360" y="280" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="13">Goal: Build interest</text>
+
+  <!-- Arrow -->
+  <line x1="460" y1="230" x2="480" y2="230" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="478,223 492,230 478,237" fill="#5eead4"/>
+
+  <!-- Stage 3 -->
+  <rect x="490" y="130" width="200" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="490" y="130" width="200" height="5" rx="3" fill="#c084fc"/>
+  <text x="590" y="168" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">STAGE 3</text>
+  <text x="590" y="196" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Consideration</text>
+  <text x="590" y="228" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Pricing page,</text>
+  <text x="590" y="248" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">case studies</text>
+  <text x="590" y="280" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="13">Goal: Qualify lead</text>
+
+  <!-- Arrow -->
+  <line x1="690" y1="230" x2="710" y2="230" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="708,223 722,230 708,237" fill="#5eead4"/>
+
+  <!-- Stage 4 -->
+  <rect x="720" y="130" width="200" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="720" y="130" width="200" height="5" rx="3" fill="#60a5fa"/>
+  <text x="820" y="168" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">STAGE 4</text>
+  <text x="820" y="196" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Decision</text>
+  <text x="820" y="228" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Demo, trial,</text>
+  <text x="820" y="248" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">sales conversation</text>
+  <text x="820" y="280" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="13">Goal: Convert</text>
+
+  <!-- Arrow -->
+  <line x1="920" y1="230" x2="940" y2="230" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="938,223 952,230 938,237" fill="#5eead4"/>
+
+  <!-- Stage 5 -->
+  <rect x="950" y="130" width="200" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="950" y="130" width="200" height="5" rx="3" fill="#f5a0a1"/>
+  <text x="1050" y="168" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">STAGE 5</text>
+  <text x="1050" y="196" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Onboarding</text>
+  <text x="1050" y="228" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Setup, first value,</text>
+  <text x="1050" y="248" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">activation</text>
+  <text x="1050" y="280" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="13">Goal: Activate</text>
+
+  <!-- Arrow -->
+  <line x1="1150" y1="230" x2="1170" y2="230" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1168,223 1182,230 1168,237" fill="#5eead4"/>
+
+  <!-- Stage 6 -->
+  <rect x="1180" y="130" width="190" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1180" y="130" width="190" height="5" rx="3" fill="#d98ee0"/>
+  <text x="1275" y="168" text-anchor="middle" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" letter-spacing="0.08em">STAGE 6</text>
+  <text x="1275" y="196" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Expansion</text>
+  <text x="1275" y="228" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">Upsell, cross-sell,</text>
+  <text x="1275" y="248" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="15">advocacy</text>
+  <text x="1275" y="280" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="13">Goal: Grow revenue</text>
+
+  <text x="700" y="390" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="16">Each stage needs specific content, triggers, and exit criteria</text>
+</svg>

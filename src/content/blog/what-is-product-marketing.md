@@ -2,6 +2,7 @@
 title: "What Is Product Marketing? A PMM's Honest Guide (2026)"
 description: "What product marketing actually is, what PMMs do all day, how it's different from other marketing roles, and what the career path really looks like - from someone who does it."
 publishDate: 2026-03-07
+updatedDate: 2026-03-21
 category: [Marketing, Product Marketing, Career]
 img: /assets/stock-4.webp
 img_alt: Product marketing guide illustration
@@ -56,7 +57,7 @@ Here's a typical week in product marketing, broken into the four core pillars:
 - Writing value propositions that connect features to outcomes
 - Testing messaging through customer interviews and A/B experiments
 
-This is the highest-leverage work a PMM does. Get positioning right, and everything downstream -content, ads, sales conversations, onboarding -gets easier.
+This is the highest-leverage work a PMM does. Get positioning right, and everything downstream -content, ads, sales conversations, onboarding -gets easier. For a deep dive on how to do this well, see our [product positioning](/blog/product-positioning/) guide.
 
 ![The Positioning Framework - six elements that define product position](/assets/blog/product-marketing/positioning-framework.webp "The Positioning Framework")
 
@@ -73,7 +74,7 @@ This is the highest-leverage work a PMM does. Get positioning right, and everyth
 
 ### 3. Go-to-Market Execution
 
-- Planning and running product launches
+- Planning and running product launches (see our [go-to-market strategy template](/blog/go-to-market-strategy-template/) for the full framework)
 - Creating launch materials: landing pages, emails, blog posts, press releases
 - Coordinating across engineering, design, sales, support, and marketing
 - Building sales enablement materials: battlecards, one-pagers, demo scripts
@@ -83,7 +84,7 @@ This is the highest-leverage work a PMM does. Get positioning right, and everyth
 ### 4. Sales Enablement
 
 - Training sales teams on new features, positioning, and competitive differentiators
-- Creating battlecards that help reps handle objections
+- Creating [competitive battlecards](/blog/competitive-battlecard-template/) that help reps handle objections
 - Building case studies and customer stories
 - Joining sales calls to understand buyer objections first-hand
 
@@ -219,7 +220,7 @@ If you're considering a career in PMM, here's my advice:
 
 5. **Create a portfolio.** Write positioning documents, messaging frameworks, or competitive analyses for products you use. You don't need permission to practice PMM skills.
 
-Product marketing is one of the most rewarding roles in tech -strategic, cross-functional, close to revenue, and constantly evolving. If you like the intersection of strategy, storytelling, and execution, it might be the right fit.
+For SaaS companies specifically, our [SaaS product marketing strategy](/blog/saas-product-marketing-strategy/) guide covers the unique challenges of recurring revenue, product-led growth, and post-sale marketing. Product marketing is one of the most rewarding roles in tech -strategic, cross-functional, close to revenue, and constantly evolving. If you like the intersection of strategy, storytelling, and execution, it might be the right fit.
 
 And if you're already a PMM reading this: you're in one of the best positions to ride the AI wave. The skills that make a great PMM -customer empathy, strategic thinking, messaging precision -are exactly the skills AI can't replace.
 

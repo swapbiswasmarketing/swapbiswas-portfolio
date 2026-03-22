@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import portraitImg from '../assets/portrait-new.webp';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import Grid from '../components/Grid.astro';
@@ -65,7 +67,12 @@ const brands = [
 ];
 ---
 
-<BaseLayout title="About | Swapnil Biswas" description="About Swapnil Biswas - AI, Product & Digital Growth Marketer" breadcrumbs={[{ name: "About" }]}>
+<BaseLayout
+	title="About | Swapnil Biswas"
+	description="About Swapnil Biswas - AI, Product & Digital Growth Marketer"
+	breadcrumbs={[{ name: "About" }]}
+	profile={{ firstName: "Swapnil", lastName: "Biswas", username: "swapbiswas" }}
+>
 	<script type="application/ld+json" set:html={JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "ProfilePage",
@@ -115,13 +122,14 @@ const brands = [
 					</div>
 				</Hero>
 
-				<img
-					width="480"
-					height="720"
-					src="/assets/portrait-new-480w.webp"
-					srcset="/assets/portrait-new-480w.webp 480w, /assets/portrait-new.webp 1024w"
-					sizes="(max-width: 50em) 100vw, 480px"
+				<Image
+					src={portraitImg}
 					alt="Swapnil Biswas"
+					widths={[480, 768, 1024]}
+					sizes="(max-width: 50em) 100vw, 480px"
+					format="avif"
+					fallbackFormat="webp"
+					class="hero-portrait"
 				/>
 			</header>
 

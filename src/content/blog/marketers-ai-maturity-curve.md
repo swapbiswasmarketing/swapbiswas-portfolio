@@ -2,6 +2,7 @@
 title: "The Marketer's AI Maturity Curve: Where Are You on It?"
 description: "Discover where you stand on the AI maturity curve as a marketer. From AI-curious to AI-native - with real data, practical frameworks, and actionable steps to level up."
 publishDate: 2026-03-06
+updatedDate: 2026-03-21
 category: [AI, Marketing, Thought Leadership]
 img: /assets/stock-2.webp
 img_alt: AI maturity curve for marketers illustration
@@ -37,7 +38,7 @@ I've adapted this framework from [Gartner's AI Maturity Model](https://www.gartn
 
 **How to level up:**
 - Pick ONE repetitive task (e.g., writing meta descriptions, summarizing meeting notes, generating social captions)
-- Use a free tool like ChatGPT, Claude, or Gemini for that one task for 2 weeks straight
+- Use a [free AI tool](/blog/free-ai-tools-for-marketing/) like ChatGPT, Claude, or Gemini for that one task for 2 weeks straight
 - Track time saved - even 30 minutes a day adds up to **10+ hours per month**
 
 
@@ -147,7 +148,7 @@ Here's my simple framework for advancing one stage at a time. I call it **SPAR**
 ### **S - Standardize**
 Pick your tools. Document your processes. Create prompt libraries. Make AI usage consistent across the team.
 
-**Action item:** Create a shared Google Doc or Notion page with your team's top 10 AI prompts, organized by use case (email, blog, social, ad copy).
+**Action item:** Create a shared Google Doc or Notion page with your team's top 10 AI prompts, organized by use case (email, blog, social, ad copy). Our [ChatGPT prompts for marketing](/blog/chatgpt-prompts-for-marketing/) library is a great starting point.
 
 ### **P - Process**
 Build AI into your existing workflows - don't create parallel workflows. AI should fit INTO how you already work, not add another step.
@@ -188,9 +189,9 @@ I've been building AI agents and automating marketing workflows for over a year 
 
 1. **Stage 3 is the sweet spot for most teams.** You don't need to be AI-native to see massive gains. Just being systematic about AI adoption puts you ahead of 70% of marketing teams.
 
-2. **The biggest ROI comes from boring use cases.** It's not the flashy AI-generated video. It's automating your weekly reporting, auto-generating meta descriptions, or having AI pre-score your leads. The boring stuff saves the most time.
+2. **The biggest ROI comes from boring use cases.** It's not the flashy AI-generated video. It's automating your weekly reporting, auto-generating meta descriptions, or having AI pre-score your leads. The boring stuff saves the most time. An [AI SEO strategy](/blog/ai-seo-strategy/) is a perfect example - using AI for keyword clustering and content optimization delivers measurable results without requiring cutting-edge AI infrastructure.
 
-3. **AI doesn't replace marketers - it replaces the parts of marketing that marketers hate.** Data entry. Report formatting. First drafts of repetitive content. The tedious, repetitive work that no one signed up for.
+3. **AI doesn't replace marketers - it replaces the parts of marketing that marketers hate.** Data entry. Report formatting. First drafts of repetitive content. The tedious, repetitive work that no one signed up for. For a deeper exploration of this topic, see our analysis on [whether marketing will be replaced by AI](/blog/will-marketing-be-replaced-by-ai/).
 
 4. **The gap between Stage 2 and Stage 3 is where careers are made.** If you're the person on your team who builds the AI playbook, creates the prompt libraries, and shows the ROI - you become indispensable.
 

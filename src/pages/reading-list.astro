@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+
+interface Resource {
+	title: string;
+	url: string;
+	description: string;
+	category: string;
+}
+
+const resources: Resource[] = [
+	// Marketing Strategy
+	{
+		title: 'Positioning by April Dunford',
+		url: 'https://www.aprildunford.com/obviously-awesome',
+		description: 'The definitive guide to product positioning. Changed how I approach every GTM strategy.',
+		category: 'Marketing Strategy',
+	},
+	{
+		title: 'Crossing the Chasm by Geoffrey Moore',
+		url: 'https://www.harpercollins.com/products/crossing-the-chasm-3rd-edition-geoffrey-a-moore',
+		description: 'Essential reading for anyone marketing technology products. The chasm model still holds up.',
+		category: 'Marketing Strategy',
+	},
+	{
+		title: 'Play Bigger by Al Ramadan et al.',
+		url: 'https://www.playbigger.com/',
+		description: 'Category design thinking - how to create and dominate new market categories.',
+		category: 'Marketing Strategy',
+	},
+	{
+		title: 'Lenny Rachitsky\'s Newsletter',
+		url: 'https://www.lennysnewsletter.com/',
+		description: 'Best product and growth newsletter out there. Data-driven insights from top PMs.',
+		category: 'Marketing Strategy',
+	},
+
+	// SEO & Content
+	{
+		title: 'Ahrefs Blog',
+		url: 'https://ahrefs.com/blog/',
+		description: 'Gold standard for SEO content. Actionable, data-backed, and well-written.',
+		category: 'SEO & Content',
+	},
+	{
+		title: 'Search Engine Journal',
+		url: 'https://www.searchenginejournal.com/',
+		description: 'Stay current with algorithm updates, best practices, and industry analysis.',
+		category: 'SEO & Content',
+	},
+	{
+		title: 'Animalz Blog',
+		url: 'https://www.animalz.co/blog/',
+		description: 'High-quality content marketing strategy for SaaS. Great frameworks.',
+		category: 'SEO & Content',
+	},
+
+	// AI & Technology
+	{
+		title: 'The Batch by Andrew Ng',
+		url: 'https://www.deeplearning.ai/the-batch/',
+		description: 'Weekly AI news digest. Best way to stay informed without the hype.',
+		category: 'AI & Technology',
+	},
+	{
+		title: 'Stratechery by Ben Thompson',
+		url: 'https://stratechery.com/',
+		description: 'Deep analysis of tech strategy and business models. Premium but worth it.',
+		category: 'AI & Technology',
+	},
+	{
+		title: 'a16z Blog',
+		url: 'https://a16z.com/articles/',
+		description: 'Venture capital perspective on tech trends, AI, and startup strategy.',
+		category: 'AI & Technology',
+	},
+
+	// Growth & Product
+	{
+		title: 'Reforge',
+		url: 'https://www.reforge.com/',
+		description: 'Advanced growth programs. Their retention and monetization frameworks are top-tier.',
+		category: 'Growth & Product',
+	},
+	{
+		title: 'First Round Review',
+		url: 'https://review.firstround.com/',
+		description: 'Long-form interviews with startup operators. Practical, detailed, and real.',
+		category: 'Growth & Product',
+	},
+	{
+		title: 'Product-Led Growth by Wes Bush',
+		url: 'https://productled.com/book',
+		description: 'How to build products that sell themselves. Essential for SaaS marketers.',
+		category: 'Growth & Product',
+	},
+
+	// Tools I Use
+	{
+		title: 'Ahrefs',
+		url: 'https://ahrefs.com/',
+		description: 'My go-to for keyword research, backlink analysis, and competitive SEO.',
+		category: 'Tools I Use',
+	},
+	{
+		title: 'Notion',
+		url: 'https://www.notion.so/',
+		description: 'Content calendar, campaign briefs, competitive intel - all in one place.',
+		category: 'Tools I Use',
+	},
+	{
+		title: 'Figma',
+		url: 'https://www.figma.com/',
+		description: 'Design collaboration, landing page wireframes, and marketing assets.',
+		category: 'Tools I Use',
+	},
+	{
+		title: 'Claude by Anthropic',
+		url: 'https://claude.ai/',
+		description: 'AI assistant for research, content drafting, and strategic analysis.',
+		category: 'Tools I Use',
+	},
+];
+
+const categories = [...new Set(resources.map((r) => r.category))];
+---
+
+<BaseLayout
+	title="Reading List | Swapnil Biswas"
+	description="Books, blogs, newsletters, and tools I recommend for marketing, SEO, AI, and growth strategy."
+	breadcrumbs={[{ name: 'Reading List' }]}
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Reading List"
+				tagline="Books, blogs, newsletters, and tools that have shaped how I think about marketing, growth, and AI."
+				align="start"
+			/>
+
+			{categories.map((category) => (
+				<section class="resource-section">
+					<h2 class="section-title">{category}</h2>
+					<div class="resource-grid">
+						{resources
+							.filter((r) => r.category === category)
+							.map((resource) => (
+								<a href={resource.url} class="resource-card" target="_blank" rel="noopener noreferrer">
+									<h3 class="resource-name">{resource.title}</h3>
+									<p class="resource-desc">{resource.description}</p>
+									<span class="resource-link">
+										Visit
+										<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+									</span>
+								</a>
+							))}
+					</div>
+				</section>
+			))}
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.resource-section {
+		margin-bottom: 1rem;
+	}
+
+	.section-title {
+		font-family: var(--font-brand);
+		font-size: var(--text-xl);
+		font-weight: 600;
+		color: var(--gray-0);
+		margin-bottom: 1rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 1px solid var(--gray-800);
+	}
+
+	.resource-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	@media (min-width: 50em) {
+		.resource-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 72em) {
+		.resource-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.resource-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 1.25rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		background: var(--gradient-subtle);
+		text-decoration: none;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+	}
+
+	.resource-card:hover {
+		border-color: var(--gray-700);
+		box-shadow: var(--shadow-md);
+		transform: translateY(-2px);
+	}
+
+	.resource-name {
+		font-family: var(--font-brand);
+		font-size: var(--text-md);
+		font-weight: 600;
+		color: var(--gray-0);
+		margin: 0;
+	}
+
+	.resource-desc {
+		font-size: var(--text-sm);
+		color: var(--gray-300);
+		line-height: 1.6;
+		margin: 0;
+		flex: 1;
+	}
+
+	.resource-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+		font-size: var(--text-sm);
+		font-weight: 500;
+		color: var(--accent-regular);
+		margin-top: 0.25rem;
+	}
+</style>

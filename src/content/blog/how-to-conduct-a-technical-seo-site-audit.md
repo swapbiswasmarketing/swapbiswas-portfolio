@@ -2,6 +2,7 @@
 title: "How to Conduct a Technical SEO Site Audit: The Complete Step-by-Step Guide"
 description: "A practical, step-by-step technical SEO audit checklist. From crawlability to Core Web Vitals - with free tools, real benchmarks, and actionable fixes for every issue."
 publishDate: 2026-03-07
+updatedDate: 2026-03-21
 category: [SEO, Marketing]
 img: /assets/stock-1.webp
 img_alt: Technical SEO audit guide illustration

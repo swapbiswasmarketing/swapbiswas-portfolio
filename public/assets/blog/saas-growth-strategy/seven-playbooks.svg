@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 620">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="620" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">7 SaaS Growth Strategy Playbooks</text>
+  <text x="700" y="94" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="21">Acquisition playbooks on top · Retention playbooks on bottom</text>
+
+  <!-- ACQUISITION label -->
+  <text x="700" y="135" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="0.08em">ACQUISITION</text>
+
+  <!-- Row 1: 5 acquisition playbooks -->
+  <rect x="40" y="155" width="248" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="40" y="155" width="248" height="5" rx="3" fill="#5eead4"/>
+  <text x="164" y="192" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">1</text>
+  <text x="164" y="218" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="19" font-weight="600">Product-Led</text>
+  <text x="164" y="242" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="19" font-weight="600">Growth</text>
+  <text x="164" y="272" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">Freemium / free trial</text>
+
+  <rect x="308" y="155" width="248" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="308" y="155" width="248" height="5" rx="3" fill="#fb923c"/>
+  <text x="432" y="192" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">2</text>
+  <text x="432" y="218" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="19" font-weight="600">Content-Led</text>
+  <text x="432" y="242" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="19" font-weight="600">SEO</text>
+  <text x="432" y="272" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">Organic search engine</text>
+
+  <rect x="576" y="155" width="248" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="576" y="155" width="248" height="5" rx="3" fill="#c084fc"/>
+  <text x="700" y="192" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">3</text>
+  <text x="700" y="218" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="19" font-weight="600">Outbound</text>
+  <text x="700" y="242" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="19" font-weight="600">Sales</text>
+  <text x="700" y="272" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">Enterprise direct sales</text>
+
+  <rect x="844" y="155" width="248" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="844" y="155" width="248" height="5" rx="3" fill="#60a5fa"/>
+  <text x="968" y="192" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">4</text>
+  <text x="968" y="218" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="19" font-weight="600">Community-Led</text>
+  <text x="968" y="242" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="19" font-weight="600">Growth</text>
+  <text x="968" y="272" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">User-driven distribution</text>
+
+  <rect x="1112" y="155" width="248" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="1112" y="155" width="248" height="5" rx="3" fill="#f5a0a1"/>
+  <text x="1236" y="192" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">5</text>
+  <text x="1236" y="218" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="19" font-weight="600">Partnership</text>
+  <text x="1236" y="242" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="19" font-weight="600">Ecosystem</text>
+  <text x="1236" y="272" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="14">Integrations &amp; marketplaces</text>
+
+  <!-- Divider -->
+  <line x1="100" y1="330" x2="1300" y2="330" stroke="#30363d" stroke-width="1" stroke-dasharray="8,6"/>
+
+  <!-- RETENTION label -->
+  <text x="700" y="365" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" letter-spacing="0.08em">RETENTION &amp; EXPANSION</text>
+
+  <!-- Row 2: 2 retention playbooks -->
+  <rect x="265" y="385" width="400" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="265" y="385" width="400" height="5" rx="3" fill="#d98ee0"/>
+  <text x="465" y="422" text-anchor="middle" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">6</text>
+  <text x="465" y="448" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Customer Expansion</text>
+  <text x="465" y="478" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="16">Upsells, cross-sells &amp; seat growth</text>
+  <text x="465" y="502" text-anchor="middle" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="14">58-67% of new ARR at scale</text>
+
+  <rect x="735" y="385" width="400" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <rect x="735" y="385" width="400" height="5" rx="3" fill="#b388f2"/>
+  <text x="935" y="422" text-anchor="middle" fill="#b388f2" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700">7</text>
+  <text x="935" y="448" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="21" font-weight="600">Vertical Specialization</text>
+  <text x="935" y="478" text-anchor="middle" fill="#8b949e" font-family="Segoe UI, sans-serif" font-size="16">Industry-specific deep focus</text>
+  <text x="935" y="502" text-anchor="middle" fill="#b388f2" font-family="Segoe UI, sans-serif" font-size="14">Higher WTP, lower competition</text>
+
+  <text x="700" y="580" text-anchor="middle" fill="#6e7681" font-family="Segoe UI, sans-serif" font-size="16">Pre-PMF: Pick 1 playbook · Growth: Add a 2nd · Scale: Run 3-4 simultaneously</text>
+</svg>

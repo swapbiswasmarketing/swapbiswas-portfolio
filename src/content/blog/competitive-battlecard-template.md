@@ -2,6 +2,7 @@
 title: "How to Create a Competitive Battlecard: Template, Examples, and Best Practices (2026)"
 description: "Learn how to create competitive battlecards that sales teams actually use. Includes a free template, real examples, and the frameworks used by top product marketing teams."
 publishDate: 2026-03-12
+updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
 img: /assets/stock-1.webp
 img_alt: Competitive battlecard template for product marketing
@@ -232,9 +233,11 @@ But AI doesn't replace the strategic thinking. It handles monitoring and formatt
 4. **Fill the template** - Use the 10 sections above, starting with objection handling and talk tracks (highest immediate value)
 5. **Test with 3 reps** - Have them use it for one week, then iterate based on their feedback
 
-Don't try to build battlecards for every competitor at once. Start with one, get it right, then expand.
+Don't try to build battlecards for every competitor at once. Start with one, get it right, then expand. For the full research methodology behind step 2, see our [competitive product analysis framework](/blog/competitive-product-analysis/).
 
 **Related reading:**
 - [Product Positioning](/blog/product-positioning/) - The foundation that battlecards build on
 - [Go-To-Market Strategy Template](/blog/go-to-market-strategy-template/) - Where battlecards fit in the GTM plan
 - [What Is Product Marketing?](/blog/what-is-product-marketing/) - The role that owns competitive intelligence
+- [Competitive Analysis Examples](/blog/competitive-analysis-examples/) - 5 frameworks to inform your battlecard content
+- [Competitive Intelligence Analysis](/blog/competitive-intelligence-analysis/) - Build the system that keeps battlecards current

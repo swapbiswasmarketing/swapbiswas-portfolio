@@ -99,26 +99,72 @@ const POSTS_PER_PAGE = 9;
 
 	let currentCategory = 'all';
 	let currentPage = 1;
-	let searchQuery = '';
+	let searchMatchSlugs = null; // null = no search active, array = matched slugs from Pagefind
+
+	// Load Pagefind lazily
+	let pagefind = null;
+	async function loadPagefind() {
+		if (pagefind) return pagefind;
+		try {
+			pagefind = await import('/pagefind/pagefind.js');
+			await pagefind.init();
+		} catch {
+			pagefind = null;
+		}
+		return pagefind;
+	}
+
+	let searchTimer = null;
+	async function handleSearch(query) {
+		if (!query) {
+			searchMatchSlugs = null;
+			currentPage = 1;
+			render();
+			return;
+		}
+
+		const pf = await loadPagefind();
+		if (!pf) {
+			// Fallback to simple text matching if Pagefind unavailable (dev mode)
+			const q = query.toLowerCase();
+			searchMatchSlugs = [];
+			items.forEach((item) => {
+				const title = item.querySelector('.title')?.textContent?.toLowerCase() || '';
+				const cats = item.getAttribute('data-categories')?.toLowerCase() || '';
+				if (title.includes(q) || cats.includes(q)) {
+					searchMatchSlugs.push(item);
+				}
+			});
+			currentPage = 1;
+			render();
+			return;
+		}
+
+		const search = await pf.search(query);
+		// Load result data to get URLs
+		const resultData = await Promise.all(search.results.map((r) => r.data()));
+		const matchedUrls = resultData.map((d) => d.url.replace(/\/$/, ''));
+		// Match items by checking if their link href matches a result URL
+		searchMatchSlugs = [];
+		for (const item of items) {
+			const link = item.querySelector('a[href]');
+			if (!link) continue;
+			const href = link.getAttribute('href').replace(/\/$/, '');
+			if (matchedUrls.some((url) => url === href || url.endsWith(href))) {
+				searchMatchSlugs.push(item);
+			}
+		}
+		currentPage = 1;
+		render();
+	}
 
 	function getFilteredItems() {
-		let filtered = items;
+		let filtered = searchMatchSlugs !== null ? searchMatchSlugs : items;
 
-		// Category filter
 		if (currentCategory !== 'all') {
 			filtered = filtered.filter((item) => {
 				const cats = item.getAttribute('data-categories')?.split(',') || [];
 				return cats.includes(currentCategory);
-			});
-		}
-
-		// Search filter
-		if (searchQuery) {
-			const q = searchQuery.toLowerCase();
-			filtered = filtered.filter((item) => {
-				const title = item.querySelector('.title')?.textContent?.toLowerCase() || '';
-				const cats = item.getAttribute('data-categories')?.toLowerCase() || '';
-				return title.includes(q) || cats.includes(q);
 			});
 		}
 
@@ -133,17 +179,12 @@ const POSTS_PER_PAGE = 9;
 		const start = (currentPage - 1) * POSTS_PER_PAGE;
 		const end = start + POSTS_PER_PAGE;
 
-		// Show/hide items
 		items.forEach((item) => item.style.display = 'none');
 		filtered.slice(start, end).forEach((item) => item.style.display = '');
 
-		// Empty state
 		emptyState.style.display = filtered.length === 0 ? 'block' : 'none';
-
-		// Pagination visibility
 		pagination.style.display = totalPages <= 1 ? 'none' : 'flex';
 
-		// Page numbers
 		pageNumbers.innerHTML = '';
 		for (let i = 1; i <= totalPages; i++) {
 			const btn = document.createElement('button');
@@ -157,22 +198,21 @@ const POSTS_PER_PAGE = 9;
 			pageNumbers.appendChild(btn);
 		}
 
-		// Prev/Next states
 		prevBtn.disabled = currentPage <= 1;
 		nextBtn.disabled = currentPage >= totalPages;
 	}
 
-	// Search handler
+	// Search handler with debounce
 	const searchClear = document.querySelector('.search-clear');
 	searchInput?.addEventListener('input', (e) => {
-		searchQuery = e.target.value.trim();
-		currentPage = 1;
-		if (searchClear) searchClear.style.display = searchQuery ? 'flex' : 'none';
-		render();
+		const query = e.target.value.trim();
+		if (searchClear) searchClear.style.display = query ? 'flex' : 'none';
+		clearTimeout(searchTimer);
+		searchTimer = setTimeout(() => handleSearch(query), 200);
 	});
 	searchClear?.addEventListener('click', () => {
 		if (searchInput) searchInput.value = '';
-		searchQuery = '';
+		searchMatchSlugs = null;
 		searchClear.style.display = 'none';
 		currentPage = 1;
 		render();
