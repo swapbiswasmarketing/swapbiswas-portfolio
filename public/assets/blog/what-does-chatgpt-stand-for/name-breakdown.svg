@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 680" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="680" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-size="38" font-weight="700">What Does ChatGPT Stand For?</text>
+
+  <!-- Subtitle -->
+  <text x="700" y="98" text-anchor="middle" fill="#9ca3af" font-size="24">Chat · Generative · Pre-trained · Transformer</text>
+
+  <!-- Card 1: Chat (x: 55 to 325 = 270px) -->
+  <g filter="url(#shadow)">
+    <rect x="55" y="140" width="270" height="370" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="55" y="140" width="270" height="4" rx="2" fill="#f5a0a1"/>
+    <text x="190" y="200" text-anchor="middle" fill="#f5a0a1" font-size="48" font-weight="700">C</text>
+    <text x="190" y="245" text-anchor="middle" fill="#f0f6fc" font-size="28" font-weight="600">Chat</text>
+    <line x1="140" y1="262" x2="240" y2="262" stroke="#30363d" stroke-width="1"/>
+    <text x="190" y="300" text-anchor="middle" fill="#c8cfd8" font-size="18">Conversational interface</text>
+    <text x="190" y="338" text-anchor="middle" fill="#c8cfd8" font-size="18">Back-and-forth dialogue</text>
+    <text x="190" y="376" text-anchor="middle" fill="#c8cfd8" font-size="18">Context-aware responses</text>
+  </g>
+
+  <!-- Plus sign 1 -->
+  <text x="355" y="335" text-anchor="middle" fill="#5eead4" font-size="36" font-weight="700">+</text>
+
+  <!-- Card 2: Generative (x: 385 to 655 = 270px) -->
+  <g filter="url(#shadow)">
+    <rect x="385" y="140" width="270" height="370" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="385" y="140" width="270" height="4" rx="2" fill="#c084fc"/>
+    <text x="520" y="200" text-anchor="middle" fill="#c084fc" font-size="48" font-weight="700">G</text>
+    <text x="520" y="245" text-anchor="middle" fill="#f0f6fc" font-size="28" font-weight="600">Generative</text>
+    <line x1="470" y1="262" x2="570" y2="262" stroke="#30363d" stroke-width="1"/>
+    <text x="520" y="300" text-anchor="middle" fill="#c8cfd8" font-size="18">Creates new content</text>
+    <text x="520" y="338" text-anchor="middle" fill="#c8cfd8" font-size="18">Token-by-token output</text>
+    <text x="520" y="376" text-anchor="middle" fill="#c8cfd8" font-size="18">Not retrieval-based</text>
+  </g>
+
+  <!-- Plus sign 2 -->
+  <text x="685" y="335" text-anchor="middle" fill="#5eead4" font-size="36" font-weight="700">+</text>
+
+  <!-- Card 3: Pre-trained (x: 715 to 985 = 270px) -->
+  <g filter="url(#shadow)">
+    <rect x="715" y="140" width="270" height="370" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="715" y="140" width="270" height="4" rx="2" fill="#60a5fa"/>
+    <text x="850" y="200" text-anchor="middle" fill="#60a5fa" font-size="48" font-weight="700">P</text>
+    <text x="850" y="245" text-anchor="middle" fill="#f0f6fc" font-size="28" font-weight="600">Pre-trained</text>
+    <line x1="800" y1="262" x2="900" y2="262" stroke="#30363d" stroke-width="1"/>
+    <text x="850" y="300" text-anchor="middle" fill="#c8cfd8" font-size="18">Learned from vast data</text>
+    <text x="850" y="338" text-anchor="middle" fill="#c8cfd8" font-size="18">Billions of text examples</text>
+    <text x="850" y="376" text-anchor="middle" fill="#c8cfd8" font-size="18">Fine-tuned with RLHF</text>
+  </g>
+
+  <!-- Plus sign 3 -->
+  <text x="1015" y="335" text-anchor="middle" fill="#5eead4" font-size="36" font-weight="700">+</text>
+
+  <!-- Card 4: Transformer (x: 1045 to 1345 = 300px, wider for longer text) -->
+  <g filter="url(#shadow)">
+    <rect x="1045" y="140" width="300" height="370" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1045" y="140" width="300" height="4" rx="2" fill="#fb923c"/>
+    <text x="1195" y="200" text-anchor="middle" fill="#fb923c" font-size="48" font-weight="700">T</text>
+    <text x="1195" y="245" text-anchor="middle" fill="#f0f6fc" font-size="28" font-weight="600">Transformer</text>
+    <line x1="1145" y1="262" x2="1245" y2="262" stroke="#30363d" stroke-width="1"/>
+    <text x="1195" y="300" text-anchor="middle" fill="#c8cfd8" font-size="18">Self-attention architecture</text>
+    <text x="1195" y="338" text-anchor="middle" fill="#c8cfd8" font-size="18">Processes words in parallel</text>
+    <text x="1195" y="376" text-anchor="middle" fill="#c8cfd8" font-size="18">2017 'Attention' paper</text>
+  </g>
+
+  <!-- Footer bar -->
+  <rect x="170" y="555" width="1060" height="76" rx="12" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <text x="700" y="590" text-anchor="middle" fill="#c8cfd8" font-size="19">ChatGPT = A conversational AI built on the Transformer architecture,</text>
+  <text x="700" y="616" text-anchor="middle" fill="#c8cfd8" font-size="19">trained on massive datasets to generate human-like text</text>
+</svg>

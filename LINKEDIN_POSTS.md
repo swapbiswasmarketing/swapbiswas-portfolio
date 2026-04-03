@@ -22,8 +22,17 @@
 
 ### Tracking
 - Mark status as `[POSTED] YYYY-MM-DD` after publishing
+- After posting, add the entry to the **Posted Log** table below so you never post the same blog twice
 - Check GA4 > Acquisition > Traffic acquisition > filter by `linkedin` after 24-48 hours to see UTM traffic
 - Track which posts get the most engagement - double down on those topics
+
+#### Posted Log
+
+| # | Post Title | Topic | Date Posted | Blog Slug |
+|---|-----------|-------|-------------|-----------|
+| 1 | The Marketer's AI Maturity Curve | AI / Tools | 2026-03-17 | `marketers-ai-maturity-curve` |
+| 2 | ChatGPT Prompts for Marketing | AI / Tools | 2026-03-18 | `chatgpt-prompts-for-marketing` |
+| 3 | AI SEO Strategy | SEO / AI | 2026-03-19 | `ai-seo-strategy` |
 
 ### Adding New Blog Posts
 Use the template at the bottom of this file. Follow the same format:
@@ -45,117 +54,45 @@ Never post 2 similar topics back-to-back. Alternate between:
 
 ---
 
-## This Week's Posts
+## This Week's Posts (Week of 2026-03-24)
 
-> **Strategy:** Leading with the highest-engagement topics first. AI posts get the most reach on LinkedIn right now. Product Marketing posts get the most targeted engagement (PMMs share heavily). The SEO post bridges both audiences. Battlecard post is a sleeper hit - CI content gets saved and shared by sales teams.
+> **Strategy:** Topic rotation after an AI-heavy week. PMM (debate-driver) → CI (save/bookmark magnet) → GTM (broad appeal + credibility anchor). Three different categories, no back-to-back overlap.
 
 ---
 
-### Post 1 (Tuesday) - The Marketer's AI Maturity Curve
-**Status:** [SCHEDULED] 2026-03-16
-**Why this first:** AI + self-assessment = highest engagement format on LinkedIn. People love to comment where they fall.
+### Post 1 (Tuesday) - ICP vs Buyer Persona
+**Status:** [SCHEDULED] 2026-03-24
+**Why first:** Short, corrective format drives debate in comments. PMMs and sales people both engage. Strong opener for the week.
 
 **Image prompt (Nano Banana):**
-> A clean, modern infographic-style illustration showing 5 ascending steps or levels on a staircase. Each step is labeled Level 1 to Level 5. A small human figure stands on step 2, looking up at step 5 which glows brightly. Colors: dark navy background, steps in gradient from yellow to orange to blue to purple to glowing white. Minimal, flat design. No text on the image. Professional, LinkedIn-ready. 1200x628 aspect ratio.
+> A split illustration: left side shows a glowing office building icon (representing companies/ICP), right side shows a glowing human silhouette with a magnifying glass (representing buyer persona). A dotted line connects them through a funnel in the center. Dark background, left side in blue tones, right side in orange tones. Clean, minimal, professional. Conveys "two different things that work together." 1200x628 aspect ratio.
 
-91% of marketers say they use AI.
+"ICP and buyer persona are basically the same thing, right?" 🙃
 
-But here's what nobody's talking about 👇
+No. And confusing them is why your pipeline is leaking.
 
-Most of them are stuck at Level 1 - copy-pasting ChatGPT outputs and calling it "AI adoption."
+🏢 ICP = which COMPANIES to target
+(industry, size, revenue, tech stack, pain points)
 
-I spent weeks analyzing research from @Jasper, @BCG, @McKinsey, and @HubSpot to map the 5 levels of AI maturity for marketers:
+👤 Buyer Persona = which PEOPLE inside those companies to talk to
+(role, goals, objections, decision process)
 
-🟡 Level 1: AI-Curious (using ChatGPT for random tasks)
-🟠 Level 2: AI-Assisted (structured prompts, real workflows)
-🔵 Level 3: AI-Integrated (AI embedded in daily ops)
-🟣 Level 4: AI-Optimized (custom models, proprietary data)
-🚀 Level 5: AI-Native (AI-first thinking in everything)
+Your ICP narrows the field.
+Your persona shapes the message.
 
-The uncomfortable truth? Most teams are between Level 1-2 while pretending to be at Level 3.
+You need both. In that order. ☝️
 
-I wrote the full framework with self-assessment questions, real benchmarks, and the exact steps to move up each level.
+I wrote the breakdown with templates for each - heavily informed by frameworks from @HubSpot and @Gartner.
 
-Where do you honestly fall? Be real. 💬
+🔗 https://swapbiswas.com/blog/icp-vs-buyer-persona/?utm_source=linkedin&utm_medium=social&utm_campaign=icp-vs-buyer-persona
 
-🔗 https://swapbiswas.com/blog/marketers-ai-maturity-curve/?utm_source=linkedin&utm_medium=social&utm_campaign=marketers-ai-maturity-curve
-
-#AIMarketing #MarketingStrategy #ArtificialIntelligence #DigitalMarketing #MarTech
+#B2BMarketing #ICP #BuyerPersona #ProductMarketing #SaaS #DemandGen
 
 ---
 
-### Post 2 (Wednesday) - ChatGPT Prompts for Marketing
-**Status:** [SCHEDULED] 2026-03-16
-**Why this second:** Practical + actionable = high saves and shares. Different topic from Post 1 but same AI-interested audience carries over.
-
-**Image prompt (Nano Banana):**
-> A split-screen illustration. Left side shows a plain, boring text prompt in a chat bubble labeled "Bad Prompt" with a red X, dim and grey. Right side shows a detailed, structured prompt in a chat bubble labeled "Good Prompt" with a green checkmark, glowing and vibrant. A robot or AI assistant icon in the center. Dark background, clean minimal design, neon accent colors (green and orange). No actual readable text in the bubbles, just visual lines suggesting text. 1200x628 aspect ratio.
-
-"Write me a blog post about digital marketing." ✍️
-
-That's the prompt 90% of marketers type into @OpenAI's ChatGPT. Then they complain the output sounds generic.
-
-The problem isn't ChatGPT. It's the prompt. 🎯
-
-I compiled 50+ marketing prompt templates I actually use - across:
-📝 Content creation
-📧 Email marketing
-🔍 SEO & keyword research
-📱 Social media
-🧠 Strategy & planning
-💰 Ad copy
-👥 Customer research
-
-But here's the thing - I didn't just list prompts.
-
-I broke down the 5 prompting techniques that make them work:
-Role framing. Chain of thought. Few-shot examples. Constraints. Iteration loops.
-
-Bad prompt = generic output.
-Good prompt = output that sounds like your best marketer wrote it. ✨
-
-Stop blaming the tool 👇
-🔗 https://swapbiswas.com/blog/chatgpt-prompts-for-marketing/?utm_source=linkedin&utm_medium=social&utm_campaign=chatgpt-prompts-for-marketing
-
-#ChatGPT #AIMarketing #PromptEngineering #ContentMarketing #MarketingTips
-
----
-
-### Post 3 (Thursday) - AI SEO Strategy
-**Status:** [SCHEDULED] 2026-03-16
-**Why third:** Bridges AI audience (from Post 1) and marketing practitioners. Strong data hook.
-
-**Image prompt (Nano Banana):**
-> A dramatic illustration of a Google search bar transforming or cracking apart, with AI neural network patterns emerging from behind it. One side shows traditional blue search result links fading away, the other side shows glowing AI-generated answer boxes taking over. Dark background with blue and purple tones. Futuristic, slightly dramatic. Conveys "the old way is dying, the new way is here." Clean, professional. 1200x628 aspect ratio.
-
-I need to tell you something uncomfortable about SEO. 😬
-
-According to @SparkToro, 58-60% of Google searches now end without a single click. @Search Engine Land reports that when @Google's AI Overviews show up, organic CTR drops by 61%. And AI Overviews now reach 2 billion monthly users.
-
-If your SEO strategy is still "write a 2,000-word blog and build some backlinks" - you're playing a game that no longer exists. ❌
-
-I spent 3 weeks building the AI SEO playbook I wish existed. 6 parts:
-
-1️⃣ AI-powered keyword clustering (tools like @Semrush and @Ahrefs make this possible)
-2️⃣ Content optimization (NOT content generation)
-3️⃣ Technical SEO automation
-4️⃣ Link building intelligence
-5️⃣ Optimizing for AI Overviews & answer engines
-6️⃣ Performance monitoring
-
-Every section has real tools, real workflows, and real data.
-
-The old SEO playbook is dead. The new one is better. 🔥
-
-🔗 https://swapbiswas.com/blog/ai-seo-strategy/?utm_source=linkedin&utm_medium=social&utm_campaign=ai-seo-strategy
-
-#SEO #AIStrategy #DigitalMarketing #ContentMarketing #SearchEngineOptimization
-
----
-
-### Post 4 (Friday) - Competitive Battlecard Template
-**Status:** [ ]
-**Why fourth:** Friday = lighter content consumption. Battlecards are a "save for later" post - high bookmark rate which LinkedIn's algorithm loves.
+### Post 2 (Wednesday) - Competitive Battlecard Template
+**Status:** [SCHEDULED] 2026-03-25
+**Why second:** CI content gets saved and shared by sales teams. High bookmark rate which LinkedIn's algorithm loves.
 
 **Image prompt (Nano Banana):**
 > A sleek, top-down view of a desk with a glowing competitive battlecard document in the center, surrounded by chess pieces (representing strategy and competition). One side has pieces standing tall, the other side has pieces knocked over. Dark wood desk, dramatic lighting from above. The battlecard glows with orange/amber light. Professional, moody, strategic feel. Minimal clutter. 1200x628 aspect ratio.
@@ -181,6 +118,38 @@ Also referenced insights from @Klue on CI best practices. 🙌
 🔗 https://swapbiswas.com/blog/competitive-battlecard-template/?utm_source=linkedin&utm_medium=social&utm_campaign=competitive-battlecard-template
 
 #CompetitiveIntelligence #Battlecards #SalesEnablement #ProductMarketing #B2BSales
+
+---
+
+### Post 3 (Thursday) - GTM Strategy Template
+**Status:** [SCHEDULED] 2026-03-26
+**Why third:** Broad appeal to founders + marketers. Strong data hook (95% fail rate) and credibility anchor (657K+ leads).
+
+**Image prompt (Nano Banana):**
+> A top-down view of a blueprint/strategy document on a dark desk, with 6 glowing numbered steps connected by arrows forming a path. Each step has a small icon (target, megaphone, channels, price tag, rocket, chart). Ambient orange and purple glow. Architectural/planning feel. Clean, professional, strategic. 1200x628 aspect ratio.
+
+95% of new products fail (per @G2). 💀
+
+Not because the product is bad. Not because the market is small. Not because the team isn't talented.
+
+Because the GTM strategy was missing. Or incomplete. Or copied from a blog post without adapting it.
+
+I built the GTM template I actually use - step by step:
+
+1️⃣ Market & audience definition
+2️⃣ Positioning & messaging
+3️⃣ Channel strategy
+4️⃣ Pricing & packaging
+5️⃣ Launch execution plan
+6️⃣ Success metrics
+
+Each step has frameworks, examples, and the questions you need to answer before moving to the next one. 📋
+
+This isn't theory. It's the playbook behind real launches that drove real pipeline. 🚀
+
+🔗 https://swapbiswas.com/blog/go-to-market-strategy-template/?utm_source=linkedin&utm_medium=social&utm_campaign=go-to-market-strategy-template
+
+#GoToMarket #GTMStrategy #ProductLaunch #ProductMarketing #StartupMarketing
 
 ---
 
@@ -265,60 +234,6 @@ It's the audit behind 18M+ organic traffic. Now it's yours. 🎁
 🔗 https://swapbiswas.com/blog/how-to-conduct-a-technical-seo-site-audit/?utm_source=linkedin&utm_medium=social&utm_campaign=how-to-conduct-a-technical-seo-site-audit
 
 #TechnicalSEO #SEO #WebPerformance #CoreWebVitals #DigitalMarketing
-
----
-
-### GTM Strategy Template
-**Status:** [ ]
-
-95% of new products fail (per @G2). 💀
-
-Not because the product is bad. Not because the market is small. Not because the team isn't talented.
-
-Because the GTM strategy was missing. Or incomplete. Or copied from a blog post without adapting it.
-
-I built the GTM template I actually use - step by step:
-
-1️⃣ Market & audience definition
-2️⃣ Positioning & messaging
-3️⃣ Channel strategy
-4️⃣ Pricing & packaging
-5️⃣ Launch execution plan
-6️⃣ Success metrics
-
-Each step has frameworks, examples, and the questions you need to answer before moving to the next one. 📋
-
-This isn't theory. It's the playbook behind launches that generated 657K+ leads. 🚀
-
-🔗 https://swapbiswas.com/blog/go-to-market-strategy-template/?utm_source=linkedin&utm_medium=social&utm_campaign=go-to-market-strategy-template
-
-#GoToMarket #GTMStrategy #ProductLaunch #ProductMarketing #StartupMarketing
-
----
-
-### ICP vs Buyer Persona
-**Status:** [ ]
-
-"ICP and buyer persona are basically the same thing, right?" 🙃
-
-No. And confusing them is why your pipeline is leaking.
-
-🏢 ICP = which COMPANIES to target
-(industry, size, revenue, tech stack, pain points)
-
-👤 Buyer Persona = which PEOPLE inside those companies to talk to
-(role, goals, objections, decision process)
-
-Your ICP narrows the field.
-Your persona shapes the message.
-
-You need both. In that order. ☝️
-
-I wrote the breakdown with templates for each - heavily informed by frameworks from @HubSpot and @Gartner.
-
-🔗 https://swapbiswas.com/blog/icp-vs-buyer-persona/?utm_source=linkedin&utm_medium=social&utm_campaign=icp-vs-buyer-persona
-
-#B2BMarketing #ICP #BuyerPersona #ProductMarketing #SaaS #DemandGen
 
 ---
 

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1050" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1050" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-size="38" font-weight="700">The 5-Tool Marketing Stack</text>
+  <text x="700" y="100" text-anchor="middle" fill="#c8cfd8" font-size="24">Everything you need. Nothing you don't.</text>
+
+  <!-- Column headers -->
+  <text x="310" y="150" text-anchor="middle" fill="#9ca3af" font-size="20" font-weight="600" letter-spacing="0.06em">YOUR STACK</text>
+  <text x="1010" y="150" text-anchor="middle" fill="#9ca3af" font-size="20" font-weight="600" letter-spacing="0.06em">WHAT IT REPLACES</text>
+
+  <!-- Tool 1: Website/CMS -->
+  <rect x="60" y="175" width="500" height="120" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="60" y="195" width="6" height="80" rx="3" fill="#f5a0a1"/>
+  <text x="90" y="218" fill="#f5a0a1" font-size="18" font-weight="700" letter-spacing="0.06em">01</text>
+  <text x="130" y="218" fill="#f0f6fc" font-size="24" font-weight="600">Website / CMS</text>
+  <text x="90" y="258" fill="#c8cfd8" font-size="19">WordPress, Webflow, Astro, Squarespace</text>
+  <!-- Arrow -->
+  <line x1="560" y1="235" x2="640" y2="235" stroke="#5eead4" stroke-width="2.5" opacity="0.5"/>
+  <polygon points="640,228 656,235 640,242" fill="#5eead4" opacity="0.5"/>
+  <!-- Replaces -->
+  <rect x="670" y="185" width="670" height="100" rx="14" fill="#151b23" stroke="#30363d" stroke-width="1" opacity="0.7"/>
+  <text x="700" y="225" fill="#c8cfd8" font-size="19">Landing page builder + Form builder + Blog platform</text>
+  <text x="700" y="258" fill="#9ca3af" font-size="17">Replaces: Unbounce, Typeform, Medium, Carrd</text>
+
+  <!-- Tool 2: Email Marketing -->
+  <rect x="60" y="320" width="500" height="120" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="60" y="340" width="6" height="80" rx="3" fill="#c084fc"/>
+  <text x="90" y="363" fill="#c084fc" font-size="18" font-weight="700" letter-spacing="0.06em">02</text>
+  <text x="130" y="363" fill="#f0f6fc" font-size="24" font-weight="600">Email Marketing</text>
+  <text x="90" y="403" fill="#c8cfd8" font-size="19">Kit, Mailchimp, Brevo, ActiveCampaign</text>
+  <!-- Arrow -->
+  <line x1="560" y1="380" x2="640" y2="380" stroke="#5eead4" stroke-width="2.5" opacity="0.5"/>
+  <polygon points="640,373 656,380 640,387" fill="#5eead4" opacity="0.5"/>
+  <!-- Replaces -->
+  <rect x="670" y="330" width="670" height="100" rx="14" fill="#151b23" stroke="#30363d" stroke-width="1" opacity="0.7"/>
+  <text x="700" y="370" fill="#c8cfd8" font-size="19">Newsletter tool + Drip campaigns + Basic CRM</text>
+  <text x="700" y="403" fill="#9ca3af" font-size="17">Replaces: Substack, Drip, Mailerlite, mini-CRM</text>
+
+  <!-- Tool 3: Analytics -->
+  <rect x="60" y="465" width="500" height="120" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="60" y="485" width="6" height="80" rx="3" fill="#60a5fa"/>
+  <text x="90" y="508" fill="#60a5fa" font-size="18" font-weight="700" letter-spacing="0.06em">03</text>
+  <text x="130" y="508" fill="#f0f6fc" font-size="24" font-weight="600">Analytics</text>
+  <text x="90" y="548" fill="#c8cfd8" font-size="19">GA4 + Search Console + Microsoft Clarity</text>
+  <!-- Arrow -->
+  <line x1="560" y1="525" x2="640" y2="525" stroke="#5eead4" stroke-width="2.5" opacity="0.5"/>
+  <polygon points="640,518 656,525 640,532" fill="#5eead4" opacity="0.5"/>
+  <!-- Replaces -->
+  <rect x="670" y="475" width="670" height="100" rx="14" fill="#151b23" stroke="#30363d" stroke-width="1" opacity="0.7"/>
+  <text x="700" y="515" fill="#c8cfd8" font-size="19">Heatmap tool + Dashboard builder + Rank tracker</text>
+  <text x="700" y="548" fill="#9ca3af" font-size="17">Replaces: Hotjar, Looker Studio, basic Ahrefs</text>
+
+  <!-- Tool 4: Social Scheduling -->
+  <rect x="60" y="610" width="500" height="120" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="60" y="630" width="6" height="80" rx="3" fill="#fb923c"/>
+  <text x="90" y="653" fill="#fb923c" font-size="18" font-weight="700" letter-spacing="0.06em">04</text>
+  <text x="130" y="653" fill="#f0f6fc" font-size="24" font-weight="600">Social Scheduling</text>
+  <text x="90" y="693" fill="#c8cfd8" font-size="19">Buffer, Later, Hootsuite</text>
+  <!-- Arrow -->
+  <line x1="560" y1="670" x2="640" y2="670" stroke="#5eead4" stroke-width="2.5" opacity="0.5"/>
+  <polygon points="640,663 656,670 640,677" fill="#5eead4" opacity="0.5"/>
+  <!-- Replaces -->
+  <rect x="670" y="620" width="670" height="100" rx="14" fill="#151b23" stroke="#30363d" stroke-width="1" opacity="0.7"/>
+  <text x="700" y="660" fill="#c8cfd8" font-size="19">Native posting + Link-in-bio + Social listening</text>
+  <text x="700" y="693" fill="#9ca3af" font-size="17">Replaces: Linktree, Sprout Social, manual posting</text>
+
+  <!-- Tool 5: AI Assistant -->
+  <rect x="60" y="755" width="500" height="120" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="60" y="775" width="6" height="80" rx="3" fill="#5eead4"/>
+  <text x="90" y="798" fill="#5eead4" font-size="18" font-weight="700" letter-spacing="0.06em">05</text>
+  <text x="130" y="798" fill="#f0f6fc" font-size="24" font-weight="600">AI Writing Assistant</text>
+  <text x="90" y="838" fill="#c8cfd8" font-size="19">ChatGPT, Claude, Gemini</text>
+  <!-- Arrow -->
+  <line x1="560" y1="815" x2="640" y2="815" stroke="#5eead4" stroke-width="2.5" opacity="0.5"/>
+  <polygon points="640,808 656,815 640,822" fill="#5eead4" opacity="0.5"/>
+  <!-- Replaces -->
+  <rect x="670" y="765" width="670" height="100" rx="14" fill="#151b23" stroke="#30363d" stroke-width="1" opacity="0.7"/>
+  <text x="700" y="805" fill="#c8cfd8" font-size="19">Copywriting tool + SEO optimizer + Brainstorm tool</text>
+  <text x="700" y="838" fill="#9ca3af" font-size="17">Replaces: Jasper, Surfer SEO, idea generators</text>
+
+  <!-- Bottom cost bar -->
+  <rect x="60" y="910" width="1280" height="70" rx="14" fill="#151b23" stroke="#5eead4" stroke-width="1.5" opacity="0.9"/>
+  <text x="700" y="950" text-anchor="middle" fill="#5eead4" font-size="22" font-weight="600">Total: $4/mo (free stack) to $76-101/mo (paid) vs. industry avg $4,830/employee/year</text>
+</svg>

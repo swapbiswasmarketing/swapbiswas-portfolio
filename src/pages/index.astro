@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 // Component Imports
 import CallToAction from '../components/CallToAction.astro';
 // Page section components
@@ -99,15 +99,16 @@ const posts = (await getCollection('blog'))
 					</div>
 				</Hero>
 
-				<Image
+				<Picture
 					src={portraitImg}
 					alt="Swapnil Biswas - AI, Product & Digital Growth Marketer"
 					widths={[480, 768, 1024]}
 					sizes="(max-width: 50em) 100vw, 480px"
-					format="avif"
+					formats={['avif', 'webp']}
 					fallbackFormat="webp"
 					loading="eager"
 					fetchpriority="high"
+					pictureAttributes={{ class: "hero-portrait-picture" }}
 					class="hero-portrait"
 				/>
 			</header>
@@ -330,35 +331,24 @@ const posts = (await getCollection('blog'))
 			(nlForm as any)._nlInit = true;
 			nlForm.addEventListener('submit', async (e) => {
 				e.preventDefault();
-				const subscriberEmail = (nlForm.querySelector('input[name="email_address"]') as HTMLInputElement).value;
 				const btn = nlForm.querySelector('button') as HTMLButtonElement;
 				btn.textContent = 'Subscribing...';
 				btn.disabled = true;
 
 				try {
-					const kitHeaders = {
-						'Content-Type': 'application/json',
-						'X-Kit-Api-Key': 'REDACTED_KIT_API_KEY',
-					};
-
-					// Step 1: Create subscriber
-					const createRes = await fetch('https://api.kit.com/v4/subscribers', {
+					const formData = new FormData(nlForm);
+					const res = await fetch(nlForm.action, {
 						method: 'POST',
-						headers: kitHeaders,
-						body: JSON.stringify({ email_address: subscriberEmail, state: 'active' }),
+						body: formData,
+						headers: { 'Accept': 'application/json' },
 					});
-					if (!createRes.ok) throw new Error('Failed to create subscriber');
-
-					// Step 2: Add subscriber to form
-					await fetch('https://api.kit.com/v4/forms/9145889/subscribers', {
-						method: 'POST',
-						headers: kitHeaders,
-						body: JSON.stringify({ email_address: subscriberEmail }),
-					});
+					if (!res.ok) throw new Error('Subscription failed');
 
 					nlStatus.textContent = 'Subscribed! You\'ll hear from me soon.';
 					nlStatus.style.color = 'var(--accent-regular)';
 					nlForm.reset();
+
+					window.dataLayer?.push({ event: 'newsletter_signup', signup_location: 'homepage' });
 				} catch {
 					nlStatus.textContent = 'Something went wrong. Please try again.';
 					nlStatus.style.color = '#ca7879';

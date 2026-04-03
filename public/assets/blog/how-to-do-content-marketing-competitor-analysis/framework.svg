@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 750" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="750" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-size="38" font-weight="700">Content Competitor Analysis: 6-Step Framework</text>
+
+  <!-- ==================== ROW 1 ==================== -->
+
+  <!-- Step 1 Card -->
+  <rect x="65" y="130" width="390" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="85" y="166" fill="#f5a0a1" font-size="16" font-weight="700" letter-spacing="0.08em">STEP 1</text>
+  <text x="85" y="198" fill="#f0f6fc" font-size="22" font-weight="600">Identify Competitors</text>
+  <text x="85" y="232" fill="#c8cfd8" font-size="18">Google your keywords, check Ahrefs</text>
+  <text x="85" y="256" fill="#c8cfd8" font-size="18">competing domains, pick 3-5 targets</text>
+
+  <!-- Arrow Step 1 → Step 2 (horizontal) -->
+  <line x1="455" y1="230" x2="498" y2="230" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="498,223 512,230 498,237" fill="#5eead4"/>
+
+  <!-- Step 2 Card -->
+  <rect x="505" y="130" width="390" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="525" y="166" fill="#c084fc" font-size="16" font-weight="700" letter-spacing="0.08em">STEP 2</text>
+  <text x="525" y="198" fill="#f0f6fc" font-size="22" font-weight="600">Audit Content</text>
+  <text x="525" y="232" fill="#c8cfd8" font-size="18">Catalog types, frequency, categories,</text>
+  <text x="525" y="256" fill="#c8cfd8" font-size="18">length, and freshness</text>
+
+  <!-- Arrow Step 2 → Step 3 (horizontal) -->
+  <line x1="895" y1="230" x2="938" y2="230" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="938,223 952,230 938,237" fill="#5eead4"/>
+
+  <!-- Step 3 Card -->
+  <rect x="945" y="130" width="390" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="965" y="166" fill="#60a5fa" font-size="16" font-weight="700" letter-spacing="0.08em">STEP 3</text>
+  <text x="965" y="198" fill="#f0f6fc" font-size="22" font-weight="600">Analyze Top Performers</text>
+  <text x="965" y="232" fill="#c8cfd8" font-size="18">Find highest-traffic pages, study</text>
+  <text x="965" y="256" fill="#c8cfd8" font-size="18">quality signals and backlinks</text>
+
+  <!-- ==================== ARROW: Step 3 down to Step 4 ==================== -->
+  <!-- Down from Step 3 bottom-center, left across, down into Step 4 top-center -->
+  <!-- Step 3 bottom-center: 1140, 330 -->
+  <!-- Step 4 top-center: 260, 430 -->
+  <!-- Segment 1: down from Step 3 -->
+  <line x1="1140" y1="330" x2="1140" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <!-- Segment 2: left across -->
+  <line x1="1140" y1="380" x2="260" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <!-- Segment 3: down into Step 4 -->
+  <line x1="260" y1="380" x2="260" y2="423" stroke="#5eead4" stroke-width="2.5"/>
+  <!-- Arrowhead pointing down -->
+  <polygon points="253,423 260,437 267,423" fill="#5eead4"/>
+
+  <!-- ==================== ROW 2 ==================== -->
+
+  <!-- Step 4 Card -->
+  <rect x="65" y="430" width="390" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="85" y="466" fill="#fb923c" font-size="16" font-weight="700" letter-spacing="0.08em">STEP 4</text>
+  <text x="85" y="498" fill="#f0f6fc" font-size="22" font-weight="600">Evaluate SEO</text>
+  <text x="85" y="532" fill="#c8cfd8" font-size="18">Keyword gaps, topic clusters,</text>
+  <text x="85" y="556" fill="#c8cfd8" font-size="18">backlink profiles, on-page patterns</text>
+
+  <!-- Arrow Step 4 → Step 5 (horizontal) -->
+  <line x1="455" y1="530" x2="498" y2="530" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="498,523 512,530 498,537" fill="#5eead4"/>
+
+  <!-- Step 5 Card -->
+  <rect x="505" y="430" width="390" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="525" y="466" fill="#5eead4" font-size="16" font-weight="700" letter-spacing="0.08em">STEP 5</text>
+  <text x="525" y="498" fill="#f0f6fc" font-size="22" font-weight="600">Assess Distribution</text>
+  <text x="525" y="532" fill="#c8cfd8" font-size="18">Email, social, paid promotion,</text>
+  <text x="525" y="556" fill="#c8cfd8" font-size="18">community, syndication channels</text>
+
+  <!-- Arrow Step 5 → Step 6 (horizontal) -->
+  <line x1="895" y1="530" x2="938" y2="530" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="938,523 952,530 938,537" fill="#5eead4"/>
+
+  <!-- Step 6 Card -->
+  <rect x="945" y="430" width="390" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="965" y="466" fill="#d98ee0" font-size="16" font-weight="700" letter-spacing="0.08em">STEP 6</text>
+  <text x="965" y="498" fill="#f0f6fc" font-size="22" font-weight="600">Find Content Gaps</text>
+  <text x="965" y="532" fill="#c8cfd8" font-size="18">Topic, quality, format, and freshness</text>
+  <text x="965" y="556" fill="#c8cfd8" font-size="18">gaps to exploit</text>
+</svg>

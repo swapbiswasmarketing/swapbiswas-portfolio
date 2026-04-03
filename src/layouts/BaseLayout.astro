@@ -126,6 +126,36 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 			addEventListener('load', () => document.documentElement.classList.add('loaded'));
 		</script>
 
+		<!-- Service Worker Registration -->
+		<script is:inline>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/sw.js');
+			}
+		</script>
+
+		<!-- Core Web Vitals → dataLayer → GTM → GA4 -->
+		<script>
+			import { onCLS, onINP, onLCP, onFCP, onTTFB } from 'web-vitals';
+
+			function sendToDataLayer({ name, value, rating, id, navigationType }: { name: string; value: number; rating: string; id: string; navigationType: string }) {
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push({
+					event: 'web_vitals',
+					cwv_metric: name,
+					cwv_value: Math.round(name === 'CLS' ? value * 1000 : value),
+					cwv_rating: rating,
+					cwv_id: id,
+					cwv_navigation_type: navigationType,
+				});
+			}
+
+			onCLS(sendToDataLayer);
+			onINP(sendToDataLayer);
+			onLCP(sendToDataLayer);
+			onFCP(sendToDataLayer);
+			onTTFB(sendToDataLayer);
+		</script>
+
 		<!-- Analytics Event Tracking -->
 		<script is:inline>
 		(function() {
@@ -271,10 +301,13 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 						fetch('https://app.kit.com/forms/9145889/subscriptions', {
 							method: 'POST',
 							body: formData,
-							mode: 'no-cors'
-						}).then(function() {
+							headers: { 'Accept': 'application/json' }
+						}).then(function(res) {
+							if (!res.ok) throw new Error('Subscription failed');
 							if (statusEl) { statusEl.textContent = 'Subscribed!'; statusEl.style.color = 'var(--accent-regular)'; }
 							form.reset();
+							window.dataLayer = window.dataLayer || [];
+							window.dataLayer.push({ event: 'newsletter_signup', signup_location: 'popup' });
 							setTimeout(dismiss, 2000);
 						}).catch(function() {
 							if (statusEl) { statusEl.textContent = 'Something went wrong.'; statusEl.style.color = '#ca7879'; }

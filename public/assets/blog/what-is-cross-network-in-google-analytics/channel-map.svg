@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="800" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-size="38" font-weight="700">How Cross Network Works in GA4</text>
+  <text x="700" y="96" text-anchor="middle" fill="#c8cfd8" font-size="22">Performance Max spans multiple Google networks at once</text>
+
+  <!-- ========== LEFT SIDE: Single-Channel Groupings ========== -->
+  <text x="190" y="152" text-anchor="middle" fill="#c8cfd8" font-size="18" font-weight="600" letter-spacing="0.06em">SINGLE-CHANNEL</text>
+
+  <!-- Paid Search -->
+  <rect x="50" y="180" width="280" height="80" rx="14" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="50" y="194" width="5" height="52" rx="2" fill="#60a5fa"/>
+  <text x="75" y="213" fill="#f0f6fc" font-size="19" font-weight="600">Paid Search</text>
+  <text x="75" y="238" fill="#c8cfd8" font-size="16">Search ads only</text>
+
+  <!-- Display -->
+  <rect x="50" y="280" width="280" height="80" rx="14" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="50" y="294" width="5" height="52" rx="2" fill="#fb923c"/>
+  <text x="75" y="313" fill="#f0f6fc" font-size="19" font-weight="600">Display</text>
+  <text x="75" y="338" fill="#c8cfd8" font-size="16">Banner ads only</text>
+
+  <!-- Paid Video -->
+  <rect x="50" y="380" width="280" height="80" rx="14" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="50" y="394" width="5" height="52" rx="2" fill="#f87171"/>
+  <text x="75" y="413" fill="#f0f6fc" font-size="19" font-weight="600">Paid Video</text>
+  <text x="75" y="438" fill="#c8cfd8" font-size="16">YouTube ads only</text>
+
+  <!-- Paid Social -->
+  <rect x="50" y="480" width="280" height="80" rx="14" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="50" y="494" width="5" height="52" rx="2" fill="#d98ee0"/>
+  <text x="75" y="513" fill="#f0f6fc" font-size="19" font-weight="600">Paid Social</text>
+  <text x="75" y="538" fill="#c8cfd8" font-size="16">Meta, LinkedIn, etc.</text>
+
+  <!-- Each covers one network -->
+  <text x="190" y="590" text-anchor="middle" fill="#c8cfd8" font-size="16" font-style="italic">Each covers one network</text>
+
+  <!-- ========== DIVIDER ========== -->
+  <line x1="390" y1="150" x2="390" y2="595" stroke="#30363d" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <rect x="370" y="355" width="40" height="30" rx="8" fill="#0d1117"/>
+  <text x="390" y="376" text-anchor="middle" fill="#5eead4" font-size="16" font-weight="700">VS</text>
+
+  <!-- ========== RIGHT SIDE: Cross Network ========== -->
+  <text x="880" y="152" text-anchor="middle" fill="#c084fc" font-size="18" font-weight="600" letter-spacing="0.06em">MULTI-CHANNEL (CROSS NETWORK)</text>
+
+  <!-- Central Cross Network card -->
+  <rect x="720" y="300" width="320" height="130" rx="16" fill="#151b23" stroke="#c084fc" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="880" y="348" text-anchor="middle" fill="#c084fc" font-size="28" font-weight="700">Cross Network</text>
+  <text x="880" y="378" text-anchor="middle" fill="#c8cfd8" font-size="18">Performance Max / Demand Gen</text>
+  <text x="880" y="406" text-anchor="middle" fill="#c8cfd8" font-size="16">Ads across ALL networks below</text>
+
+  <!-- Connection lines from center to network bubbles -->
+  <line x1="760" y1="300" x2="590" y2="235" stroke="#5eead4" stroke-width="2" opacity="0.5"/>
+  <line x1="1000" y1="300" x2="1110" y2="235" stroke="#5eead4" stroke-width="2" opacity="0.5"/>
+  <line x1="720" y1="365" x2="640" y2="365" stroke="#5eead4" stroke-width="2" opacity="0.5"/>
+  <line x1="1040" y1="365" x2="1120" y2="365" stroke="#5eead4" stroke-width="2" opacity="0.5"/>
+  <line x1="760" y1="430" x2="590" y2="495" stroke="#5eead4" stroke-width="2" opacity="0.5"/>
+  <line x1="1000" y1="430" x2="1110" y2="495" stroke="#5eead4" stroke-width="2" opacity="0.5"/>
+
+  <!-- Network bubbles -->
+  <!-- Google Search (top-left) -->
+  <rect x="460" y="190" width="180" height="66" rx="12" fill="#151b23" stroke="#60a5fa" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="550" y="220" text-anchor="middle" fill="#60a5fa" font-size="18" font-weight="600">Google Search</text>
+  <text x="550" y="244" text-anchor="middle" fill="#c8cfd8" font-size="15">Search ads</text>
+
+  <!-- YouTube (top-right) -->
+  <rect x="1050" y="190" width="180" height="66" rx="12" fill="#151b23" stroke="#f87171" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1140" y="220" text-anchor="middle" fill="#f87171" font-size="18" font-weight="600">YouTube</text>
+  <text x="1140" y="244" text-anchor="middle" fill="#c8cfd8" font-size="15">Video ads</text>
+
+  <!-- Display Network (left) -->
+  <rect x="460" y="332" width="180" height="66" rx="12" fill="#151b23" stroke="#fb923c" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="550" y="362" text-anchor="middle" fill="#fb923c" font-size="18" font-weight="600">Display Network</text>
+  <text x="550" y="386" text-anchor="middle" fill="#c8cfd8" font-size="15">Banner ads</text>
+
+  <!-- Gmail (right) -->
+  <rect x="1120" y="332" width="180" height="66" rx="12" fill="#151b23" stroke="#5eead4" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1210" y="362" text-anchor="middle" fill="#5eead4" font-size="18" font-weight="600">Gmail</text>
+  <text x="1210" y="386" text-anchor="middle" fill="#c8cfd8" font-size="15">Promotions tab</text>
+
+  <!-- Discover (bottom-left) -->
+  <rect x="460" y="472" width="180" height="66" rx="12" fill="#151b23" stroke="#d98ee0" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="550" y="502" text-anchor="middle" fill="#d98ee0" font-size="18" font-weight="600">Discover</text>
+  <text x="550" y="526" text-anchor="middle" fill="#c8cfd8" font-size="15">Feed ads</text>
+
+  <!-- Google Maps (bottom-right) -->
+  <rect x="1050" y="472" width="180" height="66" rx="12" fill="#151b23" stroke="#b388f2" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1140" y="502" text-anchor="middle" fill="#b388f2" font-size="18" font-weight="600">Google Maps</text>
+  <text x="1140" y="526" text-anchor="middle" fill="#c8cfd8" font-size="15">Local ads</text>
+
+  <!-- ========== BOTTOM KEY ========== -->
+  <rect x="180" y="620" width="1040" height="80" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <text x="700" y="652" text-anchor="middle" fill="#f0f6fc" font-size="19" font-weight="600">In GA4: Cross Network = traffic from campaigns spanning multiple Google networks</text>
+  <text x="700" y="680" text-anchor="middle" fill="#c8cfd8" font-size="16">Performance Max, Demand Gen, and legacy Smart Shopping all appear under this channel grouping</text>
+</svg>

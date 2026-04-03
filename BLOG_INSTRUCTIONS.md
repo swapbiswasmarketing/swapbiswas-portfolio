@@ -59,7 +59,6 @@ Only use these 4 stock images for the `img` frontmatter field:
 - **Every stat must be verifiable.** Check the cited URL actually contains the claimed data
 - **Sources must be less than 5 years old.** Do not cite studies, reports, or data older than 5 years. Find a recent equivalent or rewrite without the specific number
 - **Every number needs a source where it makes sense.** Stats, percentages, dollar amounts, and data points should have an inline citation link. Exceptions: obvious/general numbers (e.g., "3-5 emails", "under 40 characters") that aren't research claims
-- Use markdown link format: `([Source Name](URL))`
 - Prefer primary sources over aggregator sites
 - If a stat can't be verified, either remove it or state it without specific numbers
 - **Verification means visiting the exact cited URL.** Confirming a stat "exists on the internet" is NOT verification. You must open the linked URL and confirm the exact number appears on that specific page. If the number is real but not on the page you linked, find the correct URL or use the actual primary source
@@ -91,11 +90,12 @@ Card shadow:    feDropShadow dx=0 dy=4 stdDeviation=8 flood-opacity=0.4
 Border radius:  rx="16" for cards, rx="24" for outer container
 Font:           Segoe UI, system-ui, sans-serif
 Title text:     #f0f6fc, 38px, weight 700
-Heading text:   #f0f6fc, 28px, weight 600
-Body text:      #c8cfd8, 21px (32px line spacing minimum)
-Subtitle text:  #9ca3af, 24px
-Step labels:    accent color, 20px, weight 700, letter-spacing 0.08em
-Tool hints:     accent color, 19px, weight 500
+Heading text:   #f0f6fc, 24-28px, weight 600
+Body text:      #c8cfd8, 19-21px (32px line spacing minimum)
+Supporting text:#9ca3af, 17-19px (for secondary labels, "replaces" lines, etc.)
+Subtitle text:  #9ca3af, 22-24px
+Step labels:    accent color, 18-20px, weight 700, letter-spacing 0.08em
+Tool hints:     accent color, 17-19px, weight 500
 ```
 
 ### Brand Colors (for accent bars, dots, highlights)
@@ -166,7 +166,7 @@ After converting SVG to WebP, **always view the WebP image** to verify:
 - [ ] No text is clipped at image edges (especially right and bottom)
 - [ ] Arrow labels are not hidden behind adjacent cards
 - [ ] Bottom footer text is fully visible and not cut off
-- [ ] All text is readable at the rendered size (minimum 12px for subtitles, 16px for body)
+- [ ] All text is readable at the rendered size (minimum 17px for supporting text, 19px for body)
 - [ ] If the SVG source was updated (e.g., pricing changes), the WebP was re-rendered
 
 ### Examples

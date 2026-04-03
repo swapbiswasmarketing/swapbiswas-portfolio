@@ -12,9 +12,11 @@
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.0",
     "@resvg/resvg-js": "^2.6.2",
+    "@testmuai/browser-cloud": "^1.0.1",
     "astro": "^5.17.1",
     "rehype-external-links": "^3.0.0",
-    "satori": "^0.19.2"
+    "satori": "^0.19.2",
+    "web-vitals": "^5.2.0"
   },
   "devDependencies": {
     "pagefind": "^1.4.0",

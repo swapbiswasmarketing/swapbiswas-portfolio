@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="780" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-size="38" font-weight="700">How to Check SEO Rankings: Choose Your Method</text>
+
+  <!-- Column headers -->
+  <text x="230" y="110" text-anchor="middle" fill="#5eead4" font-size="20" font-weight="600" letter-spacing="2">YOUR NEED</text>
+  <text x="1030" y="110" text-anchor="middle" fill="#5eead4" font-size="20" font-weight="600" letter-spacing="2">BEST METHOD</text>
+
+  <!-- ===================== ROW 1: Quick Spot Check ===================== -->
+
+  <!-- Left Card 1 -->
+  <g filter="url(#shadow)">
+    <rect x="55" y="135" width="350" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="55" y="135" width="5" height="160" rx="2" fill="#f5a0a1"/>
+  </g>
+  <text x="80" y="178" fill="#f5a0a1" font-size="22" font-weight="700">Quick Spot Check</text>
+  <text x="80" y="210" fill="#c8cfd8" font-size="18">Check a few keywords</text>
+  <text x="80" y="235" fill="#c8cfd8" font-size="18">right now</text>
+  <text x="80" y="272" fill="#5eead4" font-size="15" font-weight="600">Best for: bloggers, freelancers</text>
+
+  <!-- Arrow 1 -->
+  <line x1="415" y1="215" x2="570" y2="215" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="570,208 584,215 570,222" fill="#5eead4"/>
+
+  <!-- Right Card 1 -->
+  <g filter="url(#shadow)">
+    <rect x="595" y="135" width="750" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="595" y="135" width="5" height="160" rx="2" fill="#f5a0a1"/>
+  </g>
+  <text x="625" y="178" fill="#f5a0a1" font-size="22" font-weight="700">Free Tools</text>
+  <rect x="725" y="160" width="52" height="24" rx="6" fill="#f5a0a1" opacity="0.15"/>
+  <text x="751" y="177" text-anchor="middle" fill="#f5a0a1" font-size="13" font-weight="700">FREE</text>
+
+  <circle cx="635" cy="210" r="4" fill="#5eead4"/>
+  <text x="650" y="215" fill="#c8cfd8" font-size="18">Google Search Console - real click &amp; position data</text>
+
+  <circle cx="635" cy="240" r="4" fill="#5eead4"/>
+  <text x="650" y="245" fill="#c8cfd8" font-size="18">Manual Incognito Search - instant, zero cost</text>
+
+  <circle cx="635" cy="270" r="4" fill="#5eead4"/>
+  <text x="650" y="275" fill="#c8cfd8" font-size="18">Free Rank Checkers - Ubersuggest, SERPWatcher lite</text>
+
+  <!-- ===================== ROW 2: Regular Monitoring ===================== -->
+
+  <!-- Left Card 2 -->
+  <g filter="url(#shadow)">
+    <rect x="55" y="330" width="350" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="55" y="330" width="5" height="160" rx="2" fill="#c084fc"/>
+  </g>
+  <text x="80" y="373" fill="#c084fc" font-size="22" font-weight="700">Regular Monitoring</text>
+  <text x="80" y="405" fill="#c8cfd8" font-size="18">Track keywords</text>
+  <text x="80" y="430" fill="#c8cfd8" font-size="18">weekly / monthly</text>
+  <text x="80" y="467" fill="#5eead4" font-size="15" font-weight="600">Best for: agencies, growing sites</text>
+
+  <!-- Arrow 2 -->
+  <line x1="415" y1="410" x2="570" y2="410" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="570,403 584,410 570,417" fill="#5eead4"/>
+
+  <!-- Right Card 2 -->
+  <g filter="url(#shadow)">
+    <rect x="595" y="330" width="750" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="595" y="330" width="5" height="160" rx="2" fill="#c084fc"/>
+  </g>
+  <text x="625" y="373" fill="#c084fc" font-size="22" font-weight="700">Pro Rank Trackers</text>
+  <rect x="790" y="355" width="50" height="24" rx="6" fill="#c084fc" opacity="0.15"/>
+  <text x="815" y="372" text-anchor="middle" fill="#c084fc" font-size="13" font-weight="700">PAID</text>
+  <rect x="850" y="355" width="52" height="24" rx="6" fill="#5eead4" opacity="0.15"/>
+  <text x="876" y="372" text-anchor="middle" fill="#5eead4" font-size="13" font-weight="700">FREE</text>
+
+  <circle cx="635" cy="405" r="4" fill="#5eead4"/>
+  <text x="650" y="410" fill="#c8cfd8" font-size="18">Ahrefs Rank Tracker - daily updates, SERP features</text>
+
+  <circle cx="635" cy="435" r="4" fill="#5eead4"/>
+  <text x="650" y="440" fill="#c8cfd8" font-size="18">Semrush Position Tracking - competitor comparison</text>
+
+  <circle cx="635" cy="465" r="4" fill="#5eead4"/>
+  <text x="650" y="470" fill="#c8cfd8" font-size="18">GA4 + GSC Integration - free traffic correlation</text>
+
+  <!-- ===================== ROW 3: Enterprise Scale ===================== -->
+
+  <!-- Left Card 3 -->
+  <g filter="url(#shadow)">
+    <rect x="55" y="525" width="350" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="55" y="525" width="5" height="160" rx="2" fill="#fb923c"/>
+  </g>
+  <text x="80" y="568" fill="#fb923c" font-size="22" font-weight="700">Enterprise Scale</text>
+  <text x="80" y="600" fill="#c8cfd8" font-size="18">1000s of keywords,</text>
+  <text x="80" y="625" fill="#c8cfd8" font-size="18">multiple sites</text>
+  <text x="80" y="662" fill="#5eead4" font-size="15" font-weight="600">Best for: large brands, SaaS</text>
+
+  <!-- Arrow 3 -->
+  <line x1="415" y1="605" x2="570" y2="605" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="570,598 584,605 570,612" fill="#5eead4"/>
+
+  <!-- Right Card 3 -->
+  <g filter="url(#shadow)">
+    <rect x="595" y="525" width="750" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="595" y="525" width="5" height="160" rx="2" fill="#fb923c"/>
+  </g>
+  <text x="625" y="568" fill="#fb923c" font-size="22" font-weight="700">SERP API Tools</text>
+  <rect x="788" y="550" width="50" height="24" rx="6" fill="#fb923c" opacity="0.15"/>
+  <text x="813" y="567" text-anchor="middle" fill="#fb923c" font-size="13" font-weight="700">PAID</text>
+
+  <circle cx="635" cy="600" r="4" fill="#5eead4"/>
+  <text x="650" y="605" fill="#c8cfd8" font-size="18">SerpApi - scalable Google SERP data via API</text>
+
+  <circle cx="635" cy="630" r="4" fill="#5eead4"/>
+  <text x="650" y="635" fill="#c8cfd8" font-size="18">DataForSEO - bulk rank tracking, 700+ locations</text>
+
+  <circle cx="635" cy="660" r="4" fill="#5eead4"/>
+  <text x="650" y="665" fill="#c8cfd8" font-size="18">Custom dashboards - pipe data into Looker / Sheets</text>
+
+  <!-- Footer hint -->
+  <text x="700" y="740" text-anchor="middle" fill="#484f58" font-size="14">swapbiswas.com</text>
+</svg>
