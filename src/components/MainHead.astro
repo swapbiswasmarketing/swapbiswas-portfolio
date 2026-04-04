@@ -86,9 +86,6 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 <meta name="theme-color" content="#090b11" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://www.googletagmanager.com" />
-<link rel="preconnect" href="https://scripts.clarity.ms" crossorigin />
-<link rel="dns-prefetch" href="https://www.clarity.ms" />
 <link rel="dns-prefetch" href="https://api.kit.com" />
 <link
 	rel="preload"
@@ -102,31 +99,36 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 		rel="stylesheet"
 	/>
 </noscript>
-<!-- Google Tag Manager -->
+<!-- Analytics: only load on production -->
 <script is:inline>
-	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-WGNTLP2R');
-</script>
+	if (location.hostname === 'swapbiswas.com' || location.hostname === 'www.swapbiswas.com') {
+		// Preconnect hints for analytics domains
+		var pc1=document.createElement('link');pc1.rel='preconnect';pc1.href='https://www.googletagmanager.com';document.head.appendChild(pc1);
+		var pc2=document.createElement('link');pc2.rel='preconnect';pc2.href='https://scripts.clarity.ms';pc2.crossOrigin='';document.head.appendChild(pc2);
 
-<!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-32PVYX6VRH" is:inline></script>
-<script is:inline>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-32PVYX6VRH');
-</script>
+		// Google Tag Manager
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-WGNTLP2R');
 
-<!-- Microsoft Clarity -->
-<script is:inline>
-	(function(c,l,a,r,i,t,y){
-		c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-		t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-		y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-	})(window,document,"clarity","script","myl5bf3yc1");
+		// Google Analytics (GA4)
+		var s=document.createElement('script');s.async=true;
+		s.src='https://www.googletagmanager.com/gtag/js?id=G-32PVYX6VRH';
+		document.head.appendChild(s);
+		window.dataLayer=window.dataLayer||[];
+		var gtag=function(){dataLayer.push(arguments);};
+		gtag('js',new Date());
+		gtag('config','G-32PVYX6VRH');
+
+		// Microsoft Clarity
+		(function(c,l,a,r,i,t,y){
+			c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+			t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+		})(window,document,"clarity","script","myl5bf3yc1");
+	}
 </script>
 
 <script is:inline>
@@ -150,11 +152,20 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 		// Re-apply after View Transition swap (before new page renders)
 		if (!window._themeInit) {
 			window._themeInit = true;
+			var swapping = false;
 
-			document.addEventListener('astro:after-swap', applyTheme);
+			document.addEventListener('astro:before-swap', function () {
+				swapping = true;
+			});
+
+			document.addEventListener('astro:after-swap', function () {
+				applyTheme();
+				swapping = false;
+			});
 
 			if (typeof localStorage !== 'undefined') {
 				var observer = new MutationObserver(function () {
+					if (swapping) return;
 					var isDark = document.documentElement.classList.contains('theme-dark');
 					localStorage.setItem('theme', isDark ? 'dark' : 'light');
 				});

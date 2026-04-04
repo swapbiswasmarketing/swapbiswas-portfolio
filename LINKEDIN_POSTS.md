@@ -33,6 +33,9 @@
 | 1 | The Marketer's AI Maturity Curve | AI / Tools | 2026-03-17 | `marketers-ai-maturity-curve` |
 | 2 | ChatGPT Prompts for Marketing | AI / Tools | 2026-03-18 | `chatgpt-prompts-for-marketing` |
 | 3 | AI SEO Strategy | SEO / AI | 2026-03-19 | `ai-seo-strategy` |
+| 4 | ICP vs Buyer Persona | PMM | 2026-03-24 | `icp-vs-buyer-persona` |
+| 5 | Competitive Battlecard Template | CI | 2026-03-25 | `competitive-battlecard-template` |
+| 6 | GTM Strategy Template | GTM | 2026-03-26 | `go-to-market-strategy-template` |
 
 ### Adding New Blog Posts
 Use the template at the bottom of this file. Follow the same format:
@@ -61,7 +64,7 @@ Never post 2 similar topics back-to-back. Alternate between:
 ---
 
 ### Post 1 (Tuesday) - ICP vs Buyer Persona
-**Status:** [SCHEDULED] 2026-03-24
+**Status:** [POSTED] 2026-03-24
 **Why first:** Short, corrective format drives debate in comments. PMMs and sales people both engage. Strong opener for the week.
 
 **Image prompt (Nano Banana):**
@@ -91,7 +94,7 @@ I wrote the breakdown with templates for each - heavily informed by frameworks f
 ---
 
 ### Post 2 (Wednesday) - Competitive Battlecard Template
-**Status:** [SCHEDULED] 2026-03-25
+**Status:** [POSTED] 2026-03-25
 **Why second:** CI content gets saved and shared by sales teams. High bookmark rate which LinkedIn's algorithm loves.
 
 **Image prompt (Nano Banana):**
@@ -122,7 +125,7 @@ Also referenced insights from @Klue on CI best practices. 🙌
 ---
 
 ### Post 3 (Thursday) - GTM Strategy Template
-**Status:** [SCHEDULED] 2026-03-26
+**Status:** [POSTED] 2026-03-26
 **Why third:** Broad appeal to founders + marketers. Strong data hook (95% fail rate) and credibility anchor (657K+ leads).
 
 **Image prompt (Nano Banana):**
@@ -153,9 +156,142 @@ This isn't theory. It's the playbook behind real launches that drove real pipeli
 
 ---
 
+## This Week's Posts (Week of 2026-04-07)
+
+> **Strategy:** Four fresh blogs that haven't been promoted yet. AI/SEO (timely) → MarTech (provocative, shareable) → PLG (aspirational, big names) → Analytics (practical, newer post). No topic overlap.
+
+---
+
+### Post 1 (Tuesday) - AI and the Future of SEO
+**Status:** [SCHEDULED] 2026-04-07
+**Why first:** AI + SEO crossover is the hottest topic in marketing right now. Strong data hook drives debate. Opens the week with authority.
+
+**Image prompt (Nano Banana):**
+> A dark, moody split-screen composition. Left half: a classic Google-style search results page with 3 blue link snippets, slightly faded and cracked like aging concrete. Right half: a glowing AI chat interface with a single clean answer block radiating warm orange light, with subtle neural network connection lines behind it. A bold vertical dividing line in the center, glowing white, with a small "vs" badge where the line meets the middle. The left side has a cool blue-gray tone, the right side has warm orange-purple tones. No text except the "vs" badge. Flat, editorial illustration style. Professional and bold. 1200x628 aspect ratio.
+
+60% of Google searches now end without a click. 😳
+
+AI Overviews have captured up to 25% of searches. @ChatGPT and @Perplexity are becoming parallel search engines.
+
+So is SEO dead? No. But it's splitting into two games:
+
+🔍 Traditional SEO: Still works. But zero-click means you need to win the snippet, not just the ranking.
+🤖 Generative Engine Optimization: Getting cited by AI models is the new "page one."
+
+What's NOT changing:
+✅ E-E-A-T signals (experience AI can't fake)
+✅ Technical fundamentals (crawlability, speed, schema)
+✅ Original research and first-party data
+
+What IS changing:
+⚡ Content depth matters more than content volume
+⚡ Brand mentions are becoming a ranking signal
+⚡ Conversational long-tail queries are exploding
+
+I wrote the full breakdown with data from @Semrush, @Ahrefs, and @SparkToro. 👇
+
+🔗 https://swapbiswas.com/blog/ai-future-of-seo/?utm_source=linkedin&utm_medium=social&utm_campaign=ai-future-of-seo
+
+#SEO #AI #AIOverviews #DigitalMarketing #ContentStrategy #GEO
+
+---
+
+### Post 2 (Wednesday) - You Don't Need 15,384 Marketing Tools
+**Status:** [SCHEDULED] 2026-04-08
+**Why second:** Provocative title drives saves and shares. Every marketer relates to tool fatigue. High engagement format.
+
+**Image prompt (Nano Banana):**
+> A dark background with two contrasting zones. Left zone: a tangled, chaotic web of 50+ tiny app icons and subscription badges crammed together, overlapping, glowing dimly in muted grays and blues - overwhelming and suffocating. Right zone: exactly 5 bold, clean hexagonal tool icons floating in a neat horizontal row, each a different accent color (orange, teal, purple, blue, pink), connected by a single thin glowing line. A large "5" in bold white typography sits subtly behind the right group. The left side feels heavy and compressed, the right side feels airy and spacious. Flat editorial illustration, no text except the number 5. 1200x628 aspect ratio.
+
+15,384 marketing tools exist right now (per @ChiefMartec). 🤯
+
+Companies waste $21M/year on unused SaaS licenses.
+54.9% of CMOs say they're disappointed in their martech ROI.
+
+The problem isn't the tools. It's the stack.
+
+After years of testing, building, and discarding - here's what 90% of teams actually need:
+
+1️⃣ Website/CMS (your home base)
+2️⃣ Email marketing (highest ROI channel, still)
+3️⃣ Analytics (you can't improve what you can't measure)
+4️⃣ Social scheduler (consistency > virality)
+5️⃣ AI writing assistant (the multiplier)
+
+That's it. Five tools. Not fifty.
+
+I wrote the guide with specific recommendations at each budget level - from $0 to enterprise. 💰
+
+🔗 https://swapbiswas.com/blog/marketing-tools-you-need/?utm_source=linkedin&utm_medium=social&utm_campaign=marketing-tools-you-need
+
+#MarTech #MarketingTools #DigitalMarketing #SaaS #MarketingStrategy
+
+---
+
+### Post 3 (Thursday) - Product-Led Growth Examples
+**Status:** [SCHEDULED] 2026-04-09
+**Why third:** Big-name examples (Figma, Slack, Notion) attract broad audience. Aspirational content gets bookmarked. Strong end-of-week engagement.
+
+**Image prompt (Nano Banana):**
+> A dark background with a single dramatic hockey-stick growth curve rendered as a thick, glowing orange line rising sharply from bottom-left to top-right. Along the curve, 10 small glowing circles are placed at intervals like milestones, each a different color (purple, teal, blue, pink, amber, green, coral, lavender, cyan, gold). Below the curve's flat early section, a tiny label reads "Free tier." Above the explosive growth section, a tiny label reads "Viral loop kicks in." Subtle grid lines in dark gray behind everything. The curve itself has a soft glow and light particle trail. Minimal, data-visualization style. No logos. 1200x628 aspect ratio.
+
+@Figma: $1.056B revenue.
+@Canva: $4B ARR.
+@Notion: 100M users.
+
+What do they have in common? None of them needed a sales team to get their first 10,000 users. 🚀
+
+Product-led growth isn't "make it free and hope." It's a system:
+
+🔄 Viral loops that make sharing the natural action
+🎁 Freemium tiers that create value before asking for money
+👥 Collaborative features that pull in entire teams
+📈 Usage-based expansion that grows revenue without outbound
+
+I broke down 10 PLG companies - what they did, the metrics behind it, and what you can steal for your own product. 👇
+
+Including lessons from @Slack, @Zoom, @Calendly, @Loom, and @Dropbox.
+
+🔗 https://swapbiswas.com/blog/product-led-growth-examples/?utm_source=linkedin&utm_medium=social&utm_campaign=product-led-growth-examples
+
+#ProductLedGrowth #PLG #SaaS #GrowthStrategy #ProductMarketing #B2BSaaS
+
+---
+
 ## Remaining Posts (for future weeks)
 
 > Pick 3-4 per week. Alternate topics. Use the same posting rules above.
+
+---
+
+### How to Read a Heatmap
+**Status:** [ ]
+
+**Image prompt (Nano Banana):**
+> A bird's-eye view of a simplified webpage layout (navigation bar, hero block, two columns, CTA button, footer) drawn in thin white wireframe lines on a pure dark background. Overlaid on the wireframe is a realistic thermal heatmap: the CTA button and hero area glow intense red-orange-yellow (hot zones), the navigation bar glows warm amber, and the footer and sidebar fade to deep blue and purple (cold zones). The color transitions are smooth and organic like real thermal imaging. A single cursor icon sits on the hottest red zone. No text on the page, just the wireframe structure with the heatmap overlay. Photorealistic thermal camera aesthetic. 1200x628 aspect ratio.
+
+40% of online visits are plagued by user frustration (per @Contentsquare). 😤
+
+Your analytics tell you WHAT happened.
+Heatmaps tell you WHY.
+
+That CTA with a 2% click rate? The heatmap shows users never scroll that far.
+That "simple" form with 80% abandonment? Rage clicks on the third field.
+
+I wrote the practical guide to reading heatmaps:
+
+🔴 Click maps - where users actually tap (spoiler: not where you think)
+📜 Scroll maps - the "fold" is different on every page
+🖱️ Move maps - attention patterns that predict intent
+😡 Rage clicks - the silent conversion killers
+
+With real interpretation examples and the exact fixes for each pattern.
+
+Tools covered: @Hotjar, @Microsoft Clarity (free!), @Crazy Egg, and more.
+
+🔗 https://swapbiswas.com/blog/how-to-read-a-heatmap/?utm_source=linkedin&utm_medium=social&utm_campaign=how-to-read-a-heatmap
+
+#UX #CRO #Heatmaps #WebAnalytics #ConversionOptimization #DigitalMarketing
 
 ---
 
