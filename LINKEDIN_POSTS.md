@@ -36,6 +36,9 @@
 | 4 | ICP vs Buyer Persona | PMM | 2026-03-24 | `icp-vs-buyer-persona` |
 | 5 | Competitive Battlecard Template | CI | 2026-03-25 | `competitive-battlecard-template` |
 | 6 | GTM Strategy Template | GTM | 2026-03-26 | `go-to-market-strategy-template` |
+| 7 | AI and the Future of SEO | SEO / AI | 2026-04-07 | `ai-future-of-seo` |
+| 8 | You Don't Need 15,384 Marketing Tools | MarTech | 2026-04-08 | `marketing-tools-you-need` |
+| 9 | Product-Led Growth Examples | PLG | 2026-04-09 | `product-led-growth-examples` |
 
 ### Adding New Blog Posts
 Use the template at the bottom of this file. Follow the same format:
@@ -163,7 +166,7 @@ This isn't theory. It's the playbook behind real launches that drove real pipeli
 ---
 
 ### Post 1 (Tuesday) - AI and the Future of SEO
-**Status:** [SCHEDULED] 2026-04-07
+**Status:** [POSTED] 2026-04-07
 **Why first:** AI + SEO crossover is the hottest topic in marketing right now. Strong data hook drives debate. Opens the week with authority.
 
 **Image prompt (Nano Banana):**
@@ -197,7 +200,7 @@ I wrote the full breakdown with data from @Semrush, @Ahrefs, and @SparkToro. ðŸ‘
 ---
 
 ### Post 2 (Wednesday) - You Don't Need 15,384 Marketing Tools
-**Status:** [SCHEDULED] 2026-04-08
+**Status:** [POSTED] 2026-04-08
 **Why second:** Provocative title drives saves and shares. Every marketer relates to tool fatigue. High engagement format.
 
 **Image prompt (Nano Banana):**
@@ -229,7 +232,7 @@ I wrote the guide with specific recommendations at each budget level - from $0 t
 ---
 
 ### Post 3 (Thursday) - Product-Led Growth Examples
-**Status:** [SCHEDULED] 2026-04-09
+**Status:** [POSTED] 2026-04-09
 **Why third:** Big-name examples (Figma, Slack, Notion) attract broad audience. Aspirational content gets bookmarked. Strong end-of-week engagement.
 
 **Image prompt (Nano Banana):**

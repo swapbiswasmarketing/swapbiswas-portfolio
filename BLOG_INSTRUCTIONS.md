@@ -122,6 +122,7 @@ Red:            #f87171
 - Save WebP files to `public/assets/blog/{post-slug}/filename.webp`
 - Reference in markdown as `![Alt text](/assets/blog/{post-slug}/filename.webp "Title")`
 - ViewBox: typically `0 0 1400 680-800` (wide format, large for readability)
+- **Max render width: 1200px** - blog images must not exceed 1200px wide. Render SVGs at 1200px via resvg.
 - **Mobile responsiveness:** All blog content images automatically scale to `max-width: 100%` via CSS. No extra attributes needed in markdown. If an image appears too wide on mobile, the blog template handles it.
 
 ### SVG to WebP Conversion
@@ -131,7 +132,7 @@ const sharp = require('sharp');
 const fs = require('fs');
 
 const svg = fs.readFileSync('input.svg', 'utf8');
-const resvg = new Resvg(svg, { fitTo: { mode: 'width', value: 1800 } });
+const resvg = new Resvg(svg, { fitTo: { mode: 'width', value: 1200 } });
 const png = resvg.render().asPng();
 await sharp(png).webp({ quality: 90 }).toFile('output.webp');
 ```
