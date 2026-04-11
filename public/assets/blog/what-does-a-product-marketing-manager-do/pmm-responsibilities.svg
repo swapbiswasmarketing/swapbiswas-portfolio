@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="880" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="80" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">The 4 Pillars of Product Marketing</text>
+  <text x="700" y="120" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="24">Core responsibilities every product marketing manager owns</text>
+
+  <!-- ROW 1: Cards 1-2 -->
+  <!-- Card 1: Positioning -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="170" width="620" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="170" width="620" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="100" y="224" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">PILLAR 1</text>
+    <text x="100" y="276" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="34" font-weight="700">Positioning &amp; Messaging</text>
+    <text x="100" y="322" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="23">Who is this for, why should they care, and</text>
+    <text x="100" y="358" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="23">how do we say it in 30 seconds or less.</text>
+    <text x="100" y="406" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21" font-weight="500">Outputs: positioning doc, value prop, taglines</text>
+  </g>
+
+  <!-- Card 2: Launches -->
+  <g filter="url(#cardShadow)">
+    <rect x="720" y="170" width="620" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="720" y="170" width="620" height="6" rx="3" fill="#c084fc"/>
+    <text x="760" y="224" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">PILLAR 2</text>
+    <text x="760" y="276" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="34" font-weight="700">Go-to-Market &amp; Launches</text>
+    <text x="760" y="322" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="23">Owns launch tier, channel mix, pricing input,</text>
+    <text x="760" y="358" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="23">and post-launch measurement.</text>
+    <text x="760" y="406" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21" font-weight="500">Outputs: launch plan, campaign briefs, KPIs</text>
+  </g>
+
+  <!-- ROW 2: Cards 3-4 -->
+  <!-- Card 3: Research -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="465" width="620" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="465" width="620" height="6" rx="3" fill="#60a5fa"/>
+    <text x="100" y="519" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">PILLAR 3</text>
+    <text x="100" y="571" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="34" font-weight="700">Customer &amp; Market Research</text>
+    <text x="100" y="617" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="23">Win/loss interviews, buyer personas, and</text>
+    <text x="100" y="653" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="23">the ICP everyone else treats as ground truth.</text>
+    <text x="100" y="701" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21" font-weight="500">Outputs: ICP, personas, win/loss insights</text>
+  </g>
+
+  <!-- Card 4: Sales Enablement -->
+  <g filter="url(#cardShadow)">
+    <rect x="720" y="465" width="620" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="720" y="465" width="620" height="6" rx="3" fill="#5eead4"/>
+    <text x="760" y="519" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">PILLAR 4</text>
+    <text x="760" y="571" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="34" font-weight="700">Sales Enablement &amp; CI</text>
+    <text x="760" y="617" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="23">Equip reps to win. Track competitors.</text>
+    <text x="760" y="653" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="23">Run head-to-head battlecards.</text>
+    <text x="760" y="701" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21" font-weight="500">Outputs: battlecards, demo scripts, objection handling</text>
+  </g>
+
+  <!-- Bottom insight bar -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="770" width="1280" height="82" rx="16" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <text x="700" y="821" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="24">
+      <tspan fill="#5eead4" font-weight="700">44.3%</tspan> of PMM teams are still 1-2 people.
+      <tspan fill="#c084fc" font-weight="700">88.8%</tspan> work closely with product.
+      <tspan fill="#fb923c" font-weight="700">81%</tspan> with marketing.
+    </text>
+  </g>
+</svg>

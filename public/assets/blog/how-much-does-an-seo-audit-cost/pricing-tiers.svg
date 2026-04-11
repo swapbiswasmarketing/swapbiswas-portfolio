@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="78" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">SEO Audit Pricing Tiers (2026)</text>
+  <text x="700" y="118" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="24">Match the audit depth to your site size and goals</text>
+
+  <!-- ROW 1: Three pricing tiers -->
+  <!-- Tier 1: Basic -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="160" width="410" height="420" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="160" width="410" height="6" rx="3" fill="#5eead4"/>
+    <text x="90" y="212" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">TIER 1</text>
+    <text x="90" y="262" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="36" font-weight="700">Basic Audit</text>
+    <text x="90" y="318" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">$300 - $800</text>
+    <line x1="90" y1="340" x2="440" y2="340" stroke="#30363d" stroke-width="1"/>
+    <text x="90" y="382" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">Best for: small sites, startups</text>
+    <text x="90" y="416" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">Scope: under 50 pages</text>
+    <text x="90" y="464" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">• Technical health check</text>
+    <text x="90" y="498" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">• Top 10 priority issues</text>
+    <text x="90" y="532" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">• Simple written report</text>
+  </g>
+
+  <!-- Tier 2: Comprehensive -->
+  <g filter="url(#cardShadow)">
+    <rect x="495" y="160" width="410" height="420" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="495" y="160" width="410" height="6" rx="3" fill="#c084fc"/>
+    <text x="525" y="212" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">TIER 2</text>
+    <text x="525" y="262" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="36" font-weight="700">Comprehensive</text>
+    <text x="525" y="318" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">$1,500 - $5,000</text>
+    <line x1="525" y1="340" x2="875" y2="340" stroke="#30363d" stroke-width="1"/>
+    <text x="525" y="382" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">Best for: mid-market, SaaS</text>
+    <text x="525" y="416" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">Scope: 50 - 5,000 pages</text>
+    <text x="525" y="464" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">• Technical + on-page + content</text>
+    <text x="525" y="498" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">• Backlink + competitor gap</text>
+    <text x="525" y="532" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">• Prioritized action roadmap</text>
+  </g>
+
+  <!-- Tier 3: Enterprise -->
+  <g filter="url(#cardShadow)">
+    <rect x="930" y="160" width="410" height="420" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="930" y="160" width="410" height="6" rx="3" fill="#fb923c"/>
+    <text x="960" y="212" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">TIER 3</text>
+    <text x="960" y="262" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="36" font-weight="700">Enterprise</text>
+    <text x="960" y="318" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">$10,000+</text>
+    <line x1="960" y1="340" x2="1310" y2="340" stroke="#30363d" stroke-width="1"/>
+    <text x="960" y="382" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">Best for: e-commerce, global</text>
+    <text x="960" y="416" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">Scope: 5,000+ pages</text>
+    <text x="960" y="464" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">• Full stack + log file analysis</text>
+    <text x="960" y="498" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">• International SEO + hreflang</text>
+    <text x="960" y="532" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">• Migration prep + workshops</text>
+  </g>
+
+  <!-- Divider section -->
+  <text x="700" y="632" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="30" font-weight="600">What Drives the Price</text>
+
+  <!-- 5 cost-driver pills -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="670" width="248" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="670" width="248" height="5" rx="3" fill="#f5a0a1"/>
+    <text x="184" y="722" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Site Size</text>
+    <text x="184" y="762" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Page count and</text>
+    <text x="184" y="792" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">architecture depth</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="328" y="670" width="248" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="328" y="670" width="248" height="5" rx="3" fill="#c084fc"/>
+    <text x="452" y="722" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Depth</text>
+    <text x="452" y="762" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Diagnostic vs.</text>
+    <text x="452" y="792" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">causal analysis</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="596" y="670" width="248" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="596" y="670" width="248" height="5" rx="3" fill="#60a5fa"/>
+    <text x="720" y="722" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Competition</text>
+    <text x="720" y="762" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Niche complexity</text>
+    <text x="720" y="792" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">and SERP density</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="864" y="670" width="248" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="864" y="670" width="248" height="5" rx="3" fill="#5eead4"/>
+    <text x="988" y="722" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Tools</text>
+    <text x="988" y="762" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Paid SEO stack</text>
+    <text x="988" y="792" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">baked into fee</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="1132" y="670" width="208" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1132" y="670" width="208" height="5" rx="3" fill="#fb923c"/>
+    <text x="1236" y="722" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Seniority</text>
+    <text x="1236" y="762" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Freelancer to</text>
+    <text x="1236" y="792" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">senior agency</text>
+  </g>
+</svg>

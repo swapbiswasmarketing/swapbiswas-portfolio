@@ -27,6 +27,14 @@ export const collections = {
 				q: z.string(),
 				a: z.string(),
 			})).optional(),
+			howTo: z.object({
+				name: z.string().optional(),
+				totalTime: z.string().optional(),
+				steps: z.array(z.object({
+					name: z.string(),
+					text: z.string(),
+				})),
+			}).optional(),
 		}),
 	}),
 };

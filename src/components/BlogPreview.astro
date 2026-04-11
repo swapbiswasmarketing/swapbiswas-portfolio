@@ -23,9 +23,17 @@ const publishDate = data.publishDate.toLocaleDateString('en-US', {
 	month: 'short',
 	day: 'numeric',
 });
+
+function categorySlug(cat: string): string {
+	return cat
+		.toLowerCase()
+		.replace(/&/g, 'and')
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-+|-+$/g, '');
+}
 ---
 
-<a class="card" href={`/blog/${id}`}>
+<article class="card">
 	{optimizedImg ? (
 		<Image
 			src={optimizedImg}
@@ -33,7 +41,6 @@ const publishDate = data.publishDate.toLocaleDateString('en-US', {
 			widths={[400, 800]}
 			sizes="(max-width: 50em) 100vw, 400px"
 			format="avif"
-			fallbackFormat="webp"
 			loading="lazy"
 			decoding="async"
 			class="card-img"
@@ -42,7 +49,9 @@ const publishDate = data.publishDate.toLocaleDateString('en-US', {
 		<img src={data.img} alt={data.img_alt || ''} width="400" height="237" loading="lazy" decoding="async" />
 	)}
 	<div class="card-body">
-		<span class="title">{data.title}</span>
+		<h3 class="title">
+			<a class="card-link" href={`/blog/${id}`}>{data.title}</a>
+		</h3>
 		<div class="card-meta">
 			<span>{publishDate}</span>
 			<span class="sep">&middot;</span>
@@ -50,14 +59,15 @@ const publishDate = data.publishDate.toLocaleDateString('en-US', {
 		</div>
 		<div class="card-tags">
 			{data.category.slice(0, 2).map((cat) => (
-				<span class="tag">{cat}</span>
+				<a class="tag" href={`/blog/category/${categorySlug(cat)}/`}>{cat}</a>
 			))}
 		</div>
 	</div>
-</a>
+</article>
 
 <style>
 	.card {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
@@ -66,12 +76,12 @@ const publishDate = data.publishDate.toLocaleDateString('en-US', {
 		border-radius: 0.75rem;
 		overflow: hidden;
 		box-shadow: var(--shadow-sm);
-		text-decoration: none;
-		transition: box-shadow var(--theme-transition);
+		transition: box-shadow var(--theme-transition), border-color 0.2s ease;
 	}
 
 	.card:hover {
 		box-shadow: var(--shadow-md);
+		border-color: var(--gray-700);
 	}
 
 	img {
@@ -93,6 +103,33 @@ const publishDate = data.publishDate.toLocaleDateString('en-US', {
 		font-weight: 600;
 		color: var(--gray-200);
 		line-height: 1.4;
+		margin: 0;
+	}
+
+	.card-link,
+	.card-link:link,
+	.card-link:visited,
+	.card-link:hover {
+		color: var(--gray-200) !important;
+		text-decoration: none !important;
+	}
+
+	/* Stretched link: make the whole card clickable while keeping tag links clickable */
+	.card-link::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+	}
+
+	.card-link:focus-visible {
+		outline: none;
+	}
+
+	.card-link:focus-visible::before {
+		outline: 2px solid var(--accent-regular);
+		outline-offset: -2px;
+		border-radius: 0.75rem;
 	}
 
 	.card-meta {
@@ -107,6 +144,8 @@ const publishDate = data.publishDate.toLocaleDateString('en-US', {
 		display: flex;
 		gap: 0.35rem;
 		flex-wrap: wrap;
+		position: relative;
+		z-index: 2;
 	}
 
 	.tag {
@@ -116,6 +155,19 @@ const publishDate = data.publishDate.toLocaleDateString('en-US', {
 		background: var(--gray-999_40);
 		border: 1px solid var(--gray-800);
 		color: var(--gray-300);
+		text-decoration: none;
+		transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+	}
+
+	.tag:hover {
+		border-color: var(--accent-regular);
+		color: var(--accent-light);
+		background: var(--accent-overlay);
+	}
+
+	.tag:focus-visible {
+		outline: 2px solid var(--accent-regular);
+		outline-offset: 2px;
 	}
 
 	@media (min-width: 50em) {

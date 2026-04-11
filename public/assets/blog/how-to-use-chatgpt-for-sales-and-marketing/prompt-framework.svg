@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="78" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">The 4-Part Prompt Framework</text>
+  <text x="700" y="118" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="24">Context-rich prompts turn ChatGPT from generic to genuinely useful</text>
+
+  <!-- Card 1: Role -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="170" width="290" height="340" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="170" width="290" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="205" y="228" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STEP 1</text>
+    <text x="205" y="284" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">Role</text>
+    <text x="205" y="332" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">Who is ChatGPT</text>
+    <text x="205" y="366" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">pretending to be?</text>
+    <rect x="80" y="402" width="250" height="80" rx="8" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <text x="205" y="432" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="18" font-style="italic">"You are a B2B SaaS</text>
+    <text x="205" y="460" text-anchor="middle" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="18" font-style="italic">product marketer..."</text>
+  </g>
+
+  <!-- Arrow 1->2 -->
+  <line x1="355" y1="340" x2="385" y2="340" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="385,333 399,340 385,347" fill="#5eead4"/>
+
+  <!-- Card 2: Context -->
+  <g filter="url(#cardShadow)">
+    <rect x="390" y="170" width="290" height="340" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="390" y="170" width="290" height="6" rx="3" fill="#c084fc"/>
+    <text x="535" y="228" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STEP 2</text>
+    <text x="535" y="284" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">Context</text>
+    <text x="535" y="332" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">Your company,</text>
+    <text x="535" y="366" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">audience, situation.</text>
+    <rect x="410" y="402" width="250" height="80" rx="8" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <text x="535" y="432" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="18" font-style="italic">"We sell to HR teams</text>
+    <text x="535" y="460" text-anchor="middle" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="18" font-style="italic">at 200-2,000 companies."</text>
+  </g>
+
+  <!-- Arrow 2->3 -->
+  <line x1="685" y1="340" x2="715" y2="340" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="715,333 729,340 715,347" fill="#5eead4"/>
+
+  <!-- Card 3: Goal -->
+  <g filter="url(#cardShadow)">
+    <rect x="720" y="170" width="290" height="340" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="720" y="170" width="290" height="6" rx="3" fill="#60a5fa"/>
+    <text x="865" y="228" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STEP 3</text>
+    <text x="865" y="284" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">Goal</text>
+    <text x="865" y="332" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">The exact output</text>
+    <text x="865" y="366" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">you want back.</text>
+    <rect x="740" y="402" width="250" height="80" rx="8" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <text x="865" y="432" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="18" font-style="italic">"Write a 75-word cold</text>
+    <text x="865" y="460" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="18" font-style="italic">email for VP Sales."</text>
+  </g>
+
+  <!-- Arrow 3->4 -->
+  <line x1="1015" y1="340" x2="1045" y2="340" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="1045,333 1059,340 1045,347" fill="#5eead4"/>
+
+  <!-- Card 4: Constraints -->
+  <g filter="url(#cardShadow)">
+    <rect x="1050" y="170" width="290" height="340" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1050" y="170" width="290" height="6" rx="3" fill="#fb923c"/>
+    <text x="1195" y="228" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STEP 4</text>
+    <text x="1195" y="284" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">Constraints</text>
+    <text x="1195" y="332" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">Tone, length, format,</text>
+    <text x="1195" y="366" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">things to avoid.</text>
+    <rect x="1070" y="402" width="250" height="80" rx="8" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <text x="1195" y="432" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="18" font-style="italic">"Casual, under 90</text>
+    <text x="1195" y="460" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="18" font-style="italic">words, no CTA."</text>
+  </g>
+
+  <!-- Bottom comparison section -->
+  <text x="700" y="580" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="30" font-weight="600">Thin prompt vs. framework prompt</text>
+
+  <!-- Bad example -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="615" width="620" height="210" rx="16" fill="#1a1f26" stroke="#3b1a1a" stroke-width="1"/>
+    <rect x="60" y="615" width="620" height="6" rx="3" fill="#f87171"/>
+    <text x="90" y="666" fill="#f87171" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.06em">THIN PROMPT</text>
+    <text x="90" y="710" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="24" font-style="italic">"Write a cold email to a VP of Sales."</text>
+    <text x="90" y="760" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">Output: generic template, sounds like every</text>
+    <text x="90" y="794" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">other AI-generated email in the inbox.</text>
+  </g>
+
+  <!-- Good example -->
+  <g filter="url(#cardShadow)">
+    <rect x="720" y="615" width="620" height="210" rx="16" fill="#1a1f26" stroke="#1a2a1a" stroke-width="1"/>
+    <rect x="720" y="615" width="620" height="6" rx="3" fill="#5eead4"/>
+    <text x="750" y="666" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.06em">FRAMEWORK PROMPT</text>
+    <text x="750" y="710" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="24" font-style="italic">Role + Context + Goal + Constraints</text>
+    <text x="750" y="760" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">Output: specific, usable draft. Needs a</text>
+    <text x="750" y="794" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">quick edit, not a rewrite.</text>
+  </g>
+</svg>

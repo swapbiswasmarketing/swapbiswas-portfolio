@@ -13,6 +13,22 @@ faqs:
     a: "Free tools like Google Search Console and SimilarWeb's free tier can get you started. For deeper analysis, Ahrefs, Semrush, and BuzzSumo help you analyze competitor keywords, backlinks, and top-performing content."
   - q: "How often should you do a content competitor analysis?"
     a: "Run a comprehensive content competitor analysis quarterly. Do lighter monthly check-ins on competitor publishing frequency and top-performing new content to stay responsive to market shifts."
+howTo:
+  name: "How to Do Content Marketing Competitor Analysis"
+  totalTime: "PT3H"
+  steps:
+    - name: "Identify Your Real Content Competitors"
+      text: "Search your top 10-15 priority keywords on Google and note the sites that appear on page one. Cross-reference with Ahrefs or Semrush's competing domains report, then pick 3-5 true content competitors to study in depth."
+    - name: "Audit Their Content Inventory"
+      text: "Catalog every piece of content each competitor publishes. Track formats, topics, publishing cadence, and content length so you understand how much they produce and where they focus."
+    - name: "Analyze Their Top-Performing Content"
+      text: "Use Ahrefs or Semrush to identify each competitor's highest-traffic pages, top backlinks, and most-shared posts. Reverse-engineer what makes those pieces work - depth, format, data, or unique angle."
+    - name: "Evaluate Their SEO Strategy"
+      text: "Review their keyword targeting, on-page optimization, internal linking, and backlink profile. Find the keywords they rank for that you do not, and flag the ones worth competing for."
+    - name: "Assess Their Content Distribution"
+      text: "Look at which channels each competitor uses to amplify content - email, social, syndication, partnerships. Map their distribution stack so you can benchmark your own reach strategy."
+    - name: "Find Content Gaps and Opportunities"
+      text: "Compare their coverage against yours, identify topics they are ranking for that you are not, and build a prioritized list of content gaps to fill with better, deeper, or more recent posts."
 ---
 
 Most companies publish content without ever looking at what is already working in their market. They guess at topics, guess at formats, and wonder why traffic stays flat. The result? According to an Ahrefs study of 14 billion pages, **[96.55% of all content gets zero traffic from Google](https://ahrefs.com/blog/search-traffic-study/)**. Meanwhile, their competitors have already answered the questions their audience is asking.

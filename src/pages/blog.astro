@@ -20,6 +20,14 @@ const categories = [...categoryCount.entries()]
 	.sort((a, b) => b[1] - a[1])
 	.map(([cat]) => cat);
 
+function categorySlug(cat: string): string {
+	return cat
+		.toLowerCase()
+		.replace(/&/g, 'and')
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-+|-+$/g, '');
+}
+
 const POSTS_PER_PAGE = 9;
 ---
 
@@ -52,20 +60,20 @@ const POSTS_PER_PAGE = 9;
 					/>
 					<button class="search-clear" aria-label="Clear search" style="display:none">&times;</button>
 				</div>
-				<div class="filter-bar">
-				<button class="filter-btn active" data-category="all">All</button>
-				{categories.map((cat) => (
-					<button class="filter-btn" data-category={cat}>
-						{cat} <span class="filter-count">{categoryCount.get(cat)}</span>
-					</button>
-				))}
-				</div>
+				<nav class="filter-bar" aria-label="Browse by category">
+					<a class="filter-btn active" href="/blog/">All</a>
+					{categories.map((cat) => (
+						<a class="filter-btn" href={`/blog/category/${categorySlug(cat)}/`}>
+							{cat} <span class="filter-count">{categoryCount.get(cat)}</span>
+						</a>
+					))}
+				</nav>
 			</div>
 
 			<!-- Blog Grid -->
 			<ul class="blog-grid">
 				{posts.map((post) => (
-					<li class="blog-item" data-categories={post.data.category.join(',')}>
+					<li class="blog-item">
 						<BlogPreview post={post} />
 					</li>
 				))}
@@ -82,6 +90,22 @@ const POSTS_PER_PAGE = 9;
 			<div class="empty-state" style="display:none">
 				<p>No articles found in this category yet.</p>
 			</div>
+
+			<!-- Browse by topic (SEO-discoverable category hub links) -->
+			<section class="topic-hub" aria-labelledby="topic-hub-heading">
+				<h2 id="topic-hub-heading">Browse by Topic</h2>
+				<p class="topic-hub-sub">Jump straight to everything in a category.</p>
+				<ul class="topic-hub-list">
+					{categories.map((cat) => (
+						<li>
+							<a href={`/blog/category/${categorySlug(cat)}/`} class="topic-hub-link">
+								<span class="topic-hub-name">{cat}</span>
+								<span class="topic-hub-count">{categoryCount.get(cat)}</span>
+							</a>
+						</li>
+					))}
+				</ul>
+			</section>
 		</main>
 		<ContactCTA />
 	</div>
@@ -89,7 +113,6 @@ const POSTS_PER_PAGE = 9;
 
 <script define:vars={{ POSTS_PER_PAGE }}>
 	const items = Array.from(document.querySelectorAll('.blog-item'));
-	const filterBtns = document.querySelectorAll('.filter-btn');
 	const pagination = document.querySelector('.pagination');
 	const pageNumbers = document.querySelector('.page-numbers');
 	const prevBtn = document.querySelector('.page-btn.prev');
@@ -97,7 +120,6 @@ const POSTS_PER_PAGE = 9;
 	const emptyState = document.querySelector('.empty-state');
 	const searchInput = document.querySelector('.search-input');
 
-	let currentCategory = 'all';
 	let currentPage = 1;
 	let searchMatchSlugs = null; // null = no search active, array = matched slugs from Pagefind
 
@@ -125,15 +147,11 @@ const POSTS_PER_PAGE = 9;
 
 		const pf = await loadPagefind();
 		if (!pf) {
-			// Fallback to simple text matching if Pagefind unavailable (dev mode)
+			// Fallback to simple title text matching if Pagefind unavailable (dev mode)
 			const q = query.toLowerCase();
-			searchMatchSlugs = [];
-			items.forEach((item) => {
+			searchMatchSlugs = items.filter((item) => {
 				const title = item.querySelector('.title')?.textContent?.toLowerCase() || '';
-				const cats = item.getAttribute('data-categories')?.toLowerCase() || '';
-				if (title.includes(q) || cats.includes(q)) {
-					searchMatchSlugs.push(item);
-				}
+				return title.includes(q);
 			});
 			currentPage = 1;
 			render();
@@ -159,16 +177,7 @@ const POSTS_PER_PAGE = 9;
 	}
 
 	function getFilteredItems() {
-		let filtered = searchMatchSlugs !== null ? searchMatchSlugs : items;
-
-		if (currentCategory !== 'all') {
-			filtered = filtered.filter((item) => {
-				const cats = item.getAttribute('data-categories')?.split(',') || [];
-				return cats.includes(currentCategory);
-			});
-		}
-
-		return filtered;
+		return searchMatchSlugs !== null ? searchMatchSlugs : items;
 	}
 
 	function render() {
@@ -219,17 +228,6 @@ const POSTS_PER_PAGE = 9;
 		searchInput?.focus();
 	});
 
-	// Filter click handlers
-	filterBtns.forEach((btn) => {
-		btn.addEventListener('click', () => {
-			filterBtns.forEach((b) => b.classList.remove('active'));
-			btn.classList.add('active');
-			currentCategory = btn.getAttribute('data-category') || 'all';
-			currentPage = 1;
-			render();
-		});
-	});
-
 	// Prev/Next handlers
 	prevBtn?.addEventListener('click', () => { if (currentPage > 1) { currentPage--; render(); } });
 	nextBtn?.addEventListener('click', () => { currentPage++; render(); });
@@ -239,6 +237,66 @@ const POSTS_PER_PAGE = 9;
 </script>
 
 <style>
+	/* Topic hub (browse by topic section) */
+	.topic-hub {
+		margin-top: 2rem;
+		padding-top: 2.5rem;
+		border-top: 1px solid var(--gray-800);
+	}
+
+	.topic-hub h2 {
+		font-size: var(--text-xl);
+		margin: 0 0 0.25rem;
+	}
+
+	.topic-hub-sub {
+		color: var(--gray-400);
+		font-size: var(--text-sm);
+		margin: 0 0 1.25rem;
+	}
+
+	.topic-hub-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.topic-hub-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.5rem 0.9rem;
+		border-radius: 999rem;
+		border: 1px solid var(--gray-800);
+		background: var(--gray-999_40);
+		color: var(--gray-200);
+		text-decoration: none;
+		font-size: var(--text-sm);
+		transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+	}
+
+	.topic-hub-link:hover {
+		border-color: var(--accent-regular);
+		color: var(--accent-light);
+		background: var(--accent-overlay);
+	}
+
+	.topic-hub-count {
+		font-size: 0.75rem;
+		padding: 0.1rem 0.45rem;
+		border-radius: 999rem;
+		background: var(--gray-800);
+		color: var(--gray-300);
+	}
+
+	.topic-hub-link:hover .topic-hub-count {
+		background: var(--accent-dark);
+		color: var(--gray-0);
+	}
+
 	/* Toolbar */
 	.toolbar {
 		display: flex;
@@ -317,7 +375,7 @@ const POSTS_PER_PAGE = 9;
 	}
 
 	.filter-btn {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		gap: 0.35rem;
 		padding: 0.5rem 1rem;
@@ -330,6 +388,12 @@ const POSTS_PER_PAGE = 9;
 		font-weight: 500;
 		cursor: pointer;
 		transition: all 0.2s ease;
+		text-decoration: none;
+	}
+
+	.filter-btn:link,
+	.filter-btn:visited {
+		color: var(--gray-300);
 	}
 
 	.filter-btn:hover {
@@ -341,6 +405,11 @@ const POSTS_PER_PAGE = 9;
 		background: var(--gradient-accent-orange);
 		color: var(--accent-text-over);
 		border-color: transparent;
+	}
+
+	.filter-btn.active:link,
+	.filter-btn.active:visited {
+		color: var(--accent-text-over);
 	}
 
 	.filter-count {

@@ -89,14 +89,16 @@ Card border:    #30363d
 Card shadow:    feDropShadow dx=0 dy=4 stdDeviation=8 flood-opacity=0.4
 Border radius:  rx="16" for cards, rx="24" for outer container
 Font:           Segoe UI, system-ui, sans-serif
-Title text:     #f0f6fc, 38px, weight 700
-Heading text:   #f0f6fc, 24-28px, weight 600
-Body text:      #c8cfd8, 19-21px (32px line spacing minimum)
-Supporting text:#9ca3af, 17-19px (for secondary labels, "replaces" lines, etc.)
-Subtitle text:  #9ca3af, 22-24px
-Step labels:    accent color, 18-20px, weight 700, letter-spacing 0.08em
-Tool hints:     accent color, 17-19px, weight 500
+Title text:     #f0f6fc, 40-44px, weight 700
+Heading text:   #f0f6fc, 26-32px, weight 600
+Body text:      #c8cfd8, 22-24px (34px line spacing minimum)
+Supporting text:#9ca3af, 20-22px (for secondary labels, bullet lists, "replaces" lines)
+Subtitle text:  #9ca3af, 24-26px
+Step labels:    accent color, 20-22px, weight 700, letter-spacing 0.08em
+Tool hints:     accent color, 20-22px, weight 500
 ```
+
+**Why these minimums:** blog content images display at ~700-800px effective width inside the article column on desktop (even though they're rendered at 1200px). Anything under 20px body text is hard to read once the image is scaled down. Bump sizes if a diagram has few text elements and can breathe.
 
 ### Brand Colors (for accent bars, dots, highlights)
 Use LIGHTER variants that contrast well against #0d1117 dark background.
@@ -268,6 +270,9 @@ faqs:
 - `will-marketing-be-replaced-by-ai.md` (3 FAQs)
 - `do-google-reviews-help-seo.md` (3 FAQs)
 - `icp-vs-buyer-persona.md` (3 FAQs)
+- `how-much-does-an-seo-audit-cost.md` (4 FAQs)
+- `what-does-a-product-marketing-manager-do.md` (4 FAQs)
+- `how-to-use-chatgpt-for-sales-and-marketing.md` (4 FAQs)
 
 ## 9. Content Schema Reference
 

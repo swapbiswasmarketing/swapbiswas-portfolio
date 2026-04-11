@@ -1,0 +1,253 @@
+---
+import { getCollection } from 'astro:content';
+import ContactCTA from '../../../components/ContactCTA.astro';
+import Hero from '../../../components/Hero.astro';
+import BlogPreview from '../../../components/BlogPreview.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+function categorySlug(cat: string): string {
+	return cat
+		.toLowerCase()
+		.replace(/&/g, 'and')
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-+|-+$/g, '');
+}
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	const categoryMap = new Map<string, typeof posts>();
+	const categoryCount = new Map<string, number>();
+
+	for (const post of posts) {
+		for (const cat of post.data.category) {
+			const slug = cat
+				.toLowerCase()
+				.replace(/&/g, 'and')
+				.replace(/[^a-z0-9]+/g, '-')
+				.replace(/^-+|-+$/g, '');
+			if (!categoryMap.has(slug)) categoryMap.set(slug, []);
+			categoryMap.get(slug)!.push(post);
+			categoryCount.set(cat, (categoryCount.get(cat) || 0) + 1);
+		}
+	}
+
+	const allCategories = [...categoryCount.entries()]
+		.sort((a, b) => b[1] - a[1])
+		.map(([cat, count]) => ({ name: cat, count }));
+
+	return [...categoryMap.entries()].map(([slug, categoryPosts]) => {
+		const originalName = categoryPosts[0].data.category.find(
+			(c) =>
+				c
+					.toLowerCase()
+					.replace(/&/g, 'and')
+					.replace(/[^a-z0-9]+/g, '-')
+					.replace(/^-+|-+$/g, '') === slug
+		)!;
+		return {
+			params: { category: slug },
+			props: {
+				categoryName: originalName,
+				posts: categoryPosts.sort(
+					(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+				),
+				allCategories,
+			},
+		};
+	});
+}
+
+interface Props {
+	categoryName: string;
+	posts: Awaited<ReturnType<typeof getCollection<'blog'>>>;
+	allCategories: { name: string; count: number }[];
+}
+
+const { categoryName, posts, allCategories } = Astro.props;
+
+const categoryDescriptions: Record<string, string> = {
+	SEO: 'Practical SEO guides covering technical audits, keyword research, content optimization, and ranking strategies.',
+	Marketing:
+		'Marketing strategy, growth, positioning, and campaign execution for B2B and SaaS teams.',
+	AI: 'How AI is reshaping marketing workflows - prompts, tools, automation, and what to trust.',
+	'Product Marketing':
+		'Positioning, messaging, launches, sales enablement, and go-to-market strategy for product marketers.',
+	Tools: 'Reviews and guides for the marketing and SEO tools worth paying for.',
+	Career: 'Career paths, role breakdowns, and hiring guides for marketing and product roles.',
+	Email: 'Email marketing tactics - deliverability, automation, and campaign design.',
+	Design: 'Design frameworks and visual thinking for marketing teams.',
+	Travel: 'Travel writing and personal experiences.',
+};
+
+const description =
+	categoryDescriptions[categoryName] ||
+	`All blog posts in the ${categoryName} category by Swapnil Biswas.`;
+
+const pageTitle = `${categoryName} Articles | Swapnil Biswas`;
+
+const collectionSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'CollectionPage',
+	name: `${categoryName} Articles`,
+	description,
+	url: `https://swapbiswas.com/blog/category/${Astro.params.category}/`,
+	isPartOf: {
+		'@type': 'Blog',
+		'@id': 'https://swapbiswas.com/blog/',
+		name: 'Swapnil Biswas Blog',
+	},
+	hasPart: posts.map((post) => ({
+		'@type': 'BlogPosting',
+		headline: post.data.title,
+		description: post.data.description,
+		url: `https://swapbiswas.com/blog/${post.id}/`,
+		datePublished: post.data.publishDate.toISOString(),
+	})),
+};
+---
+
+<BaseLayout
+	title={pageTitle}
+	description={description}
+	breadcrumbs={[
+		{ name: 'Blog', url: '/blog/' },
+		{ name: categoryName },
+	]}
+>
+	<script
+		type="application/ld+json"
+		set:html={JSON.stringify(collectionSchema)}
+		slot="head"
+	/>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero title={categoryName} tagline={description} align="start" />
+
+			<nav class="filter-bar" aria-label="Browse by category">
+				<a class="filter-btn" href="/blog/">All</a>
+				{allCategories.map((cat) => (
+					<a
+						class:list={['filter-btn', { active: cat.name === categoryName }]}
+						href={`/blog/category/${categorySlug(cat.name)}/`}
+					>
+						{cat.name} <span class="filter-count">{cat.count}</span>
+					</a>
+				))}
+			</nav>
+
+			<p class="post-count">
+				{posts.length} {posts.length === 1 ? 'article' : 'articles'} in {categoryName}
+			</p>
+
+			<ul class="blog-grid">
+				{posts.map((post) => (
+					<li class="blog-item">
+						<BlogPreview post={post} />
+					</li>
+				))}
+			</ul>
+
+			<nav class="back-nav">
+				<a href="/blog/">&larr; View all articles</a>
+			</nav>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.filter-bar {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	.filter-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: var(--gray-999_40);
+		color: var(--gray-300);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		text-decoration: none;
+		transition: all 0.2s ease;
+	}
+
+	.filter-btn:link,
+	.filter-btn:visited {
+		color: var(--gray-300);
+	}
+
+	.filter-btn:hover {
+		border-color: var(--gray-700);
+		color: var(--gray-0);
+	}
+
+	.filter-btn.active {
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		border-color: transparent;
+	}
+
+	.filter-btn.active:link,
+	.filter-btn.active:visited {
+		color: var(--accent-text-over);
+	}
+
+	.filter-count {
+		font-size: 0.7rem;
+		padding: 0.1rem 0.4rem;
+		border-radius: 999rem;
+		background: rgba(255, 255, 255, 0.15);
+	}
+
+	.filter-btn.active .filter-count {
+		background: rgba(255, 255, 255, 0.25);
+	}
+
+	.post-count {
+		color: var(--gray-400);
+		font-size: var(--text-sm);
+		margin: 0;
+	}
+
+	.blog-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 2rem;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.blog-item {
+		display: flex;
+	}
+
+	.back-nav {
+		padding-top: 2rem;
+		border-top: 1px solid var(--gray-800);
+	}
+
+	.back-nav a {
+		color: var(--gray-300);
+		text-decoration: none;
+		font-size: var(--text-sm);
+	}
+
+	.back-nav a:hover {
+		color: var(--accent-regular);
+	}
+
+	@media (min-width: 50em) {
+		.blog-grid {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 2.5rem;
+		}
+	}
+</style>

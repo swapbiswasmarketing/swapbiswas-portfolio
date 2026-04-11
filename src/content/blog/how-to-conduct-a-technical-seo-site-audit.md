@@ -6,6 +6,26 @@ updatedDate: 2026-03-21
 category: [SEO, Marketing]
 img: /assets/stock-1.webp
 img_alt: Technical SEO audit guide illustration
+howTo:
+  name: "How to Conduct a Technical SEO Site Audit"
+  totalTime: "PT2H"
+  steps:
+    - name: "Check Crawlability"
+      text: "Review your robots.txt file, validate your XML sitemap, and analyze your crawl budget to make sure search engines can reach every important page on your site."
+    - name: "Verify Indexability"
+      text: "Check Google Search Console's index coverage report, verify canonical tags, and confirm meta robots directives are not accidentally blocking key pages from being indexed."
+    - name: "Audit Site Architecture and Internal Linking"
+      text: "Make sure every important page is no more than three clicks from the homepage, audit internal link distribution, and review URL structure for consistency and keyword relevance."
+    - name: "Measure Page Speed and Core Web Vitals"
+      text: "Test your site against LCP, INP, and CLS benchmarks using Google PageSpeed Insights, and optimize images, fonts, and JavaScript to hit the green thresholds."
+    - name: "Test Mobile Usability"
+      text: "Run a Lighthouse mobile audit, verify responsive breakpoints, and check that tap targets, font sizes, and viewport settings work on small screens."
+    - name: "Verify HTTPS and Security"
+      text: "Confirm your SSL certificate is valid, fix any mixed content warnings, and use 301 redirects rather than 302 for permanent URL changes."
+    - name: "Validate Structured Data"
+      text: "Add JSON-LD schema markup for articles, products, and FAQs where relevant, then validate every type using Google's Rich Results Test."
+    - name: "Fix Redirect Chains and Broken Links"
+      text: "Crawl your site with Screaming Frog to find 404 errors and redirect chains, then consolidate redirects so every link points directly to the final destination."
 ---
 
 Here's a stat that should worry you: a Semrush study of 50,000+ domains found that **41% of websites have internal duplicate content** and **12% have redirect chains or loops** ([Semrush Technical SEO Checklist](https://www.semrush.com/blog/technical-seo-checklist/)). Meanwhile, roughly **70% of websites** still haven't implemented structured data.
