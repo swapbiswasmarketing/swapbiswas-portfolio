@@ -1,6 +1,6 @@
 # Swapnil Biswas - Product Marketing & Growth
 
-Portfolio site for Swapnil Biswas - Product Marketing Manager, Growth Strategist, and AI enthusiast.
+Portfolio site for Swapnil Biswas - Senior Product Marketing Manager, Growth Strategist, and AI enthusiast.
 
 **[swapbiswas.com](https://swapbiswas.com)**
 

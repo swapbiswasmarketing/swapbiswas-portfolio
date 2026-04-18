@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="sharedGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#5eead4"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="76" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">AEO vs SEO: Where They Actually Differ</text>
+  <text x="700" y="116" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">Most of the work is shared. The edges move; the foundation does not.</text>
+
+  <!-- SEO-only column -->
+  <g filter="url(#cardShadow)">
+    <rect x="40" y="170" width="320" height="460" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="40" y="170" width="320" height="6" rx="3" fill="#60a5fa"/>
+    <text x="200" y="220" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">SEO ONLY</text>
+    <text x="200" y="262" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">What SEO Uniquely</text>
+    <text x="200" y="296" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Covers</text>
+    <text x="70" y="356" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Rank-position tracking</text>
+    <text x="70" y="396" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Snippet-length answers</text>
+    <text x="70" y="436" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; SERP feature ops</text>
+    <text x="70" y="476" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Core Web Vitals focus</text>
+    <text x="70" y="516" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Click-through rate</text>
+    <text x="70" y="556" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Backlink campaigns</text>
+    <text x="200" y="604" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">~20% of the work</text>
+  </g>
+
+  <!-- SHARED column (highlighted, wider) -->
+  <g filter="url(#cardShadow)">
+    <rect x="385" y="170" width="630" height="460" rx="16" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <rect x="385" y="170" width="630" height="6" rx="3" fill="url(#sharedGrad)"/>
+    <text x="700" y="220" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">SHARED FOUNDATION</text>
+    <text x="700" y="262" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">What Both Depend On</text>
+    <text x="700" y="296" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">(Google: no special AEO requirements)</text>
+    <text x="420" y="356" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Quality content and primary sources</text>
+    <text x="420" y="396" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; E-E-A-T signals (author, trust, updates)</text>
+    <text x="420" y="436" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Crawlability and clean indexing</text>
+    <text x="420" y="476" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Topical depth and cluster structure</text>
+    <text x="420" y="516" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; H2-as-question, lead-with-answer format</text>
+    <text x="420" y="556" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Internal linking and natural anchors</text>
+    <text x="700" y="604" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700">~80% of the work</text>
+  </g>
+
+  <!-- AEO-only column -->
+  <g filter="url(#cardShadow)">
+    <rect x="1040" y="170" width="320" height="460" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1040" y="170" width="320" height="6" rx="3" fill="#fb923c"/>
+    <text x="1200" y="220" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">AEO ONLY</text>
+    <text x="1200" y="262" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">What AEO Adds</text>
+    <text x="1200" y="296" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">On Top</text>
+    <text x="1070" y="356" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Citation tracking</text>
+    <text x="1070" y="396" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Passage-level tuning</text>
+    <text x="1070" y="436" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Zero-click adaptation</text>
+    <text x="1070" y="476" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Non-Google surfaces</text>
+    <text x="1070" y="516" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Answer-completeness QA</text>
+    <text x="1070" y="556" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Summary-resistant assets</text>
+    <text x="1200" y="604" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">~20% of the work</text>
+  </g>
+
+  <!-- Footer quote bar -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="660" width="1280" height="130" rx="16" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <text x="700" y="703" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">"There are no additional requirements to appear in AI Overviews or AI Mode,</text>
+    <text x="700" y="735" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">nor other special optimizations necessary."</text>
+    <text x="700" y="772" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Source: Google Search Central, AI Features and Your Website</text>
+  </g>
+</svg>

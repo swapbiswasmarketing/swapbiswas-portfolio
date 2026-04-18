@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="760" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="76" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">Anatomy of a Strong PMM OKR</text>
+  <text x="700" y="116" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="24">One outcome objective. 2-4 measurable key results. No activity masquerading as progress.</text>
+
+  <!-- Objective card -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="160" width="1280" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="160" width="1280" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="90" y="210" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">OBJECTIVE</text>
+    <text x="90" y="254" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="30" font-weight="700">Drive measurable pipeline from the Q3 launch of Feature X</text>
+    <text x="90" y="288" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">One sentence. Outcome focused. Ambitious but not an activity list.</text>
+  </g>
+
+  <!-- Branching arrows: objective bottom center to 3 KR cards -->
+  <line x1="700" y1="300" x2="700" y2="330" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="269" y1="330" x2="1131" y2="330" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="269" y1="330" x2="269" y2="358" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="699" y1="330" x2="699" y2="358" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1131" y1="330" x2="1131" y2="358" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="262,358 276,358 269,372" fill="#5eead4"/>
+  <polygon points="692,358 706,358 699,372" fill="#5eead4"/>
+  <polygon points="1124,358 1138,358 1131,372" fill="#5eead4"/>
+
+  <!-- KR 1 -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="386" width="418" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="386" width="418" height="6" rx="3" fill="#60a5fa"/>
+    <text x="90" y="436" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">KEY RESULT 1</text>
+    <text x="90" y="484" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Pipeline generated:</text>
+    <text x="90" y="522" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">$0 to $2M in 90 days</text>
+    <text x="90" y="572" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Tracked in CRM, attributed</text>
+    <text x="90" y="600" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">to launch campaign sources.</text>
+  </g>
+
+  <!-- KR 2 -->
+  <g filter="url(#cardShadow)">
+    <rect x="490" y="386" width="418" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="490" y="386" width="418" height="6" rx="3" fill="#c084fc"/>
+    <text x="520" y="436" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">KEY RESULT 2</text>
+    <text x="520" y="484" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Feature adoption:</text>
+    <text x="520" y="522" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">0 to 15% in 60 days</text>
+    <text x="520" y="572" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Measured among existing</text>
+    <text x="520" y="600" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">paying customer accounts.</text>
+  </g>
+
+  <!-- KR 3 -->
+  <g filter="url(#cardShadow)">
+    <rect x="920" y="386" width="418" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="920" y="386" width="418" height="6" rx="3" fill="#fb923c"/>
+    <text x="950" y="436" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">KEY RESULT 3</text>
+    <text x="950" y="484" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Post-launch NPS:</text>
+    <text x="950" y="522" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">baseline to 40+</text>
+    <text x="950" y="572" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">From feature users surveyed</text>
+    <text x="950" y="600" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">30 days after activation.</text>
+  </g>
+
+  <!-- Bottom rule bar -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="668" width="1280" height="78" rx="16" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <text x="700" y="717" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">
+      <tspan fill="#5eead4" font-weight="700">Rule of thumb:</tspan> 2-3 objectives per quarter,
+      <tspan fill="#c084fc" font-weight="700">2-4 KRs each</tspan>, and
+      <tspan fill="#fb923c" font-weight="700">60-70% confidence</tspan> of hitting them.
+    </text>
+  </g>
+</svg>

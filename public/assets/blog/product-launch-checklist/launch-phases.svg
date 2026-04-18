@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="76" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">The 3-Phase Product Launch Checklist</text>
+  <text x="700" y="116" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="24">Most of the outcome is decided before launch day, not on it.</text>
+
+  <!-- Phase 1: Pre-launch -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="170" width="420" height="420" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="50" y="170" width="420" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="80" y="218" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">PHASE 1</text>
+    <text x="80" y="260" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="32" font-weight="700">Pre-launch</text>
+    <text x="80" y="292" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">Weeks -12 to -1</text>
+    <text x="80" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Launch tier + brief</text>
+    <text x="80" y="372" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Target segment named</text>
+    <text x="80" y="406" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Positioning + messaging</text>
+    <text x="80" y="440" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Website + landing page</text>
+    <text x="80" y="474" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Demo video + assets</text>
+    <text x="80" y="508" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Sales enablement + cert</text>
+    <text x="80" y="542" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Analyst + PR briefings</text>
+    <text x="80" y="576" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; KPIs + baselines set</text>
+  </g>
+
+  <!-- Arrow 1->2 -->
+  <line x1="472" y1="380" x2="508" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="508,373 522,380 508,387" fill="#5eead4"/>
+
+  <!-- Phase 2: Launch Day -->
+  <g filter="url(#cardShadow)">
+    <rect x="525" y="170" width="350" height="420" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="525" y="170" width="350" height="6" rx="3" fill="#c084fc"/>
+    <text x="555" y="218" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">PHASE 2</text>
+    <text x="555" y="260" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="32" font-weight="700">Launch Day</text>
+    <text x="555" y="292" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">Week 0</text>
+    <text x="555" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Page + post live</text>
+    <text x="555" y="372" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Email + social out</text>
+    <text x="555" y="406" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Sales talk track live</text>
+    <text x="555" y="440" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Support briefed</text>
+    <text x="555" y="474" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Exec social posts</text>
+    <text x="555" y="508" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Monitoring rotation</text>
+    <text x="555" y="542" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Daily launch huddles</text>
+    <text x="555" y="576" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Real-time dashboard</text>
+  </g>
+
+  <!-- Arrow 2->3 -->
+  <line x1="877" y1="380" x2="913" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="913,373 927,380 913,387" fill="#5eead4"/>
+
+  <!-- Phase 3: Post-launch -->
+  <g filter="url(#cardShadow)">
+    <rect x="930" y="170" width="420" height="420" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="930" y="170" width="420" height="6" rx="3" fill="#5eead4"/>
+    <text x="960" y="218" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">PHASE 3</text>
+    <text x="960" y="260" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="32" font-weight="700">Post-launch</text>
+    <text x="960" y="292" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">Weeks +1 to +12</text>
+    <text x="960" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; 30-day adoption review</text>
+    <text x="960" y="372" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Pipeline + deal signal</text>
+    <text x="960" y="406" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Customer feedback synth</text>
+    <text x="960" y="440" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; 60-day messaging tune</text>
+    <text x="960" y="474" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Objection handling update</text>
+    <text x="960" y="508" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Case study published</text>
+    <text x="960" y="542" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; 90-day retrospective</text>
+    <text x="960" y="576" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">&#8226; Playbook updated</text>
+  </g>
+
+  <!-- Tier bar -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="620" width="1300" height="155" rx="16" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <text x="700" y="658" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Launch Tiering</text>
+
+    <text x="130" y="700" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">TIER 1</text>
+    <text x="130" y="730" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Flagship. Analyst + PR.</text>
+    <text x="130" y="756" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">8-12 week lead time.</text>
+
+    <text x="590" y="700" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">TIER 2</text>
+    <text x="590" y="730" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Notable feature. Campaign.</text>
+    <text x="590" y="756" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">4-6 week lead time.</text>
+
+    <text x="1030" y="700" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">TIER 3</text>
+    <text x="1030" y="730" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Incremental. In-product.</text>
+    <text x="1030" y="756" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">1-2 week coordination.</text>
+  </g>
+</svg>

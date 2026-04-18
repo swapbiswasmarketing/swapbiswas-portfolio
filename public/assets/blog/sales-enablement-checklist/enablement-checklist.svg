@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="78" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">The 6 Pillars of Sales Enablement</text>
+  <text x="700" y="118" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="24">Every item needs an owner, a last-reviewed date, and a next-review date.</text>
+
+  <!-- Row 1 -->
+  <!-- Card 1: Onboarding -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="160" width="418" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="160" width="418" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="90" y="208" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">1. ONBOARDING &amp; RAMP</text>
+    <text x="90" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">First 90 days. Product</text>
+    <text x="90" y="284" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">training, demo cert, ICP.</text>
+    <text x="90" y="330" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Owner: Enablement + PMM</text>
+    <text x="90" y="360" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Refresh: twice a year</text>
+  </g>
+
+  <!-- Card 2: Ongoing Training -->
+  <g filter="url(#cardShadow)">
+    <rect x="490" y="160" width="418" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="490" y="160" width="418" height="6" rx="3" fill="#c084fc"/>
+    <text x="520" y="208" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">2. ONGOING TRAINING</text>
+    <text x="520" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Role plays, call reviews,</text>
+    <text x="520" y="284" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">objection library, SKOs.</text>
+    <text x="520" y="330" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Owner: Enablement</text>
+    <text x="520" y="360" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Refresh: quarterly</text>
+  </g>
+
+  <!-- Card 3: Launch -->
+  <g filter="url(#cardShadow)">
+    <rect x="920" y="160" width="418" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="920" y="160" width="418" height="6" rx="3" fill="#60a5fa"/>
+    <text x="950" y="208" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">3. LAUNCH ENABLEMENT</text>
+    <text x="950" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Briefs, decks, FAQs,</text>
+    <text x="950" y="284" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">demos, certification.</text>
+    <text x="950" y="330" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Owner: PMM</text>
+    <text x="950" y="360" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Refresh: every release</text>
+  </g>
+
+  <!-- Row 2 -->
+  <!-- Card 4: Competitive -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="420" width="418" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="420" width="418" height="6" rx="3" fill="#fb923c"/>
+    <text x="90" y="468" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">4. COMPETITIVE</text>
+    <text x="90" y="512" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Battlecards, win stories,</text>
+    <text x="90" y="544" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">landmines, pricing intel.</text>
+    <text x="90" y="590" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Owner: PMM / CI lead</text>
+    <text x="90" y="620" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Refresh: monthly</text>
+  </g>
+
+  <!-- Card 5: Deal Stage -->
+  <g filter="url(#cardShadow)">
+    <rect x="490" y="420" width="418" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="490" y="420" width="418" height="6" rx="3" fill="#5eead4"/>
+    <text x="520" y="468" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">5. DEAL STAGE CONTENT</text>
+    <text x="520" y="512" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">One asset per buyer</text>
+    <text x="520" y="544" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">question, per stage.</text>
+    <text x="520" y="590" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Owner: PMM + RevOps</text>
+    <text x="520" y="620" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Refresh: quarterly</text>
+  </g>
+
+  <!-- Card 6: Tech -->
+  <g filter="url(#cardShadow)">
+    <rect x="920" y="420" width="418" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="920" y="420" width="418" height="6" rx="3" fill="#d98ee0"/>
+    <text x="950" y="468" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">6. TECH &amp; OPS</text>
+    <text x="950" y="512" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Content hub, CRM,</text>
+    <text x="950" y="544" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Gong, analytics.</text>
+    <text x="950" y="590" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Owner: Enablement + RevOps</text>
+    <text x="950" y="620" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Refresh: continuous</text>
+  </g>
+
+  <!-- Stats bar -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="685" width="1280" height="88" rx="16" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <text x="700" y="725" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Companies with a unified enablement platform are</text>
+    <text x="700" y="755" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="22">
+      <tspan fill="#5eead4" font-weight="700">42% more likely to improve win rates</tspan>
+      (Highspot, 2025).
+    </text>
+  </g>
+
+  <!-- Footer tip -->
+  <text x="700" y="825" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">If a rep cannot find a battlecard in 15 seconds, it does not exist.</text>
+  <text x="700" y="860" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20"> </text>
+</svg>

@@ -261,6 +261,97 @@ Including lessons from @Slack, @Zoom, @Calendly, @Loom, and @Dropbox.
 
 ---
 
+## This Week's Posts (Week of 2026-04-14)
+
+> **Strategy:** Strong comeback after 5-day gap. All three posts have confrontational openers that stop the scroll. Tue-Wed form a natural PMM narrative arc (positioning → competitive analysis), then Thu pivots to founders/early-stage for audience variety. No topic overlap: PMM → CI → GTM.
+
+---
+
+### Post 1 (Tuesday) - Product Positioning
+**Status:** [SCHEDULED] 2026-04-15
+**Why first:** Gut-punch opener drives debate. Sales leaders tag PMMs, PMMs tag founders. Sets the tone for the week with authority.
+
+**Image prompt (Nano Banana):**
+> A dark background with a single spotlight cone illuminating one product box/cube in the center, glowing warm orange-amber. Around it in the shadows, 8-10 identical gray cubes sit in a scattered crowd, dull and indistinguishable. The lit cube has subtle rays extending outward like a beacon. A thin crosshair/target reticle overlays the lit cube, suggesting precision and intentional focus. The contrast between the one glowing cube and the crowd of forgettable ones is the entire story. Minimal, dramatic, editorial. No text. 1200x628 aspect ratio.
+
+If your sales team can't explain why your product is different in one sentence, you don't have a positioning problem.
+
+You have a revenue problem. 💸
+
+@Product Marketing Alliance reports that 91% of PMMs say positioning is their core responsibility. Yet I've seen companies with $50M ARR that can't articulate their differentiation. 🤷
+
+I wrote a positioning guide with frameworks, real examples, and a step-by-step process I've applied in practice:
+
+🎯 The 5 components every positioning statement needs
+🧪 How to test positioning before committing
+✅ Real examples of positioning done right
+❌ And wrong
+
+Your positioning isn't your tagline. It's not your feature list. It's the context that makes your product make sense. 💡
+
+🔗 https://swapbiswas.com/blog/product-positioning/?utm_source=linkedin&utm_medium=social&utm_campaign=product-positioning
+
+#ProductPositioning #ProductMarketing #Messaging #B2BSaaS #PMM
+
+---
+
+### Post 2 (Wednesday) - Competitive Product Analysis
+**Status:** [SCHEDULED] 2026-04-16
+**Why second:** Chains naturally from positioning (first you define yourself, then you define yourself vs competitors). Pain-point stat (3.8/10 readiness) drives engagement from both sales and PMM.
+
+**Image prompt (Nano Banana):**
+> A dark background with two boxers' fists meeting in the center in a freeze-frame moment of impact. One fist glows orange-amber (your brand), the other is cool steel-blue (the competitor). On impact, data fragments explode outward like sparks - tiny icons of feature checkmarks, pricing tags, star ratings, and percentage symbols scattering in all directions. The orange fist is slightly forward, winning the clash. Motion blur on the edges, sharp focus in the center. Raw, high-contrast, editorial sports photography style. No faces, just the fists and the data explosion. 1200x628 aspect ratio.
+
+@Crayon's State of CI report found that sellers face direct competition in 68% of deals. Yet the average sales team rates its competitive readiness at 3.8 out of 10. 😬
+
+That gap is costing companies millions in winnable deals. Every quarter. 💸
+
+I wrote the competitive product analysis framework I run as a PMM at @LambdaTest:
+
+1️⃣ Identify who you're actually competing against (hint: it's not who you think)
+2️⃣ Feature-level comparison beyond checkboxes
+3️⃣ Positioning & messaging teardown
+4️⃣ Pricing intelligence
+5️⃣ Win/loss analysis
+6️⃣ Turning analysis into action - battlecards, talk tracks, objection handling
+
+Analysis without action is just research. Here's how to make it drive revenue. 🎯
+
+🔗 https://swapbiswas.com/blog/competitive-product-analysis/?utm_source=linkedin&utm_medium=social&utm_campaign=competitive-product-analysis
+
+#CompetitiveAnalysis #ProductMarketing #PMM #B2BSaaS #SalesEnablement
+
+---
+
+### Post 3 (Thursday) - GTM Strategy for Startups
+**Status:** [SCHEDULED] 2026-04-17
+**Why third:** Pivots to a completely different audience (founders/early-stage) to avoid PMM fatigue from Tue-Wed. CB Insights hook hits hard. High share potential among startup LinkedIn.
+
+**Image prompt (Nano Banana):**
+> A dark background split diagonally. Bottom-left: a small garage/workshop with a single desk lamp casting warm amber light on a rough hand-drawn GTM plan pinned to the wall - sticky notes, arrows, a scrappy whiteboard with "Day 1" written on it. Top-right: a distant glowing cityscape skyline made of abstract revenue charts and growth curves rising like skyscrapers, rendered in cool purple-blue tones. A single dotted-line path connects the garage to the skyline, curving upward like a trajectory. The garage feels real and gritty, the skyline feels aspirational and luminous. The contrast tells the whole story: from scrappy to scale. No logos, no faces. Cinematic depth of field. 1200x628 aspect ratio.
+
+The #1 reason startups fail isn't running out of money. 💀
+
+According to @CB Insights, it's building something nobody wants. Or building the right thing and having no idea who to sell it to.
+
+Enterprise GTM frameworks don't work for startups. You don't have the budget, the team, or the brand. 🤷
+
+So I wrote a GTM framework specifically for early-stage:
+
+🎯 ICP validation (before you build anything)
+📢 Channel selection with $0 budget
+💰 Pricing when you have no data
+🚀 Launch when nobody knows your name
+📊 The metrics that actually matter pre-PMF
+
+If you're a founder or early-stage marketer, this one's for you. 👇
+
+🔗 https://swapbiswas.com/blog/go-to-market-strategy-for-startups/?utm_source=linkedin&utm_medium=social&utm_campaign=go-to-market-strategy-for-startups
+
+#Startups #GTMStrategy #FounderLife #B2BSaaS #StartupMarketing #ProductMarketFit
+
+---
+
 ## Remaining Posts (for future weeks)
 
 > Pick 3-4 per week. Alternate topics. Use the same posting rules above.
@@ -376,30 +467,6 @@ It's the audit behind 18M+ organic traffic. Now it's yours. 🎁
 
 ---
 
-### Product Positioning
-**Status:** [ ]
-
-If your sales team can't explain why your product is different in one sentence, you don't have a positioning problem.
-
-You have a revenue problem. 💸
-
-@Product Marketing Alliance reports that 91% of PMMs say positioning is their core responsibility. Yet I've seen companies with $50M ARR that can't articulate their differentiation. 🤷
-
-I wrote a positioning guide that draws heavily from @April Dunford's work - adapted for how I've applied it in practice:
-
-🎯 The 5 components every positioning statement needs
-🧪 How to test positioning before committing
-✅ Real examples of positioning done right
-❌ And wrong
-
-Your positioning isn't your tagline. It's not your feature list. It's the context that makes your product make sense. 💡
-
-🔗 https://swapbiswas.com/blog/product-positioning/?utm_source=linkedin&utm_medium=social&utm_campaign=product-positioning
-
-#ProductPositioning #ProductMarketing #Messaging #B2BSaaS #PMM
-
----
-
 ### Marketing Strategy for New Product
 **Status:** [ ]
 
@@ -446,55 +513,6 @@ Covers:
 🔗 https://swapbiswas.com/blog/b2c-marketing-automation/?utm_source=linkedin&utm_medium=social&utm_campaign=b2c-marketing-automation
 
 #MarketingAutomation #B2CMarketing #Ecommerce #EmailMarketing #DTC
-
----
-
-### Competitive Product Analysis
-**Status:** [ ]
-
-@Crayon's State of CI report found that sellers face direct competition in 68% of deals. Yet the average sales team rates its competitive readiness at 3.8 out of 10. 😬
-
-That gap is costing companies millions in winnable deals. Every quarter. 💸
-
-I wrote the competitive product analysis framework I run as a PMM at @LambdaTest:
-
-1️⃣ Identify who you're actually competing against (hint: it's not who you think)
-2️⃣ Feature-level comparison beyond checkboxes
-3️⃣ Positioning & messaging teardown
-4️⃣ Pricing intelligence
-5️⃣ Win/loss analysis
-6️⃣ Turning analysis into action - battlecards, talk tracks, objection handling
-
-Analysis without action is just research. Here's how to make it drive revenue. 🎯
-
-🔗 https://swapbiswas.com/blog/competitive-product-analysis/?utm_source=linkedin&utm_medium=social&utm_campaign=competitive-product-analysis
-
-#CompetitiveAnalysis #ProductMarketing #PMM #B2BSaaS #SalesEnablement
-
----
-
-### GTM Strategy for Startups
-**Status:** [ ]
-
-The #1 reason startups fail isn't running out of money. 💀
-
-According to @CB Insights, it's building something nobody wants. Or building the right thing and having no idea who to sell it to.
-
-Enterprise GTM frameworks don't work for startups. You don't have the budget, the team, or the brand. 🤷
-
-So I wrote a GTM framework specifically for early-stage:
-
-🎯 ICP validation (before you build anything)
-📢 Channel selection with $0 budget
-💰 Pricing when you have no data
-🚀 Launch when nobody knows your name
-📊 The metrics that actually matter pre-PMF
-
-If you're a founder or early-stage marketer, this one's for you. 👇
-
-🔗 https://swapbiswas.com/blog/go-to-market-strategy-for-startups/?utm_source=linkedin&utm_medium=social&utm_campaign=go-to-market-strategy-for-startups
-
-#Startups #GTMStrategy #FounderLife #B2BSaaS #StartupMarketing #ProductMarketFit
 
 ---
 

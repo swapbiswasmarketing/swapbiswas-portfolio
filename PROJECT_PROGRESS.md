@@ -2,7 +2,7 @@
 
 ## Overview
 
-Migration of **swapbiswas.com** from WordPress + old Astro template to a new Astro 5 portfolio site based on the "deeply-debris" theme. The site is a personal portfolio for Swapnil Biswas — an AI, Product & Digital Growth Marketer.
+Migration of **swapbiswas.com** from WordPress + old Astro template to a new Astro 5 portfolio site based on the "deeply-debris" theme. The site is a personal portfolio for Swapnil Biswas - an AI, Product & Digital Growth Marketer.
 
 **Live URL:** https://swapbiswas.com
 **GitHub:** https://github.com/swapbiswasmarketing/swapbiswas-portfolio.git
@@ -272,7 +272,7 @@ cocacola, curoloy, everyday, not-pot, shuvashini, southpole, the-taxi, zimmer
 24. **Added "Get Updates" newsletter signup section to homepage**
     - Newsletter section placed between "Trusted By" and ContactCTA on homepage
     - Email input + Subscribe button with pill-shaped design
-    - Integrated with **Kit (ConvertKit) V4 API** — two-step flow:
+    - Integrated with **Kit (ConvertKit) V4 API** - two-step flow:
       1. `POST /v4/subscribers` to create subscriber
       2. `POST /v4/forms/9145889/subscribers` to add to form
     - API key: stored in Kit dashboard (V4, passed via `X-Kit-Api-Key` header)
@@ -295,19 +295,19 @@ cocacola, curoloy, everyday, not-pot, shuvashini, southpole, the-taxi, zimmer
 26. **Added Table of Contents (TOC) sidebar to all blog posts**
     - Auto-generated from H2 and H3 headings using Astro's `render()` API (`{ Content, headings }`)
     - **Desktop (72em+):** Fixed sidebar on the left, inside `.wrapper` container
-      - `position: fixed; top: 5rem` — stays perfectly still while scrolling
+      - `position: fixed; top: 5rem` - stays perfectly still while scrolling
       - Left position calculated via JS based on wrapper's left edge (updates on resize)
       - Left-border indicator style: continuous `border-left: 2px solid var(--gray-800)` with active item highlighted in accent color
       - Scrollable TOC for long posts: `max-height: calc(100vh - 7rem); overflow-y: auto` with thin 3px scrollbar
       - Active TOC item auto-scrolls into view within the scrollable container
-    - **Mobile:** Hidden (`display: none`) — sidebar layout doesn't work on small screens
+    - **Mobile:** Hidden (`display: none`) - sidebar layout doesn't work on small screens
     - **Scroll-spy:** JS tracks which heading is at the top of the viewport and highlights the corresponding TOC item with `.active` class (accent color + left border)
     - **Smart visibility:**
-      - Starts hidden (CSS `opacity: 0`) — no flash on page load
+      - Starts hidden (CSS `opacity: 0`) - no flash on page load
       - Fades in when user scrolls past the content top (`contentRect.top < 80`)
-      - Fades out when content bottom reaches `stickyTop + tocHeight` — never overlaps the CTA/footer section below
+      - Fades out when content bottom reaches `stickyTop + tocHeight` - never overlaps the CTA/footer section below
       - Smooth `opacity 0.3s ease` transition
-    - Content stays perfectly centered (`max-width: 65ch; margin-inline: auto`) — TOC does not shift the content column
+    - Content stays perfectly centered (`max-width: 65ch; margin-inline: auto`) - TOC does not shift the content column
     - H3 items visually indented (`padding-left: 2rem`) with smaller font
     - Global CSS: `html { scroll-behavior: smooth }` + `scroll-margin-top: 5rem` on H2/H3 for anchor link offset
     - File modified: `src/pages/blog/[...slug].astro`
@@ -377,10 +377,10 @@ cocacola, curoloy, everyday, not-pot, shuvashini, southpole, the-taxi, zimmer
 - **Stock images:** `stock-1.jpg` through `stock-4.jpg` are template defaults used as OG image backgrounds. They could be replaced with custom gradient art. Category-to-image mapping is in the `categoryConfig` object in `og/[...slug].png.ts`.
 - **Portrait/Avatar:** `portrait-new.jpg` is the main portrait. `avatar-crop.jpg` is a 200x200 face crop used in OG images. If the portrait changes, re-crop the avatar using sharp (see build script pattern in the OG generator).
 - **Favicon:** SVG favicon (`favicon.svg`) supports light/dark mode via `prefers-color-scheme`. ICO and PNG versions are static.
-- **Blog images:** Original blog images (in `public/assets/blog/`) are still present but no longer used as thumbnails or hero images — the generated OG images replaced them. The inline images within blog post markdown content still reference these files.
+- **Blog images:** Original blog images (in `public/assets/blog/`) are still present but no longer used as thumbnails or hero images - the generated OG images replaced them. The inline images within blog post markdown content still reference these files.
 - **Contact form:** Uses FormSubmit.co free tier (endpoint: `swapbiswas.marketing@gmail.com`). The endpoint email should be verified.
 - **Newsletter signup:** Uses Kit (ConvertKit) V4 API. Form numeric ID `9145889`. Two-step flow: create subscriber → add to form. Subscribers managed at [app.kit.com](https://app.kit.com).
-- **Future enhancements (user-identified):** Testimonials section, Download CV button — both deferred for later.
+- **Future enhancements (user-identified):** Testimonials section, Download CV button - both deferred for later.
 - **Resume data:** All resume content (skills, experience, education, certifications, awards) is hardcoded in `ResumeSection.astro` frontmatter. Update there for changes.
 - **Brand logos:** Stored in `public/assets/brands/`. Add/remove brands by editing the `index.astro` trusted-by section.
 - **Build:** `npx astro build` generates the full static site in `dist/`. OG images take a few seconds each due to font fetching + image encoding.

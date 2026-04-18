@@ -85,7 +85,7 @@ AI is not a competitor to Marketers, It is a companion to Marketers.
 
 Yes, AI will take over some of the traditional parts of marketing, but it will mostly be monotonous work, which most of us aren't excited about anyway.
 
-The best marketing campaigns are the ones that have a high brand recall. They have high recall because they are unique, unprecedented concepts—hallmarks of true creativity. This level of creativity is something that AI cannot do.
+The best marketing campaigns are the ones that have a high brand recall. They have high recall because they are unique, unprecedented concepts - hallmarks of true creativity. This level of creativity is something that AI cannot do.
 
 So, will marketing be replaced by AI?
 

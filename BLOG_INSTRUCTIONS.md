@@ -128,16 +128,16 @@ Red:            #f87171
 - **Mobile responsiveness:** All blog content images automatically scale to `max-width: 100%` via CSS. No extra attributes needed in markdown. If an image appears too wide on mobile, the blog template handles it.
 
 ### SVG to WebP Conversion
-```js
-const { Resvg } = require('@resvg/resvg-js');
-const sharp = require('sharp');
-const fs = require('fs');
 
-const svg = fs.readFileSync('input.svg', 'utf8');
-const resvg = new Resvg(svg, { fitTo: { mode: 'width', value: 1200 } });
-const png = resvg.render().asPng();
-await sharp(png).webp({ quality: 90 }).toFile('output.webp');
+Use the reusable utility at `scripts/convert-svg-batch.cjs`. It renders each SVG at 1200px width and writes a WebP alongside the source.
+
+```bash
+node scripts/convert-svg-batch.cjs public/assets/blog/{slug}/diagram.svg
+# or multiple at once:
+node scripts/convert-svg-batch.cjs public/assets/blog/{slug}/*.svg
 ```
+
+Internally: `Resvg` renders at `fitTo: { mode: 'width', value: 1200 }`, then `sharp` encodes to WebP at quality 90.
 
 ### Arrows & Connectors Between Cards
 - **Color:** Use `#5eead4` (teal) for all arrows - never use `#484f58` (nearly invisible on dark bg)
@@ -223,6 +223,15 @@ After writing a blog post, **every single fact, number, quote, and claim must be
 
 ### What to Do When a Stat Fails Verification
 Do NOT leave unverified stats in the post. Either find a real source or rewrite the sentence to make the point without a specific number. A post with fewer stats that are all accurate is better than a post full of impressive-sounding numbers that can't be verified.
+
+### When WebFetch Returns Nav/Archive Instead of Article Body
+Some pages (JS-rendered SPAs, dynamic docs sites) return only shell HTML to WebFetch. Use the TestMu AI browser-cloud wrapper to render the page in a real browser and extract markdown:
+
+```bash
+node scripts/testmu-fetch.cjs https://example.com/page
+```
+
+Requires `LT_USERNAME` and `LT_ACCESS_KEY` env vars. Output is JSON with `title`, `content`, `markdown`, `url`, and `metadata`. Grep the output for the exact phrase you need to verify.
 
 ## 7. Pre-Publish Checklist
 

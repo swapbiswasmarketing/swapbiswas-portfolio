@@ -3,6 +3,12 @@
 > **This file is synced with repo copy at `.claude/MEMORY.md`.**
 > Update both files when making changes.
 
+## User Role
+- **Senior Product Marketing Manager** at LambdaTest (now TestMu AI), promoted Apr 2026 (prior: PMM Apr 2024 - Apr 2026)
+- Leading PMM for KaneAI and HyperExecute - GTM, launches, partner marketing
+- Also leads the **Automation POD** - AI-first initiatives across the marketing org
+- Pursuing PG, Digital Marketing & Growth Strategy at IIM Visakhapatnam (May 2025 - May 2026)
+
 ## Project Overview
 - Astro 5 static site (portfolio + blog) at `c:\Website\portfolio`
 - Deployed at swapbiswas.com
@@ -24,7 +30,7 @@
 ## Blog Writing Conventions
 - **No emdashes** - use hyphens with spaces or rewrite
 - **Fact-check every stat** against cited URL before publishing
-- **Images: WebP only** - design as SVG, convert to WebP via resvg + sharp (render at 1800px)
+- **Images: WebP only** - design as SVG, convert to WebP via resvg + sharp (render at 1200px max)
 - **SEO:** Target keyword in title, first paragraph, 2+ H2s, and conclusion
 - **OG images** auto-generate at build time - no manual action needed
 - Frontmatter: title, description, publishDate, category (array), img, img_alt
@@ -78,13 +84,18 @@
 - Image prompts for Nano Banana included with each post
 - Image size: 1200x628 for LinkedIn
 
+## Medium Cross-Posting
+- Blogs cross-posted to Medium via "Import a story" feature
+- Always set canonical URL to original swapbiswas.com blog URL in Advanced Settings
+- Tracking and import prompt stored in `memory/reference_medium.md`
+
 ## Diagram Design System (for SVG source files)
 - Background: `#0d1117` to `#161b22`
 - Cards: `#151b23` fill, `#30363d` border, rx 16
 - Use LIGHT accent colors: `#f5a0a1`, `#c084fc`, `#60a5fa`, `#fb923c`, `#5eead4`, `#d98ee0`, `#b388f2`
 - Never use dark purple (#7611a6) on dark backgrounds - unreadable
 - Font: Segoe UI, Title `#f0f6fc` 38px 700, Heading 28px 600, Body `#c8cfd8` 21px, 32px line spacing
-- ViewBox: 1400px wide, render at 1800px for sharp WebP
+- ViewBox: 1400px wide, render at 1200px max for WebP
 - Save WebP to `public/assets/blog/{slug}/`
 
 ## User Preferences
