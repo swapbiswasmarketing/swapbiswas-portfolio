@@ -12,6 +12,7 @@
     "@anthropic-ai/claude-code": "^2.1.101",
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.0",
+    "@netlify/blobs": "^10.7.4",
     "@resvg/resvg-js": "^2.6.2",
     "@testmuai/browser-cloud": "^1.0.1",
     "astro": "^5.17.1",
