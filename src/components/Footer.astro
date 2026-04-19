@@ -1,75 +1,635 @@
 ---
+import { getCollection } from 'astro:content';
 import Icon from './Icon.astro';
 
 const currentYear = new Date().getFullYear();
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+const featuredSlugs = [
+	'ai-seo-strategy',
+	'aeo-vs-seo',
+	'competitive-battlecard-template',
+	'marketers-ai-maturity-curve',
+	'go-to-market-strategy-for-startups',
+];
+const featuredPosts = featuredSlugs
+	.map((slug) => posts.find((p) => p.id === slug))
+	.filter((p): p is NonNullable<typeof p> => Boolean(p))
+	.slice(0, 4);
+
+const fallbackPosts = posts.slice(0, 4);
+const popular = featuredPosts.length >= 4 ? featuredPosts : fallbackPosts;
+
+const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 ---
 
-<footer>
-	<div class="group">
-		<p>
-			Designed & Developed in Mumbai with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer">Astro</a>
-			<Icon icon="rocket-launch" size="1.2em" />
-		</p>
-		<p>&copy; {currentYear} Swapnil Biswas · <a href="/privacy/">Privacy Policy</a></p>
+<footer class="site-footer">
+	<div class="footer-inner">
+		<div class="footer-grid">
+			<div class="col col-brand">
+				<a href="/" class="brand" aria-label="Swapnil Biswas home">
+					<span class="brand-mark" aria-hidden="true">SB</span>
+					<span class="brand-name">Swapnil Biswas</span>
+				</a>
+				<p class="tagline">
+					Senior Product Marketing Manager writing about marketing, AI, SEO, and growth. Based in Mumbai.
+				</p>
+				<span class="now-line">
+					<span class="now-dot" aria-hidden="true"></span>
+					<span>Currently at TestMu AI</span>
+				</span>
+				<ul class="socials" aria-label="Social links">
+					<li>
+						<a href="https://linkedin.com/in/swapbiswas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+							<Icon icon="linkedin-logo" size="1.15em" />
+						</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/swapbiswas" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+							<Icon icon="twitter-logo" size="1.15em" />
+						</a>
+					</li>
+					<li>
+						<a href="https://instagram.com/swapbiswas" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+							<Icon icon="instagram-logo" size="1.15em" />
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/swapbiswasmarketing/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+							<Icon icon="github-logo" size="1.15em" />
+						</a>
+					</li>
+					<li>
+						<a href="mailto:swapbiswas.marketing@gmail.com" aria-label="Email">
+							<Icon icon="paper-plane-tilt" size="1.15em" />
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<nav class="col col-nav" aria-label="Footer navigation">
+				<h3 class="col-heading">Explore</h3>
+				<ul class="link-list">
+					<li><a href="/">Home</a></li>
+					<li><a href="/blog/">Blog</a></li>
+					<li><a href="/reading-list/">Reading List</a></li>
+					<li><a href="/about/">About</a></li>
+					<li><a href="/contact/">Contact</a></li>
+					<li><a href="/rss.xml">RSS Feed</a></li>
+				</ul>
+			</nav>
+
+			<div class="col col-posts">
+				<h3 class="col-heading">Popular Reads</h3>
+				<ul class="post-list">
+					{popular.map((post) => (
+						<li>
+							<a href={`/blog/${post.id}/`}>
+								<Icon icon="arrow-right" size="0.85em" />
+								<span>{post.data.title}</span>
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
+
+			<div class="col col-subscribe">
+				<div class="subscribe-card">
+					<h3 class="col-heading">Get marketing & AI insights</h3>
+					<p class="subscribe-desc">Join the newsletter. No spam, just value every week.</p>
+					<form
+						id="footer-newsletter-form"
+						class="footer-nl-form"
+						action="https://app.kit.com/forms/9145889/subscriptions"
+						method="post"
+					>
+						<label for="footer-nl-email" class="sr-only">Email address</label>
+						<input
+							id="footer-nl-email"
+							type="email"
+							name="email_address"
+							placeholder="you@example.com"
+							required
+							autocomplete="email"
+						/>
+						<button type="submit">
+							Subscribe
+							<Icon icon="arrow-right" size="0.95em" />
+						</button>
+					</form>
+					<p class="footer-nl-status" id="footer-nl-status" aria-live="polite"></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-tags" aria-label="Blog categories">
+			<span class="tags-label">Topics</span>
+			{categories.map((c) => (
+				<a class="tag-chip" href={`/blog/category/${c.toLowerCase().replace(/ /g, '-')}/`}>{c}</a>
+			))}
+		</div>
+
+		<div class="footer-bottom">
+			<p class="copyright">
+				&copy; {currentYear} Swapnil Biswas &middot;
+				Made with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer">Astro</a>
+				<Icon icon="rocket-launch" size="1em" />
+				in Mumbai
+			</p>
+			<div class="bottom-right">
+				<a href="/privacy/">Privacy</a>
+				<span aria-hidden="true">&middot;</span>
+				<a href="/contact/">Contact</a>
+				<span aria-hidden="true">&middot;</span>
+				<button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+					Back to top <Icon icon="arrow-right" size="0.85em" />
+				</button>
+			</div>
+		</div>
 	</div>
-	<p class="socials">
-		<a href="https://linkedin.com/in/swapbiswas/" target="_blank" rel="noopener noreferrer"> LinkedIn</a>
-		<a href="https://twitter.com/swapbiswas" target="_blank" rel="noopener noreferrer"> Twitter</a>
-		<a href="https://instagram.com/swapbiswas" target="_blank" rel="noopener noreferrer"> Instagram</a>
-	</p>
 </footer>
+
+<script is:inline>
+	(function () {
+		if (window._footerInit) return;
+		window._footerInit = true;
+
+		function initFooter() {
+			var form = document.getElementById('footer-newsletter-form');
+			var statusEl = document.getElementById('footer-nl-status');
+			if (form && !form._nlInit) {
+				form._nlInit = true;
+				form.addEventListener('submit', function (e) {
+					e.preventDefault();
+					var btn = form.querySelector('button[type="submit"]');
+					var original = btn ? btn.innerHTML : '';
+					if (btn) { btn.textContent = 'Subscribing...'; btn.disabled = true; }
+					var formData = new FormData(form);
+					fetch(form.action, {
+						method: 'POST',
+						body: formData,
+						headers: { 'Accept': 'application/json' }
+					}).then(function (res) {
+						if (!res.ok) throw new Error('failed');
+						if (statusEl) { statusEl.textContent = 'Subscribed! Check your inbox.'; statusEl.style.color = 'var(--accent-regular)'; }
+						form.reset();
+						window.dataLayer = window.dataLayer || [];
+						window.dataLayer.push({ event: 'newsletter_signup', signup_location: 'footer' });
+					}).catch(function () {
+						if (statusEl) { statusEl.textContent = 'Something went wrong. Please try again.'; statusEl.style.color = '#ca7879'; }
+					}).finally(function () {
+						if (btn) { btn.innerHTML = original || 'Subscribe'; btn.disabled = false; }
+					});
+				});
+			}
+
+			var btt = document.getElementById('back-to-top');
+			if (btt && !btt._init) {
+				btt._init = true;
+				btt.addEventListener('click', function () {
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				});
+			}
+		}
+
+		initFooter();
+		document.addEventListener('astro:page-load', initFooter);
+	})();
+</script>
+
 <style>
-	footer {
+	.site-footer {
+		margin-top: auto;
+		padding: 3rem 1.25rem 1.5rem;
+		color: var(--gray-300);
+		font-size: var(--text-sm);
+		position: relative;
+		border-top: 1px solid var(--gray-800);
+	}
+
+	.footer-inner {
+		max-width: 83rem;
+		margin: 0 auto;
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
+	}
+
+	.footer-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2.25rem;
+	}
+
+	/* Section heading */
+	.col-heading {
+		font-family: var(--font-brand);
+		font-size: 0.78rem;
+		font-weight: 700;
+		color: var(--gray-0);
+		margin: 0 0 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		position: relative;
+		padding-bottom: 0.5rem;
+	}
+
+	.col-heading::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 1.75rem;
+		height: 2px;
+		border-radius: 2px;
+		background: var(--gradient-accent-orange);
+	}
+
+	/* Link lists */
+	.link-list,
+	.post-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 3rem;
-		margin-top: auto;
-		padding: 3rem 2rem 3rem;
-		text-align: center;
-		color: var(--gray-400);
-		font-size: var(--text-sm);
+		gap: 0.65rem;
 	}
 
-	footer a {
-		color: var(--gray-400);
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
+	.link-list a {
+		color: var(--gray-300);
+		text-decoration: none;
+		transition: color 0.2s ease, transform 0.2s ease;
+		display: inline-block;
 	}
 
-	footer a:hover,
-	footer a:focus {
-		text-decoration-color: currentColor;
+	.link-list a:hover,
+	.link-list a:focus-visible {
+		color: var(--accent-dark);
+		transform: translateX(2px);
 	}
 
-	.group {
+	.post-list a {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.5rem;
+		color: var(--gray-300);
+		text-decoration: none;
+		line-height: 1.45;
+		transition: color 0.2s ease;
+	}
+
+	.post-list a :global(svg) {
+		flex-shrink: 0;
+		margin-top: 0.3rem;
+		color: var(--accent-dark);
+		opacity: 0.7;
+		transition: transform 0.2s ease, opacity 0.2s ease;
+	}
+
+	.post-list a:hover,
+	.post-list a:focus-visible {
+		color: var(--gray-0);
+	}
+
+	.post-list a:hover :global(svg),
+	.post-list a:focus-visible :global(svg) {
+		transform: translateX(3px);
+		opacity: 1;
+	}
+
+	.post-list span {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	/* Brand column */
+	.brand {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		margin-bottom: 0.9rem;
+		text-decoration: none;
+	}
+
+	.brand-mark {
+		width: 2.25rem;
+		height: 2.25rem;
+		display: grid;
+		place-items: center;
+		border-radius: 0.625rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-weight: 700;
+		font-size: 0.95rem;
+		letter-spacing: 0.02em;
+		box-shadow: var(--shadow-sm);
+	}
+
+	.brand-name {
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+	}
+
+	.tagline {
+		margin: 0 0 0.85rem;
+		max-width: 32ch;
+		line-height: 1.55;
+		color: var(--gray-200);
+	}
+
+	.now-line {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 1.15rem;
+		padding: 0.35rem 0.75rem;
+		border-radius: 999px;
+		border: 1px solid var(--gray-800);
+		background: var(--gray-999_40);
+		color: var(--gray-200);
+		font-size: 0.8125rem;
+		line-height: 1;
+		width: fit-content;
+	}
+
+	.now-dot {
+		display: inline-block;
+		flex-shrink: 0;
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 999px;
+		background: #22c55e;
+		box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+		animation: pulse 2.4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%, 100% { box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18); }
+		50%      { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.05); }
+	}
+
+	/* Socials — high specificity to beat .col ul / .link-list */
+	.col-brand .socials {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+	}
+
+	.col-brand .socials a {
+		display: grid;
+		place-items: center;
+		width: 2.25rem;
+		height: 2.25rem;
+		border-radius: 0.55rem;
+		border: 1px solid var(--gray-800);
+		color: var(--gray-200);
+		background: var(--gray-999_40);
+		transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+	}
+
+	.col-brand .socials a:hover,
+	.col-brand .socials a:focus-visible {
+		color: var(--accent-text-over);
+		background: var(--gradient-accent-orange);
+		border-color: transparent;
+		transform: translateY(-2px);
+	}
+
+	/* Subscribe card */
+	.subscribe-card {
+		padding: 1.5rem;
+		border-radius: 1rem;
+		border: 1px solid var(--gray-800);
+		background:
+			radial-gradient(120% 120% at 100% 0%, rgba(202, 120, 121, 0.08), transparent 60%),
+			radial-gradient(120% 120% at 0% 100%, rgba(118, 17, 166, 0.08), transparent 60%),
+			var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.subscribe-card .col-heading {
+		font-size: 0.9rem;
+		text-transform: none;
+		letter-spacing: 0;
+		font-weight: 700;
+	}
+
+	.subscribe-card .col-heading::after {
+		display: none;
+	}
+
+	.subscribe-desc {
+		margin: 0 0 1rem;
+		line-height: 1.55;
+		color: var(--gray-200);
+	}
+
+	.footer-nl-form {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
 	}
 
-	.socials {
-		display: flex;
+	.footer-nl-form input {
+		padding: 0.7rem 0.9rem;
+		border-radius: 0.55rem;
+		border: 1px solid var(--gray-800);
+		background: var(--gray-999);
+		color: var(--gray-0);
+		font-size: var(--text-sm);
+		font-family: var(--font-body);
+		outline: none;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.footer-nl-form input:focus {
+		border-color: var(--accent-dark);
+		box-shadow: 0 0 0 3px rgba(118, 17, 166, 0.15);
+	}
+
+	.footer-nl-form input::placeholder {
+		color: var(--gray-400);
+	}
+
+	.footer-nl-form button {
+		display: inline-flex;
+		align-items: center;
 		justify-content: center;
-		gap: 1rem;
+		gap: 0.5rem;
+		padding: 0.7rem 1rem;
+		border: none;
+		border-radius: 0.55rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		font-family: var(--font-brand);
+		cursor: pointer;
+		transition: transform 0.2s ease, filter 0.2s ease;
+	}
+
+	.footer-nl-form button:hover {
+		transform: translateY(-1px);
+		filter: brightness(1.05);
+	}
+
+	.footer-nl-form button:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+		transform: none;
+	}
+
+	.footer-nl-status {
+		min-height: 1.1rem;
+		margin: 0.5rem 0 0;
+		font-size: 0.8125rem;
+	}
+
+	/* Topic tag row */
+	.footer-tags {
+		margin: 2.25rem 0 1.25rem;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.45rem;
+		padding-top: 1.75rem;
+		border-top: 1px solid var(--gray-800);
+	}
+
+	.tags-label {
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: var(--gray-400);
+		margin-right: 0.5rem;
+		font-weight: 600;
+	}
+
+	.tag-chip {
+		display: inline-block;
+		padding: 0.3rem 0.75rem;
+		border-radius: 999px;
+		border: 1px solid var(--gray-800);
+		background: var(--gray-999_40);
+		color: var(--gray-200);
+		font-size: 0.8125rem;
+		text-decoration: none;
+		transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+	}
+
+	.tag-chip:hover,
+	.tag-chip:focus-visible {
+		color: var(--accent-text-over);
+		background: var(--gradient-accent-orange);
+		border-color: transparent;
+		transform: translateY(-1px);
+	}
+
+	/* Bottom bar */
+	.footer-bottom {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+		align-items: flex-start;
+		padding-top: 1.25rem;
+		border-top: 1px solid var(--gray-800);
+		color: var(--gray-400);
+		font-size: 0.8125rem;
+	}
+
+	.footer-bottom a,
+	.back-to-top {
+		color: var(--gray-300);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.footer-bottom a:hover,
+	.footer-bottom a:focus-visible,
+	.back-to-top:hover,
+	.back-to-top:focus-visible {
+		color: var(--accent-dark);
+	}
+
+	.copyright {
+		margin: 0;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
 		flex-wrap: wrap;
 	}
 
-	@media (min-width: 50em) {
-		footer {
+	.bottom-right {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.55rem;
+		flex-wrap: wrap;
+	}
+
+	/* Inline back-to-top */
+	.back-to-top {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		background: none;
+		border: none;
+		padding: 0;
+		font: inherit;
+		cursor: pointer;
+	}
+
+	.back-to-top :global(svg) {
+		transform: rotate(-90deg);
+		transition: transform 0.2s ease;
+	}
+
+	.back-to-top:hover :global(svg) {
+		transform: rotate(-90deg) translateX(3px);
+	}
+
+	/* Responsive */
+	@media (min-width: 40em) {
+		.site-footer {
+			padding: 3.5rem 2rem 1.75rem;
+		}
+		.footer-grid {
+			grid-template-columns: 1fr 1fr;
+			gap: 2.5rem 3rem;
+		}
+	}
+
+	@media (min-width: 62em) {
+		.site-footer {
+			padding: 4rem 3rem 1.75rem;
+		}
+		.footer-grid {
+			grid-template-columns: 1.5fr 0.9fr 1.5fr 1.6fr;
+			gap: 3rem;
+			align-items: start;
+		}
+		.footer-bottom {
 			flex-direction: row;
 			justify-content: space-between;
-			padding: 2.5rem 5rem;
-		}
-
-		.group {
-			flex-direction: row;
-			gap: 1rem;
-			flex-wrap: wrap;
-		}
-
-		.socials {
-			justify-content: flex-end;
+			align-items: center;
 		}
 	}
 </style>

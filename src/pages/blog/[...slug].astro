@@ -35,6 +35,17 @@ function categorySlug(cat: string): string {
 const wordCount = entry.body ? entry.body.split(/\s+/).length : 0;
 const readingTime = Math.max(1, Math.ceil(wordCount / 220));
 
+// Short articleBody excerpt for schema - strip markdown noise, cap at 300 chars.
+const articleBodyExcerpt = entry.body
+	? entry.body
+			.replace(/```[\s\S]*?```/g, '')
+			.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+			.replace(/[#>*_`~\[\]|]/g, '')
+			.replace(/\s+/g, ' ')
+			.trim()
+			.slice(0, 300)
+	: entry.data.description;
+
 // Format publish date
 const dateFormatOptions: Intl.DateTimeFormatOptions = {
 	year: 'numeric',
@@ -72,22 +83,24 @@ const blogPostSchema = {
 	"image": `https://swapbiswas.com/og/${entry.id}.webp`,
 	"datePublished": entry.data.publishDate.toISOString(),
 	"dateModified": (entry.data.updatedDate || entry.data.publishDate).toISOString(),
-	"author": {
-		"@type": "Person",
-		"@id": "https://swapbiswas.com/#person",
-		"name": "Swapnil Biswas",
-		"url": "https://swapbiswas.com"
-	},
-	"publisher": {
-		"@type": "Person",
-		"@id": "https://swapbiswas.com/#person",
-		"name": "Swapnil Biswas"
-	},
+	"author": { "@id": "https://swapbiswas.com/#person" },
+	"publisher": { "@id": "https://swapbiswas.com/#person" },
 	"mainEntityOfPage": {
 		"@type": "WebPage",
 		"@id": `https://swapbiswas.com/blog/${entry.id}/`
 	},
-	"keywords": entry.data.category.join(", ")
+	"url": `https://swapbiswas.com/blog/${entry.id}/`,
+	"inLanguage": "en-US",
+	"isAccessibleForFree": true,
+	"wordCount": wordCount,
+	"timeRequired": `PT${readingTime}M`,
+	"articleSection": entry.data.category[0],
+	"articleBody": articleBodyExcerpt,
+	"keywords": entry.data.category.join(", "),
+	"speakable": {
+		"@type": "SpeakableSpecification",
+		"cssSelector": [".description", ".content > p:first-of-type", ".faq-item:first-of-type .faq-answer"]
+	}
 };
 
 const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {

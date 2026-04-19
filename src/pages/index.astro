@@ -45,34 +45,7 @@ const posts = (await getCollection('blog'))
 					"query-input": "required name=search_term_string"
 				}
 			},
-			{
-				"@type": "Person",
-				"@id": "https://swapbiswas.com/#person",
-				"name": "Swapnil Biswas",
-				"url": "https://swapbiswas.com",
-				"image": "https://swapbiswas.com/assets/portrait-new.webp",
-				"jobTitle": "Senior Product Marketing Manager",
-				"worksFor": {
-					"@type": "Organization",
-					"name": "LambdaTest / TestMu AI"
-				},
-				"alumniOf": [
-					{
-						"@type": "CollegeOrUniversity",
-						"name": "Indian Institute of Management Visakhapatnam"
-					},
-					{
-						"@type": "CollegeOrUniversity",
-						"name": "Amity University"
-					}
-				],
-				"sameAs": [
-					"https://linkedin.com/in/swapbiswas/",
-					"https://twitter.com/swapbiswas",
-					"https://github.com/swapbiswasmarketing/"
-				],
-				"knowsAbout": ["Product Marketing", "Growth Strategy", "AI", "SEO", "Content Marketing", "SaaS Marketing"]
-			},
+			{ "@id": "https://swapbiswas.com/#person" },
 			{
 				"@type": "ItemList",
 				"name": "Latest Blog Posts",

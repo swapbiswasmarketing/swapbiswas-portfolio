@@ -7,6 +7,7 @@ import Footer from '../components/Footer.astro';
 // Component Imports
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
+import { personSchema } from '../lib/personSchema';
 
 interface BreadcrumbItem {
 	name: string;
@@ -41,13 +42,16 @@ const navItems = [
 	{ name: "About", url: "https://swapbiswas.com/about/" },
 	{ name: "Contact", url: "https://swapbiswas.com/contact/" },
 ];
-const siteNavSchema = {
+const siteGraphSchema = {
 	"@context": "https://schema.org",
-	"@graph": navItems.map((item) => ({
-		"@type": "SiteNavigationElement",
-		"name": item.name,
-		"url": item.url,
-	})),
+	"@graph": [
+		personSchema,
+		...navItems.map((item) => ({
+			"@type": "SiteNavigationElement",
+			"name": item.name,
+			"url": item.url,
+		})),
+	],
 };
 
 const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
@@ -69,7 +73,7 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 	<head>
 		<MainHead title={title} description={description} image={image} noindex={noindex} article={article} profile={profile} />
 		{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
-		<script type="application/ld+json" set:html={JSON.stringify(siteNavSchema)} />
+		<script type="application/ld+json" set:html={JSON.stringify(siteGraphSchema)} />
 		<ViewTransitions />
 		<slot name="head" />
 	</head>
