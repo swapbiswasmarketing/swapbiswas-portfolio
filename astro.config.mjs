@@ -7,7 +7,13 @@ import rehypeExternalLinks from 'rehype-external-links';
 export default defineConfig({
 	site: 'https://swapbiswas.com',
 	integrations: [
-		sitemap(),
+		sitemap({
+			// Exclude noindexed routes so they don't bloat the sitemap
+			filter: (page) =>
+				!page.includes('/blog/category/') &&
+				!page.includes('/work/') &&
+				!page.match(/\/work\/?$/),
+		}),
 		{
 			name: 'sitemap-lastmod',
 			hooks: {
