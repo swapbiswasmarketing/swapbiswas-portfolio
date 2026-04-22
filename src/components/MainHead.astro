@@ -128,6 +128,12 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 			t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 		})(window,document,"clarity","script","myl5bf3yc1");
+
+		// Google AdSense
+		var ads=document.createElement('script');ads.async=true;
+		ads.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3086200953871328';
+		ads.crossOrigin='anonymous';
+		document.head.appendChild(ads);
 	}
 </script>
 
