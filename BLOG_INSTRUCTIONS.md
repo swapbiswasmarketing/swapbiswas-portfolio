@@ -282,6 +282,11 @@ faqs:
 - `how-much-does-an-seo-audit-cost.md` (4 FAQs)
 - `what-does-a-product-marketing-manager-do.md` (4 FAQs)
 - `how-to-use-chatgpt-for-sales-and-marketing.md` (4 FAQs)
+- `how-to-implement-marketing-automation.md` (5 FAQs)
+- `how-to-launch-a-saas-product.md` (5 FAQs)
+- `what-is-b2b-demand-generation.md` (5 FAQs)
+- `what-is-market-positioning.md` (5 FAQs)
+- `what-is-sales-enablement-software.md` (5 FAQs)
 
 ## 9. Content Schema Reference
 

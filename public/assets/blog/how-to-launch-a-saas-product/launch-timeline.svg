@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="760" fill="url(#bgGrad)" rx="24"/>
+
+  <text x="700" y="68" fill="#f0f6fc" font-size="40" font-weight="700" text-anchor="middle">SaaS Product Launch Timeline</text>
+  <text x="700" y="106" fill="#9ca3af" font-size="22" text-anchor="middle">12 weeks of pre-launch work, one launch week, 90 days of post-launch loop</text>
+
+  <!-- Timeline ribbon -->
+  <line x1="170" y1="180" x2="1230" y2="180" stroke="#30363d" stroke-width="3"/>
+  <circle cx="170" cy="180" r="9" fill="#f5a0a1"/>
+  <circle cx="382" cy="180" r="9" fill="#d98ee0"/>
+  <circle cx="594" cy="180" r="9" fill="#c084fc"/>
+  <circle cx="806" cy="180" r="9" fill="#60a5fa"/>
+  <circle cx="1018" cy="180" r="9" fill="#5eead4"/>
+  <circle cx="1230" cy="180" r="9" fill="#fb923c"/>
+
+  <text x="170" y="148" fill="#9ca3af" font-size="18" text-anchor="middle" letter-spacing="0.06em">WEEK -12</text>
+  <text x="382" y="148" fill="#9ca3af" font-size="18" text-anchor="middle" letter-spacing="0.06em">WEEK -10</text>
+  <text x="594" y="148" fill="#9ca3af" font-size="18" text-anchor="middle" letter-spacing="0.06em">WEEK -8</text>
+  <text x="806" y="148" fill="#9ca3af" font-size="18" text-anchor="middle" letter-spacing="0.06em">WEEK -6</text>
+  <text x="1018" y="148" fill="#9ca3af" font-size="18" text-anchor="middle" letter-spacing="0.06em">WEEK -4 to 0</text>
+  <text x="1230" y="148" fill="#9ca3af" font-size="18" text-anchor="middle" letter-spacing="0.06em">T+90</text>
+
+  <!-- Row 1 cards -->
+  <!-- Card 1: Brief & Narrative -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="230" width="420" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <circle cx="100" cy="280" r="26" fill="#f5a0a1"/>
+    <text x="100" y="288" fill="#0d1117" font-size="24" font-weight="700" text-anchor="middle">1</text>
+    <text x="146" y="288" fill="#f0f6fc" font-size="26" font-weight="600">Brief and Narrative</text>
+    <text x="80" y="338" fill="#c8cfd8" font-size="22">One-page brief: why-now, customer</text>
+    <text x="80" y="366" fill="#c8cfd8" font-size="22">problem, value, success metrics.</text>
+    <text x="80" y="402" fill="#9ca3af" font-size="20">+ Tiering decision (T1, T2, T3)</text>
+  </g>
+
+  <!-- Card 2: Positioning & Pricing -->
+  <g filter="url(#cardShadow)">
+    <rect x="490" y="230" width="420" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <circle cx="540" cy="280" r="26" fill="#d98ee0"/>
+    <text x="540" y="288" fill="#0d1117" font-size="24" font-weight="700" text-anchor="middle">2</text>
+    <text x="586" y="288" fill="#f0f6fc" font-size="26" font-weight="600">Positioning + Pricing</text>
+    <text x="520" y="338" fill="#c8cfd8" font-size="22">Lock against competitive</text>
+    <text x="520" y="366" fill="#c8cfd8" font-size="22">alternatives. Finalize tiers.</text>
+    <text x="520" y="402" fill="#9ca3af" font-size="20">+ Pricing locked by week -10</text>
+  </g>
+
+  <!-- Card 3: Private Beta -->
+  <g filter="url(#cardShadow)">
+    <rect x="930" y="230" width="420" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <circle cx="980" cy="280" r="26" fill="#c084fc"/>
+    <text x="980" y="288" fill="#0d1117" font-size="24" font-weight="700" text-anchor="middle">3</text>
+    <text x="1026" y="288" fill="#f0f6fc" font-size="26" font-weight="600">Private Beta</text>
+    <text x="960" y="338" fill="#c8cfd8" font-size="22">20-50 design partners. Weekly</text>
+    <text x="960" y="366" fill="#c8cfd8" font-size="22">check-ins. Capture customer quotes.</text>
+    <text x="960" y="402" fill="#9ca3af" font-size="20">+ Find the breaks before scale does</text>
+  </g>
+
+  <!-- Row 2 cards -->
+  <!-- Card 4: Public Beta + Assets -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="490" width="420" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <circle cx="100" cy="540" r="26" fill="#60a5fa"/>
+    <text x="100" y="548" fill="#0d1117" font-size="24" font-weight="700" text-anchor="middle">4</text>
+    <text x="146" y="548" fill="#f0f6fc" font-size="26" font-weight="600">Public Beta + Assets</text>
+    <text x="80" y="598" fill="#c8cfd8" font-size="22">Open beta. Ship launch site, demo</text>
+    <text x="80" y="626" fill="#c8cfd8" font-size="22">video, deck, blog, email, banner.</text>
+    <text x="80" y="662" fill="#9ca3af" font-size="20">+ Production schedule is what slips</text>
+  </g>
+
+  <!-- Card 5: Sales Enablement + Launch -->
+  <g filter="url(#cardShadow)">
+    <rect x="490" y="490" width="420" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <circle cx="540" cy="540" r="26" fill="#5eead4"/>
+    <text x="540" y="548" fill="#0d1117" font-size="24" font-weight="700" text-anchor="middle">5</text>
+    <text x="586" y="548" fill="#f0f6fc" font-size="26" font-weight="600">Enablement + Launch</text>
+    <text x="520" y="598" fill="#c8cfd8" font-size="22">Sales certified. Press embargoed.</text>
+    <text x="520" y="626" fill="#c8cfd8" font-size="22">Run-of-show with named owners.</text>
+    <text x="520" y="662" fill="#9ca3af" font-size="20">+ Rehearse end-to-end before go-live</text>
+  </g>
+
+  <!-- Card 6: Post-Launch Loop -->
+  <g filter="url(#cardShadow)">
+    <rect x="930" y="490" width="420" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <circle cx="980" cy="540" r="26" fill="#fb923c"/>
+    <text x="980" y="548" fill="#0d1117" font-size="24" font-weight="700" text-anchor="middle">6</text>
+    <text x="1026" y="548" fill="#f0f6fc" font-size="26" font-weight="600">T+30 / +60 / +90</text>
+    <text x="960" y="598" fill="#c8cfd8" font-size="22">Activation, sales motion, revenue.</text>
+    <text x="960" y="626" fill="#c8cfd8" font-size="22">Retros at T+5 and T+90.</text>
+    <text x="960" y="662" fill="#9ca3af" font-size="20">+ Pipeline compounds in the loop</text>
+  </g>
+
+  <text x="700" y="745" fill="#9ca3af" font-size="20" text-anchor="middle">Launch day is when the meter starts, not when it stops.</text>
+</svg>

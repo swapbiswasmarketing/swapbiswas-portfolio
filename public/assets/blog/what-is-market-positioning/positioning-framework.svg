@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="resultGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ca7879"/>
+      <stop offset="50%" stop-color="#7611a6"/>
+      <stop offset="100%" stop-color="#e05d22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="720" fill="url(#bgGrad)" rx="24"/>
+
+  <text x="700" y="68" fill="#f0f6fc" font-size="40" font-weight="700" text-anchor="middle">The 5 Components of Market Positioning</text>
+  <text x="700" y="106" fill="#9ca3af" font-size="22" text-anchor="middle">Answer them in order. Each step depends on the answer above it.</text>
+
+  <!-- Card 1: Competitive Alternatives -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="160" width="240" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="50" y="160" width="240" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="170" y="206" fill="#f5a0a1" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0.08em">STEP 1</text>
+    <text x="170" y="252" fill="#f0f6fc" font-size="24" font-weight="600" text-anchor="middle">Competitive</text>
+    <text x="170" y="282" fill="#f0f6fc" font-size="24" font-weight="600" text-anchor="middle">Alternatives</text>
+    <line x1="80" y1="306" x2="260" y2="306" stroke="#30363d" stroke-width="1"/>
+    <text x="170" y="338" fill="#c8cfd8" font-size="20" text-anchor="middle">What would they</text>
+    <text x="170" y="362" fill="#c8cfd8" font-size="20" text-anchor="middle">do if we did not</text>
+    <text x="170" y="386" fill="#c8cfd8" font-size="20" text-anchor="middle">exist?</text>
+    <text x="170" y="416" fill="#9ca3af" font-size="18" text-anchor="middle">Often: a spreadsheet</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="295" y1="300" x2="320" y2="300" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="315,293 329,300 315,307" fill="#5eead4"/>
+
+  <!-- Card 2: Unique Attributes -->
+  <g filter="url(#cardShadow)">
+    <rect x="320" y="160" width="240" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="320" y="160" width="240" height="6" rx="3" fill="#d98ee0"/>
+    <text x="440" y="206" fill="#d98ee0" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0.08em">STEP 2</text>
+    <text x="440" y="252" fill="#f0f6fc" font-size="24" font-weight="600" text-anchor="middle">Unique</text>
+    <text x="440" y="282" fill="#f0f6fc" font-size="24" font-weight="600" text-anchor="middle">Attributes</text>
+    <line x1="350" y1="306" x2="530" y2="306" stroke="#30363d" stroke-width="1"/>
+    <text x="440" y="338" fill="#c8cfd8" font-size="20" text-anchor="middle">What we have</text>
+    <text x="440" y="362" fill="#c8cfd8" font-size="20" text-anchor="middle">that alternatives</text>
+    <text x="440" y="386" fill="#c8cfd8" font-size="20" text-anchor="middle">do not</text>
+    <text x="440" y="416" fill="#9ca3af" font-size="18" text-anchor="middle">3-5, no parity items</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="565" y1="300" x2="590" y2="300" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="585,293 599,300 585,307" fill="#5eead4"/>
+
+  <!-- Card 3: Value -->
+  <g filter="url(#cardShadow)">
+    <rect x="590" y="160" width="240" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="590" y="160" width="240" height="6" rx="3" fill="#c084fc"/>
+    <text x="710" y="206" fill="#c084fc" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0.08em">STEP 3</text>
+    <text x="710" y="252" fill="#f0f6fc" font-size="24" font-weight="600" text-anchor="middle">Differentiated</text>
+    <text x="710" y="282" fill="#f0f6fc" font-size="24" font-weight="600" text-anchor="middle">Value</text>
+    <line x1="620" y1="306" x2="800" y2="306" stroke="#30363d" stroke-width="1"/>
+    <text x="710" y="338" fill="#c8cfd8" font-size="20" text-anchor="middle">For each attribute,</text>
+    <text x="710" y="362" fill="#c8cfd8" font-size="20" text-anchor="middle">ask: so what does</text>
+    <text x="710" y="386" fill="#c8cfd8" font-size="20" text-anchor="middle">that produce?</text>
+    <text x="710" y="416" fill="#9ca3af" font-size="18" text-anchor="middle">Outcome, not feature</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="835" y1="300" x2="860" y2="300" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="855,293 869,300 855,307" fill="#5eead4"/>
+
+  <!-- Card 4: Best-Fit Customers -->
+  <g filter="url(#cardShadow)">
+    <rect x="860" y="160" width="240" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="860" y="160" width="240" height="6" rx="3" fill="#60a5fa"/>
+    <text x="980" y="206" fill="#60a5fa" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0.08em">STEP 4</text>
+    <text x="980" y="252" fill="#f0f6fc" font-size="24" font-weight="600" text-anchor="middle">Best-Fit</text>
+    <text x="980" y="282" fill="#f0f6fc" font-size="24" font-weight="600" text-anchor="middle">Customers</text>
+    <line x1="890" y1="306" x2="1070" y2="306" stroke="#30363d" stroke-width="1"/>
+    <text x="980" y="338" fill="#c8cfd8" font-size="20" text-anchor="middle">Who cares most</text>
+    <text x="980" y="362" fill="#c8cfd8" font-size="20" text-anchor="middle">about this value?</text>
+    <text x="980" y="386" fill="#c8cfd8" font-size="20" text-anchor="middle">Narrow, not TAM</text>
+    <text x="980" y="416" fill="#9ca3af" font-size="18" text-anchor="middle">Specific firmographics</text>
+  </g>
+
+  <!-- Arrow 4 -> 5 -->
+  <line x1="1105" y1="300" x2="1130" y2="300" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1125,293 1139,300 1125,307" fill="#5eead4"/>
+
+  <!-- Card 5: Market Category -->
+  <g filter="url(#cardShadow)">
+    <rect x="1130" y="160" width="220" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1130" y="160" width="220" height="6" rx="3" fill="#fb923c"/>
+    <text x="1240" y="206" fill="#fb923c" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="0.08em">STEP 5</text>
+    <text x="1240" y="252" fill="#f0f6fc" font-size="24" font-weight="600" text-anchor="middle">Market</text>
+    <text x="1240" y="282" fill="#f0f6fc" font-size="24" font-weight="600" text-anchor="middle">Category</text>
+    <line x1="1160" y1="306" x2="1320" y2="306" stroke="#30363d" stroke-width="1"/>
+    <text x="1240" y="338" fill="#c8cfd8" font-size="20" text-anchor="middle">The context that</text>
+    <text x="1240" y="362" fill="#c8cfd8" font-size="20" text-anchor="middle">makes the value</text>
+    <text x="1240" y="386" fill="#c8cfd8" font-size="20" text-anchor="middle">obvious</text>
+    <text x="1240" y="416" fill="#9ca3af" font-size="18" text-anchor="middle">Where buyers compare</text>
+  </g>
+
+  <!-- Down arrow into result -->
+  <line x1="700" y1="465" x2="700" y2="500" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,495 700,509 707,495" fill="#5eead4"/>
+
+  <!-- Result: Positioning Statement -->
+  <g filter="url(#cardShadow)">
+    <rect x="100" y="510" width="1200" height="160" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="100" y="510" width="6" height="160" rx="3" fill="url(#resultGrad)"/>
+    <text x="700" y="552" fill="#f0f6fc" font-size="24" font-weight="600" text-anchor="middle">Positioning Statement (internal, not a tagline)</text>
+    <text x="700" y="596" fill="#c8cfd8" font-size="22" text-anchor="middle">For [best-fit customer] who [problem], we are a [category] that [differentiated value].</text>
+    <text x="700" y="626" fill="#c8cfd8" font-size="22" text-anchor="middle">Unlike [competitive alternative], we [unique attribute].</text>
+    <text x="700" y="656" fill="#9ca3af" font-size="20" text-anchor="middle">Every downstream asset inherits from this one document.</text>
+  </g>
+</svg>

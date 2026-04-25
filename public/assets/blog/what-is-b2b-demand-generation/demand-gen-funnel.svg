@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="720" fill="url(#bgGrad)" rx="24"/>
+
+  <text x="700" y="68" fill="#f0f6fc" font-size="40" font-weight="700" text-anchor="middle">The B2B Demand Generation Funnel</text>
+  <text x="700" y="106" fill="#9ca3af" font-size="22" text-anchor="middle">Create demand upstream. Capture it downstream. Concentrate it where it converts.</text>
+
+  <!-- Stage 1: Create Awareness -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="150" width="305" height="460" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="50" y="150" width="305" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="80" y="200" fill="#f5a0a1" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 1  ·  TOFU</text>
+    <text x="80" y="240" fill="#f0f6fc" font-size="26" font-weight="600">Create Awareness</text>
+    <text x="80" y="282" fill="#c8cfd8" font-size="22">Become the credible voice</text>
+    <text x="80" y="310" fill="#c8cfd8" font-size="22">in the category before the</text>
+    <text x="80" y="338" fill="#c8cfd8" font-size="22">buyer has a need.</text>
+    <text x="80" y="392" fill="#9ca3af" font-size="20">• POV content + research</text>
+    <text x="80" y="422" fill="#9ca3af" font-size="20">• SEO for category terms</text>
+    <text x="80" y="452" fill="#9ca3af" font-size="20">• Podcasts + communities</text>
+    <text x="80" y="482" fill="#9ca3af" font-size="20">• PR + analyst relations</text>
+    <text x="80" y="540" fill="#5eead4" font-size="20" font-weight="600">KPI</text>
+    <text x="80" y="568" fill="#c8cfd8" font-size="20">Branded search, share of</text>
+    <text x="80" y="592" fill="#c8cfd8" font-size="20">voice, qualified traffic</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="360" y1="380" x2="395" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="390,373 404,380 390,387" fill="#5eead4"/>
+
+  <!-- Stage 2: Capture Intent -->
+  <g filter="url(#cardShadow)">
+    <rect x="395" y="150" width="305" height="460" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="395" y="150" width="305" height="6" rx="3" fill="#c084fc"/>
+    <text x="425" y="200" fill="#c084fc" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 2  ·  MOFU</text>
+    <text x="425" y="240" fill="#f0f6fc" font-size="26" font-weight="600">Capture Intent</text>
+    <text x="425" y="282" fill="#c8cfd8" font-size="22">Be present and credible</text>
+    <text x="425" y="310" fill="#c8cfd8" font-size="22">when the buyer starts</text>
+    <text x="425" y="338" fill="#c8cfd8" font-size="22">active research.</text>
+    <text x="425" y="392" fill="#9ca3af" font-size="20">• Comparison content</text>
+    <text x="425" y="422" fill="#9ca3af" font-size="20">• Pricing + integration SEO</text>
+    <text x="425" y="452" fill="#9ca3af" font-size="20">• G2 / Capterra reviews</text>
+    <text x="425" y="482" fill="#9ca3af" font-size="20">• Webinars + retargeting</text>
+    <text x="425" y="540" fill="#5eead4" font-size="20" font-weight="600">KPI</text>
+    <text x="425" y="568" fill="#c8cfd8" font-size="20">Demo requests, review</text>
+    <text x="425" y="592" fill="#c8cfd8" font-size="20">site clicks, brand lift</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="705" y1="380" x2="740" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="735,373 749,380 735,387" fill="#5eead4"/>
+
+  <!-- Stage 3: Engage Accounts -->
+  <g filter="url(#cardShadow)">
+    <rect x="740" y="150" width="305" height="460" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="740" y="150" width="305" height="6" rx="3" fill="#60a5fa"/>
+    <text x="770" y="200" fill="#60a5fa" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 3  ·  ABM</text>
+    <text x="770" y="240" fill="#f0f6fc" font-size="26" font-weight="600">Engage Accounts</text>
+    <text x="770" y="282" fill="#c8cfd8" font-size="22">Concentrate spend on</text>
+    <text x="770" y="310" fill="#c8cfd8" font-size="22">the accounts most likely</text>
+    <text x="770" y="338" fill="#c8cfd8" font-size="22">to actually buy.</text>
+    <text x="770" y="392" fill="#9ca3af" font-size="20">• Top 200-500 target list</text>
+    <text x="770" y="422" fill="#9ca3af" font-size="20">• 1:1 ad campaigns</text>
+    <text x="770" y="452" fill="#9ca3af" font-size="20">• Personalized landing pages</text>
+    <text x="770" y="482" fill="#9ca3af" font-size="20">• Intent-driven outbound</text>
+    <text x="770" y="540" fill="#5eead4" font-size="20" font-weight="600">KPI</text>
+    <text x="770" y="568" fill="#c8cfd8" font-size="20">Account engagement,</text>
+    <text x="770" y="592" fill="#c8cfd8" font-size="20">target-list opps + win rate</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="1050" y1="380" x2="1085" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1080,373 1094,380 1080,387" fill="#5eead4"/>
+
+  <!-- Stage 4: Accelerate Pipeline -->
+  <g filter="url(#cardShadow)">
+    <rect x="1085" y="150" width="265" height="460" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1085" y="150" width="265" height="6" rx="3" fill="#fb923c"/>
+    <text x="1115" y="200" fill="#fb923c" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 4  ·  BOFU</text>
+    <text x="1115" y="240" fill="#f0f6fc" font-size="26" font-weight="600">Accelerate</text>
+    <text x="1115" y="282" fill="#c8cfd8" font-size="22">Shorten the cycle from</text>
+    <text x="1115" y="310" fill="#c8cfd8" font-size="22">MQL to closed-won.</text>
+    <text x="1115" y="338" fill="#c8cfd8" font-size="22">Fuel the sales motion.</text>
+    <text x="1115" y="392" fill="#9ca3af" font-size="20">• Case studies + ROI</text>
+    <text x="1115" y="422" fill="#9ca3af" font-size="20">• Customer story library</text>
+    <text x="1115" y="452" fill="#9ca3af" font-size="20">• Reference program</text>
+    <text x="1115" y="482" fill="#9ca3af" font-size="20">• Proof + security pages</text>
+    <text x="1115" y="540" fill="#5eead4" font-size="20" font-weight="600">KPI</text>
+    <text x="1115" y="568" fill="#c8cfd8" font-size="20">MQL-to-SQL, cycle length,</text>
+    <text x="1115" y="592" fill="#c8cfd8" font-size="20">influenced revenue</text>
+  </g>
+
+  <text x="700" y="685" fill="#9ca3af" font-size="20" text-anchor="middle">Buyers complete most of the journey alone. Demand gen is what shows up in those conversations.</text>
+</svg>
