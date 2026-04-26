@@ -21,6 +21,8 @@ Both data points tell the same story: the companies that win are the ones who kn
 
 An ICP tells you **which companies** to target. A buyer persona tells you **how to talk to the people** inside those companies. Skip either one, and you're either selling to the wrong organizations or saying the wrong things to the right ones.
 
+> **Skip the blank doc.** Use the [free Buyer Persona Generator](/tools/buyer-persona-generator/) to build a polished B2B persona in 2 minutes - goals, pains, decision factors, objections, channels, and a representative quote. Live preview, PNG download, no signup.
+
 ## ICP vs Buyer Persona: The Core Difference
 
 Here's the simplest way to think about it:
@@ -323,6 +325,8 @@ If you don't have an ICP or buyer personas yet, here's the priority order:
 5. **Review quarterly** - Update based on new customer data and market shifts
 
 Faster-growing companies drive **40% more revenue from personalization** than slower-growing ones ([McKinsey](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-value-of-getting-personalization-right-or-wrong-is-multiplying)). The ICP and buyer persona are the foundation that makes that personalization possible.
+
+> **Build your first persona right now.** The [free Buyer Persona Generator](/tools/buyer-persona-generator/) walks you through every section, shows a live preview as you type, and exports a PNG you can drop into Notion, Confluence, Salesforce, or your sales enablement platform.
 
 **Related reading:**
 - [Product Positioning](/blog/product-positioning/) - How to position your product for your ICP

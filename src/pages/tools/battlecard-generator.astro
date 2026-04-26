@@ -1,0 +1,1669 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+
+const title = "Free Sales Battlecard Generator | Build a Competitive Battlecard in 2 Minutes";
+const description = "Free sales battlecard generator. Enter your product, your competitor, and key differentiators - download a polished, sales-ready battlecard PNG instantly. No signup required.";
+
+const faqs = [
+	{
+		question: "What is a sales battlecard?",
+		answer: "A sales battlecard is a one-page reference document that helps sales reps win against a specific competitor. It typically includes the competitor's positioning, your differentiators, common objections with responses, discovery questions, and proof points - all in a format reps can pull up mid-call.",
+	},
+	{
+		question: "How do I use this battlecard generator?",
+		answer: "Fill in your product name, the competitor you want to position against, three reasons you win, the competitor's genuine strengths, two common objections with your responses, three discovery questions, and one proof point. The preview updates as you type. Click Download PNG when you're done.",
+	},
+	{
+		question: "Is this battlecard generator free?",
+		answer: "Yes, completely free. No signup, no email gate, no watermark on the download. The generator runs entirely in your browser - your inputs never leave your device.",
+	},
+	{
+		question: "What format does the battlecard download in?",
+		answer: "The generator exports a high-resolution PNG image (1000px wide, rendered at 2x device pixel ratio for retina displays) suitable for embedding in Google Slides, Notion, Salesforce, Highspot, or any sales enablement tool.",
+	},
+	{
+		question: "How many competitors should I create battlecards for?",
+		answer: "Most product marketing teams build battlecards for their top 3-5 competitors - the ones that show up most often in deals. Build cards for any competitor that appears in more than 10% of your sales conversations.",
+	},
+	{
+		question: "How often should battlecards be updated?",
+		answer: "Update battlecards quarterly at minimum, and immediately when a competitor releases new pricing, a major feature, or repositions. Stale battlecards lose credibility with sales reps fast.",
+	},
+	{
+		question: "What makes a great sales battlecard?",
+		answer: "Great battlecards are short (one page), honest about competitor strengths, specific to your buyer's actual concerns, and updated regularly. They focus on what sales reps need mid-call, not exhaustive competitor analysis.",
+	},
+];
+
+const softwareSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebApplication",
+	"name": "Sales Battlecard Generator",
+	"description": description,
+	"url": "https://swapbiswas.com/tools/battlecard-generator/",
+	"applicationCategory": "BusinessApplication",
+	"operatingSystem": "Any",
+	"browserRequirements": "Requires JavaScript",
+	"offers": {
+		"@type": "Offer",
+		"price": "0",
+		"priceCurrency": "USD"
+	},
+	"creator": {
+		"@type": "Person",
+		"name": "Swapnil Biswas",
+		"url": "https://swapbiswas.com/"
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqs.map((faq) => ({
+		"@type": "Question",
+		"name": faq.question,
+		"acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+	}))
+};
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	breadcrumbs={[{ name: "Tools", url: "/tools/" }, { name: "Battlecard Generator" }]}
+>
+	<script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} slot="head" />
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+	<div class="stack gap-20">
+		<main class="wrapper tool-page">
+			<Hero
+				title="Free Sales Battlecard Generator"
+				tagline="Build a polished, sales-ready competitive battlecard in 2 minutes. No signup. Download as PNG."
+				align="start"
+			/>
+
+			<div class="tool-grid">
+				<!-- FORM -->
+				<section class="form-panel" aria-label="Battlecard inputs">
+					<form id="battlecard-form" autocomplete="off">
+						<fieldset>
+							<legend>1. Your product</legend>
+							<div class="field-row">
+								<div class="field">
+									<label for="your-product">Your product name</label>
+									<input type="text" id="your-product" maxlength="40" placeholder="e.g., Acme Analytics" />
+								</div>
+								<div class="field">
+									<label for="your-category">Your category (one line)</label>
+									<input type="text" id="your-category" maxlength="60" placeholder="e.g., Product analytics for B2B SaaS" />
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>2. Competitor</legend>
+							<div class="field-row">
+								<div class="field">
+									<label for="competitor-name">Competitor name</label>
+									<input type="text" id="competitor-name" maxlength="40" placeholder="e.g., RivalCo" />
+								</div>
+								<div class="field">
+									<label for="competitor-summary">Their one-line positioning</label>
+									<input type="text" id="competitor-summary" maxlength="80" placeholder="e.g., Enterprise analytics suite for Fortune 500" />
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset data-section-card="bc-win">
+							<legend>3. Why you win (3 differentiators)<label class="section-toggle" title="Show this section in the output"><input type="checkbox" class="section-toggle-input" data-toggle-card="bc-win" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="win-1" maxlength="100" placeholder="e.g., 4x faster implementation (2 hours vs. 2 weeks)" /></div>
+							<div class="field"><input type="text" id="win-2" maxlength="100" placeholder="e.g., Native integrations with 200+ tools, no Zapier needed" /></div>
+							<div class="field"><input type="text" id="win-3" maxlength="100" placeholder="e.g., Transparent pricing, no setup fees" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="bc-lose">
+							<legend>4. Where they win (be honest - reps lose credibility otherwise)<label class="section-toggle" title="Show this section in the output"><input type="checkbox" class="section-toggle-input" data-toggle-card="bc-lose" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="lose-1" maxlength="100" placeholder="e.g., Stronger enterprise brand recognition" /></div>
+							<div class="field"><input type="text" id="lose-2" maxlength="100" placeholder="e.g., Deeper analytics for 10K+ user deployments" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="bc-obj">
+							<legend>5. Common objections + your response<label class="section-toggle" title="Show this section in the output"><input type="checkbox" class="section-toggle-input" data-toggle-card="bc-obj" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field-row">
+								<div class="field">
+									<label for="obj-1-q">Objection 1</label>
+									<input type="text" id="obj-1-q" maxlength="80" placeholder="&quot;You're a smaller company - what about reliability?&quot;" />
+								</div>
+								<div class="field">
+									<label for="obj-1-a">Your response</label>
+									<input type="text" id="obj-1-a" maxlength="120" placeholder="99.99% uptime SLA, SOC 2 Type II, $X ARR..." />
+								</div>
+							</div>
+							<div class="field-row">
+								<div class="field">
+									<label for="obj-2-q">Objection 2</label>
+									<input type="text" id="obj-2-q" maxlength="80" placeholder="&quot;RivalCo has more features&quot;" />
+								</div>
+								<div class="field">
+									<label for="obj-2-a">Your response</label>
+									<input type="text" id="obj-2-a" maxlength="120" placeholder="They have 40 features no one uses. We focused on..." />
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset data-section-card="bc-disco">
+							<legend>6. Discovery questions (expose competitor weaknesses)<label class="section-toggle" title="Show this section in the output"><input type="checkbox" class="section-toggle-input" data-toggle-card="bc-disco" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="disco-1" maxlength="120" placeholder="e.g., How long did your last analytics rollout take?" /></div>
+							<div class="field"><input type="text" id="disco-2" maxlength="120" placeholder="e.g., How much do you spend on Zapier connectors?" /></div>
+							<div class="field"><input type="text" id="disco-3" maxlength="120" placeholder="e.g., Who owns dashboard requests on your team today?" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="bc-proof">
+							<legend>7. Proof point (one stat or quote)<label class="section-toggle" title="Show this section in the output"><input type="checkbox" class="section-toggle-input" data-toggle-card="bc-proof" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="proof" maxlength="160" placeholder="e.g., Customer X cut time-to-insight 73% after switching - VP Analytics, Customer X" /></div>
+						</fieldset>
+
+						<div class="form-actions">
+							<details class="sample-picker">
+								<summary class="btn-secondary">Load sample <span class="sample-caret">▾</span></summary>
+								<ul class="sample-options">
+									<li><button type="button" class="sample-option" data-sample="b2b-saas">B2B SaaS Analytics</button></li>
+									<li><button type="button" class="sample-option" data-sample="devops">DevOps Platform</button></li>
+									<li><button type="button" class="sample-option" data-sample="martech">Marketing Automation</button></li>
+								</ul>
+							</details>
+							<input type="file" id="logo-file-input" accept="image/png,image/jpeg,image/svg+xml,image/webp" hidden />
+							<button type="button" id="upload-logo" class="btn-secondary" title="Add a logo to the top-right of the card">＋ Logo</button>
+							<button type="button" id="remove-logo" class="btn-secondary btn-danger" hidden>× Logo</button>
+							<button type="button" id="reset-form" class="btn-secondary">Reset</button>
+							<button type="button" id="clear-saved" class="btn-secondary btn-danger" title="Clear all saved data from this browser">Clear saved</button>
+						</div>
+					</form>
+				</section>
+
+				<!-- PREVIEW -->
+				<section class="preview-panel" aria-label="Battlecard preview">
+					<div class="preview-sticky">
+						<div class="preview-controls">
+							<h2 class="preview-heading">Live Preview</h2>
+							<div class="preview-actions">
+								<div class="theme-picker" role="radiogroup" aria-label="Theme">
+									<button type="button" class="theme-btn active" data-theme="dark" title="Dark theme">Dark</button>
+									<button type="button" class="theme-btn" data-theme="light" title="Light theme">Light</button>
+									<button type="button" class="theme-btn" data-theme="brand" title="Brand theme">Brand</button>
+								</div>
+								<button type="button" id="copy-png" class="btn-icon" title="Copy image to clipboard">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+									Copy
+								</button>
+								<button type="button" id="download-pdf" class="btn-icon" title="Download as PDF">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+									PDF
+								</button>
+								<button type="button" id="download-png" class="btn-primary">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+									Download PNG
+								</button>
+							</div>
+						</div>
+						<p class="autosave-status" id="autosave-status" aria-live="polite"><span id="fill-counter" class="fill-counter"></span><span id="autosave-text"></span></p>
+
+						<div class="preview-frame" id="preview-frame">
+						<div id="battlecard" class="battlecard">
+							<header class="bc-header">
+								<div class="bc-title">
+									<span class="bc-label">Competitive Battlecard</span>
+									<h3 class="bc-vs"><span data-bind="your-product">Your Product</span> <span class="bc-vs-sep">vs</span> <span data-bind="competitor-name">Competitor</span></h3>
+								</div>
+								<div class="bc-meta">
+									<img class="card-logo" id="card-logo" alt="" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" hidden />
+									<div class="bc-meta-row"><span class="bc-meta-label">You:</span> <span data-bind="your-category">Your one-line category</span></div>
+									<div class="bc-meta-row"><span class="bc-meta-label">Them:</span> <span data-bind="competitor-summary">Their one-line positioning</span></div>
+								</div>
+							</header>
+
+							<div class="bc-grid">
+								<div class="bc-card bc-win">
+									<div class="bc-card-head">
+										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+										Why we win
+									</div>
+									<ul>
+										<li data-bind="win-1">Differentiator one</li>
+										<li data-bind="win-2">Differentiator two</li>
+										<li data-bind="win-3">Differentiator three</li>
+									</ul>
+								</div>
+
+								<div class="bc-card bc-lose">
+									<div class="bc-card-head">
+										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+										Where they're stronger
+									</div>
+									<ul>
+										<li data-bind="lose-1">Their genuine strength one</li>
+										<li data-bind="lose-2">Their genuine strength two</li>
+									</ul>
+								</div>
+
+								<div class="bc-card bc-obj">
+									<div class="bc-card-head">
+										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+										Objection handling
+									</div>
+									<div class="bc-obj-item" data-hide-group>
+										<div class="bc-q" data-bind="obj-1-q" data-prefix="&quot;" data-suffix="&quot;">Objection question</div>
+										<div class="bc-a" data-hide-group><strong>Reply:</strong> <span data-bind="obj-1-a">Your response</span></div>
+									</div>
+									<div class="bc-obj-item" data-hide-group>
+										<div class="bc-q" data-bind="obj-2-q" data-prefix="&quot;" data-suffix="&quot;">Objection question</div>
+										<div class="bc-a" data-hide-group><strong>Reply:</strong> <span data-bind="obj-2-a">Your response</span></div>
+									</div>
+								</div>
+
+								<div class="bc-card bc-disco">
+									<div class="bc-card-head">
+										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+										Discovery questions
+									</div>
+									<ol>
+										<li data-bind="disco-1">Discovery question one</li>
+										<li data-bind="disco-2">Discovery question two</li>
+										<li data-bind="disco-3">Discovery question three</li>
+									</ol>
+								</div>
+
+								<div class="bc-card bc-proof">
+									<div class="bc-card-head">
+										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+										Proof point
+									</div>
+									<p data-bind="proof">Customer proof - stat or quote</p>
+								</div>
+							</div>
+
+							<footer class="bc-footer">
+								<span class="bc-footer-built">Built with the free Sales Battlecard Generator</span>
+								<span class="bc-footer-url">swapbiswas.com/tools/battlecard-generator</span>
+							</footer>
+						</div>
+					</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Optional newsletter -->
+			<section class="tool-cta-strip">
+				<div class="cta-text">
+					<strong>Want more PMM tools and templates?</strong>
+					<p>Join the newsletter. Positioning, launch playbooks, battlecard updates - no spam, just value.</p>
+				</div>
+				<form class="cta-form" id="tool-newsletter-form">
+					<input type="email" name="email_address" placeholder="you@company.com" required autocomplete="email" aria-label="Email address" />
+					<button type="submit">Subscribe</button>
+				</form>
+				<p class="cta-status" id="tool-newsletter-status" aria-live="polite"></p>
+			</section>
+
+			<!-- SEO content -->
+			<section class="seo-content">
+				<h2>How to use the sales battlecard generator</h2>
+				<ol class="how-to">
+					<li><strong>Pick one competitor.</strong> Don't try to build a multi-competitor battlecard - sales reps lose focus. Build separate cards for each top competitor.</li>
+					<li><strong>Be specific in differentiators.</strong> "We're easier to use" is dead on arrival. "4x faster implementation, 2 hours vs. 2 weeks" wins deals.</li>
+					<li><strong>Be honest about competitor strengths.</strong> Sales reps lose credibility fast when battlecards dismiss real competitor advantages they're already hearing about in calls. Acknowledge the genuine strengths so your reps don't get caught flat-footed.</li>
+					<li><strong>Write objections in the buyer's actual words.</strong> Pull them straight from win/loss interviews and call recordings. Don't sanitize them.</li>
+					<li><strong>Discovery questions should expose, not lecture.</strong> Good discovery questions make the buyer realize the competitor's weakness themselves.</li>
+					<li><strong>One proof point beats five.</strong> Pick the most quantified, most credible customer story you have for this exact use case.</li>
+				</ol>
+
+				<h2>What makes a great competitive battlecard</h2>
+				<p>Battlecards work when sales reps actually use them. Most don't. <strong>An estimated 65% of B2B sales content goes unused</strong> - typically because it's hard to find, irrelevant to the actual conversation, or out of date (<a href="https://www.forrester.com/blogs/the-b2b-content-guide-make-sales-your-ally-in-content-marketing/" target="_blank" rel="noopener">Forrester</a>).</p>
+				<p>Battlecards built with this generator stay on one page on purpose. The structure - differentiators, honest weaknesses, objections, discovery, proof - mirrors what reps actually need mid-call. For a deeper walkthrough of the full 10-section framework, read the guide:</p>
+				<p><a href="/blog/competitive-battlecard-template/" class="seo-link">→ Read: How to Create a Competitive Battlecard (Template + Examples)</a></p>
+
+				<h2>Related templates and guides</h2>
+				<ul class="related-links">
+					<li><a href="/blog/competitive-battlecard-template/">Competitive Battlecard Template &amp; Best Practices</a></li>
+					<li><a href="/blog/product-launch-checklist/">Product Launch Checklist for PMMs</a></li>
+					<li><a href="/blog/product-positioning/">Product Positioning Framework</a></li>
+					<li><a href="/blog/what-is-sales-enablement-software/">What is Sales Enablement Software</a></li>
+				</ul>
+
+				<h2>Frequently asked questions</h2>
+				<div class="faq-list">
+					{faqs.map((faq) => (
+						<details class="faq-item">
+							<summary>{faq.question}</summary>
+							<p>{faq.answer}</p>
+						</details>
+					))}
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<script>
+	function initBattlecard() {
+		const formMaybe = document.getElementById('battlecard-form') as HTMLFormElement | null;
+		const card = document.getElementById('battlecard');
+		if (!formMaybe || !card || (formMaybe as any)._initialized) return;
+		(formMaybe as any)._initialized = true;
+		const form: HTMLFormElement = formMaybe;
+
+		const bindings = card.querySelectorAll<HTMLElement>('[data-bind]');
+
+		function update() {
+			// If any input has content, hide empty bindings instead of showing placeholders
+			const hasAnyContent = Array.from(form.querySelectorAll<HTMLInputElement>('input[type="text"]'))
+				.some((input) => input.value.trim().length > 0);
+
+			bindings.forEach((el) => {
+				const id = el.getAttribute('data-bind');
+				if (!id) return;
+				const input = document.getElementById(id) as HTMLInputElement | null;
+				const val = input?.value?.trim() || '';
+				const prefix = el.getAttribute('data-prefix') || '';
+				const suffix = el.getAttribute('data-suffix') || '';
+				if (val) {
+					el.textContent = prefix + val + suffix;
+					el.classList.remove('bc-placeholder');
+					el.classList.remove('bind-empty');
+				} else if (hasAnyContent) {
+					el.textContent = '';
+					el.classList.remove('bc-placeholder');
+					el.classList.add('bind-empty');
+				} else {
+					const original = el.getAttribute('data-placeholder') || el.textContent || '';
+					if (!el.getAttribute('data-placeholder')) el.setAttribute('data-placeholder', original);
+					el.textContent = el.getAttribute('data-placeholder') || '';
+					el.classList.add('bc-placeholder');
+					el.classList.remove('bind-empty');
+				}
+			});
+
+			// Group hide: containers that hide when ALL their data-bind descendants are empty
+			card!.querySelectorAll<HTMLElement>('[data-hide-group]').forEach((group) => {
+				const childBinds = group.querySelectorAll<HTMLElement>('[data-bind]');
+				const allEmpty = childBinds.length > 0 && Array.from(childBinds).every((c) => c.classList.contains('bind-empty'));
+				group.classList.toggle('group-hidden', allEmpty);
+			});
+		}
+
+		// Initialize placeholders
+		bindings.forEach((el) => {
+			if (!el.getAttribute('data-placeholder')) {
+				el.setAttribute('data-placeholder', el.textContent || '');
+			}
+			el.classList.add('bc-placeholder');
+		});
+
+		// ===== Section toggles =====
+		function applyToggle(toggle: HTMLInputElement) {
+			const cardClass = toggle.dataset.toggleCard;
+			if (!cardClass) return;
+			const cardEl = card!.querySelector('.' + cardClass);
+			const fieldset = toggle.closest('fieldset');
+			const excluded = !toggle.checked;
+			if (cardEl) cardEl.classList.toggle('section-excluded', excluded);
+			if (fieldset) fieldset.classList.toggle('fieldset-muted', excluded);
+		}
+
+		form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((toggle) => {
+			toggle.addEventListener('change', () => {
+				applyToggle(toggle);
+				saveState();
+				scaleCard();
+			});
+		});
+
+		// ===== localStorage persistence =====
+		const STATE_KEY = 'tool-state-battlecard';
+		const statusEl = document.getElementById('autosave-text');
+		const counterEl = document.getElementById('fill-counter');
+		let saveTimer: any;
+
+		function updateCounter() {
+			if (!counterEl) return;
+			const inputs = form.querySelectorAll<HTMLInputElement>('input[type="text"]');
+			const filled = Array.from(inputs).filter((i) => i.value.trim().length > 0).length;
+			counterEl.textContent = `${filled}/${inputs.length} fields filled${filled === inputs.length ? ' ✓' : ''}`;
+		}
+
+		function saveState() {
+			try {
+				const fields: Record<string, string> = {};
+				form.querySelectorAll<HTMLInputElement>('input[type="text"]').forEach((input) => {
+					if (input.value) fields[input.id] = input.value;
+				});
+				const excluded: Record<string, boolean> = {};
+				form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((toggle) => {
+					if (!toggle.checked && toggle.dataset.toggleCard) {
+						excluded[toggle.dataset.toggleCard] = true;
+					}
+				});
+				const theme = (card as HTMLElement).dataset.theme || 'dark';
+				const logo = cardLogo?.getAttribute('hidden') === null ? cardLogo.src : null;
+				localStorage.setItem(STATE_KEY, JSON.stringify({ fields, excluded, theme, logo, savedAt: Date.now() }));
+				if (statusEl) {
+					statusEl.textContent = 'Saved';
+					setTimeout(() => { if (statusEl && statusEl.textContent === 'Saved') statusEl.textContent = ''; }, 1500);
+				}
+			} catch (e) { /* localStorage may be unavailable */ }
+		}
+
+		function loadState() {
+			try {
+				const raw = localStorage.getItem(STATE_KEY);
+				if (!raw) return false;
+				const saved = JSON.parse(raw);
+				Object.entries(saved.fields || {}).forEach(([id, val]) => {
+					const input = document.getElementById(id) as HTMLInputElement | null;
+					if (input && typeof val === 'string') input.value = val;
+				});
+				Object.entries(saved.excluded || {}).forEach(([cardClass, isExcluded]) => {
+					const toggle = form.querySelector<HTMLInputElement>(`.section-toggle-input[data-toggle-card="${cardClass}"]`);
+					if (toggle && isExcluded) {
+						toggle.checked = false;
+						applyToggle(toggle);
+					}
+				});
+				if (saved.theme && typeof saved.theme === 'string') applyTheme(saved.theme);
+				if (saved.logo && typeof saved.logo === 'string') applyLogo(saved.logo);
+				return true;
+			} catch (e) { return false; }
+		}
+
+		// ===== Theme picker =====
+		function applyTheme(theme: string) {
+			(card as HTMLElement).dataset.theme = theme;
+			document.querySelectorAll<HTMLButtonElement>('.theme-btn').forEach((btn) => {
+				btn.classList.toggle('active', btn.dataset.theme === theme);
+			});
+		}
+		document.querySelectorAll<HTMLButtonElement>('.theme-btn').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				applyTheme(btn.dataset.theme || 'dark');
+				saveState();
+				scaleCard();
+			});
+		});
+
+		// ===== Logo upload =====
+		const cardLogo = document.getElementById('card-logo') as HTMLImageElement | null;
+		const uploadBtn = document.getElementById('upload-logo');
+		const removeBtn = document.getElementById('remove-logo');
+		const fileInput = document.getElementById('logo-file-input') as HTMLInputElement | null;
+
+		const TRANSPARENT_PX = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+		function applyLogo(dataUrl: string | null) {
+			if (cardLogo) {
+				if (dataUrl) {
+					cardLogo.src = dataUrl;
+					cardLogo.removeAttribute('hidden');
+				} else {
+					cardLogo.src = TRANSPARENT_PX;
+					cardLogo.setAttribute('hidden', '');
+				}
+			}
+			if (dataUrl) {
+				uploadBtn?.setAttribute('hidden', '');
+				removeBtn?.removeAttribute('hidden');
+			} else {
+				uploadBtn?.removeAttribute('hidden');
+				removeBtn?.setAttribute('hidden', '');
+			}
+			scaleCard();
+		}
+
+		uploadBtn?.addEventListener('click', () => fileInput?.click());
+		fileInput?.addEventListener('change', () => {
+			const file = fileInput.files?.[0];
+			if (!file) return;
+			if (file.size > 1024 * 1024) {
+				if (!confirm('That logo is over 1MB. localStorage may struggle. Continue?')) {
+					fileInput.value = '';
+					return;
+				}
+			}
+			const reader = new FileReader();
+			reader.onload = (e) => {
+				const dataUrl = e.target?.result as string;
+				applyLogo(dataUrl);
+				saveState();
+			};
+			reader.readAsDataURL(file);
+		});
+		removeBtn?.addEventListener('click', () => {
+			if (fileInput) fileInput.value = '';
+			applyLogo(null);
+			saveState();
+		});
+
+		function debouncedSave() {
+			clearTimeout(saveTimer);
+			if (statusEl) statusEl.textContent = 'Saving...';
+			saveTimer = setTimeout(saveState, 400);
+		}
+
+		form.addEventListener('input', () => { update(); updateCounter(); debouncedSave(); });
+
+		document.getElementById('clear-saved')?.addEventListener('click', () => {
+			if (!confirm('Clear all saved data for this tool? This cannot be undone.')) return;
+			try { localStorage.removeItem(STATE_KEY); } catch (e) {}
+			form.reset();
+			form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((t) => {
+				t.checked = true;
+				applyToggle(t);
+			});
+			update();
+			updateCounter();
+			if (statusEl) statusEl.textContent = 'Cleared';
+		});
+
+		// Scale card to fit frame width AND viewport height (so sticky stays visible)
+		const frame = document.getElementById('preview-frame');
+		const cardEl = card as HTMLElement;
+		function scaleCard() {
+			if (!frame) return;
+			const frameWidth = frame.clientWidth;
+			const widthScale = Math.min(1, frameWidth / 1000);
+			// Reset transform briefly to measure natural card height at scale 1
+			const prev = cardEl.style.getPropertyValue('--bc-scale');
+			cardEl.style.setProperty('--bc-scale', '1');
+			const naturalHeight = cardEl.scrollHeight;
+			cardEl.style.setProperty('--bc-scale', prev || String(widthScale));
+
+			// On desktop (sticky), also constrain to viewport height
+			const isDesktop = window.matchMedia('(min-width: 64em)').matches;
+			let heightScale = 1;
+			if (isDesktop) {
+				const reservedTop = 24; // matches sticky top: 1.5rem
+				const reservedBottom = 24;
+				const controlsHeight = 64; // preview controls bar
+				const available = window.innerHeight - reservedTop - reservedBottom - controlsHeight;
+				heightScale = available / naturalHeight;
+			}
+
+			const scale = Math.min(widthScale, heightScale, 1);
+			cardEl.style.setProperty('--bc-scale', String(scale));
+			frame.style.height = (naturalHeight * scale) + 'px';
+		}
+		scaleCard();
+		const ro = new ResizeObserver(scaleCard);
+		if (frame) ro.observe(frame);
+		const mo = new MutationObserver(scaleCard);
+		mo.observe(card, { childList: true, subtree: true, characterData: true });
+		window.addEventListener('resize', scaleCard);
+		if ((document as any).fonts?.ready) {
+			(document as any).fonts.ready.then(scaleCard);
+		}
+
+		// Sample data
+		const samples: Record<string, Record<string, string>> = {
+			'b2b-saas': {
+				'your-product': 'Acme Analytics',
+				'your-category': 'Product analytics for B2B SaaS teams',
+				'competitor-name': 'RivalCo',
+				'competitor-summary': 'Enterprise analytics suite, Fortune 500 focus',
+				'win-1': '4x faster implementation - 2 hours vs. 2 weeks',
+				'win-2': '200+ native integrations, no Zapier dependency',
+				'win-3': 'Transparent per-seat pricing, no setup or PS fees',
+				'lose-1': 'Stronger enterprise brand recognition',
+				'lose-2': 'Deeper customization for 10K+ user deployments',
+				'obj-1-q': "You're smaller - what about long-term reliability?",
+				'obj-1-a': '99.99% uptime SLA, SOC 2 Type II, profitable since 2023',
+				'obj-2-q': 'RivalCo has way more features',
+				'obj-2-a': "They have 40+ features 5% of users touch. We built the 12 that drive 90% of value.",
+				'disco-1': 'How long did your last analytics rollout take from contract to first dashboard?',
+				'disco-2': "What's your annual spend on Zapier or middleware to connect RivalCo?",
+				'disco-3': 'Who owns ad-hoc dashboard requests on your team today, and how long do they take?',
+				'proof': 'NorthWind Labs cut time-to-insight 73% after switching from RivalCo, redeployed 2 analyst FTEs - VP Analytics, NorthWind Labs',
+			},
+			'devops': {
+				'your-product': 'ShipDeploy',
+				'your-category': 'CI/CD platform for engineering teams 50-500',
+				'competitor-name': 'LegacyCI',
+				'competitor-summary': 'Enterprise CI/CD with on-prem heritage, Fortune 100 focus',
+				'win-1': '5-min onboarding vs. LegacyCI 2-week install',
+				'win-2': 'Cloud-native by default - no VPN gymnastics',
+				'win-3': '$20/dev/month vs. LegacyCI $200+ enterprise tier',
+				'lose-1': 'LegacyCI has more compliance certifications (FedRAMP High, IL5)',
+				'lose-2': 'Deeper plugin ecosystem after 15 years in market',
+				'obj-1-q': "We need on-prem - we cannot use SaaS",
+				'obj-1-a': 'Self-hosted option in Pro tier; identical UX to cloud, single binary install',
+				'obj-2-q': "We have used LegacyCI for 8 years - migration is too painful",
+				'obj-2-a': 'Migration tool ports configs in one command. Average switch is 3 days for the first repo, 1 day for the rest.',
+				'disco-1': 'How long does a new engineer wait for their first green CI run today?',
+				'disco-2': 'How many hours per week does your DevOps team spend maintaining the CI infrastructure itself?',
+				'disco-3': "What's your annual all-in cost - LegacyCI licenses, infra, and dedicated maintenance headcount?",
+				'proof': 'ShopWeave cut CI runtime 4x and saved $180K/year switching from LegacyCI - VP Engineering, ShopWeave',
+			},
+			'martech': {
+				'your-product': 'PipelineGen',
+				'your-category': 'Marketing automation for B2B mid-market',
+				'competitor-name': 'IronStack',
+				'competitor-summary': 'Enterprise marketing cloud, FANG-priced',
+				'win-1': '3-day setup vs. IronStack 90-day implementation',
+				'win-2': 'Email + ABM + attribution in one tool, not four',
+				'win-3': '$15K/year flat vs. IronStack $50K + per-contact gotchas',
+				'lose-1': 'IronStack has deeper enterprise partner ecosystem (Adobe, SAP)',
+				'lose-2': 'More mature multi-brand and multi-region tenancy',
+				'obj-1-q': "We're locked into IronStack for 2 more years",
+				'obj-1-a': 'Most customers run both during transition then sunset IronStack at renewal. 6-month overlap is typical.',
+				'obj-2-q': 'I need single sign-on with our SAP identity',
+				'obj-2-a': 'SAML + OIDC included Day 1. Full SAP IdM integration shipped Q1.',
+				'disco-1': 'When you ran your last ABM campaign, how many tools did marketing ops touch to launch it?',
+				'disco-2': "What's your IronStack renewal coming up, and what does the current quote look like?",
+				'disco-3': 'How long does it take your team to spin up a new email nurture from blank slate to live?',
+				'proof': 'NorthWind Industries replaced IronStack with PipelineGen, cut tooling cost 65% and shipped 3x more campaigns - CMO, NorthWind Industries',
+			},
+		};
+
+		function loadSample(key: string) {
+			const sample = samples[key];
+			if (!sample) return;
+			Object.entries(sample).forEach(([id, val]) => {
+				const input = document.getElementById(id) as HTMLInputElement | null;
+				if (input) input.value = val;
+			});
+			update();
+			updateCounter();
+			saveState();
+		}
+
+		form.querySelectorAll<HTMLButtonElement>('.sample-option').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				loadSample(btn.dataset.sample || '');
+				const picker = btn.closest('details');
+				if (picker) picker.removeAttribute('open');
+			});
+		});
+
+		document.getElementById('reset-form')?.addEventListener('click', () => {
+			form.reset();
+			form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((t) => {
+				t.checked = true;
+				applyToggle(t);
+			});
+			update();
+			updateCounter();
+			saveState();
+		});
+
+		// ===== Shared render helper =====
+		// Locks card to scale 1, captures via html-to-image, restores. Returns dataURL.
+		const themeBgColors: Record<string, string> = {
+			dark: '#0d1117',
+			light: '#ffffff',
+			brand: '#1c0056',
+		};
+
+		async function renderCard(format: 'png' | 'blob'): Promise<any> {
+			const cardEl = card as HTMLElement;
+			const frameEl = document.getElementById('preview-frame');
+			const prevTransform = cardEl.style.transform;
+			const prevFrameHeight = frameEl?.style.height || '';
+			try {
+				const mod: any = await import('https://esm.sh/html-to-image@1.11.13' as any);
+				cardEl.style.transform = 'none';
+				if (frameEl) frameEl.style.height = cardEl.scrollHeight + 'px';
+				const theme = cardEl.dataset.theme || 'dark';
+				const opts = {
+					pixelRatio: 2,
+					backgroundColor: themeBgColors[theme] || '#0d1117',
+					cacheBust: true,
+					skipFonts: true,
+					width: 1000,
+					height: cardEl.scrollHeight,
+				};
+				return format === 'blob' ? await mod.toBlob(cardEl, opts) : await mod.toPng(cardEl, opts);
+			} finally {
+				cardEl.style.transform = prevTransform;
+				if (frameEl) frameEl.style.height = prevFrameHeight;
+			}
+		}
+
+		// ===== Copy to clipboard =====
+		const copyBtn = document.getElementById('copy-png');
+		copyBtn?.addEventListener('click', async () => {
+			const original = copyBtn.textContent;
+			copyBtn.setAttribute('disabled', 'true');
+			copyBtn.textContent = 'Copying...';
+			try {
+				const blob = await renderCard('blob');
+				if (!blob) throw new Error('Empty blob');
+				if (!navigator.clipboard || !(window as any).ClipboardItem) {
+					alert('Copy to clipboard is not supported in this browser. Use Download PNG instead.');
+					return;
+				}
+				await navigator.clipboard.write([new (window as any).ClipboardItem({ 'image/png': blob })]);
+				copyBtn.textContent = 'Copied!';
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_copy', tool_name: 'battlecard_generator', tool_output: 'png' });
+				setTimeout(() => { copyBtn.textContent = original; copyBtn.removeAttribute('disabled'); }, 1800);
+				return;
+			} catch (err) {
+				console.error('Copy failed', err);
+				alert('Copy failed. Please use Download PNG instead.');
+			}
+			copyBtn.textContent = original;
+			copyBtn.removeAttribute('disabled');
+		});
+
+		// ===== Download as PDF (US Letter, centered, scaled to fit) =====
+		async function pngToPdf(dataUrl: string, filename: string) {
+			const mod: any = await import('https://esm.sh/jspdf@2.5.1' as any);
+			const JsPDF = mod.jsPDF || mod.default;
+			const img = new Image();
+			await new Promise<void>((res, rej) => { img.onload = () => res(); img.onerror = rej; img.src = dataUrl; });
+			const pageW = 612;  // US Letter portrait, 8.5"
+			const pageH = 792;  // 11"
+			const margin = 36;  // 0.5"
+			const maxW = pageW - 2 * margin;
+			const maxH = pageH - 2 * margin;
+			const scale = Math.min(maxW / img.width, maxH / img.height);
+			const w = img.width * scale;
+			const h = img.height * scale;
+			const x = (pageW - w) / 2;
+			const y = (pageH - h) / 2;
+			const pdf = new JsPDF({ orientation: 'portrait', unit: 'pt', format: 'letter' });
+			pdf.addImage(dataUrl, 'PNG', x, y, w, h, undefined, 'FAST');
+			pdf.save(filename);
+		}
+
+		const pdfBtn = document.getElementById('download-pdf');
+		pdfBtn?.addEventListener('click', async () => {
+			const original = pdfBtn.textContent;
+			pdfBtn.setAttribute('disabled', 'true');
+			pdfBtn.textContent = 'Building...';
+			try {
+				const dataUrl = await renderCard('png');
+				const yourProduct = (document.getElementById('your-product') as HTMLInputElement)?.value?.trim() || 'product';
+				const competitor = (document.getElementById('competitor-name') as HTMLInputElement)?.value?.trim() || 'competitor';
+				const safeName = (yourProduct + '-vs-' + competitor).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+				await pngToPdf(dataUrl, `battlecard-${safeName}.pdf`);
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'battlecard_generator', tool_output: 'pdf' });
+			} catch (err) {
+				console.error('PDF failed', err);
+				alert('PDF download failed. Please try Download PNG instead.');
+			} finally {
+				pdfBtn.textContent = original;
+				pdfBtn.removeAttribute('disabled');
+			}
+		});
+
+		// Download as PNG
+		const downloadBtn = document.getElementById('download-png');
+		downloadBtn?.addEventListener('click', async () => {
+			const original = downloadBtn.textContent;
+			downloadBtn.setAttribute('disabled', 'true');
+			downloadBtn.textContent = 'Preparing...';
+			try {
+				const dataUrl = await renderCard('png');
+				const yourProduct = (document.getElementById('your-product') as HTMLInputElement)?.value?.trim() || 'product';
+				const competitor = (document.getElementById('competitor-name') as HTMLInputElement)?.value?.trim() || 'competitor';
+				const safeName = (yourProduct + '-vs-' + competitor).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+				const link = document.createElement('a');
+				link.download = `battlecard-${safeName}.png`;
+				link.href = dataUrl;
+				link.click();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'battlecard_generator', tool_output: 'png' });
+			} catch (err) {
+				console.error('Download failed', err);
+				alert('Download failed. Please try again or use a different browser.');
+			} finally {
+				downloadBtn.textContent = original;
+				downloadBtn.removeAttribute('disabled');
+			}
+		});
+
+		// Restore previous session if any
+		loadState();
+		update();
+		updateCounter();
+	}
+
+	function initToolNewsletter() {
+		const form = document.getElementById('tool-newsletter-form') as HTMLFormElement | null;
+		const status = document.getElementById('tool-newsletter-status');
+		if (!form || (form as any)._initialized) return;
+		(form as any)._initialized = true;
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const emailInput = form.querySelector('input[name="email_address"]') as HTMLInputElement | null;
+			const email = emailInput?.value || '';
+			const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+			if (btn) { btn.textContent = 'Subscribing...'; btn.disabled = true; }
+			const formData = new FormData();
+			formData.append('email_address', email);
+			fetch('https://app.kit.com/forms/9145889/subscriptions', {
+				method: 'POST',
+				body: formData,
+				headers: { 'Accept': 'application/json' }
+			}).then((res) => {
+				if (!res.ok) throw new Error('fail');
+				if (status) { status.textContent = 'Subscribed!'; status.style.color = 'var(--accent-regular)'; }
+				form.reset();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'newsletter_signup', signup_location: 'tool_battlecard' });
+			}).catch(() => {
+				if (status) { status.textContent = 'Something went wrong.'; status.style.color = '#ca7879'; }
+			}).finally(() => {
+				if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
+			});
+		});
+	}
+
+	initBattlecard();
+	initToolNewsletter();
+	document.addEventListener('astro:page-load', () => {
+		initBattlecard();
+		initToolNewsletter();
+	});
+</script>
+
+<style>
+	.tool-page {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	/* Two-column layout */
+	.tool-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+	}
+
+	@media (min-width: 64em) {
+		.tool-grid {
+			grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+			align-items: start;
+		}
+		.preview-panel {
+			position: sticky;
+			top: 1.5rem;
+			align-self: start;
+		}
+	}
+
+	.preview-panel {
+		min-width: 0;
+	}
+
+	.preview-sticky {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	/* Form panel */
+	.form-panel {
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 1.5rem;
+	}
+
+	#battlecard-form fieldset {
+		border: none;
+		padding: 0;
+		margin: 0 0 1.75rem;
+	}
+
+	#battlecard-form legend {
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		margin-bottom: 0.75rem;
+		padding: 0;
+	}
+
+	.field {
+		margin-bottom: 0.75rem;
+	}
+
+	.field-row {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.75rem;
+		margin-bottom: 0.75rem;
+	}
+
+	@media (min-width: 30em) {
+		.field-row {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.field label {
+		display: block;
+		margin-bottom: 0.35rem;
+		color: var(--gray-300);
+		font-size: var(--text-xs);
+		font-weight: 500;
+	}
+
+	#battlecard-form input[type="text"] {
+		width: 100%;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		transition: border-color 0.15s ease;
+	}
+
+	#battlecard-form input[type="text"]:focus {
+		outline: none;
+		border-color: var(--accent-regular);
+	}
+
+	.form-actions {
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+		margin-top: 1rem;
+	}
+
+	.btn-secondary {
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+
+	.btn-secondary:hover {
+		background: var(--accent-subtle-overlay);
+		color: var(--gray-0);
+	}
+
+	.btn-danger:hover {
+		background: rgba(239, 68, 68, 0.12);
+		color: #f87171;
+		border-color: rgba(239, 68, 68, 0.3);
+	}
+
+	/* Sample data dropdown */
+	.sample-picker {
+		position: relative;
+		display: inline-block;
+	}
+	.sample-picker > summary {
+		list-style: none;
+	}
+	.sample-picker > summary::-webkit-details-marker { display: none; }
+	.sample-caret {
+		display: inline-block;
+		margin-left: 0.25rem;
+		transition: transform 0.2s ease;
+	}
+	.sample-picker[open] .sample-caret { transform: rotate(180deg); }
+	.sample-options {
+		position: absolute;
+		top: calc(100% + 0.25rem);
+		left: 0;
+		margin: 0;
+		padding: 0.25rem;
+		background: var(--gray-999);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		list-style: none;
+		z-index: 20;
+		min-width: 200px;
+		box-shadow: var(--shadow-md);
+	}
+	.sample-options li { display: block; }
+	.sample-option {
+		display: block;
+		width: 100%;
+		text-align: left;
+		padding: 0.5rem 0.75rem;
+		background: transparent;
+		border: none;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		border-radius: 0.35rem;
+	}
+	.sample-option:hover {
+		background: var(--accent-subtle-overlay);
+		color: var(--gray-0);
+	}
+
+	/* Section toggle (per-fieldset show/hide) */
+	#battlecard-form legend {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+		width: 100%;
+	}
+
+	.section-toggle {
+		display: inline-flex;
+		align-items: center;
+		cursor: pointer;
+		flex-shrink: 0;
+	}
+
+	.section-toggle-input {
+		appearance: none;
+		-webkit-appearance: none;
+		width: 34px;
+		height: 20px;
+		background: var(--gray-800);
+		border-radius: 999rem;
+		position: relative;
+		cursor: pointer;
+		margin: 0;
+		transition: background 0.2s ease;
+	}
+
+	.section-toggle-input::before {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		background: var(--gray-999);
+		border-radius: 50%;
+		top: 3px;
+		left: 3px;
+		transition: transform 0.2s ease, background 0.2s ease;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	}
+
+	.section-toggle-input:checked {
+		background: var(--accent-regular);
+	}
+
+	.section-toggle-input:checked::before {
+		transform: translateX(14px);
+	}
+
+	.section-toggle-track {
+		display: none;
+	}
+
+	.fieldset-muted {
+		opacity: 0.45;
+		transition: opacity 0.2s ease;
+	}
+
+	.fieldset-muted .field input {
+		pointer-events: none;
+	}
+
+	/* Sections excluded from the rendered card */
+	.section-excluded {
+		display: none !important;
+	}
+
+	/* Empty bound elements + groups whose bindings are all empty */
+	.bind-empty,
+	.group-hidden {
+		display: none !important;
+	}
+
+	/* Theme picker */
+	.theme-picker {
+		display: inline-flex;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		padding: 2px;
+		background: var(--gray-999_40);
+	}
+	.theme-btn {
+		padding: 0.35rem 0.75rem;
+		border: none;
+		background: transparent;
+		color: var(--gray-300);
+		font-family: var(--font-brand);
+		font-size: var(--text-xs);
+		font-weight: 500;
+		cursor: pointer;
+		border-radius: 999rem;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+	.theme-btn:hover { color: var(--gray-0); }
+	.theme-btn.active {
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+	}
+
+	/* ===== Card theme overrides ===== */
+	/* Light theme */
+	.battlecard[data-theme="light"] {
+		background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+		color: #0f172a;
+	}
+	.battlecard[data-theme="light"] .bc-header,
+	.battlecard[data-theme="light"] .bc-footer,
+	.battlecard[data-theme="light"] .bc-card-head { border-color: #e2e8f0; }
+	.battlecard[data-theme="light"] .bc-card {
+		background: #f8fafc;
+		border-color: #e2e8f0;
+	}
+	.battlecard[data-theme="light"] .bc-vs,
+	.battlecard[data-theme="light"] .bc-name { color: #0f172a; }
+	.battlecard[data-theme="light"] .bc-meta,
+	.battlecard[data-theme="light"] .bc-meta-row,
+	.battlecard[data-theme="light"] .bc-card ul,
+	.battlecard[data-theme="light"] .bc-card ol,
+	.battlecard[data-theme="light"] .bc-q,
+	.battlecard[data-theme="light"] .bc-a,
+	.battlecard[data-theme="light"] .bc-proof p { color: #475569; }
+	.battlecard[data-theme="light"] .bc-meta-label { color: #94a3b8; }
+	.battlecard[data-theme="light"] .bc-footer { color: #94a3b8; }
+	.battlecard[data-theme="light"] .bc-footer-url { color: #64748b; }
+	.battlecard[data-theme="light"] .bc-vs-sep { color: #ea580c; }
+
+	/* Brand theme - purple gradient */
+	.battlecard[data-theme="brand"] {
+		background: linear-gradient(135deg, #1c0056 0%, #7611a6 100%);
+		color: #ffffff;
+	}
+	.battlecard[data-theme="brand"] .bc-header,
+	.battlecard[data-theme="brand"] .bc-footer,
+	.battlecard[data-theme="brand"] .bc-card-head { border-color: rgba(255,255,255,0.15); }
+	.battlecard[data-theme="brand"] .bc-card {
+		background: rgba(255,255,255,0.08);
+		border-color: rgba(255,255,255,0.18);
+	}
+	.battlecard[data-theme="brand"] .bc-vs,
+	.battlecard[data-theme="brand"] .bc-name { color: #ffffff; }
+	.battlecard[data-theme="brand"] .bc-meta,
+	.battlecard[data-theme="brand"] .bc-meta-row,
+	.battlecard[data-theme="brand"] .bc-card ul,
+	.battlecard[data-theme="brand"] .bc-card ol,
+	.battlecard[data-theme="brand"] .bc-q,
+	.battlecard[data-theme="brand"] .bc-a,
+	.battlecard[data-theme="brand"] .bc-proof p { color: rgba(255,255,255,0.92); }
+	.battlecard[data-theme="brand"] .bc-meta-label,
+	.battlecard[data-theme="brand"] .bc-footer { color: rgba(255,255,255,0.7); }
+	.battlecard[data-theme="brand"] .bc-footer-url { color: rgba(255,255,255,0.85); }
+	.battlecard[data-theme="brand"] .bc-vs-sep { color: #fb923c; }
+	.battlecard[data-theme="brand"] .bc-label { color: #f5a0a1; }
+	/* Brighten the card-head accents in brand theme */
+	.battlecard[data-theme="brand"] .bc-win .bc-card-head { color: #5eead4; }
+	.battlecard[data-theme="brand"] .bc-lose .bc-card-head { color: #fdba74; }
+	.battlecard[data-theme="brand"] .bc-obj .bc-card-head { color: #93c5fd; }
+	.battlecard[data-theme="brand"] .bc-disco .bc-card-head { color: #d8b4fe; }
+	.battlecard[data-theme="brand"] .bc-proof .bc-card-head { color: #fda4af; }
+
+	/* Preview panel */
+	.preview-controls {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.preview-actions {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+	}
+
+	.btn-icon {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.5rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	}
+
+	.btn-icon:hover:not([disabled]) {
+		background: var(--accent-subtle-overlay);
+		color: var(--gray-0);
+		border-color: var(--accent-regular);
+	}
+
+	.btn-icon[disabled] {
+		opacity: 0.7;
+		cursor: not-allowed;
+	}
+
+	.autosave-status {
+		grid-column: 1 / -1;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		margin: 0;
+		min-height: 1.1rem;
+		font-size: var(--text-xs);
+		color: var(--gray-400);
+	}
+
+	.fill-counter {
+		font-variant-numeric: tabular-nums;
+	}
+
+	.preview-heading {
+		font-size: var(--text-md);
+		color: var(--gray-200);
+		margin: 0;
+	}
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 999rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		cursor: pointer;
+		transition: box-shadow 0.15s ease, transform 0.15s ease;
+	}
+
+	.btn-primary:hover:not([disabled]) {
+		box-shadow: var(--shadow-md);
+		transform: translateY(-1px);
+	}
+
+	.btn-primary[disabled] {
+		opacity: 0.7;
+		cursor: not-allowed;
+	}
+
+	.preview-frame {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		border-radius: 16px;
+	}
+
+	/* Battlecard render - dark, polished. Always 1000px so PNG export is consistent;
+	   scaled down to fit container via JS-set CSS variable. */
+	.battlecard {
+		width: 1000px;
+		background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+		color: #f0f6fc;
+		border-radius: 16px;
+		padding: 32px;
+		font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		transform-origin: top left;
+		transform: scale(var(--bc-scale, 1));
+	}
+
+	.bc-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 24px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #30363d;
+	}
+
+	.bc-label {
+		display: inline-block;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #c084fc;
+		margin-bottom: 8px;
+	}
+
+	.bc-vs {
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 1.2;
+		margin: 0;
+		color: #f0f6fc;
+	}
+
+	.bc-vs-sep {
+		color: #fb923c;
+		font-weight: 500;
+		margin: 0 6px;
+	}
+
+	.bc-meta {
+		text-align: right;
+		font-size: 13px;
+		color: #c8cfd8;
+		min-width: 280px;
+	}
+
+	.card-logo:not([hidden]) {
+		display: block;
+		max-height: 44px;
+		max-width: 160px;
+		margin: 0 0 12px auto;
+		object-fit: contain;
+	}
+
+	.bc-meta-row {
+		margin-bottom: 4px;
+	}
+
+	.bc-meta-label {
+		color: #8b949e;
+		font-weight: 600;
+		margin-right: 4px;
+	}
+
+	.bc-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+	}
+
+	.bc-card {
+		background: #151b23;
+		border: 1px solid #30363d;
+		border-radius: 12px;
+		padding: 18px;
+	}
+
+	.bc-card-head {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 14px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		margin-bottom: 12px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #30363d;
+	}
+
+	.bc-win .bc-card-head { color: #5eead4; }
+	.bc-lose .bc-card-head { color: #fb923c; }
+	.bc-obj .bc-card-head { color: #60a5fa; }
+	.bc-disco .bc-card-head { color: #c084fc; }
+	.bc-proof .bc-card-head { color: #f5a0a1; }
+
+	.bc-proof {
+		grid-column: span 2;
+	}
+
+	.bc-card ul,
+	.bc-card ol {
+		margin: 0;
+		padding-left: 20px;
+		font-size: 14px;
+		line-height: 1.55;
+		color: #c8cfd8;
+	}
+
+	.bc-card li {
+		margin-bottom: 6px;
+	}
+
+	.bc-obj-item {
+		margin-bottom: 12px;
+	}
+
+	.bc-obj-item:last-child {
+		margin-bottom: 0;
+	}
+
+	.bc-q {
+		font-style: italic;
+		color: #c8cfd8;
+		font-size: 14px;
+		margin-bottom: 4px;
+	}
+
+	.bc-a {
+		font-size: 13.5px;
+		color: #d0d7de;
+		line-height: 1.5;
+	}
+
+	.bc-a strong {
+		color: #60a5fa;
+	}
+
+	.bc-proof p {
+		margin: 0;
+		font-size: 15px;
+		font-style: italic;
+		color: #d0d7de;
+		line-height: 1.5;
+	}
+
+	.bc-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 16px;
+		border-top: 1px solid #30363d;
+		font-size: 11px;
+		color: #6e7681;
+	}
+
+	.bc-footer-url {
+		font-family: ui-monospace, SFMono-Regular, monospace;
+		color: #8b949e;
+	}
+
+	.bc-placeholder {
+		opacity: 0.45;
+	}
+
+	/* Newsletter strip */
+	.tool-cta-strip {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		padding: 1.75rem;
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		align-items: center;
+	}
+
+	@media (min-width: 50em) {
+		.tool-cta-strip {
+			grid-template-columns: 1fr auto;
+		}
+	}
+
+	.cta-text strong {
+		display: block;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+	}
+
+	.cta-text p {
+		margin: 0.25rem 0 0;
+		color: var(--gray-300);
+		font-size: var(--text-sm);
+	}
+
+	.cta-form {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.cta-form input {
+		flex: 1;
+		min-width: 0;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-size: var(--text-sm);
+	}
+
+	.cta-form button {
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 0.5rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-sm);
+		cursor: pointer;
+		white-space: nowrap;
+	}
+
+	.cta-status {
+		grid-column: 1 / -1;
+		margin: 0;
+		font-size: var(--text-sm);
+		min-height: 1rem;
+	}
+
+	/* SEO content */
+	.seo-content {
+		max-width: 60rem;
+	}
+
+	.seo-content h2 {
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+		margin: 2.5rem 0 1rem;
+	}
+
+	.seo-content h2:first-child {
+		margin-top: 0;
+	}
+
+	.seo-content p,
+	.seo-content li {
+		color: var(--gray-200);
+		font-size: var(--text-md);
+		line-height: 1.65;
+	}
+
+	.seo-content .how-to {
+		padding-left: 1.25rem;
+	}
+
+	.seo-content .how-to li {
+		margin-bottom: 0.75rem;
+	}
+
+	.seo-content a {
+		color: var(--accent-regular);
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.seo-link {
+		display: inline-block;
+		font-weight: 600;
+	}
+
+	.related-links {
+		list-style: none;
+		padding: 0;
+	}
+
+	.related-links li {
+		margin-bottom: 0.5rem;
+	}
+
+	.faq-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.faq-item {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		padding: 1rem 1.25rem;
+		background: var(--gray-999_40);
+	}
+
+	.faq-item summary {
+		cursor: pointer;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		color: var(--gray-0);
+		font-size: var(--text-md);
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.faq-item summary::after {
+		content: '+';
+		color: var(--accent-regular);
+		font-size: 1.5rem;
+		font-weight: 400;
+		line-height: 1;
+		transition: transform 0.2s ease;
+	}
+
+	.faq-item[open] summary::after {
+		content: '−';
+	}
+
+	.faq-item p {
+		margin: 0.75rem 0 0;
+		color: var(--gray-200);
+		font-size: var(--text-sm);
+		line-height: 1.6;
+	}
+
+	@media print {
+		.form-panel,
+		.preview-controls,
+		.tool-cta-strip,
+		.seo-content,
+		nav,
+		.breadcrumb-nav,
+		footer {
+			display: none !important;
+		}
+		.battlecard {
+			box-shadow: none;
+			width: 100%;
+			max-width: none;
+		}
+	}
+</style>

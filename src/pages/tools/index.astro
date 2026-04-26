@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+
+const title = "Free Marketing Tools for PMMs | Swapnil Biswas";
+const description = "Free tools for product marketers. Build battlecards, structure positioning, plan launches - in your browser, no accounts or signup walls.";
+
+const tools = [
+	{
+		name: "Sales Battlecard Generator",
+		desc: "Build a polished, sales-ready competitive battlecard in 2 minutes. Live preview, PNG download, no signup.",
+		href: "/tools/battlecard-generator/",
+		tag: "Sales Enablement",
+		status: "live",
+	},
+	{
+		name: "Buyer Persona Generator",
+		desc: "Build a polished B2B buyer persona with goals, pains, decision factors, objections, and channels - in 2 minutes.",
+		href: "/tools/buyer-persona-generator/",
+		tag: "Persona & ICP",
+		status: "live",
+	},
+	{
+		name: "Product Launch Plan Template",
+		desc: "Plan a launch in 5 minutes - positioning, goals, owners, channels, milestones, risks - on a polished one-pager you can share with execs.",
+		href: "/tools/product-launch-plan-template/",
+		tag: "Launch",
+		status: "live",
+	},
+	{
+		name: "Positioning Canvas Generator",
+		desc: "April Dunford-style positioning canvas - alternatives, attributes, value, target market, market category.",
+		href: "#",
+		tag: "Positioning",
+		status: "soon",
+	},
+	{
+		name: "Product Launch Readiness Scorecard",
+		desc: "Score your launch plan across messaging, sales enablement, GTM channels, and success metrics.",
+		href: "#",
+		tag: "Launch",
+		status: "soon",
+	},
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={[{ name: "Tools" }]}>
+	<div class="stack gap-20">
+		<main class="wrapper tools-index">
+			<Hero
+				title="Free PMM Tools"
+				tagline="Browser-based tools for product marketers. No accounts, no walls, no nonsense."
+				align="start"
+			/>
+
+			<div class="tools-grid">
+				{tools.map((tool) => (
+					<a
+						href={tool.status === 'live' ? tool.href : '#'}
+						class:list={['tool-card', { disabled: tool.status !== 'live' }]}
+						aria-disabled={tool.status !== 'live'}
+					>
+						<div class="tool-card-top">
+							<span class="tool-tag">{tool.tag}</span>
+							{tool.status === 'soon' && <span class="tool-soon">Coming soon</span>}
+						</div>
+						<h2>{tool.name}</h2>
+						<p>{tool.desc}</p>
+						{tool.status === 'live' && (
+							<span class="tool-cta">
+								Open tool
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+							</span>
+						)}
+					</a>
+				))}
+			</div>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.tools-index {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	.tools-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.25rem;
+	}
+
+	@media (min-width: 50em) {
+		.tools-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 75em) {
+		.tools-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.tool-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		padding: 1.5rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		background: var(--gray-999_40);
+		text-decoration: none;
+		color: var(--gray-200);
+		transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.tool-card:hover:not(.disabled) {
+		border-color: var(--accent-regular);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-md);
+	}
+
+	.tool-card.disabled {
+		opacity: 0.55;
+		cursor: not-allowed;
+	}
+
+	.tool-card-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.tool-tag {
+		display: inline-block;
+		font-size: var(--text-xs);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--accent-regular);
+	}
+
+	.tool-soon {
+		font-size: var(--text-xs);
+		font-weight: 500;
+		color: var(--gray-400);
+		padding: 0.2rem 0.6rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+	}
+
+	.tool-card h2 {
+		font-size: var(--text-lg);
+		color: var(--gray-0);
+		margin: 0;
+		line-height: 1.25;
+	}
+
+	.tool-card p {
+		font-size: var(--text-sm);
+		color: var(--gray-300);
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	.tool-cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		margin-top: auto;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-sm);
+		color: var(--accent-regular);
+	}
+</style>

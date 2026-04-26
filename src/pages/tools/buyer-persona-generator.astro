@@ -1,0 +1,1675 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+
+const title = "Free Buyer Persona Generator | Build a B2B Persona in 2 Minutes";
+const description = "Free buyer persona generator. Enter role, goals, pains, and objections - download a polished, sales and marketing-ready persona PNG instantly. No signup required.";
+
+const faqs = [
+	{
+		question: "What is a buyer persona?",
+		answer: "A buyer persona is a semi-fictional representation of your ideal customer based on real data and research. It captures their job role, goals, pain points, decision factors, and the channels where they consume information - giving marketing and sales a shared mental model of who they're selling to.",
+	},
+	{
+		question: "How do I use this buyer persona generator?",
+		answer: "Fill in the persona's name and role, their company context, three goals, three pain points, three decision factors, two common objections, where they spend time consuming content, and a representative quote. The preview updates as you type. Click Download PNG when you're done.",
+	},
+	{
+		question: "Is this buyer persona generator free?",
+		answer: "Yes, completely free. No signup, no email gate, no watermark on the download. The generator runs entirely in your browser - your inputs never leave your device.",
+	},
+	{
+		question: "What format does the persona download in?",
+		answer: "The generator exports a high-resolution PNG image (1000px wide, rendered at 2x device pixel ratio for retina displays) suitable for embedding in Notion, Confluence, Google Slides, Salesforce, or any sales enablement tool.",
+	},
+	{
+		question: "How is a buyer persona different from an ICP?",
+		answer: "An Ideal Customer Profile (ICP) describes the type of company you sell to (industry, size, geography, tech stack). A buyer persona describes the individual humans inside that company who influence the buying decision. Most B2B teams need one ICP and 2-4 personas (e.g., economic buyer, technical buyer, end user).",
+	},
+	{
+		question: "How many buyer personas should we create?",
+		answer: "For most B2B teams, 2-4 personas covers the buying committee: economic buyer, technical evaluator, end user, and sometimes a champion. Avoid creating personas for every job title - that fragments your messaging. Group similar roles into one persona.",
+	},
+	{
+		question: "How often should buyer personas be updated?",
+		answer: "Refresh personas every 6-12 months and immediately after any major shift - a new product line, expansion into a new segment, or a meaningful change in win/loss patterns. Stale personas drive bad targeting and waste creative budget.",
+	},
+];
+
+const softwareSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebApplication",
+	"name": "Buyer Persona Generator",
+	"description": description,
+	"url": "https://swapbiswas.com/tools/buyer-persona-generator/",
+	"applicationCategory": "BusinessApplication",
+	"operatingSystem": "Any",
+	"browserRequirements": "Requires JavaScript",
+	"offers": {
+		"@type": "Offer",
+		"price": "0",
+		"priceCurrency": "USD"
+	},
+	"creator": {
+		"@type": "Person",
+		"name": "Swapnil Biswas",
+		"url": "https://swapbiswas.com/"
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqs.map((faq) => ({
+		"@type": "Question",
+		"name": faq.question,
+		"acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+	}))
+};
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	breadcrumbs={[{ name: "Tools", url: "/tools/" }, { name: "Buyer Persona Generator" }]}
+>
+	<script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} slot="head" />
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+	<div class="stack gap-20">
+		<main class="wrapper tool-page">
+			<Hero
+				title="Free Buyer Persona Generator"
+				tagline="Build a polished, sales and marketing-ready B2B buyer persona in 2 minutes. No signup. Download as PNG."
+				align="start"
+			/>
+
+			<div class="tool-grid">
+				<!-- FORM -->
+				<section class="form-panel" aria-label="Persona inputs">
+					<form id="persona-form" autocomplete="off">
+						<fieldset>
+							<legend>1. Persona basics</legend>
+							<div class="field-row">
+								<div class="field">
+									<label for="persona-name">Persona name</label>
+									<input type="text" id="persona-name" maxlength="40" placeholder="e.g., Marketing Mary" />
+								</div>
+								<div class="field">
+									<label for="persona-role">Job title</label>
+									<input type="text" id="persona-role" maxlength="60" placeholder="e.g., VP of Demand Generation" />
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>2. Company context</legend>
+							<div class="field-row">
+								<div class="field">
+									<label for="persona-industry">Industry</label>
+									<input type="text" id="persona-industry" maxlength="40" placeholder="e.g., B2B SaaS" />
+								</div>
+								<div class="field">
+									<label for="persona-company-size">Company size</label>
+									<input type="text" id="persona-company-size" maxlength="40" placeholder="e.g., 200-1,000 employees" />
+								</div>
+							</div>
+							<div class="field-row">
+								<div class="field">
+									<label for="persona-location">Location</label>
+									<input type="text" id="persona-location" maxlength="40" placeholder="e.g., North America" />
+								</div>
+								<div class="field">
+									<label for="persona-reports-to">Reports to</label>
+									<input type="text" id="persona-reports-to" maxlength="40" placeholder="e.g., CMO" />
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset data-section-card="bp-goals">
+							<legend>3. Goals (3 - what success looks like for them)<label class="section-toggle" title="Show this section in the output"><input type="checkbox" class="section-toggle-input" data-toggle-card="bp-goals" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="goal-1" maxlength="100" placeholder="e.g., Hit pipeline coverage of 4x quarterly target" /></div>
+							<div class="field"><input type="text" id="goal-2" maxlength="100" placeholder="e.g., Reduce cost per MQL by 30% YoY" /></div>
+							<div class="field"><input type="text" id="goal-3" maxlength="100" placeholder="e.g., Launch ABM motion for top 50 enterprise accounts" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="bp-pains">
+							<legend>4. Pain points (3 - what's keeping them up at night)<label class="section-toggle" title="Show this section in the output"><input type="checkbox" class="section-toggle-input" data-toggle-card="bp-pains" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="pain-1" maxlength="100" placeholder="e.g., Sales reps complain MQLs don't convert to opportunities" /></div>
+							<div class="field"><input type="text" id="pain-2" maxlength="100" placeholder="e.g., Attribution data is fragmented across 8+ tools" /></div>
+							<div class="field"><input type="text" id="pain-3" maxlength="100" placeholder="e.g., Budget approvals require 3 quarters of historical data" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="bp-factors">
+							<legend>5. Decision factors (3 - what they care about when buying)<label class="section-toggle" title="Show this section in the output"><input type="checkbox" class="section-toggle-input" data-toggle-card="bp-factors" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="factor-1" maxlength="100" placeholder="e.g., Time to first value under 30 days" /></div>
+							<div class="field"><input type="text" id="factor-2" maxlength="100" placeholder="e.g., Native HubSpot + Salesforce sync, no Zapier" /></div>
+							<div class="field"><input type="text" id="factor-3" maxlength="100" placeholder="e.g., Transparent pricing - no per-contact fees" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="bp-objections">
+							<legend>6. Common objections (2 - and what they're really worried about)<label class="section-toggle" title="Show this section in the output"><input type="checkbox" class="section-toggle-input" data-toggle-card="bp-objections" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="obj-1" maxlength="120" placeholder="e.g., 'We just bought Tool X last quarter' - signals budget fatigue" /></div>
+							<div class="field"><input type="text" id="obj-2" maxlength="120" placeholder="e.g., 'I need to see ROI in 90 days' - signals exec pressure" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="bp-sources">
+							<legend>7. Where they spend time (3 - blogs, podcasts, communities)<label class="section-toggle" title="Show this section in the output"><input type="checkbox" class="section-toggle-input" data-toggle-card="bp-sources" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="source-1" maxlength="80" placeholder="e.g., Pavilion, Demand Curve, Marketing Brew" /></div>
+							<div class="field"><input type="text" id="source-2" maxlength="80" placeholder="e.g., LinkedIn (follows Dave Gerhardt, Kyle Poyar)" /></div>
+							<div class="field"><input type="text" id="source-3" maxlength="80" placeholder="e.g., Podcasts: Exit Five, B2B Growth, Stacking Growth" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="bp-quote">
+							<legend>8. Representative quote (one sentence in their voice)<label class="section-toggle" title="Show this section in the output"><input type="checkbox" class="section-toggle-input" data-toggle-card="bp-quote" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="quote" maxlength="180" placeholder='e.g., "I do not have time to evaluate another tool unless it solves my attribution problem in the first demo."' /></div>
+						</fieldset>
+
+						<div class="form-actions">
+							<details class="sample-picker">
+								<summary class="btn-secondary">Load sample <span class="sample-caret">▾</span></summary>
+								<ul class="sample-options">
+									<li><button type="button" class="sample-option" data-sample="demand-gen">VP Demand Generation</button></li>
+									<li><button type="button" class="sample-option" data-sample="finance">CFO / Finance Buyer</button></li>
+									<li><button type="button" class="sample-option" data-sample="devops">Engineering Director</button></li>
+								</ul>
+							</details>
+							<input type="file" id="logo-file-input" accept="image/png,image/jpeg,image/svg+xml,image/webp" hidden />
+							<button type="button" id="upload-logo" class="btn-secondary" title="Add a logo to the top-right of the card">＋ Logo</button>
+							<button type="button" id="remove-logo" class="btn-secondary btn-danger" hidden>× Logo</button>
+							<button type="button" id="reset-form" class="btn-secondary">Reset</button>
+							<button type="button" id="clear-saved" class="btn-secondary btn-danger" title="Clear all saved data from this browser">Clear saved</button>
+						</div>
+					</form>
+				</section>
+
+				<!-- PREVIEW -->
+				<section class="preview-panel" aria-label="Persona preview">
+					<div class="preview-sticky">
+						<div class="preview-controls">
+							<h2 class="preview-heading">Live Preview</h2>
+							<div class="preview-actions">
+								<div class="theme-picker" role="radiogroup" aria-label="Theme">
+									<button type="button" class="theme-btn active" data-theme="dark" title="Dark theme">Dark</button>
+									<button type="button" class="theme-btn" data-theme="light" title="Light theme">Light</button>
+									<button type="button" class="theme-btn" data-theme="brand" title="Brand theme">Brand</button>
+								</div>
+								<button type="button" id="copy-png" class="btn-icon" title="Copy image to clipboard">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+									Copy
+								</button>
+								<button type="button" id="download-pdf" class="btn-icon" title="Download as PDF">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+									PDF
+								</button>
+								<button type="button" id="download-png" class="btn-primary">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+									Download PNG
+								</button>
+							</div>
+						</div>
+						<p class="autosave-status" id="autosave-status" aria-live="polite"><span id="fill-counter" class="fill-counter"></span><span id="autosave-text"></span></p>
+
+						<div class="preview-frame" id="preview-frame">
+							<div id="persona-card" class="persona-card">
+								<header class="bp-header">
+									<div class="bp-avatar" id="bp-avatar">BP</div>
+									<div class="bp-title">
+										<span class="bp-label">Buyer Persona</span>
+										<h3 class="bp-name" data-bind="persona-name">Persona Name</h3>
+										<div class="bp-role" data-bind="persona-role">Job Title</div>
+									</div>
+									<div class="bp-meta">
+										<img class="card-logo" id="card-logo" alt="" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" hidden />
+										<div class="bp-meta-row"><span class="bp-meta-label">Industry:</span> <span data-bind="persona-industry">Industry</span></div>
+										<div class="bp-meta-row"><span class="bp-meta-label">Company:</span> <span data-bind="persona-company-size">Company size</span></div>
+										<div class="bp-meta-row"><span class="bp-meta-label">Location:</span> <span data-bind="persona-location">Location</span></div>
+										<div class="bp-meta-row"><span class="bp-meta-label">Reports to:</span> <span data-bind="persona-reports-to">Reports to</span></div>
+									</div>
+								</header>
+
+								<div class="bp-grid">
+									<div class="bp-card bp-goals">
+										<div class="bp-card-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+											Goals
+										</div>
+										<ul>
+											<li data-bind="goal-1">Goal one</li>
+											<li data-bind="goal-2">Goal two</li>
+											<li data-bind="goal-3">Goal three</li>
+										</ul>
+									</div>
+
+									<div class="bp-card bp-pains">
+										<div class="bp-card-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+											Pain points
+										</div>
+										<ul>
+											<li data-bind="pain-1">Pain one</li>
+											<li data-bind="pain-2">Pain two</li>
+											<li data-bind="pain-3">Pain three</li>
+										</ul>
+									</div>
+
+									<div class="bp-card bp-factors">
+										<div class="bp-card-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+											Decision factors
+										</div>
+										<ul>
+											<li data-bind="factor-1">Factor one</li>
+											<li data-bind="factor-2">Factor two</li>
+											<li data-bind="factor-3">Factor three</li>
+										</ul>
+									</div>
+
+									<div class="bp-card bp-objections">
+										<div class="bp-card-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+											Common objections
+										</div>
+										<ul>
+											<li data-bind="obj-1">Objection one</li>
+											<li data-bind="obj-2">Objection two</li>
+										</ul>
+									</div>
+
+									<div class="bp-card bp-sources">
+										<div class="bp-card-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+											Where they spend time
+										</div>
+										<ul>
+											<li data-bind="source-1">Source one</li>
+											<li data-bind="source-2">Source two</li>
+											<li data-bind="source-3">Source three</li>
+										</ul>
+									</div>
+
+									<div class="bp-card bp-quote">
+										<div class="bp-card-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+											In their words
+										</div>
+										<p data-bind="quote">Representative quote in their voice</p>
+									</div>
+								</div>
+
+								<footer class="bp-footer">
+									<span class="bp-footer-built">Built with the free Buyer Persona Generator</span>
+									<span class="bp-footer-url">swapbiswas.com/tools/buyer-persona-generator</span>
+								</footer>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Optional newsletter -->
+			<section class="tool-cta-strip">
+				<div class="cta-text">
+					<strong>Want more PMM tools and templates?</strong>
+					<p>Join the newsletter. Positioning, launch playbooks, persona updates - no spam, just value.</p>
+				</div>
+				<form class="cta-form" id="tool-newsletter-form">
+					<input type="email" name="email_address" placeholder="you@company.com" required autocomplete="email" aria-label="Email address" />
+					<button type="submit">Subscribe</button>
+				</form>
+				<p class="cta-status" id="tool-newsletter-status" aria-live="polite"></p>
+			</section>
+
+			<!-- SEO content -->
+			<section class="seo-content">
+				<h2>How to use the buyer persona generator</h2>
+				<ol class="how-to">
+					<li><strong>Start with one persona, not five.</strong> Build the one persona that drives the most revenue today. Add others only after you have it dialed in.</li>
+					<li><strong>Use real interview language.</strong> Pain points and quotes should come from actual customer interviews or call recordings. Made-up phrasing makes the persona feel fake to sales.</li>
+					<li><strong>Goals beat job descriptions.</strong> "Hit pipeline coverage of 4x quarterly target" tells you something. "Manages demand gen team" doesn't.</li>
+					<li><strong>Decision factors, not features.</strong> Capture what they evaluate vendors on (time to value, integration depth, pricing model) - not which features they want.</li>
+					<li><strong>Objections reveal what they're really worried about.</strong> "We just bought Tool X" is rarely about budget - it's about the political cost of admitting a mistake. Note both.</li>
+					<li><strong>Info sources beat demographics.</strong> Knowing your buyer reads Demand Curve and follows Kyle Poyar tells you exactly where to spend ad dollars. Knowing they're 35-44 doesn't.</li>
+				</ol>
+
+				<h2>Buyer persona vs. ICP - what's the difference?</h2>
+				<p>An <strong>Ideal Customer Profile (ICP)</strong> describes the type of <em>company</em> you sell to: industry, employee count, geography, tech stack, growth stage. A <strong>buyer persona</strong> describes the <em>individual humans</em> inside that company who influence the buying decision. Most B2B teams need <strong>one ICP and 2-4 personas</strong> covering the buying committee.</p>
+				<p>For a deeper walkthrough of the framework and how to use both together, read the full guide:</p>
+				<p><a href="/blog/icp-vs-buyer-persona/" class="seo-link">→ Read: ICP vs. Buyer Persona (with templates and examples)</a></p>
+
+				<h2>Related templates and guides</h2>
+				<ul class="related-links">
+					<li><a href="/blog/icp-vs-buyer-persona/">ICP vs Buyer Persona Framework</a></li>
+					<li><a href="/blog/product-positioning/">Product Positioning Framework</a></li>
+					<li><a href="/blog/what-is-b2b-demand-generation/">What is B2B Demand Generation</a></li>
+					<li><a href="/blog/go-to-market-strategy-template/">Go-To-Market Strategy Template</a></li>
+				</ul>
+
+				<h2>Frequently asked questions</h2>
+				<div class="faq-list">
+					{faqs.map((faq) => (
+						<details class="faq-item">
+							<summary>{faq.question}</summary>
+							<p>{faq.answer}</p>
+						</details>
+					))}
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<script>
+	function initPersona() {
+		const formMaybe = document.getElementById('persona-form') as HTMLFormElement | null;
+		const card = document.getElementById('persona-card');
+		if (!formMaybe || !card || (formMaybe as any)._initialized) return;
+		(formMaybe as any)._initialized = true;
+		const form: HTMLFormElement = formMaybe;
+
+		const bindings = card.querySelectorAll<HTMLElement>('[data-bind]');
+		const avatarEl = document.getElementById('bp-avatar');
+
+		function update() {
+			const hasAnyContent = Array.from(form.querySelectorAll<HTMLInputElement>('input[type="text"]'))
+				.some((input) => input.value.trim().length > 0);
+
+			bindings.forEach((el) => {
+				const id = el.getAttribute('data-bind');
+				if (!id) return;
+				const input = document.getElementById(id) as HTMLInputElement | null;
+				const val = input?.value?.trim() || '';
+				const prefix = el.getAttribute('data-prefix') || '';
+				const suffix = el.getAttribute('data-suffix') || '';
+				if (val) {
+					el.textContent = prefix + val + suffix;
+					el.classList.remove('bp-placeholder');
+					el.classList.remove('bind-empty');
+				} else if (hasAnyContent) {
+					el.textContent = '';
+					el.classList.remove('bp-placeholder');
+					el.classList.add('bind-empty');
+				} else {
+					el.textContent = el.getAttribute('data-placeholder') || '';
+					el.classList.add('bp-placeholder');
+					el.classList.remove('bind-empty');
+				}
+			});
+			// Group hide
+			card!.querySelectorAll<HTMLElement>('[data-hide-group]').forEach((group) => {
+				const childBinds = group.querySelectorAll<HTMLElement>('[data-bind]');
+				const allEmpty = childBinds.length > 0 && Array.from(childBinds).every((c) => c.classList.contains('bind-empty'));
+				group.classList.toggle('group-hidden', allEmpty);
+			});
+			// Avatar initials from persona name
+			if (avatarEl) {
+				const nameInput = document.getElementById('persona-name') as HTMLInputElement | null;
+				const name = nameInput?.value?.trim() || '';
+				if (name) {
+					const initials = name
+						.split(/\s+/)
+						.filter(Boolean)
+						.slice(0, 2)
+						.map((w) => w[0]?.toUpperCase() || '')
+						.join('');
+					avatarEl.textContent = initials || 'BP';
+					avatarEl.classList.remove('bp-placeholder');
+				} else {
+					avatarEl.textContent = 'BP';
+					avatarEl.classList.add('bp-placeholder');
+				}
+			}
+		}
+
+		bindings.forEach((el) => {
+			if (!el.getAttribute('data-placeholder')) {
+				el.setAttribute('data-placeholder', el.textContent || '');
+			}
+			el.classList.add('bp-placeholder');
+		});
+		if (avatarEl) avatarEl.classList.add('bp-placeholder');
+
+		// ===== Section toggles =====
+		function applyToggle(toggle: HTMLInputElement) {
+			const cardClass = toggle.dataset.toggleCard;
+			if (!cardClass) return;
+			const cardEl = card!.querySelector('.' + cardClass);
+			const fieldset = toggle.closest('fieldset');
+			const excluded = !toggle.checked;
+			if (cardEl) cardEl.classList.toggle('section-excluded', excluded);
+			if (fieldset) fieldset.classList.toggle('fieldset-muted', excluded);
+		}
+
+		form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((toggle) => {
+			toggle.addEventListener('change', () => {
+				applyToggle(toggle);
+				saveState();
+				scaleCard();
+			});
+		});
+
+		// ===== localStorage persistence =====
+		const STATE_KEY = 'tool-state-buyer-persona';
+		const statusEl = document.getElementById('autosave-text');
+		const counterEl = document.getElementById('fill-counter');
+		let saveTimer: any;
+
+		function updateCounter() {
+			if (!counterEl) return;
+			const inputs = form.querySelectorAll<HTMLInputElement>('input[type="text"]');
+			const filled = Array.from(inputs).filter((i) => i.value.trim().length > 0).length;
+			counterEl.textContent = `${filled}/${inputs.length} fields filled${filled === inputs.length ? ' ✓' : ''}`;
+		}
+
+		function saveState() {
+			try {
+				const fields: Record<string, string> = {};
+				form.querySelectorAll<HTMLInputElement>('input[type="text"]').forEach((input) => {
+					if (input.value) fields[input.id] = input.value;
+				});
+				const excluded: Record<string, boolean> = {};
+				form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((toggle) => {
+					if (!toggle.checked && toggle.dataset.toggleCard) excluded[toggle.dataset.toggleCard] = true;
+				});
+				const theme = (card as HTMLElement).dataset.theme || 'dark';
+				const logo = cardLogo?.getAttribute('hidden') === null ? cardLogo.src : null;
+				localStorage.setItem(STATE_KEY, JSON.stringify({ fields, excluded, theme, logo, savedAt: Date.now() }));
+				if (statusEl) {
+					statusEl.textContent = 'Saved';
+					setTimeout(() => { if (statusEl && statusEl.textContent === 'Saved') statusEl.textContent = ''; }, 1500);
+				}
+			} catch (e) {}
+		}
+
+		function loadState() {
+			try {
+				const raw = localStorage.getItem(STATE_KEY);
+				if (!raw) return false;
+				const saved = JSON.parse(raw);
+				Object.entries(saved.fields || {}).forEach(([id, val]) => {
+					const input = document.getElementById(id) as HTMLInputElement | null;
+					if (input && typeof val === 'string') input.value = val;
+				});
+				Object.entries(saved.excluded || {}).forEach(([cardClass, isExcluded]) => {
+					const toggle = form.querySelector<HTMLInputElement>(`.section-toggle-input[data-toggle-card="${cardClass}"]`);
+					if (toggle && isExcluded) { toggle.checked = false; applyToggle(toggle); }
+				});
+				if (saved.theme && typeof saved.theme === 'string') applyTheme(saved.theme);
+				if (saved.logo && typeof saved.logo === 'string') applyLogo(saved.logo);
+				return true;
+			} catch (e) { return false; }
+		}
+
+		function applyTheme(theme: string) {
+			(card as HTMLElement).dataset.theme = theme;
+			document.querySelectorAll<HTMLButtonElement>('.theme-btn').forEach((btn) => {
+				btn.classList.toggle('active', btn.dataset.theme === theme);
+			});
+		}
+		document.querySelectorAll<HTMLButtonElement>('.theme-btn').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				applyTheme(btn.dataset.theme || 'dark');
+				saveState();
+				scaleCard();
+			});
+		});
+
+		// ===== Logo upload =====
+		const cardLogo = document.getElementById('card-logo') as HTMLImageElement | null;
+		const uploadBtn = document.getElementById('upload-logo');
+		const removeBtn = document.getElementById('remove-logo');
+		const fileInput = document.getElementById('logo-file-input') as HTMLInputElement | null;
+
+		const TRANSPARENT_PX = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+		function applyLogo(dataUrl: string | null) {
+			if (cardLogo) {
+				if (dataUrl) {
+					cardLogo.src = dataUrl;
+					cardLogo.removeAttribute('hidden');
+				} else {
+					cardLogo.src = TRANSPARENT_PX;
+					cardLogo.setAttribute('hidden', '');
+				}
+			}
+			if (dataUrl) {
+				uploadBtn?.setAttribute('hidden', '');
+				removeBtn?.removeAttribute('hidden');
+			} else {
+				uploadBtn?.removeAttribute('hidden');
+				removeBtn?.setAttribute('hidden', '');
+			}
+			scaleCard();
+		}
+
+		uploadBtn?.addEventListener('click', () => fileInput?.click());
+		fileInput?.addEventListener('change', () => {
+			const file = fileInput.files?.[0];
+			if (!file) return;
+			if (file.size > 1024 * 1024) {
+				if (!confirm('That logo is over 1MB. localStorage may struggle. Continue?')) {
+					fileInput.value = '';
+					return;
+				}
+			}
+			const reader = new FileReader();
+			reader.onload = (e) => {
+				applyLogo(e.target?.result as string);
+				saveState();
+			};
+			reader.readAsDataURL(file);
+		});
+		removeBtn?.addEventListener('click', () => {
+			if (fileInput) fileInput.value = '';
+			applyLogo(null);
+			saveState();
+		});
+
+		function debouncedSave() {
+			clearTimeout(saveTimer);
+			if (statusEl) statusEl.textContent = 'Saving...';
+			saveTimer = setTimeout(saveState, 400);
+		}
+
+		form.addEventListener('input', () => { update(); updateCounter(); debouncedSave(); });
+
+		document.getElementById('clear-saved')?.addEventListener('click', () => {
+			if (!confirm('Clear all saved data for this tool? This cannot be undone.')) return;
+			try { localStorage.removeItem(STATE_KEY); } catch (e) {}
+			form.reset();
+			form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((t) => { t.checked = true; applyToggle(t); });
+			update();
+			updateCounter();
+			if (statusEl) statusEl.textContent = 'Cleared';
+		});
+
+		// Sample data
+		const samples: Record<string, Record<string, string>> = {
+			'demand-gen': {
+				'persona-name': 'Demand Gen Dana',
+				'persona-role': 'VP of Demand Generation',
+				'persona-industry': 'B2B SaaS (HR Tech)',
+				'persona-company-size': '500-2,000 employees',
+				'persona-location': 'North America (NYC HQ)',
+				'persona-reports-to': 'CMO',
+				'goal-1': 'Hit 4x pipeline coverage every quarter without growing headcount',
+				'goal-2': 'Reduce blended cost per opportunity by 25% in FY26',
+				'goal-3': 'Launch ABM motion targeting top 100 enterprise logos by Q3',
+				'pain-1': 'Sales says MQLs are unqualified - VP Sales escalates monthly',
+				'pain-2': 'Attribution split across 9 tools - cannot prove channel ROI to CFO',
+				'pain-3': 'Lost 2 senior demand managers last year - team is stretched thin',
+				'factor-1': 'Time to first measurable value under 45 days',
+				'factor-2': 'Native HubSpot + Salesforce sync (not Zapier middleware)',
+				'factor-3': 'Transparent pricing - no per-contact gotchas at renewal',
+				'obj-1': '"We just rolled out an ABM platform 18 months ago" - signals budget + political fatigue',
+				'obj-2': '"I need ROI proof in 90 days" - CFO is watching every renewal',
+				'source-1': 'Communities: Pavilion, Demand Curve, Wynter',
+				'source-2': 'LinkedIn: follows Dave Gerhardt, Kyle Poyar, Anthony Pierri',
+				'source-3': 'Podcasts: Exit Five, Stacking Growth, B2B Growth Show',
+				'quote': '"I do not need another tool. I need fewer tools that actually talk to each other and prove their own ROI."',
+			},
+			'finance': {
+				'persona-name': 'Finance Felix',
+				'persona-role': 'VP Finance / CFO',
+				'persona-industry': 'B2B SaaS (mid-market)',
+				'persona-company-size': '200-1,000 employees',
+				'persona-location': 'North America',
+				'persona-reports-to': 'CEO + Board',
+				'goal-1': 'Hit gross margin target of 75% for FY26',
+				'goal-2': 'Get to cash-flow positive within 18 months',
+				'goal-3': 'Build investor-ready financial model + monthly reporting cadence',
+				'pain-1': 'Spend per FTE growing 2x faster than ARR',
+				'pain-2': 'Tool sprawl - 80+ SaaS subscriptions, no central visibility',
+				'pain-3': 'Annual planning takes 6 weeks across 5 spreadsheets',
+				'factor-1': 'Quantified ROI with sub-12-month payback',
+				'factor-2': 'Procurement-friendly pricing (annual flat, no per-seat surprises)',
+				'factor-3': 'Vendor passes SOC 2 + InfoSec review without exception',
+				'obj-1': '"We just signed an enterprise deal with [vendor]" - signals exec optics',
+				'obj-2': '"Show me a customer reference at our exact scale" - signals risk aversion',
+				'source-1': 'Reading: WSJ, Bessemer cloud index, public S-1 filings',
+				'source-2': 'Communities: Pavilion Finance Council, NetSuite User Group',
+				'source-3': 'Podcasts: 20VC, Acquired, Run The Numbers (CJ Gustafson)',
+				'quote': '"I do not care about the feature list. I care that I can defend this line item to the board in 6 months."',
+			},
+			'devops': {
+				'persona-name': 'DevOps Drew',
+				'persona-role': 'Director of Platform Engineering',
+				'persona-industry': 'B2B SaaS (high-growth)',
+				'persona-company-size': '500-2,000 employees',
+				'persona-location': 'Distributed (US/EU)',
+				'persona-reports-to': 'VP Engineering / CTO',
+				'goal-1': 'Reduce mean-time-to-recovery (MTTR) from 45 min to under 10',
+				'goal-2': 'Cut cloud spend 30% YoY without slowing shipping velocity',
+				'goal-3': 'Ship platform self-service so feature teams stop blocking on ops',
+				'pain-1': 'On-call burnout - team rotation has 3 unfilled spots',
+				'pain-2': 'Multi-cloud sprawl after acquisition - 4 clouds, 3 IaC tools',
+				'pain-3': 'Sales reps cold-call constantly but team has no time to evaluate',
+				'factor-1': 'Open standards - OpenTelemetry compatible, no vendor lock-in',
+				'factor-2': 'Pricing not tied to host count or data ingestion',
+				'factor-3': 'Strong API + Terraform provider; avoids click-ops',
+				'obj-1': '"We tried [vendor] and ripped it out 6 months later" - signals fatigue',
+				'obj-2': '"Our infra team builds this in-house" - signals NIH culture',
+				'source-1': 'Communities: Hacker News, r/devops, CNCF Slack, KubeCon',
+				'source-2': 'LinkedIn: follows Charity Majors, Kelsey Hightower, Liz Fong-Jones',
+				'source-3': 'Podcasts: Software Engineering Daily, The Cloudcast, Practical AI',
+				'quote': '"Show me the docs, the API, and a working demo in 30 minutes. If I have to talk to a sales rep first, I am out."',
+			},
+		};
+
+		function loadSample(key: string) {
+			const sample = samples[key];
+			if (!sample) return;
+			Object.entries(sample).forEach(([id, val]) => {
+				const input = document.getElementById(id) as HTMLInputElement | null;
+				if (input) input.value = val;
+			});
+			update();
+			updateCounter();
+			saveState();
+		}
+
+		form.querySelectorAll<HTMLButtonElement>('.sample-option').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				loadSample(btn.dataset.sample || '');
+				const picker = btn.closest('details');
+				if (picker) picker.removeAttribute('open');
+			});
+		});
+
+		document.getElementById('reset-form')?.addEventListener('click', () => {
+			form.reset();
+			form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((t) => { t.checked = true; applyToggle(t); });
+			update();
+			updateCounter();
+			saveState();
+		});
+
+		// Scale card to fit frame width AND viewport height
+		const frame = document.getElementById('preview-frame');
+		const cardEl = card as HTMLElement;
+		function scaleCard() {
+			if (!frame) return;
+			const frameWidth = frame.clientWidth;
+			const widthScale = Math.min(1, frameWidth / 1000);
+			const prev = cardEl.style.getPropertyValue('--bp-scale');
+			cardEl.style.setProperty('--bp-scale', '1');
+			const naturalHeight = cardEl.scrollHeight;
+			cardEl.style.setProperty('--bp-scale', prev || String(widthScale));
+
+			const isDesktop = window.matchMedia('(min-width: 64em)').matches;
+			let heightScale = 1;
+			if (isDesktop) {
+				const reservedTop = 24;
+				const reservedBottom = 24;
+				const controlsHeight = 64;
+				const available = window.innerHeight - reservedTop - reservedBottom - controlsHeight;
+				heightScale = available / naturalHeight;
+			}
+
+			const scale = Math.min(widthScale, heightScale, 1);
+			cardEl.style.setProperty('--bp-scale', String(scale));
+			frame.style.height = (naturalHeight * scale) + 'px';
+		}
+		scaleCard();
+		const ro = new ResizeObserver(scaleCard);
+		if (frame) ro.observe(frame);
+		const mo = new MutationObserver(scaleCard);
+		mo.observe(card, { childList: true, subtree: true, characterData: true });
+		window.addEventListener('resize', scaleCard);
+		if ((document as any).fonts?.ready) {
+			(document as any).fonts.ready.then(scaleCard);
+		}
+
+		// ===== Shared render helper =====
+		const themeBgColors: Record<string, string> = { dark: '#0d1117', light: '#ffffff', brand: '#1c0056' };
+
+		async function renderCard(format: 'png' | 'blob'): Promise<any> {
+			const cEl = card as HTMLElement;
+			const frameEl = document.getElementById('preview-frame');
+			const prevTransform = cEl.style.transform;
+			const prevFrameHeight = frameEl?.style.height || '';
+			try {
+				const mod: any = await import('https://esm.sh/html-to-image@1.11.13' as any);
+				cEl.style.transform = 'none';
+				if (frameEl) frameEl.style.height = cEl.scrollHeight + 'px';
+				const theme = cEl.dataset.theme || 'dark';
+				const opts = {
+					pixelRatio: 2,
+					backgroundColor: themeBgColors[theme] || '#0d1117',
+					cacheBust: true,
+					skipFonts: true,
+					width: 1000,
+					height: cEl.scrollHeight,
+				};
+				return format === 'blob' ? await mod.toBlob(cEl, opts) : await mod.toPng(cEl, opts);
+			} finally {
+				cEl.style.transform = prevTransform;
+				if (frameEl) frameEl.style.height = prevFrameHeight;
+			}
+		}
+
+		// ===== Copy to clipboard =====
+		const copyBtn = document.getElementById('copy-png');
+		copyBtn?.addEventListener('click', async () => {
+			const original = copyBtn.textContent;
+			copyBtn.setAttribute('disabled', 'true');
+			copyBtn.textContent = 'Copying...';
+			try {
+				const blob = await renderCard('blob');
+				if (!blob) throw new Error('Empty blob');
+				if (!navigator.clipboard || !(window as any).ClipboardItem) {
+					alert('Copy to clipboard is not supported in this browser. Use Download PNG instead.');
+					return;
+				}
+				await navigator.clipboard.write([new (window as any).ClipboardItem({ 'image/png': blob })]);
+				copyBtn.textContent = 'Copied!';
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_copy', tool_name: 'buyer_persona_generator', tool_output: 'png' });
+				setTimeout(() => { copyBtn.textContent = original; copyBtn.removeAttribute('disabled'); }, 1800);
+				return;
+			} catch (err) {
+				console.error('Copy failed', err);
+				alert('Copy failed. Please use Download PNG instead.');
+			}
+			copyBtn.textContent = original;
+			copyBtn.removeAttribute('disabled');
+		});
+
+		// ===== Download as PDF =====
+		async function pngToPdf(dataUrl: string, filename: string) {
+			const mod: any = await import('https://esm.sh/jspdf@2.5.1' as any);
+			const JsPDF = mod.jsPDF || mod.default;
+			const img = new Image();
+			await new Promise<void>((res, rej) => { img.onload = () => res(); img.onerror = rej; img.src = dataUrl; });
+			const pageW = 612, pageH = 792, margin = 36;
+			const maxW = pageW - 2 * margin, maxH = pageH - 2 * margin;
+			const scale = Math.min(maxW / img.width, maxH / img.height);
+			const w = img.width * scale, h = img.height * scale;
+			const x = (pageW - w) / 2, y = (pageH - h) / 2;
+			const pdf = new JsPDF({ orientation: 'portrait', unit: 'pt', format: 'letter' });
+			pdf.addImage(dataUrl, 'PNG', x, y, w, h, undefined, 'FAST');
+			pdf.save(filename);
+		}
+
+		const pdfBtn = document.getElementById('download-pdf');
+		pdfBtn?.addEventListener('click', async () => {
+			const original = pdfBtn.textContent;
+			pdfBtn.setAttribute('disabled', 'true');
+			pdfBtn.textContent = 'Building...';
+			try {
+				const dataUrl = await renderCard('png');
+				const personaName = (document.getElementById('persona-name') as HTMLInputElement)?.value?.trim() || '';
+				const safeName = personaName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+				await pngToPdf(dataUrl, safeName ? `buyer-persona-${safeName}.pdf` : 'buyer-persona.pdf');
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'buyer_persona_generator', tool_output: 'pdf' });
+			} catch (err) {
+				console.error('PDF failed', err);
+				alert('PDF download failed. Please try Download PNG instead.');
+			} finally {
+				pdfBtn.textContent = original;
+				pdfBtn.removeAttribute('disabled');
+			}
+		});
+
+		// Download PNG
+		const downloadBtn = document.getElementById('download-png');
+		downloadBtn?.addEventListener('click', async () => {
+			const original = downloadBtn.textContent;
+			downloadBtn.setAttribute('disabled', 'true');
+			downloadBtn.textContent = 'Preparing...';
+			try {
+				const dataUrl = await renderCard('png');
+				const personaName = (document.getElementById('persona-name') as HTMLInputElement)?.value?.trim() || '';
+				const safeName = personaName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+				const link = document.createElement('a');
+				link.download = safeName ? `buyer-persona-${safeName}.png` : 'buyer-persona.png';
+				link.href = dataUrl;
+				link.click();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'buyer_persona_generator', tool_output: 'png' });
+			} catch (err) {
+				console.error('Download failed', err);
+				alert('Download failed. Please try again or use a different browser.');
+			} finally {
+				downloadBtn.textContent = original;
+				downloadBtn.removeAttribute('disabled');
+			}
+		});
+
+		// Restore previous session if any
+		loadState();
+		update();
+		updateCounter();
+	}
+
+	function initToolNewsletter() {
+		const form = document.getElementById('tool-newsletter-form') as HTMLFormElement | null;
+		const status = document.getElementById('tool-newsletter-status');
+		if (!form || (form as any)._initialized) return;
+		(form as any)._initialized = true;
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const emailInput = form.querySelector('input[name="email_address"]') as HTMLInputElement | null;
+			const email = emailInput?.value || '';
+			const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+			if (btn) { btn.textContent = 'Subscribing...'; btn.disabled = true; }
+			const formData = new FormData();
+			formData.append('email_address', email);
+			fetch('https://app.kit.com/forms/9145889/subscriptions', {
+				method: 'POST',
+				body: formData,
+				headers: { 'Accept': 'application/json' }
+			}).then((res) => {
+				if (!res.ok) throw new Error('fail');
+				if (status) { status.textContent = 'Subscribed!'; status.style.color = 'var(--accent-regular)'; }
+				form.reset();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'newsletter_signup', signup_location: 'tool_buyer_persona' });
+			}).catch(() => {
+				if (status) { status.textContent = 'Something went wrong.'; status.style.color = '#ca7879'; }
+			}).finally(() => {
+				if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
+			});
+		});
+	}
+
+	initPersona();
+	initToolNewsletter();
+	document.addEventListener('astro:page-load', () => {
+		initPersona();
+		initToolNewsletter();
+	});
+</script>
+
+<style>
+	.tool-page {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	.tool-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+	}
+
+	@media (min-width: 64em) {
+		.tool-grid {
+			grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+			align-items: start;
+		}
+		.preview-panel {
+			position: sticky;
+			top: 1.5rem;
+			align-self: start;
+		}
+	}
+
+	.preview-panel {
+		min-width: 0;
+	}
+
+	.preview-sticky {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	/* Form panel */
+	.form-panel {
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 1.5rem;
+	}
+
+	#persona-form fieldset {
+		border: none;
+		padding: 0;
+		margin: 0 0 1.75rem;
+	}
+
+	#persona-form legend {
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		margin-bottom: 0.75rem;
+		padding: 0;
+	}
+
+	.field {
+		margin-bottom: 0.75rem;
+	}
+
+	.field-row {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.75rem;
+		margin-bottom: 0.75rem;
+	}
+
+	@media (min-width: 30em) {
+		.field-row {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.field label {
+		display: block;
+		margin-bottom: 0.35rem;
+		color: var(--gray-300);
+		font-size: var(--text-xs);
+		font-weight: 500;
+	}
+
+	#persona-form input[type="text"] {
+		width: 100%;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		transition: border-color 0.15s ease;
+	}
+
+	#persona-form input[type="text"]:focus {
+		outline: none;
+		border-color: var(--accent-regular);
+	}
+
+	.form-actions {
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+		margin-top: 1rem;
+	}
+
+	.btn-secondary {
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+
+	.btn-secondary:hover {
+		background: var(--accent-subtle-overlay);
+		color: var(--gray-0);
+	}
+
+	.btn-danger:hover {
+		background: rgba(239, 68, 68, 0.12);
+		color: #f87171;
+		border-color: rgba(239, 68, 68, 0.3);
+	}
+
+	.sample-picker {
+		position: relative;
+		display: inline-block;
+	}
+	.sample-picker > summary { list-style: none; }
+	.sample-picker > summary::-webkit-details-marker { display: none; }
+	.sample-caret {
+		display: inline-block;
+		margin-left: 0.25rem;
+		transition: transform 0.2s ease;
+	}
+	.sample-picker[open] .sample-caret { transform: rotate(180deg); }
+	.sample-options {
+		position: absolute;
+		top: calc(100% + 0.25rem);
+		left: 0;
+		margin: 0;
+		padding: 0.25rem;
+		background: var(--gray-999);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		list-style: none;
+		z-index: 20;
+		min-width: 200px;
+		box-shadow: var(--shadow-md);
+	}
+	.sample-options li { display: block; }
+	.sample-option {
+		display: block;
+		width: 100%;
+		text-align: left;
+		padding: 0.5rem 0.75rem;
+		background: transparent;
+		border: none;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		border-radius: 0.35rem;
+	}
+	.sample-option:hover {
+		background: var(--accent-subtle-overlay);
+		color: var(--gray-0);
+	}
+
+	#persona-form legend {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+		width: 100%;
+	}
+
+	.section-toggle {
+		display: inline-flex;
+		align-items: center;
+		cursor: pointer;
+		flex-shrink: 0;
+	}
+
+	.section-toggle-input {
+		appearance: none;
+		-webkit-appearance: none;
+		width: 34px;
+		height: 20px;
+		background: var(--gray-800);
+		border-radius: 999rem;
+		position: relative;
+		cursor: pointer;
+		margin: 0;
+		transition: background 0.2s ease;
+	}
+
+	.section-toggle-input::before {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		background: var(--gray-999);
+		border-radius: 50%;
+		top: 3px;
+		left: 3px;
+		transition: transform 0.2s ease;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	}
+
+	.section-toggle-input:checked {
+		background: var(--accent-regular);
+	}
+
+	.section-toggle-input:checked::before {
+		transform: translateX(14px);
+	}
+
+	.section-toggle-track {
+		display: none;
+	}
+
+	.fieldset-muted {
+		opacity: 0.45;
+		transition: opacity 0.2s ease;
+	}
+
+	.fieldset-muted .field input {
+		pointer-events: none;
+	}
+
+	.section-excluded {
+		display: none !important;
+	}
+
+	.bind-empty,
+	.group-hidden {
+		display: none !important;
+	}
+
+	.theme-picker {
+		display: inline-flex;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		padding: 2px;
+		background: var(--gray-999_40);
+	}
+	.theme-btn {
+		padding: 0.35rem 0.75rem;
+		border: none;
+		background: transparent;
+		color: var(--gray-300);
+		font-family: var(--font-brand);
+		font-size: var(--text-xs);
+		font-weight: 500;
+		cursor: pointer;
+		border-radius: 999rem;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+	.theme-btn:hover { color: var(--gray-0); }
+	.theme-btn.active {
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+	}
+
+	/* Light theme */
+	.persona-card[data-theme="light"] {
+		background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+		color: #0f172a;
+	}
+	.persona-card[data-theme="light"] .bp-header,
+	.persona-card[data-theme="light"] .bp-footer,
+	.persona-card[data-theme="light"] .bp-card-head { border-color: #e2e8f0; }
+	.persona-card[data-theme="light"] .bp-card {
+		background: #f8fafc;
+		border-color: #e2e8f0;
+	}
+	.persona-card[data-theme="light"] .bp-name,
+	.persona-card[data-theme="light"] .bp-role { color: #0f172a; }
+	.persona-card[data-theme="light"] .bp-meta,
+	.persona-card[data-theme="light"] .bp-meta-row,
+	.persona-card[data-theme="light"] .bp-card ul,
+	.persona-card[data-theme="light"] .bp-quote p { color: #475569; }
+	.persona-card[data-theme="light"] .bp-meta-label,
+	.persona-card[data-theme="light"] .bp-footer { color: #94a3b8; }
+	.persona-card[data-theme="light"] .bp-footer-url { color: #64748b; }
+	.persona-card[data-theme="light"] .bp-avatar {
+		background: linear-gradient(135deg, #c084fc 0%, #fb923c 100%);
+		color: #ffffff;
+	}
+
+	/* Brand theme */
+	.persona-card[data-theme="brand"] {
+		background: linear-gradient(135deg, #1c0056 0%, #7611a6 100%);
+		color: #ffffff;
+	}
+	.persona-card[data-theme="brand"] .bp-header,
+	.persona-card[data-theme="brand"] .bp-footer,
+	.persona-card[data-theme="brand"] .bp-card-head { border-color: rgba(255,255,255,0.15); }
+	.persona-card[data-theme="brand"] .bp-card {
+		background: rgba(255,255,255,0.08);
+		border-color: rgba(255,255,255,0.18);
+	}
+	.persona-card[data-theme="brand"] .bp-name,
+	.persona-card[data-theme="brand"] .bp-role { color: #ffffff; }
+	.persona-card[data-theme="brand"] .bp-meta,
+	.persona-card[data-theme="brand"] .bp-meta-row,
+	.persona-card[data-theme="brand"] .bp-card ul,
+	.persona-card[data-theme="brand"] .bp-quote p { color: rgba(255,255,255,0.92); }
+	.persona-card[data-theme="brand"] .bp-meta-label,
+	.persona-card[data-theme="brand"] .bp-footer { color: rgba(255,255,255,0.7); }
+	.persona-card[data-theme="brand"] .bp-footer-url { color: rgba(255,255,255,0.85); }
+	.persona-card[data-theme="brand"] .bp-label { color: #f5a0a1; }
+	.persona-card[data-theme="brand"] .bp-goals .bp-card-head { color: #5eead4; }
+	.persona-card[data-theme="brand"] .bp-pains .bp-card-head { color: #fdba74; }
+	.persona-card[data-theme="brand"] .bp-factors .bp-card-head { color: #93c5fd; }
+	.persona-card[data-theme="brand"] .bp-objections .bp-card-head { color: #fda4af; }
+	.persona-card[data-theme="brand"] .bp-sources .bp-card-head { color: #f0abfc; }
+	.persona-card[data-theme="brand"] .bp-quote .bp-card-head { color: #d8b4fe; }
+	.persona-card[data-theme="brand"] .bp-avatar {
+		background: linear-gradient(135deg, #fb923c 0%, #f5a0a1 100%);
+		color: #1c0056;
+	}
+
+	.preview-actions {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+	}
+
+	.btn-icon {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.5rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	}
+
+	.btn-icon:hover:not([disabled]) {
+		background: var(--accent-subtle-overlay);
+		color: var(--gray-0);
+		border-color: var(--accent-regular);
+	}
+
+	.btn-icon[disabled] {
+		opacity: 0.7;
+		cursor: not-allowed;
+	}
+
+	.autosave-status {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		margin: 0;
+		min-height: 1.1rem;
+		font-size: var(--text-xs);
+		color: var(--gray-400);
+	}
+
+	.fill-counter {
+		font-variant-numeric: tabular-nums;
+	}
+
+	/* Preview panel */
+	.preview-controls {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.preview-heading {
+		font-size: var(--text-md);
+		color: var(--gray-200);
+		margin: 0;
+	}
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 999rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		cursor: pointer;
+		transition: box-shadow 0.15s ease, transform 0.15s ease;
+	}
+
+	.btn-primary:hover:not([disabled]) {
+		box-shadow: var(--shadow-md);
+		transform: translateY(-1px);
+	}
+
+	.btn-primary[disabled] {
+		opacity: 0.7;
+		cursor: not-allowed;
+	}
+
+	.preview-frame {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		border-radius: 16px;
+	}
+
+	/* Persona card render */
+	.persona-card {
+		width: 1000px;
+		background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+		color: #f0f6fc;
+		border-radius: 16px;
+		padding: 32px;
+		font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		transform-origin: top left;
+		transform: scale(var(--bp-scale, 1));
+	}
+
+	.bp-header {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		gap: 24px;
+		align-items: center;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #30363d;
+	}
+
+	.bp-avatar {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		background: linear-gradient(135deg, #c084fc 0%, #fb923c 100%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 32px;
+		font-weight: 700;
+		color: #0d1117;
+		letter-spacing: 0.02em;
+	}
+
+	.bp-label {
+		display: inline-block;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #c084fc;
+		margin-bottom: 6px;
+	}
+
+	.bp-name {
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 1.15;
+		margin: 0;
+		color: #f0f6fc;
+	}
+
+	.bp-role {
+		font-size: 16px;
+		color: #c8cfd8;
+		margin-top: 4px;
+	}
+
+	.bp-meta {
+		text-align: right;
+		font-size: 13px;
+		color: #c8cfd8;
+		min-width: 240px;
+	}
+
+	.card-logo:not([hidden]) {
+		display: block;
+		max-height: 44px;
+		max-width: 160px;
+		margin: 0 0 12px auto;
+		object-fit: contain;
+	}
+
+	.bp-meta-row {
+		margin-bottom: 4px;
+	}
+
+	.bp-meta-label {
+		color: #8b949e;
+		font-weight: 600;
+		margin-right: 4px;
+	}
+
+	.bp-grid {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 16px;
+	}
+
+	.bp-goals,
+	.bp-pains,
+	.bp-factors {
+		grid-column: span 2;
+	}
+
+	.bp-card {
+		background: #151b23;
+		border: 1px solid #30363d;
+		border-radius: 12px;
+		padding: 18px;
+	}
+
+	.bp-card-head {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 14px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		margin-bottom: 12px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #30363d;
+	}
+
+	.bp-goals .bp-card-head { color: #5eead4; }
+	.bp-pains .bp-card-head { color: #fb923c; }
+	.bp-factors .bp-card-head { color: #60a5fa; }
+	.bp-objections .bp-card-head { color: #f5a0a1; }
+	.bp-sources .bp-card-head { color: #d98ee0; }
+	.bp-quote .bp-card-head { color: #c084fc; }
+
+	.bp-objections,
+	.bp-sources {
+		grid-column: span 3;
+	}
+
+	.bp-quote {
+		grid-column: span 6;
+	}
+
+	.bp-card ul {
+		margin: 0;
+		padding-left: 20px;
+		font-size: 14px;
+		line-height: 1.55;
+		color: #c8cfd8;
+	}
+
+	.bp-card li {
+		margin-bottom: 6px;
+	}
+
+	.bp-card li:last-child {
+		margin-bottom: 0;
+	}
+
+	.bp-quote p {
+		margin: 0;
+		font-size: 17px;
+		font-style: italic;
+		color: #d0d7de;
+		line-height: 1.55;
+		text-align: center;
+	}
+
+	.bp-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 16px;
+		border-top: 1px solid #30363d;
+		font-size: 11px;
+		color: #6e7681;
+	}
+
+	.bp-footer-url {
+		font-family: ui-monospace, SFMono-Regular, monospace;
+		color: #8b949e;
+	}
+
+	.bp-placeholder {
+		opacity: 0.45;
+	}
+
+	/* Newsletter strip */
+	.tool-cta-strip {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		padding: 1.75rem;
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		align-items: center;
+	}
+
+	@media (min-width: 50em) {
+		.tool-cta-strip {
+			grid-template-columns: 1fr auto;
+		}
+	}
+
+	.cta-text strong {
+		display: block;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+	}
+
+	.cta-text p {
+		margin: 0.25rem 0 0;
+		color: var(--gray-300);
+		font-size: var(--text-sm);
+	}
+
+	.cta-form {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.cta-form input {
+		flex: 1;
+		min-width: 0;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-size: var(--text-sm);
+	}
+
+	.cta-form button {
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 0.5rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-sm);
+		cursor: pointer;
+		white-space: nowrap;
+	}
+
+	.cta-status {
+		grid-column: 1 / -1;
+		margin: 0;
+		font-size: var(--text-sm);
+		min-height: 1rem;
+	}
+
+	/* SEO content */
+	.seo-content {
+		max-width: 60rem;
+	}
+
+	.seo-content h2 {
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+		margin: 2.5rem 0 1rem;
+	}
+
+	.seo-content h2:first-child {
+		margin-top: 0;
+	}
+
+	.seo-content p,
+	.seo-content li {
+		color: var(--gray-200);
+		font-size: var(--text-md);
+		line-height: 1.65;
+	}
+
+	.seo-content .how-to {
+		padding-left: 1.25rem;
+	}
+
+	.seo-content .how-to li {
+		margin-bottom: 0.75rem;
+	}
+
+	.seo-content a {
+		color: var(--accent-regular);
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.seo-link {
+		display: inline-block;
+		font-weight: 600;
+	}
+
+	.related-links {
+		list-style: none;
+		padding: 0;
+	}
+
+	.related-links li {
+		margin-bottom: 0.5rem;
+	}
+
+	.faq-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.faq-item {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		padding: 1rem 1.25rem;
+		background: var(--gray-999_40);
+	}
+
+	.faq-item summary {
+		cursor: pointer;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		color: var(--gray-0);
+		font-size: var(--text-md);
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.faq-item summary::after {
+		content: '+';
+		color: var(--accent-regular);
+		font-size: 1.5rem;
+		font-weight: 400;
+		line-height: 1;
+		transition: transform 0.2s ease;
+	}
+
+	.faq-item[open] summary::after {
+		content: '−';
+	}
+
+	.faq-item p {
+		margin: 0.75rem 0 0;
+		color: var(--gray-200);
+		font-size: var(--text-sm);
+		line-height: 1.6;
+	}
+
+	@media print {
+		.form-panel,
+		.preview-controls,
+		.tool-cta-strip,
+		.seo-content,
+		nav,
+		.breadcrumb-nav,
+		footer {
+			display: none !important;
+		}
+		.persona-card {
+			box-shadow: none;
+			width: 100%;
+			max-width: none;
+		}
+	}
+</style>

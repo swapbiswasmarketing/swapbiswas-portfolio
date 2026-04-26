@@ -8,13 +8,15 @@ img: /assets/stock-1.webp
 img_alt: Competitive battlecard template for product marketing
 ---
 
-**71% of businesses using battlecards report improved win rates.** Among those, **93% say the improvement exceeds 20%** ([Crayon State of Battlecards](https://www.crayon.co/blog/state-of-battlecards)). Yet only 35% of competitive intelligence professionals actually create them ([Crayon](https://www.crayon.co/blog/sales-enablement-statistics)).
+**71% of businesses using battlecards report improved win rates.** Among those, **93% say the improvement exceeds 20%** ([Crayon Sales Enablement Statistics](https://www.crayon.co/blog/sales-enablement-statistics)). Yet only 35% of competitive intelligence professionals actually create them ([Crayon](https://www.crayon.co/blog/sales-enablement-statistics)).
 
 That's a massive gap between what works and what teams actually do.
 
 A competitive battlecard is a concise, one-page reference document that gives your sales team everything they need to win against a specific competitor. Not a 20-page competitor analysis. Not a feature comparison spreadsheet. A focused, actionable guide they can pull up mid-call.
 
 This guide covers exactly how to build one - with a template, real frameworks, and the data to back it up.
+
+> **Skip the blank page.** Use the [free Sales Battlecard Generator](/tools/battlecard-generator/) to build a polished, sales-ready battlecard in 2 minutes. Live preview, PNG download, no signup.
 
 ## Why Competitive Battlecards Matter
 
@@ -29,9 +31,9 @@ Here's what the data shows about teams that invest in battlecards:
 | **Revenue impact from CI** | 81% report direct impact | 39% report direct impact |
 | **Sales enablement content used** | High adoption | 65% goes unused |
 
-Sources: [Crayon](https://www.crayon.co/blog/sales-enablement-statistics), [Forrester](https://www.forrester.com/blogs/why-b2b-marketers-struggle-with-content/)
+Sources: [Crayon](https://www.crayon.co/blog/sales-enablement-statistics), [Forrester](https://www.forrester.com/blogs/the-b2b-content-guide-make-sales-your-ally-in-content-marketing/)
 
-The problem isn't that sales teams don't want competitive intel. It's that an estimated **65% of content marketing assets go unused** because they're irrelevant to the audience or sales context ([Forrester](https://www.forrester.com/blogs/why-b2b-marketers-struggle-with-content/)). Battlecards fix this by distilling competitive intelligence into a format reps can actually use in real-time.
+The problem isn't that sales teams don't want competitive intel. It's that an estimated **65% of content marketing assets go unused** because they're irrelevant to the audience or sales context ([Forrester](https://www.forrester.com/blogs/the-b2b-content-guide-make-sales-your-ally-in-content-marketing/)). Battlecards fix this by distilling competitive intelligence into a format reps can actually use in real-time.
 
 ## The Competitive Battlecard Template
 
@@ -127,7 +129,7 @@ What you know about their pricing structure and how to position against it.
 
 ### 9. Proof Points
 
-Evidence that backs up your claims. An audit of 150+ battlecards found that **100% of the highest-retention cards included proof points**, compared to only 19% of average battlecards ([source](https://klue.com/blog/battlecard-best-practices)).
+Evidence that backs up your claims. An audit of 150+ battlecards found that **100% of the highest-retention cards included proof points**, while only 19% of battlecards overall include them ([Klue](https://klue.com/blog/sales-battlecard-mistakes-according-to-the-data)).
 
 **Strong proof includes:**
 - Named customer case studies with specific metrics
@@ -200,7 +202,7 @@ A battlecard is not a white paper. If it takes more than 2 minutes to scan, it's
 Listing features instead of positioning and value differentiation. Buyers don't care that you have "AI-powered analytics." They care that you can "cut reporting time from 3 hours to 10 minutes."
 
 **3. Stale content.**
-Nothing destroys sales credibility faster than citing competitor information that's months old. **58% of CI professionals struggle to keep battlecards updated** ([Crayon](https://www.crayon.co/state-of-competitive-intelligence)). Set a regular update cadence - biweekly at minimum for top competitors.
+Nothing destroys sales credibility faster than citing competitor information that's months old. **58% of CI professionals struggle to keep battlecards and competitive content updated** ([Crayon](https://www.crayon.co/blog/sparks-content)). Set a regular update cadence - biweekly at minimum for top competitors.
 
 **4. Poor accessibility.**
 If battlecards live in a shared drive folder nobody checks, they won't get used. Integrate them into your CRM, Slack, or wherever your reps already work.
@@ -234,6 +236,8 @@ But AI doesn't replace the strategic thinking. It handles monitoring and formatt
 5. **Test with 3 reps** - Have them use it for one week, then iterate based on their feedback
 
 Don't try to build battlecards for every competitor at once. Start with one, get it right, then expand. For the full research methodology behind step 2, see our [competitive product analysis framework](/blog/competitive-product-analysis/).
+
+> **Build your first battlecard right now.** The [free Battlecard Generator](/tools/battlecard-generator/) walks you through every section, shows a live preview as you type, and exports a PNG you can drop into Google Slides, Notion, or your sales enablement platform.
 
 **Related reading:**
 - [Product Positioning](/blog/product-positioning/) - The foundation that battlecards build on

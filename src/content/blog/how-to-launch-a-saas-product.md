@@ -163,4 +163,6 @@ A successful SaaS product launch is not the press hit. It is the connected seque
 
 Everything else is execution. And execution is just a 12-week run-of-show with named owners on every cell.
 
+> **Lock your run-of-show on one page.** Use the [free Product Launch Plan Template](/tools/product-launch-plan-template/) to build a sharable launch plan in 5 minutes - tier, positioning, goals, owners, channels, milestones, risks. PNG export, no signup.
+
 For the broader SaaS PMM operating model that sits around the launch, see [SaaS product marketing strategy](/blog/saas-product-marketing-strategy/) and [marketing strategy for new product](/blog/marketing-strategy-for-new-product/).

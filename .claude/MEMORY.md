@@ -3,11 +3,9 @@
 > **This file is synced with repo copy at `.claude/MEMORY.md`.**
 > Update both files when making changes.
 
-## User Role
-- **Senior Product Marketing Manager** at LambdaTest (now TestMu AI), promoted Apr 2026 (prior: PMM Apr 2024 - Apr 2026)
-- Leading PMM for KaneAI and HyperExecute - GTM, launches, partner marketing
-- Also leads the **Automation POD** - AI-first initiatives across the marketing org
-- Pursuing PG, Digital Marketing & Growth Strategy at IIM Visakhapatnam (May 2025 - May 2026)
+## Linked Memory Files
+- [User Role](user_role.md) - Senior Product Marketing Manager at LambdaTest (promoted Apr 2026); prior role + education history
+- [No em-dashes](feedback_no_emdash.md) - never use `—`; default to ` - ` or rewrite; applies to all output including chat
 
 ## Project Overview
 - Astro 5 static site (portfolio + blog) at `c:\Website\portfolio`
@@ -22,7 +20,10 @@
 - OG image generator: `src/pages/og/[...slug].webp.ts` (Satori + resvg + sharp, Uint8Array response)
 - Content schema: `src/content.config.ts`
 - Blog instructions: `BLOG_INSTRUCTIONS.md` (comprehensive guide for writing blogs)
+- Tool instructions: `TOOL_INSTRUCTIONS.md` (comprehensive guide for building free interactive tools at `/tools/{slug}/`)
 - LinkedIn posts: `LINKEDIN_POSTS.md` (post copies, image prompts, UTMs, scheduling)
+- Tools index: `src/pages/tools/index.astro` (lists live + planned tools)
+- Tool pages: `src/pages/tools/{slug}.astro` (e.g., `battlecard-generator.astro`)
 - Meta head: `src/components/MainHead.astro`
 - About page: `src/pages/about.astro` (hero, stats, skills, experience timeline, education, certs, awards, brands)
 - Contact page: `src/pages/contact.astro` (FormSubmit.co form, FAQ accordion)
@@ -47,6 +48,10 @@
 - Image lightbox with alt text
 - Print-friendly styles (@media print)
 - FAQ accordion (details/summary)
+
+## Global CSS Gotchas
+- **`html, body { overflow-x: clip }` (NOT `hidden`)** in `src/styles/global.css` - required for `position: sticky` to work anywhere on the site. Using `overflow-x: hidden` causes browsers to compute `overflow-y: auto` on body, making body a scroll container and breaking sticky.
+- Don't change this without understanding the consequence.
 
 ## View Transitions / Script Pattern
 - **CRITICAL:** Never use `DOMContentLoaded` - it doesn't fire on View Transition navigations

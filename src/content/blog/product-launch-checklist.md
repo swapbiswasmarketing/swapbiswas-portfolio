@@ -20,6 +20,8 @@ A product launch is the one time a company gets to re-introduce itself to the ma
 
 This checklist covers Tier 1, Tier 2, and Tier 3 launches across three phases: pre-launch, launch day, and post-launch. Each item has a suggested owner and a rough timing. Scale it up or down based on the launch tier and the size of your team.
 
+> **Need the strategic plan first?** Use the [free Product Launch Plan Template](/tools/product-launch-plan-template/) to build a one-page launch plan in 5 minutes - positioning, goals, owners, channels, milestones, and risks. The checklist below is the tactical follow-on.
+
 ## Start With Launch Tiering
 
 Before anything else, decide what tier the launch is. Treating every release as a Tier 1 launch produces two failures at once: it burns out the team and it trains the market to ignore you. A PMM team that ships 40 "major launches" a year has no major launches at all.
@@ -191,5 +193,7 @@ Across launches I have worked on or watched, the same four failure modes repeat:
 ## The Bottom Line
 
 A product launch checklist is only useful if it survives contact with a real launch. Keep it lean, assign owners to every item, and set the launch tier early enough to defend it when scope creeps. The checklist is not a guarantee, but it closes the gap between what the team intended and what actually shipped.
+
+> **Build the launch plan before the checklist.** The [free Product Launch Plan Template](/tools/product-launch-plan-template/) gives you a one-page strategic plan - positioning, goals, owners, channels, milestones, risks - in under 5 minutes. PNG download, no signup. Use it before you start working through the tactical checklist above.
 
 For adjacent frameworks, see [go-to-market strategy template](/blog/go-to-market-strategy-template/), [go-to-market strategy for startups](/blog/go-to-market-strategy-for-startups/), and [product marketing OKRs](/blog/product-marketing-okrs/) to tie the launch back to the quarter's outcomes.
