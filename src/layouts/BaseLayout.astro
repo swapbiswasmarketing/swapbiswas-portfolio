@@ -3,6 +3,8 @@
 // https://docs.astro.build/en/basics/layouts/
 
 import { ViewTransitions } from 'astro:transitions';
+import Analytics from '@vercel/analytics/astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 import Footer from '../components/Footer.astro';
 // Component Imports
 import MainHead from '../components/MainHead.astro';
@@ -76,6 +78,8 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 		{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 		<script type="application/ld+json" set:html={JSON.stringify(siteGraphSchema)} />
 		<ViewTransitions />
+		<Analytics />
+		<SpeedInsights />
 		<slot name="head" />
 	</head>
 	<body>
