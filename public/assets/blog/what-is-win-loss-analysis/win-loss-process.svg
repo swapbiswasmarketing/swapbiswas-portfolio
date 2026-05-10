@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="700" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="40" font-weight="700">Win-Loss Analysis: The Six-Stage Process</text>
+  <text x="700" y="112" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">A working program runs the full loop every quarter, not once a year.</text>
+
+  <!-- Row 1 -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="160" width="420" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="160" width="420" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="90" y="212" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STAGE 1</text>
+    <text x="90" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Deal Selection</text>
+    <text x="90" y="296" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">12-15 closed deals: balanced</text>
+    <text x="90" y="324" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">across won, lost, and no-decision.</text>
+  </g>
+  <line x1="490" y1="260" x2="558" y2="260" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="558,254 572,260 558,266" fill="#5eead4"/>
+
+  <g filter="url(#cardShadow)">
+    <rect x="580" y="160" width="240" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="580" y="160" width="240" height="6" rx="3" fill="#c084fc"/>
+    <text x="610" y="212" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STAGE 2</text>
+    <text x="610" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Outreach</text>
+    <text x="610" y="296" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Short ask, no sales</text>
+    <text x="610" y="324" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">follow-up, charity</text>
+    <text x="610" y="350" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">thank-you.</text>
+  </g>
+  <line x1="830" y1="260" x2="898" y2="260" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="898,254 912,260 898,266" fill="#5eead4"/>
+
+  <g filter="url(#cardShadow)">
+    <rect x="920" y="160" width="420" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="920" y="160" width="420" height="6" rx="3" fill="#60a5fa"/>
+    <text x="950" y="212" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STAGE 3</text>
+    <text x="950" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">The Interview</text>
+    <text x="950" y="296" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">25-30 min structured call.</text>
+    <text x="950" y="324" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Record. Listen. Don't sell.</text>
+  </g>
+
+  <!-- Connector down from Stage 3 to Stage 4 -->
+  <line x1="1130" y1="370" x2="1130" y2="410" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1130" y1="410" x2="270" y2="410" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="270" y1="410" x2="270" y2="450" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="264,450 270,464 276,450" fill="#5eead4"/>
+
+  <!-- Row 2 -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="460" width="420" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="460" width="420" height="6" rx="3" fill="#5eead4"/>
+    <text x="90" y="512" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STAGE 4</text>
+    <text x="90" y="552" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Coding</text>
+    <text x="90" y="596" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Tag transcripts against a fixed</text>
+    <text x="90" y="624" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">taxonomy. Patterns over quotes.</text>
+  </g>
+  <line x1="490" y1="560" x2="558" y2="560" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="558,554 572,560 558,566" fill="#5eead4"/>
+
+  <g filter="url(#cardShadow)">
+    <rect x="580" y="460" width="240" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="580" y="460" width="240" height="6" rx="3" fill="#fb923c"/>
+    <text x="610" y="512" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STAGE 5</text>
+    <text x="610" y="552" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Synthesis</text>
+    <text x="610" y="596" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">One page per</text>
+    <text x="610" y="624" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">recurring pattern.</text>
+  </g>
+  <line x1="830" y1="560" x2="898" y2="560" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="898,554 912,560 898,566" fill="#5eead4"/>
+
+  <g filter="url(#cardShadow)">
+    <rect x="920" y="460" width="420" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="920" y="460" width="420" height="6" rx="3" fill="#d98ee0"/>
+    <text x="950" y="512" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STAGE 6</text>
+    <text x="950" y="552" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Action</text>
+    <text x="950" y="596" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Each finding gets an owner</text>
+    <text x="950" y="624" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">and a deadline. Track shipping.</text>
+  </g>
+
+</svg>

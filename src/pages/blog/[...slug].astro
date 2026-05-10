@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content, headings, remarkPluginFrontmatter } = await render(entry);
+const { Content, headings } = await render(entry);
 const tocHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 
 function categorySlug(cat: string): string {
@@ -146,9 +146,9 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 	}}
 >
 	<div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar"></div></div>
-	<script type="application/ld+json" set:html={JSON.stringify(blogPostSchema)} />
-	{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
-	{howToSchema && <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />}
+	<script type="application/ld+json" is:inline set:html={JSON.stringify(blogPostSchema)} />
+	{faqSchema && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />}
+	{howToSchema && <script type="application/ld+json" is:inline set:html={JSON.stringify(howToSchema)} />}
 	<div class="stack gap-20">
 		<div class="stack gap-15">
 			<header>
@@ -558,7 +558,7 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		border-radius: 0.3rem;
 		background: var(--gray-999_40);
 		border: 1px solid var(--gray-800);
-		font-size: 0.85em;
+		font-size: 0.95em;
 		color: var(--gray-100);
 	}
 
@@ -1141,7 +1141,6 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 	const contentEl = document.querySelector('.content') as HTMLElement | null;
 	const wrapper = document.querySelector('main.wrapper') as HTMLElement | null;
 	const tocToggle = document.querySelector('.toc-toggle') as HTMLButtonElement | null;
-	const tocList = document.querySelector('.toc-list') as HTMLElement | null;
 	const tocItems = document.querySelectorAll('.toc-item');
 	const isDesktop = () => window.matchMedia('(min-width: 72em)').matches;
 
@@ -1265,7 +1264,7 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		btn.textContent = 'Copy';
 		btn.addEventListener('click', async () => {
 			const code = pre.querySelector('code');
-			const text = code ? code.innerText : pre.innerText;
+			const text = code ? code.textContent ?? '' : pre.textContent ?? '';
 			await navigator.clipboard.writeText(text);
 			btn.textContent = 'Copied!';
 			setTimeout(() => { btn.textContent = 'Copy'; }, 2000);

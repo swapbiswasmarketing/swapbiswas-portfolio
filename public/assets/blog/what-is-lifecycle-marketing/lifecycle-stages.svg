@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="640" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="40" font-weight="700">Lifecycle Marketing: The Five Stages</text>
+  <text x="700" y="112" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">Each stage has its own job, channel mix, and north-star metric.</text>
+
+  <!-- Card 1 Awareness -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="160" width="240" height="420" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="160" width="240" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="80" y="210" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 1</text>
+    <text x="80" y="248" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">Awareness</text>
+    <text x="80" y="298" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Channels</text>
+    <text x="80" y="328" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">SEO</text>
+    <text x="80" y="354" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Organic social</text>
+    <text x="80" y="380" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Paid demand</text>
+    <text x="80" y="430" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Metric</text>
+    <text x="80" y="460" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Branded search</text>
+    <text x="80" y="488" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">volume</text>
+  </g>
+
+  <!-- Card 2 Acquisition -->
+  <g filter="url(#cardShadow)">
+    <rect x="320" y="160" width="240" height="420" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="320" y="160" width="240" height="6" rx="3" fill="#c084fc"/>
+    <text x="340" y="210" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 2</text>
+    <text x="340" y="248" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">Acquisition</text>
+    <text x="340" y="298" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Channels</text>
+    <text x="340" y="328" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Comparison pages</text>
+    <text x="340" y="354" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Demos &amp; trials</text>
+    <text x="340" y="380" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Retargeting</text>
+    <text x="340" y="430" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Metric</text>
+    <text x="340" y="460" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">CAC payback</text>
+    <text x="340" y="488" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">period</text>
+  </g>
+
+  <!-- Card 3 Activation -->
+  <g filter="url(#cardShadow)">
+    <rect x="580" y="160" width="240" height="420" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="580" y="160" width="240" height="6" rx="3" fill="#60a5fa"/>
+    <text x="600" y="210" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 3</text>
+    <text x="600" y="248" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">Activation</text>
+    <text x="600" y="298" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Channels</text>
+    <text x="600" y="328" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Onboarding email</text>
+    <text x="600" y="354" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">In-app guidance</text>
+    <text x="600" y="380" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">CSM outreach</text>
+    <text x="600" y="430" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Metric</text>
+    <text x="600" y="460" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Time-to-value</text>
+    <text x="600" y="488" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">activation rate</text>
+  </g>
+
+  <!-- Card 4 Retention -->
+  <g filter="url(#cardShadow)">
+    <rect x="840" y="160" width="240" height="420" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="840" y="160" width="240" height="6" rx="3" fill="#5eead4"/>
+    <text x="860" y="210" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 4</text>
+    <text x="860" y="248" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">Retention</text>
+    <text x="860" y="298" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Channels</text>
+    <text x="860" y="328" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Product updates</text>
+    <text x="860" y="354" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">EBRs</text>
+    <text x="860" y="380" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Community</text>
+    <text x="860" y="430" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Metric</text>
+    <text x="860" y="460" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Net revenue</text>
+    <text x="860" y="488" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">retention</text>
+  </g>
+
+  <!-- Card 5 Advocacy -->
+  <g filter="url(#cardShadow)">
+    <rect x="1100" y="160" width="240" height="420" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1100" y="160" width="240" height="6" rx="3" fill="#fb923c"/>
+    <text x="1120" y="210" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 5</text>
+    <text x="1120" y="248" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">Advocacy</text>
+    <text x="1120" y="298" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Channels</text>
+    <text x="1120" y="328" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Referral programs</text>
+    <text x="1120" y="354" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Customer boards</text>
+    <text x="1120" y="380" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Case studies</text>
+    <text x="1120" y="430" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Metric</text>
+    <text x="1120" y="460" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">Referral rate</text>
+    <text x="1120" y="488" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">NPS</text>
+  </g>
+
+</svg>

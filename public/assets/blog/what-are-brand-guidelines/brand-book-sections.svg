@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="760" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="40" font-weight="700">The 12 Sections of a Modern Brand Book</text>
+  <text x="700" y="112" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">Strategy, then visual, then verbal, then behavioral - in that order.</text>
+
+  <!-- Row 1: Strategy section (4 cards) -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="160" width="310" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="160" width="6" height="135" rx="3" fill="#f5a0a1"/>
+    <text x="86" y="200" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">01</text>
+    <text x="86" y="234" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Brand Strategy</text>
+    <text x="86" y="270" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Mission, values, audience.</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="395" y="160" width="310" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="395" y="160" width="6" height="135" rx="3" fill="#c084fc"/>
+    <text x="421" y="200" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">02</text>
+    <text x="421" y="234" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Logo</text>
+    <text x="421" y="270" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Variants, clear space, files.</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="730" y="160" width="310" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="730" y="160" width="6" height="135" rx="3" fill="#60a5fa"/>
+    <text x="756" y="200" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">03</text>
+    <text x="756" y="234" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Color</text>
+    <text x="756" y="270" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Palette, contrast, hierarchy.</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="1065" y="160" width="275" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1065" y="160" width="6" height="135" rx="3" fill="#5eead4"/>
+    <text x="1091" y="200" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">04</text>
+    <text x="1091" y="234" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Typography</text>
+    <text x="1091" y="270" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Display, body, fallbacks.</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="320" width="310" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="320" width="6" height="135" rx="3" fill="#fb923c"/>
+    <text x="86" y="360" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">05</text>
+    <text x="86" y="394" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Photography</text>
+    <text x="86" y="430" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Style, composition, dos.</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="395" y="320" width="310" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="395" y="320" width="6" height="135" rx="3" fill="#d98ee0"/>
+    <text x="421" y="360" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">06</text>
+    <text x="421" y="394" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Iconography</text>
+    <text x="421" y="430" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Style, grid, library.</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="730" y="320" width="310" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="730" y="320" width="6" height="135" rx="3" fill="#b388f2"/>
+    <text x="756" y="360" fill="#b388f2" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">07</text>
+    <text x="756" y="394" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Motion</text>
+    <text x="756" y="430" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Easing, duration, choreo.</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="1065" y="320" width="275" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1065" y="320" width="6" height="135" rx="3" fill="#f5a0a1"/>
+    <text x="1091" y="360" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">08</text>
+    <text x="1091" y="394" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Voice &amp; Tone</text>
+    <text x="1091" y="430" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Adjectives, opposites, ex.</text>
+  </g>
+
+  <!-- Row 3 -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="480" width="310" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="480" width="6" height="135" rx="3" fill="#c084fc"/>
+    <text x="86" y="520" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">09</text>
+    <text x="86" y="554" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Messaging</text>
+    <text x="86" y="590" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Tagline, value props, pitch.</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="395" y="480" width="310" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="395" y="480" width="6" height="135" rx="3" fill="#60a5fa"/>
+    <text x="421" y="520" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">10</text>
+    <text x="421" y="554" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Naming</text>
+    <text x="421" y="590" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Products, features, releases.</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="730" y="480" width="310" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="730" y="480" width="6" height="135" rx="3" fill="#5eead4"/>
+    <text x="756" y="520" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">11</text>
+    <text x="756" y="554" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Applications</text>
+    <text x="756" y="590" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Real assets in context.</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="1065" y="480" width="275" height="135" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1065" y="480" width="6" height="135" rx="3" fill="#fb923c"/>
+    <text x="1091" y="520" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">12</text>
+    <text x="1091" y="554" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="700">Dos &amp; Don'ts</text>
+    <text x="1091" y="590" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Side-by-side gallery.</text>
+  </g>
+
+  <!-- Footer note -->
+  <text x="700" y="690" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22" font-style="italic">Distribute as a web hub, not a static PDF. Link from every brief.</text>
+
+</svg>

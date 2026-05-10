@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 660">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="660" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="40" font-weight="700">Customer Onboarding: The Four-Stage Framework</text>
+  <text x="700" y="112" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">Compress time-to-value before the customer's enthusiasm window closes.</text>
+
+  <!-- Card 1 Welcome -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="160" width="310" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="50" y="160" width="310" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="80" y="212" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">DAY 0-1</text>
+    <text x="80" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Welcome</text>
+    <text x="80" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Job</text>
+    <text x="80" y="336" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Set expectations.</text>
+    <text x="80" y="362" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Remove first friction.</text>
+    <text x="80" y="412" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Tactics</text>
+    <text x="80" y="442" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Welcome email</text>
+    <text x="80" y="468" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; In-app welcome</text>
+    <text x="80" y="494" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Kickoff call (B2B)</text>
+    <text x="80" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">One CTA. One next step.</text>
+  </g>
+
+  <line x1="360" y1="375" x2="374" y2="375" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="368,369 380,375 368,381" fill="#5eead4"/>
+
+  <!-- Card 2 Activation -->
+  <g filter="url(#cardShadow)">
+    <rect x="380" y="160" width="310" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="380" y="160" width="310" height="6" rx="3" fill="#c084fc"/>
+    <text x="410" y="212" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">DAY 1-14</text>
+    <text x="410" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Activation</text>
+    <text x="410" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Job</text>
+    <text x="410" y="336" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Drive the magic moment.</text>
+    <text x="410" y="362" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">First real value.</text>
+    <text x="410" y="412" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Tactics</text>
+    <text x="410" y="442" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Behavior triggers</text>
+    <text x="410" y="468" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Setup checklist</text>
+    <text x="410" y="494" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; In-app guidance</text>
+    <text x="410" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Define your activation event.</text>
+  </g>
+
+  <line x1="690" y1="375" x2="704" y2="375" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="698,369 710,375 698,381" fill="#5eead4"/>
+
+  <!-- Card 3 Adoption -->
+  <g filter="url(#cardShadow)">
+    <rect x="710" y="160" width="310" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="710" y="160" width="310" height="6" rx="3" fill="#60a5fa"/>
+    <text x="740" y="212" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">DAY 14-60</text>
+    <text x="740" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Adoption</text>
+    <text x="740" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Job</text>
+    <text x="740" y="336" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Build habit.</text>
+    <text x="740" y="362" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Add team seats.</text>
+    <text x="740" y="412" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Tactics</text>
+    <text x="740" y="442" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Feature unlock</text>
+    <text x="740" y="468" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Team invites</text>
+    <text x="740" y="494" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; First QBR</text>
+    <text x="740" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">WAA per account.</text>
+  </g>
+
+  <line x1="1020" y1="375" x2="1034" y2="375" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1028,369 1040,375 1028,381" fill="#5eead4"/>
+
+  <!-- Card 4 Value Realization -->
+  <g filter="url(#cardShadow)">
+    <rect x="1040" y="160" width="310" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1040" y="160" width="310" height="6" rx="3" fill="#5eead4"/>
+    <text x="1070" y="212" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">DAY 60-90</text>
+    <text x="1070" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Value Realization</text>
+    <text x="1070" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Job</text>
+    <text x="1070" y="336" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Make value visible.</text>
+    <text x="1070" y="362" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Set up renewal.</text>
+    <text x="1070" y="412" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Tactics</text>
+    <text x="1070" y="442" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Value report</text>
+    <text x="1070" y="468" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Exec readout</text>
+    <text x="1070" y="494" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Expansion trigger</text>
+    <text x="1070" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Hand off to retention.</text>
+  </g>
+
+</svg>
