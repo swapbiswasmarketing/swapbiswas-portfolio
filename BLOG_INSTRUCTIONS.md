@@ -275,18 +275,14 @@ faqs:
 - Posts without `faqs` in frontmatter simply don't get FAQ schema - no action needed
 
 ### Posts with FAQ Schema
-- `what-is-product-marketing.md` (4 FAQs)
-- `will-marketing-be-replaced-by-ai.md` (3 FAQs)
-- `do-google-reviews-help-seo.md` (3 FAQs)
-- `icp-vs-buyer-persona.md` (3 FAQs)
-- `how-much-does-an-seo-audit-cost.md` (4 FAQs)
-- `what-does-a-product-marketing-manager-do.md` (4 FAQs)
-- `how-to-use-chatgpt-for-sales-and-marketing.md` (4 FAQs)
-- `how-to-implement-marketing-automation.md` (5 FAQs)
-- `how-to-launch-a-saas-product.md` (5 FAQs)
-- `what-is-b2b-demand-generation.md` (5 FAQs)
-- `what-is-market-positioning.md` (5 FAQs)
-- `what-is-sales-enablement-software.md` (5 FAQs)
+
+FAQ schema is now the default for question-led and high-value posts. To list every post that has one, search for the `faqs:` key in frontmatter:
+
+```bash
+grep -l "^faqs:" src/content/blog/*.md
+```
+
+Adding FAQs to a new post is what makes it "FAQ-enabled" - no manual catalog needs to be kept.
 
 ## 9. Content Schema Reference
 

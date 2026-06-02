@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 660">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="660" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="40" font-weight="700">The Four Signals of Product-Market Fit</text>
+  <text x="700" y="112" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">No single metric confirms PMF. These four cluster when it is present.</text>
+
+  <!-- Signal 1 Retention -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="160" width="320" height="440" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="50" y="160" width="320" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="80" y="212" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">SIGNAL 1</text>
+    <text x="80" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Retention flattens</text>
+    <text x="80" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">What to watch</text>
+    <text x="80" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Cohort retention curve</text>
+    <text x="80" y="364" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">stabilizes at a non-trivial</text>
+    <text x="80" y="390" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">percentage instead of</text>
+    <text x="80" y="416" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">decaying to zero.</text>
+    <text x="80" y="468" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Targets</text>
+    <text x="80" y="500" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">B2C: flat tail 20-30%</text>
+    <text x="80" y="526" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">B2B SaaS: 70%+ at 12mo</text>
+    <text x="80" y="572" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Flatness, not height.</text>
+  </g>
+
+  <!-- Signal 2 Organic -->
+  <g filter="url(#cardShadow)">
+    <rect x="390" y="160" width="320" height="440" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="390" y="160" width="320" height="6" rx="3" fill="#c084fc"/>
+    <text x="420" y="212" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">SIGNAL 2</text>
+    <text x="420" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Organic pull</text>
+    <text x="420" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">What to watch</text>
+    <text x="420" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Share of new users from</text>
+    <text x="420" y="364" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">referrals, mentions, search,</text>
+    <text x="420" y="390" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">community - acquisition</text>
+    <text x="420" y="416" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">you did not pay for.</text>
+    <text x="420" y="468" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Targets</text>
+    <text x="420" y="500" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Pre-PMF: under 10%</text>
+    <text x="420" y="526" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Post-PMF: 30%+</text>
+    <text x="420" y="572" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">The market starts the conversation.</text>
+  </g>
+
+  <!-- Signal 3 Sales -->
+  <g filter="url(#cardShadow)">
+    <rect x="730" y="160" width="320" height="440" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="730" y="160" width="320" height="6" rx="3" fill="#60a5fa"/>
+    <text x="760" y="212" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">SIGNAL 3</text>
+    <text x="760" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Sales cycle compresses</text>
+    <text x="760" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">What to watch</text>
+    <text x="760" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Median time from first</text>
+    <text x="760" y="364" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">touch to closed-won deal</text>
+    <text x="760" y="390" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">drops quarter over quarter</text>
+    <text x="760" y="416" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">in the target segment.</text>
+    <text x="760" y="468" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Why</text>
+    <text x="760" y="500" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Prospects arrive convinced.</text>
+    <text x="760" y="526" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Qualification shortens.</text>
+    <text x="760" y="572" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Demos turn transactional.</text>
+  </g>
+
+  <!-- Signal 4 Sean Ellis -->
+  <g filter="url(#cardShadow)">
+    <rect x="1070" y="160" width="290" height="440" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1070" y="160" width="290" height="6" rx="3" fill="#fb923c"/>
+    <text x="1100" y="212" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">SIGNAL 4</text>
+    <text x="1100" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Disappointment</text>
+    <text x="1100" y="282" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">survey</text>
+    <text x="1100" y="328" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Ask active users</text>
+    <text x="1100" y="362" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">"How would you feel if</text>
+    <text x="1100" y="388" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">you could no longer use</text>
+    <text x="1100" y="414" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">this product?"</text>
+    <text x="1100" y="468" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Strong signal</text>
+    <text x="1100" y="500" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Meaningful share say</text>
+    <text x="1100" y="526" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">"very disappointed."</text>
+    <text x="1100" y="572" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Directional, not diagnostic.</text>
+  </g>
+
+</svg>

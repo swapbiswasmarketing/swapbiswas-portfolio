@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="820" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="40" font-weight="700">Customer Journey Analytics: The Four Data Layers</text>
+  <text x="700" y="112" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">Identity, behavior, voice, and revenue - integrated into one journey view.</text>
+
+  <!-- Layer 1 Identity -->
+  <g filter="url(#cardShadow)">
+    <rect x="100" y="160" width="1200" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="100" y="160" width="8" height="140" rx="4" fill="#f5a0a1"/>
+    <text x="140" y="208" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">LAYER 1</text>
+    <text x="140" y="248" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Identity</text>
+    <text x="430" y="208" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">What it does</text>
+    <text x="430" y="240" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Stitch anonymous to known users,</text>
+    <text x="430" y="266" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">cross-device, cross-session.</text>
+    <text x="970" y="208" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Tools</text>
+    <text x="970" y="240" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Segment, Rudderstack,</text>
+    <text x="970" y="266" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">mParticle</text>
+  </g>
+
+  <!-- Layer 2 Behavior -->
+  <g filter="url(#cardShadow)">
+    <rect x="100" y="320" width="1200" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="100" y="320" width="8" height="140" rx="4" fill="#c084fc"/>
+    <text x="140" y="368" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">LAYER 2</text>
+    <text x="140" y="408" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Behavior</text>
+    <text x="430" y="368" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">What it does</text>
+    <text x="430" y="400" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Events, funnels, sessions,</text>
+    <text x="430" y="426" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">feature adoption, drop-off paths.</text>
+    <text x="970" y="368" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Tools</text>
+    <text x="970" y="400" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Amplitude, Mixpanel,</text>
+    <text x="970" y="426" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Heap, PostHog</text>
+  </g>
+
+  <!-- Layer 3 Voice -->
+  <g filter="url(#cardShadow)">
+    <rect x="100" y="480" width="1200" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="100" y="480" width="8" height="140" rx="4" fill="#60a5fa"/>
+    <text x="140" y="528" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">LAYER 3</text>
+    <text x="140" y="568" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Voice</text>
+    <text x="430" y="528" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">What it does</text>
+    <text x="430" y="560" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Why - NPS, surveys, tickets,</text>
+    <text x="430" y="586" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">sales calls, reviews.</text>
+    <text x="970" y="528" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Tools</text>
+    <text x="970" y="560" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Qualtrics, Refiner,</text>
+    <text x="970" y="586" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Gong, Chorus</text>
+  </g>
+
+  <!-- Layer 4 Revenue -->
+  <g filter="url(#cardShadow)">
+    <rect x="100" y="640" width="1200" height="140" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="100" y="640" width="8" height="140" rx="4" fill="#fb923c"/>
+    <text x="140" y="688" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">LAYER 4</text>
+    <text x="140" y="728" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Revenue</text>
+    <text x="430" y="688" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">What it does</text>
+    <text x="430" y="720" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">ARR, pipeline, NRR, CAC, LTV -</text>
+    <text x="430" y="746" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">the accountability layer.</text>
+    <text x="970" y="688" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Tools</text>
+    <text x="970" y="720" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Salesforce, HubSpot,</text>
+    <text x="970" y="746" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Mosaic, warehouse</text>
+  </g>
+
+</svg>

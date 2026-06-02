@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="720" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="40" font-weight="700">How to Create a Pricing Strategy: The Six-Step Workflow</text>
+  <text x="700" y="112" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">From willingness-to-pay research to live pricing, in six operational steps.</text>
+
+  <!-- Row 1 -->
+  <!-- Step 1 -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="160" width="420" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="50" y="160" width="420" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="80" y="212" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STEP 1</text>
+    <text x="80" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Research willingness to pay</text>
+    <text x="80" y="298" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Van Westendorp, Gabor-Granger,</text>
+    <text x="80" y="326" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">conjoint, or 15 customer interviews.</text>
+    <text x="80" y="362" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Measure before you set the number.</text>
+  </g>
+
+  <line x1="470" y1="275" x2="484" y2="275" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="478,269 490,275 478,281" fill="#5eead4"/>
+
+  <!-- Step 2 -->
+  <g filter="url(#cardShadow)">
+    <rect x="490" y="160" width="420" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="490" y="160" width="420" height="6" rx="3" fill="#c084fc"/>
+    <text x="520" y="212" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STEP 2</text>
+    <text x="520" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Pick a pricing model</text>
+    <text x="520" y="298" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Subscription, usage, per-seat,</text>
+    <text x="520" y="326" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">tiered, or hybrid - match your delivery.</text>
+    <text x="520" y="362" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Model = strategy decision.</text>
+  </g>
+
+  <line x1="910" y1="275" x2="924" y2="275" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="918,269 930,275 918,281" fill="#5eead4"/>
+
+  <!-- Step 3 -->
+  <g filter="url(#cardShadow)">
+    <rect x="930" y="160" width="420" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="930" y="160" width="420" height="6" rx="3" fill="#60a5fa"/>
+    <text x="960" y="212" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STEP 3</text>
+    <text x="960" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Design packaging</text>
+    <text x="960" y="298" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Three tiers. Each with a value driver.</text>
+    <text x="960" y="326" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Top tier anchors. Middle wins.</text>
+    <text x="960" y="362" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Keep the differentiator paid.</text>
+  </g>
+
+  <!-- Row transition: step 3 to step 4 -->
+  <line x1="1140" y1="390" x2="1140" y2="420" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1140" y1="420" x2="260" y2="420" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="260" y1="420" x2="260" y2="450" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="254,444 260,456 266,444" fill="#5eead4"/>
+
+  <!-- Row 2 -->
+  <!-- Step 4 -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="460" width="420" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="50" y="460" width="420" height="6" rx="3" fill="#fb923c"/>
+    <text x="80" y="512" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STEP 4</text>
+    <text x="80" y="552" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Set prices</text>
+    <text x="80" y="598" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Anchor against value (10-20%),</text>
+    <text x="80" y="626" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">research, and competitive sanity.</text>
+    <text x="80" y="662" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Round numbers signal premium.</text>
+  </g>
+
+  <line x1="470" y1="575" x2="484" y2="575" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="478,569 490,575 478,581" fill="#5eead4"/>
+
+  <!-- Step 5 -->
+  <g filter="url(#cardShadow)">
+    <rect x="490" y="460" width="420" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="490" y="460" width="420" height="6" rx="3" fill="#5eead4"/>
+    <text x="520" y="512" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STEP 5</text>
+    <text x="520" y="552" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Test before rollout</text>
+    <text x="520" y="598" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Live A/B if PLG. Sales-led pilot</text>
+    <text x="520" y="626" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">for B2B. CAB review as a floor.</text>
+    <text x="520" y="662" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Consensus is not evidence.</text>
+  </g>
+
+  <line x1="910" y1="575" x2="924" y2="575" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="918,569 930,575 918,581" fill="#5eead4"/>
+
+  <!-- Step 6 -->
+  <g filter="url(#cardShadow)">
+    <rect x="930" y="460" width="420" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="930" y="460" width="420" height="6" rx="3" fill="#d98ee0"/>
+    <text x="960" y="512" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STEP 6</text>
+    <text x="960" y="552" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Roll out + operate</text>
+    <text x="960" y="598" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Grandfather, phase, or cap.</text>
+    <text x="960" y="626" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Track discount, realization, win rate.</text>
+    <text x="960" y="662" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Revisit every 12-18 months.</text>
+  </g>
+
+</svg>

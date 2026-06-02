@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 660">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="660" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="40" font-weight="700">The Voice of the Customer Program: Five Stages</text>
+  <text x="700" y="112" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">A repeatable system that turns customer feedback into operational decisions.</text>
+
+  <!-- Card 1 Collect -->
+  <g filter="url(#cardShadow)">
+    <rect x="40" y="160" width="250" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="40" y="160" width="250" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="70" y="212" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 1</text>
+    <text x="70" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Collect</text>
+    <text x="70" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Sources</text>
+    <text x="70" y="342" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Surveys / NPS</text>
+    <text x="70" y="372" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Interviews</text>
+    <text x="70" y="402" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Support tickets</text>
+    <text x="70" y="432" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Sales calls</text>
+    <text x="70" y="462" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Reviews</text>
+    <text x="70" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">3-5 sources, no more.</text>
+  </g>
+
+  <line x1="290" y1="375" x2="304" y2="375" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="298,369 310,375 298,381" fill="#5eead4"/>
+
+  <!-- Card 2 Analyze -->
+  <g filter="url(#cardShadow)">
+    <rect x="310" y="160" width="250" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="310" y="160" width="250" height="6" rx="3" fill="#c084fc"/>
+    <text x="340" y="212" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 2</text>
+    <text x="340" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Analyze</text>
+    <text x="340" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Layers</text>
+    <text x="340" y="342" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Quant: scores</text>
+    <text x="340" y="372" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Qual: themes</text>
+    <text x="340" y="402" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; LLM clustering</text>
+    <text x="340" y="432" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; ARR weighting</text>
+    <text x="340" y="462" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Segment slicing</text>
+    <text x="340" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Human validates the cluster.</text>
+  </g>
+
+  <line x1="560" y1="375" x2="574" y2="375" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="568,369 580,375 568,381" fill="#5eead4"/>
+
+  <!-- Card 3 Distribute -->
+  <g filter="url(#cardShadow)">
+    <rect x="580" y="160" width="250" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="580" y="160" width="250" height="6" rx="3" fill="#60a5fa"/>
+    <text x="610" y="212" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 3</text>
+    <text x="610" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Distribute</text>
+    <text x="610" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Audience</text>
+    <text x="610" y="342" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Product team</text>
+    <text x="610" y="372" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; PMM / Marketing</text>
+    <text x="610" y="402" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Sales</text>
+    <text x="610" y="432" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Customer Success</text>
+    <text x="610" y="462" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Executives</text>
+    <text x="610" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">One-page weekly digest.</text>
+  </g>
+
+  <line x1="830" y1="375" x2="844" y2="375" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="838,369 850,375 838,381" fill="#5eead4"/>
+
+  <!-- Card 4 Act -->
+  <g filter="url(#cardShadow)">
+    <rect x="850" y="160" width="250" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="850" y="160" width="250" height="6" rx="3" fill="#fb923c"/>
+    <text x="880" y="212" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 4</text>
+    <text x="880" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Act</text>
+    <text x="880" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Output</text>
+    <text x="880" y="342" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Roadmap input</text>
+    <text x="880" y="372" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Messaging refresh</text>
+    <text x="880" y="402" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Operational fix</text>
+    <text x="880" y="432" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Pricing input</text>
+    <text x="880" y="462" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Launch alignment</text>
+    <text x="880" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Decisions, not decks.</text>
+  </g>
+
+  <line x1="1100" y1="375" x2="1114" y2="375" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1108,369 1120,375 1108,381" fill="#5eead4"/>
+
+  <!-- Card 5 Measure -->
+  <g filter="url(#cardShadow)">
+    <rect x="1120" y="160" width="240" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1120" y="160" width="240" height="6" rx="3" fill="#5eead4"/>
+    <text x="1150" y="212" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">STAGE 5</text>
+    <text x="1150" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Measure</text>
+    <text x="1150" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">KPIs</text>
+    <text x="1150" y="342" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Decisions / qtr</text>
+    <text x="1150" y="372" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Time to action</text>
+    <text x="1150" y="402" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Ticket reduction</text>
+    <text x="1150" y="432" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Message lift</text>
+    <text x="1150" y="462" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">&#8226; Theme trend</text>
+    <text x="1150" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Close the loop on yourself.</text>
+  </g>
+
+</svg>

@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 660">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="660" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="40" font-weight="700">The PMM Career Path: Levels and Focus Shifts</text>
+  <text x="700" y="112" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">From execution at APMM to executive seat at VP - the focus changes at every level.</text>
+
+  <!-- Level 1 APMM -->
+  <g filter="url(#cardShadow)">
+    <rect x="40" y="160" width="210" height="440" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="40" y="160" width="210" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="65" y="212" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">0-2 YRS</text>
+    <text x="65" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">APMM</text>
+    <text x="65" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Focus</text>
+    <text x="65" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Execution</text>
+    <text x="65" y="390" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Owns</text>
+    <text x="65" y="422" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">One launch</text>
+    <text x="65" y="448" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">One battlecard</text>
+    <text x="65" y="474" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">One asset</text>
+    <text x="65" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Learn the rhythm.</text>
+  </g>
+
+  <line x1="250" y1="380" x2="264" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="258,374 270,380 258,386" fill="#5eead4"/>
+
+  <!-- Level 2 PMM -->
+  <g filter="url(#cardShadow)">
+    <rect x="270" y="160" width="210" height="440" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="270" y="160" width="210" height="6" rx="3" fill="#c084fc"/>
+    <text x="295" y="212" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">2-5 YRS</text>
+    <text x="295" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">PMM</text>
+    <text x="295" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Focus</text>
+    <text x="295" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Full GTM motion</text>
+    <text x="295" y="390" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Owns</text>
+    <text x="295" y="422" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Product line</text>
+    <text x="295" y="448" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Positioning</text>
+    <text x="295" y="474" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Enablement</text>
+    <text x="295" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Craft years.</text>
+  </g>
+
+  <line x1="480" y1="380" x2="494" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="488,374 500,380 488,386" fill="#5eead4"/>
+
+  <!-- Level 3 Senior PMM -->
+  <g filter="url(#cardShadow)">
+    <rect x="500" y="160" width="210" height="440" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="500" y="160" width="210" height="6" rx="3" fill="#60a5fa"/>
+    <text x="525" y="212" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">4-7 YRS</text>
+    <text x="525" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">Senior PMM</text>
+    <text x="525" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Focus</text>
+    <text x="525" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Strategy + craft</text>
+    <text x="525" y="390" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Owns</text>
+    <text x="525" y="422" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Multiple lines</text>
+    <text x="525" y="448" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Pricing input</text>
+    <text x="525" y="474" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Mentoring</text>
+    <text x="525" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Influence senior PMs.</text>
+  </g>
+
+  <line x1="710" y1="380" x2="724" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="718,374 730,380 718,386" fill="#5eead4"/>
+
+  <!-- Level 4 Group PMM -->
+  <g filter="url(#cardShadow)">
+    <rect x="730" y="160" width="210" height="440" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="730" y="160" width="210" height="6" rx="3" fill="#fb923c"/>
+    <text x="755" y="212" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">6-10 YRS</text>
+    <text x="755" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">Group PMM</text>
+    <text x="755" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Focus</text>
+    <text x="755" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Portfolio</text>
+    <text x="755" y="390" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Owns</text>
+    <text x="755" y="422" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">PMM standards</text>
+    <text x="755" y="448" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Team hiring</text>
+    <text x="755" y="474" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Exec voice</text>
+    <text x="755" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">PMM as a function.</text>
+  </g>
+
+  <line x1="940" y1="380" x2="954" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="948,374 960,380 948,386" fill="#5eead4"/>
+
+  <!-- Level 5 Director -->
+  <g filter="url(#cardShadow)">
+    <rect x="960" y="160" width="210" height="440" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="960" y="160" width="210" height="6" rx="3" fill="#d98ee0"/>
+    <text x="985" y="212" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">8-12 YRS</text>
+    <text x="985" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">Director</text>
+    <text x="985" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Focus</text>
+    <text x="985" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Run the function</text>
+    <text x="985" y="390" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Owns</text>
+    <text x="985" y="422" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Headcount plan</text>
+    <text x="985" y="448" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">CRO partnership</text>
+    <text x="985" y="474" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Org design</text>
+    <text x="985" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Less craft, more strategy.</text>
+  </g>
+
+  <line x1="1170" y1="380" x2="1184" y2="380" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1178,374 1190,380 1178,386" fill="#5eead4"/>
+
+  <!-- Level 6 VP / CMO -->
+  <g filter="url(#cardShadow)">
+    <rect x="1190" y="160" width="170" height="440" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="1190" y="160" width="170" height="6" rx="3" fill="#5eead4"/>
+    <text x="1210" y="212" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">12+ YRS</text>
+    <text x="1210" y="252" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="700">VP / CMO</text>
+    <text x="1210" y="306" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Focus</text>
+    <text x="1210" y="338" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Executive</text>
+    <text x="1210" y="390" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-weight="600">Owns</text>
+    <text x="1210" y="422" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Positioning</text>
+    <text x="1210" y="448" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Segment plays</text>
+    <text x="1210" y="474" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="20">Launches</text>
+    <text x="1210" y="540" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Path to CEO opens.</text>
+  </g>
+
+</svg>
