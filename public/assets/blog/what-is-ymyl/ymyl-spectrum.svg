@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="scrutinyGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5eead4"/>
+      <stop offset="50%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#f87171"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="800" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">The YMYL Spectrum</text>
+  <text x="700" y="114" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="22">Google rates topics on a gradient, not a yes/no label.</text>
+
+  <!-- Scrutiny gradient bar -->
+  <text x="700" y="162" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">Potential for harm and Page Quality scrutiny increase from left to right</text>
+  <rect x="120" y="182" width="1140" height="12" rx="6" fill="url(#scrutinyGrad)"/>
+  <polygon points="1262,176 1284,188 1262,200" fill="#f87171"/>
+
+  <!-- Card 1: NOT YMYL -->
+  <g filter="url(#cardShadow)">
+    <rect x="40" y="226" width="410" height="402" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="40" y="226" width="410" height="6" rx="3" fill="#5eead4"/>
+    <text x="245" y="278" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">NOT YMYL</text>
+    <text x="245" y="318" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="600">Normal quality bar</text>
+    <text x="72" y="376" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Music award winners</text>
+    <text x="72" y="416" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; How often to wash jeans</text>
+    <text x="72" y="456" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Everyday recipes</text>
+    <text x="72" y="496" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Hobbies &amp; entertainment</text>
+    <text x="245" y="592" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Friends' advice is fine</text>
+  </g>
+
+  <!-- Card 2: MAY BE YMYL -->
+  <g filter="url(#cardShadow)">
+    <rect x="495" y="226" width="410" height="402" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="495" y="226" width="410" height="6" rx="3" fill="#fb923c"/>
+    <text x="700" y="278" text-anchor="middle" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">MAY BE YMYL</text>
+    <text x="700" y="318" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="600">Context-dependent</text>
+    <text x="527" y="376" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Weather forecasts</text>
+    <text x="527" y="416" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Car &amp; big-purchase reviews</text>
+    <text x="527" y="456" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Replacing a toothbrush</text>
+    <text x="527" y="496" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Nutrition &amp; fitness</text>
+    <text x="700" y="592" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">A judgment call</text>
+  </g>
+
+  <!-- Card 3: CLEAR YMYL -->
+  <g filter="url(#cardShadow)">
+    <rect x="950" y="226" width="410" height="402" rx="16" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <rect x="950" y="226" width="410" height="6" rx="3" fill="#f87171"/>
+    <text x="1155" y="278" text-anchor="middle" fill="#f87171" font-family="Segoe UI, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">CLEAR YMYL</text>
+    <text x="1155" y="318" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="26" font-weight="600">Very high quality bar</text>
+    <text x="982" y="372" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Tsunami evacuation routes</text>
+    <text x="982" y="412" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; When to go to the ER</text>
+    <text x="982" y="452" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Buying prescription drugs</text>
+    <text x="982" y="492" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Investing, loans &amp; taxes</text>
+    <text x="982" y="532" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Voting &amp; elections</text>
+    <text x="1155" y="592" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20" font-style="italic">Seek experts; errors cause harm</text>
+  </g>
+
+  <!-- Footer quote bar -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="656" width="1280" height="116" rx="16" fill="#1a1f26" stroke="#30363d" stroke-width="1"/>
+    <text x="700" y="706" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="600">"For pages about clear YMYL topics, we have very high Page Quality rating standards."</text>
+    <text x="700" y="744" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Source: Google Search Quality Rater Guidelines (September 11, 2025)</text>
+  </g>
+</svg>
