@@ -1,0 +1,1387 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+
+const title = "Free Value Proposition Canvas Generator | Build a VPC in 10 Minutes";
+const description = "Free value proposition canvas generator (Osterwalder-style). Map customer jobs, pains, gains and your products, pain relievers, gain creators. Download as PNG. No signup.";
+
+const faqs = [
+	{
+		question: "What is a value proposition canvas?",
+		answer: "The value proposition canvas (VPC) is a framework by Alex Osterwalder that helps you map fit between what your product offers (the value map) and what your customer cares about (the customer profile). The two halves face each other - jobs vs products, pains vs pain relievers, gains vs gain creators - so misalignment becomes visible.",
+	},
+	{
+		question: "How do I use this value proposition canvas generator?",
+		answer: "Fill in the customer segment, then the right half (customer profile): the jobs your customer is trying to get done, the pains they experience, and the gains they want. Then fill the left half (value map): the products you offer, the pain relievers, and the gain creators. The preview updates as you type. Click Download PNG when you're done.",
+	},
+	{
+		question: "Is this value proposition canvas template free?",
+		answer: "Yes, completely free. No signup, no email gate, no watermark on the download. The template runs entirely in your browser - your inputs never leave your device.",
+	},
+	{
+		question: "What format does the canvas download in?",
+		answer: "The generator exports a high-resolution PNG (1000px wide, rendered at 2x device pixel ratio for retina displays) plus an optional US Letter PDF. Both work for Notion, Slides, Miro, sales decks, or a printed workshop handout.",
+	},
+	{
+		question: "What's the difference between the value proposition canvas and the business model canvas?",
+		answer: "The business model canvas (BMC) is the bigger zoom-out - 9 blocks covering customers, value, channels, revenue, costs, partners, and resources. The value proposition canvas zooms into just one of those blocks (the value-customer relationship) and breaks it into six fields. Use VPC first to nail product-market fit, then expand into the BMC.",
+	},
+	{
+		question: "When should I use the value proposition canvas?",
+		answer: "Three times: (1) Before building a new product, to validate that what you'll build maps to what customers actually want. (2) When repositioning an existing product - the canvas exposes where positioning has drifted from real customer pains. (3) When entering a new segment - one canvas per segment, not a generic one.",
+	},
+	{
+		question: "How is this different from the lean canvas?",
+		answer: "The lean canvas (Ash Maurya) replaces 4 BMC blocks with problem, solution, key metrics, and unfair advantage - optimized for startups. The value proposition canvas is more focused: it stays on the value-customer relationship and is more useful for product marketers refining positioning rather than founders pitching a business.",
+	},
+];
+
+const softwareSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebApplication",
+	"name": "Value Proposition Canvas Generator",
+	"description": description,
+	"url": "https://swapbiswas.com/tools/value-proposition-canvas-generator/",
+	"applicationCategory": "BusinessApplication",
+	"operatingSystem": "Any",
+	"browserRequirements": "Requires JavaScript",
+	"offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+	"creator": { "@type": "Person", "name": "Swapnil Biswas", "url": "https://swapbiswas.com/" }
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqs.map((faq) => ({
+		"@type": "Question",
+		"name": faq.question,
+		"acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+	}))
+};
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	breadcrumbs={[{ name: "Tools", url: "/tools/" }, { name: "Value Proposition Canvas Generator" }]}
+>
+	<script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} slot="head" />
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+	<div class="stack gap-20">
+		<main class="wrapper tool-page">
+			<Hero
+				title="Free Value Proposition Canvas Generator"
+				tagline="Build an Osterwalder-style value proposition canvas in 10 minutes. Customer jobs, pains, gains - and the value map that matches them. Download as PNG."
+				align="start"
+			/>
+
+			<div class="tool-grid">
+				<!-- FORM -->
+				<section class="form-panel" aria-label="Value proposition canvas inputs">
+					<form id="vpcanvas-form" autocomplete="off">
+						<fieldset>
+							<legend>1. Header</legend>
+							<div class="field">
+								<label for="vp-segment">Customer segment</label>
+								<input type="text" id="vp-segment" maxlength="60" placeholder="e.g., VPs of Demand Gen at 200-2K employee B2B SaaS" />
+							</div>
+							<div class="field">
+								<label for="vp-product">Value proposition / product</label>
+								<input type="text" id="vp-product" maxlength="60" placeholder="e.g., Acme Insights" />
+							</div>
+						</fieldset>
+
+						<fieldset data-section-card="vp-jobs-card">
+							<legend>2. Customer jobs (right side)<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="vp-jobs-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="hint">What is the customer trying to get done? Functional, social, and emotional jobs.</div>
+							<div class="field"><input type="text" id="vp-job-1" maxlength="100" placeholder="Job 1: e.g., Report channel ROI to the CFO every quarter" /></div>
+							<div class="field"><input type="text" id="vp-job-2" maxlength="100" placeholder="Job 2: e.g., Decide how to reallocate budget across paid + organic" /></div>
+							<div class="field"><input type="text" id="vp-job-3" maxlength="100" placeholder="Job 3: e.g., Defend marketing as a profit center, not cost" /></div>
+							<div class="field"><input type="text" id="vp-job-4" maxlength="100" placeholder="Job 4 (optional): e.g., Align with sales on lead-source quality" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="vp-pains-card">
+							<legend>3. Customer pains<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="vp-pains-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="hint">What frustrates them today? Costs, blockers, risks, undesired outcomes.</div>
+							<div class="field"><input type="text" id="vp-pain-1" maxlength="100" placeholder="Pain 1: e.g., Manual attribution takes 3 days every quarter" /></div>
+							<div class="field"><input type="text" id="vp-pain-2" maxlength="100" placeholder="Pain 2: e.g., Can't trust the numbers when the CFO asks" /></div>
+							<div class="field"><input type="text" id="vp-pain-3" maxlength="100" placeholder="Pain 3: e.g., Engineering won't prioritize new tracking" /></div>
+							<div class="field"><input type="text" id="vp-pain-4" maxlength="100" placeholder="Pain 4 (optional): e.g., Legacy vendor takes 6 months to implement" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="vp-gains-card">
+							<legend>4. Customer gains<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="vp-gains-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="hint">What outcomes do they want? Required, expected, desired, unexpected gains.</div>
+							<div class="field"><input type="text" id="vp-gain-1" maxlength="100" placeholder="Gain 1: e.g., Real-time answer to the board's ROI question" /></div>
+							<div class="field"><input type="text" id="vp-gain-2" maxlength="100" placeholder="Gain 2: e.g., Confidence to reallocate budget mid-quarter" /></div>
+							<div class="field"><input type="text" id="vp-gain-3" maxlength="100" placeholder="Gain 3: e.g., Sales-marketing alignment on lead quality" /></div>
+							<div class="field"><input type="text" id="vp-gain-4" maxlength="100" placeholder="Gain 4 (optional): e.g., Bigger seat at the executive table" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="vp-products-card">
+							<legend>5. Products & services (left side)<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="vp-products-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="hint">What do you offer? Physical, digital, financial, intangible.</div>
+							<div class="field"><input type="text" id="vp-prod-1" maxlength="100" placeholder="Product 1: e.g., No-code attribution engine" /></div>
+							<div class="field"><input type="text" id="vp-prod-2" maxlength="100" placeholder="Product 2: e.g., Pre-built dashboards for board reporting" /></div>
+							<div class="field"><input type="text" id="vp-prod-3" maxlength="100" placeholder="Product 3: e.g., Real-time channel attribution API" /></div>
+							<div class="field"><input type="text" id="vp-prod-4" maxlength="100" placeholder="Product 4 (optional): e.g., White-glove onboarding" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="vp-pain-relievers-card">
+							<legend>6. Pain relievers<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="vp-pain-relievers-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="hint">How does each product specifically remove or reduce a customer pain?</div>
+							<div class="field"><input type="text" id="vp-relief-1" maxlength="100" placeholder="Reliever 1: e.g., Cut attribution time from 3 days to 30 minutes" /></div>
+							<div class="field"><input type="text" id="vp-relief-2" maxlength="100" placeholder="Reliever 2: e.g., Numbers reconciled against CRM source of truth" /></div>
+							<div class="field"><input type="text" id="vp-relief-3" maxlength="100" placeholder="Reliever 3: e.g., No engineering required to add a new channel" /></div>
+							<div class="field"><input type="text" id="vp-relief-4" maxlength="100" placeholder="Reliever 4 (optional): e.g., 45-day implementation vs 6 months" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="vp-gain-creators-card">
+							<legend>7. Gain creators<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="vp-gain-creators-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="hint">How does each product create the gains the customer wants?</div>
+							<div class="field"><input type="text" id="vp-creator-1" maxlength="100" placeholder="Creator 1: e.g., Real-time channel ROI in the executive dashboard" /></div>
+							<div class="field"><input type="text" id="vp-creator-2" maxlength="100" placeholder="Creator 2: e.g., Confidence to make in-quarter budget shifts" /></div>
+							<div class="field"><input type="text" id="vp-creator-3" maxlength="100" placeholder="Creator 3: e.g., Shared dashboard for sales + marketing alignment" /></div>
+							<div class="field"><input type="text" id="vp-creator-4" maxlength="100" placeholder="Creator 4 (optional): e.g., Recognition as a data-driven leader" /></div>
+						</fieldset>
+
+						<div class="form-actions">
+							<details class="sample-picker">
+								<summary class="btn-secondary">Load sample <span class="sample-caret">▾</span></summary>
+								<ul class="sample-options">
+									<li><button type="button" class="sample-option" data-sample="b2b-saas">B2B SaaS Attribution</button></li>
+									<li><button type="button" class="sample-option" data-sample="devops">DevOps Platform</button></li>
+									<li><button type="button" class="sample-option" data-sample="martech">Marketing Automation</button></li>
+								</ul>
+							</details>
+							<input type="file" id="logo-file-input" accept="image/png,image/jpeg,image/svg+xml,image/webp" hidden />
+							<button type="button" id="upload-logo" class="btn-secondary" title="Add a logo">＋ Logo</button>
+							<button type="button" id="remove-logo" class="btn-secondary btn-danger" hidden>× Logo</button>
+							<button type="button" id="reset-form" class="btn-secondary">Reset</button>
+							<button type="button" id="clear-saved" class="btn-secondary btn-danger" title="Clear all saved data from this browser">Clear saved</button>
+						</div>
+					</form>
+				</section>
+
+				<!-- PREVIEW -->
+				<section class="preview-panel" aria-label="Value proposition canvas preview">
+					<div class="preview-sticky">
+						<div class="preview-controls">
+							<h2 class="preview-heading">Live Preview</h2>
+							<div class="preview-actions">
+								<div class="theme-picker" role="radiogroup" aria-label="Theme">
+									<button type="button" class="theme-btn active" data-theme="dark">Dark</button>
+									<button type="button" class="theme-btn" data-theme="light">Light</button>
+									<button type="button" class="theme-btn" data-theme="brand">Brand</button>
+								</div>
+								<button type="button" id="copy-png" class="btn-icon">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+									Copy
+								</button>
+								<button type="button" id="download-pdf" class="btn-icon">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+									PDF
+								</button>
+								<button type="button" id="download-png" class="btn-primary">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+									Download PNG
+								</button>
+							</div>
+						</div>
+						<p class="autosave-status" id="autosave-status" aria-live="polite"><span id="fill-counter" class="fill-counter"></span><span id="autosave-text"></span></p>
+
+						<div class="preview-frame" id="preview-frame">
+							<div id="vpcanvas-card" class="vpcanvas-card">
+								<header class="vp-header">
+									<div class="vp-title">
+										<span class="vp-label">Value Proposition Canvas</span>
+										<h3 class="vp-product" data-bind="vp-product">Product name</h3>
+										<div class="vp-segment" data-hide-group><span class="vp-meta-label">For:</span> <span data-bind="vp-segment">Customer segment</span></div>
+									</div>
+									<div class="vp-logo-wrap">
+										<img class="card-logo" id="card-logo" alt="" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" hidden />
+									</div>
+								</header>
+
+								<div class="vp-canvas">
+									<!-- Left: Value Map (square) -->
+									<div class="vp-side vp-value-map">
+										<div class="vp-side-title">Value Map</div>
+										<div class="vp-side-subtitle">What you offer</div>
+										<div class="vp-blocks">
+											<div class="vp-block vp-products-card">
+												<div class="vp-block-head">
+													<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+													Products & services
+												</div>
+												<ul>
+													<li data-bind="vp-prod-1">Product 1</li>
+													<li data-bind="vp-prod-2">Product 2</li>
+													<li data-bind="vp-prod-3">Product 3</li>
+													<li data-bind="vp-prod-4">Product 4</li>
+												</ul>
+											</div>
+											<div class="vp-block vp-pain-relievers-card">
+												<div class="vp-block-head">
+													<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+													Pain relievers
+												</div>
+												<ul>
+													<li data-bind="vp-relief-1">Reliever 1</li>
+													<li data-bind="vp-relief-2">Reliever 2</li>
+													<li data-bind="vp-relief-3">Reliever 3</li>
+													<li data-bind="vp-relief-4">Reliever 4</li>
+												</ul>
+											</div>
+											<div class="vp-block vp-gain-creators-card">
+												<div class="vp-block-head">
+													<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+													Gain creators
+												</div>
+												<ul>
+													<li data-bind="vp-creator-1">Creator 1</li>
+													<li data-bind="vp-creator-2">Creator 2</li>
+													<li data-bind="vp-creator-3">Creator 3</li>
+													<li data-bind="vp-creator-4">Creator 4</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<!-- Right: Customer Profile (circle) -->
+									<div class="vp-side vp-customer-profile">
+										<div class="vp-side-title">Customer Profile</div>
+										<div class="vp-side-subtitle">What customers care about</div>
+										<div class="vp-blocks">
+											<div class="vp-block vp-jobs-card">
+												<div class="vp-block-head">
+													<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-3a2 2 0 0 1-2-2V2"/><path d="M9 18a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2"/><path d="M3 14a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M14 14a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2z"/></svg>
+													Customer jobs
+												</div>
+												<ul>
+													<li data-bind="vp-job-1">Job 1</li>
+													<li data-bind="vp-job-2">Job 2</li>
+													<li data-bind="vp-job-3">Job 3</li>
+													<li data-bind="vp-job-4">Job 4</li>
+												</ul>
+											</div>
+											<div class="vp-block vp-pains-card">
+												<div class="vp-block-head">
+													<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+													Pains
+												</div>
+												<ul>
+													<li data-bind="vp-pain-1">Pain 1</li>
+													<li data-bind="vp-pain-2">Pain 2</li>
+													<li data-bind="vp-pain-3">Pain 3</li>
+													<li data-bind="vp-pain-4">Pain 4</li>
+												</ul>
+											</div>
+											<div class="vp-block vp-gains-card">
+												<div class="vp-block-head">
+													<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+													Gains
+												</div>
+												<ul>
+													<li data-bind="vp-gain-1">Gain 1</li>
+													<li data-bind="vp-gain-2">Gain 2</li>
+													<li data-bind="vp-gain-3">Gain 3</li>
+													<li data-bind="vp-gain-4">Gain 4</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<footer class="vp-footer">
+									<span class="vp-footer-built">Built with the free Value Proposition Canvas Generator</span>
+									<span class="vp-footer-url">swapbiswas.com/tools/value-proposition-canvas-generator</span>
+								</footer>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Newsletter -->
+			<section class="tool-cta-strip">
+				<div class="cta-text">
+					<strong>Want more PMM tools and templates?</strong>
+					<p>Join the newsletter. Positioning, launch playbooks, persona updates - no spam, just value.</p>
+				</div>
+				<form class="cta-form" id="tool-newsletter-form">
+					<input type="email" name="email_address" placeholder="you@company.com" required autocomplete="email" aria-label="Email address" />
+					<button type="submit">Subscribe</button>
+				</form>
+				<p class="cta-status" id="tool-newsletter-status" aria-live="polite"></p>
+			</section>
+
+			<!-- SEO content -->
+			<section class="seo-content">
+				<h2>How to use the value proposition canvas generator</h2>
+				<ol class="how-to">
+					<li><strong>Start with one customer segment, not all of them.</strong> A canvas built for "everyone" is built for no one. Pick one segment - typically the persona where you have the strongest signal - and build a canvas just for them. Other segments get their own canvas.</li>
+					<li><strong>Fill the right side first (customer profile).</strong> Osterwalder's instruction is unambiguous: customer jobs, pains, and gains come before products. If you start with what you sell, you'll force-fit the customer to your product instead of the reverse.</li>
+					<li><strong>Distinguish jobs, pains, and gains carefully.</strong> A job is what they're trying to get done. A pain is what makes the job hard. A gain is the outcome they want. "Cut attribution from 3 days to 30 minutes" is a gain, not a job - the underlying job is "report ROI to the CFO."</li>
+					<li><strong>Then map the left side (value map) to it.</strong> Each pain reliever should explicitly answer one pain. Each gain creator should explicitly create one gain. If you have pain relievers that don't map to a listed pain, you're solving problems the customer doesn't have.</li>
+					<li><strong>Look for misalignment.</strong> The canvas is only useful when it surfaces gaps. If you list 8 products and only 2 of them touch any actual pain, you've found a positioning problem - either the products need to change or the segment needs to.</li>
+					<li><strong>Rebuild the canvas after every major customer-development interview.</strong> The canvas isn't a one-time artifact - it's a living hypothesis. Each customer conversation either confirms or rewrites a square.</li>
+				</ol>
+
+				<h2>What makes a great value proposition canvas</h2>
+				<p>A great canvas is built from observation, not from your own assumptions. Alex Osterwalder's original Value Proposition Design (2014) makes this explicit: every job, pain, and gain on the canvas should trace back to a real customer interview, a survey response, or a behavior you've observed in product analytics. If your customer profile is full of things "we think they want," you're building from the inside out.</p>
+				<p>The two halves of the canvas - customer profile (jobs/pains/gains) and value map (products/relievers/creators) - face each other on purpose. The visual juxtaposition forces a brutal question: does what we offer actually correspond to what the customer cares about? A misaligned canvas reads as cluttered; an aligned one reads as obvious.</p>
+				<p>For the full guide on writing a value proposition that follows naturally from this canvas, read the companion piece:</p>
+				<p><a href="/blog/what-is-a-value-proposition/" class="seo-link">→ Read: What Is a Value Proposition? The Full Guide</a></p>
+
+				<h2>Related templates and guides</h2>
+				<ul class="related-links">
+					<li><a href="/blog/what-is-a-value-proposition/">What Is a Value Proposition?</a></li>
+					<li><a href="/blog/product-positioning/">Product Positioning - The Full Guide</a></li>
+					<li><a href="/blog/what-is-market-positioning/">What Is Market Positioning?</a></li>
+					<li><a href="/blog/icp-vs-buyer-persona/">ICP vs Buyer Persona</a></li>
+					<li><a href="/blog/what-is-product-market-fit/">What Is Product-Market Fit?</a></li>
+					<li><a href="/tools/buyer-persona-generator/">Free Buyer Persona Generator</a></li>
+				</ul>
+
+				<h2>Frequently asked questions</h2>
+				<div class="faq-list">
+					{faqs.map((faq) => (
+						<details class="faq-item">
+							<summary>{faq.question}</summary>
+							<p>{faq.answer}</p>
+						</details>
+					))}
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<script>
+	function initVPCanvas() {
+		const formMaybe = document.getElementById('vpcanvas-form') as HTMLFormElement | null;
+		const card = document.getElementById('vpcanvas-card');
+		if (!formMaybe || !card || (formMaybe as any)._initialized) return;
+		(formMaybe as any)._initialized = true;
+		const form: HTMLFormElement = formMaybe;
+
+		const bindings = card.querySelectorAll<HTMLElement>('[data-bind]');
+
+		function update() {
+			const hasAnyContent = Array.from(form.querySelectorAll<HTMLInputElement>('input[type="text"]'))
+				.some((input) => input.value.trim().length > 0);
+
+			bindings.forEach((el) => {
+				const id = el.getAttribute('data-bind');
+				if (!id) return;
+				const input = document.getElementById(id) as HTMLInputElement | null;
+				const val = input?.value?.trim() || '';
+				if (val) {
+					el.textContent = val;
+					el.classList.remove('vp-placeholder');
+					el.classList.remove('bind-empty');
+				} else if (hasAnyContent) {
+					el.textContent = '';
+					el.classList.remove('vp-placeholder');
+					el.classList.add('bind-empty');
+				} else {
+					el.textContent = el.getAttribute('data-placeholder') || '';
+					el.classList.add('vp-placeholder');
+					el.classList.remove('bind-empty');
+				}
+			});
+			card!.querySelectorAll<HTMLElement>('[data-hide-group]').forEach((group) => {
+				const childBinds = group.querySelectorAll<HTMLElement>('[data-bind]');
+				const allEmpty = childBinds.length > 0 && Array.from(childBinds).every((c) => c.classList.contains('bind-empty'));
+				group.classList.toggle('group-hidden', allEmpty);
+			});
+		}
+
+		bindings.forEach((el) => {
+			if (!el.getAttribute('data-placeholder')) {
+				el.setAttribute('data-placeholder', el.textContent || '');
+			}
+			el.classList.add('vp-placeholder');
+		});
+
+		function applyToggle(toggle: HTMLInputElement) {
+			const cardClass = toggle.dataset.toggleCard;
+			if (!cardClass) return;
+			const cardEl = card!.querySelector('.' + cardClass);
+			const fieldset = toggle.closest('fieldset');
+			const excluded = !toggle.checked;
+			if (cardEl) cardEl.classList.toggle('section-excluded', excluded);
+			if (fieldset) fieldset.classList.toggle('fieldset-muted', excluded);
+		}
+
+		form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((toggle) => {
+			toggle.addEventListener('change', () => {
+				applyToggle(toggle);
+				saveState();
+				scaleCard();
+			});
+		});
+
+		const STATE_KEY = 'tool-state-vpcanvas';
+		const statusEl = document.getElementById('autosave-text');
+		const counterEl = document.getElementById('fill-counter');
+		let saveTimer: any;
+
+		function updateCounter() {
+			if (!counterEl) return;
+			const inputs = form.querySelectorAll<HTMLInputElement>('input[type="text"]');
+			const filled = Array.from(inputs).filter((i) => i.value.trim().length > 0).length;
+			counterEl.textContent = `${filled}/${inputs.length} fields filled${filled === inputs.length ? ' ✓' : ''}`;
+		}
+
+		function saveState() {
+			try {
+				const fields: Record<string, string> = {};
+				form.querySelectorAll<HTMLInputElement>('input[type="text"]').forEach((input) => {
+					if (input.value) fields[input.id] = input.value;
+				});
+				const excluded: Record<string, boolean> = {};
+				form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((toggle) => {
+					if (!toggle.checked && toggle.dataset.toggleCard) excluded[toggle.dataset.toggleCard] = true;
+				});
+				const theme = (card as HTMLElement).dataset.theme || 'dark';
+				const logo = cardLogo?.getAttribute('hidden') === null ? cardLogo.src : null;
+				localStorage.setItem(STATE_KEY, JSON.stringify({ fields, excluded, theme, logo, savedAt: Date.now() }));
+				if (statusEl) {
+					statusEl.textContent = 'Saved';
+					setTimeout(() => { if (statusEl && statusEl.textContent === 'Saved') statusEl.textContent = ''; }, 1500);
+				}
+			} catch (e) {}
+		}
+
+		function loadState() {
+			try {
+				const raw = localStorage.getItem(STATE_KEY);
+				if (!raw) return false;
+				const saved = JSON.parse(raw);
+				Object.entries(saved.fields || {}).forEach(([id, val]) => {
+					const input = document.getElementById(id) as HTMLInputElement | null;
+					if (input && typeof val === 'string') input.value = val;
+				});
+				Object.entries(saved.excluded || {}).forEach(([cardClass, isExcluded]) => {
+					const toggle = form.querySelector<HTMLInputElement>(`.section-toggle-input[data-toggle-card="${cardClass}"]`);
+					if (toggle && isExcluded) { toggle.checked = false; applyToggle(toggle); }
+				});
+				if (saved.theme && typeof saved.theme === 'string') applyTheme(saved.theme);
+				if (saved.logo && typeof saved.logo === 'string') applyLogo(saved.logo);
+				return true;
+			} catch (e) { return false; }
+		}
+
+		function applyTheme(theme: string) {
+			(card as HTMLElement).dataset.theme = theme;
+			document.querySelectorAll<HTMLButtonElement>('.theme-btn').forEach((btn) => {
+				btn.classList.toggle('active', btn.dataset.theme === theme);
+			});
+		}
+		document.querySelectorAll<HTMLButtonElement>('.theme-btn').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				applyTheme(btn.dataset.theme || 'dark');
+				saveState();
+				scaleCard();
+			});
+		});
+
+		const cardLogo = document.getElementById('card-logo') as HTMLImageElement | null;
+		const uploadBtn = document.getElementById('upload-logo');
+		const removeBtn = document.getElementById('remove-logo');
+		const fileInput = document.getElementById('logo-file-input') as HTMLInputElement | null;
+		const TRANSPARENT_PX = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+
+		function applyLogo(dataUrl: string | null) {
+			if (cardLogo) {
+				if (dataUrl) {
+					cardLogo.src = dataUrl;
+					cardLogo.removeAttribute('hidden');
+				} else {
+					cardLogo.src = TRANSPARENT_PX;
+					cardLogo.setAttribute('hidden', '');
+				}
+			}
+			if (dataUrl) {
+				uploadBtn?.setAttribute('hidden', '');
+				removeBtn?.removeAttribute('hidden');
+			} else {
+				uploadBtn?.removeAttribute('hidden');
+				removeBtn?.setAttribute('hidden', '');
+			}
+			scaleCard();
+		}
+
+		uploadBtn?.addEventListener('click', () => fileInput?.click());
+		fileInput?.addEventListener('change', () => {
+			const file = fileInput.files?.[0];
+			if (!file) return;
+			if (file.size > 1024 * 1024) {
+				if (!confirm('That logo is over 1MB. localStorage may struggle. Continue?')) {
+					fileInput.value = '';
+					return;
+				}
+			}
+			const reader = new FileReader();
+			reader.onload = (e) => { applyLogo(e.target?.result as string); saveState(); };
+			reader.readAsDataURL(file);
+		});
+		removeBtn?.addEventListener('click', () => {
+			if (fileInput) fileInput.value = '';
+			applyLogo(null);
+			saveState();
+		});
+
+		function debouncedSave() {
+			clearTimeout(saveTimer);
+			if (statusEl) statusEl.textContent = 'Saving...';
+			saveTimer = setTimeout(saveState, 400);
+		}
+
+		form.addEventListener('input', () => { update(); updateCounter(); debouncedSave(); });
+
+		document.getElementById('clear-saved')?.addEventListener('click', () => {
+			if (!confirm('Clear all saved data for this tool? This cannot be undone.')) return;
+			try { localStorage.removeItem(STATE_KEY); } catch (e) {}
+			form.reset();
+			form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((t) => { t.checked = true; applyToggle(t); });
+			applyLogo(null);
+			update();
+			updateCounter();
+			if (statusEl) statusEl.textContent = 'Cleared';
+		});
+
+		const samples: Record<string, Record<string, string>> = {
+			'b2b-saas': {
+				'vp-segment': 'VPs of Demand Gen at 200-2K employee B2B SaaS',
+				'vp-product': 'Acme Insights',
+				'vp-job-1': 'Report channel-level ROI to the CFO every quarter',
+				'vp-job-2': 'Decide how to reallocate budget across paid + organic + outbound',
+				'vp-job-3': 'Defend marketing as a profit center to the executive team',
+				'vp-job-4': 'Align with sales leadership on lead-source quality',
+				'vp-pain-1': 'Manual attribution takes 3 full days every quarter',
+				'vp-pain-2': 'Can\'t trust the attribution numbers when the CFO probes',
+				'vp-pain-3': 'Engineering won\'t prioritize new event tracking',
+				'vp-pain-4': 'Legacy vendor takes 6 months to implement and $80K to license',
+				'vp-gain-1': 'Real-time answer to the board\'s ROI question',
+				'vp-gain-2': 'Confidence to reallocate budget mid-quarter',
+				'vp-gain-3': 'Sales-marketing alignment on lead quality',
+				'vp-gain-4': 'Bigger seat at the executive table',
+				'vp-prod-1': 'No-code multi-touch attribution engine',
+				'vp-prod-2': 'Pre-built dashboards for board reporting',
+				'vp-prod-3': 'Real-time channel attribution API',
+				'vp-prod-4': 'White-glove 45-day implementation service',
+				'vp-relief-1': 'Cut attribution time from 3 days to 30 minutes per quarter',
+				'vp-relief-2': 'Numbers reconciled against CRM, no manual joins',
+				'vp-relief-3': 'No engineering required to add or reweight a channel',
+				'vp-relief-4': '45-day go-live vs 6 months with legacy vendor',
+				'vp-creator-1': 'Real-time channel ROI in the executive dashboard',
+				'vp-creator-2': 'Confidence to make in-quarter budget shifts',
+				'vp-creator-3': 'Shared dashboard for sales + marketing alignment',
+				'vp-creator-4': 'Recognized as the data-driven marketing leader on the team',
+			},
+			'devops': {
+				'vp-segment': 'DevOps and Platform leads at 500-5K engineer orgs',
+				'vp-product': 'Forge CI',
+				'vp-job-1': 'Keep deploy velocity high while builds grow more complex',
+				'vp-job-2': 'Keep CI infrastructure costs flat as engineering team grows',
+				'vp-job-3': 'Stabilize flaky test suites blocking deploys',
+				'vp-job-4': 'Avoid being the platform team that "broke everyone\'s pipelines"',
+				'vp-pain-1': 'Median PR build times of 20+ minutes block engineer flow',
+				'vp-pain-2': 'CI bill is growing 20% per quarter on AWS',
+				'vp-pain-3': 'Past CI migration attempts broke pipelines org-wide for weeks',
+				'vp-pain-4': 'Flaky tests retry endlessly and waste compute',
+				'vp-gain-1': 'Sub-10-minute PR feedback loops across all repos',
+				'vp-gain-2': 'CI spend that scales sub-linearly with engineering headcount',
+				'vp-gain-3': 'Stable, predictable deploys engineers can trust',
+				'vp-gain-4': 'A platform team known for shipping speedups, not breakages',
+				'vp-prod-1': 'Drop-in CI runtime compatible with existing YAML',
+				'vp-prod-2': 'Intelligent test sharding and parallelization',
+				'vp-prod-3': 'PR-level caching with sub-second restore',
+				'vp-prod-4': 'On-prem or cloud deployment options',
+				'vp-relief-1': 'Cut median build time from 22 to 7 minutes',
+				'vp-relief-2': 'Per-build-minute pricing scales with savings, not seats',
+				'vp-relief-3': 'Swap the runner, keep the YAML - zero rewrites',
+				'vp-relief-4': 'Flaky test detection + automatic isolation',
+				'vp-creator-1': '63% reduction in median PR feedback latency',
+				'vp-creator-2': 'CI bill drops while throughput goes up',
+				'vp-creator-3': 'Engineers stop dreading deploy day',
+				'vp-creator-4': 'Platform team ships a win, not a migration project',
+			},
+			'martech': {
+				'vp-segment': 'Lifecycle marketers at Series A-C B2B SaaS',
+				'vp-product': 'Latitude',
+				'vp-job-1': 'Convert free-tier trials into paying customers',
+				'vp-job-2': 'Re-engage dormant accounts before they churn',
+				'vp-job-3': 'Ship lifecycle journeys faster than marketing-ops can ticket them',
+				'vp-job-4': 'Prove lifecycle\'s contribution to revenue, not opens',
+				'vp-pain-1': 'Legacy MAP takes 3 weeks to ship a single journey',
+				'vp-pain-2': 'Email-only nurture - users churn silently without in-app reach',
+				'vp-pain-3': 'Requires a dedicated automation specialist to operate',
+				'vp-pain-4': 'Pricing scales with feature gates, not value delivered',
+				'vp-gain-1': 'Trial-to-paid conversion lifted by 40%+',
+				'vp-gain-2': 'Cross-channel reach (email + in-app + Slack) in one platform',
+				'vp-gain-3': 'Marketers ship their own journeys without engineering',
+				'vp-gain-4': 'Clear revenue attribution per journey',
+				'vp-prod-1': 'Visual journey builder with branching + A/B at every node',
+				'vp-prod-2': 'Built-in CDP - no separate license needed',
+				'vp-prod-3': 'Native Slack + Salesforce + HubSpot triggers',
+				'vp-prod-4': '1-day setup with migration tooling from legacy MAPs',
+				'vp-relief-1': 'Time to first journey: 1 day vs 6 months with legacy MAP',
+				'vp-relief-2': 'Email + in-app + push in one platform, not three',
+				'vp-relief-3': 'No "automation specialist" - marketers self-serve',
+				'vp-relief-4': 'Pricing scales with active contacts, not features',
+				'vp-creator-1': '42% lift in trial-to-paid conversion',
+				'vp-creator-2': 'Ship 14 journeys/month instead of 3',
+				'vp-creator-3': 'Marketing team feels like they\'re shipping again',
+				'vp-creator-4': 'Per-journey revenue attribution in the executive dashboard',
+			},
+		};
+
+		function loadSample(key: string) {
+			const sample = samples[key];
+			if (!sample) return;
+			Object.entries(sample).forEach(([id, val]) => {
+				const input = document.getElementById(id) as HTMLInputElement | null;
+				if (input) input.value = val;
+			});
+			update();
+			updateCounter();
+			saveState();
+		}
+
+		form.querySelectorAll<HTMLButtonElement>('.sample-option').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				loadSample(btn.dataset.sample || '');
+				const picker = btn.closest('details');
+				if (picker) picker.removeAttribute('open');
+			});
+		});
+
+		document.getElementById('reset-form')?.addEventListener('click', () => {
+			form.reset();
+			form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((t) => { t.checked = true; applyToggle(t); });
+			update();
+			updateCounter();
+			saveState();
+		});
+
+		const frame = document.getElementById('preview-frame');
+		const cardEl = card as HTMLElement;
+		function scaleCard() {
+			if (!frame) return;
+			const frameWidth = frame.clientWidth;
+			const widthScale = Math.min(1, frameWidth / 1000);
+			const prev = cardEl.style.getPropertyValue('--vp-scale');
+			cardEl.style.setProperty('--vp-scale', '1');
+			const naturalHeight = cardEl.scrollHeight;
+			cardEl.style.setProperty('--vp-scale', prev || String(widthScale));
+
+			const isDesktop = window.matchMedia('(min-width: 64em)').matches;
+			let heightScale = 1;
+			if (isDesktop) {
+				const reservedTop = 24, reservedBottom = 24, controlsHeight = 64;
+				const available = window.innerHeight - reservedTop - reservedBottom - controlsHeight;
+				heightScale = available / naturalHeight;
+			}
+
+			const scale = Math.min(widthScale, heightScale, 1);
+			cardEl.style.setProperty('--vp-scale', String(scale));
+			frame.style.height = (naturalHeight * scale) + 'px';
+		}
+		scaleCard();
+		const ro = new ResizeObserver(scaleCard);
+		if (frame) ro.observe(frame);
+		const mo = new MutationObserver(scaleCard);
+		mo.observe(card, { childList: true, subtree: true, characterData: true });
+		window.addEventListener('resize', scaleCard);
+		if ((document as any).fonts?.ready) {
+			(document as any).fonts.ready.then(scaleCard);
+		}
+
+		const themeBgColors: Record<string, string> = { dark: '#0d1117', light: '#ffffff', brand: '#1c0056' };
+
+		async function renderCard(format: 'png' | 'blob'): Promise<any> {
+			const cEl = card as HTMLElement;
+			const frameEl = document.getElementById('preview-frame');
+			const prevTransform = cEl.style.transform;
+			const prevFrameHeight = frameEl?.style.height || '';
+			try {
+				const mod: any = await import('https://esm.sh/html-to-image@1.11.13' as any);
+				cEl.style.transform = 'none';
+				if (frameEl) frameEl.style.height = cEl.scrollHeight + 'px';
+				const theme = cEl.dataset.theme || 'dark';
+				const opts = {
+					pixelRatio: 2,
+					backgroundColor: themeBgColors[theme] || '#0d1117',
+					cacheBust: true,
+					skipFonts: true,
+					width: 1000,
+					height: cEl.scrollHeight,
+				};
+				return format === 'blob' ? await mod.toBlob(cEl, opts) : await mod.toPng(cEl, opts);
+			} finally {
+				cEl.style.transform = prevTransform;
+				if (frameEl) frameEl.style.height = prevFrameHeight;
+			}
+		}
+
+		const copyBtn = document.getElementById('copy-png');
+		copyBtn?.addEventListener('click', async () => {
+			const original = copyBtn.textContent;
+			copyBtn.setAttribute('disabled', 'true');
+			copyBtn.textContent = 'Copying...';
+			try {
+				const blob = await renderCard('blob');
+				if (!blob) throw new Error('Empty blob');
+				if (!navigator.clipboard || !(window as any).ClipboardItem) {
+					alert('Copy to clipboard is not supported in this browser. Use Download PNG instead.');
+					return;
+				}
+				await navigator.clipboard.write([new (window as any).ClipboardItem({ 'image/png': blob })]);
+				copyBtn.textContent = 'Copied!';
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_copy', tool_name: 'value_proposition_canvas_generator', tool_output: 'png' });
+				setTimeout(() => { copyBtn.textContent = original; copyBtn.removeAttribute('disabled'); }, 1800);
+				return;
+			} catch (err) {
+				console.error('Copy failed', err);
+				alert('Copy failed. Please use Download PNG instead.');
+			}
+			copyBtn.textContent = original;
+			copyBtn.removeAttribute('disabled');
+		});
+
+		async function pngToPdf(dataUrl: string, filename: string) {
+			const mod: any = await import('https://esm.sh/jspdf@2.5.1' as any);
+			const JsPDF = mod.jsPDF || mod.default;
+			const img = new Image();
+			await new Promise<void>((res, rej) => { img.onload = () => res(); img.onerror = rej; img.src = dataUrl; });
+			const pageW = 612, pageH = 792, margin = 36;
+			const maxW = pageW - 2 * margin, maxH = pageH - 2 * margin;
+			const scale = Math.min(maxW / img.width, maxH / img.height);
+			const w = img.width * scale, h = img.height * scale;
+			const x = (pageW - w) / 2, y = (pageH - h) / 2;
+			const pdf = new JsPDF({ orientation: 'landscape', unit: 'pt', format: 'letter' });
+			const lw = 792, lh = 612;
+			const lScale = Math.min((lw - 72) / img.width, (lh - 72) / img.height);
+			const lwImg = img.width * lScale, lhImg = img.height * lScale;
+			const lx = (lw - lwImg) / 2, ly = (lh - lhImg) / 2;
+			pdf.addImage(dataUrl, 'PNG', lx, ly, lwImg, lhImg, undefined, 'FAST');
+			pdf.save(filename);
+		}
+
+		const pdfBtn = document.getElementById('download-pdf');
+		pdfBtn?.addEventListener('click', async () => {
+			const original = pdfBtn.textContent;
+			pdfBtn.setAttribute('disabled', 'true');
+			pdfBtn.textContent = 'Building...';
+			try {
+				const dataUrl = await renderCard('png');
+				const productName = (document.getElementById('vp-product') as HTMLInputElement)?.value?.trim() || '';
+				const safeName = productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+				await pngToPdf(dataUrl, safeName ? `vpc-${safeName}.pdf` : 'value-proposition-canvas.pdf');
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'value_proposition_canvas_generator', tool_output: 'pdf' });
+			} catch (err) {
+				console.error('PDF failed', err);
+				alert('PDF download failed. Please try Download PNG instead.');
+			} finally {
+				pdfBtn.textContent = original;
+				pdfBtn.removeAttribute('disabled');
+			}
+		});
+
+		const downloadBtn = document.getElementById('download-png');
+		downloadBtn?.addEventListener('click', async () => {
+			const original = downloadBtn.textContent;
+			downloadBtn.setAttribute('disabled', 'true');
+			downloadBtn.textContent = 'Preparing...';
+			try {
+				const dataUrl = await renderCard('png');
+				const productName = (document.getElementById('vp-product') as HTMLInputElement)?.value?.trim() || '';
+				const safeName = productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+				const link = document.createElement('a');
+				link.download = safeName ? `vpc-${safeName}.png` : 'value-proposition-canvas.png';
+				link.href = dataUrl;
+				link.click();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'value_proposition_canvas_generator', tool_output: 'png' });
+			} catch (err) {
+				console.error('Download failed', err);
+				alert('Download failed. Please try again or use a different browser.');
+			} finally {
+				downloadBtn.textContent = original;
+				downloadBtn.removeAttribute('disabled');
+			}
+		});
+
+		loadState();
+		update();
+		updateCounter();
+	}
+
+	function initToolNewsletter() {
+		const form = document.getElementById('tool-newsletter-form') as HTMLFormElement | null;
+		const status = document.getElementById('tool-newsletter-status');
+		if (!form || (form as any)._initialized) return;
+		(form as any)._initialized = true;
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const emailInput = form.querySelector('input[name="email_address"]') as HTMLInputElement | null;
+			const email = emailInput?.value || '';
+			const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+			if (btn) { btn.textContent = 'Subscribing...'; btn.disabled = true; }
+			const formData = new FormData();
+			formData.append('email_address', email);
+			fetch('https://app.kit.com/forms/9145889/subscriptions', {
+				method: 'POST',
+				body: formData,
+				headers: { 'Accept': 'application/json' }
+			}).then((res) => {
+				if (!res.ok) throw new Error('fail');
+				if (status) { status.textContent = 'Subscribed!'; status.style.color = 'var(--accent-regular)'; }
+				form.reset();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'newsletter_signup', signup_location: 'tool_value_prop_canvas' });
+			}).catch(() => {
+				if (status) { status.textContent = 'Something went wrong.'; status.style.color = '#ca7879'; }
+			}).finally(() => {
+				if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
+			});
+		});
+	}
+
+	initVPCanvas();
+	initToolNewsletter();
+	document.addEventListener('astro:page-load', () => {
+		initVPCanvas();
+		initToolNewsletter();
+	});
+</script>
+
+<style>
+	.tool-page { display: flex; flex-direction: column; gap: 3.5rem; }
+	.tool-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+
+	@media (min-width: 64em) {
+		.tool-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; }
+		.preview-panel { position: sticky; top: 1.5rem; align-self: start; }
+	}
+
+	.preview-panel { min-width: 0; }
+	.preview-sticky { display: flex; flex-direction: column; gap: 1rem; }
+
+	.form-panel {
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 1.5rem;
+	}
+	#vpcanvas-form fieldset { border: none; padding: 0; margin: 0 0 1.75rem; }
+	#vpcanvas-form legend {
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		margin-bottom: 0.5rem;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+		width: 100%;
+	}
+	.hint {
+		font-size: var(--text-xs);
+		color: var(--gray-400);
+		margin-bottom: 0.75rem;
+		line-height: 1.45;
+	}
+	.field { margin-bottom: 0.5rem; }
+	.field-row { display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin-bottom: 0.5rem; }
+	@media (min-width: 30em) { .field-row { grid-template-columns: 1fr 1fr; } }
+	.field label {
+		display: block;
+		margin-bottom: 0.35rem;
+		color: var(--gray-300);
+		font-size: var(--text-xs);
+		font-weight: 500;
+	}
+	#vpcanvas-form input[type="text"] {
+		width: 100%;
+		padding: 0.55rem 0.8rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		transition: border-color 0.15s ease;
+	}
+	#vpcanvas-form input[type="text"]:focus { outline: none; border-color: var(--accent-regular); }
+
+	.form-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+	.btn-secondary {
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+	.btn-secondary:hover { background: var(--accent-subtle-overlay); color: var(--gray-0); }
+	.btn-danger:hover {
+		background: rgba(239, 68, 68, 0.12);
+		color: #f87171;
+		border-color: rgba(239, 68, 68, 0.3);
+	}
+
+	.sample-picker { position: relative; display: inline-block; }
+	.sample-picker > summary { list-style: none; }
+	.sample-picker > summary::-webkit-details-marker { display: none; }
+	.sample-caret { display: inline-block; margin-left: 0.25rem; transition: transform 0.2s ease; }
+	.sample-picker[open] .sample-caret { transform: rotate(180deg); }
+	.sample-options {
+		position: absolute;
+		top: calc(100% + 0.25rem);
+		left: 0;
+		margin: 0;
+		padding: 0.25rem;
+		background: var(--gray-999);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		list-style: none;
+		z-index: 20;
+		min-width: 200px;
+		box-shadow: var(--shadow-md);
+	}
+	.sample-options li { display: block; }
+	.sample-option {
+		display: block;
+		width: 100%;
+		text-align: left;
+		padding: 0.5rem 0.75rem;
+		background: transparent;
+		border: none;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		border-radius: 0.35rem;
+	}
+	.sample-option:hover { background: var(--accent-subtle-overlay); color: var(--gray-0); }
+
+	.section-toggle { display: inline-flex; align-items: center; cursor: pointer; flex-shrink: 0; }
+	.section-toggle-input {
+		appearance: none;
+		-webkit-appearance: none;
+		width: 34px;
+		height: 20px;
+		background: var(--gray-800);
+		border-radius: 999rem;
+		position: relative;
+		cursor: pointer;
+		margin: 0;
+		transition: background 0.2s ease;
+	}
+	.section-toggle-input::before {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		background: var(--gray-999);
+		border-radius: 50%;
+		top: 3px;
+		left: 3px;
+		transition: transform 0.2s ease;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	}
+	.section-toggle-input:checked { background: var(--accent-regular); }
+	.section-toggle-input:checked::before { transform: translateX(14px); }
+	.section-toggle-track { display: none; }
+	.fieldset-muted { opacity: 0.45; transition: opacity 0.2s ease; }
+	.fieldset-muted .field input { pointer-events: none; }
+	.section-excluded { display: none !important; }
+	.bind-empty, .group-hidden { display: none !important; }
+
+	.theme-picker {
+		display: inline-flex;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		padding: 2px;
+		background: var(--gray-999_40);
+	}
+	.theme-btn {
+		padding: 0.35rem 0.75rem;
+		border: none;
+		background: transparent;
+		color: var(--gray-300);
+		font-family: var(--font-brand);
+		font-size: var(--text-xs);
+		font-weight: 500;
+		cursor: pointer;
+		border-radius: 999rem;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+	.theme-btn:hover { color: var(--gray-0); }
+	.theme-btn.active { background: var(--accent-regular); color: var(--accent-text-over); }
+
+	.preview-actions { display: flex; gap: 0.5rem; align-items: center; }
+	.btn-icon {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.5rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	}
+	.btn-icon:hover:not([disabled]) {
+		background: var(--accent-subtle-overlay);
+		color: var(--gray-0);
+		border-color: var(--accent-regular);
+	}
+	.btn-icon[disabled] { opacity: 0.7; cursor: not-allowed; }
+
+	.autosave-status {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		margin: 0;
+		min-height: 1.1rem;
+		font-size: var(--text-xs);
+		color: var(--gray-400);
+	}
+	.fill-counter { font-variant-numeric: tabular-nums; }
+
+	.preview-controls {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	.preview-heading { font-size: var(--text-md); color: var(--gray-200); margin: 0; }
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 999rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		cursor: pointer;
+		transition: box-shadow 0.15s ease, transform 0.15s ease;
+	}
+	.btn-primary:hover:not([disabled]) { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+	.btn-primary[disabled] { opacity: 0.7; cursor: not-allowed; }
+
+	.preview-frame { position: relative; width: 100%; overflow: hidden; border-radius: 16px; }
+
+	/* VPC card */
+	.vpcanvas-card {
+		width: 1000px;
+		background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+		color: #f0f6fc;
+		border-radius: 16px;
+		padding: 32px;
+		font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		transform-origin: top left;
+		transform: scale(var(--vp-scale, 1));
+	}
+
+	.vp-header {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 24px;
+		align-items: flex-start;
+		padding-bottom: 16px;
+		border-bottom: 1px solid #30363d;
+	}
+	.vp-label {
+		display: inline-block;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #c084fc;
+		margin-bottom: 8px;
+	}
+	.vp-product {
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 1.15;
+		margin: 0 0 8px 0;
+		color: #f0f6fc;
+	}
+	.vp-segment {
+		font-size: 14px;
+		color: #c8cfd8;
+		line-height: 1.5;
+	}
+	.vp-meta-label { color: #8b949e; font-weight: 600; margin-right: 4px; }
+	.vp-logo-wrap { text-align: right; }
+	.card-logo:not([hidden]) {
+		display: block;
+		max-height: 56px;
+		max-width: 180px;
+		margin: 0 0 0 auto;
+		object-fit: contain;
+	}
+
+	.vp-canvas {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+
+	.vp-side {
+		background: #151b23;
+		border: 1px solid #30363d;
+		border-radius: 14px;
+		padding: 18px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+	.vp-side-title {
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #f0f6fc;
+	}
+	.vp-value-map .vp-side-title { color: #5eead4; }
+	.vp-customer-profile .vp-side-title { color: #fb923c; }
+	.vp-side-subtitle {
+		font-size: 12px;
+		color: #8b949e;
+		margin-top: -8px;
+	}
+	.vp-blocks {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+	.vp-block {
+		background: rgba(255,255,255,0.03);
+		border: 1px solid #30363d;
+		border-radius: 10px;
+		padding: 14px;
+	}
+	.vp-block-head {
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		font-size: 12px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		margin-bottom: 10px;
+		padding-bottom: 8px;
+		border-bottom: 1px solid #30363d;
+	}
+	.vp-products-card .vp-block-head { color: #5eead4; }
+	.vp-pain-relievers-card .vp-block-head { color: #93c5fd; }
+	.vp-gain-creators-card .vp-block-head { color: #d8b4fe; }
+	.vp-jobs-card .vp-block-head { color: #fb923c; }
+	.vp-pains-card .vp-block-head { color: #f5a0a1; }
+	.vp-gains-card .vp-block-head { color: #fde68a; }
+
+	.vp-block ul {
+		margin: 0;
+		padding-left: 18px;
+		font-size: 13px;
+		line-height: 1.55;
+		color: #c8cfd8;
+	}
+	.vp-block li { margin-bottom: 5px; }
+	.vp-block li:last-child { margin-bottom: 0; }
+
+	.vp-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 16px;
+		border-top: 1px solid #30363d;
+		font-size: 11px;
+		color: #6e7681;
+	}
+	.vp-footer-url {
+		font-family: ui-monospace, SFMono-Regular, monospace;
+		color: #8b949e;
+	}
+
+	.vp-placeholder { opacity: 0.45; }
+
+	/* Light theme */
+	.vpcanvas-card[data-theme="light"] {
+		background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+		color: #0f172a;
+	}
+	.vpcanvas-card[data-theme="light"] .vp-header,
+	.vpcanvas-card[data-theme="light"] .vp-footer,
+	.vpcanvas-card[data-theme="light"] .vp-block-head { border-color: #e2e8f0; }
+	.vpcanvas-card[data-theme="light"] .vp-side,
+	.vpcanvas-card[data-theme="light"] .vp-block {
+		background: #f8fafc;
+		border-color: #e2e8f0;
+	}
+	.vpcanvas-card[data-theme="light"] .vp-product { color: #0f172a; }
+	.vpcanvas-card[data-theme="light"] .vp-segment,
+	.vpcanvas-card[data-theme="light"] .vp-block ul { color: #475569; }
+	.vpcanvas-card[data-theme="light"] .vp-meta-label,
+	.vpcanvas-card[data-theme="light"] .vp-side-subtitle,
+	.vpcanvas-card[data-theme="light"] .vp-footer { color: #64748b; }
+	.vpcanvas-card[data-theme="light"] .vp-footer-url { color: #94a3b8; }
+	.vpcanvas-card[data-theme="light"] .vp-value-map .vp-side-title { color: #0d9488; }
+	.vpcanvas-card[data-theme="light"] .vp-customer-profile .vp-side-title { color: #ea580c; }
+	.vpcanvas-card[data-theme="light"] .vp-products-card .vp-block-head { color: #0d9488; }
+	.vpcanvas-card[data-theme="light"] .vp-pain-relievers-card .vp-block-head { color: #2563eb; }
+	.vpcanvas-card[data-theme="light"] .vp-gain-creators-card .vp-block-head { color: #7611a6; }
+	.vpcanvas-card[data-theme="light"] .vp-jobs-card .vp-block-head { color: #ea580c; }
+	.vpcanvas-card[data-theme="light"] .vp-pains-card .vp-block-head { color: #be123c; }
+	.vpcanvas-card[data-theme="light"] .vp-gains-card .vp-block-head { color: #a16207; }
+
+	/* Brand theme */
+	.vpcanvas-card[data-theme="brand"] {
+		background: linear-gradient(135deg, #1c0056 0%, #7611a6 100%);
+		color: #ffffff;
+	}
+	.vpcanvas-card[data-theme="brand"] .vp-header,
+	.vpcanvas-card[data-theme="brand"] .vp-footer,
+	.vpcanvas-card[data-theme="brand"] .vp-block-head { border-color: rgba(255,255,255,0.15); }
+	.vpcanvas-card[data-theme="brand"] .vp-side,
+	.vpcanvas-card[data-theme="brand"] .vp-block {
+		background: rgba(255,255,255,0.08);
+		border-color: rgba(255,255,255,0.18);
+	}
+	.vpcanvas-card[data-theme="brand"] .vp-product { color: #ffffff; }
+	.vpcanvas-card[data-theme="brand"] .vp-segment,
+	.vpcanvas-card[data-theme="brand"] .vp-block ul { color: rgba(255,255,255,0.92); }
+	.vpcanvas-card[data-theme="brand"] .vp-meta-label,
+	.vpcanvas-card[data-theme="brand"] .vp-side-subtitle,
+	.vpcanvas-card[data-theme="brand"] .vp-footer { color: rgba(255,255,255,0.7); }
+	.vpcanvas-card[data-theme="brand"] .vp-footer-url { color: rgba(255,255,255,0.85); }
+	.vpcanvas-card[data-theme="brand"] .vp-label { color: #f5a0a1; }
+
+	/* Newsletter */
+	.tool-cta-strip {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		padding: 1.75rem;
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		align-items: center;
+	}
+	@media (min-width: 50em) { .tool-cta-strip { grid-template-columns: 1fr auto; } }
+	.cta-text strong {
+		display: block;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+	}
+	.cta-text p { margin: 0.25rem 0 0; color: var(--gray-300); font-size: var(--text-sm); }
+	.cta-form { display: flex; gap: 0.5rem; }
+	.cta-form input {
+		flex: 1;
+		min-width: 0;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-size: var(--text-sm);
+	}
+	.cta-form button {
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 0.5rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-sm);
+		cursor: pointer;
+		white-space: nowrap;
+	}
+	.cta-status { grid-column: 1 / -1; margin: 0; font-size: var(--text-sm); min-height: 1rem; }
+
+	/* SEO */
+	.seo-content { max-width: 60rem; }
+	.seo-content h2 { font-size: var(--text-xl); color: var(--gray-0); margin: 2.5rem 0 1rem; }
+	.seo-content h2:first-child { margin-top: 0; }
+	.seo-content p, .seo-content li { color: var(--gray-200); font-size: var(--text-md); line-height: 1.65; }
+	.seo-content .how-to { padding-left: 1.25rem; }
+	.seo-content .how-to li { margin-bottom: 0.75rem; }
+	.seo-content a { color: var(--accent-regular); text-decoration: underline; text-underline-offset: 0.2em; }
+	.seo-link { display: inline-block; font-weight: 600; }
+	.related-links { list-style: none; padding: 0; }
+	.related-links li { margin-bottom: 0.5rem; }
+
+	.faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+	.faq-item {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		padding: 1rem 1.25rem;
+		background: var(--gray-999_40);
+	}
+	.faq-item summary {
+		cursor: pointer;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		color: var(--gray-0);
+		font-size: var(--text-md);
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+	.faq-item summary::after {
+		content: '+';
+		color: var(--accent-regular);
+		font-size: 1.5rem;
+		font-weight: 400;
+		line-height: 1;
+	}
+	.faq-item[open] summary::after { content: '−'; }
+	.faq-item p { margin: 0.75rem 0 0; color: var(--gray-200); font-size: var(--text-sm); line-height: 1.6; }
+
+	@media print {
+		.form-panel, .preview-controls, .tool-cta-strip, .seo-content, nav, .breadcrumb-nav, footer { display: none !important; }
+		.vpcanvas-card { box-shadow: none; width: 100%; max-width: none; }
+	}
+</style>

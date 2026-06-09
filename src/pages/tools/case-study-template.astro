@@ -1,0 +1,1495 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+
+const title = "Free Case Study Template | Build a B2B Case Study in 10 Minutes";
+const description = "Free case study template. Capture the customer, challenge, solution, results, and quote on a polished one-page PNG. Built for B2B SaaS PMMs. No signup.";
+
+const faqs = [
+	{
+		question: "What is a case study?",
+		answer: "A case study is a structured narrative that shows how a real customer used your product to solve a problem and what the measurable outcome was. It's the highest-converting piece of content in B2B sales because prospects trust other buyers more than they trust you.",
+	},
+	{
+		question: "How do I use this case study template?",
+		answer: "Fill in the customer details (company, industry, size), the headline outcome, the challenge they faced, the solution they implemented, three measurable results, a customer quote, and the looking-ahead section. The preview updates as you type. Click Download PNG when you're done.",
+	},
+	{
+		question: "Is this case study template free?",
+		answer: "Yes, completely free. No signup, no email gate, no watermark on the download. The template runs entirely in your browser - your inputs never leave your device.",
+	},
+	{
+		question: "What format does the case study download in?",
+		answer: "The generator exports a high-resolution PNG (1000px wide, rendered at 2x device pixel ratio for retina displays) plus an optional US Letter PDF. Both work for Notion, Slides, sales decks, partner portals, or a printed leave-behind.",
+	},
+	{
+		question: "What makes a great B2B case study?",
+		answer: "Three things: (1) A specific, measurable outcome stated in the headline (a number, a percentage, a time saved). (2) A challenge described in the customer's own words, not your marketing language. (3) A quote from someone with a title and a face - anonymous quotes don't convert.",
+	},
+	{
+		question: "How long should a case study be?",
+		answer: "A one-page case study is the right length for top-of-funnel skimming and sales follow-up. The full long-form version (1,500-2,500 words) belongs on your website. This tool produces the one-pager - the sales artifact - that links to the full story.",
+	},
+	{
+		question: "Do I need approval from the customer before publishing?",
+		answer: "Yes, always. Get explicit written approval before publishing any case study with a customer's name, logo, or quote. Most enterprise customers also require a sign-off from their marketing or legal team. Build approval into the workflow from day one, not at the end.",
+	},
+];
+
+const softwareSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebApplication",
+	"name": "Case Study Template Generator",
+	"description": description,
+	"url": "https://swapbiswas.com/tools/case-study-template/",
+	"applicationCategory": "BusinessApplication",
+	"operatingSystem": "Any",
+	"browserRequirements": "Requires JavaScript",
+	"offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+	"creator": { "@type": "Person", "name": "Swapnil Biswas", "url": "https://swapbiswas.com/" }
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqs.map((faq) => ({
+		"@type": "Question",
+		"name": faq.question,
+		"acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+	}))
+};
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	breadcrumbs={[{ name: "Tools", url: "/tools/" }, { name: "Case Study Template" }]}
+>
+	<script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} slot="head" />
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+	<div class="stack gap-20">
+		<main class="wrapper tool-page">
+			<Hero
+				title="Free Case Study Template"
+				tagline="Build a polished B2B case study in 10 minutes. Customer, challenge, solution, results, quote, future. No signup. Download as PNG."
+				align="start"
+			/>
+
+			<div class="tool-grid">
+				<!-- FORM -->
+				<section class="form-panel" aria-label="Case study inputs">
+					<form id="casestudy-form" autocomplete="off">
+						<fieldset>
+							<legend>1. Customer</legend>
+							<div class="field-row">
+								<div class="field">
+									<label for="cs-company">Company name</label>
+									<input type="text" id="cs-company" maxlength="50" placeholder="e.g., NorthWind Labs" />
+								</div>
+								<div class="field">
+									<label for="cs-industry">Industry</label>
+									<input type="text" id="cs-industry" maxlength="40" placeholder="e.g., B2B SaaS - logistics" />
+								</div>
+							</div>
+							<div class="field-row">
+								<div class="field">
+									<label for="cs-size">Company size</label>
+									<input type="text" id="cs-size" maxlength="40" placeholder="e.g., 450 employees, $80M ARR" />
+								</div>
+								<div class="field">
+									<label for="cs-region">Region</label>
+									<input type="text" id="cs-region" maxlength="40" placeholder="e.g., North America" />
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>2. Headline outcome</legend>
+							<div class="field-row">
+								<div class="field">
+									<label for="cs-hero-stat">Hero stat</label>
+									<input type="text" id="cs-hero-stat" maxlength="20" placeholder="e.g., 3.4x" />
+								</div>
+								<div class="field">
+									<label for="cs-hero-label">Stat label</label>
+									<input type="text" id="cs-hero-label" maxlength="80" placeholder="e.g., faster pipeline reporting" />
+								</div>
+							</div>
+							<div class="field">
+								<label for="cs-headline">Headline summary</label>
+								<input type="text" id="cs-headline" maxlength="140" placeholder="e.g., How NorthWind cut attribution work from 3 days to 30 minutes per quarter" />
+							</div>
+						</fieldset>
+
+						<fieldset data-section-card="cs-challenge-card">
+							<legend>3. The challenge<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="cs-challenge-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field">
+								<label for="cs-challenge-intro">Context (one sentence)</label>
+								<input type="text" id="cs-challenge-intro" maxlength="180" placeholder="e.g., NorthWind's demand team was spending 3 full days each quarter manually reconciling attribution across 12 channels." />
+							</div>
+							<div class="field"><input type="text" id="cs-pain-1" maxlength="110" placeholder="Pain 1: e.g., Manual reconciliation across 12 channels every quarter" /></div>
+							<div class="field"><input type="text" id="cs-pain-2" maxlength="110" placeholder="Pain 2: e.g., Board questions on ROI couldn't be answered in real time" /></div>
+							<div class="field"><input type="text" id="cs-pain-3" maxlength="110" placeholder="Pain 3: e.g., Three-week lag on channel budget decisions" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="cs-solution-card">
+							<legend>4. The solution<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="cs-solution-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field">
+								<label for="cs-solution-summary">What they did</label>
+								<input type="text" id="cs-solution-summary" maxlength="180" placeholder="e.g., NorthWind rolled out Acme Insights with a 45-day implementation, connecting HubSpot, Salesforce, and 8 paid channels." />
+							</div>
+							<div class="field"><input type="text" id="cs-step-1" maxlength="100" placeholder="Step 1: e.g., Connected HubSpot, Salesforce, and GA4" /></div>
+							<div class="field"><input type="text" id="cs-step-2" maxlength="100" placeholder="Step 2: e.g., Configured 12 channels and 4 lifecycle stages" /></div>
+							<div class="field"><input type="text" id="cs-step-3" maxlength="100" placeholder="Step 3: e.g., Trained 14 marketers across two regions in two weeks" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="cs-results-card">
+							<legend>5. Results (3 - measurable)<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="cs-results-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field-row">
+								<div class="field">
+									<label for="cs-r1-num">Result 1 - number</label>
+									<input type="text" id="cs-r1-num" maxlength="20" placeholder="e.g., 95%" />
+								</div>
+								<div class="field">
+									<label for="cs-r1-label">Result 1 - label</label>
+									<input type="text" id="cs-r1-label" maxlength="60" placeholder="e.g., reduction in attribution time" />
+								</div>
+							</div>
+							<div class="field-row">
+								<div class="field">
+									<label for="cs-r2-num">Result 2 - number</label>
+									<input type="text" id="cs-r2-num" maxlength="20" placeholder="e.g., $1.2M" />
+								</div>
+								<div class="field">
+									<label for="cs-r2-label">Result 2 - label</label>
+									<input type="text" id="cs-r2-label" maxlength="60" placeholder="e.g., budget reallocated to top channels" />
+								</div>
+							</div>
+							<div class="field-row">
+								<div class="field">
+									<label for="cs-r3-num">Result 3 - number</label>
+									<input type="text" id="cs-r3-num" maxlength="20" placeholder="e.g., 45 days" />
+								</div>
+								<div class="field">
+									<label for="cs-r3-label">Result 3 - label</label>
+									<input type="text" id="cs-r3-label" maxlength="60" placeholder="e.g., from kickoff to first board report" />
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset data-section-card="cs-quote-card">
+							<legend>6. Customer quote<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="cs-quote-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field">
+								<label for="cs-quote">Quote (one or two sentences)</label>
+								<input type="text" id="cs-quote" maxlength="220" placeholder="e.g., We cut attribution work from 3 days to 30 minutes. For the first time, I can answer the board's ROI question without scrambling." />
+							</div>
+							<div class="field-row">
+								<div class="field">
+									<label for="cs-author">Name</label>
+									<input type="text" id="cs-author" maxlength="50" placeholder="e.g., Alex M." />
+								</div>
+								<div class="field">
+									<label for="cs-author-title">Title</label>
+									<input type="text" id="cs-author-title" maxlength="60" placeholder="e.g., VP Marketing, NorthWind Labs" />
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset data-section-card="cs-future-card">
+							<legend>7. Looking ahead<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="cs-future-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field">
+								<label for="cs-future">What's next</label>
+								<input type="text" id="cs-future" maxlength="180" placeholder="e.g., NorthWind is rolling Acme Insights out to two more regions and connecting product-usage data in Q3." />
+							</div>
+						</fieldset>
+
+						<div class="form-actions">
+							<details class="sample-picker">
+								<summary class="btn-secondary">Load sample <span class="sample-caret">▾</span></summary>
+								<ul class="sample-options">
+									<li><button type="button" class="sample-option" data-sample="saas-attribution">B2B SaaS Attribution</button></li>
+									<li><button type="button" class="sample-option" data-sample="devops">DevOps Platform</button></li>
+									<li><button type="button" class="sample-option" data-sample="martech">Marketing Automation</button></li>
+								</ul>
+							</details>
+							<input type="file" id="logo-file-input" accept="image/png,image/jpeg,image/svg+xml,image/webp" hidden />
+							<button type="button" id="upload-logo" class="btn-secondary" title="Add a logo to the top-right of the card">＋ Logo</button>
+							<button type="button" id="remove-logo" class="btn-secondary btn-danger" hidden>× Logo</button>
+							<button type="button" id="reset-form" class="btn-secondary">Reset</button>
+							<button type="button" id="clear-saved" class="btn-secondary btn-danger" title="Clear all saved data from this browser">Clear saved</button>
+						</div>
+					</form>
+				</section>
+
+				<!-- PREVIEW -->
+				<section class="preview-panel" aria-label="Case study preview">
+					<div class="preview-sticky">
+						<div class="preview-controls">
+							<h2 class="preview-heading">Live Preview</h2>
+							<div class="preview-actions">
+								<div class="theme-picker" role="radiogroup" aria-label="Theme">
+									<button type="button" class="theme-btn active" data-theme="dark">Dark</button>
+									<button type="button" class="theme-btn" data-theme="light">Light</button>
+									<button type="button" class="theme-btn" data-theme="brand">Brand</button>
+								</div>
+								<button type="button" id="copy-png" class="btn-icon">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+									Copy
+								</button>
+								<button type="button" id="download-pdf" class="btn-icon">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+									PDF
+								</button>
+								<button type="button" id="download-png" class="btn-primary">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+									Download PNG
+								</button>
+							</div>
+						</div>
+						<p class="autosave-status" id="autosave-status" aria-live="polite"><span id="fill-counter" class="fill-counter"></span><span id="autosave-text"></span></p>
+
+						<div class="preview-frame" id="preview-frame">
+							<div id="casestudy-card" class="casestudy-card">
+								<header class="cs-header">
+									<div class="cs-title">
+										<span class="cs-label">Customer Story</span>
+										<h3 class="cs-headline" data-bind="cs-headline">Headline summary</h3>
+										<div class="cs-meta">
+											<span class="cs-meta-row" data-hide-group><span class="cs-meta-label">Customer:</span> <span data-bind="cs-company">Company name</span></span>
+											<span class="cs-meta-row" data-hide-group><span class="cs-meta-label">Industry:</span> <span data-bind="cs-industry">Industry</span></span>
+											<span class="cs-meta-row" data-hide-group><span class="cs-meta-label">Size:</span> <span data-bind="cs-size">Company size</span></span>
+											<span class="cs-meta-row" data-hide-group><span class="cs-meta-label">Region:</span> <span data-bind="cs-region">Region</span></span>
+										</div>
+									</div>
+									<div class="cs-hero">
+										<img class="card-logo" id="card-logo" alt="" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" hidden />
+										<div class="cs-hero-stat" data-bind="cs-hero-stat">0x</div>
+										<div class="cs-hero-label" data-bind="cs-hero-label">Headline outcome</div>
+									</div>
+								</header>
+
+								<div class="cs-grid">
+									<div class="cs-card cs-challenge-card">
+										<div class="cs-card-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+											The challenge
+										</div>
+										<p class="cs-intro" data-bind="cs-challenge-intro">Challenge context</p>
+										<ul>
+											<li data-bind="cs-pain-1">Pain point 1</li>
+											<li data-bind="cs-pain-2">Pain point 2</li>
+											<li data-bind="cs-pain-3">Pain point 3</li>
+										</ul>
+									</div>
+
+									<div class="cs-card cs-solution-card">
+										<div class="cs-card-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+											The solution
+										</div>
+										<p class="cs-intro" data-bind="cs-solution-summary">What they did</p>
+										<ul>
+											<li data-bind="cs-step-1">Step 1</li>
+											<li data-bind="cs-step-2">Step 2</li>
+											<li data-bind="cs-step-3">Step 3</li>
+										</ul>
+									</div>
+
+									<div class="cs-card cs-results-card">
+										<div class="cs-card-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+											Results
+										</div>
+										<div class="cs-results-grid">
+											<div class="cs-result" data-hide-group>
+												<div class="cs-result-num" data-bind="cs-r1-num">0</div>
+												<div class="cs-result-label" data-bind="cs-r1-label">Result 1</div>
+											</div>
+											<div class="cs-result" data-hide-group>
+												<div class="cs-result-num" data-bind="cs-r2-num">0</div>
+												<div class="cs-result-label" data-bind="cs-r2-label">Result 2</div>
+											</div>
+											<div class="cs-result" data-hide-group>
+												<div class="cs-result-num" data-bind="cs-r3-num">0</div>
+												<div class="cs-result-label" data-bind="cs-r3-label">Result 3</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="cs-card cs-quote-card">
+										<div class="cs-card-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 .985 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+											What the customer said
+										</div>
+										<blockquote class="cs-quote-text">
+											<span data-bind="cs-quote">Customer quote</span>
+										</blockquote>
+										<div class="cs-quote-author">
+											<div class="cs-author-name" data-bind="cs-author">Author name</div>
+											<div class="cs-author-title" data-bind="cs-author-title">Author title</div>
+										</div>
+									</div>
+
+									<div class="cs-card cs-future-card">
+										<div class="cs-card-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+											What's next
+										</div>
+										<p data-bind="cs-future">Looking ahead</p>
+									</div>
+								</div>
+
+								<footer class="cs-footer">
+									<span class="cs-footer-built">Built with the free Case Study Template</span>
+									<span class="cs-footer-url">swapbiswas.com/tools/case-study-template</span>
+								</footer>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Newsletter -->
+			<section class="tool-cta-strip">
+				<div class="cta-text">
+					<strong>Want more PMM tools and templates?</strong>
+					<p>Join the newsletter. Positioning, launch playbooks, persona updates - no spam, just value.</p>
+				</div>
+				<form class="cta-form" id="tool-newsletter-form">
+					<input type="email" name="email_address" placeholder="you@company.com" required autocomplete="email" aria-label="Email address" />
+					<button type="submit">Subscribe</button>
+				</form>
+				<p class="cta-status" id="tool-newsletter-status" aria-live="polite"></p>
+			</section>
+
+			<!-- SEO content -->
+			<section class="seo-content">
+				<h2>How to use the case study template</h2>
+				<ol class="how-to">
+					<li><strong>Lead with the outcome, not the customer.</strong> The hero stat ("3.4x faster reporting") earns the read. The customer name comes second. Most case studies bury the result three paragraphs in and lose the reader.</li>
+					<li><strong>Capture the challenge in their words.</strong> Interview the customer and quote them back. "We were spending three days a quarter on attribution" lands harder than "Our customer faced reporting inefficiencies."</li>
+					<li><strong>Show three measurable results, not five.</strong> One percentage, one absolute number, one time savings is the canonical pattern. More than three dilutes the impact.</li>
+					<li><strong>One quote, one face.</strong> Anonymous customer quotes don't convert. Get a named human with a title, ideally with permission to use a photo on the long-form version.</li>
+					<li><strong>Make the solution concrete.</strong> "They rolled it out" is not a solution. "They connected HubSpot, Salesforce, and 8 paid channels in 45 days" is. Specificity earns belief.</li>
+					<li><strong>End with what's next.</strong> The future-looking line signals the relationship is healthy and expanding - critical proof for the prospect reading this who's about to sign a multi-year deal.</li>
+				</ol>
+
+				<h2>What makes a great B2B case study</h2>
+				<p>The best B2B case studies aren't about your product - they're about the customer being the hero of their own story. Your product is just the tool that helped them win. When prospects read it, they see themselves in the protagonist's shoes and project the same outcome onto their own situation.</p>
+				<p>The structure here - customer, challenge, solution, results, quote, future - is what Joe Pulizzi and the Content Marketing Institute call the "narrative arc" of B2B social proof. It mirrors how buyers actually evaluate vendors during deep-funnel research.</p>
+				<p>For the full guide on how to interview customers and extract the story, read the companion piece:</p>
+				<p><a href="/blog/what-is-voice-of-the-customer/" class="seo-link">→ Read: What Is Voice of the Customer (and How to Run a Program)</a></p>
+
+				<h2>Related templates and guides</h2>
+				<ul class="related-links">
+					<li><a href="/blog/what-is-voice-of-the-customer/">What Is Voice of the Customer?</a></li>
+					<li><a href="/blog/sales-enablement-checklist/">Sales Enablement Checklist for PMMs</a></li>
+					<li><a href="/blog/what-is-sales-enablement-software/">What Is Sales Enablement Software?</a></li>
+					<li><a href="/blog/product-launch-checklist/">Product Launch Checklist</a></li>
+					<li><a href="/tools/battlecard-generator/">Free Sales Battlecard Generator</a></li>
+					<li><a href="/tools/product-one-pager-template/">Free Product One-Pager Template</a></li>
+				</ul>
+
+				<h2>Frequently asked questions</h2>
+				<div class="faq-list">
+					{faqs.map((faq) => (
+						<details class="faq-item">
+							<summary>{faq.question}</summary>
+							<p>{faq.answer}</p>
+						</details>
+					))}
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<script>
+	function initCaseStudy() {
+		const formMaybe = document.getElementById('casestudy-form') as HTMLFormElement | null;
+		const card = document.getElementById('casestudy-card');
+		if (!formMaybe || !card || (formMaybe as any)._initialized) return;
+		(formMaybe as any)._initialized = true;
+		const form: HTMLFormElement = formMaybe;
+
+		const bindings = card.querySelectorAll<HTMLElement>('[data-bind]');
+
+		function update() {
+			const hasAnyContent = Array.from(form.querySelectorAll<HTMLInputElement>('input[type="text"]'))
+				.some((input) => input.value.trim().length > 0);
+
+			bindings.forEach((el) => {
+				const id = el.getAttribute('data-bind');
+				if (!id) return;
+				const input = document.getElementById(id) as HTMLInputElement | null;
+				const val = input?.value?.trim() || '';
+				if (val) {
+					el.textContent = val;
+					el.classList.remove('cs-placeholder');
+					el.classList.remove('bind-empty');
+				} else if (hasAnyContent) {
+					el.textContent = '';
+					el.classList.remove('cs-placeholder');
+					el.classList.add('bind-empty');
+				} else {
+					el.textContent = el.getAttribute('data-placeholder') || '';
+					el.classList.add('cs-placeholder');
+					el.classList.remove('bind-empty');
+				}
+			});
+			card!.querySelectorAll<HTMLElement>('[data-hide-group]').forEach((group) => {
+				const childBinds = group.querySelectorAll<HTMLElement>('[data-bind]');
+				const allEmpty = childBinds.length > 0 && Array.from(childBinds).every((c) => c.classList.contains('bind-empty'));
+				group.classList.toggle('group-hidden', allEmpty);
+			});
+		}
+
+		bindings.forEach((el) => {
+			if (!el.getAttribute('data-placeholder')) {
+				el.setAttribute('data-placeholder', el.textContent || '');
+			}
+			el.classList.add('cs-placeholder');
+		});
+
+		function applyToggle(toggle: HTMLInputElement) {
+			const cardClass = toggle.dataset.toggleCard;
+			if (!cardClass) return;
+			const cardEl = card!.querySelector('.' + cardClass);
+			const fieldset = toggle.closest('fieldset');
+			const excluded = !toggle.checked;
+			if (cardEl) cardEl.classList.toggle('section-excluded', excluded);
+			if (fieldset) fieldset.classList.toggle('fieldset-muted', excluded);
+		}
+
+		form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((toggle) => {
+			toggle.addEventListener('change', () => {
+				applyToggle(toggle);
+				saveState();
+				scaleCard();
+			});
+		});
+
+		const STATE_KEY = 'tool-state-casestudy';
+		const statusEl = document.getElementById('autosave-text');
+		const counterEl = document.getElementById('fill-counter');
+		let saveTimer: any;
+
+		function updateCounter() {
+			if (!counterEl) return;
+			const inputs = form.querySelectorAll<HTMLInputElement>('input[type="text"]');
+			const filled = Array.from(inputs).filter((i) => i.value.trim().length > 0).length;
+			counterEl.textContent = `${filled}/${inputs.length} fields filled${filled === inputs.length ? ' ✓' : ''}`;
+		}
+
+		function saveState() {
+			try {
+				const fields: Record<string, string> = {};
+				form.querySelectorAll<HTMLInputElement>('input[type="text"]').forEach((input) => {
+					if (input.value) fields[input.id] = input.value;
+				});
+				const excluded: Record<string, boolean> = {};
+				form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((toggle) => {
+					if (!toggle.checked && toggle.dataset.toggleCard) excluded[toggle.dataset.toggleCard] = true;
+				});
+				const theme = (card as HTMLElement).dataset.theme || 'dark';
+				const logo = cardLogo?.getAttribute('hidden') === null ? cardLogo.src : null;
+				localStorage.setItem(STATE_KEY, JSON.stringify({ fields, excluded, theme, logo, savedAt: Date.now() }));
+				if (statusEl) {
+					statusEl.textContent = 'Saved';
+					setTimeout(() => { if (statusEl && statusEl.textContent === 'Saved') statusEl.textContent = ''; }, 1500);
+				}
+			} catch (e) {}
+		}
+
+		function loadState() {
+			try {
+				const raw = localStorage.getItem(STATE_KEY);
+				if (!raw) return false;
+				const saved = JSON.parse(raw);
+				Object.entries(saved.fields || {}).forEach(([id, val]) => {
+					const input = document.getElementById(id) as HTMLInputElement | null;
+					if (input && typeof val === 'string') input.value = val;
+				});
+				Object.entries(saved.excluded || {}).forEach(([cardClass, isExcluded]) => {
+					const toggle = form.querySelector<HTMLInputElement>(`.section-toggle-input[data-toggle-card="${cardClass}"]`);
+					if (toggle && isExcluded) { toggle.checked = false; applyToggle(toggle); }
+				});
+				if (saved.theme && typeof saved.theme === 'string') applyTheme(saved.theme);
+				if (saved.logo && typeof saved.logo === 'string') applyLogo(saved.logo);
+				return true;
+			} catch (e) { return false; }
+		}
+
+		function applyTheme(theme: string) {
+			(card as HTMLElement).dataset.theme = theme;
+			document.querySelectorAll<HTMLButtonElement>('.theme-btn').forEach((btn) => {
+				btn.classList.toggle('active', btn.dataset.theme === theme);
+			});
+		}
+		document.querySelectorAll<HTMLButtonElement>('.theme-btn').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				applyTheme(btn.dataset.theme || 'dark');
+				saveState();
+				scaleCard();
+			});
+		});
+
+		const cardLogo = document.getElementById('card-logo') as HTMLImageElement | null;
+		const uploadBtn = document.getElementById('upload-logo');
+		const removeBtn = document.getElementById('remove-logo');
+		const fileInput = document.getElementById('logo-file-input') as HTMLInputElement | null;
+		const TRANSPARENT_PX = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+
+		function applyLogo(dataUrl: string | null) {
+			if (cardLogo) {
+				if (dataUrl) {
+					cardLogo.src = dataUrl;
+					cardLogo.removeAttribute('hidden');
+				} else {
+					cardLogo.src = TRANSPARENT_PX;
+					cardLogo.setAttribute('hidden', '');
+				}
+			}
+			if (dataUrl) {
+				uploadBtn?.setAttribute('hidden', '');
+				removeBtn?.removeAttribute('hidden');
+			} else {
+				uploadBtn?.removeAttribute('hidden');
+				removeBtn?.setAttribute('hidden', '');
+			}
+			scaleCard();
+		}
+
+		uploadBtn?.addEventListener('click', () => fileInput?.click());
+		fileInput?.addEventListener('change', () => {
+			const file = fileInput.files?.[0];
+			if (!file) return;
+			if (file.size > 1024 * 1024) {
+				if (!confirm('That logo is over 1MB. localStorage may struggle. Continue?')) {
+					fileInput.value = '';
+					return;
+				}
+			}
+			const reader = new FileReader();
+			reader.onload = (e) => { applyLogo(e.target?.result as string); saveState(); };
+			reader.readAsDataURL(file);
+		});
+		removeBtn?.addEventListener('click', () => {
+			if (fileInput) fileInput.value = '';
+			applyLogo(null);
+			saveState();
+		});
+
+		function debouncedSave() {
+			clearTimeout(saveTimer);
+			if (statusEl) statusEl.textContent = 'Saving...';
+			saveTimer = setTimeout(saveState, 400);
+		}
+
+		form.addEventListener('input', () => { update(); updateCounter(); debouncedSave(); });
+
+		document.getElementById('clear-saved')?.addEventListener('click', () => {
+			if (!confirm('Clear all saved data for this tool? This cannot be undone.')) return;
+			try { localStorage.removeItem(STATE_KEY); } catch (e) {}
+			form.reset();
+			form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((t) => { t.checked = true; applyToggle(t); });
+			applyLogo(null);
+			update();
+			updateCounter();
+			if (statusEl) statusEl.textContent = 'Cleared';
+		});
+
+		const samples: Record<string, Record<string, string>> = {
+			'saas-attribution': {
+				'cs-company': 'NorthWind Labs',
+				'cs-industry': 'B2B SaaS - logistics',
+				'cs-size': '450 employees, $80M ARR',
+				'cs-region': 'North America',
+				'cs-hero-stat': '95%',
+				'cs-hero-label': 'reduction in attribution time',
+				'cs-headline': 'How NorthWind cut attribution work from 3 days to 30 minutes per quarter',
+				'cs-challenge-intro': 'NorthWind\'s 14-person demand team was spending 3 full days each quarter manually reconciling attribution across 12 channels.',
+				'cs-pain-1': 'Manual reconciliation across 12 channels every quarter',
+				'cs-pain-2': 'Board questions on ROI couldn\'t be answered in real time',
+				'cs-pain-3': 'Three-week lag on channel budget reallocation decisions',
+				'cs-solution-summary': 'NorthWind rolled out Acme Insights with a 45-day implementation, connecting HubSpot, Salesforce, and 8 paid channels.',
+				'cs-step-1': 'Connected HubSpot, Salesforce, GA4, and 8 paid channels',
+				'cs-step-2': 'Configured 12 channels and 4 lifecycle stages with custom weighting',
+				'cs-step-3': 'Trained 14 marketers across two regions in two weeks',
+				'cs-r1-num': '95%',
+				'cs-r1-label': 'reduction in quarterly attribution work',
+				'cs-r2-num': '$1.2M',
+				'cs-r2-label': 'budget reallocated to top-performing channels',
+				'cs-r3-num': '45 days',
+				'cs-r3-label': 'from kickoff to first board-ready report',
+				'cs-quote': 'We cut attribution work from 3 days to 30 minutes per quarter. For the first time, I can answer the board\'s ROI question without scrambling.',
+				'cs-author': 'Alex M.',
+				'cs-author-title': 'VP Marketing, NorthWind Labs',
+				'cs-future': 'NorthWind is rolling Acme Insights out to two more regions and connecting product-usage data in Q3 to attribute expansion revenue.',
+			},
+			'devops': {
+				'cs-company': 'BrightOps',
+				'cs-industry': 'DevOps tooling',
+				'cs-size': '1,200 employees, ~600 engineers',
+				'cs-region': 'Global (US + EU)',
+				'cs-hero-stat': '63%',
+				'cs-hero-label': 'reduction in median PR build time',
+				'cs-headline': 'How BrightOps cut PR feedback loops from 22 to 7 minutes - without rewriting any pipelines',
+				'cs-challenge-intro': 'BrightOps\' 600 engineers were waiting 20+ minutes for PR feedback, slowing release cadence and frustrating teams.',
+				'cs-pain-1': 'Median PR build time of 22 minutes, blocking deploy velocity',
+				'cs-pain-2': 'Existing CI was costing $80K/month and growing 20% quarterly',
+				'cs-pain-3': 'Past rewrite attempts had broken pipelines for 3 weeks',
+				'cs-solution-summary': 'BrightOps swapped to Forge CI as a drop-in runner - no YAML changes, no rewrites, no engineer time required.',
+				'cs-step-1': 'Swapped runner for 12 highest-traffic repositories first',
+				'cs-step-2': 'Enabled intelligent test sharding and PR-level caching',
+				'cs-step-3': 'Rolled out org-wide over 6 weeks with zero pipeline rewrites',
+				'cs-r1-num': '63%',
+				'cs-r1-label': 'reduction in median PR build time',
+				'cs-r2-num': '$48K',
+				'cs-r2-label': 'monthly CI spend reduction',
+				'cs-r3-num': 'Zero',
+				'cs-r3-label': 'pipeline rewrites required',
+				'cs-quote': 'Our median PR went from 22 minutes to 7. No one had to change a single workflow file. That\'s the part our engineering leads didn\'t believe until they saw it.',
+				'cs-author': 'Priya R.',
+				'cs-author-title': 'Director of Platform Engineering, BrightOps',
+				'cs-future': 'BrightOps is extending Forge to monorepo support and exploring self-hosted runners for compliance-restricted teams.',
+			},
+			'martech': {
+				'cs-company': 'FieldKit',
+				'cs-industry': 'B2B SaaS - field service',
+				'cs-size': '180 employees, $30M ARR',
+				'cs-region': 'North America + APAC',
+				'cs-hero-stat': '42%',
+				'cs-hero-label': 'lift in trial-to-paid conversion',
+				'cs-headline': 'How FieldKit launched 14 lifecycle journeys in 30 days and lifted conversion by 42%',
+				'cs-challenge-intro': 'FieldKit\'s lifecycle marketer was running on a legacy MAP that took 3 weeks to ship a single journey - and most trials were churning before activation.',
+				'cs-pain-1': 'Legacy automation took 3 weeks to ship a single new journey',
+				'cs-pain-2': 'No in-app messaging meant email-only nurture - users churned silently',
+				'cs-pain-3': 'Trial-to-paid conversion stuck at 11% for 4 quarters',
+				'cs-solution-summary': 'FieldKit migrated to Latitude in 1 week and shipped 14 lifecycle journeys in the first month - email + in-app + Slack.',
+				'cs-step-1': 'Migrated contact and event data from legacy MAP in 1 week',
+				'cs-step-2': 'Shipped 14 onboarding and re-engagement journeys in 30 days',
+				'cs-step-3': 'Connected Slack + Salesforce triggers for sales-led handoffs',
+				'cs-r1-num': '42%',
+				'cs-r1-label': 'lift in trial-to-paid conversion',
+				'cs-r2-num': '14',
+				'cs-r2-label': 'new journeys live in first month',
+				'cs-r3-num': '1 week',
+				'cs-r3-label': 'from contract to first journey live',
+				'cs-quote': 'We launched 14 journeys in the first month. Our old tool took 6 months to launch 3. The team finally feels like they\'re shipping instead of waiting on tickets.',
+				'cs-author': 'Sarah K.',
+				'cs-author-title': 'Head of Growth, FieldKit',
+				'cs-future': 'FieldKit is expanding Latitude into expansion campaigns for the customer success team and launching localized journeys for APAC.',
+			},
+		};
+
+		function loadSample(key: string) {
+			const sample = samples[key];
+			if (!sample) return;
+			Object.entries(sample).forEach(([id, val]) => {
+				const input = document.getElementById(id) as HTMLInputElement | null;
+				if (input) input.value = val;
+			});
+			update();
+			updateCounter();
+			saveState();
+		}
+
+		form.querySelectorAll<HTMLButtonElement>('.sample-option').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				loadSample(btn.dataset.sample || '');
+				const picker = btn.closest('details');
+				if (picker) picker.removeAttribute('open');
+			});
+		});
+
+		document.getElementById('reset-form')?.addEventListener('click', () => {
+			form.reset();
+			form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((t) => { t.checked = true; applyToggle(t); });
+			update();
+			updateCounter();
+			saveState();
+		});
+
+		const frame = document.getElementById('preview-frame');
+		const cardEl = card as HTMLElement;
+		function scaleCard() {
+			if (!frame) return;
+			const frameWidth = frame.clientWidth;
+			const widthScale = Math.min(1, frameWidth / 1000);
+			const prev = cardEl.style.getPropertyValue('--cs-scale');
+			cardEl.style.setProperty('--cs-scale', '1');
+			const naturalHeight = cardEl.scrollHeight;
+			cardEl.style.setProperty('--cs-scale', prev || String(widthScale));
+
+			const isDesktop = window.matchMedia('(min-width: 64em)').matches;
+			let heightScale = 1;
+			if (isDesktop) {
+				const reservedTop = 24, reservedBottom = 24, controlsHeight = 64;
+				const available = window.innerHeight - reservedTop - reservedBottom - controlsHeight;
+				heightScale = available / naturalHeight;
+			}
+
+			const scale = Math.min(widthScale, heightScale, 1);
+			cardEl.style.setProperty('--cs-scale', String(scale));
+			frame.style.height = (naturalHeight * scale) + 'px';
+		}
+		scaleCard();
+		const ro = new ResizeObserver(scaleCard);
+		if (frame) ro.observe(frame);
+		const mo = new MutationObserver(scaleCard);
+		mo.observe(card, { childList: true, subtree: true, characterData: true });
+		window.addEventListener('resize', scaleCard);
+		if ((document as any).fonts?.ready) {
+			(document as any).fonts.ready.then(scaleCard);
+		}
+
+		const themeBgColors: Record<string, string> = { dark: '#0d1117', light: '#ffffff', brand: '#1c0056' };
+
+		async function renderCard(format: 'png' | 'blob'): Promise<any> {
+			const cEl = card as HTMLElement;
+			const frameEl = document.getElementById('preview-frame');
+			const prevTransform = cEl.style.transform;
+			const prevFrameHeight = frameEl?.style.height || '';
+			try {
+				const mod: any = await import('https://esm.sh/html-to-image@1.11.13' as any);
+				cEl.style.transform = 'none';
+				if (frameEl) frameEl.style.height = cEl.scrollHeight + 'px';
+				const theme = cEl.dataset.theme || 'dark';
+				const opts = {
+					pixelRatio: 2,
+					backgroundColor: themeBgColors[theme] || '#0d1117',
+					cacheBust: true,
+					skipFonts: true,
+					width: 1000,
+					height: cEl.scrollHeight,
+				};
+				return format === 'blob' ? await mod.toBlob(cEl, opts) : await mod.toPng(cEl, opts);
+			} finally {
+				cEl.style.transform = prevTransform;
+				if (frameEl) frameEl.style.height = prevFrameHeight;
+			}
+		}
+
+		const copyBtn = document.getElementById('copy-png');
+		copyBtn?.addEventListener('click', async () => {
+			const original = copyBtn.textContent;
+			copyBtn.setAttribute('disabled', 'true');
+			copyBtn.textContent = 'Copying...';
+			try {
+				const blob = await renderCard('blob');
+				if (!blob) throw new Error('Empty blob');
+				if (!navigator.clipboard || !(window as any).ClipboardItem) {
+					alert('Copy to clipboard is not supported in this browser. Use Download PNG instead.');
+					return;
+				}
+				await navigator.clipboard.write([new (window as any).ClipboardItem({ 'image/png': blob })]);
+				copyBtn.textContent = 'Copied!';
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_copy', tool_name: 'case_study_template', tool_output: 'png' });
+				setTimeout(() => { copyBtn.textContent = original; copyBtn.removeAttribute('disabled'); }, 1800);
+				return;
+			} catch (err) {
+				console.error('Copy failed', err);
+				alert('Copy failed. Please use Download PNG instead.');
+			}
+			copyBtn.textContent = original;
+			copyBtn.removeAttribute('disabled');
+		});
+
+		async function pngToPdf(dataUrl: string, filename: string) {
+			const mod: any = await import('https://esm.sh/jspdf@2.5.1' as any);
+			const JsPDF = mod.jsPDF || mod.default;
+			const img = new Image();
+			await new Promise<void>((res, rej) => { img.onload = () => res(); img.onerror = rej; img.src = dataUrl; });
+			const pageW = 612, pageH = 792, margin = 36;
+			const maxW = pageW - 2 * margin, maxH = pageH - 2 * margin;
+			const scale = Math.min(maxW / img.width, maxH / img.height);
+			const w = img.width * scale, h = img.height * scale;
+			const x = (pageW - w) / 2, y = (pageH - h) / 2;
+			const pdf = new JsPDF({ orientation: 'portrait', unit: 'pt', format: 'letter' });
+			pdf.addImage(dataUrl, 'PNG', x, y, w, h, undefined, 'FAST');
+			pdf.save(filename);
+		}
+
+		const pdfBtn = document.getElementById('download-pdf');
+		pdfBtn?.addEventListener('click', async () => {
+			const original = pdfBtn.textContent;
+			pdfBtn.setAttribute('disabled', 'true');
+			pdfBtn.textContent = 'Building...';
+			try {
+				const dataUrl = await renderCard('png');
+				const company = (document.getElementById('cs-company') as HTMLInputElement)?.value?.trim() || '';
+				const safeName = company.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+				await pngToPdf(dataUrl, safeName ? `case-study-${safeName}.pdf` : 'case-study.pdf');
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'case_study_template', tool_output: 'pdf' });
+			} catch (err) {
+				console.error('PDF failed', err);
+				alert('PDF download failed. Please try Download PNG instead.');
+			} finally {
+				pdfBtn.textContent = original;
+				pdfBtn.removeAttribute('disabled');
+			}
+		});
+
+		const downloadBtn = document.getElementById('download-png');
+		downloadBtn?.addEventListener('click', async () => {
+			const original = downloadBtn.textContent;
+			downloadBtn.setAttribute('disabled', 'true');
+			downloadBtn.textContent = 'Preparing...';
+			try {
+				const dataUrl = await renderCard('png');
+				const company = (document.getElementById('cs-company') as HTMLInputElement)?.value?.trim() || '';
+				const safeName = company.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+				const link = document.createElement('a');
+				link.download = safeName ? `case-study-${safeName}.png` : 'case-study.png';
+				link.href = dataUrl;
+				link.click();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'case_study_template', tool_output: 'png' });
+			} catch (err) {
+				console.error('Download failed', err);
+				alert('Download failed. Please try again or use a different browser.');
+			} finally {
+				downloadBtn.textContent = original;
+				downloadBtn.removeAttribute('disabled');
+			}
+		});
+
+		loadState();
+		update();
+		updateCounter();
+	}
+
+	function initToolNewsletter() {
+		const form = document.getElementById('tool-newsletter-form') as HTMLFormElement | null;
+		const status = document.getElementById('tool-newsletter-status');
+		if (!form || (form as any)._initialized) return;
+		(form as any)._initialized = true;
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const emailInput = form.querySelector('input[name="email_address"]') as HTMLInputElement | null;
+			const email = emailInput?.value || '';
+			const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+			if (btn) { btn.textContent = 'Subscribing...'; btn.disabled = true; }
+			const formData = new FormData();
+			formData.append('email_address', email);
+			fetch('https://app.kit.com/forms/9145889/subscriptions', {
+				method: 'POST',
+				body: formData,
+				headers: { 'Accept': 'application/json' }
+			}).then((res) => {
+				if (!res.ok) throw new Error('fail');
+				if (status) { status.textContent = 'Subscribed!'; status.style.color = 'var(--accent-regular)'; }
+				form.reset();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'newsletter_signup', signup_location: 'tool_case_study' });
+			}).catch(() => {
+				if (status) { status.textContent = 'Something went wrong.'; status.style.color = '#ca7879'; }
+			}).finally(() => {
+				if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
+			});
+		});
+	}
+
+	initCaseStudy();
+	initToolNewsletter();
+	document.addEventListener('astro:page-load', () => {
+		initCaseStudy();
+		initToolNewsletter();
+	});
+</script>
+
+<style>
+	.tool-page { display: flex; flex-direction: column; gap: 3.5rem; }
+	.tool-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+
+	@media (min-width: 64em) {
+		.tool-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; }
+		.preview-panel { position: sticky; top: 1.5rem; align-self: start; }
+	}
+
+	.preview-panel { min-width: 0; }
+	.preview-sticky { display: flex; flex-direction: column; gap: 1rem; }
+
+	.form-panel {
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 1.5rem;
+	}
+	#casestudy-form fieldset { border: none; padding: 0; margin: 0 0 1.75rem; }
+	#casestudy-form legend {
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		margin-bottom: 0.75rem;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+		width: 100%;
+	}
+	.field { margin-bottom: 0.75rem; }
+	.field-row { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+	@media (min-width: 30em) { .field-row { grid-template-columns: 1fr 1fr; } }
+	.field label {
+		display: block;
+		margin-bottom: 0.35rem;
+		color: var(--gray-300);
+		font-size: var(--text-xs);
+		font-weight: 500;
+	}
+	#casestudy-form input[type="text"] {
+		width: 100%;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		transition: border-color 0.15s ease;
+	}
+	#casestudy-form input[type="text"]:focus { outline: none; border-color: var(--accent-regular); }
+
+	.form-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+	.btn-secondary {
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+	.btn-secondary:hover { background: var(--accent-subtle-overlay); color: var(--gray-0); }
+	.btn-danger:hover {
+		background: rgba(239, 68, 68, 0.12);
+		color: #f87171;
+		border-color: rgba(239, 68, 68, 0.3);
+	}
+
+	.sample-picker { position: relative; display: inline-block; }
+	.sample-picker > summary { list-style: none; }
+	.sample-picker > summary::-webkit-details-marker { display: none; }
+	.sample-caret { display: inline-block; margin-left: 0.25rem; transition: transform 0.2s ease; }
+	.sample-picker[open] .sample-caret { transform: rotate(180deg); }
+	.sample-options {
+		position: absolute;
+		top: calc(100% + 0.25rem);
+		left: 0;
+		margin: 0;
+		padding: 0.25rem;
+		background: var(--gray-999);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		list-style: none;
+		z-index: 20;
+		min-width: 200px;
+		box-shadow: var(--shadow-md);
+	}
+	.sample-options li { display: block; }
+	.sample-option {
+		display: block;
+		width: 100%;
+		text-align: left;
+		padding: 0.5rem 0.75rem;
+		background: transparent;
+		border: none;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		border-radius: 0.35rem;
+	}
+	.sample-option:hover { background: var(--accent-subtle-overlay); color: var(--gray-0); }
+
+	.section-toggle { display: inline-flex; align-items: center; cursor: pointer; flex-shrink: 0; }
+	.section-toggle-input {
+		appearance: none;
+		-webkit-appearance: none;
+		width: 34px;
+		height: 20px;
+		background: var(--gray-800);
+		border-radius: 999rem;
+		position: relative;
+		cursor: pointer;
+		margin: 0;
+		transition: background 0.2s ease;
+	}
+	.section-toggle-input::before {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		background: var(--gray-999);
+		border-radius: 50%;
+		top: 3px;
+		left: 3px;
+		transition: transform 0.2s ease;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	}
+	.section-toggle-input:checked { background: var(--accent-regular); }
+	.section-toggle-input:checked::before { transform: translateX(14px); }
+	.section-toggle-track { display: none; }
+	.fieldset-muted { opacity: 0.45; transition: opacity 0.2s ease; }
+	.fieldset-muted .field input { pointer-events: none; }
+	.section-excluded { display: none !important; }
+	.bind-empty, .group-hidden { display: none !important; }
+
+	.theme-picker {
+		display: inline-flex;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		padding: 2px;
+		background: var(--gray-999_40);
+	}
+	.theme-btn {
+		padding: 0.35rem 0.75rem;
+		border: none;
+		background: transparent;
+		color: var(--gray-300);
+		font-family: var(--font-brand);
+		font-size: var(--text-xs);
+		font-weight: 500;
+		cursor: pointer;
+		border-radius: 999rem;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+	.theme-btn:hover { color: var(--gray-0); }
+	.theme-btn.active { background: var(--accent-regular); color: var(--accent-text-over); }
+
+	.preview-actions { display: flex; gap: 0.5rem; align-items: center; }
+	.btn-icon {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.5rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	}
+	.btn-icon:hover:not([disabled]) {
+		background: var(--accent-subtle-overlay);
+		color: var(--gray-0);
+		border-color: var(--accent-regular);
+	}
+	.btn-icon[disabled] { opacity: 0.7; cursor: not-allowed; }
+
+	.autosave-status {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		margin: 0;
+		min-height: 1.1rem;
+		font-size: var(--text-xs);
+		color: var(--gray-400);
+	}
+	.fill-counter { font-variant-numeric: tabular-nums; }
+
+	.preview-controls {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	.preview-heading { font-size: var(--text-md); color: var(--gray-200); margin: 0; }
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 999rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		cursor: pointer;
+		transition: box-shadow 0.15s ease, transform 0.15s ease;
+	}
+	.btn-primary:hover:not([disabled]) { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+	.btn-primary[disabled] { opacity: 0.7; cursor: not-allowed; }
+
+	.preview-frame { position: relative; width: 100%; overflow: hidden; border-radius: 16px; }
+
+	/* Case study card */
+	.casestudy-card {
+		width: 1000px;
+		background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+		color: #f0f6fc;
+		border-radius: 16px;
+		padding: 32px;
+		font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		transform-origin: top left;
+		transform: scale(var(--cs-scale, 1));
+	}
+
+	.cs-header {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 32px;
+		align-items: center;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #30363d;
+	}
+	.cs-label {
+		display: inline-block;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #c084fc;
+		margin-bottom: 10px;
+	}
+	.cs-headline {
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 1.2;
+		margin: 0 0 14px 0;
+		color: #f0f6fc;
+	}
+	.cs-meta {
+		display: flex;
+		gap: 16px;
+		flex-wrap: wrap;
+		font-size: 13px;
+		color: #c8cfd8;
+	}
+	.cs-meta-row { display: inline; }
+	.cs-meta-label {
+		color: #8b949e;
+		font-weight: 600;
+		margin-right: 4px;
+	}
+	.cs-hero {
+		text-align: center;
+		padding: 18px 24px;
+		background: rgba(94, 234, 212, 0.08);
+		border: 1px solid rgba(94, 234, 212, 0.25);
+		border-radius: 12px;
+		min-width: 220px;
+	}
+	.card-logo:not([hidden]) {
+		display: block;
+		max-height: 40px;
+		max-width: 140px;
+		margin: 0 auto 10px;
+		object-fit: contain;
+	}
+	.cs-hero-stat {
+		font-size: 56px;
+		font-weight: 700;
+		color: #5eead4;
+		line-height: 1;
+	}
+	.cs-hero-label {
+		font-size: 13px;
+		color: #c8cfd8;
+		margin-top: 6px;
+		max-width: 22ch;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.cs-grid {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 16px;
+	}
+	.cs-card {
+		background: #151b23;
+		border: 1px solid #30363d;
+		border-radius: 12px;
+		padding: 18px;
+	}
+	.cs-card-head {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 13px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		margin-bottom: 12px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #30363d;
+	}
+	.cs-challenge-card .cs-card-head { color: #f5a0a1; }
+	.cs-solution-card .cs-card-head { color: #5eead4; }
+	.cs-results-card .cs-card-head { color: #fb923c; }
+	.cs-quote-card .cs-card-head { color: #c084fc; }
+	.cs-future-card .cs-card-head { color: #60a5fa; }
+
+	.cs-challenge-card, .cs-solution-card { grid-column: span 3; }
+	.cs-results-card { grid-column: span 6; }
+	.cs-quote-card { grid-column: span 4; }
+	.cs-future-card { grid-column: span 2; }
+
+	.cs-card p { margin: 0 0 10px; font-size: 14px; line-height: 1.55; color: #c8cfd8; }
+	.cs-card ul { margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.55; color: #c8cfd8; }
+	.cs-card li { margin-bottom: 6px; }
+	.cs-card li:last-child { margin-bottom: 0; }
+	.cs-intro {
+		color: #e6edf3 !important;
+		font-weight: 500;
+		margin-bottom: 12px !important;
+	}
+
+	.cs-results-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 16px;
+	}
+	.cs-result {
+		text-align: center;
+		padding: 16px;
+		background: rgba(251, 146, 60, 0.06);
+		border: 1px solid rgba(251, 146, 60, 0.18);
+		border-radius: 10px;
+	}
+	.cs-result-num {
+		font-size: 38px;
+		font-weight: 700;
+		color: #fb923c;
+		line-height: 1;
+	}
+	.cs-result-label {
+		font-size: 13px;
+		color: #c8cfd8;
+		margin-top: 8px;
+		line-height: 1.4;
+	}
+
+	.cs-quote-text {
+		margin: 0 0 12px;
+		font-size: 17px;
+		font-style: italic;
+		color: #e6edf3;
+		line-height: 1.5;
+		padding-left: 14px;
+		border-left: 3px solid #c084fc;
+	}
+	.cs-quote-author { padding-left: 14px; }
+	.cs-author-name {
+		font-weight: 600;
+		font-size: 14px;
+		color: #e6edf3;
+	}
+	.cs-author-title {
+		font-size: 12px;
+		color: #8b949e;
+		margin-top: 2px;
+	}
+
+	.cs-future-card p { font-size: 14px; }
+
+	.cs-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 16px;
+		border-top: 1px solid #30363d;
+		font-size: 11px;
+		color: #6e7681;
+	}
+	.cs-footer-url {
+		font-family: ui-monospace, SFMono-Regular, monospace;
+		color: #8b949e;
+	}
+
+	.cs-placeholder { opacity: 0.45; }
+
+	/* Light theme */
+	.casestudy-card[data-theme="light"] {
+		background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+		color: #0f172a;
+	}
+	.casestudy-card[data-theme="light"] .cs-header,
+	.casestudy-card[data-theme="light"] .cs-footer,
+	.casestudy-card[data-theme="light"] .cs-card-head { border-color: #e2e8f0; }
+	.casestudy-card[data-theme="light"] .cs-card {
+		background: #f8fafc;
+		border-color: #e2e8f0;
+	}
+	.casestudy-card[data-theme="light"] .cs-headline { color: #0f172a; }
+	.casestudy-card[data-theme="light"] .cs-card p,
+	.casestudy-card[data-theme="light"] .cs-card ul,
+	.casestudy-card[data-theme="light"] .cs-result-label,
+	.casestudy-card[data-theme="light"] .cs-quote-text,
+	.casestudy-card[data-theme="light"] .cs-meta { color: #475569; }
+	.casestudy-card[data-theme="light"] .cs-meta-label,
+	.casestudy-card[data-theme="light"] .cs-footer,
+	.casestudy-card[data-theme="light"] .cs-author-title { color: #64748b; }
+	.casestudy-card[data-theme="light"] .cs-footer-url { color: #94a3b8; }
+	.casestudy-card[data-theme="light"] .cs-intro { color: #0f172a !important; }
+	.casestudy-card[data-theme="light"] .cs-author-name { color: #0f172a; }
+	.casestudy-card[data-theme="light"] .cs-quote-text { color: #0f172a; border-left-color: #7611a6; }
+	.casestudy-card[data-theme="light"] .cs-hero {
+		background: rgba(94, 234, 212, 0.12);
+		border-color: rgba(94, 234, 212, 0.4);
+	}
+	.casestudy-card[data-theme="light"] .cs-hero-stat { color: #0d9488; }
+	.casestudy-card[data-theme="light"] .cs-hero-label { color: #475569; }
+	.casestudy-card[data-theme="light"] .cs-result { background: rgba(251, 146, 60, 0.1); border-color: rgba(251, 146, 60, 0.3); }
+	.casestudy-card[data-theme="light"] .cs-result-num { color: #ea580c; }
+
+	/* Brand theme */
+	.casestudy-card[data-theme="brand"] {
+		background: linear-gradient(135deg, #1c0056 0%, #7611a6 100%);
+		color: #ffffff;
+	}
+	.casestudy-card[data-theme="brand"] .cs-header,
+	.casestudy-card[data-theme="brand"] .cs-footer,
+	.casestudy-card[data-theme="brand"] .cs-card-head { border-color: rgba(255,255,255,0.15); }
+	.casestudy-card[data-theme="brand"] .cs-card {
+		background: rgba(255,255,255,0.08);
+		border-color: rgba(255,255,255,0.18);
+	}
+	.casestudy-card[data-theme="brand"] .cs-headline { color: #ffffff; }
+	.casestudy-card[data-theme="brand"] .cs-label { color: #f5a0a1; }
+	.casestudy-card[data-theme="brand"] .cs-card p,
+	.casestudy-card[data-theme="brand"] .cs-card ul,
+	.casestudy-card[data-theme="brand"] .cs-result-label,
+	.casestudy-card[data-theme="brand"] .cs-quote-text,
+	.casestudy-card[data-theme="brand"] .cs-meta { color: rgba(255,255,255,0.92); }
+	.casestudy-card[data-theme="brand"] .cs-meta-label,
+	.casestudy-card[data-theme="brand"] .cs-footer,
+	.casestudy-card[data-theme="brand"] .cs-author-title { color: rgba(255,255,255,0.7); }
+	.casestudy-card[data-theme="brand"] .cs-footer-url { color: rgba(255,255,255,0.85); }
+	.casestudy-card[data-theme="brand"] .cs-quote-text { border-left-color: #f5a0a1; }
+	.casestudy-card[data-theme="brand"] .cs-author-name { color: #ffffff; }
+	.casestudy-card[data-theme="brand"] .cs-hero {
+		background: rgba(94, 234, 212, 0.15);
+		border-color: rgba(94, 234, 212, 0.35);
+	}
+	.casestudy-card[data-theme="brand"] .cs-hero-stat { color: #5eead4; }
+	.casestudy-card[data-theme="brand"] .cs-result {
+		background: rgba(253, 186, 116, 0.12);
+		border-color: rgba(253, 186, 116, 0.3);
+	}
+	.casestudy-card[data-theme="brand"] .cs-result-num { color: #fdba74; }
+	.casestudy-card[data-theme="brand"] .cs-challenge-card .cs-card-head { color: #fda4af; }
+	.casestudy-card[data-theme="brand"] .cs-solution-card .cs-card-head { color: #5eead4; }
+	.casestudy-card[data-theme="brand"] .cs-results-card .cs-card-head { color: #fdba74; }
+	.casestudy-card[data-theme="brand"] .cs-quote-card .cs-card-head { color: #d8b4fe; }
+	.casestudy-card[data-theme="brand"] .cs-future-card .cs-card-head { color: #93c5fd; }
+
+	/* Newsletter strip */
+	.tool-cta-strip {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		padding: 1.75rem;
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		align-items: center;
+	}
+	@media (min-width: 50em) { .tool-cta-strip { grid-template-columns: 1fr auto; } }
+	.cta-text strong {
+		display: block;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+	}
+	.cta-text p { margin: 0.25rem 0 0; color: var(--gray-300); font-size: var(--text-sm); }
+	.cta-form { display: flex; gap: 0.5rem; }
+	.cta-form input {
+		flex: 1;
+		min-width: 0;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-size: var(--text-sm);
+	}
+	.cta-form button {
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 0.5rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-sm);
+		cursor: pointer;
+		white-space: nowrap;
+	}
+	.cta-status { grid-column: 1 / -1; margin: 0; font-size: var(--text-sm); min-height: 1rem; }
+
+	/* SEO content */
+	.seo-content { max-width: 60rem; }
+	.seo-content h2 { font-size: var(--text-xl); color: var(--gray-0); margin: 2.5rem 0 1rem; }
+	.seo-content h2:first-child { margin-top: 0; }
+	.seo-content p, .seo-content li { color: var(--gray-200); font-size: var(--text-md); line-height: 1.65; }
+	.seo-content .how-to { padding-left: 1.25rem; }
+	.seo-content .how-to li { margin-bottom: 0.75rem; }
+	.seo-content a { color: var(--accent-regular); text-decoration: underline; text-underline-offset: 0.2em; }
+	.seo-link { display: inline-block; font-weight: 600; }
+	.related-links { list-style: none; padding: 0; }
+	.related-links li { margin-bottom: 0.5rem; }
+
+	.faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+	.faq-item {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		padding: 1rem 1.25rem;
+		background: var(--gray-999_40);
+	}
+	.faq-item summary {
+		cursor: pointer;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		color: var(--gray-0);
+		font-size: var(--text-md);
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+	.faq-item summary::after {
+		content: '+';
+		color: var(--accent-regular);
+		font-size: 1.5rem;
+		font-weight: 400;
+		line-height: 1;
+	}
+	.faq-item[open] summary::after { content: '−'; }
+	.faq-item p { margin: 0.75rem 0 0; color: var(--gray-200); font-size: var(--text-sm); line-height: 1.6; }
+
+	@media print {
+		.form-panel, .preview-controls, .tool-cta-strip, .seo-content, nav, .breadcrumb-nav, footer { display: none !important; }
+		.casestudy-card { box-shadow: none; width: 100%; max-width: none; }
+	}
+</style>

@@ -1,0 +1,1411 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+
+const title = "Free Go-to-Market Strategy Template | Build a GTM Strategy in 10 Minutes";
+const description = "Free go-to-market (GTM) strategy template. Capture ICP, positioning, pricing, channels, motion, goals, and metrics on a polished one-pager PNG. No signup.";
+
+const faqs = [
+	{
+		question: "What is a go-to-market strategy?",
+		answer: "A go-to-market (GTM) strategy is the plan for how you'll bring a product to market and grow it: who the ideal customer is, what positioning you'll use, how you'll price and package, which channels you'll acquire through, what motion you'll use to expand existing customers, and which metrics will tell you it's working.",
+	},
+	{
+		question: "How do I use this GTM strategy template?",
+		answer: "Fill in the product and timeframe, the market opportunity, the ICP (segment, persona, where they are), your positioning (category, value prop, differentiators), your pricing and packaging, your channels and motion, three measurable goals, and three success metrics. The preview updates as you type. Click Download PNG when you're done.",
+	},
+	{
+		question: "Is this GTM strategy template free?",
+		answer: "Yes, completely free. No signup, no email gate, no watermark on the download. The template runs entirely in your browser - your inputs never leave your device.",
+	},
+	{
+		question: "What format does the GTM strategy download in?",
+		answer: "The generator exports a high-resolution PNG (1000px wide, rendered at 2x device pixel ratio for retina displays) plus an optional US Letter PDF. Both work for Notion, Slides, board decks, or as a printed strategy artifact.",
+	},
+	{
+		question: "What's the difference between a GTM strategy and a launch plan?",
+		answer: "A GTM strategy is the broader, longer-horizon plan for how a product wins in market (quarters to years). A launch plan is the time-bound execution slice for a specific moment - typically T-30 to T+30 around a launch date. The GTM strategy is the why-and-how; the launch plan is the when-and-who.",
+	},
+	{
+		question: "When should I build or refresh the GTM strategy?",
+		answer: "Build it before any major launch, any new market entry, any new ICP segment, or any pricing change. Refresh it at minimum annually - and any time the market shifts (new competitor, new buying behavior, new economic context). A GTM strategy that hasn't been touched in 18 months is almost certainly wrong.",
+	},
+	{
+		question: "Who owns the GTM strategy?",
+		answer: "Product marketing leads the artifact, but it's a cross-functional decision. Product, sales, marketing, customer success, and finance all need to sign off. If only PMM has read it, it's a document, not a strategy. The strategy lives in the cross-functional commitments behind it.",
+	},
+];
+
+const softwareSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebApplication",
+	"name": "Go-to-Market Strategy Template",
+	"description": description,
+	"url": "https://swapbiswas.com/tools/go-to-market-strategy-template/",
+	"applicationCategory": "BusinessApplication",
+	"operatingSystem": "Any",
+	"browserRequirements": "Requires JavaScript",
+	"offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+	"creator": { "@type": "Person", "name": "Swapnil Biswas", "url": "https://swapbiswas.com/" }
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqs.map((faq) => ({
+		"@type": "Question",
+		"name": faq.question,
+		"acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+	}))
+};
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	breadcrumbs={[{ name: "Tools", url: "/tools/" }, { name: "Go-to-Market Strategy Template" }]}
+>
+	<script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} slot="head" />
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+	<div class="stack gap-20">
+		<main class="wrapper tool-page">
+			<Hero
+				title="Free Go-to-Market Strategy Template"
+				tagline="Build a one-page GTM strategy in 10 minutes. ICP, positioning, pricing, channels, motion, goals, metrics. No signup. Download as PNG."
+				align="start"
+			/>
+
+			<div class="tool-grid">
+				<!-- FORM -->
+				<section class="form-panel" aria-label="GTM strategy inputs">
+					<form id="gtm-form" autocomplete="off">
+						<fieldset>
+							<legend>1. Product & timeframe</legend>
+							<div class="field-row">
+								<div class="field">
+									<label for="gtm-product">Product</label>
+									<input type="text" id="gtm-product" maxlength="50" placeholder="e.g., Acme Insights" />
+								</div>
+								<div class="field">
+									<label for="gtm-timeframe">Timeframe</label>
+									<input type="text" id="gtm-timeframe" maxlength="40" placeholder="e.g., Q3 2026 - Q2 2027" />
+								</div>
+							</div>
+							<div class="field">
+								<label for="gtm-owner">Strategy owner</label>
+								<input type="text" id="gtm-owner" maxlength="40" placeholder="e.g., Alex M., Head of PMM" />
+							</div>
+						</fieldset>
+
+						<fieldset data-section-card="gtm-icp-card">
+							<legend>2. Ideal customer profile<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="gtm-icp-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field">
+								<label for="gtm-icp-segment">Segment</label>
+								<input type="text" id="gtm-icp-segment" maxlength="120" placeholder="e.g., 200-2K employee B2B SaaS in North America" />
+							</div>
+							<div class="field">
+								<label for="gtm-icp-persona">Primary persona</label>
+								<input type="text" id="gtm-icp-persona" maxlength="80" placeholder="e.g., VP of Demand Generation" />
+							</div>
+							<div class="field">
+								<label for="gtm-icp-trigger">Buying trigger</label>
+								<input type="text" id="gtm-icp-trigger" maxlength="120" placeholder="e.g., Board pushback on marketing ROI reporting" />
+							</div>
+						</fieldset>
+
+						<fieldset data-section-card="gtm-position-card">
+							<legend>3. Positioning<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="gtm-position-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field">
+								<label for="gtm-category">Market category</label>
+								<input type="text" id="gtm-category" maxlength="60" placeholder="e.g., Revenue attribution platform" />
+							</div>
+							<div class="field">
+								<label for="gtm-valueprop">Value proposition (one line)</label>
+								<input type="text" id="gtm-valueprop" maxlength="160" placeholder="e.g., Attribute pipeline to channel in under 45 days - without engineering" />
+							</div>
+							<div class="field"><input type="text" id="gtm-diff-1" maxlength="100" placeholder="Differentiator 1: e.g., 45-day implementation vs 6 months" /></div>
+							<div class="field"><input type="text" id="gtm-diff-2" maxlength="100" placeholder="Differentiator 2: e.g., No engineering required" /></div>
+							<div class="field"><input type="text" id="gtm-diff-3" maxlength="100" placeholder="Differentiator 3: e.g., Built by ex-Salesforce data engineers" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="gtm-pricing-card">
+							<legend>4. Pricing & packaging<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="gtm-pricing-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field">
+								<label for="gtm-pricing-model">Pricing model</label>
+								<input type="text" id="gtm-pricing-model" maxlength="80" placeholder="e.g., Per-contact subscription, billed annually" />
+							</div>
+							<div class="field"><input type="text" id="gtm-tier-1" maxlength="80" placeholder="Tier 1: e.g., Starter - $1.5K/mo, up to 10K contacts" /></div>
+							<div class="field"><input type="text" id="gtm-tier-2" maxlength="80" placeholder="Tier 2: e.g., Growth - $4K/mo, up to 50K contacts" /></div>
+							<div class="field"><input type="text" id="gtm-tier-3" maxlength="80" placeholder="Tier 3: e.g., Enterprise - custom, SSO + audit" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="gtm-channels-card">
+							<legend>5. Channels & motion<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="gtm-channels-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field">
+								<label for="gtm-motion">Sales motion</label>
+								<input type="text" id="gtm-motion" maxlength="80" placeholder="e.g., Sales-led for $4K+ deals, PLG for self-serve below" />
+							</div>
+							<div class="field"><input type="text" id="gtm-channel-1" maxlength="80" placeholder="Primary channel 1: e.g., Outbound to top 500 ICP accounts" /></div>
+							<div class="field"><input type="text" id="gtm-channel-2" maxlength="80" placeholder="Primary channel 2: e.g., Content SEO on attribution use cases" /></div>
+							<div class="field"><input type="text" id="gtm-channel-3" maxlength="80" placeholder="Primary channel 3: e.g., ABM via paid LinkedIn + display retargeting" /></div>
+							<div class="field">
+								<label for="gtm-expansion">Expansion motion</label>
+								<input type="text" id="gtm-expansion" maxlength="100" placeholder="e.g., CS-led upsell at 75% feature adoption + multi-team rollouts" />
+							</div>
+						</fieldset>
+
+						<fieldset data-section-card="gtm-goals-card">
+							<legend>6. Goals (3 - measurable)<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="gtm-goals-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="gtm-goal-1" maxlength="100" placeholder="Goal 1: e.g., $4M net-new ARR by end of FY26" /></div>
+							<div class="field"><input type="text" id="gtm-goal-2" maxlength="100" placeholder="Goal 2: e.g., 60 enterprise logos in target segment" /></div>
+							<div class="field"><input type="text" id="gtm-goal-3" maxlength="100" placeholder="Goal 3: e.g., NDR of 120%+ across cohorts" /></div>
+						</fieldset>
+
+						<fieldset data-section-card="gtm-metrics-card">
+							<legend>7. Success metrics (3 - leading indicators)<label class="section-toggle"><input type="checkbox" class="section-toggle-input" data-toggle-card="gtm-metrics-card" checked /><span class="section-toggle-track"></span></label></legend>
+							<div class="field"><input type="text" id="gtm-metric-1" maxlength="100" placeholder="Metric 1: e.g., Pipeline coverage 3x by start of each quarter" /></div>
+							<div class="field"><input type="text" id="gtm-metric-2" maxlength="100" placeholder="Metric 2: e.g., Average sales cycle under 45 days" /></div>
+							<div class="field"><input type="text" id="gtm-metric-3" maxlength="100" placeholder="Metric 3: e.g., Trial-to-paid conversion above 18%" /></div>
+						</fieldset>
+
+						<div class="form-actions">
+							<details class="sample-picker">
+								<summary class="btn-secondary">Load sample <span class="sample-caret">▾</span></summary>
+								<ul class="sample-options">
+									<li><button type="button" class="sample-option" data-sample="b2b-saas">B2B SaaS Attribution</button></li>
+									<li><button type="button" class="sample-option" data-sample="devops">DevOps Platform</button></li>
+									<li><button type="button" class="sample-option" data-sample="martech">Marketing Automation</button></li>
+								</ul>
+							</details>
+							<input type="file" id="logo-file-input" accept="image/png,image/jpeg,image/svg+xml,image/webp" hidden />
+							<button type="button" id="upload-logo" class="btn-secondary" title="Add a logo">＋ Logo</button>
+							<button type="button" id="remove-logo" class="btn-secondary btn-danger" hidden>× Logo</button>
+							<button type="button" id="reset-form" class="btn-secondary">Reset</button>
+							<button type="button" id="clear-saved" class="btn-secondary btn-danger" title="Clear all saved data from this browser">Clear saved</button>
+						</div>
+					</form>
+				</section>
+
+				<!-- PREVIEW -->
+				<section class="preview-panel" aria-label="GTM strategy preview">
+					<div class="preview-sticky">
+						<div class="preview-controls">
+							<h2 class="preview-heading">Live Preview</h2>
+							<div class="preview-actions">
+								<div class="theme-picker" role="radiogroup" aria-label="Theme">
+									<button type="button" class="theme-btn active" data-theme="dark">Dark</button>
+									<button type="button" class="theme-btn" data-theme="light">Light</button>
+									<button type="button" class="theme-btn" data-theme="brand">Brand</button>
+								</div>
+								<button type="button" id="copy-png" class="btn-icon">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+									Copy
+								</button>
+								<button type="button" id="download-pdf" class="btn-icon">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+									PDF
+								</button>
+								<button type="button" id="download-png" class="btn-primary">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+									Download PNG
+								</button>
+							</div>
+						</div>
+						<p class="autosave-status" id="autosave-status" aria-live="polite"><span id="fill-counter" class="fill-counter"></span><span id="autosave-text"></span></p>
+
+						<div class="preview-frame" id="preview-frame">
+							<div id="gtm-card" class="gtm-card">
+								<header class="gtm-header">
+									<div class="gtm-title">
+										<span class="gtm-label">Go-to-Market Strategy</span>
+										<h3 class="gtm-product" data-bind="gtm-product">Product</h3>
+									</div>
+									<div class="gtm-meta">
+										<img class="card-logo" id="card-logo" alt="" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" hidden />
+										<div class="gtm-meta-row" data-hide-group><span class="gtm-meta-label">Timeframe:</span> <span data-bind="gtm-timeframe">Timeframe</span></div>
+										<div class="gtm-meta-row" data-hide-group><span class="gtm-meta-label">Owner:</span> <span data-bind="gtm-owner">Strategy owner</span></div>
+									</div>
+								</header>
+
+								<div class="gtm-grid">
+									<div class="gtm-cell gtm-icp-card">
+										<div class="gtm-cell-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+											Ideal customer profile
+										</div>
+										<div class="gtm-row" data-hide-group><span class="gtm-row-label">Segment</span><span data-bind="gtm-icp-segment">Segment</span></div>
+										<div class="gtm-row" data-hide-group><span class="gtm-row-label">Persona</span><span data-bind="gtm-icp-persona">Persona</span></div>
+										<div class="gtm-row" data-hide-group><span class="gtm-row-label">Trigger</span><span data-bind="gtm-icp-trigger">Buying trigger</span></div>
+									</div>
+
+									<div class="gtm-cell gtm-position-card">
+										<div class="gtm-cell-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+											Positioning
+										</div>
+										<div class="gtm-row" data-hide-group><span class="gtm-row-label">Category</span><span data-bind="gtm-category">Market category</span></div>
+										<div class="gtm-row" data-hide-group><span class="gtm-row-label">Value prop</span><span data-bind="gtm-valueprop">Value proposition</span></div>
+										<div class="gtm-row gtm-row-list">
+											<span class="gtm-row-label">Differentiators</span>
+											<ul>
+												<li data-bind="gtm-diff-1">Differentiator 1</li>
+												<li data-bind="gtm-diff-2">Differentiator 2</li>
+												<li data-bind="gtm-diff-3">Differentiator 3</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="gtm-cell gtm-pricing-card">
+										<div class="gtm-cell-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+											Pricing & packaging
+										</div>
+										<div class="gtm-row" data-hide-group><span class="gtm-row-label">Model</span><span data-bind="gtm-pricing-model">Pricing model</span></div>
+										<ul class="gtm-tier-list">
+											<li data-bind="gtm-tier-1">Tier 1</li>
+											<li data-bind="gtm-tier-2">Tier 2</li>
+											<li data-bind="gtm-tier-3">Tier 3</li>
+										</ul>
+									</div>
+
+									<div class="gtm-cell gtm-channels-card">
+										<div class="gtm-cell-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+											Channels & motion
+										</div>
+										<div class="gtm-row" data-hide-group><span class="gtm-row-label">Motion</span><span data-bind="gtm-motion">Sales motion</span></div>
+										<div class="gtm-row gtm-row-list">
+											<span class="gtm-row-label">Primary channels</span>
+											<ul>
+												<li data-bind="gtm-channel-1">Channel 1</li>
+												<li data-bind="gtm-channel-2">Channel 2</li>
+												<li data-bind="gtm-channel-3">Channel 3</li>
+											</ul>
+										</div>
+										<div class="gtm-row" data-hide-group><span class="gtm-row-label">Expansion</span><span data-bind="gtm-expansion">Expansion motion</span></div>
+									</div>
+
+									<div class="gtm-cell gtm-goals-card">
+										<div class="gtm-cell-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+											Goals
+										</div>
+										<ul>
+											<li data-bind="gtm-goal-1">Goal 1</li>
+											<li data-bind="gtm-goal-2">Goal 2</li>
+											<li data-bind="gtm-goal-3">Goal 3</li>
+										</ul>
+									</div>
+
+									<div class="gtm-cell gtm-metrics-card">
+										<div class="gtm-cell-head">
+											<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+											Success metrics
+										</div>
+										<ul>
+											<li data-bind="gtm-metric-1">Metric 1</li>
+											<li data-bind="gtm-metric-2">Metric 2</li>
+											<li data-bind="gtm-metric-3">Metric 3</li>
+										</ul>
+									</div>
+								</div>
+
+								<footer class="gtm-footer">
+									<span class="gtm-footer-built">Built with the free Go-to-Market Strategy Template</span>
+									<span class="gtm-footer-url">swapbiswas.com/tools/go-to-market-strategy-template</span>
+								</footer>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Newsletter -->
+			<section class="tool-cta-strip">
+				<div class="cta-text">
+					<strong>Want more PMM tools and templates?</strong>
+					<p>Join the newsletter. Positioning, launch playbooks, persona updates - no spam, just value.</p>
+				</div>
+				<form class="cta-form" id="tool-newsletter-form">
+					<input type="email" name="email_address" placeholder="you@company.com" required autocomplete="email" aria-label="Email address" />
+					<button type="submit">Subscribe</button>
+				</form>
+				<p class="cta-status" id="tool-newsletter-status" aria-live="polite"></p>
+			</section>
+
+			<!-- SEO content -->
+			<section class="seo-content">
+				<h2>How to use the go-to-market strategy template</h2>
+				<ol class="how-to">
+					<li><strong>Define one ICP, then one persona inside it.</strong> "B2B SaaS" is not an ICP - it's a category. A real ICP names firmographics (segment, size, region), a buying trigger, and the specific persona who signs. If the ICP isn't tight, every downstream decision blurs.</li>
+					<li><strong>Lead positioning with the category, not the value prop.</strong> Buyers can't evaluate a value prop until they know the reference set. "Revenue attribution platform" gives them the category. The value prop differentiates inside it.</li>
+					<li><strong>Pick three differentiators, not seven.</strong> If everything is a differentiator, nothing is. The three you keep are the ones that map to specific buying-trigger pains your ICP has - not the ones engineering is proud of.</li>
+					<li><strong>Make pricing a strategic decision, not a finance one.</strong> Pricing model (per seat, per usage, per contact) signals what you optimize for. Tier names anchor the buying conversation. Both are positioning artifacts, not just numbers.</li>
+					<li><strong>Concentrate channels, don't spread them.</strong> Three primary channels run at 80% effort beats eight channels at 25% effort. Pick where your ICP actually pays attention - and where you can measure attribution.</li>
+					<li><strong>Separate the motion from the channels.</strong> Sales-led, product-led, or hybrid is the motion. Outbound, content, ABM are the channels. A coherent strategy names both.</li>
+					<li><strong>Pair goals (lagging) with metrics (leading).</strong> "$4M ARR" is a lagging goal. "Pipeline coverage of 3x by start of quarter" is a leading metric that predicts whether you'll hit it. The strategy needs both or it's just a wish list.</li>
+				</ol>
+
+				<h2>What goes into a great GTM strategy</h2>
+				<p>A great GTM strategy answers seven decisions explicitly: who we sell to (ICP), how we describe what we sell (positioning), how we charge (pricing), how we acquire (channels), how we expand (motion), what success looks like (goals), and how we'll know we're winning (metrics). Most "strategies" answer two of these and hand-wave the rest.</p>
+				<p>The discipline of putting them all on one page exposes the misalignments. If the positioning targets enterprise but the channels are SEO and product-led, something is wrong. If the goals say $4M ARR but the metrics say nothing about pipeline coverage, you have no early warning system.</p>
+				<p>For the full walkthrough of how to build a GTM strategy from scratch, including templates for each section, read the companion guide:</p>
+				<p><a href="/blog/go-to-market-strategy-template/" class="seo-link">→ Read: Go-to-Market Strategy Template - The Full Guide</a></p>
+
+				<h2>Related templates and guides</h2>
+				<ul class="related-links">
+					<li><a href="/blog/go-to-market-strategy-template/">Go-to-Market Strategy Template Guide</a></li>
+					<li><a href="/blog/go-to-market-strategy-for-startups/">GTM Strategy for Startups</a></li>
+					<li><a href="/blog/marketing-strategy-for-new-product/">Marketing Strategy for a New Product</a></li>
+					<li><a href="/blog/saas-product-marketing-strategy/">SaaS Product Marketing Strategy</a></li>
+					<li><a href="/blog/what-is-product-marketing/">What Is Product Marketing?</a></li>
+					<li><a href="/tools/product-launch-plan-template/">Free Product Launch Plan Template</a></li>
+					<li><a href="/tools/buyer-persona-generator/">Free Buyer Persona Generator</a></li>
+				</ul>
+
+				<h2>Frequently asked questions</h2>
+				<div class="faq-list">
+					{faqs.map((faq) => (
+						<details class="faq-item">
+							<summary>{faq.question}</summary>
+							<p>{faq.answer}</p>
+						</details>
+					))}
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<script>
+	function initGTM() {
+		const formMaybe = document.getElementById('gtm-form') as HTMLFormElement | null;
+		const card = document.getElementById('gtm-card');
+		if (!formMaybe || !card || (formMaybe as any)._initialized) return;
+		(formMaybe as any)._initialized = true;
+		const form: HTMLFormElement = formMaybe;
+
+		const bindings = card.querySelectorAll<HTMLElement>('[data-bind]');
+
+		function update() {
+			const hasAnyContent = Array.from(form.querySelectorAll<HTMLInputElement>('input[type="text"]'))
+				.some((input) => input.value.trim().length > 0);
+
+			bindings.forEach((el) => {
+				const id = el.getAttribute('data-bind');
+				if (!id) return;
+				const input = document.getElementById(id) as HTMLInputElement | null;
+				const val = input?.value?.trim() || '';
+				if (val) {
+					el.textContent = val;
+					el.classList.remove('gtm-placeholder');
+					el.classList.remove('bind-empty');
+				} else if (hasAnyContent) {
+					el.textContent = '';
+					el.classList.remove('gtm-placeholder');
+					el.classList.add('bind-empty');
+				} else {
+					el.textContent = el.getAttribute('data-placeholder') || '';
+					el.classList.add('gtm-placeholder');
+					el.classList.remove('bind-empty');
+				}
+			});
+			card!.querySelectorAll<HTMLElement>('[data-hide-group]').forEach((group) => {
+				const childBinds = group.querySelectorAll<HTMLElement>('[data-bind]');
+				const allEmpty = childBinds.length > 0 && Array.from(childBinds).every((c) => c.classList.contains('bind-empty'));
+				group.classList.toggle('group-hidden', allEmpty);
+			});
+		}
+
+		bindings.forEach((el) => {
+			if (!el.getAttribute('data-placeholder')) {
+				el.setAttribute('data-placeholder', el.textContent || '');
+			}
+			el.classList.add('gtm-placeholder');
+		});
+
+		function applyToggle(toggle: HTMLInputElement) {
+			const cardClass = toggle.dataset.toggleCard;
+			if (!cardClass) return;
+			const cardEl = card!.querySelector('.' + cardClass);
+			const fieldset = toggle.closest('fieldset');
+			const excluded = !toggle.checked;
+			if (cardEl) cardEl.classList.toggle('section-excluded', excluded);
+			if (fieldset) fieldset.classList.toggle('fieldset-muted', excluded);
+		}
+
+		form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((toggle) => {
+			toggle.addEventListener('change', () => {
+				applyToggle(toggle);
+				saveState();
+				scaleCard();
+			});
+		});
+
+		const STATE_KEY = 'tool-state-gtm';
+		const statusEl = document.getElementById('autosave-text');
+		const counterEl = document.getElementById('fill-counter');
+		let saveTimer: any;
+
+		function updateCounter() {
+			if (!counterEl) return;
+			const inputs = form.querySelectorAll<HTMLInputElement>('input[type="text"]');
+			const filled = Array.from(inputs).filter((i) => i.value.trim().length > 0).length;
+			counterEl.textContent = `${filled}/${inputs.length} fields filled${filled === inputs.length ? ' ✓' : ''}`;
+		}
+
+		function saveState() {
+			try {
+				const fields: Record<string, string> = {};
+				form.querySelectorAll<HTMLInputElement>('input[type="text"]').forEach((input) => {
+					if (input.value) fields[input.id] = input.value;
+				});
+				const excluded: Record<string, boolean> = {};
+				form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((toggle) => {
+					if (!toggle.checked && toggle.dataset.toggleCard) excluded[toggle.dataset.toggleCard] = true;
+				});
+				const theme = (card as HTMLElement).dataset.theme || 'dark';
+				const logo = cardLogo?.getAttribute('hidden') === null ? cardLogo.src : null;
+				localStorage.setItem(STATE_KEY, JSON.stringify({ fields, excluded, theme, logo, savedAt: Date.now() }));
+				if (statusEl) {
+					statusEl.textContent = 'Saved';
+					setTimeout(() => { if (statusEl && statusEl.textContent === 'Saved') statusEl.textContent = ''; }, 1500);
+				}
+			} catch (e) {}
+		}
+
+		function loadState() {
+			try {
+				const raw = localStorage.getItem(STATE_KEY);
+				if (!raw) return false;
+				const saved = JSON.parse(raw);
+				Object.entries(saved.fields || {}).forEach(([id, val]) => {
+					const input = document.getElementById(id) as HTMLInputElement | null;
+					if (input && typeof val === 'string') input.value = val;
+				});
+				Object.entries(saved.excluded || {}).forEach(([cardClass, isExcluded]) => {
+					const toggle = form.querySelector<HTMLInputElement>(`.section-toggle-input[data-toggle-card="${cardClass}"]`);
+					if (toggle && isExcluded) { toggle.checked = false; applyToggle(toggle); }
+				});
+				if (saved.theme && typeof saved.theme === 'string') applyTheme(saved.theme);
+				if (saved.logo && typeof saved.logo === 'string') applyLogo(saved.logo);
+				return true;
+			} catch (e) { return false; }
+		}
+
+		function applyTheme(theme: string) {
+			(card as HTMLElement).dataset.theme = theme;
+			document.querySelectorAll<HTMLButtonElement>('.theme-btn').forEach((btn) => {
+				btn.classList.toggle('active', btn.dataset.theme === theme);
+			});
+		}
+		document.querySelectorAll<HTMLButtonElement>('.theme-btn').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				applyTheme(btn.dataset.theme || 'dark');
+				saveState();
+				scaleCard();
+			});
+		});
+
+		const cardLogo = document.getElementById('card-logo') as HTMLImageElement | null;
+		const uploadBtn = document.getElementById('upload-logo');
+		const removeBtn = document.getElementById('remove-logo');
+		const fileInput = document.getElementById('logo-file-input') as HTMLInputElement | null;
+		const TRANSPARENT_PX = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+
+		function applyLogo(dataUrl: string | null) {
+			if (cardLogo) {
+				if (dataUrl) {
+					cardLogo.src = dataUrl;
+					cardLogo.removeAttribute('hidden');
+				} else {
+					cardLogo.src = TRANSPARENT_PX;
+					cardLogo.setAttribute('hidden', '');
+				}
+			}
+			if (dataUrl) {
+				uploadBtn?.setAttribute('hidden', '');
+				removeBtn?.removeAttribute('hidden');
+			} else {
+				uploadBtn?.removeAttribute('hidden');
+				removeBtn?.setAttribute('hidden', '');
+			}
+			scaleCard();
+		}
+
+		uploadBtn?.addEventListener('click', () => fileInput?.click());
+		fileInput?.addEventListener('change', () => {
+			const file = fileInput.files?.[0];
+			if (!file) return;
+			if (file.size > 1024 * 1024) {
+				if (!confirm('That logo is over 1MB. localStorage may struggle. Continue?')) {
+					fileInput.value = '';
+					return;
+				}
+			}
+			const reader = new FileReader();
+			reader.onload = (e) => { applyLogo(e.target?.result as string); saveState(); };
+			reader.readAsDataURL(file);
+		});
+		removeBtn?.addEventListener('click', () => {
+			if (fileInput) fileInput.value = '';
+			applyLogo(null);
+			saveState();
+		});
+
+		function debouncedSave() {
+			clearTimeout(saveTimer);
+			if (statusEl) statusEl.textContent = 'Saving...';
+			saveTimer = setTimeout(saveState, 400);
+		}
+
+		form.addEventListener('input', () => { update(); updateCounter(); debouncedSave(); });
+
+		document.getElementById('clear-saved')?.addEventListener('click', () => {
+			if (!confirm('Clear all saved data for this tool? This cannot be undone.')) return;
+			try { localStorage.removeItem(STATE_KEY); } catch (e) {}
+			form.reset();
+			form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((t) => { t.checked = true; applyToggle(t); });
+			applyLogo(null);
+			update();
+			updateCounter();
+			if (statusEl) statusEl.textContent = 'Cleared';
+		});
+
+		const samples: Record<string, Record<string, string>> = {
+			'b2b-saas': {
+				'gtm-product': 'Acme Insights',
+				'gtm-timeframe': 'Q3 2026 - Q2 2027 (FY27)',
+				'gtm-owner': 'Alex M., Head of Product Marketing',
+				'gtm-icp-segment': '200-2K employee B2B SaaS companies in North America',
+				'gtm-icp-persona': 'VP of Demand Generation',
+				'gtm-icp-trigger': 'Board pushback on marketing ROI - or new CMO in seat under 90 days',
+				'gtm-category': 'Revenue attribution platform',
+				'gtm-valueprop': 'Attribute pipeline to channel in under 45 days - without engineering',
+				'gtm-diff-1': '45-day implementation vs 6 months with legacy vendor',
+				'gtm-diff-2': 'No engineering required to add or reweight channels',
+				'gtm-diff-3': 'Built by ex-Salesforce data engineers, not analytics generalists',
+				'gtm-pricing-model': 'Per-contact subscription, billed annually',
+				'gtm-tier-1': 'Starter - $1.5K/mo, up to 10K contacts',
+				'gtm-tier-2': 'Growth - $4K/mo, up to 50K contacts + integrations',
+				'gtm-tier-3': 'Enterprise - custom, SSO + audit + dedicated CSM',
+				'gtm-motion': 'Sales-led for $4K+ MRR deals, PLG for self-serve Starter tier',
+				'gtm-channel-1': 'Outbound to top 500 ICP accounts (SDR + AE pair)',
+				'gtm-channel-2': 'Content SEO targeting "attribution" + "channel ROI" keywords',
+				'gtm-channel-3': 'ABM via paid LinkedIn + display retargeting on closed-lost accounts',
+				'gtm-expansion': 'CS-led upsell at 75% feature adoption + multi-team rollout plays',
+				'gtm-goal-1': '$4M net-new ARR by end of FY27',
+				'gtm-goal-2': '60 new enterprise logos in target segment',
+				'gtm-goal-3': 'Net dollar retention of 120%+ across all cohorts',
+				'gtm-metric-1': 'Pipeline coverage 3x by start of each quarter',
+				'gtm-metric-2': 'Average sales cycle under 45 days (mid-market) / 90 days (enterprise)',
+				'gtm-metric-3': 'Trial-to-paid conversion above 18%',
+			},
+			'devops': {
+				'gtm-product': 'Forge CI',
+				'gtm-timeframe': 'FY27 (Jan 2026 - Dec 2026)',
+				'gtm-owner': 'Priya R., VP Product Marketing',
+				'gtm-icp-segment': '500-5K engineer orgs with high build volume, NA + EU',
+				'gtm-icp-persona': 'Director / VP of Platform Engineering',
+				'gtm-icp-trigger': 'CI bill above $50K/month or median PR build time over 15 min',
+				'gtm-category': 'Drop-in CI runtime',
+				'gtm-valueprop': 'Cut build times by 60% with zero pipeline rewrites - swap the runner, keep the YAML',
+				'gtm-diff-1': 'Zero pipeline rewrites - works with existing GitHub Actions / GitLab CI',
+				'gtm-diff-2': 'Per-build-minute pricing, not per-seat',
+				'gtm-diff-3': 'On-prem deployment for compliance-restricted teams',
+				'gtm-pricing-model': 'Per-build-minute consumption, billed monthly',
+				'gtm-tier-1': 'Cloud - $0.008/min, pay-as-you-go',
+				'gtm-tier-2': 'Self-hosted - $80K/year baseline, unlimited builds',
+				'gtm-tier-3': 'Enterprise - air-gapped + SLA + dedicated support',
+				'gtm-motion': 'Bottoms-up engineer adoption → expansion to platform/exec sponsor',
+				'gtm-channel-1': 'Engineer-targeted technical content (build-speed teardowns, benchmarks)',
+				'gtm-channel-2': 'Open-source community sponsorships + maintainer partnerships',
+				'gtm-channel-3': 'Conference talks at DevOps Days, KubeCon, GitHub Universe',
+				'gtm-expansion': 'Platform team buys → engineering org buys → enterprise compliance buys self-hosted',
+				'gtm-goal-1': '$3M ARR with 100+ logos under 5K engineers',
+				'gtm-goal-2': '15 enterprise self-hosted contracts',
+				'gtm-goal-3': '40% logo growth from open-source-driven inbound',
+				'gtm-metric-1': 'Free tier → paid conversion above 8%',
+				'gtm-metric-2': 'Median time-to-first-build under 10 minutes',
+				'gtm-metric-3': 'Engineer-installed accounts (free) per month above 500',
+			},
+			'martech': {
+				'gtm-product': 'Latitude',
+				'gtm-timeframe': '12 months from launch (April 2026)',
+				'gtm-owner': 'Sarah K., Director of PMM',
+				'gtm-icp-segment': 'Series A-C B2B SaaS, 50-500 employees, NA + APAC',
+				'gtm-icp-persona': 'Head of Lifecycle / Head of Growth',
+				'gtm-icp-trigger': 'New growth leader hired or quarterly trial-to-paid metric flatlining',
+				'gtm-category': 'Modern lifecycle marketing platform',
+				'gtm-valueprop': 'Lifecycle automation without the 6-month onboarding - ship 14 journeys in a month, not 3',
+				'gtm-diff-1': '1-day setup vs 6 months with legacy MAP',
+				'gtm-diff-2': 'Built-in CDP - no separate license required',
+				'gtm-diff-3': 'Marketer-operated - no automation specialist required',
+				'gtm-pricing-model': 'Per-active-contact subscription with free trial',
+				'gtm-tier-1': 'Growth - $800/mo, up to 25K contacts',
+				'gtm-tier-2': 'Scale - $2.4K/mo, up to 100K contacts',
+				'gtm-tier-3': 'Enterprise - custom, dedicated success + SSO',
+				'gtm-motion': 'Product-led free trial → AE-led for Scale tier and above',
+				'gtm-channel-1': 'Content SEO targeting "lifecycle marketing" + "trial conversion"',
+				'gtm-channel-2': 'Community sponsorship (Demand Curve, Exit Five, RevGenius)',
+				'gtm-channel-3': 'Migration offer campaigns targeting legacy MAP refugees',
+				'gtm-expansion': 'Trial → activation milestone → AE-led upgrade to Scale at 25K+ contacts',
+				'gtm-goal-1': '$5M ARR by end of FY27',
+				'gtm-goal-2': '300 paying customers, average contract $1.5K MRR',
+				'gtm-goal-3': '50% of new revenue from migration campaigns',
+				'gtm-metric-1': 'Trial-to-paid conversion above 14%',
+				'gtm-metric-2': 'Time-to-first-journey-live under 24 hours',
+				'gtm-metric-3': 'Net retention above 115%',
+			},
+		};
+
+		function loadSample(key: string) {
+			const sample = samples[key];
+			if (!sample) return;
+			Object.entries(sample).forEach(([id, val]) => {
+				const input = document.getElementById(id) as HTMLInputElement | null;
+				if (input) input.value = val;
+			});
+			update();
+			updateCounter();
+			saveState();
+		}
+
+		form.querySelectorAll<HTMLButtonElement>('.sample-option').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				loadSample(btn.dataset.sample || '');
+				const picker = btn.closest('details');
+				if (picker) picker.removeAttribute('open');
+			});
+		});
+
+		document.getElementById('reset-form')?.addEventListener('click', () => {
+			form.reset();
+			form.querySelectorAll<HTMLInputElement>('.section-toggle-input').forEach((t) => { t.checked = true; applyToggle(t); });
+			update();
+			updateCounter();
+			saveState();
+		});
+
+		const frame = document.getElementById('preview-frame');
+		const cardEl = card as HTMLElement;
+		function scaleCard() {
+			if (!frame) return;
+			const frameWidth = frame.clientWidth;
+			const widthScale = Math.min(1, frameWidth / 1000);
+			const prev = cardEl.style.getPropertyValue('--gtm-scale');
+			cardEl.style.setProperty('--gtm-scale', '1');
+			const naturalHeight = cardEl.scrollHeight;
+			cardEl.style.setProperty('--gtm-scale', prev || String(widthScale));
+
+			const isDesktop = window.matchMedia('(min-width: 64em)').matches;
+			let heightScale = 1;
+			if (isDesktop) {
+				const reservedTop = 24, reservedBottom = 24, controlsHeight = 64;
+				const available = window.innerHeight - reservedTop - reservedBottom - controlsHeight;
+				heightScale = available / naturalHeight;
+			}
+
+			const scale = Math.min(widthScale, heightScale, 1);
+			cardEl.style.setProperty('--gtm-scale', String(scale));
+			frame.style.height = (naturalHeight * scale) + 'px';
+		}
+		scaleCard();
+		const ro = new ResizeObserver(scaleCard);
+		if (frame) ro.observe(frame);
+		const mo = new MutationObserver(scaleCard);
+		mo.observe(card, { childList: true, subtree: true, characterData: true });
+		window.addEventListener('resize', scaleCard);
+		if ((document as any).fonts?.ready) {
+			(document as any).fonts.ready.then(scaleCard);
+		}
+
+		const themeBgColors: Record<string, string> = { dark: '#0d1117', light: '#ffffff', brand: '#1c0056' };
+
+		async function renderCard(format: 'png' | 'blob'): Promise<any> {
+			const cEl = card as HTMLElement;
+			const frameEl = document.getElementById('preview-frame');
+			const prevTransform = cEl.style.transform;
+			const prevFrameHeight = frameEl?.style.height || '';
+			try {
+				const mod: any = await import('https://esm.sh/html-to-image@1.11.13' as any);
+				cEl.style.transform = 'none';
+				if (frameEl) frameEl.style.height = cEl.scrollHeight + 'px';
+				const theme = cEl.dataset.theme || 'dark';
+				const opts = {
+					pixelRatio: 2,
+					backgroundColor: themeBgColors[theme] || '#0d1117',
+					cacheBust: true,
+					skipFonts: true,
+					width: 1000,
+					height: cEl.scrollHeight,
+				};
+				return format === 'blob' ? await mod.toBlob(cEl, opts) : await mod.toPng(cEl, opts);
+			} finally {
+				cEl.style.transform = prevTransform;
+				if (frameEl) frameEl.style.height = prevFrameHeight;
+			}
+		}
+
+		const copyBtn = document.getElementById('copy-png');
+		copyBtn?.addEventListener('click', async () => {
+			const original = copyBtn.textContent;
+			copyBtn.setAttribute('disabled', 'true');
+			copyBtn.textContent = 'Copying...';
+			try {
+				const blob = await renderCard('blob');
+				if (!blob) throw new Error('Empty blob');
+				if (!navigator.clipboard || !(window as any).ClipboardItem) {
+					alert('Copy to clipboard is not supported in this browser. Use Download PNG instead.');
+					return;
+				}
+				await navigator.clipboard.write([new (window as any).ClipboardItem({ 'image/png': blob })]);
+				copyBtn.textContent = 'Copied!';
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_copy', tool_name: 'go_to_market_strategy_template', tool_output: 'png' });
+				setTimeout(() => { copyBtn.textContent = original; copyBtn.removeAttribute('disabled'); }, 1800);
+				return;
+			} catch (err) {
+				console.error('Copy failed', err);
+				alert('Copy failed. Please use Download PNG instead.');
+			}
+			copyBtn.textContent = original;
+			copyBtn.removeAttribute('disabled');
+		});
+
+		async function pngToPdf(dataUrl: string, filename: string) {
+			const mod: any = await import('https://esm.sh/jspdf@2.5.1' as any);
+			const JsPDF = mod.jsPDF || mod.default;
+			const img = new Image();
+			await new Promise<void>((res, rej) => { img.onload = () => res(); img.onerror = rej; img.src = dataUrl; });
+			const pageW = 612, pageH = 792, margin = 36;
+			const maxW = pageW - 2 * margin, maxH = pageH - 2 * margin;
+			const scale = Math.min(maxW / img.width, maxH / img.height);
+			const w = img.width * scale, h = img.height * scale;
+			const x = (pageW - w) / 2, y = (pageH - h) / 2;
+			const pdf = new JsPDF({ orientation: 'portrait', unit: 'pt', format: 'letter' });
+			pdf.addImage(dataUrl, 'PNG', x, y, w, h, undefined, 'FAST');
+			pdf.save(filename);
+		}
+
+		const pdfBtn = document.getElementById('download-pdf');
+		pdfBtn?.addEventListener('click', async () => {
+			const original = pdfBtn.textContent;
+			pdfBtn.setAttribute('disabled', 'true');
+			pdfBtn.textContent = 'Building...';
+			try {
+				const dataUrl = await renderCard('png');
+				const productName = (document.getElementById('gtm-product') as HTMLInputElement)?.value?.trim() || '';
+				const safeName = productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+				await pngToPdf(dataUrl, safeName ? `gtm-strategy-${safeName}.pdf` : 'gtm-strategy.pdf');
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'go_to_market_strategy_template', tool_output: 'pdf' });
+			} catch (err) {
+				console.error('PDF failed', err);
+				alert('PDF download failed. Please try Download PNG instead.');
+			} finally {
+				pdfBtn.textContent = original;
+				pdfBtn.removeAttribute('disabled');
+			}
+		});
+
+		const downloadBtn = document.getElementById('download-png');
+		downloadBtn?.addEventListener('click', async () => {
+			const original = downloadBtn.textContent;
+			downloadBtn.setAttribute('disabled', 'true');
+			downloadBtn.textContent = 'Preparing...';
+			try {
+				const dataUrl = await renderCard('png');
+				const productName = (document.getElementById('gtm-product') as HTMLInputElement)?.value?.trim() || '';
+				const safeName = productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+				const link = document.createElement('a');
+				link.download = safeName ? `gtm-strategy-${safeName}.png` : 'gtm-strategy.png';
+				link.href = dataUrl;
+				link.click();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'go_to_market_strategy_template', tool_output: 'png' });
+			} catch (err) {
+				console.error('Download failed', err);
+				alert('Download failed. Please try again or use a different browser.');
+			} finally {
+				downloadBtn.textContent = original;
+				downloadBtn.removeAttribute('disabled');
+			}
+		});
+
+		loadState();
+		update();
+		updateCounter();
+	}
+
+	function initToolNewsletter() {
+		const form = document.getElementById('tool-newsletter-form') as HTMLFormElement | null;
+		const status = document.getElementById('tool-newsletter-status');
+		if (!form || (form as any)._initialized) return;
+		(form as any)._initialized = true;
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const emailInput = form.querySelector('input[name="email_address"]') as HTMLInputElement | null;
+			const email = emailInput?.value || '';
+			const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+			if (btn) { btn.textContent = 'Subscribing...'; btn.disabled = true; }
+			const formData = new FormData();
+			formData.append('email_address', email);
+			fetch('https://app.kit.com/forms/9145889/subscriptions', {
+				method: 'POST',
+				body: formData,
+				headers: { 'Accept': 'application/json' }
+			}).then((res) => {
+				if (!res.ok) throw new Error('fail');
+				if (status) { status.textContent = 'Subscribed!'; status.style.color = 'var(--accent-regular)'; }
+				form.reset();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'newsletter_signup', signup_location: 'tool_gtm_strategy' });
+			}).catch(() => {
+				if (status) { status.textContent = 'Something went wrong.'; status.style.color = '#ca7879'; }
+			}).finally(() => {
+				if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
+			});
+		});
+	}
+
+	initGTM();
+	initToolNewsletter();
+	document.addEventListener('astro:page-load', () => {
+		initGTM();
+		initToolNewsletter();
+	});
+</script>
+
+<style>
+	.tool-page { display: flex; flex-direction: column; gap: 3.5rem; }
+	.tool-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+
+	@media (min-width: 64em) {
+		.tool-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; }
+		.preview-panel { position: sticky; top: 1.5rem; align-self: start; }
+	}
+
+	.preview-panel { min-width: 0; }
+	.preview-sticky { display: flex; flex-direction: column; gap: 1rem; }
+
+	.form-panel {
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 1.5rem;
+	}
+	#gtm-form fieldset { border: none; padding: 0; margin: 0 0 1.75rem; }
+	#gtm-form legend {
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		margin-bottom: 0.75rem;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+		width: 100%;
+	}
+	.field { margin-bottom: 0.75rem; }
+	.field-row { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+	@media (min-width: 30em) { .field-row { grid-template-columns: 1fr 1fr; } }
+	.field label {
+		display: block;
+		margin-bottom: 0.35rem;
+		color: var(--gray-300);
+		font-size: var(--text-xs);
+		font-weight: 500;
+	}
+	#gtm-form input[type="text"] {
+		width: 100%;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		transition: border-color 0.15s ease;
+	}
+	#gtm-form input[type="text"]:focus { outline: none; border-color: var(--accent-regular); }
+
+	.form-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+	.btn-secondary {
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+	.btn-secondary:hover { background: var(--accent-subtle-overlay); color: var(--gray-0); }
+	.btn-danger:hover {
+		background: rgba(239, 68, 68, 0.12);
+		color: #f87171;
+		border-color: rgba(239, 68, 68, 0.3);
+	}
+
+	.sample-picker { position: relative; display: inline-block; }
+	.sample-picker > summary { list-style: none; }
+	.sample-picker > summary::-webkit-details-marker { display: none; }
+	.sample-caret { display: inline-block; margin-left: 0.25rem; transition: transform 0.2s ease; }
+	.sample-picker[open] .sample-caret { transform: rotate(180deg); }
+	.sample-options {
+		position: absolute;
+		top: calc(100% + 0.25rem);
+		left: 0;
+		margin: 0;
+		padding: 0.25rem;
+		background: var(--gray-999);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		list-style: none;
+		z-index: 20;
+		min-width: 200px;
+		box-shadow: var(--shadow-md);
+	}
+	.sample-options li { display: block; }
+	.sample-option {
+		display: block;
+		width: 100%;
+		text-align: left;
+		padding: 0.5rem 0.75rem;
+		background: transparent;
+		border: none;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		border-radius: 0.35rem;
+	}
+	.sample-option:hover { background: var(--accent-subtle-overlay); color: var(--gray-0); }
+
+	.section-toggle { display: inline-flex; align-items: center; cursor: pointer; flex-shrink: 0; }
+	.section-toggle-input {
+		appearance: none;
+		-webkit-appearance: none;
+		width: 34px;
+		height: 20px;
+		background: var(--gray-800);
+		border-radius: 999rem;
+		position: relative;
+		cursor: pointer;
+		margin: 0;
+		transition: background 0.2s ease;
+	}
+	.section-toggle-input::before {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 14px;
+		background: var(--gray-999);
+		border-radius: 50%;
+		top: 3px;
+		left: 3px;
+		transition: transform 0.2s ease;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	}
+	.section-toggle-input:checked { background: var(--accent-regular); }
+	.section-toggle-input:checked::before { transform: translateX(14px); }
+	.section-toggle-track { display: none; }
+	.fieldset-muted { opacity: 0.45; transition: opacity 0.2s ease; }
+	.fieldset-muted .field input { pointer-events: none; }
+	.section-excluded { display: none !important; }
+	.bind-empty, .group-hidden { display: none !important; }
+
+	.theme-picker {
+		display: inline-flex;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		padding: 2px;
+		background: var(--gray-999_40);
+	}
+	.theme-btn {
+		padding: 0.35rem 0.75rem;
+		border: none;
+		background: transparent;
+		color: var(--gray-300);
+		font-family: var(--font-brand);
+		font-size: var(--text-xs);
+		font-weight: 500;
+		cursor: pointer;
+		border-radius: 999rem;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+	.theme-btn:hover { color: var(--gray-0); }
+	.theme-btn.active { background: var(--accent-regular); color: var(--accent-text-over); }
+
+	.preview-actions { display: flex; gap: 0.5rem; align-items: center; }
+	.btn-icon {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.5rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	}
+	.btn-icon:hover:not([disabled]) {
+		background: var(--accent-subtle-overlay);
+		color: var(--gray-0);
+		border-color: var(--accent-regular);
+	}
+	.btn-icon[disabled] { opacity: 0.7; cursor: not-allowed; }
+
+	.autosave-status {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		margin: 0;
+		min-height: 1.1rem;
+		font-size: var(--text-xs);
+		color: var(--gray-400);
+	}
+	.fill-counter { font-variant-numeric: tabular-nums; }
+
+	.preview-controls {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	.preview-heading { font-size: var(--text-md); color: var(--gray-200); margin: 0; }
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 999rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		cursor: pointer;
+		transition: box-shadow 0.15s ease, transform 0.15s ease;
+	}
+	.btn-primary:hover:not([disabled]) { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+	.btn-primary[disabled] { opacity: 0.7; cursor: not-allowed; }
+
+	.preview-frame { position: relative; width: 100%; overflow: hidden; border-radius: 16px; }
+
+	/* GTM card */
+	.gtm-card {
+		width: 1000px;
+		background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+		color: #f0f6fc;
+		border-radius: 16px;
+		padding: 32px;
+		font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		transform-origin: top left;
+		transform: scale(var(--gtm-scale, 1));
+	}
+
+	.gtm-header {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 24px;
+		align-items: flex-start;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #30363d;
+	}
+	.gtm-label {
+		display: inline-block;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #c084fc;
+		margin-bottom: 8px;
+	}
+	.gtm-product {
+		font-size: 32px;
+		font-weight: 700;
+		line-height: 1.15;
+		margin: 0;
+		color: #f0f6fc;
+	}
+	.gtm-meta {
+		text-align: right;
+		font-size: 13px;
+		color: #c8cfd8;
+		min-width: 260px;
+	}
+	.card-logo:not([hidden]) {
+		display: block;
+		max-height: 44px;
+		max-width: 160px;
+		margin: 0 0 10px auto;
+		object-fit: contain;
+	}
+	.gtm-meta-row { margin-bottom: 4px; }
+	.gtm-meta-label { color: #8b949e; font-weight: 600; margin-right: 4px; }
+
+	.gtm-grid {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 16px;
+	}
+	.gtm-cell {
+		background: #151b23;
+		border: 1px solid #30363d;
+		border-radius: 12px;
+		padding: 18px;
+	}
+	.gtm-cell-head {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 13px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		margin-bottom: 12px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #30363d;
+	}
+	.gtm-icp-card .gtm-cell-head { color: #60a5fa; }
+	.gtm-position-card .gtm-cell-head { color: #c084fc; }
+	.gtm-pricing-card .gtm-cell-head { color: #5eead4; }
+	.gtm-channels-card .gtm-cell-head { color: #fb923c; }
+	.gtm-goals-card .gtm-cell-head { color: #fde68a; }
+	.gtm-metrics-card .gtm-cell-head { color: #f5a0a1; }
+
+	.gtm-icp-card { grid-column: span 3; }
+	.gtm-position-card { grid-column: span 3; }
+	.gtm-pricing-card { grid-column: span 3; }
+	.gtm-channels-card { grid-column: span 3; }
+	.gtm-goals-card { grid-column: span 3; }
+	.gtm-metrics-card { grid-column: span 3; }
+
+	.gtm-row {
+		display: grid;
+		grid-template-columns: 100px 1fr;
+		gap: 10px;
+		align-items: baseline;
+		padding: 6px 0;
+		font-size: 13px;
+		color: #c8cfd8;
+		border-bottom: 1px solid #21262d;
+	}
+	.gtm-row:last-child { border-bottom: none; }
+	.gtm-row-label {
+		font-size: 11px;
+		color: #8b949e;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		font-weight: 600;
+	}
+	.gtm-row-list {
+		display: block;
+		padding: 8px 0;
+	}
+	.gtm-row-list ul {
+		margin: 6px 0 0;
+		padding-left: 18px;
+		color: #c8cfd8;
+	}
+	.gtm-row-list li {
+		margin-bottom: 4px;
+	}
+	.gtm-tier-list {
+		margin: 8px 0 0;
+		padding-left: 18px;
+		font-size: 13px;
+		color: #c8cfd8;
+	}
+	.gtm-tier-list li {
+		margin-bottom: 6px;
+	}
+
+	.gtm-cell ul {
+		margin: 0;
+		padding-left: 18px;
+		font-size: 13.5px;
+		line-height: 1.55;
+		color: #c8cfd8;
+	}
+	.gtm-cell > ul li { margin-bottom: 6px; }
+	.gtm-cell > ul li:last-child { margin-bottom: 0; }
+
+	.gtm-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 16px;
+		border-top: 1px solid #30363d;
+		font-size: 11px;
+		color: #6e7681;
+	}
+	.gtm-footer-url {
+		font-family: ui-monospace, SFMono-Regular, monospace;
+		color: #8b949e;
+	}
+
+	.gtm-placeholder { opacity: 0.45; }
+
+	/* Light */
+	.gtm-card[data-theme="light"] {
+		background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+		color: #0f172a;
+	}
+	.gtm-card[data-theme="light"] .gtm-header,
+	.gtm-card[data-theme="light"] .gtm-footer,
+	.gtm-card[data-theme="light"] .gtm-cell-head { border-color: #e2e8f0; }
+	.gtm-card[data-theme="light"] .gtm-cell {
+		background: #f8fafc;
+		border-color: #e2e8f0;
+	}
+	.gtm-card[data-theme="light"] .gtm-product { color: #0f172a; }
+	.gtm-card[data-theme="light"] .gtm-row,
+	.gtm-card[data-theme="light"] .gtm-cell ul,
+	.gtm-card[data-theme="light"] .gtm-meta,
+	.gtm-card[data-theme="light"] .gtm-tier-list { color: #475569; }
+	.gtm-card[data-theme="light"] .gtm-row-label,
+	.gtm-card[data-theme="light"] .gtm-meta-label,
+	.gtm-card[data-theme="light"] .gtm-footer { color: #64748b; }
+	.gtm-card[data-theme="light"] .gtm-footer-url { color: #94a3b8; }
+	.gtm-card[data-theme="light"] .gtm-row { border-bottom-color: #e2e8f0; }
+
+	/* Brand */
+	.gtm-card[data-theme="brand"] {
+		background: linear-gradient(135deg, #1c0056 0%, #7611a6 100%);
+		color: #ffffff;
+	}
+	.gtm-card[data-theme="brand"] .gtm-header,
+	.gtm-card[data-theme="brand"] .gtm-footer,
+	.gtm-card[data-theme="brand"] .gtm-cell-head { border-color: rgba(255,255,255,0.15); }
+	.gtm-card[data-theme="brand"] .gtm-cell {
+		background: rgba(255,255,255,0.08);
+		border-color: rgba(255,255,255,0.18);
+	}
+	.gtm-card[data-theme="brand"] .gtm-product { color: #ffffff; }
+	.gtm-card[data-theme="brand"] .gtm-row,
+	.gtm-card[data-theme="brand"] .gtm-cell ul,
+	.gtm-card[data-theme="brand"] .gtm-meta,
+	.gtm-card[data-theme="brand"] .gtm-tier-list { color: rgba(255,255,255,0.92); }
+	.gtm-card[data-theme="brand"] .gtm-row-label,
+	.gtm-card[data-theme="brand"] .gtm-meta-label,
+	.gtm-card[data-theme="brand"] .gtm-footer { color: rgba(255,255,255,0.7); }
+	.gtm-card[data-theme="brand"] .gtm-footer-url { color: rgba(255,255,255,0.85); }
+	.gtm-card[data-theme="brand"] .gtm-label { color: #f5a0a1; }
+	.gtm-card[data-theme="brand"] .gtm-row { border-bottom-color: rgba(255,255,255,0.1); }
+
+	/* Newsletter */
+	.tool-cta-strip {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		padding: 1.75rem;
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		align-items: center;
+	}
+	@media (min-width: 50em) { .tool-cta-strip { grid-template-columns: 1fr auto; } }
+	.cta-text strong {
+		display: block;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+	}
+	.cta-text p { margin: 0.25rem 0 0; color: var(--gray-300); font-size: var(--text-sm); }
+	.cta-form { display: flex; gap: 0.5rem; }
+	.cta-form input {
+		flex: 1;
+		min-width: 0;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-size: var(--text-sm);
+	}
+	.cta-form button {
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 0.5rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-sm);
+		cursor: pointer;
+		white-space: nowrap;
+	}
+	.cta-status { grid-column: 1 / -1; margin: 0; font-size: var(--text-sm); min-height: 1rem; }
+
+	/* SEO */
+	.seo-content { max-width: 60rem; }
+	.seo-content h2 { font-size: var(--text-xl); color: var(--gray-0); margin: 2.5rem 0 1rem; }
+	.seo-content h2:first-child { margin-top: 0; }
+	.seo-content p, .seo-content li { color: var(--gray-200); font-size: var(--text-md); line-height: 1.65; }
+	.seo-content .how-to { padding-left: 1.25rem; }
+	.seo-content .how-to li { margin-bottom: 0.75rem; }
+	.seo-content a { color: var(--accent-regular); text-decoration: underline; text-underline-offset: 0.2em; }
+	.seo-link { display: inline-block; font-weight: 600; }
+	.related-links { list-style: none; padding: 0; }
+	.related-links li { margin-bottom: 0.5rem; }
+
+	.faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+	.faq-item {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		padding: 1rem 1.25rem;
+		background: var(--gray-999_40);
+	}
+	.faq-item summary {
+		cursor: pointer;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		color: var(--gray-0);
+		font-size: var(--text-md);
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+	.faq-item summary::after {
+		content: '+';
+		color: var(--accent-regular);
+		font-size: 1.5rem;
+		font-weight: 400;
+		line-height: 1;
+	}
+	.faq-item[open] summary::after { content: '−'; }
+	.faq-item p { margin: 0.75rem 0 0; color: var(--gray-200); font-size: var(--text-sm); line-height: 1.6; }
+
+	@media print {
+		.form-panel, .preview-controls, .tool-cta-strip, .seo-content, nav, .breadcrumb-nav, footer { display: none !important; }
+		.gtm-card { box-shadow: none; width: 100%; max-width: none; }
+	}
+</style>

@@ -277,6 +277,7 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				var statusEl = document.getElementById('nl-popup-status');
 				if (!popup) return;
 				if (localStorage.getItem('nl-popup-dismissed')) return;
+				if (/[?&]nopopup\b/.test(location.search)) return;
 
 				var shown = false;
 				function showPopup() {
