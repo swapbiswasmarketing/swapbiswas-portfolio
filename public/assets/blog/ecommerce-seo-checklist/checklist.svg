@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="720" fill="url(#bg)" rx="24"/>
+  <text x="700" y="64" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">Ecommerce SEO Checklist: Category to Cart</text>
+  <text x="700" y="102" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">Four fixes that win ecommerce rankings at scale</text>
+
+  <!-- Card 1 -->
+  <g filter="url(#cardShadow)">
+    <rect x="30" y="140" width="655" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="30" y="140" width="655" height="6" rx="3" fill="#fb923c"/>
+    <text x="60" y="190" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="27" font-weight="600">1. Crawl Budget &amp; Faceted Nav</text>
+    <text x="60" y="236" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Control filter and facet URLs</text>
+    <text x="60" y="268" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; noindex or canonical thin facets</text>
+    <text x="60" y="300" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Block infinite parameter combos</text>
+    <text x="60" y="352" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="19" font-style="italic">Stop Google wasting crawl on junk URLs.</text>
+  </g>
+
+  <!-- Card 2 -->
+  <g filter="url(#cardShadow)">
+    <rect x="715" y="140" width="655" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="715" y="140" width="655" height="6" rx="3" fill="#60a5fa"/>
+    <text x="745" y="190" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="27" font-weight="600">2. Category Pages</text>
+    <text x="745" y="236" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Add unique intro copy</text>
+    <text x="745" y="268" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Fix thin and duplicate pages</text>
+    <text x="745" y="300" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Handle pagination cleanly</text>
+    <text x="745" y="352" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="19" font-style="italic">Category pages are your top money keywords.</text>
+  </g>
+
+  <!-- Card 3 -->
+  <g filter="url(#cardShadow)">
+    <rect x="30" y="420" width="655" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="30" y="420" width="655" height="6" rx="3" fill="#5eead4"/>
+    <text x="60" y="470" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="27" font-weight="600">3. Product Pages &amp; Schema</text>
+    <text x="60" y="516" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Product + Offer + Rating schema</text>
+    <text x="60" y="548" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Unique product descriptions</text>
+    <text x="60" y="580" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Alt text on product images</text>
+    <text x="60" y="632" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19" font-style="italic">Schema unlocks rich results in the SERP.</text>
+  </g>
+
+  <!-- Card 4 -->
+  <g filter="url(#cardShadow)">
+    <rect x="715" y="420" width="655" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="715" y="420" width="655" height="6" rx="3" fill="#c084fc"/>
+    <text x="745" y="470" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="27" font-weight="600">4. Internal Linking</text>
+    <text x="745" y="516" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Hub-and-spoke category structure</text>
+    <text x="745" y="548" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Link related products</text>
+    <text x="745" y="580" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Breadcrumbs site-wide</text>
+    <text x="745" y="632" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="19" font-style="italic">Keep every product under three clicks.</text>
+  </g>
+</svg>

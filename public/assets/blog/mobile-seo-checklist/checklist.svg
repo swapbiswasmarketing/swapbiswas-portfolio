@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="720" fill="url(#bg)" rx="24"/>
+  <text x="700" y="64" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">Mobile SEO Checklist: 4 Areas to Fix First</text>
+  <text x="700" y="102" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">Mobile-first indexing, Core Web Vitals, responsive design, and tap targets</text>
+
+  <!-- Card 1 -->
+  <g filter="url(#cardShadow)">
+    <rect x="30" y="140" width="655" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="30" y="140" width="655" height="6" rx="3" fill="#60a5fa"/>
+    <text x="60" y="190" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="27" font-weight="600">1. Mobile-First Indexing</text>
+    <text x="60" y="236" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Content parity with desktop</text>
+    <text x="60" y="268" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Same metadata &amp; structured data</text>
+    <text x="60" y="300" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Same internal links and nav</text>
+    <text x="60" y="352" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="19" font-style="italic">Google indexes the mobile version of your site.</text>
+  </g>
+
+  <!-- Card 2 -->
+  <g filter="url(#cardShadow)">
+    <rect x="715" y="140" width="655" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="715" y="140" width="655" height="6" rx="3" fill="#5eead4"/>
+    <text x="745" y="190" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="27" font-weight="600">2. Core Web Vitals</text>
+    <text x="745" y="236" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; LCP 2.5s or faster</text>
+    <text x="745" y="268" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; INP 200ms or less</text>
+    <text x="745" y="300" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; CLS 0.1 or less</text>
+    <text x="745" y="352" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="19" font-style="italic">Measured on real users at the 75th percentile.</text>
+  </g>
+
+  <!-- Card 3 -->
+  <g filter="url(#cardShadow)">
+    <rect x="30" y="420" width="655" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="30" y="420" width="655" height="6" rx="3" fill="#fb923c"/>
+    <text x="60" y="470" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="27" font-weight="600">3. Responsive Design &amp; Viewport</text>
+    <text x="60" y="516" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Set the meta viewport tag</text>
+    <text x="60" y="548" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Fluid layouts, no fixed widths</text>
+    <text x="60" y="580" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Readable text, no side-scroll</text>
+    <text x="60" y="632" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="19" font-style="italic">One responsive URL, not a separate m-dot site.</text>
+  </g>
+
+  <!-- Card 4 -->
+  <g filter="url(#cardShadow)">
+    <rect x="715" y="420" width="655" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="715" y="420" width="655" height="6" rx="3" fill="#c084fc"/>
+    <text x="745" y="470" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="27" font-weight="600">4. Usability &amp; Tap Targets</text>
+    <text x="745" y="516" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Tap targets at least 48x48 px</text>
+    <text x="745" y="548" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; About 8 px spacing between them</text>
+    <text x="745" y="580" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; No intrusive interstitials</text>
+    <text x="745" y="632" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="19" font-style="italic">Thumb-friendly beats pixel-perfect on mobile.</text>
+  </g>
+</svg>

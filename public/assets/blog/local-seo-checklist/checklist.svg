@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 770">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="770" fill="url(#bg)" rx="24"/>
+  <text x="700" y="64" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">Local SEO Checklist: 20 Steps to the Map Pack</text>
+  <text x="700" y="102" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">Five areas that decide whether you rank in local results</text>
+
+  <!-- Top row -->
+  <g filter="url(#cardShadow)">
+    <rect x="30" y="140" width="430" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="30" y="140" width="430" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="58" y="182" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" letter-spacing="0.08em">STEPS 1-6</text>
+    <text x="58" y="216" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Google Business Profile</text>
+    <text x="58" y="262" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Claim and verify</text>
+    <text x="58" y="292" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Primary + secondary categories</text>
+    <text x="58" y="322" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Hours, services, photos</text>
+    <text x="58" y="352" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Posts and Q&amp;A</text>
+  </g>
+  <g filter="url(#cardShadow)">
+    <rect x="485" y="140" width="430" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="485" y="140" width="430" height="6" rx="3" fill="#fb923c"/>
+    <text x="513" y="182" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" letter-spacing="0.08em">STEPS 7-10</text>
+    <text x="513" y="216" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">NAP &amp; Citations</text>
+    <text x="513" y="262" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Consistent name, address, phone</text>
+    <text x="513" y="292" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Core local directories</text>
+    <text x="513" y="322" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Data aggregators</text>
+    <text x="513" y="352" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Remove duplicate listings</text>
+  </g>
+  <g filter="url(#cardShadow)">
+    <rect x="940" y="140" width="430" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="940" y="140" width="430" height="6" rx="3" fill="#5eead4"/>
+    <text x="968" y="182" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" letter-spacing="0.08em">STEPS 11-14</text>
+    <text x="968" y="216" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Reviews &amp; Reputation</text>
+    <text x="968" y="262" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Ask after delivering value</text>
+    <text x="968" y="292" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Respond to every review</text>
+    <text x="968" y="322" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Use keywords in replies</text>
+    <text x="968" y="352" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Monitor rating and sentiment</text>
+  </g>
+
+  <!-- Bottom row (centered) -->
+  <g filter="url(#cardShadow)">
+    <rect x="240" y="440" width="430" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="240" y="440" width="430" height="6" rx="3" fill="#60a5fa"/>
+    <text x="268" y="482" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" letter-spacing="0.08em">STEPS 15-18</text>
+    <text x="268" y="516" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">On-Page Local Signals</text>
+    <text x="268" y="562" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Geo terms in title and H1</text>
+    <text x="268" y="592" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Dedicated location pages</text>
+    <text x="268" y="622" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; LocalBusiness schema</text>
+    <text x="268" y="652" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Embedded Google map</text>
+  </g>
+  <g filter="url(#cardShadow)">
+    <rect x="730" y="440" width="430" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="730" y="440" width="430" height="6" rx="3" fill="#c084fc"/>
+    <text x="758" y="482" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" letter-spacing="0.08em">STEPS 19-20</text>
+    <text x="758" y="516" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Local Links &amp; Tracking</text>
+    <text x="758" y="562" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Local backlinks and sponsorships</text>
+    <text x="758" y="592" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19">&#8226; Track map-pack rankings</text>
+    <text x="758" y="648" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="19" font-style="italic">Re-run the full list each quarter.</text>
+  </g>
+</svg>

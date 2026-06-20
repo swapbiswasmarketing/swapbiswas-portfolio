@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="910" fill="url(#bg)" rx="24"/>
+  <text x="700" y="64" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="38" font-weight="700">9 Strategies to Improve Brand Visibility in AI Search</text>
+  <text x="700" y="102" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">Get surfaced and cited across ChatGPT, Perplexity, Gemini, and AI Overviews</text>
+
+  <!-- Row 1 -->
+  <g filter="url(#cardShadow)">
+    <rect x="30" y="140" width="430" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="30" y="140" width="430" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="60" y="186" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" font-style="italic">01</text>
+    <text x="60" y="226" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="25" font-weight="600">Entity Consistency</text>
+    <text x="60" y="272" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19"><tspan x="60" dy="0">Same brand name, bio, and</tspan><tspan x="60" dy="28">details on every profile.</tspan></text>
+  </g>
+  <g filter="url(#cardShadow)">
+    <rect x="485" y="140" width="430" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="485" y="140" width="430" height="6" rx="3" fill="#c084fc"/>
+    <text x="515" y="186" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" font-style="italic">02</text>
+    <text x="515" y="226" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="25" font-weight="600">Structured Data</text>
+    <text x="515" y="272" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19"><tspan x="515" dy="0">Add schema so engines parse</tspan><tspan x="515" dy="28">your facts cleanly.</tspan></text>
+  </g>
+  <g filter="url(#cardShadow)">
+    <rect x="940" y="140" width="430" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="940" y="140" width="430" height="6" rx="3" fill="#60a5fa"/>
+    <text x="970" y="186" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" font-style="italic">03</text>
+    <text x="970" y="226" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="25" font-weight="600">Trusted Citations</text>
+    <text x="970" y="272" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19"><tspan x="970" dy="0">Get mentioned where AI looks:</tspan><tspan x="970" dy="28">Reddit, Wikipedia, G2, press.</tspan></text>
+  </g>
+
+  <!-- Row 2 -->
+  <g filter="url(#cardShadow)">
+    <rect x="30" y="390" width="430" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="30" y="390" width="430" height="6" rx="3" fill="#5eead4"/>
+    <text x="60" y="436" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" font-style="italic">04</text>
+    <text x="60" y="476" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="25" font-weight="600">Answer-Shaped Content</text>
+    <text x="60" y="522" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19"><tspan x="60" dy="0">Lead with the answer, then</tspan><tspan x="60" dy="28">the supporting detail.</tspan></text>
+  </g>
+  <g filter="url(#cardShadow)">
+    <rect x="485" y="390" width="430" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="485" y="390" width="430" height="6" rx="3" fill="#fb923c"/>
+    <text x="515" y="436" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" font-style="italic">05</text>
+    <text x="515" y="476" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="25" font-weight="600">Topical Authority</text>
+    <text x="515" y="522" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19"><tspan x="515" dy="0">Cover topics in clusters,</tspan><tspan x="515" dy="28">not one-off posts.</tspan></text>
+  </g>
+  <g filter="url(#cardShadow)">
+    <rect x="940" y="390" width="430" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="940" y="390" width="430" height="6" rx="3" fill="#b388f2"/>
+    <text x="970" y="436" fill="#b388f2" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" font-style="italic">06</text>
+    <text x="970" y="476" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="25" font-weight="600">Digital PR &amp; Mentions</text>
+    <text x="970" y="522" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19"><tspan x="970" dy="0">Earn unlinked brand mentions;</tspan><tspan x="970" dy="28">they still count as signals.</tspan></text>
+  </g>
+
+  <!-- Row 3 -->
+  <g filter="url(#cardShadow)">
+    <rect x="30" y="640" width="430" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="30" y="640" width="430" height="6" rx="3" fill="#d98ee0"/>
+    <text x="60" y="686" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" font-style="italic">07</text>
+    <text x="60" y="726" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="25" font-weight="600">Reviews &amp; Validation</text>
+    <text x="60" y="772" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19"><tspan x="60" dy="0">Third-party reviews feed AI</tspan><tspan x="60" dy="28">summaries and build trust.</tspan></text>
+  </g>
+  <g filter="url(#cardShadow)">
+    <rect x="485" y="640" width="430" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="485" y="640" width="430" height="6" rx="3" fill="#f87171"/>
+    <text x="515" y="686" fill="#f87171" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" font-style="italic">08</text>
+    <text x="515" y="726" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="25" font-weight="600">Crawlable &amp; Fast</text>
+    <text x="515" y="772" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19"><tspan x="515" dy="0">Let AI bots fetch and render</tspan><tspan x="515" dy="28">pages without blocks.</tspan></text>
+  </g>
+  <g filter="url(#cardShadow)">
+    <rect x="940" y="640" width="430" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="940" y="640" width="430" height="6" rx="3" fill="#5eead4"/>
+    <text x="970" y="686" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" font-style="italic">09</text>
+    <text x="970" y="726" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="25" font-weight="600">Measure &amp; Iterate</text>
+    <text x="970" y="772" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="19"><tspan x="970" dy="0">Track citations and share of</tspan><tspan x="970" dy="28">voice; refine monthly.</tspan></text>
+  </g>
+</svg>
