@@ -207,7 +207,11 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 		color: var(--gray-300);
 		font-size: var(--text-sm);
 		position: relative;
-		border-top: 1px solid var(--gray-800);
+		border-top: 1px solid var(--sg-hair);
+		/* frosted glass: the strand passes BEHIND and reads as a soft blur through the footer */
+		background-color: color-mix(in srgb, var(--sg-panel) 50%, transparent);
+		backdrop-filter: blur(20px) saturate(1.4);
+		-webkit-backdrop-filter: blur(20px) saturate(1.4);
 	}
 
 	.footer-inner {

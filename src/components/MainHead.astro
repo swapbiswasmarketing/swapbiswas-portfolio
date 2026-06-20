@@ -87,19 +87,15 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="dns-prefetch" href="https://api.kit.com" />
-<link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
-
-<!-- Google AdSense -->
-<script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3086200953871328" crossorigin="anonymous"></script>
 <link
 	rel="preload"
 	as="style"
-	href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
 	onload="this.onload=null;this.rel='stylesheet'"
 />
 <noscript>
 	<link
-		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
 		rel="stylesheet"
 	/>
 </noscript>
@@ -132,6 +128,12 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 			t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 		})(window,document,"clarity","script","myl5bf3yc1");
+
+		// Google AdSense (production only)
+		var pc3=document.createElement('link');pc3.rel='preconnect';pc3.href='https://pagead2.googlesyndication.com';pc3.crossOrigin='';document.head.appendChild(pc3);
+		var ad=document.createElement('script');ad.async=true;ad.crossOrigin='anonymous';
+		ad.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3086200953871328';
+		document.head.appendChild(ad);
 	}
 </script>
 
@@ -142,6 +144,9 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 			if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
 				return localStorage.getItem('theme');
 			}
+			// Homepage defaults to dark (the showpiece). The toggle still works and,
+			// once used, the saved choice wins here too. Other pages follow the OS.
+			if (location.pathname === '/' || location.pathname === '') return 'dark';
 			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 		}
 

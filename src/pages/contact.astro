@@ -43,6 +43,7 @@ const faqs = [
 	<div class="stack gap-20">
 		<main class="wrapper contact">
 			<Hero
+				eyebrow="Get in touch"
 				title="Contact"
 				tagline="Let's Talk. Reach out using the form below or email me directly."
 				align="start"
@@ -217,7 +218,7 @@ const faqs = [
 
 	h2 {
 		font-size: var(--text-2xl);
-		color: var(--gray-0);
+		color: var(--sg-text);
 		margin-bottom: 1rem;
 	}
 
@@ -233,27 +234,33 @@ const faqs = [
 	label {
 		display: block;
 		margin-bottom: 0.5rem;
-		color: var(--gray-200);
+		color: var(--sg-muted);
 		font-size: var(--text-sm);
 	}
 
 	input,
 	textarea {
 		width: 100%;
-		padding: 0.75rem 1rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 0.5rem;
-		background: var(--gray-999_40);
-		color: var(--gray-200);
+		padding: 0.85rem 1rem;
+		border: 1px solid var(--sg-hair);
+		border-radius: 0.75rem;
+		background: var(--sg-void);
+		color: var(--sg-text);
 		font-family: var(--font-body);
 		font-size: var(--text-md);
-		transition: border-color var(--theme-transition);
+		transition: border-color var(--theme-transition), box-shadow var(--theme-transition);
+	}
+
+	input::placeholder,
+	textarea::placeholder {
+		color: var(--sg-muted);
 	}
 
 	input:focus,
 	textarea:focus {
 		outline: none;
-		border-color: var(--accent-regular);
+		border-color: var(--sg-strand-0);
+		box-shadow: 0 0 0 3px rgba(197, 97, 246, 0.18);
 	}
 
 	textarea {
@@ -262,20 +269,21 @@ const faqs = [
 
 	button[type="submit"] {
 		display: inline-block;
-		padding: 0.75rem 2rem;
+		padding: 0.85rem 2rem;
 		border: none;
 		border-radius: 999rem;
-		background: var(--gradient-accent-orange);
-		color: var(--accent-text-over);
+		background: linear-gradient(120deg, var(--sg-strand-0), var(--sg-warm));
+		color: #ffffff;
 		font-family: var(--font-brand);
 		font-size: var(--text-md);
-		font-weight: 500;
+		font-weight: 600;
 		cursor: pointer;
-		transition: box-shadow var(--theme-transition);
+		transition: box-shadow var(--theme-transition), filter var(--theme-transition);
 	}
 
 	button[type="submit"]:hover {
-		box-shadow: var(--shadow-md);
+		filter: brightness(1.06);
+		box-shadow: 0 8px 24px rgba(197, 97, 246, 0.28);
 	}
 
 	button[type="submit"]:disabled {
@@ -309,20 +317,19 @@ const faqs = [
 
 	/* FAQ Styles */
 	.faq-box {
-		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
+		border: 1px solid var(--sg-hair);
+		border-radius: 1rem;
 		padding: 1.5rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
+		background-color: var(--sg-panel);
 	}
 
 	.faq-subtitle {
-		color: var(--gray-300);
+		color: var(--sg-muted);
 		margin-bottom: 1.5rem;
 	}
 
 	.accordion {
-		border-top: 1px solid var(--gray-800);
+		border-top: 1px solid var(--sg-hair);
 	}
 
 	.accordion.first {
@@ -336,18 +343,19 @@ const faqs = [
 		padding: 1.25rem 0;
 		cursor: pointer;
 		font-size: var(--text-md);
-		font-weight: 500;
-		color: var(--gray-200);
+		font-weight: 600;
+		color: var(--sg-text);
 		user-select: none;
 		margin: 0;
 	}
 
 	.accordion-trigger:hover {
-		color: var(--gray-0);
+		color: var(--sg-strand-0);
 	}
 
 	.accordion-icon {
 		font-size: var(--text-lg);
+		color: var(--sg-muted);
 		transition: transform 0.2s ease;
 	}
 
@@ -368,7 +376,7 @@ const faqs = [
 
 	.accordion-content p {
 		padding-bottom: 1.25rem;
-		color: var(--gray-300);
+		color: var(--sg-lede);
 		line-height: 1.6;
 	}
 
@@ -380,7 +388,7 @@ const faqs = [
 		}
 
 		.faq-box {
-			border-radius: 1.5rem;
+			border-radius: 1.25rem;
 			padding: 2.5rem;
 		}
 	}

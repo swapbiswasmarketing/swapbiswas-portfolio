@@ -3,19 +3,20 @@ import Icon from './Icon.astro';
 ---
 
 <section class="box skills">
+	<h2 class="sr-only">What I do</h2>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Product & GTM Strategy</h2>
+		<h3>Product & GTM Strategy</h3>
 		<p>Go-to-market campaigns, product launches, positioning, and competitive strategy for B2B SaaS.</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>AI & Marketing Automation</h2>
+		<h3>AI & Marketing Automation</h3>
 		<p>AI agents, workflow automation, and predictive analytics to scale marketing operations.</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Data Analytics & Growth</h2>
+		<h3>Data Analytics & Growth</h3>
 		<p>Growth hacking, market research, conversion rate optimization, and data-driven decision making.</p>
 	</div>
 </section>
@@ -23,11 +24,13 @@ import Icon from './Icon.astro';
 
 <style>
 	.box {
-		border: 1px solid var(--gray-800);
+		border: 1px solid var(--sg-hair);
 		border-radius: 0.75rem;
 		padding: 1.5rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
+		/* frosted glass: the strand passes BEHIND and reads as a soft blur through the panel */
+		background-color: color-mix(in srgb, var(--sg-panel) 50%, transparent);
+		backdrop-filter: blur(20px) saturate(1.4);
+		-webkit-backdrop-filter: blur(20px) saturate(1.4);
 	}
 
 	.skills {
@@ -36,7 +39,7 @@ import Icon from './Icon.astro';
 		gap: 3rem;
 	}
 
-	.skills h2 {
+	.skills h3 {
 		font-size: var(--text-lg);
 	}
 
@@ -56,7 +59,7 @@ import Icon from './Icon.astro';
 			gap: 5rem;
 		}
 
-		.skills h2 {
+		.skills h3 {
 			font-size: var(--text-2xl);
 		}
 	}

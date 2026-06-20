@@ -76,18 +76,29 @@ function categorySlug(cat: string): string {
 		border-radius: 0.75rem;
 		overflow: hidden;
 		box-shadow: var(--shadow-sm);
-		transition: box-shadow var(--theme-transition), border-color 0.2s ease;
+		transition: box-shadow var(--theme-transition), border-color 0.2s ease, transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
 	}
 
 	.card:hover {
 		box-shadow: var(--shadow-md);
 		border-color: var(--gray-700);
+		transform: translateY(-5px);
 	}
 
 	img {
 		width: 100%;
 		height: 11rem;
 		object-fit: cover;
+		transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+	}
+
+	.card:hover img {
+		transform: scale(1.06);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.card:hover { transform: none; }
+		.card:hover img { transform: none; }
 	}
 
 	.card-body {
