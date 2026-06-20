@@ -3,7 +3,7 @@ import Icon from './Icon.astro';
 ---
 
 <theme-toggle>
-	<button>
+	<button data-cursor="theme">
 		<span class="sr-only">Dark theme</span>
 		<span class="icon light"><Icon icon="sun" /></span>
 		<span class="icon dark"><Icon icon="moon-stars" /></span>
@@ -19,6 +19,21 @@ import Icon from './Icon.astro';
 		background-color: var(--gray-999);
 		box-shadow: inset 0 0 0 1px var(--accent-overlay);
 		cursor: pointer;
+		transition:
+			box-shadow var(--theme-transition),
+			transform var(--theme-transition);
+	}
+
+	button:hover {
+		box-shadow:
+			inset 0 0 0 1px var(--accent-regular),
+			0 0 16px -4px var(--accent-regular);
+		transform: translateY(-1px);
+	}
+
+	button:focus-visible {
+		outline: 2px solid var(--accent-dark);
+		outline-offset: 3px;
 	}
 
 	.icon {
@@ -29,7 +44,7 @@ import Icon from './Icon.astro';
 		width: 2rem;
 		height: 2rem;
 		font-size: 1rem;
-		color: var(--accent-overlay);
+		color: var(--gray-400);
 	}
 
 	.icon.light::before {

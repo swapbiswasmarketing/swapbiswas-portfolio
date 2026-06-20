@@ -5,11 +5,7 @@ import { Picture } from 'astro:assets';
 import CallToAction from '../components/CallToAction.astro';
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
-import Grid from '../components/Grid.astro';
-import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
 import BlogPreview from '../components/BlogPreview.astro';
 import ResumeSection from '../components/ResumeSection.astro';
 import Skills from '../components/Skills.astro';
@@ -23,12 +19,44 @@ const projects = (await getCollection('work'))
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 3);
+
+const brands = [
+	{ name: 'LambdaTest', logo: '/assets/brands/lambdatest-trim.webp' },
+	{ name: 'Samsung', logo: '/assets/brands/samsung-trim.webp' },
+	{ name: 'Sociowash', logo: '/assets/brands/sociowash-trim.png' },
+	{ name: 'Medilife', logo: '/assets/brands/medilife-trim.webp' },
+	{ name: 'Appknox', logo: '/assets/brands/appknox.svg' },
+	{ name: 'Lido Learning', logo: '/assets/brands/lido-trim.webp' },
+];
+
+// The Selected Work showcase is built and ready, but the work entries currently
+// use placeholder images (e.g. "800x950"). Flip this to true once they have real
+// project imagery and the section will appear automatically.
+const showSelectedWork = false;
 ---
 
 <BaseLayout
 	description="Swapnil Biswas - Product Marketing & Growth Strategist specializing in AI, SEO, and content. 657K+ leads generated, 18M+ traffic driven. Explore my work and blog."
 	image="/og/home.webp"
 >
+	<script slot="head" is:inline>
+		// Enable the Signal intro loader before paint (only with JS + no reduced-motion),
+		// so no-JS / reduced-motion visitors always see content immediately.
+		(function () {
+			try {
+				var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+				if (!reduce && !window.__signalLoaderShown) {
+					document.documentElement.classList.add('signal-js');
+				}
+			} catch (e) {}
+			// Safety: never let the loader trap content if the main script fails to run.
+			setTimeout(function () {
+				var l = document.getElementById('signal-loader');
+				if (l) l.style.display = 'none';
+				document.documentElement.classList.remove('signal-js');
+			}, 4500);
+		})();
+	</script>
 	<script type="application/ld+json" set:html={JSON.stringify({
 		"@context": "https://schema.org",
 		"@graph": [
@@ -57,34 +85,87 @@ const posts = (await getCollection('blog'))
 			}
 		]
 	})} />
-	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
-			<header class="hero">
-				<Hero
-					title="Hello, my name is Swapnil Biswas"
-					tagline="I mix AI agents, people, and a few clever strategies to get your product or service the results it deserves."
-					align="start"
-				>
-					<div class="roles">
-						<Pill><Icon icon="strategy" size="1.33em" /> Product Marketing</Pill>
-						<Pill><Icon icon="trophy" size="1.33em" /> Growth Strategy</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Content & SEO</Pill>
-					</div>
-				</Hero>
+	<div class="stack gap-20 lg:gap-30">
+		<!-- Signal: ambient background, scroll progress, section HUD (decorative) -->
+		<div class="signal-aura" aria-hidden="true"><span class="aura aura-1"></span><span class="aura aura-2"></span><span class="aura aura-3"></span></div>
+		<canvas class="signal-constellation" aria-hidden="true"></canvas>
+		<div class="signal-grain" aria-hidden="true"></div>
+		<div class="signal-progress" aria-hidden="true"><span id="signal-progress-bar"></span></div>
+		<div class="signal-hud" aria-hidden="true"><span id="signal-hud-idx">01</span><span class="signal-hud-sep"></span><span class="signal-hud-total">06</span></div>
+		<!-- Signal: continuous strand + custom cursor + intro loader (decorative) -->
+		<div class="signal-cursor" aria-hidden="true"><span class="sc-ring"></span><span class="sc-dot"></span></div>
+		<span class="signal-cursor-label" aria-hidden="true"></span>
+		<div class="signal-loader" id="signal-loader" aria-hidden="true">
+			<div class="sl-inner">
+				<div class="sl-count"><span id="signal-pct">0</span><i>%</i></div>
+				<div class="sl-label">Calibrating signal</div>
+				<div class="sl-bar"><span id="signal-bar"></span></div>
+			</div>
+		</div>
+		<svg class="signal-strand" id="signal-strand" aria-hidden="true" preserveAspectRatio="none">
+			<defs>
+				<linearGradient id="signalGrad" x1="0" y1="0" x2="0" y2="1">
+					<stop id="sg0" offset="0%" stop-color="#C561F6"></stop>
+					<stop id="sg1" offset="45%" stop-color="#9B30D9"></stop>
+					<stop id="sg2" offset="75%" stop-color="#7611A6"></stop>
+					<stop id="sg3" offset="100%" stop-color="#CA7879"></stop>
+				</linearGradient>
+				<filter id="signalGlow" x="-60%" y="-60%" width="220%" height="220%">
+					<feGaussianBlur stdDeviation="4" result="b"></feGaussianBlur>
+					<feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+				</filter>
+			</defs>
+			<path id="sp-base" stroke="url(#signalGrad)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.85"></path>
+			<path id="sp-pkt1" stroke="#FFE3C2" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#signalGlow)"></path>
+			<path id="sp-pkt2" stroke="#C561F6" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#signalGlow)"></path>
+			<line id="sp-filament" stroke="rgba(255,227,194,.5)" stroke-width="1" stroke-dasharray="2 3" opacity="0"></line>
+			<circle id="sp-halo" r="22" fill="#C561F6" opacity="0.22" filter="url(#signalGlow)"></circle>
+			<circle id="sp-flare" r="7" fill="#FFE3C2" filter="url(#signalGlow)"></circle>
+		</svg>
 
-				<Picture
-					src={portraitImg}
-					alt="Swapnil Biswas - AI, Product & Digital Growth Marketer"
-					widths={[480, 768, 1024]}
-					sizes="(max-width: 50em) 100vw, 480px"
-					formats={['avif', 'webp']}
-					fallbackFormat="webp"
-					loading="eager"
-					fetchpriority="high"
-					pictureAttributes={{ class: "hero-portrait-picture" }}
-					class="hero-portrait"
-				/>
+		<div class="wrapper stack gap-8 lg:gap-20">
+			<header class="signal-hero">
+				<span class="signal-bgword" aria-hidden="true">SIGNAL</span>
+				<div class="signal-hero-copy">
+					<span class="signal-badge" data-fade><i></i> Available for new projects</span>
+					<p class="eyebrow" data-fade>The signal, routed</p>
+					<h1 class="signal-h1">
+						<span class="ln"><span>Swapnil</span></span>
+						<span class="ln"><span>Biswas</span></span>
+					</h1>
+					<p class="signal-lede" data-fade>I build the marketing engines - <b>AI agents</b>, content systems, and growth loops - that turn raw signal into <b>compounding growth</b>.</p>
+					<a class="signal-cta" href="/contact/" data-cursor="say hello" data-magnetic data-fade>
+						Let&rsquo;s talk <span class="arw" aria-hidden="true">&#8594;</span>
+					</a>
+					<div class="signal-roles" data-fade>
+						<span>Product Marketing</span><span>Growth</span><span>SEO</span><span>AI</span>
+					</div>
+				</div>
+
+				<div class="signal-cue" aria-hidden="true"><span>scroll</span><span class="line"></span></div>
+
+				<div class="signal-portrait-wrap" data-cursor="that's me">
+					<Picture
+						src={portraitImg}
+						alt="Swapnil Biswas - AI, Product & Digital Growth Marketer"
+						widths={[480, 768, 1024]}
+						sizes="(max-width: 50em) 100vw, 480px"
+						formats={['avif', 'webp']}
+						fallbackFormat="webp"
+						loading="eager"
+						fetchpriority="high"
+						pictureAttributes={{ class: "signal-portrait-pic" }}
+						class="signal-portrait"
+					/>
+				</div>
 			</header>
+
+			<div class="signal-marquee signal-marquee--tags" aria-hidden="true">
+				<div class="mq-track" id="mq-tags">
+					<span class="mq-tag"><span>Product Marketing</span><span class="star">✦</span><span>Growth Strategy</span><span class="star">✦</span><span>AI Agents</span><span class="star">✦</span><span>SEO</span><span class="star">✦</span><span>Content</span><span class="star">✦</span><span>Demand Gen</span><span class="star">✦</span></span>
+					<span class="mq-tag"><span>Product Marketing</span><span class="star">✦</span><span>Growth Strategy</span><span class="star">✦</span><span>AI Agents</span><span class="star">✦</span><span>SEO</span><span class="star">✦</span><span>Content</span><span class="star">✦</span><span>Demand Gen</span><span class="star">✦</span></span>
+				</div>
+			</div>
 
 			<Skills />
 
@@ -122,7 +203,7 @@ const posts = (await getCollection('blog'))
 			</section>
 		</div>
 
-		<main class="wrapper stack gap-20 lg:gap-48">
+		<main class="wrapper stack gap-20 lg:gap-30">
 			<!-- Selected Work section hidden - work case studies don't have final data yet
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
@@ -151,14 +232,40 @@ const posts = (await getCollection('blog'))
 			</section>
 			-->
 
-			<section class="section with-background with-cta">
+			{showSelectedWork && projects.length > 0 && (
+				<section class="signal-work">
+					<header class="section-header stack gap-2 lg:gap-4">
+						<p class="section-eyebrow">Selected Work</p>
+						<h2>Campaigns &amp; builds</h2>
+					</header>
+					<div class="work-list">
+						{projects.map((p, i) => (
+							<a class="work-item" href={`/work/${p.id}`} data-cursor="view">
+								<div class="work-media">
+									<img src={p.data.img} alt={p.data.img_alt || p.data.title} loading="lazy" decoding="async" />
+									<span class="work-index">{String(i + 1).padStart(2, '0')}</span>
+								</div>
+								<div class="work-meta">
+									<h4 class="work-title">{p.data.title}</h4>
+									<p class="work-desc">{p.data.description}</p>
+									<div class="work-tags">{p.data.tags.slice(0, 3).map((t) => <span>{t}</span>)}</div>
+									<span class="work-arrow">View case study <span aria-hidden="true">&#8594;</span></span>
+								</div>
+							</a>
+						))}
+					</div>
+				</section>
+			)}
+
+			<section class="section with-background">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Latest Posts</h3>
+					<p class="section-eyebrow">The Journal</p>
+					<h2>Latest Posts</h2>
 					<p>Read my latest thoughts on marketing, AI, SEO, and growth strategy.</p>
 				</header>
 
 				<div class="gallery">
-					<Grid variant="offset">
+					<ul class="signal-posts-grid">
 						{
 							posts.map((post) => (
 								<li>
@@ -166,10 +273,10 @@ const posts = (await getCollection('blog'))
 								</li>
 							))
 						}
-					</Grid>
+					</ul>
 				</div>
 
-				<div class="cta">
+				<div class="cta signal-posts-cta">
 					<CallToAction href="/blog/">
 						View All
 						<Icon icon="arrow-right" size="1.2em" />
@@ -183,31 +290,17 @@ const posts = (await getCollection('blog'))
 				</div>
 			</section>
 
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Trusted By</h3>
-					<p>
-						I have had the privilege of working with some amazing brands and companies throughout my career.
-					</p>
+			<section class="signal-brands-sec">
+				<header class="signal-brands-head section-header stack gap-2 lg:gap-4">
+					<p class="section-eyebrow">Trusted by</p>
+					<h2>Brands I've helped grow</h2>
 				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							[
-								{ name: 'LambdaTest', logo: '/assets/brands/lambdatest.webp' },
-								{ name: 'Samsung', logo: '/assets/brands/samsung.webp' },
-								{ name: 'Sociowash', logo: '/assets/brands/sociowash.png' },
-								{ name: 'Medilife', logo: '/assets/brands/medilife.webp' },
-								{ name: 'Appknox', logo: '/assets/brands/appknox.svg' },
-								{ name: 'Lido Learning', logo: '/assets/brands/lido.webp' },
-							].map((brand) => (
-								<li class="mention-card">
-									<img src={brand.logo} alt={brand.name} class="brand-logo" loading="lazy" decoding="async" />
-								</li>
-							))
-						}
-					</Grid>
+				<div class="signal-marquee signal-marquee--brands" aria-hidden="true">
+					<div class="mq-track" id="mq-brands">
+						{[...brands, ...brands, ...brands, ...brands, ...brands, ...brands].map((brand) => (
+							<span class="mq-logo"><img src={brand.logo} alt={brand.name} loading="lazy" decoding="async" /></span>
+						))}
+					</div>
 				</div>
 			</section>
 		</main>
@@ -230,7 +323,7 @@ const posts = (await getCollection('blog'))
 					/>
 					<button type="submit">Subscribe</button>
 				</form>
-				<p class="newsletter-status" id="newsletter-status"></p>
+				<p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite"></p>
 			</div>
 		</section>
 
@@ -249,12 +342,19 @@ const posts = (await getCollection('blog'))
 			if (valueEl) valueEl.textContent = '0';
 		});
 
+		const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 		const animateCountUp = () => {
 			stats.forEach((stat) => {
 				const target = parseFloat(stat.getAttribute('data-count') || '0');
 				const hasDecimal = stat.hasAttribute('data-decimal');
 				const valueEl = stat.querySelector('.stat-value') as HTMLElement;
 				if (!valueEl) return;
+
+				// Respect reduced motion: write the final value, no animation.
+				if (prefersReduced) {
+					valueEl.textContent = hasDecimal ? target.toFixed(1) : target.toString();
+					return;
+				}
 
 				const duration = 2000;
 				const startTime = performance.now();
@@ -317,14 +417,14 @@ const posts = (await getCollection('blog'))
 					});
 					if (!res.ok) throw new Error('Subscription failed');
 
-					nlStatus.textContent = 'Subscribed! You\'ll hear from me soon.';
-					nlStatus.style.color = 'var(--accent-regular)';
+					nlStatus.textContent = 'Done - subscribed! You\'ll hear from me soon.';
+					nlStatus.style.color = 'var(--sg-text)';
 					nlForm.reset();
 
 					window.dataLayer?.push({ event: 'newsletter_signup', signup_location: 'homepage' });
 				} catch {
-					nlStatus.textContent = 'Something went wrong. Please try again.';
-					nlStatus.style.color = '#ca7879';
+					nlStatus.textContent = 'Error - something went wrong. Please try again.';
+					nlStatus.style.color = 'var(--sg-text)';
 				}
 				btn.textContent = 'Subscribe';
 				btn.disabled = false;
@@ -405,7 +505,8 @@ const posts = (await getCollection('blog'))
 		font-family: var(--font-brand);
 		font-weight: 600;
 		line-height: 1;
-		background: var(--gradient-accent-orange);
+		color: var(--sg-warm);
+		background: linear-gradient(120deg, var(--sg-strand-0), var(--sg-warm));
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
@@ -415,7 +516,8 @@ const posts = (await getCollection('blog'))
 		font-size: var(--text-xl);
 		font-family: var(--font-brand);
 		font-weight: 600;
-		background: var(--gradient-accent-orange);
+		color: var(--sg-warm);
+		background: linear-gradient(120deg, var(--sg-strand-0), var(--sg-warm));
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
@@ -423,7 +525,7 @@ const posts = (await getCollection('blog'))
 
 	.stat-label {
 		font-size: var(--text-sm);
-		color: var(--gray-400);
+		color: var(--sg-muted);
 		letter-spacing: 0.02em;
 	}
 
@@ -499,7 +601,7 @@ const posts = (await getCollection('blog'))
 		color: var(--gray-300);
 	}
 
-	.section-header h3 {
+	.section-header h2 {
 		font-size: var(--text-2xl);
 	}
 
@@ -519,8 +621,10 @@ const posts = (await getCollection('blog'))
 			font-size: var(--text-lg);
 		}
 
-		.section-header h3 {
-			font-size: var(--text-4xl);
+		.section-header h2 {
+			font-size: clamp(2.5rem, 5vw, 4.5rem);
+			letter-spacing: -0.02em;
+			line-height: 1;
 		}
 
 		.with-cta .section-header {
@@ -541,6 +645,13 @@ const posts = (await getCollection('blog'))
 
 	.resume-wrapper {
 		grid-column: 1 / -1;
+		/* frosted glass: the strand passes BEHIND and reads as a soft blur through the panel */
+		border: 1px solid var(--sg-hair);
+		border-radius: clamp(1rem, 2vw, 1.75rem);
+		padding: clamp(1.5rem, 4vw, 3rem);
+		background-color: color-mix(in srgb, var(--sg-panel) 50%, transparent);
+		backdrop-filter: blur(20px) saturate(1.4);
+		-webkit-backdrop-filter: blur(20px) saturate(1.4);
 	}
 
 	/* ====================================================== */
@@ -592,23 +703,15 @@ const posts = (await getCollection('blog'))
 	/* ====================================================== */
 
 	.newsletter-section {
-		padding: 2rem 1.5rem;
-		background: var(--gradient-accent-orange);
+		padding: 2.75rem 1.5rem;
+		background: var(--sg-panel);
+		border: 1px solid var(--sg-hair);
 		position: relative;
 		overflow: hidden;
-		border-radius: 1rem;
+		border-radius: 1.25rem;
 		max-width: 64rem;
 		margin: 0 auto;
 		width: calc(100% - 3rem);
-	}
-
-	.newsletter-section::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: var(--gray-999);
-		opacity: 0.85;
-		border-radius: 1rem;
 	}
 
 	.newsletter-wrapper {
@@ -623,16 +726,14 @@ const posts = (await getCollection('blog'))
 	}
 
 	.newsletter-content h2 {
-		font-size: var(--text-2xl);
-		background: var(--gradient-accent-orange);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin-bottom: 0.25rem;
+		font-size: clamp(1.8rem, 4vw, 2.6rem);
+		color: var(--sg-text);
+		letter-spacing: -0.01em;
+		margin-bottom: 0.4rem;
 	}
 
 	.newsletter-content p {
-		color: var(--gray-300);
+		color: var(--sg-muted);
 		font-size: var(--text-sm);
 	}
 
@@ -647,9 +748,9 @@ const posts = (await getCollection('blog'))
 		flex: 1;
 		padding: 0.75rem 1.25rem;
 		border-radius: 999px;
-		border: 1px solid var(--gray-700);
-		background: var(--gray-999);
-		color: var(--gray-0);
+		border: 1px solid var(--sg-hair);
+		background: var(--sg-void);
+		color: var(--sg-text);
 		font-size: var(--text-md);
 		font-family: var(--font-body);
 		outline: none;
@@ -658,6 +759,7 @@ const posts = (await getCollection('blog'))
 
 	.newsletter-form input[type="email"]:focus {
 		border-color: var(--accent-regular);
+		box-shadow: 0 0 0 3px rgba(197, 97, 246, 0.22);
 	}
 
 	.newsletter-form input[type="email"]::placeholder {
@@ -707,4 +809,813 @@ const posts = (await getCollection('blog'))
 			flex-direction: row;
 		}
 	}
+
+	/* ============================================================
+	   THE SIGNAL - homepage hero
+	   ============================================================ */
+	.signal-hero {
+		position: relative;
+		z-index: 2;
+		min-height: 84vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 2.5rem;
+		padding-top: 1rem;
+	}
+	.signal-hero-copy { max-width: 44rem; position: relative; z-index: 2; }
+	.signal-hero .eyebrow {
+		font-family: var(--font-brand);
+		font-size: 0.8rem;
+		letter-spacing: 0.3em;
+		text-transform: uppercase;
+		color: var(--sg-eyebrow);
+		margin-bottom: 1.3rem;
+	}
+	.signal-h1 {
+		font-family: var(--font-brand);
+		font-weight: 600;
+		line-height: 0.92;
+		letter-spacing: -0.02em;
+		font-size: clamp(3rem, 9vw, 7.5rem);
+		color: var(--sg-text);
+		margin-bottom: 1.4rem;
+	}
+	/* overflow:hidden enables the line mask reveal; padding-right gives the wide
+	   display word breathing room so it is never clipped on the right edge. */
+	.signal-h1 .ln { display: block; overflow: hidden; padding-bottom: 0.08em; padding-right: 0.12em; }
+	.signal-h1 .ln > span { display: block; }
+	.signal-h1 .ltr { display: inline-block; }
+	.signal-lede {
+		font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+		color: var(--sg-lede);
+		margin-bottom: 2rem;
+		max-width: 32ch;
+	}
+	.signal-lede b { color: var(--sg-text); font-weight: 600; }
+	.signal-cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6rem;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: 1rem;
+		color: var(--sg-text);
+		text-decoration: none;
+		border: 1px solid var(--sg-hair);
+		padding: 0.85rem 1.5rem;
+		border-radius: 99px;
+		background: rgba(255, 255, 255, 0.02);
+		transition: border-color 0.3s, background 0.3s;
+	}
+	.signal-cta:hover { border-color: var(--sg-warm); background: rgba(202, 120, 121, 0.08); }
+	.signal-cta .arw { transition: transform 0.3s; }
+	.signal-cta:hover .arw { transform: translateX(5px); }
+	.signal-roles {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		margin-top: 1.8rem;
+		font-family: var(--font-brand);
+		font-size: 0.72rem;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: var(--sg-muted);
+	}
+	.signal-roles span { border: 1px solid var(--sg-hair); padding: 0.35rem 0.7rem; border-radius: 99px; }
+
+	.signal-portrait-wrap { position: relative; width: min(360px, 80%); aspect-ratio: 4 / 5; }
+	.signal-portrait-wrap::before { content: ''; position: absolute; inset: -14%; z-index: -1; pointer-events: none; background: radial-gradient(circle at 55% 40%, var(--sg-strand-0), transparent 62%); opacity: 0.28; filter: blur(44px); }
+	.signal-portrait-wrap::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; border-radius: 1.4rem; background: linear-gradient(150deg, var(--sg-strand-0) 0%, transparent 45%, var(--sg-warm) 100%); mix-blend-mode: soft-light; opacity: 0.5; }
+	.signal-portrait-wrap :global(.signal-portrait-pic) { display: block; width: 100%; height: 100%; }
+	.signal-portrait-wrap :global(.signal-portrait) {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 1.4rem;
+		clip-path: circle(140% at 50% 45%);
+		box-shadow: 0 30px 80px -40px rgba(197, 97, 246, 0.5);
+		filter: grayscale(0.35) contrast(1.06);
+	}
+
+	@media (min-width: 50em) {
+		.signal-hero {
+			display: grid;
+			grid-template-columns: 1.15fr 0.85fr;
+			align-items: center;
+			gap: 3.5rem;
+			min-height: 100vh;
+			padding-inline: 1rem;
+		}
+		.signal-portrait-wrap { justify-self: end; }
+	}
+
+	/* custom cursor */
+	.signal-cursor { position: fixed; inset: 0; z-index: 10001; pointer-events: none; opacity: 0; }
+	.sc-ring, .sc-dot {
+		position: fixed; top: 0; left: 0; border-radius: 50%;
+		transform: translate(-50%, -50%); will-change: transform; pointer-events: none;
+	}
+	.sc-ring {
+		width: 38px; height: 38px; border: 1.5px solid var(--sg-ring); z-index: 10001;
+		transition: width 0.25s, height 0.25s, border-color 0.25s, background 0.25s;
+	}
+	.sc-dot { width: 6px; height: 6px; background: var(--sg-dot); box-shadow: 0 0 12px 2px var(--sg-dot-shadow); z-index: 10002; }
+	.sc-ring.is-hot { width: 60px; height: 60px; border-color: var(--sg-warm); background: rgba(202, 120, 121, 0.08); }
+	.signal-cursor-label {
+		position: fixed; top: 0; left: 0; z-index: 10002; pointer-events: none;
+		font-family: var(--font-brand); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
+		color: var(--sg-eyebrow); transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.2s; white-space: nowrap;
+	}
+
+	/* intro loader (only shown when JS enables it) */
+	.signal-loader { display: none; }
+	:global(html.signal-js) .signal-loader {
+		display: grid; position: fixed; inset: 0; z-index: 9990; background: var(--sg-void); place-items: center; will-change: transform;
+	}
+	.sl-inner { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; }
+	.sl-count { display: flex; align-items: baseline; gap: 0.08em; font-family: var(--font-brand); font-weight: 700; line-height: 1; letter-spacing: -0.03em; font-size: clamp(4rem, 14vw, 11rem); background: linear-gradient(120deg, var(--sg-strand-0), var(--sg-warm)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+	.sl-count i { font-style: normal; font-size: 0.3em; -webkit-text-fill-color: var(--sg-muted); color: var(--sg-muted); }
+	.sl-label { font-family: var(--font-brand); font-size: 0.72rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--sg-muted); }
+	.sl-bar { width: min(320px, 60vw); height: 2px; background: var(--sg-hair); overflow: hidden; }
+	.sl-bar span { display: block; height: 100%; width: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--sg-strand-0), var(--sg-warm)); }
+
+	/* the continuous strand - spans the whole page, drawn on scroll */
+	.signal-strand { position: absolute; top: 0; left: 0; width: 100%; z-index: -1; pointer-events: none; }
+	.signal-strand path { fill: none; }
+	#sp-flare { transform-box: fill-box; transform-origin: center; animation: flarePulse 2.4s ease-in-out infinite; }
+	@keyframes flarePulse { 0%, 100% { transform: scale(0.8); opacity: 0.8; } 50% { transform: scale(1.25); opacity: 1; } }
+	#sp-halo { display: none; }
+	.signal-constellation { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: var(--sg-constellation-op); }
+	@media (prefers-reduced-motion: reduce) { #sp-flare, #sp-halo { animation: none; } .signal-constellation { display: none; } }
+
+	/* stats: pulse-on-arrival - the strand "delivers" each number */
+	.stats .stat.signal-hit .stat-number { animation: sgPop 0.7s ease-out; }
+	.stats .stat.signal-hit .stat-value,
+	.stats .stat.signal-hit .stat-suffix { animation: sgHit 0.85s ease-out; }
+	@keyframes sgPop { 0% { transform: scale(0.92); } 42% { transform: scale(1.06); } 100% { transform: scale(1); } }
+	@keyframes sgHit {
+		0% { filter: drop-shadow(0 0 0 transparent); }
+		30% { filter: drop-shadow(0 0 16px var(--sg-warm)); }
+		100% { filter: drop-shadow(0 0 0 transparent); }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.stats .stat.signal-hit .stat-number,
+		.stats .stat.signal-hit .stat-value,
+		.stats .stat.signal-hit .stat-suffix { animation: none; }
+	}
+
+	/* brands: a sweep of strand-light passes across each logo as it arrives */
+	.mention-card { position: relative; overflow: hidden; }
+	.mention-card::after {
+		content: ''; position: absolute; inset: 0; pointer-events: none;
+		background: linear-gradient(105deg, transparent 38%, rgba(197, 97, 246, 0.22) 50%, transparent 62%);
+		transform: translateX(-130%);
+	}
+	.mention-card.signal-lit::after { animation: sgShine 0.9s ease-out; }
+	@keyframes sgShine { to { transform: translateX(130%); } }
+	@media (prefers-reduced-motion: reduce) {
+		.mention-card.signal-lit::after { animation: none; }
+	}
+
+	/* ============================================================
+	   THE SIGNAL - heavy layers (ambient, HUD, marquees, wordmark)
+	   ============================================================ */
+	/* ambient aura + grain + vignette */
+	.signal-aura { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+	.signal-aura .aura { position: absolute; border-radius: 50%; filter: blur(90px); opacity: var(--sg-aura-op); will-change: transform; }
+	.signal-aura .aura-1 { width: 55vw; height: 55vw; left: -12vw; top: -14vw; background: radial-gradient(circle, var(--sg-strand-2), transparent 68%); animation: auraDrift1 28s ease-in-out infinite; }
+	.signal-aura .aura-2 { width: 48vw; height: 48vw; right: -14vw; top: 16vh; background: radial-gradient(circle, var(--sg-strand-0), transparent 68%); animation: auraDrift2 34s ease-in-out infinite; }
+	.signal-aura .aura-3 { width: 44vw; height: 44vw; left: 26vw; bottom: -20vh; background: radial-gradient(circle, var(--sg-warm), transparent 68%); animation: auraDrift3 40s ease-in-out infinite; }
+	:global(:root.theme-dark) .signal-aura .aura { mix-blend-mode: screen; }
+	.signal-aura::after { content: ''; position: absolute; inset: 0; background: radial-gradient(125% 95% at 50% 28%, transparent 52%, var(--sg-void) 100%); }
+	@keyframes auraDrift1 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(8vw, 6vh) scale(1.15); } }
+	@keyframes auraDrift2 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-7vw, 10vh) scale(1.12); } }
+	@keyframes auraDrift3 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(6vw, -8vh) scale(1.2); } }
+	.signal-grain { position: fixed; inset: 0; z-index: 1; pointer-events: none; background-image: url('/assets/backgrounds/noise.png'); background-size: 200px; opacity: 0.045; mix-blend-mode: overlay; }
+
+	/* scroll progress bar */
+	.signal-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 9995; pointer-events: none; }
+	.signal-progress span { display: block; height: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--sg-strand-0), var(--sg-warm)); box-shadow: 0 0 12px var(--sg-strand-0); }
+
+	/* section index HUD */
+	.signal-hud { position: fixed; left: 1.4rem; bottom: 1.2rem; z-index: 60; display: flex; align-items: center; gap: 0.55rem; font-family: var(--font-brand); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--sg-muted); }
+	.signal-hud-sep { width: 28px; height: 1px; background: var(--sg-muted); opacity: 0.5; }
+	#signal-hud-idx { color: var(--sg-text); }
+	@media (max-width: 50em) { .signal-hud { display: none; } }
+
+	/* giant background wordmark */
+	.signal-bgword { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; font-family: var(--font-brand); font-weight: 700; font-size: min(36vw, 32rem); line-height: 1; letter-spacing: -0.04em; color: transparent; -webkit-text-stroke: 1px var(--sg-bgword-stroke); white-space: nowrap; user-select: none; pointer-events: none; }
+	@media (max-width: 50em) { .signal-bgword { display: none; } .signal-strand { opacity: 0.6; } }
+
+	/* availability badge */
+	.signal-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-brand); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sg-text); border: 1px solid var(--sg-hair); border-radius: 99px; padding: 0.4rem 0.85rem; margin-bottom: 1.1rem; background: rgba(127, 127, 160, 0.06); }
+	.signal-badge i { width: 8px; height: 8px; border-radius: 50%; background: var(--sg-ok); animation: badgePulse 2s infinite; }
+	@keyframes badgePulse { 0% { box-shadow: 0 0 0 0 rgba(46, 198, 168, 0.5); } 70% { box-shadow: 0 0 0 8px rgba(46, 198, 168, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 198, 168, 0); } }
+
+	/* scroll cue */
+	.signal-cue { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-family: var(--font-brand); font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--sg-muted); z-index: 2; }
+	.signal-cue .line { width: 1px; height: 38px; background: linear-gradient(var(--sg-strand-0), transparent); animation: cueDrip 2s infinite; }
+	@keyframes cueDrip { 0% { opacity: 0.2; } 50% { opacity: 1; } 100% { opacity: 0.2; } }
+	@media (max-width: 50em) { .signal-cue { display: none; } }
+
+	/* marquees (full-bleed) */
+	.signal-marquee { position: relative; z-index: 2; overflow: hidden; width: 100vw; margin-left: calc(50% - 50vw); border-block: 1px solid var(--sg-hair); padding: 1.15rem 0; }
+	.signal-marquee--tags { background: linear-gradient(90deg, transparent, rgba(118, 17, 166, 0.05), transparent); }
+	.mq-track { display: flex; align-items: center; gap: 3rem; width: max-content; will-change: transform; }
+	.mq-tag { display: inline-flex; align-items: center; gap: 3rem; white-space: nowrap; font-family: var(--font-brand); font-weight: 600; font-size: clamp(1.1rem, 2.6vw, 1.9rem); letter-spacing: -0.01em; color: var(--sg-text); }
+	.mq-tag .star { color: var(--sg-strand-0); }
+	.mq-logo { height: 3.4rem; display: flex; align-items: center; justify-content: center; flex: none; padding: 0 0.85rem; }
+	/* brands marquee: per-item spacing (no flex gap) so the loop seam is exact across copies */
+	#mq-brands { gap: 0; }
+	#mq-brands .mq-logo { padding: 0 1.8rem; }
+	.mq-logo img { height: 2.4rem; width: auto; max-width: none; object-fit: contain; filter: brightness(0) opacity(0.5); transition: filter 0.3s; }
+	:global(:root.theme-dark) .mq-logo img { filter: brightness(0) invert(1) opacity(0.6); }
+	.mq-logo:hover img { filter: brightness(0) opacity(0.9); }
+	:global(:root.theme-dark) .mq-logo:hover img { filter: brightness(0) invert(1) opacity(1); }
+
+	/* brands section */
+	.signal-brands-sec { display: flex; flex-direction: column; align-items: center; gap: 3rem; }
+	.signal-brands-head { justify-self: center; text-align: center; }
+
+	/* selected work showcase */
+	.signal-work { display: flex; flex-direction: column; gap: 3.5rem; }
+	.work-list { display: flex; flex-direction: column; gap: 4.5rem; }
+	.work-item { display: grid; grid-template-columns: 1fr; gap: 1.4rem; text-decoration: none; color: inherit; }
+	.work-media { position: relative; aspect-ratio: 16 / 10; border-radius: 1.25rem; overflow: hidden; border: 1px solid var(--sg-hair); background: var(--sg-panel); }
+	.work-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
+	.work-item:hover .work-media img { transform: scale(1.06); }
+	.work-index { position: absolute; top: 1rem; left: 1rem; font-family: var(--font-brand); font-size: 0.78rem; letter-spacing: 0.18em; color: #fff; background: rgba(7, 8, 13, 0.5); backdrop-filter: blur(8px); padding: 0.3rem 0.6rem; border-radius: 99px; }
+	.work-meta { display: flex; flex-direction: column; gap: 0.85rem; }
+	.work-title { font-family: var(--font-brand); font-weight: 600; font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1.05; color: var(--sg-text); }
+	.work-desc { color: var(--sg-lede); max-width: 52ch; }
+	.work-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+	.work-tags span { font-family: var(--font-brand); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sg-muted); border: 1px solid var(--sg-hair); border-radius: 99px; padding: 0.3rem 0.7rem; }
+	.work-arrow { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-brand); font-weight: 600; color: var(--sg-strand-0); transition: gap 0.3s; }
+	.work-item:hover .work-arrow { gap: 0.8rem; }
+	@media (min-width: 50em) {
+		.work-item { grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 3.5rem; }
+		.work-item:nth-child(even) .work-media { order: 2; }
+	}
+
+	/* latest posts - balanced 3-up row (no offset dangling gap) */
+	.signal-posts-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; list-style: none; padding: 0; margin: 0; }
+	@media (min-width: 50em) { .signal-posts-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+	.signal-posts-cta { display: flex; justify-content: center; }
+	@media (min-width: 50em) { .signal-posts-cta { grid-area: auto; grid-column: 1 / -1; } }
+
+	/* section eyebrow */
+	.section-eyebrow { font-family: var(--font-brand); font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--sg-eyebrow); margin-bottom: 0.2rem; }
+
+	@media (prefers-reduced-motion: reduce) {
+		.signal-aura .aura, .signal-badge i, .signal-cue .line { animation: none; }
+	}
 </style>
+
+<style is:global>
+	/* The Signal palette - theme-aware. This stylesheet ships only on the homepage,
+	   so these overrides never affect the rest of the site. Light is the default
+	   (:root); dark overrides apply under .theme-dark (the site's existing toggle). */
+	:root {
+		--sg-void: #f4f5fa;
+		--sg-panel: #ffffff;
+		--sg-hair: #e2e5ef;
+		--sg-text: #14172b;
+		--sg-lede: #2a2f44;
+		--sg-muted: #5c6680;
+		--sg-v1: #7611a6;
+		--sg-warm: #b85f60;
+		--sg-bloom: #7611a6;
+		--sg-strand-0: #c561f6;
+		--sg-strand-1: #9b30d9;
+		--sg-strand-2: #7611a6;
+		--sg-strand-3: #c0593a;
+		--sg-strand-opacity: 0.95;
+		--sg-strand-w: 3.2;
+		--sg-pkt-w: 4.2;
+		--sg-pkt2-w: 3.2;
+		--sg-aura-op: 0.13;
+		--sg-constellation-op: 0.46;
+		--sg-eyebrow: #9b30d9;
+		--sg-ok: #1aa179;
+		--sg-bgword-stroke: rgba(20, 23, 43, 0.09);
+		--sg-packet: #7611a6;
+		--sg-packet-2: #c561f6;
+		--sg-flare: #7611a6;
+		--sg-filament: rgba(118, 17, 166, 0.45);
+		--sg-ring: rgba(118, 17, 166, 0.55);
+		--sg-dot: #7611a6;
+		--sg-dot-shadow: rgba(118, 17, 166, 0.45);
+	}
+	:root.theme-dark {
+		--sg-void: #07080d;
+		--sg-panel: #0e1018;
+		--sg-hair: #1c2030;
+		--sg-text: #f2f4fb;
+		--sg-lede: #cdd3e6;
+		--sg-muted: #8a93b5;
+		--sg-v1: #c561f6;
+		--sg-warm: #ca7879;
+		--sg-bloom: #ffe3c2;
+		--sg-strand-0: #c561f6;
+		--sg-strand-1: #9b30d9;
+		--sg-strand-2: #7611a6;
+		--sg-strand-3: #ca7879;
+		--sg-strand-opacity: 0.85;
+		--sg-strand-w: 2.6;
+		--sg-pkt-w: 3.6;
+		--sg-pkt2-w: 3;
+		--sg-aura-op: 0.32;
+		--sg-constellation-op: 0.4;
+		--sg-eyebrow: #c561f6;
+		--sg-ok: #2ec6a8;
+		--sg-bgword-stroke: rgba(255, 255, 255, 0.06);
+		--sg-packet: #ffe3c2;
+		--sg-packet-2: #c561f6;
+		--sg-flare: #ffe3c2;
+		--sg-filament: rgba(255, 227, 194, 0.5);
+		--sg-ring: rgba(197, 97, 246, 0.6);
+		--sg-dot: #ffe3c2;
+		--sg-dot-shadow: rgba(202, 120, 121, 0.9);
+	}
+	body { background: var(--sg-void); }
+	.backgrounds { background: var(--sg-void) !important; }
+	/* suppress the themed section background washes so the strand reads cleanly */
+	.with-background::before { display: none !important; }
+	/* strand colors - override the SVG presentation attributes, theme-aware */
+	#sg0 { stop-color: var(--sg-strand-0); }
+	#sg1 { stop-color: var(--sg-strand-1); }
+	#sg2 { stop-color: var(--sg-strand-2); }
+	#sg3 { stop-color: var(--sg-strand-3); }
+	#sp-base { opacity: var(--sg-strand-opacity); stroke-width: var(--sg-strand-w); }
+	#sp-pkt1 { stroke: var(--sg-packet); stroke-width: var(--sg-pkt-w); }
+	#sp-pkt2 { stroke: var(--sg-packet-2); stroke-width: var(--sg-pkt2-w); }
+	#sp-flare { fill: var(--sg-flare); }
+	#sp-filament { stroke: var(--sg-filament); }
+	/* skills: the signal "routes" into each capability - staggered rise + a
+	   gradient route-line landing on each card (set hidden via JS, so no-JS shows cards) */
+	.skills > div { position: relative; }
+	.skills > div::before {
+		content: ''; position: absolute; top: 0; left: 1.25rem; right: 1.25rem; height: 2px;
+		background: linear-gradient(90deg, var(--sg-strand-2), var(--sg-warm));
+		transform: scaleX(0); transform-origin: left; border-radius: 2px;
+	}
+	.skills > div.signal-lit::before { animation: sgRoute 0.7s ease-out forwards; }
+	@keyframes sgRoute { to { transform: scaleX(1); } }
+	/* contact: the CTA pulses as the strand resolves into the ask */
+	a.signal-pulse { animation: sgCtaPulse 1.7s ease-out 0.1s 2; }
+	@keyframes sgCtaPulse {
+		0%, 100% { box-shadow: 0 0 0 0 rgba(197, 97, 246, 0); }
+		35% { box-shadow: 0 0 30px 4px rgba(197, 97, 246, 0.45); }
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.skills > div::before { display: none; }
+		a.signal-pulse { animation: none; }
+	}
+	/* hide the native cursor only while the custom cursor is active */
+	body.signal-active,
+	body.signal-active a,
+	body.signal-active button { cursor: none !important; }
+</style>
+
+<script>
+	import gsap from 'gsap';
+	import ScrollTrigger from 'gsap/ScrollTrigger';
+	import Lenis from 'lenis';
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	let S: any = null;
+	const onHome = () => location.pathname === '/' || location.pathname === '';
+
+	function smoothPath(pts: number[][]) {
+		let d = `M ${pts[0][0]} ${pts[0][1]}`;
+		for (let i = 0; i < pts.length - 1; i++) {
+			const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+			const c1x = p1[0] + (p2[0] - p0[0]) / 6, c1y = p1[1] + (p2[1] - p0[1]) / 6;
+			const c2x = p2[0] - (p3[0] - p1[0]) / 6, c2y = p2[1] - (p3[1] - p1[1]) / 6;
+			d += ` C ${c1x} ${c1y}, ${c2x} ${c2y}, ${p2[0]} ${p2[1]}`;
+		}
+		return d;
+	}
+
+	function initSignal() {
+		if (!onHome() || S) return;
+		const svg = document.getElementById('signal-strand') as unknown as SVGSVGElement | null;
+		if (!svg) return;
+
+		const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const fine = matchMedia('(pointer: fine)').matches;
+
+		const pBase = document.getElementById('sp-base') as unknown as SVGPathElement;
+		const pPkt1 = document.getElementById('sp-pkt1') as unknown as SVGPathElement;
+		const pPkt2 = document.getElementById('sp-pkt2') as unknown as SVGPathElement;
+		const flare = document.getElementById('sp-flare')!;
+		const halo = document.getElementById('sp-halo');
+		const filament = document.getElementById('sp-filament');
+		const ring = document.querySelector('.sc-ring') as HTMLElement;
+		const dot = document.querySelector('.sc-dot') as HTMLElement;
+		const clabel = document.querySelector('.signal-cursor-label') as HTMLElement;
+		const cursorWrap = document.querySelector('.signal-cursor') as HTMLElement;
+
+		S = { tickers: [] as any[], triggers: [] as any[], lenis: null as any, listeners: [] as any[], marquees: [] as any[], refreshHandlers: [] as any[], delayed: [] as any[], tl: null as any, revealTl: null as any };
+		const addL = (t: any, e: string, f: any, o?: any) => { t.addEventListener(e, f, o); S.listeners.push([t, e, f, o]); };
+
+		let len = 0;
+		let drawnLen = 0;
+		let samplePts: number[][] = [];
+
+		// The strand spans the ENTIRE page (absolute, height = full document) and is
+		// drawn progressively as you scroll, so its glowing head travels down the page.
+		function buildPath() {
+			const W = innerWidth;
+			svg!.setAttribute('height', '0'); // don't let the strand inflate the measurement
+			const Hpage = Math.max(document.documentElement.scrollHeight, innerHeight);
+			svg!.setAttribute('width', String(W));
+			svg!.setAttribute('height', String(Hpage));
+			svg!.setAttribute('viewBox', `0 0 ${W} ${Hpage}`);
+			const cx = W * 0.5;
+			// Keep the strand in the side GUTTERS (outside the centered content column,
+			// max-width 83rem = 664px half) so it frames the content and never crosses
+			// reading text on wide screens. On narrow screens it weaves gently behind.
+			const contentHalf = Math.min(W * 0.46, 664);
+			const gutter = Math.max(0, W / 2 - contentHalf);
+			// Narrow screens have no gutter, so a centered weave would cross the text.
+			// Run the strand down the right edge as a quiet side-accent instead.
+			const narrow = gutter <= 70;
+			const amp = contentHalf + Math.min(gutter * 0.55, 130);
+			const edgeX = W - 18;
+			const sels = ['.signal-hero', '.signal-marquee--tags', '.stats', '.skills', '.signal-work', 'main > section.with-cta', '.resume-wrapper', '.signal-brands-sec', '.newsletter-section', 'aside'];
+			const anchors: number[][] = [];
+			let ai = 0;
+			for (const s of sels) {
+				const el = document.querySelector(s);
+				if (!el) continue;
+				const r = el.getBoundingClientRect();
+				const yc = r.top + window.scrollY + r.height / 2;
+				if (narrow) {
+					anchors.push([edgeX - 12 - 9 * Math.sin(ai * 1.1), yc]);
+				} else {
+					const dir = ai % 2 === 0 ? 1 : -1;
+					const k = 0.85 + 0.15 * Math.sin(ai * 1.3);
+					anchors.push([cx + dir * amp * k, yc]);
+				}
+				ai++;
+			}
+			const sx = narrow ? edgeX : cx;
+			const pts: number[][] = [[sx, -80], ...(anchors.length ? anchors : [[sx, Hpage * 0.5]]), [sx, Hpage + 80]];
+			const d = smoothPath(pts);
+			pBase.setAttribute('d', d); pPkt1.setAttribute('d', d); pPkt2.setAttribute('d', d);
+			len = pBase.getTotalLength();
+			pBase.style.strokeDasharray = String(len);
+			pPkt2.style.strokeDasharray = `13 ${len}`;
+			// pre-sample points once so the head position is a cheap array lookup
+			// (instead of getPointAtLength on a full-document path every scroll frame).
+			samplePts = [];
+			const SAMPLES = 220;
+			for (let i = 0; i <= SAMPLES; i++) { const pt = pBase.getPointAtLength((len * i) / SAMPLES); samplePts.push([pt.x, pt.y]); }
+		}
+		buildPath();
+		if (filament) (filament as HTMLElement).style.display = 'none';
+
+		// custom cursor
+		if (fine && !reduce) {
+			document.body.classList.add('signal-active');
+			if (cursorWrap) cursorWrap.style.opacity = '1';
+			const rx = gsap.quickTo(ring, 'x', { duration: 0.5, ease: 'power3' });
+			const ry = gsap.quickTo(ring, 'y', { duration: 0.5, ease: 'power3' });
+			const dx = gsap.quickTo(dot, 'x', { duration: 0.12, ease: 'power3' });
+			const dy = gsap.quickTo(dot, 'y', { duration: 0.12, ease: 'power3' });
+			const move = (e: MouseEvent) => {
+				rx(e.clientX); ry(e.clientY); dx(e.clientX); dy(e.clientY);
+				if (clabel) { clabel.style.left = e.clientX + 'px'; clabel.style.top = e.clientY + 32 + 'px'; }
+			};
+			addL(window, 'mousemove', move);
+			document.querySelectorAll('[data-cursor]').forEach((el) => {
+				const en = () => { ring.classList.add('is-hot'); if (clabel) { clabel.textContent = el.getAttribute('data-cursor'); clabel.style.opacity = '1'; } };
+				const lv = () => { ring.classList.remove('is-hot'); if (clabel) clabel.style.opacity = '0'; };
+				addL(el, 'mouseenter', en); addL(el, 'mouseleave', lv);
+			});
+			addL(window, 'pointerdown', () => gsap.to(ring, { scale: 0.7, duration: 0.18 }));
+			addL(window, 'pointerup', () => gsap.to(ring, { scale: 1, duration: 0.18 }));
+		} else if (cursorWrap) {
+			cursorWrap.style.display = 'none';
+		}
+
+		// Lenis smooth scroll
+		if (!reduce) {
+			const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+			lenis.on('scroll', ScrollTrigger.update);
+			const raf = (t: number) => lenis.raf(t * 1000);
+			gsap.ticker.add(raf); gsap.ticker.lagSmoothing(0);
+			S.tickers.push(raf); S.lenis = lenis;
+			(window as any).__lenis = lenis;
+		}
+
+		// Draw the strand to your scroll position; the head + trail ride the tip.
+		const trailLen = () => Math.min(180, len * 0.06);
+		function paintStrand(p: number) {
+			drawnLen = len * (0.045 + p * 0.955);
+			pBase.style.strokeDashoffset = String(len - drawnLen);
+			const tr = trailLen();
+			pPkt1.style.strokeDasharray = `${tr} ${len}`;
+			pPkt1.style.strokeDashoffset = String(-(drawnLen - tr));
+			const si = samplePts.length ? Math.min(samplePts.length - 1, Math.max(0, Math.round((drawnLen / len) * (samplePts.length - 1)))) : 0;
+			const tip = samplePts[si] || [0, 0];
+			flare.setAttribute('cx', String(tip[0])); flare.setAttribute('cy', String(tip[1]));
+			// fade the head + bright trail in with scroll so they never float disconnected at the top
+			const headOp = Math.min(1, p * 5);
+			flare.setAttribute('fill-opacity', String(headOp));
+			pPkt1.style.opacity = String(headOp);
+		}
+
+		if (reduce) {
+			pBase.style.strokeDashoffset = '0';
+			pPkt1.style.display = 'none';
+			pPkt2.style.display = 'none';
+			flare.setAttribute('opacity', '0');
+			if (halo) halo.setAttribute('opacity', '0');
+		} else {
+			paintStrand(0);
+			const draw = ScrollTrigger.create({
+				trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: 0.4,
+				onUpdate: (self) => paintStrand(self.progress),
+			});
+			S.triggers.push(draw);
+
+			// a faint data packet flowing within the drawn portion
+			let flow = 0;
+			const tick = () => {
+				flow = (flow + 6) % Math.max(drawnLen, 1);
+				pPkt2.style.strokeDashoffset = String(-flow);
+			};
+			gsap.ticker.add(tick); S.tickers.push(tick);
+
+			// rebuild the path geometry whenever ScrollTrigger re-measures the page
+			const onRefresh = () => buildPath();
+			ScrollTrigger.addEventListener('refreshInit', onRefresh);
+			S.refreshHandlers.push(onRefresh);
+			S.delayed.push(gsap.delayedCall(0.6, () => { if (!S) return; buildPath(); ScrollTrigger.refresh(); }));
+		}
+
+		// stats: pulse-on-arrival - the strand delivers each metric as it enters view
+		const statsSec = document.querySelector('.stats');
+		if (statsSec) {
+			const st = ScrollTrigger.create({
+				trigger: statsSec, start: 'top 78%', once: true,
+				onEnter: () => {
+					statsSec.querySelectorAll('.stat').forEach((el, i) => {
+						gsap.delayedCall(i * 0.18, () => el.classList.add('signal-hit'));
+					});
+				},
+			});
+			S.triggers.push(st);
+		}
+
+		// skills: staggered route-in reveal + gradient route line on each card
+		const skillCards = gsap.utils.toArray<HTMLElement>('.skills > div');
+		if (skillCards.length) {
+			if (!reduce) gsap.set(skillCards, { opacity: 0, y: 26 });
+			const sk = ScrollTrigger.create({
+				trigger: '.skills', start: 'top 82%', once: true,
+				onEnter: () => skillCards.forEach((el, i) => {
+					if (!reduce) gsap.to(el, { opacity: 1, y: 0, duration: 0.7, delay: i * 0.14, ease: 'power3.out' });
+					gsap.delayedCall(i * 0.14 + 0.12, () => el.classList.add('signal-lit'));
+				}),
+			});
+			S.triggers.push(sk);
+		}
+
+		// brands: light sweeps across the logo wall, card by card, as the strand passes
+		const brandCards = gsap.utils.toArray<HTMLElement>('.mention-card');
+		if (brandCards.length) {
+			const br = ScrollTrigger.create({
+				trigger: brandCards[0], start: 'top 84%', once: true,
+				onEnter: () => brandCards.forEach((el, i) => gsap.delayedCall(i * 0.12, () => el.classList.add('signal-lit'))),
+			});
+			S.triggers.push(br);
+		}
+
+		// contact: the CTA pulses as the strand resolves into one taut ask
+		const contactBtn = document.querySelector('aside a[href^="mailto:"]');
+		if (contactBtn) {
+			const ct = ScrollTrigger.create({
+				trigger: contactBtn, start: 'top 85%', once: true,
+				onEnter: () => contactBtn.classList.add('signal-pulse'),
+			});
+			S.triggers.push(ct);
+		}
+
+		// ---- magnetic buttons ----
+		if (fine && !reduce) {
+			const magnets = Array.from(document.querySelectorAll('[data-magnetic], .cta a, aside a[href^="mailto:"]')) as HTMLElement[];
+			magnets.forEach((el) => {
+				const qx = gsap.quickTo(el, 'x', { duration: 0.4, ease: 'power3' });
+				const qy = gsap.quickTo(el, 'y', { duration: 0.4, ease: 'power3' });
+				const mm = (e: MouseEvent) => {
+					const r = el.getBoundingClientRect();
+					const dx = e.clientX - (r.left + r.width / 2);
+					const dy = e.clientY - (r.top + r.height / 2);
+					if (Math.hypot(dx, dy) < Math.max(r.width, r.height) * 1.1) { qx(dx * 0.3); qy(dy * 0.3); }
+					else { qx(0); qy(0); }
+				};
+				addL(window, 'mousemove', mm);
+			});
+		}
+
+		// ---- 3D tilt on the portrait + skill cards (depth) ----
+		if (fine && !reduce) {
+			const tilt = (el: HTMLElement, max: number) => {
+				gsap.set(el, { transformPerspective: 850, transformOrigin: 'center' });
+				const qrx = gsap.quickTo(el, 'rotationX', { duration: 0.5, ease: 'power3' });
+				const qry = gsap.quickTo(el, 'rotationY', { duration: 0.5, ease: 'power3' });
+				const mv = (e: MouseEvent) => {
+					const r = el.getBoundingClientRect();
+					qry((((e.clientX - r.left) / r.width) - 0.5) * max);
+					qrx(-((((e.clientY - r.top) / r.height) - 0.5) * max));
+				};
+				const lv = () => { qrx(0); qry(0); };
+				addL(el, 'mousemove', mv); addL(el, 'mouseleave', lv);
+			};
+			const pw = document.querySelector('.signal-portrait-wrap') as HTMLElement | null;
+			if (pw) tilt(pw, 10);
+			gsap.utils.toArray<HTMLElement>('.skills > div').forEach((c) => tilt(c, 7));
+		}
+
+		// ---- canvas constellation: drifting data-nodes that link to the cursor ----
+		const cvs = document.querySelector('.signal-constellation') as HTMLCanvasElement | null;
+		const cctx = cvs ? cvs.getContext('2d') : null;
+		if (cvs && cctx && !reduce && fine) {
+			const DPR = Math.min(window.devicePixelRatio || 1, 2);
+			let cw = 0, ch = 0, cmx = -9999, cmy = -9999;
+			let parts: { x: number; y: number; vx: number; vy: number }[] = [];
+			const sizeCvs = () => {
+				cw = innerWidth; ch = innerHeight;
+				cvs.width = Math.floor(cw * DPR); cvs.height = Math.floor(ch * DPR);
+				cvs.style.width = cw + 'px'; cvs.style.height = ch + 'px';
+				cctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+				const n = Math.min(70, Math.floor((cw * ch) / 26000));
+				parts = Array.from({ length: n }, () => ({ x: Math.random() * cw, y: Math.random() * ch, vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25 }));
+			};
+			sizeCvs();
+			addL(window, 'resize', sizeCvs);
+			addL(window, 'mousemove', (e: MouseEvent) => { cmx = e.clientX; cmy = e.clientY; });
+			const drawC = () => {
+				const dark = document.documentElement.classList.contains('theme-dark');
+				const node = dark ? '197,97,246' : '118,17,166';
+				const link = dark ? '140,147,181' : '118,17,166';
+				cctx.clearRect(0, 0, cw, ch);
+				for (const p of parts) {
+					p.x += p.vx; p.y += p.vy;
+					if (p.x < 0 || p.x > cw) p.vx *= -1;
+					if (p.y < 0 || p.y > ch) p.vy *= -1;
+				}
+				cctx.lineWidth = 1;
+				for (let i = 0; i < parts.length; i++) {
+					const a = parts[i];
+					const dc = Math.hypot(a.x - cmx, a.y - cmy);
+					if (dc < 170) { cctx.strokeStyle = `rgba(${node},${(1 - dc / 170) * 0.45})`; cctx.beginPath(); cctx.moveTo(a.x, a.y); cctx.lineTo(cmx, cmy); cctx.stroke(); }
+					for (let j = i + 1; j < parts.length; j++) {
+						const b = parts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+						if (d < 120) { cctx.strokeStyle = `rgba(${link},${(1 - d / 120) * 0.18})`; cctx.beginPath(); cctx.moveTo(a.x, a.y); cctx.lineTo(b.x, b.y); cctx.stroke(); }
+					}
+					cctx.fillStyle = `rgba(${node},0.55)`; cctx.beginPath(); cctx.arc(a.x, a.y, 1.4, 0, Math.PI * 2); cctx.fill();
+				}
+			};
+			gsap.ticker.add(drawC); S.tickers.push(drawC);
+		}
+
+		// ---- infinite marquees (seamless -50% over duplicated content) ----
+		const mq = (id: string, dur: number) => {
+			const el = document.getElementById(id);
+			if (el && !reduce) S.marquees.push(gsap.to(el, { xPercent: -50, duration: dur, ease: 'none', repeat: -1 }));
+		};
+		mq('mq-tags', 28);
+		mq('mq-brands', 95);
+
+		// ---- scroll progress bar + section index HUD ----
+		const bar = document.getElementById('signal-progress-bar');
+		const hudIdx = document.getElementById('signal-hud-idx');
+		const TOTAL = 6;
+		const sp = ScrollTrigger.create({
+			trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: true,
+			onUpdate: (self) => {
+				if (bar) bar.style.transform = `scaleX(${self.progress})`;
+				if (hudIdx) hudIdx.textContent = String(Math.min(TOTAL, Math.floor(self.progress * TOTAL) + 1)).padStart(2, '0');
+			},
+		});
+		S.triggers.push(sp);
+
+		// ---- parallax on the giant background wordmark ----
+		const bgword = document.querySelector('.signal-bgword');
+		if (bgword && !reduce) {
+			const pw = gsap.to(bgword, { yPercent: 24, ease: 'none', scrollTrigger: { trigger: '.signal-hero', start: 'top top', end: 'bottom top', scrub: true } });
+			if (pw.scrollTrigger) S.triggers.push(pw.scrollTrigger);
+		}
+
+		// ---- reveal-on-scroll across the whole page ----
+		if (!reduce) {
+			const items = gsap.utils.toArray<HTMLElement>('.section-header, .work-item, .gallery li, .resume-wrapper, .newsletter-content, aside');
+			if (items.length) {
+				gsap.set(items, { opacity: 0, y: 40 });
+				ScrollTrigger.batch(items, {
+					start: 'top 86%',
+					onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out', overwrite: true }),
+				}).forEach((t) => S.triggers.push(t));
+			}
+		}
+
+		// reveal
+		const portrait = document.querySelector('.signal-portrait') as HTMLElement | null;
+		const fades = gsap.utils.toArray<HTMLElement>('.signal-hero [data-fade]');
+		const h1lines = gsap.utils.toArray<HTMLElement>('.signal-h1 .ln > span');
+
+		// split the hero name into letters for a kinetic, cursor-reactive reveal
+		const letters: HTMLElement[] = [];
+		h1lines.forEach((word) => {
+			const text = word.textContent || '';
+			word.textContent = '';
+			for (const ch of text) {
+				const s = document.createElement('span');
+				s.className = 'ltr';
+				s.textContent = ch;
+				word.appendChild(s);
+				letters.push(s);
+			}
+		});
+		if (fine && !reduce && letters.length) {
+			const qs = letters.map((l) => gsap.quickTo(l, 'y', { duration: 0.5, ease: 'power3' }));
+			const hero = document.querySelector('.signal-hero') as HTMLElement | null;
+			if (hero) {
+				const lm = (e: MouseEvent) => letters.forEach((l, i) => {
+					const r = l.getBoundingClientRect();
+					const d = Math.hypot(e.clientX - (r.left + r.width / 2), e.clientY - (r.top + r.height / 2));
+					qs[i](d < 150 ? -(1 - d / 150) * 18 : 0);
+				});
+				addL(hero, 'mousemove', lm);
+				addL(hero, 'mouseleave', () => qs.forEach((q) => q(0)));
+			}
+		}
+
+		const reveal = () => {
+			if (!S) return;
+			const tl = gsap.timeline();
+			S.revealTl = tl;
+			// ignite only the hero portion of the strand; the rest draws on scroll
+			tl.fromTo(pBase, { strokeDashoffset: len }, { strokeDashoffset: len - len * 0.045, duration: 1.0, ease: 'power2.inOut' }, 0)
+				.to(letters, { yPercent: 0, duration: 0.85, ease: 'power4.out', stagger: 0.035 }, '-=0.5');
+			if (portrait) tl.to(portrait, { clipPath: 'circle(140% at 50% 45%)', duration: 1.1, ease: 'power3.inOut' }, '-=0.8');
+			tl.to(fades, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', stagger: 0.1 }, '-=0.7');
+		};
+
+		if (reduce) {
+			document.documentElement.classList.remove('signal-js');
+			const ld = document.getElementById('signal-loader'); if (ld) ld.style.display = 'none';
+			gsap.set(pBase, { strokeDashoffset: 0 });
+		} else {
+			// set the hidden start states for the reveal
+			gsap.set(pBase, { strokeDashoffset: len });
+			if (letters.length) gsap.set(letters, { yPercent: 115 });
+			if (fades.length) gsap.set(fades, { opacity: 0, y: 24 });
+			if (portrait) gsap.set(portrait, { clipPath: 'circle(0% at 50% 45%)' });
+
+			if ((window as any).__signalLoaderShown) {
+				const ld = document.getElementById('signal-loader'); if (ld) ld.style.display = 'none';
+				reveal();
+			} else {
+				(window as any).__signalLoaderShown = true;
+				const pctEl = document.getElementById('signal-pct');
+				const barEl = document.getElementById('signal-bar');
+				const o = { v: 0 };
+				S.tl = gsap.timeline()
+					.to(o, { v: 100, duration: 1.4, ease: 'power2.inOut', onUpdate: () => {
+						if (pctEl) pctEl.textContent = String(Math.round(o.v));
+						if (barEl) barEl.style.transform = `scaleX(${o.v / 100})`;
+					} })
+					.to('.sl-inner', { y: -24, opacity: 0, duration: 0.5, ease: 'power3.in' }, '+=0.12')
+					.to('#signal-loader', { yPercent: -100, duration: 0.95, ease: 'expo.inOut', onComplete: () => { const ld = document.getElementById('signal-loader'); if (ld) ld.style.display = 'none'; } }, '-=0.18')
+					.add(reveal, '-=0.62');
+			}
+		}
+	}
+
+	function teardownSignal() {
+		if (!S) return;
+		S.tickers.forEach((fn: any) => gsap.ticker.remove(fn));
+		S.triggers.forEach((t: any) => t && t.kill());
+		(S.marquees || []).forEach((tw: any) => tw && tw.kill());
+		(S.refreshHandlers || []).forEach((h: any) => ScrollTrigger.removeEventListener('refreshInit', h));
+		(S.delayed || []).forEach((d: any) => d && d.kill());
+		if (S.tl) { try { S.tl.kill(); } catch (e) {} }
+		if (S.revealTl) { try { S.revealTl.kill(); } catch (e) {} }
+		if (S.lenis) { try { S.lenis.destroy(); } catch (e) {} }
+		try { delete (window as any).__lenis; } catch (e) {}
+		S.listeners.forEach(([t, e, f, o]: any[]) => t.removeEventListener(e, f, o));
+		gsap.ticker.lagSmoothing(500, 33); // restore the global default we disabled for Lenis
+		document.body.classList.remove('signal-active');
+		S = null;
+	}
+
+	document.addEventListener('astro:page-load', initSignal);
+	document.addEventListener('astro:before-swap', teardownSignal);
+</script>
