@@ -1,0 +1,63 @@
+<svg width="1400" height="730" viewBox="0 0 1400 730" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="730" rx="24" fill="url(#bg)"/>
+
+  <text x="700" y="74" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700" fill="#f0f6fc">Who Publishes llms.txt vs Who Actually Reads It</text>
+  <text x="700" y="116" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#9ca3af">Most "adoption" is automatic publishing, not machines consuming the file</text>
+
+  <!-- Left card: publishers -->
+  <rect x="70" y="160" width="600" height="520" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="370" y="222" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" letter-spacing="1.5" fill="#60a5fa">WHO PUBLISHES IT</text>
+  <line x1="110" y1="248" x2="630" y2="248" stroke="#30363d" stroke-width="1.5"/>
+
+  <circle cx="122" cy="294" r="6" fill="#60a5fa"/>
+  <text x="150" y="302" font-family="Segoe UI, system-ui, sans-serif" font-size="24" fill="#c8cfd8">Mintlify-hosted doc sites (auto)</text>
+  <circle cx="122" cy="360" r="6" fill="#60a5fa"/>
+  <text x="150" y="368" font-family="Segoe UI, system-ui, sans-serif" font-size="24" fill="#c8cfd8">Yoast SEO sites (auto)</text>
+  <circle cx="122" cy="426" r="6" fill="#60a5fa"/>
+  <text x="150" y="434" font-family="Segoe UI, system-ui, sans-serif" font-size="24" fill="#c8cfd8">Anthropic's Claude dev docs</text>
+  <circle cx="122" cy="492" r="6" fill="#60a5fa"/>
+  <text x="150" y="500" font-family="Segoe UI, system-ui, sans-serif" font-size="24" fill="#c8cfd8">Cloudflare (announced)</text>
+  <circle cx="122" cy="558" r="6" fill="#60a5fa"/>
+  <text x="150" y="566" font-family="Segoe UI, system-ui, sans-serif" font-size="24" fill="#c8cfd8">Anyone running a 2-minute test</text>
+
+  <rect x="110" y="610" width="520" height="46" rx="10" fill="#60a5fa" fill-opacity="0.12"/>
+  <text x="370" y="640" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#60a5fa">Adoption numbers go UP</text>
+
+  <!-- Right card: readers -->
+  <rect x="730" y="160" width="600" height="520" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1030" y="222" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" letter-spacing="1.5" fill="#5eead4">WHO ACTUALLY READS IT</text>
+  <line x1="770" y1="248" x2="1290" y2="248" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- green check: coding agents -->
+  <polyline points="786,300 795,310 814,288" fill="none" stroke="#5eead4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="828" y="306" font-family="Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#f0f6fc">AI coding assistants</text>
+  <text x="828" y="340" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#9ca3af">loading a tool's own documentation</text>
+
+  <line x1="770" y1="372" x2="1290" y2="372" stroke="#30363d" stroke-width="1" stroke-dasharray="4 6"/>
+
+  <!-- red X: not search engines -->
+  <line x1="786" y1="406" x2="804" y2="424" stroke="#f87171" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="804" y1="406" x2="786" y2="424" stroke="#f87171" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="826" y="424" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">Google Search (says so officially)</text>
+
+  <line x1="786" y1="466" x2="804" y2="484" stroke="#f87171" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="804" y1="466" x2="786" y2="484" stroke="#f87171" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="826" y="484" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">ChatGPT and Perplexity ranking</text>
+
+  <line x1="786" y1="526" x2="804" y2="544" stroke="#f87171" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="804" y1="526" x2="786" y2="544" stroke="#f87171" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="826" y="544" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">Training crawlers (97% unread)</text>
+
+  <rect x="770" y="610" width="520" height="46" rx="10" fill="#f87171" fill-opacity="0.12"/>
+  <text x="1030" y="640" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#f87171">Reading numbers stay FLAT</text>
+</svg>
