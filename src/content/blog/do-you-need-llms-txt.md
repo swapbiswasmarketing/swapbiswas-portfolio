@@ -67,7 +67,7 @@ So is Google saying the file is useless while secretly rewarding it? No. The res
 
 The Lighthouse check does not live in the Performance, SEO, or Best Practices categories that most people see. It sits inside a new, **experimental "Agentic Browsing" category** that grades a site for AI-agent readiness, a different job from search ranking. The [category's own code](https://github.com/GoogleChrome/lighthouse/blob/main/core/config/agentic-browsing-config.js) notes it "is still under development and subject to change," and it is not part of a standard Lighthouse scan.
 
-This is not Google contradicting itself so much as two products doing two different jobs. The audit lives in a category built to test AI-agent readiness, not to grade search, and Lighthouse itself treats the file as optional rather than expected. Two Google products, two purposes. No hidden ranking benefit, just nuance.
+This is not Google contradicting itself so much as two products doing two different jobs. The Lighthouse audit lives in a category built to test AI-agent readiness, not to grade search, and it treats the file as optional rather than expected. There is no hidden ranking benefit buried in the check, just an experiment running in a different lane.
 
 ## What Google Has Actually Said About llms.txt
 
