@@ -144,9 +144,8 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 			if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
 				return localStorage.getItem('theme');
 			}
-			// Homepage defaults to dark (the showpiece). The toggle still works and,
-			// once used, the saved choice wins here too. Other pages follow the OS.
-			if (location.pathname === '/' || location.pathname === '') return 'dark';
+			// Follow the visitor's OS preference everywhere (homepage included).
+			// The toggle still works and, once used, the saved choice wins.
 			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 		}
 

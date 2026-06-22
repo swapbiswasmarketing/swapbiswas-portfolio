@@ -1,0 +1,50 @@
+<svg width="1400" height="660" viewBox="0 0 1400 660" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="660" rx="24" fill="url(#bg2)"/>
+
+  <text x="700" y="74" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700" fill="#f0f6fc">Should You Create an llms.txt File?</text>
+  <text x="700" y="116" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#9ca3af">A low-stakes, low-priority call for most sites in 2026</text>
+
+  <!-- Left card: skip it -->
+  <rect x="70" y="160" width="600" height="460" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#shadow2)"/>
+  <text x="370" y="222" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="1.5" fill="#fb923c">SKIP IT IF</text>
+  <line x1="110" y1="248" x2="630" y2="248" stroke="#30363d" stroke-width="1.5"/>
+
+  <circle cx="124" cy="300" r="6" fill="#fb923c"/>
+  <text x="152" y="308" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">Your only goal is ranking in Google</text>
+  <text x="152" y="340" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">or AI answer engines</text>
+
+  <circle cx="124" cy="410" r="6" fill="#fb923c"/>
+  <text x="152" y="418" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">You run a large site where upkeep</text>
+  <text x="152" y="450" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">is real maintenance work</text>
+
+  <circle cx="124" cy="520" r="6" fill="#fb923c"/>
+  <text x="152" y="528" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">Your core technical SEO and</text>
+  <text x="152" y="560" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">crawlability aren't solid yet</text>
+
+  <!-- Right card: consider it -->
+  <rect x="730" y="160" width="600" height="460" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#shadow2)"/>
+  <text x="1030" y="222" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="700" letter-spacing="1.5" fill="#5eead4">CONSIDER IT IF</text>
+  <line x1="770" y1="248" x2="1290" y2="248" stroke="#30363d" stroke-width="1.5"/>
+
+  <circle cx="784" cy="300" r="6" fill="#5eead4"/>
+  <text x="812" y="308" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">You publish developer or API docs</text>
+  <text x="812" y="340" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">that AI coding agents read</text>
+
+  <circle cx="784" cy="410" r="6" fill="#5eead4"/>
+  <text x="812" y="418" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">You see Claude, OpenAI or agent</text>
+  <text x="812" y="450" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">bots in your server logs</text>
+
+  <circle cx="784" cy="520" r="6" fill="#5eead4"/>
+  <text x="812" y="528" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">It's a small site and the file</text>
+  <text x="812" y="560" font-family="Segoe UI, system-ui, sans-serif" font-size="23" fill="#c8cfd8">takes two minutes to add</text>
+</svg>
