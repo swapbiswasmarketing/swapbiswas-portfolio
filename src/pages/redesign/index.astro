@@ -1,0 +1,72 @@
+---
+// REDESIGN HUB - navigate all 12 homepage concepts. Self-contained, dark, minimal.
+const concepts = [
+  { n: '01', s: 'aurora',     t: 'Aurora',     d: 'Minimal luxury. Calm editorial type over a living WebGL aurora.', c: ['#0a0a14','#b9a7ff','#e8c9a0'] },
+  { n: '02', s: 'monolith',   t: 'Monolith',   d: 'Editorial kinetic. Brutal display type, acid accent, scroll energy.', c: ['#0b0b0b','#d8ff3e','#f4f1ea'] },
+  { n: '03', s: 'terminal',   t: 'Terminal',   d: 'Retro-techno. Monospace, phosphor glow, the signal routed.', c: ['#05080f','#37f5b5','#ffb86b'] },
+  { n: '04', s: 'brut',       t: 'Brut',       d: 'Brutalist. Raw grid, clashing color, rule-breaking layout.', c: ['#e9e6dd','#1b1b1b','#3b4cff'] },
+  { n: '05', s: 'prism',      t: 'Prism',      d: 'Immersive 3D. Refractive glass and iridescent depth in Three.js.', c: ['#07060d','#8a7bff','#ff7ad9'] },
+  { n: '06', s: 'atelier',    t: 'Atelier',    d: 'Light editorial. Paper, ink and print-grade restraint.', c: ['#f3efe6','#161310','#b4451f'] },
+  { n: '07', s: 'console',    t: 'Console',    d: 'Your portfolio as the product. SaaS dashboard, command palette, live charts.', c: ['#0b0e16','#6366f1','#10b981'] },
+  { n: '08', s: 'broadsheet', t: 'Broadsheet', d: 'Newspaper front page. Masthead, justified columns, halftone print.', c: ['#f3efe4','#15120c','#c0301d'] },
+  { n: '09', s: 'flux',       t: 'Flux',       d: 'Bright modern SaaS. Flowing gradient mesh and frosted glass.', c: ['#fbfbfd','#6366f1','#fb7185'] },
+  { n: '10', s: 'atlas',      t: 'Atlas',      d: 'Growth, quantified. Swiss data report with animated charts.', c: ['#faf9f6','#e5341c','#3b5bdb'] },
+  { n: '11', s: 'odyssey',    t: 'Odyssey',    d: 'From noise to signal. Cinematic scrollytelling, particle morph.', c: ['#04050a','#4b6cff','#ffcf6b'] },
+  { n: '12', s: 'riso',       t: 'Riso',       d: 'Print, overprinted. Risograph duotone, grain and bold shapes.', c: ['#f2ecd9','#ff48a0','#2336ff'] },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Homepage concepts - Swapnil Biswas</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#08080b;--ink:#f3efe6;--mut:#86838f;--line:rgba(243,239,230,.1);--mono:"JetBrains Mono",monospace}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;min-height:100vh;
+    background-image:radial-gradient(60% 50% at 50% -10%,rgba(120,90,220,.14),transparent 70%)}
+  a{color:inherit;text-decoration:none}
+  .head{max-width:1200px;margin:0 auto;padding:clamp(3rem,8vh,6rem) clamp(1.25rem,5vw,4rem) 2.5rem}
+  .kick{font-family:var(--mono);font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--mut)}
+  .head h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(2.2rem,6vw,4.5rem);line-height:1.02;letter-spacing:-.02em;margin:1.2rem 0 .8rem;max-width:18ch}
+  .head h1 em{font-style:italic;color:#e8c9a0}
+  .head p{color:var(--mut);max-width:52ch;line-height:1.6;font-size:1.02rem}
+  .grid{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,5vw,4rem) 6rem;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem}
+  @media(max-width:740px){.grid{grid-template-columns:1fr}}
+  .card{position:relative;border:1px solid var(--line);border-radius:18px;padding:1.8rem;overflow:hidden;
+    background:rgba(255,255,255,.015);transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .4s,background .4s;min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
+  .card:hover{transform:translateY(-5px);border-color:rgba(243,239,230,.28);background:rgba(255,255,255,.03)}
+  .card .swatches{display:flex;gap:.4rem;position:absolute;top:1.8rem;right:1.8rem}
+  .card .swatches i{width:16px;height:16px;border-radius:50%;display:block;border:1px solid rgba(255,255,255,.12)}
+  .card .num{font-family:var(--mono);font-size:.8rem;color:var(--mut);letter-spacing:.1em}
+  .card h2{font-family:"Fraunces",serif;font-weight:400;font-size:2rem;letter-spacing:-.02em;margin:.4rem 0 .5rem}
+  .card p{color:var(--mut);font-size:.94rem;line-height:1.55;max-width:34ch}
+  .card .go{margin-top:1.4rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;color:var(--ink);opacity:.75;transition:gap .4s,opacity .3s}
+  .card:hover .go{gap:.9rem;opacity:1}
+  .foot{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,5vw,4rem) 4rem;color:var(--mut);font-size:.82rem;font-family:var(--mono);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--line);padding-top:2rem}
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="kick">Swapnil Biswas &middot; Homepage redesign</div>
+    <h1>Twelve ways to route the <em>signal</em>.</h1>
+    <p>Twelve independent homepage directions - different fonts, palettes, motion and tech. Each is a complete, self-contained concept. Open any one, then we refine the winner.</p>
+  </div>
+  <div class="grid">
+    {concepts.map(c => (
+      <a class="card" href={`/redesign/${c.s}`}>
+        <div class="swatches">{c.c.map(col => <i style={`background:${col}`}></i>)}</div>
+        <div><div class="num">{c.n}</div><h2>{c.t}</h2><p>{c.d}</p></div>
+        <div class="go">Open concept &#8594;</div>
+      </a>
+    ))}
+  </div>
+  <div class="foot"><span>Prototypes - not linked from the live site</span><span>localhost / redesign</span></div>
+</body>
+</html>

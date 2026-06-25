@@ -1,0 +1,787 @@
+---
+// REDESIGN PROTOTYPE - "Brut" - brutalist / experimental, light / paper.
+// Concept 04. Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+// Tech: raw-WebGL cursor-reactive halftone/dither distortion block + GSAP scroll reveals
+//       + Lenis smooth scroll + scroll-velocity marquee skew + custom cursor.
+const stats = [
+  { n: '657K+', l: 'Leads generated' },
+  { n: '18.2M+', l: 'Organic traffic' },
+  { n: '10x', l: 'Conversion lift' },
+  { n: '20+', l: 'AI agents built' },
+  { n: '15+', l: 'Marketers mentored' },
+  { n: '76', l: 'Articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.', k: 'Launches / Positioning' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.', k: '18.2M+ organic' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.', k: '20+ agents shipped' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.', k: '8 tools / 76 articles' },
+];
+const work = [
+  { t: 'LambdaTest', m: 'Product & digital marketing', y: '2021 - 2025', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', r: '657K+ leads / 18.2M+ organic', c: 'Full-funnel growth engine', tile: 'growth' },
+  { t: 'TestMu AI', m: 'Rebrand lead', y: '2026', d: 'Led the complete rebrand from LambdaTest to TestMu AI.', r: 'Full company rebrand', c: 'Identity / Brand system', tile: 'morph' },
+  { t: 'Samsung', m: 'Launch content & distribution', y: '2019', d: 'On the Galaxy M-series from inception; ran content distribution (collaborated with Technical Guruji).', r: 'Galaxy M-series launch', c: 'Launch / Distribution', tile: 'signal' },
+  { t: 'Medilife Superspeciality', m: 'Marketing & web - 0 to 1', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.', r: 'Website, GTM, social & launch', c: 'Healthcare / 0 to 1', tile: 'pulse' },
+  { t: 'Lido Learning', m: 'Growth / CRM', y: '2021', d: 'Ran CRM management and lead routing/assignment for the EdTech.', r: 'CRM & lead operations', c: 'EdTech / CRM ops', tile: 'funnel' },
+  { t: 'Appknox', m: 'Freelance content', d: 'Freelance content writer for the mobile app security company.', r: 'Security content', c: 'Security / Content', tile: 'shield' },
+];
+const awards = [
+  { t: 'Value of Agility Award', s: 'LambdaTest', y: '2024' },
+  { t: 'Wall of Fame', s: 'LambdaTest', y: '2025' },
+  { t: '#1 Product of the Day', s: 'Product Hunt', y: '2024' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const marquee = ['AVAILABLE FOR WORK', 'PRODUCT MARKETING', 'AI AGENTS', 'TECHNICAL SEO', 'GTM', 'BUILDING IN PUBLIC'];
+---
+<!doctype html>
+<html lang="en" data-theme="brut">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,800;0,900;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#e9e6dd; --ink:#1b1b1b; --blue:#3b4cff; --red:#ff3b2f;
+    /* darker blue reserved for SMALL text on paper so it clears AA (~4.5:1) */
+    --blue-ink:#1f2bce;
+    /* lighter blue for text/accents on the dark ink ground (AA on #1b1b1b) */
+    --blue-lt:#8e9bff;
+    --bd:3px solid #1b1b1b;
+    --disp:"Archivo",Arial,sans-serif; --mono:"Space Mono",ui-monospace,monospace;
+    --m:clamp(1rem,4vw,3.5rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{background:var(--paper);color:var(--ink);font-family:var(--mono);line-height:1.5;overflow-x:hidden;font-weight:400;cursor:none}
+  ::selection{background:var(--blue);color:var(--paper)}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--disp);text-transform:uppercase}
+  /* custom cursor */
+  .cursor{position:fixed;top:0;left:0;width:26px;height:26px;border:var(--bd);border-radius:50%;
+    z-index:9999;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;
+    transition:width .25s,height .25s,background .25s;will-change:transform}
+  .cursor.big{width:84px;height:84px;background:var(--blue);border-color:var(--blue)}
+  /* signature: over a work card the cursor swells to a labelled "OPEN" disc */
+  .cursor.view{width:92px;height:92px;background:var(--blue);border-color:var(--blue);mix-blend-mode:normal}
+  .cursor.view::after{content:"OPEN \2197";font-family:var(--mono);font-weight:700;font-size:.6rem;
+    letter-spacing:.06em;color:var(--paper);position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  @media(max-width:760px),(pointer:coarse){body{cursor:auto}.cursor{display:none}}
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:stretch;
+    background:var(--paper);border-bottom:var(--bd)}
+  .logo{font-family:var(--disp);font-weight:900;font-size:1.05rem;letter-spacing:-.02em;text-transform:uppercase;
+    padding:1rem var(--m);border-right:var(--bd);display:flex;align-items:center;gap:.5rem}
+  .logo .dot{width:11px;height:11px;background:var(--red);border:2px solid var(--ink);border-radius:50%}
+  .navlinks{display:flex;align-items:stretch}
+  .navlinks a{display:flex;align-items:center;padding:0 1.3rem;font-family:var(--mono);font-size:.72rem;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;border-left:var(--bd);transition:background .15s,color .15s}
+  .navlinks a:hover,.navlinks a:focus-visible{background:var(--ink);color:var(--paper);outline:none}
+  /* ALL CONCEPTS: reads as a distinct, clearly-interactive chip with a blue underline cue */
+  .navlinks a.all{position:relative;color:var(--blue-ink);background:var(--paper);
+    box-shadow:inset 0 -3px 0 var(--blue)}
+  .navlinks a.all::before{content:"\2190";margin-right:.5rem;display:inline-block;
+    transition:transform .2s}
+  .navlinks a.all:hover,.navlinks a.all:focus-visible{background:var(--blue);color:var(--paper);
+    box-shadow:inset 0 -3px 0 var(--ink)}
+  .navlinks a.all:hover::before,.navlinks a.all:focus-visible::before{transform:translateX(-4px)}
+  @media(max-width:760px){.navlinks a:not(.all){display:none}.logo{font-size:.9rem;padding:.8rem 1rem}}
+  /* shell */
+  main{padding-top:0}
+  .wrap{max-width:1500px;margin:0 auto;padding:0 var(--m)}
+  .label{font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#0a0a0a}
+  .secnum{font-family:var(--mono);font-weight:700;color:var(--blue-ink);font-size:.82rem;letter-spacing:.1em}
+  /* HERO */
+  header.hero{min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+    border-bottom:var(--bd);overflow:hidden;padding-top:5.5rem}
+  /* canvas sits BEHIND everything; off-center, anchored bottom-right, low opacity */
+  canvas#gl{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block;opacity:.28;
+    background:radial-gradient(90% 95% at 88% 92%, rgba(59,76,255,.12), transparent 55%);
+    /* contain the halftone atmosphere away from the top-right nav: fade out the top
+       band so the dot field never crowds the header / 'ALL CONCEPTS' link */
+    -webkit-mask-image:linear-gradient(180deg,transparent 0,transparent 6.5rem,#000 13rem);
+    mask-image:linear-gradient(180deg,transparent 0,transparent 6.5rem,#000 13rem)}
+  /* contained, hard-edged halftone block anchored to the hero's bottom-right corner:
+     gives the soft WebG atmosphere a DELIBERATE printed-plate boundary against the frame */
+  .hero-plate-edge{position:absolute;right:0;bottom:0;z-index:2;pointer-events:none;
+    width:clamp(120px,22vw,300px);height:clamp(120px,20vw,260px);
+    border-left:var(--bd);border-top:var(--bd);background:var(--paper);
+    background-image:radial-gradient(var(--ink) 1.5px,transparent 1.7px);background-size:11px 11px;
+    -webkit-mask-image:linear-gradient(315deg,#000 30%,transparent 78%);
+    mask-image:linear-gradient(315deg,#000 30%,transparent 78%)}
+  .hero-plate-edge::after{content:"HALFTONE / RAW";position:absolute;right:10px;bottom:8px;
+    font-family:var(--mono);font-weight:700;font-size:.56rem;letter-spacing:.14em;color:var(--blue-ink);opacity:1}
+  @media(max-width:760px){.hero-plate-edge{display:none}}
+  .hero-grid{position:absolute;inset:0;z-index:1;pointer-events:none;
+    background-image:linear-gradient(var(--ink) 1px,transparent 1px),linear-gradient(90deg,var(--ink) 1px,transparent 1px);
+    background-size:clamp(60px,9vw,120px) clamp(60px,9vw,120px);opacity:.06}
+  .hero-inner{position:relative;z-index:3;padding:0 var(--m) clamp(2rem,5vw,4rem)}
+  /* solid raw-paper plate behind the headline block: ink type ALWAYS sits on flat paper */
+  .hero-plate{display:inline-block;background:var(--paper);padding:24px 28px 28px;
+    box-shadow:0 0 0 3px var(--ink);max-width:100%}
+  .hero .tag{display:inline-block;background:var(--ink);color:var(--paper);padding:.55rem 1rem;
+    font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+    margin-bottom:18px;transform:rotate(-1.5deg)}
+  .hero h1{font-family:var(--disp);font-weight:900;font-size:clamp(3rem,8.6vw,8.2rem);line-height:.86;
+    letter-spacing:-.045em;text-transform:uppercase;max-width:none}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln>span{display:block;will-change:transform;white-space:nowrap;
+    word-break:keep-all;overflow-wrap:normal;hyphens:none;-webkit-hyphens:none}
+  .hero h1 .blu{color:var(--blue)}
+  .hero h1 .red{color:var(--red)}
+  .hero h1 .wd1{display:inline}
+  .hero .sub{margin-top:1.8rem;max-width:52ch;font-family:var(--mono);font-size:clamp(.95rem,1.35vw,1.12rem);
+    line-height:1.85;letter-spacing:-.01em;background:var(--paper);border:var(--bd);padding:1.1rem 1.35rem;display:inline-block}
+  .hero .sub b{color:var(--blue-ink);font-weight:700}
+  @media(max-width:760px){
+    /* mobile: the atmosphere bleeds TALL behind the headline so the first viewport
+       reads like an installation, not a generic site. Headline gets commanding. */
+    header.hero{justify-content:flex-end;padding-top:6rem;min-height:100svh}
+    canvas#gl{top:0;bottom:auto;height:78vh;opacity:.30}
+    /* the type plate keeps ink on flat paper; sits low so atmosphere fills above it */
+    .hero-plate{padding:16px 16px 18px;box-shadow:0 0 0 3px var(--ink);max-width:100%}
+    .hero h1{font-size:clamp(4.4rem,18.5vw,6.6rem);line-height:.84;letter-spacing:-.055em;max-width:100%}
+    .hero h1 .ln{overflow:visible}
+    /* mobile: never split a word and never overflow - stack each word on its own line */
+    .hero h1 .ln>span{white-space:normal;word-break:keep-all;overflow-wrap:normal}
+    .hero h1 .wd1{display:block}
+    /* deliberate brutalist tension: the blue line bleeds slightly off the LEFT edge */
+    .hero h1 .ln:nth-child(2)>span{margin-left:-.04em;letter-spacing:-.065em}
+    /* give the eyebrow pill real vertical breathing room above the commanding headline */
+    .hero .tag{margin-bottom:26px;font-size:.64rem}
+    .hero .sub{margin-top:1.3rem;font-size:.92rem;line-height:1.7}
+  }
+  @media(max-width:600px){
+    .hero h1{font-size:clamp(4.8rem,20vw,7rem);line-height:.82}
+    canvas#gl{height:82vh;opacity:.34}
+  }
+  .cta{margin-top:1.8rem;display:flex;gap:0;flex-wrap:wrap;border:var(--bd);width:max-content;max-width:100%}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.5rem;font-family:var(--mono);font-size:.8rem;
+    font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .15s,color .15s,transform .15s}
+  .btn.primary{background:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--blue)}
+  .btn.ghost{background:var(--paper);color:var(--ink);border-left:var(--bd)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn .ar{display:inline-block;transition:transform .25s}
+  .btn:hover .ar{transform:translate(4px,-4px)}
+  @media(max-width:760px){.cta{width:100%}.btn{flex:1;justify-content:center;padding:.9rem .6rem}}
+  /* MARQUEE - paper band with ink rules; blue stays an ACCENT (asterisk + alt word) */
+  .marquee{border-bottom:var(--bd);background:var(--paper);color:var(--ink);overflow:hidden;
+    display:flex;white-space:nowrap;will-change:transform;
+    box-shadow:inset 0 3px 0 rgba(27,27,27,.10)}
+  .marquee .track{display:flex;flex:none;animation:scroll 28s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  .marquee span{font-family:var(--disp);font-weight:900;font-size:clamp(1.6rem,4.5vw,3rem);
+    text-transform:uppercase;letter-spacing:-.01em;padding:.45rem 0;display:inline-flex;align-items:center;
+    -webkit-text-stroke:0}
+  /* alternate words pick up the blue accent so it never reads as a solid slab */
+  .marquee span:nth-child(2n){color:var(--blue)}
+  .marquee span::after{content:"*";color:var(--red);margin:0 1.35rem;font-family:var(--mono);font-weight:700}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+  /* SECTION FRAME */
+  section{border-bottom:var(--bd);position:relative}
+  .secpad{padding:clamp(3rem,7vw,6rem) 0}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;
+    padding-bottom:2rem;margin-bottom:2.5rem;border-bottom:var(--bd);flex-wrap:wrap}
+  .shead h2{font-family:var(--disp);font-weight:900;font-size:clamp(2rem,6vw,4.5rem);line-height:.9;
+    letter-spacing:-.03em;text-transform:uppercase}
+  .shead h2 .blu{color:var(--blue)}
+  .shead h2 .red{color:var(--red)}
+  .shead .meta{font-family:var(--mono);font-size:.76rem;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;text-align:right;color:#0a0a0a}
+  /* STATS - editorial scale, vertical rules between cells, strong mono captions */
+  .stats{display:grid;grid-template-columns:repeat(6,1fr);border-top:var(--bd);border-left:var(--bd)}
+  .stat{border-right:var(--bd);border-bottom:var(--bd);padding:2.2rem 1.3rem 1.6rem;transition:background .15s,color .15s;position:relative}
+  .stat:hover{background:var(--ink);color:var(--paper)}
+  .stat .n{font-family:var(--disp);font-weight:900;font-size:clamp(2.2rem,4.2vw,3.8rem);letter-spacing:-.04em;line-height:.9}
+  .stat:nth-child(2n) .n{color:var(--blue)}
+  .stat:hover .n{color:var(--paper)}
+  .stat .l{margin-top:.9rem;padding-top:.7rem;border-top:2px solid var(--ink);font-family:var(--mono);font-size:.66rem;
+    font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#0a0a0a;opacity:1}
+  .stat:hover .l{border-top-color:var(--paper);color:var(--paper)}
+  /* small spec index in the previously-empty top-right corner of each stat cell */
+  .stat .si{position:absolute;top:.8rem;right:.9rem;font-family:var(--mono);font-weight:700;font-size:.6rem;
+    letter-spacing:.1em;color:#4f4a42;opacity:1}
+  .stat:hover .si{color:var(--paper);opacity:.6}
+  @media(max-width:980px){.stats{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:520px){.stats{grid-template-columns:repeat(2,1fr)}}
+  /* PILLARS */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;border-top:var(--bd);border-left:var(--bd)}
+  .pillar{border-right:var(--bd);border-bottom:var(--bd);padding:2.2rem;transition:background .15s,color .15s}
+  .pillar:hover{background:var(--blue);color:var(--paper)}
+  .pillar .pi{font-family:var(--disp);font-weight:900;font-size:2.4rem;line-height:1;color:var(--red);letter-spacing:-.03em}
+  .pillar:hover .pi{color:var(--paper)}
+  .pillar{display:flex;flex-direction:column}
+  .pillar .ptop{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+  /* small halftone spec mark in the formerly-empty top-right of each cell */
+  .pillar .pmark{width:46px;height:46px;flex:none;border:2px solid var(--ink);border-radius:50%;
+    background-image:radial-gradient(var(--ink) 1.4px,transparent 1.5px);background-size:7px 7px;opacity:.55;
+    transition:opacity .15s,border-color .15s}
+  .pillar:hover .pmark{border-color:var(--paper);background-image:radial-gradient(var(--paper) 1.4px,transparent 1.5px);opacity:.8}
+  .pillar h3{font-family:var(--disp);font-weight:800;font-size:1.35rem;letter-spacing:-.01em;margin:1.1rem 0 .8rem;line-height:1.05}
+  .pillar p{font-family:var(--mono);font-size:.95rem;line-height:1.85;letter-spacing:-.01em;max-width:38ch;color:#161616;opacity:1}
+  .pillar:hover p{color:var(--paper);opacity:1}
+  /* spec-sheet key line fills the lower cell */
+  .pillar .pk{margin-top:auto;padding-top:1.1rem;font-family:var(--mono);font-weight:700;font-size:.72rem;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--blue-ink)}
+  .pillar:hover .pk{color:var(--paper)}
+  @media(max-width:760px){.pillars{grid-template-columns:1fr}}
+  /* WORK - CENTERPIECE: deliberate asymmetric grid. One HERO project spans the full
+     top row (large duotone composition + outcome metric in Archivo); three equal
+     supporting cards below share ONE consistent internal structure. Every tile is a
+     DISTINCT printed-plate composition (different crop/field/color-emphasis per
+     project) inside thick black borders - no fake screenshots, no pastel blobs. */
+  .work{border-top:var(--bd);display:grid;grid-template-columns:repeat(3,1fr)}
+  .work a{display:flex;border-bottom:var(--bd);border-right:var(--bd);position:relative;
+    transition:background .2s,color .2s;overflow:hidden;background:var(--paper)}
+  .work a:last-child{border-right:0}
+  /* base interaction: every card inverts to ink, lifts, and gains an inset accent frame.
+     The accent COLOR is set per-project below so each card hovers to a distinct identity. */
+  /* --acc = bright accent for the dark hover ground; --acc-ink = AA-safe tone for paper rest state */
+  .work a{--acc:var(--blue);--acc-ink:var(--blue-ink)}
+  .work a:hover,.work a:focus-within{background:var(--ink);color:var(--paper)}
+  .work a:hover{transform:translateY(-3px);z-index:6;
+    box-shadow:0 0 0 3px var(--acc),0 18px 0 -8px rgba(27,27,27,.18)}
+  .work a:focus-within{outline:none;box-shadow:inset 0 0 0 3px var(--acc)}
+  /* per-project hover identity: distinct accent drives the frame, number, chip + arrow */
+  .work a:has(.tile.growth){--acc:var(--blue);--acc-ink:var(--blue-ink)}
+  .work a:has(.tile.morph){--acc:#d98ee0;--acc-ink:#8a2d97}
+  .work a:has(.tile.signal){--acc:#5eead4;--acc-ink:#0c7c6b}
+  .work a:has(.tile.pulse){--acc:#ff6a5e;--acc-ink:#c41d12}
+  .work a:has(.tile.funnel){--acc:#fb923c;--acc-ink:#b5560a}
+  .work a:has(.tile.shield){--acc:#60a5fa;--acc-ink:#1f5fcf}
+  /* HERO card: spans all 3 columns, image LEFT / copy RIGHT on desktop */
+  .work a.hero{grid-column:1 / -1;flex-direction:row}
+  .work a.hero .tile{aspect-ratio:auto;width:48%;flex:none;border-bottom:0;border-right:var(--bd);min-height:380px}
+  .work a.hero .body{flex:1;justify-content:center;padding:clamp(1.8rem,4vw,3.2rem) clamp(1.8rem,4vw,3.4rem)}
+  .work a.hero .wt{font-size:clamp(1.8rem,3.8vw,3.2rem)}
+  .work a.hero .wn{font-size:clamp(2.6rem,5vw,4.4rem)}
+  /* supporting cards: stack image over body. Tiles are taller/richer than before. */
+  .work a.sup{flex-direction:column}
+  .work a.sup .tile{aspect-ratio:16/11}
+  /* tile - bold duotone / data / typographic composition (ink + blue, paper ground) */
+  .work .tile{position:relative;aspect-ratio:16/10;border-bottom:var(--bd);overflow:hidden;
+    background:var(--ink);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+  /* hover micro-interaction: plate lifts + a paper sweep wipes across once */
+  .work a:hover .tile{transform:scale(1.02)}
+  .work .tile .sweep{position:absolute;inset:0;z-index:5;pointer-events:none;
+    background:linear-gradient(110deg,transparent 0 38%,rgba(233,230,221,.16) 46% 54%,transparent 62% 100%);
+    transform:translateX(-110%);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+  .work a:hover .tile .sweep{transform:translateX(110%)}
+  /* halftone field on dark - DISTINCT hue + grain per project so no two plates read alike */
+  .work .tile .dots{position:absolute;inset:0;opacity:.5;
+    background-image:radial-gradient(var(--blue) 1.5px,transparent 1.7px);
+    background-size:13px 13px;background-position:0 0;transition:background-position .6s ease,opacity .3s}
+  .tile.growth .dots{background-image:radial-gradient(var(--blue) 1.5px,transparent 1.7px);background-size:13px 13px}
+  .tile.morph .dots{background-image:radial-gradient(#d98ee0 1.4px,transparent 1.6px);background-size:10px 10px;opacity:.44}
+  .tile.signal .dots{background-image:radial-gradient(#5eead4 1.4px,transparent 1.6px);background-size:9px 9px;opacity:.42}
+  .tile.pulse .dots{background-image:radial-gradient(#ff6a5e 1.9px,transparent 2.1px);background-size:15px 15px;opacity:.52}
+  .tile.funnel .dots{background-image:repeating-linear-gradient(0deg,#fb923c 0 1.5px,transparent 1.5px 11px);opacity:.46}
+  .tile.shield .dots{background-image:radial-gradient(#60a5fa 1.5px,transparent 1.7px);background-size:12px 12px;opacity:.46}
+  .work a:hover .tile .dots{background-position:9px 9px;opacity:.72}
+  .work a:hover .tile.funnel .dots{opacity:.5}
+  /* the giant index number, knocked into the plate */
+  .work .tile .tx{position:absolute;left:.7rem;top:.4rem;z-index:2;color:rgba(233,230,221,.16);
+    font-family:var(--disp);font-weight:900;font-size:clamp(4.5rem,12vw,9rem);line-height:.8;
+    letter-spacing:-.06em;transition:color .3s}
+  .work a:hover .tile .tx{color:rgba(59,76,255,.32)}
+  .work a:hover .tile.morph .tx{color:rgba(217,142,224,.34)}
+  .work a:hover .tile.signal .tx{color:rgba(94,234,212,.34)}
+  .work a:hover .tile.pulse .tx{color:rgba(255,106,94,.34)}
+  .work a:hover .tile.funnel .tx{color:rgba(251,146,60,.34)}
+  .work a:hover .tile.shield .tx{color:rgba(96,165,250,.34)}
+  .work a.hero .tile .tx{font-size:clamp(7rem,15vw,13rem)}
+  /* the OUTCOME METRIC typeset large, in paper, dominating the plate */
+  .work .tile .tmetric{position:absolute;left:1.1rem;right:1.1rem;bottom:1rem;z-index:3;
+    font-family:var(--disp);font-weight:900;text-transform:uppercase;color:var(--paper);
+    font-size:clamp(1.3rem,2.6vw,1.95rem);line-height:1.0;letter-spacing:-.005em;word-spacing:.06em}
+  /* meta label on the dark plate lifted one step brighter for legibility; per-project hue */
+  .work .tile .tmetric b{color:#b8c0ff;display:block;font-size:.58em;letter-spacing:.06em;
+    font-family:var(--mono);font-weight:700;margin-bottom:.5rem;-webkit-text-fill-color:#b8c0ff}
+  .tile.morph .tmetric b{color:#eec0f3;-webkit-text-fill-color:#eec0f3}
+  .tile.signal .tmetric b{color:#7ff0dd;-webkit-text-fill-color:#7ff0dd}
+  .tile.pulse .tmetric b{color:#ff9d94;-webkit-text-fill-color:#ff9d94}
+  .tile.funnel .tmetric b{color:#ffc183;-webkit-text-fill-color:#ffc183}
+  .tile.shield .tmetric b{color:#a9cdfb;-webkit-text-fill-color:#a9cdfb}
+  .work a.hero .tile .tmetric{font-size:clamp(2rem,4vw,3.4rem)}
+  /* per-project accent strip across the top of each plate - DISTINCT per project */
+  .work .tile::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;z-index:4;
+    background:linear-gradient(90deg,var(--blue) 0 60%,var(--red) 60% 100%)}
+  .tile.growth::before{background:linear-gradient(90deg,var(--blue) 0 70%,var(--paper) 70% 100%)}
+  .tile.morph::before{background:linear-gradient(90deg,#d98ee0 0 50%,var(--blue) 50% 100%)}
+  .tile.signal::before{background:repeating-linear-gradient(90deg,#5eead4 0 16px,transparent 16px 24px)}
+  .tile.pulse::before{background:linear-gradient(90deg,#ff6a5e 0 35%,var(--paper) 35% 100%)}
+  .tile.funnel::before{background:linear-gradient(90deg,var(--paper) 0 50%,#fb923c 50% 100%)}
+  .tile.shield::before{background:linear-gradient(90deg,#60a5fa 0 60%,var(--paper) 60% 100%)}
+  /* DISTINCT composition per project: each .field is a different crop/structure.
+     growth = rising area chart (LambdaTest), morph = split before/after identity (TestMu AI rebrand),
+     signal = broadcast beams out (Samsung launch), pulse = medical heartbeat + cross (Medilife),
+     funnel = converging pipeline (Lido CRM), shield = security crest (Appknox) */
+  .work .tile .field{position:absolute;inset:0;z-index:1;opacity:.5}
+  /* LambdaTest - rising area chart climbing to the top-right */
+  .tile.growth .field{opacity:.6;background:
+      linear-gradient(58deg,rgba(59,76,255,.55) 0 2px,transparent 2px),
+      linear-gradient(0deg,rgba(59,76,255,.34),rgba(59,76,255,.04) 60%,transparent 72%);
+      background-position:0 100%,0 100%;background-size:100% 100%,100% 78%;background-repeat:no-repeat}
+  /* TestMu AI - hard split: old identity (left) morphs to new (right) */
+  .tile.morph .field{opacity:.55;background:
+      linear-gradient(90deg,rgba(217,142,224,.5) 0 46%,transparent 46% 54%,rgba(59,76,255,.5) 54% 100%),
+      radial-gradient(closest-side,transparent 52%,rgba(233,230,221,.4) 54% 58%,transparent 60%) 50% 50%/40% 84% no-repeat}
+  /* Samsung - signal/broadcast beams radiating out from the left edge */
+  .tile.signal .field{opacity:.58;background:
+      conic-gradient(from 312deg at 6% 50%,rgba(94,234,212,.6) 0 14deg,transparent 14deg 34deg,rgba(94,234,212,.6) 34deg 48deg,transparent 48deg 68deg,rgba(94,234,212,.6) 68deg 82deg,transparent 82deg),
+      radial-gradient(closest-side,rgba(255,59,47,.55) 0 30%,transparent 34%) 6% 50%/16% 30% no-repeat}
+  /* Medilife - heartbeat line + medical cross */
+  .tile.pulse .field{opacity:.6;background:
+      linear-gradient(90deg,transparent 0 44%,rgba(255,106,94,.7) 44% 56%,transparent 56% 100%) 50% 50%/100% 26% no-repeat,
+      linear-gradient(0deg,transparent 0 37%,rgba(255,106,94,.7) 37% 63%,transparent 63% 100%) 50% 50%/26% 100% no-repeat,
+      repeating-linear-gradient(90deg,transparent 0 18px,rgba(255,106,94,.4) 18px 19px) 0 50%/100% 2px no-repeat}
+  /* Lido - converging funnel / pipeline routing toward a single exit */
+  .tile.funnel .field{opacity:.58;background:
+      linear-gradient(102deg,rgba(251,146,60,.62) 0 2px,transparent 2px) 0 20%/100% 1px no-repeat,
+      linear-gradient(78deg,rgba(251,146,60,.62) 0 2px,transparent 2px) 0 80%/100% 1px no-repeat,
+      linear-gradient(90deg,transparent 0 70%,rgba(251,146,60,.4) 70% 100%);
+      background-repeat:no-repeat}
+  /* Appknox - security shield / crest */
+  .tile.shield .field{opacity:.58;background:
+      conic-gradient(from 180deg at 50% 30%,rgba(96,165,250,.55) 0 90deg,rgba(96,165,250,.3) 90deg 180deg,rgba(96,165,250,.55) 180deg 270deg,rgba(96,165,250,.3) 270deg) 50% 38%/52% 64% no-repeat,
+      radial-gradient(closest-side,transparent 60%,rgba(96,165,250,.5) 62% 70%,transparent 72%) 50% 36%/64% 80% no-repeat}
+  .work a:hover .tile{filter:none}
+  /* body - ONE shared hierarchy across hero + all supporting cards */
+  .work .body{padding:1.5rem clamp(1.2rem,2.5vw,1.8rem) 1.6rem;display:flex;flex-direction:column;flex:1;position:relative}
+  .work .wtop{display:flex;align-items:baseline;gap:.9rem;margin-bottom:.5rem}
+  .work .wn{font-family:var(--disp);font-weight:900;font-size:clamp(1.6rem,3vw,2.4rem);line-height:.8;
+    letter-spacing:-.05em;color:var(--acc-ink);-webkit-text-stroke:0;transition:color .2s}
+  .work a:hover .wn{color:var(--acc)}
+  .work .wt{font-family:var(--disp);font-weight:800;font-size:clamp(1.2rem,2vw,1.7rem);letter-spacing:-.02em;
+    text-transform:uppercase;line-height:.95;position:relative;display:inline-block}
+  /* underline-sweep */
+  .work .wt::after{content:"";position:absolute;left:0;bottom:-3px;height:3px;width:100%;background:var(--acc);
+    transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+  .work a:hover .wt::after{transform:scaleX(1)}
+  .work .wm{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:#0a0a0a;opacity:1;margin-bottom:.7rem}
+  .work a:hover .wm{color:var(--paper);opacity:1}
+  .work .wd{font-family:var(--mono);font-size:.89rem;line-height:1.78;letter-spacing:-.01em;color:#161616;opacity:1;max-width:44ch;margin-bottom:1.2rem}
+  .work a:hover .wd{color:var(--paper);opacity:.95}
+  .work .wfoot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding-top:1rem;border-top:2px solid var(--ink)}
+  .work a:hover .wfoot{border-top-color:var(--paper)}
+  /* result-metric chip - leads with the RESULT (metric-forward), shared by every card */
+  .work .wres{font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.02em;text-transform:uppercase;
+    background:var(--acc-ink);color:var(--paper);padding:.4rem .7rem;border:2px solid var(--ink);line-height:1.2;
+    transition:background .2s,color .2s,border-color .2s}
+  .work a:hover .wres{background:var(--acc);color:var(--ink);border-color:var(--acc)}
+  .work .wright{display:flex;align-items:center;gap:1rem;flex:none}
+  .work .wy{font-family:var(--mono);font-weight:700;font-size:.74rem;letter-spacing:.08em;color:#0a0a0a;opacity:1}
+  .work a:hover .wy{color:var(--paper);opacity:.95}
+  .work .war{font-family:var(--disp);font-weight:900;font-size:1.5rem;display:inline-block;
+    transition:transform .25s,color .2s;color:var(--ink)}
+  .work a:hover .war{transform:translate(6px,-6px);color:var(--acc)}
+  @media(max-width:980px){
+    .work{grid-template-columns:1fr 1fr}
+    .work a{border-right:var(--bd)!important}
+    .work a:nth-child(2n){border-right:0!important}
+    .work a.hero{flex-direction:column;grid-column:1 / -1}
+    .work a.hero .tile{width:100%;border-right:0;border-bottom:var(--bd);min-height:0;aspect-ratio:16/8}}
+  @media(max-width:560px){
+    .work{grid-template-columns:1fr}
+    .work a{border-right:0!important}
+    .work a.hero .tile{aspect-ratio:16/10}}
+  /* RECOGNITION + BRANDS */
+  .recog{display:grid;grid-template-columns:1.1fr 1fr;border-top:var(--bd)}
+  .awards{border-right:var(--bd)}
+  .award{display:flex;align-items:baseline;gap:1rem;padding:1.5rem var(--m);border-bottom:var(--bd);transition:background .15s,color .15s}
+  .award:last-child{border-bottom:0}
+  .award:hover{background:var(--red);color:var(--paper)}
+  .award .ix{font-family:var(--mono);font-weight:700;font-size:.74rem;color:var(--blue-ink)}
+  .award:hover .ix{color:var(--paper)}
+  .award .acopy{flex:1}
+  .award b{font-family:var(--disp);font-weight:800;font-size:1.2rem;text-transform:uppercase;letter-spacing:-.01em}
+  .award span{font-family:var(--mono);font-size:.76rem;color:#0a0a0a;opacity:1;display:block;margin-top:.2rem}
+  .award:hover span{color:var(--paper);opacity:.9}
+  /* year fills the formerly-empty right edge of each award row */
+  .award .ay{font-family:var(--disp);font-weight:900;font-size:1.4rem;letter-spacing:-.03em;color:#4f4a42;opacity:1;flex:none}
+  .award:hover .ay{color:var(--paper);opacity:.8}
+  .brands{padding:var(--m);display:flex;flex-wrap:wrap;gap:0;align-content:flex-start;position:relative}
+  .brands .bl{width:100%;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;color:#0a0a0a}
+  /* count chip + halftone mark fill the header row of the formerly-sparse brands panel */
+  .brands .bcount{font-family:var(--disp);font-weight:900;font-size:1.4rem;letter-spacing:-.03em;color:var(--red);opacity:.85}
+  .brands span.b{border:var(--bd);padding:.55rem 1rem;font-family:var(--mono);font-size:.78rem;font-weight:700;
+    text-transform:uppercase;margin:0 -3px -3px 0;transition:background .15s,color .15s,transform .15s;color:#1b1b1b}
+  .brands span.b:hover{background:var(--blue);color:var(--paper);transform:rotate(-2deg);position:relative;z-index:2}
+  /* halftone footer mark anchors the lower-right of the panel */
+  .brands .bmark{width:100%;margin-top:1.4rem;height:54px;
+    background-image:radial-gradient(var(--ink) 1.5px,transparent 1.6px);background-size:11px 11px;opacity:.28;
+    -webkit-mask-image:linear-gradient(90deg,#000,transparent);mask-image:linear-gradient(90deg,#000,transparent)}
+  @media(max-width:760px){.recog{grid-template-columns:1fr}.awards{border-right:0;border-bottom:var(--bd)}}
+  /* ABOUT */
+  .about-in{padding:0 var(--m)}
+  /* secondary hero scale: 60-80px desktop, red PRODUCT */
+  .about p{font-family:var(--disp);font-weight:900;font-size:clamp(2.4rem,7vw,5rem);line-height:.98;
+    letter-spacing:-.035em;max-width:18ch;text-transform:uppercase}
+  .about p .blu{color:var(--blue)}
+  .about p .red{color:var(--red)}
+  .about .who{margin-top:2rem;padding-left:1.2rem;border-left:var(--bd);
+    font-family:var(--mono);font-size:.96rem;line-height:1.85;letter-spacing:-.01em;max-width:48ch;color:#0a0a0a;opacity:1}
+  /* CONTACT - given the same numbered / bordered section discipline as the body */
+  .contact{background:var(--ink);color:var(--paper);padding:clamp(3rem,7vw,6rem) var(--m) clamp(4rem,9vw,8rem);border-bottom:var(--bd)}
+  /* section header mirrors .shead but inverted for the dark ground */
+  .contact .chead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;
+    padding-bottom:2rem;margin-bottom:clamp(2.5rem,6vw,4rem);border-bottom:3px solid var(--paper);flex-wrap:wrap;text-align:left}
+  .contact .chead h2{font-family:var(--disp);font-weight:900;font-size:clamp(2rem,6vw,4.5rem);line-height:.9;
+    letter-spacing:-.03em;text-transform:uppercase}
+  .contact .chead h2 .secnum{color:var(--blue-lt)}
+  .contact .chead .meta{font-family:var(--mono);font-size:.76rem;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;text-align:right;color:var(--paper)}
+  /* the SAY HELLO block now sits inside a thick paper-bordered frame */
+  .contact .cframe{border:3px solid var(--paper);padding:clamp(2.2rem,6vw,4.5rem) clamp(1.4rem,5vw,4rem);text-align:center}
+  .contact .label{color:var(--blue-lt);margin-bottom:2rem;display:block}
+  .contact .big{font-family:var(--disp);font-weight:900;font-size:clamp(2.6rem,11vw,9rem);line-height:.88;
+    letter-spacing:-.04em;text-transform:uppercase}
+  .contact .big a{display:inline-block;transition:transform .2s,color .2s}
+  .contact .big a:hover{color:var(--blue-lt);transform:rotate(-2deg) scale(1.02)}
+  .contact .big a .ar{color:var(--red)}
+  /* big clickable mono email line */
+  .contact .mailline{margin-top:2.4rem;display:inline-block;font-family:var(--mono);font-weight:700;
+    font-size:clamp(.95rem,3vw,2rem);letter-spacing:-.01em;color:var(--paper);
+    border-bottom:3px solid var(--blue);padding-bottom:.25rem;
+    transition:color .2s,border-color .2s;word-break:break-word;max-width:100%}
+  .contact .mailline:hover{color:var(--blue);border-color:var(--paper)}
+  .contact .links{margin-top:2.8rem;display:flex;gap:0;justify-content:center;flex-wrap:wrap;border:3px solid var(--paper);width:max-content;max-width:100%;margin-left:auto;margin-right:auto}
+  .contact .links a{padding:.9rem 1.6rem;font-family:var(--mono);font-size:.78rem;font-weight:700;
+    letter-spacing:.06em;text-transform:uppercase;transition:background .15s,color .15s}
+  .contact .links a+a{border-left:3px solid var(--paper)}
+  .contact .links a:hover{background:var(--paper);color:var(--ink)}
+  /* FOOTER */
+  footer{padding:2rem var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    font-family:var(--mono);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+  footer a{color:var(--blue-ink)}
+  footer a:hover{background:var(--blue-ink);padding:.1rem .3rem;color:var(--paper)}
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(28px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <a class="logo" href="/redesign/"><span class="dot"></span>SWAPNIL BISWAS</a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="all" href="/redesign/">All concepts</a>
+  </div>
+</nav>
+
+<main>
+  <header class="hero">
+    <canvas id="gl"></canvas>
+    <div class="hero-grid"></div>
+    <div class="hero-plate-edge" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-plate">
+        <span class="tag">Senior Product Marketing Manager - LambdaTest</span>
+        <h1>
+          <span class="ln"><span><span class="wd1">The</span> <span class="wd1">marketer</span></span></span>
+          <span class="ln"><span class="blu"><span class="wd1">who</span> <span class="wd1">ships</span></span></span>
+          <span class="ln"><span class="red">code.</span></span>
+        </h1>
+      </div>
+      <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. Product marketing and growth, actually engineered.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">Selected work <span class="ar">&#8599;</span></a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="marquee" id="marquee" aria-hidden="true">
+    <div class="track">
+      {marquee.map(w => <span>{w}</span>)}
+      {marquee.map(w => <span>{w}</span>)}
+    </div>
+  </div>
+
+  <section id="stats">
+    <div class="wrap secpad">
+      <div class="shead">
+        <h2><span class="secnum">[01]</span><br/>By the <span class="blu">numbers</span></h2>
+        <div class="meta">Receipts /<br/>not adjectives</div>
+      </div>
+      <div class="stats">
+        {stats.map((s, i) => (
+          <div class="stat reveal"><span class="si">/{String(i + 1).padStart(2, '0')}</span><div class="n">{s.n}</div><div class="l">{s.l}</div></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap secpad">
+      <div class="shead">
+        <h2><span class="secnum">[02]</span><br/>What I <span class="blu">do</span></h2>
+        <div class="meta">Four disciplines /<br/>one operator</div>
+      </div>
+      <div class="pillars">
+        {pillars.map(p => (
+          <div class="pillar reveal"><div class="ptop"><div class="pi">{p.i}</div><span class="pmark" aria-hidden="true"></span></div><h3>{p.t}</h3><p>{p.d}</p><div class="pk">{p.k}</div></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap secpad" style="padding-left:0;padding-right:0">
+      <div class="shead" style="padding-left:var(--m);padding-right:var(--m)">
+        <h2><span class="secnum">[03]</span><br/>Selected <span class="blu">work</span></h2>
+        <div class="meta">2024 - 2026</div>
+      </div>
+      <div class="work">
+        {work.map((w, idx) => (
+          <a href="#" class={`reveal ${idx === 0 ? 'hero' : 'sup'}`}>
+            <span class={`tile ${w.tile}`} aria-hidden="true">
+              <span class="field"></span>
+              <span class="dots"></span>
+              <span class="sweep"></span>
+              <span class="tx">0{idx + 1}</span>
+              <span class="tmetric"><b>Outcome</b>{w.r}</span>
+            </span>
+            <span class="body">
+              <span class="wtop"><span class="wn">0{idx + 1}</span><span class="wt">{w.t}</span></span>
+              <span class="wm">{w.m}</span>
+              <span class="wd">{w.d}</span>
+              <span class="wfoot">
+                <span class="wres">{w.c}</span>
+                <span class="wright"><span class="wy">{w.y}</span><span class="war">&#8599;</span></span>
+              </span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="recognition">
+    <div class="wrap secpad" style="padding-left:0;padding-right:0">
+      <div class="shead" style="padding-left:var(--m);padding-right:var(--m)">
+        <h2><span class="secnum">[04]</span><br/>Recognition &amp; <span class="red">brands</span></h2>
+        <div class="meta">Proof of work</div>
+      </div>
+      <div class="recog">
+        <div class="awards">
+          {awards.map((a, idx) => (
+            <div class="award reveal"><span class="ix">0{idx + 1}</span><div class="acopy"><b>{a.t}</b><span>{a.s}</span></div><span class="ay">{a.y}</span></div>
+          ))}
+        </div>
+        <div class="brands reveal">
+          <div class="bl label">Brands shipped with<span class="bcount">{brands.length}</span></div>
+          {brands.map(b => <span class="b">{b}</span>)}
+          <div class="bmark" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap secpad about">
+      <div class="shead">
+        <h2><span class="secnum">[05]</span><br/><span class="blu">About</span></h2>
+        <div class="meta">Mumbai, India</div>
+      </div>
+      <div class="about-in">
+        <p class="reveal">I treat my own career like a <span class="blu">product</span> - positioned, measured and shipped.</p>
+        <p class="who reveal">7+ years in marketing, 4+ in B2B SaaS. Postgrad in Digital Marketing &amp; Growth Strategy at IIM Visakhapatnam. A PMM and growth strategist who codes AI agents, ships websites and runs technical SEO. The differentiator: I build the systems, not just the slide decks.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="chead">
+      <h2><span class="secnum">[06]</span><br/>Say <span class="red">hello</span></h2>
+      <div class="meta">Available for work /<br/>let's talk</div>
+    </div>
+    <div class="cframe reveal">
+      <span class="label">Let's build something that compounds</span>
+      <div class="big"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello <span class="ar">&#8599;</span></a></div>
+      <div><a class="mailline" href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a></div>
+      <div class="links">
+        <a href="mailto:swapbiswas.marketing@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>&copy; 2026 Swapnil Biswas</span>
+  <span>Concept 04 - Brut / <a href="/redesign/">View all concepts</a></span>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- custom cursor ----
+  (function(){
+    const cur = document.getElementById('cursor');
+    if(!cur || window.matchMedia('(pointer:coarse)').matches) return;
+    let x = innerWidth/2, y = innerHeight/2, tx = x, ty = y;
+    addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
+    document.querySelectorAll('a,button,.stat,.pillar,.brands span.b').forEach(el => {
+      el.addEventListener('mouseenter', () => cur.classList.add('big'));
+      el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+    });
+    // signature: work cards get the labelled "OPEN" cursor instead of the plain big disc
+    document.querySelectorAll('.work a').forEach(el => {
+      el.addEventListener('mouseenter', () => cur.classList.add('view'));
+      el.addEventListener('mouseleave', () => cur.classList.remove('view'));
+    });
+    (function follow(){
+      x += (tx - x) * 0.22; y += (ty - y) * 0.22;
+      cur.style.transform = `translate(${x}px,${y}px) translate(-50%,-50%)`;
+      requestAnimationFrame(follow);
+    })();
+  })();
+
+  // ---- WebGL cursor-reactive halftone / dither distortion ----
+  (function(){
+    const cv = document.getElementById('gl');
+    if(!cv) return;
+    const gl = cv.getContext('webgl', { antialias:true, alpha:false });
+    if(!gl){ return; } // CSS conic-gradient fallback already on the canvas
+    const vs = `attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+    const fs = `precision highp float;
+    uniform vec2 r; uniform float t; uniform vec2 mo;
+    float hash(vec2 x){return fract(sin(dot(x,vec2(127.1,311.7)))*43758.5453);}
+    void main(){
+      vec2 uv = gl_FragCoord.xy / r.xy;
+      vec2 asp = vec2(r.x/r.y, 1.0);
+      vec2 p = uv * asp;
+      // OFF-CENTER anchor: bottom-right, so it supports the asymmetric grid
+      vec2 anchor = vec2(0.80, 0.18) * asp;
+      // mouse drives the warp so it reads as interactive
+      vec2 mp = mo * asp;
+      vec2 d = p - anchor;
+      float dist = length(d);
+      // soft mask: presence falls off toward the top-left, keeping type area clean
+      float mask = smoothstep(1.05, 0.18, dist);
+      // mouse-tied displacement (warp swells toward the cursor)
+      vec2 dm = p - mp;
+      float distm = length(dm);
+      float pull = 0.14 / (distm*distm + 0.05);
+      pull = min(pull, 1.4);
+      vec2 warp = p - normalize(dm + 1e-4) * pull * 0.08;
+      warp += 0.010 * vec2(sin(warp.y*8.0 + t*0.5), cos(warp.x*8.0 + t*0.45));
+      // halftone dot grid radiating from the anchor
+      float cells = 30.0;
+      vec2 g = warp * cells;
+      vec2 cell = floor(g);
+      vec2 f = fract(g) - 0.5;
+      float ripple = sin(dist*20.0 - t*1.2) * 0.5 + 0.5;
+      float field = hash(cell) * 0.55 + ripple * 0.45 + sin(warp.x*4.0 + t*0.3)*0.2;
+      float radius = clamp(field, 0.05, 0.60) * mask;
+      float halftone = smoothstep(radius, radius - 0.06, length(f));
+      // MONOCHROME ink dots on flat paper
+      vec3 paper = vec3(0.914, 0.902, 0.867);
+      vec3 ink   = vec3(0.106, 0.106, 0.106);
+      vec3 blue  = vec3(0.231, 0.298, 1.0);
+      vec3 dotcol = ink;
+      // electric-blue ONLY as a sparing highlight near the mouse
+      float hl = smoothstep(0.18, 0.0, distm) * step(0.55, field);
+      dotcol = mix(dotcol, blue, hl);
+      vec3 col = mix(paper, dotcol, halftone);
+      gl_FragColor = vec4(col, 1.0);
+    }`;
+    function sh(ty,s){const o=gl.createShader(ty);gl.shaderSource(o,s);gl.compileShader(o);return o;}
+    const pr=gl.createProgram();
+    gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));
+    gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));
+    gl.linkProgram(pr);gl.useProgram(pr);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t'),um=gl.getUniformLocation(pr,'mo');
+    let mx=0.5,my=0.5,tmx=0.5,tmy=0.5;
+    function size(){
+      const d=Math.min(window.devicePixelRatio||1,1.6);
+      const w=cv.clientWidth||innerWidth, h=cv.clientHeight||innerHeight;
+      cv.width=Math.max(1,w*d);cv.height=Math.max(1,h*d);
+      gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(ur,cv.width,cv.height);
+    }
+    size();addEventListener('resize',size);
+    const rect = () => cv.getBoundingClientRect();
+    addEventListener('mousemove', e => {
+      const b = rect();
+      tmx = (e.clientX - b.left) / b.width;
+      tmy = 1.0 - (e.clientY - b.top) / b.height;
+    });
+    if(reduce){ gl.uniform1f(ut,2.0); gl.uniform2f(um,0.5,0.5); gl.drawArrays(gl.TRIANGLES,0,3); return; }
+    const start=performance.now();
+    (function loop(now){
+      mx += (tmx-mx)*0.08; my += (tmy-my)*0.08;
+      gl.uniform1f(ut,(now-start)/1000);
+      gl.uniform2f(um,mx,my);
+      gl.drawArrays(gl.TRIANGLES,0,3);
+      requestAnimationFrame(loop);
+    })(start);
+  })();
+
+  // ---- smooth scroll + reveals + marquee skew ----
+  if(!reduce){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    function raf(t){lenis.raf(t);requestAnimationFrame(raf);}requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll',ScrollTrigger.update);
+
+    // hero lines
+    gsap.set('.hero h1 .ln>span',{yPercent:120});
+    gsap.set('.hero .tag,.hero .sub,.hero .cta',{opacity:0,y:24});
+    const tl=gsap.timeline({delay:.12});
+    tl.to('.hero h1 .ln>span',{yPercent:0,duration:1.0,ease:'expo.out',stagger:.1})
+      .to('.hero .tag',{opacity:1,y:0,duration:.6},.15)
+      .to('.hero .sub',{opacity:1,y:0,duration:.7},.45)
+      .to('.hero .cta',{opacity:1,y:0,duration:.7},.6);
+
+    // batched, staggered reveals: siblings that enter together animate as one choreographed
+    // run (grid rows ripple in) instead of each firing independently. Safety net below guarantees
+    // every .reveal ends at opacity:1 even if a trigger never fires.
+    ScrollTrigger.batch('.reveal',{
+      start:'top 88%',
+      onEnter: batch => gsap.to(batch,{opacity:1,y:0,duration:.85,ease:'expo.out',stagger:.08,overwrite:true})
+    });
+    // guarantee: anything still hidden after a beat (e.g. already in view, odd layout) is shown.
+    ScrollTrigger.addEventListener('refresh', () => {
+      gsap.utils.toArray('.reveal').forEach(el=>{
+        const r = el.getBoundingClientRect();
+        if(r.top < innerHeight && getComputedStyle(el).opacity === '0'){
+          gsap.set(el,{opacity:1,y:0});
+        }
+      });
+    });
+
+    // scroll-velocity skew on the marquee
+    const track = document.querySelector('#marquee .track');
+    if(track){
+      let skew = 0;
+      lenis.on('scroll', ({velocity}) => {
+        const v = Math.max(-12, Math.min(12, (velocity||0) * 0.35));
+        skew += (v - skew) * 0.5;
+        gsap.set(track,{skewX:skew*0.3});
+      });
+      // ease back toward 0 each frame
+      gsap.ticker.add(() => { skew += (0 - skew) * 0.06; gsap.set(track,{skewX:skew*0.3}); });
+    }
+  }
+</script>
+</body>
+</html>

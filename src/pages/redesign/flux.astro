@@ -1,0 +1,823 @@
+---
+// REDESIGN PROTOTYPE - "Flux" (Concept 09) - bright modern product company, Stripe/Linear school, light.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css, no components.
+// Tech: raw-WebGL animated gradient-mesh shader (Stripe-style fbm color blobs) + GSAP/ScrollTrigger + Lenis.
+const stats = [
+  { n: '657K+', l: 'Leads generated' },
+  { n: '18.2M+', l: 'Organic traffic driven' },
+  { n: '10x', l: 'Conversion lift' },
+  { n: '20+', l: 'AI agents & apps built' },
+  { n: '15+', l: 'Marketers mentored' },
+  { n: '76', l: 'Articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS. The narrative that makes a product impossible to ignore.', g: 'a' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds long after the campaign ends.', g: 'b' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped - instead of only briefing them.', g: 'c' },
+  { i: '04', t: 'Building in public', d: 'This site, eight free tools and seventy-six articles. Shipped systems, not slide-ware.', g: 'd' },
+];
+const work = [
+  { i: '01', t: 'LambdaTest', role: 'Product & digital marketing', r: '657K+ leads, 18.2M+ organic traffic', y: '2021-2025', sw: 'growth', note: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { i: '02', t: 'TestMu AI', role: 'Rebrand lead', r: 'Full company rebrand', y: '2026', sw: 'morph', note: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', t: 'Samsung', role: 'Launch content & distribution', r: 'Galaxy M-series launch', y: '2019', sw: 'signal', note: 'On the Galaxy M-series from inception; ran content distribution (collaborated with Technical Guruji).' },
+  { i: '04', t: 'Medilife Superspeciality', role: 'Marketing & web, 0 to 1', r: 'Website, GTM, social & launch', y: '', sw: 'pulse', note: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', t: 'Lido Learning', role: 'Growth / CRM', r: 'CRM & lead operations', y: '2021', sw: 'funnel', note: 'Ran CRM management and lead routing/assignment for the EdTech.' },
+  { i: '06', t: 'Appknox', role: 'Freelance content', r: 'Security content', y: '', sw: 'shield', note: 'Freelance content writer for the mobile app security company.' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const awards = [
+  { t: 'Value of Agility Award', s: 'LambdaTest', y: '2024' },
+  { t: 'Wall of Fame', s: 'LambdaTest', y: '' },
+  { t: '#1 Product of the Day', s: 'Product Hunt', y: '' },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="flux">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#fbfbfd; --panel:#ffffff; --ink:#0a0a14; --read:#3a3a4c; --mut:#6b6b7d;
+    --line:rgba(10,10,20,.10); --line2:rgba(10,10,20,.06);
+    --indigo:#6366f1; --violet:#a855f7; --cyan:#22d3ee; --pink:#fb7185;
+    --glass:rgba(255,255,255,.62); --glassb:rgba(255,255,255,.55);
+    --disp:"Space Grotesk",system-ui,sans-serif; --sans:"Inter",system-ui,sans-serif;
+    --m:clamp(1.15rem,5vw,5.5rem);
+    --shadow:0 12px 40px -16px rgba(36,30,90,.22);
+    --shadow-lift:0 28px 70px -22px rgba(99,102,241,.34);
+    --grad:linear-gradient(120deg,var(--indigo),var(--violet) 38%,var(--pink) 70%,var(--cyan));
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip;scroll-behavior:auto}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;overflow-x:clip;font-weight:400}
+  section{overflow-x:clip}
+  ::selection{background:rgba(99,102,241,.22);color:#0a0a14}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* ---- WebGL gradient-mesh hero background + CSS fallback ---- */
+  /* The canvas fills the hero only (not fixed full-page) - Flux is a bright modern landing,
+     the mesh lives behind the hero and a softer echo appears in the CTA band. */
+  .mesh-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  canvas.mesh{position:absolute;inset:0;width:100%;height:100%;display:block;
+    /* CSS gradient fallback so a null/failed context never shows a flat box */
+    background:
+      radial-gradient(60% 70% at 18% 22%,rgba(99,102,241,.85),transparent 60%),
+      radial-gradient(55% 65% at 82% 18%,rgba(168,85,247,.75),transparent 60%),
+      radial-gradient(70% 75% at 70% 88%,rgba(34,211,238,.6),transparent 62%),
+      radial-gradient(60% 70% at 22% 90%,rgba(251,113,133,.6),transparent 62%),
+      linear-gradient(120deg,#eef0ff,#fdf0fb)}
+  /* animated CSS mesh used on mobile (WebGL unreliable there) + reduced-motion still */
+  .css-mesh{position:absolute;inset:0;z-index:0;display:none;pointer-events:none;
+    background:
+      radial-gradient(48% 60% at 16% 24%,rgba(99,102,241,.92),transparent 60%),
+      radial-gradient(50% 60% at 84% 16%,rgba(168,85,247,.82),transparent 60%),
+      radial-gradient(62% 70% at 74% 86%,rgba(34,211,238,.68),transparent 62%),
+      radial-gradient(58% 66% at 20% 92%,rgba(251,113,133,.7),transparent 62%),
+      linear-gradient(120deg,#eef0ff,#fdf0fb);
+    background-size:180% 180%;animation:meshDrift 12s ease-in-out infinite alternate}
+  @keyframes meshDrift{0%{background-position:0% 0%}50%{background-position:100% 30%}100%{background-position:100% 100%}}
+  @media(prefers-reduced-motion:reduce){.css-mesh{animation:none}}
+  /* soft top scrim so the fixed nav stays legible and a bottom fade into the page bg */
+  .mesh-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(251,251,253,.30) 0%,transparent 18% 58%,rgba(251,251,253,.78) 90%,var(--bg) 100%)}
+  /* faint grain to keep gradients from banding */
+  .grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.035;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  .wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:0 var(--m)}
+
+  /* ---- progress + nav ---- */
+  .progress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:left;z-index:50;
+    background:var(--grad)}
+  nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;
+    padding:.85rem var(--m);transition:padding .4s,background .4s,box-shadow .4s,border-color .4s;
+    border-bottom:1px solid transparent}
+  nav.scrolled{background:rgba(251,251,253,.72);backdrop-filter:blur(16px) saturate(160%);
+    -webkit-backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid var(--line2);box-shadow:0 6px 24px -18px rgba(36,30,90,.4)}
+  .logo{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--disp);font-size:1.05rem;font-weight:600;letter-spacing:-.02em}
+  .logo .mk{width:24px;height:24px;border-radius:8px;background:var(--grad);box-shadow:0 4px 14px -4px rgba(99,102,241,.6);flex:none}
+  .logo span{color:var(--mut);font-weight:500}
+  .navlinks{display:flex;gap:1.9rem;align-items:center;font-size:.86rem;font-weight:500}
+  .navlinks a{position:relative;color:var(--read);transition:color .3s}
+  .navlinks a:hover{color:var(--ink)}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1.5px;background:var(--grad);transition:width .35s cubic-bezier(.2,.8,.2,1)}
+  .navlinks a:hover::after{width:100%}
+  .navlinks a.pill{padding:.5rem 1rem;border-radius:100px;border:1px solid var(--line);color:var(--ink);background:var(--panel);box-shadow:0 2px 10px -6px rgba(36,30,90,.3)}
+  .navlinks a.pill::after{display:none}
+  .navlinks a.pill:hover{border-color:transparent;box-shadow:0 6px 18px -6px rgba(99,102,241,.5)}
+  @media(max-width:760px){.navlinks a:not(.pill){display:none}}
+
+  /* ---- buttons (pill, gradient + glow) ---- */
+  .btn{position:relative;display:inline-flex;align-items:center;gap:.55rem;padding:.92rem 1.5rem;border-radius:100px;
+    font-size:.92rem;font-weight:600;letter-spacing:-.01em;font-family:var(--sans);
+    transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,background .3s,color .3s;will-change:transform;isolation:isolate}
+  .btn .ar{transition:transform .4s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .btn.primary{color:#fff;background:var(--grad);background-size:160% 160%;box-shadow:0 10px 30px -10px rgba(99,102,241,.55)}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(168,85,247,.62);animation:gradShift 4s ease infinite}
+  @keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+  .btn.ghost{color:var(--ink);background:var(--glass);border:1px solid var(--line);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 4px 16px -10px rgba(36,30,90,.4)}
+  .btn.ghost:hover{transform:translateY(-2px);border-color:rgba(99,102,241,.5);box-shadow:0 10px 28px -10px rgba(99,102,241,.4)}
+
+  /* ---- hero ---- */
+  header.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    padding-top:7rem;padding-bottom:5rem}
+  .hero .inner{position:relative;z-index:2}
+  .badge{display:inline-flex;align-items:center;gap:.6rem;padding:.42rem .9rem .42rem .55rem;border-radius:100px;
+    background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    font-size:.78rem;font-weight:500;color:var(--read);box-shadow:0 4px 18px -12px rgba(36,30,90,.5);margin-bottom:1.8rem}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.5);animation:pulse 2.6s ease-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+  @media(prefers-reduced-motion:reduce){.badge .dot{animation:none}}
+  .hero h1{font-family:var(--disp);font-weight:600;font-size:clamp(2.9rem,8.6vw,6.6rem);line-height:.98;letter-spacing:-.04em;max-width:16ch;
+    position:relative}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln>span{display:block;will-change:transform}
+  /* soft light halo behind the headline so the ink + gradient words stay legible over the mesh */
+  .hero .h1halo{position:absolute;z-index:0;left:-6%;top:-12%;width:88%;height:128%;pointer-events:none;
+    background:radial-gradient(58% 56% at 34% 50%,rgba(251,251,253,.92),rgba(251,251,253,.62) 46%,transparent 74%);
+    filter:blur(8px)}
+  .hero h1 .ln,.hero h1 .ln>span{position:relative;z-index:1}
+  /* deepened gradient stops + a faint text-shadow keep the clipped word readable on any mesh patch */
+  .hero h1 .grad{background:linear-gradient(118deg,#4f46e5,#7c3aed 36%,#db2777 68%,#0891b2);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    background-size:200% 200%;animation:gradShift 7s ease infinite;
+    -webkit-text-stroke:.4px rgba(124,58,237,.18)}
+  @media(prefers-reduced-motion:reduce){.hero h1 .grad{animation:none}}
+  .hero .sub{margin-top:1.9rem;max-width:50ch;font-size:clamp(1.05rem,1.5vw,1.28rem);color:var(--read);line-height:1.62}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  .cta{margin-top:2.4rem;display:flex;gap:.85rem;flex-wrap:wrap;align-items:center}
+  .scrollcue{position:absolute;bottom:1.8rem;left:var(--m);z-index:2;font-size:.72rem;letter-spacing:.18em;color:var(--mut);
+    text-transform:uppercase;display:flex;align-items:center;gap:.6rem;font-weight:500}
+  .scrollcue .bar{width:1px;height:34px;background:linear-gradient(var(--mut),transparent);display:block;animation:cue 2s ease-in-out infinite}
+  @keyframes cue{0%,100%{transform:scaleY(.6);opacity:.5;transform-origin:top}50%{transform:scaleY(1);opacity:1;transform-origin:top}}
+  @media(prefers-reduced-motion:reduce){.scrollcue .bar{animation:none}}
+  @media(max-width:600px){
+    header.hero{padding-top:6.5rem;padding-bottom:3.5rem;justify-content:flex-end}
+    .hero h1{font-size:clamp(3rem,14vw,4.4rem);max-width:11ch;letter-spacing:-.045em}
+    .hero .sub{margin-top:1.4rem;font-size:1.04rem;max-width:42ch}
+    .scrollcue{display:none}
+  }
+
+  /* ---- brand strip ---- */
+  .strip{padding:2.6rem 0;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+  .strip .lab{text-align:center;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);font-weight:600;margin-bottom:1.5rem}
+  .marquee{position:relative;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+  .marquee .track{display:flex;gap:3.2rem;width:max-content;animation:scroll 26s linear infinite}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none;justify-content:center;flex-wrap:wrap;width:auto}}
+  .marquee:hover .track{animation-play-state:paused}
+  .marquee b{font-family:var(--disp);font-weight:500;font-size:1.35rem;letter-spacing:-.01em;color:var(--mut);opacity:.7;white-space:nowrap;transition:color .3s,opacity .3s}
+  .marquee b:hover{color:var(--ink);opacity:1}
+
+  /* ---- section frame ---- */
+  section{padding:clamp(4.5rem,10vh,8rem) 0;position:relative}
+  .shead{margin-bottom:3rem;max-width:42rem}
+  .eyebrow{display:inline-block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+    color:var(--indigo);margin-bottom:1rem}
+  .shead h2{font-family:var(--disp);font-weight:600;font-size:clamp(1.9rem,4.4vw,3.2rem);letter-spacing:-.035em;line-height:1.04}
+  .shead h2 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .shead p{margin-top:1rem;color:var(--read);font-size:1.05rem;max-width:46ch;line-height:1.6}
+
+  /* ---- statement / marquee line ---- */
+  .statement{padding:clamp(3.5rem,8vh,6rem) 0}
+  .statement p{font-family:var(--disp);font-weight:500;font-size:clamp(1.5rem,3.6vw,2.7rem);line-height:1.28;
+    letter-spacing:-.03em;max-width:24ch}
+  .statement p em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* ---- stats band ---- */
+  .statsband{background:linear-gradient(180deg,#0a0a14,#12121f);color:#fff;border-radius:28px;
+    padding:clamp(2.4rem,5vw,3.6rem);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .statsband::before{content:"";position:absolute;inset:0;z-index:0;opacity:.55;
+    background:radial-gradient(50% 70% at 12% 0%,rgba(99,102,241,.5),transparent 60%),
+      radial-gradient(46% 64% at 88% 110%,rgba(251,113,133,.42),transparent 60%),
+      radial-gradient(40% 60% at 95% 0%,rgba(34,211,238,.34),transparent 60%)}
+  .statgrid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(6,1fr);gap:2rem 1.4rem}
+  .statc{display:flex;flex-direction:column;gap:.45rem}
+  .statc .n{font-family:var(--disp);font-weight:600;font-size:clamp(2rem,3.4vw,2.9rem);letter-spacing:-.03em;line-height:.95;
+    background:linear-gradient(120deg,#fff,#c7c7ff 60%,#9fe9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .statc .l{font-size:.82rem;color:rgba(255,255,255,.62);letter-spacing:.01em;line-height:1.35;max-width:16ch}
+  @media(max-width:860px){.statgrid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:480px){.statgrid{grid-template-columns:repeat(2,1fr);gap:1.6rem 1rem}.statc .n{font-size:clamp(1.8rem,9vw,2.4rem)}}
+
+  /* ---- pillars (glass feature cards) ---- */
+  .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+  .pillar{position:relative;padding:2rem 1.9rem;border-radius:22px;background:var(--glass);
+    border:1px solid var(--line);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);
+    box-shadow:var(--shadow);overflow:hidden;
+    transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,border-color .5s}
+  .pillar::before{content:"";position:absolute;inset:0;z-index:0;opacity:.0;transition:opacity .5s;pointer-events:none}
+  .pillar.a::before{background:radial-gradient(70% 90% at 0% 0%,rgba(99,102,241,.16),transparent 60%)}
+  .pillar.b::before{background:radial-gradient(70% 90% at 100% 0%,rgba(168,85,247,.16),transparent 60%)}
+  .pillar.c::before{background:radial-gradient(70% 90% at 0% 100%,rgba(34,211,238,.18),transparent 60%)}
+  .pillar.d::before{background:radial-gradient(70% 90% at 100% 100%,rgba(251,113,133,.16),transparent 60%)}
+  .pillar:hover{transform:translateY(-6px);border-color:rgba(99,102,241,.35);box-shadow:var(--shadow-lift)}
+  .pillar:hover::before{opacity:1}
+  .pillar .ic{position:relative;z-index:1;width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+    margin-bottom:1.3rem;background:var(--panel);border:1px solid var(--line);box-shadow:0 6px 18px -10px rgba(36,30,90,.5)}
+  .pillar .ic svg{width:22px;height:22px}
+  .pillar .pi{position:relative;z-index:1;font-family:var(--disp);font-size:.8rem;font-weight:600;letter-spacing:.08em;color:var(--mut);margin-bottom:.5rem}
+  .pillar h3{position:relative;z-index:1;font-family:var(--disp);font-size:1.3rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.6rem}
+  .pillar p{position:relative;z-index:1;color:var(--read);font-size:.96rem;line-height:1.62;max-width:42ch}
+  @media(max-width:720px){.pillars{grid-template-columns:1fr}}
+
+  /* ---- selected work (centerpiece) ---- */
+  .work{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+  .work .row{position:relative;display:flex;flex-direction:column;min-height:330px;border-radius:24px;overflow:hidden;
+    border:1px solid var(--line);background:var(--panel);box-shadow:var(--shadow);isolation:isolate;
+    transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .55s,border-color .5s}
+  .work .row.feat{grid-column:1 / -1;min-height:360px}
+  .work .row:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift)}
+  /* the gradient thumbnail fills the top of the card; copy sits on a frosted footer */
+  .work .thumb{position:relative;flex:1;overflow:hidden;min-height:170px}
+  .work .thumb .art{position:absolute;inset:0;transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .6s;
+    filter:saturate(1) brightness(1);transform:scale(1.02)}
+  .work .row:hover .thumb .art{transform:scale(1.08);filter:saturate(1.12) brightness(1.04)}
+  /* cursor-tracking sheen */
+  .work .thumb .sheen{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;transition:opacity .5s;mix-blend-mode:overlay;
+    background:radial-gradient(220px 220px at var(--mx,50%) var(--my,50%),rgba(255,255,255,.5),transparent 60%)}
+  .work .row:hover .thumb .sheen{opacity:1}
+  @media(prefers-reduced-motion:reduce){.work .thumb .sheen{display:none}}
+  /* floating result pill on the thumbnail */
+  .work .rpill{position:absolute;z-index:3;left:1.2rem;top:1.2rem;display:inline-flex;align-items:center;gap:.45rem;
+    padding:.45rem .85rem;border-radius:100px;font-family:var(--disp);font-weight:600;font-size:.92rem;letter-spacing:-.01em;
+    color:var(--ink);background:rgba(255,255,255,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.7);box-shadow:0 8px 24px -10px rgba(36,30,90,.4);max-width:calc(100% - 2.4rem)}
+  .work .rpill .dot{width:7px;height:7px;border-radius:50%;background:var(--grad);flex:none}
+  .work .row.feat .rpill{font-size:1.05rem}
+  .work .widx{position:absolute;z-index:3;right:1.2rem;top:1.2rem;font-family:var(--disp);font-weight:600;font-size:.82rem;
+    color:rgba(255,255,255,.85);letter-spacing:.06em;text-shadow:0 1px 6px rgba(0,0,0,.25)}
+  /* card footer */
+  .work .foot{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding:1.2rem 1.4rem;background:var(--glassb);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);
+    border-top:1px solid var(--line2)}
+  .work .foot .nm{font-family:var(--disp);font-weight:600;font-size:1.18rem;letter-spacing:-.02em}
+  .work .row.feat .foot .nm{font-size:1.5rem}
+  .work .foot .role{font-size:.82rem;color:var(--mut);margin-top:.18rem}
+  .work .foot .go{width:38px;height:38px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--line);background:var(--panel);color:var(--ink);transition:transform .4s,background .4s,color .4s,border-color .4s}
+  .work .row:hover .foot .go{background:var(--ink);color:#fff;border-color:var(--ink);transform:rotate(-45deg)}
+  /* per-project gradient base + distinct on-brand SVG motif layer (.motif) */
+  /* LambdaTest - rising growth field (indigo->violet), featured */
+  .art.growth{background:
+      radial-gradient(80% 110% at 82% 12%,rgba(124,58,237,.9),transparent 60%),
+      radial-gradient(70% 90% at 10% 95%,rgba(67,56,202,.92),transparent 62%),
+      conic-gradient(from 200deg at 58% 52%,#3f3fb0,#7c3aed,#4338ca);}
+  /* dim + vignette the featured LambdaTest field so the growth chart reads clearly */
+  .work .row.feat .art.growth::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(120% 130% at 60% 45%,transparent 30%,rgba(10,8,30,.42) 100%),
+      linear-gradient(180deg,rgba(10,8,30,.16),rgba(10,8,30,.30));}
+  /* TestMu AI - identity refresh / morph (violet->indigo) */
+  .art.morph{background:
+      radial-gradient(70% 90% at 22% 24%,rgba(99,102,241,.9),transparent 62%),
+      radial-gradient(70% 90% at 80% 84%,rgba(168,85,247,.92),transparent 62%),
+      linear-gradient(125deg,#5b4bd6,#8b5cf6 55%,#a855f7);}
+  /* Samsung - device / broadcast / signal-out (cyan) */
+  .art.signal{background:linear-gradient(115deg,#0e7490,#0ea5b7 40%,#22d3ee 80%,#67e8f9);}
+  /* Medilife - medical pulse / cross (pink->rose) */
+  .art.pulse{background:radial-gradient(75% 95% at 50% 44%,#fb7185,#f43f5e 58%,#be185d);}
+  /* Lido Learning - funnel / pipeline / routing (indigo->cyan) */
+  .art.funnel{background:linear-gradient(135deg,#4f46e5,#6366f1 45%,#22d3ee);}
+  /* Appknox - shield / security (deep indigo->violet) */
+  .art.shield{background:
+      radial-gradient(70% 90% at 50% 18%,rgba(124,58,237,.85),transparent 62%),
+      linear-gradient(160deg,#3730a3,#4338ca 55%,#6d28d9);}
+
+  /* the motif sits above the gradient art, below the sheen/pills */
+  .work .motif{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .work .motif svg{position:absolute;inset:0;width:100%;height:100%}
+
+  .work .row.feat .motif{z-index:2}
+
+  /* LambdaTest - rising growth / area chart: filled curve + drawing trend line + climbing marker */
+  .m-growth .area{fill:rgba(255,255,255,.16)}
+  .m-growth .grid{stroke:rgba(255,255,255,.16);stroke-width:1}
+  .m-growth .trend{fill:none;stroke:#fff;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;
+    filter:drop-shadow(0 0 7px rgba(255,255,255,.85));
+    stroke-dasharray:540;stroke-dashoffset:540;animation:draw 3.2s cubic-bezier(.2,.8,.2,1) infinite}
+  @keyframes draw{0%{stroke-dashoffset:540}55%,100%{stroke-dashoffset:0}}
+  .work .row:hover .m-growth .trend{animation-duration:1.6s}
+  .m-growth .dot{fill:#fff;filter:drop-shadow(0 0 8px rgba(255,255,255,1));
+    animation:climb 3.2s cubic-bezier(.2,.8,.2,1) infinite}
+  @keyframes climb{0%{transform:translate(-150px,80px);opacity:0}20%{opacity:1}55%,100%{transform:translate(0,0);opacity:1}}
+
+  /* TestMu AI - identity refresh: a mark that morphs (square <-> circle) = before/after rebrand */
+  .m-morph .mk{fill:none;stroke:#fff;stroke-width:3.2;filter:drop-shadow(0 0 7px rgba(255,255,255,.8));
+    animation:morph 4s ease-in-out infinite}
+  @keyframes morph{0%,100%{d:path("M150 105 H250 V205 H150 Z")}50%{d:path("M200 95 C234 95 255 130 255 155 C255 192 226 215 200 215 C166 215 145 180 145 155 C145 118 174 95 200 95 Z")}}
+  .m-morph .spin{fill:none;stroke:rgba(255,255,255,.55);stroke-width:1.6;stroke-dasharray:6 14;
+    transform-origin:200px 155px;animation:slowspin 9s linear infinite}
+  @keyframes slowspin{to{transform:rotate(360deg)}}
+  .work .row:hover .m-morph .mk{animation-duration:2s}
+
+  /* Samsung - device / broadcast: handset emitting concentric signal waves */
+  .m-signal .dev{fill:none;stroke:#fff;stroke-width:3;filter:drop-shadow(0 0 6px rgba(255,255,255,.7))}
+  .m-signal .wave{fill:none;stroke:#fff;stroke-width:2.4;transform-origin:200px 165px;
+    animation:emit 2.8s ease-out infinite}
+  .m-signal .wave:nth-of-type(2){animation-delay:.9s}
+  .m-signal .wave:nth-of-type(3){animation-delay:1.8s}
+  @keyframes emit{0%{opacity:.9;transform:scale(.2)}100%{opacity:0;transform:scale(1.5)}}
+  .work .row:hover .m-signal .wave{animation-duration:1.4s}
+
+  /* Medilife - medical pulse: ECG heartbeat line sweeping across + cross */
+  .m-pulse .line{fill:none;stroke:#fff;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;
+    filter:drop-shadow(0 0 7px rgba(255,255,255,.9));
+    stroke-dasharray:560;stroke-dashoffset:560;animation:beat 3s linear infinite}
+  @keyframes beat{to{stroke-dashoffset:-560}}
+  .work .row:hover .m-pulse .line{animation-duration:1.5s}
+  .m-pulse .cross{fill:#fff;opacity:.92;filter:drop-shadow(0 0 6px rgba(255,255,255,.6))}
+
+  /* Lido Learning - funnel / routing: leads narrowing down a funnel into a routed node */
+  .m-funnel .fnl{fill:rgba(255,255,255,.14);stroke:#fff;stroke-width:2.4;
+    filter:drop-shadow(0 0 5px rgba(255,255,255,.5))}
+  .m-funnel .lead{fill:#fff;filter:drop-shadow(0 0 6px rgba(255,255,255,.9));
+    animation:route 2.6s ease-in infinite}
+  .m-funnel .lead:nth-of-type(2){animation-delay:.6s}
+  .m-funnel .lead:nth-of-type(3){animation-delay:1.2s}
+  .m-funnel .lead:nth-of-type(4){animation-delay:1.9s}
+  @keyframes route{0%{transform:translate(0,-90px);opacity:0}25%{opacity:1}80%{transform:translate(0,70px);opacity:1}100%{transform:translate(0,90px);opacity:0}}
+  .work .row:hover .m-funnel .lead{animation-duration:1.4s}
+
+  /* Appknox - shield / security: shield outline with a checkmark + scanning sweep */
+  .m-shield .shd{fill:rgba(255,255,255,.12);stroke:#fff;stroke-width:3;stroke-linejoin:round;
+    filter:drop-shadow(0 0 7px rgba(255,255,255,.7))}
+  .m-shield .chk{fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:70;stroke-dashoffset:70;animation:check 3s ease-in-out infinite}
+  @keyframes check{0%,20%{stroke-dashoffset:70}45%,100%{stroke-dashoffset:0}}
+  .m-shield .scan{fill:rgba(255,255,255,.22);animation:scan 3.2s ease-in-out infinite}
+  @keyframes scan{0%,100%{transform:translateY(-40px);opacity:0}50%{transform:translateY(40px);opacity:.9}}
+  .work .row:hover .m-shield .chk{animation-duration:1.6s}
+
+  @media(prefers-reduced-motion:reduce){
+    .m-growth .trend,.m-growth .dot,.m-morph .mk,.m-morph .spin,.m-signal .wave,
+    .m-pulse .line,.m-funnel .lead,.m-shield .chk,.m-shield .scan{animation:none}
+    .m-growth .trend{stroke-dashoffset:0}
+    .m-growth .dot{transform:none}
+    .m-pulse .line{stroke-dasharray:none}
+    .m-shield .chk{stroke-dashoffset:0}
+    .m-funnel .lead{opacity:.9;transform:none}
+  }
+  @media(max-width:720px){.work{grid-template-columns:1fr}.work .row.feat{grid-column:1}
+    .work .row,.work .row.feat{min-height:300px}}
+
+  /* ---- recognition + brands ---- */
+  .recog{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.2rem,3vw,2rem);align-items:stretch}
+  .panel{background:var(--glass);border:1px solid var(--line);border-radius:22px;padding:2rem 1.9rem;
+    backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);box-shadow:var(--shadow)}
+  .panel .clabel{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);font-weight:600;margin-bottom:1.4rem}
+  .award{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0;border-top:1px solid var(--line2)}
+  .award:first-of-type{border-top:0;padding-top:0}
+  .award b{font-family:var(--disp);font-weight:600;font-size:1.12rem;letter-spacing:-.02em}
+  .award b .num{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .award span{font-size:.74rem;letter-spacing:.06em;color:var(--mut);text-align:right;white-space:nowrap;text-transform:uppercase;font-weight:500}
+  .brands{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+  .brands b{display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--disp);font-weight:500;
+    font-size:.98rem;letter-spacing:-.01em;color:var(--read);padding:1rem .6rem;border-radius:14px;border:1px solid var(--line2);
+    background:rgba(255,255,255,.5);transition:color .3s,transform .3s,box-shadow .3s,border-color .3s}
+  .brands b:hover{color:var(--ink);transform:translateY(-3px);border-color:rgba(99,102,241,.3);box-shadow:0 10px 24px -14px rgba(99,102,241,.5)}
+  @media(max-width:760px){.recog{grid-template-columns:1fr}}
+
+  /* ---- about ---- */
+  .about .abody{display:grid;grid-template-columns:230px 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+  .about .rail{display:flex;flex-direction:column;gap:.4rem}
+  .about .rail .av{width:64px;height:64px;border-radius:18px;background:var(--grad);box-shadow:0 12px 30px -10px rgba(99,102,241,.6);
+    margin-bottom:1rem;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;color:#fff;font-size:1.4rem}
+  .about .rail .k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:600}
+  .about .rail .v{font-family:var(--disp);font-weight:500;font-size:1.05rem;letter-spacing:-.01em;margin-bottom:.5rem}
+  .about p{font-family:var(--disp);font-weight:500;font-size:clamp(1.4rem,2.9vw,2.2rem);line-height:1.35;letter-spacing:-.025em;max-width:24ch}
+  .about p em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  @media(max-width:720px){.about .abody{grid-template-columns:1fr;gap:1.6rem}
+    .about .rail{flex-direction:row;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem}
+    .about .rail .av{margin-bottom:0}}
+
+  /* ---- CTA band (echo gradient mesh) ---- */
+  .ctaband{position:relative;border-radius:32px;overflow:hidden;padding:clamp(3rem,7vw,5.5rem) clamp(1.5rem,5vw,4rem);
+    text-align:center;color:#0a0a14;box-shadow:var(--shadow-lift)}
+  .ctaband .ctamesh{position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(50% 80% at 16% 10%,rgba(99,102,241,.95),transparent 60%),
+      radial-gradient(54% 80% at 86% 14%,rgba(168,85,247,.9),transparent 60%),
+      radial-gradient(60% 90% at 78% 96%,rgba(34,211,238,.8),transparent 62%),
+      radial-gradient(58% 86% at 20% 94%,rgba(251,113,133,.85),transparent 62%),
+      linear-gradient(120deg,#eef0ff,#fde8fb);
+    background-size:160% 160%}
+  .ctaband.anim .ctamesh{animation:meshDrift 16s ease-in-out infinite alternate}
+  @media(prefers-reduced-motion:reduce){.ctaband.anim .ctamesh{animation:none}}
+  .ctaband .glass{position:relative;z-index:1;display:inline-block;max-width:46rem}
+  .ctaband .eyebrow{color:#3a3a4c}
+  .ctaband h2{font-family:var(--disp);font-weight:600;font-size:clamp(2rem,5.4vw,3.8rem);letter-spacing:-.04em;line-height:1.02;color:#0a0a14}
+  .ctaband p{margin-top:1.2rem;font-size:1.08rem;color:#2a2a3c;max-width:36ch;margin-left:auto;margin-right:auto}
+  .ctaband .cta{justify-content:center;margin-top:2.2rem}
+  .ctaband .em{margin-top:1.8rem;font-size:.88rem;color:#3a3a4c}
+  .ctaband .em a{font-weight:600;border-bottom:1px solid rgba(10,10,20,.3)}
+
+  /* ---- footer ---- */
+  footer{padding:3rem var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center;
+    border-top:1px solid var(--line2);font-size:.84rem;color:var(--mut)}
+  footer a{color:var(--read);font-weight:500}
+  footer a:hover{color:var(--ink)}
+  footer .ft-logo{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--disp);font-weight:600;color:var(--ink)}
+  footer .ft-logo .mk{width:18px;height:18px;border-radius:6px;background:var(--grad)}
+
+  /* ---- reveal ---- */
+  .reveal{opacity:0;transform:translateY(26px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<nav id="nav">
+  <a class="logo" href="/redesign/"><span class="mk" aria-hidden="true"></span>Swapnil <span>Biswas</span></a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#services">What I do</a>
+    <a href="#about">About</a>
+    <a class="pill" href="/redesign/">All concepts</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="mesh-wrap" aria-hidden="true">
+    <canvas class="mesh" id="mesh"></canvas>
+    <div class="css-mesh" id="cssMesh"></div>
+    <div class="mesh-scrim"></div>
+  </div>
+  <div class="wrap inner">
+    <div class="badge"><span class="dot" aria-hidden="true"></span> Senior Product Marketing Manager - LambdaTest</div>
+    <h1>
+      <span class="h1halo" aria-hidden="true"></span>
+      <span class="ln"><span>The marketer</span></span>
+      <span class="ln"><span>who <span class="grad">ships</span>.</span></span>
+    </h1>
+    <p class="sub">I'm Swapnil Biswas - a product marketer who builds. I ship the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b>, not just the decks that describe them.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See selected work <span class="ar">&#8599;</span></a>
+      <a class="btn ghost" href="#contact">Let's build together</a>
+    </div>
+  </div>
+  <div class="scrollcue"><span class="bar"></span> Scroll</div>
+</header>
+
+<section class="strip" aria-label="Trusted by">
+  <div class="wrap">
+    <div class="lab">Trusted by teams at</div>
+    <div class="marquee">
+      <div class="track">
+        {[...brands, ...brands].map(b => <b>{b}</b>)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="statement">
+    <p class="reveal">I don't just write the launch plan. I <em>build the system</em> that makes it compound.</p>
+  </section>
+
+  <section id="stats" style="padding-top:0">
+    <div class="statsband reveal">
+      <div class="statgrid">
+        {stats.map(s => (
+          <div class="statc"><div class="n" data-val={s.n}>{s.n}</div><div class="l">{s.l}</div></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="shead reveal">
+      <div class="eyebrow">What I do</div>
+      <h2>Four disciplines, <span class="grad">one operator</span>.</h2>
+      <p>Product marketing plus the engineering to ship it. I build the systems, not just the decks.</p>
+    </div>
+    <div class="pillars">
+      {pillars.map(p => (
+        <div class={`pillar reveal ${p.g}`}>
+          <div class="ic" aria-hidden="true">
+            {p.g === 'a' && <svg viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>}
+            {p.g === 'b' && <svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-9"/><path d="M21 7v5h-5"/></svg>}
+            {p.g === 'c' && <svg viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M9 7V4m6 3V4M9 13h.01M15 13h.01M2 12h2m16 0h2"/></svg>}
+            {p.g === 'd' && <svg viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>}
+          </div>
+          <div class="pi">{p.i}</div>
+          <h3>{p.t}</h3>
+          <p>{p.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="shead reveal">
+      <div class="eyebrow">Selected work</div>
+      <h2>Shipped, <span class="grad">measured, ranked</span>.</h2>
+      <p>Launches I led and products I built - each leading with the result, not the slide.</p>
+    </div>
+    <div class="work">
+      {work.map((w, idx) => (
+        <a class={`row reveal${idx === 0 ? ' feat' : ''}`} href="#" aria-label={`${w.t} - ${w.r}`}>
+          <span class="thumb">
+            <span class={`art ${w.sw}`} aria-hidden="true"></span>
+            <span class="motif" aria-hidden="true">
+              {w.sw === 'growth' && (
+                <svg class="m-growth" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+                  <line class="grid" x1="40" y1="80" x2="370" y2="80"/>
+                  <line class="grid" x1="40" y1="140" x2="370" y2="140"/>
+                  <line class="grid" x1="40" y1="200" x2="370" y2="200"/>
+                  <path class="area" d="M40 240 L100 210 L160 215 L220 150 L290 110 L360 55 L360 260 L40 260 Z"/>
+                  <path class="trend" d="M40 240 L100 210 L160 215 L220 150 L290 110 L360 55"/>
+                  <circle class="dot" cx="360" cy="55" r="7"/>
+                </svg>
+              )}
+              {w.sw === 'morph' && (
+                <svg class="m-morph" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+                  <circle class="spin" cx="200" cy="155" r="92"/>
+                  <path class="mk" d="M150 105 H250 V205 H150 Z"/>
+                </svg>
+              )}
+              {w.sw === 'signal' && (
+                <svg class="m-signal" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+                  <circle class="wave" cx="200" cy="165" r="44"/>
+                  <circle class="wave" cx="200" cy="165" r="44"/>
+                  <circle class="wave" cx="200" cy="165" r="44"/>
+                  <rect class="dev" x="172" y="110" width="56" height="100" rx="12"/>
+                  <line class="dev" x1="190" y1="196" x2="210" y2="196"/>
+                </svg>
+              )}
+              {w.sw === 'pulse' && (
+                <svg class="m-pulse" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+                  <path class="line" d="M20 165 H120 L140 120 L165 215 L190 90 L215 165 H300 L320 140 L340 165 H400"/>
+                  <path class="cross" d="M300 60 H324 V84 H348 V108 H324 V132 H300 V108 H276 V84 H300 Z"/>
+                </svg>
+              )}
+              {w.sw === 'funnel' && (
+                <svg class="m-funnel" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+                  <path class="fnl" d="M110 90 H290 L222 175 V230 H178 V175 Z"/>
+                  <circle class="lead" cx="200" cy="155" r="7"/>
+                  <circle class="lead" cx="170" cy="155" r="6"/>
+                  <circle class="lead" cx="230" cy="155" r="6"/>
+                  <circle class="lead" cx="200" cy="155" r="5"/>
+                </svg>
+              )}
+              {w.sw === 'shield' && (
+                <svg class="m-shield" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+                  <rect class="scan" x="150" y="60" width="100" height="14" rx="7"/>
+                  <path class="shd" d="M200 58 L262 84 V150 C262 196 234 224 200 240 C166 224 138 196 138 150 V84 Z"/>
+                  <path class="chk" d="M174 150 L194 172 L230 122"/>
+                </svg>
+              )}
+            </span>
+            <span class="sheen" aria-hidden="true"></span>
+            <span class="rpill"><span class="dot" aria-hidden="true"></span>{w.r}</span>
+            <span class="widx" aria-hidden="true">{w.i}{w.y ? ' / ' + w.y : ''}</span>
+          </span>
+          <span class="foot">
+            <span>
+              <span class="nm">{w.t}</span>
+              <span class="role">{w.role}{w.y ? ' · ' + w.y : ''}</span>
+            </span>
+            <span class="go" aria-hidden="true">&#8594;</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="recognition">
+    <div class="shead reveal">
+      <div class="eyebrow">Recognition</div>
+      <h2>Honors &amp; <span class="grad">the brands</span>.</h2>
+    </div>
+    <div class="recog">
+      <div class="panel reveal">
+        <div class="clabel">Honors &amp; awards</div>
+        {awards.map(a => (
+          <div class="award">
+            <b set:html={a.t.replace('#1', '<span class="num">#1</span>')}></b>
+            <span>{a.s}{a.y ? ' / ' + a.y : ''}</span>
+          </div>
+        ))}
+      </div>
+      <div class="panel reveal">
+        <div class="clabel">Trusted by teams at</div>
+        <div class="brands">
+          {brands.map(b => <b>{b}</b>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="shead reveal">
+      <div class="eyebrow">About</div>
+      <h2>The operator <span class="grad">behind the work</span>.</h2>
+    </div>
+    <div class="abody">
+      <div class="rail reveal">
+        <div class="av" aria-hidden="true">SB</div>
+        <div class="k">Based in</div>
+        <div class="v">Mumbai, India</div>
+        <div class="k">Experience</div>
+        <div class="v">7+ yrs, 4+ in SaaS</div>
+        <div class="k">Postgrad</div>
+        <div class="v">IIM Visakhapatnam</div>
+      </div>
+      <p class="reveal">Seven years in marketing, four in B2B SaaS, a postgrad in growth strategy at IIM Visakhapatnam. I treat my own career like a product - <em>positioned, measured and shipped</em>.</p>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-bottom:clamp(4rem,8vh,6rem)">
+    <div class="ctaband anim reveal">
+      <div class="ctamesh" aria-hidden="true"></div>
+      <div class="glass">
+        <div class="eyebrow">Let's talk</div>
+        <h2>Let's build something that compounds.</h2>
+        <p>Open to select product marketing and growth work. Bring the product - I'll bring the system.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:swapbiswas.marketing@gmail.com">Say hello <span class="ar">&#8599;</span></a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a>
+        </div>
+        <div class="em">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">linkedin.com/in/swapbiswas</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <span class="ft-logo"><span class="mk" aria-hidden="true"></span>Concept 09 - Flux</span>
+  <span>&copy; 2026 Swapnil Biswas &middot; <a href="/redesign/">View all concepts</a></span>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  // ---- WebGL gradient-mesh hero (Stripe-style flowing fbm color blobs) ----
+  // On small screens WebGL is unreliable, so we hide the canvas and show the animated CSS mesh.
+  (function(){
+    const cv = document.getElementById('mesh') as HTMLCanvasElement | null;
+    const css = document.getElementById('cssMesh');
+    if(!cv) return;
+    if(isMobile){
+      cv.style.display = 'none';
+      if(css) css.style.display = 'block';
+      return;
+    }
+    const gl = cv.getContext('webgl', { antialias:true, alpha:false });
+    if(!gl){
+      cv.style.display = 'none';
+      if(css) css.style.display = 'block';
+      return;
+    }
+    const vs = `attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+    const fs = `precision highp float;uniform vec2 r;uniform float t;uniform vec2 m;
+    float h(vec2 x){return fract(sin(dot(x,vec2(127.1,311.7)))*43758.5453);}
+    float n(vec2 x){vec2 i=floor(x),f=fract(x);float a=h(i),b=h(i+vec2(1,0)),c=h(i+vec2(0,1)),d=h(i+vec2(1,1));vec2 u=f*f*(3.-2.*f);return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y;}
+    float fbm(vec2 x){float v=0.,a=.5;for(int i=0;i<6;i++){v+=a*n(x);x*=2.03;a*=.5;}return v;}
+    // brand palette - bright, glossy
+    vec3 INDIGO=vec3(.388,.400,.945);   // #6366f1
+    vec3 VIOLET=vec3(.659,.333,.969);   // #a855f7
+    vec3 CYAN=vec3(.133,.827,.933);     // #22d3ee
+    vec3 PINK=vec3(.984,.443,.522);     // #fb7185
+    vec3 PAPER=vec3(.984,.984,.992);    // #fbfbfd
+    void main(){
+      vec2 uv=gl_FragCoord.xy/r.xy;vec2 p=uv;p.x*=r.x/r.y;
+      // cursor draws the mesh toward it - subtle parallax warp
+      vec2 mc=m; mc.x*=r.x/r.y;
+      vec2 toM=(mc-p);
+      p+=toM*.06*exp(-dot(toM,toM)*2.2);
+      // flowing time - faster so the curl is visibly alive, plus a slow rotary drift
+      float tt=t*2.2;
+      // domain-warped fbm - the signature flowing blobs (curl-like via offset gradients)
+      vec2 q=vec2(fbm(p*1.6+vec2(0.,tt*.09)),fbm(p*1.6+vec2(5.2,tt*.075)));
+      vec2 w=vec2(fbm(p*1.8+q*1.7+vec2(1.7,9.2)+vec2(tt*.08,-tt*.05)),fbm(p*1.8+q*1.7+vec2(8.3,2.8)+vec2(-tt*.06,tt*.07)));
+      float f=fbm(p*1.4+w*1.9);
+      // four moving color fields - each drifts on its own current
+      float gi=smoothstep(.2,.9,fbm(p*1.3+w*1.3+vec2(tt*.09,-tt*.06)));
+      float gv=smoothstep(.25,.85,fbm(p*1.5+w*1.5+vec2(-tt*.07,tt*.09)+3.1));
+      float gc=smoothstep(.3,.9,fbm(p*1.2+w*1.1+vec2(tt*.06,tt*.08)+6.7));
+      float gp=smoothstep(.28,.88,fbm(p*1.6+w*1.6+vec2(-tt*.09,-tt*.07)+9.9));
+      vec3 col=PAPER;
+      col=mix(col,INDIGO,gi*.85);
+      col=mix(col,VIOLET,gv*.7);
+      col=mix(col,CYAN,gc*.55*smoothstep(.1,.9,uv.y));   // cyan biased lower
+      col=mix(col,PINK,gp*.6*smoothstep(.9,.1,uv.x));     // pink biased left
+      // strong paper lift in the upper-left headline zone so the clipped words stay readable
+      float head=smoothstep(.9,.3,uv.x)*smoothstep(.32,.92,uv.y);
+      col=mix(col,PAPER,head*.34);
+      // general gentle lift toward paper at the very top
+      col=mix(col,PAPER,smoothstep(.5,1.0,uv.y)*.22);
+      // soft sheen highlight that follows the cursor a touch
+      vec2 sc=mix(vec2(.3,.62),m,.35);
+      float sheen=smoothstep(.9,.0,length((uv-sc)*vec2(1.0,1.4)));
+      col+=sheen*.07;
+      col=clamp(col,0.,1.);
+      gl_FragColor=vec4(col,1.0);
+    }`;
+    function sh(type:number,src:string){const o=gl!.createShader(type)!;gl!.shaderSource(o,src);gl!.compileShader(o);return o;}
+    const pr=gl.createProgram()!;gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t'),um=gl.getUniformLocation(pr,'m');
+    function size(){const d=Math.min(window.devicePixelRatio||1,1.6);const W=cv!.clientWidth||window.innerWidth,H=cv!.clientHeight||window.innerHeight;cv!.width=W*d;cv!.height=H*d;gl!.viewport(0,0,cv!.width,cv!.height);gl!.uniform2f(ur,cv!.width,cv!.height);}
+    size();window.addEventListener('resize',size);
+    // cursor reactivity - target in 0..1 uv space, eased toward each frame (origin-bottom-left like gl_FragCoord)
+    let mtx=.34,mty=.6,mx=.34,my=.6;
+    window.addEventListener('pointermove',(e)=>{
+      const rc=cv!.getBoundingClientRect();
+      mtx=(e.clientX-rc.left)/rc.width;
+      mty=1-(e.clientY-rc.top)/rc.height;
+    },{passive:true});
+    gl.uniform2f(um,mx,my);
+    if(reduce){gl.uniform1f(ut,6.0);gl.drawArrays(gl.TRIANGLES,0,3);return;}
+    const start=performance.now();
+    (function loop(now:number){
+      mx+=(mtx-mx)*.05; my+=(mty-my)*.05;
+      gl!.uniform1f(ut,(now-start)/1000);
+      gl!.uniform2f(um,mx,my);
+      gl!.drawArrays(gl!.TRIANGLES,0,3);
+      requestAnimationFrame(loop);
+    })(start);
+  })();
+
+  // ---- nav scrolled state (independent of reduced-motion) ----
+  const nav=document.getElementById('nav');
+  function onScroll(){ if(nav){ nav.classList.toggle('scrolled', window.scrollY>40); } }
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  // ---- smooth scroll + reveals ----
+  if(!reduce){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    function raf(time:number){lenis.raf(time);requestAnimationFrame(raf);}requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll',ScrollTrigger.update);
+    lenis.on('scroll',onScroll);
+
+    // hero intro
+    gsap.set('.hero h1 .ln>span',{yPercent:120});
+    gsap.set('.hero .badge,.hero .sub,.hero .cta',{opacity:0,y:22});
+    const tl=gsap.timeline({delay:.15});
+    tl.to('.hero h1 .ln>span',{yPercent:0,duration:1.05,ease:'expo.out',stagger:.1})
+      .to('.hero .badge',{opacity:1,y:0,duration:.7},.15)
+      .to('.hero .sub',{opacity:1,y:0,duration:.8},.45)
+      .to('.hero .cta',{opacity:1,y:0,duration:.8},.6);
+
+    // batched scroll reveals - every .reveal ends at opacity:1
+    ScrollTrigger.batch('.reveal',{
+      start:'top 88%',
+      onEnter:batch=>gsap.to(batch,{opacity:1,y:0,duration:.9,ease:'expo.out',stagger:.08,overwrite:true}),
+    });
+    ScrollTrigger.refresh();
+
+    // scroll progress bar
+    const prog=document.getElementById('progress');
+    gsap.to(prog,{scaleX:1,ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:.3}});
+
+    // stat count-up on scroll-in - parses "657K+", "18.2M+", "10x", "76" into number + suffix
+    document.querySelectorAll<HTMLElement>('.statc .n').forEach(el=>{
+      const raw=el.dataset.val||el.textContent||'';
+      const mm=raw.match(/^([0-9]+(?:\.[0-9]+)?)(.*)$/);
+      if(!mm){return;}
+      const end=parseFloat(mm[1]);
+      const dec=(mm[1].split('.')[1]||'').length;
+      const suffix=mm[2];
+      el.textContent='0'+suffix;
+      ScrollTrigger.create({
+        trigger:el, start:'top 90%', once:true,
+        onEnter:()=>{
+          const o={v:0};
+          gsap.to(o,{v:end,duration:1.5,ease:'power2.out',
+            onUpdate:()=>{el.textContent=o.v.toFixed(dec)+suffix;},
+            onComplete:()=>{el.textContent=end.toFixed(dec)+suffix;}});
+        }
+      });
+    });
+
+    // cursor-tracking sheen on work cards
+    document.querySelectorAll<HTMLElement>('.work .row').forEach(card=>{
+      const thumb=card.querySelector<HTMLElement>('.thumb');
+      card.addEventListener('mousemove',(e:MouseEvent)=>{
+        if(!thumb) return;
+        const rc=thumb.getBoundingClientRect();
+        thumb.style.setProperty('--mx',`${((e.clientX-rc.left)/rc.width)*100}%`);
+        thumb.style.setProperty('--my',`${((e.clientY-rc.top)/rc.height)*100}%`);
+      });
+    });
+  }
+</script>
+</body>
+</html>

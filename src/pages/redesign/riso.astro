@@ -1,0 +1,759 @@
+---
+// REDESIGN PROTOTYPE - "Riso" - risograph / screen-print zine, 2-color overprint, light.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+// Tech: raw-WebGL grain + halftone/duotone + RGB-misregistration shader overlay,
+// GSAP scroll reveals + Lenis smooth scroll. Print-poster collage composition.
+const stats = [
+  { n: '657K+', l: 'Leads generated' },
+  { n: '18.2M+', l: 'Organic traffic driven' },
+  { n: '10x', l: 'Conversion lift' },
+  { n: '20+', l: 'AI agents & apps built' },
+  { n: '15+', l: 'Marketers mentored' },
+  { n: '76', l: 'Articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS. The story that makes a product impossible to ignore.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds long after the campaign ends.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped - not just brief them.' },
+  { i: '04', t: 'Building in public', d: 'This site, eight free tools and seventy-six articles. Shipped systems, not slide-ware.' },
+];
+const work = [
+  { i: '01', t: 'LambdaTest', role: 'Product & digital marketing', r: '657K+ leads / 18.2M+ organic', y: '2021-2025', sw: 'growth', note: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { i: '02', t: 'TestMu AI', role: 'Rebrand lead', r: 'Full company rebrand', y: '2026', sw: 'morph', note: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', t: 'Samsung', role: 'Launch content & distribution', r: 'Galaxy M-series launch', y: '2019', sw: 'signal', note: 'On the Galaxy M-series from inception; ran content distribution (collaborated with Technical Guruji).' },
+  { i: '04', t: 'Medilife Superspeciality', role: 'Marketing & web, 0 to 1', r: 'Website, GTM, social & launch', y: '', sw: 'pulse', note: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', t: 'Lido Learning', role: 'Growth / CRM', r: 'CRM & lead operations', y: '2021', sw: 'funnel', note: 'Ran CRM management and lead routing/assignment for the EdTech.' },
+  { i: '06', t: 'Appknox', role: 'Freelance content', r: 'Security content', y: '', sw: 'shield', note: 'Freelance content writer for the mobile app security company.' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const marquee = ['Positioning', 'Built not briefed', 'Technical SEO', 'AI agents', 'GTM', 'AEO', 'Demand gen', 'Ships sites'];
+---
+<!doctype html>
+<html lang="en" data-theme="riso">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,500..800&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f2ecd9;            /* warm risograph paper */
+    --paper2:#e9e1ca;
+    --ink:#16130c;             /* black overprint */
+    --soft:#3a352a;            /* readable body on paper, > 4.5:1 */
+    --mut:#6b6451;
+    --pink:#ff48a0;            /* fluoro pink */
+    --blue:#2336ff;            /* riso blue */
+    --teal:#00b3b3;
+    --line:rgba(22,19,12,.16);
+    --disp:"Archivo",system-ui,sans-serif;
+    --sans:"Space Grotesk",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+    --m:clamp(1.1rem,5vw,5.5rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;overflow-x:clip;font-weight:400}
+  section{overflow-x:clip}
+  ::selection{background:var(--pink);color:var(--paper)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+
+  /* ---- print substrate: WebGL grain/halftone canvas + CSS fallbacks ---- */
+  /* fixed full-bleed shader. Fallback paper texture baked into background so a null
+     context never shows a bare box. */
+  canvas#riso{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;
+    display:block;opacity:.5;mix-blend-mode:multiply;
+    background:
+      radial-gradient(120% 90% at 80% -10%,rgba(255,72,160,.10),transparent 55%),
+      radial-gradient(120% 90% at 0% 110%,rgba(35,54,255,.10),transparent 55%)}
+  /* heavy paper grain - fixed & full-bleed so it persists across the WHOLE page below the fold */
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.62'/%3E%3C/svg%3E");
+    background-size:200px 200px}
+  /* faint halftone dot screen over the whole page for the printed-zine feel */
+  .halftone{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.10;mix-blend-mode:multiply;
+    background-image:radial-gradient(var(--ink) 1px,transparent 1.4px);
+    background-size:5px 5px}
+  .paperedge{position:fixed;inset:0;z-index:1;pointer-events:none;
+    box-shadow:inset 0 0 160px rgba(22,19,12,.18)}
+
+  .wrap{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:0 var(--m)}
+
+  /* ---- misregistration wobble (the 'print slightly off' signature) ---- */
+  @keyframes misreg{
+    0%,100%{transform:translate(0,0)}
+    25%{transform:translate(.6px,-.5px)}
+    50%{transform:translate(-.5px,.4px)}
+    75%{transform:translate(.4px,.6px)}
+  }
+  .wobble:hover{animation:misreg .22s steps(2) infinite}
+  @media(prefers-reduced-motion:reduce){.wobble:hover{animation:none}}
+
+  /* ---- overprinted geometric shapes ---- */
+  /* multiply so pink-over-blue mixes a third violet & shapes darken the black ink */
+  .shape{position:absolute;pointer-events:none;mix-blend-mode:multiply;z-index:0}
+  .shape.pink{background:var(--pink)}
+  .shape.blue{background:var(--blue)}
+  .shape.circle{border-radius:50%}
+  .shape.ring{background:transparent;border:14px solid var(--pink);border-radius:50%}
+  .shape.ringb{background:transparent;border:14px solid var(--blue);border-radius:50%}
+  /* halftone-dot ink fill: the shape is screened, not flat */
+  .shape.tone-pink{background:
+    radial-gradient(var(--pink) 38%,transparent 40%) 0 0/9px 9px,
+    radial-gradient(var(--pink) 26%,transparent 28%) 4.5px 4.5px/9px 9px;
+    background-color:rgba(255,72,160,.18)}
+  .shape.tone-blue{background:
+    radial-gradient(var(--blue) 38%,transparent 40%) 0 0/9px 9px,
+    radial-gradient(var(--blue) 26%,transparent 28%) 4.5px 4.5px/9px 9px;
+    background-color:rgba(35,54,255,.16)}
+  /* channel-split MISREGISTRATION: a duplicated shape, offset a few px in a contrasting hue */
+  .shape.misreg::after{content:"";position:absolute;inset:0;border-radius:inherit;mix-blend-mode:multiply;
+    opacity:.55;transform:translate(2.5px,2px)}
+  .shape.misreg.pink::after,.shape.misreg.tone-pink::after{background:var(--blue);transform:translate(-2.5px,1.5px)}
+  .shape.misreg.blue::after,.shape.misreg.tone-blue::after{background:var(--pink);transform:translate(2.5px,2px)}
+  .shape.ringb.misreg::after{background:transparent;border:14px solid var(--pink);transform:translate(3px,2px)}
+  .shape.circle.misreg::after{border-radius:50%}
+
+  /* ---- nav ---- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+    padding:1.05rem var(--m);background:linear-gradient(180deg,var(--paper),rgba(242,236,217,.0));}
+  .logo{font-family:var(--disp);font-weight:800;font-size:1.05rem;letter-spacing:-.02em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:.5rem}
+  .logo .blot{width:14px;height:14px;border-radius:50%;background:var(--pink);mix-blend-mode:multiply;
+    box-shadow:5px 0 0 var(--blue)}
+  .navlinks{display:flex;gap:1.7rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase}
+  .navlinks a{position:relative;padding:.2rem 0}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:3px;background:var(--pink);transition:width .3s}
+  .navlinks a:hover::after{width:100%}
+  .navlinks a.muted{color:var(--blue)}
+  .navlinks a.muted::after{background:var(--blue)}
+  @media(max-width:760px){.navlinks{gap:1rem;font-size:.64rem}.navlinks a:not(.muted):not(:first-child){display:none}}
+
+  /* ---- labels ---- */
+  .kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);font-weight:700}
+  .plate-label{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.7rem;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+  .plate-label::before{content:"";width:30px;height:3px;background:var(--pink)}
+
+  /* ---- HERO: poster / zine plate ---- */
+  header.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    padding-top:7rem;padding-bottom:3.5rem}
+  .hero .heromark{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .hero .s1{top:-6%;right:-4%;width:42vw;max-width:560px;height:42vw;max-height:560px}
+  .hero .s2{bottom:2%;left:-7%;width:30vw;max-width:380px;height:30vw;max-height:380px}
+  .hero .s3{top:24%;left:34%;width:18vw;max-width:230px;height:18vw;max-height:230px}
+  .hero .s4{top:15%;left:3%;width:104px;height:104px}
+  .hero-inner{position:relative;z-index:2}
+  .hero .plate-label{margin-bottom:1.6rem}
+  .hero h1{font-family:var(--disp);font-weight:900;font-size:clamp(3.4rem,13vw,11rem);line-height:.86;
+    letter-spacing:-.03em;text-transform:uppercase;max-width:13ch}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln>span{display:block;will-change:transform}
+  /* desktop: keep "who actually" on one line, hide the mobile-only standalone "actually" */
+  .hero h1 .l-actually{display:none}
+  .hero h1 .l-who .out{display:inline}
+  .hero h1 .pink{color:var(--pink);mix-blend-mode:multiply}
+  .hero h1 .blue{color:var(--blue);mix-blend-mode:multiply}
+  /* misregistration: a pink ghost of the word, offset 2-3px, so the TYPE carries the print signature */
+  .hero h1 .ghost{position:relative}
+  .hero h1 .ghost::before{content:attr(data-ghost);position:absolute;left:0;top:0;z-index:-1;
+    color:var(--pink);mix-blend-mode:multiply;transform:translate(-3px,2px);pointer-events:none}
+  .hero h1 .out{color:transparent;-webkit-text-stroke:2.5px var(--ink)}
+  .hero .sub{margin-top:2.1rem;max-width:46ch;font-size:clamp(1.02rem,1.5vw,1.25rem);color:var(--soft);line-height:1.6}
+  .hero .sub b{color:var(--ink);font-weight:700;background:linear-gradient(transparent 62%,rgba(255,72,160,.45) 0)}
+  .hero-cta{margin-top:2.6rem;display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--mono);font-weight:700;font-size:.82rem;
+    letter-spacing:.04em;text-transform:uppercase;padding:.95rem 1.5rem;border:3px solid var(--ink);
+    transition:transform .18s,box-shadow .18s,background .2s,color .2s}
+  .btn.primary{background:var(--ink);color:var(--paper);box-shadow:6px 6px 0 var(--pink)}
+  .btn.primary:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--pink)}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:6px 6px 0 var(--blue)}
+  .btn.ghost:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--blue)}
+  .btn .ar{transition:transform .25s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .heroanchor{margin-top:2.6rem;display:flex;align-items:center;gap:1rem;max-width:34rem;font-family:var(--mono)}
+  .avail{display:inline-flex;align-items:center;gap:.55rem;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+  .avail .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(0,179,179,.6);animation:pulse 2.6s ease-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,179,179,.5)}70%{box-shadow:0 0 0 8px rgba(0,179,179,0)}100%{box-shadow:0 0 0 0 rgba(0,179,179,0)}}
+  @media(prefers-reduced-motion:reduce){.avail .dot{animation:none}}
+  .heroanchor .rule{flex:1;height:3px;background:var(--ink)}
+  .scrollcue{position:absolute;bottom:1.6rem;left:var(--m);z-index:2;font-family:var(--mono);font-size:.68rem;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--mut);display:flex;align-items:center;gap:.6rem}
+  .scrollcue .bar{width:3px;height:34px;background:var(--ink);display:block}
+  @media(max-width:600px){
+    /* center the full 4-line statement; no flex-end push that could clip the top line */
+    header.hero{padding-top:6.5rem;padding-bottom:2.4rem;justify-content:center;min-height:100svh}
+    /* 4 explicit lines: THE MARKETER / WHO / ACTUALLY / SHIPS. - none wrap mid-word */
+    .hero h1{font-size:clamp(2.9rem,14vw,5rem);max-width:none;line-height:.9}
+    .hero h1 .l-who{display:none}            /* split "who actually" into two stacked lines */
+    .hero h1 .l-actually{display:block}
+    .hero h1 .l-actually .out{display:block}
+    .hero .sub{margin-top:1.5rem;font-size:1.02rem;max-width:40ch}
+    /* scale the overprint shapes down proportionally so they frame, not crowd, the headline */
+    .hero .s1{top:-3%;right:-8%;width:46vw;height:46vw;max-width:320px;max-height:320px}
+    .hero .s2{bottom:0%;left:-10%;width:38vw;height:38vw;max-width:230px;max-height:230px}
+    .hero .s3{display:none}
+    .hero .s4{width:78px;height:78px;top:5%;left:5%}
+    .scrollcue{display:none}
+  }
+
+  /* ---- marquee statement ---- */
+  .marquee{position:relative;z-index:2;border-top:4px solid var(--ink);border-bottom:4px solid var(--ink);
+    background:var(--pink);overflow:hidden;padding:.85rem 0;mix-blend-mode:multiply}
+  .marquee .track{display:flex;gap:0;white-space:nowrap;width:max-content;will-change:transform}
+  .marquee span{font-family:var(--disp);font-weight:800;font-size:clamp(1.3rem,3vw,2.1rem);text-transform:uppercase;
+    letter-spacing:-.01em;color:var(--paper);padding:0 1.4rem;display:inline-flex;align-items:center;gap:1.4rem}
+  .marquee span::after{content:"";width:13px;height:13px;border-radius:50%;border:3px solid var(--paper)}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+  /* ---- section frame ---- */
+  section{padding:clamp(4.5rem,10vh,8rem) 0;position:relative}
+  /* carry the hero riso language down: each section gets a chunky top rule + an
+     overprinted shape accent + its own halftone wash so identity never collapses */
+  section.plated{border-top:5px solid var(--ink)}
+  .sec-accent{position:absolute;pointer-events:none;mix-blend-mode:multiply;z-index:0;border-radius:50%}
+  .sec-accent.a-pink{background:rgba(255,72,160,.9)}
+  .sec-accent.a-blue{background:rgba(35,54,255,.9)}
+  .sec-accent.a-tone{background:
+    radial-gradient(var(--pink) 36%,transparent 38%) 0 0/10px 10px,
+    radial-gradient(var(--pink) 24%,transparent 26%) 5px 5px/10px 10px;
+    background-color:rgba(255,72,160,.14)}
+  .sec-accent.a-tone-b{background:
+    radial-gradient(var(--blue) 36%,transparent 38%) 0 0/10px 10px,
+    radial-gradient(var(--blue) 24%,transparent 26%) 5px 5px/10px 10px;
+    background-color:rgba(35,54,255,.12)}
+  .sec-accent::after{content:"";position:absolute;inset:0;border-radius:inherit;mix-blend-mode:multiply;
+    opacity:.5;transform:translate(3px,2px)}
+  .sec-accent.a-pink::after,.sec-accent.a-tone::after{background:var(--blue);transform:translate(-3px,2px)}
+  .sec-accent.a-blue::after,.sec-accent.a-tone-b::after{background:var(--pink);transform:translate(3px,2px)}
+  .sec-grain{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.12;mix-blend-mode:multiply;
+    background-image:radial-gradient(var(--ink) 1px,transparent 1.5px);background-size:6px 6px}
+  section .wrap-rel{position:relative;z-index:2}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3rem;flex-wrap:wrap;
+    position:relative;z-index:2}
+  .shead h2{font-family:var(--disp);font-weight:900;font-size:clamp(2rem,6vw,4.4rem);text-transform:uppercase;
+    letter-spacing:-.03em;line-height:.92}
+  .shead h2 .pink{color:var(--pink);mix-blend-mode:multiply}
+  .shead h2 .blue{color:var(--blue);mix-blend-mode:multiply}
+
+  /* ---- STATS as huge riso numerals ---- */
+  .statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:4px solid var(--ink);position:relative;z-index:2;background:var(--paper)}
+  .statcell{padding:clamp(1.4rem,3vw,2.4rem);border-right:4px solid var(--ink);border-bottom:4px solid var(--ink);position:relative}
+  .statgrid .statcell:nth-child(3n){border-right:0}
+  .statgrid .statcell:nth-child(n+4){border-bottom:0}
+  .statcell .n{font-family:var(--disp);font-weight:900;font-size:clamp(2.6rem,7vw,5.2rem);line-height:.86;letter-spacing:-.03em}
+  .statcell:nth-child(3n+1) .n{color:var(--pink);mix-blend-mode:multiply}
+  .statcell:nth-child(3n+2) .n{color:var(--blue);mix-blend-mode:multiply}
+  .statcell:nth-child(3n+3) .n{color:var(--ink)}
+  .statcell .l{margin-top:.7rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+  .statcell::after{content:"";position:absolute;left:0;bottom:0;width:0;height:6px;background:var(--ink);transition:width .5s cubic-bezier(.2,.8,.2,1)}
+  .statcell:hover::after{width:100%}
+  @media(max-width:760px){.statgrid{grid-template-columns:1fr 1fr}
+    .statgrid .statcell{border-right:4px solid var(--ink)!important;border-bottom:4px solid var(--ink)!important}
+    .statgrid .statcell:nth-child(2n){border-right:0!important}
+    .statgrid .statcell:nth-last-child(-n+2){}
+  }
+  @media(max-width:430px){.statgrid{grid-template-columns:1fr}
+    .statgrid .statcell{border-right:0!important;border-bottom:4px solid var(--ink)!important}
+    .statgrid .statcell:last-child{border-bottom:0!important}
+  }
+
+  /* ---- WHAT I DO: overprinted cards ---- */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2.2vw,1.8rem);position:relative;z-index:2}
+  .pillar{position:relative;border:4px solid var(--ink);padding:clamp(1.6rem,2.6vw,2.4rem);background:var(--paper);
+    overflow:hidden;transition:transform .2s,box-shadow .2s}
+  .pillar::before{content:"";position:absolute;mix-blend-mode:multiply;z-index:0;opacity:.9;
+    width:160px;height:160px;border-radius:50%;top:-50px;right:-40px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .pillar:nth-child(1)::before{background:var(--pink)}
+  .pillar:nth-child(2)::before{background:var(--blue)}
+  .pillar:nth-child(3)::before{background:var(--teal)}
+  .pillar:nth-child(4)::before{background:var(--pink);border-radius:0;transform:rotate(45deg)}
+  /* halftone corner flourish on alternating cards so the print screen stays continuous mid-page */
+  .pillar:nth-child(even)::after{content:"";position:absolute;z-index:0;pointer-events:none;mix-blend-mode:multiply;
+    width:120px;height:120px;bottom:-30px;left:-30px;border-radius:50%;
+    background:radial-gradient(var(--blue) 34%,transparent 36%) 0 0/8px 8px,radial-gradient(var(--blue) 22%,transparent 24%) 4px 4px/8px 8px;
+    background-color:rgba(35,54,255,.10)}
+  .pillar:nth-child(odd)::after{content:"";position:absolute;z-index:0;pointer-events:none;mix-blend-mode:multiply;
+    width:110px;height:110px;bottom:-26px;left:-26px;border-radius:50%;
+    background:radial-gradient(var(--pink) 34%,transparent 36%) 0 0/8px 8px,radial-gradient(var(--pink) 22%,transparent 24%) 4px 4px/8px 8px;
+    background-color:rgba(255,72,160,.09)}
+  .pillar:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
+  .pillar:hover::before{transform:scale(1.35) translate(-10px,10px)}
+  .pillar:nth-child(4):hover::before{transform:scale(1.3) rotate(75deg)}
+  .pillar .pi{position:relative;z-index:1;font-family:var(--disp);font-weight:900;font-size:2.4rem;line-height:1;
+    color:var(--paper);-webkit-text-stroke:2px var(--ink);letter-spacing:-.02em}
+  .pillar h3{position:relative;z-index:1;font-family:var(--disp);font-weight:800;font-size:1.3rem;text-transform:uppercase;
+    letter-spacing:-.01em;margin:1.2rem 0 .7rem}
+  .pillar p{position:relative;z-index:1;color:var(--soft);font-size:.98rem;line-height:1.6;max-width:40ch}
+  @media(max-width:760px){.pillars{grid-template-columns:1fr}}
+
+  /* ---- SELECTED WORK: one tile system - bold riso shape field + name + one metric ---- */
+  .work{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2.2vw,1.8rem);position:relative;z-index:2;align-items:stretch}
+  /* lower-row tiles share one fixed height so the bottom baseline aligns and density reads uniform */
+  .plate{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:340px;height:100%;
+    border:5px solid var(--ink);padding:clamp(1.4rem,2.4vw,2.1rem);overflow:hidden;background:var(--paper);isolation:isolate;
+    transition:transform .2s,box-shadow .2s}
+  /* every tile carries a halftone ink wash so the field reads as printed, not flat */
+  .plate::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;mix-blend-mode:multiply;opacity:.5;
+    background-image:radial-gradient(var(--ink) 1px,transparent 1.6px);background-size:7px 7px}
+  .plate:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 var(--ink)}
+  /* index + result-led copy */
+  .plate .widx{font-family:var(--mono);font-weight:700;font-size:.78rem;letter-spacing:.1em;color:var(--mut);
+    margin-bottom:auto;position:relative;z-index:2}
+  .plate .res{position:relative;z-index:2;font-family:var(--disp);font-weight:900;font-size:clamp(1.8rem,3.4vw,2.9rem);
+    line-height:.96;letter-spacing:-.02em;text-transform:uppercase;margin-top:1.2rem;display:inline-flex;align-items:baseline;gap:.5rem}
+  .plate .res .ar{font-size:.55em;transition:transform .25s;color:var(--ink)}
+  .plate:hover .res .ar{transform:translate(4px,-4px)}
+  .plate .meta{position:relative;z-index:2;margin-top:.85rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;
+    display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+  .plate .meta .nm{font-weight:700;color:var(--ink);text-transform:uppercase}
+  .plate .meta .role{color:var(--mut)}
+  .plate .meta .yr{color:var(--mut)}
+  .plate .note{position:relative;z-index:2;margin-top:.7rem;font-family:var(--sans);font-size:.9rem;line-height:1.5;
+    color:var(--soft);max-width:38ch}
+  .work .plate.feat .note{max-width:52ch}
+  /* per-plate overprinted compositions (distinct geometry per project) */
+  .plate .art{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .plate .art i{position:absolute;mix-blend-mode:multiply;display:block;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+  /* channel-split misregistration ghost on every art shape - duplicated 2-3px in a contrast hue */
+  .plate .art i::after{content:"";position:absolute;inset:0;border-radius:inherit;mix-blend-mode:multiply;opacity:.5;
+    clip-path:inherit;transform:translate(2.5px,2px)}
+  .art.growth i.a::after{background:var(--blue);transform:translate(-3px,2px)}
+  .art.growth i.b::after{background:var(--pink);transform:translate(3px,2px)}
+  .art.growth i.c::after{background:var(--blue);transform:translate(-2px,2px)}
+  .art.morph i.a::after{border:18px solid var(--blue);transform:translate(-3px,2px);border-radius:50%}
+  .art.morph i.b::after{background:var(--pink);transform:translate(3px,2px)}
+  .art.morph i.c::after{background:var(--blue);transform:translate(-2px,2px);border-radius:50%}
+  .art.signal i.a::after{border-color:transparent transparent var(--blue) transparent;transform:translate(-3px,2px)}
+  .art.signal i.b::after{background:var(--pink);transform:translate(3px,2px);border-radius:50%}
+  .art.signal i.c::after{background:var(--blue);transform:translate(-2px,2px);border-radius:50%}
+  .art.pulse i.a::after{background:var(--blue);transform:translate(-3px,2px)}
+  .art.pulse i.b::after{background:var(--pink);transform:translate(3px,2px)}
+  .art.pulse i.c::after{background:var(--blue);transform:translate(-2px,2px)}
+  .art.funnel i.a::after{background:var(--blue);transform:translate(-3px,2px)}
+  .art.funnel i.b::after{background:var(--pink);transform:translate(3px,2px)}
+  .art.funnel i.c::after{background:var(--blue);transform:translate(-2px,2px)}
+  .art.shield i.a::after{background:var(--blue);transform:translate(-3px,2px)}
+  .art.shield i.b::after{background:var(--pink);transform:translate(3px,2px)}
+  .art.shield i.c::after{background:var(--blue);transform:translate(-2px,2px)}
+  .plate:hover .art i{transform:scale(1.12)}
+  /* LambdaTest - rising area/growth chart (organic growth engine) */
+  .art.growth i.a{width:300px;height:160px;top:40px;right:-50px;
+    clip-path:polygon(0 100%,18% 78%,38% 84%,58% 50%,78% 58%,100% 12%,100% 100%);
+    background:radial-gradient(var(--pink) 40%,transparent 42%) 0 0/9px 9px,radial-gradient(var(--pink) 28%,transparent 30%) 4.5px 4.5px/9px 9px;
+    background-color:rgba(255,72,160,.20)}
+  .art.growth i.b{width:300px;height:120px;background:var(--blue);top:90px;right:-30px;
+    clip-path:polygon(0 100%,22% 70%,44% 80%,64% 44%,82% 56%,100% 22%,100% 100%)}
+  .art.growth i.c{width:18px;height:18px;border-radius:50%;background:var(--ink);top:48px;right:-32px}
+  .plate:hover .art.growth i{transform:translateY(-8px)}
+  /* TestMu AI - identity morph: square morphing to circle (rebrand) */
+  .art.morph i.a{width:200px;height:200px;border-radius:50%;border:18px solid var(--pink);top:-50px;right:-40px}
+  .art.morph i.b{width:150px;height:150px;background:var(--blue);top:0;right:20px;border-radius:8px;transform:rotate(12deg)}
+  .art.morph i.c{width:70px;height:70px;border-radius:50%;background:var(--ink);top:70px;right:80px}
+  .plate:hover .art.morph i.b{transform:rotate(45deg) scale(1.12)}
+  /* Samsung - broadcast / signal-out concentric arcs over a device dot */
+  .art.signal i.a{width:0;height:0;border-style:solid;border-width:0 130px 200px 130px;
+    border-color:transparent transparent var(--pink) transparent;top:-30px;right:0;opacity:.9}
+  .art.signal i.b{width:170px;height:170px;border-radius:50%;border:16px solid var(--blue);top:-30px;right:-40px}
+  .art.signal i.c{width:54px;height:54px;border-radius:50%;background:var(--ink);top:38px;right:18px}
+  /* Medilife - medical pulse / cross (heartbeat line + plus) */
+  .art.pulse i.a{width:300px;height:8px;background:var(--pink);top:80px;right:-60px;
+    clip-path:polygon(0 50%,30% 50%,38% 0,46% 100%,54% 20%,62% 50%,100% 50%,100% 100%,0 100%)}
+  .art.pulse i.b{width:54px;height:160px;background:var(--blue);top:-20px;right:30px}
+  .art.pulse i.c{width:160px;height:54px;background:var(--blue);top:33px;right:-23px}
+  .plate:hover .art.pulse i.a{transform:translateX(-18px)}
+  /* Lido - funnel / pipeline routing (stacked narrowing bars) */
+  .art.funnel i.a{width:240px;height:42px;background:var(--pink);top:0;right:-20px}
+  .art.funnel i.b{width:170px;height:42px;background:var(--blue);top:58px;right:10px}
+  .art.funnel i.c{width:90px;height:42px;background:var(--ink);top:116px;right:50px}
+  .plate:hover .art.funnel i.b{transform:translateX(-12px)}
+  /* Appknox - security shield (overprinted shield + lock dot) */
+  .art.shield i.a{width:200px;height:220px;background:var(--pink);top:-30px;right:-30px;
+    clip-path:polygon(50% 0,100% 18%,100% 58%,50% 100%,0 58%,0 18%)}
+  .art.shield i.b{width:140px;height:154px;background:var(--blue);top:0;right:10px;
+    clip-path:polygon(50% 0,100% 18%,100% 58%,50% 100%,0 58%,0 18%)}
+  .art.shield i.c{width:44px;height:44px;border-radius:50%;background:var(--ink);top:74px;right:58px}
+  /* feature plate spans the full width on top; the three result tiles sit in one even 3-up row beneath */
+  .work{grid-template-columns:repeat(6,1fr)}
+  .work .plate{grid-column:span 2}
+  .work .plate.feat{grid-column:1 / -1;min-height:300px;flex-direction:row;align-items:flex-end;justify-content:space-between;gap:1.5rem}
+  .work .plate.feat .res{font-size:clamp(2.2rem,4.6vw,4rem)}
+  .work .plate.feat .copy{position:relative;z-index:2;max-width:62%}
+  @media(max-width:980px){.work{grid-template-columns:1fr 1fr}.work .plate{grid-column:auto}}
+  @media(max-width:760px){.work{grid-template-columns:1fr}
+    .work .plate.feat{flex-direction:column;align-items:stretch}
+    .work .plate.feat .copy{max-width:100%}}
+  @media(max-width:430px){.plate{min-height:260px}}
+
+  /* ---- RECOGNITION: stamped marks + brands ---- */
+  .recog{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,4rem);align-items:start;position:relative;z-index:2}
+  .stamps{display:flex;flex-direction:column;gap:1.2rem}
+  .stamp{display:flex;align-items:center;gap:1.1rem;border:3px solid var(--ink);padding:1rem 1.2rem;
+    transform:rotate(-1.4deg);position:relative;background:var(--paper)}
+  .stamp:nth-child(2){transform:rotate(1.1deg)}
+  .stamp:nth-child(3){transform:rotate(-.6deg)}
+  /* overprint halftone accent in the corner of alternating stamps - print aesthetic carried through */
+  .stamp::after{content:"";position:absolute;top:-14px;right:-14px;width:64px;height:64px;border-radius:50%;
+    pointer-events:none;mix-blend-mode:multiply;z-index:0;
+    background:radial-gradient(var(--pink) 36%,transparent 38%) 0 0/8px 8px,radial-gradient(var(--pink) 24%,transparent 26%) 4px 4px/8px 8px;
+    background-color:rgba(255,72,160,.10)}
+  .stamp:nth-child(even)::after{background:radial-gradient(var(--blue) 36%,transparent 38%) 0 0/8px 8px,radial-gradient(var(--blue) 24%,transparent 26%) 4px 4px/8px 8px;
+    background-color:rgba(35,54,255,.10);left:-14px;right:auto}
+  .stamp>*{position:relative;z-index:1}
+  .stamp .ico{width:42px;height:42px;flex:none;border-radius:50%;border:3px solid var(--pink);
+    display:grid;place-items:center;font-family:var(--disp);font-weight:900;color:var(--blue);mix-blend-mode:multiply}
+  .stamp b{font-family:var(--disp);font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:-.01em;line-height:1.1}
+  .stamp span{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-top:.25rem}
+  .brandbox{border:4px solid var(--ink);padding:clamp(1.2rem,2.4vw,1.8rem)}
+  .brandbox .bl{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:1.1rem}
+  .brands{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .brands span{font-family:var(--disp);font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:-.01em;
+    padding:.85rem 0;border-top:2px solid var(--line);color:var(--soft);transition:color .25s}
+  .brands span:nth-child(2n){padding-left:1.1rem}
+  .brands span:nth-child(odd){padding-right:1.1rem}
+  .brands span:hover{color:var(--pink)}
+  @media(max-width:760px){.recog{grid-template-columns:1fr;gap:2.4rem}}
+
+  /* ---- ABOUT ---- */
+  .about .abody{display:grid;grid-template-columns:220px 1fr;gap:clamp(1.6rem,3vw,3rem);align-items:start;position:relative;z-index:2}
+  .about .rail{display:flex;flex-direction:column;gap:.4rem;font-family:var(--mono)}
+  .about .rail .k{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+  .about .rail .v{font-family:var(--disp);font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:-.01em;color:var(--ink)}
+  .about .rail .div{height:4px;width:48px;background:var(--pink);margin:.8rem 0;mix-blend-mode:multiply}
+  .about .rail .sig{font-family:var(--disp);font-weight:900;font-size:1.5rem;color:var(--blue);mix-blend-mode:multiply;text-transform:uppercase}
+  .about .plate-quote{position:relative;border:4px solid var(--ink);padding:clamp(1.6rem,3vw,2.6rem);background:var(--paper);overflow:hidden}
+  .about .plate-quote::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:var(--teal);
+    mix-blend-mode:multiply;bottom:-60px;left:-40px;opacity:.85}
+  .about p{position:relative;z-index:1;font-family:var(--disp);font-weight:600;font-size:clamp(1.3rem,2.8vw,2rem);
+    line-height:1.3;letter-spacing:-.01em;max-width:30ch;color:var(--ink)}
+  .about p em{font-style:normal;color:var(--pink);mix-blend-mode:multiply}
+  .about p b{color:var(--blue);font-weight:800}
+  @media(max-width:760px){.about .abody{grid-template-columns:1fr;gap:1.6rem}
+    .about .rail{flex-direction:row;flex-wrap:wrap;align-items:center;gap:.8rem 1.4rem}
+    .about .rail .div{display:none}}
+
+  /* ---- CONTACT plate ---- */
+  .contact{text-align:center}
+  .contactplate{position:relative;border:5px solid var(--ink);background:var(--blue);color:var(--paper);
+    padding:clamp(2.6rem,7vw,5.5rem) clamp(1.4rem,4vw,3rem);overflow:hidden;mix-blend-mode:normal}
+  .contactplate .cs{position:absolute;mix-blend-mode:screen;pointer-events:none}
+  .contactplate .cs.p1{width:260px;height:260px;border-radius:50%;background:var(--pink);top:-90px;right:-60px;opacity:.55}
+  .contactplate .cs.p2{width:180px;height:180px;border-radius:50%;border:16px solid var(--pink);bottom:-70px;left:-50px;opacity:.5}
+  .contact .kicker{position:relative;z-index:2;color:var(--paper)}
+  .contact .big{position:relative;z-index:2;font-family:var(--disp);font-weight:900;font-size:clamp(2.4rem,8vw,6.2rem);
+    line-height:.92;letter-spacing:-.03em;text-transform:uppercase;margin:1.4rem 0 2rem}
+  .contact .big .arrowmail{position:relative;display:inline-block}
+  .contact .big .arrowmail::after{content:"";position:absolute;left:0;bottom:.04em;width:100%;height:6px;background:var(--pink);
+    transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .contact .big .arrowmail:hover::after{transform:scaleX(1)}
+  .contact .em{position:relative;z-index:2;font-family:var(--mono);font-size:.86rem;letter-spacing:.04em;color:rgba(242,236,217,.85)}
+  .contact .em a{border-bottom:2px solid var(--pink);padding-bottom:2px}
+
+  footer{position:relative;z-index:2;border-top:4px solid var(--ink);padding:1.8rem var(--m);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--soft)}
+  footer a{color:var(--blue);font-weight:700}
+  footer a:hover{color:var(--pink)}
+
+  .reveal{opacity:0;transform:translateY(26px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+  /* scroll progress as a riso bar */
+  .progress{position:fixed;top:0;left:0;height:5px;width:100%;transform:scaleX(0);transform-origin:left;z-index:30;
+    background:var(--pink);mix-blend-mode:multiply}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<canvas id="riso"></canvas>
+<div class="halftone" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="paperedge" aria-hidden="true"></div>
+
+<nav>
+  <a class="logo" href="/redesign/"><span class="blot"></span> Swapnil Biswas</a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#do">What I do</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="muted" href="/redesign/">All concepts</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="heromark" aria-hidden="true">
+      <span class="shape circle tone-pink misreg wobble s1"></span>
+      <span class="shape ringb misreg s2"></span>
+      <span class="shape circle tone-blue misreg s3"></span>
+      <span class="shape circle pink misreg s4"></span>
+    </div>
+    <div class="hero-inner">
+      <div class="plate-label">Senior Product Marketing Manager - LambdaTest</div>
+      <h1>
+        <span class="ln"><span>The marketer</span></span>
+        <span class="ln l-who"><span class="pink">who</span> <span class="out">actually</span></span>
+        <span class="ln l-actually"><span class="out">actually</span></span>
+        <span class="ln"><span class="blue ghost" data-ghost="ships.">ships.</span></span>
+      </h1>
+      <p class="sub">I'm Swapnil Biswas - a product marketer who builds. I ship the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b>, not just the decks that describe them.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#work">See the work <span class="ar">&#8599;</span></a>
+        <a class="btn ghost" href="#contact">Let's build</a>
+      </div>
+      <div class="heroanchor">
+        <span class="avail"><span class="dot"></span> Open to select work</span>
+        <span class="rule"></span>
+      </div>
+    </div>
+    <div class="scrollcue"><span class="bar"></span> Scroll</div>
+  </header>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track" id="mtrack">
+    {[...marquee, ...marquee, ...marquee].map(w => <span>{w}</span>)}
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="stats" class="plated">
+    <span class="sec-grain" aria-hidden="true"></span>
+    <span class="sec-accent a-tone" aria-hidden="true" style="width:300px;height:300px;top:-70px;right:-90px"></span>
+    <span class="sec-accent a-blue" aria-hidden="true" style="width:90px;height:90px;bottom:8%;left:-50px"></span>
+    <div class="shead">
+      <h2>By the <span class="pink">numbers</span></h2>
+      <div class="plate-label">Outcomes, not activity</div>
+    </div>
+    <div class="statgrid reveal">
+      {stats.map(s => (
+        <div class="statcell wobble"><div class="n">{s.n}</div><div class="l">{s.l}</div></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="do" class="plated">
+    <span class="sec-grain" aria-hidden="true"></span>
+    <span class="sec-accent a-tone-b" aria-hidden="true" style="width:280px;height:280px;top:-60px;left:-100px"></span>
+    <span class="sec-accent a-pink" aria-hidden="true" style="width:70px;height:70px;top:14%;right:-30px"></span>
+    <div class="shead">
+      <h2>What I <span class="blue">do</span></h2>
+      <div class="plate-label">Four plates, one operator</div>
+    </div>
+    <div class="pillars">
+      {pillars.map(p => (
+        <div class="pillar reveal"><div class="pi">{p.i}</div><h3>{p.t}</h3><p>{p.d}</p></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="work" class="plated">
+    <span class="sec-grain" aria-hidden="true"></span>
+    <span class="sec-accent a-tone" aria-hidden="true" style="width:260px;height:260px;top:-60px;right:-80px"></span>
+    <div class="shead">
+      <h2>Selected <span class="pink">work</span></h2>
+      <div class="plate-label">2019 - 2026 &middot; result first</div>
+    </div>
+    <div class="work">
+      {work.map((w, idx) => (
+        <a class={`plate reveal wobble${idx === 0 ? ' feat' : ''}`} href="#">
+          <span class={`art ${w.sw}`} aria-hidden="true">
+            <i class="a"></i><i class="b"></i><i class="c"></i>
+          </span>
+          {idx === 0 ? (
+            <span class="copy">
+              <span class="widx">{w.i} / Featured</span>
+              <span class="res">{w.r}<span class="ar">&#8599;</span></span>
+              <span class="meta"><span class="nm">{w.t}</span><span class="role">{w.role}</span>{w.y && <span class="yr">&middot; {w.y}</span>}</span>
+              <span class="note">{w.note}</span>
+            </span>
+          ) : (
+            <>
+              <span class="widx">{w.i}</span>
+              <span class="res">{w.r}<span class="ar">&#8599;</span></span>
+              <span class="meta"><span class="nm">{w.t}</span><span class="role">{w.role}</span>{w.y && <span class="yr">&middot; {w.y}</span>}</span>
+              <span class="note">{w.note}</span>
+            </>
+          )}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="recognition" class="plated">
+    <span class="sec-grain" aria-hidden="true"></span>
+    <span class="sec-accent a-tone-b" aria-hidden="true" style="width:300px;height:300px;bottom:-90px;right:-100px"></span>
+    <span class="sec-accent a-pink" aria-hidden="true" style="width:80px;height:80px;top:10%;left:-40px"></span>
+    <div class="shead">
+      <h2>Recognition &amp; <span class="blue">brands</span></h2>
+      <div class="plate-label">Stamped &amp; trusted</div>
+    </div>
+    <div class="recog">
+      <div class="stamps reveal">
+        <div class="stamp wobble"><span class="ico">A</span><div><b>Value of Agility Award</b><span>LambdaTest &middot; 2024</span></div></div>
+        <div class="stamp wobble"><span class="ico">&#9733;</span><div><b>Wall of Fame</b><span>LambdaTest</span></div></div>
+        <div class="stamp wobble"><span class="ico">#1</span><div><b>Product of the Day</b><span>Product Hunt</span></div></div>
+      </div>
+      <div class="brandbox reveal">
+        <div class="bl">Trusted by teams at</div>
+        <div class="brands">
+          {brands.map(b => <span>{b}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about plated">
+    <span class="sec-grain" aria-hidden="true"></span>
+    <span class="sec-accent a-tone" aria-hidden="true" style="width:240px;height:240px;top:-50px;right:-70px"></span>
+    <div class="shead">
+      <h2><span class="pink">About</span></h2>
+      <div class="plate-label">The operator behind the work</div>
+    </div>
+    <div class="abody">
+      <div class="rail reveal">
+        <div class="k">Based in</div>
+        <div class="v">Mumbai, India</div>
+        <div class="div"></div>
+        <div class="k">Experience</div>
+        <div class="v">7+ yrs / 4+ SaaS</div>
+        <div class="div"></div>
+        <div class="sig">Swapnil B.</div>
+      </div>
+      <div class="plate-quote reveal">
+        <p>Seven years in marketing, four in B2B SaaS, plus a postgrad in growth strategy at <b>IIM Visakhapatnam</b>. I treat my own career like a product - <em>positioned, measured and shipped.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="contactplate reveal">
+      <span class="cs p1" aria-hidden="true"></span>
+      <span class="cs p2" aria-hidden="true"></span>
+      <div class="kicker">Let's build something that compounds</div>
+      <div class="big"><a class="arrowmail" href="mailto:swapbiswas.marketing@gmail.com">Say hello &#8599;</a></div>
+      <div class="em">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <span>&copy; 2026 Swapnil Biswas</span>
+  <span>Concept 12 - Riso &middot; <a href="/redesign/">View all concepts</a></span>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  // ---- WebGL print substrate: animated grain + halftone + RGB misregistration ----
+  // Renders an offset/duotone film over the paper. Null context => CSS fallback already
+  // baked into the canvas background + the .grain/.halftone DOM layers, so it never shows
+  // a bare box.
+  (function(){
+    const cv = document.getElementById('riso');
+    if(!cv) return;
+    const gl = cv.getContext('webgl', { antialias:false, alpha:true });
+    if(!gl){ cv.style.display='none'; return; }
+    const vs = `attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+    const fs = `precision highp float;uniform vec2 r;uniform float t;
+    float h(vec2 x){return fract(sin(dot(x,vec2(127.1,311.7)))*43758.5453);}
+    float n(vec2 x){vec2 i=floor(x),f=fract(x);float a=h(i),b=h(i+vec2(1,0)),c=h(i+vec2(0,1)),d=h(i+vec2(1,1));vec2 u=f*f*(3.-2.*f);return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y;}
+    // riso inks
+    const vec3 PINK=vec3(1.0,0.282,0.627);
+    const vec3 BLUE=vec3(0.137,0.211,1.0);
+    void main(){
+      vec2 uv=gl_FragCoord.xy/r.xy;
+      // base 2-color plate fields - pink top-right, blue bottom-left
+      float pf=smoothstep(.2,1.0,uv.x*.6+uv.y*.7);
+      float bf=smoothstep(.2,1.0,(1.-uv.x)*.7+(1.-uv.y)*.6);
+      // slow misregistration: each ink plate drifts a touch off the others
+      vec2 off=vec2(sin(t*.35)*.004,cos(t*.27)*.004);
+      float pn=n((uv+off)*vec2(r.x/r.y,1.)*3.2+t*.02);
+      float bn=n((uv-off)*vec2(r.x/r.y,1.)*3.2-t*.02+9.3);
+      // halftone screen (rotated dot grid) so plates read as printed dots
+      float scale=520.;
+      float ang=.4;
+      mat2 rot=mat2(cos(ang),-sin(ang),sin(ang),cos(ang));
+      vec2 cell=rot*uv*scale;
+      float dot=length(fract(cell)-.5);
+      float screen=smoothstep(.46,.30,dot);
+      // animated film grain
+      float grain=h(floor(uv*r.xy)+floor(t*24.));
+      vec3 col=vec3(0.);
+      float pa=pf*pn*screen*0.9;
+      float ba=bf*bn*screen*0.9;
+      col+=PINK*pa;
+      col+=BLUE*ba;
+      col+=(grain-.5)*.06;
+      // overprint where both inks land -> darker mixed third color
+      float over=pa*ba;
+      col-=over*.4;
+      float a=clamp(pa+ba,0.,.85);
+      gl_FragColor=vec4(col,a);
+    }`;
+    function sh(ty,s){const o=gl.createShader(ty);gl.shaderSource(o,s);gl.compileShader(o);return o;}
+    const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t');
+    function size(){const d=Math.min(window.devicePixelRatio||1,1.6);cv.width=Math.floor(innerWidth*d);cv.height=Math.floor(innerHeight*d);gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(ur,cv.width,cv.height);}
+    size();addEventListener('resize',size);
+    if(reduce){gl.uniform1f(ut,2.0);gl.drawArrays(gl.TRIANGLES,0,3);return;}
+    const start=performance.now();
+    (function loop(now){gl.uniform1f(ut,(now-start)/1000);gl.drawArrays(gl.TRIANGLES,0,3);requestAnimationFrame(loop);})(start);
+  })();
+
+  // ---- smooth scroll + reveals + marquee ----
+  if(!reduce){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    function raf(t){lenis.raf(t);requestAnimationFrame(raf);}requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll',ScrollTrigger.update);
+
+    // hero lines slam up
+    gsap.set('.hero h1 .ln>span',{yPercent:120});
+    gsap.set('.hero .plate-label,.hero .sub,.hero .hero-cta,.hero .heroanchor',{opacity:0,y:18});
+    const tl=gsap.timeline({delay:.12});
+    tl.to('.hero h1 .ln>span',{yPercent:0,duration:.9,ease:'expo.out',stagger:.08})
+      .to('.hero .plate-label',{opacity:1,y:0,duration:.6},.15)
+      .to('.hero .sub',{opacity:1,y:0,duration:.7},.45)
+      .to('.hero .hero-cta',{opacity:1,y:0,duration:.7},.58)
+      .to('.hero .heroanchor',{opacity:1,y:0,duration:.7},.7);
+
+    // batched scroll reveals - every .reveal ends at opacity:1
+    ScrollTrigger.batch('.reveal',{
+      start:'top 90%',
+      onEnter:batch=>gsap.to(batch,{opacity:1,y:0,duration:.9,ease:'expo.out',stagger:.08,overwrite:true}),
+    });
+    ScrollTrigger.refresh();
+
+    // scroll progress
+    gsap.to('#progress',{scaleX:1,ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:.3}});
+
+    // infinite marquee (1/3 width = one content copy)
+    const track=document.getElementById('mtrack');
+    if(track){
+      const seg=track.scrollWidth/3;
+      gsap.to(track,{x:-seg,duration:18,ease:'none',repeat:-1,modifiers:{x:gsap.utils.unitize(x=>parseFloat(x)%seg)}});
+    }
+
+    // subtle parallax drift on hero overprint shapes (the 'plates' float a touch)
+    gsap.utils.toArray('.heromark .shape').forEach((el,i)=>{
+      gsap.to(el,{yPercent:(i%2?-12:14),ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:.6}});
+    });
+  } else {
+    // reduced motion: ensure marquee shows a static slice, all reveals visible (CSS handles)
+  }
+</script>
+</body>
+</html>

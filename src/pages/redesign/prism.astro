@@ -1,0 +1,962 @@
+---
+// REDESIGN PROTOTYPE - "Prism" - Concept 05 - immersive 3D / WebGL flagship, dark.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+// Tech: Three.js (CDN ESM) refractive iridescent torus-knot + coloured lights, mouse parallax,
+// GSAP scroll reveals + Lenis smooth scroll. CSS radial-gradient fallback if Three fails.
+const stats = [
+  { n: '657K+', l: 'Leads generated' },
+  { n: '18.2M+', l: 'Organic traffic driven' },
+  { n: '10x', l: 'Conversion lift' },
+  { n: '20+', l: 'AI agents & apps built' },
+  { n: '15+', l: 'Marketers mentored' },
+  { n: '76', l: 'Articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+const work = [
+  { i: '01', t: 'LambdaTest', role: 'Product & Digital Marketing', y: '2021-2025', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', metric: '657K+', metricSub: 'leads · 18.2M+ organic', pv: 'pv-lt' },
+  { i: '02', t: 'TestMu AI', role: 'Rebrand Lead', y: '2026', d: 'Led the complete rebrand from LambdaTest to TestMu AI.', metric: 'Full', metricSub: 'company rebrand', pv: 'pv-testmu' },
+  { i: '03', t: 'Samsung', role: 'Launch Content & Distribution · via Sociowash', y: '2019', d: 'On the Galaxy M-series from inception; ran content distribution (collaborated with Technical Guruji).', metric: 'Galaxy M', metricSub: 'series launch', pv: 'pv-samsung' },
+  { i: '04', t: 'Medilife Superspeciality', role: 'Marketing & Web · 0 to 1', y: '', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.', metric: 'Website, GTM', metricSub: 'social & launch', pv: 'pv-medilife' },
+  { i: '05', t: 'Lido Learning', role: 'Growth / CRM', y: '2021', d: 'Ran CRM management and lead routing/assignment for the EdTech.', metric: 'CRM &', metricSub: 'lead operations', pv: 'pv-lido' },
+  { i: '06', t: 'Appknox', role: 'Freelance Content', y: '', d: 'Freelance content writer for the mobile app security company.', metric: 'Security', metricSub: 'content', pv: 'pv-appknox' },
+];
+const awards = [
+  { b: 'Value of Agility Award', s: 'LambdaTest, 2024' },
+  { b: 'Wall of Fame', s: 'LambdaTest' },
+  { b: '#1 Product of the Day', s: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+---
+<!doctype html>
+<html lang="en" data-theme="prism">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#07060d; --bg2:#0c0a18;
+    --ink:#f4f2ff; --mut:#c6c1de; --faint:#b3acd0;
+    --label:#bdb0e2;
+    --line:rgba(180,170,255,.13);
+    --violet:#8a7bff; --pink:#ff7ad9; --cyan:#6be7ff;
+    --glass:rgba(22,18,40,.42);
+    --disp:"Space Grotesk",system-ui,sans-serif;
+    --sans:"Inter",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+    --spectrum:linear-gradient(100deg,var(--violet) 0%,var(--pink) 45%,var(--cyan) 100%);
+    --m:clamp(1.25rem,5vw,6rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;overflow-x:hidden;font-weight:400}
+  ::selection{background:var(--pink);color:#0b0712}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em}
+
+  /* base scene fallback gradient (always under the canvas) */
+  .scenebg{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(60% 55% at 50% 42%, rgba(138,123,255,.30), transparent 70%),
+      radial-gradient(45% 40% at 72% 60%, rgba(255,122,217,.20), transparent 70%),
+      radial-gradient(50% 45% at 28% 64%, rgba(107,231,255,.16), transparent 72%),
+      var(--bg)}
+  canvas#prism{position:fixed;inset:0;width:100vw;height:100vh;z-index:1;pointer-events:none;display:block}
+  .grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.045;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .vignette{position:fixed;inset:0;z-index:2;pointer-events:none;
+    background:
+      radial-gradient(80% 120% at -12% 42%,rgba(7,6,13,.92) 0%,rgba(7,6,13,.55) 38%,transparent 62%),
+      radial-gradient(125% 95% at 50% -8%,transparent 46%,rgba(7,6,13,.6) 100%),
+      linear-gradient(180deg,transparent 60%,var(--bg) 98%)}
+  @media(max-width:880px){
+    .vignette{background:
+      radial-gradient(120% 60% at 50% 110%,rgba(7,6,13,.94) 0%,rgba(7,6,13,.4) 44%,transparent 66%),
+      radial-gradient(125% 95% at 50% -8%,transparent 50%,rgba(7,6,13,.55) 100%),
+      linear-gradient(180deg,transparent 64%,var(--bg) 98%)}
+  }
+
+  .wrap{position:relative;z-index:3;max-width:1280px;margin:0 auto;padding:0 var(--m)}
+
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+    padding:1.3rem var(--m);transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+  nav.scrolled{background:rgba(7,6,13,.55);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom-color:var(--line)}
+  .logo{font-family:var(--disp);font-size:1.05rem;font-weight:600;letter-spacing:-.01em;display:flex;align-items:center;gap:.6rem}
+  .logo .pip{width:11px;height:11px;border-radius:3px;background:var(--spectrum);box-shadow:0 0 18px rgba(138,123,255,.7);transform:rotate(45deg)}
+  .navlinks{display:flex;gap:2rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase}
+  .navlinks a{position:relative;color:var(--mut);transition:color .3s}
+  .navlinks a:hover{color:var(--ink)}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--spectrum);transition:width .35s cubic-bezier(.2,.8,.2,1)}
+  .navlinks a:hover::after{width:100%}
+  .navlinks a.all{color:var(--faint)}
+  .navlinks a.all:hover{color:var(--mut)}
+  .navlinks a.all::after{display:none}
+  @media(max-width:760px){.navlinks{gap:1.1rem}.navlinks a:not(.all){display:none}}
+
+  /* micro-label - the hero eyebrow keeps the full treatment (tick + caps mono) */
+  .eyebrow{font-family:var(--mono);font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;color:var(--label);display:inline-flex;align-items:center;gap:.65rem}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--spectrum)}
+  /* section kickers: a quieter, sentence-case counter-label so they don't all read identical to the eyebrow */
+  .kicker{font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.01em;color:var(--faint);display:inline-flex;align-items:baseline;gap:.6rem;flex:none}
+  .kicker .dotmark{width:5px;height:5px;border-radius:2px;background:var(--spectrum);transform:translateY(-1px);flex:none}
+  /* numbered kicker variant: a small index that pairs with the section heading */
+  .kicker .idx{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .spectrum{background:var(--spectrum);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+  @media(prefers-reduced-motion:no-preference){.spectrum{animation:flow 9s linear infinite}}
+  @keyframes flow{to{background-position:200% 0}}
+
+  /* hero */
+  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:8rem 0 4rem;position:relative}
+  .hero .eyebrow{margin-bottom:2rem}
+  .hero h1{font-weight:600;font-size:clamp(2.9rem,9vw,8.5rem);line-height:.95;letter-spacing:-.035em;max-width:15ch}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln>span{display:block;will-change:transform}
+  .hero h1 .ships{background:linear-gradient(96deg,#a78bff 0%,#ff7ad9 42%,#22d3ff 88%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:saturate(1.35) drop-shadow(0 0 28px rgba(138,123,255,.35))}
+  .hero h1 .ships .dot{color:#eafcff;-webkit-text-fill-color:#eafcff;text-shadow:0 0 16px rgba(107,231,255,.8)}
+  @media(prefers-reduced-motion:no-preference){.hero h1 .ships{animation:flow 9s linear infinite}}
+  .hero .sub{margin-top:2.2rem;max-width:50ch;font-size:clamp(1rem,1.4vw,1.18rem);color:#d2cdeb;line-height:1.7}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  .cta{margin-top:2.6rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.7rem;border-radius:100px;font-size:.85rem;font-weight:600;font-family:var(--disp);letter-spacing:.01em;position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s,color .4s}
+  .btn.primary{color:#08060f;background:linear-gradient(100deg,var(--violet) 0%,#c9a8ff 38%,var(--cyan) 100%);box-shadow:0 10px 40px -12px rgba(138,123,255,.7),inset 0 1px 0 rgba(255,255,255,.55)}
+  .btn.primary::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.4),transparent 48%);opacity:.85;pointer-events:none}
+  .btn.primary:hover{transform:translateY(-3px);box-shadow:0 18px 60px -8px rgba(107,231,255,.65),0 0 0 1px rgba(255,255,255,.25),inset 0 1px 0 rgba(255,255,255,.6)}
+  .btn.ghost{border:1px solid transparent;color:var(--ink);background:linear-gradient(var(--bg),var(--bg)) padding-box,var(--spectrum) border-box;background-color:rgba(22,18,40,.34);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .btn.ghost:hover{transform:translateY(-3px);box-shadow:0 0 30px -8px rgba(138,123,255,.5)}
+  .btn .ar{transition:transform .45s}
+  .btn:hover .ar{transform:translate(4px,-4px)}
+  .scrollcue{position:absolute;bottom:1.8rem;left:0;font-family:var(--mono);font-size:.8rem;letter-spacing:.11em;color:rgba(216,210,238,.95);text-transform:uppercase;display:flex;align-items:center;gap:.7rem}
+  .scrollcue .bar{width:1px;height:42px;background:linear-gradient(var(--violet),var(--cyan),transparent);display:block}
+  .scrollcue .chev{font-size:.9rem;line-height:1;color:var(--cyan);display:inline-block}
+  @media(prefers-reduced-motion:no-preference){
+    .scrollcue .bar{animation:cue 2.4s ease-in-out infinite}
+    .scrollcue .chev{animation:chev 1.8s ease-in-out infinite}
+  }
+  @keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+  @keyframes chev{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(5px);opacity:1}}
+  @media(max-width:880px){
+    /* knot bleeds wider behind the headline at reduced opacity so the H1 still dominates */
+    canvas#prism{opacity:.62}
+    header.hero{padding:7.5rem 0 4rem;min-height:100svh}
+    .hero .eyebrow{margin-bottom:1.4rem}
+    .hero h1{font-size:clamp(3.1rem,13vw,5rem);max-width:11ch}
+    /* keep 'ships.' gradient prominent on mobile */
+    .hero h1 .ships{filter:saturate(1.5) drop-shadow(0 0 22px rgba(138,123,255,.5))}
+    .hero .sub{margin-top:1.8rem;font-size:1.04rem}
+  }
+  @media(max-width:880px) and (max-height:720px){
+    header.hero{padding-top:6.5rem}
+    .hero h1{font-size:clamp(2.8rem,11vw,4rem)}
+  }
+  /* MOBILE HERO DRAMA (<=600px): the headline must command the first viewport and the
+     atmosphere must bleed TALL behind it, not read as a thin compressed band */
+  @media(max-width:600px){
+    /* taller, brighter scene bleed behind the headline (push the bloom up and enlarge it) */
+    .scenebg{background:
+      radial-gradient(95% 62% at 50% 30%, rgba(138,123,255,.40), transparent 72%),
+      radial-gradient(70% 48% at 74% 50%, rgba(255,122,217,.26), transparent 72%),
+      radial-gradient(72% 50% at 26% 56%, rgba(107,231,255,.20), transparent 74%),
+      var(--bg)}
+    canvas#prism{opacity:.72}
+    /* let the dark floor sit lower so the upper two thirds stay luminous behind the H1 */
+    .vignette{background:
+      radial-gradient(140% 52% at 50% 116%,rgba(7,6,13,.96) 0%,rgba(7,6,13,.34) 46%,transparent 70%),
+      radial-gradient(125% 90% at 50% -12%,transparent 58%,rgba(7,6,13,.4) 100%),
+      linear-gradient(180deg,transparent 70%,var(--bg) 99%)}
+    header.hero{min-height:100svh;padding:7rem 0 3.5rem;justify-content:flex-end}
+    .hero h1{font-size:clamp(3.6rem,15.5vw,5.4rem);line-height:.9;letter-spacing:-.04em;max-width:9ch}
+    .hero h1 .ships{filter:saturate(1.55) drop-shadow(0 0 26px rgba(138,123,255,.55))}
+    .hero .sub{margin-top:1.6rem;font-size:1.02rem;max-width:38ch}
+    .cta{margin-top:2rem}
+    /* hero bottom-aligns on mobile, so the floating scroll cue would collide with the CTA */
+    .scrollcue{display:none}
+  }
+  @media(max-width:600px) and (max-height:680px){
+    .hero h1{font-size:clamp(3.1rem,13vw,4.4rem)}
+    header.hero{padding-top:6rem}
+  }
+
+  /* sections - spacing tightened so near-black gaps read as deliberate negative space */
+  section{padding:clamp(3.6rem,7.5vh,6rem) 0;position:relative}
+  /* tighten the vertical rhythm between the stat grid and "What I do" so the two dark
+     card blocks read as one continuous "what + proof" zone rather than two drifting bands */
+  #stats{padding-bottom:clamp(1.6rem,3vh,2.6rem)}
+  #services{padding-top:clamp(2rem,4vh,3.2rem)}
+  /* faint drifting gradient hairline marking the seam between stacked sections */
+  .wrap>section+section::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(180,170,255,.22) 28%,rgba(107,231,255,.16) 60%,transparent);opacity:.7}
+  /* drop the seam hairline between stats+services since they're now one zone */
+  #services::before{display:none}
+  .shead{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;border-top:1px solid var(--line);padding-top:1.4rem;margin-bottom:3rem;position:relative}
+  /* per-section accent: a short coloured tick on the head divider */
+  .shead::before{content:"";position:absolute;top:-1px;left:0;width:64px;height:2px;border-radius:2px;background:var(--violet);box-shadow:0 0 14px rgba(138,123,255,.7)}
+  #services .shead::before{background:var(--cyan);box-shadow:0 0 14px rgba(107,231,255,.7)}
+  #work .shead::before{background:var(--pink);box-shadow:0 0 14px rgba(255,122,217,.7)}
+  #recognition .shead::before{background:var(--cyan);box-shadow:0 0 14px rgba(107,231,255,.7)}
+  #about .shead::before{background:var(--violet);box-shadow:0 0 14px rgba(138,123,255,.7)}
+  .shead h2{font-weight:600;font-size:clamp(1.7rem,3.4vw,2.7rem);letter-spacing:-.025em}
+  .shead .eyebrow{flex:none}
+  @media(max-width:560px){.shead{flex-direction:column;align-items:flex-start;gap:.7rem}}
+
+  /* marquee statement */
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.6rem 0;overflow:hidden;white-space:nowrap;position:relative;z-index:3}
+  .marquee .track{display:inline-block;will-change:transform}
+  .marquee span{font-family:var(--disp);font-weight:500;font-size:clamp(1.3rem,3vw,2.2rem);letter-spacing:-.02em;color:var(--mut);padding:0 1.4rem}
+  .marquee span em{font-style:normal}
+  @media(prefers-reduced-motion:no-preference){.marquee .track{animation:scrollx 26s linear infinite}}
+  @keyframes scrollx{to{transform:translateX(-50%)}}
+
+  /* glass card grid for stats */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .stat{padding:2.3rem 1.7rem;border-radius:18px;border:1px solid transparent;
+    background:linear-gradient(var(--bg2),var(--bg2)) padding-box,linear-gradient(150deg,rgba(138,123,255,.55),rgba(107,231,255,.4) 55%,rgba(255,122,217,.15)) border-box;
+    background-color:rgba(20,16,38,.5);
+    position:relative;overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+  .stat::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 0% 0%,rgba(138,123,255,.18),transparent 55%);opacity:.6;transition:opacity .5s;pointer-events:none}
+  .stat::after{content:"";position:absolute;inset:0;background:var(--spectrum);opacity:0;transition:opacity .5s;mix-blend-mode:overlay;pointer-events:none}
+  .stat:hover{transform:translateY(-6px);box-shadow:0 22px 50px -22px rgba(138,123,255,.6)}
+  .stat:hover::after{opacity:.16}
+  .stat .n{font-family:var(--disp);font-weight:700;font-size:clamp(2.6rem,5vw,4rem);letter-spacing:-.03em;line-height:1;color:var(--ink)}
+  .stat .l{margin-top:.8rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:#c9c2e0;text-transform:uppercase}
+  @media(max-width:880px){.stats{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:460px){.stats{grid-template-columns:1fr}}
+
+  /* pillars - carry the prism identity at rest: iridescent gradient border + faint glass refraction */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .pillar{padding:2.2rem 1.9rem;border-radius:18px;border:1px solid transparent;
+    background:linear-gradient(var(--bg2),var(--bg2)) padding-box,linear-gradient(150deg,rgba(138,123,255,.42),rgba(107,231,255,.3) 52%,rgba(255,122,217,.22)) border-box;
+    background-color:rgba(20,16,38,.5);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;position:relative;overflow:hidden}
+  /* faint refraction wash anchored to the top-left corner so each tile reads as glass, not a flat plate */
+  .pillar .refract{content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;z-index:0;
+    background:radial-gradient(120% 90% at 0% 0%,rgba(138,123,255,.16),transparent 52%),radial-gradient(90% 80% at 100% 100%,rgba(107,231,255,.1),transparent 56%);
+    opacity:.7;transition:opacity .5s}
+  .pillar>*{position:relative;z-index:1}
+  /* iridescent chromatic edge-glow - intensifies the refractive border on hover */
+  .pillar::before{content:"";position:absolute;inset:0;border-radius:18px;padding:1px;pointer-events:none;z-index:0;
+    background:linear-gradient(140deg,rgba(158,143,255,.85),rgba(127,231,255,.5) 45%,rgba(255,142,227,.7));
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;
+    opacity:0;transition:opacity .5s}
+  .pillar::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;border-radius:2px;background:var(--spectrum);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .pillar:hover{transform:translateY(-4px);box-shadow:0 18px 48px -26px rgba(138,123,255,.6),0 0 30px -16px rgba(107,231,255,.4)}
+  .pillar:hover .refract{opacity:1}
+  .pillar:hover::before{opacity:1}
+  .pillar:hover::after{transform:scaleX(1)}
+  .pillar .pi{font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:1.3rem;display:block}
+  .pillar h3{font-size:1.35rem;font-weight:600;margin-bottom:.7rem}
+  .pillar p{color:#c4bee0;font-size:.97rem;line-height:1.65;max-width:42ch}
+  @media(max-width:760px){.pillars{grid-template-columns:1fr}}
+
+  /* work list - the centerpiece. Each row leads with a metric-forward duotone tile.
+     Project 01 (LambdaTest) is hero-featured: a taller tile + larger type for grid rhythm. */
+  .work{display:flex;flex-direction:column;gap:1.1rem}
+  .work a{display:grid;grid-template-columns:340px 1fr auto;gap:2.6rem;align-items:center;padding:1.6rem 1.7rem;position:relative;border-radius:22px;overflow:hidden;
+    border:1px solid var(--line);background:rgba(15,12,28,.34);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    transition:transform .5s cubic-bezier(.2,.8,.2,1),background .45s,border-color .45s,box-shadow .5s}
+  /* featured first row: bigger tile, heavier title, a faint chromatic wash to set it apart */
+  .work a.feat{grid-template-columns:420px 1fr auto;padding:2rem 1.9rem;
+    background:linear-gradient(105deg,rgba(138,123,255,.08),rgba(107,231,255,.05) 55%,rgba(255,122,217,.05))}
+  .work a.feat .pv{width:420px;height:272px;border-color:rgba(180,170,255,.34)}
+  .work a.feat .wt{font-size:clamp(1.9rem,3.8vw,2.9rem)}
+  /* the flagship row keeps its iridescent ring lit at rest (subtle) so it visibly leads the
+     list instead of waiting for hover - the others stay quiet until interacted with */
+  .work a.feat .ring{opacity:.5}
+  .work a.feat:hover .ring,.work a.feat:focus-visible .ring{opacity:1}
+  .work a.feat .feattag{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);
+    border:1px solid rgba(107,231,255,.3);border-radius:100px;padding:.28rem .7rem;width:fit-content;margin-bottom:.2rem}
+  .work a.feat .feattag::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+  .work a:not(.feat) .feattag{display:none}
+  .work a::before{content:"";position:absolute;inset:0;border-radius:22px;opacity:0;transition:opacity .45s;pointer-events:none;
+    background:linear-gradient(105deg,rgba(138,123,255,.14),rgba(107,231,255,.09) 50%,rgba(255,122,217,.07));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+  .work a::after{content:"";position:absolute;left:0;top:10%;bottom:10%;width:3px;border-radius:3px;background:var(--spectrum);transform:scaleY(0);transform-origin:top;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+  /* iridescent chromatic ring drawn as a masked 1px border that ignites on hover/focus - this is
+     the clear "active" affordance the card was missing (the box-shadow alone read as ambient) */
+  .work .ring{content:"";position:absolute;inset:0;border-radius:22px;padding:1px;pointer-events:none;z-index:1;
+    background:linear-gradient(135deg,rgba(158,143,255,.95),rgba(127,231,255,.6) 46%,rgba(255,142,227,.85));
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+    mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;
+    opacity:0;transition:opacity .45s}
+  .work a:hover,.work a:focus-visible{transform:translateY(-5px);border-color:rgba(180,170,255,.36);box-shadow:0 28px 64px -28px rgba(138,123,255,.75),0 0 40px -18px rgba(107,231,255,.45)}
+  .work a:focus-visible{outline:none}
+  .work a:active{transform:translateY(-2px) scale(.995)}
+  .work a:hover::before,.work a:focus-visible::before{opacity:1}
+  .work a:hover::after,.work a:focus-visible::after{transform:scaleY(1)}
+  .work a:hover .ring,.work a:focus-visible .ring{opacity:1}
+
+  /* the "image": an intentional metric-forward duotone composition that echoes the hero glass */
+  .pv{position:relative;width:340px;height:204px;border-radius:16px;overflow:hidden;flex:none;
+    display:flex;flex-direction:column;justify-content:flex-end;padding:1.15rem 1.3rem;isolation:isolate;
+    border:1px solid rgba(180,170,255,.22);
+    box-shadow:0 14px 40px -22px rgba(8,6,16,.95),inset 0 1px 0 rgba(255,255,255,.1);
+    transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,border-color .5s;
+    /* scrim: darken the bottom (metric) band and the two top corners (idx + arrow) so labels
+       keep contrast even where a project's gradient peaks brightest at the corners */
+    background:
+      linear-gradient(0deg,rgba(7,6,13,.64) 0%,rgba(7,6,13,.3) 30%,transparent 56%),
+      radial-gradient(58% 52% at 6% 4%,rgba(7,6,13,.5),transparent 64%),
+      radial-gradient(58% 52% at 94% 4%,rgba(7,6,13,.5),transparent 64%)}
+  /* the refractive base layer (per-project iridescent composition) */
+  .pv::before{content:"";position:absolute;inset:0;z-index:-2;filter:saturate(1.2) contrast(1.05);transform:scale(1.04);transition:transform .7s,filter .7s}
+  /* a refracted highlight streak (glass sheen) sweeps on hover */
+  .pv::after{content:"";position:absolute;top:0;bottom:0;left:-65%;width:55%;z-index:-1;
+    background:linear-gradient(105deg,transparent,rgba(255,255,255,.4),transparent);
+    transform:skewX(-18deg);transition:left .8s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+  .work a:hover .pv,.work a:focus-visible .pv{transform:translateY(-3px) rotate(-.8deg);border-color:rgba(180,170,255,.5);box-shadow:0 26px 50px -20px rgba(138,123,255,.6),inset 0 1px 0 rgba(255,255,255,.16)}
+  .work a:hover .pv::before,.work a:focus-visible .pv::before{transform:scale(1.12) rotate(1.5deg);filter:saturate(1.5) contrast(1.1)}
+  .work a:hover .pv::after{left:130%}
+  /* per-project compositional motif layer (distinct geometry / focal crop per tile) */
+  .pvfx{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.9;
+    transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .6s}
+  .work a:hover .pvfx,.work a:focus-visible .pvfx{transform:scale(1.06)}
+
+  /* large typeset result metric living inside the tile (sits above base + motif) */
+  .pv-idx{position:absolute;z-index:2;top:.85rem;left:1.3rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.14em;color:#eceaf8;
+    padding:.18rem .5rem;border-radius:7px;background:rgba(7,6,13,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);text-shadow:0 1px 6px rgba(0,0,0,.5)}
+  .pv-metric{position:relative;z-index:2;display:flex;flex-direction:column;line-height:1;text-shadow:0 2px 14px rgba(7,6,13,.7)}
+  /* localized soft scrim hugging the metric label itself, so the big white word ('AI-native',
+     '#1') clears AA even where it sits directly on a bright cyan/pink gradient peak */
+  .pv-metric::before{content:"";position:absolute;z-index:-1;left:-1.3rem;right:-1.3rem;bottom:-1.15rem;top:-.55rem;pointer-events:none;
+    background:radial-gradient(120% 130% at 14% 86%,rgba(7,6,13,.7),rgba(7,6,13,.34) 56%,transparent 80%)}
+  .pv-metric b{font-family:var(--disp);font-weight:700;font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.03em;color:#fff;transition:transform .5s cubic-bezier(.2,.8,.2,1),text-shadow .5s;transform-origin:left bottom}
+  .work a:hover .pv-metric b,.work a:focus-visible .pv-metric b{transform:scale(1.1);text-shadow:0 2px 16px rgba(7,6,13,.7),0 0 22px rgba(255,255,255,.35)}
+  .work a.feat .pv-metric b{font-size:clamp(2.2rem,4vw,3rem)}
+  /* metricSub tag (PRODUCT HUNT / TEST CLOUD / SAVED 95-100 LIGHTHOUSE) sits on the brightest
+     gradient corners - give it a semi-opaque dark scrim pill so it always reads AA */
+  .pv-metric i{font-family:var(--mono);font-style:normal;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#eceaf8;margin-top:.5rem;align-self:flex-start;
+    background:rgba(7,6,13,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);padding:.2rem .5rem;border-radius:7px}
+  .pv-arrow{position:absolute;z-index:2;top:.7rem;right:1rem;font-size:1.05rem;color:#fff;opacity:0;transform:translate(-5px,5px);transition:opacity .45s,transform .45s;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+  .work a:hover .pv-arrow,.work a:focus-visible .pv-arrow{opacity:1;transform:translate(0,0)}
+
+  /* ---- per-project DISTINCT compositions: different crop, focal point, palette emphasis ---- */
+  /* 01 LambdaTest - the growth engine: violet-cyan field with a rising area-chart motif */
+  .pv-lt::before{background:
+    radial-gradient(64% 80% at 18% 78%,rgba(154,140,255,.95),rgba(58,36,127,.4) 60%,transparent 78%),
+    radial-gradient(56% 64% at 88% 22%,rgba(107,231,255,.7),transparent 64%),
+    linear-gradient(120deg,#1c1450,#3a2c92 42%,#3fb6dc 88%);}
+  .pv-lt .pvfx{background:
+    linear-gradient(to top,rgba(231,250,255,.22),transparent 64%),
+    repeating-linear-gradient(90deg,transparent 0 30px,rgba(220,228,255,.1) 30px 31px);
+    clip-path:polygon(0% 100%,0% 74%,18% 66%,34% 72%,50% 50%,66% 56%,82% 32%,100% 22%,100% 100%);
+    mix-blend-mode:screen;opacity:.78}
+
+  /* 02 TestMu AI - the rebrand: a morph / before-after split that fuses two identities */
+  .pv-testmu::before{background:
+    linear-gradient(105deg,rgba(58,36,127,.95) 0%,rgba(154,140,255,.5) 48%,rgba(255,138,224,.85) 100%),
+    radial-gradient(60% 70% at 50% 50%,rgba(120,234,255,.55),transparent 66%);}
+  .pv-testmu .pvfx{background:
+    linear-gradient(105deg,transparent 0 48%,rgba(255,255,255,.5) 49.4% 50.6%,transparent 51% 100%),
+    repeating-linear-gradient(105deg,transparent 0 14px,rgba(231,230,255,.1) 14px 15px);
+    mix-blend-mode:screen;opacity:.7}
+
+  /* 03 Samsung - device launch / broadcast: cyan signal rings radiating from a central core */
+  .pv-samsung::before{background:
+    radial-gradient(60% 70% at 50% 52%,rgba(120,234,255,.98),rgba(28,40,92,.5) 58%,transparent 80%),
+    radial-gradient(52% 56% at 14% 16%,rgba(154,140,255,.7),transparent 64%),
+    linear-gradient(135deg,#0c1a3a,#1f5a86 52%,#3fb6dc);}
+  .pv-samsung .pvfx{background:
+    repeating-radial-gradient(circle at 50% 52%,transparent 0 22px,rgba(231,250,255,.18) 22px 23.5px,transparent 23.5px 46px);
+    -webkit-mask:radial-gradient(60% 70% at 50% 52%,#000,transparent 82%);mask:radial-gradient(60% 70% at 50% 52%,#000,transparent 82%);
+    mix-blend-mode:screen;opacity:.62}
+
+  /* 04 Medilife - hospital 0 to 1: clean teal-violet field with a medical pulse / cross motif */
+  .pv-medilife::before{background:
+    radial-gradient(64% 76% at 30% 40%,rgba(120,234,255,.92),transparent 66%),
+    radial-gradient(58% 66% at 84% 80%,rgba(150,134,255,.78),transparent 66%),
+    linear-gradient(135deg,#102a44,#1c5e86 50%,#46c3dd);}
+  .pv-medilife .pvfx{background:
+    linear-gradient(to right,transparent 0 6%,rgba(231,250,255,.55) 6% 6.6%,transparent 6.6% 28%,
+      rgba(231,250,255,.55) 28% 28.6%,transparent 28.6% 40%,rgba(231,250,255,.85) 40% 47%,
+      transparent 47% 53%,rgba(231,250,255,.55) 53% 53.6%,transparent 53.6% 100%);
+    -webkit-mask:linear-gradient(0deg,transparent 38%,#000 50%,transparent 62%);mask:linear-gradient(0deg,transparent 38%,#000 50%,transparent 62%);
+    mix-blend-mode:screen;opacity:.7}
+
+  /* 05 Lido Learning - growth/CRM: a violet funnel / routing pipeline narrowing left to right */
+  .pv-lido::before{background:
+    radial-gradient(70% 84% at 12% 50%,rgba(154,140,255,.98),rgba(58,36,127,.45) 60%,transparent 80%),
+    radial-gradient(52% 60% at 90% 60%,rgba(107,231,255,.6),transparent 64%),
+    linear-gradient(100deg,#241653,#4a36a0 46%,#7d6fe6);}
+  .pv-lido .pvfx{background:
+    repeating-linear-gradient(90deg,transparent 0 30px,rgba(231,230,255,.14) 30px 31px);
+    -webkit-mask:polygon(0 8%,100% 38%,100% 62%,0 92%);clip-path:polygon(0 8%,100% 38%,100% 62%,0 92%);
+    mix-blend-mode:screen;opacity:.6}
+
+  /* 06 Appknox - mobile security: a violet-pink field with a centred shield silhouette */
+  .pv-appknox::before{background:
+    radial-gradient(60% 72% at 50% 44%,rgba(150,134,255,.95),rgba(58,36,127,.45) 58%,transparent 80%),
+    radial-gradient(54% 58% at 84% 84%,rgba(255,138,224,.7),transparent 64%),
+    linear-gradient(135deg,#1d1647,#3a2c8f 52%,#7d4fb0);}
+  .pv-appknox .pvfx{background:
+    repeating-linear-gradient(0deg,transparent 0 7px,rgba(231,230,255,.14) 7px 8px);
+    -webkit-mask:polygon(50% 6%,86% 22%,86% 54%,50% 90%,14% 54%,14% 22%);clip-path:polygon(50% 6%,86% 22%,86% 54%,50% 90%,14% 54%,14% 22%);
+    mix-blend-mode:screen;opacity:.62}
+
+  .work .wmid{display:flex;flex-direction:column;gap:.5rem;min-width:0}
+  .work .widx{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;color:var(--faint)}
+  .work .widx em{font-style:normal;background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .work .wt{font-family:var(--disp);font-weight:600;font-size:clamp(1.5rem,3.2vw,2.4rem);letter-spacing:-.025em;transition:color .35s;position:relative;line-height:1.04}
+  .work a:hover .wt,.work a:focus-visible .wt{color:transparent;background:var(--spectrum);-webkit-background-clip:text;background-clip:text}
+  .work .wrole{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:#c9c2e0;transition:color .35s}
+  .work a:hover .wrole,.work a:focus-visible .wrole{color:var(--cyan)}
+  .work .wd{font-size:.94rem;color:var(--mut);line-height:1.55;max-width:30ch;align-self:center}
+  .work .wy{font-family:var(--mono);color:var(--faint);font-size:.9rem;justify-self:end;display:flex;align-items:center;gap:.7rem}
+  .work .wy .arr{display:inline-block;color:var(--violet);transform:translateX(-6px);opacity:0;transition:transform .45s,opacity .45s}
+  .work a:hover .wy .arr,.work a:focus-visible .wy .arr{transform:translateX(0);opacity:1}
+  @media(max-width:980px){
+    .work a,.work a.feat{grid-template-columns:250px 1fr auto;gap:1.7rem;padding:1.5rem}
+    .pv,.work a.feat .pv{width:250px;height:160px}
+    .work a.feat .wt{font-size:clamp(1.7rem,4vw,2.2rem)}
+    .work .wd{display:none}
+  }
+  @media(max-width:680px){
+    .work a,.work a.feat{grid-template-columns:1fr;gap:1.1rem;padding:1.2rem}
+    .pv,.work a.feat .pv{width:100%;height:188px}
+    .work .wy{justify-self:start}
+  }
+
+  /* recognition + brands */
+  .recog{display:grid;grid-template-columns:1fr 1fr;gap:var(--m);align-items:start}
+  .awards{display:flex;flex-direction:column;gap:.2rem}
+  .award{display:flex;gap:1.15rem;align-items:center;padding:1.2rem 0;position:relative;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+  .award:hover{transform:translateX(5px)}
+  /* thin gradient divider between award rows */
+  .award+.award{border-top:1px solid transparent;background:linear-gradient(90deg,rgba(180,170,255,.34),rgba(107,231,255,.16) 42%,transparent 80%) top/100% 1px no-repeat}
+  .award .laurel{flex:none;width:38px;height:38px;display:grid;place-items:center;color:var(--violet);filter:drop-shadow(0 0 11px rgba(138,123,255,.45));transition:color .4s,filter .4s}
+  .award:hover .laurel{color:var(--cyan);filter:drop-shadow(0 0 14px rgba(107,231,255,.6))}
+  .award .laurel svg{width:38px;height:38px}
+  .award .at b{font-weight:600;font-family:var(--disp);display:block;line-height:1.2;font-size:clamp(1.2rem,1.9vw,1.5rem);letter-spacing:-.015em;color:var(--ink)}
+  .award .at span{color:var(--mut);font-size:.82rem;font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;margin-top:.25rem;display:block}
+  /* brands: a quiet kicker + a gradient hairline lead-in, then the pills - so the column reads
+     with the same typographic care as the award rows rather than as a loose bag of tags */
+  .brands{display:flex;flex-direction:column;gap:1.05rem;align-content:flex-start}
+  .brands .brandlbl{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.01em;color:var(--faint);
+    padding-bottom:.95rem;border-bottom:1px solid transparent;
+    background:linear-gradient(90deg,rgba(180,170,255,.34),rgba(107,231,255,.16) 46%,transparent 82%) bottom/100% 1px no-repeat}
+  .brands .brandlbl .dotmark{width:5px;height:5px;border-radius:2px;background:var(--spectrum);flex:none}
+  .brandpills{display:flex;flex-wrap:wrap;gap:.7rem;align-content:flex-start}
+  .brandpills span{border:1px solid var(--line);border-radius:100px;padding:.7rem 1.35rem;font-size:.98rem;font-weight:500;letter-spacing:-.005em;color:#d4cfe8;background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:color .3s,border-color .3s,box-shadow .3s,transform .3s}
+  .brandpills span:hover{color:var(--ink);border-color:rgba(180,170,255,.4);box-shadow:0 0 22px -10px rgba(138,123,255,.6);transform:translateY(-2px)}
+  @media(max-width:760px){.recog{grid-template-columns:1fr;gap:3rem}}
+
+  /* full-bleed prism echo - padding trimmed so the dark band above/below it doesn't yawn open */
+  .echo{position:relative;min-height:54vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:clamp(3.4rem,8vh,5.4rem) 0;overflow:hidden}
+  /* faint prism hairline + spark at the top and bottom seam of the full-bleed echo (it sits
+     OUTSIDE .wrap, so the section+section seam rule can't reach it) - keeps momentum through the
+     near-black gap between Recognition -> echo -> About */
+  .seam{position:relative;z-index:3;height:0;margin:0 auto;max-width:1280px;padding:0 var(--m)}
+  .seam::before{content:"";position:absolute;left:var(--m);right:var(--m);top:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(180,170,255,.2) 30%,rgba(107,231,255,.15) 60%,transparent);opacity:.65}
+  .seam::after{content:"";position:absolute;left:50%;top:-3px;width:7px;height:7px;border-radius:2px;
+    transform:translateX(-50%) rotate(45deg);background:var(--spectrum);box-shadow:0 0 14px rgba(138,123,255,.6);opacity:.85}
+  .echo::before{content:"";position:absolute;inset:-10% -20%;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(38% 46% at 50% 50%,rgba(138,123,255,.42),transparent 70%),
+      radial-gradient(30% 36% at 38% 44%,rgba(255,122,217,.30),transparent 70%),
+      radial-gradient(34% 40% at 64% 58%,rgba(107,231,255,.30),transparent 72%);
+    filter:blur(8px)}
+  .echo::after{content:"";position:absolute;left:50%;top:50%;width:min(54vw,560px);height:min(54vw,560px);transform:translate(-50%,-50%) rotate(45deg);z-index:0;pointer-events:none;border-radius:30% 70% 62% 38% / 44% 38% 62% 56%;
+    background:conic-gradient(from 120deg,rgba(138,123,255,.5),rgba(255,122,217,.45),rgba(107,231,255,.5),rgba(138,123,255,.5));
+    opacity:.55;mix-blend-mode:screen;filter:blur(2px)}
+  @media(prefers-reduced-motion:no-preference){.echo::after{animation:echospin 34s linear infinite}}
+  @keyframes echospin{to{transform:translate(-50%,-50%) rotate(405deg)}}
+  /* dark scrim so the statement + CTA read against the bright prism echo */
+  .echo .scrim{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:3rem 2.4rem 3.2rem;border-radius:26px;
+    background:radial-gradient(120% 130% at 50% 30%,rgba(7,6,13,.82),rgba(7,6,13,.55) 60%,rgba(7,6,13,.2));
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+  .echo .echotxt{position:relative;z-index:2;max-width:18ch;margin:0 auto;font-family:var(--disp);font-weight:500;font-size:clamp(1.8rem,4.4vw,3.4rem);line-height:1.15;letter-spacing:-.025em}
+  .echo .echotxt em{font-style:normal;background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .echo .echolbl{position:relative;z-index:2;margin-top:1.4rem;margin-bottom:2rem;display:inline-flex}
+  .echo .echocta{position:relative;z-index:2}
+  /* the closer pill sits on the brightest iridescent band of the page - push it brighter and
+     harder than the hero primary so it stays the unmistakable focal action: near-white core,
+     crisp ring, and a wider chromatic halo */
+  .btn.primary.echobtn{background:linear-gradient(100deg,#e9e3ff 0%,#fff 42%,#dff7ff 100%);
+    box-shadow:0 12px 46px -10px rgba(120,110,255,.85),0 0 0 1px rgba(255,255,255,.45),0 0 34px -6px rgba(107,231,255,.55),inset 0 1px 0 rgba(255,255,255,.85)}
+  .btn.primary.echobtn:hover{transform:translateY(-3px);
+    box-shadow:0 20px 64px -8px rgba(107,231,255,.8),0 0 0 1.5px rgba(255,255,255,.6),0 0 44px -4px rgba(255,122,217,.5),inset 0 1px 0 rgba(255,255,255,.9)}
+
+  /* about */
+  .about p{font-family:var(--disp);font-weight:400;font-size:clamp(1.5rem,3.4vw,2.6rem);line-height:1.4;letter-spacing:-.02em;max-width:24ch}
+  .about p em{font-style:normal;color:transparent;background:var(--spectrum);-webkit-background-clip:text;background-clip:text}
+
+  /* contact - a soft scroll-parallaxed chromatic knot drifts behind the closer */
+  .contact{text-align:center;padding-bottom:6rem;overflow:visible}
+  .contact .closeglow{position:absolute;left:50%;top:42%;width:min(70vw,720px);height:min(70vw,720px);
+    transform:translate(-50%,-50%) rotate(45deg);z-index:0;pointer-events:none;
+    border-radius:38% 62% 56% 44% / 50% 44% 56% 50%;
+    background:conic-gradient(from 90deg,rgba(138,123,255,.32),rgba(255,122,217,.26),rgba(107,231,255,.32),rgba(138,123,255,.32));
+    opacity:.42;mix-blend-mode:screen;filter:blur(34px);will-change:transform}
+  .contact>*:not(.closeglow){position:relative;z-index:2}
+  @media(prefers-reduced-motion:no-preference){.contact .closeglow{animation:echospin 46s linear infinite}}
+  .contact .big{font-family:var(--disp);font-weight:600;font-size:clamp(2.6rem,8vw,7rem);line-height:1;letter-spacing:-.035em}
+  .contact .big a{position:relative;display:inline-block}
+  .contact .big a .word{background:var(--spectrum);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .contact .big a .ar{display:inline-block;transition:transform .45s}
+  .contact .big a:hover .ar{transform:translate(6px,-6px)}
+  .contact .em{margin-top:2.4rem;font-family:var(--mono);font-size:.84rem;color:var(--mut);letter-spacing:.02em}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .3s}
+  .contact .em a:hover{border-bottom-color:var(--pink)}
+
+  footer{border-top:1px solid var(--line);padding:2.4rem var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:var(--mono);font-size:.72rem;color:var(--mut);position:relative;z-index:3}
+  footer a{color:var(--ink)}
+  footer a:hover{color:var(--pink)}
+
+  .reveal{opacity:0;transform:translateY(26px)}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none}
+    .hero h1 .ln>span{transform:none}
+  }
+</style>
+</head>
+<body>
+<div class="scenebg"></div>
+<canvas id="prism"></canvas>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<nav id="nav">
+  <a class="logo" href="/redesign/"><span class="pip"></span> Swapnil Biswas</a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="all" href="/redesign/">All concepts</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Senior Product Marketing Manager - LambdaTest</div>
+    <h1>
+      <span class="ln"><span>The marketer</span></span>
+      <span class="ln"><span>who <span class="ships">ships<span class="dot">.</span></span></span></span>
+    </h1>
+    <p class="sub">I'm Swapnil Biswas. I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See selected work <span class="ar">&#8599;</span></a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+    <div class="scrollcue"><span class="bar"></span> <span class="lbl">Scroll to refract</span> <span class="chev" aria-hidden="true">&#8964;</span></div>
+  </header>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Product marketing&nbsp;<em class="spectrum">+</em>&nbsp;engineering</span>
+    <span>Signal in&nbsp;<em class="spectrum">/</em>&nbsp;spectrum out</span>
+    <span>Built, not briefed</span>
+    <span>Product marketing&nbsp;<em class="spectrum">+</em>&nbsp;engineering</span>
+    <span>Signal in&nbsp;<em class="spectrum">/</em>&nbsp;spectrum out</span>
+    <span>Built, not briefed</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="stats">
+    <div class="shead"><h2>By the <span class="spectrum">numbers</span></h2><div class="kicker"><span class="idx">01</span> Measured output, not vanity</div></div>
+    <div class="stats">
+      {stats.map(s => (
+        <div class="stat reveal"><div class="n" data-count={s.n}>{s.n}</div><div class="l">{s.l}</div></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="shead"><h2>What I <span class="spectrum">do</span></h2><div class="kicker"><span class="idx">02</span> Four disciplines, one operator</div></div>
+    <div class="pillars">
+      {pillars.map(p => (
+        <div class="pillar reveal"><span class="refract" aria-hidden="true"></span><span class="pi">{p.i}</span><h3>{p.t}</h3><p>{p.d}</p></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="shead"><h2>Selected <span class="spectrum">work</span></h2><div class="kicker"><span class="idx">03</span> Lead with the result</div></div>
+    <div class="work">
+      {work.map((w, idx) => (
+        <a href="#" class={`reveal ${idx === 0 ? 'feat' : ''}`}>
+          <span class="ring" aria-hidden="true"></span>
+          <span class={`pv ${w.pv}`} aria-hidden="true">
+            <span class="pvfx"></span>
+            <span class="pv-idx">{w.i}</span>
+            <span class="pv-metric"><b>{w.metric}</b><i>{w.metricSub}</i></span>
+            <span class="pv-arrow" aria-hidden="true">&#8599;</span>
+          </span>
+          <span class="wmid">
+            <span class="feattag">Flagship engagement</span>
+            <span class="widx">{w.i} <em>/ 06</em></span>
+            <span class="wt">{w.t}</span>
+            <span class="wrole">{w.role}</span>
+          </span>
+          <span class="wd">{w.d}</span>
+          <span class="wy">{w.y} <span class="arr">&#8599;</span></span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="recognition">
+    <div class="shead"><h2>Recognition &amp; <span class="spectrum">brands</span></h2></div>
+    <div class="recog">
+      <div class="awards reveal">
+        {awards.map(a => (
+          <div class="award">
+            <span class="laurel" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7.5 3.5C4.6 5.6 3.4 9 4 13.2c.4 2.8 1.8 5 3.7 6.5"/>
+                <path d="M5.2 7.7c1.4-.3 2.6.1 3.4 1.1M4.3 11.5c1.4 0 2.5.6 3.1 1.7M5 15.4c1.3.3 2.2 1.1 2.6 2.3"/>
+                <path d="M16.5 3.5C19.4 5.6 20.6 9 20 13.2c-.4 2.8-1.8 5-3.7 6.5"/>
+                <path d="M18.8 7.7c-1.4-.3-2.6.1-3.4 1.1M19.7 11.5c-1.4 0-2.5.6-3.1 1.7M19 15.4c-1.3.3-2.2 1.1-2.6 2.3"/>
+                <path d="m12 8.4 1.1 2.3 2.5.3-1.8 1.7.5 2.5L12 16.3l-2.3 1.2.5-2.5L8.4 11l2.5-.3z"/>
+              </svg>
+            </span>
+            <div class="at"><b>{a.b}</b> <span>{a.s}</span></div>
+          </div>
+        ))}
+      </div>
+      <div class="brands reveal">
+        <span class="brandlbl"><span class="dotmark" aria-hidden="true"></span>Trusted by teams at</span>
+        <div class="brandpills">
+          {brands.map(b => <span>{b}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <div class="seam" aria-hidden="true"></div>
+  <section class="echo">
+    <div class="wrap" style="width:100%">
+      <div class="scrim reveal">
+        <p class="echotxt">Signal in. <em>Spectrum out.</em> Built to be measured, not admired.</p>
+        <div class="eyebrow echolbl" style="justify-content:center">Refraction, not decoration</div>
+        <div class="echocta"><a class="btn primary echobtn" href="#contact">Start a project <span class="ar">&#8599;</span></a></div>
+      </div>
+    </div>
+  </section>
+  <div class="seam" aria-hidden="true"></div>
+
+  <div class="wrap">
+  <section id="about" class="about">
+    <div class="shead"><h2><span class="spectrum">About</span></h2><div class="kicker"><span class="dotmark"></span> Based in Mumbai, India</div></div>
+    <p class="reveal">7+ years in marketing, 4+ in B2B SaaS. A postgrad in growth strategy at <em>IIM Visakhapatnam</em>. I treat my own career like a product - positioned, measured and shipped.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <span class="closeglow" aria-hidden="true"></span>
+    <div class="eyebrow reveal" style="margin-bottom:2rem">Let's build something that compounds</div>
+    <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com"><span class="word">Say hello</span> <span class="ar">&#8599;</span></a></div>
+    <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+  </section>
+</div>
+
+<footer>
+  <span>&copy; 2026 Swapnil Biswas</span>
+  <span>Concept 05 - Prism &middot; <a href="/redesign/">View all concepts</a></span>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+  import * as THREE from 'https://esm.sh/three@0.160.0';
+  import { RoomEnvironment } from 'https://esm.sh/three@0.160.0/examples/jsm/environments/RoomEnvironment.js';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- Three.js refractive prism ----
+  let three = null;
+  (function(){
+    const cv = document.getElementById('prism');
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true });
+      if(!renderer.getContext()) throw new Error('no ctx');
+    } catch(e){
+      // CSS .scenebg gradient already provides the fallback; just bail.
+      cv.style.display = 'none';
+      return;
+    }
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.6);
+    renderer.setPixelRatio(dpr);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(42, window.innerWidth/window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0, 6.2);
+
+    // environment so transmission/iridescence has something to refract.
+    // RoomEnvironment gives a rich studio IBL; we tint it with coloured lights below.
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    // Colourful equirectangular IBL so the glass reflects/refracts a violet-pink-cyan
+    // spectrum. A neutral studio env (RoomEnvironment) makes the knot read as white plastic.
+    const ecv = document.createElement('canvas'); ecv.width = 1024; ecv.height = 512;
+    const ectx = ecv.getContext('2d');
+    const eg = ectx.createLinearGradient(0, 0, 0, 512);
+    eg.addColorStop(0.00, '#9a8cff');
+    eg.addColorStop(0.34, '#4a2f8f');
+    eg.addColorStop(0.52, '#0d0b1c');
+    eg.addColorStop(0.72, '#1b6f8a');
+    eg.addColorStop(1.00, '#06060d');
+    ectx.fillStyle = eg; ectx.fillRect(0, 0, 1024, 512);
+    const eglow = (x, y, r, col) => { const g2 = ectx.createRadialGradient(x,y,0,x,y,r); g2.addColorStop(0,col); g2.addColorStop(1,'rgba(0,0,0,0)'); ectx.fillStyle = g2; ectx.fillRect(0,0,1024,512); };
+    eglow(770, 150, 270, 'rgba(255,122,217,0.85)');
+    eglow(220, 120, 240, 'rgba(138,123,255,0.80)');
+    eglow(540, 430, 300, 'rgba(107,231,255,0.60)');
+    const envTex = new THREE.CanvasTexture(ecv);
+    envTex.mapping = THREE.EquirectangularReflectionMapping;
+    const envRT = pmrem.fromEquirectangular(envTex);
+    scene.environment = envRT.texture;
+    envTex.dispose();
+
+    // the prism object - a torus knot with iridescent transmissive glass
+    const geo = new THREE.TorusKnotGeometry(1.15, 0.42, 220, 40, 2, 3);
+    const mat = new THREE.MeshPhysicalMaterial({
+      roughness: 0.08,
+      metalness: 0,
+      transmission: 1.0,
+      thickness: 1.6,
+      ior: 1.55,
+      iridescence: 1.0,
+      iridescenceIOR: 1.35,
+      iridescenceThicknessRange: [120, 520],
+      clearcoat: 0.0,
+      envMapIntensity: 2.4,
+      attenuationColor: new THREE.Color(0xb49cff),
+      attenuationDistance: 2.0,
+      specularColor: new THREE.Color(0xd9c9ff),
+      specularIntensity: 1.0,
+      color: new THREE.Color(0xf1e9ff),
+    });
+    // group holds knot + glow so placement transforms move together
+    const group = new THREE.Group();
+    const knot = new THREE.Mesh(geo, mat);
+    group.add(knot);
+
+    // soft bloom/glow behind the brightest lobe (radial sprite, additive)
+    const glowCanvas = document.createElement('canvas');
+    glowCanvas.width = glowCanvas.height = 256;
+    const gx = glowCanvas.getContext('2d');
+    const grad = gx.createRadialGradient(128,128,0,128,128,128);
+    grad.addColorStop(0,'rgba(180,150,255,0.9)');
+    grad.addColorStop(.35,'rgba(150,130,255,0.45)');
+    grad.addColorStop(.7,'rgba(107,231,255,0.16)');
+    grad.addColorStop(1,'rgba(0,0,0,0)');
+    gx.fillStyle = grad; gx.fillRect(0,0,256,256);
+    const glowTex = new THREE.CanvasTexture(glowCanvas);
+    const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, blending: THREE.AdditiveBlending, transparent:true, depthWrite:false, opacity:0.85 }));
+    glow.scale.setScalar(5.2);
+    glow.position.set(0.4, 0.3, -1.4);
+    group.add(glow);
+    scene.add(group);
+
+    // coloured lights raking across for spectrum sheen
+    const lV = new THREE.PointLight(0x8a7bff, 70, 30); lV.position.set(-5, 3, 4);
+    const lP = new THREE.PointLight(0xff7ad9, 60, 30); lP.position.set(5, -2, 3);
+    const lC = new THREE.PointLight(0x6be7ff, 60, 30); lC.position.set(0, -4, 5);
+    const dir = new THREE.DirectionalLight(0xcfd6ff, 0.5); dir.position.set(2, 4, 6);
+    scene.add(lV, lP, lC, dir, new THREE.AmbientLight(0x241c40, 0.55));
+
+    // faint particle field
+    const pCount = 220;
+    const pPos = new Float32Array(pCount*3);
+    for(let i=0;i<pCount;i++){
+      pPos[i*3]   = (Math.random()-0.5)*16;
+      pPos[i*3+1] = (Math.random()-0.5)*12;
+      pPos[i*3+2] = (Math.random()-0.5)*8 - 2;
+    }
+    const pGeo = new THREE.BufferGeometry();
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+    const pMat = new THREE.PointsMaterial({ size: 0.028, color: 0xb9aaff, transparent:true, opacity:0.55, depthWrite:false });
+    const particles = new THREE.Points(pGeo, pMat);
+    scene.add(particles);
+
+    // responsive sizing
+    function size(){
+      const w = window.innerWidth, h = window.innerHeight;
+      camera.aspect = w/h; camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
+      if(w > 880){
+        // desktop: sit the silhouette in the right third but pull it in from the edge and
+        // scale down a touch so the knot's outer lobe never clips against the viewport edge.
+        // x scales gently with aspect so ultrawide doesn't fling it off-screen.
+        const aspect = w / h;
+        group.position.x = Math.min(1.18 + (aspect - 1.6) * 0.28, 1.5);
+        group.position.y = -0.1;
+        group.scale.setScalar(0.82);
+      } else {
+        // mobile: a large centred composition lifted into the upper viewport so it bleeds
+        // TALL behind the headline (which bottom-aligns on phones) instead of a thin band.
+        group.position.x = 0;
+        group.position.y = w <= 600 ? 1.35 : 0.9;
+        group.scale.setScalar(w <= 600 ? 1.2 : 1.05);
+      }
+    }
+    size();
+    window.addEventListener('resize', size);
+
+    // mouse parallax
+    const target = { x: 0, y: 0 };
+    if(!reduce){
+      window.addEventListener('pointermove', (e)=>{
+        target.x = (e.clientX / window.innerWidth - 0.5);
+        target.y = (e.clientY / window.innerHeight - 0.5);
+      }, { passive:true });
+    }
+
+    let rx=0, ry=0, scrollY=0, midPar=0, midParEased=0;
+    three = {
+      get scrollY(){ return scrollY; },
+      set scrollY(v){ scrollY = v; },
+      // 0..1 progress while one mid section is in view -> drives an anchored parallax rotation
+      set midParallax(v){ midPar = v; }
+    };
+
+    // smoothed cursor for dot-field parallax
+    const par = { x: 0, y: 0 };
+    function render(){
+      // anchored parallax: ease the mid-section progress and add an extra slow tumble
+      midParEased += (midPar - midParEased) * 0.08;
+      knot.rotation.x = rx + midParEased * 0.9;
+      knot.rotation.y = ry + midParEased * 1.3;
+      knot.rotation.z = midParEased * 0.5;
+      // dot field parallaxes toward the cursor (eased)
+      par.x += (target.x - par.x) * 0.06;
+      par.y += (target.y - par.y) * 0.06;
+      particles.rotation.y = ry*0.3 - par.x*0.4;
+      particles.position.x = -par.x*1.4;
+      glow.position.x = 0.4 - par.x*0.5;
+      glow.position.y = 0.3 - par.y*0.5;
+      renderer.render(scene, camera);
+    }
+
+    if(reduce){
+      rx = 0.4; ry = 0.6;
+      size(); render();
+    } else {
+      const clock = new THREE.Clock();
+      (function loop(){
+        const t = clock.getElapsedTime();
+        // slow auto-rotate + mouse parallax + scroll drift
+        ry += 0.0024;
+        rx = Math.sin(t*0.18)*0.18 + target.y*0.5 + scrollY*0.0006;
+        ry += (target.x*0.5) * 0.02;
+        // gentle camera drift on scroll
+        camera.position.y = -scrollY*0.0008;
+        camera.position.z = 6.2 + Math.sin(t*0.2)*0.12;
+        particles.position.y = Math.sin(t*0.25)*0.2;
+        render();
+        requestAnimationFrame(loop);
+      })();
+    }
+
+    // dispose on unload
+    window.addEventListener('beforeunload', ()=>{
+      geo.dispose(); mat.dispose(); pGeo.dispose(); pMat.dispose();
+      glowTex.dispose(); if(glow.material) glow.material.dispose();
+      envRT.dispose(); pmrem.dispose(); renderer.dispose();
+    });
+  })();
+
+  // ---- smooth scroll + reveals ----
+  const nav = document.getElementById('nav');
+  function navState(y){ if(y>40) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); }
+
+  if(!reduce){
+    const lenis = new Lenis({ lerp:.1, smoothWheel:true });
+    lenis.on('scroll', (e)=>{
+      navState(e.scroll);
+      if(three) three.scrollY = e.scroll;
+    });
+    function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', ScrollTrigger.update);
+
+    // hero intro
+    gsap.set('.hero h1 .ln>span', { yPercent: 118 });
+    gsap.set('.hero .eyebrow,.hero .sub,.hero .cta,.scrollcue', { opacity:0, y:20 });
+    const tl = gsap.timeline({ delay:.18 });
+    tl.to('.hero h1 .ln>span', { yPercent:0, duration:1.1, ease:'expo.out', stagger:.1 })
+      .to('.hero .eyebrow', { opacity:1, y:0, duration:.7 }, .2)
+      .to('.hero .sub', { opacity:1, y:0, duration:.8 }, .55)
+      .to('.hero .cta', { opacity:1, y:0, duration:.8 }, .7)
+      .to('.scrollcue', { opacity:1, y:0, duration:.8 }, .85);
+
+    // grouped reveals get a staggered batch so a row of cards choreographs in sequence
+    // (stat grid, pillar grid, work list) instead of every tile popping at the same instant.
+    const grouped = new Set();
+    [['.stats','.stat.reveal'],['.pillars','.pillar.reveal'],['.work','.work a.reveal']].forEach(([wrap,sel])=>{
+      const items = gsap.utils.toArray(`${wrap} ${sel}`);
+      if(!items.length) return;
+      items.forEach(el=>grouped.add(el));
+      gsap.to(items, {
+        opacity:1, y:0, duration:1, ease:'expo.out', stagger:.09,
+        scrollTrigger:{ trigger:wrap, start:'top 86%' }
+      });
+    });
+    // everything else (one-off blocks) reveals individually
+    gsap.utils.toArray('.reveal').forEach(el=>{
+      if(grouped.has(el)) return;
+      gsap.to(el, { opacity:1, y:0, duration:1, ease:'expo.out', scrollTrigger:{ trigger:el, start:'top 88%' } });
+    });
+
+    // scroll-tied parallax rotation of the WebGL knot anchored behind ONE mid section
+    const midAnchor = document.getElementById('recognition');
+    if(midAnchor && three){
+      ScrollTrigger.create({
+        trigger: midAnchor, start: 'top bottom', end: 'bottom top', scrub: true,
+        onUpdate(self){ if(three) three.midParallax = self.progress; }
+      });
+    }
+
+    // scroll-parallaxed drift of the chromatic echo behind the "Say hello" closer
+    const closeGlow = document.querySelector('.contact .closeglow');
+    if(closeGlow){
+      gsap.to(closeGlow, {
+        yPercent: -22, ease: 'none',
+        scrollTrigger: { trigger: '#contact', start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    }
+
+    // count-up on scroll for stat numbers (preserves prefix/suffix like K+, M+, x)
+    gsap.utils.toArray('.stat .n').forEach(el=>{
+      const raw = el.getAttribute('data-count') || el.textContent;
+      const m = raw.match(/^([^0-9.]*)([\d.]+)(.*)$/);
+      if(!m){ return; }
+      const pre = m[1], end = parseFloat(m[2]), suf = m[3];
+      const dec = (m[2].split('.')[1] || '').length;
+      const obj = { v: 0 };
+      el.textContent = pre + '0' + suf;
+      gsap.to(obj, {
+        v: end, duration: 1.6, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+        onUpdate(){ el.textContent = pre + obj.v.toFixed(dec) + suf; },
+        onComplete(){ el.textContent = raw; }
+      });
+    });
+  } else {
+    navState(window.scrollY);
+    window.addEventListener('scroll', ()=>navState(window.scrollY), { passive:true });
+  }
+</script>
+</body>
+</html>

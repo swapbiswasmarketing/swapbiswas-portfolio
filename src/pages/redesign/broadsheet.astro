@@ -1,0 +1,743 @@
+---
+// REDESIGN PROTOTYPE - "Broadsheet" - Concept 08 - newspaper front page, ink on newsprint.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+// Tech: raw-WebGL halftone-dot shader (portrait region as classic newsprint dots) +
+// GSAP scroll reveals + Lenis smooth scroll + a STOP PRESS ticker marquee.
+const dateline = 'THE SIGNAL - Mumbai - Vol. 01 - No. 06 - 2026';
+const stats = [
+  { n: '657K+', l: 'Leads generated' },
+  { n: '18.2M+', l: 'Organic traffic driven' },
+  { n: '10x', l: 'Conversion lift' },
+  { n: '20+', l: 'AI agents & apps built' },
+  { n: '15+', l: 'Marketers mentored' },
+  { n: '76', l: 'Articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS. The narrative that makes a product impossible to ignore.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand generation that compounds long after the campaign ends.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - twenty-plus shipped - instead of only briefing them.' },
+  { i: '04', t: 'Building in public', d: 'This site, eight free tools and seventy-six articles. Shipped systems, not slide-ware.' },
+];
+const work = [
+  { i: '01', head: 'A full organic growth engine built from the ground up', t: 'LambdaTest', role: 'Product & digital marketing', r: '657K+ leads, 18.2M+ organic traffic', y: '2021-2025', kicker: 'Growth Engine', note: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { i: '02', head: 'A company reborn - LambdaTest becomes TestMu AI', t: 'TestMu AI', role: 'Rebrand lead', r: 'Full company rebrand', y: '2026', kicker: 'Rebrand', note: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', head: 'A flagship phone launch broadcast to millions', t: 'Samsung', role: 'Launch content & distribution', r: 'Galaxy M-series launch', y: '2019', kicker: 'Launch', note: 'On the Galaxy M-series from inception; ran content distribution (collaborated with Technical Guruji).' },
+  { i: '04', head: 'A superspeciality hospital taken from zero to one', t: 'Medilife Superspeciality', role: 'Marketing & web - 0 to 1', r: 'Website, GTM, social & launch', y: '', kicker: 'Zero to One', note: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', head: 'Lead operations engineered for an EdTech at scale', t: 'Lido Learning', role: 'Growth / CRM', r: 'CRM & lead operations', y: '2021', kicker: 'CRM', note: 'Ran CRM management and lead routing/assignment for the EdTech.' },
+  { i: '06', head: 'Security content for the mobile app defenders', t: 'Appknox', role: 'Freelance content', r: 'Security content', y: '', kicker: 'Content', note: 'Freelance content writer for the mobile app security company.' },
+];
+const index = [
+  { n: 'A1', t: 'The Lead Story', p: 'The marketer who ships' },
+  { n: 'A3', t: 'By The Numbers', p: '657K leads, 18.2M traffic' },
+  { n: 'B1', t: 'The Desk', p: 'Four disciplines, one operator' },
+  { n: 'C1', t: 'Selected Filings', p: 'Six shipped systems' },
+  { n: 'D1', t: 'Awards Desk', p: 'Recognition & brands' },
+  { n: 'E1', t: 'The Byline', p: 'About the correspondent' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const tickerItems = ['STOP PRESS', '657K+ leads generated', '18.2M+ organic traffic driven', '10x conversion lift', '20+ AI agents shipped', '#1 Product of the Day - Product Hunt', 'Value of Agility Award 2024', '76 articles published', 'Now reading: THE SIGNAL'];
+---
+<!doctype html>
+<html lang="en" data-theme="broadsheet">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Signal - Swapnil Biswas, the marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f3efe4; --paper2:#efe9db; --paper3:#e9e2d1;
+    --ink:#15120c; --ink2:#3a342a; --ink-soft:#5b5448; --faint:#7a7264;
+    --red:#c0301d; --line:rgba(21,18,12,.82); --hair:rgba(21,18,12,.28); --hair2:rgba(21,18,12,.16);
+    --mast:"DM Serif Display",Georgia,serif;
+    --body:"Newsreader",Georgia,serif;
+    --label:"Archivo",system-ui,sans-serif;
+    --m:clamp(1rem,4vw,3.5rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;overflow-x:clip;font-weight:400;
+    background-image:
+      radial-gradient(140% 120% at 50% -20%,rgba(21,18,12,.025),transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E")}
+  section{overflow-x:clip;position:relative}
+  ::selection{background:var(--red);color:var(--paper)}
+  a{color:inherit;text-decoration:none}
+  /* paper grain overlay - faint, never a grey box */
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.06;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  /* scroll progress as a press-red rule */
+  .progress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:left;z-index:60;background:var(--red)}
+  .wrap{position:relative;z-index:2;max-width:1300px;margin:0 auto;padding:0 var(--m)}
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;
+    padding:.7rem var(--m);background:rgba(243,239,228,.92);backdrop-filter:saturate(120%) blur(6px);
+    border-bottom:2px solid var(--line);font-family:var(--label)}
+  .logo{font-family:var(--mast);font-size:1.25rem;letter-spacing:.01em}
+  .logo i{font-style:italic;color:var(--red)}
+  .navlinks{display:flex;gap:1.6rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;align-items:center}
+  .navlinks a{position:relative;color:var(--ink2);transition:color .25s}
+  .navlinks a:hover{color:var(--ink)}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--red);transition:width .35s cubic-bezier(.2,.8,.2,1)}
+  .navlinks a:hover::after{width:100%}
+  .navlinks a.allc{color:var(--red);border:1.5px solid var(--red);padding:.3rem .7rem;border-radius:2px}
+  .navlinks a.allc::after{display:none}
+  .navlinks a.allc:hover{background:var(--red);color:var(--paper)}
+  @media(max-width:760px){.navlinks a:not(.allc){display:none}}
+  /* ---------- TICKER ---------- */
+  .ticker{position:fixed;top:46px;left:0;right:0;z-index:39;background:var(--ink);color:var(--paper);
+    overflow:hidden;border-bottom:2px solid var(--line);height:30px;display:flex;align-items:center;font-family:var(--label)}
+  .ticker .track{display:inline-flex;white-space:nowrap;will-change:transform;animation:tick 32s linear infinite}
+  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+  .ticker .item{display:inline-flex;align-items:center;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;padding:0 1.1rem}
+  .ticker .item.flag{color:var(--red);font-weight:700}
+  .ticker .item::after{content:"\2022";margin-left:1.1rem;opacity:.45}
+  /* ---------- MASTHEAD ---------- */
+  .masthead{padding-top:5.8rem}
+  .topline{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;
+    border-top:3px solid var(--line);border-bottom:1px solid var(--line);padding:.5rem 0;
+    font-family:var(--label);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .topline .ed{color:var(--red);font-weight:700}
+  .masttitle{text-align:center;padding:1.1rem 0 .6rem;position:relative}
+  .masttitle h1{font-family:var(--mast);font-weight:400;line-height:.86;letter-spacing:-.01em;
+    font-size:clamp(3.2rem,15vw,11rem)}
+  .masttitle .reg{color:var(--red);font-size:.45em;vertical-align:.7em}
+  .dateline{display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap;
+    border-top:1px solid var(--line);border-bottom:3px solid var(--line);padding:.45rem 0;
+    font-family:var(--label);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);font-weight:500}
+  .dateline .star{color:var(--red)}
+  @media(max-width:560px){.dateline{font-size:.56rem;letter-spacing:.12em;gap:.5rem}.topline{font-size:.56rem;letter-spacing:.1em}}
+  /* ---------- HERO / LEAD STORY ---------- */
+  header.hero{min-height:100svh;display:flex;flex-direction:column;padding-bottom:2rem}
+  .lead{display:grid;grid-template-columns:1.72fr 1fr;gap:0;border-bottom:3px double var(--line);flex:1}
+  .lead .story{padding:2rem 2.4rem 2rem 0;border-right:1px solid var(--line);display:flex;flex-direction:column}
+  .kicker{font-family:var(--label);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:.9rem;display:inline-flex;align-items:center;gap:.6rem}
+  .kicker::before{content:"";width:30px;height:2px;background:var(--red)}
+  .lead h2.headline{font-family:var(--mast);font-weight:400;line-height:.92;letter-spacing:-.01em;
+    font-size:clamp(2.6rem,7vw,6rem);margin-bottom:.4rem}
+  .lead h2.headline em{font-style:italic;color:var(--red)}
+  .lead h2 .ln{display:block;overflow:hidden}
+  .lead h2 .ln>span{display:block;will-change:transform}
+  .deck{font-family:var(--body);font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.5;color:var(--ink2);
+    font-style:italic;max-width:42ch;margin:.8rem 0 1.4rem;padding-bottom:1.2rem;border-bottom:1px solid var(--hair)}
+  .deck b{font-style:normal;font-weight:600;color:var(--ink)}
+  .byline{font-family:var(--label);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:1.2rem}
+  .byline b{color:var(--ink);font-weight:700}
+  .cols{columns:2;column-gap:2.1rem;column-rule:1px solid var(--hair2);font-size:.96rem;line-height:1.64;text-align:justify;
+    hyphens:auto;-webkit-hyphens:auto;text-wrap:pretty;hanging-punctuation:first allow-end;color:var(--ink2);flex:1;
+    word-spacing:-.005em;letter-spacing:.001em}
+  /* widen the measure on large screens so justification has room to breathe (~66ch/col) */
+  @media(min-width:1100px){.cols{font-size:1rem;line-height:1.66}}
+  .cols p{margin-bottom:.7rem}
+  .cols p:first-child::first-letter{font-family:var(--mast);float:left;font-size:3.6em;line-height:.74;
+    padding:.06em .12em .02em 0;color:var(--red)}
+  .leadcta{margin-top:1.4rem;display:flex;gap:.8rem;flex-wrap:wrap;break-inside:avoid}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--label);font-size:.74rem;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:700;padding:.7rem 1.2rem;border:2px solid var(--ink);transition:transform .3s,background .25s,color .25s}
+  .btn.solid{background:var(--ink);color:var(--paper)}
+  .btn.solid:hover{background:var(--red);border-color:var(--red);transform:translateY(-2px)}
+  .btn.outline:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+  .btn .ar{transition:transform .3s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  /* portrait column with halftone WebGL */
+  .lead .aside{padding:2rem 0 2rem 2.4rem;display:flex;flex-direction:column}
+  .halfwrap{position:relative;flex:1;min-height:300px;border:2px solid var(--line);overflow:hidden;background:var(--paper3)}
+  canvas#halftone{position:absolute;inset:0;width:100%;height:100%;display:block;
+    background:
+      repeating-linear-gradient(45deg, var(--ink) 0 1px, transparent 1px 8px),
+      var(--paper2)}
+  .halfwrap .cap{position:absolute;left:0;right:0;bottom:0;background:var(--ink);color:var(--paper);
+    font-family:var(--label);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.4rem .6rem;z-index:2}
+  .halfwrap .cap b{color:#e8b3a8}
+  .halfwrap .ornament{position:absolute;top:.6rem;left:.6rem;z-index:2;font-family:var(--label);font-size:.58rem;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--paper);background:var(--red);padding:.25rem .5rem;font-weight:700}
+  .aside .pullq{font-family:var(--mast);font-weight:400;font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.12;
+    margin-top:1.2rem;padding-top:1.2rem;border-top:3px solid var(--line);letter-spacing:-.01em}
+  .aside .pullq .q{color:var(--red);font-size:1.4em;line-height:0;vertical-align:-.2em;margin-right:.1em}
+  @media(max-width:860px){
+    .lead{grid-template-columns:1fr}
+    .lead .story{border-right:0;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+    .lead .aside{padding:1.6rem 0 0}
+    .cols{columns:1}
+  }
+  @media(max-width:560px){
+    header.hero{min-height:100svh}
+    .lead h2.headline{font-size:clamp(2.6rem,12vw,4rem)}
+    .halfwrap{min-height:260px}
+  }
+  /* ---------- INDEX RAIL + statement ---------- */
+  .deck-row{display:grid;grid-template-columns:1fr 320px;gap:0;border-bottom:3px solid var(--line)}
+  .indexrail{border-left:1px solid var(--line);padding:1.6rem 0 1.6rem 1.8rem}
+  .indexrail .ihead{font-family:var(--label);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red);
+    font-weight:700;border-bottom:2px solid var(--line);padding-bottom:.6rem;margin-bottom:.4rem}
+  .ixrow{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--hair2);transition:padding-left .3s}
+  .ixrow:hover{padding-left:.4rem}
+  .ixrow .pg{font-family:var(--label);font-weight:700;font-size:.74rem;color:var(--red);letter-spacing:.06em}
+  .ixrow .it{font-family:var(--mast);font-size:1.05rem;line-height:1.05}
+  .ixrow .ip{font-size:.78rem;color:var(--ink-soft);display:block;margin-top:.1rem;font-style:italic}
+  .stmt{padding:2.4rem 2rem 2.4rem 0;display:flex;align-items:center;border-right:1px solid var(--line)}
+  .stmt p{font-family:var(--mast);font-weight:400;font-size:clamp(1.5rem,3.4vw,2.7rem);line-height:1.1;letter-spacing:-.01em}
+  .stmt p em{font-style:italic;color:var(--red)}
+  @media(max-width:860px){.deck-row{grid-template-columns:1fr}.stmt{border-right:0;padding:1.8rem 0;border-bottom:1px solid var(--line)}.indexrail{border-left:0;padding:1.6rem 0}}
+  /* ---------- SECTION FRAME ---------- */
+  section{padding:clamp(2.6rem,6vh,4.2rem) 0}
+  .shead{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:1rem 1.5rem;
+    border-top:3px solid var(--line);border-bottom:1px solid var(--line);padding:.6rem 0;margin-bottom:2rem}
+  .shead .kick{font-family:var(--label);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;
+    color:var(--paper);background:var(--ink);padding:.28rem .55rem;align-self:center;white-space:nowrap}
+  .shead h3{font-family:var(--mast);font-weight:400;font-size:clamp(1.5rem,3.2vw,2.6rem);letter-spacing:-.01em;line-height:1}
+  .shead h3 em{font-style:italic;color:var(--red)}
+  .shead .lbl{font-family:var(--label);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;text-align:right}
+  @media(max-width:560px){.shead{grid-template-columns:auto 1fr;gap:.5rem 1rem}.shead .lbl{grid-column:1 / -1;text-align:left}}
+  /* ---------- BY THE NUMBERS (boxed sidebar feel, full-width band) ---------- */
+  .numbers{display:grid;grid-template-columns:repeat(6,1fr);border:2px solid var(--line)}
+  .num{padding:1.4rem 1.2rem;border-right:1px solid var(--hair);display:flex;flex-direction:column;justify-content:flex-end;
+    position:relative;transition:background .3s}
+  .num:last-child{border-right:0}
+  .num:hover{background:var(--paper3)}
+  .num .n{font-family:var(--mast);font-weight:400;font-size:clamp(1.9rem,3.6vw,3.1rem);line-height:.9;letter-spacing:-.01em}
+  .num:nth-child(2) .n{color:var(--red)}
+  .num .l{font-family:var(--label);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:.7rem;line-height:1.3}
+  @media(max-width:860px){.numbers{grid-template-columns:repeat(3,1fr)}.num:nth-child(3){border-right:0}.num:nth-child(1),.num:nth-child(2),.num:nth-child(3){border-bottom:1px solid var(--hair)}}
+  @media(max-width:480px){.numbers{grid-template-columns:repeat(2,1fr)}.num:nth-child(odd){border-right:1px solid var(--hair)}.num:nth-child(even){border-right:0}.num:nth-child(1),.num:nth-child(2),.num:nth-child(3),.num:nth-child(4){border-bottom:1px solid var(--hair)}}
+  /* ---------- THE DESK (pillars) ---------- */
+  .desk{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+  .pillar{padding:1.8rem 2rem 1.8rem 0;border-bottom:1px solid var(--hair);display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:start}
+  .pillar:nth-child(even){padding-left:2rem;padding-right:0;border-left:1px solid var(--line)}
+  .pillar .pi{font-family:var(--mast);color:var(--red);font-size:clamp(2rem,3.2vw,2.8rem);line-height:.8}
+  .pillar h4{font-family:var(--mast);font-size:1.4rem;font-weight:400;margin-bottom:.5rem;letter-spacing:-.01em;line-height:1.05}
+  .pillar p{color:var(--ink2);font-size:.96rem;line-height:1.62;max-width:62ch;text-align:justify;
+    hyphens:auto;-webkit-hyphens:auto;text-wrap:pretty;hanging-punctuation:first allow-end;word-spacing:-.005em}
+  @media(max-width:760px){.desk{grid-template-columns:1fr}.pillar,.pillar:nth-child(even){padding-left:0;padding-right:0;border-left:0}}
+  /* ---------- SELECTED FILINGS (work = the centerpiece, 4 stories) ---------- */
+  .filings{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+  .filing{position:relative;padding:1.8rem 2rem;border-bottom:1px solid var(--line);overflow:hidden;
+    background:var(--paper);transition:background .35s;display:flex;flex-direction:column;isolation:isolate}
+  .filing:nth-child(odd){border-right:1px solid var(--line)}
+  /* feature filing spans full width */
+  .filing.feat{grid-column:1 / -1;border-right:0}
+  .filing .halftone-bg{position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .45s;
+    background-image:radial-gradient(circle at 50% 50%, var(--ink) 0 1.4px, transparent 1.4px 9px);background-size:9px 9px;
+    -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.5),transparent 70%);mask-image:linear-gradient(180deg,rgba(0,0,0,.5),transparent 70%)}
+  .filing:hover{background:var(--paper3)}
+  .filing:hover .halftone-bg{opacity:.07}
+  .filing::before{content:"";position:absolute;top:0;left:0;height:4px;width:0;background:var(--red);z-index:3;transition:width .55s cubic-bezier(.2,.8,.2,1)}
+  .filing:hover::before{width:100%}
+  /* distinct on-brand composition per filing: a corner edition flag + leading rule treatment */
+  .filing::after{content:attr(data-fi);position:absolute;top:0;right:0;font-family:var(--mast);font-size:clamp(3rem,7vw,5.5rem);
+    line-height:.7;color:var(--ink);opacity:.05;padding:.15em .25em 0;pointer-events:none;transition:opacity .35s,color .35s;z-index:0}
+  .filing:hover::after{opacity:.10;color:var(--red)}
+  .filing.feat::after{font-size:clamp(5rem,12vw,11rem)}
+  /* each filing leads with its own restrained accent block under the headline */
+  .filing[data-fi="01"]{--accent:var(--red)}
+  .filing[data-fi="02"]{--accent:#1d4e6b}
+  .filing[data-fi="03"]{--accent:#7a4c12}
+  .filing[data-fi="04"]{--accent:#2f5d3a}
+  .filing[data-fi="05"]{--accent:#5a3a6b}
+  .filing[data-fi="06"]{--accent:#3a3a3a}
+  .filing h4{position:relative;z-index:1;padding-left:1rem;border-left:3px solid var(--accent,var(--red))}
+  .filing .metric,.filing .fkicker,.filing .readmore{position:relative;z-index:1}
+  .fkicker{font-family:var(--label);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:700;
+    display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--hair);padding-bottom:.6rem;margin-bottom:1rem}
+  .fkicker>span:first-child{display:inline-flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+  .fkicker .fno{font-style:normal;color:var(--paper);background:var(--ink);font-size:.6rem;letter-spacing:.1em;padding:.18rem .4rem}
+  .fkicker .yr{color:var(--ink-soft);font-weight:600}
+  .filing h4{font-family:var(--mast);font-weight:400;letter-spacing:-.01em;line-height:.98;
+    font-size:clamp(1.5rem,2.6vw,2.1rem);margin-bottom:1rem}
+  .filing.feat h4{font-size:clamp(1.9rem,4vw,3.2rem);max-width:18ch}
+  /* metric block = the centerpiece payoff: a labeled "result" leads each filing */
+  .filing .metric{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem 1.4rem;flex-wrap:wrap;
+    border-top:2px solid var(--line);padding-top:.9rem}
+  .filing .metric .result{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+  .filing .metric .rl{font-family:var(--label);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);font-weight:700}
+  .filing .metric .big{font-family:var(--mast);font-size:clamp(1.3rem,2.2vw,1.9rem);line-height:1.02;color:var(--ink);transition:color .3s}
+  .filing.feat .metric .big{font-size:clamp(1.5rem,2.6vw,2.3rem)}
+  .filing:hover .metric .big{color:var(--red)}
+  .filing .metric .meta{display:flex;flex-direction:column;align-items:flex-end;gap:.25rem;text-align:right}
+  .filing .metric .nm{font-family:var(--label);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+  .filing .metric .role{font-family:var(--label);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .filing .readmore{font-family:var(--label);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);
+    font-weight:700;margin-top:1rem;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s}
+  .filing:hover .readmore{opacity:1;transform:translateY(0)}
+  /* feature gets a two-column layout: headline left, halftone plate right */
+  .filing.feat{flex-direction:row;align-items:stretch;gap:2.2rem}
+  .filing.feat .ftext{flex:1.4;display:flex;flex-direction:column}
+  .filing.feat .fplate{flex:1;min-height:210px;border:2px solid var(--line);position:relative;overflow:hidden;background:var(--paper2)}
+  .filing.feat .fplate canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .filing.feat .fplate .fcap{position:absolute;left:0;bottom:0;background:var(--red);color:var(--paper);
+    font-family:var(--label);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .5rem;font-weight:700;z-index:2}
+  @media(max-width:760px){
+    .filings{grid-template-columns:1fr}
+    .filing,.filing:nth-child(odd){border-right:0}
+    .filing.feat{flex-direction:column;gap:1.4rem}
+    .filing.feat .fplate{min-height:200px}
+  }
+  /* ---------- AWARDS DESK + brands ---------- */
+  .desk-row{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border-top:1px solid var(--line)}
+  .awcol{padding:1.6rem 2.2rem 1.6rem 0;border-right:1px solid var(--line)}
+  .brcol{padding:1.6rem 0 1.6rem 2.2rem}
+  .clabel{font-family:var(--label);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-weight:700;
+    border-bottom:2px solid var(--line);padding-bottom:.6rem;margin-bottom:.4rem}
+  .award{display:grid;grid-template-columns:1fr auto;gap:1.2rem;align-items:baseline;padding:.9rem 0;border-bottom:1px solid var(--hair2)}
+  .award b{font-family:var(--mast);font-weight:400;font-size:clamp(1.2rem,2.2vw,1.7rem);letter-spacing:-.01em;line-height:1.1}
+  .award b .star{color:var(--red);font-style:italic}
+  .award span{font-family:var(--label);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;text-align:right;white-space:nowrap}
+  .brands{display:grid;grid-template-columns:1fr 1fr}
+  .brands span{font-family:var(--mast);font-size:1.25rem;color:var(--ink2);padding:.85rem 0;border-bottom:1px solid var(--hair2);
+    display:flex;align-items:center;transition:color .25s,padding-left .25s}
+  .brands span:nth-child(odd){padding-right:1rem}
+  .brands span:nth-child(even){padding-left:1rem}
+  .brands span:hover{color:var(--red);padding-left:.3rem}
+  @media(max-width:760px){.desk-row{grid-template-columns:1fr}.awcol{border-right:0;padding:1.6rem 0;border-bottom:1px solid var(--line)}.brcol{padding:1.6rem 0}}
+  /* ---------- THE BYLINE (about) ---------- */
+  .byline-sec{display:grid;grid-template-columns:230px 1fr;gap:0;border-top:1px solid var(--line)}
+  .bymeta{padding:1.6rem 1.8rem 1.6rem 0;border-right:1px solid var(--line);font-family:var(--label)}
+  .bymeta .k{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-top:1rem}
+  .bymeta .v{font-family:var(--body);font-size:1rem;color:var(--ink);font-style:italic;margin-top:.15rem}
+  .bymeta .sig{font-family:var(--mast);font-size:1.7rem;color:var(--red);margin-top:1.3rem;font-style:italic;line-height:1}
+  .bymeta .role0{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:.3rem}
+  .bytext{padding:1.6rem 0 1.6rem 2.2rem}
+  .bytext .lead0{font-family:var(--label);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:1rem}
+  .bytext .cols2{columns:2;column-gap:2.2rem;column-rule:1px solid var(--hair2);font-size:1rem;line-height:1.68;text-align:justify;
+    hyphens:auto;-webkit-hyphens:auto;text-wrap:pretty;hanging-punctuation:first allow-end;word-spacing:-.005em;color:var(--ink2)}
+  .bytext .cols2 p{margin-bottom:.7rem}
+  .bytext .cols2 p:first-child::first-letter{font-family:var(--mast);float:left;font-size:3.2em;line-height:.74;padding:.05em .1em 0 0;color:var(--red)}
+  .bytext em{color:var(--ink);font-style:italic;font-weight:500}
+  @media(max-width:760px){.byline-sec{grid-template-columns:1fr}.bymeta{border-right:0;border-bottom:1px solid var(--line);padding:1.4rem 0;display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:baseline}.bymeta .k{margin-top:0}.bytext{padding:1.4rem 0}.bytext .cols2{columns:1}}
+  /* ---------- CLASSIFIED / CONTACT CTA ---------- */
+  .classified{border:3px double var(--line);padding:clamp(1.8rem,4vw,3rem);text-align:center;position:relative;background:var(--paper2)}
+  .classified .corner{position:absolute;width:14px;height:14px;border:2px solid var(--red)}
+  .classified .corner.tl{top:.6rem;left:.6rem;border-right:0;border-bottom:0}
+  .classified .corner.tr{top:.6rem;right:.6rem;border-left:0;border-bottom:0}
+  .classified .corner.bl{bottom:.6rem;left:.6rem;border-right:0;border-top:0}
+  .classified .corner.br{bottom:.6rem;right:.6rem;border-left:0;border-top:0}
+  .classified .ck{font-family:var(--label);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:1rem}
+  .classified .big{font-family:var(--mast);font-weight:400;font-size:clamp(2.2rem,7vw,5rem);line-height:.98;letter-spacing:-.01em;margin-bottom:1.2rem}
+  .classified .big em{font-style:italic;color:var(--red)}
+  .classified .em{font-family:var(--label);font-size:.78rem;letter-spacing:.06em;color:var(--ink2);margin-bottom:1.8rem}
+  .classified .em a{color:var(--red);font-weight:600;border-bottom:1px solid var(--red)}
+  .classified .ccta{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:.8rem}
+  /* ---------- COLOPHON / FOOTER ---------- */
+  footer{border-top:3px double var(--line);margin-top:2.5rem;padding:1.8rem var(--m) 2.6rem;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;font-family:var(--label);
+    font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  footer a{color:var(--red);font-weight:600}
+  footer a:hover{text-decoration:underline}
+  footer .colo{flex-basis:100%;text-align:center;font-family:var(--body);font-style:italic;text-transform:none;
+    letter-spacing:0;font-size:.82rem;color:var(--faint);padding-top:1rem;margin-top:1rem;border-top:1px solid var(--hair2)}
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(20px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<nav>
+  <a class="logo" href="/redesign/">The <i>Signal</i></a>
+  <div class="navlinks">
+    <a href="#desk">The Desk</a>
+    <a href="#filings">Filings</a>
+    <a href="#byline">Byline</a>
+    <a href="#classified">Contact</a>
+    <a class="allc" href="/redesign/">All concepts</a>
+  </div>
+</nav>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track" id="ticker">
+    {[...tickerItems, ...tickerItems].map(t => (
+      <span class={`item${t === 'STOP PRESS' ? ' flag' : ''}`}>{t}</span>
+    ))}
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="masthead">
+    <div class="topline">
+      <span>Final Edition</span>
+      <span class="ed">A Portfolio Front Page</span>
+      <span>Price: Your attention</span>
+    </div>
+    <div class="masttitle">
+      <h1>The Signal<span class="reg">&reg;</span></h1>
+    </div>
+    <div class="dateline">
+      <span class="star">&#9733;</span>
+      <span>{dateline}</span>
+      <span class="star">&#9733;</span>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="lead">
+      <div class="story">
+        <span class="kicker">Lead Story - Profile</span>
+        <h2 class="headline">
+          <span class="ln"><span>The marketer</span></span>
+          <span class="ln"><span>who <em>ships.</em></span></span>
+        </h2>
+        <p class="deck">A product marketer who builds the systems instead of only briefing them - the agents, the sites and the SEO behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b>.</p>
+        <p class="byline">By <b>Swapnil Biswas</b> - Senior Product Marketing Manager, LambdaTest</p>
+        <div class="cols">
+          <p>Most product marketers stop at the deck. Swapnil Biswas starts there and keeps going - into the codebase, the crawl budget and the automation layer that actually moves the numbers. He is a PMM and growth strategist who codes AI agents, ships production sites and runs technical SEO himself.</p>
+          <p>The thesis is simple. Positioning that nobody can execute is a slide. So he builds the execution: twenty-plus AI agents and internal tools shipped, a self-hosted portfolio that scores 95 to 100 on Lighthouse, and an organic engine that has compounded into millions of visits.</p>
+          <p>The result reads less like a marketer's resume and more like an operator's ledger. Leads in the hundreds of thousands. Traffic in the tens of millions. Conversion lifted tenfold. The decks still get written - they just describe systems that already exist.</p>
+          <div class="leadcta">
+            <a class="btn solid" href="#filings">Read the filings <span class="ar">&#8599;</span></a>
+            <a class="btn outline" href="#classified">Get in touch</a>
+          </div>
+        </div>
+      </div>
+      <div class="aside">
+        <div class="halfwrap">
+          <span class="ornament">Halftone Plate</span>
+          <canvas id="halftone"></canvas>
+          <span class="cap">FIG. 1 - <b>The masthead monogram</b>, screened at 85 lpi - a press plate reconstructed dot by dot</span>
+        </div>
+        <p class="pullq"><span class="q">&ldquo;</span>I turn product noise into growth signal - then build the machine that keeps the signal coming.<span class="q">&rdquo;</span></p>
+      </div>
+    </div>
+  </header>
+
+  <div class="deck-row reveal" id="statement">
+    <div class="stmt">
+      <p>Growth, <em>built not briefed</em> - I ship the agents, sites and SEO systems, not just the decks that describe them.</p>
+    </div>
+    <div class="indexrail">
+      <div class="ihead">Inside This Edition</div>
+      {index.map(ix => (
+        <a class="ixrow" href="#filings">
+          <span class="pg">{ix.n}</span>
+          <span class="it">{ix.t}<span class="ip">{ix.p}</span></span>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <section id="numbers">
+    <div class="shead">
+      <span class="kick">Section A</span>
+      <h3>By The <em>Numbers</em></h3>
+      <span class="lbl">A1 - The ledger - 2024-2026</span>
+    </div>
+    <div class="numbers reveal">
+      {stats.map(s => (
+        <div class="num"><span class="n">{s.n}</span><span class="l">{s.l}</span></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="desk">
+    <div class="shead">
+      <span class="kick">Section B</span>
+      <h3>The <em>Desk</em></h3>
+      <span class="lbl">B1 - Four disciplines, one operator</span>
+    </div>
+    <div class="desk">
+      {pillars.map(p => (
+        <div class="pillar reveal"><span class="pi">{p.i}</span><div><h4>{p.t}</h4><p>{p.d}</p></div></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="filings">
+    <div class="shead">
+      <span class="kick">Section C - Filings</span>
+      <h3>Selected <em>Filings</em></h3>
+      <span class="lbl">C1 - Six shipped systems</span>
+    </div>
+    <div class="filings">
+      {work.map((w, idx) => (
+        <a class={`filing reveal${idx === 0 ? ' feat' : ''}`} data-fi={w.i} href="#">
+          {idx === 0 ? (
+            <>
+              <div class="ftext">
+                <div class="fkicker"><span><i class="fno">No. {w.i}</i>{w.kicker}</span>{w.y && <span class="yr">{w.y}</span>}</div>
+                <h4>{w.head}</h4>
+                <div class="metric">
+                  <span class="result"><span class="rl">The result</span><span class="big">{w.r}</span></span>
+                  <span class="meta"><span class="nm">{w.t}</span><span class="role">{w.role}</span></span>
+                </div>
+                <span class="readmore">Continued on C2 &#8599;</span>
+              </div>
+              <div class="fplate">
+                <canvas id="halftone2"></canvas>
+                <span class="fcap">FIG. 2 - {w.t}, halftone plate</span>
+              </div>
+            </>
+          ) : (
+            <>
+              <span class="halftone-bg" aria-hidden="true"></span>
+              <div class="fkicker"><span><i class="fno">No. {w.i}</i>{w.kicker}</span>{w.y && <span class="yr">{w.y}</span>}</div>
+              <h4>{w.head}</h4>
+              <div class="metric">
+                <span class="result"><span class="rl">The result</span><span class="big">{w.r}</span></span>
+                <span class="meta"><span class="nm">{w.t}</span><span class="role">{w.role}</span></span>
+              </div>
+              <span class="readmore">Read filing {w.i} &#8599;</span>
+            </>
+          )}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="awards">
+    <div class="shead">
+      <span class="kick">Section D</span>
+      <h3>Awards <em>Desk</em></h3>
+      <span class="lbl">D1 - Recognition &amp; brands</span>
+    </div>
+    <div class="desk-row">
+      <div class="awcol reveal">
+        <div class="clabel">Honors &amp; Awards</div>
+        <div class="award"><b>Value of Agility Award</b> <span>LambdaTest &middot; 2024</span></div>
+        <div class="award"><b>Wall of Fame</b> <span>LambdaTest</span></div>
+        <div class="award"><b><span class="star">#1</span> Product of the Day</b> <span>Product Hunt</span></div>
+      </div>
+      <div class="brcol reveal">
+        <div class="clabel">Bylines &amp; Brands</div>
+        <div class="brands">
+          {brands.map(b => <span>{b}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="byline">
+    <div class="shead">
+      <span class="kick">Section E</span>
+      <h3>The <em>Byline</em></h3>
+      <span class="lbl">E1 - About the correspondent</span>
+    </div>
+    <div class="byline-sec">
+      <div class="bymeta reveal">
+        <div class="k">Filed from</div>
+        <div class="v">Mumbai, India</div>
+        <div class="k">Experience</div>
+        <div class="v">7+ yrs marketing, 4+ in B2B SaaS</div>
+        <div class="k">Credentials</div>
+        <div class="v">Postgrad, IIM Visakhapatnam</div>
+        <div class="sig">Swapnil B.</div>
+        <div class="role0">Sr. PMM - LambdaTest</div>
+      </div>
+      <div class="bytext reveal">
+        <div class="lead0">The Correspondent</div>
+        <div class="cols2">
+          <p>Swapnil Biswas writes from Mumbai, where seven years in marketing and four in B2B SaaS have produced a particular kind of operator - one who is as comfortable in a fragment shader as in a positioning doc.</p>
+          <p>A postgraduate in Digital Marketing and Growth Strategy from <em>IIM Visakhapatnam</em>, he treats his own career like a product: positioned, measured and shipped. The portfolio you are reading is itself a filing - designed, built and optimized by hand.</p>
+          <p>The throughline across every brand he has served, from <em>LambdaTest</em> to Samsung, is the same. Don't just describe the growth. Build the machine that produces it, then publish the receipts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="classified">
+    <div class="classified reveal">
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+      <div class="ck">Classified - Open To Select Work</div>
+      <div class="big">Let's build something <em>that compounds.</em></div>
+      <div class="em">Reply to the desk at <a href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a></div>
+      <div class="ccta">
+        <a class="btn solid" href="mailto:swapbiswas.marketing@gmail.com">Say hello <span class="ar">&#8599;</span></a>
+        <a class="btn outline" href="https://www.linkedin.com/in/swapbiswas/">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <span>&copy; 2026 The Signal - Swapnil Biswas</span>
+  <span>Concept 08 - Broadsheet &middot; <a href="/redesign/">View all concepts</a></span>
+  <span class="colo">Set in DM Serif Display, Newsreader &amp; Archivo - printed on virtual newsprint - one press-red spot color - no trees harmed.</span>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- halftone WebGL: treat a soft portrait gradient as classic newsprint dots ----
+  // Raw GLSL fullscreen quad. The dot phase animates subtly so the plate "breathes".
+  // CSS gradient already painted on the canvas as a fallback if context is null.
+  function halftone(id, seed, opts){
+    const cv = document.getElementById(id);
+    if(!cv) return;
+    const gl = cv.getContext('webgl', { antialias:true, alpha:true });
+    if(!gl) return; // CSS fallback stays visible
+    const vs = `attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+    const fs = `precision highp float;uniform vec2 r;uniform float t;uniform float seed;uniform float build;
+    // DELIBERATE DATA PLATE: a bold typographic 'S' monogram inside a ruled press
+    // frame, rendered as honest newsprint halftone. No portrait pretense - this is
+    // confidently a masthead plate, so structure (the letterform) survives the dots.
+    // distance to a thick stroke segment a->b
+    float seg(vec2 p, vec2 a, vec2 b){
+      vec2 pa = p - a, ba = b - a;
+      float h = clamp(dot(pa,ba)/dot(ba,ba), 0.0, 1.0);
+      return length(pa - ba*h);
+    }
+    // signed-ish field for a stylized 'S' built from an arc skeleton, centered ~origin
+    float glyphS(vec2 p){
+      // sample a 'S' as two C-curves: top bowl opening right, bottom bowl opening left
+      float d = 1e3;
+      const int N = 22;
+      for(int i=0;i<N;i++){
+        float u = float(i)/float(N-1);           // 0..1 along the stroke
+        float ang;
+        vec2 c;
+        if(u < 0.5){
+          // top bowl: arc from upper-right, sweeping left and down (open to the right)
+          float a = mix(-0.55, 3.3, u*2.0);       // radians
+          c = vec2(0.0, 0.21) + vec2(cos(a), sin(a))*vec2(0.20,0.20);
+        } else {
+          // bottom bowl: arc continuing, open to the left (mirror)
+          float a = mix(0.16, 4.0, (u-0.5)*2.0);
+          c = vec2(0.0, -0.21) + vec2(-cos(a), sin(a))*vec2(0.20,0.20);
+        }
+        if(i>0){
+          // accumulate min distance to polyline by comparing consecutive samples
+        }
+        d = min(d, length(p - c));
+      }
+      return d;
+    }
+    float tone(vec2 uv){
+      vec2 c = (uv - 0.5);
+      c.x *= r.x / r.y;                  // square the working space
+      // the monogram letterform: thick ink stroke -> big dots
+      float dG = glyphS(c * 1.55);
+      float letter = smoothstep(0.105, 0.055, dG);   // stroke thickness
+      // a ruled rectangular plate border, like a registered press frame
+      vec2 q = abs(c) - vec2(0.40, 0.42);
+      float frameOuter = max(q.x, q.y);
+      float frame = smoothstep(0.012, 0.0, abs(frameOuter + 0.02)) * 0.85;
+      // a faint corner-tick + center cross-hair register marks for "data plate" honesty
+      float ch = smoothstep(0.004,0.0,abs(c.x))*step(abs(c.y),0.06)
+               + smoothstep(0.004,0.0,abs(c.y))*step(abs(c.x),0.06);
+      float v = max(letter, max(frame, ch*0.35*(1.0-letter)));
+      v *= smoothstep(1.10, 0.40, length(uv - vec2(0.5)));   // gentle vignette
+      v = clamp(v, 0.0, 1.0);
+      return v;
+    }
+    void main(){
+      vec2 uv = gl_FragCoord.xy / r.xy;
+      // keep dot cells square regardless of plate aspect
+      float aspect = r.x / r.y;
+      vec2 grid = vec2(uv.x * aspect, uv.y);
+      float cell = 0.030;                 // halftone frequency (coarser = legible dots)
+      // classic 45deg newsprint screen, barely animated so it stays a portrait not a shimmer
+      float ang = 0.785 + sin(t*0.12 + seed)*0.015;
+      mat2 rot = mat2(cos(ang),-sin(ang),sin(ang),cos(ang));
+      vec2 g = rot * grid / cell;
+      vec2 f = fract(g) - 0.5;
+      float d = length(f);
+      // dot-by-dot RECONSTRUCTION on load: 'build' (0->1) is a wavefront sweeping
+      // top->bottom; each cell only "develops" once the wavefront passes its row,
+      // with a little per-cell jitter so dots pop in organically like a developing print.
+      vec2 cellId = floor(g);
+      float jit = fract(sin(dot(cellId, vec2(12.99,78.23))) * 43758.55);
+      float appear = smoothstep(uv.y - 0.06, uv.y + 0.02, build) * step(jit*0.18, build + 0.02);
+      // tone -> dot radius (darker tone = bigger dot)
+      float ton = tone(uv);
+      float radius = sqrt(ton) * 0.66 * appear;
+      float dot = smoothstep(radius, radius - 0.08, d);
+      vec3 paper = vec3(0.953, 0.937, 0.894);
+      vec3 ink   = vec3(0.082, 0.071, 0.047);
+      // faint press-red mis-registration ghost, offset slightly, for authenticity
+      vec2 gr = rot * (vec2((uv.x+0.004)*aspect, uv.y+0.003)) / cell;
+      float dr = length(fract(gr)-0.5);
+      float dotR = smoothstep(radius, radius-0.08, dr);
+      vec3 col = mix(paper, ink, dot);
+      col = mix(col, mix(col, vec3(0.753,0.188,0.114), 0.20), clamp(dotR-dot,0.0,1.0)*0.5);
+      // wavefront edge: a faint developing line that travels down as it builds
+      float edge = smoothstep(0.05, 0.0, abs(uv.y - build)) * (1.0 - step(0.999, build));
+      col = mix(col, vec3(0.753,0.188,0.114), edge*0.12);
+      gl_FragColor = vec4(col, 1.0);
+    }`;
+    function sh(ty,s){const o=gl.createShader(ty);gl.shaderSource(o,s);gl.compileShader(o);return o;}
+    const pr=gl.createProgram();
+    gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));
+    gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));
+    gl.linkProgram(pr);gl.useProgram(pr);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);
+    gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t'),us=gl.getUniformLocation(pr,'seed'),ub=gl.getUniformLocation(pr,'build');
+    gl.uniform1f(us, seed);
+    function size(){
+      const d=Math.min(window.devicePixelRatio||1,1.6);
+      const w=cv.clientWidth||cv.offsetWidth||320, h=cv.clientHeight||cv.offsetHeight||320;
+      cv.width=Math.max(2,Math.round(w*d));cv.height=Math.max(2,Math.round(h*d));
+      gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(ur,cv.width,cv.height);
+    }
+    size();addEventListener('resize',size);
+    // reduced motion: render the finished plate, fully built, no animation
+    if(reduce){gl.uniform1f(ut,2.0);gl.uniform1f(ub,1.0);gl.drawArrays(gl.TRIANGLES,0,3);return;}
+    // dot-by-dot reconstruction: 'build' ramps 0->1 over ~1.8s, eased, the one
+    // on-concept motion beat. After it lands the plate holds (build=1) and only
+    // the screen angle breathes almost imperceptibly.
+    const start=performance.now();
+    const dur=1800, delay=(opts&&opts.delay)||0;
+    (function loop(now){
+      const elapsed=now-start;
+      let b=Math.max(0,(elapsed-delay)/dur);
+      b=b>=1?1:1-Math.pow(1-b,3);          // easeOutCubic to a clean stop at 1
+      gl.uniform1f(ut,elapsed/1000);
+      gl.uniform1f(ub,b);
+      gl.drawArrays(gl.TRIANGLES,0,3);
+      requestAnimationFrame(loop);
+    })(start);
+  }
+  halftone('halftone', 0.0, { delay: 350 });
+  halftone('halftone2', 2.3, { delay: 0 });
+
+  // ---- smooth scroll + reveals + microinteractions ----
+  if(!reduce){
+    const lenis = new Lenis({ lerp:.1, smoothWheel:true });
+    function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', ScrollTrigger.update);
+
+    // lead headline lines slide up like a press impression
+    gsap.set('.lead h2 .ln>span',{ yPercent:115 });
+    gsap.set('.kicker,.deck,.byline,.cols,.aside',{ opacity:0, y:18 });
+    const tl = gsap.timeline({ delay:.12 });
+    tl.to('.lead h2 .ln>span',{ yPercent:0, duration:1.05, ease:'expo.out', stagger:.1 })
+      .to('.kicker',{ opacity:1, y:0, duration:.6 }, .15)
+      .to('.deck',{ opacity:1, y:0, duration:.7 }, .35)
+      .to('.byline',{ opacity:1, y:0, duration:.6 }, .5)
+      .to('.cols',{ opacity:1, y:0, duration:.8 }, .55)
+      .to('.aside',{ opacity:1, y:0, duration:.8 }, .45);
+
+    // batched scroll reveals - every .reveal still ends at opacity:1
+    ScrollTrigger.batch('.reveal',{
+      start:'top 90%',
+      onEnter:batch=>gsap.to(batch,{ opacity:1, y:0, duration:.9, ease:'expo.out', stagger:.08, overwrite:true }),
+    });
+    ScrollTrigger.refresh();
+
+    // press-red progress rule
+    const prog = document.getElementById('progress');
+    gsap.to(prog,{ scaleX:1, ease:'none', scrollTrigger:{ trigger:document.body, start:'top top', end:'bottom bottom', scrub:.3 } });
+
+    // pause ticker on hover for readability
+    const tk = document.getElementById('ticker');
+    const tkParent = tk?.parentElement;
+    if(tkParent){
+      tkParent.addEventListener('mouseenter',()=>{ tk.style.animationPlayState='paused'; });
+      tkParent.addEventListener('mouseleave',()=>{ tk.style.animationPlayState='running'; });
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,701 @@
+---
+// REDESIGN PROTOTYPE - "Aurora" - minimal luxury / Swiss editorial, dark.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+// Tech: raw-WebGL aurora shader background + GSAP scroll reveals + Lenis smooth scroll.
+const stats = [
+  { n: '657K+', l: 'Leads generated', big: false },
+  { n: '18.2M+', l: 'Organic traffic driven', big: true },
+  { n: '10x', l: 'Conversion lift', big: false },
+  { n: '20+', l: 'AI agents & apps built', big: false },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS. The narrative that makes a product impossible to ignore.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand generation that compounds long after the campaign ends.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped - instead of only briefing them.' },
+  { i: '04', t: 'Building in public', d: 'This site, eight free tools and seventy-six articles. Shipped systems, not slide-ware.' },
+];
+// Real selected work, priority order. LambdaTest is the only project with hard
+// numbers (657K+ / 18.2M+) and is hero-featured; the rest stay qualitative.
+// `note` carries the one-line context; year omitted where unknown (Medilife, Appknox).
+const work = [
+  { i: '01', t: 'LambdaTest', role: 'Product & digital marketing', r: '657K+ leads, 18.2M+ organic traffic', y: '2021 - 2025', sw: 'ltgrowth', note: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { i: '02', t: 'TestMu AI', role: 'Rebrand lead', r: 'Full company rebrand', y: '2026', sw: 'rebrand', note: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', t: 'Samsung', role: 'Launch content & distribution', r: 'Galaxy M-series launch', y: '2019', sw: 'broadcast', note: 'On the Galaxy M-series from inception; ran content distribution (collaborated with Technical Guruji).' },
+  { i: '04', t: 'Medilife Superspeciality', role: 'Marketing & web, 0 to 1', r: 'Website, GTM, social & launch', y: '', sw: 'pulse', note: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', t: 'Lido Learning', role: 'Growth / CRM', r: 'CRM & lead operations', y: '2021', sw: 'funnel', note: 'Ran CRM management and lead routing/assignment for the EdTech.' },
+  { i: '06', t: 'Appknox', role: 'Freelance content', r: 'Security content', y: '', sw: 'shield', note: 'Freelance content writer for the mobile app security company.' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+---
+<!doctype html>
+<html lang="en" data-theme="aurora">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - Product marketing, engineered</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#08080b; --ink:#f3efe6; --bone:#EDE6D8; --read:#cfcabe; --mut:#b3aebb; --line:rgba(243,239,230,.12);
+    --accent:#b9a7ff; --warm:#e8c9a0;
+    --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,sans-serif;
+    --m:clamp(1.25rem,5vw,6rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;overflow-x:clip;font-weight:400}
+  /* decorative section glows must never create horizontal scroll */
+  section{overflow-x:clip}
+  ::selection{background:var(--accent);color:#0b0b10}
+  a{color:inherit;text-decoration:none}
+  /* aurora canvas - full-bleed fixed behind hero, with a CSS gradient fallback so a
+     failed/blank paint is invisible (never a bare grey box). */
+  canvas#aurora{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:.95;
+    display:block;
+    background:
+      radial-gradient(70% 55% at 28% 78%,rgba(232,201,160,.20),transparent 60%),
+      radial-gradient(95% 75% at 60% 8%,rgba(64,42,128,.55),transparent 62%),
+      radial-gradient(120% 90% at 50% -10%,#2a1c52,#0a0a14 60%)}
+  /* CSS-only aurora used on small screens where mobile WebGL is unreliable */
+  .css-aurora{position:fixed;inset:0;z-index:0;pointer-events:none;display:none;
+    background:
+      radial-gradient(60% 42% at 26% 80%,rgba(232,201,160,.22),transparent 62%),
+      radial-gradient(85% 60% at 64% 6%,rgba(98,64,196,.5),transparent 60%),
+      radial-gradient(120% 95% at 50% -8%,#2c1d56,#0a0a14 58%);
+    animation:auroraDrift 22s ease-in-out infinite alternate}
+  @keyframes auroraDrift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-2%,2%,0) scale(1.08)}}
+  @media(prefers-reduced-motion:reduce){.css-aurora{animation:none}}
+  /* MOBILE HERO DRAMA: on tall narrow viewports the bloom must stay full-height behind
+     the wordmark, not collapse into a thin muddy band. Pull the violet plume TALLER and
+     hotter, lift the gold low-left, and let it fill ~75% of the first screen. The bloom is
+     anchored to the lower-left where the headline sits so the type lives in light. */
+  @media(max-width:600px){
+    .css-aurora{
+      background:
+        radial-gradient(120% 50% at 22% 92%,rgba(232,201,160,.30),transparent 58%),
+        radial-gradient(150% 80% at 38% 30%,rgba(124,90,210,.62),transparent 64%),
+        radial-gradient(130% 70% at 70% 4%,rgba(98,64,196,.55),transparent 60%),
+        radial-gradient(160% 120% at 50% -6%,#321f63,#0a0a14 66%)}
+    @keyframes auroraDrift{0%{transform:translate3d(0,0,0) scale(1.06)}100%{transform:translate3d(-3%,-2%,0) scale(1.16)}}
+    /* same richer fallback painted under the canvas in the rare case it stays visible */
+    canvas#aurora{background:
+      radial-gradient(120% 50% at 22% 92%,rgba(232,201,160,.28),transparent 58%),
+      radial-gradient(150% 80% at 38% 30%,rgba(124,90,210,.6),transparent 64%),
+      radial-gradient(160% 120% at 50% -6%,#321f63,#0a0a14 66%)}
+  }
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .vignette{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% -10%,transparent 45%,rgba(8,8,11,.5) 100%),linear-gradient(180deg,transparent 58%,var(--bg) 96%)}
+  /* keep the lower bloom alive behind the bottom-anchored mobile headline */
+  @media(max-width:600px){.vignette{background:radial-gradient(130% 80% at 50% -8%,transparent 52%,rgba(8,8,11,.42) 100%),linear-gradient(180deg,transparent 74%,var(--bg) 100%)}}
+  /* persistent atmosphere - a faint fixed aurora wash that carries the hero's palette
+     ALL THE WAY DOWN so the lower sections never collapse to flat near-black. */
+  .atmos{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;will-change:transform;
+    background:
+      radial-gradient(48% 38% at 82% 30%,rgba(185,167,255,.10),transparent 64%),
+      radial-gradient(42% 34% at 12% 58%,rgba(232,201,160,.085),transparent 66%),
+      radial-gradient(54% 40% at 70% 88%,rgba(124,90,210,.10),transparent 64%)}
+  @media(prefers-reduced-motion:reduce){.atmos{transform:none!important}}
+  .wrap{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:0 var(--m)}
+  /* soft glows anchored to section transitions - keep gold/violet alive between blocks */
+  .glow{position:absolute;pointer-events:none;z-index:-1;border-radius:50%;filter:blur(40px);opacity:.55}
+  .glow.gold{background:radial-gradient(circle,rgba(232,201,160,.14),transparent 70%)}
+  .glow.violet{background:radial-gradient(circle,rgba(185,167,255,.13),transparent 70%)}
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+    padding:1.5rem var(--m);mix-blend-mode:difference}
+  .logo{font-family:var(--serif);font-size:1.15rem;font-weight:500;letter-spacing:-.01em}
+  .logo i{font-style:italic;color:var(--warm)}
+  .navlinks{display:flex;gap:2.2rem;font-size:.8rem;letter-spacing:.02em}
+  .navlinks a{position:relative;opacity:.92;transition:opacity .3s}
+  .navlinks a:hover{opacity:1}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:currentColor;transition:width .35s cubic-bezier(.2,.8,.2,1)}
+  .navlinks a:hover::after{width:100%}
+  .navlinks a.muted{opacity:.78}
+  @media(max-width:720px){.navlinks{display:none}}
+  /* labels */
+  .eyebrow{font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--bone);font-weight:500}
+  /* credential eyebrow with a 1px gold tick */
+  .credential{display:inline-flex;align-items:center;gap:.85rem;font-size:.72rem;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--bone);font-weight:500}
+  .credential::before{content:"";width:26px;height:1px;background:var(--warm);flex:none}
+  /* hero */
+  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:6rem;padding-bottom:4rem}
+  .hero .credential{margin-bottom:1.8rem;overflow:hidden}
+  .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,9.5vw,9.5rem);line-height:.93;letter-spacing:-.025em;max-width:14ch}
+  .hero h1 em{font-style:italic;font-weight:400;color:var(--warm)}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln>span{display:block;will-change:transform}
+  .hero .sub{margin-top:2.4rem;max-width:46ch;font-size:clamp(1rem,1.4vw,1.18rem);color:var(--read);line-height:1.65}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  /* lower-left hero anchor - availability badge on a thin baseline rule */
+  .heroanchor{margin-top:3.2rem;display:flex;align-items:center;gap:1.1rem;max-width:30rem}
+  .heroanchor .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+  .avail{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--bone);white-space:nowrap}
+  .avail .dot{width:7px;height:7px;border-radius:50%;background:#8fe6b0;box-shadow:0 0 0 0 rgba(143,230,176,.6);
+    animation:availPulse 2.6s ease-out infinite}
+  @keyframes availPulse{0%{box-shadow:0 0 0 0 rgba(143,230,176,.5)}70%{box-shadow:0 0 0 7px rgba(143,230,176,0)}100%{box-shadow:0 0 0 0 rgba(143,230,176,0)}}
+  @media(prefers-reduced-motion:reduce){.avail .dot{animation:none}}
+  .cta{margin-top:2.8rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.6rem;border-radius:100px;font-size:.85rem;font-weight:500;letter-spacing:.01em;transition:transform .4s cubic-bezier(.2,.8,.2,1),background .3s,color .3s}
+  .btn.primary{background:var(--ink);color:#0b0b10}
+  .btn.primary:hover{transform:translateY(-2px)}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn .ar{transition:transform .4s}
+  .btn:hover .ar{transform:translate(4px,-4px)}
+  .scrollcue{position:absolute;bottom:2rem;left:var(--m);font-size:.7rem;letter-spacing:.2em;color:var(--mut);text-transform:uppercase;display:flex;align-items:center;gap:.6rem}
+  .scrollcue .bar{width:1px;height:40px;background:linear-gradient(var(--mut),transparent);display:block}
+  @media(max-width:600px){
+    header.hero{padding-top:6.5rem;padding-bottom:3rem;min-height:100svh;justify-content:flex-end}
+    .hero .credential{margin-bottom:1.4rem}
+    .hero h1{font-size:clamp(3.7rem,16.5vw,5.4rem);line-height:.9;letter-spacing:-.03em;max-width:9ch}
+    .hero .sub{margin-top:1.6rem;font-size:1.02rem;max-width:38ch}
+    .heroanchor{margin-top:2rem}
+    .scrollcue{display:none}
+  }
+  /* section frame */
+  section{padding:clamp(5rem,11vh,9rem) 0;position:relative}
+  .shead{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;border-top:1px solid var(--line);padding-top:1.5rem;margin-bottom:3.5rem}
+  .shead h2{font-family:var(--serif);font-weight:300;font-size:clamp(1.6rem,3.2vw,2.6rem);letter-spacing:-.02em}
+  .shead h2 em{font-style:italic;color:var(--warm)}
+  /* stats - editorial, no boxes, asymmetric Fraunces rhythm */
+  .stats{display:grid;grid-template-columns:repeat(12,1fr);gap:2.5rem 2rem;align-items:end}
+  .stat{display:flex;flex-direction:column}
+  .stat .n{font-family:var(--serif);font-weight:300;font-size:clamp(2.8rem,6vw,5rem);letter-spacing:-.025em;line-height:.9}
+  .stat .l{margin-top:.8rem;font-size:.82rem;letter-spacing:.02em;color:var(--bone);max-width:18ch}
+  .stat.s1{grid-column:1 / span 4}
+  .stat.s2{grid-column:5 / span 8}
+  .stat.s2 .n{font-size:clamp(4rem,11vw,9rem);color:var(--warm)}
+  .stat.s3{grid-column:1 / span 5}
+  /* s4 (20+) carried less visual weight than the dominant 18.2M+, leaving the lower-right
+     optically empty. Pull it to span the full right field and add a thin gold accent rule
+     above the number so the corner reads as intentional, balanced negative space. */
+  .stat.s4{grid-column:7 / span 6;position:relative;padding-top:1.4rem}
+  .stat.s4::before{content:"";position:absolute;top:0;left:0;width:48px;height:2px;
+    background:linear-gradient(90deg,var(--warm),transparent)}
+  .stat.s4 .l{max-width:22ch}
+  @media(max-width:720px){.stats{grid-template-columns:1fr;gap:2.4rem}
+    .stat.s1,.stat.s2,.stat.s3,.stat.s4{grid-column:1}
+    .stat.s2 .n{font-size:clamp(3.6rem,18vw,6rem)}}
+  /* pillars - hairline divider grid, oversized Fraunces numbers */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .pillar{padding:2.8rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:1.8rem;align-items:start}
+  .pillar:nth-child(odd){padding-right:3rem}
+  .pillar:nth-child(even){padding-left:3rem;border-left:1px solid var(--line)}
+  .pillar .pi{font-family:var(--serif);font-weight:300;color:var(--warm);font-size:clamp(2.2rem,3.4vw,3.2rem);line-height:.8;letter-spacing:-.02em}
+  .pillar h3{font-size:1.35rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.7rem}
+  .pillar p{color:var(--read);font-size:.98rem;line-height:1.7;max-width:42ch}
+  @media(max-width:720px){.pillars{grid-template-columns:1fr}.pillar:nth-child(even){padding-left:0;border-left:0}.pillar:nth-child(odd){padding-right:0}}
+  /* work - the centerpiece. A 2-col mosaic of metric-forward CARDS: each leads with the
+     RESULT in large Fraunces, project + role beneath, and a DISTINCT on-brand abstract
+     composition that fills the card and reacts on hover. The first project is hero-featured
+     across both columns for grid rhythm. No fake screenshots - intentional typographic art. */
+  .work{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2vw,1.6rem);align-items:start}
+  .work .row{position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+    min-height:300px;padding:1.7rem;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    isolation:isolate;
+    transition:transform .55s cubic-bezier(.2,.8,.2,1),border-color .5s,box-shadow .55s}
+  /* feature card spans the full width and stands taller for rhythm */
+  .work .row.feat{grid-column:1 / -1;min-height:360px;flex-direction:row;align-items:flex-end;
+    justify-content:space-between;gap:2rem}
+  .work .row:hover{transform:translateY(-4px);border-color:rgba(232,201,160,.45);
+    box-shadow:0 24px 60px -18px rgba(124,90,210,.42)}
+  /* size + elevation hierarchy across the five non-feature cards so the three 2-up rows
+     don't read as identical blocks. Each row keeps its two cells aligned (no vertical
+     offset that would break the grid), but the heights step in a deliberate rhythm:
+     row of 02/03 stands tallest and lifted, 04/05 sits mid, 06 receded. Restored to a
+     calmer, even cadence on the single-column mobile stack. */
+  .work .row:nth-child(2),.work .row:nth-child(3){min-height:330px}
+  .work .row:nth-child(2){box-shadow:0 12px 34px -22px rgba(124,90,210,.5)}
+  .work .row:nth-child(4),.work .row:nth-child(5){min-height:300px}
+  .work .row:nth-child(6){min-height:280px}
+  @media(max-width:720px){.work .row:nth-child(2),.work .row:nth-child(3),
+    .work .row:nth-child(4),.work .row:nth-child(5),.work .row:nth-child(6){min-height:300px;margin-top:0;box-shadow:none}}
+  /* the per-project art layer fills the card behind the type, lifts/saturates on hover */
+  .work .art{position:absolute;inset:0;z-index:-1;opacity:.9;transform:scale(1.02);
+    transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .6s,filter .6s;
+    filter:saturate(.82) brightness(.92)}
+  .work .row:hover .art{transform:scale(1.08);opacity:1;filter:saturate(1.15) brightness(1.04)}
+  /* signature interaction: a soft aurora "light" follows the cursor across the hovered
+     card, as if the cursor casts the glow. JS sets --mx/--my; CSS does the rest. */
+  .work .row .sheen{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;
+    transition:opacity .5s;mix-blend-mode:screen;
+    background:radial-gradient(220px 220px at var(--mx,50%) var(--my,50%),rgba(232,201,160,.22),transparent 60%)}
+  .work .row:hover .sheen{opacity:1}
+  @media(prefers-reduced-motion:reduce){.work .row .sheen{display:none}}
+  /* legibility scrim so the type always reads over the art */
+  .work .art::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(0deg,rgba(8,8,11,.86) 8%,rgba(8,8,11,.38) 48%,rgba(8,8,11,.12) 100%)}
+  .work .row.feat .art::after{background:linear-gradient(75deg,rgba(8,8,11,.88) 30%,rgba(8,8,11,.34) 70%,rgba(8,8,11,.05) 100%)}
+  /* gold divider that wipes across the top edge on hover */
+  .work .row::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;z-index:3;
+    background:linear-gradient(90deg,var(--warm),rgba(232,201,160,.15));
+    transition:width .65s cubic-bezier(.2,.8,.2,1)}
+  .work .row:hover::before{width:100%}
+  .work .copy{position:relative;z-index:2;display:flex;flex-direction:column}
+  .work .row.feat .copy{max-width:60%}
+  /* index number - quiet Fraunces marker that warms on hover */
+  .work .widx{font-family:var(--serif);font-style:italic;font-weight:300;
+    font-size:clamp(1rem,1.5vw,1.25rem);color:var(--mut);letter-spacing:.02em;
+    margin-bottom:auto;transition:color .4s}
+  .work .row:hover .widx{color:var(--warm)}
+  /* body = the large result metric (the lead) + animated arrow */
+  .work .wt{position:relative;width:fit-content;display:inline-flex;align-items:baseline;gap:.7rem;
+    margin-top:1.3rem;
+    font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3vw,2.6rem);letter-spacing:-.025em;
+    line-height:1.04;color:var(--ink);transition:color .4s,transform .5s cubic-bezier(.2,.8,.2,1)}
+  .work .row.feat .wt{font-size:clamp(2.2rem,4.4vw,3.6rem)}
+  .work .row:hover .wt{transform:translateX(.15rem);color:var(--warm)}
+  .work .wt .arrow{font-size:.5em;opacity:0;transform:translateX(-8px);transition:opacity .35s,transform .35s;color:var(--warm)}
+  .work .row:hover .wt .arrow{opacity:1;transform:translateX(0)}
+  .work .wt::after{content:"";position:absolute;left:0;bottom:-.12em;height:1px;width:0;background:var(--warm);
+    transition:width .45s cubic-bezier(.2,.8,.2,1)}
+  .work .row:hover .wt::after{width:100%}
+  /* meta line = project name then role, divided by a hairline */
+  .work .wm{display:flex;align-items:baseline;gap:.85rem;flex-wrap:wrap;margin-top:.9rem;
+    font-size:.9rem;line-height:1.4;letter-spacing:.01em;color:var(--bone)}
+  .work .wm .nm{color:var(--ink);font-weight:500}
+  .work .wm .role{position:relative;padding-left:1.05rem;color:var(--read)}
+  .work .wm .role::before{content:"";position:absolute;left:0;top:.55em;width:.55rem;height:1px;background:var(--line)}
+  /* note line - only shown on the feature card, where there's horizontal room. A quiet,
+     readable sub-line that adds context without competing with the lead metric. */
+  .work .wnote{margin-top:1rem;max-width:46ch;font-size:.92rem;line-height:1.55;color:var(--read)}
+  @media(max-width:720px){.work .wnote{max-width:100%;font-size:.88rem}}
+  /* per-project compositions - each a DISTINCT crop/emphasis in the design's own palette */
+  /* LambdaTest (feature) - a rising growth/area chart: layered gold ramps climbing left
+     to right out of a violet field (the organic growth engine, 18.2M+). */
+  .art.ltgrowth{background:
+      linear-gradient(to top right,rgba(232,201,160,.34) 0%,rgba(232,201,160,0) 46%),
+      linear-gradient(to top right,rgba(185,167,255,.30) 0%,rgba(185,167,255,0) 60%),
+      repeating-linear-gradient(90deg,rgba(243,239,230,.05) 0 1px,transparent 1px 64px),
+      linear-gradient(135deg,#2c2160,#0c0a1a)}
+  /* TestMu AI - identity refresh / morph: two overlapping marks, one violet fading into a
+     gold one (the before-after of the LambdaTest -> TestMu AI rebrand). */
+  .art.rebrand{background:
+      radial-gradient(closest-side at 38% 50%,rgba(124,90,210,.7),transparent 70%),
+      radial-gradient(closest-side at 62% 50%,rgba(232,201,160,.6),transparent 70%),
+      conic-gradient(from 140deg at 50% 50%,rgba(185,167,255,.22),rgba(232,201,160,.18),rgba(185,167,255,.22)),
+      linear-gradient(135deg,#241a52,#0d0a18)}
+  /* Samsung - device / broadcast: concentric signal arcs radiating out from a corner
+     (the Galaxy M-series launch + content distribution). */
+  .art.broadcast{background:
+      radial-gradient(closest-side at 84% 84%,transparent 26%,rgba(232,201,160,.55) 28%,transparent 32%),
+      radial-gradient(closest-side at 84% 84%,transparent 46%,rgba(185,167,255,.4) 48%,transparent 52%),
+      radial-gradient(closest-side at 84% 84%,transparent 66%,rgba(143,230,176,.3) 68%,transparent 72%),
+      linear-gradient(135deg,#101a36,#080c16)}
+  /* Medilife - medical pulse / cross: a soft gold cross glow on a clean clinical field
+     (0-to-1 hospital launch). The pulse line itself is drawn as the .hint motif. */
+  .art.pulse{background:
+      linear-gradient(0deg,rgba(232,201,160,.5) 0 2px,transparent 2px) 50% 50% / 56% 56% no-repeat,
+      linear-gradient(90deg,rgba(232,201,160,.5) 0 2px,transparent 2px) 50% 50% / 56% 56% no-repeat,
+      radial-gradient(60% 70% at 50% 50%,rgba(143,230,176,.18),transparent 64%),
+      linear-gradient(135deg,#14223a,#0a0e18)}
+  /* Lido Learning - funnel / pipeline / routing: stacked narrowing bands feeding a point
+     (CRM lead routing & assignment). */
+  .art.funnel{background:
+      linear-gradient(180deg,rgba(185,167,255,.45) 0 14%,transparent 14%),
+      linear-gradient(180deg,transparent 26%,rgba(232,201,160,.4) 26% 38%,transparent 38%),
+      linear-gradient(180deg,transparent 50%,rgba(143,230,176,.34) 50% 60%,transparent 60%),
+      radial-gradient(36% 30% at 50% 92%,rgba(232,201,160,.5),transparent 70%),
+      linear-gradient(135deg,#241a4a,#0c0a18)}
+  /* Appknox - shield / security: a warm shield bloom on deep field (security content).
+     The shield outline is drawn as the .hint motif. */
+  .art.shield{background:
+      radial-gradient(58% 70% at 50% 42%,rgba(232,201,160,.4),transparent 62%),
+      radial-gradient(70% 80% at 50% 10%,rgba(185,167,255,.28),transparent 60%),
+      linear-gradient(135deg,#1b1c3e,#0a0b16)}
+  /* iconographic hints (low-key, contained). These sit on z-index:1 above the art's
+     legibility scrim so they read as a faint motif, never competing with the type. */
+  .work .row{--hint:rgba(243,239,230,.34)}
+  .work .hint{position:absolute;z-index:1;pointer-events:none;opacity:.55;
+    transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
+  .work .row:hover .hint{opacity:.9}
+  /* small top-right motif used by Appknox (shield) and Medilife (pulse) tiles */
+  .work .hint.up{top:1.3rem;right:1.3rem;width:1.5rem;height:1.6rem}
+  .work .hint.up svg{width:100%;height:100%;display:block}
+  .work .row:hover .hint.up{transform:translateY(-3px)}
+  @media(max-width:560px){.work .hint.up{width:1.2rem;height:1.3rem;top:1rem;right:1rem}}
+  /* per-tile hover accent: each card warms its OWN signature hue, so the four read as a
+     distinct set even in motion. The glow colour is tuned to each art composition. */
+  .work .row.feat:hover{box-shadow:0 26px 64px -18px rgba(124,90,210,.5)}
+  .work .row:has(.art.rebrand):hover{border-color:rgba(185,167,255,.5);box-shadow:0 24px 60px -18px rgba(185,167,255,.4)}
+  .work .row:has(.art.broadcast):hover{border-color:rgba(143,230,176,.5);box-shadow:0 24px 60px -18px rgba(143,230,176,.34)}
+  .work .row:has(.art.pulse):hover{border-color:rgba(232,201,160,.5);box-shadow:0 24px 60px -18px rgba(232,201,160,.36)}
+  .work .row:has(.art.funnel):hover{border-color:rgba(185,167,255,.5);box-shadow:0 24px 60px -18px rgba(185,167,255,.38)}
+  .work .row:has(.art.shield):hover{border-color:rgba(232,201,160,.5);box-shadow:0 24px 60px -18px rgba(232,201,160,.34)}
+  /* a faint per-tile colour swatch that fades in lower-right on hover, echoing the art hue */
+  .work .row .swatch{position:absolute;right:1.2rem;bottom:1.2rem;z-index:2;width:1.5rem;height:1.5rem;
+    border-radius:50%;opacity:0;transform:scale(.6);
+    transition:opacity .45s,transform .5s cubic-bezier(.2,.8,.2,1);
+    box-shadow:0 0 0 1px rgba(243,239,230,.18),0 6px 18px -4px rgba(0,0,0,.5)}
+  .work .row:hover .swatch{opacity:.92;transform:scale(1)}
+  .work .row.feat .swatch{right:1.7rem;bottom:1.7rem}
+  .work .swatch.ltgrowth{background:conic-gradient(from 200deg,#b9a7ff,#e8c9a0,#8fe6b0,#7c5ad2,#b9a7ff)}
+  .work .swatch.rebrand{background:radial-gradient(circle at 32% 30%,#cbbcff,#e8c9a0)}
+  .work .swatch.broadcast{background:radial-gradient(circle at 32% 30%,#bff3d3,#5fb98a)}
+  .work .swatch.pulse{background:radial-gradient(circle at 32% 30%,#f0d9b8,#8fe6b0)}
+  .work .swatch.funnel{background:radial-gradient(circle at 32% 30%,#cbbcff,#7c5ad2)}
+  .work .swatch.shield{background:radial-gradient(circle at 32% 30%,#f0d9b8,#b9a7ff)}
+  @media(max-width:560px){.work .row .swatch{width:1.2rem;height:1.2rem;right:1rem;bottom:1rem}}
+  @media(max-width:720px){.work{grid-template-columns:1fr}
+    .work .row,.work .row.feat{grid-column:1;flex-direction:column;align-items:stretch;justify-content:flex-end}
+    .work .row.feat .copy{max-width:100%}
+    .work .row.feat .art::after{background:linear-gradient(0deg,rgba(8,8,11,.86) 8%,rgba(8,8,11,.38) 48%,rgba(8,8,11,.12) 100%)}}
+  @media(max-width:560px){
+    .work .row{min-height:220px;padding:1.4rem}
+    .work .wt,.work .row.feat .wt{font-size:clamp(1.7rem,9vw,2.4rem)}
+    /* re-establish the bento hierarchy on a single column: the feature card stays the
+       tallest + boldest result, and the rest step down in a deliberate, varied rhythm so
+       the stack never reads as four identical tiles. */
+    .work .row.feat{min-height:300px}
+    .work .row.feat .wt{font-size:clamp(2rem,11vw,2.9rem)}
+    .work .row.feat{border-color:rgba(232,201,160,.28)}
+    .work .row:nth-child(2){min-height:250px}
+    .work .row:nth-child(3){min-height:215px}
+    .work .row:nth-child(4){min-height:235px}
+    .work .row:nth-child(5){min-height:210px}
+    .work .row:nth-child(6){min-height:230px}
+  }
+  /* recognition - two columns on a shared baseline grid. Both columns open with a hairline
+     top rule + small-caps label so the rhythm reads as one aligned system, not two stacks.
+     Awards: Fraunces name + small-caps source. Brands: even monochrome bone logo grid. */
+  .recog{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,5vw,5rem);align-items:start}
+  .recol{display:flex;flex-direction:column}
+  .recol .clabel{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--bone);
+    padding-bottom:1.2rem;margin-bottom:.2rem;border-top:1px solid var(--line);padding-top:1.2rem}
+  .awards{display:flex;flex-direction:column}
+  .award{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:1.5rem;
+    padding:1.05rem 0;border-top:1px solid var(--line)}
+  .award:last-child{border-bottom:1px solid var(--line)}
+  .award b{font-family:var(--serif);font-weight:400;font-size:clamp(1.3rem,2.4vw,1.9rem);letter-spacing:-.01em;line-height:1.15}
+  .award b .num{color:var(--warm);font-style:italic}
+  .award span{color:var(--bone);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;justify-self:end}
+  /* brands as an even two-column grid so cells align row-for-row with the awards list */
+  .brands{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .brands span{font-family:var(--serif);font-weight:300;font-size:1.2rem;letter-spacing:-.01em;
+    color:var(--bone);opacity:1;line-height:1;display:flex;align-items:center;
+    min-height:1.05rem;padding:1.05rem 0;border-top:1px solid var(--line);
+    transition:opacity .3s,color .3s}
+  .brands span:nth-child(2n){padding-left:1.4rem}
+  .brands span:nth-child(odd){padding-right:1.4rem}
+  .brands span:hover{opacity:1;color:var(--warm)}
+  @media(max-width:720px){.recog{grid-template-columns:1fr;gap:2.6rem}}
+  /* about - anchored by a left meta-column (small-caps label, location, thin vertical
+     rule) and a soft aurora plate beside the statement. Whitespace tightened. */
+  .about .abody{display:grid;grid-template-columns:200px 1fr;gap:3rem;align-items:stretch}
+  .about .rail{display:flex;flex-direction:column;gap:.5rem;border-left:1px solid var(--line);padding-left:1.6rem}
+  .about .rail .k{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mut)}
+  .about .rail .k.lead{color:var(--bone)}
+  .about .rail .v{font-family:var(--serif);font-style:italic;color:var(--bone);font-size:1.05rem}
+  .about .rail .div{height:1px;width:34px;background:var(--warm);opacity:.6;margin:.7rem 0}
+  .about .rail .sig{font-family:var(--serif);font-size:1.4rem;color:var(--warm);font-style:italic;letter-spacing:-.01em}
+  /* statement sits on a soft aurora plate so the void becomes intentional */
+  .about .plate{position:relative;border:1px solid var(--line);border-radius:18px;
+    padding:clamp(1.5rem,2.1vw,2rem) clamp(1.8rem,3vw,2.8rem);overflow:hidden;
+    display:flex;align-items:center;min-height:100%;
+    background:linear-gradient(135deg,rgba(185,167,255,.05),transparent 55%),rgba(243,239,230,.012)}
+  .about .plate::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(60% 80% at 88% -10%,rgba(232,201,160,.12),transparent 60%)}
+  .about p{position:relative;z-index:1;font-family:var(--serif);font-weight:300;
+    font-size:clamp(1.5rem,3.2vw,2.4rem);line-height:1.32;letter-spacing:-.015em;max-width:26ch}
+  .about p em{font-style:italic;color:var(--warm)}
+  @media(max-width:720px){.about .abody{grid-template-columns:1fr;gap:1.6rem}
+    .about .rail{flex-direction:row;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem;border-left:0;padding-left:0;
+      border-top:1px solid var(--line);padding-top:1.4rem}
+    .about .rail .div{display:none}
+    .about .rail .sig{flex-basis:100%}}
+  /* tighten the about block's vertical rhythm so the pull-quote void matches page cadence */
+  .about{padding-top:clamp(4.2rem,9vh,7.2rem);padding-bottom:clamp(4.2rem,9vh,7.2rem)}
+  /* contact */
+  .contact{text-align:center;padding-bottom:7rem}
+  .contact .big{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,8vw,7rem);line-height:1;letter-spacing:-.03em}
+  .contact .big a{position:relative}
+  .contact .big a::after{content:"";position:absolute;left:0;bottom:.06em;width:100%;height:2px;background:var(--warm);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .contact .big a:hover::after{transform:scaleX(1)}
+  .contact .em{margin-top:2.5rem;font-size:.95rem;color:var(--read);letter-spacing:.02em}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:2px}
+  footer{border-top:1px solid var(--line);padding:2.5rem var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.78rem;color:var(--read);position:relative;z-index:2}
+  footer a{color:var(--read)}
+  footer a:hover{color:var(--bone)}
+  .reveal{opacity:0;transform:translateY(24px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+  /* craft details */
+  .progress{position:fixed;top:0;left:0;height:2px;width:100%;transform:scaleX(0);transform-origin:left;z-index:30;
+    background:linear-gradient(90deg,var(--accent),var(--warm));mix-blend-mode:screen}
+  .cur{position:fixed;top:0;left:0;width:34px;height:34px;border:1px solid rgba(243,239,230,.6);border-radius:50%;
+    pointer-events:none;z-index:40;transform:translate(-50%,-50%);mix-blend-mode:difference;
+    transition:width .35s cubic-bezier(.2,.8,.2,1),height .35s cubic-bezier(.2,.8,.2,1),background .3s;will-change:transform}
+  .cur.big{width:74px;height:74px;background:rgba(243,239,230,.08)}
+  @media(hover:none),(pointer:coarse){.cur{display:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+<canvas id="aurora"></canvas>
+<div class="css-aurora" id="cssAurora" aria-hidden="true"></div>
+<div class="atmos" id="atmos" aria-hidden="true"></div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<nav>
+  <a class="logo" href="/redesign/">Swapnil <i>Biswas</i></a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="muted" href="/redesign/">All concepts</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="credential">Senior Product Marketing Manager - LambdaTest</div>
+    <h1>
+      <span class="ln"><span>Product</span></span>
+      <span class="ln"><span>marketing,</span></span>
+      <span class="ln"><span><em>engineered.</em></span></span>
+    </h1>
+    <p class="sub">I'm Swapnil Biswas - a product marketer who codes. I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b>, not just the decks that describe them.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See selected work <span class="ar">&#8599;</span></a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+    <div class="heroanchor">
+      <span class="avail"><span class="dot"></span> Open to select work</span>
+      <span class="rule"></span>
+    </div>
+    <div class="scrollcue"><span class="bar"></span> Scroll</div>
+  </header>
+
+  <section id="stats">
+    <div class="stats">
+      {stats.map((s, idx) => (
+        <div class={`stat reveal s${idx + 1}`}><div class="n">{s.n}</div><div class="l">{s.l}</div></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="glow violet" style="width:600px;height:600px;top:-120px;right:-220px;opacity:.42"></div>
+    <div class="glow gold" style="width:420px;height:420px;bottom:-140px;left:-180px;opacity:.4"></div>
+    <div class="shead"><h2>What I <em>do</em></h2><div class="eyebrow">Four disciplines, one operator</div></div>
+    <div class="pillars">
+      {pillars.map(p => (
+        <div class="pillar reveal"><div class="pi">{p.i}</div><div><h3>{p.t}</h3><p>{p.d}</p></div></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="glow gold" style="width:560px;height:560px;top:-200px;left:-160px"></div>
+    <div class="shead"><h2>Selected <em>work</em></h2><div class="eyebrow">2019 - 2026</div></div>
+    <div class="work">
+      {work.map((w, idx) => (
+        <a class={`row reveal${idx === 0 ? ' feat' : ''}`} href="#">
+          <span class={`art ${w.sw}`} aria-hidden="true"></span>
+          <span class="sheen" aria-hidden="true"></span>
+          {w.sw === 'shield' && (
+            <span class="hint up" aria-hidden="true"><svg viewBox="0 0 24 26" fill="none">
+              <path d="M12 2 L21 6 V13 C21 19 17 23 12 25 C7 23 3 19 3 13 V6 Z" stroke="var(--hint)" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M8 13 L11 16 L16 9" stroke="var(--warm)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+            </svg></span>
+          )}
+          {w.sw === 'pulse' && (
+            <span class="hint up" aria-hidden="true"><svg viewBox="0 0 26 24" fill="none">
+              <path d="M1 12 H7 L10 4 L15 20 L18 12 H25" stroke="var(--warm)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+            </svg></span>
+          )}
+          <span class={`swatch ${w.sw}`} aria-hidden="true"></span>
+          <span class="copy">
+            <span class="widx">{w.i}</span>
+            <span class="wt">{w.r}<span class="arrow">&#8599;</span></span>
+            <span class="wm"><span class="nm">{w.t}</span><span class="role">{w.role}{w.y ? ` · ${w.y}` : ''}</span></span>
+            {idx === 0 && <span class="wnote">{w.note}</span>}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="recognition">
+    <div class="glow violet" style="width:520px;height:520px;top:-180px;right:-120px"></div>
+    <div class="shead"><h2>Recognition &amp; <em>brands</em></h2><div class="eyebrow">Selected honors</div></div>
+    <div class="recog">
+      <div class="recol reveal">
+        <div class="clabel">Honors &amp; awards</div>
+        <div class="awards">
+          <div class="award"><b>Value of Agility Award</b> <span>LambdaTest &middot; 2024</span></div>
+          <div class="award"><b>Wall of Fame</b> <span>LambdaTest</span></div>
+          <div class="award"><b><span class="num">#1</span> Product of the Day</b> <span>Product Hunt</span></div>
+        </div>
+      </div>
+      <div class="recol reveal">
+        <div class="clabel">Trusted by teams at</div>
+        <div class="brands">
+          {brands.map(b => <span>{b}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="glow gold" style="width:480px;height:480px;bottom:-160px;left:-140px"></div>
+    <div class="shead"><h2><em>About</em></h2><div class="eyebrow">The operator behind the work</div></div>
+    <div class="abody">
+      <div class="rail reveal">
+        <div class="k lead">About</div>
+        <div class="k">Based in</div>
+        <div class="v">Mumbai, India</div>
+        <div class="div"></div>
+        <div class="sig">Swapnil B.</div>
+      </div>
+      <div class="plate reveal">
+        <p>Seven years in marketing, four in B2B SaaS. A postgrad in growth strategy at <em>IIM Visakhapatnam</em>. I treat my own career like a product - positioned, measured and shipped.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="eyebrow reveal" style="margin-bottom:2rem">Let's build something that compounds</div>
+    <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello &#8599;</a></div>
+    <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+  </section>
+</div>
+
+<footer>
+  <span>&copy; 2026 Swapnil Biswas</span>
+  <span>Concept 01 - Aurora &middot; <a href="/redesign/">View all 6 concepts</a></span>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  // ---- aurora background ----
+  // On small screens, mobile WebGL is unreliable and can paint a flat grey rectangle.
+  // There, hide the canvas and use the animated CSS radial-gradient aurora instead.
+  (function(){
+    const cv = document.getElementById('aurora');
+    const css = document.getElementById('cssAurora');
+    if(isMobile){
+      if(cv) cv.style.display = 'none';
+      if(css) css.style.display = 'block';
+      return;
+    }
+    const gl = cv.getContext('webgl', { antialias:true, alpha:true });
+    if(!gl){
+      // CSS fallback already lives on the canvas background; also show animated layer.
+      if(css) css.style.display = 'block';
+      return;
+    }
+    const vs=`attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+    const fs=`precision highp float;uniform vec2 r;uniform float t;
+    float h(vec2 x){return fract(sin(dot(x,vec2(127.1,311.7)))*43758.5453);}
+    float n(vec2 x){vec2 i=floor(x),f=fract(x);float a=h(i),b=h(i+vec2(1,0)),c=h(i+vec2(0,1)),d=h(i+vec2(1,1));vec2 u=f*f*(3.-2.*f);return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y;}
+    float fbm(vec2 x){float v=0.,a=.5;for(int i=0;i<6;i++){v+=a*n(x);x*=2.02;a*=.5;}return v;}
+    void main(){
+      vec2 uv=gl_FragCoord.xy/r.xy;vec2 p=uv;p.x*=r.x/r.y;
+      float fl=fbm(p*2.2+vec2(t*.03,t*.05));
+      // main band - brighter + wider spread, biased to bleed up behind the wordmark
+      float bands=fbm(vec2(p.x*1.4,p.y*2.6-t*.06)+fl*1.2);
+      float aur=smoothstep(.18,.82,bands)*smoothstep(1.15,.2,uv.y);
+      // warm-gold band low-left so the gold appears in the MOTION, not only the type
+      float gold=smoothstep(.30,.92,fbm(vec2(p.x*1.1+1.7,p.y*2.2+t*.045)+fl))
+                 *smoothstep(.0,.55,uv.y)*smoothstep(.9,.1,uv.y)
+                 *smoothstep(.75,.05,uv.x);
+      vec3 c1=vec3(.46,.30,.92);vec3 c2=vec3(.18,.62,.70);vec3 c3=vec3(.92,.50,.68);vec3 c4=vec3(.95,.82,.62);
+      vec3 col=mix(c1,c2,smoothstep(.2,.7,fl));
+      col=mix(col,c3,smoothstep(.5,1.0,bands)*.6);
+      col=mix(col,c4,pow(aur,2.4)*.45);
+      col*=aur*1.7;                       // ~50% more luminance
+      col+=c4*pow(gold,1.8)*.9;           // warm-gold glow low-left
+      // soft glow just under the wordmark so the type sits in light
+      float halo=smoothstep(.9,.0,length((uv-vec2(.32,.55))*vec2(1.0,1.6)));
+      col+=mix(c1,c4,.4)*halo*.22;
+      float vig=smoothstep(1.35,.15,length(uv-vec2(.5,.30)));
+      col*=vig;
+      col=pow(col,vec3(1.02));
+      gl_FragColor=vec4(col,1.0);
+    }`;
+    function sh(t,s){const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o;}
+    const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t');
+    function size(){const d=Math.min(window.devicePixelRatio||1,1.6);cv.width=innerWidth*d;cv.height=innerHeight*d;gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(ur,cv.width,cv.height);}
+    size();addEventListener('resize',size);
+    if(reduce){gl.uniform1f(ut,3.0);gl.drawArrays(gl.TRIANGLES,0,3);return;}
+    let start=performance.now();
+    (function loop(now){gl.uniform1f(ut,(now-start)/1000);gl.drawArrays(gl.TRIANGLES,0,3);requestAnimationFrame(loop);})(start);
+  })();
+
+  // ---- smooth scroll + reveals ----
+  if(!reduce){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    function raf(t){lenis.raf(t);requestAnimationFrame(raf);}requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll',ScrollTrigger.update);
+
+    // hero lines
+    gsap.set('.hero h1 .ln>span',{yPercent:115});
+    gsap.set('.hero .credential,.hero .sub,.hero .cta',{opacity:0,y:20});
+    const tl=gsap.timeline({delay:.15});
+    tl.to('.hero h1 .ln>span',{yPercent:0,duration:1.1,ease:'expo.out',stagger:.09})
+      .to('.hero .credential',{opacity:1,y:0,duration:.7},.2)
+      .to('.hero .sub',{opacity:1,y:0,duration:.8},.5)
+      .to('.hero .cta',{opacity:1,y:0,duration:.8},.65);
+
+    // batched scroll reveals: siblings entering together stagger as one considered
+    // gesture rather than firing independently. Every .reveal still ends at opacity:1.
+    ScrollTrigger.batch('.reveal',{
+      start:'top 88%',
+      onEnter:batch=>gsap.to(batch,{opacity:1,y:0,duration:1,ease:'expo.out',stagger:.09,overwrite:true}),
+    });
+    // safety net: guarantee no .reveal is ever left hidden (e.g. above the fold at load)
+    ScrollTrigger.refresh();
+
+    // scroll progress
+    const prog=document.getElementById('progress');
+    gsap.to(prog,{scaleX:1,ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:.3}});
+
+    // gentle parallax on the persistent atmosphere so it drifts as you scroll the page
+    const atmos=document.getElementById('atmos');
+    if(atmos){gsap.to(atmos,{yPercent:14,ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:.6}});}
+
+    // custom trailing cursor + magnetic CTA
+    const cur=document.getElementById('cur')!;
+    let cx=-100,cy=-100,tx=cx,ty=cy;
+    addEventListener('mousemove',(e:MouseEvent)=>{tx=e.clientX;ty=e.clientY;});
+    (function cloop(){cx+=(tx-cx)*.18;cy+=(ty-cy)*.18;cur.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;requestAnimationFrame(cloop);})();
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mouseenter',()=>cur.classList.add('big'));
+      el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
+    });
+    document.querySelectorAll<HTMLElement>('.btn.primary').forEach(btn=>{
+      btn.addEventListener('mousemove',(e:MouseEvent)=>{const r=btn.getBoundingClientRect();gsap.to(btn,{x:(e.clientX-r.left-r.width/2)*.35,y:(e.clientY-r.top-r.height/2)*.45,duration:.4,ease:'power3.out'});});
+      btn.addEventListener('mouseleave',()=>gsap.to(btn,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'}));
+    });
+
+    // signature interaction: the aurora sheen tracks the cursor across each work card
+    document.querySelectorAll<HTMLElement>('.work .row').forEach(card=>{
+      card.addEventListener('mousemove',(e:MouseEvent)=>{
+        const r=card.getBoundingClientRect();
+        card.style.setProperty('--mx',`${((e.clientX-r.left)/r.width)*100}%`);
+        card.style.setProperty('--my',`${((e.clientY-r.top)/r.height)*100}%`);
+      });
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,954 @@
+---
+// REDESIGN PROTOTYPE - "Atlas" - Concept 10 - Swiss annual-report / data-viz, LIGHT.
+// Growth, quantified. Real animated charts (canvas + SVG) that draw on during scroll.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+// Tech: raw-WebGL plotter-grid background + GSAP ScrollTrigger chart draw-on + Lenis.
+const stats = [
+  { fig: '657K+', label: 'Leads generated', note: 'cumulative, B2B SaaS pipeline', kind: 'area', peak: '657K', yhi: '700K', ylo: '0' },
+  { fig: '18.2M+', label: 'Organic traffic driven', note: 'sessions, technical + content SEO', kind: 'line', peak: '18.2M', yhi: '20M', ylo: '0' },
+  { fig: '10x', label: 'Conversion lift', note: 'baseline vs optimized funnel', kind: 'bar', peak: '10x', yhi: '10x', ylo: '1x' },
+  { fig: '20+', label: 'AI agents & apps built', note: 'shipped internal + public tools', kind: 'arc', peak: '20+', yhi: '', ylo: '' },
+];
+const subStats = [
+  { fig: '15+', label: 'Marketers mentored' },
+  { fig: '76', label: 'Articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS. The narrative that moves the category.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand generation that compounds long after launch.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped - not just brief them.' },
+  { i: '04', t: 'Building in public', d: 'This site, eight free tools and seventy-six articles. Shipped systems, not slide-ware.' },
+];
+const work = [
+  { i: '01', t: 'LambdaTest', role: 'Product & digital marketing', y: '2021-25', motif: 'area',
+    metric: '657K+', metricSub: '18.2M+ organic traffic', unit: 'leads generated, full growth engine',
+    spark: [5, 9, 8, 16, 14, 22, 27, 34] },
+  { i: '02', t: 'TestMu AI', role: 'Rebrand lead', y: '2026', motif: 'bars',
+    metric: 'Full', metricSub: 'company rebrand', unit: 'LambdaTest to TestMu AI',
+    spark: [9, 9, 18, 18, 13, 13, 31, 31] },
+  { i: '03', t: 'Samsung', role: 'Launch content & distribution', y: '2019', motif: 'bars',
+    metric: 'Galaxy', metricSub: 'M-series launch', unit: 'content distribution, via Sociowash',
+    spark: [4, 26, 9, 24, 12, 22, 16, 30] },
+  { i: '04', t: 'Medilife Superspeciality', role: 'Marketing & web, 0 to 1', y: '', motif: 'area',
+    metric: '0 to 1', metricSub: 'website, GTM, social & launch', unit: 'NABH superspeciality hospital, Dehradun',
+    spark: [8, 18, 10, 24, 14, 28, 20, 33] },
+  { i: '05', t: 'Lido Learning', role: 'Growth / CRM', y: '2021', motif: 'bars',
+    metric: 'CRM', metricSub: 'lead operations', unit: 'CRM & lead routing, EdTech',
+    spark: [34, 27, 27, 20, 20, 14, 14, 9] },
+  { i: '06', t: 'Appknox', role: 'Freelance content', y: '', motif: 'gauge',
+    metric: 'Security', metricSub: 'content', unit: 'mobile app security writing',
+    spark: [6, 10, 9, 16, 15, 22, 26, 31] },
+];
+const recognition = [
+  { name: 'Value of Agility Award', src: 'LambdaTest', yr: '2024' },
+  { name: 'Wall of Fame', src: 'LambdaTest', yr: '' },
+  { name: '#1 Product of the Day', src: 'Product Hunt', yr: '' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+---
+<!doctype html>
+<html lang="en" data-theme="atlas">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - Growth, quantified</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#faf9f6; --paper2:#f0efe9; --ink:#111111; --ink2:#2a2a28;
+    --mut:#6b6b66; --faint:#9a9a94;
+    --rule:rgba(17,17,17,.14); --rule2:rgba(17,17,17,.08);
+    --red:#e5341c; --slate:#3b5bdb;
+    --grotesk:"Archivo","Inter",system-ui,sans-serif;
+    --sans:"Inter",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+    --m:clamp(1.25rem,5vw,5.5rem);
+    --maxw:1320px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;overflow-x:clip;font-weight:400}
+  section{overflow-x:clip;position:relative}
+  ::selection{background:var(--red);color:#fff}
+  a{color:inherit;text-decoration:none}
+  /* WebGL plotter-grid background - faint engineering plot paper that drifts */
+  canvas#plot{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;
+    display:block;opacity:.9;
+    background:
+      linear-gradient(var(--paper),var(--paper2)),
+      repeating-linear-gradient(0deg,transparent 0 39px,rgba(17,17,17,.035) 39px 40px),
+      repeating-linear-gradient(90deg,transparent 0 39px,rgba(17,17,17,.035) 39px 40px)}
+  .css-grid{position:fixed;inset:0;z-index:0;pointer-events:none;display:none;
+    background:
+      linear-gradient(var(--paper),var(--paper2)),
+      repeating-linear-gradient(0deg,transparent 0 39px,rgba(17,17,17,.04) 39px 40px),
+      repeating-linear-gradient(90deg,transparent 0 39px,rgba(17,17,17,.04) 39px 40px)}
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:0 var(--m)}
+  /* 12-col grid helper */
+  .grid12{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(1rem,2vw,1.6rem)}
+  /* ---- nav ---- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+    padding:1.1rem var(--m);background:rgba(250,249,246,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule2)}
+  .logo{font-family:var(--grotesk);font-size:1rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem}
+  .logo .mk{display:inline-block;width:11px;height:11px;background:var(--red);border-radius:2px}
+  .navlinks{display:flex;gap:2rem;align-items:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase}
+  .navlinks a{position:relative;color:var(--ink2);transition:color .25s}
+  .navlinks a:hover{color:var(--red)}
+  .navlinks a.muted{color:var(--mut)}
+  .navlinks a.muted:hover{color:var(--ink)}
+  @media(max-width:760px){.navlinks a:not(.muted){display:none}}
+  /* ---- report cover hero ---- */
+  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    padding-top:6.5rem;padding-bottom:3rem}
+  .coverhead{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;
+    border-top:1.5px solid var(--ink);padding-top:.9rem;margin-bottom:clamp(2rem,5vh,3.8rem)}
+  .coverhead .doc{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+  .coverhead .doc b{color:var(--ink);font-weight:700}
+  .coverhead .yr{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--mut)}
+  .herobody{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,4rem);align-items:end}
+  .hero h1{font-family:var(--grotesk);font-weight:800;font-size:clamp(2.9rem,8.2vw,7.2rem);
+    line-height:.92;letter-spacing:-.04em;text-transform:none}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln>span{display:block;will-change:transform}
+  .hero h1 .red{color:var(--red)}
+  .hero .sub{margin-top:1.8rem;max-width:42ch;font-size:clamp(1rem,1.3vw,1.14rem);color:var(--ink2);line-height:1.6}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  .hero .sub .u{border-bottom:2px solid var(--red);padding-bottom:1px}
+  .cta{margin-top:2.2rem;display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.4rem;font-family:var(--mono);
+    font-size:.74rem;letter-spacing:.04em;text-transform:uppercase;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .25s,color .25s,border-color .25s}
+  .btn.primary{background:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--red);transform:translateY(-2px)}
+  .btn.ghost{border:1.5px solid var(--ink);color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px)}
+  .btn .ar{transition:transform .35s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  /* the dominant cover figure + its mini hero chart */
+  .coverfig{display:flex;flex-direction:column;border-left:1.5px solid var(--ink);padding-left:1.3rem}
+  .coverfig .lab{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+  .coverfig .big{font-family:var(--grotesk);font-weight:800;font-size:clamp(3.4rem,7.5vw,6rem);
+    line-height:.88;letter-spacing:-.04em;color:var(--ink);margin:.3rem 0 .1rem;
+    font-variant-numeric:tabular-nums}
+  .coverfig .big em{font-style:normal;color:var(--red)}
+  .coverfig .cap{font-family:var(--mono);font-size:.68rem;color:var(--mut);letter-spacing:.02em}
+  .coverfig canvas{width:100%;height:88px;display:block;margin-top:1rem}
+  .scrollcue{margin-top:clamp(2rem,5vh,3.5rem);display:flex;align-items:center;gap:.7rem;
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+  .scrollcue .bar{width:46px;height:1px;background:var(--ink);position:relative;overflow:hidden}
+  .scrollcue .bar::after{content:"";position:absolute;inset:0;background:var(--red);
+    transform:translateX(-100%);animation:cue 2.2s cubic-bezier(.5,0,.2,1) infinite}
+  @keyframes cue{0%{transform:translateX(-100%)}55%{transform:translateX(0)}100%{transform:translateX(100%)}}
+  @media(prefers-reduced-motion:reduce){.scrollcue .bar::after{animation:none}}
+  @media(max-width:820px){
+    .herobody{grid-template-columns:1fr;align-items:start;gap:2.2rem}
+    .coverfig{border-left:0;border-top:1.5px solid var(--ink);padding-left:0;padding-top:1.1rem}
+  }
+  @media(max-width:600px){
+    header.hero{justify-content:flex-end;padding-bottom:2.4rem}
+    .hero h1{font-size:clamp(3.2rem,15vw,5rem)}
+    .hero .sub{font-size:1rem;max-width:36ch}
+  }
+  /* ---- section frame ---- */
+  section.block{padding:clamp(4.5rem,10vh,8rem) 0}
+  .shead{display:grid;grid-template-columns:auto 1fr auto;gap:1.2rem;align-items:baseline;
+    border-top:1.5px solid var(--ink);padding-top:1rem;margin-bottom:clamp(2.5rem,5vh,4rem)}
+  .shead .no{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--red);font-weight:700;white-space:nowrap}
+  .shead .no em{font-style:normal;color:var(--faint);font-weight:400}
+  .shead h2{font-family:var(--grotesk);font-weight:700;font-size:clamp(1.5rem,3.2vw,2.5rem);letter-spacing:-.03em}
+  .shead .meta{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);text-align:right;justify-self:end}
+  .shead.anchored .meta{display:inline-flex;align-items:center;gap:.55rem}
+  .gmark{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
+  .gmark i{display:block;width:3px;background:var(--red);border-radius:1px}
+  .gmark i:nth-child(1){height:5px;opacity:.45}
+  .gmark i:nth-child(2){height:9px;opacity:.65}
+  .gmark i:nth-child(3){height:7px;opacity:.55}
+  .gmark i:nth-child(4){height:14px}
+  @media(max-width:600px){.shead{grid-template-columns:auto 1fr;gap:.7rem 1rem}.shead .meta{grid-column:1 / -1;text-align:left;justify-self:start}}
+  /* ---- statement marquee ---- */
+  .marq{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);overflow:hidden;
+    padding:1.1rem 0;background:var(--paper2)}
+  .marqtrack{display:flex;gap:0;white-space:nowrap;will-change:transform}
+  .marqtrack span{font-family:var(--grotesk);font-weight:700;font-size:clamp(1.4rem,3.4vw,2.6rem);
+    letter-spacing:-.02em;padding:0 1.4rem;color:var(--ink)}
+  .marqtrack span .dot{color:var(--red)}
+  .marqtrack span em{font-style:normal;color:var(--faint)}
+  /* ---- metrics: each a chart + figure + caption ---- */
+  .metric{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(1rem,2vw,2rem);align-items:center;
+    padding:clamp(2.2rem,5vh,3.6rem) 0;border-top:1px solid var(--rule)}
+  .metric:last-of-type{border-bottom:1px solid var(--rule)}
+  .metric .mfig{grid-column:1 / span 4;display:flex;flex-direction:column}
+  .metric:nth-child(even) .mfig{grid-column:9 / span 4;order:2;text-align:right;align-items:flex-end}
+  .metric:nth-child(even) .mchart{grid-column:1 / span 8;order:1}
+  .metric .mchart{grid-column:5 / span 8;position:relative}
+  .metric .midx{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--red);font-weight:700}
+  .metric .mnum{font-family:var(--grotesk);font-weight:800;font-size:clamp(3rem,7vw,5.6rem);
+    line-height:.9;letter-spacing:-.04em;font-variant-numeric:tabular-nums;margin:.5rem 0 .3rem}
+  .metric .mlabel{font-family:var(--grotesk);font-weight:600;font-size:1.05rem;letter-spacing:-.01em}
+  .metric .mnote{font-family:var(--mono);font-size:.68rem;color:var(--mut);margin-top:.4rem;max-width:24ch;letter-spacing:.01em}
+  .metric:nth-child(even) .mnote{margin-left:auto}
+  .chartcard{position:relative;border:1px solid var(--rule);background:rgba(255,255,255,.55);
+    padding:1.1rem 1.3rem .85rem;box-shadow:0 1px 0 rgba(17,17,17,.03)}
+  .chartcard canvas{display:block;width:100%;height:clamp(200px,24vw,280px)}
+  .chartcard .ctitle{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:.5rem;max-width:60%}
+  /* x-axis tick row: aligned under the plot area (left gutter ~38px reserved for Y ticks) */
+  .chartcard .caxis{display:flex;justify-content:space-between;margin-top:.5rem;
+    padding:.45rem 14px 0 38px;border-top:1px solid var(--rule2)}
+  .chartcard .caxis span{font-family:var(--mono);font-size:.64rem;color:var(--mut);letter-spacing:.03em;font-variant-numeric:tabular-nums}
+  .chartcard[data-kind="bar"] .caxis{justify-content:space-around;padding-left:38px}
+  .chartcard[data-kind="arc"] .caxis{justify-content:center;gap:1.1rem;padding:.45rem 0 0;border-top:0}
+  /* axis title under the tick row */
+  .chartcard .xlabel{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--faint);margin-top:.4rem;padding-left:38px}
+  .chartcard[data-kind="bar"] .xlabel{padding-left:38px}
+  .chartcard[data-kind="arc"] .xlabel{padding-left:0;text-align:center}
+  .chartcard[data-kind="arc"] .caxis span{position:relative;padding-left:.85rem}
+  .chartcard[data-kind="arc"] .caxis span::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:9px;height:9px;border-radius:2px}
+  .chartcard[data-kind="arc"] .caxis span:nth-child(1)::before{background:var(--red)}
+  .chartcard[data-kind="arc"] .caxis span:nth-child(2)::before{background:var(--slate)}
+  .chartcard[data-kind="arc"] .caxis span:nth-child(3)::before{background:rgba(17,17,17,.45)}
+  .chartcard .ticker{position:absolute;top:1.1rem;right:1.3rem;font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--red);font-variant-numeric:tabular-nums}
+  @media(max-width:760px){
+    .metric,.metric:nth-child(even){grid-template-columns:1fr;gap:1.2rem}
+    .metric .mfig,.metric:nth-child(even) .mfig{grid-column:1;order:1;text-align:left;align-items:flex-start}
+    .metric .mchart,.metric:nth-child(even) .mchart{grid-column:1;order:2}
+    .metric:nth-child(even) .mnote{margin-left:0}
+    .chartcard{padding:1.1rem 1.1rem .9rem}
+    .chartcard canvas{height:clamp(220px,52vw,260px)}
+    .chartcard .caxis span{font-size:.7rem}
+    .chartcard .xlabel{font-size:.62rem}
+    .chartcard .ctitle{font-size:.72rem}
+  }
+  .substats{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:clamp(1.5rem,3vh,2.4rem);
+    border-top:1px solid var(--rule)}
+  .substat{padding:1.3rem 0;display:flex;align-items:baseline;gap:1rem}
+  .substat:nth-child(2){padding-left:1.6rem;border-left:1px solid var(--rule)}
+  .substat .n{font-family:var(--grotesk);font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .substat .l{font-family:var(--mono);font-size:.72rem;color:var(--mut);letter-spacing:.02em}
+  /* ---- pillars: numbered rigorous grid ---- */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule)}
+  .pillar{padding:2.2rem 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:start}
+  .pillar:nth-child(odd){padding-right:clamp(1rem,3vw,3rem)}
+  .pillar:nth-child(even){padding-left:clamp(1rem,3vw,3rem);border-left:1px solid var(--rule)}
+  .pillar .pi{font-family:var(--mono);font-weight:700;font-size:.9rem;color:var(--red);letter-spacing:.06em;padding-top:.3rem}
+  .pillar h3{font-family:var(--grotesk);font-size:1.3rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.6rem}
+  .pillar p{color:var(--ink2);font-size:.96rem;line-height:1.66;max-width:42ch}
+  @media(max-width:700px){.pillars{grid-template-columns:1fr}.pillar:nth-child(even){padding-left:0;border-left:0}.pillar:nth-child(odd){padding-right:0}}
+  /* ---- selected work: tall tiles, each a distinct data motif ---- */
+  .wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1.5px solid var(--ink);border-left:1px solid var(--rule)}
+  .wtile{display:flex;flex-direction:column;min-height:clamp(360px,46vw,440px);
+    padding:1.5rem 1.4rem 1.6rem;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    position:relative;cursor:pointer;background:transparent;overflow:hidden;
+    transition:background .35s cubic-bezier(.2,.8,.2,1)}
+  .wtile::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+  .wtile:hover,.wtile:focus-visible{background:rgba(229,52,28,.05);outline:none}
+  .wtile:hover::after,.wtile:focus-visible::after{transform:scaleX(1)}
+  .wtop{display:flex;justify-content:space-between;align-items:center}
+  .wtile .wi{font-family:var(--mono);font-size:.72rem;color:var(--faint);font-weight:700;letter-spacing:.04em}
+  .wtile:hover .wi{color:var(--red)}
+  .wtile .war{font-family:var(--mono);color:var(--faint);transition:transform .35s,color .25s}
+  .wtile:hover .war{transform:translate(3px,-3px);color:var(--red)}
+  .wmotif{margin:1.1rem 0 1.2rem;flex:0 0 auto}
+  .wmotif canvas{display:block;width:100%;height:96px}
+  .wtile .wmetric{font-family:var(--grotesk);font-weight:800;font-size:clamp(2rem,3.4vw,2.9rem);
+    line-height:.92;letter-spacing:-.035em;color:var(--red);font-variant-numeric:tabular-nums}
+  .wtile .wmetric em{font-style:normal}
+  .wtile .wmsub{font-family:var(--grotesk);font-weight:600;font-size:.98rem;letter-spacing:-.01em;color:var(--ink);margin-top:.25rem;line-height:1.25}
+  .wtile .wfoot{margin-top:auto;padding-top:1.1rem;display:flex;flex-direction:column;gap:.2rem}
+  .wtile .wname{font-family:var(--grotesk);font-weight:700;font-size:1.12rem;letter-spacing:-.02em;transition:color .25s}
+  .wtile:hover .wname{color:var(--red)}
+  .wtile .wcap{font-family:var(--mono);font-size:.64rem;color:var(--mut);letter-spacing:.04em;text-transform:uppercase;margin-top:.15rem}
+  .wtile .wunit{font-family:var(--mono);font-size:.6rem;color:var(--faint);letter-spacing:.04em;text-transform:uppercase;margin-top:.3rem;
+    opacity:0;transform:translateY(4px);transition:opacity .35s,transform .35s}
+  .wtile:hover .wunit,.wtile:focus-visible .wunit{opacity:1;transform:none}
+  @media(max-width:980px){.wgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){
+    .wgrid{grid-template-columns:1fr}
+    .wtile{min-height:0;padding:1.6rem 1.3rem}
+    .wmotif canvas{height:84px}
+    .wtile .wunit{opacity:1;transform:none}
+  }
+  /* ---- recognition + brands ---- */
+  .recog{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem)}
+  .recol .clabel{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);
+    border-top:1px solid var(--rule);padding-top:.9rem;margin-bottom:.2rem}
+  .award{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--rule)}
+  .award b{font-family:var(--grotesk);font-weight:700;font-size:clamp(1.1rem,2vw,1.5rem);letter-spacing:-.02em;line-height:1.15}
+  .award b .hash{color:var(--red)}
+  .award span{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);white-space:nowrap;justify-self:end}
+  .brands{display:grid;grid-template-columns:1fr 1fr}
+  .brands span{font-family:var(--grotesk);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;color:var(--ink2);
+    padding:.85rem 0;border-bottom:1px solid var(--rule);transition:color .25s}
+  .brands span:nth-child(2n){padding-left:1.3rem}
+  .brands span:nth-child(odd){padding-right:1.3rem}
+  .brands span:hover{color:var(--red)}
+  @media(max-width:700px){.recog{grid-template-columns:1fr;gap:2.4rem}}
+  /* ---- about: methodology column ---- */
+  .about .abody{display:grid;grid-template-columns:230px 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  .about .rail{display:flex;flex-direction:column;gap:1.05rem;border-right:1px solid var(--rule);padding-right:1.6rem}
+  .about .rail .item{display:flex;flex-direction:column;gap:.2rem}
+  .about .rail .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .about .rail .v{font-family:var(--grotesk);font-weight:600;font-size:1rem;letter-spacing:-.01em;color:var(--ink)}
+  .about p{font-family:var(--grotesk);font-weight:500;font-size:clamp(1.35rem,3vw,2.2rem);line-height:1.3;letter-spacing:-.025em;max-width:24ch}
+  .about p em{font-style:normal;color:var(--red)}
+  .about p+.meth{margin-top:1.4rem}
+  .about .meth{font-family:var(--sans);font-size:.96rem;color:var(--ink2);line-height:1.66;max-width:48ch;font-weight:400}
+  @media(max-width:700px){.about .abody{grid-template-columns:1fr;gap:1.6rem}
+    .about .rail{flex-direction:row;flex-wrap:wrap;gap:1rem 1.8rem;border-right:0;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:1.4rem}}
+  /* ---- contact ---- */
+  .contact{padding-bottom:7rem;border-top:1.5px solid var(--ink);padding-top:clamp(3.5rem,8vh,6rem)}
+  .contact .lead{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:1.8rem;font-weight:700}
+  .contact .big{font-family:var(--grotesk);font-weight:800;font-size:clamp(3.7rem,13vw,10.5rem);line-height:.9;letter-spacing:-.05em}
+  .contact .big a{position:relative;display:inline-block}
+  .contact .big a::after{content:"";position:absolute;left:0;bottom:.04em;width:100%;height:.09em;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .contact .big a:hover::after{transform:scaleX(1)}
+  .contact .em{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;font-family:var(--mono);font-size:.78rem;color:var(--mut);letter-spacing:.02em}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color .25s,border-color .25s}
+  .contact .em a:hover{color:var(--red);border-color:var(--red)}
+  /* ---- footer colophon ---- */
+  footer{border-top:1.5px solid var(--ink);padding:2.4rem var(--m);position:relative;z-index:2}
+  .colophon{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;
+    font-family:var(--mono);font-size:.7rem;color:var(--mut);letter-spacing:.02em}
+  .colophon .c1{grid-column:1 / span 4}
+  .colophon .c2{grid-column:5 / span 4}
+  .colophon .c3{grid-column:9 / span 4;text-align:right}
+  .colophon b{color:var(--ink);font-weight:700}
+  .colophon a{color:var(--mut)}
+  .colophon a:hover{color:var(--red)}
+  @media(max-width:700px){.colophon{grid-template-columns:1fr;gap:.6rem}.colophon .c1,.colophon .c2,.colophon .c3{grid-column:1;text-align:left}}
+  /* ---- reveal ---- */
+  .reveal{opacity:0;transform:translateY(22px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+  .progress{position:fixed;top:0;left:0;height:2px;width:100%;transform:scaleX(0);transform-origin:left;z-index:30;background:var(--red)}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<canvas id="plot"></canvas>
+<div class="css-grid" id="cssGrid" aria-hidden="true"></div>
+<div class="grain"></div>
+
+<nav>
+  <a class="logo" href="/redesign/"><span class="mk"></span> Swapnil Biswas</a>
+  <div class="navlinks">
+    <a href="#metrics">Metrics</a>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="muted" href="/redesign/">All concepts &#8599;</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="coverhead">
+      <div class="doc"><b>Annual Report</b> / Growth, quantified</div>
+      <div class="yr">FY 2018 - 2026</div>
+    </div>
+    <div class="herobody">
+      <div>
+        <h1>
+          <span class="ln"><span>Growth,</span></span>
+          <span class="ln"><span class="red">built</span></span>
+          <span class="ln"><span>not briefed.</span></span>
+        </h1>
+        <p class="sub">I'm Swapnil Biswas - a product marketer who <b>builds</b>. I ship the agents, sites and SEO systems behind <span class="u">657K+ leads</span> and <span class="u">18M+ in organic traffic</span>, not just the decks that describe them.</p>
+        <div class="cta">
+          <a class="btn primary" href="#metrics">Read the figures <span class="ar">&#8599;</span></a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="coverfig">
+        <div class="lab">Headline figure / leads</div>
+        <div class="big"><span id="coverCount">657</span><em>K+</em></div>
+        <div class="cap">cumulative pipeline generated</div>
+        <canvas id="heroChart" aria-hidden="true"></canvas>
+      </div>
+    </div>
+    <div class="scrollcue"><span class="bar"></span> Scroll to read</div>
+  </header>
+</div>
+
+<div class="marq" aria-hidden="true">
+  <div class="marqtrack" id="marq">
+    <span>Positioning <em>/</em> Demand <span class="dot">.</span> SEO &amp; AEO <em>/</em> AI agents <span class="dot">.</span> Built, not briefed <em>/</em> Shipped systems <span class="dot">.</span>&nbsp;</span>
+    <span>Positioning <em>/</em> Demand <span class="dot">.</span> SEO &amp; AEO <em>/</em> AI agents <span class="dot">.</span> Built, not briefed <em>/</em> Shipped systems <span class="dot">.</span>&nbsp;</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="metrics" class="block">
+    <div class="shead anchored">
+      <div class="no">01 <em>/ 06</em></div>
+      <h2>The figures, visualized</h2>
+      <div class="meta"><span class="gmark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Four metrics, drawn on scroll</div>
+    </div>
+
+    {stats.map((s, idx) => (
+      <div class="metric reveal" data-metric={s.kind}>
+        <div class="mfig">
+          <div class="midx">{'0' + (idx + 1)} / {s.label.toUpperCase()}</div>
+          <div class="mnum" data-count={s.fig}>{s.fig}</div>
+          <div class="mlabel">{s.label}</div>
+          <div class="mnote">{s.note}</div>
+        </div>
+        <div class="mchart">
+          <div class="chartcard" data-kind={s.kind}>
+            <span class="ticker" data-count={s.fig}>{s.fig}</span>
+            <span class="ctitle">{s.label}</span>
+            <canvas class="metricCanvas" data-kind={s.kind} data-peak={s.peak} aria-hidden="true"></canvas>
+            <div class="caxis" aria-hidden="true">
+              {s.kind === 'arc'
+                ? <><span>agents</span><span>tools</span><span>public</span></>
+                : s.kind === 'bar'
+                ? <><span>Control</span><span>Optimized</span></>
+                : <><span>2018</span><span>2020</span><span>2022</span><span>2024</span><span>2026</span></>}
+            </div>
+            <div class="xlabel" aria-hidden="true">
+              {s.kind === 'arc'
+                ? 'composition of shipped builds'
+                : s.kind === 'bar'
+                ? 'funnel variant'
+                : 'fiscal year'}
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+
+    <div class="substats reveal">
+      {subStats.map(s => (
+        <div class="substat"><span class="n">{s.fig}</span><span class="l">{s.label}</span></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="services" class="block">
+    <div class="shead anchored">
+      <div class="no">02 <em>/ 06</em></div>
+      <h2>What I do</h2>
+      <div class="meta"><span class="gmark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Four disciplines, one operator</div>
+    </div>
+    <div class="pillars">
+      {pillars.map(p => (
+        <div class="pillar reveal"><div class="pi">{p.i}</div><div><h3>{p.t}</h3><p>{p.d}</p></div></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="work" class="block">
+    <div class="shead anchored">
+      <div class="no">03 <em>/ 06</em></div>
+      <h2>Selected work</h2>
+      <div class="meta"><span class="gmark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Six projects, result-led</div>
+    </div>
+    <div class="wgrid">
+      {work.map(w => (
+        <a class="wtile reveal" href="#" data-spark={w.spark.join(',')} data-motif={w.motif}>
+          <div class="wtop">
+            <span class="wi">{w.i}</span>
+            <span class="war">&#8599;</span>
+          </div>
+          <div class="wmotif"><canvas class="motifCanvas" data-motif={w.motif} aria-hidden="true"></canvas></div>
+          <div class="wmetric" set:html={w.metric.replace('#1', '<em>#1</em>')}></div>
+          <div class="wmsub">{w.metricSub}</div>
+          <div class="wfoot">
+            <span class="wname">{w.t}</span>
+            <span class="wcap">{w.role}{w.y ? ' · ' + w.y : ''}</span>
+            <span class="wunit">{w.unit}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="recognition" class="block">
+    <div class="shead anchored">
+      <div class="no">04 <em>/ 06</em></div>
+      <h2>Recognition &amp; brands</h2>
+      <div class="meta"><span class="gmark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Selected honors</div>
+    </div>
+    <div class="recog">
+      <div class="recol reveal">
+        <div class="clabel">Honors &amp; awards</div>
+        {recognition.map(r => (
+          <div class="award">
+            <b set:html={r.name.replace('#1', '<span class="hash">#1</span>')}></b>
+            <span>{r.src}{r.yr ? ' · ' + r.yr : ''}</span>
+          </div>
+        ))}
+      </div>
+      <div class="recol reveal">
+        <div class="clabel">Trusted by teams at</div>
+        <div class="brands">
+          {brands.map(b => <span>{b}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="block about">
+    <div class="shead anchored">
+      <div class="no">05 <em>/ 06</em></div>
+      <h2>Methodology</h2>
+      <div class="meta"><span class="gmark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>The operator behind the work</div>
+    </div>
+    <div class="abody">
+      <div class="rail reveal">
+        <div class="item"><span class="k">Based in</span><span class="v">Mumbai, India</span></div>
+        <div class="item"><span class="k">Experience</span><span class="v">7+ yrs marketing</span></div>
+        <div class="item"><span class="k">Specialism</span><span class="v">4+ yrs B2B SaaS</span></div>
+        <div class="item"><span class="k">Education</span><span class="v">IIM Visakhapatnam</span></div>
+        <div class="item"><span class="k">Postgrad</span><span class="v">Digital Mktg &amp; Growth</span></div>
+      </div>
+      <div class="reveal">
+        <p>I treat my own career like a <em>product</em> - positioned, measured and shipped.</p>
+        <p class="meth">Seven years in marketing, four of them deep in B2B SaaS, plus a postgrad in Digital Marketing &amp; Growth Strategy at IIM Visakhapatnam. The method is simple: define the position, instrument the funnel, build the system that moves the number, then publish the proof.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="block contact">
+    <div class="lead reveal">06 / Let's build something that compounds</div>
+    <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com">Let's build &#8599;</a></div>
+    <div class="em reveal">
+      <a href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a>
+      <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="colophon">
+    <div class="c1"><b>Swapnil Biswas</b><br/>Senior Product Marketing Manager, LambdaTest</div>
+    <div class="c2">Set in Archivo, Inter &amp; Space Mono<br/>Printed on light report paper, FY2026</div>
+    <div class="c3"><b>Concept 10 - Atlas</b><br/><a href="/redesign/">View all concepts &#8599;</a></div>
+  </div>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  // ---- palette pulled from CSS tokens ----
+  const RED = '#e5341c', SLATE = '#3b5bdb', INK = '#111111', FAINT = '#9a9a94';
+
+  // ---- WebGL plotter-grid background ----
+  // A faint engineering plot-paper plane that drifts; on mobile use the CSS fallback.
+  (function(){
+    const cv = document.getElementById('plot');
+    const css = document.getElementById('cssGrid');
+    if(isMobile){
+      if(cv) cv.style.display = 'none';
+      if(css) css.style.display = 'block';
+      return;
+    }
+    const gl = cv.getContext('webgl', { antialias:true, alpha:true });
+    if(!gl){ if(css) css.style.display = 'block'; return; }
+    const vs = `attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+    const fs = `precision highp float;uniform vec2 r;uniform float t;
+      // faint moving plot grid on warm paper, with a soft slate/red plotted line drift
+      float gridline(vec2 uv,float div){
+        vec2 g=abs(fract(uv*div-.5)-.5)/fwidth(uv*div);
+        float l=min(g.x,g.y);
+        return 1.-min(l,1.);
+      }
+      void main(){
+        vec2 uv=gl_FragCoord.xy/r.xy;
+        vec2 p=uv; p.x*=r.x/r.y;
+        p.y+=t*0.012;            // gentle vertical drift like paper feeding through a plotter
+        vec3 paper=mix(vec3(.980,.976,.964),vec3(.941,.937,.913),uv.y);
+        float fine=gridline(p,46.0)*0.05;
+        float major=gridline(p,9.2)*0.07;
+        vec3 col=paper - fine - major;
+        // a faint plotted curve - sinusoid that breathes, warm ink, very subtle
+        float curve=p.y - (0.5 + 0.10*sin(p.x*6.0 + t*0.25) + 0.05*sin(p.x*13.0 - t*0.15));
+        float line=smoothstep(0.012,0.0,abs(curve));
+        col=mix(col,vec3(.067,.067,.067),line*0.09);
+        // a second red plotted curve, offset - the brand accent line
+        float curve2=p.y - (0.62 + 0.07*sin(p.x*4.0 - t*0.2));
+        float line2=smoothstep(0.011,0.0,abs(curve2));
+        col=mix(col,vec3(.898,.204,.110),line2*0.10);
+        // vignette to keep edges calm
+        float vig=smoothstep(1.25,.2,length(uv-vec2(.5,.45)));
+        col=mix(paper*0.985,col,vig*0.9+0.1);
+        gl_FragColor=vec4(col,1.0);
+      }`;
+    // enable derivatives for crisp grid lines
+    gl.getExtension('OES_standard_derivatives');
+    const fsHeader = '#extension GL_OES_standard_derivatives : enable\n';
+    function sh(type,src){const o=gl.createShader(type);gl.shaderSource(o,src);gl.compileShader(o);return o;}
+    const pr=gl.createProgram();
+    gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));
+    gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fsHeader+fs));
+    gl.linkProgram(pr);gl.useProgram(pr);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t');
+    function size(){const d=Math.min(window.devicePixelRatio||1,1.6);cv.width=innerWidth*d;cv.height=innerHeight*d;gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(ur,cv.width,cv.height);}
+    size();addEventListener('resize',size);
+    if(reduce){gl.uniform1f(ut,2.0);gl.drawArrays(gl.TRIANGLES,0,3);return;}
+    const start=performance.now();
+    (function loop(now){gl.uniform1f(ut,(now-start)/1000);gl.drawArrays(gl.TRIANGLES,0,3);requestAnimationFrame(loop);})(start);
+  })();
+
+  // ---- canvas chart helpers ----
+  // Each chart accepts a 0..1 progress and redraws. ScrollTrigger scrubs progress.
+  function setupCanvas(canvas, cssH){
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = canvas.getBoundingClientRect();
+    const w = rect.width || canvas.clientWidth || 300;
+    const h = cssH || rect.height || 200;
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, w, h };
+  }
+
+  // shared chart frame: gridlines + baseline + Y ticks + peak callout.
+  // Returns plot rect {x0,x1,y0,y1}. Reserves left gutter for Y ticks, bottom for baseline.
+  function frame(c, yticks){
+    const { ctx, w, h } = c;
+    ctx.clearRect(0,0,w,h);
+    const gutterL = 38, padR = 14, padT = 18, baseB = 8;
+    const x0 = gutterL, x1 = w - padR, y0 = h - baseB, y1 = padT;
+    const rows = yticks.length;
+    ctx.textBaseline = 'middle'; ctx.textAlign = 'right';
+    ctx.font = (w < 520 ? 12 : 11) + 'px "Space Mono", monospace';
+    for(let k=0;k<rows;k++){
+      const yy = y1 + (y0 - y1) * k / (rows - 1);
+      ctx.strokeStyle = k === rows-1 ? 'rgba(17,17,17,.32)' : 'rgba(17,17,17,.09)';
+      ctx.lineWidth = k === rows-1 ? 1.4 : 1;
+      ctx.beginPath(); ctx.moveTo(x0, yy + .5); ctx.lineTo(x1, yy + .5); ctx.stroke();
+      if(yticks[k]){ ctx.fillStyle = '#6b6b66'; ctx.fillText(yticks[k], x0 - 8, yy); }
+    }
+    return { x0, x1, y0, y1 };
+  }
+
+  function peakLabel(ctx, x, y, text, align){
+    ctx.font = '700 13px "Space Mono", monospace';
+    ctx.textAlign = align || 'right'; ctx.textBaseline = 'alphabetic';
+    const tw = ctx.measureText(text).width;
+    const bx = align === 'left' ? x : x - tw;
+    ctx.fillStyle = 'rgba(250,249,246,.92)';
+    ctx.fillRect(bx - 5, y - 14, tw + 10, 19);
+    ctx.fillStyle = RED; ctx.fillText(text, x, y);
+  }
+
+  // area chart - cumulative leads (657K). Fills ~75% of plot height, peak callout at line end.
+  function drawArea(c, prog, peak){
+    const { ctx } = c;
+    const { x0, x1, y0, y1 } = frame(c, ['700K','525K','350K','175K','0']);
+    const pts = [0.05,0.11,0.10,0.22,0.31,0.36,0.50,0.58,0.71,0.80,0.90,0.94];
+    const n = pts.length, maxI = Math.max(1, prog*(n-1));
+    const px=i=>x0+(i/(n-1))*(x1-x0), py=v=>y0-v*(y0-y1);
+    ctx.beginPath(); ctx.moveTo(x0,y0);
+    for(let i=0;i<=maxI;i++){ const ii=Math.min(i,n-1); ctx.lineTo(px(ii),py(pts[ii])); }
+    const lx=px(Math.min(maxI,n-1)), lv=pts[Math.min(Math.round(maxI),n-1)];
+    ctx.lineTo(lx,y0); ctx.closePath();
+    const g=ctx.createLinearGradient(0,y1,0,y0);
+    g.addColorStop(0,'rgba(229,52,28,.34)'); g.addColorStop(1,'rgba(229,52,28,.03)');
+    ctx.fillStyle=g; ctx.fill();
+    ctx.beginPath();
+    for(let i=0;i<=maxI;i++){ const ii=Math.min(i,n-1); i===0?ctx.moveTo(px(ii),py(pts[ii])):ctx.lineTo(px(ii),py(pts[ii])); }
+    ctx.strokeStyle=RED; ctx.lineWidth=2.6; ctx.lineJoin='round'; ctx.lineCap='round'; ctx.stroke();
+    ctx.beginPath(); ctx.arc(lx,py(lv),3.6,0,Math.PI*2); ctx.fillStyle=RED; ctx.fill();
+    if(prog>0.9 && peak) peakLabel(ctx, lx, py(lv)-10, peak, 'right');
+  }
+
+  // line chart - traffic (18.2M).
+  function drawLine(c, prog, peak){
+    const { ctx } = c;
+    const { x0, x1, y0, y1 } = frame(c, ['20M','15M','10M','5M','0']);
+    const pts=[0.10,0.16,0.14,0.27,0.25,0.40,0.47,0.43,0.60,0.72,0.85,0.91];
+    const n=pts.length, maxI=Math.max(1, prog*(n-1));
+    const px=i=>x0+(i/(n-1))*(x1-x0), py=v=>y0-v*(y0-y1);
+    // subtle fill under the line in slate
+    ctx.beginPath(); ctx.moveTo(x0,y0);
+    for(let i=0;i<=maxI;i++){ const ii=Math.min(i,n-1); ctx.lineTo(px(ii),py(pts[ii])); }
+    ctx.lineTo(px(Math.min(maxI,n-1)),y0); ctx.closePath();
+    const g=ctx.createLinearGradient(0,y1,0,y0);
+    g.addColorStop(0,'rgba(59,91,219,.20)'); g.addColorStop(1,'rgba(59,91,219,.02)');
+    ctx.fillStyle=g; ctx.fill();
+    ctx.beginPath();
+    for(let i=0;i<=maxI;i++){ const ii=Math.min(i,n-1); i===0?ctx.moveTo(px(ii),py(pts[ii])):ctx.lineTo(px(ii),py(pts[ii])); }
+    ctx.strokeStyle=SLATE; ctx.lineWidth=2.8; ctx.lineJoin='round'; ctx.lineCap='round'; ctx.stroke();
+    const lx=px(Math.min(maxI,n-1)), lv=pts[Math.min(Math.round(maxI),n-1)];
+    ctx.beginPath(); ctx.arc(lx,py(lv),3.6,0,Math.PI*2); ctx.fillStyle=SLATE; ctx.fill();
+    ctx.beginPath(); ctx.arc(lx,py(lv),6.5,0,Math.PI*2); ctx.strokeStyle='rgba(59,91,219,.35)'; ctx.lineWidth=1.4; ctx.stroke();
+    if(prog>0.9 && peak){ ctx.fillStyle=RED; peakLabel(ctx, lx, py(lv)-12, peak, 'right'); }
+  }
+
+  // bar chart - 10x conversion. Baseline bar (1x) vs optimized (10x), tall.
+  function drawBar(c, prog, peak){
+    const { ctx } = c;
+    const { x0, x1, y0, y1 } = frame(c, ['10x','','5x','','1x']);
+    const vals=[0.10,0.94];
+    const slot=(x1-x0)/vals.length, bw=Math.min(slot*0.46, 78);
+    vals.forEach((v,i)=>{
+      const cx=x0+slot*(i+0.5);
+      const bh=v*(y0-y1)*prog;
+      ctx.fillStyle = i===vals.length-1 ? RED : 'rgba(17,17,17,.26)';
+      ctx.fillRect(cx-bw/2, y0-bh, bw, bh);
+      if(i===vals.length-1 && prog>0.9 && peak){
+        ctx.fillStyle=RED; ctx.font='700 14px "Space Mono", monospace';
+        ctx.textAlign='center'; ctx.textBaseline='alphabetic';
+        ctx.fillText(peak, cx, y0-bh-8);
+      }
+    });
+  }
+
+  // arc/donut - 20+ agents composition.
+  function drawArc(c, prog){
+    const { ctx, w, h } = c;
+    ctx.clearRect(0,0,w,h);
+    const cx=w/2, cy=h/2+2, R=Math.min(w,h)/2 - 14, r=R*0.60;
+    ctx.beginPath(); ctx.arc(cx,cy,(R+r)/2,0,Math.PI*2);
+    ctx.lineWidth=R-r; ctx.strokeStyle='rgba(17,17,17,.07)'; ctx.stroke();
+    const segs=[{f:0.55,col:RED},{f:0.30,col:SLATE},{f:0.15,col:'rgba(17,17,17,.45)'}];
+    let a=-Math.PI/2; const total=prog*Math.PI*2; let drawn=0;
+    for(const s of segs){
+      const span=s.f*Math.PI*2;
+      const end=Math.min(span, Math.max(0,total-drawn));
+      if(end>0){
+        ctx.beginPath(); ctx.arc(cx,cy,(R+r)/2, a, a+end);
+        ctx.lineWidth=R-r-4; ctx.lineCap='butt'; ctx.strokeStyle=s.col; ctx.stroke();
+      }
+      a+=span; drawn+=span;
+    }
+    ctx.fillStyle=INK; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.font='800 '+Math.round(R*0.52)+'px "Archivo", sans-serif';
+    ctx.fillText(Math.round(prog*20)+'+', cx, cy-2);
+    ctx.fillStyle=FAINT; ctx.font='9px "Space Mono", monospace';
+    ctx.fillText('SHIPPED', cx, cy+R*0.46);
+  }
+
+  const drawers = { area:drawArea, line:drawLine, bar:drawBar, arc:drawArc };
+
+  // ---- work-tile motif drawers (compact, scroll-draw-on) ----
+  function motifArea(c, data, prog){
+    const { ctx, w, h } = c;
+    ctx.clearRect(0,0,w,h);
+    const x0=2,x1=w-2,y0=h-12,y1=6, max=Math.max(...data),min=Math.min(...data),n=data.length;
+    const px=i=>x0+(i/(n-1))*(x1-x0), py=v=>y0-((v-min)/(max-min||1))*(y0-y1);
+    ctx.strokeStyle='rgba(17,17,17,.10)'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(x0,y0+.5); ctx.lineTo(x1,y0+.5); ctx.stroke();
+    const maxI=Math.max(0,prog*(n-1));
+    ctx.beginPath(); ctx.moveTo(x0,y0);
+    for(let i=0;i<=maxI;i++){ const ii=Math.min(i,n-1); ctx.lineTo(px(ii),py(data[ii])); }
+    ctx.lineTo(px(Math.min(maxI,n-1)),y0); ctx.closePath();
+    const g=ctx.createLinearGradient(0,y1,0,y0);
+    g.addColorStop(0,'rgba(229,52,28,.28)'); g.addColorStop(1,'rgba(229,52,28,.02)');
+    ctx.fillStyle=g; ctx.fill();
+    ctx.beginPath();
+    for(let i=0;i<=maxI;i++){ const ii=Math.min(i,n-1); i===0?ctx.moveTo(px(ii),py(data[ii])):ctx.lineTo(px(ii),py(data[ii])); }
+    ctx.strokeStyle=RED; ctx.lineWidth=2.2; ctx.lineJoin='round'; ctx.lineCap='round'; ctx.stroke();
+    const lx=px(Math.min(maxI,n-1)), lv=data[Math.min(Math.round(maxI),n-1)];
+    ctx.beginPath(); ctx.arc(lx,py(lv),3,0,Math.PI*2); ctx.fillStyle=RED; ctx.fill();
+  }
+  function motifBars(c, data, prog){
+    const { ctx, w, h } = c;
+    ctx.clearRect(0,0,w,h);
+    const x0=2,x1=w-2,y0=h-12,y1=6, max=Math.max(...data),n=data.length;
+    ctx.strokeStyle='rgba(17,17,17,.10)'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(x0,y0+.5); ctx.lineTo(x1,y0+.5); ctx.stroke();
+    const slot=(x1-x0)/n, bw=Math.min(slot*0.62, 16);
+    data.forEach((v,i)=>{
+      const cx=x0+slot*(i+0.5), bh=(v/max)*(y0-y1)*prog;
+      ctx.fillStyle = i===n-1 ? RED : 'rgba(229,52,28,'+(0.30+0.5*i/n)+')';
+      ctx.fillRect(cx-bw/2, y0-bh, bw, bh);
+    });
+  }
+  function motifDonut(c, data, prog){
+    const { ctx, w, h } = c;
+    ctx.clearRect(0,0,w,h);
+    const cx=w/2, cy=h/2, R=Math.min(w,h)/2-6, r=R*0.58;
+    ctx.beginPath(); ctx.arc(cx,cy,(R+r)/2,0,Math.PI*2);
+    ctx.lineWidth=R-r; ctx.strokeStyle='rgba(17,17,17,.08)'; ctx.stroke();
+    ctx.beginPath(); ctx.arc(cx,cy,(R+r)/2,-Math.PI/2,-Math.PI/2+prog*Math.PI*2*0.92);
+    ctx.lineWidth=R-r; ctx.lineCap='round'; ctx.strokeStyle=RED; ctx.stroke();
+    ctx.fillStyle=RED; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.font='800 '+Math.round(R*0.7)+'px "Archivo", sans-serif';
+    ctx.fillText('1', cx, cy);
+  }
+  function motifGauge(c, data, prog){
+    const { ctx, w, h } = c;
+    ctx.clearRect(0,0,w,h);
+    const cx=w/2, cy=h-6, R=Math.min(w/2-4, h-12);
+    ctx.lineWidth=9; ctx.lineCap='round';
+    ctx.beginPath(); ctx.arc(cx,cy,R,Math.PI,Math.PI*2); ctx.strokeStyle='rgba(17,17,17,.08)'; ctx.stroke();
+    ctx.beginPath(); ctx.arc(cx,cy,R,Math.PI,Math.PI+prog*Math.PI*0.97); ctx.strokeStyle=RED; ctx.stroke();
+    ctx.fillStyle=RED; ctx.textAlign='center'; ctx.textBaseline='alphabetic';
+    ctx.font='800 '+Math.round(R*0.42)+'px "Archivo", sans-serif';
+    ctx.fillText(Math.round(prog*100), cx, cy-6);
+  }
+  const motifs = { area:motifArea, bars:motifBars, donut:motifDonut, gauge:motifGauge };
+
+  // ---- counter helper: animate a figure string like "657K+", "18.2M+", "10x", "20+" ----
+  function animateFigure(el, raw, prog){
+    const m = raw.match(/^([\d.]+)(.*)$/);
+    if(!m){ el.textContent = raw; return; }
+    const target = parseFloat(m[1]);
+    const suffix = m[2];
+    let val = target * prog;
+    let out = (target % 1 === 0) ? Math.round(val).toString() : val.toFixed(1);
+    el.textContent = out + suffix;
+  }
+
+  // ---- hero cover chart: clean area sparkline, no axis clutter ----
+  function drawHero(c, prog){
+    const { ctx, w, h } = c;
+    ctx.clearRect(0,0,w,h);
+    const x0=1,x1=w-1,y0=h-12,y1=6;
+    const pts=[0.05,0.11,0.10,0.22,0.31,0.36,0.50,0.58,0.71,0.80,0.90,0.94];
+    const n=pts.length, maxI=Math.max(1,prog*(n-1));
+    const px=i=>x0+(i/(n-1))*(x1-x0), py=v=>y0-v*(y0-y1);
+    ctx.strokeStyle='rgba(17,17,17,.14)'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(x0,y0+.5); ctx.lineTo(x1,y0+.5); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x0,y0);
+    for(let i=0;i<=maxI;i++){ const ii=Math.min(i,n-1); ctx.lineTo(px(ii),py(pts[ii])); }
+    ctx.lineTo(px(Math.min(maxI,n-1)),y0); ctx.closePath();
+    const g=ctx.createLinearGradient(0,y1,0,y0);
+    g.addColorStop(0,'rgba(229,52,28,.30)'); g.addColorStop(1,'rgba(229,52,28,.02)');
+    ctx.fillStyle=g; ctx.fill();
+    ctx.beginPath();
+    for(let i=0;i<=maxI;i++){ const ii=Math.min(i,n-1); i===0?ctx.moveTo(px(ii),py(pts[ii])):ctx.lineTo(px(ii),py(pts[ii])); }
+    ctx.strokeStyle=RED; ctx.lineWidth=2.4; ctx.lineJoin='round'; ctx.lineCap='round'; ctx.stroke();
+    const lx=px(Math.min(maxI,n-1)), lv=pts[Math.min(Math.round(maxI),n-1)];
+    ctx.beginPath(); ctx.arc(lx,py(lv),3.2,0,Math.PI*2); ctx.fillStyle=RED; ctx.fill();
+  }
+  (function(){
+    const canvas = document.getElementById('heroChart');
+    if(!canvas) return;
+    let c = setupCanvas(canvas, 88);
+    let p = reduce ? 1 : 0.7; // never start blank
+    function step(){
+      p = Math.min(1, p + 0.012);
+      drawHero(c, p);
+      const cnt = document.getElementById('coverCount');
+      if(cnt) cnt.textContent = Math.round(657 * p).toString();
+      if(p < 1) requestAnimationFrame(step);
+    }
+    if(reduce){ drawHero(c,1); const cnt=document.getElementById('coverCount'); if(cnt) cnt.textContent='657'; }
+    else { drawHero(c,p); setTimeout(step, 300); }
+    addEventListener('resize', ()=>{ c=setupCanvas(canvas,88); drawHero(c, reduce?1:p); });
+  })();
+
+  // ---- marquee ----
+  if(!reduce){
+    const marq = document.getElementById('marq');
+    if(marq){
+      gsap.to(marq, { xPercent:-50, duration:24, ease:'none', repeat:-1 });
+    }
+  }
+
+  // ---- smooth scroll + reveals + chart draw-on ----
+  if(!reduce){
+    const lenis = new Lenis({ lerp:.1, smoothWheel:true });
+    function raf(t){ lenis.raf(t); requestAnimationFrame(raf); } requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', ScrollTrigger.update);
+
+    // hero lines
+    gsap.set('.hero h1 .ln>span', { yPercent:118 });
+    gsap.set('.hero .sub,.hero .cta,.coverhead,.coverfig', { opacity:0, y:18 });
+    const tl = gsap.timeline({ delay:.1 });
+    tl.to('.coverhead', { opacity:1, y:0, duration:.7 }, 0)
+      .to('.hero h1 .ln>span', { yPercent:0, duration:1.05, ease:'expo.out', stagger:.1 }, .1)
+      .to('.hero .sub', { opacity:1, y:0, duration:.7 }, .55)
+      .to('.hero .cta', { opacity:1, y:0, duration:.7 }, .68)
+      .to('.coverfig', { opacity:1, y:0, duration:.8 }, .5);
+
+    // reveals
+    ScrollTrigger.batch('.reveal', {
+      start:'top 90%',
+      onEnter:batch=>gsap.to(batch, { opacity:1, y:0, duration:.95, ease:'expo.out', stagger:.08, overwrite:true }),
+    });
+
+    // --- the signature: scroll-triggered chart draw-on for each metric ---
+    document.querySelectorAll('.metricCanvas').forEach(canvas=>{
+      const kind = canvas.getAttribute('data-kind');
+      const peak = canvas.getAttribute('data-peak') || '';
+      const draw = drawers[kind] || drawArea;
+      let c = setupCanvas(canvas);
+      const card = canvas.closest('.metric');
+      const figEl = card ? card.querySelector('.mnum') : null;
+      const tickEl = card ? card.querySelector('.ticker') : null;
+      const raw = figEl ? figEl.getAttribute('data-count') : '';
+      const state = { p:0 };
+      // Figure shows the REAL final value at rest (657K+, never a partial like 539K).
+      // On first enter the chart draws on AND the figure counts up once, then both LOCK
+      // at the final value (no scrub) so resting / scrolled-past always reads full.
+      if(figEl) figEl.textContent = raw;
+      if(tickEl) tickEl.textContent = raw;
+      draw(c, 0, peak);
+      let played = false;
+      function playIn(){
+        if(played) return; played = true;
+        gsap.to(state, { p:1, duration:1.3, ease:'power2.out', onUpdate:()=>{
+          draw(c, state.p, peak);
+          if(figEl) animateFigure(figEl, raw, state.p);
+          if(tickEl) animateFigure(tickEl, raw, state.p);
+        }, onComplete:()=>{ draw(c,1,peak); if(figEl) figEl.textContent=raw; if(tickEl) tickEl.textContent=raw; } });
+      }
+      ScrollTrigger.create({ trigger: card, start: 'top 85%', onEnter: playIn, onEnterBack: playIn });
+      // above-fold safety: if already in view on load, draw fully
+      if(card.getBoundingClientRect().top < window.innerHeight * 0.92){ playIn(); }
+      addEventListener('resize', ()=>{ c = setupCanvas(canvas); draw(c, state.p, peak); });
+    });
+
+    // --- work-tile motifs draw on as the tile reveals ---
+    document.querySelectorAll('.wtile').forEach(tile=>{
+      const canvas = tile.querySelector('.motifCanvas');
+      const motif = canvas.getAttribute('data-motif');
+      const draw = motifs[motif] || motifArea;
+      const data = (tile.getAttribute('data-spark')||'').split(',').map(Number);
+      let c = setupCanvas(canvas, 96);
+      draw(c, data, 0);
+      ScrollTrigger.create({
+        trigger: tile, start:'top 90%', once:true,
+        onEnter:()=>{ gsap.to({v:0},{v:1,duration:1.1,ease:'power2.out',onUpdate:function(){ draw(c, data, this.targets()[0].v); }}); },
+      });
+      addEventListener('resize', ()=>{ c = setupCanvas(canvas, 96); draw(c, data, 1); });
+    });
+
+    // scroll progress bar
+    gsap.to('#progress', { scaleX:1, ease:'none', scrollTrigger:{ trigger:document.body, start:'top top', end:'bottom bottom', scrub:.3 } });
+
+    ScrollTrigger.refresh();
+  } else {
+    // reduced motion: render every chart fully, set counters to final
+    document.querySelectorAll('.metricCanvas').forEach(canvas=>{
+      const kind = canvas.getAttribute('data-kind');
+      const peak = canvas.getAttribute('data-peak') || '';
+      const draw = drawers[kind] || drawArea;
+      const c = setupCanvas(canvas); draw(c, 1, peak);
+      const card = canvas.closest('.metric');
+      if(card){
+        const figEl = card.querySelector('.mnum'), tickEl = card.querySelector('.ticker');
+        if(figEl) figEl.textContent = figEl.getAttribute('data-count');
+        if(tickEl) tickEl.textContent = tickEl.getAttribute('data-count');
+      }
+    });
+    document.querySelectorAll('.wtile').forEach(tile=>{
+      const canvas = tile.querySelector('.motifCanvas');
+      const motif = canvas.getAttribute('data-motif');
+      const draw = motifs[motif] || motifArea;
+      const data = (tile.getAttribute('data-spark')||'').split(',').map(Number);
+      const c = setupCanvas(canvas, 96); draw(c, data, 1);
+    });
+  }
+</script>
+</body>
+</html>

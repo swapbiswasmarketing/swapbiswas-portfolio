@@ -1,0 +1,866 @@
+---
+// REDESIGN PROTOTYPE - "Monolith" - dark editorial / kinetic typography.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+// Tech: raw-WebGL crisp lime halftone dot-lattice (flow-field + pointer) + GSAP scroll reveals
+//       + count-up + ONE scroll-velocity kinetic marquee + Lenis smooth scroll.
+const stats = [
+  { n: 657, suf: 'K+', l: 'Leads generated', big: false },
+  { n: 18.2, suf: 'M+', l: 'Organic traffic driven', big: true },
+  { n: 10, suf: 'x', l: 'Conversion lift', big: false },
+  { n: 20, suf: '+', l: 'AI agents & apps built', big: false },
+  { n: 15, suf: '+', l: 'Marketers mentored', big: false },
+  { n: 76, suf: '', l: 'Articles published', big: false },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+const work = [
+  { t: 'LambdaTest', m: 'Product & digital marketing', y: '2021-2025', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', rh: '<span class="ac">657K+</span> leads <span class="ac">18.2M+</span> organic traffic', tile: 'lt', spark: [3,5,4,7,8,11,14], skpi: '657K+ leads' },
+  { t: 'TestMu AI', m: 'Rebrand lead', y: '2026', d: 'Led the complete rebrand from LambdaTest to TestMu AI.', rh: 'Full company <span class="ac">rebrand</span>', tile: 'rebrand', spark: [12,10,8,6,5,3,2], skpi: 'Identity refresh' },
+  { t: 'Samsung', m: 'Launch content & distribution', y: '2019', d: 'On the Galaxy M-series from inception; ran content distribution (collaborated with Technical Guruji).', rh: 'Galaxy <span class="ac">M-series</span> launch', tile: 'samsung', spark: [2,4,5,9,8,12,13], skpi: 'M-series launch' },
+  { t: 'Medilife Superspeciality', m: 'Marketing & web, 0 to 1', y: '', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.', rh: 'Website, GTM, <span class="ac">social &amp; launch</span>', tile: 'medi', spark: [4,5,6,8,10,12,13], skpi: '0 to 1 GTM' },
+  { t: 'Lido Learning', m: 'Growth / CRM', y: '2021', d: 'Ran CRM management and lead routing/assignment for the EdTech.', rh: 'CRM &amp; <span class="ac">lead operations</span>', tile: 'lido', spark: [3,4,6,5,8,10,12], skpi: 'Lead routing' },
+  { t: 'Appknox', m: 'Freelance content', y: '', d: 'Freelance content writer for the mobile app security company.', rh: '<span class="ac">Security</span> content', tile: 'appknox', spark: [2,3,5,6,7,9,11], skpi: 'Security content' },
+];
+const awards = [
+  { b: 'Value of Agility Award', s: 'LambdaTest, 2024' },
+  { b: 'Wall of Fame', s: 'LambdaTest' },
+  { b: '#1 Product of the Day', s: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const marquee = ['Swapnil Biswas', 'Product Marketer Who Builds', 'GTM Strategy', 'Senior PMM', 'AI Agents', 'Technical SEO', 'AEO', 'Positioning', 'Demand Gen', 'Sales Enablement', 'Growth, Built Not Briefed', 'Shipped, Not Slideware'];
+---
+<!doctype html>
+<html lang="en" data-theme="monolith">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#070707; --ink:#f4f1ea; --bone:#F2F0E6; --bone2:#E2E0D6; --mut:#CFCFC6; --line:rgba(244,241,234,.13);
+    --acid:#d8ff3e;
+    --display:"Anton",Impact,"Arial Narrow",sans-serif;
+    --sans:"Space Grotesk",system-ui,sans-serif;
+    --m:clamp(1.25rem,5vw,5.5rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;overflow-x:hidden;font-weight:400}
+  ::selection{background:var(--acid);color:#070707}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-weight:400}
+  canvas#gl{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:1}
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  /* solid dark band behind nav + eyebrow so the type plate never competes with the dot grid */
+  .topband{position:fixed;top:0;left:0;right:0;height:120px;z-index:2;pointer-events:none;
+    background:linear-gradient(180deg,#070707 0%,#070707 56%,rgba(7,7,7,.78) 80%,transparent 100%)}
+  .wrap{position:relative;z-index:3;max-width:1500px;margin:0 auto;padding:0 var(--m)}
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+    padding:1.3rem var(--m)}
+  .logo{font-family:var(--display);font-size:1.35rem;letter-spacing:.02em;text-transform:uppercase;color:var(--bone)}
+  .navlinks{display:flex;gap:1.8rem;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--bone)}
+  .navlinks a{position:relative;opacity:1;transition:opacity .3s}
+  .navlinks a:hover{opacity:1}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--acid);transition:width .35s cubic-bezier(.2,.8,.2,1)}
+  .navlinks a:hover::after{width:100%}
+  .navlinks a.allc{color:var(--mut);opacity:1}
+  .navlinks a.allc:hover{color:var(--bone)}
+  .navlinks a.allc::after{background:var(--mut)}
+  /* mobile menu trigger - hidden on desktop, lime MENU button on small screens */
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;font-family:var(--sans);font-size:.74rem;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--acid);padding:.4rem 0;align-items:center;gap:.5rem}
+  .menu-btn .mlines{display:inline-flex;flex-direction:column;gap:3px;width:20px}
+  .menu-btn .mlines i{display:block;height:2px;background:var(--acid);width:100%}
+  /* full overlay menu */
+  .mobile-menu{position:fixed;inset:0;z-index:40;background:#070707;display:flex;flex-direction:column;
+    padding:1.3rem var(--m) 3rem;opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .35s ease,transform .35s cubic-bezier(.2,.8,.2,1),visibility .35s}
+  .mobile-menu.open{opacity:1;visibility:visible;transform:none}
+  .mobile-menu .mm-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:auto}
+  .mobile-menu .mm-close{background:none;border:0;cursor:pointer;font-family:var(--sans);font-size:.74rem;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--bone);padding:.4rem 0}
+  .mobile-menu nav.mm-links{position:static;display:flex;flex-direction:column;gap:.4rem;padding:0;margin-top:auto}
+  .mobile-menu nav.mm-links a{font-family:var(--display);text-transform:uppercase;font-size:clamp(2.6rem,12vw,4rem);
+    line-height:1.02;color:var(--bone);letter-spacing:-.005em;display:flex;align-items:baseline;gap:1rem}
+  .mobile-menu nav.mm-links a .mi{font-family:var(--sans);font-size:.7rem;letter-spacing:.18em;color:var(--mut);font-weight:600;transform:translateY(-.4em)}
+  .mobile-menu nav.mm-links a:active,.mobile-menu nav.mm-links a:focus{color:var(--acid)}
+  .mobile-menu nav.mm-links a.allc{font-size:clamp(1.4rem,6vw,2rem);color:var(--mut);margin-top:1rem}
+  @media(max-width:760px){.navlinks a:not(.allc){display:none}.navlinks{display:none}.menu-btn{display:inline-flex}}
+  /* labels */
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--mut);font-weight:600}
+  .eyebrow .ac{color:var(--acid)}
+  /* hero - top block holds eyebrow + headline, lower band holds sub + stats as one deliberate row */
+  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:9rem 0 3.2rem;position:relative;gap:0}
+  .hero .hero-top{flex:0 0 auto}
+  /* lower band: thin rule + index marker, sub copy left, signature stat row right - reads as a system */
+  .hero .hero-band{margin-top:auto;padding-top:1.6rem;border-top:1px solid var(--line);position:relative;
+    display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(1.5rem,4vw,4rem);align-items:end}
+  .hero .hero-band::before{content:"";position:absolute;top:-1px;left:0;width:64px;height:3px;background:var(--acid)}
+  .hero .band-idx{position:absolute;top:1.6rem;right:0;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);font-weight:600}
+  /* signature stat strip: aligned to a shared baseline row, set off as its own band with a hairline rule + breathing room */
+  .hero .heroStats{display:flex;gap:clamp(1.4rem,3vw,2.8rem);align-items:flex-end;flex-wrap:wrap;
+    padding-top:clamp(1.4rem,2.4vw,2rem);border-top:1px solid var(--line);position:relative}
+  .hero .heroStats::before{content:"";position:absolute;top:-1px;left:0;width:40px;height:2px;background:var(--acid)}
+  .hero .heroStats .hs{display:flex;flex-direction:column;gap:.45rem}
+  .hero .heroStats .hs .hn{font-family:var(--display);font-weight:400;line-height:.82;color:var(--acid);
+    font-size:clamp(2.2rem,4.4vw,3.4rem);letter-spacing:-.01em;text-transform:uppercase}
+  .hero .heroStats .hs .hl{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--bone2);font-weight:600}
+  @media(max-width:880px){.hero .hero-band{grid-template-columns:1fr;gap:2rem}.hero .band-idx{display:none}}
+  .hero .eyebrow{margin-bottom:1.6rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;color:var(--bone);font-weight:500;font-size:.74rem;letter-spacing:.3em}
+  .hero .eyebrow .ln{display:inline-block;width:46px;height:2px;background:var(--acid)}
+  .hero h1{font-family:var(--display);text-transform:uppercase;font-weight:400;
+    font-size:clamp(3.4rem,15.5vw,15rem);line-height:.82;letter-spacing:-.005em}
+  .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+  .hero h1 .ln>span{display:block;will-change:transform}
+  .hero h1 .ln>span i{font-style:normal}
+  .hero h1 .acid{color:var(--acid)}
+  .hero h1 .out{color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .hero .sub{position:relative;margin-top:0;max-width:48ch;font-size:clamp(1.1rem,1.7vw,1.34rem);color:var(--bone);line-height:1.55;font-weight:500;
+    padding:0;isolation:isolate}
+  /* solid-ish scrim behind the body block so the dot field never thins the type.
+     two-layer: a near-opaque core plus a wide soft skirt with a backdrop blur so the
+     dense halftone never bands or shows through behind the body copy at any width */
+  .hero .sub::before{content:"";position:absolute;z-index:-1;inset:-1rem -1.8rem -1rem -2rem;
+    -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+    background:
+      linear-gradient(90deg,rgba(7,7,7,.96) 0%,rgba(7,7,7,.96) 62%,rgba(7,7,7,.82) 84%,rgba(7,7,7,.55) 100%),
+      radial-gradient(140% 150% at 10% 50%,rgba(7,7,7,.9) 0%,rgba(7,7,7,.72) 60%,rgba(7,7,7,.5) 100%)}
+  .hero .sub b{color:var(--bone);font-weight:700}
+  .hero .sub .stat{font-family:var(--display);font-weight:400;color:var(--acid);font-size:1.12em;letter-spacing:.01em;text-transform:uppercase}
+  .hero .band-copy{display:flex;flex-direction:column;gap:1.6rem}
+  .cta{margin-top:0;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  /* SHARP rectangle buttons with invert hover - no pills */
+  .btn{display:inline-flex;align-items:center;gap:.6rem;padding:1.05rem 1.9rem;font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    border-radius:0;transition:background .3s,color .3s,border-color .3s}
+  .btn.primary{background:var(--acid);color:#070707;border:1.5px solid var(--acid)}
+  .btn.primary:hover{background:transparent;color:var(--acid)}
+  .btn.ghost{border:1.5px solid var(--line);color:var(--bone)}
+  .btn.ghost:hover{background:var(--bone);border-color:var(--bone);color:#070707}
+  .btn .ar{transition:transform .45s}
+  .btn:hover .ar{transform:translate(4px,-4px)}
+  .scrollcue{position:absolute;bottom:1.7rem;right:0;font-size:.66rem;letter-spacing:.24em;color:var(--mut);text-transform:uppercase;display:flex;align-items:center;gap:.6rem;writing-mode:vertical-rl}
+  .scrollcue .bar{width:2px;height:46px;background:linear-gradient(var(--acid),transparent)}
+  /* marquee - single signature band */
+  .marquee{position:relative;z-index:3;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:1.1rem 0;overflow:hidden;white-space:nowrap;background:var(--acid)}
+  .mtrack{display:inline-flex;gap:3.5rem;will-change:transform}
+  .mtrack span{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.6rem,4vw,3rem);
+    letter-spacing:.01em;color:#070707;display:inline-flex;align-items:center;gap:3.5rem}
+  .mtrack span::after{content:"";width:14px;height:14px;background:#070707;border-radius:50%;display:inline-block}
+  /* section frame */
+  section{padding:clamp(5rem,12vh,9rem) 0;position:relative;z-index:3}
+  /* lime accent rule + faint dot texture carried into every section header */
+  .shead{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;border-top:1px solid var(--line);padding-top:1.7rem;margin-bottom:3.5rem}
+  .shead::before{content:"";position:absolute;top:-1px;left:0;width:84px;height:3px;background:var(--acid)}
+  .shead h2{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(2.2rem,6vw,5rem);line-height:.9;letter-spacing:-.005em;color:var(--bone)}
+  .shead h2 em{font-style:normal;color:var(--acid)}
+  .shead .idx{font-size:.72rem;letter-spacing:.3em;color:var(--bone2);text-transform:uppercase;font-weight:600;padding-bottom:.4rem}
+  /* faint lime halftone texture behind the dark middle-third sections */
+  #stats,#services,#work,#recognition{position:relative}
+  #stats::before,#services::before,#work::before,#recognition::before{content:"";position:absolute;z-index:-1;pointer-events:none;
+    inset:0 calc(var(--m) * -1);opacity:.5;
+    background-image:radial-gradient(rgba(216,255,62,.07) 1.1px,transparent 1.2px);
+    background-size:24px 24px;
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);
+    mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent)}
+  /* one oversized typographic anchor per section (giant ghost word, far right) */
+  .anchor{position:absolute;top:clamp(1rem,4vh,3.2rem);right:0;z-index:-1;pointer-events:none;user-select:none;
+    font-family:var(--display);text-transform:uppercase;line-height:.8;letter-spacing:-.01em;
+    font-size:clamp(4rem,11vw,9rem);color:transparent;-webkit-text-stroke:1px rgba(244,241,234,.06)}
+  @media(max-width:760px){.anchor{display:none}}
+  /* stats - oversized Anton numerals on bare black, hairline baseline grid, NO boxes */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+  .stat{padding:2.4rem 0 2.2rem;border-bottom:1px solid var(--line);position:relative;display:flex;flex-direction:column}
+  .stat:not(:nth-child(3n)){padding-right:2rem}
+  /* secondary stats: consistent baseline - numerals pushed to a shared baseline above the label */
+  .stat:not(.lead) .n{margin-top:auto}
+  .stat .n{font-family:var(--display);font-weight:400;letter-spacing:-.01em;line-height:.82;color:var(--bone);
+    font-size:clamp(2.8rem,7vw,5.5rem);display:flex;align-items:baseline}
+  .stat.lead .n{font-size:clamp(4.5rem,15vw,12rem);color:var(--acid)}
+  .stat .suf{font-size:.5em;margin-left:.06em}
+  /* designed label row: thin lime rule sits above each label so the row reads as a system */
+  .stat .l{margin-top:.85rem;padding-top:.7rem;font-size:.72rem;letter-spacing:.14em;color:var(--bone2);text-transform:uppercase;font-weight:600;position:relative}
+  .stat .l::before{content:"";position:absolute;top:0;left:0;width:26px;height:2px;background:var(--acid)}
+  .stat.lead{grid-column:1 / -1;border-bottom:1px solid var(--line);padding-bottom:2.6rem}
+  .stat.lead .l{font-size:.84rem;color:var(--bone);font-weight:600}
+  .stat.lead .l::before{width:40px;height:3px}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.stat:not(:nth-child(3n)){padding-right:0}.stat{padding-right:1rem!important}}
+  /* pillars - large numbered editorial entries, no borders/cards */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .pillar{padding:2.8rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:baseline}
+  .pillar:nth-child(odd){padding-right:3.5rem}
+  .pillar:nth-child(even){padding-left:3.5rem;border-left:1px solid var(--line)}
+  .pillar .pi{font-family:var(--display);color:var(--bone);font-size:clamp(2.4rem,5vw,4rem);line-height:.8;-webkit-text-stroke:1px var(--ink);color:transparent}
+  .pillar:hover .pi{color:var(--acid);-webkit-text-stroke:0}
+  .pillar h3{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.4rem,2.4vw,2.1rem);font-weight:400;letter-spacing:.005em;margin-bottom:.7rem;line-height:1;color:var(--bone)}
+  .pillar p{color:var(--bone2);font-size:1.12rem;line-height:1.6;max-width:42ch;font-weight:400}
+  @media(max-width:760px){.pillars{grid-template-columns:1fr}.pillar:nth-child(even){padding-left:0;border-left:0}.pillar:nth-child(odd){padding-right:0}}
+  /* work - large editorial CASE CARDS, the centerpiece. abstract duotone-lime preview tiles. */
+  /* asymmetric grid: ONE hero-featured project spans full width, the other three sit in a 3-up rhythm */
+  .work{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,2.6vw,2.6rem)}
+  .case{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);background:#0a0a0a;
+    overflow:hidden;transition:border-color .45s,transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+  .case:hover{transform:translateY(-6px)}
+  .case:active{transform:translateY(-2px) scale(.992);transition-duration:.12s}
+  /* per-tile hover accent: each card glows in ITS OWN hue, reinforcing the distinct palettes */
+  .tile-lt:hover{border-color:rgba(214,255,72,.85);box-shadow:0 18px 52px -26px rgba(214,255,72,.5)}
+  .tile-rebrand:hover{border-color:rgba(216,255,62,.9);box-shadow:0 18px 52px -26px rgba(216,255,62,.55)}
+  .tile-samsung:hover{border-color:rgba(120,255,170,.85);box-shadow:0 18px 52px -26px rgba(120,255,170,.5)}
+  .tile-medi:hover{border-color:rgba(90,240,180,.82);box-shadow:0 18px 52px -26px rgba(90,240,180,.46)}
+  .tile-lido:hover{border-color:rgba(170,240,90,.84);box-shadow:0 18px 52px -26px rgba(170,240,90,.48)}
+  .tile-appknox:hover{border-color:rgba(90,220,200,.82);box-shadow:0 18px 52px -26px rgba(90,220,200,.46)}
+  @media(prefers-reduced-motion:reduce){.case,.case:hover,.case:active{transform:none}}
+  /* hero-featured first project: spans all 3 columns, media + body sit side by side as a banner.
+     standout treatment - a persistent lime left-edge spine + corner index "featured" mark so it
+     never reads as just another quiet tile next to the hero energy */
+  .case.feat{grid-column:1 / -1;flex-direction:row;align-items:stretch;border-color:rgba(216,255,62,.34);
+    box-shadow:0 14px 44px -30px rgba(216,255,62,.4)}
+  .case.feat::before{content:"";position:absolute;top:0;bottom:0;left:0;width:4px;z-index:4;
+    background:linear-gradient(180deg,var(--acid),rgba(216,255,62,.25));pointer-events:none}
+  .case.feat .case-body{position:relative}
+  .case.feat .case-body::after{content:"FEATURED";position:absolute;top:clamp(1.8rem,3vw,3rem);right:clamp(1.8rem,3vw,3rem);
+    font-size:.6rem;letter-spacing:.24em;font-weight:700;color:var(--acid);opacity:1}
+  .case.feat .case-media{flex:1 1 58%;aspect-ratio:auto;min-height:clamp(15rem,30vw,21rem)}
+  .case.feat .case-body{flex:1 1 42%;justify-content:center;padding:clamp(1.8rem,3vw,3rem);gap:1.1rem}
+  .case.feat .result{font-size:clamp(2.1rem,4vw,3.4rem);padding-right:clamp(4.5rem,8vw,7.5rem)}
+  .case.feat .case-no{font-size:clamp(2.4rem,4vw,3.4rem)}
+  .case.feat .wd{font-size:1.04rem;max-width:38ch}
+  @media(max-width:880px){.case.feat{flex-direction:column}.case.feat .case-media{flex:none}}
+  /* abstract preview tile - duotone-lime gradient field + live halftone canvas, reveals on hover */
+  .case-media{position:relative;aspect-ratio:16/9;overflow:hidden;background:#060d02}
+  .case-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.92;transition:opacity .5s,transform .8s cubic-bezier(.2,.8,.2,1)}
+  .case:hover .case-canvas{opacity:1;transform:scale(1.04)}
+  /* per-project duotone wash so each tile reads distinct yet on-brand.
+     each tile gets its OWN hue tilt off the lime base (warm-lime / pure-acid / cool-cyan-lime /
+     deep-teal-lime) so the four previews never collapse into one identical green field */
+  .case-media::before{content:"";position:absolute;inset:0;z-index:1;mix-blend-mode:screen;transition:opacity .5s;opacity:.85}
+  .case:hover .case-media::before{opacity:1}
+  /* LambdaTest (hero-featured, growth): broad rising glow from the lower-left, warm chartreuse, generous + confident - reads as an area chart climbing */
+  .tile-lt .case-media{background:#0c0f02}
+  .tile-lt .case-canvas{filter:hue-rotate(-12deg) saturate(1.1)}
+  .tile-lt .case-media::before{background:radial-gradient(110% 150% at 18% 88%,rgba(214,255,72,.62),transparent 58%),linear-gradient(115deg,rgba(190,232,40,.24),rgba(7,7,7,0) 64%)}
+  /* TestMu AI (rebrand / identity morph): hard diagonal sweep, brightest pure acid, like a before-after wipe */
+  .tile-rebrand .case-media{background:#070d04}
+  .tile-rebrand .case-canvas{filter:saturate(1.18) brightness(1.06)}
+  .tile-rebrand .case-media::before{background:linear-gradient(102deg,rgba(216,255,62,.66) 0%,rgba(216,255,62,.1) 30%,transparent 46%),linear-gradient(282deg,rgba(170,255,90,.26),transparent 52%)}
+  /* Samsung (device / broadcast / signal-out): tight focused corner spotlight radiating out, cooler cyan-lime */
+  .tile-samsung .case-media{background:#040e0a}
+  .tile-samsung .case-canvas{filter:hue-rotate(28deg) saturate(.96)}
+  .tile-samsung .case-media::before{background:radial-gradient(62% 100% at 84% 18%,rgba(120,255,170,.6),transparent 52%),linear-gradient(40deg,rgba(150,255,120,.12),transparent 56%)}
+  /* Medilife (medical pulse / cross): rotational conic, structural/engineered, deepest teal-lime, lower density */
+  .tile-medi .case-media{background:#03100c}
+  .tile-medi .case-canvas{filter:hue-rotate(48deg) saturate(.9)}
+  .tile-medi .case-media::before{background:conic-gradient(from 200deg at 32% 58%,rgba(90,240,180,.42),transparent 34%,rgba(120,255,150,.26) 70%,transparent),radial-gradient(90% 90% at 70% 30%,rgba(80,230,200,.16),transparent 60%)}
+  /* Lido Learning (funnel / pipeline / routing): converging diagonal wash, warm yellow-lime */
+  .tile-lido .case-media{background:#0b0f03}
+  .tile-lido .case-canvas{filter:hue-rotate(-4deg) saturate(1.04)}
+  .tile-lido .case-media::before{background:linear-gradient(160deg,rgba(170,240,90,.5) 0%,rgba(170,240,90,.08) 42%,transparent 60%),radial-gradient(80% 110% at 50% 100%,rgba(200,255,100,.22),transparent 56%)}
+  /* Appknox (shield / security): centred protective dome, cooler teal-lime */
+  .tile-appknox .case-media{background:#04100d}
+  .tile-appknox .case-canvas{filter:hue-rotate(40deg) saturate(.94)}
+  .tile-appknox .case-media::before{background:radial-gradient(70% 80% at 50% 30%,rgba(90,220,200,.52),transparent 56%),linear-gradient(0deg,rgba(80,230,180,.16),transparent 52%)}
+  /* per-tile crop/scale so thumbnails do not flatten into one identical texture */
+  .tile-lt .case-canvas{transform:scale(1.0)}
+  .tile-rebrand .case-canvas{transform:scale(1.18) translateX(4%)}
+  .tile-samsung .case-canvas{transform:scale(1.32) translate(-6%,4%)}
+  .tile-medi .case-canvas{transform:scale(1.1) translateY(-3%)}
+  .tile-lido .case-canvas{transform:scale(1.22) translate(5%,2%)}
+  .tile-appknox .case-canvas{transform:scale(1.28) translateY(2%)}
+  .case.tile-rebrand:hover .case-canvas{transform:scale(1.24) translateX(4%)}
+  .case.tile-samsung:hover .case-canvas{transform:scale(1.4) translate(-6%,4%)}
+  .case.tile-medi:hover .case-canvas{transform:scale(1.16) translateY(-3%)}
+  .case.tile-lido:hover .case-canvas{transform:scale(1.28) translate(5%,2%)}
+  .case.tile-appknox:hover .case-canvas{transform:scale(1.34) translateY(2%)}
+  /* dark vignette so foreground labels stay legible over the tile */
+  .case-media::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(180deg,rgba(7,7,7,.5) 0%,transparent 30%,transparent 55%,rgba(7,7,7,.78) 100%)}
+  .case-no{position:absolute;top:.9rem;left:1.1rem;z-index:3;font-family:var(--display);font-size:clamp(1.6rem,3vw,2.4rem);
+    line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(244,241,234,.55);transition:-webkit-text-stroke .4s,color .4s}
+  .case:hover .case-no{color:var(--acid);-webkit-text-stroke:0}
+  /* tile label sits over the lime-tinted halftone: use a dark scrim + off-white ink,
+     never small lime text on a lime tile */
+  .case-tag{position:absolute;bottom:.9rem;left:1.1rem;z-index:3;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+    font-weight:700;color:#f2f0e6;background:rgba(7,7,7,.82);border:1px solid rgba(216,255,62,.5);padding:.34rem .6rem;line-height:1;
+    transition:border-color .4s,transform .4s cubic-bezier(.2,.8,.2,1)}
+  .case:hover .case-tag{transform:translateY(-2px)}
+  .case-body{padding:1.7rem 1.6rem 1.5rem;display:flex;flex-direction:column;gap:.85rem;flex:1}
+  /* metric-forward: the RESULT leads, typeset large in the display face.
+     signature hover: a lime underline sweeps in left-to-right beneath the result */
+  .case .result{font-family:var(--display);text-transform:uppercase;font-weight:400;letter-spacing:-.005em;line-height:.92;
+    font-size:clamp(1.7rem,3vw,2.5rem);color:var(--bone);display:block;position:relative;width:fit-content;
+    padding-bottom:.18em;transition:color .4s}
+  .case .result::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--acid);
+    transition:width .5s cubic-bezier(.2,.8,.2,1)}
+  .case .result .ac{color:var(--acid)}
+  .case:hover .result{color:var(--acid)}
+  .case:hover .result::after{width:100%}
+  @media(prefers-reduced-motion:reduce){.case .result::after{transition:none}}
+  /* per-tile accent colour token drives result-sweep, arrow, index + tag border on hover,
+     so every interactive cue picks up that card's own hue rather than a single shared green */
+  .tile-lt{--ac:#d6ff48}.tile-rebrand{--ac:#d8ff3e}.tile-samsung{--ac:#78ffaa}.tile-medi{--ac:#5af0b4}.tile-lido{--ac:#aef05a}.tile-appknox{--ac:#5adcc8}
+  .case .result::after{background:var(--ac,var(--acid))}
+  .case:hover .result{color:var(--ac,var(--acid))}
+  .case .result .ac{color:var(--ac,var(--acid))}
+  .case:hover .case-no{color:var(--ac,var(--acid))}
+  .case .arr{color:var(--ac,var(--acid))}
+  .case:hover .case-tag{border-color:var(--ac,var(--acid))}
+  /* project name demoted to an eyebrow row with index + name */
+  .case .wt-row{display:flex;align-items:baseline;gap:.7rem;border-top:1px solid var(--line);padding-top:.85rem}
+  .case .wt{font-family:var(--sans);text-transform:uppercase;font-weight:700;font-size:.92rem;letter-spacing:.04em;line-height:1;color:var(--bone)}
+  .case .wd{font-size:.96rem;color:var(--bone2);line-height:1.5;font-weight:400}
+  /* per-project KPI sparkline strip in the body of NON-featured tiles, so the bodies
+     read as distinct as the media. tiny inline SVG trend + its own KPI label, hue-matched. */
+  .case .spark-row{display:flex;align-items:center;gap:.7rem;margin-top:-.1rem}
+  .case .spark{display:block;width:64px;height:18px;flex:none;overflow:visible}
+  .case .spark polyline{fill:none;stroke:var(--ac,var(--acid));stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;
+    opacity:.72;transition:opacity .4s}
+  .case .spark circle{fill:var(--ac,var(--acid));opacity:.9}
+  .case:hover .spark polyline{opacity:1}
+  .case .skpi{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--bone2)}
+  .case.feat .spark-row{display:none}
+  /* featured tile: explicit VIEW CASE affordance under the body, the heaviest tile earns a label */
+  .case.feat .viewcase{display:inline-flex;align-items:center;gap:.55rem;font-size:.7rem;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--acid);width:fit-content;padding-bottom:.3rem;position:relative;margin-top:.2rem}
+  .case.feat .viewcase::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--acid);
+    transform:scaleX(.32);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+  .case.feat:hover .viewcase::after{transform:scaleX(1)}
+  .case.feat .viewcase .vca{transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+  .case.feat:hover .viewcase .vca{transform:translate(4px,-4px)}
+  /* role + year + arrow foot */
+  .case-foot{margin-top:auto;padding-top:1.1rem;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .case .role{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--bone2);line-height:1.2}
+  .case-meta{display:flex;align-items:center;gap:.9rem;flex:none}
+  .case .wy{font-family:var(--display);color:var(--bone2);font-size:1.35rem;line-height:1}
+  /* underline-sweep + arrow-slide microinteraction */
+  .case .arr{font-size:1.25rem;color:var(--acid);transform:translate(-6px,6px);opacity:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s}
+  .case:hover .arr{transform:translate(0,0);opacity:1}
+  @media(max-width:880px){.work{grid-template-columns:1fr;gap:1.4rem}.case .wd{display:block}}
+  /* tablet: keep a 3-up rhythm collapse gracefully to 2-up before stacking */
+  @media(min-width:881px) and (max-width:1080px){.work{grid-template-columns:repeat(2,1fr)}.case.feat .result{font-size:clamp(2rem,4vw,2.8rem)}}
+  /* recognition - the proof strip, scaled UP so it earns its place */
+  .recog{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+  .recog .rk-label{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);font-weight:600;margin-bottom:1.4rem;
+    display:flex;align-items:center;gap:.7rem}
+  .recog .rk-label::before{content:"";width:22px;height:2px;background:var(--acid)}
+  .awards{display:flex;flex-direction:column;gap:0}
+  /* each award is now a full editorial row: large display name + meta, hairline-separated */
+  .award{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:baseline;
+    padding:1.3rem 0;border-top:1px solid var(--line)}
+  .award:first-child{border-top:0;padding-top:0}
+  .award .dot{width:11px;height:11px;background:var(--acid);flex:none;transform:translateY(-.12em)}
+  .award b{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:-.005em;line-height:.92;
+    font-size:clamp(1.5rem,2.6vw,2.2rem);color:var(--bone);display:block}
+  .award span{display:block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-weight:600;margin-top:.5rem}
+  /* brands: bolder chips with stronger borders + an acid hover that fills, so the wall reads as real logos */
+  .brands{display:flex;flex-wrap:wrap;gap:.7rem;align-content:flex-start}
+  .brands span{border:1px solid rgba(244,241,234,.22);padding:.8rem 1.25rem;font-size:.9rem;font-weight:600;letter-spacing:.05em;
+    text-transform:uppercase;color:var(--bone2);transition:border-color .3s,color .3s,background .3s}
+  .brands span:hover{border-color:var(--acid);background:var(--acid);color:#070707}
+  @media(max-width:760px){.recog{grid-template-columns:1fr;gap:3rem}}
+  /* about - near-full-bleed moment */
+  .about-bleed{position:relative;z-index:3;background:var(--bone);color:#070707;margin-top:2rem}
+  .about-bleed .inner{max-width:1500px;margin:0 auto;padding:clamp(5rem,11vh,8rem) var(--m)}
+  .about-bleed .shead{border-color:rgba(7,7,7,.16)}
+  .about-bleed .shead h2{color:#070707}
+  .about-bleed .shead h2 em{color:#070707;border-bottom:6px solid var(--acid)}
+  .about-bleed .shead .idx{color:rgba(7,7,7,.68)}
+  /* oversized Anton pull-quote opening line, sits above the body copy, lime highlight on the key phrase */
+  /* line-height tuned so the lime highlight bands on consecutive lines never collide.
+     highlight padding is vertically tight (.04em) and added back via line-height headroom. */
+  .about-bleed .pull{font-family:var(--display);text-transform:uppercase;font-weight:400;line-height:1.28;letter-spacing:-.01em;
+    font-size:clamp(2.6rem,7vw,6rem);max-width:13ch;margin-bottom:1.7rem;color:#070707}
+  .about-bleed .pull em{font-style:normal;background:var(--acid);padding:.04em .1em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .about-bleed p{font-family:var(--sans);font-weight:500;font-size:clamp(1.5rem,3.6vw,2.8rem);line-height:1.4;letter-spacing:-.01em;max-width:26ch;color:#070707}
+  .about-bleed p em{font-style:normal;background:var(--acid);padding:.04em .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  /* contact */
+  .contact{text-align:left;padding-bottom:6rem;padding-top:clamp(5rem,12vh,9rem)}
+  .contact .big{font-family:var(--display);text-transform:uppercase;font-weight:400;font-size:clamp(3rem,13vw,12rem);line-height:.84;letter-spacing:-.01em}
+  .contact .big a{position:relative;color:var(--bone)}
+  .contact .big a .out{color:transparent;-webkit-text-stroke:2px var(--acid);transition:color .35s}
+  .contact .big a:hover .out{color:var(--acid);-webkit-text-stroke:0}
+  .contact .em{margin-top:2.6rem;font-size:.95rem;color:var(--mut);letter-spacing:.02em;display:flex;gap:1.4rem;flex-wrap:wrap}
+  .contact .em a{color:var(--bone);border-bottom:2px solid var(--line);padding-bottom:3px;transition:border-color .3s}
+  .contact .em a:hover{border-color:var(--acid)}
+  footer{border-top:1px solid var(--line);padding:2.4rem var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--bone2);position:relative;z-index:3}
+  footer a{color:var(--bone2);border-bottom:1px solid var(--line);transition:color .3s,border-color .3s}
+  footer a:hover{color:var(--bone);border-color:var(--bone)}
+  .reveal{opacity:0;transform:translateY(28px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important}}
+  /* ---- mobile hero: giant type stays the hero, atmosphere bleeds TALL behind it ---- */
+  @media(max-width:600px){
+    /* commanding headline: bigger minimum, tighter leading so it dominates the first viewport */
+    .hero h1{font-size:clamp(4.4rem,20vw,7rem);line-height:.82;letter-spacing:-.015em}
+    /* force each word block to wrap and put the lime accent on its own line */
+    .hero h1 .ln>span i{display:block}
+    .hero h1 .acid{display:block}
+    /* give the headline block top weight; pull the eyebrow tighter to it */
+    .hero{padding-top:7.5rem}
+    .hero .eyebrow{margin-bottom:1.1rem}
+    /* let the WebGL atmosphere bleed TALL behind the headline - not a thin compressed band.
+       full-bleed, no down-scale, only a gentle opacity lift toward the top so type stays legible */
+    canvas#gl{opacity:.66;transform:none;
+      -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.55) 78%,transparent 100%);
+      mask-image:linear-gradient(180deg,#000 0%,#000 52%,rgba(0,0,0,.55) 78%,transparent 100%)}
+    /* lift the hero body scrim a touch on small screens */
+    .hero .sub{padding-left:0;margin-top:2rem}
+    .hero .sub::before{inset:-.6rem -1rem}
+  }
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+<div class="grain"></div>
+<div class="topband"></div>
+
+<nav>
+  <a class="logo" href="/redesign/">SB<span style="color:var(--acid)">.</span></a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="allc" href="/redesign/">All concepts</a>
+  </div>
+  <button class="menu-btn" id="menuOpen" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span class="mlines"><i></i><i></i><i></i></span>Menu
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="mm-top">
+    <a class="logo" href="/redesign/">SB<span style="color:var(--acid)">.</span></a>
+    <button class="mm-close" id="menuClose" aria-label="Close menu">Close &#10005;</button>
+  </div>
+  <nav class="mm-links">
+    <a href="#work" data-mm><span class="mi">01</span>Work</a>
+    <a href="#about" data-mm><span class="mi">02</span>About</a>
+    <a href="#contact" data-mm><span class="mi">03</span>Contact</a>
+    <a class="allc" href="/redesign/" data-mm>All concepts &#8599;</a>
+  </nav>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-top">
+      <div class="eyebrow"><span class="ln"></span>Senior Product Marketing Manager <span class="ac">/</span> LambdaTest</div>
+      <h1>
+        <span class="ln"><span><i class="w1">The</i> <i class="w2">marketer</i></span></span>
+        <span class="ln"><span><i class="w3">who</i> <span class="acid">ships.</span></span></span>
+      </h1>
+    </div>
+    <div class="hero-band">
+      <span class="band-idx">00 / Intro</span>
+      <div class="band-copy">
+        <p class="sub">I build the agents, sites and SEO systems behind the numbers - not just the decks that describe them. Product marketing, actually engineered.</p>
+        <div class="cta">
+          <a class="btn primary" href="#work">See selected work <span class="ar">&#8599;</span></a>
+          <a class="btn ghost" href="#contact">Let's build</a>
+        </div>
+      </div>
+      <div class="heroStats">
+        <div class="hs"><span class="hn">657K+</span><span class="hl">Leads generated</span></div>
+        <div class="hs"><span class="hn">18M+</span><span class="hl">Organic traffic</span></div>
+        <div class="hs"><span class="hn">20+</span><span class="hl">AI agents built</span></div>
+      </div>
+    </div>
+    <div class="scrollcue"><span class="bar"></span> Scroll</div>
+  </header>
+</div>
+
+<div class="marquee" data-dir="1">
+  <div class="mtrack">{[...marquee, ...marquee].map(t => <span>{t}</span>)}</div>
+</div>
+
+<div class="wrap">
+  <section id="stats">
+    <span class="anchor" aria-hidden="true">Impact</span>
+    <div class="shead"><h2>By the <em>numbers</em></h2><span class="idx">01 / Impact</span></div>
+    <div class="stats">
+      {stats.map(s => (
+        <div class={`stat reveal${s.big ? ' lead' : ''}`}>
+          <div class="n"><span class="num" data-to={s.n} data-dec={String(s.n).includes('.') ? 1 : 0}>0</span><span class="suf">{s.suf}</span></div>
+          <div class="l">{s.l}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="services">
+    <span class="anchor" aria-hidden="true">Disciplines</span>
+    <div class="shead"><h2>What I <em>do</em></h2><span class="idx">02 / Disciplines</span></div>
+    <div class="pillars">
+      {pillars.map(p => (
+        <div class="pillar reveal"><div class="pi">{p.i}</div><div><h3>{p.t}</h3><p>{p.d}</p></div></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="work">
+    <span class="anchor" aria-hidden="true">Built</span>
+    <div class="shead"><h2>Selected <em>work</em></h2><span class="idx">03 / Built</span></div>
+    <div class="work">
+      {work.map((w, i) => (
+        <a href="#" class={`case reveal tile-${w.tile}${i === 0 ? ' feat' : ''}`}>
+          <div class="case-media">
+            <canvas class="case-canvas" data-tile={w.tile}></canvas>
+            <span class="case-no">{String(i + 1).padStart(2, '0')}</span>
+            <span class="case-tag">{w.m}</span>
+          </div>
+          <div class="case-body">
+            <span class="result" set:html={w.rh}></span>
+            <div class="wt-row"><span class="wt">{String(i + 1).padStart(2, '0')} / {w.t}</span></div>
+            <p class="wd">{w.d}</p>
+            {i !== 0 && (() => {
+              const max = Math.max(...w.spark), min = Math.min(...w.spark);
+              const span = (max - min) || 1;
+              const pts = w.spark.map((v, k) => `${(k / (w.spark.length - 1) * 60 + 2).toFixed(1)},${(16 - (v - min) / span * 14).toFixed(1)}`).join(' ');
+              const last = pts.split(' ').pop().split(',');
+              return (
+                <div class="spark-row">
+                  <svg class="spark" viewBox="0 0 64 18" aria-hidden="true">
+                    <polyline points={pts} />
+                    <circle cx={last[0]} cy={last[1]} r="2" />
+                  </svg>
+                  <span class="skpi">{w.skpi}</span>
+                </div>
+              );
+            })()}
+            {i === 0 && <span class="viewcase">View case <span class="vca">&#8599;</span></span>}
+            <div class="case-foot">
+              <span class="role">{w.m}</span>
+              <span class="case-meta"><span class="wy">{w.y}</span><span class="arr">&#8599;</span></span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="recognition">
+    <span class="anchor" aria-hidden="true">Proof</span>
+    <div class="shead"><h2>Recognition &amp; <em>brands</em></h2><span class="idx">04 / Proof</span></div>
+    <div class="recog">
+      <div class="reveal">
+        <div class="rk-label">Awards</div>
+        <div class="awards">
+          {awards.map(a => (
+            <div class="award"><span class="dot"></span><div><b>{a.b}</b><span>{a.s}</span></div></div>
+          ))}
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="rk-label">Brands I have shipped for</div>
+        <div class="brands">
+          {brands.map(b => <span>{b}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- near-full-bleed bone moment for deliberate vertical rhythm -->
+<section id="about" class="about-bleed">
+  <div class="inner">
+    <div class="shead"><h2><em>About</em></h2><span class="idx">05 / Mumbai, India</span></div>
+    <p class="pull reveal">I treat my own career <em>like a product.</em></p>
+    <p class="reveal">7+ years in marketing, 4+ in B2B SaaS. Postgrad in growth strategy at <em>IIM Visakhapatnam</em>. Positioned, measured and <em>shipped</em>.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <section id="contact" class="contact">
+    <div class="eyebrow reveal" style="margin-bottom:1.8rem;color:var(--bone2)">Let's build something that compounds</div>
+    <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com">Say <span class="out">hello</span> &#8599;</a></div>
+    <div class="em reveal">
+      <a href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a>
+      <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <span>&copy; 2026 Swapnil Biswas</span>
+  <span>Concept 02 - Monolith &middot; <a href="/redesign/">View all concepts</a></span>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- WebGL CRISP lime halftone dot-lattice (flow-field + pointer driven) ----
+  (function(){
+    const cv = document.getElementById('gl');
+    const gl = cv.getContext('webgl', { antialias:true, alpha:true });
+    if(!gl){ cv.style.background='#070707'; return; }
+    const vs=`attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+    const fs=`precision highp float;uniform vec2 r;uniform float t;uniform vec2 ptr;
+    float h(vec2 x){return fract(sin(dot(x,vec2(127.1,311.7)))*43758.5453);}
+    float n(vec2 x){vec2 i=floor(x),f=fract(x);float a=h(i),b=h(i+vec2(1,0)),c=h(i+vec2(0,1)),d=h(i+vec2(1,1));vec2 u=f*f*(3.-2.*f);return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y;}
+    void main(){
+      // uniform lattice in screen space - crisp regular dot grid
+      float cell = 28.0;
+      vec2 g  = gl_FragCoord.xy / cell;          // grid coords
+      vec2 id = floor(g);                          // which cell
+      vec2 gc = fract(g) - 0.5;                    // local coord within cell [-.5,.5]
+      // sample a SLOW flow-field at the cell centre (so each dot is one value -> crisp)
+      vec2 cc = (id + 0.5) * cell / r.xy;          // cell-centre in uv 0..1
+      vec2 cp = cc; cp.x *= r.x / r.y;
+      float flow = n(cp*2.1 + vec2(t*0.045, -t*0.03));
+      flow = mix(flow, n(cp*4.0 - vec2(t*0.02, t*0.05)), 0.4);
+      // pointer influence - dots swell toward the cursor
+      float pd = distance(cc, ptr);
+      float pulse = smoothstep(0.42, 0.0, pd) * 0.55;
+      float amp = clamp(flow*1.15 - 0.18 + pulse, 0.0, 1.0);
+      // anti-aliased circle, radius driven by amp; dot fully off below threshold
+      float radius = amp * 0.46;
+      float aa = 1.2 / cell;                        // ~1px edge softness, still crisp
+      float dotMask = 1.0 - smoothstep(radius - aa, radius + aa, length(gc));
+      // edge fade so corners settle into near-pure black, type plate stays clean
+      vec2 uv = gl_FragCoord.xy / r.xy;
+      float edge = smoothstep(1.05, 0.45, length(uv - vec2(0.5, 0.46)));
+      float bright = dotMask * amp * edge;
+      // cap max dot opacity ~0.38 over near-pure black; NO bloom/cloud
+      vec3 lime = vec3(0.847, 1.0, 0.243);
+      vec3 col  = mix(vec3(0.027), lime, clamp(bright, 0.0, 0.38));
+      gl_FragColor = vec4(col, 1.0);
+    }`;
+    function sh(t,s){const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o;}
+    const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t'),up=gl.getUniformLocation(pr,'ptr');
+    let pxy=[0.5,0.46], tgt=[0.5,0.46];
+    function size(){const d=Math.min(window.devicePixelRatio||1,1.6);cv.width=innerWidth*d;cv.height=innerHeight*d;gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(ur,cv.width,cv.height);}
+    size();addEventListener('resize',size);
+    if(!reduce){
+      addEventListener('pointermove',(e)=>{ tgt=[e.clientX/innerWidth, 1.0 - e.clientY/innerHeight]; },{passive:true});
+    }
+    if(reduce){gl.uniform1f(ut,4.0);gl.uniform2f(up,0.5,0.46);gl.drawArrays(gl.TRIANGLES,0,3);return;}
+    let start=performance.now();
+    (function loop(now){
+      pxy[0]+=(tgt[0]-pxy[0])*0.06; pxy[1]+=(tgt[1]-pxy[1])*0.06;
+      gl.uniform1f(ut,(now-start)/1000);
+      gl.uniform2f(up,pxy[0],pxy[1]);
+      gl.drawArrays(gl.TRIANGLES,0,3);
+      requestAnimationFrame(loop);
+    })(start);
+  })();
+
+  // ---- SELECTED WORK abstract preview tiles: per-project lime halftone canvas ----
+  // Each tile is a distinct flow-field of crisp lime dots over near-black, on-brand
+  // with the hero lattice. Animates on hover; static frame for reduced-motion.
+  (function(){
+    const limeRGB='216,255,62';
+    const cfgs={
+      lt:      { cell:11, freq:1.5, swirl:1.1, drift:0.45, tilt:0.4 },  // LambdaTest hero: fine, rich, slow billow rising
+      rebrand: { cell:9,  freq:2.8, swirl:0.25,drift:1.7, tilt:1.1 },   // TestMu rebrand: tight, fast, hard diagonal wipe
+      samsung: { cell:18, freq:1.2, swirl:2.0, drift:0.35, tilt:0.12 }, // Samsung broadcast: coarse, calm, radial signal-out
+      medi:    { cell:14, freq:2.1, swirl:0.7, drift:0.7, tilt:0.55 },  // Medilife: structured mid-grain pulse
+      lido:    { cell:13, freq:2.4, swirl:0.5, drift:1.0, tilt:0.85 },  // Lido funnel: directional, converging
+      appknox: { cell:16, freq:1.4, swirl:1.6, drift:0.4, tilt:0.2 }    // Appknox shield: coarse, centred, calm
+    };
+    function noise(x,y){
+      const s=Math.sin(x*12.9898+y*78.233)*43758.5453;
+      return s-Math.floor(s);
+    }
+    function smoothNoise(x,y){
+      const xi=Math.floor(x), yi=Math.floor(y), xf=x-xi, yf=y-yi;
+      const u=xf*xf*(3-2*xf), v=yf*yf*(3-2*yf);
+      const a=noise(xi,yi),b=noise(xi+1,yi),c=noise(xi,yi+1),d=noise(xi+1,yi+1);
+      return a+(b-a)*u+(c-a)*v*(1-u)+(d-b)*u*v;
+    }
+    document.querySelectorAll('.case-canvas').forEach((cv)=>{
+      const key=cv.getAttribute('data-tile')||'lt';
+      const cfg=cfgs[key]||cfgs.lt;
+      const ctx=cv.getContext('2d');
+      if(!ctx) return;
+      const card=cv.closest('.case');
+      let hover=0, hovTarget=0, raf=0;
+      if(card && !reduce){
+        card.addEventListener('mouseenter',()=>{hovTarget=1; if(!raf) loop(performance.now());});
+        card.addEventListener('mouseleave',()=>{hovTarget=0;});
+      }
+      function fit(){
+        const r=cv.getBoundingClientRect();
+        const dpr=Math.min(window.devicePixelRatio||1,2);
+        cv.width=Math.max(2,Math.round(r.width*dpr));
+        cv.height=Math.max(2,Math.round(r.height*dpr));
+        draw(performance.now());
+      }
+      function draw(now){
+        const W=cv.width, H=cv.height;
+        if(W<2||H<2) return;
+        const t=now/1000;
+        const cell=cfg.cell*(Math.min(window.devicePixelRatio||1,2));
+        ctx.clearRect(0,0,W,H);
+        ctx.fillStyle='#060d02';
+        ctx.fillRect(0,0,W,H);
+        const cols=Math.ceil(W/cell)+1, rows=Math.ceil(H/cell)+1;
+        for(let yi=0;yi<rows;yi++){
+          for(let xi=0;xi<cols;xi++){
+            const cx=(xi+0.5)*cell, cy=(yi+0.5)*cell;
+            const u=cx/W, vv=cy/H;
+            let f=smoothNoise(u*cfg.freq*3 + t*cfg.drift, vv*cfg.freq*3 - t*cfg.drift*0.6);
+            f=f*0.6 + smoothNoise(u*cfg.freq*6 - t*0.4*cfg.swirl, vv*cfg.freq*6 + t*0.3)*0.4;
+            // diagonal tilt gradient gives each tile a directional bias
+            f+= (u*cfg.tilt + (1-vv)*cfg.tilt*0.6) - 0.3;
+            f+= hover*0.22; // dots swell on hover
+            const amp=Math.max(0,Math.min(1,f*1.25-0.12));
+            if(amp<=0.02) continue;
+            const rad=amp*cell*0.46;
+            const a=Math.min(0.92,amp*(0.55+hover*0.4));
+            ctx.beginPath();
+            ctx.arc(cx,cy,rad,0,6.2832);
+            ctx.fillStyle='rgba('+limeRGB+','+a.toFixed(3)+')';
+            ctx.fill();
+          }
+        }
+      }
+      function loop(now){
+        hover+=(hovTarget-hover)*0.12;
+        draw(now);
+        if(hovTarget>0.01 || hover>0.01){ raf=requestAnimationFrame(loop); }
+        else { raf=0; draw(now); }
+      }
+      // observe size; draw a static idle frame once visible
+      const ro=('ResizeObserver' in window)?new ResizeObserver(fit):null;
+      if(ro) ro.observe(cv);
+      requestAnimationFrame(fit);
+      if(reduce){ requestAnimationFrame(()=>draw(1200)); }
+    });
+  })();
+
+  // ---- mobile menu overlay (independent of motion preference) ----
+  (function(){
+    const menu=document.getElementById('mobileMenu');
+    const openBtn=document.getElementById('menuOpen');
+    const closeBtn=document.getElementById('menuClose');
+    if(!menu||!openBtn) return;
+    function open(){menu.classList.add('open');openBtn.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+    function close(){menu.classList.remove('open');openBtn.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+    openBtn.addEventListener('click',open);
+    if(closeBtn) closeBtn.addEventListener('click',close);
+    menu.querySelectorAll('[data-mm]').forEach(a=>a.addEventListener('click',close));
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape'&&menu.classList.contains('open')) close(); });
+  })();
+
+  // ---- reduced-motion: ensure everything visible, skip loops ----
+  if(reduce){
+    document.querySelectorAll('.reveal').forEach(el=>{el.style.opacity='1';el.style.transform='none';});
+    document.querySelectorAll('.num').forEach(el=>{
+      const dec=parseInt(el.dataset.dec||'0',10);
+      el.textContent=parseFloat(el.dataset.to).toFixed(dec);
+    });
+  } else {
+    // ---- smooth scroll ----
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    function raf(t){lenis.raf(t);requestAnimationFrame(raf);}requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll',ScrollTrigger.update);
+
+    // hero reveal - overflow-clip line masks
+    gsap.set('.hero h1 .ln>span',{yPercent:118});
+    gsap.set('.hero .eyebrow,.hero .sub,.hero .cta,.hero .heroStats .hs,.hero .band-idx',{opacity:0,y:24});
+    const tl=gsap.timeline({delay:.15});
+    tl.to('.hero .eyebrow',{opacity:1,y:0,duration:.7,ease:'expo.out'},.1)
+      .to('.hero h1 .ln>span',{yPercent:0,duration:1.15,ease:'expo.out',stagger:.12},.05)
+      .to('.hero .band-idx',{opacity:1,y:0,duration:.7,ease:'expo.out'},.5)
+      .to('.hero .sub',{opacity:1,y:0,duration:.8,ease:'expo.out'},.55)
+      .to('.hero .cta',{opacity:1,y:0,duration:.8,ease:'expo.out'},.7)
+      .to('.hero .heroStats .hs',{opacity:1,y:0,duration:.7,ease:'expo.out',stagger:.1},.62);
+
+    // generic reveals - batched so siblings (stat cells, pillars, work cards, awards)
+    // cascade in a tight stagger instead of all firing on one scroll line.
+    // standalone reveals still animate on their own trigger.
+    const grouped=new Set();
+    document.querySelectorAll('.stats,.pillars,.work,.awards,.recog,.contact').forEach(group=>{
+      const items=group.querySelectorAll(':scope > .reveal');
+      if(!items.length) return;
+      items.forEach(el=>grouped.add(el));
+      ScrollTrigger.batch(items,{
+        start:'top 90%',
+        onEnter:batch=>gsap.to(batch,{opacity:1,y:0,duration:.9,ease:'expo.out',stagger:.09,overwrite:true})
+      });
+    });
+    gsap.utils.toArray('.reveal').forEach(el=>{
+      if(grouped.has(el)) return;
+      gsap.to(el,{opacity:1,y:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 90%'}});
+    });
+
+    // ---- count-up on scroll for the "by the numbers" metrics ----
+    gsap.utils.toArray('.num').forEach(el=>{
+      const to=parseFloat(el.dataset.to);
+      const dec=parseInt(el.dataset.dec||'0',10);
+      const o={v:0};
+      gsap.to(o,{
+        v:to,duration:1.8,ease:'power2.out',
+        scrollTrigger:{trigger:el,start:'top 88%'},
+        onUpdate(){ el.textContent = dec ? o.v.toFixed(dec) : Math.round(o.v).toString(); },
+        onComplete(){ el.textContent = dec ? to.toFixed(dec) : Math.round(to).toString(); }
+      });
+    });
+
+    // ---- ONE signature scroll-velocity kinetic marquee ----
+    const tracks=[];
+    document.querySelectorAll('.marquee').forEach(mq=>{
+      const track=mq.querySelector('.mtrack');
+      const dir=parseFloat(mq.dataset.dir)||1;
+      const half=track.scrollWidth/2; // content duplicated for seamless wrap
+      tracks.push({track,dir,half,x:dir<0?-half:0});
+    });
+    let vel=0;
+    lenis.on('scroll',(e)=>{ vel=e.velocity||0; });
+    const base=0.6; // px/frame baseline drift
+    gsap.ticker.add(()=>{
+      const skew=gsap.utils.clamp(-12,12,vel*0.85);
+      tracks.forEach(o=>{
+        const speed=(base + Math.abs(vel)*1.5)*o.dir;
+        o.x -= speed;
+        if(o.dir>0 && o.x<=-o.half) o.x+=o.half;
+        if(o.dir<0 && o.x>=0) o.x-=o.half;
+        o.track.style.transform=`translateX(${o.x}px) skewX(${skew*o.dir*0.35}deg)`;
+      });
+      vel*=0.9; // decay
+    });
+
+    // ---- magnetic primary button ----
+    const mag=document.querySelector('.btn.primary');
+    if(mag){
+      mag.addEventListener('mousemove',(e)=>{
+        const b=mag.getBoundingClientRect();
+        const mx=e.clientX-b.left-b.width/2, my=e.clientY-b.top-b.height/2;
+        gsap.to(mag,{x:mx*0.3,y:my*0.4,duration:.5,ease:'power3.out'});
+      });
+      mag.addEventListener('mouseleave',()=>gsap.to(mag,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'}));
+    }
+
+    // ---- signature: pointer-parallax on the Selected Work tiles ----
+    // the whole media frame shifts a few px toward the cursor (NOT the canvas, whose
+    // transform carries the per-tile crop/scale), giving the page's most interactive
+    // moment a quiet sense of depth without fighting the tile compositions.
+    document.querySelectorAll('.case').forEach(card=>{
+      const media=card.querySelector('.case-media');
+      if(!media) return;
+      card.addEventListener('mousemove',(e)=>{
+        const b=card.getBoundingClientRect();
+        const rx=(e.clientX-b.left)/b.width-0.5, ry=(e.clientY-b.top)/b.height-0.5;
+        gsap.to(media,{x:rx*8,y:ry*6,duration:.6,ease:'power3.out'});
+      });
+      card.addEventListener('mouseleave',()=>gsap.to(media,{x:0,y:0,duration:.7,ease:'power3.out'}));
+    });
+  }
+</script>
+</body>
+</html>

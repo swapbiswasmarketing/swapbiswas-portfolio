@@ -1,0 +1,955 @@
+---
+// REDESIGN PROTOTYPE - "Odyssey" - cinematic scrollytelling, from noise to signal, dark.
+// Concept 11. Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+// Tech: THREE.js particle system (noise -> ordered constellation, scroll + mouse driven)
+//       + GSAP/ScrollTrigger reveals + Lenis smooth scroll. Three.js via CDN ESM, gradient fallback.
+const stats = [
+  { n: '657K+', l: 'Leads generated' },
+  { n: '18.2M+', l: 'Organic traffic driven' },
+  { n: '10x', l: 'Conversion lift' },
+  { n: '20+', l: 'AI agents & apps built' },
+  { n: '15+', l: 'Marketers mentored' },
+  { n: '76', l: 'Articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS. The narrative that makes a product impossible to ignore.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand generation that compounds long after the campaign ends.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped - instead of only briefing them.' },
+  { i: '04', t: 'Building in public', d: 'This site, eight free tools and seventy-six articles. Shipped systems, not slide-ware.' },
+];
+const work = [
+  { i: '01', t: 'LambdaTest', role: 'Product & digital marketing', r: '657K+ leads, 18.2M+ organic traffic', y: '2021-2025', sw: 'ldt', note: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { i: '02', t: 'TestMu AI', role: 'Rebrand lead', r: 'Full company rebrand', y: '2026', sw: 'rebrand', note: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', t: 'Samsung', role: 'Launch content & distribution', r: 'Galaxy M-series launch', y: '2019', sw: 'samsung', note: 'On the Galaxy M-series from inception; ran content distribution (collaborated with Technical Guruji).' },
+  { i: '04', t: 'Medilife Superspeciality', role: 'Marketing & web, 0 to 1', r: 'Website, GTM, social & launch', y: '', sw: 'medi', note: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', t: 'Lido Learning', role: 'Growth / CRM', r: 'CRM & lead operations', y: '2021', sw: 'lido', note: 'Ran CRM management and lead routing/assignment for the EdTech.' },
+  { i: '06', t: 'Appknox', role: 'Freelance content', r: 'Security content', y: '', sw: 'appknox', note: 'Freelance content writer for the mobile app security company.' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const acts = [
+  { num: 'Act I', name: 'The Noise', line: 'Every product launches into static. A thousand signals, none of them yours.' },
+  { num: 'Act II', name: 'The System', line: 'I build the machine - the agents, the SEO, the GTM - that turns chaos into a pattern.' },
+  { num: 'Act III', name: 'The Signal', line: 'What is left is one clear line of growth. Measured, ordered, locked.' },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="odyssey">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - From noise to signal</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#04050a; --bg2:#070912; --ink:#f4f6ff; --read:#c4c9e4; --mut:#7e85a8; --line:rgba(244,246,255,.10);
+    --cold:#4b6cff; --cold-soft:#7d96ff; --warm:#ffcf6b; --warm-soft:#ffe1a0; --teal:#5eead4;
+    --disp:"Space Grotesk",system-ui,sans-serif; --sans:"Inter",system-ui,sans-serif;
+    --m:clamp(1.25rem,5vw,6rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip;scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;overflow-x:clip;font-weight:400}
+  section{overflow-x:clip;position:relative}
+  ::selection{background:var(--warm);color:#0a0a14}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--disp)}
+
+  /* ---- WebGL particle canvas: full-bleed fixed, with a cosmic gradient fallback so a
+     failed/null context never shows a bare box. Cold (blue) -> warm (gold) is driven in JS. */
+  canvas#scene{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;display:block;
+    background:
+      radial-gradient(60% 50% at 50% 26%,rgba(75,108,255,.22),transparent 62%),
+      radial-gradient(80% 70% at 50% 120%,rgba(255,207,107,.10),transparent 60%),
+      radial-gradient(120% 100% at 50% 0%,#070b1c,#04050a 64%)}
+  /* CSS-only fallback field (small screens + null WebGL): drifting cosmic haze */
+  .css-field{position:fixed;inset:0;z-index:0;pointer-events:none;display:none;
+    background:
+      radial-gradient(50% 44% at 50% 24%,rgba(75,108,255,.26),transparent 60%),
+      radial-gradient(70% 60% at 50% 118%,rgba(255,207,107,.12),transparent 58%),
+      radial-gradient(120% 100% at 50% -4%,#080c20,#04050a 62%);
+    animation:fieldDrift 26s ease-in-out infinite alternate}
+  @keyframes fieldDrift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-2%,1.5%,0) scale(1.07)}}
+  @media(prefers-reduced-motion:reduce){.css-field{animation:none}}
+
+  /* film grain + cinematic vignette + scanline atmosphere */
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.06;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .vignette{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(120% 95% at 50% 40%,transparent 50%,rgba(4,5,10,.62) 100%),linear-gradient(180deg,rgba(4,5,10,.35),transparent 22%,transparent 80%,var(--bg))}
+
+  .wrap{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:0 var(--m)}
+
+  /* ---- nav ---- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+    padding:1.4rem var(--m);transition:background .4s,backdrop-filter .4s}
+  nav.solid{background:rgba(4,5,10,.6);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .logo{font-family:var(--disp);font-size:1.05rem;font-weight:600;letter-spacing:.01em;display:inline-flex;align-items:center;gap:.6rem}
+  .logo .pip{width:8px;height:8px;border-radius:50%;background:var(--warm);box-shadow:0 0 14px var(--warm);flex:none}
+  .navlinks{display:flex;gap:2.1rem;font-size:.78rem;letter-spacing:.06em;font-weight:500;text-transform:uppercase;align-items:center}
+  .navlinks a{position:relative;color:var(--read);transition:color .3s}
+  .navlinks a:hover{color:var(--ink)}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--warm);transition:width .35s cubic-bezier(.2,.8,.2,1)}
+  .navlinks a:hover::after{width:100%}
+  .navlinks a.all{color:var(--mut);border:1px solid var(--line);border-radius:100px;padding:.4rem .9rem;text-transform:none;letter-spacing:.02em}
+  .navlinks a.all::after{display:none}
+  .navlinks a.all:hover{color:var(--ink);border-color:var(--warm)}
+  @media(max-width:760px){.navlinks a:not(.all){display:none}}
+
+  /* scroll progress + act tracker */
+  .progress{position:fixed;top:0;left:0;height:2px;width:100%;transform:scaleX(0);transform-origin:left;z-index:30;
+    background:linear-gradient(90deg,var(--cold),var(--teal),var(--warm))}
+
+  /* ---- hero ---- */
+  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:8rem 0 4rem;position:relative}
+  .eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--warm-soft);font-weight:500;font-family:var(--disp)}
+  .hero .credential{display:inline-flex;align-items:center;gap:.85rem;font-size:.72rem;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--cold-soft);font-weight:500;font-family:var(--disp);margin-bottom:2rem;overflow:hidden}
+  .hero .credential::before{content:"";width:30px;height:1px;background:var(--cold-soft);flex:none}
+  .hero h1{font-family:var(--disp);font-weight:500;font-size:clamp(2.9rem,9vw,8.4rem);line-height:.95;letter-spacing:-.03em;max-width:16ch}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln>span{display:block;will-change:transform}
+  .hero h1 .noise{color:var(--cold-soft)}
+  .hero h1 .signal{color:var(--warm);position:relative}
+  .hero .sub{margin-top:2.4rem;max-width:50ch;font-size:clamp(1rem,1.4vw,1.2rem);color:var(--read);line-height:1.7}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  .cta{margin-top:2.8rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.7rem;border-radius:100px;font-size:.85rem;font-weight:600;letter-spacing:.02em;font-family:var(--disp);transition:transform .4s cubic-bezier(.2,.8,.2,1),background .3s,color .3s,box-shadow .4s}
+  .btn.primary{background:var(--warm);color:#0a0a14;box-shadow:0 0 0 0 rgba(255,207,107,.4)}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px -10px rgba(255,207,107,.6)}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn .ar{transition:transform .4s}
+  .btn:hover .ar{transform:translate(4px,-4px)}
+  .scrollcue{position:absolute;bottom:2rem;left:var(--m);font-size:.68rem;letter-spacing:.24em;color:var(--mut);text-transform:uppercase;display:flex;align-items:center;gap:.7rem;font-family:var(--disp)}
+  .scrollcue .bar{width:1px;height:42px;background:linear-gradient(var(--warm),transparent);display:block;animation:cuePulse 2.4s ease-in-out infinite}
+  @keyframes cuePulse{0%,100%{opacity:.4;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
+  @media(prefers-reduced-motion:reduce){.scrollcue .bar{animation:none}}
+  @media(max-width:600px){
+    header.hero{padding:7rem 0 3rem;justify-content:flex-end;min-height:100svh}
+    .hero .credential{margin-bottom:1.4rem}
+    .hero h1{font-size:clamp(3rem,15vw,5rem);line-height:.95;letter-spacing:-.03em;max-width:11ch}
+    .hero .sub{margin-top:1.6rem;font-size:1.02rem;max-width:40ch}
+    .scrollcue{display:none}
+  }
+
+  /* ---- marquee statement ---- */
+  .marquee{padding:3.5rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative;
+    background:linear-gradient(180deg,rgba(75,108,255,.04),rgba(255,207,107,.03))}
+  .marquee .track{display:flex;gap:3rem;white-space:nowrap;width:max-content;animation:slide 32s linear infinite}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+  .marquee span{font-family:var(--disp);font-weight:600;font-size:clamp(1.6rem,3.6vw,2.8rem);letter-spacing:-.02em;color:var(--mut);display:inline-flex;align-items:center;gap:3rem}
+  .marquee span em{font-style:normal;color:var(--warm)}
+  .marquee span .dot{width:9px;height:9px;border-radius:50%;background:var(--cold);flex:none}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ---- section frame + act headers ---- */
+  section.act{padding:clamp(5.5rem,13vh,10rem) 0}
+  /* Distinct ambient palette per act, mapping the cold->warm journey.
+     A wide soft glow bleeds left past the wrap so the act reads as its own "room". */
+  section.act::before{content:"";position:absolute;z-index:-1;pointer-events:none;
+    top:0;bottom:0;left:50%;margin-left:-50vw;width:100vw;opacity:.9;transition:opacity .6s}
+  /* Noise - near-black with a cold blue cast pooling at the act opening */
+  section.act.noise::before{background:
+    radial-gradient(70% 50% at 18% 8%,rgba(75,108,255,.13),transparent 60%),
+    linear-gradient(180deg,rgba(8,10,24,.85),rgba(4,5,10,0) 38%)}
+  /* System - neutral slate, the machine room; cooler-grey, balanced */
+  section.act.system::before{background:
+    radial-gradient(80% 46% at 80% 4%,rgba(120,132,170,.10),transparent 58%),
+    linear-gradient(180deg,rgba(16,19,30,.7),rgba(4,5,10,0) 42%)}
+  /* Signal - warm charcoal with amber pooling, the resolution */
+  section.act.signal::before{background:
+    radial-gradient(72% 50% at 22% 6%,rgba(255,207,107,.12),transparent 60%),
+    radial-gradient(60% 40% at 92% 96%,rgba(255,207,107,.06),transparent 58%),
+    linear-gradient(180deg,rgba(24,18,8,.55),rgba(4,5,10,0) 44%)}
+  .actmark{display:flex;align-items:baseline;gap:1.4rem;margin-bottom:1rem;flex-wrap:wrap}
+  .actmark .anum{font-family:var(--disp);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--warm);font-weight:600}
+  /* the ghost label behind each act name - tinted to the act palette, no longer a flat grey */
+  .actmark{position:relative}
+  .actmark .aghost{position:absolute;left:-.04em;top:-.42em;z-index:-1;font-family:var(--disp);font-weight:700;
+    font-size:clamp(4.4rem,15vw,11rem);line-height:1;letter-spacing:-.04em;pointer-events:none;user-select:none;
+    white-space:nowrap;opacity:.5}
+  .act.noise .aghost{color:transparent;-webkit-text-stroke:1px rgba(125,150,255,.16);text-stroke:1px rgba(125,150,255,.16)}
+  .act.system .aghost{color:transparent;-webkit-text-stroke:1px rgba(150,160,190,.13);text-stroke:1px rgba(150,160,190,.13)}
+  .act.signal .aghost{color:transparent;-webkit-text-stroke:1px rgba(255,207,107,.2);text-stroke:1px rgba(255,207,107,.2)}
+  .actmark .aname{position:relative;font-family:var(--disp);font-weight:600;font-size:clamp(2.2rem,6vw,4.6rem);letter-spacing:-.03em;line-height:1}
+  .act .aline{max-width:44ch;font-size:clamp(1.05rem,1.6vw,1.35rem);color:var(--read);line-height:1.6;margin-bottom:3.5rem}
+  .act.noise .anum{color:var(--cold-soft)}
+  .act.noise .aname{color:var(--ink)}
+  .act.system .anum{color:#b6bedb}
+  .act.system .aname{color:var(--ink)}
+  .act.signal .anum{color:var(--warm)}
+  .act.signal .aname{color:var(--ink)}
+  .shead{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;border-top:1px solid var(--line);padding-top:1.4rem;margin-bottom:3rem}
+  .shead h2{font-family:var(--disp);font-weight:500;font-size:clamp(1.4rem,2.8vw,2.2rem);letter-spacing:-.02em}
+  .shead h2 em{font-style:normal;color:var(--warm)}
+  .shead .eyebrow{color:var(--mut)}
+
+  /* ---- stats: kinetic counter grid ---- */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:1px solid var(--line)}
+  .stat{padding:2.4rem 2rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .stat:nth-child(-n+3){border-top:1px solid var(--line)}
+  .stat .n{font-family:var(--disp);font-weight:600;font-size:clamp(2.4rem,5vw,4rem);letter-spacing:-.03em;line-height:1;
+    background:linear-gradient(120deg,var(--cold-soft),var(--warm));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .l{margin-top:.85rem;font-size:.8rem;letter-spacing:.04em;color:var(--read);text-transform:uppercase}
+  .stat::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--warm);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+  .stat:hover::after{width:100%}
+  @media(max-width:760px){.stats{grid-template-columns:1fr 1fr}}
+  @media(max-width:440px){.stats{grid-template-columns:1fr}.stat{padding:1.8rem 1.4rem}}
+
+  /* ---- pillars ---- */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .pillar{padding:2.6rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:start}
+  .pillar:nth-child(odd){padding-right:2.8rem}
+  .pillar:nth-child(even){padding-left:2.8rem;border-left:1px solid var(--line)}
+  .pillar .pi{font-family:var(--disp);font-weight:600;color:var(--warm);font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:.9;letter-spacing:-.02em}
+  .pillar h3{font-family:var(--disp);font-size:1.3rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.7rem}
+  .pillar p{color:var(--read);font-size:.97rem;line-height:1.7;max-width:42ch}
+  @media(max-width:760px){.pillars{grid-template-columns:1fr}.pillar:nth-child(even){padding-left:0;border-left:0}.pillar:nth-child(odd){padding-right:0}}
+
+  /* ---- work: the centerpiece. 4 distinct on-brand compositions, result-metric led ---- */
+  .work{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2vw,1.5rem)}
+  .work .row{position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+    min-height:320px;padding:1.8rem;border:1px solid var(--line);border-radius:18px;overflow:hidden;isolation:isolate;
+    transition:transform .55s cubic-bezier(.2,.8,.2,1),border-color .5s,box-shadow .55s}
+  .work .row.feat{grid-column:1 / -1;min-height:clamp(380px,46vw,460px);flex-direction:row;align-items:flex-end;justify-content:space-between;gap:2rem}
+  .work .row:hover{transform:translateY(-4px)}
+  /* vary tile sizes so the grid breathes across the six tiles below the feature */
+  .work .row:nth-child(2){min-height:380px}
+  .work .row:nth-child(3){min-height:300px;margin-top:1.5rem}
+  .work .row:nth-child(4){min-height:340px}
+  .work .row:nth-child(5){min-height:320px;margin-top:1.5rem}
+  .work .row:nth-child(6){min-height:300px}
+  @media(max-width:760px){.work .row:nth-child(3),.work .row:nth-child(5){margin-top:0}}
+
+  /* feature tile: metric-forward + live particle/data motif on hover */
+  .work .row.feat .copy{justify-content:flex-end}
+  .work .row.feat .fmetric{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.4rem;line-height:.92}
+  .work .row.feat .fmetric .big{font-family:var(--disp);font-weight:600;letter-spacing:-.04em;
+    font-size:clamp(2.6rem,7vw,5.2rem);
+    background:linear-gradient(120deg,var(--cold-soft),var(--warm));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .work .row.feat .fmetric .unit{font-family:var(--disp);font-weight:500;font-size:clamp(.95rem,1.6vw,1.25rem);color:var(--read);letter-spacing:.01em}
+  .work .row.feat .fcanvas{position:absolute;inset:0;z-index:0;width:100%;height:100%;
+    opacity:.55;transition:opacity .6s cubic-bezier(.2,.8,.2,1);pointer-events:none;display:block}
+  .work .row.feat:hover .fcanvas{opacity:1}
+  @media(prefers-reduced-motion:reduce){.work .row.feat .fcanvas{opacity:.7}}
+  /* per-project art layer */
+  .work .art{position:absolute;inset:0;z-index:-1;opacity:.92;transform:scale(1.02);
+    transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .6s,filter .6s;filter:saturate(.85) brightness(.9)}
+  .work .row:hover .art{transform:scale(1.08);opacity:1;filter:saturate(1.15) brightness(1.05)}
+  .work .art::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,5,10,.9) 6%,rgba(4,5,10,.4) 50%,rgba(4,5,10,.1) 100%)}
+  .work .row.feat .art::after{background:linear-gradient(75deg,rgba(4,5,10,.92) 32%,rgba(4,5,10,.36) 72%,rgba(4,5,10,.05) 100%)}
+  /* signature: a signal "beam" follows the cursor across the card */
+  .work .row .sheen{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .5s;mix-blend-mode:screen;
+    background:radial-gradient(240px 240px at var(--mx,50%) var(--my,50%),rgba(255,207,107,.2),transparent 60%)}
+  .work .row:hover .sheen{opacity:1}
+  @media(prefers-reduced-motion:reduce){.work .row .sheen{display:none}}
+  /* warm top wipe on hover */
+  .work .row::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;z-index:3;
+    background:linear-gradient(90deg,var(--warm),rgba(255,207,107,.15));transition:width .65s cubic-bezier(.2,.8,.2,1)}
+  .work .row:hover::before{width:100%}
+  .work .copy{position:relative;z-index:2;display:flex;flex-direction:column}
+  .work .row.feat .copy{max-width:60%}
+  .work .widx{font-family:var(--disp);font-weight:500;font-size:clamp(.95rem,1.4vw,1.15rem);color:var(--mut);letter-spacing:.04em;margin-bottom:auto;transition:color .4s}
+  .work .row:hover .widx{color:var(--warm)}
+  .work .wt{position:relative;width:fit-content;display:inline-flex;align-items:baseline;gap:.6rem;margin-top:1.2rem;
+    font-family:var(--disp);font-weight:600;font-size:clamp(1.6rem,3vw,2.5rem);letter-spacing:-.03em;line-height:1.04;
+    color:var(--ink);transition:color .4s,transform .5s cubic-bezier(.2,.8,.2,1)}
+  .work .row.feat .wt{font-size:clamp(2.1rem,4.4vw,3.5rem)}
+  .work .row:hover .wt{transform:translateX(.15rem);color:var(--warm)}
+  .work .wt .arrow{font-size:.45em;opacity:0;transform:translateX(-8px);transition:opacity .35s,transform .35s;color:var(--warm)}
+  .work .row:hover .wt .arrow{opacity:1;transform:translateX(0)}
+  .work .wm{display:flex;align-items:baseline;gap:.85rem;flex-wrap:wrap;margin-top:.85rem;font-size:.88rem;line-height:1.4;color:var(--read)}
+  .work .wm .nm{color:var(--ink);font-weight:600;font-family:var(--disp)}
+  .work .wm .role{position:relative;padding-left:1.05rem;color:var(--mut)}
+  .work .wm .role::before{content:"";position:absolute;left:0;top:.55em;width:.55rem;height:1px;background:var(--line)}
+  .work .wm .role.norole{padding-left:0;color:var(--read)}
+  .work .wm .role.norole::before{display:none}
+  /* short qualitative note under each tile (kept subtle so the result stays the hero) */
+  .work .wnote{margin-top:.7rem;font-size:.82rem;line-height:1.5;color:var(--mut);max-width:46ch}
+  .work .row.feat .wnote{max-width:48ch}
+  /* the feature's second metric line sits tight under the first */
+  .work .row.feat .fmetric2{margin-top:-.1rem;margin-bottom:.8rem}
+  /* per-project on-brand compositions */
+  /* LambdaTest - a rising growth / area chart (the organic engine compounding up-right) */
+  .art.ldt{background:
+      linear-gradient(35deg,transparent 38%,rgba(255,207,107,.5) 39%,rgba(255,207,107,.55) 40%,transparent 41%),
+      linear-gradient(0deg,rgba(75,108,255,.28),transparent 58%),
+      radial-gradient(80% 90% at 6% 100%,rgba(94,234,212,.18),transparent 56%),
+      radial-gradient(70% 90% at 96% 6%,rgba(255,207,107,.3),transparent 60%),
+      linear-gradient(150deg,#101a44,#06070f)}
+  /* TestMu AI - identity refresh / morph: cold half wiping into a warm half (before -> after) */
+  .art.rebrand{background:
+      linear-gradient(118deg,transparent 47%,rgba(244,246,255,.5) 49%,transparent 51%),
+      linear-gradient(118deg,rgba(75,108,255,.4) 0 46%,transparent 46%),
+      linear-gradient(118deg,transparent 54%,rgba(255,207,107,.42) 54%),
+      linear-gradient(135deg,#141538,#07060f)}
+  /* Samsung - device / broadcast: signal arcs radiating out from a point */
+  .art.samsung{background:
+      radial-gradient(closest-side at 24% 78%,transparent 26%,rgba(125,150,255,.4) 28%,transparent 32%),
+      radial-gradient(closest-side at 24% 78%,transparent 46%,rgba(94,234,212,.32) 48%,transparent 53%),
+      radial-gradient(closest-side at 24% 78%,transparent 66%,rgba(255,207,107,.34) 68%,transparent 74%),
+      radial-gradient(50% 60% at 24% 78%,rgba(75,108,255,.3),transparent 64%),
+      linear-gradient(135deg,#0a1838,#05070f)}
+  /* Medilife - medical pulse / cross: a heartbeat line + a soft warm cross */
+  .art.medi{background:
+      linear-gradient(0deg,transparent 48%,rgba(94,234,212,.5) 49%,rgba(94,234,212,.55) 51%,transparent 52%),
+      linear-gradient(90deg,transparent 70%,rgba(255,207,107,.5) 70%,rgba(255,207,107,.5) 72%,transparent 72%),
+      linear-gradient(0deg,transparent 33%,rgba(255,207,107,.5) 33%,rgba(255,207,107,.5) 35%,transparent 35%) 72% 0/16% 100% no-repeat,
+      radial-gradient(60% 80% at 78% 30%,rgba(255,207,107,.16),transparent 60%),
+      linear-gradient(135deg,#0c1a2e,#06070f)}
+  /* Lido Learning - funnel / pipeline: stacked narrowing bands routing down */
+  .art.lido{background:
+      linear-gradient(0deg,rgba(75,108,255,.34) 0 16%,transparent 16%),
+      linear-gradient(0deg,transparent 30%,rgba(125,150,255,.3) 30% 44%,transparent 44%),
+      linear-gradient(0deg,transparent 58%,rgba(94,234,212,.3) 58% 70%,transparent 70%),
+      linear-gradient(0deg,transparent 84%,rgba(255,207,107,.5) 84% 92%,transparent 92%),
+      linear-gradient(135deg,#0c1230,#06070f)}
+  /* Appknox - shield / security: a centered protective form with a check pulse */
+  .art.appknox{background:
+      radial-gradient(closest-side at 70% 46%,transparent 34%,rgba(94,234,212,.5) 36%,transparent 41%),
+      radial-gradient(closest-side at 70% 46%,transparent 54%,rgba(125,150,255,.34) 56%,transparent 62%),
+      radial-gradient(60% 80% at 70% 46%,rgba(255,207,107,.18),transparent 60%),
+      linear-gradient(135deg,#0d1730,#06070f)}
+  /* per-tile hover accent hue */
+  .work .row:has(.art.ldt):hover{border-color:rgba(255,207,107,.5);box-shadow:0 24px 60px -18px rgba(255,207,107,.45)}
+  .work .row:has(.art.rebrand):hover{border-color:rgba(244,246,255,.4);box-shadow:0 24px 60px -18px rgba(75,108,255,.4)}
+  .work .row:has(.art.samsung):hover{border-color:rgba(125,150,255,.5);box-shadow:0 24px 60px -18px rgba(125,150,255,.4)}
+  .work .row:has(.art.medi):hover{border-color:rgba(94,234,212,.5);box-shadow:0 24px 60px -18px rgba(94,234,212,.34)}
+  .work .row:has(.art.lido):hover{border-color:rgba(125,150,255,.5);box-shadow:0 24px 60px -18px rgba(75,108,255,.4)}
+  .work .row:has(.art.appknox):hover{border-color:rgba(94,234,212,.5);box-shadow:0 24px 60px -18px rgba(94,234,212,.34)}
+  @media(max-width:760px){.work{grid-template-columns:1fr}
+    .work .row,.work .row.feat{grid-column:1;flex-direction:column;align-items:stretch;justify-content:flex-end}
+    .work .row.feat .copy{max-width:100%}
+    .work .row.feat .art::after{background:linear-gradient(0deg,rgba(4,5,10,.9) 6%,rgba(4,5,10,.4) 50%,rgba(4,5,10,.1) 100%)}}
+  @media(max-width:560px){.work .row{min-height:230px;padding:1.4rem}
+    .work .wt,.work .row.feat .wt{font-size:clamp(1.6rem,9vw,2.3rem)}
+    .work .row.feat{min-height:300px}}
+
+  /* ---- recognition + brands ---- */
+  .recog{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,5vw,5rem);align-items:start}
+  .recol{display:flex;flex-direction:column}
+  .recol .clabel{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mut);font-family:var(--disp);
+    border-top:1px solid var(--line);padding-top:1.2rem;padding-bottom:1.2rem}
+  .awards{display:flex;flex-direction:column}
+  .award{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:1.5rem;padding:1.05rem 0;border-top:1px solid var(--line)}
+  .award:last-child{border-bottom:1px solid var(--line)}
+  .award b{font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.2vw,1.7rem);letter-spacing:-.01em;line-height:1.15}
+  .award b .num{color:var(--warm)}
+  .award span{color:var(--mut);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;justify-self:end;font-family:var(--disp)}
+  .brands{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .brands span{font-family:var(--disp);font-weight:400;font-size:1.1rem;letter-spacing:-.01em;color:var(--read);line-height:1;
+    display:flex;align-items:center;min-height:1.05rem;padding:1.05rem 0;border-top:1px solid var(--line);transition:color .3s}
+  .brands span:nth-child(2n){padding-left:1.4rem}
+  .brands span:nth-child(odd){padding-right:1.4rem}
+  .brands span:hover{color:var(--warm)}
+  @media(max-width:760px){.recog{grid-template-columns:1fr;gap:2.6rem}}
+
+  /* ---- about ---- */
+  .about .abody{display:grid;grid-template-columns:210px 1fr;gap:3rem;align-items:stretch}
+  .about .rail{display:flex;flex-direction:column;gap:.5rem;border-left:1px solid var(--line);padding-left:1.6rem}
+  .about .rail .k{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mut);font-family:var(--disp)}
+  .about .rail .v{font-family:var(--disp);color:var(--read);font-size:1.02rem;font-weight:500}
+  .about .rail .div{height:1px;width:34px;background:var(--warm);opacity:.6;margin:.7rem 0}
+  .about .rail .sig{font-family:var(--disp);font-size:1.3rem;color:var(--warm);font-weight:500;letter-spacing:-.01em}
+  .about .plate{position:relative;border:1px solid var(--line);border-radius:18px;padding:clamp(1.6rem,2.4vw,2.4rem) clamp(1.8rem,3vw,2.8rem);
+    overflow:hidden;display:flex;align-items:center;min-height:100%;
+    background:linear-gradient(135deg,rgba(75,108,255,.06),transparent 55%),rgba(244,246,255,.012)}
+  .about .plate::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(60% 80% at 90% -10%,rgba(255,207,107,.12),transparent 60%)}
+  .about p{position:relative;z-index:1;font-family:var(--disp);font-weight:400;font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.34;letter-spacing:-.015em;max-width:26ch}
+  .about p em{font-style:normal;color:var(--warm)}
+  @media(max-width:760px){.about .abody{grid-template-columns:1fr;gap:1.6rem;align-items:start}
+    .about .rail{flex-direction:row;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem;border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:1.4rem}
+    .about .rail .div{display:none}.about .rail .sig{flex-basis:100%}
+    /* kill the stretched-plate void: plate hugs its text, About hugs the contact closer */
+    .about .plate{min-height:0;align-items:flex-start}
+    .about.act{padding-bottom:clamp(2.5rem,7vh,4rem)}}
+
+  /* ---- contact: signal locked ---- */
+  .contact{text-align:center;padding:clamp(5rem,12vh,9rem) 0 7rem}
+  .lock{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--disp);font-size:.72rem;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--teal);margin-bottom:2.2rem}
+  .lock .ld{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(94,234,212,.6);animation:lockPulse 2.6s ease-out infinite}
+  @keyframes lockPulse{0%{box-shadow:0 0 0 0 rgba(94,234,212,.5)}70%{box-shadow:0 0 0 8px rgba(94,234,212,0)}100%{box-shadow:0 0 0 0 rgba(94,234,212,0)}}
+  @media(prefers-reduced-motion:reduce){.lock .ld{animation:none}}
+  .contact .big{font-family:var(--disp);font-weight:500;font-size:clamp(2.4rem,7.5vw,6.4rem);line-height:1;letter-spacing:-.03em}
+  .contact .big a{position:relative;color:var(--ink)}
+  .contact .big a::after{content:"";position:absolute;left:0;bottom:.04em;width:100%;height:3px;background:var(--warm);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .contact .big a:hover::after{transform:scaleX(1)}
+  .contact .em{margin-top:2.4rem;font-size:.95rem;color:var(--read);letter-spacing:.02em}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:2px}
+  .contact .em a:hover{border-color:var(--warm)}
+
+  footer{border-top:1px solid var(--line);padding:2.5rem var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.78rem;color:var(--mut);position:relative;z-index:2;font-family:var(--disp)}
+  footer a{color:var(--read)}
+  footer a:hover{color:var(--warm)}
+
+  .reveal{opacity:0;transform:translateY(26px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+  .cur{position:fixed;top:0;left:0;width:30px;height:30px;border:1px solid rgba(244,246,255,.5);border-radius:50%;
+    pointer-events:none;z-index:40;transform:translate(-50%,-50%);mix-blend-mode:difference;
+    transition:width .35s cubic-bezier(.2,.8,.2,1),height .35s cubic-bezier(.2,.8,.2,1),background .3s;will-change:transform}
+  .cur.big{width:70px;height:70px;background:rgba(244,246,255,.08)}
+  @media(hover:none),(pointer:coarse){.cur{display:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+<canvas id="scene"></canvas>
+<div class="css-field" id="cssField" aria-hidden="true"></div>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<nav id="nav">
+  <a class="logo" href="/redesign/"><span class="pip"></span> Swapnil Biswas</a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="all" href="/redesign/">All concepts</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero" id="top">
+    <div class="credential">Senior Product Marketing Manager - LambdaTest</div>
+    <h1>
+      <span class="ln"><span>I turn product</span></span>
+      <span class="ln"><span class="noise">noise</span></span>
+      <span class="ln"><span>into growth <span class="signal">signal.</span></span></span>
+    </h1>
+    <p class="sub">A product marketer who builds. I ship the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See selected work <span class="ar">&#8599;</span></a>
+      <a class="btn ghost" href="#contact">Let's build</a>
+    </div>
+    <div class="scrollcue"><span class="bar"></span> Begin the descent</div>
+  </header>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span><span class="dot"></span> Product Marketing <em>that ships</em></span>
+    <span><span class="dot"></span> Growth, built not briefed</span>
+    <span><span class="dot"></span> AI agents in production</span>
+    <span><span class="dot"></span> Technical SEO that compounds</span>
+    <span><span class="dot"></span> Product Marketing <em>that ships</em></span>
+    <span><span class="dot"></span> Growth, built not briefed</span>
+    <span><span class="dot"></span> AI agents in production</span>
+    <span><span class="dot"></span> Technical SEO that compounds</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- ACT I - THE NOISE: stats emerge from the chaos -->
+  <section class="act noise" id="stats">
+    <div class="actmark reveal"><span class="aghost" aria-hidden="true">{acts[0].name}</span><span class="anum">{acts[0].num}</span><span class="aname">{acts[0].name}</span></div>
+    <p class="aline reveal">{acts[0].line} These are the numbers that cut through.</p>
+    <div class="stats">
+      {stats.map(s => (
+        <div class="stat reveal"><div class="n">{s.n}</div><div class="l">{s.l}</div></div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ACT II - THE SYSTEM: what I do + selected work -->
+  <section class="act system" id="services">
+    <div class="actmark reveal"><span class="aghost" aria-hidden="true">{acts[1].name}</span><span class="anum">{acts[1].num}</span><span class="aname">{acts[1].name}</span></div>
+    <p class="aline reveal">{acts[1].line}</p>
+    <div class="shead"><h2>What I <em>do</em></h2><div class="eyebrow">Four disciplines, one operator</div></div>
+    <div class="pillars">
+      {pillars.map(p => (
+        <div class="pillar reveal"><div class="pi">{p.i}</div><div><h3>{p.t}</h3><p>{p.d}</p></div></div>
+      ))}
+    </div>
+  </section>
+
+  <section class="act system" id="work" style="padding-top:0">
+    <div class="shead"><h2>Selected <em>work</em></h2><div class="eyebrow">2019 - 2026</div></div>
+    <div class="work">
+      {work.map((w, idx) => (
+        <a class={`row reveal${idx === 0 ? ' feat' : ''}`} href="#">
+          <span class={`art ${w.sw}`} aria-hidden="true"></span>
+          {idx === 0 && <canvas class="fcanvas" aria-hidden="true"></canvas>}
+          <span class="sheen" aria-hidden="true"></span>
+          <span class="copy">
+            <span class="widx">{w.i}{idx === 0 ? ' · Featured' : ''}</span>
+            {idx === 0 ? (
+              <>
+                <span class="fmetric"><span class="big">657K+</span><span class="unit">leads generated</span></span>
+                <span class="fmetric fmetric2"><span class="big">18.2M+</span><span class="unit">organic traffic driven</span></span>
+                <span class="wt">{w.t}<span class="arrow">&#8599;</span></span>
+                <span class="wm"><span class="role norole">{w.role} &middot; {w.y}</span></span>
+                <span class="wnote">{w.note}</span>
+              </>
+            ) : (
+              <>
+                <span class="wt">{w.r}<span class="arrow">&#8599;</span></span>
+                <span class="wm"><span class="nm">{w.t}</span><span class="role">{w.role}{w.y ? ` · ${w.y}` : ''}</span></span>
+                <span class="wnote">{w.note}</span>
+              </>
+            )}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ACT III - THE SIGNAL: recognition, about, contact -->
+  <section class="act signal" id="recognition">
+    <div class="actmark reveal"><span class="aghost" aria-hidden="true">{acts[2].name}</span><span class="anum">{acts[2].num}</span><span class="aname">{acts[2].name}</span></div>
+    <p class="aline reveal">{acts[2].line}</p>
+    <div class="shead"><h2>Recognition &amp; <em>brands</em></h2><div class="eyebrow">Selected honors</div></div>
+    <div class="recog">
+      <div class="recol reveal">
+        <div class="clabel">Honors &amp; awards</div>
+        <div class="awards">
+          <div class="award"><b>Value of Agility Award</b> <span>LambdaTest &middot; 2024</span></div>
+          <div class="award"><b>Wall of Fame</b> <span>LambdaTest</span></div>
+          <div class="award"><b><span class="num">#1</span> Product of the Day</b> <span>Product Hunt</span></div>
+        </div>
+      </div>
+      <div class="recol reveal">
+        <div class="clabel">Trusted by teams at</div>
+        <div class="brands">
+          {brands.map(b => <span>{b}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="act signal about" id="about">
+    <div class="shead"><h2><em>About</em></h2><div class="eyebrow">The operator behind the work</div></div>
+    <div class="abody">
+      <div class="rail reveal">
+        <div class="k">Based in</div>
+        <div class="v">Mumbai, India</div>
+        <div class="div"></div>
+        <div class="k">Experience</div>
+        <div class="v">7+ yrs &middot; 4+ in B2B SaaS</div>
+        <div class="div"></div>
+        <div class="sig">Swapnil B.</div>
+      </div>
+      <div class="plate reveal">
+        <p>Seven years in marketing, four in B2B SaaS. A postgrad in Digital Marketing &amp; Growth Strategy at <em>IIM Visakhapatnam</em>. I treat my own career like a product - positioned, measured and shipped.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="lock reveal"><span class="ld"></span> Signal locked</div>
+    <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com">Let's build something that compounds &#8599;</a></div>
+    <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+  </section>
+</div>
+
+<footer>
+  <span>&copy; 2026 Swapnil Biswas</span>
+  <span>Concept 11 - Odyssey &middot; <a href="/redesign/">View all concepts</a></span>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  // ---------------------------------------------------------------
+  // THREE.js particle field: chaotic NOISE -> ordered SIGNAL ring,
+  // morph driven by scroll progress, colour cold(blue)->warm(gold).
+  // Falls back to the CSS field on mobile or if Three fails to load.
+  // ---------------------------------------------------------------
+  let scrollProgress = 0;       // 0..1 across the whole page
+  let mx = 0, my = 0;           // -1..1 mouse parallax
+
+  // ---------------------------------------------------------------
+  // Hero IDLE DEMO: before any scroll, run a short autonomous "breathing" of the
+  // morph (noise -> partial constellation -> noise) so the signature reads on load.
+  // Hands off the instant the user scrolls; reduced-motion holds a static partial frame.
+  // `effProgress()` = max(real scroll, idle demo) so scrolling always wins immediately.
+  // ---------------------------------------------------------------
+  let idleProgress = 0;         // 0..1 autonomous demo value, decays to 0 once scrolling
+  let hasScrolled = false;
+  const idleStart = (typeof performance !== 'undefined' ? performance.now() : Date.now());
+  function effProgress(){
+    if (reduce) return 0.55;
+    if (hasScrolled || scrollProgress > 0.002) { hasScrolled = true; idleProgress = 0; return scrollProgress; }
+    // gentle, looping breath: ~6s period, peaks ~0.42 (a partial constellation, never full).
+    const el = ((typeof performance !== 'undefined' ? performance.now() : Date.now()) - idleStart) / 1000;
+    const breath = (1 - Math.cos((el / 3) * Math.PI)) / 2;      // 0->1->0 every 6s
+    idleProgress = breath * 0.42;
+    return Math.max(scrollProgress, idleProgress);
+  }
+
+  const cv = document.getElementById('scene');
+  const cssField = document.getElementById('cssField');
+
+  function showCssFallback(){
+    if (cv) cv.style.display = 'none';
+    if (cssField) cssField.style.display = 'block';
+  }
+
+  if (isMobile) {
+    // Mobile: skip Three/WebGL but keep a LIGHTWEIGHT 2D particle canvas pinned behind
+    // the hero + act dividers, still driven by scroll cold(blue)->warm(gold).
+    startMobileField();
+  } else {
+    // probe WebGL on a THROWAWAY canvas - probing on `cv` itself would lock it to a
+    // webgl1 context and make Three's webgl2 request fail ("existing context of a different type").
+    const tmp = document.createElement('canvas');
+    const probe = tmp.getContext('webgl2') || tmp.getContext('webgl') || tmp.getContext('experimental-webgl');
+    if (!probe) {
+      showCssFallback();
+    } else {
+      import('https://esm.sh/three@0.160.0').then((THREE) => {
+        try { initThree(THREE); }
+        catch (e) { showCssFallback(); }
+      }).catch(() => showCssFallback());
+    }
+  }
+
+  function initThree(THREE){
+    const renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.6));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.z = 16;
+
+    const COUNT = 4200;
+    const noisePos = new Float32Array(COUNT * 3);   // chaotic source
+    const signalPos = new Float32Array(COUNT * 3);  // ordered target (constellation ring + wave)
+    const seeds = new Float32Array(COUNT);
+
+    for (let i = 0; i < COUNT; i++) {
+      // NOISE: random cloud in a box
+      noisePos[i*3+0] = (Math.random() - 0.5) * 30;
+      noisePos[i*3+1] = (Math.random() - 0.5) * 22;
+      noisePos[i*3+2] = (Math.random() - 0.5) * 20;
+
+      // SIGNAL: layered ordered structure - a constellation ring with a sine wave running through it
+      const a = (i / COUNT) * Math.PI * 2 * 5;           // wraps several times
+      const ringR = 8 + Math.sin(i * 0.21) * 0.6;
+      const onRing = i % 3 !== 0;                         // ~2/3 form the ring, rest form the wave line
+      if (onRing) {
+        signalPos[i*3+0] = Math.cos(a) * ringR;
+        signalPos[i*3+1] = Math.sin(a) * ringR * 0.62 + Math.sin(a * 3) * 0.5;
+        signalPos[i*3+2] = Math.sin(a * 2) * 1.6;
+      } else {
+        const x = ((i / COUNT) - 0.5) * 26;
+        signalPos[i*3+0] = x;
+        signalPos[i*3+1] = Math.sin(x * 0.7) * 2.4;       // the clean signal wave
+        signalPos[i*3+2] = Math.cos(x * 0.5) * 1.2;
+      }
+      seeds[i] = Math.random();
+    }
+
+    const geo = new THREE.BufferGeometry();
+    // start at noise positions; we lerp manually each frame
+    const cur = new Float32Array(noisePos);
+    geo.setAttribute('position', new THREE.BufferAttribute(cur, 3));
+
+    // round soft sprite for points
+    const c = document.createElement('canvas'); c.width = c.height = 64;
+    const ctx = c.getContext('2d');
+    const g = ctx.createRadialGradient(32,32,0,32,32,32);
+    g.addColorStop(0,'rgba(255,255,255,1)');
+    g.addColorStop(.4,'rgba(255,255,255,.6)');
+    g.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.fillStyle = g; ctx.fillRect(0,0,64,64);
+    const sprite = new THREE.CanvasTexture(c);
+
+    const mat = new THREE.PointsMaterial({
+      size: 0.16,
+      map: sprite,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      color: new THREE.Color(0x4b6cff),
+    });
+    const points = new THREE.Points(geo, mat);
+    scene.add(points);
+
+    const cold = new THREE.Color(0x4b6cff);
+    const warm = new THREE.Color(0xffcf6b);
+    const tmpCol = new THREE.Color();
+
+    function resize(){
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize', resize);
+
+    window.addEventListener('mousemove', (e) => {
+      mx = (e.clientX / window.innerWidth) * 2 - 1;
+      my = (e.clientY / window.innerHeight) * 2 - 1;
+    });
+
+    const posAttr = geo.getAttribute('position');
+    let t = 0;
+
+    function frame(){
+      t += 0.004;
+      // morph factor: real scroll, or the autonomous idle demo before first scroll
+      const p = effProgress();
+      const ease = p < 0.5 ? 2*p*p : 1 - Math.pow(-2*p+2,2)/2; // easeInOutQuad
+
+      const arr = posAttr.array;
+      for (let i = 0; i < COUNT; i++) {
+        const ix = i*3;
+        // gentle drift on the noise so the chaos breathes
+        const sx = noisePos[ix]   + Math.sin(t + seeds[i]*6.28) * 0.6;
+        const sy = noisePos[ix+1] + Math.cos(t*0.8 + seeds[i]*6.28) * 0.6;
+        const sz = noisePos[ix+2];
+        arr[ix]   = sx + (signalPos[ix]   - sx) * ease;
+        arr[ix+1] = sy + (signalPos[ix+1] - sy) * ease;
+        arr[ix+2] = sz + (signalPos[ix+2] - sz) * ease;
+      }
+      posAttr.needsUpdate = true;
+
+      // colour cold -> warm with progress
+      tmpCol.copy(cold).lerp(warm, ease);
+      mat.color.copy(tmpCol);
+      mat.size = 0.13 + ease * 0.07;
+
+      // slow auto-rotation + mouse parallax
+      points.rotation.y = (reduce ? 0 : t * 0.05) + mx * 0.35;
+      points.rotation.x = my * 0.2;
+      // pull camera in slightly as the signal forms
+      camera.position.z = 16 - ease * 2.4;
+
+      renderer.render(scene, camera);
+      requestAnimationFrame(frame);
+    }
+
+    if (reduce) {
+      // single static composed frame (signal mostly formed, warm)
+      frame();
+    } else {
+      frame();
+    }
+  }
+
+  // ---------------------------------------------------------------
+  // Mobile lightweight 2D particle field (Canvas2D, reduced count).
+  // Scattered cold drift (noise) -> converges toward a calm warm wave (signal),
+  // interpolated by scrollProgress. Legible: low density, soft additive dots.
+  // ---------------------------------------------------------------
+  function startMobileField(){
+    if (!cv) { showCssFallback(); return; }
+    const ctx = cv.getContext('2d');
+    if (!ctx) { showCssFallback(); return; }   // last-resort CSS haze
+    cv.style.display = 'block';
+    let W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const N = 90;                               // reduced count for mobile
+    const P = [];
+
+    function layout(){
+      W = window.innerWidth; H = window.innerHeight;
+      cv.width = Math.floor(W * dpr); cv.height = Math.floor(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function seed(){
+      P.length = 0;
+      for (let i = 0; i < N; i++) {
+        const ph = i / N;
+        P.push({
+          nx: Math.random() * W, ny: Math.random() * H,   // noise home
+          tx: ph * W,                                       // signal target x (across)
+          amp: H * 0.10 + Math.random() * H * 0.05,
+          spd: 0.5 + Math.random() * 0.8,
+          off: Math.random() * Math.PI * 2,
+          r: 0.8 + Math.random() * 1.6,
+        });
+      }
+    }
+    layout(); seed();
+    window.addEventListener('resize', () => { layout(); seed(); }, { passive: true });
+
+    const COLD = [125,150,255], WARM = [255,207,107];
+    let t = 0;
+    function lerp(a,b,k){ return a + (b-a)*k; }
+
+    function frame(){
+      t += reduce ? 0 : 0.012;
+      const p = effProgress();
+      const ease = p < 0.5 ? 2*p*p : 1 - Math.pow(-2*p+2,2)/2;
+      ctx.clearRect(0,0,W,H);
+      ctx.globalCompositeOperation = 'lighter';
+      const midY = H * 0.5;
+      const cr = Math.round(lerp(COLD[0],WARM[0],ease));
+      const cg = Math.round(lerp(COLD[1],WARM[1],ease));
+      const cb = Math.round(lerp(COLD[2],WARM[2],ease));
+      for (let i = 0; i < N; i++) {
+        const d = P[i];
+        // noise position (gentle drift)
+        const dx = d.nx + Math.sin(t * d.spd + d.off) * 14;
+        const dy = d.ny + Math.cos(t * d.spd * 0.8 + d.off) * 14;
+        // signal position (ordered wave across the screen)
+        const sx = d.tx;
+        const sy = midY + Math.sin(d.tx / W * Math.PI * 3 + t * 0.4) * d.amp;
+        const x = lerp(dx, sx, ease);
+        const y = lerp(dy, sy, ease);
+        const a = 0.18 + ease * 0.34;
+        const rr = d.r * (1 + ease * 0.5);
+        const grd = ctx.createRadialGradient(x, y, 0, x, y, rr * 4);
+        grd.addColorStop(0, `rgba(${cr},${cg},${cb},${a})`);
+        grd.addColorStop(1, `rgba(${cr},${cg},${cb},0)`);
+        ctx.fillStyle = grd;
+        ctx.beginPath(); ctx.arc(x, y, rr * 4, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+      requestAnimationFrame(frame);
+    }
+    frame();
+  }
+
+  // ---------------------------------------------------------------
+  // Feature work tile: live converging particle/data motif on the lead case.
+  // Idle = scattered cold dots; on hover the field converges to a rising warm
+  // signal line. Canvas2D, tiny count, reduced-motion safe.
+  // ---------------------------------------------------------------
+  function startFeatureMotif(){
+    if (reduce) return;
+    const canvas = document.querySelector('.work .row.feat .fcanvas');
+    const card = document.querySelector('.work .row.feat');
+    if (!canvas || !card) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let W = 0, H = 0, hover = 0, target = 0;
+    const N = 64, P = [];
+    function layout(){
+      const r = card.getBoundingClientRect();
+      W = r.width; H = r.height;
+      canvas.width = Math.floor(W * dpr); canvas.height = Math.floor(H * dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      P.length = 0;
+      for (let i = 0; i < N; i++) {
+        const ph = i / N;
+        P.push({ nx: Math.random()*W, ny: Math.random()*H, tx: ph*W,
+          amp: H*0.16, off: Math.random()*Math.PI*2, r: 0.8 + Math.random()*1.3 });
+      }
+    }
+    layout();
+    const ro = new ResizeObserver(layout); ro.observe(card);
+    card.addEventListener('mouseenter', () => target = 1);
+    card.addEventListener('mouseleave', () => target = 0);
+    const COLD=[125,150,255], WARM=[255,207,107];
+    const L=(a,b,k)=>a+(b-a)*k;
+    let t = 0;
+    function frame(){
+      t += 0.02; hover += (target - hover) * 0.07;
+      const e = hover < 0.5 ? 2*hover*hover : 1 - Math.pow(-2*hover+2,2)/2;
+      ctx.clearRect(0,0,W,H);
+      ctx.globalCompositeOperation='lighter';
+      const cr=Math.round(L(COLD[0],WARM[0],e)),cg=Math.round(L(COLD[1],WARM[1],e)),cb=Math.round(L(COLD[2],WARM[2],e));
+      const midY=H*0.5;
+      // signal line connecting converged dots
+      if (e > 0.15){
+        ctx.globalCompositeOperation='source-over';
+        ctx.beginPath();
+        for (let i=0;i<N;i++){ const d=P[i]; const sy=midY+Math.sin(d.tx/W*Math.PI*2.4+t*0.5)*d.amp;
+          const x=L(d.nx,d.tx,e), y=L(d.ny,sy,e); i?ctx.lineTo(x,y):ctx.moveTo(x,y); }
+        ctx.strokeStyle=`rgba(${cr},${cg},${cb},${0.18*e})`; ctx.lineWidth=1.2; ctx.stroke();
+        ctx.globalCompositeOperation='lighter';
+      }
+      for (let i=0;i<N;i++){ const d=P[i];
+        const dx=d.nx+Math.sin(t+d.off)*10, dy=d.ny+Math.cos(t*0.8+d.off)*10;
+        const sy=midY+Math.sin(d.tx/W*Math.PI*2.4+t*0.5)*d.amp;
+        const x=L(dx,d.tx,e), y=L(dy,sy,e);
+        const a=0.22+e*0.4, rr=d.r*(1+e*0.6);
+        const g=ctx.createRadialGradient(x,y,0,x,y,rr*4);
+        g.addColorStop(0,`rgba(${cr},${cg},${cb},${a})`); g.addColorStop(1,`rgba(${cr},${cg},${cb},0)`);
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(x,y,rr*4,0,Math.PI*2); ctx.fill();
+      }
+      ctx.globalCompositeOperation='source-over';
+      requestAnimationFrame(frame);
+    }
+    frame();
+  }
+  startFeatureMotif();
+
+  // ---------------------------------------------------------------
+  // Lenis smooth scroll + GSAP reveals + progress + nav state
+  // (drives scrollProgress for the particle morph)
+  // ---------------------------------------------------------------
+  const nav = document.getElementById('nav');
+  const prog = document.getElementById('progress');
+
+  function updateProgress(){
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    scrollProgress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    if (window.scrollY > 0) hasScrolled = true;   // end the idle demo, scroll owns the morph
+    if (prog) prog.style.transform = `scaleX(${scrollProgress})`;
+    if (nav) nav.classList.toggle('solid', window.scrollY > 40);
+  }
+
+  if (!reduce) {
+    const lenis = new Lenis({ lerp: .1, smoothWheel: true });
+    function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', () => { ScrollTrigger.update(); updateProgress(); });
+
+    // hero kinetic reveal
+    gsap.set('.hero h1 .ln>span', { yPercent: 120 });
+    gsap.set('.hero .credential,.hero .sub,.hero .cta', { opacity: 0, y: 22 });
+    const tl = gsap.timeline({ delay: .15 });
+    tl.to('.hero h1 .ln>span', { yPercent: 0, duration: 1.15, ease: 'expo.out', stagger: .1 })
+      .to('.hero .credential', { opacity: 1, y: 0, duration: .7 }, .2)
+      .to('.hero .sub', { opacity: 1, y: 0, duration: .8 }, .55)
+      .to('.hero .cta', { opacity: 1, y: 0, duration: .8 }, .7);
+
+    // batched scroll reveals - every .reveal ends opacity:1
+    ScrollTrigger.batch('.reveal', {
+      start: 'top 88%',
+      onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, duration: 1, ease: 'expo.out', stagger: .08, overwrite: true }),
+    });
+
+    // act names get a subtle kinetic slide as they enter
+    gsap.utils.toArray('.actmark .aname').forEach((el) => {
+      gsap.from(el, {
+        xPercent: -4, opacity: .35, ease: 'none',
+        scrollTrigger: { trigger: el, start: 'top 90%', end: 'top 45%', scrub: .6 },
+      });
+    });
+
+    ScrollTrigger.refresh();
+    updateProgress();
+  } else {
+    // reduced motion: no Lenis, no scrub - just keep progress + nav state live
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  // custom trailing cursor (desktop only) + work-card signal beam
+  if (!reduce && window.matchMedia('(hover:hover)').matches) {
+    const cur = document.getElementById('cur');
+    let cx = -100, cy = -100, tx = cx, ty = cy;
+    window.addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
+    (function cloop(){ cx += (tx-cx)*.18; cy += (ty-cy)*.18; cur.style.transform = `translate(${cx}px,${cy}px) translate(-50%,-50%)`; requestAnimationFrame(cloop); })();
+    document.querySelectorAll('a,button').forEach(el => {
+      el.addEventListener('mouseenter', () => cur.classList.add('big'));
+      el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+    });
+    document.querySelectorAll('.work .row').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${((e.clientX-r.left)/r.width)*100}%`);
+        card.style.setProperty('--my', `${((e.clientY-r.top)/r.height)*100}%`);
+      });
+    });
+  }
+</script>
+</body>
+</html>

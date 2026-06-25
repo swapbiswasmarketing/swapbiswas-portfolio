@@ -39,6 +39,7 @@
 | 7 | AI and the Future of SEO | SEO / AI | 2026-04-07 | `ai-future-of-seo` |
 | 8 | You Don't Need 15,384 Marketing Tools | MarTech | 2026-04-08 | `marketing-tools-you-need` |
 | 9 | Product-Led Growth Examples | PLG | 2026-04-09 | `product-led-growth-examples` |
+| 10 | Do You Need an llms.txt File? | SEO / AI | 2026-06-23 (scheduled) | `do-you-need-llms-txt` |
 
 ### Adding New Blog Posts
 Use the template at the bottom of this file. Follow the same format:
@@ -349,6 +350,59 @@ If you're a founder or early-stage marketer, this one's for you. 👇
 🔗 https://swapbiswas.com/blog/go-to-market-strategy-for-startups/?utm_source=linkedin&utm_medium=social&utm_campaign=go-to-market-strategy-for-startups
 
 #Startups #GTMStrategy #FounderLife #B2BSaaS #StartupMarketing #ProductMarketFit
+
+---
+
+## Scheduled (Week of 2026-06-22)
+
+> **Strategy:** Single high-relevance AI/SEO post on the most-debated GEO topic right now. The "Google contradiction" hook on llms.txt, fully data-led and built to drive comments.
+
+---
+
+### Do You Need an llms.txt File?
+**Status:** [SCHEDULED] 2026-06-23
+**Topic:** SEO / AI
+**Blog slug:** `do-you-need-llms-txt`
+
+**Image prompt (Nano Banana):**
+> A dramatic, cinematic editorial illustration on a deep charcoal background (#0d1117) with faint glowing circuit-trace lines. In the center, a single glowing document icon - a stylized "llms.txt" file with a soft cool-teal glow - rests on a sleek dark inspection platform. A large chrome-rimmed magnifying glass hovers over it, and a precise scanning beam fans out from the lens onto the file, split into Google's four signature brand colors: blue (#4285F4), red (#EA4335), yellow (#FBBC05), and green (#34A853). The file is clearly being measured and scrutinized. Yet directly behind it, a faded row of empty search-result bars stays dark and unlit, and the document casts no light or reflection into them, signaling it is inspected but ignored. High contrast, deep shadows, shallow cinematic depth of field, premium tech-editorial style. The story in one frame: Google measures the file with one tool while its search quietly ignores it. No text, no words on the document. 1200x628 aspect ratio.
+
+Everyone's racing to add an llms.txt file to their site. 🏃
+
+97% of them are never read. 📉
+
+Here's the part nobody can explain:
+
+Google says you don't need machine-readable AI files. Then Google's own Chrome Lighthouse quietly shipped a check that looks for an llms.txt file.
+
+So do you need one or not? I went through every study I could find. 👇
+
+📊 @Ahrefs analyzed 137,210 sites - 97% of llms.txt files got ZERO requests in a month.
+🧪 Reboot Online linked test pages only from llms.txt. After 3 months: not a single AI bot showed up.
+📉 SE Ranking (~300K sites): no correlation between having the file and getting cited by AI.
+🗣️ @Google's John Mueller compares it to the long-dead "keywords" meta tag.
+
+The contradiction actually resolves cleanly: it depends which Google product you ask.
+
+🔍 Google Search ignores llms.txt.
+🤖 An experimental Lighthouse audit checks it for AI-agent readiness.
+
+Two products. Two completely different jobs.
+
+The one real use case today? Developer docs. AI coding assistants like Cursor and Claude Code read llms.txt to load a tool's documentation as context. That's genuinely useful - and it's the whole story.
+
+Chasing AI search visibility instead? Your time is better spent on:
+✅ Clean, crawlable HTML
+✅ Structured data
+✅ Content actually worth citing
+
+Not a text file the bots never fetch.
+
+Full breakdown - every study, every source - here 👇
+
+🔗 https://swapbiswas.com/blog/do-you-need-llms-txt/?utm_source=linkedin&utm_medium=social&utm_campaign=do-you-need-llms-txt
+
+#SEO #AISearch #GEO #DigitalMarketing #ContentStrategy
 
 ---
 
