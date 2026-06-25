@@ -23,7 +23,7 @@ What do these companies share? They all used product-led growth to build massive
 
 Product-led growth (PLG) is a [go-to-market strategy](/blog/go-to-market-strategy-for-startups/) where the product itself drives user acquisition, activation, and expansion. Instead of requiring a demo call or sales conversation, users sign up, experience value, and convert on their own timeline.
 
-The PLG model flips the traditional sales funnel. Users become advocates before they become customers. The product is the marketing, the sales pitch, and the onboarding experience all at once.
+The PLG model flips the traditional sales funnel. Users become advocates before they become customers. The product is [the marketing](/blog/product-led-marketing/), the sales pitch, and the onboarding experience all at once.
 
 ![Three PLG growth loop types - viral invite, shareable output, data gravity](/assets/blog/product-led-growth-examples/growth-loops.webp "Three PLG Growth Loop Types")
 

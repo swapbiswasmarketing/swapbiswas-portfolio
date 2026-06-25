@@ -18,7 +18,7 @@ faqs:
     a: "Awareness: branded search lift, share of voice, qualified traffic. Activation: signups, time-to-first-value, week-1 retention. Revenue: pipeline created, opportunities sourced, payback period. A launch that hits awareness but fails activation is a failed launch, even if the press was glowing."
 ---
 
-The SaaS launch problem is not visibility. It is conversion. [CB Insights' analysis of recent VC-backed shutdowns](https://www.cbinsights.com/research/report/startup-failure-reasons-top/) found **70% ran out of capital and 43% had poor product-market fit**. Most of those companies got launch coverage. They just could not turn attention into activation, and activation into revenue. This guide is about how to launch a SaaS product so that all three connect.
+The SaaS launch problem is not visibility. It is conversion. [CB Insights' analysis of recent VC-backed shutdowns](https://www.cbinsights.com/research/report/startup-failure-reasons-top/) found **70% ran out of capital and 43% had poor [product-market fit](/blog/what-is-product-market-fit/)**. Most of those companies got launch coverage. They just could not turn attention into activation, and activation into revenue. This guide is about how to launch a SaaS product so that all three connect.
 
 What follows is the playbook used by PMM teams running disciplined launches: a tiering system, a 12-week pre-launch timeline, a launch-week run-of-show, and the post-launch loop that turns a single moment into a quarter of compounding pipeline.
 

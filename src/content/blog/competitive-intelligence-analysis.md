@@ -141,7 +141,7 @@ Understand how competitors position themselves and where they invest marketing d
 Arm your sales team with intelligence that wins deals:
 
 - **Pricing and packaging** - Current plans, pricing changes, discount patterns
-- **Win/loss patterns** - Why deals are won or lost against specific competitors
+- **Win/loss patterns** - [Why deals are won or lost](/blog/what-is-win-loss-analysis/) against specific competitors
 - **Objection handling** - Common competitor claims and effective counter-messaging
 - **Sales process** - How competitors sell, demo cadence, trial structure
 

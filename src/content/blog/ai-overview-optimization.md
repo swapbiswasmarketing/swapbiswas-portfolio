@@ -140,4 +140,4 @@ AI overview optimization is SEO done with more discipline. Google has said clear
 
 Fix the H2s. Lead with the answer. Build real topic depth. Keep your E-E-A-T signals credible. Do that consistently for 90 days and your citation rate will move. Chase AI-specific tricks and you will end up with a site that looks engineered and still does not get cited.
 
-For the broader strategic context, see our guide on [AI and the future of SEO](/blog/ai-future-of-seo/) and [AI SEO strategy](/blog/ai-seo-strategy/) - and for the contrarian read on all of this, see [AEO vs SEO](/blog/aeo-vs-seo/), where we argue answer engine optimization is mostly SEO with better formatting.
+For the broader strategic context, see our guide on [AI and the future of SEO](/blog/ai-future-of-seo/) and [AI SEO strategy](/blog/ai-seo-strategy/) - and for the contrarian read on all of this, see [AEO vs SEO](/blog/aeo-vs-seo/), where we argue answer engine optimization is mostly SEO with better formatting. The same structural discipline applies beyond Google: see [LLM optimization](/blog/llm-optimization/) for getting cited by ChatGPT, Perplexity, and Gemini.

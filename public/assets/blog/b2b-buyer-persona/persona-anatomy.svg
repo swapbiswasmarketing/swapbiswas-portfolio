@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="760" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="64" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="40" font-weight="700" text-anchor="middle">The Anatomy of a Sales-Ready B2B Buyer Persona</text>
+  <text x="700" y="100" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22" text-anchor="middle">Lead with the fields a rep can act on. Cut the fields that do not survive a discovery call.</text>
+
+  <!-- LEFT COLUMN: USE -->
+  <rect x="40" y="140" width="640" height="580" rx="16" fill="#151b23" stroke="#5eead4" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="40" y="140" width="640" height="8" rx="4" fill="#5eead4"/>
+  <text x="360" y="196" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="700" text-anchor="middle">USE: Fields That Close Deals</text>
+
+  <!-- USE rows -->
+  <rect x="72" y="224" width="576" height="84" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="96" y="258" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">Objections</text>
+  <text x="96" y="288" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="20">The reason they hesitate, and the answer to each</text>
+
+  <rect x="72" y="320" width="576" height="84" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="96" y="354" fill="#fb923c" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">Trigger Events</text>
+  <text x="96" y="384" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="20">What makes them start looking right now</text>
+
+  <rect x="72" y="416" width="576" height="84" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="96" y="450" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">Decision Criteria</text>
+  <text x="96" y="480" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="20">What they compare on versus competitors</text>
+
+  <rect x="72" y="512" width="576" height="84" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="96" y="546" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">Buyer Language</text>
+  <text x="96" y="576" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="20">The exact words they use for the pain</text>
+
+  <rect x="72" y="608" width="576" height="84" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="96" y="642" fill="#d98ee0" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">Success Metrics</text>
+  <text x="96" y="672" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="20">What they are measured on at work</text>
+
+  <!-- Center arrow USE -> CUT -->
+  <line x1="694" y1="430" x2="734" y2="430" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="734,422 750,430 734,438" fill="#5eead4"/>
+
+  <!-- RIGHT COLUMN: CUT -->
+  <rect x="760" y="140" width="600" height="580" rx="16" fill="#151b23" stroke="#f87171" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="760" y="140" width="600" height="8" rx="4" fill="#f87171"/>
+  <text x="1060" y="196" fill="#f87171" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="700" text-anchor="middle">CUT: Fields Sales Ignores</text>
+
+  <!-- CUT rows -->
+  <rect x="792" y="224" width="536" height="84" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="816" y="258" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">Age and Gender</text>
+  <text x="816" y="288" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">Tells a rep nothing about closing</text>
+
+  <rect x="792" y="320" width="536" height="84" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="816" y="354" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">Favorite Apps and Hobbies</text>
+  <text x="816" y="384" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">Filler that never enters a deal</text>
+
+  <rect x="792" y="416" width="536" height="84" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="816" y="450" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">A Made-Up Name and Photo</text>
+  <text x="816" y="480" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">"Marketing Mary" and a stock headshot</text>
+
+  <rect x="792" y="512" width="536" height="84" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="816" y="546" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">Generic Goals</text>
+  <text x="816" y="576" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">"Wants to grow the business"</text>
+
+  <rect x="792" y="608" width="536" height="84" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="816" y="642" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700">Education History</text>
+  <text x="816" y="672" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">Irrelevant to how they buy</text>
+</svg>

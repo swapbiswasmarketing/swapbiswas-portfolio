@@ -124,4 +124,6 @@ The takeaway is simple. How email marketing fuels your inbound strategy comes do
 
 Map a specific email type to every funnel stage, automate the high-intent triggers, and segment by behavior so each message lands. Then measure email across the full funnel instead of by open rate alone, and feed those insights back into your content and SEO.
 
+Related reading: build a [product launch email sequence](/blog/product-launch-email-sequence/) for bottom-of-funnel pushes, and learn [how to check a competitor's email marketing](/blog/how-to-check-competitor-email-marketing/) to sharpen your own program.
+
 Do that and email stops being a side channel. It becomes the spine of an inbound engine where SEO, content, social, and email each make the others stronger. Start by auditing one stage of your funnel this week, find where leads go cold, and build the email flow that catches them.

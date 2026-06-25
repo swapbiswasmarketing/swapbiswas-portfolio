@@ -27,7 +27,7 @@ What follows is the honest version, written from inside the role: what PMMs actu
 
 ## What Does a Product Marketing Manager Do?
 
-Product marketing covers the four corners of the go-to-market motion:
+[Product marketing](/blog/what-is-product-marketing/) covers the four corners of the go-to-market motion:
 
 - **Positioning and messaging** - why the product exists, who it is for, why it wins
 - **Competitive intelligence and win-loss** - what the market is doing, why deals close and don't

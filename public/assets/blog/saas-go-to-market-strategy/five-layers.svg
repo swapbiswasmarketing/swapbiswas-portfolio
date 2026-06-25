@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 870">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="870" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="64" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700">The Five Layers of a SaaS Go-to-Market Strategy</text>
+  <text x="700" y="104" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Each layer depends on the one below it. Skip a layer and everything above wobbles.</text>
+
+  <!-- Layer 1: Market and segment -->
+  <g filter="url(#cardShadow)">
+    <rect x="120" y="138" width="1160" height="106" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="120" y="138" width="8" height="106" rx="4" fill="#f5a0a1"/>
+    <text x="164" y="180" fill="#f5a0a1" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">LAYER 1</text>
+    <text x="164" y="216" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">Market and segment</text>
+    <text x="560" y="200" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">Who specifically you serve, and why now.</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <line x1="700" y1="244" x2="700" y2="266" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,264 707,264 700,278" fill="#5eead4"/>
+
+  <!-- Layer 2: Positioning -->
+  <g filter="url(#cardShadow)">
+    <rect x="120" y="282" width="1160" height="106" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="120" y="282" width="8" height="106" rx="4" fill="#d98ee0"/>
+    <text x="164" y="324" fill="#d98ee0" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">LAYER 2</text>
+    <text x="164" y="360" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">Positioning</text>
+    <text x="560" y="344" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">The frame that makes you the obvious choice.</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <line x1="700" y1="388" x2="700" y2="410" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,408 707,408 700,422" fill="#5eead4"/>
+
+  <!-- Layer 3: Motion -->
+  <g filter="url(#cardShadow)">
+    <rect x="120" y="426" width="1160" height="106" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="120" y="426" width="8" height="106" rx="4" fill="#60a5fa"/>
+    <text x="164" y="468" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">LAYER 3</text>
+    <text x="164" y="504" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">Motion</text>
+    <text x="560" y="488" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">How buyers move from awareness to purchase.</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <line x1="700" y1="532" x2="700" y2="554" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,552 707,552 700,566" fill="#5eead4"/>
+
+  <!-- Layer 4: Channels -->
+  <g filter="url(#cardShadow)">
+    <rect x="120" y="570" width="1160" height="106" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="120" y="570" width="8" height="106" rx="4" fill="#fb923c"/>
+    <text x="164" y="612" fill="#fb923c" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">LAYER 4</text>
+    <text x="164" y="648" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">Channels</text>
+    <text x="560" y="632" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">The places you reach and convert buyers.</text>
+  </g>
+
+  <!-- Arrow 4 -->
+  <line x1="700" y1="676" x2="700" y2="698" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,696 707,696 700,710" fill="#5eead4"/>
+
+  <!-- Layer 5: Alignment and metrics -->
+  <g filter="url(#cardShadow)">
+    <rect x="120" y="714" width="1160" height="106" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="120" y="714" width="8" height="106" rx="4" fill="#5eead4"/>
+    <text x="164" y="756" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">LAYER 5</text>
+    <text x="164" y="792" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">Alignment and metrics</text>
+    <text x="560" y="776" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">The cadence that keeps teams pointed the same way.</text>
+  </g>
+
+</svg>

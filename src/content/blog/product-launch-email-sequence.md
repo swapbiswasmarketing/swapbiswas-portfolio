@@ -58,7 +58,7 @@ Here is a sample 9-email sequence with timing, the goal of each send, and a subj
 | Post-launch | 8. Last call | Day 6 | Final conversion push | "Closing tonight" |
 | Post-launch | 9. Win-back | Day 9 | Re-engage non-openers | New angle, resend to non-openers |
 
-Treat this as a menu, not a mandate. A small list or a simple product can collapse this into 5 or 6 emails. A complex B2B launch with a long buying cycle can stretch the post-launch phase over weeks. The launch flow should slot into your broader plan - if you have not mapped that yet, start with a [product launch checklist](/blog/product-launch-checklist/).
+Treat this as a menu, not a mandate. A small list or a simple product can collapse this into 5 or 6 emails. A complex B2B launch with a long buying cycle can stretch the post-launch phase over weeks. The launch flow should slot into your broader plan - if you have not mapped that yet, start with a [product launch checklist](/blog/product-launch-checklist/) or the step-by-step playbook on [how to launch a SaaS product](/blog/how-to-launch-a-saas-product/).
 
 ### Pre-Launch: Build the List and the Anticipation
 

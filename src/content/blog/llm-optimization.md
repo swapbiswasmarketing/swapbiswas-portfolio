@@ -126,7 +126,7 @@ A modern site treats LLMs as a first-class crawler population. Two files matter.
 
 ### llms.txt
 
-A proposed standard (see [llmstxt.org](https://llmstxt.org/)) that publishes a markdown index of your highest-value content for LLMs to ingest. The format is simple - a markdown file with sections of links and one-line descriptions. swapbiswas.com publishes one at the root, plus a `llms-full.txt` with full content.
+A [proposed standard](/blog/do-you-need-llms-txt/) (see [llmstxt.org](https://llmstxt.org/)) that publishes a markdown index of your highest-value content for LLMs to ingest. The format is simple - a markdown file with sections of links and one-line descriptions. swapbiswas.com publishes one at the root, plus a `llms-full.txt` with full content.
 
 Adoption across models is partial. The cost of adding one is near-zero, so the asymmetric bet says ship it.
 

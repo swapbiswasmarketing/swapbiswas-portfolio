@@ -126,7 +126,7 @@ Retention marketing in SaaS is about continuously reinforcing the value your pro
 
 ## SaaS Product Marketing Strategy Metrics
 
-You can't improve what you don't measure. Here are the metrics that matter at each stage, along with benchmarks to calibrate against.
+You can't improve what you don't measure. Here are the [metrics that matter](/blog/product-marketing-okrs/) at each stage, along with benchmarks to calibrate against.
 
 ### Acquisition Metrics
 

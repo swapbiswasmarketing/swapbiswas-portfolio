@@ -80,7 +80,7 @@ Use `rel="canonical"` to consolidate signals, but treat it as a hint rather than
 
 Product pages are where intent converts. They are also where most stores leave easy wins on the table, because the UX and the markup are both weak.
 
-The opportunity is real: Baymard's 2026 benchmark of 155+ leading stores found that [62% of mobile and 52% of desktop ecommerce sites have "mediocre or worse" product page UX](https://baymard.com/blog/current-state-ecommerce-product-page-ux). Better product pages are not just an SEO play, they lift conversion too.
+The opportunity is real: Baymard's 2026 benchmark of 155+ leading stores found that [62% of mobile and 52% of desktop ecommerce sites have "mediocre or worse" product page UX](https://baymard.com/blog/current-state-ecommerce-product-page-ux). Better product pages are not just an SEO play, they lift conversion too. Since most of that traffic is mobile, it is worth running through a dedicated [mobile SEO checklist](/blog/mobile-seo-checklist/) alongside this one.
 
 ### On-Page Product Checklist
 
@@ -127,5 +127,7 @@ Run this **ecommerce SEO checklist** as a repeatable quarterly audit, not a one-
 | Internal links | Fix orphans, strengthen breadcrumbs | Crawler plus product feed |
 
 To track whether the work is paying off, watch indexed pages, crawl stats, and category-level rankings over time. My guides on [how to check your SEO ranking](/blog/how-do-i-check-my-seo-ranking/) and [what belongs in an SEO report](/blog/what-is-seo-report/) cover how to turn those numbers into a story your team will actually read.
+
+Related: [why an SEO audit is important](/blog/why-seo-audit-is-important/) and [how much an SEO audit costs](/blog/how-much-does-an-seo-audit-cost/) if you are deciding whether to run this in-house or hire it out.
 
 Start at the top of this **ecommerce SEO checklist**, fix the crawl budget leaks first, and work down to product schema and internal links. The stores that win organic search are not the ones with the most pages. They are the ones where every crawled page earns its place from category to cart.

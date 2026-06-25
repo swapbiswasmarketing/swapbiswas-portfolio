@@ -190,7 +190,7 @@ This is the bridge from a pricing strategy to a [product launch playbook](/blog/
 
 Pricing is one of the four core PMM mandates - positioning, messaging, pricing, and launch. Done well, it shows up in:
 
-- **Win-loss analysis** - price comes up in deals; the data tells you whether the issue is price or value framing
+- **[Win-loss analysis](/blog/what-is-win-loss-analysis/)** - price comes up in deals; the data tells you whether the issue is price or value framing
 - **Competitive battlecards** - how to handle price objections vs each competitor
 - **Sales enablement** - the ROI calculator, the value framing, the discount guardrails
 - **Launch readiness** - pricing decisions made before launch, not after

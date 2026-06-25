@@ -66,7 +66,7 @@ For how to build positioning, see [product positioning](/blog/product-positionin
 - [ ] **Demo video** (2-3 minutes, showing the use case, not the UI)
 - [ ] **Product screenshots** and GIFs for marketing and docs
 - [ ] **Announcement blog post** written, designed, and SEO-optimized
-- [ ] **Customer-facing email** to existing users or waitlist
+- [ ] **[Customer-facing email](/blog/product-launch-email-sequence/)** to existing users or waitlist
 - [ ] **Social media assets** (LinkedIn, X, YouTube thumbnails)
 - [ ] **Paid ad creative** if running launch ads
 - [ ] **Press release** drafted (Tier 1 only)

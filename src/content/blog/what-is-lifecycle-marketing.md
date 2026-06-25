@@ -161,7 +161,7 @@ For the persona work that underpins all of this, see [ICP vs Buyer Persona](/blo
 If you are starting from zero, do not try to build all five stages at once. Sequence the work.
 
 1. **Days 1-30:** instrument the data. Pick a CDP or warehouse-native setup. Define the customer ID. Pipe product events into the marketing automation platform.
-2. **Days 31-60:** build activation. The single highest-ROI lifecycle workflow is the first-30-days onboarding sequence. Ship it before anything else.
+2. **Days 31-60:** build activation. The single highest-ROI lifecycle workflow is the first-30-days [onboarding sequence](/blog/what-is-customer-onboarding/). Ship it before anything else.
 3. **Days 61-90:** build retention. Add usage-based triggers - feature adoption, login frequency, NPS - and the campaigns that respond to them.
 4. **Quarter 2 onward:** build acquisition lifecycle (segmented nurture, product-led trials) and advocacy (referral programs, customer marketing).
 

@@ -38,7 +38,7 @@ Google's Pixel devices use the feedback collected via market research to add [fe
 
 ## 4. Pricing Strategy
 
-Pricing is one of the core criteria in the decision-making process for purchasing a product or service. Marketing research provides insights into how much a consumer is willing to pay, how value is perceived, and their behavior on various prices. All this information helps in making the right pricing strategy that maximizes profit.
+Pricing is one of the core criteria in the decision-making process for purchasing a product or service. Marketing research provides insights into how much a consumer is willing to pay, how value is perceived, and their behavior on various prices. All this information helps in making the [right pricing strategy](/blog/how-to-create-a-pricing-strategy/) that maximizes profit.
 
 **Example:**
 
@@ -68,7 +68,7 @@ In the ad, Kendall Jenner was in a picture session to join demonstrators in the 
 
 ## 7. Competitive Analysis
 
-Identifying a competitor's strengths, weaknesses, product positioning, and strategy can be a huge opportunity to gain market share and profits. This can be achieved with the help of good market research.
+Identifying a [competitor's strengths, weaknesses, product positioning, and strategy](/blog/competitive-analysis-examples/) can be a huge opportunity to gain market share and profits. This can be achieved with the help of good market research.
 
 **Example:**
 
@@ -97,3 +97,5 @@ Netflix uses [user data and market trends](https://www.livemint.com/companies/ne
 ## Conclusion
 
 Marketing research is crucial for managers, providing essential insights to make informed decisions, identify opportunities, and mitigate risks. By understanding market dynamics, targeting the right audience, and enhancing customer satisfaction, businesses can achieve sustainable growth and stay ahead of the competition.
+
+Related reading: [the marketing tools you actually need](/blog/marketing-tools-you-need/) and [how to read a heatmap](/blog/how-to-read-a-heatmap/) to turn research into action.

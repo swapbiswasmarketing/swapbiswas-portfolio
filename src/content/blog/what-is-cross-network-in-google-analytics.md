@@ -100,7 +100,7 @@ For context, Google's own data shows that **Performance Max delivers 27% more co
 
 ### Step 4: Check the Conversion Paths Report
 
-Navigate to **Advertising > Attribution > Conversion paths**. Filter by the Cross Network channel to see where it typically appears in the customer journey. Cross Network traffic often shows up in early and mid-funnel touchpoints because Performance Max serves heavily on YouTube and Display for prospecting.
+Navigate to **Advertising > Attribution > Conversion paths**. Filter by the Cross Network channel to see where it typically appears in the [customer journey](/blog/what-is-customer-journey-analytics/). Cross Network traffic often shows up in early and mid-funnel touchpoints because Performance Max serves heavily on YouTube and Display for prospecting.
 
 ## How to Get More Granular Data From Cross Network Campaigns
 

@@ -33,7 +33,7 @@ This means your SaaS growth strategy must balance two engines simultaneously: ne
 
 ### Playbook 1: Product-Led Growth
 
-Let users experience your product before paying. Offer a freemium tier or free trial that delivers real value and builds habitual usage.
+Let users experience your product before paying. This is the foundation of [product-led marketing](/blog/product-led-marketing/). Offer a freemium tier or free trial that delivers real value and builds habitual usage.
 
 Companies like Figma (**$1.056B revenue, 136% NRR**) and Canva (**$4B ARR, 265M users**) prove that giving away a genuinely useful product creates massive top-of-funnel that converts through natural upgrade triggers. See our full breakdown of [product-led growth examples](/blog/product-led-growth-examples/) for detailed case studies.
 

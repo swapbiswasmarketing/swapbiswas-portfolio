@@ -32,7 +32,7 @@ The mechanics are different too. AI engines retrieve a set of pages, summarize t
 
 Ahrefs analyzed 863,000 keyword SERPs and roughly 4 million AI Overview URLs and found that only **38% of pages cited in AI Overviews also rank in the top 10** for that query, down from 76% a year earlier, [per the Ahrefs study](https://ahrefs.com/blog/ai-overview-citations-top-10). The other citations come from deeper rankings or pages outside the top 100 entirely.
 
-The lesson is direct. You can earn an AI citation without ranking first, and you can rank first and still get left out. The strategies to improve brand visibility in AI search engines below close that gap.
+The lesson is direct. You can earn an AI citation without ranking first, and you can rank first and still get left out. This shift is reshaping [the future of SEO](/blog/ai-future-of-seo/). The strategies to improve brand visibility in AI search engines below close that gap.
 
 ## 1. Lock Down Entity Consistency
 

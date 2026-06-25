@@ -83,7 +83,7 @@ The workhorse of SEO reporting. Covers the past 30 days compared to the prior mo
 
 ### Quarterly SEO Report
 
-A higher-level view that aggregates three months of data to show trends. Focuses on strategic progress - are we hitting our annual goals? How is organic share-of-voice changing?
+A higher-level view that aggregates three months of data to show trends. Focuses on strategic progress - are we hitting our annual goals? How is organic share-of-voice changing? If you need to make the case for deeper diagnostic work to leadership, our guide on [why an SEO audit is important](/blog/why-seo-audit-is-important/) explains the business value.
 
 **Best for:** Executive stakeholders, board presentations, budget planning.
 

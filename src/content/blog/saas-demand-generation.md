@@ -78,7 +78,7 @@ Here is the core argument of this playbook: stop counting leads and start counti
 
 A **product-qualified lead** is a user who has experienced real value in your product and shows usage signals that predict a purchase. According to [OpenView's guide to PQLs](https://openviewpartners.com/blog/your-guide-to-product-qualified-leads-pqls/), **PQLs convert at extremely high rates, often 15-30%**. Compare that to the sub-1% inquiry-to-close rate of MQL-driven funnels and the case makes itself.
 
-The difference is information. An MQL told you they want a whitepaper. A PQL showed you they used your product and got value. One is a guess about intent; the other is proof of it.
+The difference is information. An MQL told you they want a whitepaper. A PQL showed you they used your product and got value. One is a guess about intent; the other is proof of it. This is also the practical line between [demand generation and lead generation](/blog/demand-generation-vs-lead-generation/): one builds demand and qualified pipeline, the other just collects contacts.
 
 ### How to Define a PQL for Your Product
 

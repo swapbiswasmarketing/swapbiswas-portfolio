@@ -130,7 +130,7 @@ Links from local sources carry extra weight for local search. Sponsor a local ev
 
 ### 20. Track your local rankings
 
-You cannot improve what you do not measure. Track your map pack position for your priority keywords from the locations you serve, since local rankings change with the searcher's location. Learning [how to check your SEO ranking](/blog/how-do-i-check-my-seo-ranking/) gives you the baseline to know whether this checklist is working.
+You cannot improve what you do not measure. Track your map pack position for your priority keywords from the locations you serve, since local rankings change with the searcher's location. Learning [how to check your SEO ranking](/blog/how-do-i-check-my-seo-ranking/) gives you the baseline to know whether this checklist is working, and rolling those numbers into a regular [SEO report](/blog/what-is-seo-report/) keeps the progress visible over time.
 
 ## Local SEO Checklist Priorities at a Glance
 

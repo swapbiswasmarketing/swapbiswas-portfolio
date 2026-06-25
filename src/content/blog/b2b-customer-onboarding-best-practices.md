@@ -82,7 +82,7 @@ The blend should shift with account size. Use this as a starting rule of thumb a
 | Mid-market | Strong: guided setup plus an onboarding specialist | Scheduled: kickoff, mid-point check, value review |
 | Enterprise | Supporting: in-app reinforces the plan | Lead: named CSM, implementation team, exec sponsor |
 
-Automated lifecycle communications connect the two layers. If you are formalizing those sequences, the patterns in this [B2B marketing automation guide](/blog/b2b-marketing-automation/) map cleanly onto onboarding emails and in-app nudges triggered by milestone progress.
+[Automated lifecycle communications](/blog/what-is-lifecycle-marketing/) connect the two layers. If you are formalizing those sequences, the patterns in this [B2B marketing automation guide](/blog/b2b-marketing-automation/) map cleanly onto onboarding emails and in-app nudges triggered by milestone progress.
 
 ## Measure Activation as Your Leading Retention Metric
 

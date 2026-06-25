@@ -54,7 +54,7 @@ Then subscribe to your top 5 to 10 competitors. Sign up through every entry poin
 
 ### Trigger their automations on purpose
 
-The most valuable emails are automated lifecycle flows, and you can trigger them yourself. To see a **welcome series**, just subscribe and wait. To see an **abandoned cart flow**, add a product to your cart on their site and leave without buying.
+The most valuable emails are automated lifecycle flows, and you can trigger them yourself. To see a [**welcome series**](/blog/product-launch-email-sequence/), just subscribe and wait. To see an **abandoned cart flow**, add a product to your cart on their site and leave without buying.
 
 To see a **browse abandonment or win-back flow**, visit category pages and then go quiet for a few weeks. These automated journeys reveal the offers a competitor is willing to give to recover a sale, which is often deeper than anything in their broadcast emails.
 
@@ -130,4 +130,4 @@ A single monthly review keeps you ahead without turning into a full-time spy ope
 
 Knowing how to check a competitor's email marketing is a low-cost, high-return habit. Set up a dedicated inbox, subscribe to your top rivals, trigger their automations, and run every email through a simple five-part teardown covering cadence, subject lines, offers, CTAs, and lifecycle triggers.
 
-Layer in a paid intelligence tool when you need speed or history, but the free method alone will teach you most of what you need. Then do the part that matters: use what you learn to ship sharper, more differentiated emails of your own. Start this week by subscribing to three competitors, and run your first teardown by Friday.
+Layer in a paid intelligence tool when you need speed or history, but the free method alone will teach you most of what you need. Related reading: [how email marketing fuels your inbound strategy](/blog/how-email-marketing-fuels-inbound-strategy/) and [competitive analysis examples](/blog/competitive-analysis-examples/) for frameworks beyond the inbox. Then do the part that matters: use what you learn to ship sharper, more differentiated emails of your own. Start this week by subscribing to three competitors, and run your first teardown by Friday.

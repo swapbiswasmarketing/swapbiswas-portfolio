@@ -188,7 +188,7 @@ Your CRM and marketing platform should share a single source of truth:
 - Sync lead scores to CRM contact records in real time
 - Create sales tasks automatically when leads hit MQL threshold
 - Log marketing touches to the deal timeline
-- Update lifecycle stages based on both marketing and sales activity
+- Update [lifecycle stages](/blog/what-is-lifecycle-marketing/) based on both marketing and sales activity
 
 ## Common Marketing Automation Strategy Mistakes
 

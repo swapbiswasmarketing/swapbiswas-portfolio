@@ -86,7 +86,7 @@ The linguistic personality. Voice adjectives, tone shifts by context, voice char
 
 ### 9. Messaging Architecture
 
-Tagline, value propositions per audience, key messages by funnel stage, elevator pitch versions (10 words, 30 words, 90 seconds). For the underlying value prop work, see [What Is a Value Proposition](/blog/what-is-a-value-proposition/).
+Tagline, value propositions per [audience](/blog/b2b-buyer-persona/), key messages by funnel stage, elevator pitch versions (10 words, 30 words, 90 seconds). For the underlying value prop work, see [What Is a Value Proposition](/blog/what-is-a-value-proposition/).
 
 ### 10. Naming Conventions
 

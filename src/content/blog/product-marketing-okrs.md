@@ -98,7 +98,7 @@ These OKRs are often skipped because the outputs are qualitative. Skip them at y
 |---|---|
 | Deeply understand our new mid-market ICP | Conduct 25 mid-market buyer interviews; ship refreshed ICP and buyer persona documents; identify top 3 trigger events and validate with a 200-response survey |
 | Improve the voice-of-customer loop | Tag 100% of Gong calls with customer pain themes; publish a monthly VOC digest to the company; 5 product or positioning decisions citing VOC data as the primary input |
-| Pricing research we can act on | Run a Van Westendorp price sensitivity study with 300 responses; conduct 15 willingness-to-pay interviews with target accounts; ship a pricing recommendation adopted by the pricing committee |
+| Pricing research we can act on | Run a Van Westendorp price sensitivity study with 300 responses; conduct 15 willingness-to-pay interviews with target accounts; ship a [pricing recommendation](/blog/how-to-create-a-pricing-strategy/) adopted by the pricing committee |
 
 For the foundational work here, see [ICP vs buyer persona](/blog/icp-vs-buyer-persona/).
 

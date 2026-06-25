@@ -48,7 +48,7 @@ I've adapted this framework from [Gartner's AI Maturity Model](https://www.gartn
 **Where you are:** You're using AI tools regularly, but it's ad hoc. Different team members use different tools for different things. There's no shared workflow or best practice.
 
 **What it looks like:**
-- You use ChatGPT for blog outlines, Canva AI for images, Grammarly for editing
+- You use [ChatGPT for blog outlines](/blog/how-to-use-chatgpt-for-sales-and-marketing/), Canva AI for images, Grammarly for editing
 - AI tools are siloed - no one tool connects to another
 - Results are inconsistent because prompts and processes vary
 - You spend more time figuring out the tools than getting output

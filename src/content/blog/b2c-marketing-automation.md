@@ -79,7 +79,7 @@ A proven three-email sequence:
 
 ### 3. Post-Purchase and Retention
 
-Acquiring a new customer costs 5-25x more than retaining an existing one ([Harvard Business Review](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers)). Post-purchase automation keeps buyers engaged and drives repeat purchases.
+Acquiring a new customer costs 5-25x more than retaining an existing one ([Harvard Business Review](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers)). Post-purchase automation keeps buyers engaged and drives repeat purchases - a core part of [lifecycle marketing](/blog/what-is-lifecycle-marketing/).
 
 **Key post-purchase flows:**
 - Order confirmation with cross-sell recommendations

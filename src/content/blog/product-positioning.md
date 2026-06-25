@@ -16,7 +16,7 @@ Product positioning is the foundation that everything else - messaging, pricing,
 
 ## What Is Product Positioning?
 
-Product positioning is how you define your product's place in the market relative to alternatives. It answers a deceptively simple question: **why should your target customer choose you over everything else?**
+Product positioning is how you define your product's [place in the market](/blog/what-is-market-positioning/) relative to alternatives. It answers a deceptively simple question: **why should your target customer choose you over everything else?**
 
 "Everything else" doesn't just mean direct competitors. It means the status quo, manual workarounds, spreadsheets, hiring an agency, or doing nothing at all.
 

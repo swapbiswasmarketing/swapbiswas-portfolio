@@ -90,7 +90,7 @@ Once core workflows are live, wire in the channels that feed them.
 - **Forms.** Replace every static form on the site with the platform's form. Map every field to the data model.
 - **Webinars.** Sync registration, attendance, and post-event behavior. Webinar attendance is one of the highest-intent signals you have.
 - **Paid media.** Sync custom audiences from CRM. Suppress current customers from acquisition spend.
-- **Product analytics.** If you are SaaS, pipe key in-app events (signup, activation, upgrade) into the marketing platform. This is what turns a marketing tool into a lifecycle tool.
+- **Product analytics.** If you are SaaS, pipe key in-app events (signup, activation, upgrade) into the marketing platform. This is what turns a marketing tool into a [lifecycle tool](/blog/what-is-lifecycle-marketing/).
 - **Webhooks.** Anything not natively integrated should send a webhook on the events that matter.
 
 ### Phase 5: Reporting (Week 8-10)

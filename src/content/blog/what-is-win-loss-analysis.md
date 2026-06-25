@@ -152,7 +152,7 @@ The deliverables that turn research into pipeline:
 - **Refreshed positioning** if buyer language has shifted (see [Product Positioning](/blog/product-positioning/) and [What Is Market Positioning](/blog/what-is-market-positioning/))
 - **Sales talk tracks** for the top 3 objections heard in losses
 - **Product gap list** ranked by deal impact and prevalence
-- **A "voice of the customer" library** of quotes for marketing and content teams
+- **A ["voice of the customer"](/blog/what-is-voice-of-the-customer/) library** of quotes for marketing and content teams
 
 For the broader competitive intelligence work that win-loss feeds into, see [Competitive Intelligence Analysis](/blog/competitive-intelligence-analysis/) and [Competitive Battlecard Template](/blog/competitive-battlecard-template/).
 

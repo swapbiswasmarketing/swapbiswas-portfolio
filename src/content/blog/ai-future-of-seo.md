@@ -36,7 +36,7 @@ This does not mean SEO is dead. It means the value of a click just went up. User
 
 ### ChatGPT and Perplexity as Search Alternatives
 
-AI chatbots are becoming a parallel search channel. Users ask ChatGPT, Perplexity, and Claude questions they previously typed into Google. These AI engines pull information from web content and cite their sources - creating a new category of organic visibility.
+AI chatbots are becoming a parallel search channel. Users ask ChatGPT, Perplexity, and Claude questions they previously typed into Google. These AI engines pull information from web content and cite their sources - creating a new category of organic visibility. Optimizing for these citations is its own discipline, covered in our guide to [getting cited by ChatGPT, Perplexity, and Gemini](/blog/llm-optimization/).
 
 Between **40-60% of cited sources in AI search change month to month** ([Profound](https://www.tryprofound.com/blog/ai-search-volatility)), making AI visibility volatile but winnable. Platforms like Perplexity lean heavily on Reddit and community sources, while Google AI Overviews favor authoritative publications. This means multi-platform presence - not just your website - affects AI visibility.
 

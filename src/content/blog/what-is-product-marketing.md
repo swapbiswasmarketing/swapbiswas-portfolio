@@ -208,7 +208,7 @@ Source: [PMA State of Product Marketing 2025](https://www.productmarketingallian
 
 ## Getting Into Product Marketing
 
-If you're considering a career in PMM, here's my advice:
+If you're [considering a career in PMM](/blog/is-product-marketing-a-good-career/), here's my advice:
 
 1. **Start by understanding the product.** The best PMMs are the ones who understand both the technology and the customer deeply.
 

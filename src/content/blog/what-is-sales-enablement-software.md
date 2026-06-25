@@ -29,7 +29,7 @@ Sales enablement software is the technology layer that equips a sales team with 
 1. **Content management** - one searchable home for decks, one-pagers, battlecards, and customer stories
 2. **Training and coaching** - structured onboarding, certifications, and ongoing skill development
 3. **Conversation intelligence** - call recording, transcription, and pattern analysis
-4. **Readiness analytics** - which reps are using which content, in which deals, with what outcome
+4. **[Readiness analytics](/blog/sales-enablement-kpis/)** - which reps are using which content, in which deals, with what outcome
 
 The job of the platform is to compress the distance between "marketing made an asset" and "a rep used it in a winning deal." Done well, content usage becomes a signal on the deal record, and coaching becomes data-driven instead of vibes-based.
 

@@ -43,7 +43,7 @@ The terms get used interchangeably in pitch decks. They are not the same.
 | Market positioning | Where the product sits in a category for a specific buyer | 1-3 years | Product marketing |
 | Product positioning | A specific product or feature within the broader portfolio | 6-18 months | Product marketing |
 | Brand positioning | What the company stands for emotionally | 5-10 years | Brand / CMO |
-| Value proposition | The headline value statement on the homepage | Months | Marketing |
+| [Value proposition](/blog/what-is-a-value-proposition/) | The headline value statement on the homepage | Months | Marketing |
 | Messaging | The downstream language: taglines, ad copy, decks | Quarterly | Marketing + sales |
 | Category design | Defining or claiming a brand-new category | Multi-year bet | Founder + CMO |
 

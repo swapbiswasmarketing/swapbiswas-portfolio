@@ -174,7 +174,7 @@ Automated emails account for **37% of all email-generated sales** despite making
 
 Start small. The biggest mistake in B2B marketing automation is trying to automate everything at once. Pick one workflow - usually inbound lead nurture - and perfect it before adding complexity.
 
-Here is a realistic implementation timeline:
+Here is a realistic [implementation timeline](/blog/how-to-implement-marketing-automation/):
 
 - **Month 1:** Choose a platform, integrate with your CRM, clean your contact database
 - **Month 2:** Build your lead scoring model and first nurture sequence

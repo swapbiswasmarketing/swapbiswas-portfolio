@@ -78,7 +78,7 @@ YMYL on its own does nothing. It matters because of what it triggers: a higher b
 
 > "Our systems give even more weight to content that aligns with strong E-E-A-T for topics that could significantly impact the health, financial stability, or safety of people, or the welfare or well-being of society. We call these 'Your Money or Your Life' topics, or YMYL for short."
 
-That is the whole mechanism. YMYL raises the stakes; E-E-A-T is the bar that gets raised. The same dynamic shows up across modern search surfaces, which is exactly why E-E-A-T keeps appearing in [the AEO-versus-SEO debate](/blog/aeo-vs-seo/) and in [AI Overview optimization](/blog/ai-overview-optimization/) - the requirements are the same, the surface is new.
+That is the whole mechanism. YMYL raises the stakes; E-E-A-T is the bar that gets raised. The same dynamic shows up across modern search surfaces, which is exactly why E-E-A-T keeps appearing in [the AEO-versus-SEO debate](/blog/aeo-vs-seo/) and in [AI Overview optimization](/blog/ai-overview-optimization/) - the requirements are the same, the surface is new. The same trust signals also drive [brand visibility in AI search engines](/blog/improve-brand-visibility-in-ai-search-engines/).
 
 Within E-E-A-T, Google is clear that not all four letters carry equal weight:
 

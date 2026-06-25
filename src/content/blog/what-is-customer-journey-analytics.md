@@ -155,7 +155,7 @@ The stack depends on the customer model. There is no single right answer.
 | Product analytics | Amplitude, Mixpanel, Heap, PostHog | PLG, self-serve SaaS, behavioral funnels |
 | Customer Data Platform | Segment, Rudderstack, mParticle | Identity resolution, data plumbing |
 | Session replay | FullStory, LogRocket, Hotjar | Qualitative drill-down on drop-off points |
-| Journey orchestration | Salesforce Marketing Cloud, Braze, Iterable | Multi-channel lifecycle messaging |
+| Journey orchestration | Salesforce Marketing Cloud, Braze, Iterable | Multi-channel [lifecycle messaging](/blog/what-is-lifecycle-marketing/) |
 | Enterprise CJA | Adobe Customer Journey Analytics, Pointillist | Large enterprise, complex omnichannel |
 | Marketing analytics | Looker, Tableau, Sigma on a warehouse | Self-serve dashboards for stakeholders |
 | Voice of customer | Qualtrics, Delighted, Refiner | Survey + verbatim integration |

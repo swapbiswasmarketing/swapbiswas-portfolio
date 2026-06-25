@@ -159,7 +159,7 @@ Prioritize the top 20 most replicable, high-quality opportunities.
 
 ### 5. Optimizing for AI Overviews & Answer Engines
 
-This is the new frontier of SEO. With ChatGPT search, Perplexity, Google AI Overviews, and other AI answer engines, you need to optimize for machines that read and cite your content.
+This is the new frontier of SEO. With ChatGPT search, Perplexity, Google AI Overviews, and other AI answer engines, you need to optimize for machines that read and cite your content. For a deeper playbook, see how to [get cited in Google AI Overviews](/blog/ai-overview-optimization/) and how to [get cited by ChatGPT, Perplexity, and Gemini](/blog/llm-optimization/).
 
 **Key principles:**
 

@@ -146,6 +146,6 @@ A product marketing manager owns the story that turns a product into revenue. Th
 
 It is a role that rewards clear thinkers and strong writers, and it has become more strategic as AI has compressed the tactical side of marketing.
 
-If you are considering the path, the best starting point is to write. Write positioning docs for products you admire, and write battlecards for companies you interview with. Writing is where the job actually happens, and it is the skill that compounds fastest.
+If you are [considering the path](/blog/is-product-marketing-a-good-career/), the best starting point is to write. Write positioning docs for products you admire, and write battlecards for companies you interview with. Writing is where the job actually happens, and it is the skill that compounds fastest.
 
 For a broader view of what modern product marketing looks like, start with our primer on [what is product marketing](/blog/what-is-product-marketing/).

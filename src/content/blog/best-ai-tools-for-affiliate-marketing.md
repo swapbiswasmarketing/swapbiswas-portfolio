@@ -38,7 +38,7 @@ Claude produces the most natural-sounding long-form content among the major LLMs
 
 **Best for:** Product descriptions, content outlines, and brainstorming affiliate angles.
 
-ChatGPT's web browsing feature makes it useful for pulling current product specs and pricing. The custom GPT feature lets you build specialized assistants for specific affiliate niches. Check out [our guide to ChatGPT prompts for marketing](/blog/chatgpt-prompts-for-marketing) for templates you can adapt to affiliate workflows.
+ChatGPT's web browsing feature makes it useful for pulling current product specs and pricing. If you want a broader playbook, see how to [use ChatGPT for sales and marketing](/blog/how-to-use-chatgpt-for-sales-and-marketing/). The custom GPT feature lets you build specialized assistants for specific affiliate niches. Check out [our guide to ChatGPT prompts for marketing](/blog/chatgpt-prompts-for-marketing) for templates you can adapt to affiliate workflows.
 
 **Pricing:** Free tier with caps. Plus at $20/month.
 

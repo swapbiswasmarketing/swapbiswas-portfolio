@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="760" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700">12 Sales Enablement KPIs by Category</text>
+  <text x="700" y="98" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Grouped by what each metric proves</text>
+
+  <!-- COLUMN 1: Content Effectiveness -->
+  <rect x="40" y="135" width="410" height="540" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="40" y="135" width="410" height="6" rx="3" fill="#f5a0a1"/>
+  <text x="70" y="185" fill="#f5a0a1" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">CATEGORY 1</text>
+  <text x="70" y="225" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600">Content</text>
+  <text x="70" y="260" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600">Effectiveness</text>
+  <text x="70" y="320" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="70" dy="0">1. Content usage rate</tspan>
+    <tspan x="70" dy="48">2. Influence on closed-won</tspan>
+    <tspan x="70" dy="48">3. Buyer time on content</tspan>
+    <tspan x="70" dy="48">4. Content findability</tspan>
+  </text>
+
+  <!-- Arrow 1 to 2 -->
+  <line x1="450" y1="405" x2="487" y2="405" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="485,398 499,405 485,412" fill="#5eead4"/>
+
+  <!-- COLUMN 2: Training & Readiness -->
+  <rect x="495" y="135" width="410" height="540" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="495" y="135" width="410" height="6" rx="3" fill="#c084fc"/>
+  <text x="525" y="185" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">CATEGORY 2</text>
+  <text x="525" y="225" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600">Training</text>
+  <text x="525" y="260" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600">&amp; Readiness</text>
+  <text x="525" y="320" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="525" dy="0">5. Time-to-ramp</tspan>
+    <tspan x="525" dy="48">6. Certification pass rate</tspan>
+    <tspan x="525" dy="48">7. Knowledge retention</tspan>
+    <tspan x="525" dy="48">8. Rep confidence</tspan>
+  </text>
+
+  <!-- Arrow 2 to 3 -->
+  <line x1="905" y1="405" x2="942" y2="405" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="940,398 954,405 940,412" fill="#5eead4"/>
+
+  <!-- COLUMN 3: Deal & Revenue Impact -->
+  <rect x="950" y="135" width="410" height="540" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="950" y="135" width="410" height="6" rx="3" fill="#60a5fa"/>
+  <text x="980" y="185" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">CATEGORY 3</text>
+  <text x="980" y="225" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600">Deal &amp;</text>
+  <text x="980" y="260" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600">Revenue Impact</text>
+  <text x="980" y="320" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="980" dy="0">9. Win rate</tspan>
+    <tspan x="980" dy="48">10. Sales cycle length</tspan>
+    <tspan x="980" dy="48">11. Average deal size</tspan>
+    <tspan x="980" dy="48">12. Quota attainment</tspan>
+  </text>
+
+  <!-- Footer hint -->
+  <text x="70" y="640" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">Leading indicators</text>
+  <text x="525" y="640" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">Leading + lagging</text>
+  <text x="980" y="640" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">Lagging outcomes</text>
+</svg>

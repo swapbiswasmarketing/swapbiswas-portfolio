@@ -26,7 +26,7 @@ SEO is the rare channel where the asset appreciates. A page that ranks keeps ear
 
 The problem is that the same compounding works in reverse. A page that slips from position one to position three does not lose a little traffic. It loses most of it.
 
-**[The #1 organic result in Google earns an average 27.6% click-through rate](https://backlinko.com/google-ctr-stats)**, per Backlinko's 2025 analysis of 4 million search results with Semrush, while the top three results combined take 54.4% of all clicks. So a slide off the first position on a high-intent keyword can cut your clicks sharply, and you never see an error message - just a smaller number next quarter.
+**[The #1 organic result in Google earns an average 27.6% click-through rate](https://backlinko.com/google-ctr-stats)**, per Backlinko's 2025 analysis of 4 million search results with Semrush, while the top three results combined take 54.4% of all clicks. So a slide off the first position on a high-intent keyword can cut your clicks sharply, which is why it pays to [check your SEO ranking](/blog/how-do-i-check-my-seo-ranking/) regularly, and you never see an error message - just a smaller number next quarter.
 
 An audit is how you catch that slide while it is still cheap to fix. It connects an abstract ranking change to a concrete revenue line, which is the language that gets budget approved.
 

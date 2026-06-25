@@ -127,7 +127,7 @@ You can't be everywhere at launch. Pick 2-3 channels based on where your target 
 **Waitlist strategy:**
 - Create a landing page with clear value proposition
 - Offer early access or a launch discount for sign-ups
-- Send 2-3 pre-launch emails with behind-the-scenes content
+- Send 2-3 [pre-launch emails](/blog/product-launch-email-sequence/) with behind-the-scenes content
 
 **Social proof seeding:**
 - Get 5-10 beta users to share their experience publicly

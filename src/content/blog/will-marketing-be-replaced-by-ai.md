@@ -45,7 +45,7 @@ Marketing has to be adaptive to new trends, societal shifts, and unexpected chal
 
 ## What AI can do in Marketing?
 
-AI has progressed more in the last few years than in the last few decades due to ChatGPT, Google's Gemini, and many other such tools. Over the past few years, people have used AI extensively, so let's look at the some of the major areas where AI is making a difference:
+AI has progressed more in the last few years than in the last few decades due to [ChatGPT](/blog/what-does-chatgpt-stand-for/), Google's Gemini, and many other such tools. Over the past few years, people have used AI extensively, so let's look at the some of the major areas where AI is making a difference:
 
 ### **Data Analysis and Insights**
 
@@ -59,7 +59,7 @@ Repetitive tasks like writing emails, social media posting, and even content cur
 
 ### **Customer Service**
 
-37% of chatbots are used in Support, and 41% are used in sales, according to [Intercom](https://www.intercom.com/blog/the-state-of-chatbots/). Enterprises use AI based chatbots to handle many queries, such as registering complaints, answering any questions and more.
+37% of chatbots are used in Support, and 41% are [used in sales](/blog/how-to-use-chatgpt-for-sales-and-marketing/), according to [Intercom](https://www.intercom.com/blog/the-state-of-chatbots/). Enterprises use AI based chatbots to handle many queries, such as registering complaints, answering any questions and more.
 
 ### **Content Creation**
 

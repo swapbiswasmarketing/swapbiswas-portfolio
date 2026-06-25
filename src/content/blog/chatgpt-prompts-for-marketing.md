@@ -16,7 +16,7 @@ Over **86% of marketing teams** now use AI in their workflows ([HubSpot 2026 Sta
 
 **Prompt quality matters more than model quality.** The difference between a vague prompt and a well-structured one is the difference between generic filler and content that actually converts.
 
-Here are 50+ prompts I use in my own marketing work, organized by use case. If you're still building your AI toolkit, start with our guide to [free AI tools for marketing](/blog/free-ai-tools-for-marketing/) - many of these prompts work across ChatGPT, Claude, and Gemini. But first, the techniques that make them work.
+Here are 50+ prompts I use in my own marketing work, organized by use case. For the bigger picture on workflows, see [how to use ChatGPT for sales and marketing](/blog/how-to-use-chatgpt-for-sales-and-marketing/). If you're still building your AI toolkit, start with our guide to [free AI tools for marketing](/blog/free-ai-tools-for-marketing/) - many of these prompts work across ChatGPT, Claude, and Gemini. But first, the techniques that make them work.
 
 ## The 5 Prompting Techniques That Actually Matter
 

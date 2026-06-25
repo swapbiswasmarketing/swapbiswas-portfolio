@@ -169,9 +169,9 @@ The reverse pattern is just as recognisable: teams that ship feature after featu
 
 PMF is not the finish line. It is the starting line. Post-PMF, the work shifts:
 
-- **Channel scaling** - figure out which acquisition channels work at scale (product-channel fit)
+- **[Channel scaling](/blog/saas-growth-strategy/)** - figure out which acquisition channels work at scale (product-channel fit)
 - **Pricing optimisation** - capture more of the value you are creating (see the [pricing strategy playbook](/blog/how-to-create-a-pricing-strategy/))
-- **Expansion** - move from one segment to two, with intentional positioning per segment
+- **Expansion** - move from one segment to two, with intentional [positioning per segment](/blog/product-positioning/)
 - **Defensibility** - moats become real once growth is real
 
 Most companies stall post-PMF by trying to scale before product-channel fit is solid. The discipline carries: pick a channel, prove it works, then add the next.

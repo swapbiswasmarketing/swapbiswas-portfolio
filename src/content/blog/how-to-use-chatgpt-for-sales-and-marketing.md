@@ -234,7 +234,7 @@ The tasks where it hurts more than it helps:
 - Anything requiring up-to-date market data without verification
 - Deeply original content where the voice matters more than the structure
 
-For a broader view on how AI is reshaping the marketing function, see our [AI future of SEO](/blog/ai-future-of-seo/) post and the [marketers' AI maturity curve](/blog/marketers-ai-maturity-curve/).
+For a broader view on how AI is reshaping the marketing function, see our [AI future of SEO](/blog/ai-future-of-seo/) post, the [marketers' AI maturity curve](/blog/marketers-ai-maturity-curve/), and our take on [whether marketing will be replaced by AI](/blog/will-marketing-be-replaced-by-ai/).
 
 ## The Bottom Line on How to Use ChatGPT for Sales and Marketing
 

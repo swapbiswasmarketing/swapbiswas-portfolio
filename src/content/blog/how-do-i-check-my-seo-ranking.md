@@ -248,3 +248,5 @@ For more serious tracking needs, tools like Ahrefs and Semrush give you daily up
 The most important thing is to **check consistently and act on what you find**. Rankings alone don't grow a business - the optimizations you make based on that data do.
 
 Set up your tracking today, establish a weekly review cadence, and focus on the keywords that drive real business results.
+
+Related reading: [why an SEO audit is important](/blog/why-seo-audit-is-important/) and [how much an SEO audit costs](/blog/how-much-does-an-seo-audit-cost/).

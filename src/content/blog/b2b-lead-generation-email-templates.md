@@ -232,7 +232,7 @@ Subject: `wrong person?`
 
 A great template gets the door open. Persistence gets you through it. [Backlinko's study of 12 million outreach emails](https://backlinko.com/email-outreach-study) found a single follow-up boosted replies by **65.8%**, yet the overall response rate sat at just 8.5%, meaning most senders give up far too early.
 
-Build a sequence of four to six touches. Space the first follow-ups two to three days apart, then stretch later ones to a week or more. Each touch should add a new angle - a fresh case study, a different pain point, a softer ask - rather than a guilt-tripping "just bumping this."
+[Build a sequence](/blog/product-launch-email-sequence/) of four to six touches. Space the first follow-ups two to three days apart, then stretch later ones to a week or more. Each touch should add a new angle - a fresh case study, a different pain point, a softer ask - rather than a guilt-tripping "just bumping this."
 
 The same discipline applies once a lead converts. If you are sending these emails to fuel a broader pipeline, the principles connect directly to how a strong sequence supports [B2B demand generation](/blog/what-is-b2b-demand-generation/) and the way [email marketing fuels inbound strategy](/blog/how-email-marketing-fuels-inbound-strategy/) over the long run.
 

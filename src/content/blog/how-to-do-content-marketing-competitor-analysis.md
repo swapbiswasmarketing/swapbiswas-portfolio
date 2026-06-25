@@ -142,7 +142,7 @@ Creating content is only half the equation. How competitors distribute and promo
 
 **Channels to evaluate:**
 
-- **Email marketing** - Subscribe to their newsletter. Note frequency, content format, and how they drive traffic back to blog posts.
+- **Email marketing** - Subscribe to their newsletter. Note frequency, content format, and how they drive traffic back to blog posts. For a deeper teardown, see [how to check a competitor's email marketing](/blog/how-to-check-competitor-email-marketing/).
 - **Social media** - Which platforms do they prioritize? What content gets the most engagement? What posting cadence do they maintain?
 - **Paid promotion** - Check Facebook Ad Library and Google Ads Transparency Center for promoted content. If competitors pay to boost specific posts, those topics are clearly high-value.
 - **Community presence** - Are they active on Reddit, Quora, industry forums, or Slack communities? Community distribution is hard to scale but builds authority.

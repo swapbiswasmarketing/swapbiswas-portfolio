@@ -118,7 +118,7 @@ A common pattern: a **one-page "VoC digest" emailed weekly with three themes and
 Insight without action is the most expensive form of theatre in B2B SaaS. The acting takes three forms:
 
 - **Roadmap input** - feed themes into the product prioritization process. Not as "the customer asked for X." As "this theme appears in a meaningful share of negative NPS responses, and weighted by ARR it represents material pipeline risk." The structure matters more than the exact numbers - tie qualitative theme to quantitative impact.
-- **Messaging refresh** - the language customers use to describe value is the language that converts. Pull verbatim phrases into web copy, sales decks, and ad creative. Most positioning rewrites should start with three weeks of verbatim mining.
+- **Messaging refresh** - the language customers use to describe value is the language that converts. Pull verbatim phrases into web copy, sales decks, and ad creative. Most [positioning rewrites](/blog/product-positioning/) should start with three weeks of verbatim mining.
 - **Operational fix** - if 14% of tickets are about the same friction, fix the friction. Track which fixes get shipped and how the underlying ticket category responds.
 
 ### Stage 5: Measure
@@ -203,7 +203,7 @@ PMMs sit at the intersection of customer language and product decisions. The VoC
 
 - **Win-loss analysis** - the structured VoC discipline applied to deals. Why we won, why we lost, in the customer's own words. Covered in detail in the [win-loss analysis playbook](/blog/what-is-win-loss-analysis/).
 - **Messaging verbatim library** - the bank of customer phrases that goes into web copy, sales decks, ads, and emails.
-- **Positioning signal** - what customers actually compare you against, in their own words, often differs from your competitive map.
+- **Positioning signal** - what customers actually compare you against, in their own words, often differs from your [competitive map](/blog/competitive-product-analysis/).
 - **Launch readiness** - before a launch, run a short VoC sweep to test message resonance with five customers in the target segment. Saves expensive launches that miss.
 
 For more on how PMMs use customer input in strategy, see [what does a product marketing manager do](/blog/what-does-a-product-marketing-manager-do/).

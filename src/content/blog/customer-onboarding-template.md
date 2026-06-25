@@ -110,7 +110,7 @@ A customer onboarding template should be measured, not just filled in. Track a s
 | Onboarding cycle time | Total days from kickoff to handoff | Lower |
 | Onboarding-stage churn | Customers lost before adoption | Lower |
 
-Start with activation rate and time to value, since those two predict the rest. As your template matures, add stage-level completion so you can pinpoint the exact row where customers stall.
+Start with activation rate and time to value, since those two predict the rest. As your template matures, add stage-level completion so you can pinpoint the exact row where customers stall, the same way [customer journey analytics](/blog/what-is-customer-journey-analytics/) surfaces drop-off points across the wider journey.
 
 For SaaS teams, onboarding metrics feed directly into broader growth. The way you activate and retain new accounts shapes your entire [SaaS growth strategy](/blog/saas-growth-strategy/), and B2B teams will find a deeper operational playbook in these [B2B customer onboarding best practices](/blog/b2b-customer-onboarding-best-practices/).
 

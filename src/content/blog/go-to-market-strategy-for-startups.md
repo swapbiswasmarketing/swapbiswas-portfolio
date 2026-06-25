@@ -136,7 +136,7 @@ Most startups underprice. They fear rejection, so they charge $19/month for some
 
 ## Step 6: Build Your Launch Plan
 
-A launch plan is not a press release and a Product Hunt post. It is a coordinated sequence of activities designed to drive awareness, trial, and conversion within your ICP.
+A launch plan is not a press release and a Product Hunt post. It is a coordinated sequence of activities designed to drive awareness, trial, and conversion within your ICP. For a comprehensive runthrough, work from our [product launch checklist](/blog/product-launch-checklist/).
 
 ### The Startup Launch Checklist
 

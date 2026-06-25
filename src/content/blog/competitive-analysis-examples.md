@@ -131,7 +131,7 @@ An [AI SEO strategy](/blog/ai-seo-strategy/) can accelerate this analysis signif
 
 **How to use this:** Prioritize keywords where competitors rank and you do not (content gaps), then keywords where you rank lower than competitors (optimization opportunities). Templates and comparison pages often have high commercial intent and lower competition than head terms.
 
-## Competitive Analysis Example 5: Win/Loss Analysis
+## Competitive Analysis Example 5: [Win/Loss Analysis](/blog/what-is-win-loss-analysis/)
 
 **Use this when:** Understanding why deals close or fall through, improving sales enablement, or building [competitive battlecards](/blog/competitive-battlecard-template/).
 

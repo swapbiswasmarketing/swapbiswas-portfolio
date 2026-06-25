@@ -43,7 +43,7 @@ Google's [AI Features and Your Website](https://developers.google.com/search/doc
 
 Google is saying the quiet part out loud: the way to earn a citation in an AI Overview is to be the kind of page that should already have been ranking. The machinery in front of the answer changed. The substrate underneath did not. Google's own Search Central team puts it even more directly in their [May 2025 guidance](https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search): "The underpinnings of what Google has long advised carries across to these new experiences."
 
-If you run the same test against ChatGPT or Perplexity, the answer is similar. Their models pull from the same public web. The signals that make content trustworthy to a human evaluator - clear authorship, primary sources, coherent structure, substantive depth - are the same signals that make content easier for an LLM to cite.
+If you run the same test against ChatGPT or Perplexity, the answer is similar. Their models pull from the same public web. The signals that make content trustworthy to a human evaluator - clear authorship, primary sources, coherent structure, substantive depth - are the same signals that make content [easier for an LLM to cite](/blog/llm-optimization/).
 
 ## The Five "AEO Tactics" That Are Actually SEO
 

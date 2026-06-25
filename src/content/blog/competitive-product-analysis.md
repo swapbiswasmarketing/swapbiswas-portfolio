@@ -78,7 +78,7 @@ Secondary research (blog posts, analyst reports) gives you a starting point, but
 **High-value primary sources:**
 
 - **Product trials and demos:** Sign up for competitor free trials. Document the onboarding flow, core workflows, and limitations you hit.
-- **Win/loss interviews:** Talk to prospects who chose a competitor. Ask what capabilities tipped their decision.
+- **[Win/loss interviews](/blog/what-is-win-loss-analysis/):** Talk to prospects who chose a competitor. Ask what capabilities tipped their decision.
 - **Sales call recordings:** Tools like Gong and Chorus capture exactly how competitors come up in deals.
 - **Review mining:** G2, Capterra, and TrustRadius reviews reveal what real users praise and complain about. Filter by company size and industry to match your target segment.
 - **Job postings:** A competitor's open roles reveal their product roadmap priorities. Hiring five ML engineers? They're building AI features.

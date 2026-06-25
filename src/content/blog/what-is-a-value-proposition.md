@@ -101,7 +101,7 @@ EVPs that read like a careers page banner ("we're a fast-paced team that values 
 
 ## How to Write a Value Proposition: A 5-Step Process
 
-The process below is what most product marketing teams actually use. It assumes you have customer interviews, competitive intelligence, and a positioning point of view in place.
+The process below is what most product marketing teams actually use. It assumes you have customer interviews, [competitive intelligence](/blog/competitive-intelligence-analysis/), and a positioning point of view in place.
 
 ### Step 1: Interview Your Best Customers
 
@@ -143,7 +143,7 @@ Run the mirror, opposite, and customer tests above. Most first drafts fail at le
 
 ### Step 5: Test on a Live Audience
 
-The cheapest test is a five-second test. Show the value prop to five people in your ICP. Ask them what the product does, who it is for, and why they would care. If they cannot tell you in their own words, the prop is too clever.
+The cheapest test is a five-second test. Show the value prop to five people in your [ICP](/blog/icp-vs-buyer-persona/). Ask them what the product does, who it is for, and why they would care. If they cannot tell you in their own words, the prop is too clever.
 
 A more expensive test: change your homepage hero, run it for a week, and look at scroll depth, demo conversion, and outbound reply rates. Numbers move within 14 days when the prop is clearly better - or clearly worse.
 
@@ -177,7 +177,7 @@ Specific homepage taglines change every quarter, so live copy is a moving target
 | Superhuman | Owns one extreme (speed) and defends it ruthlessly | Single-attribute positioning, hard to copy |
 | Stripe | Reframes the category from "payments" to "financial infrastructure" | Category expansion that pulls in a wider buyer set |
 
-Steal the structure, not the words. Each pattern would fail if a competitor copied it without the underlying truth — and each company's exact homepage copy will have changed by the time you read this.
+Steal the structure, not the words. Each pattern would fail if a competitor copied it without the underlying truth - and each company's exact homepage copy will have changed by the time you read this.
 
 ## The Bottom Line
 

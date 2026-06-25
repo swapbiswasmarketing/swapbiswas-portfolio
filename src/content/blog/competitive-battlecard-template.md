@@ -230,7 +230,7 @@ But AI doesn't replace the strategic thinking. It handles monitoring and formatt
 ## Getting Started: Your First Battlecard in 5 Steps
 
 1. **Pick your #1 competitor** - The one your sales team loses to most often
-2. **Pull your win/loss data** - Interview 5-10 reps about recent competitive deals
+2. **Pull your [win/loss data](/blog/what-is-win-loss-analysis/)** - Interview 5-10 reps about recent competitive deals
 3. **Map their positioning** - Read their website, G2 reviews, and recent press
 4. **Fill the template** - Use the 10 sections above, starting with objection handling and talk tracks (highest immediate value)
 5. **Test with 3 reps** - Have them use it for one week, then iterate based on their feedback

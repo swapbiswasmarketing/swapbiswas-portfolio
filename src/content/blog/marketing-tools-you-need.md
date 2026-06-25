@@ -103,7 +103,7 @@ For a deeper look at email strategy, check out our guide on [increasing email in
 
 **What it replaces:** Separate rank tracker (for basics), heatmap tool (Clarity is free), dashboard tool, reporting platform
 
-You need to know what's working. Google Analytics 4 plus Google Search Console covers most of what marketers need to measure - traffic, conversions, keyword performance, and user behavior.
+You need to know what's working. [Google Analytics 4](/blog/what-is-cross-network-in-google-analytics/) plus Google Search Console covers most of what marketers need to measure - traffic, conversions, keyword performance, and user behavior.
 
 Add Microsoft Clarity (free) for heatmaps and session recordings. That's your analytics stack.
 

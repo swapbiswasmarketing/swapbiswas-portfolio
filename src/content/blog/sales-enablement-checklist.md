@@ -158,7 +158,7 @@ Build the cadence into a shared calendar. Assign the owner. Set the review date 
 
 ## Metrics That Prove Enablement Is Working
 
-Enablement teams that cannot measure their impact get cut in the first budget review. Track at least these:
+Enablement teams that cannot measure their impact get cut in the first budget review. Track at least these [sales enablement KPIs](/blog/sales-enablement-kpis/):
 
 - **Ramp time**: days from start to first closed-won deal, quota, or $X in pipeline
 - **Win rate by tenure bucket**: 0-6 months, 6-12 months, 12+ months

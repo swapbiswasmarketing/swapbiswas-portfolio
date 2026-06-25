@@ -40,7 +40,7 @@ The same website can get quoted $800 or $8,000 depending on what the auditor is 
 
 ### 1. Site Size and Technical Complexity
 
-A 40-page brochure site takes a few hours to crawl and assess. A 40,000-page e-commerce site with faceted navigation, multiple subdomains, and product variants needs log file analysis, crawl budget modeling, and indexation strategy - all of which take days, not hours.
+A 40-page brochure site takes a few hours to crawl and assess. A 40,000-page [e-commerce site](/blog/ecommerce-seo-checklist/) with faceted navigation, multiple subdomains, and product variants needs log file analysis, crawl budget modeling, and indexation strategy - all of which take days, not hours.
 
 As a rough rule: every 10x increase in page count adds a tier of complexity, and therefore cost.
 
@@ -150,7 +150,7 @@ These are signs you are being overcharged or under-served.
 
 ## How to Calculate the ROI of an SEO Audit
 
-An audit is worth paying for when it unlocks revenue you would not have captured otherwise. The math is simple:
+An audit is worth paying for when it [unlocks revenue you would not have captured otherwise](/blog/why-seo-audit-is-important/). The math is simple:
 
 **ROI = (Traffic value recovered + New opportunities identified) - Audit cost**
 

@@ -20,7 +20,7 @@ faqs:
 
 Mobile now drives **50.29% of all global web traffic**, edging out desktop, [according to Statcounter's platform market share data](https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet). For most consumer and B2B sites, the real share leans even higher. That means the version of your site Google sees, scores, and ranks is the phone version, not the polished desktop layout you designed on a 27-inch monitor. This mobile SEO checklist fixes the gap.
 
-This **mobile SEO checklist** gives you 15 concrete fixes grouped into four areas: indexing, speed, layout, and usability. It is deliberately narrow. For everything else under the hood, pair it with my full [technical SEO site audit](/blog/how-to-conduct-a-technical-seo-site-audit/) - this is the mobile-first subset of that larger audit.
+This **mobile SEO checklist** gives you 15 concrete fixes grouped into four areas: indexing, speed, layout, and usability. It is deliberately narrow. For everything else under the hood, pair it with my full [technical SEO site audit](/blog/how-to-conduct-a-technical-seo-site-audit/) - this is the mobile-first subset of that larger audit, and it is one big reason [an SEO audit is important](/blog/why-seo-audit-is-important/) in the first place.
 
 ![Mobile SEO checklist covering the four areas to fix first](/assets/blog/mobile-seo-checklist/checklist.webp "Mobile SEO Checklist: 4 Areas to Fix First")
 

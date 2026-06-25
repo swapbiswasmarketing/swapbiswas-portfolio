@@ -116,7 +116,7 @@ Onboarding measurement done badly looks at email opens and call-completion rates
 | Onboarding completion | % of accounts that finish a defined onboarding plan | Discipline metric - did the program actually run |
 | Net Promoter Score at 30 days | Survey response 30 days post-sign-up | Leading indicator of renewal sentiment |
 
-Track these as cohorts. Comparing one calendar month's day-30 retention to the same month a year ago is the only honest read - April 2026 against April 2025, not April against December. Aggregate metrics hide the lessons.
+Track these as cohorts, ideally tied into [customer journey analytics](/blog/what-is-customer-journey-analytics/) so you can see where activation breaks down. Comparing one calendar month's day-30 retention to the same month a year ago is the only honest read - April 2026 against April 2025, not April against December. Aggregate metrics hide the lessons.
 
 ## The Onboarding Communication Playbook
 
@@ -161,7 +161,7 @@ The mechanics differ between product-led and sales-led GTM motions.
 | Activation event | Single-user behavior (sent first message, etc.) | Account-level (5+ users, integration live, first report run) |
 | Success criteria | Defined by product team | Defined jointly with customer in a mutual onboarding plan |
 
-Most B2B SaaS teams run a hybrid - a self-serve trial with PLG onboarding for individual users, and SLG onboarding for accounts that move to a contract. Designing both to share the same database is the operational unlock.
+For the full account-level program, see [B2B customer onboarding best practices](/blog/b2b-customer-onboarding-best-practices/). Most B2B SaaS teams run a hybrid - a self-serve trial with PLG onboarding for individual users, and SLG onboarding for accounts that move to a contract. Designing both to share the same database is the operational unlock.
 
 For PLG patterns, see [Product-Led Growth Examples](/blog/product-led-growth-examples/).
 
@@ -184,7 +184,7 @@ A workable stack:
 - **In-app guidance:** Pendo, Appcues, Userflow, Chameleon
 - **CS workflow:** Gainsight, Vitally, Totango, ChurnZero
 - **Product analytics:** Amplitude, Mixpanel, PostHog, Heap
-- **Survey:** Delighted, Refiner, Survicate
+- **Survey:** Delighted, Refiner, Survicate (feed responses into your [voice of the customer](/blog/what-is-voice-of-the-customer/) program)
 - **Mutual action plans (B2B):** Recapped, Aligned, GetAccept
 
 Smaller teams can compress this to one or two tools (HubSpot + PostHog + Loom). Larger teams add specialized layers as the cost of switching tooling becomes higher than the cost of a new vendor.

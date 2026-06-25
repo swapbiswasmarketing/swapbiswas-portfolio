@@ -62,7 +62,7 @@ Don't assume you know the problem. Validate it.
 
 **Methods:**
 - Customer discovery interviews (aim for 15-20)
-- Competitive win/loss analysis
+- Competitive [win/loss analysis](/blog/what-is-win-loss-analysis/)
 - Search demand data (use [Ahrefs](https://ahrefs.com) or Google Trends)
 - Support ticket analysis from beta users
 

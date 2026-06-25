@@ -38,7 +38,7 @@ A technical SEO audit finds and fixes these invisible problems. I run one on eve
 
 A technical SEO audit evaluates the infrastructure of your website -the code, server configuration, site architecture, and performance factors that affect how search engines crawl, index, and rank your pages.
 
-It's different from a content audit (which evaluates page quality) or a backlink audit (which evaluates your link profile). A technical audit asks: **Is your website set up in a way that allows search engines to do their job?**
+It's different from a content audit (which evaluates page quality) or a backlink audit (which evaluates your link profile). A technical audit asks: **Is your website set up in a way that allows search engines to do their job?** If you are still building the case internally, see [why an SEO audit is important](/blog/why-seo-audit-is-important/) before you start.
 
 **How often should you do one?**
 - **Full audit:** Every 3-6 months
@@ -204,7 +204,7 @@ Check in Google Search Console → Core Web Vitals, or test individual pages at 
 
 **What you're checking:** Does your site work properly on mobile devices?
 
-Google completed **mobile-first indexing** for all sites in July 2024. Mobile now accounts for **71% of all Google search traffic** ([SQ Magazine, 2026](https://sqmagazine.co.uk/google-search-statistics/)). If your mobile experience is broken, your desktop rankings will suffer too.
+Google completed **mobile-first indexing** for all sites in July 2024. For a deeper checklist on this, see the [mobile SEO checklist](/blog/mobile-seo-checklist/). Mobile now accounts for **71% of all Google search traffic** ([SQ Magazine, 2026](https://sqmagazine.co.uk/google-search-statistics/)). If your mobile experience is broken, your desktop rankings will suffer too.
 
 **5.1 Lighthouse Mobile Audit**
 
@@ -364,6 +364,8 @@ For larger sites (10K+ pages), expect 1-2 days for a thorough audit.
 You don't need expensive tools or an SEO agency to run a technical audit. Google Search Console and Screaming Frog's free version will catch 90% of the issues.
 
 The hardest part isn't finding the issues -it's fixing them consistently. Set a quarterly reminder, run the audit, and work through the priority list. That discipline alone puts you ahead of the majority of sites that have critical technical issues they don't even know about.
+
+Related: turn your findings into a clear [SEO report](/blog/what-is-seo-report/), track progress by learning [how to check your SEO ranking](/blog/how-do-i-check-my-seo-ranking/), and if you are budgeting the work, see [how much an SEO audit costs](/blog/how-much-does-an-seo-audit-cost/).
 
 Your content deserves to be found. Make sure your technical foundation isn't the thing holding it back.
 

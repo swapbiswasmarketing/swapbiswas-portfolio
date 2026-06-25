@@ -40,7 +40,7 @@ Let's get into it.
 
 **Best for:** First drafts, content outlines, repurposing existing content, brainstorming headlines, and quick research synthesis.
 
-**Honest take:** The free tier is surprisingly capable for marketing tasks. You'll hit usage limits during heavy workdays, but for 80% of tasks, it's enough. I use it daily for content briefs and outline generation.
+**Honest take:** The free tier is surprisingly capable for [marketing tasks](/blog/how-to-use-chatgpt-for-sales-and-marketing/). You'll hit usage limits during heavy workdays, but for 80% of tasks, it's enough. I use it daily for content briefs and outline generation.
 
 **Limitation:** You'll hit daily message caps on the most capable model and get bumped to a smaller model. Heavy usage days may require waiting.
 

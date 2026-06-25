@@ -20,7 +20,7 @@ faqs:
 
 The most cited stat in B2B marketing is also the most uncomfortable one. [6sense's 2025 B2B Buyer Experience Report](https://6sense.com/science-of-b2b/buyer-experience-report-2025/) found that the **point of first contact with sales has shifted to 61% of the buying journey, down from 69% the prior year**. That is the case for **B2B demand generation** in one number. By the time a buyer raises a hand, most of the meaningful work has already happened. Either you were in the consideration set during those independent-research months or you were not.
 
-This guide explains what B2B demand generation actually is in 2026, how it differs from lead generation and ABM, the four-stage funnel that organized teams run, the tech stack that makes it work, and the metrics that hold up in a board meeting.
+This guide explains what B2B demand generation actually is in 2026, how it [differs from lead generation](/blog/demand-generation-vs-lead-generation/) and ABM, the four-stage funnel that organized teams run, the tech stack that makes it work, and the metrics that hold up in a board meeting.
 
 ## What Is B2B Demand Generation?
 

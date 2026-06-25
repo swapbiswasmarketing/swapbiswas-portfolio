@@ -165,7 +165,7 @@ Create separate drip tracks for each topic your audience cares about. For a mark
 
 **Goal:** Complete 3 key setup actions within 14 days (activation milestone).
 
-Nurtured leads produce a **20% increase in sales opportunities** compared to non-nurtured leads ([Demand Gen Report](https://www.demandgenreport.com/industry-topics/demanding-views/2336-the-10-commandments-for-lead-nurturing-success.html)). The same principle applies post-purchase - onboarded customers retain better than abandoned ones.
+Nurtured leads produce a **20% increase in sales opportunities** compared to non-nurtured leads ([Demand Gen Report](https://www.demandgenreport.com/industry-topics/demanding-views/2336-the-10-commandments-for-lead-nurturing-success.html)). The same principle applies post-purchase - [onboarded customers](/blog/what-is-customer-onboarding/) retain better than abandoned ones.
 
 ### 8. Re-engagement (Inactive Users)
 
