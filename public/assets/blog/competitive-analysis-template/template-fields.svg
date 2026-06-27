@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="760" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="70" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700" text-anchor="middle">What Goes In a Competitive Analysis Template</text>
+  <text x="700" y="106" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22" text-anchor="middle">One row per competitor, ten fields that map to real decisions</text>
+
+  <!-- ROW 1 -->
+  <!-- Card 1: Competitor -->
+  <rect x="40" y="138" width="248" height="206" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="40" y="138" width="248" height="6" rx="3" fill="#60a5fa"/>
+  <text x="164" y="180" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" text-anchor="middle" letter-spacing="0.08em">01</text>
+  <text x="164" y="214" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" text-anchor="middle">Competitor</text>
+  <text x="164" y="262" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">Name and</text>
+  <text x="164" y="290" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">one-line</text>
+  <text x="164" y="318" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">description</text>
+
+  <!-- Card 2: Category type -->
+  <rect x="316" y="138" width="248" height="206" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="316" y="138" width="248" height="6" rx="3" fill="#c084fc"/>
+  <text x="440" y="180" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" text-anchor="middle" letter-spacing="0.08em">02</text>
+  <text x="440" y="214" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" text-anchor="middle">Category type</text>
+  <text x="440" y="262" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">Direct, indirect,</text>
+  <text x="440" y="290" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">or aspirational</text>
+
+  <!-- Card 3: Target buyer -->
+  <rect x="592" y="138" width="248" height="206" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="592" y="138" width="248" height="6" rx="3" fill="#fb923c"/>
+  <text x="716" y="180" fill="#fb923c" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" text-anchor="middle" letter-spacing="0.08em">03</text>
+  <text x="716" y="214" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" text-anchor="middle">Target buyer</text>
+  <text x="716" y="262" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">Who they</text>
+  <text x="716" y="290" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">sell to</text>
+
+  <!-- Card 4: Pricing model -->
+  <rect x="868" y="138" width="248" height="206" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="868" y="138" width="248" height="6" rx="3" fill="#5eead4"/>
+  <text x="992" y="180" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" text-anchor="middle" letter-spacing="0.08em">04</text>
+  <text x="992" y="214" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" text-anchor="middle">Pricing model</text>
+  <text x="992" y="262" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">How they</text>
+  <text x="992" y="290" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">charge, rough</text>
+  <text x="992" y="318" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">tiers</text>
+
+  <!-- Card 5: Core features -->
+  <rect x="1144" y="138" width="216" height="206" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="1144" y="138" width="216" height="6" rx="3" fill="#f5a0a1"/>
+  <text x="1252" y="180" fill="#f5a0a1" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" text-anchor="middle" letter-spacing="0.08em">05</text>
+  <text x="1252" y="214" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" text-anchor="middle">Core features</text>
+  <text x="1252" y="262" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">Their 3 to 5</text>
+  <text x="1252" y="290" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">headline</text>
+  <text x="1252" y="318" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">capabilities</text>
+
+  <!-- ROW 2 -->
+  <!-- Card 6: Positioning -->
+  <rect x="40" y="380" width="248" height="206" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="40" y="380" width="248" height="6" rx="3" fill="#d98ee0"/>
+  <text x="164" y="422" fill="#d98ee0" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" text-anchor="middle" letter-spacing="0.08em">06</text>
+  <text x="164" y="456" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" text-anchor="middle">Positioning</text>
+  <text x="164" y="504" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">The category</text>
+  <text x="164" y="532" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">and promise</text>
+  <text x="164" y="560" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">they claim</text>
+
+  <!-- Card 7: Strengths -->
+  <rect x="316" y="380" width="248" height="206" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="316" y="380" width="248" height="6" rx="3" fill="#5eead4"/>
+  <text x="440" y="422" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" text-anchor="middle" letter-spacing="0.08em">07</text>
+  <text x="440" y="456" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" text-anchor="middle">Strengths</text>
+  <text x="440" y="504" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">What they</text>
+  <text x="440" y="532" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">genuinely</text>
+  <text x="440" y="560" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">do well</text>
+
+  <!-- Card 8: Weaknesses -->
+  <rect x="592" y="380" width="248" height="206" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="592" y="380" width="248" height="6" rx="3" fill="#f87171"/>
+  <text x="716" y="422" fill="#f87171" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" text-anchor="middle" letter-spacing="0.08em">08</text>
+  <text x="716" y="456" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" text-anchor="middle">Weaknesses</text>
+  <text x="716" y="504" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">Real,</text>
+  <text x="716" y="532" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">defensible</text>
+  <text x="716" y="560" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">gaps</text>
+
+  <!-- Card 9: Your edge -->
+  <rect x="868" y="380" width="248" height="206" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="868" y="380" width="248" height="6" rx="3" fill="#b388f2"/>
+  <text x="992" y="422" fill="#b388f2" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" text-anchor="middle" letter-spacing="0.08em">09</text>
+  <text x="992" y="456" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" text-anchor="middle">Your edge</text>
+  <text x="992" y="504" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">Why a buyer</text>
+  <text x="992" y="532" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">picks you</text>
+  <text x="992" y="560" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">over them</text>
+
+  <!-- Card 10: Takeaway -->
+  <rect x="1144" y="380" width="216" height="206" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="1144" y="380" width="216" height="6" rx="3" fill="#fb923c"/>
+  <text x="1252" y="422" fill="#fb923c" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" text-anchor="middle" letter-spacing="0.08em">10</text>
+  <text x="1252" y="456" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" text-anchor="middle">Takeaway</text>
+  <text x="1252" y="504" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">One action this</text>
+  <text x="1252" y="532" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">competitor</text>
+  <text x="1252" y="560" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">triggers</text>
+
+  <!-- Footer note -->
+  <rect x="40" y="624" width="1320" height="96" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <text x="700" y="666" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" text-anchor="middle">The two columns everyone skips create all the value</text>
+  <text x="700" y="698" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="21" text-anchor="middle">Your edge and Takeaway turn research into decisions your team acts on</text>
+</svg>

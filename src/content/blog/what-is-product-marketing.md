@@ -39,7 +39,7 @@ But definitions only get you so far. Let me show you what this actually looks li
 
 ## What Product Marketers Actually Do
 
-Here's a typical week in product marketing, broken into the four core pillars:
+Here's a typical week in product marketing, broken into the [four core pillars](/blog/product-marketing-framework/):
 
 ### 1. Market Intelligence
 

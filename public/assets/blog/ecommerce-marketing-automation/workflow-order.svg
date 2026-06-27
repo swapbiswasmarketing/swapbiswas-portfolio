@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="640" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700">The Core Ecommerce Automation Workflows</text>
+  <text x="700" y="120" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Build them in this priority order, not all at once</text>
+
+  <!-- Card 1: Abandoned Cart + Browse Abandonment (salmon) -->
+  <rect x="60" y="200" width="300" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="60" y="200" width="300" height="6" rx="3" fill="#f5a0a1"/>
+  <text x="84" y="252" fill="#f5a0a1" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STEP 1</text>
+  <text x="84" y="300" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">Abandoned Cart</text>
+  <text x="84" y="334" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">+ Browse Abandon</text>
+  <text x="84" y="378" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Highest intent.</text>
+  <text x="84" y="408" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Recover near-buyers.</text>
+
+  <!-- Card 2: Welcome + First-Purchase (purple) -->
+  <rect x="400" y="200" width="300" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="400" y="200" width="300" height="6" rx="3" fill="#c084fc"/>
+  <text x="424" y="252" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STEP 2</text>
+  <text x="424" y="300" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">Welcome +</text>
+  <text x="424" y="334" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">First Purchase</text>
+  <text x="424" y="378" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Peak curiosity.</text>
+  <text x="424" y="408" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Earn the first buy.</text>
+
+  <!-- Card 3: Post-Purchase + Replenishment (blue) -->
+  <rect x="740" y="200" width="300" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="740" y="200" width="300" height="6" rx="3" fill="#60a5fa"/>
+  <text x="764" y="252" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STEP 3</text>
+  <text x="764" y="300" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">Post-Purchase</text>
+  <text x="764" y="334" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">+ Replenishment</text>
+  <text x="764" y="378" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Build loyalty.</text>
+  <text x="764" y="408" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Set up repeats.</text>
+
+  <!-- Card 4: Winback (teal) -->
+  <rect x="1080" y="200" width="300" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="1080" y="200" width="300" height="6" rx="3" fill="#5eead4"/>
+  <text x="1104" y="252" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">STEP 4</text>
+  <text x="1104" y="300" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600">Winback</text>
+  <text x="1104" y="378" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Re-engage lapsed</text>
+  <text x="1104" y="408" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">customers.</text>
+
+  <!-- Arrows connecting steps (teal) -->
+  <line x1="362" y1="315" x2="392" y2="315" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="392,315 378,308 378,322" fill="#5eead4"/>
+
+  <line x1="702" y1="315" x2="732" y2="315" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="732,315 718,308 718,322" fill="#5eead4"/>
+
+  <line x1="1042" y1="315" x2="1072" y2="315" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="1072,315 1058,308 1058,322" fill="#5eead4"/>
+
+  <!-- Footer note -->
+  <text x="700" y="540" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600">Each flow owns one stage of the buying journey</text>
+  <text x="700" y="582" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Ship Step 1 first, prove it works, then layer in the rest</text>
+
+  <!-- Journey stage labels under cards -->
+  <text x="210" y="468" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">Decision</text>
+  <text x="550" y="468" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">Awareness</text>
+  <text x="890" y="468" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">Retention</text>
+  <text x="1230" y="468" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20">Reactivation</text>
+</svg>

@@ -59,9 +59,9 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
 <style>
   :root{
     --paper:#faf9f6; --paper2:#f0efe9; --ink:#111111; --ink2:#2a2a28;
-    --mut:#6b6b66; --faint:#9a9a94;
+    --mut:#6b6b66; --faint:#6a6a64;
     --rule:rgba(17,17,17,.14); --rule2:rgba(17,17,17,.08);
-    --red:#e5341c; --slate:#3b5bdb;
+    --red:#e5341c; --red-ink:#c92d17; --slate:#3b5bdb;
     --grotesk:"Archivo","Inter",system-ui,sans-serif;
     --sans:"Inter",system-ui,sans-serif;
     --mono:"Space Mono",ui-monospace,monospace;
@@ -99,7 +99,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .logo .mk{display:inline-block;width:11px;height:11px;background:var(--red);border-radius:2px}
   .navlinks{display:flex;gap:2rem;align-items:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase}
   .navlinks a{position:relative;color:var(--ink2);transition:color .25s}
-  .navlinks a:hover{color:var(--red)}
+  .navlinks a:hover{color:var(--red-ink)}
   .navlinks a.muted{color:var(--mut)}
   .navlinks a.muted:hover{color:var(--ink)}
   @media(max-width:760px){.navlinks a:not(.muted){display:none}}
@@ -126,7 +126,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .btn.primary{background:var(--ink);color:var(--paper)}
   .btn.primary:hover{background:var(--red);transform:translateY(-2px)}
   .btn.ghost{border:1.5px solid var(--ink);color:var(--ink)}
-  .btn.ghost:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px)}
+  .btn.ghost:hover{border-color:var(--red);color:var(--red-ink);transform:translateY(-2px)}
   .btn .ar{transition:transform .35s}
   .btn:hover .ar{transform:translate(3px,-3px)}
   /* the dominant cover figure + its mini hero chart */
@@ -158,7 +158,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   section.block{padding:clamp(4.5rem,10vh,8rem) 0}
   .shead{display:grid;grid-template-columns:auto 1fr auto;gap:1.2rem;align-items:baseline;
     border-top:1.5px solid var(--ink);padding-top:1rem;margin-bottom:clamp(2.5rem,5vh,4rem)}
-  .shead .no{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--red);font-weight:700;white-space:nowrap}
+  .shead .no{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--red-ink);font-weight:700;white-space:nowrap}
   .shead .no em{font-style:normal;color:var(--faint);font-weight:400}
   .shead h2{font-family:var(--grotesk);font-weight:700;font-size:clamp(1.5rem,3.2vw,2.5rem);letter-spacing:-.03em}
   .shead .meta{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);text-align:right;justify-self:end}
@@ -186,7 +186,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .metric:nth-child(even) .mfig{grid-column:9 / span 4;order:2;text-align:right;align-items:flex-end}
   .metric:nth-child(even) .mchart{grid-column:1 / span 8;order:1}
   .metric .mchart{grid-column:5 / span 8;position:relative}
-  .metric .midx{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--red);font-weight:700}
+  .metric .midx{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--red-ink);font-weight:700}
   .metric .mnum{font-family:var(--grotesk);font-weight:800;font-size:clamp(3rem,7vw,5.6rem);
     line-height:.9;letter-spacing:-.04em;font-variant-numeric:tabular-nums;margin:.5rem 0 .3rem}
   .metric .mlabel{font-family:var(--grotesk);font-weight:600;font-size:1.05rem;letter-spacing:-.01em}
@@ -212,7 +212,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .chartcard[data-kind="arc"] .caxis span:nth-child(1)::before{background:var(--red)}
   .chartcard[data-kind="arc"] .caxis span:nth-child(2)::before{background:var(--slate)}
   .chartcard[data-kind="arc"] .caxis span:nth-child(3)::before{background:rgba(17,17,17,.45)}
-  .chartcard .ticker{position:absolute;top:1.1rem;right:1.3rem;font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--red);font-variant-numeric:tabular-nums}
+  .chartcard .ticker{position:absolute;top:1.1rem;right:1.3rem;font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--red-ink);font-variant-numeric:tabular-nums}
   @media(max-width:760px){
     .metric,.metric:nth-child(even){grid-template-columns:1fr;gap:1.2rem}
     .metric .mfig,.metric:nth-child(even) .mfig{grid-column:1;order:1;text-align:left;align-items:flex-start}
@@ -235,7 +235,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .pillar{padding:2.2rem 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:start}
   .pillar:nth-child(odd){padding-right:clamp(1rem,3vw,3rem)}
   .pillar:nth-child(even){padding-left:clamp(1rem,3vw,3rem);border-left:1px solid var(--rule)}
-  .pillar .pi{font-family:var(--mono);font-weight:700;font-size:.9rem;color:var(--red);letter-spacing:.06em;padding-top:.3rem}
+  .pillar .pi{font-family:var(--mono);font-weight:700;font-size:.9rem;color:var(--red-ink);letter-spacing:.06em;padding-top:.3rem}
   .pillar h3{font-family:var(--grotesk);font-size:1.3rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.6rem}
   .pillar p{color:var(--ink2);font-size:.96rem;line-height:1.66;max-width:42ch}
   @media(max-width:700px){.pillars{grid-template-columns:1fr}.pillar:nth-child(even){padding-left:0;border-left:0}.pillar:nth-child(odd){padding-right:0}}
@@ -250,9 +250,9 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .wtile:hover::after,.wtile:focus-visible::after{transform:scaleX(1)}
   .wtop{display:flex;justify-content:space-between;align-items:center}
   .wtile .wi{font-family:var(--mono);font-size:.72rem;color:var(--faint);font-weight:700;letter-spacing:.04em}
-  .wtile:hover .wi{color:var(--red)}
+  .wtile:hover .wi{color:var(--red-ink)}
   .wtile .war{font-family:var(--mono);color:var(--faint);transition:transform .35s,color .25s}
-  .wtile:hover .war{transform:translate(3px,-3px);color:var(--red)}
+  .wtile:hover .war{transform:translate(3px,-3px);color:var(--red-ink)}
   .wmotif{margin:1.1rem 0 1.2rem;flex:0 0 auto}
   .wmotif canvas{display:block;width:100%;height:96px}
   .wtile .wmetric{font-family:var(--grotesk);font-weight:800;font-size:clamp(2rem,3.4vw,2.9rem);
@@ -261,7 +261,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .wtile .wmsub{font-family:var(--grotesk);font-weight:600;font-size:.98rem;letter-spacing:-.01em;color:var(--ink);margin-top:.25rem;line-height:1.25}
   .wtile .wfoot{margin-top:auto;padding-top:1.1rem;display:flex;flex-direction:column;gap:.2rem}
   .wtile .wname{font-family:var(--grotesk);font-weight:700;font-size:1.12rem;letter-spacing:-.02em;transition:color .25s}
-  .wtile:hover .wname{color:var(--red)}
+  .wtile:hover .wname{color:var(--red-ink)}
   .wtile .wcap{font-family:var(--mono);font-size:.64rem;color:var(--mut);letter-spacing:.04em;text-transform:uppercase;margin-top:.15rem}
   .wtile .wunit{font-family:var(--mono);font-size:.6rem;color:var(--faint);letter-spacing:.04em;text-transform:uppercase;margin-top:.3rem;
     opacity:0;transform:translateY(4px);transition:opacity .35s,transform .35s}
@@ -279,14 +279,14 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
     border-top:1px solid var(--rule);padding-top:.9rem;margin-bottom:.2rem}
   .award{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--rule)}
   .award b{font-family:var(--grotesk);font-weight:700;font-size:clamp(1.1rem,2vw,1.5rem);letter-spacing:-.02em;line-height:1.15}
-  .award b .hash{color:var(--red)}
+  .award b .hash{color:var(--red-ink)}
   .award span{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);white-space:nowrap;justify-self:end}
   .brands{display:grid;grid-template-columns:1fr 1fr}
   .brands span{font-family:var(--grotesk);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;color:var(--ink2);
     padding:.85rem 0;border-bottom:1px solid var(--rule);transition:color .25s}
   .brands span:nth-child(2n){padding-left:1.3rem}
   .brands span:nth-child(odd){padding-right:1.3rem}
-  .brands span:hover{color:var(--red)}
+  .brands span:hover{color:var(--red-ink)}
   @media(max-width:700px){.recog{grid-template-columns:1fr;gap:2.4rem}}
   /* ---- about: methodology column ---- */
   .about .abody{display:grid;grid-template-columns:230px 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
@@ -302,14 +302,14 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
     .about .rail{flex-direction:row;flex-wrap:wrap;gap:1rem 1.8rem;border-right:0;padding-right:0;border-bottom:1px solid var(--rule);padding-bottom:1.4rem}}
   /* ---- contact ---- */
   .contact{padding-bottom:7rem;border-top:1.5px solid var(--ink);padding-top:clamp(3.5rem,8vh,6rem)}
-  .contact .lead{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:1.8rem;font-weight:700}
+  .contact .lead{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red-ink);margin-bottom:1.8rem;font-weight:700}
   .contact .big{font-family:var(--grotesk);font-weight:800;font-size:clamp(3.7rem,13vw,10.5rem);line-height:.9;letter-spacing:-.05em}
   .contact .big a{position:relative;display:inline-block}
   .contact .big a::after{content:"";position:absolute;left:0;bottom:.04em;width:100%;height:.09em;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
   .contact .big a:hover::after{transform:scaleX(1)}
   .contact .em{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;font-family:var(--mono);font-size:.78rem;color:var(--mut);letter-spacing:.02em}
   .contact .em a{color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:2px;transition:color .25s,border-color .25s}
-  .contact .em a:hover{color:var(--red);border-color:var(--red)}
+  .contact .em a:hover{color:var(--red-ink);border-color:var(--red-ink)}
   /* ---- footer colophon ---- */
   footer{border-top:1.5px solid var(--ink);padding:2.4rem var(--m);position:relative;z-index:2}
   .colophon{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;
@@ -319,7 +319,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .colophon .c3{grid-column:9 / span 4;text-align:right}
   .colophon b{color:var(--ink);font-weight:700}
   .colophon a{color:var(--mut)}
-  .colophon a:hover{color:var(--red)}
+  .colophon a:hover{color:var(--red-ink)}
   @media(max-width:700px){.colophon{grid-template-columns:1fr;gap:.6rem}.colophon .c1,.colophon .c2,.colophon .c3{grid-column:1;text-align:left}}
   /* ---- reveal ---- */
   .reveal{opacity:0;transform:translateY(22px)}
@@ -540,7 +540,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
   // ---- palette pulled from CSS tokens ----
-  const RED = '#e5341c', SLATE = '#3b5bdb', INK = '#111111', FAINT = '#9a9a94';
+  const RED = '#e5341c', SLATE = '#3b5bdb', INK = '#111111', FAINT = '#6a6a64';
 
   // ---- WebGL plotter-grid background ----
   // A faint engineering plot-paper plane that drifts; on mobile use the CSS fallback.

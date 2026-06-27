@@ -98,12 +98,17 @@ const marquee = ['AVAILABLE FOR WORK', 'PRODUCT MARKETING', 'AI AGENTS', 'TECHNI
   header.hero{min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;
     border-bottom:var(--bd);overflow:hidden;padding-top:5.5rem}
   /* canvas sits BEHIND everything; off-center, anchored bottom-right, low opacity */
-  canvas#gl{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block;opacity:.28;
+  canvas#gl{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block;opacity:.26;
     background:radial-gradient(90% 95% at 88% 92%, rgba(59,76,255,.12), transparent 55%);
-    /* contain the halftone atmosphere away from the top-right nav: fade out the top
-       band so the dot field never crowds the header / 'ALL CONCEPTS' link */
-    -webkit-mask-image:linear-gradient(180deg,transparent 0,transparent 6.5rem,#000 13rem);
-    mask-image:linear-gradient(180deg,transparent 0,transparent 6.5rem,#000 13rem)}
+    /* contain the halftone atmosphere away from the top-right nav (top band) AND keep the
+       bright halftone weak over the bottom-LEFT text column, so the cursor-driven bloom can
+       never wash the headline / sub even at its worst. Field concentrates bottom-right, its
+       design anchor. Two intersected masks: top fade x left-column fade. */
+    -webkit-mask-image:linear-gradient(180deg,transparent 0,transparent 6.5rem,#000 13rem),
+      radial-gradient(120% 130% at 92% 88%, #000 38%, rgba(0,0,0,.22) 72%);
+    mask-image:linear-gradient(180deg,transparent 0,transparent 6.5rem,#000 13rem),
+      radial-gradient(120% 130% at 92% 88%, #000 38%, rgba(0,0,0,.22) 72%);
+    -webkit-mask-composite:source-in;mask-composite:intersect}
   /* contained, hard-edged halftone block anchored to the hero's bottom-right corner:
      gives the soft WebG atmosphere a DELIBERATE printed-plate boundary against the frame */
   .hero-plate-edge{position:absolute;right:0;bottom:0;z-index:2;pointer-events:none;
@@ -119,14 +124,19 @@ const marquee = ['AVAILABLE FOR WORK', 'PRODUCT MARKETING', 'AI AGENTS', 'TECHNI
     background-image:linear-gradient(var(--ink) 1px,transparent 1px),linear-gradient(90deg,var(--ink) 1px,transparent 1px);
     background-size:clamp(60px,9vw,120px) clamp(60px,9vw,120px);opacity:.06}
   .hero-inner{position:relative;z-index:3;padding:0 var(--m) clamp(2rem,5vw,4rem)}
-  /* solid raw-paper plate behind the headline block: ink type ALWAYS sits on flat paper */
-  .hero-plate{display:inline-block;background:var(--paper);padding:24px 28px 28px;
-    box-shadow:0 0 0 3px var(--ink);max-width:100%}
+  /* solid raw-paper plate behind the headline block: ink type ALWAYS sits on flat paper.
+     width:max-content + opaque paper GUARANTEES the plate is at least as wide as the widest
+     headline line, so no letter ever spills onto the live WebGL halftone behind it. */
+  .hero-plate{display:block;width:max-content;max-width:100%;background:var(--paper);padding:24px 28px 28px;
+    box-shadow:0 0 0 3px var(--ink)}
   .hero .tag{display:inline-block;background:var(--ink);color:var(--paper);padding:.55rem 1rem;
     font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
     margin-bottom:18px;transform:rotate(-1.5deg)}
   .hero h1{font-family:var(--disp);font-weight:900;font-size:clamp(3rem,8.6vw,8.2rem);line-height:.86;
-    letter-spacing:-.045em;text-transform:uppercase;max-width:none}
+    letter-spacing:-.045em;text-transform:uppercase;max-width:none;
+    /* belt-and-suspenders: a tight paper halo so even if the bright WebGL bloom ever reaches
+       a letter edge (mouse-driven), the type keeps a readable boundary against it */
+    text-shadow:0 0 2px var(--paper),0 0 5px var(--paper)}
   .hero h1 .ln{display:block;overflow:hidden}
   .hero h1 .ln>span{display:block;will-change:transform;white-space:nowrap;
     word-break:keep-all;overflow-wrap:normal;hyphens:none;-webkit-hyphens:none}
@@ -410,7 +420,7 @@ const marquee = ['AVAILABLE FOR WORK', 'PRODUCT MARKETING', 'AI AGENTS', 'TECHNI
   .brands{padding:var(--m);display:flex;flex-wrap:wrap;gap:0;align-content:flex-start;position:relative}
   .brands .bl{width:100%;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;color:#0a0a0a}
   /* count chip + halftone mark fill the header row of the formerly-sparse brands panel */
-  .brands .bcount{font-family:var(--disp);font-weight:900;font-size:1.4rem;letter-spacing:-.03em;color:var(--red);opacity:.85}
+  .brands .bcount{font-family:var(--disp);font-weight:900;font-size:1.4rem;letter-spacing:-.03em;color:var(--red);opacity:1}
   .brands span.b{border:var(--bd);padding:.55rem 1rem;font-family:var(--mono);font-size:.78rem;font-weight:700;
     text-transform:uppercase;margin:0 -3px -3px 0;transition:background .15s,color .15s,transform .15s;color:#1b1b1b}
   .brands span.b:hover{background:var(--blue);color:var(--paper);transform:rotate(-2deg);position:relative;z-index:2}

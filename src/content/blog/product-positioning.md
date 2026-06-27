@@ -69,7 +69,7 @@ Talk to churned customers, read support tickets, listen to sales calls. The lang
 
 ### 4. Solution
 
-How does your product solve it? This is where you translate features into benefits.
+How does your product solve it? This is where you translate features into benefits with a clear [value proposition template](/blog/value-proposition-template/).
 
 Nobody cares that you have "AI-powered analytics." They care that they can "find revenue leaks in 5 minutes instead of 5 hours."
 

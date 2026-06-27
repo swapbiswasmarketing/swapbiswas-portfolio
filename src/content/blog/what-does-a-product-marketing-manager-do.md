@@ -30,7 +30,7 @@ A good PMM turns a feature list into a story a buyer can repeat to their boss. A
 
 ## The 4 Core Responsibilities Every PMM Owns
 
-The [Product Marketing Alliance State of Product Marketing 2025 report](https://www.productmarketingalliance.com/state-of-product-marketing-report-2025/) describes positioning, messaging, launches, and research as the "Foundational Four" - the core work that defines the PMM role. Sales enablement and competitive intelligence have grown alongside them into an expected fourth pillar at most modern PMM functions.
+The [Product Marketing Alliance State of Product Marketing 2025 report](https://www.productmarketingalliance.com/state-of-product-marketing-report-2025/) describes positioning, messaging, launches, and research as the "Foundational Four" - the core work that defines the PMM role. These map directly onto the broader [product marketing framework](/blog/product-marketing-framework/) most teams operate within. Sales enablement and competitive intelligence have grown alongside them into an expected fourth pillar at most modern PMM functions.
 
 ![Product marketing manager core responsibilities framework](/assets/blog/what-does-a-product-marketing-manager-do/pmm-responsibilities.webp "Product Marketing Manager Responsibilities")
 

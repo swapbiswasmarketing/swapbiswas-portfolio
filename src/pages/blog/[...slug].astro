@@ -354,7 +354,9 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 	/* Blog Layout */
 	.blog-layout {
 		position: relative;
-		overflow-x: hidden;
+		/* clip (not hidden) so it does not become a scroll container and break the
+		   sticky TOC sidebar on desktop. */
+		overflow-x: clip;
 	}
 
 	/* Table of Contents - Sidebar */
@@ -742,13 +744,29 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 	}
 
 	@media (min-width: 72em) {
+		/* Centred article with the TOC floating in the LEFT gutter: a 3-column grid
+		   (gutter | centred content | gutter). The content column is centred on the
+		   page; the sticky TOC sits in the left gutter and never overlaps the text.
+		   calc(100% - 32rem) reserves >=16rem per gutter so the TOC always has room. */
+		.blog-layout {
+			display: grid;
+			grid-template-columns: 1fr min(66ch, calc(100% - 32rem)) 1fr;
+			align-items: start;
+		}
+		.content-column {
+			grid-column: 2;
+		}
 		.toc-sidebar {
-			position: fixed;
+			grid-column: 1;
+			justify-self: end;
+			align-self: start;
+			position: sticky;
 			top: 5rem;
-			width: 16rem;
+			width: 15rem;
+			margin-right: clamp(1.5rem, 3vw, 3rem);
 			margin-bottom: 0;
-			opacity: 0;
-			pointer-events: none;
+			opacity: 1;
+			pointer-events: auto;
 			transition: opacity 0.3s ease;
 		}
 
@@ -1169,29 +1187,19 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		});
 	}
 
-	// Position TOC at the left edge of the wrapper (desktop only)
+	// The sticky two-column grid handles TOC placement now; clear any stale inline
+	// left from earlier (the old position:fixed sidebar set it manually).
 	function positionToc() {
-		if (!tocSidebar || !wrapper || !isDesktop()) return;
-		const wrapperRect = wrapper.getBoundingClientRect();
-		const wrapperPadding = parseFloat(getComputedStyle(wrapper).paddingLeft) || 0;
-		tocSidebar.style.left = `${Math.max(16, wrapperRect.left + wrapperPadding)}px`;
+		if (tocSidebar) tocSidebar.style.left = '';
 	}
 
 	function onScroll() {
 		if (!contentEl || !tocSidebar) return;
 
-		// Desktop: show/hide based on content position
-		if (isDesktop()) {
-			const contentRect = contentEl.getBoundingClientRect();
-			const stickyTop = 80;
-			const tocHeight = tocSidebar.offsetHeight;
-			const pastTop = contentRect.top < stickyTop;
-			const beforeBottom = contentRect.bottom > stickyTop + tocHeight;
-			const visible = pastTop && beforeBottom;
-			tocSidebar.style.opacity = visible ? '1' : '0';
-			tocSidebar.style.pointerEvents = visible ? 'auto' : 'none';
-		} else {
-			// Reset inline styles on mobile
+		// Desktop: the sticky TOC lives in its own grid column and naturally scrolls
+		// away when the article ends, so no manual show/hide is needed. On mobile,
+		// clear any stale inline styles from a previous desktop layout.
+		if (!isDesktop()) {
 			tocSidebar.style.opacity = '';
 			tocSidebar.style.pointerEvents = '';
 			tocSidebar.style.left = '';

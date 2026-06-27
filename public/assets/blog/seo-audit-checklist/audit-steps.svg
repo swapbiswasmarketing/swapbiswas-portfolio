@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="760" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="70" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700">The 6-Step SEO Audit Sequence</text>
+  <text x="700" y="106" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Work it in order, from highest leverage to lowest</text>
+
+  <!-- ROW 1: Steps 1-3 -->
+  <!-- Step 1: Crawlability -->
+  <rect x="40" y="150" width="410" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="40" y="150" width="410" height="5" rx="3" fill="#f5a0a1"/>
+  <text x="72" y="200" fill="#f5a0a1" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 1</text>
+  <text x="72" y="244" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Crawlability</text>
+  <text x="72" y="296" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="72" dy="0">Can search engines reach</tspan>
+    <tspan x="72" dy="34">your pages at all</tspan>
+  </text>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="450" y1="270" x2="488" y2="270" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="486,263 500,270 486,277" fill="#5eead4"/>
+
+  <!-- Step 2: Indexation -->
+  <rect x="505" y="150" width="410" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="505" y="150" width="410" height="5" rx="3" fill="#fb923c"/>
+  <text x="537" y="200" fill="#fb923c" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 2</text>
+  <text x="537" y="244" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Indexation</text>
+  <text x="537" y="296" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="537" dy="0">Right pages in the index,</tspan>
+    <tspan x="537" dy="34">wrong ones out</tspan>
+  </text>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="915" y1="270" x2="953" y2="270" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="951,263 965,270 951,277" fill="#5eead4"/>
+
+  <!-- Step 3: Technical health -->
+  <rect x="970" y="150" width="390" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="970" y="150" width="390" height="5" rx="3" fill="#5eead4"/>
+  <text x="1002" y="200" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 3</text>
+  <text x="1002" y="244" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Technical Health</text>
+  <text x="1002" y="296" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="1002" dy="0">Speed, mobile, structured</tspan>
+    <tspan x="1002" dy="34">data, and security</tspan>
+  </text>
+
+  <!-- Arrow 3 -> 4 (down the right side) -->
+  <line x1="1165" y1="390" x2="1165" y2="438" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1158,436 1165,450 1172,436" fill="#5eead4"/>
+
+  <!-- ROW 2: Steps 6-4 (right to left to follow the snake) -->
+  <!-- Step 4: On-page (right column) -->
+  <rect x="970" y="450" width="390" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="970" y="450" width="390" height="5" rx="3" fill="#60a5fa"/>
+  <text x="1002" y="500" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 4</text>
+  <text x="1002" y="544" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">On-Page</text>
+  <text x="1002" y="596" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="1002" dy="0">Titles, headings, intent</tspan>
+    <tspan x="1002" dy="34">match, and metadata</tspan>
+  </text>
+
+  <!-- Arrow 4 -> 5 (leftward) -->
+  <line x1="965" y1="570" x2="927" y2="570" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="929,563 915,570 929,577" fill="#5eead4"/>
+
+  <!-- Step 5: Content (middle column) -->
+  <rect x="505" y="450" width="410" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="505" y="450" width="410" height="5" rx="3" fill="#d98ee0"/>
+  <text x="537" y="500" fill="#d98ee0" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 5</text>
+  <text x="537" y="544" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Content</text>
+  <text x="537" y="596" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="537" dy="0">Depth, freshness, thin</tspan>
+    <tspan x="537" dy="34">pages, cannibalization</tspan>
+  </text>
+
+  <!-- Arrow 5 -> 6 (leftward) -->
+  <line x1="500" y1="570" x2="462" y2="570" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="464,563 450,570 464,577" fill="#5eead4"/>
+
+  <!-- Step 6: Internal links and backlinks (left column) -->
+  <rect x="40" y="450" width="410" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#shadow)"/>
+  <rect x="40" y="450" width="410" height="5" rx="3" fill="#c084fc"/>
+  <text x="72" y="500" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 6</text>
+  <text x="72" y="544" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Links &amp; Backlinks</text>
+  <text x="72" y="596" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="72" dy="0">Authority flow inside</tspan>
+    <tspan x="72" dy="34">and into the site</tspan>
+  </text>
+</svg>

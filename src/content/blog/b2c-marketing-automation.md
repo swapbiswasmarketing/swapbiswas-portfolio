@@ -149,7 +149,7 @@ Don't try to automate everything at once. Follow this phased approach:
 
 ### Phase 1: Foundation (Week 1-2)
 
-**Set up your platform and data connections.** Choose a tool from the comparison above, connect your ecommerce platform, and import your existing contacts. Configure these three flows first:
+**Set up your platform and data connections.** Choose a tool from the comparison above, [connect your ecommerce platform](/blog/ecommerce-marketing-automation/), and import your existing contacts. Configure these three flows first:
 
 1. Welcome series (3-4 emails)
 2. Abandoned cart recovery (3 emails)

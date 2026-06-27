@@ -32,7 +32,7 @@ Here's how it actually works, and how to do it without fooling yourself.
 
 Let me clear up the language first, because people use these terms loosely.
 
-**Product-led growth (PLG)** is the go-to-market motion. The product itself drives acquisition, activation, and expansion. Slack, Notion, Figma, Calendly, and Canva are the usual examples, and for good reason - you can use all of them before you ever talk to a human.
+**Product-led growth (PLG)** is the go-to-market motion. The product itself drives acquisition, activation, and expansion. Slack, Notion, Figma, Calendly, and Canva are the usual examples, and for good reason - you can experience the core of all of them before you ever talk to a human.
 
 Product led marketing is the marketing discipline that lives inside that motion. It owns the parts that make the product-as-channel actually work: positioning, the path to first value, in-product messaging, and the loops that turn one user's success into the next person's signup.
 
@@ -48,7 +48,7 @@ Traditional marketing front-loads the persuasion. You spend on ads, content, and
 
 Product-led marketing flips the order. People experience value first, then decide. When the product is genuinely good, that order is a massive advantage because the proof is undeniable. Nobody argues with their own "wow" moment.
 
-It also compounds. Every activated user is a potential source of new users through invites, shared outputs, and word of mouth. Your acquisition cost trends down over time instead of up. That is the dream that gets founders excited, and it is real - when the conditions are right.
+It also compounds. Every activated user is a potential source of new users through invites, shared outputs, and word of mouth. Your acquisition cost trends down over time instead of up. That is the dream that gets founders excited, and it can be real - when the conditions are right.
 
 But it is not magic, and it is not for every product.
 

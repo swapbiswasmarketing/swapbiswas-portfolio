@@ -110,12 +110,19 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .hero h1 .italln{display:inline}
   .hero .lower{margin-top:3.4rem;display:grid;grid-template-columns:1.25fr .9fr;gap:var(--m);align-items:start}
   .hero .leftcol{display:flex;flex-direction:column;gap:2.2rem;align-items:flex-start}
-  .hero .sub{max-width:46ch;font-size:clamp(1.12rem,1.55vw,1.22rem);color:#1a1a1a;line-height:1.62}
+  /* paper scrim behind the sub-paragraph: the contour WebGL drifts with the cursor and can lay
+     sienna/ink hairlines directly under this small body text - a soft paper plate guarantees clean read */
+  .hero .sub{position:relative;max-width:46ch;font-size:clamp(1.12rem,1.55vw,1.22rem);color:#1a1a1a;line-height:1.62}
+  .hero .sub::before{content:"";position:absolute;inset:-.5rem -.9rem;z-index:-1;border-radius:5px;
+    background:radial-gradient(120% 110% at 30% 50%,var(--paper) 70%,rgba(243,239,230,0) 100%)}
   .hero .sub b{color:var(--ink);font-weight:600}
   .hero .sub b.acc{color:var(--accent)}
   .cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:flex-start}
   /* hero right column - vertical metric ledger, composed on a strict baseline */
-  .hero .metrics{display:flex;flex-direction:column;border-top:1px solid var(--hair);justify-self:end;width:100%;max-width:320px}
+  .hero .metrics{position:relative;display:flex;flex-direction:column;border-top:1px solid var(--hair);justify-self:end;width:100%;max-width:320px}
+  /* paper plate behind the ledger so the cursor-reactive contour never crowds the figures + labels */
+  .hero .metrics::before{content:"";position:absolute;inset:-.6rem -.9rem;z-index:-1;border-radius:4px;
+    background:radial-gradient(120% 100% at 60% 50%,var(--paper) 66%,rgba(243,239,230,0) 100%)}
   /* the figure sits on a fixed baseline; the label is leader-ruled across to it like a ledger entry */
   .hero .metric{display:flex;align-items:baseline;gap:1rem;height:5.4rem;border-bottom:1px solid var(--line)}
   .hero .metric .mn{font-family:var(--display);font-weight:500;font-size:clamp(2rem,3vw,2.7rem);letter-spacing:-.02em;line-height:1;flex:none}
@@ -305,7 +312,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .tile-duotone .big{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:.88;
     font-size:clamp(2.1rem,5.8vw,3.7rem);color:var(--paper)}
   .tile-duotone .sub{font-family:var(--display);font-style:italic;font-weight:500;line-height:.95;
-    font-size:clamp(1.5rem,4.2vw,2.6rem);color:rgba(243,239,230,.82)}
+    font-size:clamp(1.5rem,4.2vw,2.6rem);color:rgba(243,239,230,.95)}
 
   /* 03 Samsung - bold launch badge composition (Galaxy M-series device / broadcast).
      distinct treatment: warm ink-wash field + fine diagonal hatch so it reads apart from the paper tiles */

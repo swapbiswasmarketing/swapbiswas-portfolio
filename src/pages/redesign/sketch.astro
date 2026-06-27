@@ -1,0 +1,709 @@
+---
+// REDESIGN PROTOTYPE - "Sketch" - a strategist's working notebook (light, hand-drawn).
+// Concept 16. Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout,
+// no global.css, no project components.
+// Tech: raw-WebGL paper-grain + faint wobble/displacement shader behind the hero +
+// SVG stroke-dashoffset "draw-on" marker accents + GSAP scroll reveals + Lenis smooth scroll.
+const stats = [
+  { n: '657K+', l: 'Leads generated', pen: 'yel' },
+  { n: '18.2M+', l: 'Organic traffic driven', pen: 'yel' },
+  { n: '10x', l: 'Conversion lift', pen: 'red' },
+  { n: '20+', l: 'AI agents & apps built', pen: 'blue' },
+  { n: '15+', l: 'Marketers mentored', pen: 'yel' },
+  { n: '76', l: 'Articles published', pen: 'blue' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS. The story that makes a product impossible to ignore.', tag: 'positioning' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds long after the campaign ends.', tag: 'compounding' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped - instead of only briefing them.', tag: 'I build it' },
+  { i: '04', t: 'Building in public', d: 'This site, eight free tools and seventy-six articles. Shipped systems, not slide-ware.', tag: 'shipped' },
+];
+// Real selected work, priority order. LambdaTest is the only project with hard numbers.
+// Each tile is a sticky note with its own doodle motif + colour + tilt.
+const work = [
+  { i: '01', t: 'LambdaTest', role: 'Product & digital marketing', r: '657K+ leads, 18.2M+ organic traffic', y: '2021 - 2025', doodle: 'growth', tone: 'yel', note: 'Owned product and digital marketing end to end and built the full organic growth engine.', feat: true },
+  { i: '02', t: 'TestMu AI', role: 'Rebrand lead', r: 'Full company rebrand', y: '2026', doodle: 'rebrand', tone: 'blue', note: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', t: 'Samsung', role: 'Launch content & distribution', r: 'Galaxy M-series launch', y: '2019', doodle: 'broadcast', tone: 'pink', note: 'On the Galaxy M-series from inception; ran content distribution (with Technical Guruji).', art: true },
+  { i: '04', t: 'Medilife Superspeciality', role: 'Marketing & web, 0 to 1', r: 'Website, GTM, social & launch', y: '', doodle: 'pulse', tone: 'mint', note: 'Built the full digital presence and GTM for a NABH superspeciality hospital in Dehradun.', art: true },
+  { i: '05', t: 'Lido Learning', role: 'Growth / CRM', r: 'CRM & lead operations', y: '2021', doodle: 'funnel', tone: 'lav', note: 'Ran CRM management and lead routing/assignment for the EdTech.' },
+  { i: '06', t: 'Appknox', role: 'Freelance content', r: 'Security content', y: '', doodle: 'shield', tone: 'yel', note: 'Freelance content writer for the mobile app security company.' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+---
+<!doctype html>
+<html lang="en" data-theme="sketch">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The working sketch</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#fbfaf4; --paper2:#f4f2e8; --ink:#1a1a1a; --ink2:#3a3a36; --read:#4a4a44;
+    --grid:#cdd8ef; --grid2:#e4e7d8;
+    --yel:#ffe14d; --red:#e23b3b; --blue:#2b5cff; --pink:#ff7eb0; --mint:#7ad9a9; --lav:#b7a4ff;
+    --line:rgba(26,26,26,.16);
+    --hand:"Caveat",cursive; --sans:"Inter",system-ui,sans-serif; --head:"Archivo",system-ui,sans-serif;
+    --m:clamp(1.1rem,5vw,5.5rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;overflow-x:clip;font-weight:400}
+  section{overflow-x:clip}
+  ::selection{background:var(--yel);color:#1a1a1a}
+  a{color:inherit;text-decoration:none}
+  /* ---- WebGL paper/grain canvas: full-bleed fixed behind hero, with a dot-grid + paper
+     CSS fallback painted underneath so a failed/null context is invisible. ---- */
+  canvas#paper{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;display:block;
+    opacity:.9;
+    background:
+      radial-gradient(60% 50% at 78% 12%,rgba(255,225,77,.16),transparent 60%),
+      radial-gradient(55% 50% at 12% 86%,rgba(43,92,255,.07),transparent 60%),
+      var(--paper)}
+  /* dot-grid graph-paper overlay (the notebook surface) sits above the canvas, below content */
+  .gridlayer{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background-image:
+      radial-gradient(var(--grid) 1.1px,transparent 1.2px);
+    background-size:26px 26px;background-position:13px 13px;opacity:.85}
+  /* faint blue horizontal rule lines, like a notebook page */
+  .rulelayer{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.4;
+    background-image:repeating-linear-gradient(0deg,transparent 0 51px,rgba(205,216,239,.7) 51px 52px)}
+  /* a soft red "margin" line down the left, like a real notebook */
+  .margin{position:fixed;top:0;bottom:0;left:max(2.4rem,calc(var(--m) - 1.6rem));width:1px;z-index:1;pointer-events:none;
+    background:rgba(226,59,59,.32)}
+  @media(max-width:720px){.margin{left:1.4rem}}
+  .css-paper{position:fixed;inset:0;z-index:0;pointer-events:none;display:none;
+    background:
+      radial-gradient(60% 50% at 80% 10%,rgba(255,225,77,.18),transparent 60%),
+      radial-gradient(55% 50% at 10% 88%,rgba(43,92,255,.08),transparent 60%),
+      var(--paper)}
+  .grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{position:relative;z-index:3;max-width:1180px;margin:0 auto;padding:0 var(--m)}
+  /* ---- nav ---- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+    padding:1.1rem var(--m);
+    background:linear-gradient(180deg,rgba(251,250,244,.92),rgba(251,250,244,.4) 70%,transparent);
+    backdrop-filter:blur(2px)}
+  .logo{font-family:var(--head);font-size:1.05rem;font-weight:800;letter-spacing:-.02em;display:inline-flex;align-items:center;gap:.5rem}
+  .navav{position:relative;display:inline-flex;width:34px;height:34px;flex:none}
+  .navav img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:50% 18%;
+    display:block;filter:saturate(.92) contrast(1.02);transform:rotate(-2deg);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+  .navav svg{position:absolute;inset:-5px;width:44px;height:44px;overflow:visible}
+  .logo:hover .navav img{transform:rotate(2deg) scale(1.06)}
+  @media(max-width:420px){.navav{display:none}}
+  .logo .sb{position:relative;display:inline-block}
+  .logo .sb svg{position:absolute;left:-6px;right:-6px;bottom:-7px;width:calc(100% + 12px);height:14px;overflow:visible}
+  .navlinks{display:flex;gap:1.9rem;font-size:.82rem;letter-spacing:.01em;align-items:center;font-weight:500}
+  .navlinks a{position:relative;color:var(--ink2);transition:color .25s}
+  .navlinks a:hover{color:var(--ink)}
+  .navlinks a::after{content:"";position:absolute;left:-2px;right:-2px;bottom:-5px;height:6px;
+    background:var(--yel);border-radius:40% 60% 55% 45%;transform:scaleX(0);transform-origin:left;
+    transition:transform .3s cubic-bezier(.2,.8,.2,1);z-index:-1;opacity:.85}
+  .navlinks a:hover::after{transform:scaleX(1)}
+  .navlinks a.muted{color:#5f5d56;font-family:var(--hand);font-size:1.05rem}
+  .navlinks a.muted::after{background:var(--blue);opacity:.35}
+  @media(max-width:760px){.navlinks a:not(.muted){display:none}}
+  /* ---- shared bits ---- */
+  .eyebrow{font-family:var(--hand);font-size:1.35rem;color:var(--blue);font-weight:600;line-height:1}
+  .pin{font-family:var(--hand);color:var(--red);font-weight:600}
+  /* sketchy wobbly border helper - a hand-drawn rounded box via dashed-ish double border */
+  .sketchbox{position:relative;border-radius:14px 16px 13px 17px / 16px 14px 17px 13px;
+    border:2px solid var(--ink);background:rgba(255,255,255,.55)}
+  .sketchbox::after{content:"";position:absolute;inset:3px;border:1.5px solid rgba(26,26,26,.22);
+    border-radius:13px 15px 12px 16px / 15px 13px 16px 12px;pointer-events:none}
+  /* highlighter swipe behind a word (animates width on scroll via .lit) */
+  .hl{position:relative;display:inline;white-space:nowrap}
+  .hl>span{position:relative;z-index:1}
+  .hl::before{content:"";position:absolute;left:-.12em;right:-.12em;top:.12em;bottom:.05em;z-index:0;
+    background:var(--yel);border-radius:30% 70% 60% 40% / 50% 40% 60% 50%;
+    transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.8,.2,1);opacity:.85}
+  .hl.red::before{background:rgba(226,59,59,.32)}
+  .hl.blue::before{background:rgba(43,92,255,.22)}
+  .hl.lit::before{transform:scaleX(1)}
+  @media(prefers-reduced-motion:reduce){.hl::before{transform:scaleX(1)}}
+  /* ---- hero ---- */
+  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:6rem;padding-bottom:4rem;position:relative}
+  .hero .credential{display:inline-flex;align-items:center;gap:.6rem;font-size:.74rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink2);font-weight:600;margin-bottom:1.6rem}
+  .hero .credential .tick{width:24px;height:2px;background:var(--red);flex:none;border-radius:2px}
+  .hero h1{font-family:var(--head);font-weight:900;font-size:clamp(3.1rem,11vw,8.8rem);line-height:.92;
+    letter-spacing:-.035em;max-width:13ch;color:var(--ink)}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln>span{display:block;will-change:transform}
+  .hero h1 .draw{position:relative;display:inline-block}
+  /* the hand-drawn marker underline that "draws on" under the key word */
+  .hero h1 .draw svg{position:absolute;left:-2%;right:-2%;bottom:-.16em;width:104%;height:.42em;overflow:visible}
+  .hero h1 .ink2{color:var(--blue)}
+  .hero .sub{margin-top:2.1rem;max-width:44ch;font-size:clamp(1.02rem,1.5vw,1.22rem);color:var(--read);line-height:1.62}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  /* a hand-written sticky-ish aside doodle near the hero */
+  .hero .aside{position:absolute;top:22%;right:0;font-family:var(--hand);font-size:1.5rem;color:var(--red);
+    transform:rotate(-7deg);max-width:13rem;line-height:1.05;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.3rem;
+    text-shadow:0 1px 2px rgba(251,250,244,.95),0 0 6px rgba(251,250,244,.9)}
+  .hero .aside .arr{width:64px;height:48px}
+  @media(max-width:980px){.hero .aside{display:none}}
+  .cta{margin-top:2.4rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.5rem;font-size:.88rem;font-weight:600;
+    letter-spacing:.01em;border-radius:14px 16px 13px 17px / 16px 14px 17px 13px;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .25s}
+  .btn.primary{background:var(--ink);color:var(--paper);box-shadow:4px 4px 0 0 var(--yel)}
+  .btn.primary:hover{transform:translate(-1px,-2px);box-shadow:6px 7px 0 0 var(--yel)}
+  .btn.ghost{border:2px solid var(--ink);color:var(--ink);box-shadow:3px 3px 0 0 rgba(43,92,255,.5)}
+  .btn.ghost:hover{transform:translate(-1px,-2px);box-shadow:5px 6px 0 0 rgba(43,92,255,.6)}
+  .btn .ar{transition:transform .35s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .heroanchor{margin-top:2.6rem;display:flex;align-items:center;gap:.9rem;font-family:var(--hand);font-size:1.3rem;color:var(--ink2)}
+  .heroanchor .dot{width:9px;height:9px;border-radius:50%;background:var(--mint);flex:none;
+    box-shadow:0 0 0 0 rgba(122,217,169,.7);animation:pulse 2.6s ease-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(122,217,169,.6)}70%{box-shadow:0 0 0 9px rgba(122,217,169,0)}100%{box-shadow:0 0 0 0 rgba(122,217,169,0)}}
+  @media(prefers-reduced-motion:reduce){.heroanchor .dot{animation:none}}
+  .scrollcue{position:absolute;bottom:1.6rem;left:0;font-family:var(--hand);font-size:1.2rem;color:#5a5852;
+    display:flex;align-items:center;gap:.5rem}
+  .scrollcue .bar{width:2px;height:34px;background:linear-gradient(var(--ink2),transparent);display:block;border-radius:2px}
+  @media(max-width:600px){
+    header.hero{padding-top:6rem;padding-bottom:2.6rem;justify-content:flex-end}
+    .hero h1{font-size:clamp(3.4rem,17vw,5.4rem);line-height:.9;max-width:9ch}
+    .hero .sub{margin-top:1.5rem;font-size:1.04rem;max-width:36ch}
+    .scrollcue{display:none}
+  }
+  /* ---- section frame ---- */
+  section{padding:clamp(4.5rem,10vh,8rem) 0;position:relative}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.4rem;margin-bottom:3rem;
+    border-bottom:2px solid var(--ink);padding-bottom:1rem;border-radius:0 0 60% 8px / 0 0 12px 6px}
+  .shead h2{font-family:var(--head);font-weight:800;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.025em;line-height:1}
+  .shead h2 .no{font-family:var(--hand);font-weight:700;color:var(--red);font-size:.7em;margin-right:.5rem}
+  .shead .eyebrow{text-align:right;flex:none}
+  /* ---- marquee statement ---- */
+  .statement{padding:clamp(2.4rem,6vh,4rem) 0;overflow:hidden}
+  .marq{display:flex;gap:2.5rem;white-space:nowrap;width:max-content;will-change:transform}
+  .marq span{font-family:var(--head);font-weight:800;font-size:clamp(1.6rem,4.5vw,3.4rem);letter-spacing:-.02em;
+    color:var(--ink);display:inline-flex;align-items:center;gap:2.5rem}
+  .marq span i{font-family:var(--hand);font-style:normal;font-weight:700;color:var(--blue);font-size:1.05em}
+  .marq .star{color:var(--red);font-size:.7em}
+  @media(prefers-reduced-motion:reduce){.marq{transform:none!important}}
+  /* ---- stats - each circled in marker, on a faint highlighter ---- */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.2rem,3vw,2.6rem) clamp(1rem,3vw,3rem)}
+  .stat{position:relative;display:flex;flex-direction:column;align-items:flex-start;padding:.4rem .2rem 1rem}
+  .stat .n{position:relative;font-family:var(--head);font-weight:900;font-size:clamp(2.6rem,6vw,4.4rem);
+    letter-spacing:-.03em;line-height:.92;color:var(--ink);z-index:1}
+  /* the hand-drawn circle/scribble that wraps the number, drawn on scroll */
+  .stat .ring{position:absolute;top:-14%;left:-8%;width:116%;height:128%;z-index:0;overflow:visible;pointer-events:none}
+  .stat .ring path{fill:none;stroke-width:3;stroke-linecap:round}
+  .stat.yel .ring path{stroke:var(--red)}
+  .stat.red .ring path{stroke:var(--red)}
+  .stat.blue .ring path{stroke:var(--blue)}
+  .stat .l{margin-top:.9rem;font-size:.86rem;letter-spacing:.01em;color:var(--read);font-weight:500;max-width:18ch}
+  @media(max-width:760px){.stats{grid-template-columns:1fr 1fr}}
+  @media(max-width:440px){.stats{grid-template-columns:1fr}.stat{align-items:flex-start}}
+  /* ---- pillars - notebook entries on a numbered list ---- */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,2.5vw,2rem)}
+  .pillar{position:relative;padding:1.8rem 1.7rem 1.6rem;background:rgba(255,255,255,.6);
+    border-radius:16px 18px 14px 20px / 18px 15px 20px 14px;border:2px solid var(--ink);
+    box-shadow:5px 6px 0 -2px rgba(26,26,26,.1);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+  .pillar:hover{transform:translate(-1px,-3px) rotate(-.4deg);box-shadow:8px 10px 0 -2px rgba(43,92,255,.18)}
+  .pillar .pi{font-family:var(--hand);font-weight:700;color:var(--red);font-size:2.1rem;line-height:.8}
+  .pillar h3{font-family:var(--head);font-size:1.22rem;font-weight:700;letter-spacing:-.015em;margin:.5rem 0 .6rem;color:var(--ink)}
+  .pillar p{color:var(--read);font-size:.96rem;line-height:1.62;max-width:40ch}
+  .pillar .tag{position:absolute;top:-.85rem;right:1.1rem;font-family:var(--hand);font-size:1.2rem;color:var(--blue);
+    font-weight:600;transform:rotate(-5deg);background:var(--paper);padding:0 .35rem}
+  @media(max-width:720px){.pillars{grid-template-columns:1fr}}
+  /* ---- selected work - sticky notes board ---- */
+  .work{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.3rem,2.6vw,2.2rem);align-items:start}
+  .note{position:relative;display:flex;flex-direction:column;padding:1.6rem 1.5rem 1.5rem;min-height:240px;
+    border-radius:3px;color:#1a1a1a;text-align:left;isolation:isolate;
+    box-shadow:0 1px 1px rgba(26,26,26,.12),5px 8px 18px -8px rgba(26,26,26,.32);
+    transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+  /* the little tape strip at the top of each sticky note */
+  .note::before{content:"";position:absolute;top:-9px;left:50%;width:74px;height:22px;transform:translateX(-50%) rotate(-2deg);
+    background:rgba(255,255,255,.45);border:1px solid rgba(26,26,26,.12);
+    box-shadow:0 1px 3px rgba(26,26,26,.12);z-index:3}
+  .note.feat{grid-column:1 / -1;min-height:230px}
+  .note.yel{background:#fff0a6;transform:rotate(-1.4deg)}
+  .note.blue{background:#cfe0ff;transform:rotate(1.6deg)}
+  .note.pink{background:#ffd6e7;transform:rotate(-1.1deg)}
+  .note.mint{background:#cdf2df;transform:rotate(1.2deg)}
+  .note.lav{background:#e4dcff;transform:rotate(-1.7deg)}
+  /* hand-drawn hover: each note lifts and "un-tilts" in its own direction, like a hand
+     nudging it on the board. Reduced-motion users get a still, flat lift only. */
+  .note:hover{transform:rotate(.4deg) translateY(-6px) scale(1.014);
+    box-shadow:0 2px 2px rgba(26,26,26,.14),10px 18px 32px -10px rgba(26,26,26,.42)}
+  .note.yel:hover{transform:rotate(.8deg) translateY(-6px) scale(1.014)}
+  .note.blue:hover{transform:rotate(-.9deg) translateY(-6px) scale(1.014)}
+  .note.pink:hover{transform:rotate(.7deg) translateY(-6px) scale(1.014)}
+  .note.mint:hover{transform:rotate(-.7deg) translateY(-6px) scale(1.014)}
+  .note.lav:hover{transform:rotate(1deg) translateY(-6px) scale(1.014)}
+  .note.art:hover .doodle{transform:translate(-50%,-58%) rotate(1.5deg) scale(1.05)}
+  @media(prefers-reduced-motion:reduce){
+    .note:hover,.note.yel:hover,.note.blue:hover,.note.pink:hover,.note.mint:hover,.note.lav:hover{
+      transform:translateY(-3px)}
+    .note.art:hover .doodle{transform:translate(-50%,-58%) rotate(-3deg)}
+  }
+  .note .widx{font-family:var(--hand);font-weight:700;color:rgba(26,26,26,.62);font-size:1.5rem;line-height:.8}
+  /* the result - the LEAD, big and bold */
+  .note .wr{font-family:var(--head);font-weight:800;font-size:clamp(1.45rem,2.6vw,2rem);letter-spacing:-.025em;
+    line-height:1.05;margin-top:1.1rem;color:#161616}
+  .note.feat .wr{font-size:clamp(1.8rem,3.6vw,2.9rem);max-width:16ch}
+  .note .wm{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;margin-top:.9rem;font-size:.86rem;
+    color:#2a2a26;font-weight:500}
+  .note .wm .nm{font-weight:700;color:#161616}
+  .note .wm .role{color:#46443e}
+  .note .wnote{margin-top:.9rem;font-size:.9rem;line-height:1.55;color:#33312c;max-width:52ch}
+  .note .wnote{display:none}
+  .note.feat .wnote{display:block}
+  /* doodle motif lives top-right, hand-drawn, draws-on on scroll */
+  .note .doodle{position:absolute;top:1.2rem;right:1.2rem;width:54px;height:54px;z-index:2;overflow:visible}
+  .note .doodle path,.note .doodle line,.note .doodle polyline,.note .doodle circle,.note .doodle rect{
+    fill:none;stroke:#1a1a1a;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  .note.feat .doodle{width:108px;height:64px;top:1.4rem;right:1.6rem}
+  /* a small "stuck-on" arrow doodle pointing at the feature result */
+  .note.feat{padding-right:9rem}
+  /* ---- illustrative notes: the doodle becomes a big central hand-drawn motif so a couple
+     of tiles read as sketches, not text. Lifts work-section distinctiveness. ---- */
+  .note.art{justify-content:flex-end;min-height:260px}
+  .note.art .doodle{position:absolute;top:50%;left:50%;right:auto;width:120px;height:120px;
+    transform:translate(-50%,-58%) rotate(-3deg);opacity:.9;z-index:1;
+    transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+  .note.art .doodle path,.note.art .doodle line,.note.art .doodle polyline,
+  .note.art .doodle circle,.note.art .doodle rect{stroke-width:2.1}
+  .note.art .widx{position:relative;z-index:2}
+  .note.art .wr{font-size:clamp(1.15rem,2vw,1.5rem);position:relative;z-index:2}
+  .note.art .wm{position:relative;z-index:2}
+  @media(max-width:720px){.note.art .doodle{width:96px;height:96px}}
+  @media(max-width:720px){
+    .work{grid-template-columns:1fr}
+    .note,.note.feat{transform:none;padding-right:1.5rem}
+    .note.feat{padding-right:1.5rem}
+    .note.feat .doodle{width:60px;height:50px}
+    .note:hover,.note.yel:hover,.note.blue:hover,.note.pink:hover,
+    .note.mint:hover,.note.lav:hover{transform:translateY(-4px)}
+  }
+  /* ---- recognition + brands ---- */
+  .recog{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  .recol .clabel{font-family:var(--hand);font-size:1.5rem;color:var(--blue);font-weight:700;margin-bottom:1rem}
+  .award{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:1rem;padding:.9rem 0;
+    border-bottom:1.5px dashed var(--line)}
+  .award b{font-family:var(--head);font-weight:700;font-size:clamp(1.1rem,2.2vw,1.5rem);letter-spacing:-.01em;line-height:1.15;color:var(--ink)}
+  .award b .num{color:var(--red);font-family:var(--hand)}
+  .award span{color:var(--ink2);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;justify-self:end;font-weight:600}
+  /* brands as little hand-circled chips */
+  .brands{display:flex;flex-wrap:wrap;gap:.8rem .9rem}
+  .brands span{font-family:var(--head);font-weight:600;font-size:.92rem;color:var(--ink);
+    padding:.5rem .9rem;border:2px solid var(--ink);border-radius:40% 60% 55% 45% / 55% 45% 60% 40%;
+    background:rgba(255,255,255,.5);transition:transform .3s,background .3s}
+  .brands span:nth-child(2n){border-radius:55% 45% 50% 50% / 45% 55% 50% 60%;transform:rotate(-1.4deg)}
+  .brands span:nth-child(3n){transform:rotate(1.6deg)}
+  .brands span:hover{transform:rotate(0) scale(1.05);background:var(--yel)}
+  @media(max-width:720px){.recog{grid-template-columns:1fr;gap:2.2rem}}
+  /* ---- about ---- */
+  .about .abody{display:grid;grid-template-columns:210px 1fr 320px;gap:clamp(1.6rem,3vw,3rem);align-items:stretch}
+  /* CUT-OUT STICKER: the transparent portrait figure dropped straight onto the cream page,
+     with a hand-drawn scribble/marker halo around it + one strip of washi tape. The suit is
+     near-black and reads fine on the light paper, so no background panel/mask is needed. */
+  .polaroid{position:relative;align-self:end;justify-self:center;width:min(300px,80vw);
+    padding-top:1.2rem;transform:rotate(-2.5deg);
+    transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+  .polaroid:hover{transform:rotate(-.6deg) translateY(-5px) scale(1.02)}
+  /* the rough hand-drawn marker halo / scribble outline behind the figure */
+  .polaroid .halo{position:absolute;top:.2rem;left:50%;transform:translateX(-50%);
+    width:104%;height:99%;z-index:0;overflow:visible;pointer-events:none}
+  .polaroid .halo path{fill:none;stroke:var(--blue);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.55}
+  .polaroid .halo path.h2{stroke:var(--red);opacity:.4}
+  /* the cut-out figure itself: contain (it is a cut figure, not a fill), fixed box, no mask */
+  .polaroid .ph{position:relative;z-index:1;display:block;width:100%;aspect-ratio:1023/1536;
+    object-fit:contain;object-position:bottom center;
+    filter:drop-shadow(5px 10px 14px rgba(26,26,26,.28))}
+  /* one piece of washi tape pinning the sticker at the top */
+  .polaroid .tape{position:absolute;width:78px;height:24px;z-index:2;
+    background:repeating-linear-gradient(45deg,rgba(255,225,77,.62) 0 7px,rgba(255,225,77,.4) 7px 14px);
+    border-left:1px solid rgba(255,255,255,.5);border-right:1px solid rgba(26,26,26,.08);
+    box-shadow:0 1px 2px rgba(26,26,26,.16)}
+  .polaroid .tape.tl{top:.1rem;left:50%;transform:translateX(-50%) rotate(-3deg)}
+  .polaroid .tape.tr{display:none}
+  /* hand-drawn caption tucked under the cut-out */
+  .polaroid .cap{position:relative;z-index:2;font-family:var(--hand);font-size:1.75rem;color:var(--ink);font-weight:700;
+    text-align:center;line-height:1;padding:.5rem 0 0;transform:rotate(-1.5deg)}
+  /* doodle arrow pointing at the cut-out figure */
+  .polaroid .arrowdoodle{position:absolute;bottom:24%;left:-50px;width:60px;height:64px;overflow:visible;z-index:3}
+  .polaroid .arrowdoodle path{fill:none;stroke:var(--red);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+  @media(max-width:980px){.about .abody{grid-template-columns:210px 1fr}
+    .polaroid{grid-column:1 / -1;justify-self:start;margin-top:.5rem;width:min(260px,72vw)}
+    .polaroid .arrowdoodle{display:none}}
+  .about .rail{display:flex;flex-direction:column;gap:.45rem;font-size:.92rem}
+  .about .rail .k{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);font-weight:600}
+  .about .rail .v{font-family:var(--hand);font-size:1.55rem;color:var(--blue);font-weight:600;line-height:1.05}
+  .about .rail .div{height:2px;width:38px;background:var(--red);border-radius:2px;margin:.6rem 0}
+  .about .rail .sig{font-family:var(--hand);font-size:2.1rem;color:var(--ink);font-weight:700;transform:rotate(-3deg);transform-origin:left}
+  .about .plate{position:relative;padding:clamp(1.6rem,3vw,2.6rem);overflow:hidden;display:flex;align-items:center;min-height:100%;
+    background:rgba(255,255,255,.6);border:2px solid var(--ink);
+    border-radius:18px 20px 16px 22px / 20px 17px 22px 16px;box-shadow:6px 8px 0 -2px rgba(255,225,77,.5)}
+  .about p{font-family:var(--head);font-weight:600;font-size:clamp(1.3rem,2.8vw,2rem);line-height:1.34;letter-spacing:-.015em;max-width:26ch;color:var(--ink)}
+  .about p em{font-style:normal;font-family:var(--hand);color:var(--blue);font-weight:700;font-size:1.15em}
+  @media(max-width:720px){.about .abody{grid-template-columns:1fr;gap:1.4rem}
+    .about .rail{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:.7rem 1.3rem}
+    .about .rail .div{display:none}.about .rail .sig{flex-basis:100%}
+    .polaroid{justify-self:center;width:min(240px,72vw)}}
+  /* ---- contact ---- */
+  .contact{text-align:center;padding-bottom:6rem}
+  .contact .big{font-family:var(--head);font-weight:900;font-size:clamp(2.6rem,9vw,6.4rem);line-height:.98;letter-spacing:-.035em;color:var(--ink)}
+  .contact .big .draw{position:relative;display:inline-block}
+  .contact .big .draw svg{position:absolute;left:-2%;right:-2%;bottom:-.14em;width:104%;height:.4em;overflow:visible}
+  .contact .em{margin-top:2.2rem;font-size:.96rem;color:var(--read)}
+  .contact .em a{color:var(--ink);font-weight:600;border-bottom:2px solid var(--yel);padding-bottom:1px}
+  .contact .sub{font-family:var(--hand);font-size:1.6rem;color:var(--blue);margin-bottom:.4rem}
+  footer{border-top:2px solid var(--ink);padding:2rem var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;
+    gap:1rem;font-size:.8rem;color:var(--ink2);position:relative;z-index:3;font-weight:500}
+  footer a{color:var(--blue);font-weight:600}
+  footer a:hover{text-decoration:underline}
+  .fcred{display:inline-flex;align-items:center;gap:.65rem}
+  .fcred .navav{width:30px;height:30px}
+  .fcred .navav img{width:30px;height:30px}
+  .fcred .navav svg{inset:-5px}
+  @media(max-width:420px){.fcred .navav{display:inline-flex}}
+  .reveal{opacity:0;transform:translateY(22px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+  /* scroll progress as a hand-drawn marker bar */
+  .progress{position:fixed;top:0;left:0;height:4px;width:100%;transform:scaleX(0);transform-origin:left;z-index:30;
+    background:repeating-linear-gradient(90deg,var(--red) 0 14px,rgba(226,59,59,.55) 14px 18px)}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<canvas id="paper"></canvas>
+<div class="css-paper" id="cssPaper" aria-hidden="true"></div>
+<div class="gridlayer" aria-hidden="true"></div>
+<div class="rulelayer" aria-hidden="true"></div>
+<div class="margin" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<nav>
+  <a class="logo" href="/redesign/">
+    <span class="navav" aria-hidden="true">
+      <img src="/assets/avatar-crop.webp" alt="" width="34" height="34" loading="lazy" decoding="async" />
+      <svg viewBox="0 0 44 44" aria-hidden="true"><path d="M22 2 C 33 2, 42 11, 42 22 C 42 33, 33 42, 22 42 C 11 42, 2 33, 2 22 C 2 11, 11 2, 22 2" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-dasharray="2.5 5"/></svg>
+    </span>
+    Swapnil <span class="sb">Biswas<svg viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 24 3, 50 12, 74 6 S 110 4, 118 9" fill="none" stroke="#2b5cff" stroke-width="3" stroke-linecap="round"/></svg></span></a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="muted" href="/redesign/">All concepts &#8599;</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="credential"><span class="tick"></span> Senior Product Marketing Manager - LambdaTest</div>
+    <h1>
+      <span class="ln"><span>I treat my</span></span>
+      <span class="ln"><span>career like a</span></span>
+      <span class="ln"><span class="draw"><span class="ink2">product.</span><svg viewBox="0 0 320 26" preserveAspectRatio="none" aria-hidden="true"><path id="heroUnderline" d="M4 16 C 60 6, 130 22, 196 12 S 300 8, 316 16" fill="none" stroke="#2b5cff" stroke-width="6" stroke-linecap="round"/></svg></span></span>
+    </h1>
+    <p class="sub">I'm Swapnil Biswas - a product marketer who <b>builds</b>. I ship the agents, sites and SEO systems behind <span class="hl"><span><b>657K+ leads</b></span></span> and <span class="hl blue"><span><b>18M+ organic traffic</b></span></span>, not just the decks that describe them.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See the working sketch <span class="ar">&#8599;</span></a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+    <div class="heroanchor"><span class="dot"></span> open to select work</div>
+    <div class="aside" aria-hidden="true">
+      positioned, measured &amp; shipped
+      <svg class="arr" viewBox="0 0 64 48" fill="none"><path d="M58 4 C 40 10, 20 18, 8 40" stroke="#e23b3b" stroke-width="2.4" stroke-linecap="round"/><path d="M4 30 L8 42 L18 36" stroke="#e23b3b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="scrollcue"><span class="bar"></span> flip the page</div>
+  </header>
+
+  <section class="statement" id="statement" aria-label="Statement">
+    <div class="marq" id="marq" aria-hidden="true">
+      <span>Build the systems <span class="star">&#10022;</span> <i>not just the decks</i> <span class="star">&#10022;</span> Positioning &amp; GTM <span class="star">&#10022;</span> <i>SEO that compounds</i> <span class="star">&#10022;</span> AI agents, shipped <span class="star">&#10022;</span> </span>
+      <span>Build the systems <span class="star">&#10022;</span> <i>not just the decks</i> <span class="star">&#10022;</span> Positioning &amp; GTM <span class="star">&#10022;</span> <i>SEO that compounds</i> <span class="star">&#10022;</span> AI agents, shipped <span class="star">&#10022;</span> </span>
+    </div>
+  </section>
+
+  <section id="stats">
+    <div class="shead"><h2><span class="no">No.1</span> The numbers, circled</h2><div class="eyebrow">what the work added up to</div></div>
+    <div class="stats">
+      {stats.map((s, idx) => (
+        <div class={`stat reveal ${s.pen}`}>
+          <svg class="ring" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true">
+            {idx % 2 === 0
+              ? <path class="ringpath" d="M40 22 C 8 30, 6 70, 42 92 C 92 112, 168 104, 188 70 C 200 44, 168 18, 110 14 C 84 12, 56 14, 40 22" />
+              : <path class="ringpath" d="M36 28 C 10 40, 14 84, 56 96 C 110 110, 176 96, 190 64 C 198 40, 160 20, 104 18 C 76 17, 52 19, 36 28" />}
+          </svg>
+          <div class="n">{s.n}</div>
+          <div class="l">{s.l}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="shead"><h2><span class="no">No.2</span> What I do</h2><div class="eyebrow">four disciplines, one operator</div></div>
+    <div class="pillars">
+      {pillars.map(p => (
+        <div class="pillar reveal">
+          <span class="tag">{p.tag}</span>
+          <div class="pi">{p.i}</div>
+          <h3>{p.t}</h3>
+          <p>{p.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="shead"><h2><span class="no">No.3</span> Selected work</h2><div class="eyebrow">the sticky-note board, 2019 - 2026</div></div>
+    <div class="work">
+      {work.map((w) => (
+        <article class={`note reveal ${w.tone}${w.feat ? ' feat' : ''}${w.art ? ' art' : ''}`}>
+          <svg class="doodle" viewBox="0 0 60 60" aria-hidden="true">
+            {w.doodle === 'growth' && (<g>
+              <polyline points="6,52 6,8 56,8" />
+              <polyline points="6,46 20,34 32,40 46,18 56,24" />
+              <polyline points="48,18 56,18 56,26" />
+            </g>)}
+            {w.doodle === 'rebrand' && (<g>
+              <path d="M14 14 a16 16 0 1 1 -4 22" />
+              <polyline points="10,28 10,40 22,40" />
+              <path d="M46 46 a16 16 0 1 1 4 -22" />
+              <polyline points="50,32 50,20 38,20" />
+            </g>)}
+            {w.doodle === 'broadcast' && (<g>
+              <circle cx="30" cy="44" r="4" />
+              <path d="M30 36 a14 14 0 0 1 0 0 M20 38 a18 18 0 0 1 20 0" />
+              <path d="M14 34 a26 26 0 0 1 32 0" />
+              <path d="M9 29 a34 34 0 0 1 42 0" />
+            </g>)}
+            {w.doodle === 'pulse' && (<g>
+              <polyline points="4,30 16,30 22,12 32,48 40,30 56,30" />
+              <path d="M44 8 v10 M39 13 h10" />
+            </g>)}
+            {w.doodle === 'funnel' && (<g>
+              <polyline points="8,12 52,12 38,32 38,48 22,42 22,32 8,12" />
+              <path d="M30 50 v4" />
+            </g>)}
+            {w.doodle === 'shield' && (<g>
+              <path d="M30 6 L50 14 V30 C50 44 41 52 30 56 C19 52 10 44 10 30 V14 Z" />
+              <polyline points="21,30 28,38 40,22" />
+            </g>)}
+          </svg>
+          <span class="widx">{w.i}</span>
+          <h3 class="wr">{w.r}</h3>
+          <div class="wm"><span class="nm">{w.t}</span><span class="role">{w.role}{w.y ? ` · ${w.y}` : ''}</span></div>
+          <p class="wnote">{w.note}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="recognition">
+    <div class="shead"><h2><span class="no">No.4</span> Recognition &amp; brands</h2><div class="eyebrow">gold stars on the page</div></div>
+    <div class="recog">
+      <div class="recol reveal">
+        <div class="clabel">honors &amp; awards</div>
+        <div class="award"><b>Value of Agility Award</b> <span>LambdaTest &middot; 2024</span></div>
+        <div class="award"><b>Wall of Fame</b> <span>LambdaTest</span></div>
+        <div class="award"><b><span class="num">#1</span> Product of the Day</b> <span>Product Hunt</span></div>
+      </div>
+      <div class="recol reveal">
+        <div class="clabel">worked with</div>
+        <div class="brands">
+          {brands.map(b => <span>{b}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="shead"><h2><span class="no">No.5</span> About me</h2><div class="eyebrow">the operator behind the sketch</div></div>
+    <div class="abody">
+      <div class="rail reveal">
+        <div class="k">Based in</div>
+        <div class="v">Mumbai, India</div>
+        <div class="div"></div>
+        <div class="k">Experience</div>
+        <div class="v">7+ yrs, 4+ in SaaS</div>
+        <div class="div"></div>
+        <div class="sig">- Swapnil B.</div>
+      </div>
+      <div class="plate reveal">
+        <p>Seven years in marketing, four in B2B SaaS, plus a postgrad in growth strategy at <em>IIM Visakhapatnam</em>. I treat my own career like a product - positioned, measured and shipped.</p>
+      </div>
+      <figure class="polaroid reveal">
+        <svg class="halo" viewBox="0 0 200 300" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M104 10 C 150 16, 178 70, 176 140 C 174 210, 184 256, 150 286 C 110 300, 70 296, 40 282 C 14 258, 22 196, 22 140 C 22 78, 50 18, 104 10" />
+          <path class="h2" d="M112 18 C 158 28, 170 84, 166 148 C 162 212, 176 252, 142 280 C 104 298, 66 290, 38 274 C 16 250, 30 192, 30 138 C 32 84, 58 24, 112 18" />
+        </svg>
+        <span class="tape tl" aria-hidden="true"></span>
+        <img class="ph" src="/assets/portrait-cut.webp" alt="Swapnil Biswas, cut-out portrait" width="300" height="451" loading="lazy" decoding="async" />
+        <figcaption class="cap">that's me, the operator</figcaption>
+        <svg class="arrowdoodle" viewBox="0 0 60 64" aria-hidden="true"><path d="M4 8 C 26 12, 40 26, 50 50"/><path d="M40 46 L52 52 L50 38"/></svg>
+      </figure>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="sub reveal">let's build something that compounds</div>
+    <div class="big reveal"><span class="draw">Say hello<svg viewBox="0 0 340 22" preserveAspectRatio="none" aria-hidden="true"><path id="contactUnderline" d="M4 14 C 70 5, 150 20, 220 11 S 320 7, 336 14" fill="none" stroke="#e23b3b" stroke-width="6" stroke-linecap="round"/></svg></span> <a href="mailto:swapbiswas.marketing@gmail.com" style="font-family:var(--hand);color:var(--blue);font-size:.7em">&#8599;</a></div>
+    <div class="em reveal"><a href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+  </section>
+</div>
+
+<footer>
+  <span class="fcred"><span class="navav" aria-hidden="true"><img src="/assets/avatar-crop.webp" alt="" width="30" height="30" loading="lazy" decoding="async" /><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M22 2 C 33 2, 42 11, 42 22 C 42 33, 33 42, 22 42 C 11 42, 2 33, 2 22 C 2 11, 11 2, 22 2" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-dasharray="2.5 5"/></svg></span> &copy; 2026 Swapnil Biswas</span>
+  <span>Concept 16 - Sketch &middot; <a href="/redesign/">View all concepts</a></span>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  // ---- WebGL paper/grain background ----
+  // Raw GLSL fullscreen-quad (Aurora boilerplate), fragment shader swapped for an animated
+  // warm paper texture with a faint hand-drawn 'wobble'/displacement of the grain. On small
+  // screens (unreliable mobile WebGL) or a null context, fall back to the CSS paper plate.
+  (function(){
+    const cv = document.getElementById('paper');
+    const css = document.getElementById('cssPaper');
+    if(isMobile){
+      if(cv) cv.style.display='none';
+      if(css) css.style.display='block';
+      return;
+    }
+    const gl = cv.getContext('webgl',{antialias:true,alpha:true});
+    if(!gl){ if(css) css.style.display='block'; return; }
+    const vs=`attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+    const fs=`precision highp float;uniform vec2 r;uniform float t;
+    float h(vec2 x){return fract(sin(dot(x,vec2(127.1,311.7)))*43758.5453);}
+    float n(vec2 x){vec2 i=floor(x),f=fract(x);float a=h(i),b=h(i+vec2(1,0)),c=h(i+vec2(0,1)),d=h(i+vec2(1,1));vec2 u=f*f*(3.-2.*f);return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y;}
+    float fbm(vec2 x){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(x);x*=2.03;a*=.5;}return v;}
+    void main(){
+      vec2 uv=gl_FragCoord.xy/r.xy;
+      vec2 p=uv;p.x*=r.x/r.y;
+      // hand-drawn 'wobble': low-freq displacement that breathes over time, like ink on a
+      // slightly buckled page. This warps the fibre/grain sampling so the paper feels analog.
+      vec2 wob=vec2(fbm(p*2.2+t*.03),fbm(p*2.2+7.3-t*.025))-0.5;
+      vec2 sp=p+wob*0.06;
+      // paper fibre: two octaves of fine grain, multiplied so it reads as woven stock
+      float fib=fbm(sp*42.0)*0.6+fbm(sp*120.0)*0.4;
+      float fibre=mix(0.985,1.0,smoothstep(0.3,0.75,fib));
+      // warm paper base #fbfaf4 -> #f4f2e8, biased warmer top-right (the hero highlight)
+      vec3 paperA=vec3(0.984,0.980,0.957);
+      vec3 paperB=vec3(0.956,0.949,0.910);
+      vec3 col=mix(paperB,paperA,smoothstep(0.0,1.0,uv.y*0.6+uv.x*0.4));
+      col*=fibre;
+      // faint highlighter-yellow bloom top-right + cool blue wash low-left (brand inks)
+      float yel=smoothstep(0.55,1.0,uv.x)*smoothstep(0.45,1.0,uv.y);
+      col+=vec3(1.0,0.88,0.30)*yel*0.07*(0.85+0.15*sin(t*0.4));
+      float blu=smoothstep(0.5,0.0,uv.x)*smoothstep(0.5,0.0,uv.y);
+      col+=vec3(0.17,0.36,1.0)*blu*0.025;
+      // very subtle moving 'coffee-ring' soft spots so the page feels lived-in
+      float spot=smoothstep(0.16,0.0,length((uv-vec2(0.78,0.2))*vec2(1.0,1.3)));
+      col-=vec3(0.02,0.02,0.0)*spot;
+      // soft page vignette toward edges
+      float vig=smoothstep(1.4,0.35,length(uv-vec2(0.5,0.5)));
+      col=mix(col*0.965,col,vig);
+      gl_FragColor=vec4(col,1.0);
+    }`;
+    function sh(ty,s){const o=gl.createShader(ty);gl.shaderSource(o,s);gl.compileShader(o);return o;}
+    const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t');
+    function size(){const d=Math.min(window.devicePixelRatio||1,1.6);cv.width=innerWidth*d;cv.height=innerHeight*d;gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(ur,cv.width,cv.height);}
+    size();addEventListener('resize',size);
+    if(reduce){gl.uniform1f(ut,2.0);gl.drawArrays(gl.TRIANGLES,0,3);return;}
+    let start=performance.now();
+    (function loop(now){gl.uniform1f(ut,(now-start)/1000);gl.drawArrays(gl.TRIANGLES,0,3);requestAnimationFrame(loop);})(start);
+  })();
+
+  // ---- prep SVG draw-on paths: set dash to the full length so they start "undrawn" ----
+  function primeDraw(el){
+    if(!el) return 0;
+    const len = el.getTotalLength();
+    el.style.strokeDasharray = len;
+    el.style.strokeDashoffset = reduce ? 0 : len;
+    return len;
+  }
+  const heroUL = document.getElementById('heroUnderline');
+  const contactUL = document.getElementById('contactUnderline');
+  primeDraw(heroUL); primeDraw(contactUL);
+  document.querySelectorAll('.stat .ringpath').forEach(primeDraw);
+  document.querySelectorAll('.note .doodle path, .note .doodle polyline, .note .doodle circle')
+    .forEach(p=>primeDraw(p));
+
+  // ---- smooth scroll + reveals + signature animations ----
+  if(!reduce){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    function raf(t){lenis.raf(t);requestAnimationFrame(raf);}requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll',ScrollTrigger.update);
+
+    // hero lines rise, then the marker underline "draws on"
+    gsap.set('.hero h1 .ln>span',{yPercent:115});
+    gsap.set('.hero .credential,.hero .sub,.hero .cta,.hero .heroanchor,.hero .aside',{opacity:0,y:18});
+    const tl=gsap.timeline({delay:.15});
+    tl.to('.hero h1 .ln>span',{yPercent:0,duration:1.0,ease:'expo.out',stagger:.1})
+      .to('.hero .credential',{opacity:1,y:0,duration:.6},.15)
+      .to(heroUL,{strokeDashoffset:0,duration:.9,ease:'power2.inOut'},'-=.2')
+      .to('.hero .sub',{opacity:1,y:0,duration:.7},'-=.5')
+      .to('.hero .cta',{opacity:1,y:0,duration:.7},'-=.45')
+      .to('.hero .heroanchor',{opacity:1,y:0,duration:.6},'-=.4')
+      .to('.hero .aside',{opacity:1,y:0,duration:.7,ease:'back.out(1.6)'},'-=.5')
+      .add(()=>document.querySelectorAll('.hero .sub .hl').forEach((h,i)=>setTimeout(()=>h.classList.add('lit'),i*180)),'-=.2');
+
+    // batched scroll reveals - every .reveal ends opacity:1
+    ScrollTrigger.batch('.reveal',{
+      start:'top 88%',
+      onEnter:batch=>gsap.to(batch,{opacity:1,y:0,duration:.9,ease:'expo.out',stagger:.08,overwrite:true}),
+    });
+
+    // signature: stat circles draw on, then the highlighter under their label swipes
+    document.querySelectorAll('.stat').forEach(stat=>{
+      const ring=stat.querySelector('.ringpath');
+      ScrollTrigger.create({trigger:stat,start:'top 80%',once:true,onEnter:()=>{
+        if(ring) gsap.to(ring,{strokeDashoffset:0,duration:.8,ease:'power2.inOut'});
+      }});
+    });
+
+    // signature: sticky-note doodles draw on as each note enters
+    document.querySelectorAll('.note').forEach(note=>{
+      const strokes=note.querySelectorAll('.doodle path, .doodle polyline, .doodle circle');
+      ScrollTrigger.create({trigger:note,start:'top 82%',once:true,onEnter:()=>{
+        gsap.to(strokes,{strokeDashoffset:0,duration:.7,ease:'power2.out',stagger:.06});
+      }});
+    });
+
+    // signature: highlighter strokes swipe across key words on scroll
+    document.querySelectorAll('.hl').forEach(h=>{
+      ScrollTrigger.create({trigger:h,start:'top 86%',once:true,
+        onEnter:()=>h.classList.add('lit')});
+    });
+
+    // contact underline draws on
+    ScrollTrigger.create({trigger:'#contact',start:'top 70%',once:true,
+      onEnter:()=>{ if(contactUL) gsap.to(contactUL,{strokeDashoffset:0,duration:.9,ease:'power2.inOut'}); }});
+
+    // statement marquee - gentle continuous drift, half-width loop
+    const marq=document.getElementById('marq');
+    if(marq){
+      gsap.to(marq,{xPercent:-50,duration:26,ease:'none',repeat:-1});
+    }
+
+    // scroll progress
+    gsap.to('#progress',{scaleX:1,ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:.3}});
+
+    ScrollTrigger.refresh();
+  } else {
+    // reduced motion: still loop the marquee statically (no transform) and ensure reveals show
+    document.querySelectorAll('.hl').forEach(h=>h.classList.add('lit'));
+  }
+</script>
+</body>
+</html>

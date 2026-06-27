@@ -90,16 +90,21 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   /* nav */
   nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
     padding:1.3rem var(--m);transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+  /* WASHOUT GUARD: the bright iridescent knot drifts under the top-right nav before any scroll,
+     so an always-on top scrim (below the nav text) keeps links readable even at the very top */
+  nav::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;transition:opacity .4s;
+    background:linear-gradient(180deg,rgba(7,6,13,.7) 0%,rgba(7,6,13,.34) 62%,transparent 100%)}
   nav.scrolled{background:rgba(7,6,13,.55);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom-color:var(--line)}
-  .logo{font-family:var(--disp);font-size:1.05rem;font-weight:600;letter-spacing:-.01em;display:flex;align-items:center;gap:.6rem}
+  nav.scrolled::before{opacity:0}
+  .logo{font-family:var(--disp);font-size:1.05rem;font-weight:600;letter-spacing:-.01em;display:flex;align-items:center;gap:.6rem;text-shadow:0 1px 10px rgba(7,6,13,.7)}
   .logo .pip{width:11px;height:11px;border-radius:3px;background:var(--spectrum);box-shadow:0 0 18px rgba(138,123,255,.7);transform:rotate(45deg)}
   .navlinks{display:flex;gap:2rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase}
-  .navlinks a{position:relative;color:var(--mut);transition:color .3s}
+  .navlinks a{position:relative;color:var(--mut);transition:color .3s;text-shadow:0 1px 9px rgba(7,6,13,.65)}
   .navlinks a:hover{color:var(--ink)}
   .navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--spectrum);transition:width .35s cubic-bezier(.2,.8,.2,1)}
   .navlinks a:hover::after{width:100%}
-  .navlinks a.all{color:var(--faint)}
-  .navlinks a.all:hover{color:var(--mut)}
+  .navlinks a.all{color:var(--mut)}
+  .navlinks a.all:hover{color:var(--ink)}
   .navlinks a.all::after{display:none}
   @media(max-width:760px){.navlinks{gap:1.1rem}.navlinks a:not(.all){display:none}}
 
@@ -117,15 +122,28 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   @keyframes flow{to{background-position:200% 0}}
 
   /* hero */
-  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:8rem 0 4rem;position:relative}
-  .hero .eyebrow{margin-bottom:2rem}
-  .hero h1{font-weight:600;font-size:clamp(2.9rem,9vw,8.5rem);line-height:.95;letter-spacing:-.035em;max-width:15ch}
+  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:8rem 0 4rem;position:relative;overflow-x:clip}
+  .hero .eyebrow{margin-bottom:2rem;text-shadow:0 1px 10px rgba(7,6,13,.75)}
+  /* WASHOUT GUARD: the bright iridescent knot auto-rotates + parallaxes + drifts by aspect ratio
+     into the headline column (the "...ter" of marketer already overlaps it). A multi-layer dark
+     halo guarantees the white glyphs keep an edge even when near-white glass sits directly behind. */
+  .hero h1{position:relative;font-weight:600;font-size:clamp(2.9rem,9vw,8.5rem);line-height:.95;letter-spacing:-.035em;max-width:15ch;
+    text-shadow:0 1px 2px rgba(7,6,13,.55),0 2px 22px rgba(7,6,13,.7),0 0 60px rgba(7,6,13,.55)}
+  /* dark scrim: sits above the knot (whole .wrap is z-index:3) but behind the headline text, so
+     the bright gradient word keeps contrast where the iridescent glass knot drifts in behind it.
+     Weighted toward the lower-right, where 'ships.' lands and the knot intrudes most. */
+  .hero h1::before{content:"";position:absolute;z-index:-1;pointer-events:none;left:-.22em;right:-.42em;top:-.12em;bottom:-.22em;
+    background:radial-gradient(66% 80% at 60% 76%,rgba(7,6,13,.72) 0%,rgba(7,6,13,.5) 40%,rgba(7,6,13,.2) 64%,transparent 80%)}
   .hero h1 .ln{display:block;overflow:hidden}
   .hero h1 .ln>span{display:block;will-change:transform}
-  .hero h1 .ships{background:linear-gradient(96deg,#a78bff 0%,#ff7ad9 42%,#22d3ff 88%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:saturate(1.35) drop-shadow(0 0 28px rgba(138,123,255,.35))}
-  .hero h1 .ships .dot{color:#eafcff;-webkit-text-fill-color:#eafcff;text-shadow:0 0 16px rgba(107,231,255,.8)}
-  @media(prefers-reduced-motion:no-preference){.hero h1 .ships{animation:flow 9s linear infinite}}
-  .hero .sub{margin-top:2.2rem;max-width:50ch;font-size:clamp(1rem,1.4vw,1.18rem);color:#d2cdeb;line-height:1.7}
+  /* gradient word: the focal payoff. Bright spectrum, luminous edge to edge. CRITICAL: the word
+     itself carries NO text-shadow and NO filter - in Chrome both silently darken a
+     background-clip:text fill by ~half (they composite a shadow layer into the glyph). Contrast
+     against the drifting glass knot comes from a dark scrim on the h1 (.hero h1::before). The
+     bright cyan dot keeps its own glow because it has a solid fill, so a shadow is safe there. */
+  .hero h1 .ships{background:linear-gradient(95deg,#b89dff 0%,#ff8fe0 47%,#7fe9ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-shadow:none}
+  .hero h1 .ships .dot{color:#f2feff;-webkit-text-fill-color:#f2feff;text-shadow:0 0 10px rgba(127,233,255,.95),0 0 26px rgba(127,233,255,.6)}
+  .hero .sub{margin-top:2.2rem;max-width:50ch;font-size:clamp(1rem,1.4vw,1.18rem);color:#d2cdeb;line-height:1.7;text-shadow:0 1px 12px rgba(7,6,13,.8),0 0 26px rgba(7,6,13,.55)}
   .hero .sub b{color:var(--ink);font-weight:600}
   .cta{margin-top:2.6rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
   .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.7rem;border-radius:100px;font-size:.85rem;font-weight:600;font-family:var(--disp);letter-spacing:.01em;position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s,color .4s}
@@ -151,8 +169,9 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
     header.hero{padding:7.5rem 0 4rem;min-height:100svh}
     .hero .eyebrow{margin-bottom:1.4rem}
     .hero h1{font-size:clamp(3.1rem,13vw,5rem);max-width:11ch}
-    /* keep 'ships.' gradient prominent on mobile */
-    .hero h1 .ships{filter:saturate(1.5) drop-shadow(0 0 22px rgba(138,123,255,.5))}
+    /* deepen the scrim on mobile so 'ships.' stays crisp over the knot (the word itself can carry
+       no shadow - it would darken the gradient fill) */
+    .hero h1::before{background:radial-gradient(72% 84% at 58% 74%,rgba(7,6,13,.8) 0%,rgba(7,6,13,.55) 42%,transparent 78%)}
     .hero .sub{margin-top:1.8rem;font-size:1.04rem}
   }
   @media(max-width:880px) and (max-height:720px){
@@ -176,7 +195,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
       linear-gradient(180deg,transparent 70%,var(--bg) 99%)}
     header.hero{min-height:100svh;padding:7rem 0 3.5rem;justify-content:flex-end}
     .hero h1{font-size:clamp(3.6rem,15.5vw,5.4rem);line-height:.9;letter-spacing:-.04em;max-width:9ch}
-    .hero h1 .ships{filter:saturate(1.55) drop-shadow(0 0 26px rgba(138,123,255,.55))}
+    .hero h1::before{background:radial-gradient(76% 86% at 56% 72%,rgba(7,6,13,.82) 0%,rgba(7,6,13,.58) 44%,transparent 80%)}
     .hero .sub{margin-top:1.6rem;font-size:1.02rem;max-width:38ch}
     .cta{margin-top:2rem}
     /* hero bottom-aligns on mobile, so the floating scroll cue would collide with the CTA */
@@ -262,7 +281,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
      Project 01 (LambdaTest) is hero-featured: a taller tile + larger type for grid rhythm. */
   .work{display:flex;flex-direction:column;gap:1.1rem}
   .work a{display:grid;grid-template-columns:340px 1fr auto;gap:2.6rem;align-items:center;padding:1.6rem 1.7rem;position:relative;border-radius:22px;overflow:hidden;
-    border:1px solid var(--line);background:rgba(15,12,28,.34);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    border:1px solid var(--line);background:rgba(13,11,24,.66);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
     transition:transform .5s cubic-bezier(.2,.8,.2,1),background .45s,border-color .45s,box-shadow .5s}
   /* featured first row: bigger tile, heavier title, a faint chromatic wash to set it apart */
   .work a.feat{grid-template-columns:420px 1fr auto;padding:2rem 1.9rem;
@@ -445,7 +464,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
     background:linear-gradient(90deg,rgba(180,170,255,.34),rgba(107,231,255,.16) 46%,transparent 82%) bottom/100% 1px no-repeat}
   .brands .brandlbl .dotmark{width:5px;height:5px;border-radius:2px;background:var(--spectrum);flex:none}
   .brandpills{display:flex;flex-wrap:wrap;gap:.7rem;align-content:flex-start}
-  .brandpills span{border:1px solid var(--line);border-radius:100px;padding:.7rem 1.35rem;font-size:.98rem;font-weight:500;letter-spacing:-.005em;color:#d4cfe8;background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:color .3s,border-color .3s,box-shadow .3s,transform .3s}
+  .brandpills span{border:1px solid var(--line);border-radius:100px;padding:.7rem 1.35rem;font-size:.98rem;font-weight:500;letter-spacing:-.005em;color:#d4cfe8;background:rgba(16,13,30,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:color .3s,border-color .3s,box-shadow .3s,transform .3s}
   .brandpills span:hover{color:var(--ink);border-color:rgba(180,170,255,.4);box-shadow:0 0 22px -10px rgba(138,123,255,.6);transform:translateY(-2px)}
   @media(max-width:760px){.recog{grid-template-columns:1fr;gap:3rem}}
 

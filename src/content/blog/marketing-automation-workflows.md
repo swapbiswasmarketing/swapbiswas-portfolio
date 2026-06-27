@@ -216,7 +216,7 @@ Nurtured leads produce a **20% increase in sales opportunities** compared to non
 - **Email 2 (Day 7):** Use case showing how the upsell enhances their current setup
 - **Email 3 (Day 14):** Limited-time upgrade offer or bundle pricing
 
-**Branch logic:** Different recommendations based on what they purchased. A customer who bought the starter plan gets feature-focused upsell content. A customer who bought a single product gets cross-sell content.
+**Branch logic:** Different recommendations based on what they purchased. A customer who bought the starter plan gets feature-focused upsell content. A customer who bought a single product gets [cross-sell content](/blog/ecommerce-marketing-automation/).
 
 ### 12. Renewal Reminder
 

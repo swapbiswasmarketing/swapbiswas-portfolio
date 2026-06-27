@@ -136,17 +136,23 @@ const palette = [
     padding:.05rem .35rem;border-radius:4px;border:1px solid var(--line);color:var(--ink)}
 
   /* eyebrow / labels */
+  /* readability guard: section eyebrows / heads / meta sit over the bare WebGL backdrop
+     (not inside an opaque card). A dark halo keeps small text legible even if the
+     animated indigo/emerald plume drifts brighter directly behind it. */
   .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--acc2);
-    display:inline-flex;align-items:center;gap:.5rem}
+    display:inline-flex;align-items:center;gap:.5rem;
+    text-shadow:0 1px 3px rgba(6,8,13,.85),0 0 10px rgba(6,8,13,.7)}
   .eyebrow::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--acc);flex:none}
 
   /* section heads */
   section{padding:clamp(3.4rem,8vh,6.5rem) 0;position:relative}
   .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;margin-bottom:2rem;
     border-top:1px solid var(--line);padding-top:1.5rem}
-  .shead h2{font-weight:600;font-size:clamp(1.5rem,3vw,2.3rem);letter-spacing:-.025em;line-height:1.1}
+  .shead h2{font-weight:600;font-size:clamp(1.5rem,3vw,2.3rem);letter-spacing:-.025em;line-height:1.1;
+    text-shadow:0 1px 4px rgba(6,8,13,.7)}
   .shead h2 .acc{color:var(--acc2)}
-  .shead .meta{font-family:var(--mono);font-size:.74rem;color:var(--dim);text-align:right;white-space:nowrap}
+  .shead .meta{font-family:var(--mono);font-size:.74rem;color:var(--dim);text-align:right;white-space:nowrap;
+    text-shadow:0 1px 3px rgba(6,8,13,.85)}
 
   /* ---- HERO: bento grid ---- */
   header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
@@ -245,9 +251,10 @@ const palette = [
     background:linear-gradient(180deg,rgba(99,102,241,.05),transparent)}
   .marquee .track{display:inline-flex;gap:2.4rem;will-change:transform;animation:slide 28s linear infinite}
   @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
-  .marquee span{font-family:var(--sans);font-weight:600;font-size:clamp(1.1rem,2.2vw,1.8rem);letter-spacing:-.02em;color:var(--mut)}
+  .marquee span{font-family:var(--sans);font-weight:600;font-size:clamp(1.1rem,2.2vw,1.8rem);letter-spacing:-.02em;color:var(--mut);
+    text-shadow:0 1px 4px rgba(6,8,13,.7)}
   .marquee span em{font-style:normal;color:var(--ink)}
-  .marquee span .sep{color:var(--acc);margin:0 .2rem}
+  .marquee span .sep{color:var(--acc2);margin:0 .2rem}
   @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* ---- pillars / what I do ---- */
@@ -451,7 +458,7 @@ const palette = [
   footer{border-top:1px solid var(--line);position:relative;z-index:2}
   .footin{max-width:1320px;margin:0 auto;padding:1.3rem var(--m);display:flex;align-items:center;
     justify-content:space-between;flex-wrap:wrap;gap:.8rem 1.5rem;
-    font-family:var(--mono);font-size:.74rem;color:var(--dim)}
+    font-family:var(--mono);font-size:.74rem;color:var(--dim);text-shadow:0 1px 3px rgba(6,8,13,.8)}
   .footin .grp{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
   .footin .grp span{display:inline-flex;align-items:center;gap:.45rem}
   .footin a{color:var(--mut)}

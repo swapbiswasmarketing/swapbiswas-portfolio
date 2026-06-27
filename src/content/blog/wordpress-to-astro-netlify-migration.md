@@ -46,7 +46,7 @@ My new stack is three tools. That's it.
 
 **Astro** is a modern static site generator. It takes your content (markdown files, like writing in a Google Doc), applies your design template, and generates plain HTML files. No databases. No PHP. No server processing on every visit. The result is a site that loads almost instantly.
 
-Astro has [48,000+ stars on GitHub](https://astro.build/blog/year-in-review-2025/) and achieves **perfect 100 Lighthouse scores** with literally **0 KB of JavaScript** by default. It only sends JavaScript to the browser when you explicitly need interactivity.
+Astro has [48,000+ stars on GitHub](https://astro.build/blog/year-in-review-2025/) and achieves **perfect 100 Lighthouse scores** with literally **0 KB of JavaScript** by default. It only sends JavaScript to the browser when you explicitly need interactivity. That static-HTML output is also a quiet SEO advantage: unlike [vibe-coded React sites that render client-side and struggle to get indexed by Google](/blog/vibe-coded-website-seo/), Astro ships real HTML that search engines can read immediately.
 
 **Netlify** hosts the generated HTML files on a global CDN (Content Delivery Network). Your site is served from the server closest to your visitor, which means fast load times worldwide. It also handles SSL certificates (HTTPS), custom domains, and automatic deployments - all for free.
 

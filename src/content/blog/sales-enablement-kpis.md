@@ -52,7 +52,7 @@ Here are the twelve I come back to. I have grouped them by what they measure, be
 
 ### Content Effectiveness KPIs
 
-**1. Content usage rate.** What share of published assets actually get opened, sent, or presented by reps? A library where 80 percent of content is never touched is not a content problem, it is a discoverability or relevance problem. This is the first metric I check because it exposes waste fast.
+**1. Content usage rate.** What share of published assets actually get opened, sent, or presented by reps? A library where most of the content is never touched is not a content problem, it is a discoverability or relevance problem. This is the first metric I check because it exposes waste fast.
 
 **2. Content influence on closed-won.** This is the one that earns budget. Of the deals that closed, how many had a rep engage a key enablement asset along the way? You are not claiming the asset closed the deal. You are showing that your content shows up in winning motions far more than in losing ones.
 
@@ -109,7 +109,7 @@ A few patterns quietly corrupt enablement dashboards. I have made most of these 
 
 **Vanity over value.** Reporting assets shipped and training hours because they always go up. They prove effort, not impact, and seasoned leaders see through them.
 
-**No baseline.** Announcing that win rate is 28 percent means nothing without knowing what it was before and what it is for reps who skipped your program. A number with no comparison is not a KPI, it is trivia.
+**No baseline.** Announcing that win rate is 31 percent means nothing without knowing what it was before and what it is for reps who skipped your program. A number with no comparison is not a KPI, it is trivia.
 
 **Measuring completion, not competence.** A 100 percent training completion rate next to reps who still fumble the top objection is a measurement failure. Always pair completion with a readiness check.
 

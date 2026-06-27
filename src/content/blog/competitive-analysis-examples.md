@@ -17,7 +17,7 @@ faqs:
 
 **94% of companies report their markets have become more competitive** ([Crayon](https://www.crayon.co/blog/build-a-world-class-competitive-enablement-program-a-cxos-guide)). Yet **58% of CI professionals struggle to keep battlecards and content updated** ([Crayon](https://www.crayon.co/blog/the-state-of-competitive-intelligence-in-2024-ci-meets-ai)). The gap between knowing you should analyze competitors and actually doing it well is enormous.
 
-Most competitive analysis efforts fail because they produce generic SWOT charts that nobody acts on. What works is structured, specific analysis tied to decisions your team needs to make. Here are five competitive analysis examples you can copy and adapt.
+Most competitive analysis efforts fail because they produce generic SWOT charts that nobody acts on. What works is structured, specific analysis tied to decisions your team needs to make. Here are five competitive analysis examples you can copy and adapt. If you want a blank framework to start from, grab our [competitive analysis template](/blog/competitive-analysis-template/) first.
 
 ## What Makes a Good Competitive Analysis
 

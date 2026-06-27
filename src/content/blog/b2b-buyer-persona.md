@@ -11,7 +11,7 @@ faqs:
   - q: "How is a B2B buyer persona different from an ICP?"
     a: "An ICP describes the kind of company worth pursuing, using firmographics like industry, size, and tech stack. A buyer persona describes an individual decision-maker inside that company. You need both: the ICP picks the account, the persona shapes how you talk to the people in it."
   - q: "How many buyer personas should a B2B company have?"
-    a: "Most B2B teams need one persona per role in the buying committee that genuinely changes your messaging, which is usually three to five. If two personas would receive the same pitch, merge them. More personas almost always means less use."
+    a: "Most B2B teams need one persona per role in the buying committee that genuinely changes your messaging, which is usually a few, not a dozen. If two personas would receive the same pitch, merge them. More personas almost always means less use."
   - q: "How do you research a B2B buyer persona?"
     a: "Interview recent buyers and lost deals, mine call recordings and win-loss notes, and pull patterns from sales and customer success. Surveys and analytics fill gaps, but direct conversations with real buyers are the backbone of an accurate persona."
   - q: "Why don't sales teams use buyer personas?"
@@ -28,7 +28,7 @@ It matters more in B2B than anywhere else, because you are never selling to one 
 
 ## What a B2B Buyer Persona Actually Is
 
-A **buyer persona** is a research-based profile of a specific role in the buying decision. Not a real individual, not a vague "small business owner," but a composite of the people who repeatedly show up in your deals doing a particular job.
+A buyer persona is a research-based profile of a specific role in the buying decision. Not a real individual, not a vague "small business owner," but a composite of the people who repeatedly show up in your deals doing a particular job.
 
 The B2B part matters more than people admit. In B2C you often sell to one person who buys for themselves. In B2B you sell to a **buying committee**: an economic buyer, a champion, an end user, a technical evaluator, and at least one skeptic who can kill the deal. Each of them weighs your product differently.
 

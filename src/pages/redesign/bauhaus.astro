@@ -1,0 +1,682 @@
+---
+// REDESIGN PROTOTYPE - "Bauhaus" - constructivist geometry, light/bold primaries.
+// Concept 13. Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+// Tech: raw-WebGL animated constructivist shader (hard-edged primary shapes rotating/translating)
+//       + GSAP/ScrollTrigger scroll reveals + Lenis smooth scroll. Reuses Aurora's proven plumbing.
+const stats = [
+  { n: '657K+', l: 'Leads generated', c: 'red' },
+  { n: '18.2M+', l: 'Organic traffic driven', c: 'blue' },
+  { n: '10x', l: 'Conversion lift', c: 'yellow' },
+  { n: '20+', l: 'AI agents & apps built', c: 'red' },
+  { n: '15+', l: 'Marketers mentored', c: 'blue' },
+  { n: '76', l: 'Articles published', c: 'yellow' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS. The narrative that makes a product impossible to ignore.', c: 'red', shape: 'circle' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand generation that compounds long after the campaign ends.', c: 'blue', shape: 'bar' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped - instead of only briefing them.', c: 'yellow', shape: 'triangle' },
+  { i: '04', t: 'Building in public', d: 'This site, eight free tools and seventy-six articles. Shipped systems, not slide-ware.', c: 'black', shape: 'square' },
+];
+// Real selected work, priority order. Only LambdaTest carries hard numbers.
+// Each tile = a distinct primary colour + a distinct geometric motif.
+const work = [
+  { i: '01', t: 'LambdaTest', role: 'Product & digital marketing', r: '657K+ leads, 18.2M+ organic traffic', y: '2021 - 2025', c: 'red', motif: 'circle', note: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { i: '02', t: 'TestMu AI', role: 'Rebrand lead', r: 'Full company rebrand', y: '2026', c: 'blue', motif: 'split', note: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', t: 'Samsung', role: 'Launch content & distribution', r: 'Galaxy M-series launch', y: '2019', c: 'yellow', motif: 'arc', note: 'On the Galaxy M-series from inception; ran content distribution (collaborated with Technical Guruji).' },
+  { i: '04', t: 'Medilife Superspeciality', role: 'Marketing & web, 0 to 1', r: 'Website, GTM, social & launch', y: '', c: 'black', motif: 'cross', note: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', t: 'Lido Learning', role: 'Growth / CRM', r: 'CRM & lead operations', y: '2021', c: 'red', motif: 'triangle', note: 'Ran CRM management and lead routing/assignment for the EdTech.' },
+  { i: '06', t: 'Appknox', role: 'Freelance content', r: 'Security content', y: '', c: 'blue', motif: 'bars', note: 'Freelance content writer for the mobile app security company.' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+---
+<!doctype html>
+<html lang="en" data-theme="bauhaus">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who builds the machine</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bone:#f4f1e8; --ink:#141414; --red:#e63329; --blue:#2440d8; --yellow:#f6c700;
+    --read:#2a2a2a; --mut:#5a5a52; --line:#141414;
+    --disp:"Jost","Futura",system-ui,sans-serif; --sans:"Inter",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+    --m:clamp(1.25rem,5vw,5.5rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+  body{background:var(--bone);color:var(--ink);font-family:var(--sans);line-height:1.55;overflow-x:clip;font-weight:400}
+  section{overflow-x:clip}
+  ::selection{background:var(--yellow);color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  /* ---- WebGL constructivist canvas - fixed behind the hero, CSS fallback so a blank
+     paint is never a bare grey box ---- */
+  canvas#gl{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;display:block;
+    background:
+      radial-gradient(38% 40% at 80% 22%,var(--blue) 0 22%,transparent 24%),
+      radial-gradient(30% 32% at 18% 76%,var(--red) 0 30%,transparent 32%),
+      var(--bone)}
+  /* CSS-only constructivist composition used on small screens (mobile WebGL unreliable) */
+  .css-shapes{position:fixed;inset:0;z-index:0;pointer-events:none;display:none;overflow:hidden;background:var(--bone)}
+  .css-shapes i{position:absolute;display:block;animation:floatY 14s ease-in-out infinite alternate}
+  .css-shapes .c1{width:46vw;height:46vw;border-radius:50%;background:var(--blue);top:8%;right:-12vw}
+  .css-shapes .c2{width:30vw;height:30vw;background:var(--red);bottom:6%;left:-8vw;transform:rotate(45deg);animation-duration:18s}
+  .css-shapes .c3{width:0;height:0;border-left:18vw solid transparent;border-right:18vw solid transparent;border-bottom:30vw solid var(--yellow);top:34%;left:8%;animation-duration:22s}
+  .css-shapes .c4{width:54vw;height:10px;background:var(--ink);top:64%;right:-6vw;transform:rotate(-12deg);animation-duration:16s}
+  @keyframes floatY{0%{transform:translate3d(0,0,0) rotate(0)}100%{transform:translate3d(0,-3.5%,0) rotate(6deg)}}
+  .css-shapes .c2{animation-name:floatRot}
+  @keyframes floatRot{0%{transform:translate3d(0,0,0) rotate(45deg)}100%{transform:translate3d(2%,-3%,0) rotate(58deg)}}
+  @media(prefers-reduced-motion:reduce){.css-shapes i{animation:none}}
+  /* a flat bone scrim so the hero type sits in a calm light field over the busy shapes */
+  .scrim{position:fixed;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(244,241,232,.26) 0%,rgba(244,241,232,.66) 46%,var(--bone) 88%)}
+  @media(max-width:600px){.scrim{background:linear-gradient(180deg,rgba(244,241,232,.10) 0%,rgba(244,241,232,.55) 52%,var(--bone) 92%)}}
+  /* very faint print-paper grain to warm the bone */
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.045;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:0 var(--m)}
+  /* ---- nav ---- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+    padding:1rem var(--m);background:var(--bone);border-bottom:2px solid var(--ink)}
+  .logo{font-family:var(--disp);font-weight:700;font-size:1.1rem;letter-spacing:-.01em;text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:.6rem}
+  .logo .mk{width:16px;height:16px;border-radius:50%;background:var(--red);flex:none;display:inline-block}
+  /* small circular avatar in the nav - black keyline, sits on a red dot tone */
+  .logo .av{width:30px;height:30px;border-radius:50%;border:2px solid var(--ink);flex:none;
+    object-fit:cover;background:var(--red);filter:grayscale(1) contrast(1.05) brightness(1.02)}
+  @media(max-width:760px){.logo .av{width:26px;height:26px}}
+  .navlinks{display:flex;gap:1.8rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+  .navlinks a{position:relative;padding:.2rem 0}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--ink);transition:width .3s cubic-bezier(.2,.8,.2,1)}
+  .navlinks a:hover::after{width:100%}
+  .navlinks a.allc{color:var(--blue)}
+  @media(max-width:760px){.navlinks{gap:1rem;font-size:.62rem}.navlinks .hidexs{display:none}}
+  /* ---- shared section frame ---- */
+  section{padding:clamp(4.5rem,10vh,8rem) 0;position:relative}
+  .secnum{font-family:var(--disp);font-weight:700;font-size:clamp(3.5rem,9vw,8rem);line-height:.8;letter-spacing:-.04em;
+    -webkit-text-stroke:2px var(--ink);color:transparent}
+  .shead{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;
+    border-bottom:3px solid var(--ink);padding-bottom:1.1rem;margin-bottom:3rem}
+  .shead .ht{display:flex;align-items:baseline;gap:1.4rem;flex-wrap:wrap}
+  .shead h2{font-family:var(--disp);font-weight:700;font-size:clamp(1.9rem,4.4vw,3.4rem);letter-spacing:-.02em;text-transform:uppercase;line-height:.95}
+  .label{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+  /* ---- hero ---- */
+  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:6rem;padding-bottom:3rem;position:relative}
+  /* GUARANTEE legibility: a solid bone backing plate sits above the WebGL canvas/scrim
+     (z 0/1) but below the hero text (z 2), so a bright primary shape drifting directly
+     behind the headline under the cursor can never wash out the black/red/blue words.
+     It is feathered at the edges so the constructivist shapes still read around the type. */
+  header.hero::before{content:"";position:absolute;z-index:0;pointer-events:none;
+    left:calc(-1 * var(--m));right:calc(-1 * var(--m));top:4.5rem;bottom:1.5rem;
+    background:var(--bone);
+    -webkit-mask:linear-gradient(90deg,transparent,#000 7%,#000 78%,transparent 99%);
+    mask:linear-gradient(90deg,transparent,#000 7%,#000 78%,transparent 99%);
+    opacity:.94}
+  .hero>*{position:relative;z-index:2}
+  @media(max-width:600px){header.hero::before{left:calc(-1 * var(--m));right:calc(-1 * var(--m));top:5rem;bottom:1rem;opacity:.96}}
+  .hero .tag{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink);background:var(--yellow);border:2px solid var(--ink);
+    padding:.45rem .85rem;width:fit-content;margin-bottom:1.8rem}
+  .hero .tag .sq{width:9px;height:9px;background:var(--ink);flex:none}
+  .hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(3.1rem,11vw,10rem);line-height:.86;letter-spacing:-.035em;
+    text-transform:uppercase;max-width:13ch;
+    /* bone halo: second-layer insurance so the glyph edges stay crisp even where the
+       backing plate feathers out and a primary shape drifts behind a letter */
+    text-shadow:0 0 1px rgba(244,241,232,.9),0 1px 10px rgba(244,241,232,.7)}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln>span{display:block;will-change:transform}
+  .hero h1 .red{color:var(--red)} .hero h1 .blue{color:var(--blue)}
+  /* a hero accent: a hollow ring after the wordmark */
+  .hero h1 .ring{display:inline-block;width:.62em;height:.62em;border:.13em solid var(--yellow);border-radius:50%;vertical-align:.04em;margin-left:.12em}
+  .hero .sub{margin-top:2.2rem;max-width:44ch;font-size:clamp(1.02rem,1.5vw,1.22rem);color:var(--read);line-height:1.6}
+  .hero .sub b{font-weight:600;color:var(--ink);box-shadow:inset 0 -.42em 0 rgba(246,199,0,.55)}
+  .cta{margin-top:2.6rem;display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.95rem 1.6rem;font-family:var(--mono);font-size:.76rem;
+    font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);
+    transition:transform .35s cubic-bezier(.2,.8,.2,1),background .25s,color .25s,box-shadow .25s}
+  .btn.primary{background:var(--red);color:var(--bone);box-shadow:5px 5px 0 var(--ink)}
+  .btn.primary:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+  .btn.ghost{background:var(--bone);color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--bone);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--blue)}
+  .btn .ar{transition:transform .35s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .herofoot{margin-top:3rem;display:flex;align-items:center;gap:1rem;max-width:32rem}
+  .herofoot .rule{flex:1;height:2px;background:var(--ink)}
+  .avail{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+  .avail .dot{width:9px;height:9px;border-radius:50%;background:var(--red);animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(230,51,41,.5)}70%{box-shadow:0 0 0 8px rgba(230,51,41,0)}100%{box-shadow:0 0 0 0 rgba(230,51,41,0)}}
+  @media(prefers-reduced-motion:reduce){.avail .dot{animation:none}}
+  .scrollcue{position:absolute;bottom:1.6rem;left:var(--m);font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--mut);display:flex;align-items:center;gap:.6rem}
+  .scrollcue .bar{width:2px;height:38px;background:var(--ink);display:block;animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+  @media(prefers-reduced-motion:reduce){.scrollcue .bar{animation:none}}
+  @media(max-width:600px){
+    header.hero{padding-top:6rem;padding-bottom:2.5rem;justify-content:flex-end}
+    .hero h1{font-size:clamp(3.5rem,17vw,5.6rem);line-height:.88;max-width:9ch}
+    .hero .sub{margin-top:1.5rem;font-size:1.02rem;max-width:36ch}
+    .herofoot{margin-top:2rem}
+    .scrollcue{display:none}
+  }
+  /* ---- marquee statement ---- */
+  .marquee{position:relative;z-index:2;background:var(--ink);color:var(--bone);overflow:hidden;
+    border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:0}
+  .mqtrack{display:flex;gap:0;width:max-content;will-change:transform;padding:1.05rem 0}
+  .mqtrack span{font-family:var(--disp);font-weight:700;font-size:clamp(1.3rem,3vw,2.2rem);letter-spacing:.01em;
+    text-transform:uppercase;white-space:nowrap;padding:0 1.6rem;display:inline-flex;align-items:center;gap:1.6rem}
+  .mqtrack span .o{width:.5em;height:.5em;border-radius:50%;background:var(--yellow);flex:none;display:inline-block}
+  .mqtrack span:nth-child(2n) .o{background:var(--red)}
+  .mqtrack span:nth-child(3n) .o{background:var(--blue)}
+  /* ---- stats ---- */
+  #stats .secnum{margin-bottom:1.4rem}
+  .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-top:3px solid var(--ink);border-left:3px solid var(--ink)}
+  .stat{position:relative;border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);
+    padding:1.6rem 1.4rem 1.5rem;min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;
+    overflow:hidden;grid-column:span 2}
+  .stat.red{background:var(--red);color:var(--bone)} .stat.blue{background:var(--blue);color:var(--bone)}
+  .stat.yellow{background:var(--yellow);color:var(--ink)}
+  .stat .n{font-family:var(--disp);font-weight:700;font-size:clamp(2.6rem,5.5vw,4.6rem);line-height:.85;letter-spacing:-.03em}
+  .stat .l{margin-top:.7rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;max-width:16ch;line-height:1.4}
+  /* decorative motif in each stat corner */
+  .stat .deco{position:absolute;top:-10px;right:-10px;width:64px;height:64px;opacity:.9;pointer-events:none}
+  .stat.red .deco{border-radius:50%;border:8px solid rgba(244,241,232,.32)}
+  .stat.blue .deco{background:rgba(244,241,232,.22);transform:rotate(45deg)}
+  .stat.yellow .deco{width:0;height:0;border-left:32px solid transparent;border-right:32px solid transparent;border-bottom:54px solid rgba(20,20,20,.18);top:-4px;right:4px}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.stat{grid-column:span 1;min-height:160px}}
+  @media(max-width:400px){.stats{grid-template-columns:1fr}.stat{grid-column:span 1}}
+  /* ---- pillars (what I do) ---- */
+  .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:3px solid var(--ink);border-left:3px solid var(--ink)}
+  .pillar{position:relative;border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:2.4rem 2rem 2.6rem;
+    background:var(--bone);overflow:hidden;transition:background .3s,color .3s}
+  .pillar .pi{font-family:var(--mono);font-size:.9rem;font-weight:700;letter-spacing:.1em;color:var(--mut);transition:color .3s}
+  .pillar .pmark{margin:1.2rem 0 1.4rem;width:46px;height:46px;display:block}
+  .pillar .pmark.circle{border-radius:50%;background:var(--red)}
+  .pillar .pmark.bar{height:18px;width:64px;margin-top:1.6rem;background:var(--blue)}
+  .pillar .pmark.triangle{width:0;height:0;border-left:26px solid transparent;border-right:26px solid transparent;border-bottom:46px solid var(--yellow)}
+  .pillar .pmark.square{background:var(--ink);transform:rotate(0)}
+  .pillar h3{font-family:var(--disp);font-weight:600;font-size:clamp(1.3rem,2.4vw,1.7rem);text-transform:uppercase;letter-spacing:-.01em;line-height:1;margin-bottom:.8rem}
+  .pillar p{color:var(--read);font-size:.97rem;line-height:1.65;max-width:40ch}
+  .pillar:hover{background:var(--ink);color:var(--bone)}
+  .pillar:hover .pi{color:var(--yellow)}
+  .pillar:hover p{color:#d6d2c6}
+  .pillar:hover .pmark.square{background:var(--bone)}
+  .pillar:hover .pmark{transform:translateX(4px) rotate(8deg);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+  @media(max-width:760px){.pillars{grid-template-columns:1fr}}
+  /* ---- selected work : colour-blocked geometric plates ---- */
+  .work{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(.9rem,1.6vw,1.4rem)}
+  .plate{position:relative;border:3px solid var(--ink);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;
+    min-height:300px;padding:1.6rem;isolation:isolate;background:var(--bone);
+    box-shadow:6px 6px 0 var(--ink);
+    transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+  .plate:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--ink)}
+  .plate.feat{grid-column:span 12;min-height:360px}
+  .plate.c2{grid-column:span 6} .plate.c3{grid-column:span 6}
+  .plate.c4{grid-column:span 4} .plate.c5{grid-column:span 4} .plate.c6{grid-column:span 4}
+  /* lower-row tiles get more generous internal padding to match the larger top tiles */
+  .plate.c4,.plate.c5,.plate.c6{padding:2rem 1.9rem 2.1rem}
+  /* colour fields */
+  .plate.red{background:var(--red);color:var(--bone)} .plate.blue{background:var(--blue);color:var(--bone)}
+  .plate.yellow{background:var(--yellow);color:var(--ink)} .plate.black{background:var(--ink);color:var(--bone)}
+  /* geometric motif layer per plate */
+  .plate .motif{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .plate .motif b{position:absolute;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+  /* circle (LambdaTest) - the rolling circle */
+  .motif.circle b{width:300px;height:300px;border-radius:50%;border:34px solid rgba(244,241,232,.22);top:-90px;right:-60px}
+  .plate:hover .motif.circle b{transform:translateX(-28px) rotate(40deg)}
+  /* split (TestMu rebrand) - two halves */
+  .motif.split b.h1{width:55%;height:200%;background:rgba(244,241,232,.16);top:-40%;left:-8%;transform:rotate(18deg)}
+  .motif.split b.h2{width:120px;height:120px;border-radius:50%;background:var(--yellow);bottom:-30px;right:-24px}
+  .plate:hover .motif.split b.h2{transform:scale(1.25)}
+  /* arc (Samsung) - concentric quarter arcs */
+  .motif.arc b{border:18px solid rgba(20,20,20,.18);border-radius:50%}
+  .motif.arc b.a1{width:160px;height:160px;bottom:-80px;right:-80px}
+  .motif.arc b.a2{width:300px;height:300px;bottom:-150px;right:-150px;border-color:rgba(20,20,20,.12)}
+  .plate:hover .motif.arc b{transform:scale(1.12)}
+  /* cross (Medilife) - plus mark */
+  .motif.cross b.v{width:34px;height:140px;background:rgba(244,241,232,.2);top:24px;right:42px}
+  .motif.cross b.hb{width:140px;height:34px;background:rgba(244,241,232,.2);top:77px;right:-11px}
+  .plate:hover .motif.cross b{transform:rotate(45deg)}
+  /* triangle (Lido) */
+  .motif.triangle b{width:0;height:0;border-left:90px solid transparent;border-right:90px solid transparent;border-bottom:160px solid rgba(244,241,232,.18);top:-30px;right:0}
+  .plate:hover .motif.triangle b{transform:rotate(-12deg) translateY(8px)}
+  /* bars (Appknox) */
+  .motif.bars b{height:16px;background:rgba(244,241,232,.2);right:-10px}
+  .motif.bars b.b1{width:140px;top:30px} .motif.bars b.b2{width:100px;top:62px;background:var(--yellow);opacity:.85} .motif.bars b.b3{width:170px;top:94px}
+  .plate:hover .motif.bars b{transform:translateX(-14px)}
+  .plate .pcontent{position:relative;z-index:2;display:flex;flex-direction:column}
+  .plate.feat .pcontent{max-width:64%}
+  .plate .pidx{font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.1em;margin-bottom:auto}
+  .plate .presult{font-family:var(--disp);font-weight:700;font-size:clamp(1.5rem,2.8vw,2.3rem);line-height:1;letter-spacing:-.02em;
+    text-transform:uppercase;margin-top:1.4rem;display:inline-flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+  .plate.feat .presult{font-size:clamp(2rem,4.2vw,3.4rem)}
+  .plate .presult .ar{font-size:.6em;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s}
+  .plate:hover .presult .ar{opacity:1;transform:translateX(0)}
+  .plate .pmeta{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;margin-top:.9rem;
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;text-transform:uppercase}
+  .plate .pmeta .nm{font-weight:700}
+  .plate .pmeta .role{position:relative;padding-left:.9rem;opacity:1}
+  .plate .pmeta .role::before{content:"";position:absolute;left:0;top:.5em;width:.45rem;height:2px;background:currentColor;opacity:.6}
+  .plate .pnote{margin-top:1rem;max-width:44ch;font-family:var(--sans);font-size:.92rem;line-height:1.55;opacity:1}
+  @media(max-width:880px){
+    .work{grid-template-columns:1fr}
+    .plate,.plate.feat,.plate.c2,.plate.c3,.plate.c4,.plate.c5,.plate.c6{grid-column:span 1;min-height:260px}
+    .plate.feat .pcontent{max-width:100%}
+  }
+  @media(max-width:560px){.plate,.plate.feat{min-height:230px;padding:1.3rem}.plate .presult,.plate.feat .presult{font-size:clamp(1.5rem,8vw,2.2rem)}}
+  /* ---- recognition + brands ---- */
+  .recog{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,4rem);align-items:start}
+  .recol .clabel{font-family:var(--mono);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);
+    border-bottom:2px solid var(--ink);padding-bottom:.9rem;margin-bottom:.4rem}
+  .award{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.1rem;padding:1.1rem 0;border-bottom:2px solid var(--ink)}
+  .award .am{width:18px;height:18px;flex:none}
+  .award:nth-child(2) .am{border-radius:50%;background:var(--red)}
+  .award:nth-child(3) .am{background:var(--blue);transform:rotate(45deg)}
+  .award:nth-child(4) .am{width:0;height:0;background:none;border-left:11px solid transparent;border-right:11px solid transparent;border-bottom:18px solid var(--yellow)}
+  .award b{font-family:var(--disp);font-weight:600;font-size:clamp(1.15rem,2.2vw,1.6rem);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1}
+  .award span{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);white-space:nowrap;justify-self:end}
+  .brands{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--ink)}
+  .brands span{font-family:var(--disp);font-weight:500;font-size:1.15rem;text-transform:uppercase;letter-spacing:.01em;
+    padding:1.05rem .4rem;border-bottom:2px solid var(--ink);display:flex;align-items:center;gap:.7rem;transition:color .25s,background .25s}
+  .brands span::before{content:"";width:10px;height:10px;background:var(--ink);flex:none}
+  .brands span:nth-child(3n)::before{border-radius:50%;background:var(--red)}
+  .brands span:nth-child(3n+1)::before{background:var(--blue)}
+  .brands span:nth-child(2n)::before{transform:rotate(45deg)}
+  .brands span:nth-child(odd){border-right:2px solid var(--ink);padding-left:.4rem}
+  .brands span:nth-child(even){padding-left:1.2rem}
+  .brands span:hover{background:var(--yellow)}
+  @media(max-width:760px){.recog{grid-template-columns:1fr;gap:2.4rem}}
+  /* ---- about ---- */
+  .about .abody{display:grid;grid-template-columns:260px 230px 1fr;gap:clamp(1.6rem,3vw,3rem);align-items:stretch}
+  /* photo-montage : a true Bauhaus photo-montage - the transparent portrait cut-out
+     stands IN FRONT OF a big primary-colour geometric block (blue circle), so the dark
+     suit contrasts crisply on the colour. No frame, no background masking - the cut-out
+     is alpha-clean. A soft backlight halo lifts the near-black suit off the bone field. */
+  .about .photoframe{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;
+    min-height:380px;overflow:visible}
+  /* big blue circle the figure stands over - the colour stage */
+  .about .photoframe .block{position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+    width:min(96%,300px);aspect-ratio:1/1;border-radius:50%;background:var(--blue);
+    border:3px solid var(--ink);z-index:0}
+  /* soft radial backlight / halo behind the figure so the near-black suit reads as a lit
+     silhouette rather than a floating head */
+  .about .photoframe .halo{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);
+    width:78%;height:88%;z-index:1;pointer-events:none;border-radius:50% 50% 46% 46%;
+    background:radial-gradient(58% 60% at 50% 42%,rgba(255,250,235,.9) 0%,rgba(255,250,235,.5) 38%,rgba(255,250,235,0) 70%)}
+  .about .photoframe .disc{position:absolute;left:-10px;bottom:-14px;width:66px;height:66px;border-radius:50%;
+    background:var(--red);border:3px solid var(--ink);z-index:4}
+  .about .photoframe .bartop{position:absolute;right:-10px;top:-8px;width:88px;height:18px;background:var(--yellow);
+    border:3px solid var(--ink);z-index:4}
+  .about .photoframe figure{position:relative;z-index:3;margin:0;width:100%;height:100%;
+    display:flex;align-items:flex-end;justify-content:center;
+    transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+  .about .photoframe figure:hover{transform:translateY(-4px)}
+  .about .photoframe img{display:block;width:auto;max-width:100%;height:auto;max-height:440px;aspect-ratio:1023/1536;
+    object-fit:contain;object-position:bottom center;
+    /* rim/edge light + a grounding drop shadow to seat the figure on the colour stage */
+    filter:drop-shadow(2px -1px 0 rgba(255,250,235,.55)) drop-shadow(0 14px 22px rgba(20,20,20,.32));
+    transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+  .about .photoframe figure:hover img{transform:scale(1.025)}
+  .about .photoframe figcaption{position:absolute;left:0;bottom:0;z-index:4;
+    font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bone);
+    background:var(--ink);padding:.35rem .55rem;display:flex;align-items:center;gap:.5rem}
+  .about .photoframe figcaption .o{width:8px;height:8px;border-radius:50%;background:var(--yellow);flex:none;align-self:center}
+  .about .rail{display:flex;flex-direction:column;gap:.45rem;border-left:3px solid var(--ink);padding-left:1.6rem}
+  .about .rail .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+  .about .rail .v{font-family:var(--disp);font-weight:600;font-size:1.2rem;text-transform:uppercase}
+  .about .rail .div{height:3px;width:40px;background:var(--red);margin:.9rem 0}
+  .about .rail .sig{font-family:var(--disp);font-weight:700;font-size:1.5rem;color:var(--blue);text-transform:uppercase;letter-spacing:-.01em}
+  .about .plate2{position:relative;border:3px solid var(--ink);background:var(--yellow);color:var(--ink);
+    padding:clamp(1.8rem,3vw,3rem);overflow:hidden;display:flex;align-items:center;min-height:100%;box-shadow:6px 6px 0 var(--ink)}
+  .about .plate2 .bg{position:absolute;width:240px;height:240px;border-radius:50%;border:30px solid rgba(20,20,20,.1);top:-90px;right:-70px;pointer-events:none}
+  .about p{position:relative;z-index:1;font-family:var(--disp);font-weight:500;font-size:clamp(1.4rem,2.9vw,2.1rem);line-height:1.32;letter-spacing:-.01em;max-width:24ch}
+  .about p em{font-style:normal;color:var(--red)}
+  @media(max-width:980px){.about .abody{grid-template-columns:300px 1fr;grid-template-areas:"photo body" "rail body"}
+    .about .photoframe{grid-area:photo}.about .plate2{grid-area:body}
+    .about .rail{grid-area:rail;border-left:0;border-top:3px solid var(--ink);padding-left:0;padding-top:1.4rem}}
+  @media(max-width:760px){.about .abody{grid-template-columns:1fr;grid-template-areas:"photo" "body" "rail";gap:1.6rem}
+    .about .photoframe{min-height:340px;max-width:340px;margin:0 auto;width:100%}
+    .about .photoframe img{max-height:380px}
+    .about .rail{flex-direction:row;flex-wrap:wrap;align-items:center;gap:.8rem 1.4rem;border-left:0;padding-left:0;border-top:3px solid var(--ink);padding-top:1.4rem}
+    .about .rail .div{display:none}.about .rail .sig{flex-basis:100%}}
+  /* ---- contact ---- */
+  .contact{text-align:center;padding-bottom:6rem}
+  .contact .lead{font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:1.6rem}
+  .contact .big{font-family:var(--disp);font-weight:700;font-size:clamp(2.6rem,9vw,7.5rem);line-height:.9;letter-spacing:-.03em;text-transform:uppercase}
+  .contact .big a{position:relative;color:var(--ink)}
+  .contact .big a .o{display:inline-block;width:.5em;height:.5em;border-radius:50%;background:var(--red);vertical-align:.02em;margin-left:.1em}
+  .contact .big a::after{content:"";position:absolute;left:0;bottom:.02em;width:100%;height:6px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .contact .big a:hover::after{transform:scaleX(1)}
+  .contact .em{margin-top:2.4rem;font-family:var(--mono);font-size:.82rem;letter-spacing:.04em;color:var(--read)}
+  .contact .em a{border-bottom:2px solid var(--ink);padding-bottom:2px}
+  .contact .em a:hover{color:var(--blue);border-color:var(--blue)}
+  footer{border-top:3px solid var(--ink);padding:2rem var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--read);position:relative;z-index:2;background:var(--bone)}
+  footer a{color:var(--blue)}
+  footer a:hover{text-decoration:underline}
+  /* reveal pattern - every .reveal MUST end opacity:1 */
+  .reveal{opacity:0;transform:translateY(26px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+  /* scroll progress bar - tricolor */
+  .progress{position:fixed;top:0;left:0;height:4px;width:100%;transform:scaleX(0);transform-origin:left;z-index:40;
+    background:linear-gradient(90deg,var(--red) 0 33%,var(--blue) 33% 66%,var(--yellow) 66% 100%)}
+  /* a signature shape that rolls along the page as you scroll */
+  .roller{position:fixed;bottom:1.4rem;right:1.4rem;width:42px;height:42px;border-radius:50%;background:var(--red);
+    border:2px solid var(--ink);z-index:25;pointer-events:none;display:grid;place-items:center;will-change:transform}
+  .roller::before{content:"";width:2px;height:14px;background:var(--ink)}
+  @media(hover:none),(pointer:coarse){.roller{display:none}}
+  @media(prefers-reduced-motion:reduce){.roller{display:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<canvas id="gl"></canvas>
+<div class="css-shapes" id="cssShapes" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i></div>
+<div class="scrim"></div>
+<div class="grain"></div>
+<div class="roller" id="roller" aria-hidden="true"></div>
+
+<nav>
+  <a class="logo" href="/redesign/"><img class="av" src="/assets/avatar-crop.webp" alt="Swapnil Biswas" width="30" height="30" loading="eager" decoding="async" />Swapnil Biswas</a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#services" class="hidexs">What I do</a>
+    <a href="#about" class="hidexs">About</a>
+    <a href="#contact">Contact</a>
+    <a href="/redesign/" class="allc">All concepts</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="tag"><span class="sq"></span> Senior Product Marketing Manager - LambdaTest</span>
+    <h1>
+      <span class="ln"><span>I build the</span></span>
+      <span class="ln"><span><span class="red">machine</span><span class="ring"></span></span></span>
+      <span class="ln"><span>not just the <span class="blue">deck.</span></span></span>
+    </h1>
+    <p class="sub">Swapnil Biswas - a product marketer who codes. I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b>, not just the slides that describe them.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See selected work <span class="ar">&#8599;</span></a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+    <div class="herofoot">
+      <span class="avail"><span class="dot"></span> Open to select work</span>
+      <span class="rule"></span>
+    </div>
+    <div class="scrollcue"><span class="bar"></span> Scroll</div>
+  </header>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="mqtrack" id="mqtrack">
+    <span><span class="o"></span> Positioning</span><span><span class="o"></span> Launches</span><span><span class="o"></span> Technical SEO</span><span><span class="o"></span> AI Agents</span><span><span class="o"></span> Demand Gen</span><span><span class="o"></span> Sites Shipped</span><span><span class="o"></span> Battlecards</span><span><span class="o"></span> AEO</span>
+    <span><span class="o"></span> Positioning</span><span><span class="o"></span> Launches</span><span><span class="o"></span> Technical SEO</span><span><span class="o"></span> AI Agents</span><span><span class="o"></span> Demand Gen</span><span><span class="o"></span> Sites Shipped</span><span><span class="o"></span> Battlecards</span><span><span class="o"></span> AEO</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="stats">
+    <div class="secnum reveal">02</div>
+    <div class="shead reveal"><div class="ht"><h2>By the numbers</h2></div><div class="label">Outcomes, not adjectives</div></div>
+    <div class="stats">
+      {stats.map(s => (
+        <div class={`stat reveal ${s.c}`}><span class="deco" aria-hidden="true"></span><div class="n">{s.n}</div><div class="l">{s.l}</div></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="secnum reveal">03</div>
+    <div class="shead reveal"><div class="ht"><h2>What I do</h2></div><div class="label">Four disciplines, one operator</div></div>
+    <div class="pillars">
+      {pillars.map(p => (
+        <div class="pillar reveal">
+          <div class="pi">{p.i}</div>
+          <span class={`pmark ${p.shape}`} aria-hidden="true"></span>
+          <h3>{p.t}</h3>
+          <p>{p.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="secnum reveal">04</div>
+    <div class="shead reveal"><div class="ht"><h2>Selected work</h2></div><div class="label">2019 - 2026</div></div>
+    <div class="work">
+      {work.map((w, idx) => (
+        <a class={`plate reveal ${w.c} ${idx === 0 ? 'feat' : 'c' + (idx + 1)}`} href="#">
+          <span class="motif" aria-hidden="true">
+            <span class={`motif ${w.motif}`} style="position:absolute;inset:0">
+              {w.motif === 'circle' && <b></b>}
+              {w.motif === 'split' && (<><b class="h1"></b><b class="h2"></b></>)}
+              {w.motif === 'arc' && (<><b class="a1"></b><b class="a2"></b></>)}
+              {w.motif === 'cross' && (<><b class="v"></b><b class="hb"></b></>)}
+              {w.motif === 'triangle' && <b></b>}
+              {w.motif === 'bars' && (<><b class="b1"></b><b class="b2"></b><b class="b3"></b></>)}
+            </span>
+          </span>
+          <span class="pcontent">
+            <span class="pidx">{w.i} / 06</span>
+            <span class="presult">{w.r}<span class="ar">&#8599;</span></span>
+            <span class="pmeta"><span class="nm">{w.t}</span><span class="role">{w.role}{w.y ? ` · ${w.y}` : ''}</span></span>
+            {idx === 0 && <span class="pnote">{w.note}</span>}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="recognition">
+    <div class="secnum reveal">05</div>
+    <div class="shead reveal"><div class="ht"><h2>Recognition &amp; brands</h2></div><div class="label">Selected honors</div></div>
+    <div class="recog">
+      <div class="recol reveal">
+        <div class="clabel">Honors &amp; awards</div>
+        <div class="award"><span class="am" aria-hidden="true"></span><b>Value of Agility Award</b><span>LambdaTest &middot; 2024</span></div>
+        <div class="award"><span class="am" aria-hidden="true"></span><b>Wall of Fame</b><span>LambdaTest</span></div>
+        <div class="award"><span class="am" aria-hidden="true"></span><b>#1 Product of the Day</b><span>Product Hunt</span></div>
+      </div>
+      <div class="recol reveal">
+        <div class="clabel">Trusted by teams at</div>
+        <div class="brands">
+          {brands.map(b => <span>{b}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="secnum reveal">06</div>
+    <div class="shead reveal"><div class="ht"><h2>About</h2></div><div class="label">The operator behind the work</div></div>
+    <div class="abody">
+      <div class="photoframe reveal">
+        <span class="block" aria-hidden="true"></span>
+        <span class="halo" aria-hidden="true"></span>
+        <span class="bartop" aria-hidden="true"></span>
+        <figure>
+          <img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" width="1023" height="1536" loading="lazy" decoding="async" />
+          <figcaption><span class="o"></span>Swapnil Biswas</figcaption>
+        </figure>
+        <span class="disc" aria-hidden="true"></span>
+      </div>
+      <div class="rail reveal">
+        <div class="k">Based in</div>
+        <div class="v">Mumbai, India</div>
+        <div class="k" style="margin-top:.6rem">Experience</div>
+        <div class="v">7+ years &middot; 4+ B2B SaaS</div>
+        <div class="div"></div>
+        <div class="sig">Swapnil B.</div>
+      </div>
+      <div class="plate2 reveal">
+        <span class="bg" aria-hidden="true"></span>
+        <p>Seven years in marketing, four in B2B SaaS. A postgrad in growth strategy at <em>IIM Visakhapatnam</em>. I treat my own career like a product - positioned, measured and shipped.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="lead reveal">Let's build something that compounds</div>
+    <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello<span class="o"></span></a></div>
+    <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+  </section>
+</div>
+
+<footer>
+  <span>&copy; 2026 Swapnil Biswas</span>
+  <span>Concept 13 - Bauhaus &middot; <a href="/redesign/">View all concepts</a></span>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  // ---- WebGL constructivist composition ----
+  // Hard-edged primary-colour geometric shapes (circles, bars, triangles) slowly
+  // rotating / translating / intersecting in a balanced kinetic dance behind the hero.
+  // Mobile WebGL is unreliable, so there we fall back to the animated CSS shapes.
+  (function(){
+    const cv = document.getElementById('gl');
+    const css = document.getElementById('cssShapes');
+    if(isMobile){
+      if(cv) cv.style.display = 'none';
+      if(css) css.style.display = 'block';
+      return;
+    }
+    const gl = cv.getContext('webgl', { antialias:true, alpha:false });
+    if(!gl){
+      if(css) css.style.display = 'block';
+      if(cv) cv.style.display = 'none';
+      return;
+    }
+    const vs = `attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+    const fs = `precision highp float;uniform vec2 r;uniform float t;uniform vec2 mo;
+    // primaries
+    vec3 BONE=vec3(.957,.945,.910);vec3 RED=vec3(.902,.200,.161);
+    vec3 BLUE=vec3(.141,.251,.847);vec3 YEL=vec3(.965,.780,0.0);vec3 INK=vec3(.078,.078,.078);
+    mat2 rot(float a){float s=sin(a),c=cos(a);return mat2(c,-s,s,c);}
+    // hard-edged anti-aliased fill helpers (1 inside, 0 outside)
+    float circle(vec2 uv,vec2 c,float rad){float d=length(uv-c);return smoothstep(rad+.004,rad-.004,d);}
+    float ring(vec2 uv,vec2 c,float rad,float w){float d=length(uv-c);return smoothstep(.004,0.,abs(d-rad)-w);}
+    float box(vec2 uv,vec2 c,vec2 hs,float a){vec2 q=abs(rot(a)*(uv-c))-hs;float d=max(q.x,q.y);return smoothstep(.004,-.004,d);}
+    float tri(vec2 uv,vec2 c,float s,float a){uv=rot(a)*(uv-c);uv.y+=s*.25;
+      float d=max(abs(uv.x)*.866+uv.y*.5,-uv.y);return smoothstep(.004,-.004,d-s*.5);}
+    void main(){
+      vec2 uv=gl_FragCoord.xy/r.xy;uv-=.5;uv.x*=r.x/r.y;
+      // slow parallax toward the mouse so the whole composition drifts subtly
+      vec2 par=(mo-.5)*.06;
+      vec3 col=BONE;
+      // BIG static blue circle upper-right (anchor) - pushed further right/up so it
+      // clears the left-aligned wordmark glyphs (incl. the 'O' region of MACHINE)
+      col=mix(col,BLUE,circle(uv,vec2(.56,.34)+par,.20));
+      // rolling red circle - translates left to right and back, low-left
+      float rollx=-0.46+0.30*sin(t*.18);
+      col=mix(col,RED,circle(uv,vec2(rollx,-.26)+par*.6,.12));
+      // sliding yellow bar that travels horizontally across mid-height
+      float barx=-0.10+0.18*sin(t*.13+1.0);
+      col=mix(col,YEL,box(uv,vec2(barx,.02)+par,vec2(.26,.028),0.0));
+      // rotating ink triangle
+      col=mix(col,INK,tri(uv,vec2(.20,-.18)+par,.16,t*.10));
+      // slowly rotating ink keyline bar (thin) crossing the field
+      col=mix(col,INK,box(uv,vec2(0.0,0.0),vec2(.62,.006),0.45+sin(t*.05)*.12));
+      // a hollow yellow ring orbiting slowly - lifted up and out to the upper-left
+      // margin so its orbit never collides with the wordmark glyphs
+      vec2 orb=vec2(cos(t*.16),sin(t*.16))*.30;
+      col=mix(col,YEL,ring(uv,vec2(-.42,.36)+orb*.32+par,.085,.018));
+      // small blue square pulsing scale, lower-right
+      float sc=.05+.012*sin(t*.4);
+      col=mix(col,BLUE,box(uv,vec2(.40,-.30)+par,vec2(sc),t*.2));
+      // thin red diagonal keyline
+      col=mix(col,RED,box(uv,vec2(-.12,-.05),vec2(.7,.0035),-0.55));
+      gl_FragColor=vec4(col,1.0);
+    }`;
+    function sh(ty,s){const o=gl.createShader(ty);gl.shaderSource(o,s);gl.compileShader(o);return o;}
+    const pr=gl.createProgram();
+    gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));
+    gl.linkProgram(pr);gl.useProgram(pr);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t'),um=gl.getUniformLocation(pr,'mo');
+    let mx=.5,my=.5;
+    function size(){const d=Math.min(window.devicePixelRatio||1,1.6);cv.width=innerWidth*d;cv.height=innerHeight*d;gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(ur,cv.width,cv.height);}
+    size();addEventListener('resize',size);
+    addEventListener('mousemove',(e)=>{mx=e.clientX/innerWidth;my=1-e.clientY/innerHeight;});
+    if(reduce){gl.uniform1f(ut,2.0);gl.uniform2f(um,.5,.5);gl.drawArrays(gl.TRIANGLES,0,3);return;}
+    const start=performance.now();let tmx=.5,tmy=.5;
+    (function loop(now){
+      tmx+=(mx-tmx)*.05;tmy+=(my-tmy)*.05;
+      gl.uniform1f(ut,(now-start)/1000);gl.uniform2f(um,tmx,tmy);
+      gl.drawArrays(gl.TRIANGLES,0,3);requestAnimationFrame(loop);
+    })(start);
+  })();
+
+  // ---- smooth scroll + reveals ----
+  if(!reduce){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    function raf(time){lenis.raf(time);requestAnimationFrame(raf);}requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll',ScrollTrigger.update);
+
+    // hero entrance
+    gsap.set('.hero h1 .ln>span',{yPercent:115});
+    gsap.set('.hero .tag,.hero .sub,.hero .cta,.hero .herofoot',{opacity:0,y:22});
+    const tl=gsap.timeline({delay:.15});
+    tl.to('.hero h1 .ln>span',{yPercent:0,duration:1.05,ease:'expo.out',stagger:.1})
+      .to('.hero .tag',{opacity:1,y:0,duration:.6},.15)
+      .to('.hero .sub',{opacity:1,y:0,duration:.7},.45)
+      .to('.hero .cta',{opacity:1,y:0,duration:.7},.6)
+      .to('.hero .herofoot',{opacity:1,y:0,duration:.7},.72);
+
+    // batched scroll reveals - every .reveal still ends at opacity:1
+    ScrollTrigger.batch('.reveal',{
+      start:'top 90%',
+      onEnter:batch=>gsap.to(batch,{opacity:1,y:0,duration:.9,ease:'expo.out',stagger:.07,overwrite:true}),
+    });
+    ScrollTrigger.refresh();
+
+    // scroll progress
+    gsap.to('#progress',{scaleX:1,ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:.3}});
+
+    // marquee - constant drift, nudged by scroll velocity
+    const track=document.getElementById('mqtrack');
+    if(track){
+      const half=track.scrollWidth/2;
+      let x=0;
+      function mqloop(){x-=0.6;if(-x>=half)x+=half;track.style.transform=`translateX(${x}px)`;requestAnimationFrame(mqloop);}
+      mqloop();
+    }
+
+    // signature: a circle that rolls (rotates) as you scroll the page
+    const roller=document.getElementById('roller');
+    if(roller){
+      gsap.to(roller,{rotation:1080,ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:.4}});
+    }
+
+    // signature: the sliding-bar parallax - stat decos drift slightly with scroll
+    gsap.utils.toArray('.stat .deco').forEach((d,i)=>{
+      gsap.to(d,{y:(i%2?-1:1)*18,ease:'none',scrollTrigger:{trigger:d,start:'top bottom',end:'bottom top',scrub:.6}});
+    });
+
+    // photo-plate accents drift on scroll (constructivist motion below the fold)
+    gsap.to('.about .photoframe .disc',{y:-26,ease:'none',scrollTrigger:{trigger:'.about .photoframe',start:'top bottom',end:'bottom top',scrub:.6}});
+    gsap.to('.about .photoframe .bartop',{y:22,x:8,ease:'none',scrollTrigger:{trigger:'.about .photoframe',start:'top bottom',end:'bottom top',scrub:.6}});
+
+    // magnetic primary CTA
+    document.querySelectorAll('.btn.primary').forEach(btn=>{
+      btn.addEventListener('mousemove',(e)=>{const rc=btn.getBoundingClientRect();gsap.to(btn,{x:(e.clientX-rc.left-rc.width/2)*.3,y:(e.clientY-rc.top-rc.height/2)*.4,duration:.4,ease:'power3.out'});});
+      btn.addEventListener('mouseleave',()=>gsap.to(btn,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'}));
+    });
+  }
+</script>
+</body>
+</html>

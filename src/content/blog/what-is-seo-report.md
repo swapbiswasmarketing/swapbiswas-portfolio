@@ -89,7 +89,7 @@ A higher-level view that aggregates three months of data to show trends. Focuses
 
 ### Technical SEO Audit Report
 
-A deep-dive into your site's technical health - crawlability, indexation, site speed, structured data, and internal linking. This isn't a recurring report; it's triggered by specific needs (site launch, redesign, performance drop).
+A deep-dive into your site's technical health - crawlability, indexation, site speed, structured data, and internal linking. This isn't a recurring report; it's triggered by specific needs (site launch, redesign, performance drop). Running through an [SEO audit checklist](/blog/seo-audit-checklist/) first gives you the raw findings this report section is built from.
 
 **Best for:** Development teams, migration planning, troubleshooting ranking drops. See our full [technical SEO audit guide](/blog/how-to-conduct-a-technical-seo-site-audit/) for the complete checklist.
 

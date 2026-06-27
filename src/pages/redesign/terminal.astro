@@ -114,9 +114,18 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .ascii{font-size:.7rem;letter-spacing:0;white-space:nowrap;overflow:hidden;display:block;
     color:rgba(55,245,181,.28);user-select:none}
   /* hero */
-  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:6rem;padding-bottom:3rem}
-  .boot{font-size:clamp(.78rem,1.6vw,.9rem);color:var(--green2);margin-bottom:2rem;min-height:7.5em;line-height:1.7}
-  .boot .row{display:block;white-space:pre-wrap;color:rgba(124,255,176,.92)}
+  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:6rem;padding-bottom:3rem;position:relative}
+  /* DYNAMIC-WASHOUT SCRIM: the WebGL waveform is fixed at opacity 1 and its bright
+     phosphor trace + amber peaks ride through mid/lower viewport - exactly behind the
+     boot text, sub-paragraph, CTA and HUD. This scrim sits ABOVE the canvas (z0/1) and
+     BELOW the hero text (content z2), darkening the worst case while still letting the
+     signal bleed visibly around the edges so the aesthetic is preserved. */
+  header.hero::before{content:"";position:absolute;left:calc(-1 * var(--m));right:calc(-1 * var(--m));top:0;bottom:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(120% 78% at 30% 56%,rgba(5,7,12,.86),rgba(5,7,12,.58) 46%,rgba(5,7,12,.2) 72%,transparent 88%),
+      linear-gradient(180deg,rgba(5,7,12,.55) 0%,rgba(5,7,12,.28) 30%,rgba(5,7,12,.34) 70%,rgba(5,7,12,.6) 100%)}
+  .boot{font-size:clamp(.78rem,1.6vw,.9rem);color:var(--green2);margin-bottom:2rem;min-height:7.5em;line-height:1.7;position:relative}
+  .boot .row{display:block;white-space:pre-wrap;color:rgba(124,255,176,.92);text-shadow:0 1px 5px rgba(5,7,12,.95),0 0 2px rgba(5,7,12,.9)}
   .boot .row:last-of-type{color:var(--green2)}
   .boot .row .tag{color:var(--amber);font-weight:600}
   .boot .row .tag.live{color:#05080f;background:var(--green);padding:0 .4em;border-radius:2px;box-shadow:var(--glow)}
@@ -125,14 +134,22 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .cur{animation:blink 1s steps(1) infinite}
   /* HEADLINE: Space Grotesk heavy, committed system, tight tracking */
   .hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(3.2rem,8.5vw,7rem);line-height:.92;letter-spacing:-.035em;max-width:14ch;color:var(--ink);position:relative}
-  /* dark halo behind the headline so the waveform glow never softens the type edges */
-  .hero h1::before{content:"";position:absolute;left:-6%;right:-6%;top:-14%;bottom:-16%;z-index:-1;pointer-events:none;
-    background:radial-gradient(60% 70% at 35% 50%,rgba(5,7,12,.92),rgba(5,7,12,.7) 55%,transparent 80%);filter:blur(8px)}
+  /* dark halo behind the headline so the waveform glow never softens the type edges -
+     widened to cover the FULL headline (incl. the right-side words) in the worst case
+     where the bright trace rides directly behind the type */
+  .hero h1::before{content:"";position:absolute;left:-8%;right:-8%;top:-16%;bottom:-18%;z-index:-1;pointer-events:none;
+    background:radial-gradient(78% 80% at 42% 50%,rgba(5,7,12,.94),rgba(5,7,12,.8) 52%,rgba(5,7,12,.45) 74%,transparent 90%);filter:blur(10px)}
   .hero h1 em{font-style:normal;color:var(--green);text-shadow:0 0 34px rgba(55,245,181,.45)}
   .hero h1 .ln{display:block;overflow:hidden}
   .hero h1 .ln>span{display:block;will-change:transform}
-  /* body: bright near-white-green for crisp AA, single restrained highlight family */
-  .hero .sub{margin-top:1.9rem;max-width:54ch;font-size:clamp(.98rem,1.35vw,1.1rem);color:#dfeee7;line-height:1.75}
+  /* body: bright near-white-green for crisp AA, single restrained highlight family.
+     position:relative so its own dark backing plate (below) sits above the waveform. */
+  .hero .sub{margin-top:1.9rem;max-width:54ch;font-size:clamp(.98rem,1.35vw,1.1rem);color:#eaf5ef;line-height:1.75;position:relative;text-shadow:0 1px 6px rgba(5,7,12,.85)}
+  /* dedicated dark backing for the sub-paragraph - it sits in the BRIGHTEST waveform
+     band (trace + amber peaks ride here), so the scrim alone is not enough. Soft-edged
+     plate keeps the signal bleeding at the margins while guaranteeing the text wins. */
+  .hero .sub::before{content:"";position:absolute;left:-1.1rem;right:-1.1rem;top:-.7rem;bottom:-.7rem;z-index:-1;pointer-events:none;border-radius:10px;
+    background:radial-gradient(120% 130% at 26% 50%,rgba(5,7,12,.82),rgba(5,7,12,.6) 60%,rgba(5,7,12,.28) 85%,transparent 100%)}
   .hero .sub b{color:var(--green2);font-weight:600}
   .hero .sub .ship{display:block;margin-top:.55rem;color:#eef7f2;font-weight:500}
   .hero .sub .ship em{font-style:normal;color:var(--amber);text-shadow:var(--aglow);font-weight:600}
@@ -146,8 +163,8 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .btn .ar{transition:transform .3s}
   .btn:hover .ar{transform:translate(3px,-3px)}
   /* signal-status HUD aligned to grid - replaces floating pill */
-  .hud{margin-top:2.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;
-    border-top:1px solid var(--line);padding-top:1.1rem;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut2)}
+  .hud{margin-top:2.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;position:relative;
+    border-top:1px solid var(--line);padding-top:1.1rem;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut2);text-shadow:0 1px 5px rgba(5,7,12,.9)}
   .hud .h{display:flex;align-items:center;gap:.5rem}
   .hud .h .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:var(--glow)}
   .hud .h .dot.amber{background:var(--amber);box-shadow:var(--aglow)}

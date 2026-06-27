@@ -131,7 +131,7 @@ Match the two columns. The strongest value proposition is the one where pain rel
 
 ### Step 3: Write the One-Sentence Version
 
-Use this template as a starting point - then break it.
+Use this [template as a starting point](/blog/value-proposition-template/) - then break it.
 
 > For [target customer] who [job to be done], [product name] is the [category] that [unique outcome] - unlike [alternative], we [point of difference].
 

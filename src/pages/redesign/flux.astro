@@ -43,7 +43,7 @@ const awards = [
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg:#fbfbfd; --panel:#ffffff; --ink:#0a0a14; --read:#3a3a4c; --mut:#6b6b7d;
+    --bg:#fbfbfd; --panel:#ffffff; --ink:#0a0a14; --read:#3a3a4c; --mut:#595968;
     --line:rgba(10,10,20,.10); --line2:rgba(10,10,20,.06);
     --indigo:#6366f1; --violet:#a855f7; --cyan:#22d3ee; --pink:#fb7185;
     --glass:rgba(255,255,255,.62); --glassb:rgba(255,255,255,.55);
@@ -98,9 +98,13 @@ const awards = [
     background:var(--grad)}
   nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;
     padding:.85rem var(--m);transition:padding .4s,background .4s,box-shadow .4s,border-color .4s;
-    border-bottom:1px solid transparent}
+    border-bottom:1px solid transparent;
+    /* unscrolled, the bar floats over the live mesh - a faint paper halo on the text
+       keeps the logo + links legible until the frosted .scrolled plate takes over */
+    text-shadow:0 1px 8px rgba(251,251,253,.85)}
   nav.scrolled{background:rgba(251,251,253,.72);backdrop-filter:blur(16px) saturate(160%);
-    -webkit-backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid var(--line2);box-shadow:0 6px 24px -18px rgba(36,30,90,.4)}
+    -webkit-backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid var(--line2);box-shadow:0 6px 24px -18px rgba(36,30,90,.4);
+    text-shadow:none}
   .logo{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--disp);font-size:1.05rem;font-weight:600;letter-spacing:-.02em}
   .logo .mk{width:24px;height:24px;border-radius:8px;background:var(--grad);box-shadow:0 4px 14px -4px rgba(99,102,241,.6);flex:none}
   .logo span{color:var(--mut);font-weight:500}
@@ -131,6 +135,15 @@ const awards = [
   header.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
     padding-top:7rem;padding-bottom:5rem}
   .hero .inner{position:relative;z-index:2}
+  /* full text-column scrim: a soft paper plate above the mesh, below the text, covering
+     badge -> CTA so dark ink + grey sub + clipped word survive the cursor-reactive mesh
+     at its brightest/most-saturated worst case (not just the headline halo). */
+  .hero .inner::before{content:"";position:absolute;z-index:0;pointer-events:none;
+    left:-7%;top:-8%;width:74%;height:118%;
+    background:radial-gradient(64% 60% at 32% 48%,rgba(251,251,253,.86),rgba(251,251,253,.5) 52%,transparent 78%);
+    filter:blur(10px)}
+  .hero .inner>*{position:relative;z-index:1}
+  @media(max-width:760px){.hero .inner::before{left:-12%;width:96%}}
   .badge{display:inline-flex;align-items:center;gap:.6rem;padding:.42rem .9rem .42rem .55rem;border-radius:100px;
     background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
     font-size:.78rem;font-weight:500;color:var(--read);box-shadow:0 4px 18px -12px rgba(36,30,90,.5);margin-bottom:1.8rem}
@@ -152,7 +165,9 @@ const awards = [
     background-size:200% 200%;animation:gradShift 7s ease infinite;
     -webkit-text-stroke:.4px rgba(124,58,237,.18)}
   @media(prefers-reduced-motion:reduce){.hero h1 .grad{animation:none}}
-  .hero .sub{margin-top:1.9rem;max-width:50ch;font-size:clamp(1.05rem,1.5vw,1.28rem);color:var(--read);line-height:1.62}
+  .hero .sub{margin-top:1.9rem;max-width:50ch;font-size:clamp(1.05rem,1.5vw,1.28rem);color:#2c2c3a;line-height:1.62;
+    /* paper halo so the body copy holds when the mesh saturates behind its right edge */
+    text-shadow:0 1px 10px rgba(251,251,253,.9),0 0 2px rgba(251,251,253,.9)}
   .hero .sub b{color:var(--ink);font-weight:600}
   .cta{margin-top:2.4rem;display:flex;gap:.85rem;flex-wrap:wrap;align-items:center}
   .scrollcue{position:absolute;bottom:1.8rem;left:var(--m);z-index:2;font-size:.72rem;letter-spacing:.18em;color:var(--mut);
@@ -175,14 +190,16 @@ const awards = [
   @keyframes scroll{to{transform:translateX(-50%)}}
   @media(prefers-reduced-motion:reduce){.marquee .track{animation:none;justify-content:center;flex-wrap:wrap;width:auto}}
   .marquee:hover .track{animation-play-state:paused}
-  .marquee b{font-family:var(--disp);font-weight:500;font-size:1.35rem;letter-spacing:-.01em;color:var(--mut);opacity:.7;white-space:nowrap;transition:color .3s,opacity .3s}
+  .marquee b{font-family:var(--disp);font-weight:500;font-size:1.35rem;letter-spacing:-.01em;color:var(--mut);opacity:.92;white-space:nowrap;transition:color .3s,opacity .3s}
   .marquee b:hover{color:var(--ink);opacity:1}
 
   /* ---- section frame ---- */
   section{padding:clamp(4.5rem,10vh,8rem) 0;position:relative}
   .shead{margin-bottom:3rem;max-width:42rem}
+  /* deeper indigo so the small uppercase eyebrow clears AA on the light bg (the bright
+     --indigo #6366f1 is ~3.9:1 as small text); the accent reads the same, just legible */
   .eyebrow{display:inline-block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
-    color:var(--indigo);margin-bottom:1rem}
+    color:#4f46e5;margin-bottom:1rem}
   .shead h2{font-family:var(--disp);font-weight:600;font-size:clamp(1.9rem,4.4vw,3.2rem);letter-spacing:-.035em;line-height:1.04}
   .shead h2 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
   .shead p{margin-top:1rem;color:var(--read);font-size:1.05rem;max-width:46ch;line-height:1.6}
@@ -204,7 +221,7 @@ const awards = [
   .statc{display:flex;flex-direction:column;gap:.45rem}
   .statc .n{font-family:var(--disp);font-weight:600;font-size:clamp(2rem,3.4vw,2.9rem);letter-spacing:-.03em;line-height:.95;
     background:linear-gradient(120deg,#fff,#c7c7ff 60%,#9fe9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .statc .l{font-size:.82rem;color:rgba(255,255,255,.62);letter-spacing:.01em;line-height:1.35;max-width:16ch}
+  .statc .l{font-size:.82rem;color:rgba(255,255,255,.74);letter-spacing:.01em;line-height:1.35;max-width:16ch}
   @media(max-width:860px){.statgrid{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:480px){.statgrid{grid-template-columns:repeat(2,1fr);gap:1.6rem 1rem}.statc .n{font-size:clamp(1.8rem,9vw,2.4rem)}}
 
@@ -254,14 +271,16 @@ const awards = [
   .work .rpill .dot{width:7px;height:7px;border-radius:50%;background:var(--grad);flex:none}
   .work .row.feat .rpill{font-size:1.05rem}
   .work .widx{position:absolute;z-index:3;right:1.2rem;top:1.2rem;font-family:var(--disp);font-weight:600;font-size:.82rem;
-    color:rgba(255,255,255,.85);letter-spacing:.06em;text-shadow:0 1px 6px rgba(0,0,0,.25)}
+    color:#fff;letter-spacing:.06em;
+    /* stronger multi-stop shadow so the index/year holds on the bright cyan & pink tiles */
+    text-shadow:0 1px 3px rgba(8,10,40,.55),0 0 10px rgba(8,10,40,.4)}
   /* card footer */
   .work .foot{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:1rem;
-    padding:1.2rem 1.4rem;background:var(--glassb);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);
+    padding:1.2rem 1.4rem;background:rgba(255,255,255,.86);backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%);
     border-top:1px solid var(--line2)}
   .work .foot .nm{font-family:var(--disp);font-weight:600;font-size:1.18rem;letter-spacing:-.02em}
   .work .row.feat .foot .nm{font-size:1.5rem}
-  .work .foot .role{font-size:.82rem;color:var(--mut);margin-top:.18rem}
+  .work .foot .role{font-size:.82rem;color:#55556a;margin-top:.18rem}
   .work .foot .go{width:38px;height:38px;flex:none;border-radius:50%;display:flex;align-items:center;justify-content:center;
     border:1px solid var(--line);background:var(--panel);color:var(--ink);transition:transform .4s,background .4s,color .4s,border-color .4s}
   .work .row:hover .foot .go{background:var(--ink);color:#fff;border-color:var(--ink);transform:rotate(-45deg)}

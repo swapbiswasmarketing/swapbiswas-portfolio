@@ -44,7 +44,7 @@ const marquee = ['Positioning', 'Built not briefed', 'Technical SEO', 'AI agents
     --paper2:#e9e1ca;
     --ink:#16130c;             /* black overprint */
     --soft:#3a352a;            /* readable body on paper, > 4.5:1 */
-    --mut:#6b6451;
+    --mut:#534c3a;             /* small labels/captions - 7.2:1 on paper, survives halftone */
     --pink:#ff48a0;            /* fluoro pink */
     --blue:#2336ff;            /* riso blue */
     --teal:#00b3b3;
@@ -135,9 +135,11 @@ const marquee = ['Positioning', 'Built not briefed', 'Technical SEO', 'AI agents
 
   /* ---- labels ---- */
   .kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);font-weight:700}
-  .plate-label{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.7rem;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
-  .plate-label::before{content:"";width:30px;height:3px;background:var(--pink)}
+  /* mono micro-label: stronger ink + a faint paper chip so it always wins over any overprint shape behind it */
+  .plate-label{position:relative;z-index:3;display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.74rem;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--soft);font-weight:700;
+    background:rgba(242,236,217,.78);padding:.2rem .5rem;margin-left:-.5rem;border-radius:2px}
+  .plate-label::before{content:"";width:26px;height:3px;background:var(--pink);flex:none}
 
   /* ---- HERO: poster / zine plate ---- */
   header.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
@@ -148,6 +150,13 @@ const marquee = ['Positioning', 'Built not briefed', 'Technical SEO', 'AI agents
   .hero .s3{top:24%;left:34%;width:18vw;max-width:230px;height:18vw;max-height:230px}
   .hero .s4{top:15%;left:3%;width:104px;height:104px}
   .hero-inner{position:relative;z-index:2}
+  /* soft paper scrim sitting ABOVE the fixed WebGL shader + overprint shapes but BELOW the
+     hero text - guarantees the headline/sub stay readable even if the animated pink/blue
+     plate or halftone drifts bright directly behind the words. Feathered so it never reads
+     as a hard box and keeps the zine look. */
+  .hero-inner::before{content:"";position:absolute;z-index:-1;
+    left:-1.4rem;right:-1.4rem;top:-1.4rem;bottom:-1.4rem;pointer-events:none;
+    background:radial-gradient(120% 120% at 30% 45%,rgba(242,236,217,.92),rgba(242,236,217,.74) 55%,rgba(242,236,217,0) 90%)}
   .hero .plate-label{margin-bottom:1.6rem}
   .hero h1{font-family:var(--disp);font-weight:900;font-size:clamp(3.4rem,13vw,11rem);line-height:.86;
     letter-spacing:-.03em;text-transform:uppercase;max-width:13ch}
@@ -162,7 +171,9 @@ const marquee = ['Positioning', 'Built not briefed', 'Technical SEO', 'AI agents
   .hero h1 .ghost{position:relative}
   .hero h1 .ghost::before{content:attr(data-ghost);position:absolute;left:0;top:0;z-index:-1;
     color:var(--pink);mix-blend-mode:multiply;transform:translate(-3px,2px);pointer-events:none}
-  .hero h1 .out{color:transparent;-webkit-text-stroke:2.5px var(--ink)}
+  /* outlined word: thicker ink stroke + a faint paper fill (not fully transparent) so the
+     letterforms read against the textured paper/shader instead of disappearing into it */
+  .hero h1 .out{color:rgba(242,236,217,.6);-webkit-text-stroke:3px var(--ink)}
   .hero .sub{margin-top:2.1rem;max-width:46ch;font-size:clamp(1.02rem,1.5vw,1.25rem);color:var(--soft);line-height:1.6}
   .hero .sub b{color:var(--ink);font-weight:700;background:linear-gradient(transparent 62%,rgba(255,72,160,.45) 0)}
   .hero-cta{margin-top:2.6rem;display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
@@ -181,8 +192,11 @@ const marquee = ['Positioning', 'Built not briefed', 'Technical SEO', 'AI agents
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,179,179,.5)}70%{box-shadow:0 0 0 8px rgba(0,179,179,0)}100%{box-shadow:0 0 0 0 rgba(0,179,179,0)}}
   @media(prefers-reduced-motion:reduce){.avail .dot{animation:none}}
   .heroanchor .rule{flex:1;height:3px;background:var(--ink)}
+  /* scrollcue sits over the bottom-left blue plate field of the shader with no card backing -
+     ink colour + a paper halo so it always wins if the plate drifts bright behind it */
   .scrollcue{position:absolute;bottom:1.6rem;left:var(--m);z-index:2;font-family:var(--mono);font-size:.68rem;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--mut);display:flex;align-items:center;gap:.6rem}
+    letter-spacing:.2em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:.6rem;
+    text-shadow:0 0 6px var(--paper),0 0 6px var(--paper),0 0 3px var(--paper)}
   .scrollcue .bar{width:3px;height:34px;background:var(--ink);display:block}
   @media(max-width:600px){
     /* center the full 4-line statement; no flex-end push that could clip the top line */
@@ -215,9 +229,9 @@ const marquee = ['Positioning', 'Built not briefed', 'Technical SEO', 'AI agents
   /* carry the hero riso language down: each section gets a chunky top rule + an
      overprinted shape accent + its own halftone wash so identity never collapses */
   section.plated{border-top:5px solid var(--ink)}
-  .sec-accent{position:absolute;pointer-events:none;mix-blend-mode:multiply;z-index:0;border-radius:50%}
-  .sec-accent.a-pink{background:rgba(255,72,160,.9)}
-  .sec-accent.a-blue{background:rgba(35,54,255,.9)}
+  .sec-accent{position:absolute;pointer-events:none;mix-blend-mode:multiply;z-index:0;border-radius:50%;opacity:.55}
+  .sec-accent.a-pink{background:rgba(255,72,160,.7)}
+  .sec-accent.a-blue{background:rgba(35,54,255,.7)}
   .sec-accent.a-tone{background:
     radial-gradient(var(--pink) 36%,transparent 38%) 0 0/10px 10px,
     radial-gradient(var(--pink) 24%,transparent 26%) 5px 5px/10px 10px;
@@ -273,12 +287,13 @@ const marquee = ['Positioning', 'Built not briefed', 'Technical SEO', 'AI agents
   .pillar:nth-child(3)::before{background:var(--teal)}
   .pillar:nth-child(4)::before{background:var(--pink);border-radius:0;transform:rotate(45deg)}
   /* halftone corner flourish on alternating cards so the print screen stays continuous mid-page */
-  .pillar:nth-child(even)::after{content:"";position:absolute;z-index:0;pointer-events:none;mix-blend-mode:multiply;
-    width:120px;height:120px;bottom:-30px;left:-30px;border-radius:50%;
+  /* corner flourishes pushed deep into the corner + low opacity so they never wash under body copy */
+  .pillar:nth-child(even)::after{content:"";position:absolute;z-index:0;pointer-events:none;mix-blend-mode:multiply;opacity:.7;
+    width:104px;height:104px;bottom:-48px;left:-44px;border-radius:50%;
     background:radial-gradient(var(--blue) 34%,transparent 36%) 0 0/8px 8px,radial-gradient(var(--blue) 22%,transparent 24%) 4px 4px/8px 8px;
     background-color:rgba(35,54,255,.10)}
-  .pillar:nth-child(odd)::after{content:"";position:absolute;z-index:0;pointer-events:none;mix-blend-mode:multiply;
-    width:110px;height:110px;bottom:-26px;left:-26px;border-radius:50%;
+  .pillar:nth-child(odd)::after{content:"";position:absolute;z-index:0;pointer-events:none;mix-blend-mode:multiply;opacity:.7;
+    width:96px;height:96px;bottom:-44px;left:-40px;border-radius:50%;
     background:radial-gradient(var(--pink) 34%,transparent 36%) 0 0/8px 8px,radial-gradient(var(--pink) 22%,transparent 24%) 4px 4px/8px 8px;
     background-color:rgba(255,72,160,.09)}
   .pillar:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink)}
@@ -297,8 +312,8 @@ const marquee = ['Positioning', 'Built not briefed', 'Technical SEO', 'AI agents
   .plate{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:340px;height:100%;
     border:5px solid var(--ink);padding:clamp(1.4rem,2.4vw,2.1rem);overflow:hidden;background:var(--paper);isolation:isolate;
     transition:transform .2s,box-shadow .2s}
-  /* every tile carries a halftone ink wash so the field reads as printed, not flat */
-  .plate::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;mix-blend-mode:multiply;opacity:.5;
+  /* every tile carries a halftone ink wash so the field reads as printed, not flat - kept faint so small copy stays legible */
+  .plate::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;mix-blend-mode:multiply;opacity:.32;
     background-image:radial-gradient(var(--ink) 1px,transparent 1.6px);background-size:7px 7px}
   .plate:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 var(--ink)}
   /* index + result-led copy */
@@ -426,11 +441,13 @@ const marquee = ['Positioning', 'Built not briefed', 'Technical SEO', 'AI agents
   .about .rail .div{height:4px;width:48px;background:var(--pink);margin:.8rem 0;mix-blend-mode:multiply}
   .about .rail .sig{font-family:var(--disp);font-weight:900;font-size:1.5rem;color:var(--blue);mix-blend-mode:multiply;text-transform:uppercase}
   .about .plate-quote{position:relative;border:4px solid var(--ink);padding:clamp(1.6rem,3vw,2.6rem);background:var(--paper);overflow:hidden}
-  .about .plate-quote::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:var(--teal);
-    mix-blend-mode:multiply;bottom:-60px;left:-40px;opacity:.85}
+  /* teal blob pushed deep into the corner + dialed back so it never sits under the quote's last line */
+  .about .plate-quote::before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:var(--teal);
+    mix-blend-mode:multiply;bottom:-86px;left:-66px;opacity:.6}
   .about p{position:relative;z-index:1;font-family:var(--disp);font-weight:600;font-size:clamp(1.3rem,2.8vw,2rem);
     line-height:1.3;letter-spacing:-.01em;max-width:30ch;color:var(--ink)}
-  .about p em{font-style:normal;color:var(--pink);mix-blend-mode:multiply}
+  /* emphasis in riso blue (5.8:1 on paper) instead of pink, which fails small-text contrast on cream/teal */
+  .about p em{font-style:normal;color:var(--blue);font-weight:700;mix-blend-mode:multiply}
   .about p b{color:var(--blue);font-weight:800}
   @media(max-width:760px){.about .abody{grid-template-columns:1fr;gap:1.6rem}
     .about .rail{flex-direction:row;flex-wrap:wrap;align-items:center;gap:.8rem 1.4rem}

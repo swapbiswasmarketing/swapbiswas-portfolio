@@ -86,14 +86,14 @@ const acts = [
   nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
     padding:1.4rem var(--m);transition:background .4s,backdrop-filter .4s}
   nav.solid{background:rgba(4,5,10,.6);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .logo{font-family:var(--disp);font-size:1.05rem;font-weight:600;letter-spacing:.01em;display:inline-flex;align-items:center;gap:.6rem}
+  .logo{font-family:var(--disp);font-size:1.05rem;font-weight:600;letter-spacing:.01em;display:inline-flex;align-items:center;gap:.6rem;text-shadow:0 1px 8px rgba(4,5,10,.85)}
   .logo .pip{width:8px;height:8px;border-radius:50%;background:var(--warm);box-shadow:0 0 14px var(--warm);flex:none}
-  .navlinks{display:flex;gap:2.1rem;font-size:.78rem;letter-spacing:.06em;font-weight:500;text-transform:uppercase;align-items:center}
+  .navlinks{display:flex;gap:2.1rem;font-size:.78rem;letter-spacing:.06em;font-weight:500;text-transform:uppercase;align-items:center;text-shadow:0 1px 8px rgba(4,5,10,.85)}
   .navlinks a{position:relative;color:var(--read);transition:color .3s}
   .navlinks a:hover{color:var(--ink)}
   .navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--warm);transition:width .35s cubic-bezier(.2,.8,.2,1)}
   .navlinks a:hover::after{width:100%}
-  .navlinks a.all{color:var(--mut);border:1px solid var(--line);border-radius:100px;padding:.4rem .9rem;text-transform:none;letter-spacing:.02em}
+  .navlinks a.all{color:#aab0cf;border:1px solid var(--line);border-radius:100px;padding:.4rem .9rem;text-transform:none;letter-spacing:.02em}
   .navlinks a.all::after{display:none}
   .navlinks a.all:hover{color:var(--ink);border-color:var(--warm)}
   @media(max-width:760px){.navlinks a:not(.all){display:none}}
@@ -104,16 +104,28 @@ const acts = [
 
   /* ---- hero ---- */
   header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:8rem 0 4rem;position:relative}
+  /* DYNAMIC-WASHOUT GUARD: the WebGL particle field is full-bleed fixed behind everything
+     and brightens to gold as it morphs - the cursor parallax can drift the bright zone behind
+     the hero text. This soft dark plate sits above the canvas (the .wrap stacking context puts
+     this z:-1 layer over the z:0 fixed canvas) but below the hero copy, so the headline + sub
+     always have a dark backing no matter how bright the particles get. */
+  header.hero::before{content:"";position:absolute;z-index:-1;pointer-events:none;
+    left:-8%;right:-8%;top:8%;bottom:6%;
+    background:radial-gradient(120% 86% at 30% 50%,rgba(4,5,10,.82),rgba(4,5,10,.55) 46%,rgba(4,5,10,0) 78%);
+    -webkit-mask:linear-gradient(#000,#000);mask:linear-gradient(#000,#000)}
   .eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--warm-soft);font-weight:500;font-family:var(--disp)}
   .hero .credential{display:inline-flex;align-items:center;gap:.85rem;font-size:.72rem;letter-spacing:.26em;
-    text-transform:uppercase;color:var(--cold-soft);font-weight:500;font-family:var(--disp);margin-bottom:2rem;overflow:hidden}
+    text-transform:uppercase;color:var(--cold-soft);font-weight:500;font-family:var(--disp);margin-bottom:2rem;overflow:hidden;
+    text-shadow:0 1px 10px rgba(4,5,10,.9)}
   .hero .credential::before{content:"";width:30px;height:1px;background:var(--cold-soft);flex:none}
-  .hero h1{font-family:var(--disp);font-weight:500;font-size:clamp(2.9rem,9vw,8.4rem);line-height:.95;letter-spacing:-.03em;max-width:16ch}
+  .hero h1{font-family:var(--disp);font-weight:500;font-size:clamp(2.9rem,9vw,8.4rem);line-height:.95;letter-spacing:-.03em;max-width:16ch;
+    text-shadow:0 2px 30px rgba(4,5,10,.9),0 1px 8px rgba(4,5,10,.85)}
   .hero h1 .ln{display:block;overflow:hidden}
   .hero h1 .ln>span{display:block;will-change:transform}
   .hero h1 .noise{color:var(--cold-soft)}
   .hero h1 .signal{color:var(--warm);position:relative}
-  .hero .sub{margin-top:2.4rem;max-width:50ch;font-size:clamp(1rem,1.4vw,1.2rem);color:var(--read);line-height:1.7}
+  .hero .sub{margin-top:2.4rem;max-width:50ch;font-size:clamp(1rem,1.4vw,1.2rem);color:var(--read);line-height:1.7;
+    text-shadow:0 1px 12px rgba(4,5,10,.92),0 0 2px rgba(4,5,10,.8)}
   .hero .sub b{color:var(--ink);font-weight:600}
   .cta{margin-top:2.8rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
   .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.7rem;border-radius:100px;font-size:.85rem;font-weight:600;letter-spacing:.02em;font-family:var(--disp);transition:transform .4s cubic-bezier(.2,.8,.2,1),background .3s,color .3s,box-shadow .4s}
@@ -123,7 +135,7 @@ const acts = [
   .btn.ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
   .btn .ar{transition:transform .4s}
   .btn:hover .ar{transform:translate(4px,-4px)}
-  .scrollcue{position:absolute;bottom:2rem;left:var(--m);font-size:.68rem;letter-spacing:.24em;color:var(--mut);text-transform:uppercase;display:flex;align-items:center;gap:.7rem;font-family:var(--disp)}
+  .scrollcue{position:absolute;bottom:2rem;left:var(--m);font-size:.68rem;letter-spacing:.24em;color:#9aa1c4;text-transform:uppercase;display:flex;align-items:center;gap:.7rem;font-family:var(--disp);text-shadow:0 1px 8px rgba(4,5,10,.9)}
   .scrollcue .bar{width:1px;height:42px;background:linear-gradient(var(--warm),transparent);display:block;animation:cuePulse 2.4s ease-in-out infinite}
   @keyframes cuePulse{0%,100%{opacity:.4;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
   @media(prefers-reduced-motion:reduce){.scrollcue .bar{animation:none}}
@@ -137,10 +149,10 @@ const acts = [
 
   /* ---- marquee statement ---- */
   .marquee{padding:3.5rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative;
-    background:linear-gradient(180deg,rgba(75,108,255,.04),rgba(255,207,107,.03))}
+    background:linear-gradient(180deg,rgba(8,10,22,.7),rgba(8,10,22,.62)),linear-gradient(180deg,rgba(75,108,255,.04),rgba(255,207,107,.03))}
   .marquee .track{display:flex;gap:3rem;white-space:nowrap;width:max-content;animation:slide 32s linear infinite}
   @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
-  .marquee span{font-family:var(--disp);font-weight:600;font-size:clamp(1.6rem,3.6vw,2.8rem);letter-spacing:-.02em;color:var(--mut);display:inline-flex;align-items:center;gap:3rem}
+  .marquee span{font-family:var(--disp);font-weight:600;font-size:clamp(1.6rem,3.6vw,2.8rem);letter-spacing:-.02em;color:#969dbf;display:inline-flex;align-items:center;gap:3rem;text-shadow:0 1px 8px rgba(4,5,10,.7)}
   .marquee span em{font-style:normal;color:var(--warm)}
   .marquee span .dot{width:9px;height:9px;border-radius:50%;background:var(--cold);flex:none}
   @keyframes slide{to{transform:translateX(-50%)}}
@@ -174,8 +186,11 @@ const acts = [
   .act.noise .aghost{color:transparent;-webkit-text-stroke:1px rgba(125,150,255,.16);text-stroke:1px rgba(125,150,255,.16)}
   .act.system .aghost{color:transparent;-webkit-text-stroke:1px rgba(150,160,190,.13);text-stroke:1px rgba(150,160,190,.13)}
   .act.signal .aghost{color:transparent;-webkit-text-stroke:1px rgba(255,207,107,.2);text-stroke:1px rgba(255,207,107,.2)}
-  .actmark .aname{position:relative;font-family:var(--disp);font-weight:600;font-size:clamp(2.2rem,6vw,4.6rem);letter-spacing:-.03em;line-height:1}
-  .act .aline{max-width:44ch;font-size:clamp(1.05rem,1.6vw,1.35rem);color:var(--read);line-height:1.6;margin-bottom:3.5rem}
+  .actmark .aname{position:relative;font-family:var(--disp);font-weight:600;font-size:clamp(2.2rem,6vw,4.6rem);letter-spacing:-.03em;line-height:1;text-shadow:0 2px 22px rgba(4,5,10,.85)}
+  /* act intro line sits over the fixed particle field - halo keeps it legible if particles brighten behind it */
+  .act .aline{max-width:44ch;font-size:clamp(1.05rem,1.6vw,1.35rem);color:var(--read);line-height:1.6;margin-bottom:3.5rem;
+    text-shadow:0 1px 12px rgba(4,5,10,.9),0 0 2px rgba(4,5,10,.75)}
+  .actmark .anum{text-shadow:0 1px 8px rgba(4,5,10,.9)}
   .act.noise .anum{color:var(--cold-soft)}
   .act.noise .aname{color:var(--ink)}
   .act.system .anum{color:#b6bedb}
@@ -183,13 +198,16 @@ const acts = [
   .act.signal .anum{color:var(--warm)}
   .act.signal .aname{color:var(--ink)}
   .shead{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;border-top:1px solid var(--line);padding-top:1.4rem;margin-bottom:3rem}
-  .shead h2{font-family:var(--disp);font-weight:500;font-size:clamp(1.4rem,2.8vw,2.2rem);letter-spacing:-.02em}
+  .shead h2{font-family:var(--disp);font-weight:500;font-size:clamp(1.4rem,2.8vw,2.2rem);letter-spacing:-.02em;text-shadow:0 1px 12px rgba(4,5,10,.85)}
   .shead h2 em{font-style:normal;color:var(--warm)}
-  .shead .eyebrow{color:var(--mut)}
+  /* eyebrow raised from --mut (fails AA on a brightened field) to a lighter grey + halo */
+  .shead .eyebrow{color:#9aa1c4;text-shadow:0 1px 8px rgba(4,5,10,.9)}
 
   /* ---- stats: kinetic counter grid ---- */
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-left:1px solid var(--line)}
-  .stat{padding:2.4rem 2rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  /* solid-ish backing so the gradient number + label never compete with bright particles behind the grid */
+  .stat{padding:2.4rem 2rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden;
+    background:rgba(6,8,16,.66)}
   .stat:nth-child(-n+3){border-top:1px solid var(--line)}
   .stat .n{font-family:var(--disp);font-weight:600;font-size:clamp(2.4rem,5vw,4rem);letter-spacing:-.03em;line-height:1;
     background:linear-gradient(120deg,var(--cold-soft),var(--warm));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -205,8 +223,8 @@ const acts = [
   .pillar:nth-child(odd){padding-right:2.8rem}
   .pillar:nth-child(even){padding-left:2.8rem;border-left:1px solid var(--line)}
   .pillar .pi{font-family:var(--disp);font-weight:600;color:var(--warm);font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:.9;letter-spacing:-.02em}
-  .pillar h3{font-family:var(--disp);font-size:1.3rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.7rem}
-  .pillar p{color:var(--read);font-size:.97rem;line-height:1.7;max-width:42ch}
+  .pillar h3{font-family:var(--disp);font-size:1.3rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.7rem;text-shadow:0 1px 10px rgba(4,5,10,.8)}
+  .pillar p{color:var(--read);font-size:.97rem;line-height:1.7;max-width:42ch;text-shadow:0 1px 10px rgba(4,5,10,.88),0 0 2px rgba(4,5,10,.7)}
   @media(max-width:760px){.pillars{grid-template-columns:1fr}.pillar:nth-child(even){padding-left:0;border-left:0}.pillar:nth-child(odd){padding-right:0}}
 
   /* ---- work: the centerpiece. 4 distinct on-brand compositions, result-metric led ---- */
@@ -331,17 +349,19 @@ const acts = [
   /* ---- recognition + brands ---- */
   .recog{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,5vw,5rem);align-items:start}
   .recol{display:flex;flex-direction:column}
-  .recol .clabel{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mut);font-family:var(--disp);
-    border-top:1px solid var(--line);padding-top:1.2rem;padding-bottom:1.2rem}
+  /* clabel raised from --mut (too dim, fails AA) to a lighter grey + halo over the particle field */
+  .recol .clabel{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:#9aa1c4;font-family:var(--disp);
+    border-top:1px solid var(--line);padding-top:1.2rem;padding-bottom:1.2rem;text-shadow:0 1px 8px rgba(4,5,10,.9)}
   .awards{display:flex;flex-direction:column}
   .award{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:1.5rem;padding:1.05rem 0;border-top:1px solid var(--line)}
   .award:last-child{border-bottom:1px solid var(--line)}
-  .award b{font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.2vw,1.7rem);letter-spacing:-.01em;line-height:1.15}
+  .award b{font-family:var(--disp);font-weight:500;font-size:clamp(1.2rem,2.2vw,1.7rem);letter-spacing:-.01em;line-height:1.15;text-shadow:0 1px 10px rgba(4,5,10,.82)}
   .award b .num{color:var(--warm)}
-  .award span{color:var(--mut);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;justify-self:end;font-family:var(--disp)}
+  /* meta raised from --mut to a readable grey + halo */
+  .award span{color:#9aa1c4;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;justify-self:end;font-family:var(--disp);text-shadow:0 1px 8px rgba(4,5,10,.9)}
   .brands{display:grid;grid-template-columns:1fr 1fr;gap:0}
   .brands span{font-family:var(--disp);font-weight:400;font-size:1.1rem;letter-spacing:-.01em;color:var(--read);line-height:1;
-    display:flex;align-items:center;min-height:1.05rem;padding:1.05rem 0;border-top:1px solid var(--line);transition:color .3s}
+    display:flex;align-items:center;min-height:1.05rem;padding:1.05rem 0;border-top:1px solid var(--line);transition:color .3s;text-shadow:0 1px 9px rgba(4,5,10,.85)}
   .brands span:nth-child(2n){padding-left:1.4rem}
   .brands span:nth-child(odd){padding-right:1.4rem}
   .brands span:hover{color:var(--warm)}
@@ -350,16 +370,19 @@ const acts = [
   /* ---- about ---- */
   .about .abody{display:grid;grid-template-columns:210px 1fr;gap:3rem;align-items:stretch}
   .about .rail{display:flex;flex-direction:column;gap:.5rem;border-left:1px solid var(--line);padding-left:1.6rem}
-  .about .rail .k{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mut);font-family:var(--disp)}
-  .about .rail .v{font-family:var(--disp);color:var(--read);font-size:1.02rem;font-weight:500}
+  /* rail labels raised from --mut + halo'd; they sit directly over the particle field */
+  .about .rail .k{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:#9aa1c4;font-family:var(--disp);text-shadow:0 1px 8px rgba(4,5,10,.9)}
+  .about .rail .v{font-family:var(--disp);color:var(--read);font-size:1.02rem;font-weight:500;text-shadow:0 1px 9px rgba(4,5,10,.85)}
   .about .rail .div{height:1px;width:34px;background:var(--warm);opacity:.6;margin:.7rem 0}
-  .about .rail .sig{font-family:var(--disp);font-size:1.3rem;color:var(--warm);font-weight:500;letter-spacing:-.01em}
+  .about .rail .sig{font-family:var(--disp);font-size:1.3rem;color:var(--warm);font-weight:500;letter-spacing:-.01em;text-shadow:0 1px 9px rgba(4,5,10,.85)}
+  /* plate backing was near-transparent (.012 white) so particles bled through behind the quote;
+     give it a real semi-opaque dark fill so the statement copy always has a controlled background */
   .about .plate{position:relative;border:1px solid var(--line);border-radius:18px;padding:clamp(1.6rem,2.4vw,2.4rem) clamp(1.8rem,3vw,2.8rem);
     overflow:hidden;display:flex;align-items:center;min-height:100%;
-    background:linear-gradient(135deg,rgba(75,108,255,.06),transparent 55%),rgba(244,246,255,.012)}
+    background:linear-gradient(135deg,rgba(75,108,255,.06),transparent 55%),rgba(6,8,16,.62)}
   .about .plate::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
     background:radial-gradient(60% 80% at 90% -10%,rgba(255,207,107,.12),transparent 60%)}
-  .about p{position:relative;z-index:1;font-family:var(--disp);font-weight:400;font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.34;letter-spacing:-.015em;max-width:26ch}
+  .about p{position:relative;z-index:1;font-family:var(--disp);font-weight:400;font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.34;letter-spacing:-.015em;max-width:26ch;text-shadow:0 1px 10px rgba(4,5,10,.6)}
   .about p em{font-style:normal;color:var(--warm)}
   @media(max-width:760px){.about .abody{grid-template-columns:1fr;gap:1.6rem;align-items:start}
     .about .rail{flex-direction:row;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem;border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:1.4rem}
@@ -369,21 +392,26 @@ const acts = [
     .about.act{padding-bottom:clamp(2.5rem,7vh,4rem)}}
 
   /* ---- contact: signal locked ---- */
-  .contact{text-align:center;padding:clamp(5rem,12vh,9rem) 0 7rem}
+  /* this sits at the page bottom where the particle field is fully morphed to bright warm GOLD -
+     a centred dark scrim (above the canvas, below the copy) guards the big white headline */
+  .contact{text-align:center;padding:clamp(5rem,12vh,9rem) 0 7rem;position:relative}
+  .contact::before{content:"";position:absolute;z-index:-1;pointer-events:none;
+    left:-10%;right:-10%;top:4%;bottom:4%;
+    background:radial-gradient(110% 80% at 50% 50%,rgba(4,5,10,.72),rgba(4,5,10,.4) 50%,rgba(4,5,10,0) 80%)}
   .lock{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--disp);font-size:.72rem;letter-spacing:.28em;
-    text-transform:uppercase;color:var(--teal);margin-bottom:2.2rem}
+    text-transform:uppercase;color:var(--teal);margin-bottom:2.2rem;text-shadow:0 1px 8px rgba(4,5,10,.9)}
   .lock .ld{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(94,234,212,.6);animation:lockPulse 2.6s ease-out infinite}
   @keyframes lockPulse{0%{box-shadow:0 0 0 0 rgba(94,234,212,.5)}70%{box-shadow:0 0 0 8px rgba(94,234,212,0)}100%{box-shadow:0 0 0 0 rgba(94,234,212,0)}}
   @media(prefers-reduced-motion:reduce){.lock .ld{animation:none}}
-  .contact .big{font-family:var(--disp);font-weight:500;font-size:clamp(2.4rem,7.5vw,6.4rem);line-height:1;letter-spacing:-.03em}
+  .contact .big{font-family:var(--disp);font-weight:500;font-size:clamp(2.4rem,7.5vw,6.4rem);line-height:1;letter-spacing:-.03em;text-shadow:0 2px 24px rgba(4,5,10,.85),0 1px 8px rgba(4,5,10,.8)}
   .contact .big a{position:relative;color:var(--ink)}
   .contact .big a::after{content:"";position:absolute;left:0;bottom:.04em;width:100%;height:3px;background:var(--warm);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
   .contact .big a:hover::after{transform:scaleX(1)}
-  .contact .em{margin-top:2.4rem;font-size:.95rem;color:var(--read);letter-spacing:.02em}
+  .contact .em{margin-top:2.4rem;font-size:.95rem;color:var(--read);letter-spacing:.02em;text-shadow:0 1px 9px rgba(4,5,10,.85)}
   .contact .em a{color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:2px}
   .contact .em a:hover{border-color:var(--warm)}
 
-  footer{border-top:1px solid var(--line);padding:2.5rem var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.78rem;color:var(--mut);position:relative;z-index:2;font-family:var(--disp)}
+  footer{border-top:1px solid var(--line);padding:2.5rem var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.78rem;color:#9aa1c4;position:relative;z-index:2;font-family:var(--disp);background:rgba(4,5,10,.72);text-shadow:0 1px 8px rgba(4,5,10,.9)}
   footer a{color:var(--read)}
   footer a:hover{color:var(--warm)}
 

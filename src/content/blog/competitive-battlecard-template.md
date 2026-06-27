@@ -244,4 +244,5 @@ Don't try to build battlecards for every competitor at once. Start with one, get
 - [Go-To-Market Strategy Template](/blog/go-to-market-strategy-template/) - Where battlecards fit in the GTM plan
 - [What Is Product Marketing?](/blog/what-is-product-marketing/) - The role that owns competitive intelligence
 - [Competitive Analysis Examples](/blog/competitive-analysis-examples/) - 5 frameworks to inform your battlecard content
+- [Competitive Analysis Template](/blog/competitive-analysis-template/) - A fill-in-the-blank framework to structure your research
 - [Competitive Intelligence Analysis](/blog/competitive-intelligence-analysis/) - Build the system that keeps battlecards current

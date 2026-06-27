@@ -1,0 +1,958 @@
+---
+// REDESIGN PROTOTYPE - "Chrome" - liquid-metal / Y2K, dark + reflective.
+// Concept 15. Fully self-contained: own <html>, own fonts, own tokens.
+// No BaseLayout, no global.css, no project components.
+// Tech: Three.js (CDN ESM) reflective chrome blob with iridescent oil-slick env map
+//   + raw-WebGL oil-slick backdrop shader + GSAP scroll reveals + Lenis smooth scroll.
+const stats = [
+  { n: '657K+', l: 'Leads generated' },
+  { n: '18.2M+', l: 'Organic traffic driven' },
+  { n: '10x', l: 'Conversion lift' },
+  { n: '20+', l: 'AI agents & apps built' },
+  { n: '15+', l: 'Marketers mentored' },
+  { n: '76', l: 'Articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS. The narrative that makes a product impossible to ignore.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand generation that compounds long after the campaign ends.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped - instead of only briefing them.' },
+  { i: '04', t: 'Building in public', d: 'This site, eight free tools and seventy-six articles. Shipped systems, not slide-ware.' },
+];
+// Real selected work, priority order. Only LambdaTest has hard numbers.
+// `sw` keys a DISTINCT iridescent/metallic composition per tile.
+const work = [
+  { i: '01', t: 'LambdaTest', role: 'Product & digital marketing', r: '657K+ leads, 18.2M+ organic traffic', y: '2021 - 2025', sw: 'mercury', note: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { i: '02', t: 'TestMu AI', role: 'Rebrand lead', r: 'Full company rebrand', y: '2026', sw: 'morph', note: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', t: 'Samsung', role: 'Launch content & distribution', r: 'Galaxy M-series launch', y: '2019', sw: 'wave', note: 'On the Galaxy M-series from inception; ran content distribution (collaborated with Technical Guruji).' },
+  { i: '04', t: 'Medilife Superspeciality', role: 'Marketing & web, 0 to 1', r: 'Website, GTM, social & launch', y: '', sw: 'pulse', note: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', t: 'Lido Learning', role: 'Growth / CRM', r: 'CRM & lead operations', y: '2021', sw: 'funnel', note: 'Ran CRM management and lead routing / assignment for the EdTech.' },
+  { i: '06', t: 'Appknox', role: 'Freelance content', r: 'Security content', y: '', sw: 'shield', note: 'Freelance content writer for the mobile app security company.' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+---
+<!doctype html>
+<html lang="en" data-theme="chrome">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - Product marketing, forged in metal</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#08080c; --bg2:#0c0c12; --ink:#f4f6fb; --silver:#d7dbe6; --read:#c3c8d6; --mut:#9aa0b3;
+    --line:rgba(215,219,230,.12); --line2:rgba(215,219,230,.20);
+    /* iridescent oil-slick accents */
+    --violet:#b08cff; --cyan:#67e8f9; --green:#7df0c4; --magenta:#f0a6e8; --hot:#ff7a59;
+    --disp:"Space Grotesk",system-ui,sans-serif; --sans:"Inter",system-ui,sans-serif;
+    --m:clamp(1.25rem,5vw,6rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;overflow-x:clip;font-weight:400}
+  section{overflow-x:clip}
+  ::selection{background:var(--violet);color:#08080c}
+  a{color:inherit;text-decoration:none}
+  /* chrome-gradient text treatment for key words - brushed metal sheen */
+  .chrome-txt{
+    background:linear-gradient(180deg,#ffffff 0%,#c7ccd9 30%,#7e8497 50%,#dfe3ec 64%,#9aa0b3 80%,#f3f5fb 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+    filter:drop-shadow(0 1px 0 rgba(0,0,0,.4))}
+  /* iridescent oil-slick text for accent words */
+  .oil-txt{
+    background:linear-gradient(110deg,var(--violet),var(--cyan) 35%,var(--green) 55%,var(--magenta) 78%,var(--violet));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+
+  /* ---------- backdrop layers ---------- */
+  /* raw-WebGL oil-slick gradient backdrop, full-bleed fixed. CSS gradient fallback baked
+     into the canvas background so a failed paint never shows a bare grey box. */
+  canvas#bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;display:block;opacity:.85;
+    background:
+      radial-gradient(60% 50% at 72% 18%,rgba(176,140,255,.22),transparent 60%),
+      radial-gradient(55% 50% at 22% 80%,rgba(103,232,249,.16),transparent 62%),
+      radial-gradient(120% 90% at 50% -10%,#13131f,#08080c 62%)}
+  /* CSS-only animated oil-slick for small screens (mobile WebGL unreliable) */
+  .css-oil{position:fixed;inset:0;z-index:0;pointer-events:none;display:none;
+    background:
+      radial-gradient(60% 46% at 74% 14%,rgba(176,140,255,.30),transparent 60%),
+      radial-gradient(58% 48% at 20% 84%,rgba(103,232,249,.20),transparent 62%),
+      radial-gradient(50% 42% at 84% 70%,rgba(125,240,196,.14),transparent 62%),
+      radial-gradient(120% 95% at 50% -8%,#14131f,#08080c 60%);
+    animation:oilDrift 20s ease-in-out infinite alternate}
+  @keyframes oilDrift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-2%,2%,0) scale(1.08)}}
+  @media(prefers-reduced-motion:reduce){.css-oil{animation:none}}
+  /* three.js chrome canvas - sits in the hero, behind the wordmark, above backdrop */
+  canvas#chrome{position:fixed;inset:0;width:100vw;height:100vh;z-index:1;pointer-events:none;display:block}
+  .chrome-fallback{position:fixed;inset:0;z-index:1;pointer-events:none;display:none}
+  .chrome-fallback::after{content:"";position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);
+    width:min(60vw,460px);height:min(60vw,460px);border-radius:50%;
+    background:
+      radial-gradient(40% 40% at 38% 32%,#ffffff,transparent 60%),
+      conic-gradient(from 200deg,#b08cff,#67e8f9,#7df0c4,#f0a6e8,#b08cff);
+    filter:blur(2px) saturate(1.2);
+    box-shadow:0 40px 120px -20px rgba(176,140,255,.5),inset 0 0 60px rgba(0,0,0,.5)}
+  /* grain + vignette for cinematic depth */
+  .grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.045;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .vignette{position:fixed;inset:0;z-index:2;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 30%,transparent 50%,rgba(8,8,12,.55) 100%),linear-gradient(180deg,transparent 60%,var(--bg) 97%)}
+  /* scanline sheen - subtle Y2K horizontal glass band */
+  .scan{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.5;mix-blend-mode:screen;
+    background:linear-gradient(180deg,transparent 0%,rgba(215,219,230,.04) 48%,rgba(215,219,230,.07) 50%,transparent 52%)}
+
+  .wrap{position:relative;z-index:3;max-width:1280px;margin:0 auto;padding:0 var(--m)}
+
+  /* ---------- nav ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+    padding:1.3rem var(--m);
+    background:linear-gradient(180deg,rgba(8,8,12,.7),transparent);backdrop-filter:blur(4px)}
+  .logo{font-family:var(--disp);font-size:1.05rem;font-weight:700;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:.55em}
+  .logo i{font-style:normal}
+  /* chrome-ringed nav avatar */
+  .navav{width:32px;height:32px;border-radius:50%;flex:none;position:relative;overflow:hidden;
+    box-shadow:0 0 0 1px rgba(215,219,230,.35),0 0 0 3px rgba(8,8,12,.9),0 0 0 4px rgba(176,140,255,.35);
+    background:conic-gradient(from 200deg,#b08cff,#67e8f9,#7df0c4,#f0a6e8,#b08cff)}
+  .navav img{width:100%;height:100%;display:block;object-fit:cover;border-radius:50%;
+    filter:grayscale(.45) contrast(1.06) brightness(1.02);mix-blend-mode:luminosity}
+  .navav::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
+    background:linear-gradient(150deg,rgba(103,232,249,.28),transparent 45%,rgba(176,140,255,.3));mix-blend-mode:screen}
+  .navlinks{display:flex;gap:2rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+  .navlinks a{position:relative;color:var(--silver);transition:color .3s}
+  .navlinks a:hover{color:var(--ink)}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;
+    background:linear-gradient(90deg,var(--violet),var(--cyan));transition:width .35s cubic-bezier(.2,.8,.2,1)}
+  .navlinks a:hover::after{width:100%}
+  .navlinks a.muted{color:var(--mut)}
+  @media(max-width:720px){.navlinks{display:none}}
+
+  /* ---------- shared labels ---------- */
+  .eyebrow{font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--silver);font-weight:600}
+  .credential{display:inline-flex;align-items:center;gap:.85rem;font-size:.7rem;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--silver);font-weight:600}
+  .credential::before{content:"";width:28px;height:1px;
+    background:linear-gradient(90deg,var(--violet),var(--cyan));flex:none}
+
+  /* ---------- hero ---------- */
+  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    padding-top:6rem;padding-bottom:4rem;position:relative}
+  .hero .credential{margin-bottom:1.8rem;overflow:hidden;text-shadow:0 1px 6px rgba(8,8,12,.85)}
+  .hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(3.1rem,11.5vw,11rem);line-height:.88;
+    letter-spacing:-.035em;max-width:13ch;position:relative;z-index:1}
+  /* local darken-vignette behind the wordmark so the grey chrome type always reads
+     over the brightest teal facets of the blob */
+  .hero h1::before{content:"";position:absolute;z-index:-1;pointer-events:none;
+    left:-10%;right:-10%;top:-16%;bottom:-16%;
+    background:radial-gradient(85% 95% at 42% 50%,rgba(8,8,12,.82),rgba(8,8,12,.6) 50%,rgba(8,8,12,.28) 75%,transparent 92%);
+    filter:blur(16px)}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln>span{display:block;will-change:transform}
+  /* the grey "Marketing / cast in" words get a soft dark halo so they keep contrast
+     even where they cross the brightest chrome highlights */
+  .hero h1 .chrome-txt{filter:drop-shadow(0 1px 0 rgba(0,0,0,.55)) drop-shadow(0 2px 16px rgba(8,8,12,.85)) drop-shadow(0 0 26px rgba(8,8,12,.7))}
+  /* the iridescent "metal." word can blend into the blob's violet/teal flares - give it
+     the same dark halo so it always separates from the bright chrome behind it */
+  .hero h1 .oil-txt{filter:drop-shadow(0 1px 1px rgba(8,8,12,.9)) drop-shadow(0 2px 16px rgba(8,8,12,.9)) drop-shadow(0 0 24px rgba(8,8,12,.7))}
+  /* sub-paragraph sits over the lower facets of the reflective blob, which can flare
+     bright white/teal as it rotates + tracks the cursor. A solid dark scrim above the
+     WebGL (below the text) guarantees the body copy reads in that worst case. */
+  .hero .sub{position:relative;margin-top:2.3rem;max-width:48ch;font-size:clamp(1.02rem,1.45vw,1.2rem);
+    color:#e6e9f1;line-height:1.65;text-shadow:0 1px 12px rgba(8,8,12,.95),0 0 24px rgba(8,8,12,.8)}
+  .hero .sub::before{content:"";position:absolute;z-index:-1;pointer-events:none;
+    left:-1.5rem;right:-1.5rem;top:-1.1rem;bottom:-1.1rem;border-radius:18px;
+    /* UNIFORM dark backing (was a radial that faded at the edges, letting the
+       iridescent blob bleed through the top line - making each line a different colour).
+       Now every line of the paragraph sits on the same dark, so the colour is consistent. */
+    background:radial-gradient(150% 220% at 50% 50%,rgba(9,9,14,.9) 0%,rgba(9,9,14,.88) 84%,rgba(9,9,14,.5) 95%,transparent 100%);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  .heroanchor{margin-top:3rem;display:flex;align-items:center;gap:1.1rem;max-width:30rem}
+  .heroanchor .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
+  .avail{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--silver);white-space:nowrap;font-weight:600;text-shadow:0 1px 6px rgba(8,8,12,.85)}
+  .avail .dot{width:7px;height:7px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 0 0 rgba(125,240,196,.6);animation:availPulse 2.6s ease-out infinite}
+  @keyframes availPulse{0%{box-shadow:0 0 0 0 rgba(125,240,196,.5)}70%{box-shadow:0 0 0 7px rgba(125,240,196,0)}100%{box-shadow:0 0 0 0 rgba(125,240,196,0)}}
+  @media(prefers-reduced-motion:reduce){.avail .dot{animation:none}}
+  .cta{margin-top:2.6rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.7rem;border-radius:100px;
+    font-size:.84rem;font-weight:600;letter-spacing:.01em;
+    transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s}
+  /* primary = brushed chrome pill */
+  .btn.primary{color:#0a0a10;position:relative;
+    background:linear-gradient(180deg,#ffffff,#cfd4e0 46%,#aeb4c6 54%,#eef0f6);
+    box-shadow:0 10px 30px -10px rgba(215,219,230,.4),inset 0 1px 0 rgba(255,255,255,.8)}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(176,140,255,.5)}
+  .btn.ghost{border:1px solid var(--line2);color:var(--ink);background:rgba(8,8,12,.45);backdrop-filter:blur(2px);text-shadow:0 1px 5px rgba(8,8,12,.8)}
+  .btn.ghost:hover{border-color:var(--silver);transform:translateY(-2px)}
+  .btn .ar{transition:transform .4s}
+  .btn:hover .ar{transform:translate(4px,-4px)}
+  .scrollcue{position:absolute;bottom:2rem;left:0;font-size:.66rem;letter-spacing:.24em;color:var(--silver);
+    text-transform:uppercase;display:flex;align-items:center;gap:.6rem;text-shadow:0 1px 6px rgba(8,8,12,.8)}
+  .scrollcue .bar{width:1px;height:40px;background:linear-gradient(var(--mut),transparent);display:block}
+  @media(max-width:600px){
+    header.hero{padding-top:6.5rem;padding-bottom:3rem;justify-content:flex-end}
+    .hero .credential{margin-bottom:1.3rem}
+    .hero h1{font-size:clamp(3.9rem,17vw,5.6rem);line-height:.9;letter-spacing:-.04em;max-width:9ch}
+    .hero .sub{margin-top:1.5rem;font-size:1.02rem;max-width:38ch}
+    .heroanchor{margin-top:1.9rem}
+    .scrollcue{display:none}
+  }
+
+  /* ---------- section frame ---------- */
+  section{padding:clamp(5rem,11vh,9rem) 0;position:relative}
+  .shead{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;
+    border-top:1px solid var(--line);padding-top:1.5rem;margin-bottom:3.5rem}
+  .shead h2{font-family:var(--disp);font-weight:600;font-size:clamp(1.7rem,3.4vw,2.8rem);letter-spacing:-.025em}
+
+  /* ---------- marquee statement ---------- */
+  .marquee{position:relative;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:1.7rem 0;overflow:hidden;white-space:nowrap;
+    /* the chrome blob (fixed, centred) can flare bright directly behind this band -
+       a semi-opaque dark plate keeps the silver statement legible */
+    background:linear-gradient(180deg,rgba(8,8,12,.55),rgba(8,8,12,.62))}
+  .marquee .track span{text-shadow:0 1px 6px rgba(8,8,12,.7)}
+  .marquee .track{display:inline-flex;gap:2.5rem;will-change:transform;animation:marq 26s linear infinite}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+  .marquee .track span{font-family:var(--disp);font-weight:600;font-size:clamp(1.4rem,3.2vw,2.4rem);
+    letter-spacing:-.02em;color:var(--silver);display:inline-flex;align-items:center;gap:2.5rem}
+  .marquee .track span::after{content:"";width:8px;height:8px;border-radius:50%;flex:none;
+    background:conic-gradient(from 0deg,var(--violet),var(--cyan),var(--green),var(--magenta),var(--violet))}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  /* ---------- stats - chrome plates ---------- */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,1.6vw,1.3rem)}
+  .stat{position:relative;padding:2rem 1.6rem;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    /* solid-ish dark base so the fixed chrome blob can't flare through behind the
+       light stat numbers/labels as the card scrolls over the viewport centre */
+    background:linear-gradient(160deg,rgba(20,21,30,.86),rgba(12,12,18,.9)),
+      linear-gradient(160deg,rgba(215,219,230,.05),rgba(215,219,230,.01));
+    transition:transform .5s cubic-bezier(.2,.8,.2,1),border-color .4s,box-shadow .5s}
+  .stat::before{content:"";position:absolute;inset:0;z-index:0;opacity:.5;pointer-events:none;
+    background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,.08) 50%,transparent 60%)}
+  .stat:hover{transform:translateY(-4px);border-color:var(--line2);
+    box-shadow:0 22px 50px -22px rgba(176,140,255,.4)}
+  .stat .n{position:relative;z-index:1;font-family:var(--disp);font-weight:700;
+    font-size:clamp(2.4rem,5vw,3.6rem);letter-spacing:-.03em;line-height:.95;
+    background:linear-gradient(180deg,#ffffff,#c7ccd9 48%,#8a90a3 60%,#eef0f6);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .stat .l{position:relative;z-index:1;margin-top:.7rem;font-size:.82rem;letter-spacing:.02em;color:var(--silver)}
+  @media(max-width:720px){.stats{grid-template-columns:1fr 1fr;gap:.85rem}
+    .stat{padding:1.5rem 1.2rem}}
+  @media(max-width:420px){.stats{grid-template-columns:1fr 1fr}}
+
+  /* ---------- pillars ---------- */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .pillar{padding:2.6rem 0;border-top:1px solid var(--line);display:grid;
+    grid-template-columns:auto 1fr;gap:1.7rem;align-items:start}
+  .pillar:nth-child(odd){padding-right:3rem}
+  .pillar:nth-child(even){padding-left:3rem;border-left:1px solid var(--line)}
+  .pillar .pi{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,3.4vw,3rem);line-height:.85;
+    letter-spacing:-.03em;
+    background:linear-gradient(180deg,#ffffff,#9aa0b3 70%,#dfe3ec);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .pillar h3{font-family:var(--disp);font-size:1.32rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.6rem}
+  .pillar p{color:var(--read);font-size:.97rem;line-height:1.7;max-width:42ch}
+  @media(max-width:720px){.pillars{grid-template-columns:1fr}
+    .pillar:nth-child(even){padding-left:0;border-left:0}.pillar:nth-child(odd){padding-right:0}}
+
+  /* ---------- work - the centerpiece ---------- */
+  .work{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2vw,1.6rem);align-items:start}
+  .work .row{position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+    min-height:300px;padding:1.7rem;border:1px solid var(--line);border-radius:18px;overflow:hidden;isolation:isolate;
+    transition:transform .55s cubic-bezier(.2,.8,.2,1),border-color .5s,box-shadow .55s}
+  .work .row.feat{grid-column:1 / -1;min-height:360px;flex-direction:row;align-items:flex-end;
+    justify-content:space-between;gap:2rem}
+  .work .row:hover{transform:translateY(-4px);border-color:var(--line2)}
+  .work .row:nth-child(2),.work .row:nth-child(3){min-height:330px}
+  .work .row:nth-child(4),.work .row:nth-child(5){min-height:300px}
+  .work .row:nth-child(6){min-height:280px}
+  /* metallic art layer - distinct per project */
+  .work .art{position:absolute;inset:0;z-index:-1;opacity:.92;transform:scale(1.02);
+    transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .6s,filter .6s;filter:saturate(.9) brightness(.92)}
+  .work .row:hover .art{transform:scale(1.08);opacity:1;filter:saturate(1.2) brightness(1.05)}
+  /* legibility scrim */
+  .work .art::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(0deg,rgba(8,8,12,.9) 8%,rgba(8,8,12,.4) 48%,rgba(8,8,12,.12) 100%)}
+  .work .row.feat .art::after{background:linear-gradient(75deg,rgba(8,8,12,.92) 30%,rgba(8,8,12,.36) 70%,rgba(8,8,12,.05) 100%)}
+  /* cursor-tracking chrome sheen */
+  .work .row .sheen{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .5s;
+    mix-blend-mode:screen;
+    background:radial-gradient(220px 220px at var(--mx,50%) var(--my,50%),rgba(255,255,255,.18),transparent 60%)}
+  .work .row:hover .sheen{opacity:1}
+  @media(prefers-reduced-motion:reduce){.work .row .sheen{display:none}}
+  /* iridescent top wipe on hover */
+  .work .row::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;z-index:3;
+    background:linear-gradient(90deg,var(--violet),var(--cyan),var(--green));
+    transition:width .65s cubic-bezier(.2,.8,.2,1)}
+  .work .row:hover::before{width:100%}
+  .work .copy{position:relative;z-index:2;display:flex;flex-direction:column}
+  .work .row.feat .copy{max-width:60%}
+  /* the index sits at the TOP of the tile, above the bottom scrim, over the brightest
+     part of the metallic art - use silver + a dark halo so it never disappears */
+  .work .widx{font-family:var(--disp);font-weight:600;font-size:clamp(.95rem,1.4vw,1.15rem);
+    color:var(--silver);letter-spacing:.04em;margin-bottom:auto;transition:color .4s;
+    text-shadow:0 1px 6px rgba(8,8,12,.85),0 0 14px rgba(8,8,12,.6)}
+  .work .row:hover .widx{color:var(--ink)}
+  .work .wt{position:relative;width:fit-content;display:inline-flex;align-items:baseline;gap:.7rem;margin-top:1.3rem;
+    font-family:var(--disp);font-weight:600;font-size:clamp(1.6rem,3vw,2.5rem);letter-spacing:-.025em;
+    line-height:1.05;color:var(--ink);transition:color .4s,transform .5s cubic-bezier(.2,.8,.2,1)}
+  .work .row.feat .wt{font-size:clamp(2.1rem,4.4vw,3.5rem)}
+  .work .row:hover .wt{transform:translateX(.15rem)}
+  .work .wt .arrow{font-size:.5em;opacity:0;transform:translateX(-8px);transition:opacity .35s,transform .35s;color:var(--cyan)}
+  .work .row:hover .wt .arrow{opacity:1;transform:translateX(0)}
+  .work .wt::after{content:"";position:absolute;left:0;bottom:-.12em;height:1px;width:0;
+    background:linear-gradient(90deg,var(--violet),var(--cyan));transition:width .45s cubic-bezier(.2,.8,.2,1)}
+  .work .row:hover .wt::after{width:100%}
+  .work .wm{display:flex;align-items:baseline;gap:.85rem;flex-wrap:wrap;margin-top:.9rem;
+    font-size:.9rem;line-height:1.4;letter-spacing:.01em;color:var(--silver)}
+  .work .wm .nm{color:var(--ink);font-weight:600;font-family:var(--disp)}
+  .work .wm .role{position:relative;padding-left:1.05rem;color:var(--read)}
+  .work .wm .role::before{content:"";position:absolute;left:0;top:.55em;width:.55rem;height:1px;background:var(--line2)}
+  .work .wnote{margin-top:1rem;max-width:46ch;font-size:.92rem;line-height:1.55;color:var(--read)}
+  @media(max-width:720px){.work .wnote{max-width:100%;font-size:.88rem}}
+  /* per-project iridescent / metallic compositions (DISTINCT each) */
+  /* LambdaTest (feature) - mercury pour: layered chrome ramps climbing out of violet/cyan field */
+  .art.mercury{background:
+    linear-gradient(to top right,rgba(255,255,255,.22) 0%,transparent 46%),
+    linear-gradient(to top right,rgba(176,140,255,.34) 0%,transparent 58%),
+    repeating-linear-gradient(90deg,rgba(215,219,230,.05) 0 1px,transparent 1px 64px),
+    linear-gradient(135deg,#1c1838,#0a0a14)}
+  /* TestMu AI - morph: two overlapping chrome marks, violet -> green (the rebrand),
+     wrapped in a polished diagonal brushed-chrome sheen so it reads as liquid metal */
+  .art.morph{background:
+    repeating-linear-gradient(118deg,rgba(255,255,255,.10) 0 2px,transparent 2px 9px),
+    linear-gradient(118deg,transparent 30%,rgba(255,255,255,.22) 50%,transparent 66%),
+    radial-gradient(closest-side at 38% 50%,rgba(176,140,255,.7),transparent 70%),
+    radial-gradient(closest-side at 62% 50%,rgba(125,240,196,.6),transparent 70%),
+    conic-gradient(from 140deg at 50% 50%,rgba(103,232,249,.22),rgba(240,166,232,.18),rgba(103,232,249,.22)),
+    linear-gradient(135deg,#161a30,#0a0b16)}
+  /* Samsung - wave: concentric signal arcs in cyan from a corner (M-series broadcast) */
+  .art.wave{background:
+    radial-gradient(closest-side at 84% 84%,transparent 26%,rgba(103,232,249,.55) 28%,transparent 32%),
+    radial-gradient(closest-side at 84% 84%,transparent 46%,rgba(176,140,255,.4) 48%,transparent 52%),
+    radial-gradient(closest-side at 84% 84%,transparent 66%,rgba(125,240,196,.3) 68%,transparent 72%),
+    linear-gradient(135deg,#0e1830,#080c16)}
+  /* Medilife - pulse: chrome cross + green pulse field (0-to-1 hospital), set on a
+     polished convex steel disc (angular conic sweep) so it reads as mirror-metal */
+  .art.pulse{background:
+    linear-gradient(0deg,rgba(255,255,255,.42) 0 2px,transparent 2px) 50% 50% / 56% 56% no-repeat,
+    linear-gradient(90deg,rgba(255,255,255,.42) 0 2px,transparent 2px) 50% 50% / 56% 56% no-repeat,
+    radial-gradient(closest-side at 50% 50%,rgba(255,255,255,.18),transparent 72%),
+    conic-gradient(from 210deg at 50% 46%,rgba(255,255,255,.16),rgba(125,240,196,.04) 22%,rgba(255,255,255,.14) 46%,rgba(103,232,249,.05) 66%,rgba(255,255,255,.16)),
+    radial-gradient(60% 70% at 50% 50%,rgba(125,240,196,.2),transparent 64%),
+    linear-gradient(135deg,#10203a,#0a0e18)}
+  /* Lido Learning - funnel: narrowing iridescent bands feeding a point (CRM routing) */
+  .art.funnel{background:
+    linear-gradient(180deg,rgba(176,140,255,.45) 0 14%,transparent 14%),
+    linear-gradient(180deg,transparent 26%,rgba(103,232,249,.4) 26% 38%,transparent 38%),
+    linear-gradient(180deg,transparent 50%,rgba(125,240,196,.34) 50% 60%,transparent 60%),
+    radial-gradient(36% 30% at 50% 92%,rgba(255,255,255,.4),transparent 70%),
+    linear-gradient(135deg,#191436,#0c0a18)}
+  /* Appknox - shield: chrome shield bloom on deep field (security content) */
+  .art.shield{background:
+    radial-gradient(58% 70% at 50% 42%,rgba(255,255,255,.32),transparent 62%),
+    radial-gradient(70% 80% at 50% 10%,rgba(176,140,255,.28),transparent 60%),
+    linear-gradient(135deg,#181a3a,#0a0b16)}
+  /* iconographic hints */
+  .work .row{--hint:rgba(215,219,230,.34)}
+  .work .hint{position:absolute;z-index:1;pointer-events:none;opacity:.55;
+    transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
+  .work .row:hover .hint{opacity:.9}
+  .work .hint.up{top:1.3rem;right:1.3rem;width:1.5rem;height:1.6rem}
+  .work .hint.up svg{width:100%;height:100%;display:block}
+  .work .row:hover .hint.up{transform:translateY(-3px)}
+  @media(max-width:560px){.work .hint.up{width:1.2rem;height:1.3rem;top:1rem;right:1rem}}
+  /* per-tile hover glow tuned to each composition's signature hue */
+  .work .row.feat:hover{box-shadow:0 26px 64px -18px rgba(176,140,255,.5)}
+  .work .row:has(.art.morph):hover{box-shadow:0 24px 60px -18px rgba(125,240,196,.42)}
+  .work .row:has(.art.wave):hover{box-shadow:0 24px 60px -18px rgba(103,232,249,.42)}
+  .work .row:has(.art.pulse):hover{box-shadow:0 24px 60px -18px rgba(125,240,196,.4)}
+  .work .row:has(.art.funnel):hover{box-shadow:0 24px 60px -18px rgba(176,140,255,.42)}
+  .work .row:has(.art.shield):hover{box-shadow:0 24px 60px -18px rgba(215,219,230,.36)}
+  /* per-tile chrome swatch fades in lower-right on hover */
+  .work .row .swatch{position:absolute;right:1.2rem;bottom:1.2rem;z-index:2;width:1.5rem;height:1.5rem;border-radius:50%;
+    opacity:0;transform:scale(.6);transition:opacity .45s,transform .5s cubic-bezier(.2,.8,.2,1);
+    box-shadow:0 0 0 1px rgba(215,219,230,.2),0 6px 18px -4px rgba(0,0,0,.5)}
+  .work .row:hover .swatch{opacity:.95;transform:scale(1)}
+  .work .row.feat .swatch{right:1.7rem;bottom:1.7rem}
+  .work .swatch.mercury{background:conic-gradient(from 200deg,#b08cff,#67e8f9,#7df0c4,#f0a6e8,#b08cff)}
+  .work .swatch.morph{background:radial-gradient(circle at 32% 30%,#cbbcff,#7df0c4)}
+  .work .swatch.wave{background:radial-gradient(circle at 32% 30%,#bdf6ff,#67e8f9)}
+  .work .swatch.pulse{background:radial-gradient(circle at 32% 30%,#ffffff,#7df0c4)}
+  .work .swatch.funnel{background:radial-gradient(circle at 32% 30%,#cbbcff,#b08cff)}
+  .work .swatch.shield{background:radial-gradient(circle at 32% 30%,#ffffff,#b08cff)}
+  @media(max-width:560px){.work .row .swatch{width:1.2rem;height:1.2rem;right:1rem;bottom:1rem}}
+  @media(max-width:720px){.work{grid-template-columns:1fr}
+    .work .row,.work .row.feat{grid-column:1;flex-direction:column;align-items:stretch;justify-content:flex-end}
+    .work .row.feat .copy{max-width:100%}
+    .work .row.feat .art::after{background:linear-gradient(0deg,rgba(8,8,12,.9) 8%,rgba(8,8,12,.4) 48%,rgba(8,8,12,.12) 100%)}}
+  @media(max-width:560px){
+    .work .row{min-height:220px;padding:1.4rem}
+    .work .wt,.work .row.feat .wt{font-size:clamp(1.6rem,9vw,2.3rem)}
+    .work .row.feat{min-height:300px}
+    .work .row.feat .wt{font-size:clamp(2rem,11vw,2.8rem)}
+    .work .row:nth-child(2){min-height:250px}.work .row:nth-child(3){min-height:215px}
+    .work .row:nth-child(4){min-height:235px}.work .row:nth-child(5){min-height:210px}
+    .work .row:nth-child(6){min-height:230px}
+  }
+
+  /* ---------- recognition + brands ---------- */
+  .recog{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,5vw,5rem);align-items:start}
+  .recol{display:flex;flex-direction:column}
+  .recol .clabel{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--silver);
+    padding-top:1.2rem;padding-bottom:1.2rem;border-top:1px solid var(--line)}
+  .awards{display:flex;flex-direction:column}
+  .award{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:1.5rem;
+    padding:1.05rem 0;border-top:1px solid var(--line)}
+  .award:last-child{border-bottom:1px solid var(--line)}
+  .award b{font-family:var(--disp);font-weight:600;font-size:clamp(1.25rem,2.4vw,1.85rem);letter-spacing:-.01em;line-height:1.15}
+  .award b .num{font-style:normal;
+    background:linear-gradient(110deg,var(--violet),var(--cyan));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .award span{color:var(--silver);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;justify-self:end}
+  .brands{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .brands span{font-family:var(--disp);font-weight:500;font-size:1.15rem;letter-spacing:-.01em;color:var(--silver);
+    line-height:1;display:flex;align-items:center;min-height:1.05rem;padding:1.05rem 0;border-top:1px solid var(--line);
+    transition:color .3s}
+  .brands span:nth-child(2n){padding-left:1.4rem}
+  .brands span:nth-child(odd){padding-right:1.4rem}
+  .brands span:hover{color:var(--ink)}
+  @media(max-width:720px){.recog{grid-template-columns:1fr;gap:2.6rem}}
+
+  /* ---------- about ---------- */
+  .about{padding-top:clamp(4.2rem,9vh,7.2rem);padding-bottom:clamp(4.2rem,9vh,7.2rem)}
+  .about .abody{display:grid;grid-template-columns:200px 1fr 260px;gap:3rem;align-items:stretch}
+  /* metallic portrait frame - brushed-steel ring around a chrome/iridescent backdrop panel,
+     with a transparent figure cut-out lit by a halo + reflection so the near-black suit reads */
+  .about .portrait{position:relative;align-self:stretch;border-radius:20px;overflow:hidden;isolation:isolate;
+    min-height:340px;
+    /* brushed-steel frame */
+    padding:5px;
+    background:
+      conic-gradient(from 140deg,#cfd4e0,#8a90a3 18%,#eef0f6 30%,#9aa0b3 48%,#e7eaf2 60%,#7e8497 80%,#dfe3ec);
+    box-shadow:0 30px 70px -28px rgba(176,140,255,.45),inset 0 1px 0 rgba(255,255,255,.5)}
+  /* the inner panel is the BACKDROP the cut-out sits on: a brushed-metal / iridescent
+     gradient that is lighter than the page so the near-black suit never vanishes */
+  .about .portrait .pframe{position:relative;width:100%;height:100%;min-height:330px;border-radius:16px;overflow:hidden;
+    display:flex;align-items:flex-end;justify-content:center;
+    background:
+      /* brushed-metal vertical streaks */
+      repeating-linear-gradient(95deg,rgba(255,255,255,.05) 0 1px,transparent 1px 7px),
+      /* iridescent oil-slick sweep */
+      conic-gradient(from 200deg at 60% 30%,rgba(176,140,255,.30),rgba(103,232,249,.22) 30%,rgba(125,240,196,.18) 55%,rgba(240,166,232,.22) 78%,rgba(176,140,255,.30)),
+      /* steel base ramp - mid-tone so the silhouette separates from it */
+      linear-gradient(165deg,#3a4257 0%,#262c3c 42%,#171b27 100%)}
+  /* soft radial BACKLIGHT / halo behind the figure - the rim light that lifts the suit */
+  .about .portrait .pframe::before{content:"";position:absolute;left:50%;top:34%;z-index:0;pointer-events:none;
+    width:118%;height:96%;transform:translate(-50%,-50%);
+    background:radial-gradient(46% 54% at 50% 46%,rgba(231,237,247,.85),rgba(176,140,255,.34) 46%,rgba(103,232,249,.16) 66%,transparent 78%);
+    filter:blur(8px)}
+  /* the transparent cut-out figure - object-fit:contain, lit, grounded on the panel */
+  .about .portrait img{position:relative;z-index:1;width:100%;height:100%;
+    object-fit:contain;object-position:50% 100%;
+    /* gentle cool grade to sit in the chrome palette + a soft rim glow + ground shadow */
+    filter:contrast(1.05) brightness(1.02) saturate(.96)
+      drop-shadow(0 0 14px rgba(231,237,247,.30))
+      drop-shadow(0 18px 26px rgba(5,6,12,.55))}
+  /* subtle floor REFLECTION of the figure fading into the panel base */
+  .about .portrait .refl{position:absolute;left:0;right:0;bottom:0;height:30%;z-index:0;pointer-events:none;
+    background:linear-gradient(0deg,rgba(231,237,247,.10),transparent 80%);
+    -webkit-mask:linear-gradient(0deg,#000,transparent);mask:linear-gradient(0deg,#000,transparent)}
+  /* bottom scrim so the caption + figure base ground into the panel */
+  .about .portrait .pframe::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(0deg,rgba(8,8,12,.72) 0%,rgba(8,8,12,.18) 22%,transparent 42%)}
+  /* moving spec sheen across the panel on hover */
+  .about .portrait .gloss{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .5s;
+    mix-blend-mode:screen;
+    background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.22) 50%,transparent 62%)}
+  .about .portrait:hover .gloss{opacity:1}
+  .about .portrait .cap{position:absolute;left:1rem;right:1rem;bottom:.9rem;z-index:4;display:flex;
+    align-items:center;justify-content:space-between;gap:.6rem}
+  .about .portrait .cap .nm{font-family:var(--disp);font-weight:600;font-size:.92rem;letter-spacing:-.01em;color:var(--ink)}
+  .about .portrait .cap .rl{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--silver);font-weight:600}
+  @media(prefers-reduced-motion:reduce){.about .portrait .gloss{display:none}}
+  .about .rail{display:flex;flex-direction:column;gap:.5rem;border-left:1px solid var(--line);padding-left:1.6rem}
+  .about .rail .k{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mut)}
+  .about .rail .k.lead{color:var(--silver)}
+  .about .rail .v{font-family:var(--disp);color:var(--silver);font-size:1.05rem;font-weight:500}
+  .about .rail .div{height:1px;width:34px;background:linear-gradient(90deg,var(--violet),var(--cyan));margin:.7rem 0}
+  .about .rail .sig{font-family:var(--disp);font-size:1.35rem;font-weight:600;letter-spacing:-.01em;
+    background:linear-gradient(180deg,#ffffff,#9aa0b3 70%,#dfe3ec);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .about .plate{position:relative;border:1px solid var(--line);border-radius:18px;
+    padding:clamp(1.5rem,2.1vw,2rem) clamp(1.8rem,3vw,2.8rem);overflow:hidden;
+    display:flex;align-items:center;min-height:100%;
+    background:linear-gradient(135deg,rgba(176,140,255,.06),transparent 55%),rgba(215,219,230,.012)}
+  .about .plate::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(60% 80% at 88% -10%,rgba(103,232,249,.12),transparent 60%)}
+  .about p{position:relative;z-index:1;font-family:var(--disp);font-weight:400;
+    font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.35;letter-spacing:-.015em;max-width:27ch}
+  .about p em{font-style:normal;
+    background:linear-gradient(110deg,var(--violet),var(--cyan));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  @media(max-width:960px){.about .abody{grid-template-columns:1fr 260px;gap:2.2rem}
+    .about .portrait{grid-row:1 / span 2;grid-column:2}}
+  @media(max-width:720px){.about .abody{grid-template-columns:1fr;gap:1.6rem}
+    .about .portrait{grid-row:auto;grid-column:auto;min-height:300px;max-height:62vh}
+    .about .rail{flex-direction:row;flex-wrap:wrap;align-items:center;gap:1rem 1.4rem;border-left:0;padding-left:0;
+      border-top:1px solid var(--line);padding-top:1.4rem}
+    .about .rail .div{display:none}.about .rail .sig{flex-basis:100%}}
+
+  /* ---------- contact ---------- */
+  .contact{text-align:center;padding-bottom:7rem}
+  .contact .big{font-family:var(--disp);font-weight:700;font-size:clamp(2.6rem,8.5vw,7.5rem);line-height:1;letter-spacing:-.04em}
+  .contact .big a{position:relative}
+  .contact .big a::after{content:"";position:absolute;left:0;bottom:.06em;width:100%;height:3px;
+    background:linear-gradient(90deg,var(--violet),var(--cyan),var(--green));
+    transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .contact .big a:hover::after{transform:scaleX(1)}
+  .contact .em{margin-top:2.4rem;font-size:.95rem;color:var(--read);letter-spacing:.02em}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--line2);padding-bottom:2px}
+  footer{border-top:1px solid var(--line);padding:2.5rem var(--m);display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:1rem;font-size:.76rem;color:var(--read);position:relative;z-index:3}
+  footer a{color:var(--silver)}footer a:hover{color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(24px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+  /* Reduced-motion users don't get the JS scroll-fade of the bright fixed canvases,
+     so dim them statically. The blob stays present in the hero but can never flare
+     bright enough behind scrolled-over light text to wash it out. */
+  @media(prefers-reduced-motion:reduce){
+    canvas#chrome,.chrome-fallback{opacity:.5}
+    canvas#bg{opacity:.5}
+  }
+
+  /* craft details */
+  .progress{position:fixed;top:0;left:0;height:2px;width:100%;transform:scaleX(0);transform-origin:left;z-index:30;
+    background:linear-gradient(90deg,var(--violet),var(--cyan),var(--green));mix-blend-mode:screen}
+  .cur{position:fixed;top:0;left:0;width:34px;height:34px;border:1px solid rgba(215,219,230,.6);border-radius:50%;
+    pointer-events:none;z-index:40;transform:translate(-50%,-50%);mix-blend-mode:difference;
+    transition:width .35s cubic-bezier(.2,.8,.2,1),height .35s cubic-bezier(.2,.8,.2,1),background .3s;will-change:transform}
+  .cur.big{width:74px;height:74px;background:rgba(215,219,230,.08)}
+  @media(hover:none),(pointer:coarse){.cur{display:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+<canvas id="bg"></canvas>
+<canvas id="chrome"></canvas>
+<div class="chrome-fallback" id="chromeFallback" aria-hidden="true"></div>
+<div class="css-oil" id="cssOil" aria-hidden="true"></div>
+<div class="grain"></div>
+<div class="scan"></div>
+<div class="vignette"></div>
+
+<nav>
+  <a class="logo" href="/redesign/"><span class="navav"><img src="/assets/avatar-crop.webp" alt="Swapnil Biswas" width="32" height="32" loading="lazy" decoding="async" /></span>Swapnil <i class="oil-txt">Biswas</i></a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="muted" href="/redesign/">All concepts</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="credential">Senior Product Marketing Manager - LambdaTest</div>
+    <h1>
+      <span class="ln"><span><span class="chrome-txt">Marketing</span></span></span>
+      <span class="ln"><span><span class="chrome-txt">cast in</span></span></span>
+      <span class="ln"><span><span class="oil-txt">metal.</span></span></span>
+    </h1>
+    <p class="sub">I'm Swapnil Biswas - a product marketer who builds. I forge the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b>, not just the decks that describe them.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">See selected work <span class="ar">&#8599;</span></a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+    <div class="heroanchor">
+      <span class="avail"><span class="dot"></span> Open to select work</span>
+      <span class="rule"></span>
+    </div>
+    <div class="scrollcue"><span class="bar"></span> Scroll</div>
+  </header>
+
+  <section id="manifesto" style="padding-top:0">
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>Build the systems</span><span>not just the decks</span><span>Positioning</span>
+        <span>Growth that compounds</span><span>AI agents, shipped</span><span>Technical SEO</span>
+        <span>Build the systems</span><span>not just the decks</span><span>Positioning</span>
+        <span>Growth that compounds</span><span>AI agents, shipped</span><span>Technical SEO</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="stats">
+    <div class="stats">
+      {stats.map(s => (
+        <div class="stat reveal"><div class="n">{s.n}</div><div class="l">{s.l}</div></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="shead"><h2>What I <span class="oil-txt">do</span></h2><div class="eyebrow">Four disciplines, one operator</div></div>
+    <div class="pillars">
+      {pillars.map(p => (
+        <div class="pillar reveal"><div class="pi">{p.i}</div><div><h3>{p.t}</h3><p>{p.d}</p></div></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="shead"><h2>Selected <span class="oil-txt">work</span></h2><div class="eyebrow">2019 - 2026</div></div>
+    <div class="work">
+      {work.map((w, idx) => (
+        <a class={`row reveal${idx === 0 ? ' feat' : ''}`} href="#">
+          <span class={`art ${w.sw}`} aria-hidden="true"></span>
+          <span class="sheen" aria-hidden="true"></span>
+          {w.sw === 'shield' && (
+            <span class="hint up" aria-hidden="true"><svg viewBox="0 0 24 26" fill="none">
+              <path d="M12 2 L21 6 V13 C21 19 17 23 12 25 C7 23 3 19 3 13 V6 Z" stroke="var(--hint)" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M8 13 L11 16 L16 9" stroke="var(--cyan)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+            </svg></span>
+          )}
+          {w.sw === 'pulse' && (
+            <span class="hint up" aria-hidden="true"><svg viewBox="0 0 26 24" fill="none">
+              <path d="M1 12 H7 L10 4 L15 20 L18 12 H25" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+            </svg></span>
+          )}
+          <span class={`swatch ${w.sw}`} aria-hidden="true"></span>
+          <span class="copy">
+            <span class="widx">{w.i}</span>
+            <span class="wt">{w.r}<span class="arrow">&#8599;</span></span>
+            <span class="wm"><span class="nm">{w.t}</span><span class="role">{w.role}{w.y ? ` · ${w.y}` : ''}</span></span>
+            {idx === 0 && <span class="wnote">{w.note}</span>}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="recognition">
+    <div class="shead"><h2>Recognition &amp; <span class="oil-txt">brands</span></h2><div class="eyebrow">Selected honors</div></div>
+    <div class="recog">
+      <div class="recol reveal">
+        <div class="clabel">Honors &amp; awards</div>
+        <div class="awards">
+          <div class="award"><b>Value of Agility Award</b> <span>LambdaTest &middot; 2024</span></div>
+          <div class="award"><b>Wall of Fame</b> <span>LambdaTest</span></div>
+          <div class="award"><b><span class="num">#1</span> Product of the Day</b> <span>Product Hunt</span></div>
+        </div>
+      </div>
+      <div class="recol reveal">
+        <div class="clabel">Trusted by teams at</div>
+        <div class="brands">
+          {brands.map(b => <span>{b}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="shead"><h2><span class="oil-txt">About</span></h2><div class="eyebrow">The operator behind the work</div></div>
+    <div class="abody">
+      <div class="rail reveal">
+        <div class="k lead">About</div>
+        <div class="k">Based in</div>
+        <div class="v">Mumbai, India</div>
+        <div class="div"></div>
+        <div class="sig">Swapnil B.</div>
+      </div>
+      <div class="plate reveal">
+        <p>Seven years in marketing, four in B2B SaaS. A postgrad in growth strategy at <em>IIM Visakhapatnam</em>. I treat my own career like a product - positioned, measured and shipped.</p>
+      </div>
+      <figure class="portrait reveal">
+        <div class="pframe">
+          <span class="refl" aria-hidden="true"></span>
+          <img src="/assets/portrait-cut.webp" alt="Swapnil Biswas, product marketer" width="1023" height="1536" loading="lazy" decoding="async" />
+          <span class="gloss" aria-hidden="true"></span>
+          <figcaption class="cap"><span class="nm">Swapnil Biswas</span><span class="rl">Mumbai, IN</span></figcaption>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="eyebrow reveal" style="margin-bottom:2rem">Let's build something that compounds</div>
+    <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com" class="chrome-txt">Say hello &#8599;</a></div>
+    <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+  </section>
+</div>
+
+<footer>
+  <span>&copy; 2026 Swapnil Biswas</span>
+  <span>Concept 15 - Chrome &middot; <a href="/redesign/">View all concepts</a></span>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+  // ---- raw-WebGL oil-slick backdrop ----
+  // On small screens, fall back to the animated CSS oil-slick (mobile WebGL unreliable).
+  (function(){
+    const cv = document.getElementById('bg');
+    const css = document.getElementById('cssOil');
+    if(isMobile){ if(cv) cv.style.display='none'; if(css) css.style.display='block'; return; }
+    const gl = cv.getContext('webgl', { antialias:true, alpha:true });
+    if(!gl){ if(css) css.style.display='block'; return; }
+    const vs = `attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+    const fs = `precision highp float;uniform vec2 r;uniform float t;
+      float h(vec2 x){return fract(sin(dot(x,vec2(127.1,311.7)))*43758.5453);}
+      float n(vec2 x){vec2 i=floor(x),f=fract(x);float a=h(i),b=h(i+vec2(1,0)),c=h(i+vec2(0,1)),d=h(i+vec2(1,1));vec2 u=f*f*(3.-2.*f);return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y;}
+      float fbm(vec2 x){float v=0.,a=.5;for(int i=0;i<6;i++){v+=a*n(x);x*=2.02;a*=.5;}return v;}
+      void main(){
+        vec2 uv=gl_FragCoord.xy/r.xy;vec2 p=uv;p.x*=r.x/r.y;
+        // slow flowing field
+        float f=fbm(p*2.4+vec2(t*.025,t*.04));
+        float g=fbm(p*1.6-vec2(t*.03,-t*.02)+f*1.4);
+        // iridescent oil-slick palette (violet/cyan/green/magenta sheen)
+        vec3 violet=vec3(.69,.55,1.0);
+        vec3 cyan=vec3(.40,.91,.98);
+        vec3 green=vec3(.49,.94,.77);
+        vec3 magenta=vec3(.94,.65,.91);
+        vec3 col=mix(violet,cyan,smoothstep(.2,.8,f));
+        col=mix(col,green,smoothstep(.45,.95,g)*.6);
+        col=mix(col,magenta,smoothstep(.55,1.0,f*g)*.4);
+        // keep it dark + reflective: low overall luminance, brighter where the slick swirls
+        float swirl=pow(smoothstep(.25,.85,g),1.6);
+        col*=swirl*.34;
+        // bias glow to upper-right where the chrome blob mirrors the scene
+        float halo=smoothstep(1.1,.0,length((uv-vec2(.72,.30))*vec2(1.0,1.3)));
+        col+=mix(violet,cyan,.5)*halo*.10;
+        float vig=smoothstep(1.35,.2,length(uv-vec2(.5,.42)));
+        col*=vig;
+        gl_FragColor=vec4(col,1.0);
+      }`;
+    function sh(ty,s){const o=gl.createShader(ty);gl.shaderSource(o,s);gl.compileShader(o);return o;}
+    const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t');
+    function size(){const d=Math.min(window.devicePixelRatio||1,1.6);cv.width=innerWidth*d;cv.height=innerHeight*d;gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(ur,cv.width,cv.height);}
+    size();addEventListener('resize',size);
+    if(reduce){gl.uniform1f(ut,4.0);gl.drawArrays(gl.TRIANGLES,0,3);return;}
+    const start=performance.now();
+    (function loop(now){gl.uniform1f(ut,(now-start)/1000);gl.drawArrays(gl.TRIANGLES,0,3);requestAnimationFrame(loop);})(start);
+  })();
+
+  // ---- Three.js liquid-metal chrome blob ----
+  // A single reflective icosahedron with metalness:1, low roughness, mirroring a colourful
+  // oil-slick environment built from a CanvasTexture -> PMREMGenerator. Slow auto-rotate +
+  // mouse-reactive vertex displacement so the metal liquifies. DPR capped, gradient fallback.
+  (async function(){
+    const cv = document.getElementById('chrome');
+    const fb = document.getElementById('chromeFallback');
+    // mobile: skip WebGL chrome, show the CSS chrome fallback orb
+    if(isMobile){ if(cv) cv.style.display='none'; if(fb) fb.style.display='block'; return; }
+    let THREE;
+    try { THREE = await import('https://esm.sh/three@0.160.0'); }
+    catch(e){ if(cv) cv.style.display='none'; if(fb) fb.style.display='block'; return; }
+    const gl = cv.getContext('webgl2') || cv.getContext('webgl');
+    if(!gl){ cv.style.display='none'; if(fb) fb.style.display='block'; return; }
+
+    const renderer = new THREE.WebGLRenderer({ canvas:cv, antialias:true, alpha:true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.6));
+    renderer.setSize(innerWidth, innerHeight);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(38, innerWidth/innerHeight, 0.1, 100);
+    camera.position.set(0, 0, 6.4);
+
+    // ---- iridescent oil-slick equirectangular environment (NOT neutral studio) ----
+    const envCv = document.createElement('canvas');
+    envCv.width = 1024; envCv.height = 512;
+    const ec = envCv.getContext('2d');
+    // base vertical dark gradient
+    let bg = ec.createLinearGradient(0,0,0,512);
+    bg.addColorStop(0,'#161427'); bg.addColorStop(.5,'#0c0c16'); bg.addColorStop(1,'#05050a');
+    ec.fillStyle = bg; ec.fillRect(0,0,1024,512);
+    // colourful oil-slick blobs the chrome will mirror
+    const blobs = [
+      ['#b08cff', 240, 150, 320],
+      ['#67e8f9', 700, 180, 300],
+      ['#7df0c4', 500, 360, 260],
+      ['#f0a6e8', 880, 340, 240],
+      ['#8b6cff', 120, 380, 220],
+      ['#5fd6ff', 420, 90,  200],
+      ['#ff7a59', 980, 120, 150],
+    ];
+    blobs.forEach(([c,x,y,rad])=>{
+      const g = ec.createRadialGradient(x,y,0,x,y,rad);
+      g.addColorStop(0, c); g.addColorStop(1, 'rgba(0,0,0,0)');
+      ec.globalCompositeOperation = 'lighter';
+      ec.fillStyle = g; ec.beginPath(); ec.arc(x,y,rad,0,Math.PI*2); ec.fill();
+    });
+    // a bright top band = key highlight so the metal gets a clean specular streak
+    ec.globalCompositeOperation = 'lighter';
+    let hl = ec.createLinearGradient(0,0,0,120);
+    hl.addColorStop(0,'rgba(255,255,255,.6)'); hl.addColorStop(1,'rgba(255,255,255,0)');
+    ec.fillStyle = hl; ec.fillRect(0,0,1024,120);
+    ec.globalCompositeOperation = 'source-over';
+
+    const envTex = new THREE.CanvasTexture(envCv);
+    envTex.mapping = THREE.EquirectangularReflectionMapping;
+    envTex.colorSpace = THREE.SRGBColorSpace;
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    const envRT = pmrem.fromEquirectangular(envTex);
+    scene.environment = envRT.texture;
+
+    // a couple of lights to give the metal form beyond pure reflection
+    const key = new THREE.DirectionalLight(0xffffff, 1.2); key.position.set(3,4,5); scene.add(key);
+    const rim = new THREE.DirectionalLight(0xb08cff, 1.0); rim.position.set(-4,-2,-3); scene.add(rim);
+    scene.add(new THREE.AmbientLight(0x404060, 0.6));
+
+    // ---- the chrome blob: high-detail icosahedron, displaced for "liquid" surface ----
+    const geo = new THREE.IcosahedronGeometry(1.85, 24);
+    const basePos = geo.attributes.position.array.slice();
+    const nVerts = geo.attributes.position.count;
+    const mat = new THREE.MeshStandardMaterial({
+      color: 0xeef1f8, metalness: 1.0, roughness: 0.08, envMapIntensity: 1.35,
+    });
+    const blob = new THREE.Mesh(geo, mat);
+    scene.add(blob);
+
+    // simple 3D value noise for vertex displacement
+    function hash(x,y,z){const s=Math.sin(x*127.1+y*311.7+z*74.7)*43758.5453;return s-Math.floor(s);}
+    function vnoise(x,y,z){
+      const xi=Math.floor(x),yi=Math.floor(y),zi=Math.floor(z);
+      const xf=x-xi,yf=y-yi,zf=z-zi;
+      const u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf),w=zf*zf*(3-2*zf);
+      function l(a,b,t){return a+(b-a)*t;}
+      const c000=hash(xi,yi,zi),c100=hash(xi+1,yi,zi),c010=hash(xi,yi+1,zi),c110=hash(xi+1,yi+1,zi);
+      const c001=hash(xi,yi,zi+1),c101=hash(xi+1,yi,zi+1),c011=hash(xi,yi+1,zi+1),c111=hash(xi+1,yi+1,zi+1);
+      return l(l(l(c000,c100,u),l(c010,c110,u),v),l(l(c001,c101,u),l(c011,c111,u),v),w);
+    }
+
+    const pos = geo.attributes.position;
+    let mx=0,my=0,tmx=0,tmy=0;
+    addEventListener('mousemove',e=>{ tmx=(e.clientX/innerWidth)*2-1; tmy=(e.clientY/innerHeight)*2-1; });
+
+    function displace(time){
+      const amp = 0.30 + (Math.abs(mx)+Math.abs(my))*0.22; // mouse 'liquifies' the metal more
+      const freq = 1.15;
+      for(let i=0;i<nVerts;i++){
+        const ix=i*3;
+        const bx=basePos[ix], by=basePos[ix+1], bz=basePos[ix+2];
+        // direction = normalized base vertex (sphere normal)
+        const len=Math.sqrt(bx*bx+by*by+bz*bz)||1;
+        const nx=bx/len, ny=by/len, nz=bz/len;
+        const nz1 = vnoise(bx*freq + time*0.5, by*freq + mx*1.5, bz*freq + time*0.35);
+        const nz2 = vnoise(bx*2.3 - time*0.3, by*2.3 + my*1.5, bz*2.3 + time*0.4)*0.5;
+        const d = (nz1 + nz2 - 0.75) * amp;
+        pos.array[ix]   = bx + nx*d;
+        pos.array[ix+1] = by + ny*d;
+        pos.array[ix+2] = bz + nz*d;
+      }
+      pos.needsUpdate = true;
+      geo.computeVertexNormals();
+    }
+
+    function resize(){
+      camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+      renderer.setSize(innerWidth, innerHeight);
+    }
+    addEventListener('resize', resize);
+
+    let rafId;
+    if(reduce){
+      displace(0.6);
+      blob.rotation.y = 0.5;
+      renderer.render(scene, camera);
+    } else {
+      const t0 = performance.now();
+      (function animate(now){
+        const t = (now - t0)/1000;
+        mx += (tmx-mx)*0.05; my += (tmy-my)*0.05;
+        displace(t);
+        blob.rotation.y = t*0.18 + mx*0.4;
+        blob.rotation.x = Math.sin(t*0.12)*0.15 - my*0.3;
+        renderer.render(scene, camera);
+        rafId = requestAnimationFrame(animate);
+      })(t0);
+    }
+
+    // dispose on unload to avoid leaks
+    addEventListener('beforeunload', ()=>{
+      if(rafId) cancelAnimationFrame(rafId);
+      geo.dispose(); mat.dispose(); envTex.dispose(); envRT.dispose(); pmrem.dispose(); renderer.dispose();
+    });
+  })();
+
+  // ---- smooth scroll + reveals + microinteractions ----
+  if(!reduce){
+    const lenis = new Lenis({ lerp:.1, smoothWheel:true });
+    function raf(t){ lenis.raf(t); requestAnimationFrame(raf); } requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll', ScrollTrigger.update);
+
+    // hero entrance
+    gsap.set('.hero h1 .ln>span',{ yPercent:115 });
+    gsap.set('.hero .credential,.hero .sub,.hero .cta,.hero .heroanchor',{ opacity:0, y:20 });
+    const tl = gsap.timeline({ delay:.15 });
+    tl.to('.hero h1 .ln>span',{ yPercent:0, duration:1.1, ease:'expo.out', stagger:.09 })
+      .to('.hero .credential',{ opacity:1, y:0, duration:.7 }, .2)
+      .to('.hero .sub',{ opacity:1, y:0, duration:.8 }, .5)
+      .to('.hero .cta',{ opacity:1, y:0, duration:.8 }, .65)
+      .to('.hero .heroanchor',{ opacity:1, y:0, duration:.7 }, .8);
+
+    // batched scroll reveals
+    ScrollTrigger.batch('.reveal',{
+      start:'top 88%',
+      onEnter:batch=>gsap.to(batch,{ opacity:1, y:0, duration:1, ease:'expo.out', stagger:.09, overwrite:true }),
+    });
+    ScrollTrigger.refresh();
+
+    // Fade the bright fixed canvases (reflective chrome blob + oil-slick) out as the
+    // user leaves the hero, so their bright flares can never wash out the light text in
+    // the scrolled-over sections (stats / pillars / recognition / about / contact).
+    const chromeCv = document.getElementById('chrome');
+    const bgCv = document.getElementById('bg');
+    gsap.to([chromeCv, bgCv].filter(Boolean),{
+      opacity:0, ease:'none',
+      scrollTrigger:{ trigger:'#manifesto', start:'top 70%', end:'top top', scrub:.4 }
+    });
+
+    // scroll progress bar
+    const prog = document.getElementById('progress');
+    gsap.to(prog,{ scaleX:1, ease:'none', scrollTrigger:{ trigger:document.body, start:'top top', end:'bottom bottom', scrub:.3 }});
+
+    // trailing chrome cursor
+    const cur = document.getElementById('cur');
+    let cx=-100,cy=-100,tx=cx,ty=cy;
+    addEventListener('mousemove',e=>{ tx=e.clientX; ty=e.clientY; });
+    (function cloop(){ cx+=(tx-cx)*.18; cy+=(ty-cy)*.18; cur.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`; requestAnimationFrame(cloop); })();
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mouseenter',()=>cur.classList.add('big'));
+      el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
+    });
+
+    // magnetic primary CTA
+    document.querySelectorAll('.btn.primary').forEach(btn=>{
+      btn.addEventListener('mousemove',e=>{ const r=btn.getBoundingClientRect();
+        gsap.to(btn,{ x:(e.clientX-r.left-r.width/2)*.35, y:(e.clientY-r.top-r.height/2)*.45, duration:.4, ease:'power3.out' }); });
+      btn.addEventListener('mouseleave',()=>gsap.to(btn,{ x:0, y:0, duration:.6, ease:'elastic.out(1,.4)' }));
+    });
+
+    // signature: chrome sheen tracks cursor across each work card
+    document.querySelectorAll('.work .row').forEach(card=>{
+      card.addEventListener('mousemove',e=>{ const r=card.getBoundingClientRect();
+        card.style.setProperty('--mx',`${((e.clientX-r.left)/r.width)*100}%`);
+        card.style.setProperty('--my',`${((e.clientY-r.top)/r.height)*100}%`);
+      });
+    });
+  }
+</script>
+</body>
+</html>

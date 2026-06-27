@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="760" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="74" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700">What the Crawler Receives: CSR vs SSR vs SSG</text>
+  <text x="700" y="112" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="21">What Googlebot sees in the first response, before any JavaScript runs</text>
+
+  <!-- ===================== Card 1: CSR (red/salmon) ===================== -->
+  <rect x="60" y="150" width="400" height="540" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="60" y="150" width="400" height="6" rx="3" fill="#f87171"/>
+
+  <text x="260" y="216" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Client-Side (CSR)</text>
+  <text x="260" y="248" text-anchor="middle" fill="#f87171" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600">Plain React default</text>
+  <line x1="100" y1="276" x2="420" y2="276" stroke="#30363d" stroke-width="1"/>
+
+  <text x="100" y="324" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600">What Googlebot sees first</text>
+  <text x="100" y="360" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="100" dy="0">An empty shell,</tspan>
+    <tspan x="100" dy="34">content missing</tspan>
+  </text>
+
+  <line x1="100" y1="436" x2="420" y2="436" stroke="#30363d" stroke-width="1"/>
+
+  <text x="100" y="484" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600">SEO impact</text>
+  <text x="100" y="520" fill="#f87171" font-family="Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600">
+    <tspan x="100" dy="0">High risk</tspan>
+  </text>
+  <text x="100" y="558" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="100" dy="0">May never be</tspan>
+    <tspan x="100" dy="34">indexed</tspan>
+  </text>
+
+  <!-- ===================== Card 2: SSR (teal) ===================== -->
+  <rect x="500" y="150" width="400" height="540" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="500" y="150" width="400" height="6" rx="3" fill="#5eead4"/>
+
+  <text x="700" y="216" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Server-Side (SSR)</text>
+  <text x="700" y="248" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600">Next.js, Remix, Nuxt</text>
+  <line x1="540" y1="276" x2="860" y2="276" stroke="#30363d" stroke-width="1"/>
+
+  <text x="540" y="324" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600">What Googlebot sees first</text>
+  <text x="540" y="360" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="540" dy="0">Full HTML in the</tspan>
+    <tspan x="540" dy="34">first response</tspan>
+  </text>
+
+  <line x1="540" y1="436" x2="860" y2="436" stroke="#30363d" stroke-width="1"/>
+
+  <text x="540" y="484" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600">SEO impact</text>
+  <text x="540" y="520" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600">
+    <tspan x="540" dy="0">Strong</tspan>
+  </text>
+  <text x="540" y="558" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="540" dy="0">Content visible</tspan>
+    <tspan x="540" dy="34">right away</tspan>
+  </text>
+
+  <!-- ===================== Card 3: SSG (blue) ===================== -->
+  <rect x="940" y="150" width="400" height="540" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="940" y="150" width="400" height="6" rx="3" fill="#60a5fa"/>
+
+  <text x="1140" y="216" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Static (SSG)</text>
+  <text x="1140" y="248" text-anchor="middle" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600">Astro default</text>
+  <line x1="980" y1="276" x2="1300" y2="276" stroke="#30363d" stroke-width="1"/>
+
+  <text x="980" y="324" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600">What Googlebot sees first</text>
+  <text x="980" y="360" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="980" dy="0">Full pre-built</tspan>
+    <tspan x="980" dy="34">HTML</tspan>
+  </text>
+
+  <line x1="980" y1="436" x2="1300" y2="436" stroke="#30363d" stroke-width="1"/>
+
+  <text x="980" y="484" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600">SEO impact</text>
+  <text x="980" y="520" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600">
+    <tspan x="980" dy="0">Strong</tspan>
+  </text>
+  <text x="980" y="558" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">
+    <tspan x="980" dy="0">Visible and</tspan>
+    <tspan x="980" dy="34">fast</tspan>
+  </text>
+</svg>

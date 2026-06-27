@@ -34,7 +34,7 @@ A strong product marketing OKR does three things:
 
 ## The 5 Categories of Product Marketing OKRs
 
-Every PMM team should have OKRs that span the core responsibilities of the role. The [Product Marketing Alliance's State of Product Marketing 2025 report](https://www.productmarketingalliance.com/state-of-product-marketing-report-2025/) describes PMMs as sharpening positioning, messaging, and launches, alongside the customer research, sales enablement, and competitive intel work most modern teams also own. That gives you five OKR categories.
+Every PMM team should have OKRs that span the [core responsibilities of the role](/blog/product-marketing-framework/). The [Product Marketing Alliance's State of Product Marketing 2025 report](https://www.productmarketingalliance.com/state-of-product-marketing-report-2025/) describes PMMs as sharpening positioning, messaging, and launches, alongside the customer research, sales enablement, and competitive intel work most modern teams also own. That gives you five OKR categories.
 
 ### 1. Positioning and Messaging OKRs
 

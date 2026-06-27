@@ -75,7 +75,7 @@ Check your robots.txt file at `yoursite.com/robots.txt`:
 - Is the sitemap URL referenced?
 - Are CSS/JS files being blocked? (This prevents Google from rendering your pages properly)
 
-**Common mistake:** Blocking `/wp-admin/` is fine, but blocking `/wp-includes/` can prevent Google from loading CSS and JavaScript needed to render your pages.
+**Common mistake:** Blocking `/wp-admin/` is fine, but blocking `/wp-includes/` can prevent Google from loading CSS and JavaScript needed to render your pages. This rendering dependency is also why [client-side JavaScript sites often struggle to get indexed](/blog/vibe-coded-website-seo/) - if the content only appears after JavaScript runs, Google may never see it.
 
 **1.2 XML Sitemap**
 
@@ -365,7 +365,7 @@ You don't need expensive tools or an SEO agency to run a technical audit. Google
 
 The hardest part isn't finding the issues -it's fixing them consistently. Set a quarterly reminder, run the audit, and work through the priority list. That discipline alone puts you ahead of the majority of sites that have critical technical issues they don't even know about.
 
-Related: turn your findings into a clear [SEO report](/blog/what-is-seo-report/), track progress by learning [how to check your SEO ranking](/blog/how-do-i-check-my-seo-ranking/), and if you are budgeting the work, see [how much an SEO audit costs](/blog/how-much-does-an-seo-audit-cost/).
+Related: turn your findings into a clear [SEO report](/blog/what-is-seo-report/), work through a broader [SEO audit checklist](/blog/seo-audit-checklist/) that covers content and on-page alongside the technical layer, track progress by learning [how to check your SEO ranking](/blog/how-do-i-check-my-seo-ranking/), and if you are budgeting the work, see [how much an SEO audit costs](/blog/how-much-does-an-seo-audit-cost/).
 
 Your content deserves to be found. Make sure your technical foundation isn't the thing holding it back.
 

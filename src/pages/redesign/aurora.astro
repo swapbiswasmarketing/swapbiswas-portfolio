@@ -124,16 +124,34 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
     text-transform:uppercase;color:var(--bone);font-weight:500}
   .credential::before{content:"";width:26px;height:1px;background:var(--warm);flex:none}
   /* hero */
-  header.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:6rem;padding-bottom:4rem}
-  .hero .credential{margin-bottom:1.8rem;overflow:hidden}
-  .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,9.5vw,9.5rem);line-height:.93;letter-spacing:-.025em;max-width:14ch}
-  .hero h1 em{font-style:italic;font-weight:400;color:var(--warm)}
+  header.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:6rem;padding-bottom:4rem}
+  /* READABILITY SCRIM: the aurora WebGL is animated and can drift BRIGHT (violet/pink/gold,
+     boosted ~1.7x luminance) directly behind the hero text - the shader even centres a halo
+     under the wordmark. A static screenshot does not show that worst case, so we GUARANTEE
+     the type wins with a soft dark plate sitting ABOVE the canvas (z 0/1) and BELOW the copy
+     (z 2). It is anchored lower-left where the headline + sub live and feathers out so the
+     aurora stays visible across the rest of the hero - legibility without flattening the look. */
+  .hero::before{content:"";position:absolute;z-index:0;pointer-events:none;
+    left:calc(var(--m) * -1);right:0;bottom:0;top:18%;
+    background:
+      radial-gradient(120% 95% at 24% 78%,rgba(8,8,11,.74),rgba(8,8,11,.5) 40%,transparent 72%),
+      linear-gradient(0deg,rgba(8,8,11,.6),transparent 60%)}
+  @media(max-width:600px){.hero::before{top:40%;background:
+      radial-gradient(140% 80% at 30% 85%,rgba(8,8,11,.7),rgba(8,8,11,.42) 46%,transparent 76%),
+      linear-gradient(0deg,rgba(8,8,11,.6),transparent 64%)}}
+  .hero .credential{margin-bottom:1.8rem;overflow:hidden;position:relative;z-index:2}
+  .hero h1{position:relative;z-index:2;font-family:var(--serif);font-weight:300;font-size:clamp(3rem,9.5vw,9.5rem);line-height:.93;letter-spacing:-.025em;max-width:14ch;
+    text-shadow:0 2px 30px rgba(8,8,11,.55)}
+  .hero h1 em{font-style:italic;font-weight:400;color:var(--warm);
+    /* the gold word is the highest washout risk over a brightening aurora - give it a dark halo */
+    text-shadow:0 1px 2px rgba(8,8,11,.7),0 2px 26px rgba(8,8,11,.65)}
   .hero h1 .ln{display:block;overflow:hidden}
   .hero h1 .ln>span{display:block;will-change:transform}
-  .hero .sub{margin-top:2.4rem;max-width:46ch;font-size:clamp(1rem,1.4vw,1.18rem);color:var(--read);line-height:1.65}
+  .hero .sub{position:relative;z-index:2;margin-top:2.4rem;max-width:46ch;font-size:clamp(1rem,1.4vw,1.18rem);color:var(--read);line-height:1.65;
+    text-shadow:0 1px 12px rgba(8,8,11,.6)}
   .hero .sub b{color:var(--ink);font-weight:600}
   /* lower-left hero anchor - availability badge on a thin baseline rule */
-  .heroanchor{margin-top:3.2rem;display:flex;align-items:center;gap:1.1rem;max-width:30rem}
+  .heroanchor{position:relative;z-index:2;margin-top:3.2rem;display:flex;align-items:center;gap:1.1rem;max-width:30rem}
   .heroanchor .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
   .avail{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.22em;
     text-transform:uppercase;color:var(--bone);white-space:nowrap}
@@ -141,7 +159,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
     animation:availPulse 2.6s ease-out infinite}
   @keyframes availPulse{0%{box-shadow:0 0 0 0 rgba(143,230,176,.5)}70%{box-shadow:0 0 0 7px rgba(143,230,176,0)}100%{box-shadow:0 0 0 0 rgba(143,230,176,0)}}
   @media(prefers-reduced-motion:reduce){.avail .dot{animation:none}}
-  .cta{margin-top:2.8rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  .cta{position:relative;z-index:2;margin-top:2.8rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
   .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.6rem;border-radius:100px;font-size:.85rem;font-weight:500;letter-spacing:.01em;transition:transform .4s cubic-bezier(.2,.8,.2,1),background .3s,color .3s}
   .btn.primary{background:var(--ink);color:#0b0b10}
   .btn.primary:hover{transform:translateY(-2px)}
@@ -149,7 +167,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .btn.ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
   .btn .ar{transition:transform .4s}
   .btn:hover .ar{transform:translate(4px,-4px)}
-  .scrollcue{position:absolute;bottom:2rem;left:var(--m);font-size:.7rem;letter-spacing:.2em;color:var(--mut);text-transform:uppercase;display:flex;align-items:center;gap:.6rem}
+  .scrollcue{position:absolute;z-index:2;bottom:2rem;left:var(--m);font-size:.7rem;letter-spacing:.2em;color:var(--bone);text-transform:uppercase;display:flex;align-items:center;gap:.6rem;text-shadow:0 1px 10px rgba(8,8,11,.6)}
   .scrollcue .bar{width:1px;height:40px;background:linear-gradient(var(--mut),transparent);display:block}
   @media(max-width:600px){
     header.hero{padding-top:6.5rem;padding-bottom:3rem;min-height:100svh;justify-content:flex-end}
@@ -241,9 +259,11 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
   .work .copy{position:relative;z-index:2;display:flex;flex-direction:column}
   .work .row.feat .copy{max-width:60%}
   /* index number - quiet Fraunces marker that warms on hover */
+  /* widx sits at the TOP of the card where the legibility scrim is weakest (~.12) and the
+     art can be bright - use the lighter read ink + a shadow so the marker never dims out. */
   .work .widx{font-family:var(--serif);font-style:italic;font-weight:300;
-    font-size:clamp(1rem,1.5vw,1.25rem);color:var(--mut);letter-spacing:.02em;
-    margin-bottom:auto;transition:color .4s}
+    font-size:clamp(1rem,1.5vw,1.25rem);color:var(--read);letter-spacing:.02em;
+    margin-bottom:auto;transition:color .4s;text-shadow:0 1px 8px rgba(8,8,11,.55)}
   .work .row:hover .widx{color:var(--warm)}
   /* body = the large result metric (the lead) + animated arrow */
   .work .wt{position:relative;width:fit-content;display:inline-flex;align-items:baseline;gap:.7rem;
@@ -390,7 +410,7 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
      rule) and a soft aurora plate beside the statement. Whitespace tightened. */
   .about .abody{display:grid;grid-template-columns:200px 1fr;gap:3rem;align-items:stretch}
   .about .rail{display:flex;flex-direction:column;gap:.5rem;border-left:1px solid var(--line);padding-left:1.6rem}
-  .about .rail .k{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mut)}
+  .about .rail .k{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--read)}
   .about .rail .k.lead{color:var(--bone)}
   .about .rail .v{font-family:var(--serif);font-style:italic;color:var(--bone);font-size:1.05rem}
   .about .rail .div{height:1px;width:34px;background:var(--warm);opacity:.6;margin:.7rem 0}

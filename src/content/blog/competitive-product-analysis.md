@@ -157,7 +157,7 @@ These platforms vary widely in pricing depending on features and team size, but 
 
 ## Competitive Product Analysis Template
 
-Here's a ready-to-use structure. Copy this into a document for each primary competitor.
+Here's a ready-to-use structure, or start from our fill-in-the-blank [competitive analysis template](/blog/competitive-analysis-template/). Copy this into a document for each primary competitor.
 
 **Section 1 - Competitor Profile**
 - Company name, founding year, funding, estimated revenue

@@ -78,7 +78,7 @@ Structured data helps AI engines understand your content's meaning and context. 
 - **Schema markup** - FAQ, HowTo, Article, and Organization schema help AI extract structured information
 - **Clear headings and structure** - AI models parse H2/H3 hierarchies to understand content relationships
 - **Entity markup** - Help search engines connect your content to known entities (people, companies, concepts)
-- **Site performance** - Fast, accessible sites still rank better in traditional search and are crawled more efficiently
+- **Site performance** - Fast, accessible sites still rank better in traditional search and are crawled more efficiently. This is also where AI-built sites can quietly fail: many [vibe-coded React sites render client-side and never get indexed by Google](/blog/vibe-coded-website-seo/), so the fix is serving real HTML through SSR or static generation
 
 For a deep technical foundation, see our [technical SEO audit guide](/blog/how-to-conduct-a-technical-seo-site-audit/).
 

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="720" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="72" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="40" font-weight="700">The Anatomy Every Value Proposition Template Shares</text>
+  <text x="700" y="112" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22">The order changes between frameworks. These four blocks do not.</text>
+
+  <!-- Card 1 Customer (top-left) -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="160" width="640" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="160" width="640" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="90" y="212" fill="#f5a0a1" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">BLOCK 1</text>
+    <text x="90" y="254" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="700">Customer</text>
+    <text x="90" y="298" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Who exactly is this for? A specific role,</text>
+    <text x="90" y="332" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">segment, or stage of company.</text>
+    <text x="90" y="378" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-style="italic">Skipped because "everyone" feels safer.</text>
+  </g>
+
+  <!-- Card 2 Job (top-right) -->
+  <g filter="url(#cardShadow)">
+    <rect x="720" y="160" width="620" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="720" y="160" width="620" height="6" rx="3" fill="#c084fc"/>
+    <text x="750" y="212" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">BLOCK 2</text>
+    <text x="750" y="254" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="700">Job</text>
+    <text x="750" y="298" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">What are they trying to get done?</text>
+    <text x="750" y="332" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">The work they hire a product for.</text>
+    <text x="750" y="378" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-style="italic">Skipped because it needs real research.</text>
+  </g>
+
+  <!-- Card 3 Outcome (bottom-left) -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="425" width="640" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="60" y="425" width="640" height="6" rx="3" fill="#60a5fa"/>
+    <text x="90" y="477" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">BLOCK 3</text>
+    <text x="90" y="519" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="700">Outcome</text>
+    <text x="90" y="563" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">What changes for them when they</text>
+    <text x="90" y="597" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">use you? The before vs after.</text>
+    <text x="90" y="643" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-style="italic">Skipped because listing features is easier.</text>
+  </g>
+
+  <!-- Card 4 Differentiator (bottom-right) -->
+  <g filter="url(#cardShadow)">
+    <rect x="720" y="425" width="620" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="720" y="425" width="620" height="6" rx="3" fill="#fb923c"/>
+    <text x="750" y="477" fill="#fb923c" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">BLOCK 4</text>
+    <text x="750" y="519" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="700">Differentiator</text>
+    <text x="750" y="563" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Why us, not the alternative? What a</text>
+    <text x="750" y="597" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="22">rival cannot honestly claim back.</text>
+    <text x="750" y="643" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-style="italic">Skipped because it is the hard, honest part.</text>
+  </g>
+
+  <!-- Connectors: Customer -> Job (top gap) -->
+  <line x1="700" y1="280" x2="704" y2="280" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="704,272 720,280 704,288" fill="#5eead4"/>
+
+  <!-- Outcome -> Differentiator (bottom gap) -->
+  <line x1="700" y1="545" x2="704" y2="545" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="704,537 720,545 704,553" fill="#5eead4"/>
+</svg>

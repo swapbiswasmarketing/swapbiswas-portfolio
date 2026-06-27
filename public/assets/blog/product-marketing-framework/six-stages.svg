@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="760" fill="url(#bg)" rx="24"/>
+
+  <!-- Title -->
+  <text x="700" y="68" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700">The Six Stages of the Product Marketing Framework</text>
+  <text x="700" y="106" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22">A continuous loop where each stage feeds the next</text>
+
+  <!-- ROW 1 -->
+  <!-- Card 1: Research -->
+  <rect x="60" y="150" width="380" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="60" y="150" width="380" height="6" rx="3" fill="#f5a0a1"/>
+  <text x="92" y="206" fill="#f5a0a1" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STAGE 1</text>
+  <text x="92" y="248" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Research</text>
+  <text x="92" y="290" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">Earn the right to have</text>
+  <text x="92" y="320" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">an opinion</text>
+
+  <!-- Card 2: Positioning -->
+  <rect x="510" y="150" width="380" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="510" y="150" width="380" height="6" rx="3" fill="#d98ee0"/>
+  <text x="542" y="206" fill="#d98ee0" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STAGE 2</text>
+  <text x="542" y="248" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Positioning</text>
+  <text x="542" y="290" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">The decision everything</text>
+  <text x="542" y="320" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">else inherits</text>
+
+  <!-- Card 3: Segmentation -->
+  <rect x="960" y="150" width="380" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="960" y="150" width="380" height="6" rx="3" fill="#c084fc"/>
+  <text x="992" y="206" fill="#c084fc" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STAGE 3</text>
+  <text x="992" y="248" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Segmentation</text>
+  <text x="992" y="290" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">Decide who you are</text>
+  <text x="992" y="320" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">not for</text>
+
+  <!-- Arrows row 1 (left to right) -->
+  <line x1="440" y1="250" x2="498" y2="250" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="498,243 512,250 498,257" fill="#5eead4"/>
+  <line x1="890" y1="250" x2="948" y2="250" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="948,243 962,250 948,257" fill="#5eead4"/>
+
+  <!-- Arrow down from Stage 3 to Stage 4 -->
+  <line x1="1150" y1="350" x2="1150" y2="408" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1143,408 1150,422 1157,408" fill="#5eead4"/>
+
+  <!-- ROW 2 -->
+  <!-- Card 4: Go-to-Market -->
+  <rect x="960" y="424" width="380" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="960" y="424" width="380" height="6" rx="3" fill="#60a5fa"/>
+  <text x="992" y="480" fill="#60a5fa" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STAGE 4</text>
+  <text x="992" y="522" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Go-to-Market</text>
+  <text x="992" y="564" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">Turn the position into</text>
+  <text x="992" y="594" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">a launch</text>
+
+  <!-- Card 5: Enablement -->
+  <rect x="510" y="424" width="380" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="510" y="424" width="380" height="6" rx="3" fill="#fb923c"/>
+  <text x="542" y="480" fill="#fb923c" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STAGE 5</text>
+  <text x="542" y="522" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Enablement</text>
+  <text x="542" y="564" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">Arm the people who</text>
+  <text x="542" y="594" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">carry the message</text>
+
+  <!-- Card 6: Feedback -->
+  <rect x="60" y="424" width="380" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="60" y="424" width="380" height="6" rx="3" fill="#5eead4"/>
+  <text x="92" y="480" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="0.08em">STAGE 6</text>
+  <text x="92" y="522" fill="#f0f6fc" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600">Feedback</text>
+  <text x="92" y="564" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">Close the loop or</text>
+  <text x="92" y="594" fill="#c8cfd8" font-family="Segoe UI, system-ui, sans-serif" font-size="23">repeat the problem</text>
+
+  <!-- Arrows row 2 (right to left) -->
+  <line x1="960" y1="524" x2="902" y2="524" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="902,517 888,524 902,531" fill="#5eead4"/>
+  <line x1="510" y1="524" x2="452" y2="524" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="452,517 438,524 452,531" fill="#5eead4"/>
+
+  <!-- Loop-back arrow: Feedback (Stage 6) back up to Research (Stage 1) -->
+  <line x1="250" y1="424" x2="250" y2="364" stroke="#5eead4" stroke-width="2.5" stroke-dasharray="7,5"/>
+  <polygon points="243,364 250,350 257,364" fill="#5eead4"/>
+  <text x="270" y="395" fill="#5eead4" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.08em">LOOP BACK</text>
+
+  <!-- Footer caption -->
+  <text x="700" y="690" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, system-ui, sans-serif" font-size="22">Feedback restarts research, so each cycle sharpens the next</text>
+</svg>
