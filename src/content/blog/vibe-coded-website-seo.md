@@ -68,7 +68,7 @@ Google handles JavaScript rendering in two stages, often described as two-wave i
 
 In the first wave, Googlebot crawls and indexes whatever is in the raw HTML. For a server-rendered or static page, that is your full content. For a client-side app, that is the empty shell, so there is essentially nothing to index.
 
-In the second wave, Google queues the page for rendering, runs the JavaScript, and sees the real content. The problem is that this second wave is deferred. Google usually does run it, often within seconds, but the second wave is queued and deprioritized, and for a low-authority new site it can be delayed long enough, or deprioritized enough, that your content stays out of the index.
+In the second wave, Google queues the page for rendering, runs the JavaScript, and sees the real content. The catch is that this wave is deferred and not guaranteed. Google often renders within seconds, but rendering is queued work, and for a new low-authority site it can be deprioritized long enough that your content does not reliably reach the index.
 
 So your brand new vibe-coded website sits in a queue. Google has seen a blank page and has little reason to prioritize rendering it, so the content you are proud of never enters the index. This is the core of any honest JavaScript SEO conversation: the gap between what is crawled and what is rendered is where rankings quietly die.
 
