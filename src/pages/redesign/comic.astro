@@ -1,0 +1,561 @@
+---
+// REDESIGN PROTOTYPE - "Comic" - a graphic novel of the career.
+// Original concept (NOT a reskin of any print concept): sequential-art storytelling.
+//  - The page is a COMIC told in PANELS revealed on scroll, with bold ink borders + gutters.
+//  - Hero is a SPLASH PAGE: headline as title treatment + a caption box intro.
+//  - Each work entry is a story PANEL: caption box (client/year/role), a speech bubble /
+//    narration, and the OUTCOME landing as a jagged onomatopoeia BURST.
+//    The big-number bursts ("657K!" "18.2M!") are ONLY for LambdaTest's hard numbers.
+//    No invented metrics for any other client.
+//  - Build stats 20+/15+/76 as a stats panel. Recognition as trophy panels.
+//    About as an origin-story panel. Contact as the final "TO BE CONTINUED..." panel.
+// Limited comic palette: cream newsprint (#f3ead6) + ink black (#14110d)
+//   + hero red (#e8362f) + cyan (#1aa7c8). Ben-Day halftone dot shading.
+// Fonts: Bangers (comic display) + Comic Neue (comic body, AA legible) + Space Mono (caption tags).
+// Fully self-contained: own <html>, own fonts, own tokens, noindex. No BaseLayout, no global.css.
+const stats = [
+  { n: '20', plus: '+', l: 'AI agents & internal tools shipped' },
+  { n: '15', plus: '+', l: 'Marketers mentored & levelled up' },
+  { n: '76', plus: '',  l: 'Long-form articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.', c: 'red' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.', c: 'cyan' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.', c: 'red' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.', c: 'cyan' },
+];
+const work = [
+  { i: '01', t: 'LambdaTest', y: '2021 - 2025', role: 'Product & digital marketing', r: '657K+ leads · 18.2M+ organic', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', bubble: 'I owned product and digital marketing end to end - and built the whole organic growth engine from scratch.', feat: true, cap: 'MEANWHILE, at LambdaTest...' },
+  { i: '02', t: 'TestMu AI', y: '2026', role: 'Rebrand lead', r: 'Full company rebrand', d: 'Led the complete rebrand from LambdaTest to TestMu AI.', bubble: 'A whole company, renamed and relaunched. I led the rebrand from LambdaTest to TestMu AI.', cap: 'A NEW NAME RISES...' },
+  { i: '03', t: 'Samsung', y: '2019', role: 'via Sociowash', r: 'Galaxy M-series launch', d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.', bubble: 'On the Galaxy M-series from day one - content distribution, and a team-up with Technical Guruji.', cap: 'BACK IN 2019...' },
+  { i: '04', t: 'Medilife Superspeciality', y: '0 to 1', role: 'Marketing & web', r: 'Website · GTM · social', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.', bubble: 'Zero to one: the full digital presence and go-to-market for a NABH-accredited hospital in Dehradun.', cap: 'FROM NOTHING...' },
+  { i: '05', t: 'Lido Learning', y: '2021', role: 'Growth / CRM', r: 'CRM & lead operations', d: 'Ran CRM management and lead routing and assignment for the EdTech.', bubble: 'Behind the EdTech engine: CRM management plus lead routing and assignment.', cap: 'IN THE ENGINE ROOM...' },
+  { i: '06', t: 'Appknox', y: 'Freelance', role: 'Content', r: 'Security content', d: 'Freelance content writer for the mobile app security company.', bubble: 'Freelance words for a mobile app security company - making the technical readable.', cap: 'AND ON THE SIDE...' },
+];
+const recognition = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024', icon: '★' },
+  { t: 'Wall of Fame', m: 'LambdaTest', icon: '☆' },
+  { t: '#1 Product of the Day', m: 'Product Hunt', icon: '▲' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+---
+<!doctype html>
+<html lang="en" data-theme="comic">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f3ead6;       /* cream newsprint */
+    --paper2:#ece0c4;       /* slightly darker page */
+    --ink:#14110d;          /* ink black */
+    --ink2:#3b352b;         /* softened ink for body */
+    --red:#e8362f;          /* hero spot red */
+    --cyan:#1aa7c8;         /* spot cyan */
+    --cyanD:#127892;        /* darker cyan (AA on paper for text) */
+    --yellow:#f7c948;
+    --gutter:18px;
+    --bw:4px;               /* ink border weight */
+    --disp:"Bangers",Impact,sans-serif;
+    --body:"Comic Neue","Comic Sans MS",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+    --pad:clamp(1.1rem,4.5vw,4rem);
+    /* Ben-Day dot field (transparent on paper) */
+    --bd-ink: radial-gradient(circle at center, rgba(20,17,13,.34) 32%, transparent 35%);
+    --bd-red: radial-gradient(circle at center, rgba(232,54,47,.42) 32%, transparent 35%);
+    --bd-cyan: radial-gradient(circle at center, rgba(26,167,200,.42) 32%, transparent 35%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+    position:relative;
+  }
+  /* page-wide newsprint dot tint + paper grain */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:var(--bd-ink);background-size:7px 7px}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.06;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--red);color:var(--paper)}
+  .wrap{width:min(1240px,100%);margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
+
+  /* ===== masthead (comic logo bar) ===== */
+  .mast{position:sticky;top:0;z-index:40;background:var(--ink);color:var(--paper);border-bottom:var(--bw) solid var(--ink)}
+  .mast-in{width:min(1240px,100%);margin:0 auto;padding:.55rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .logo{font-family:var(--disp);font-size:1.5rem;letter-spacing:.06em;color:var(--paper);display:flex;align-items:center;gap:.55rem;line-height:1}
+  .logo .pow{display:inline-grid;place-items:center;background:var(--red);color:var(--paper);font-family:var(--disp);font-size:.78rem;padding:.18em .5em;transform:rotate(-5deg);border:2px solid var(--paper);letter-spacing:.04em}
+  .mast nav{display:flex;gap:1.3rem}
+  .mast nav a{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);opacity:.78;transition:opacity .25s,color .25s}
+  .mast nav a:hover{opacity:1;color:var(--yellow)}
+  @media(max-width:680px){.mast nav{display:none}}
+
+  /* ===== generic panel ===== */
+  .panel{position:relative;background:var(--paper);border:var(--bw) solid var(--ink);
+    box-shadow:6px 6px 0 rgba(20,17,13,.85);}
+  .panel + .panel{margin-top:var(--gutter)}
+  .grid{display:grid;gap:var(--gutter)}
+
+  /* caption box (yellow narration tab, top-left) */
+  .cap{display:inline-block;font-family:var(--mono);font-weight:700;font-size:.66rem;letter-spacing:.08em;
+    text-transform:uppercase;background:var(--yellow);color:var(--ink);border:3px solid var(--ink);
+    padding:.4rem .7rem;line-height:1.2;box-shadow:3px 3px 0 rgba(20,17,13,.85)}
+
+  /* tag row (mono meta) */
+  .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+
+  /* speech bubble */
+  .bubble{position:relative;background:var(--paper);border:3px solid var(--ink);border-radius:22px;
+    padding:1rem 1.1rem;font-family:var(--body);font-weight:700;color:var(--ink);line-height:1.4;
+    box-shadow:4px 4px 0 rgba(20,17,13,.18)}
+  .bubble::after,.bubble::before{content:"";position:absolute;bottom:-18px;left:34px;width:0;height:0;border-style:solid}
+  .bubble::before{border-width:18px 16px 0 0;border-color:var(--ink) transparent transparent transparent}
+  .bubble::after{bottom:-12px;left:38px;border-width:13px 11px 0 0;border-color:var(--paper) transparent transparent transparent}
+
+  /* onomatopoeia / burst */
+  .burst{position:relative;display:inline-grid;place-items:center;text-align:center}
+  .burst .star{position:absolute;inset:-12% -10%;z-index:0}
+  .burst .label{position:relative;z-index:1;font-family:var(--disp);line-height:.82;color:var(--paper);
+    -webkit-text-stroke:2px var(--ink);text-stroke:2px var(--ink);
+    text-shadow:3px 3px 0 var(--ink)} /* plain text - NOT background-clip:text, shadow is safe here */
+
+  /* ===== HERO / SPLASH PAGE ===== */
+  header.splash{padding:2.2rem 0 0;position:relative;z-index:2}
+  .splash-panel{position:relative;overflow:hidden;padding:clamp(1.4rem,4vw,3rem);
+    background:
+      radial-gradient(circle at center, rgba(26,167,200,.22) 32%, transparent 35%) 0 0/9px 9px,
+      var(--paper);
+  }
+  /* sunburst rays behind the title */
+  .splash-panel::before{content:"";position:absolute;inset:-30%;z-index:0;pointer-events:none;opacity:.16;
+    background:repeating-conic-gradient(from 0deg at 64% 38%, var(--red) 0deg 7deg, transparent 7deg 14deg)}
+  .splash-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr minmax(220px,330px);gap:clamp(1.2rem,3vw,2.4rem);align-items:center}
+  .eyebrow{display:inline-block;font-family:var(--mono);font-weight:700;font-size:.66rem;letter-spacing:.12em;
+    text-transform:uppercase;background:var(--ink);color:var(--paper);padding:.4rem .65rem;margin-bottom:1.1rem}
+  h1.title{font-family:var(--disp);font-weight:400;line-height:.84;letter-spacing:.01em;
+    font-size:clamp(3rem,11vw,8rem);color:var(--ink);text-transform:uppercase;margin-bottom:.2em}
+  h1.title .red{color:var(--red);-webkit-text-stroke:0;display:block}
+  h1.title .ships{color:var(--paper);-webkit-text-stroke:3px var(--ink);text-stroke:3px var(--ink);
+    text-shadow:5px 5px 0 var(--red);display:inline-block} /* plain text, shadow safe */
+  .splash .sub{font-family:var(--body);font-weight:700;max-width:48ch;color:var(--ink);
+    font-size:clamp(1rem,1.3vw,1.18rem);line-height:1.5;margin-top:.3rem}
+  .splash .sub b{color:var(--red)}
+  .splash .cta{margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap}
+  .btn{font-family:var(--disp);font-size:1.05rem;letter-spacing:.04em;padding:.5rem 1.2rem;border:3px solid var(--ink);
+    display:inline-flex;gap:.45rem;align-items:center;background:var(--paper);color:var(--ink);
+    box-shadow:4px 4px 0 var(--ink);transition:transform .15s ease,box-shadow .15s ease}
+  .btn:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  .btn.primary{background:var(--red);color:var(--paper)}
+  .btn.cyan{background:var(--cyan);color:var(--ink)}
+
+  /* hero portrait panel (halftone'd, inset) */
+  .hero-photo{position:relative;border:var(--bw) solid var(--ink);background:var(--paper2);aspect-ratio:5/6;overflow:hidden;
+    box-shadow:6px 6px 0 rgba(20,17,13,.85)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;
+    filter:grayscale(1) contrast(1.18) brightness(1.05)}
+  .hero-photo::after{content:"";position:absolute;inset:0;mix-blend-mode:multiply;opacity:.6;pointer-events:none;
+    background-image:var(--bd-ink);background-size:5px 5px}
+  .hero-photo .ptag{position:absolute;left:0;bottom:0;font-family:var(--mono);font-weight:700;font-size:.6rem;
+    letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:.3rem .55rem}
+
+  .scrollcue{margin-top:1.8rem;display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);
+    font-weight:700;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+  .scrollcue .arr{display:inline-block;animation:bob 1.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+  @media(max-width:780px){
+    .splash-grid{grid-template-columns:1fr}
+    .splash-type{order:-1}
+    .hero-photo{max-width:300px;margin:0 auto}
+  }
+
+  /* ===== section heading (issue divider) ===== */
+  section{padding:clamp(2.4rem,7vh,4.6rem) 0;position:relative;z-index:2}
+  .shead{display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;flex-wrap:wrap}
+  .shead .issue{font-family:var(--mono);font-weight:700;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+    background:var(--ink);color:var(--paper);padding:.35rem .6rem;flex:none}
+  .shead h2{font-family:var(--disp);font-weight:400;text-transform:uppercase;letter-spacing:.02em;line-height:.9;
+    font-size:clamp(1.9rem,5vw,3.4rem);color:var(--ink)}
+  .shead h2 em{font-style:normal;color:var(--red)}
+
+  /* ===== stats panel (3 burst cells) ===== */
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+  .statcell{padding:clamp(1.4rem,3vw,2.2rem) 1.2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+  .statcell .bigburst{font-family:var(--disp);font-size:clamp(3.4rem,9vw,6.4rem);line-height:.8;color:var(--ink)}
+  .statcell .bigburst sup{font-size:.42em;color:var(--red);-webkit-text-stroke:0}
+  .statcell .sl{font-family:var(--body);font-weight:700;font-size:.92rem;color:var(--ink2);max-width:22ch;line-height:1.4}
+  .statcell:nth-child(2){background:
+    radial-gradient(circle at center, rgba(232,54,47,.14) 32%, transparent 35%) 0 0/8px 8px,var(--paper)}
+  @media(max-width:720px){.stats-grid{grid-template-columns:1fr}}
+
+  /* ===== disciplines (4 panels) ===== */
+  .disc-grid{grid-template-columns:repeat(2,1fr)}
+  .disc{padding:1.4rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.7rem;min-height:180px}
+  .disc .dnum{font-family:var(--disp);font-size:2.4rem;line-height:.8;color:var(--paper);
+    -webkit-text-stroke:2px var(--ink);text-stroke:2px var(--ink);align-self:flex-start}
+  .disc.red .dnum{text-shadow:3px 3px 0 var(--red)}
+  .disc.cyan .dnum{text-shadow:3px 3px 0 var(--cyan)}
+  .disc .dt{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:.96;letter-spacing:.01em;color:var(--ink)}
+  .disc .dd{font-family:var(--body);font-weight:700;color:var(--ink2);font-size:.95rem;line-height:1.45;margin-top:auto}
+  .disc.red{background:radial-gradient(circle at center, rgba(232,54,47,.10) 32%, transparent 35%) 0 0/8px 8px,var(--paper)}
+  .disc.cyan{background:radial-gradient(circle at center, rgba(26,167,200,.12) 32%, transparent 35%) 0 0/8px 8px,var(--paper)}
+  @media(max-width:680px){.disc-grid{grid-template-columns:1fr}}
+
+  /* ===== work / story panels ===== */
+  .story{display:flex;flex-direction:column;gap:var(--gutter)}
+  .wpanel{padding:1.4rem 1.4rem 1.6rem;display:grid;gap:1rem;align-items:start}
+  /* standard (non-feat) panels in a 2-up grid */
+  .wgrid{grid-template-columns:repeat(2,1fr)}
+  .wpanel .captop{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem;flex-wrap:wrap}
+  .wpanel .ttl{font-family:var(--disp);font-size:clamp(1.5rem,3vw,2.3rem);line-height:.94;letter-spacing:.01em;color:var(--ink);margin-top:.2rem}
+  .wpanel .role{font-family:var(--mono);font-weight:700;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyanD)}
+  .wpanel .bubble{margin-top:.2rem}
+  .wpanel .desc{font-family:var(--body);font-weight:400;color:var(--ink2);font-size:.93rem;line-height:1.5}
+
+  /* FEATURED splash work panel (LambdaTest) - full width, with bursts */
+  .wpanel.feat{grid-template-columns:1.15fr 1fr;gap:clamp(1.2rem,3vw,2.4rem);align-items:stretch;
+    background:radial-gradient(circle at center, rgba(232,54,47,.10) 32%, transparent 35%) 0 0/9px 9px,var(--paper)}
+  .wpanel.feat .fleft{display:flex;flex-direction:column;gap:.9rem}
+  .wpanel.feat .ttl{font-size:clamp(2rem,4.5vw,3.4rem)}
+  .wpanel.feat .fright{border-left:3px dashed var(--ink);padding-left:clamp(1.2rem,3vw,2.2rem);
+    display:flex;flex-direction:column;justify-content:center;gap:2.4rem}
+  .burst.big{padding:.7em 0}
+  .burst.big .star{inset:-6% -6%}
+  .burst.big .label{font-size:clamp(2.4rem,6vw,4.2rem)}
+  .burstwrap .bl{font-family:var(--mono);font-weight:700;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin-top:1.2rem;z-index:2;position:relative;
+    background:var(--paper);border:2px solid var(--ink);padding:.32rem .6rem;box-shadow:2px 2px 0 rgba(20,17,13,.5)}
+  .burstwrap{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1}
+  @media(max-width:820px){
+    .wgrid{grid-template-columns:1fr}
+    .wpanel.feat{grid-template-columns:1fr}
+    .wpanel.feat .fright{border-left:0;border-top:3px dashed var(--ink);padding-left:0;padding-top:1.6rem;flex-direction:row;justify-content:space-around;gap:1rem;flex-wrap:wrap}
+  }
+
+  /* ===== recognition (trophy panels) ===== */
+  .rec-grid{grid-template-columns:repeat(3,1fr)}
+  .trophy{padding:1.5rem 1.2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.7rem;min-height:180px;justify-content:center}
+  .trophy .ic{font-family:var(--disp);font-size:2.6rem;line-height:1;color:var(--paper);
+    -webkit-text-stroke:2px var(--ink);text-stroke:2px var(--ink);text-shadow:3px 3px 0 var(--yellow)}
+  .trophy b{font-family:var(--disp);font-size:1.4rem;letter-spacing:.01em;line-height:1;color:var(--ink)}
+  .trophy span{font-family:var(--mono);font-weight:700;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+  @media(max-width:680px){.rec-grid{grid-template-columns:1fr}}
+
+  .brands-panel{margin-top:var(--gutter);padding:1.3rem 1.4rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .brands-panel .bl{font-family:var(--mono);font-weight:700;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+  .brands-panel .bgrid{display:flex;flex-wrap:wrap;gap:.55rem}
+  .brands-panel .bgrid span{font-family:var(--body);font-weight:700;font-size:.8rem;border:2px solid var(--ink);padding:.35rem .7rem;background:var(--paper);color:var(--ink)}
+
+  /* ===== about / origin story ===== */
+  .origin{grid-template-columns:260px 1fr;align-items:stretch}
+  .origin-photo{position:relative;border-right:var(--bw) solid var(--ink);overflow:hidden;background:var(--paper2);min-height:260px}
+  .origin-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(1) contrast(1.15) brightness(1.05)}
+  .origin-photo::after{content:"";position:absolute;inset:0;mix-blend-mode:multiply;opacity:.55;background-image:var(--bd-ink);background-size:5px 5px;pointer-events:none}
+  .origin-body{padding:1.5rem 1.6rem}
+  .origin-body .lead{font-family:var(--disp);font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.02;letter-spacing:.01em;color:var(--ink);margin-bottom:1.3rem}
+  .origin-body .lead em{font-style:normal;color:var(--red)}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem 1.6rem}
+  .fact .k{font-family:var(--mono);font-weight:700;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cyanD);margin-bottom:.25rem}
+  .fact .v{font-family:var(--body);font-weight:700;color:var(--ink);font-size:.9rem;line-height:1.4}
+  @media(max-width:720px){
+    .origin{grid-template-columns:1fr}
+    .origin-photo{border-right:0;border-bottom:var(--bw) solid var(--ink);min-height:240px}
+    .facts{grid-template-columns:1fr}
+  }
+
+  /* ===== contact / TO BE CONTINUED ===== */
+  .endpanel{position:relative;overflow:hidden;padding:clamp(2rem,5vw,3.6rem) clamp(1.4rem,4vw,3rem);text-align:center;
+    background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .endpanel::before{content:"";position:absolute;inset:-30%;z-index:0;opacity:.18;pointer-events:none;
+    background:repeating-conic-gradient(from 0deg at 50% 38%, var(--cyan) 0deg 7deg, transparent 7deg 14deg)}
+  .endpanel > *{position:relative;z-index:1}
+  .endpanel .tbc{font-family:var(--disp);font-size:clamp(2.2rem,7vw,5rem);line-height:.86;letter-spacing:.02em;color:var(--paper);
+    text-shadow:4px 4px 0 var(--red)}
+  .endpanel .csub{font-family:var(--body);font-weight:700;color:var(--paper);opacity:.92;margin-top:.8rem;font-size:1rem}
+  .endpanel .cbtns{margin-top:1.8rem;display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+  .endpanel .cbtn{font-family:var(--disp);font-size:1.15rem;letter-spacing:.04em;padding:.6rem 1.4rem;border:3px solid var(--paper);
+    background:var(--red);color:var(--paper);box-shadow:4px 4px 0 var(--paper);transition:transform .15s ease,box-shadow .15s ease}
+  .endpanel .cbtn.cyan{background:var(--cyan);color:var(--ink)}
+  .endpanel .cbtn:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--paper)}
+  .endpanel .em{margin-top:1.6rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;color:var(--paper);opacity:.85}
+  .endpanel .em a{border-bottom:1px solid rgba(243,234,214,.5)}
+
+  /* footer */
+  footer{border-top:var(--bw) solid var(--ink);padding:1.6rem 0 2.4rem;position:relative;z-index:2;background:var(--paper)}
+  .foot-in{width:min(1240px,100%);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem;
+    font-family:var(--mono);font-weight:700;font-size:.68rem;letter-spacing:.06em;color:var(--ink2);text-transform:uppercase}
+  .foot-in a{color:var(--red)}.foot-in a:hover{color:var(--ink)}
+
+  /* ===== panel reveal (pop / slide / ink-in) ===== */
+  .reveal{opacity:0;transform:translateY(26px) rotate(-.6deg) scale(.97);
+    transition:opacity .5s cubic-bezier(.2,.9,.25,1.2),transform .5s cubic-bezier(.2,.9,.25,1.2)}
+  .reveal.show{opacity:1;transform:none}
+  .reveal.slideL{transform:translateX(-34px) rotate(.5deg)}
+  .reveal.slideR{transform:translateX(34px) rotate(-.5deg)}
+
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1!important;transform:none!important;transition:none}
+    .scrollcue .arr{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+  <header class="mast">
+    <div class="mast-in">
+      <div class="logo"><span class="pow">POW!</span> SWAPNIL BISWAS</div>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="/redesign/">All concepts</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- ===================== SPLASH PAGE ===================== -->
+    <header class="splash" id="hero">
+      <div class="panel splash-panel reveal">
+        <div class="splash-grid">
+          <div class="splash-type">
+            <span class="eyebrow">Senior Product Marketing Manager &middot; LambdaTest</span>
+            <h1 class="title">
+              The marketer
+              <span class="red">who <span class="ships">ships.</span></span>
+            </h1>
+            <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+            <div class="cta">
+              <a class="btn primary" href="#work">Read the story &#8599;</a>
+              <a class="btn cyan" href="#contact">Get in touch</a>
+            </div>
+            <div class="scrollcue"><span class="arr">&#8595;</span> Turn the page</div>
+          </div>
+          <figure class="hero-photo" aria-label="Portrait of Swapnil Biswas">
+            <img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" fetchpriority="high" decoding="async" />
+            <figcaption class="ptag">Issue No. 36 &middot; Our hero</figcaption>
+          </figure>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== STATS PANEL ===================== -->
+    <section id="numbers">
+      <div class="shead reveal">
+        <span class="issue">Page 01</span>
+        <h2>The <em>origin</em> stats</h2>
+      </div>
+      <div class="panel grid stats-grid reveal">
+        {stats.map(s => (
+          <div class="statcell">
+            <div class="bigburst" data-target={s.n}>0{s.plus && <sup>{s.plus}</sup>}</div>
+            <div class="sl">{s.l}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===================== DISCIPLINES ===================== -->
+    <section id="what">
+      <div class="shead reveal">
+        <span class="issue">Page 02</span>
+        <h2>The <em>powers</em></h2>
+      </div>
+      <div class="grid disc-grid">
+        {pillars.map((p, idx) => (
+          <div class={'panel disc reveal ' + p.c + (idx % 2 ? ' slideR' : ' slideL')}>
+            <span class="cap">Power No. {p.i}</span>
+            <div class="dnum">{p.i}</div>
+            <div class="dt">{p.t}</div>
+            <div class="dd">{p.d}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===================== WORK / STORY PANELS ===================== -->
+    <section id="work">
+      <div class="shead reveal">
+        <span class="issue">Page 03</span>
+        <h2>Selected <em>chapters</em></h2>
+      </div>
+      <div class="story">
+        {work.map((w, idx) => (
+          w.feat ? (
+            <article class="panel wpanel feat reveal" aria-label={w.t + ' - ' + w.r}>
+              <div class="fleft">
+                <span class="cap">{w.cap}</span>
+                <div class="captop">
+                  <div>
+                    <div class="ttl">{w.t}</div>
+                    <div class="role">{w.role} &middot; {w.y}</div>
+                  </div>
+                </div>
+                <div class="bubble">{w.bubble}</div>
+              </div>
+              <div class="fright">
+                <div class="burstwrap">
+                  <div class="burst big">
+                    <svg class="star" viewBox="0 0 200 160" aria-hidden="true" preserveAspectRatio="none">
+                      <polygon points="100,4 118,40 158,30 144,68 196,80 144,92 158,130 118,120 100,156 82,120 42,130 56,92 4,80 56,68 42,30 82,40" fill="#f7c948" stroke="#14110d" stroke-width="4" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="label">657K!</span>
+                  </div>
+                  <div class="bl">Leads generated</div>
+                </div>
+                <div class="burstwrap">
+                  <div class="burst big">
+                    <svg class="star" viewBox="0 0 200 160" aria-hidden="true" preserveAspectRatio="none">
+                      <polygon points="100,4 118,40 158,30 144,68 196,80 144,92 158,130 118,120 100,156 82,120 42,130 56,92 4,80 56,68 42,30 82,40" fill="#1aa7c8" stroke="#14110d" stroke-width="4" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="label">18.2M!</span>
+                  </div>
+                  <div class="bl">Organic traffic driven</div>
+                </div>
+              </div>
+            </article>
+          ) : null
+        ))}
+        <div class="grid wgrid">
+          {work.map((w, idx) => (
+            !w.feat ? (
+              <article class={'panel wpanel reveal' + (idx % 2 ? ' slideR' : ' slideL')} aria-label={w.t + ' - ' + w.r}>
+                <span class="cap">{w.cap}</span>
+                <div class="captop">
+                  <div>
+                    <div class="ttl">{w.t}</div>
+                    <div class="role">{w.role} &middot; {w.y}</div>
+                  </div>
+                  <span class="tag">Ch. {w.i}</span>
+                </div>
+                <div class="bubble">{w.bubble}</div>
+                <div class="desc">{w.r}</div>
+              </article>
+            ) : null
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RECOGNITION ===================== -->
+    <section id="honours">
+      <div class="shead reveal">
+        <span class="issue">Page 04</span>
+        <h2>The <em>trophies</em></h2>
+      </div>
+      <div class="grid rec-grid">
+        {recognition.map((a, idx) => (
+          <div class={'panel trophy reveal' + (idx % 2 ? ' slideR' : ' slideL')}>
+            <div class="ic">{a.icon}</div>
+            <b>{a.t}</b>
+            <span>{a.m}</span>
+          </div>
+        ))}
+      </div>
+      <div class="panel brands-panel reveal">
+        <span class="bl">Featuring guest appearances by</span>
+        <div class="bgrid">{brands.map(b => <span>{b}</span>)}</div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT / ORIGIN STORY ===================== -->
+    <section id="about">
+      <div class="shead reveal">
+        <span class="issue">Page 05</span>
+        <h2>The <em>origin</em> story</h2>
+      </div>
+      <div class="panel grid origin reveal">
+        <div class="origin-photo"><img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" loading="lazy" decoding="async" /></div>
+        <div class="origin-body">
+          <span class="cap">MUMBAI, INDIA</span>
+          <p class="lead" style="margin-top:1rem">I treat my own career like a <em>product</em> - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+          <div class="facts">
+            <div class="fact"><div class="k">Based</div><div class="v">Mumbai, India</div></div>
+            <div class="fact"><div class="k">Tenure</div><div class="v">7+ years marketing &middot; 4+ in B2B SaaS</div></div>
+            <div class="fact"><div class="k">Education</div><div class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</div></div>
+            <div class="fact"><div class="k">Practice</div><div class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT / TO BE CONTINUED ===================== -->
+    <section id="contact">
+      <div class="panel endpanel reveal">
+        <div class="tbc">TO BE CONTINUED...</div>
+        <p class="csub">Let's build something that compounds. The next chapter is yours.</p>
+        <div class="cbtns">
+          <a class="cbtn" href="mailto:swapbiswas.marketing@gmail.com">Say hello &#8599;</a>
+          <a class="cbtn cyan" href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a>
+        </div>
+        <div class="em">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">linkedin.com/in/swapbiswas</a></div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <span>Comic &middot; Concept 36</span>
+      <span>Swapnil Biswas &copy; 2026</span>
+      <span><a href="/redesign/">View all concepts</a></span>
+    </div>
+  </footer>
+
+<script>
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- panel reveals (pop / slide / ink-in) ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.14, rootMargin: '0px 0px -7% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* Safety net: if a trigger never fires, force-show every panel after load + on idle. */
+  function showAll(){ document.querySelectorAll('.reveal').forEach(el => el.classList.add('show')); }
+  if (RM) { showAll(); }
+  // Reveal any panel that is currently within (or above) the viewport - covers
+  // anchor jumps, fast scrolls and observers that miss a fast-passing element.
+  function sweep(){
+    document.querySelectorAll('.reveal:not(.show)').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.05) el.classList.add('show');
+    });
+  }
+  window.addEventListener('scroll', sweep, { passive: true });
+  window.addEventListener('load', () => { setTimeout(sweep, 1200); });
+  // last-resort: nothing should ever stay invisible for long
+  setTimeout(showAll, 4000);
+
+  /* ---------- count-up inside the burst numerals ---------- */
+  function countUp(el){
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const sup = el.querySelector('sup');
+    const supHTML = sup ? sup.outerHTML : '';
+    if (RM){ el.innerHTML = String(target) + supHTML; return; }
+    const dur = 1000; const t0 = performance.now();
+    function step(now){
+      const p = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(target * eased);
+      el.innerHTML = val + supHTML;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const numIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ countUp(e.target); numIO.unobserve(e.target); } });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('.bigburst').forEach(n => numIO.observe(n));
+</script>
+</body>
+</html>

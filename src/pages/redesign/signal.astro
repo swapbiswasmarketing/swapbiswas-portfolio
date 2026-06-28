@@ -1,0 +1,843 @@
+---
+// REDESIGN PROTOTYPE - "Signal Lab" - the portfolio as a measurement instrument / oscilloscope.
+// Original concept (NOT a reskin of halftone): own layout, palette, fonts, mechanic.
+//  - A live oscilloscope TRACE on a 2D <canvas> drawn across a fine graticule. On load the trace
+//    is NOISE; as you scroll it RESOLVES into a clean coherent waveform (noise -> signal). Scroll
+//    scrubs a timeline and the trace annotates spikes at each milestone.
+//  - Hovering a stat makes the scope draw that value as a labeled pulse readout (square wave + callout).
+//  - Instrument chrome: graticule, channel labels CH1/CH2, V/div + TIME/div readouts, blinking REC dot,
+//    seven-seg-ish lit digital readout boxes for the three headline metrics.
+// Single PHOSPHOR trace color: cyan-white (#7fe9ff) on near-black panel (#06080a). Distinct from the
+// green Terminal, amber Sepia, blue Cobalt concepts.
+// prefers-reduced-motion: static clean resolved waveform, no noise animation, all content readable.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+const stats = [
+  { n: '20', plus: '+', l: 'AI agents & internal tools shipped', read: 'CH-A' },
+  { n: '15', plus: '+', l: 'Marketers mentored & levelled up', read: 'CH-B' },
+  { n: '76', plus: '',  l: 'Long-form articles published', read: 'CH-C' },
+];
+const channels = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+const work = [
+  { i: '01', t: 'LambdaTest', y: '2021 - 2025', role: 'Product & digital marketing', r: '657K+ leads · 18.2M+ organic', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', feat: true, wave: 'rise' },
+  { i: '02', t: 'TestMu AI', y: '2026', role: 'Rebrand lead', r: 'Full company rebrand', d: 'Led the complete rebrand from LambdaTest to TestMu AI.', wave: 'step' },
+  { i: '03', t: 'Samsung', y: '2019', role: 'via Sociowash', r: 'Galaxy M-series launch', d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.', wave: 'burst' },
+  { i: '04', t: 'Medilife Superspeciality', y: '0 to 1', role: 'Marketing & web', r: 'Website · GTM · social', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.', wave: 'ramp' },
+  { i: '05', t: 'Lido Learning', y: '2021', role: 'Growth / CRM', r: 'CRM & lead operations', d: 'Ran CRM management and lead routing and assignment for the EdTech.', wave: 'pulse' },
+  { i: '06', t: 'Appknox', y: 'Freelance', role: 'Content', r: 'Security content', d: 'Freelance content writer for the mobile app security company.', wave: 'sine' },
+];
+const recognition = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+---
+<!doctype html>
+<html lang="en" data-theme="signal">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* near-black instrument panel + single phosphor */
+    --bg:#06080a; --panel:#0a0e12; --panel2:#0c1218; --bezel:#11171e;
+    --phos:#7fe9ff;            /* the one trace color */
+    --phos-dim:#4fb3cc;
+    --ink:#e8f6fb;             /* crisp body / headings */
+    --body:#bfe0ea;            /* AA body copy on near-black */
+    --dim:#86a7b3;             /* secondary labels (still >=4.5:1 on --bg) */
+    --faint:#5f7c88;           /* decorative-only mono */
+    --grid:rgba(127,233,255,.10);
+    --grid-strong:rgba(127,233,255,.20);
+    --line:rgba(127,233,255,.16);
+    --hair:rgba(127,233,255,.30);
+    --rec:#ff5c6c;
+    --disp:"Space Grotesk",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+    --m:clamp(1.15rem,4.5vw,4.5rem);
+    --glow:0 0 14px rgba(127,233,255,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--body);font-family:var(--disp);min-height:100vh;-webkit-font-smoothing:antialiased;
+    line-height:1.6;letter-spacing:.005em;position:relative}
+  /* faint phosphor scanlines + vignette over the whole instrument */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:repeating-linear-gradient(0deg,rgba(127,233,255,.035) 0 1px,transparent 1px 3px)}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 0%,transparent 55%,rgba(0,0,0,.55) 100%)}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--phos);color:var(--bg)}
+  .wrap{width:min(1280px,100%);margin:0 auto;padding:0 var(--m);position:relative;z-index:2}
+
+  .mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+
+  /* ===== top instrument bar ===== */
+  .bar{position:fixed;top:0;left:0;right:0;z-index:40;
+    background:linear-gradient(180deg,rgba(6,8,10,.94),rgba(6,8,10,.62) 72%,transparent);
+    backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+  .bar-in{width:min(1280px,100%);margin:0 auto;padding:.7rem var(--m);display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-weight:700;letter-spacing:.05em;font-size:.9rem;color:var(--ink)}
+  .rec{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+  .rec .dot{width:9px;height:9px;border-radius:50%;background:var(--rec);box-shadow:0 0 8px rgba(255,92,108,.8);animation:blink 1.4s steps(1) infinite}
+  @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:.2}}
+  .bar nav{display:flex;gap:1.5rem}
+  .bar nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);transition:color .3s}
+  .bar nav a:hover{color:var(--phos)}
+  @media(max-width:760px){.bar nav{display:none}}
+
+  /* ===== hero / the scope ===== */
+  header.hero{padding:6.5rem 0 2rem;position:relative;z-index:2}
+  .hero-edition{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:.8rem;margin-bottom:clamp(1.1rem,2.6vw,1.8rem)}
+
+  /* the oscilloscope instrument */
+  .scope{position:relative;border:1px solid var(--line);border-radius:14px;background:
+    linear-gradient(180deg,var(--panel2),var(--panel));
+    box-shadow:inset 0 0 60px rgba(0,0,0,.6),0 18px 50px rgba(0,0,0,.45);
+    overflow:hidden;isolation:isolate}
+  /* the CRT screen area (where the canvas lives) */
+  .screen{position:relative;aspect-ratio:16/8;width:100%;background:
+    radial-gradient(120% 130% at 50% 40%,rgba(127,233,255,.045),transparent 70%),#05080b;
+    border-bottom:1px solid var(--line)}
+  .screen canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  /* screen corners */
+  .screen .corner{position:absolute;width:13px;height:13px;border:1px solid var(--hair);z-index:3}
+  .screen .corner.tl{top:10px;left:10px;border-right:0;border-bottom:0}
+  .screen .corner.tr{top:10px;right:10px;border-left:0;border-bottom:0}
+  .screen .corner.bl{bottom:10px;left:10px;border-right:0;border-top:0}
+  .screen .corner.br{bottom:10px;right:10px;border-left:0;border-top:0}
+
+  /* headline overlay - instrument label etched on the screen */
+  .scope-overlay{position:absolute;inset:0;z-index:4;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between;
+    padding:clamp(1rem,2.6vw,2rem)}
+  .scope-overlay .top-row{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+  .chtag{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--phos-dim)}
+  .chtag b{color:var(--phos);font-weight:700}
+  .h1-wrap{align-self:flex-start;max-width:18ch;position:relative}
+  /* soft dark scrim behind the headline so it holds contrast over the busy noise
+     trace. Feathered edges + blur = localized CRT dimming, NOT a hard box, and it
+     does not dim the rest of the trace. Sits above the canvas, below the text. */
+  .h1-wrap::before{content:"";position:absolute;z-index:-1;
+    left:-.7em;right:-1.5em;top:-.45em;bottom:-.55em;
+    background:radial-gradient(125% 135% at 36% 50%,rgba(4,7,10,.93) 0%,rgba(4,7,10,.9) 52%,rgba(4,7,10,.74) 74%,rgba(4,7,10,.38) 88%,transparent 100%);
+    filter:blur(8px);border-radius:18px}
+  .hero h1{font-family:var(--disp);font-weight:700;text-transform:uppercase;line-height:.92;letter-spacing:.01em;
+    font-size:clamp(2rem,6.4vw,5rem);color:var(--ink);position:relative;
+    text-shadow:0 0 22px rgba(127,233,255,.28)}
+  .hero h1 .accent{color:var(--phos)}
+  .scope-overlay .status{align-self:flex-end;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-align:right;line-height:1.7}
+  .scope-overlay .status .live{color:var(--phos)}
+
+  /* readout strip beneath the screen (V/div, TIME/div, lock state) */
+  .scope-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+    padding:.7rem clamp(1rem,2.4vw,1.6rem);font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .scope-foot .grp{display:flex;gap:1.4rem;flex-wrap:wrap}
+  .scope-foot .grp span b{color:var(--phos-dim)}
+  .scope-foot .knobs{display:flex;gap:.7rem}
+  .scope-foot .knob{width:18px;height:18px;border-radius:50%;border:1px solid var(--hair);position:relative;background:
+    radial-gradient(circle at 50% 40%,rgba(127,233,255,.12),transparent 70%)}
+  .scope-foot .knob::after{content:"";position:absolute;left:50%;top:3px;width:1px;height:6px;background:var(--phos-dim);transform:translateX(-.5px)}
+  .scope-foot .knob:nth-child(2)::after{transform:translateX(-.5px) rotate(40deg);transform-origin:bottom}
+  .scope-foot .knob:nth-child(3)::after{transform:translateX(-.5px) rotate(-65deg);transform-origin:bottom}
+
+  /* side panel - instrument controls */
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(1.3rem,3vw,2rem);margin-top:clamp(1.3rem,3vw,2rem)}
+  .controls{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(1.3rem,3vw,2.4rem);align-items:start}
+  .controls .sub{color:var(--body);font-size:clamp(1rem,1.2vw,1.1rem);line-height:1.66;max-width:48ch}
+  .controls .sub b{color:var(--ink);font-weight:600}
+  .controls .cta{margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.8rem 1.3rem;border:1px solid var(--hair);border-radius:7px;display:inline-flex;gap:.55rem;align-items:center;transition:background .35s,color .35s,border-color .35s,transform .35s,box-shadow .35s;color:var(--ink)}
+  .btn .ar{transition:transform .35s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .btn.primary{background:var(--phos);color:#04181d;border-color:var(--phos)}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 0 22px rgba(127,233,255,.4)}
+  .btn.ghost:hover{border-color:var(--phos);color:var(--phos);background:rgba(127,233,255,.06)}
+  .scrollcue{margin-top:1.7rem;display:flex;align-items:center;gap:.7rem;color:var(--faint);font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase}
+  .scrollcue .track{width:36px;height:1px;background:var(--hair);position:relative;overflow:hidden}
+  .scrollcue .track::after{content:"";position:absolute;inset:0;width:40%;background:var(--phos);animation:sweep 2.2s linear infinite}
+  @keyframes sweep{0%{transform:translateX(-110%)}100%{transform:translateX(280%)}}
+
+  /* readout displays - the three headline metrics as lit segment boxes */
+  .readouts{display:grid;grid-template-rows:repeat(3,1fr);gap:.75rem}
+  .ro{border:1px solid var(--line);border-radius:9px;background:
+    linear-gradient(180deg,rgba(127,233,255,.04),transparent),#05080b;
+    padding:.8rem .95rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem;
+    position:relative;overflow:hidden;transition:border-color .35s,box-shadow .35s,transform .35s;cursor:default}
+  .ro::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--phos-dim);opacity:.5;transition:opacity .35s,box-shadow .35s}
+  .ro:hover{border-color:var(--hair);box-shadow:inset 0 0 24px rgba(127,233,255,.08);transform:translateY(-1px)}
+  .ro:hover::before{opacity:1;box-shadow:0 0 12px var(--phos)}
+  .ro .val{font-family:var(--mono);font-weight:700;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1;color:var(--phos);letter-spacing:.01em;
+    text-shadow:var(--glow);font-variant-numeric:tabular-nums}
+  .ro .val sup{font-size:.5em;top:-.05em;margin-left:.04em}
+  .ro .meta{text-align:right;max-width:16ch}
+  .ro .meta .lbl{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);line-height:1.5}
+  .ro .meta .ch{font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:.25rem}
+
+  @media(max-width:900px){
+    .controls{grid-template-columns:1fr;gap:1.6rem}
+    .readouts{grid-template-rows:none;grid-template-columns:repeat(3,1fr)}
+    .ro{flex-direction:column;align-items:flex-start;gap:.55rem}
+    .ro .meta{text-align:left}
+  }
+  @media(max-width:560px){
+    .screen{aspect-ratio:4/3}
+    /* taller screen = noise fills the whole panel, so the headline needs a wider,
+       denser scrim to stay legible over the trace - including the cyan accent word
+       on the right of the last line, where a centred scrim would feather out */
+    .h1-wrap::before{left:-.6em;right:-.6em;top:-.4em;bottom:-.35em;
+      background:linear-gradient(90deg,rgba(4,7,10,.96) 0%,rgba(4,7,10,.94) 70%,rgba(4,7,10,.82) 90%,rgba(4,7,10,.55) 100%);
+      filter:blur(10px);border-radius:14px}
+    .readouts{grid-template-columns:1fr}
+    .ro{flex-direction:row;align-items:center}
+    .ro .meta{text-align:right}
+  }
+
+  /* ===== section heads ===== */
+  section{padding:clamp(3.4rem,8vh,6rem) 0;position:relative;z-index:2}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;border-bottom:1px solid var(--line);padding-bottom:1.1rem;margin-bottom:2.4rem}
+  .shead .idx{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--phos-dim);margin-bottom:.7rem}
+  .shead h2{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:clamp(1.7rem,4.2vw,3rem);line-height:.98;letter-spacing:.01em;color:var(--ink)}
+  .shead .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--dim);text-align:right;text-transform:uppercase;line-height:1.7}
+
+  /* ===== channels / disciplines ===== */
+  .channels{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .ch{background:var(--panel);padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:.7rem;position:relative;transition:background .4s}
+  .ch::before{content:"";position:absolute;left:0;top:1.6rem;bottom:1.6rem;width:2px;background:var(--phos-dim);opacity:.35;transition:opacity .4s,box-shadow .4s}
+  .ch:hover{background:var(--panel2)}
+  .ch:hover::before{opacity:1;box-shadow:0 0 10px var(--phos)}
+  .ch .chid{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  .ch .cht{font-family:var(--disp);font-weight:600;font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.1;color:var(--ink)}
+  .ch .chd{color:var(--body);font-size:.95rem;line-height:1.55;max-width:40ch}
+  @media(max-width:680px){.channels{grid-template-columns:1fr}}
+
+  /* ===== signal captures (work) ===== */
+  .captures{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .cap{background:var(--panel);grid-column:span 4;padding:1.4rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.7rem;position:relative;min-height:250px;transition:background .4s}
+  .cap.feat{grid-column:span 12;flex-direction:row;align-items:stretch;gap:2.2rem;min-height:240px}
+  .cap:hover{background:var(--panel2)}
+  .cap .chead{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
+  /* mini waveform sparkline */
+  .spark{height:46px;width:100%;border:1px solid var(--line);border-radius:6px;background:
+    linear-gradient(0deg,transparent 0 49%,var(--grid) 49% 51%,transparent 51%),
+    radial-gradient(100% 120% at 50% 50%,rgba(127,233,255,.04),transparent 70%),#05080b;
+    position:relative;overflow:hidden}
+  .spark canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .cap .ct{font-family:var(--disp);font-weight:600;font-size:clamp(1.2rem,2.2vw,1.55rem);line-height:1.05;color:var(--ink)}
+  .cap .crole{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .cap .cr{font-family:var(--mono);font-size:.76rem;color:var(--phos-dim);letter-spacing:.01em}
+  .cap .cd{color:var(--body);font-size:.9rem;line-height:1.55;margin-top:auto}
+  /* featured layout */
+  .cap.feat .cleft{flex:1.15;display:flex;flex-direction:column;gap:.8rem}
+  .cap.feat .cright{flex:1;border-left:1px solid var(--line);padding-left:2.2rem;display:flex;flex-direction:column;justify-content:center;gap:.3rem}
+  .cap.feat .bignum{font-family:var(--mono);font-weight:700;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1;color:var(--phos);text-shadow:var(--glow);font-variant-numeric:tabular-nums}
+  .cap.feat .bigl{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:1rem}
+  @media(max-width:920px){.cap{grid-column:span 6}.cap.feat{flex-direction:column;gap:1.3rem}.cap.feat .cright{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:1.3rem}}
+  @media(max-width:560px){.cap{grid-column:span 12}}
+
+  /* ===== calibration (recognition) + brands ===== */
+  .cal-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(2rem,5vw,4rem)}
+  .stamps{display:flex;flex-direction:column;gap:0}
+  .stamp{display:flex;align-items:center;gap:1.1rem;padding:1.1rem 0;border-top:1px solid var(--line)}
+  .stamp:last-child{border-bottom:1px solid var(--line)}
+  .stamp .seal{width:30px;height:30px;border:1px solid var(--hair);border-radius:50%;position:relative;flex:none;display:grid;place-items:center}
+  .stamp .seal::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--phos-dim);box-shadow:0 0 8px rgba(127,233,255,.5)}
+  .stamp b{font-family:var(--disp);font-weight:600;font-size:1.1rem;letter-spacing:.01em;display:block;line-height:1.2;color:var(--ink)}
+  .stamp span{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--dim);text-transform:uppercase}
+  .brands .bl{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:1.1rem}
+  .brands .bgrid{display:flex;flex-wrap:wrap;gap:.6rem}
+  .brands .bgrid span{font-family:var(--mono);font-size:.76rem;border:1px solid var(--line);border-radius:6px;padding:.5rem .8rem;color:var(--body)}
+  @media(max-width:720px){.cal-grid{grid-template-columns:1fr}}
+
+  /* ===== about / spec sheet ===== */
+  .about-grid{display:grid;grid-template-columns:280px 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  .about-photo{position:relative;aspect-ratio:5/6;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(.7) brightness(1.02) contrast(1.05)}
+  .about-photo::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(127,233,255,.06) 0 1px,transparent 1px 3px);pointer-events:none;mix-blend-mode:screen;opacity:.5}
+  .about-lead{font-family:var(--disp);font-weight:500;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.18;letter-spacing:.005em;margin-bottom:1.8rem;color:var(--ink)}
+  /* spec sheet table */
+  .specs{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .spec{display:grid;grid-template-columns:160px 1fr;gap:1rem;padding:.95rem 1.1rem;border-top:1px solid var(--line)}
+  .spec:first-child{border-top:0}
+  .spec .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--phos-dim);align-self:start;padding-top:.15rem}
+  .spec .v{color:var(--body);font-size:.96rem;line-height:1.5}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr}.about-photo{max-width:260px}.spec{grid-template-columns:1fr;gap:.25rem}}
+
+  /* ===== transmit / contact ===== */
+  .transmit{border-top:1px solid var(--line)}
+  .tx-panel{border:1px solid var(--line);border-radius:16px;background:
+    radial-gradient(120% 140% at 50% 0%,rgba(127,233,255,.06),transparent 65%),var(--panel);
+    padding:clamp(2rem,5vw,3.6rem);text-align:center;position:relative;overflow:hidden}
+  .tx-panel .cl{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--phos-dim);margin-bottom:1.1rem}
+  .tx-panel .big{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:clamp(2.4rem,8vw,5.5rem);line-height:.95;letter-spacing:.01em;color:var(--ink);text-shadow:0 0 26px rgba(127,233,255,.25)}
+  .tx-panel .big a{display:inline-flex;align-items:center;gap:.25em;transition:color .3s}
+  .tx-panel .big a:hover{color:var(--phos)}
+  .tx-panel .big a .ar{font-size:.45em}
+  .tx-panel .em{margin-top:1.5rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--dim)}
+  .tx-panel .em a{color:var(--ink);border-bottom:1px solid var(--hair)}
+  .tx-panel .em a:hover{color:var(--phos);border-color:var(--phos)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:2rem 0 3rem;position:relative;z-index:2}
+  .foot-in{width:min(1280px,100%);margin:0 auto;padding:0 var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--faint);text-transform:uppercase}
+  .foot-in a{color:var(--dim)}.foot-in a:hover{color:var(--phos)}
+
+  /* reveals */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1!important;transform:none!important;transition:none}
+    .scrollcue .track::after{animation:none}
+    .rec .dot{animation:none;opacity:1}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-in">
+      <div class="brand">SWAPNIL&nbsp;BISWAS</div>
+      <span class="rec"><span class="dot" aria-hidden="true"></span>REC &middot; Signal Lab</span>
+      <nav>
+        <a href="#work">Captures</a>
+        <a href="#about">Spec</a>
+        <a href="#contact">Transmit</a>
+        <a href="/redesign/">All concepts</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <header class="hero" id="hero">
+      <div class="hero-edition">
+        <span class="mono">Senior Product Marketing Manager &middot; LambdaTest</span>
+        <span class="mono">Instrument 23 &middot; Signal Lab</span>
+      </div>
+
+      <!-- the oscilloscope -->
+      <div class="scope">
+        <div class="screen" id="screen">
+          <canvas id="scope" aria-hidden="true"></canvas>
+          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+          <div class="scope-overlay">
+            <div class="top-row">
+              <span class="chtag"><b>CH1</b> &middot; CAREER &middot; 2.0 V/DIV</span>
+              <span class="chtag">TRIG &middot; AUTO</span>
+            </div>
+            <div class="h1-wrap">
+              <h1>The marketer<br/>who <span class="accent">ships</span></h1>
+            </div>
+            <div class="status">
+              <span class="live" id="lockstate">ACQUIRING&hellip;</span><br/>
+              noise &rarr; signal &middot; scroll to lock
+            </div>
+          </div>
+        </div>
+        <div class="scope-foot">
+          <div class="grp">
+            <span>TIME/DIV <b>1.0 s</b></span>
+            <span>V/DIV <b>2.0 v</b></span>
+            <span>SAMPLE <b id="sampreadout">--%</b></span>
+            <span>SRC <b>CH1</b></span>
+          </div>
+          <div class="knobs" aria-hidden="true">
+            <span class="knob"></span><span class="knob"></span><span class="knob"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        <div class="controls">
+          <div>
+            <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18.2M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+            <div class="cta">
+              <a class="btn primary" href="#work">Selected work <span class="ar">&#8599;</span></a>
+              <a class="btn ghost" href="#contact">Get in touch</a>
+            </div>
+            <div class="scrollcue"><span class="track"></span> Scroll to resolve the signal</div>
+          </div>
+          <div class="readouts">
+            {stats.map(s => (
+              <div class="ro" data-stat data-val={s.n} data-plus={s.plus} tabindex="0" aria-label={s.n + s.plus + ' ' + s.l}>
+                <div class="val" data-target={s.n}>0{s.plus && <sup>{s.plus}</sup>}</div>
+                <div class="meta"><div class="lbl">{s.l}</div><div class="ch">{s.read} &middot; locked</div></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="wrap">
+    <section id="what">
+      <div class="shead">
+        <div><div class="idx">&mdash; 01 / Inputs</div><h2 class="reveal">What I do</h2></div>
+        <div class="meta reveal">Four channel inputs<br/>one operator</div>
+      </div>
+      <div class="channels">
+        {channels.map(c => (
+          <div class="ch reveal">
+            <div class="chid">CH &middot; {c.i}</div>
+            <div class="cht">{c.t}</div>
+            <div class="chd">{c.d}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="shead">
+        <div><div class="idx">&mdash; 02 / Captures</div><h2 class="reveal">Signal captures</h2></div>
+        <div class="meta reveal">Acquired waveforms<br/>2019 - 2026</div>
+      </div>
+      <div class="captures">
+        {work.map(w => (
+          <a href="#" class={'cap reveal' + (w.feat ? ' feat' : '')} aria-label={w.t + ' - ' + w.r}>
+            {w.feat ? (
+              <>
+                <span class="cleft">
+                  <span class="chead"><span>Capture {w.i} &middot; Featured</span><span>{w.y}</span></span>
+                  <span class="spark"><canvas class="sparkcv" data-wave={w.wave} aria-hidden="true"></canvas></span>
+                  <span class="ct">{w.t}</span>
+                  <span class="crole">{w.role}</span>
+                  <span class="cd">{w.d}</span>
+                </span>
+                <span class="cright">
+                  <span class="bignum">657K+</span>
+                  <span class="bigl">Leads generated</span>
+                  <span class="bignum">18.2M+</span>
+                  <span class="bigl" style="margin-bottom:0">Organic traffic driven</span>
+                </span>
+              </>
+            ) : (
+              <>
+                <span class="chead"><span>Capture {w.i}</span><span>{w.y}</span></span>
+                <span class="spark"><canvas class="sparkcv" data-wave={w.wave} aria-hidden="true"></canvas></span>
+                <span class="ct">{w.t}</span>
+                <span class="crole">{w.role}</span>
+                <span class="cr">{w.r}</span>
+                <span class="cd">{w.d}</span>
+              </>
+            )}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section id="honours">
+      <div class="shead">
+        <div><div class="idx">&mdash; 03 / Calibration</div><h2 class="reveal">Recognition &amp; brands</h2></div>
+        <div class="meta reveal">Calibration stamps<br/>verified output</div>
+      </div>
+      <div class="cal-grid">
+        <div class="stamps reveal">
+          {recognition.map(a => (
+            <div class="stamp"><span class="seal" aria-hidden="true"></span><div><b>{a.t}</b><span>{a.m}</span></div></div>
+          ))}
+        </div>
+        <div class="brands reveal">
+          <div class="bl">Trusted by teams at</div>
+          <div class="bgrid">{brands.map(b => <span>{b}</span>)}</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="shead">
+        <div><div class="idx">&mdash; 04 / Spec sheet</div><h2 class="reveal">About the operator</h2></div>
+        <div class="meta reveal">Mumbai, India</div>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo reveal"><img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" loading="lazy" decoding="async" /></div>
+        <div>
+          <p class="about-lead reveal">I treat my own career like a product - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+          <div class="specs reveal">
+            <div class="spec"><div class="k">Based</div><div class="v">Mumbai, India</div></div>
+            <div class="spec"><div class="k">Tenure</div><div class="v">7+ years marketing &middot; 4+ in B2B SaaS</div></div>
+            <div class="spec"><div class="k">Education</div><div class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</div></div>
+            <div class="spec"><div class="k">Practice</div><div class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="transmit">
+      <div class="tx-panel reveal">
+        <div class="cl">Channel open &middot; ready to transmit</div>
+        <div class="big"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello <span class="ar">&#8599;</span></a></div>
+        <div class="em">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <span>Signal Lab &middot; Concept 23</span>
+      <span>Swapnil Biswas &copy; 2026</span>
+      <span><a href="/redesign/">View all concepts</a></span>
+    </div>
+  </footer>
+
+<script>
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- reveals ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---------- readout count-up ---------- */
+  function countUp(el){
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const sup = el.querySelector('sup');
+    const supHTML = sup ? sup.outerHTML : '';
+    if (RM){ el.innerHTML = String(target) + supHTML; return; }
+    const dur = 1100; const t0 = performance.now();
+    function step(now){
+      const p = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(target * eased);
+      el.innerHTML = val + supHTML;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const numIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ countUp(e.target.querySelector('.val')); numIO.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.ro').forEach(n => numIO.observe(n));
+
+  /* =========================================================================
+     THE MECHANIC - oscilloscope trace: noise -> signal.
+     A single phosphor trace drawn across a graticule. Scroll progress drives a
+     "lock" parameter: 0 = pure noise, 1 = a clean coherent composite waveform.
+     Milestones along the timeline produce annotated spikes. Hovering a stat
+     readout injects a labelled measured pulse for that value.
+     Performance: fixed sample count, single rAF, paused when offscreen.
+     ========================================================================= */
+  (function scope(){
+    const cv = document.getElementById('scope');
+    const screen = document.getElementById('screen');
+    const lockState = document.getElementById('lockstate');
+    const sampReadout = document.getElementById('sampreadout');
+    if (!cv || !screen) return;
+    const ctx = cv.getContext('2d');
+    const PHOS = '#7fe9ff';
+    const GRID = 'rgba(127,233,255,0.10)';
+    const GRID2 = 'rgba(127,233,255,0.20)';
+    const DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+    const N = 360;                 // capped sample points across the screen
+    let W = 0, H = 0, mid = 0, amp = 0;
+    let lock = RM ? 1 : 0;         // 0 noise -> 1 signal
+    let targetLock = RM ? 1 : 0;
+    let visible = true, running = false, raf = 0;
+
+    // milestones along the normalised timeline (x in 0..1) -> annotated spikes
+    const marks = [0.12, 0.30, 0.44, 0.58, 0.72, 0.88];
+    // per-sample fixed noise phase so noise is stable frame-to-frame structure
+    const seed = new Float32Array(N);
+    for (let i = 0; i < N; i++) seed[i] = Math.random() * Math.PI * 2;
+
+    // measurement pulse injected on stat hover
+    let pulse = null; // {center, width, label, t0, life}
+
+    function size(){
+      const rect = screen.getBoundingClientRect();
+      if (rect.width < 4) return;
+      W = rect.width; H = rect.height;
+      cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR);
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      mid = H * 0.5;
+      amp = Math.min(H * 0.30, 150);
+    }
+
+    // graticule grid (10 x 8 divisions, like a real scope)
+    function drawGrid(){
+      const cols = 10, rows = 8;
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = GRID;
+      ctx.beginPath();
+      for (let i = 1; i < cols; i++){ const x = (W / cols) * i; ctx.moveTo(x, 0); ctx.lineTo(x, H); }
+      for (let j = 1; j < rows; j++){ const y = (H / rows) * j; ctx.moveTo(0, y); ctx.lineTo(W, y); }
+      ctx.stroke();
+      // centre cross-hairs stronger, with tick marks
+      ctx.strokeStyle = GRID2;
+      ctx.beginPath();
+      ctx.moveTo(0, mid); ctx.lineTo(W, mid);
+      ctx.moveTo(W / 2, 0); ctx.lineTo(W / 2, H);
+      ctx.stroke();
+      // minor ticks on the centre axes
+      ctx.beginPath();
+      const tx = W / cols / 5, ty = H / rows / 5;
+      for (let x = 0; x <= W; x += tx){ ctx.moveTo(x, mid - 3); ctx.lineTo(x, mid + 3); }
+      for (let y = 0; y <= H; y += ty){ ctx.moveTo(W / 2 - 3, y); ctx.lineTo(W / 2 + 3, y); }
+      ctx.stroke();
+    }
+
+    // pseudo-random but deterministic noise from seed
+    function noiseAt(i, t){
+      const s = seed[i];
+      return (
+        Math.sin(s + t * 2.1) * 0.5 +
+        Math.sin(s * 1.7 + t * 3.3) * 0.3 +
+        Math.sin(s * 3.1 - t * 1.4) * 0.2
+      );
+    }
+
+    // the clean resolved composite signal (a coherent, legible waveform)
+    function signalAt(x, t){
+      // gentle carrier + a couple of harmonics + milestone spikes
+      let v = Math.sin(x * Math.PI * 6 - t * 1.2) * 0.5;
+      v += Math.sin(x * Math.PI * 14 - t * 0.8) * 0.16;
+      // milestone spikes: short gaussian bumps at each mark
+      for (let m = 0; m < marks.length; m++){
+        const d = x - marks[m];
+        const g = Math.exp(-(d * d) / 0.00035);
+        v += g * 0.7 * (m % 2 === 0 ? 1 : -1);
+      }
+      return v;
+    }
+
+    function frame(now){
+      if (!running) return;
+      const t = now * 0.001;
+      // ease lock toward target
+      lock += (targetLock - lock) * 0.08;
+      if (Math.abs(targetLock - lock) < 0.001) lock = targetLock;
+
+      ctx.clearRect(0, 0, W, H);
+      drawGrid();
+
+      // build the trace
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = PHOS;
+      ctx.shadowColor = 'rgba(127,233,255,0.6)';
+      ctx.shadowBlur = 8;
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      const noiseGain = (1 - lock);
+      const sigGain = lock;
+      for (let i = 0; i < N; i++){
+        const x = i / (N - 1);
+        const px = x * W;
+        let v = noiseAt(i, RM ? 0 : t) * noiseGain + signalAt(x, RM ? 0 : t) * sigGain;
+        // measurement pulse overlay (square-ish bump) on stat hover
+        if (pulse){
+          const age = (now - pulse.t0) / pulse.life;
+          if (age < 1){
+            const env = Math.sin(Math.min(1, age) * Math.PI); // rise + fall
+            const within = Math.abs(x - pulse.center) < pulse.width;
+            if (within) v += 1.05 * env;
+          } else { pulse = null; }
+        }
+        const py = mid - v * amp;
+        if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      // bright scan dot riding the right edge of the trace (gives "live" feel)
+      if (!RM){
+        const sx = W - 1;
+        const xv = 1;
+        let v = signalAt(xv, t) * sigGain + noiseAt(N - 1, t) * noiseGain;
+        const sy = mid - v * amp;
+        ctx.fillStyle = PHOS;
+        ctx.shadowColor = 'rgba(127,233,255,0.9)'; ctx.shadowBlur = 12;
+        ctx.beginPath(); ctx.arc(sx, sy, 2.6, 0, 6.2832); ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      // milestone annotation ticks once locked enough
+      if (lock > 0.55){
+        ctx.fillStyle = 'rgba(127,233,255,0.55)';
+        ctx.font = '10px "Space Mono", monospace';
+        for (let m = 0; m < marks.length; m++){
+          const px = marks[m] * W;
+          const a = Math.min(1, (lock - 0.55) / 0.3);
+          ctx.globalAlpha = a;
+          ctx.fillRect(px - 0.5, mid - 5, 1, 10);
+          ctx.globalAlpha = a * 0.8;
+          ctx.fillText('M' + (m + 1), px + 3, mid - 8);
+          ctx.globalAlpha = 1;
+        }
+      }
+
+      // pulse label callout
+      if (pulse){
+        const px = pulse.center * W;
+        const py = mid - amp * 1.05 - 6;
+        ctx.fillStyle = PHOS;
+        ctx.font = 'bold 13px "Space Mono", monospace';
+        ctx.textAlign = 'center';
+        ctx.shadowColor = 'rgba(127,233,255,0.7)'; ctx.shadowBlur = 8;
+        ctx.fillText(pulse.label, px, Math.max(16, py));
+        ctx.shadowBlur = 0;
+        ctx.textAlign = 'left';
+      }
+
+      // update readouts
+      if (sampReadout) sampReadout.textContent = Math.round(lock * 100) + '%';
+      if (lockState){
+        if (lock > 0.92) lockState.textContent = 'SIGNAL LOCKED';
+        else if (lock > 0.4) lockState.textContent = 'RESOLVING…';
+        else lockState.textContent = 'ACQUIRING…';
+      }
+
+      // keep animating while noise present, a pulse is live, or lock still easing
+      const needsMotion = !RM && (lock < 0.999 || pulse || lock < targetLock || targetLock < lock || sigGain < 1);
+      if (needsMotion) { raf = requestAnimationFrame(frame); }
+      else { running = false; drawStaticLocked(); }
+    }
+
+    // static render (reduced motion or settled): clean locked waveform, no noise
+    function drawStaticLocked(){
+      ctx.clearRect(0, 0, W, H);
+      drawGrid();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = PHOS;
+      ctx.shadowColor = 'rgba(127,233,255,0.55)';
+      ctx.shadowBlur = 8;
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      for (let i = 0; i < N; i++){
+        const x = i / (N - 1);
+        const px = x * W;
+        const py = mid - signalAt(x, 0) * amp;
+        if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+      // milestone ticks
+      ctx.fillStyle = 'rgba(127,233,255,0.5)';
+      ctx.font = '10px "Space Mono", monospace';
+      for (let m = 0; m < marks.length; m++){
+        const px = marks[m] * W;
+        ctx.fillRect(px - 0.5, mid - 5, 1, 10);
+        ctx.fillText('M' + (m + 1), px + 3, mid - 8);
+      }
+      if (sampReadout) sampReadout.textContent = '100%';
+      if (lockState) lockState.textContent = 'SIGNAL LOCKED';
+    }
+
+    function kick(){
+      if (RM){ drawStaticLocked(); return; }
+      if (!running && visible){ running = true; raf = requestAnimationFrame(frame); }
+    }
+
+    // scroll drives lock: by the time hero is scrolled through, signal is locked
+    function onScroll(){
+      if (RM) return;
+      const heroH = (document.getElementById('hero')?.offsetHeight || window.innerHeight);
+      // lock fully by ~85% of hero height scrolled
+      const p = Math.min(1, Math.max(0, window.scrollY / (heroH * 0.85)));
+      targetLock = p;
+      kick();
+    }
+
+    // pause when scope offscreen
+    const vis = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        visible = e.isIntersecting;
+        if (visible) kick();
+        else if (raf) { cancelAnimationFrame(raf); running = false; }
+      });
+    }, { threshold: 0 });
+    vis.observe(screen);
+
+    // stat hover -> measured pulse readout on the scope
+    if (!RM){
+      document.querySelectorAll('[data-stat]').forEach((el, idx) => {
+        const v = el.getAttribute('data-val') + (el.getAttribute('data-plus') || '');
+        // place each stat's pulse at a distinct timeline position
+        const centers = [0.26, 0.5, 0.74];
+        const trigger = () => {
+          pulse = { center: centers[idx % centers.length], width: 0.05, label: v, t0: performance.now(), life: 1400 };
+          kick();
+        };
+        el.addEventListener('pointerenter', trigger);
+        el.addEventListener('focus', trigger);
+      });
+    }
+
+    // init
+    function init(){
+      size();
+      if (RM){ drawStaticLocked(); return; }
+      onScroll();
+      kick();
+    }
+    if (document.fonts && document.fonts.ready){ document.fonts.ready.then(init); }
+    init();
+
+    let rt;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { size(); if (RM) drawStaticLocked(); else { onScroll(); kick(); } }, 160); });
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+
+  /* ---------- mini waveform sparklines on capture cards ---------- */
+  (function sparklines(){
+    const DPR = Math.min(window.devicePixelRatio || 1, 2);
+    const PHOS = '#7fe9ff';
+    function gen(type, x){
+      switch(type){
+        case 'rise':  return Math.tanh((x - 0.5) * 5) * 0.85;                       // climbing growth curve
+        case 'step':  return (x < 0.4 ? -0.55 : (x < 0.55 ? (x - 0.4) / 0.15 * 1.1 - 0.55 : 0.55)); // step up
+        case 'burst': return Math.exp(-Math.pow((x - 0.5) * 6, 2)) * 0.9 - 0.1;     // single spike
+        case 'ramp':  return (x * 2 - 1) * 0.8;                                      // linear ramp 0->1
+        case 'pulse': { const p = (x * 4) % 1; return (p < 0.5 ? 0.55 : -0.55); }   // square pulse train
+        case 'sine':  return Math.sin(x * Math.PI * 4) * 0.7;                        // clean sine
+        default:      return Math.sin(x * Math.PI * 4) * 0.6;
+      }
+    }
+    function draw(cv){
+      const wrap = cv.parentElement;
+      const rect = wrap.getBoundingClientRect();
+      if (rect.width < 4) return;
+      const W = rect.width, H = rect.height;
+      cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR);
+      const ctx = cv.getContext('2d');
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      const type = cv.getAttribute('data-wave') || 'sine';
+      const mid = H * 0.5, amp = H * 0.34;
+      ctx.lineWidth = 1.6; ctx.strokeStyle = PHOS; ctx.lineJoin = 'round';
+      ctx.shadowColor = 'rgba(127,233,255,0.5)'; ctx.shadowBlur = 5;
+      ctx.beginPath();
+      const STEPS = 120;
+      for (let i = 0; i <= STEPS; i++){
+        const x = i / STEPS;
+        const px = x * W;
+        const py = mid - gen(type, x) * amp;
+        if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+    }
+    const all = document.querySelectorAll('.sparkcv');
+    const sio = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting){ draw(e.target); sio.unobserve(e.target); } });
+    }, { threshold: 0.2 });
+    function ready(){ all.forEach(cv => sio.observe(cv)); }
+    if (document.fonts && document.fonts.ready){ document.fonts.ready.then(ready); } else { ready(); }
+    let rt;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => all.forEach(draw), 200); });
+  })();
+</script>
+</body>
+</html>

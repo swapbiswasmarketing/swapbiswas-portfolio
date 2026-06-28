@@ -1,0 +1,719 @@
+---
+// REDESIGN PROTOTYPE - "Microscope" - a scientific deep-zoom / "powers of ten" instrument.
+// Original concept (NOT a reskin of Halftone's static loupe): own layout + interaction.
+//  - A fixed full-viewport ZOOM STAGE. Scroll drives an INFINITE-ZOOM timeline through 6 nested
+//    content LAYERS (L0 macro number -> L5 contact). Each layer scales up + cross-fades to reveal
+//    the next layer beneath it. A scientific HUD overlays a live magnification readout, a scale bar,
+//    a focus reticle, crosshairs and a fine measurement grid.
+//  - The narrative: anyone can quote 18.2M. Look closer at the system that made it.
+//  - CRITICAL: prefers-reduced-motion (and no-JS) = layers render as a normal stacked, fully
+//    readable document. The zoom is a pure enhancement. Content is never trapped behind the stage.
+// Palette: clinical dark optical stage (#070a0f) + warm microscope-lamp glow (amber #ffb55c) and a
+//   single cool instrument accent (cyan #5fd3e6). Swiss sans (Space Grotesk) + mono readouts (IBM Plex Mono).
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+const stats = [
+  { n: '20', plus: '+', l: 'AI agents & internal tools shipped' },
+  { n: '15', plus: '+', l: 'Marketers mentored & levelled up' },
+  { n: '76', plus: '',  l: 'Long-form articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+const work = [
+  { i: '01', t: 'LambdaTest', y: '2021 - 2025', role: 'Product & digital marketing', r: '657K+ leads · 18.2M+ organic', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', feat: true },
+  { i: '02', t: 'TestMu AI', y: '2026', role: 'Rebrand lead', r: 'Full company rebrand', d: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', t: 'Samsung', y: '2019', role: 'via Sociowash', r: 'Galaxy M-series launch', d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { i: '04', t: 'Medilife Superspeciality', y: '0 to 1', role: 'Marketing & web', r: 'Website · GTM · social', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', t: 'Lido Learning', y: '2021', role: 'Growth / CRM', r: 'CRM & lead operations', d: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { i: '06', t: 'Appknox', y: 'Freelance', role: 'Content', r: 'Security content', d: 'Freelance content writer for the mobile app security company.' },
+];
+const recognition = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+
+// Six zoom stops. Each carries the magnification readout shown in the HUD when it is in focus.
+const layers = [
+  { id: 'L0', mag: '1x',       label: 'Specimen' },
+  { id: 'L1', mag: '10x',      label: 'Disciplines' },
+  { id: 'L2', mag: '120x',     label: 'Portfolio' },
+  { id: 'L3', mag: '1,400x',   label: 'Systems' },
+  { id: 'L4', mag: '8,000x',   label: 'Operator' },
+  { id: 'L5', mag: '10,000x',  label: 'Contact' },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="microscope">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#070a0f;          /* optical stage */
+    --bg2:#0b1018;
+    --panel:#0e141d;
+    --panel2:#111927;
+    --ink:#eaf2f8;          /* high-contrast text */
+    --soft:#c4d2de;         /* body, AA on bg */
+    --dim:#8da0b0;          /* labels, >=4.5:1 on bg */
+    --faint:#5d6e7c;
+    --amber:#ffb55c;        /* microscope-lamp glow / primary accent */
+    --amber-soft:#ffcf95;
+    --cyan:#5fd3e6;         /* cool instrument accent */
+    --line:rgba(180,205,225,.12);
+    --hair:rgba(180,205,225,.24);
+    --grid:rgba(120,150,170,.10);
+    --sans:"Space Grotesk",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --gut:clamp(1.1rem,4.5vw,3.4rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:100vh;
+    -webkit-font-smoothing:antialiased;line-height:1.6;letter-spacing:.002em}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--amber);color:#1a1206}
+  .mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+
+  /* ============================================================
+     THE ZOOM STAGE (enhancement). When JS marks <body class="zoom">,
+     the stage becomes a fixed viewport and layers nest + scale.
+     Default (no JS / reduced motion): everything is normal flow.
+     ============================================================ */
+
+  /* page-wide optical grid + lamp vignette - always on, sits behind everything */
+  .optics{position:fixed;inset:0;z-index:0;pointer-events:none}
+  .optics .meshfine{position:absolute;inset:0;opacity:.55;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:34px 34px}
+  .optics .lamp{position:absolute;inset:0;
+    background:radial-gradient(120% 90% at 50% 8%,rgba(255,181,92,.10),transparent 46%),
+               radial-gradient(140% 120% at 50% 120%,rgba(95,211,230,.06),transparent 50%),
+               radial-gradient(100% 100% at 50% 50%,transparent 58%,rgba(0,0,0,.55) 100%)}
+  .optics .scan{position:absolute;inset:0;opacity:.4;mix-blend-mode:overlay;
+    background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)}
+
+  /* ---- HUD (overlay instrument frame) ---- */
+  .hud{position:fixed;inset:0;z-index:50;pointer-events:none}
+  .hud-frame{position:absolute;inset:clamp(.8rem,2vw,1.5rem);border:1px solid var(--line)}
+  .hud-frame::before,.hud-frame::after,
+  .hud-frame .c2,.hud-frame .c3{content:"";position:absolute;width:14px;height:14px;border:1.5px solid var(--amber);opacity:.85}
+  .hud-frame::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+  .hud-frame::after{top:-1px;right:-1px;border-left:0;border-bottom:0}
+  .hud-frame .c2{bottom:-1px;left:-1px;border-right:0;border-top:0}
+  .hud-frame .c3{bottom:-1px;right:-1px;border-left:0;border-top:0}
+
+  /* reticle + crosshairs - centred on the stage, only when zoom is active */
+  .reticle{position:absolute;top:50%;left:50%;width:min(58vmin,440px);height:min(58vmin,440px);
+    transform:translate(-50%,-50%);opacity:0;transition:opacity .5s}
+  body.zoom .reticle{opacity:.5}
+  .reticle .ring{position:absolute;inset:0;border:1px solid var(--hair);border-radius:50%}
+  .reticle .ring.r2{inset:14%;border-color:var(--line)}
+  .reticle .ring.r3{inset:30%;border-style:dashed;border-color:rgba(255,181,92,.3)}
+  .reticle .x,.reticle .y{position:absolute;background:linear-gradient(var(--hair),transparent,var(--hair))}
+  .reticle .x{left:50%;top:0;bottom:0;width:1px;transform:translateX(-.5px)}
+  .reticle .y{top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--hair),transparent,var(--hair));transform:translateY(-.5px)}
+  .reticle .tick{position:absolute;left:50%;width:1px;height:7px;background:var(--amber);transform:translateX(-.5px)}
+  .reticle .tick.t{top:-3px}.reticle .tick.b{bottom:-3px}
+  .reticle .tick.l{left:-3px;top:50%;width:7px;height:1px;transform:translateY(-.5px)}
+  .reticle .tick.r{right:-3px;left:auto;top:50%;width:7px;height:1px;transform:translateY(-.5px)}
+  .reticle .dot{position:absolute;top:50%;left:50%;width:5px;height:5px;border:1px solid var(--cyan);border-radius:50%;transform:translate(-50%,-50%)}
+
+  /* top-left readout */
+  .readout{position:absolute;top:clamp(1.3rem,3vw,2.2rem);left:clamp(1.3rem,3vw,2.2rem);
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;line-height:1.9}
+  .readout b{color:var(--amber);font-weight:600}
+  .readout .lbl{color:var(--faint)}
+  .readout .magbig{display:block;font-size:1.5rem;letter-spacing:.04em;color:var(--ink);margin-top:.15rem;font-weight:600}
+  .readout .magbig em{font-style:normal;color:var(--amber)}
+
+  /* top-right specimen tag */
+  .spectag{position:absolute;top:clamp(1.3rem,3vw,2.2rem);right:clamp(1.3rem,3vw,2.2rem);text-align:right;
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--faint);text-transform:uppercase;line-height:1.9}
+  .spectag b{color:var(--soft);font-weight:500}
+
+  /* scale bar bottom-left */
+  .scalebar{position:absolute;left:clamp(1.3rem,3vw,2.2rem);bottom:clamp(1.3rem,3vw,2.2rem);
+    font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:var(--dim);text-transform:uppercase}
+  .scalebar .bar{height:8px;width:120px;border:1px solid var(--hair);border-top:0;position:relative;margin-bottom:.45rem}
+  .scalebar .bar::before{content:"";position:absolute;left:0;top:0;height:100%;width:var(--sb,40%);background:var(--amber);opacity:.55;transition:width .4s}
+  .scalebar .bar i{position:absolute;top:0;width:1px;height:100%;background:var(--hair)}
+  .scalebar .bar i.q1{left:25%}.scalebar .bar i.q2{left:50%}.scalebar .bar i.q3{left:75%}
+  /* the scale bar is a live-zoom instrument; in the stacked fallback it would overlap
+     scrolling content bottom-left, so it only shows once the zoom stage is engaged */
+  body:not(.zoom) .scalebar{display:none}
+
+  /* zoom progress dots bottom-right */
+  .ztrack{position:absolute;right:clamp(1.3rem,3vw,2.2rem);bottom:clamp(1.3rem,3vw,2.2rem);
+    display:flex;flex-direction:column;gap:.55rem;align-items:flex-end;pointer-events:auto}
+  .zdot{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--faint);transition:color .3s}
+  .zdot .mk{width:8px;height:8px;border:1px solid var(--hair);border-radius:50%;transition:all .3s;flex:none}
+  .zdot.on{color:var(--amber)}
+  .zdot.on .mk{background:var(--amber);border-color:var(--amber);box-shadow:0 0 0 3px rgba(255,181,92,.15)}
+  @media(max-width:680px){ .ztrack .lz{display:none} .readout .lbl,.spectag{display:none} }
+
+  /* depth / scroll cue near reticle */
+  .focuscue{position:absolute;left:50%;bottom:clamp(3.6rem,9vh,5rem);transform:translateX(-50%);
+    font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);
+    display:flex;align-items:center;gap:.6rem;opacity:0;transition:opacity .5s}
+  body.zoom .focuscue{opacity:1}
+  .focuscue .ar{display:inline-block;width:1px;height:18px;background:linear-gradient(var(--amber),transparent);position:relative}
+  .focuscue .ar::after{content:"";position:absolute;left:-2.5px;bottom:0;width:6px;height:6px;border-right:1px solid var(--amber);border-bottom:1px solid var(--amber);transform:rotate(45deg)}
+
+  /* ============================================================
+     DOCUMENT (the actual content). In zoom mode it becomes the
+     fixed stage; layers are absolutely positioned + transformed.
+     ============================================================ */
+  .doc{position:relative;z-index:2}
+  body.zoom .doc{position:fixed;inset:0;z-index:2;overflow:hidden}
+
+  .layer{position:relative;z-index:2}
+  /* in zoom mode each layer is centred in the stage and we drive transform from JS */
+  body.zoom .layer{position:absolute;inset:0;display:grid;place-items:center;
+    transform-origin:50% 50%;will-change:transform,opacity;backface-visibility:hidden}
+  .layer-in{width:min(1180px,100%);margin:0 auto;padding:0 var(--gut)}
+  body.zoom .layer-in{max-height:100vh;overflow:hidden}
+
+  /* normal-flow spacing for the no-zoom fallback */
+  .layer{padding:clamp(3.2rem,9vh,6rem) 0}
+  body.zoom .layer{padding:0}
+
+  /* a little instrument label on each layer */
+  .lhead{display:flex;align-items:baseline;gap:1rem;margin-bottom:clamp(1.4rem,3vw,2.2rem);
+    border-bottom:1px solid var(--line);padding-bottom:1rem;flex-wrap:wrap}
+  .lhead .ln{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+  .lhead .lt{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  .lhead .lm{margin-left:auto;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+
+  /* ---------- L0 : specimen / hero / macro number ---------- */
+  .specimen{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--cyan);margin-bottom:1.4rem}
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--cyan)}
+  h1.head{font-weight:600;line-height:.95;letter-spacing:-.02em;font-size:clamp(2.6rem,7.4vw,5.6rem);color:var(--ink)}
+  h1.head .ships{position:relative;color:var(--amber)}
+  h1.head .ships::after{content:"";position:absolute;left:0;right:0;bottom:-.06em;height:2px;
+    background:linear-gradient(90deg,var(--amber),transparent);opacity:.7}
+  .sub{margin-top:clamp(1.3rem,2.6vw,1.9rem);max-width:46ch;color:var(--soft);font-size:clamp(1rem,1.3vw,1.12rem);line-height:1.62}
+  .sub b{color:var(--ink);font-weight:600}
+  .cta{margin-top:1.8rem;display:flex;gap:.8rem;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.3rem;
+    border:1px solid var(--hair);display:inline-flex;gap:.55rem;align-items:center;transition:background .3s,color .3s,border-color .3s,transform .3s;color:var(--ink)}
+  .btn .ar{transition:transform .3s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .btn.primary{background:var(--amber);color:#1a1206;border-color:var(--amber)}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,181,92,.25)}
+  .btn.ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+
+  /* the big specimen number plate */
+  .plate{position:relative;border:1px solid var(--line);background:
+    linear-gradient(180deg,rgba(255,181,92,.04),transparent 60%),var(--panel);
+    padding:clamp(1.4rem,3vw,2.2rem);overflow:hidden}
+  .plate::before{content:"";position:absolute;inset:0;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:22px 22px;opacity:.6;pointer-events:none}
+  .plate .pcorner{position:absolute;width:10px;height:10px;border:1px solid var(--hair)}
+  .plate .pcorner.tl{top:7px;left:7px;border-right:0;border-bottom:0}
+  .plate .pcorner.tr{top:7px;right:7px;border-left:0;border-bottom:0}
+  .plate .pcorner.bl{bottom:7px;left:7px;border-right:0;border-top:0}
+  .plate .pcorner.br{bottom:7px;right:7px;border-left:0;border-top:0}
+  .plate .ptag{position:relative;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);display:flex;justify-content:space-between}
+  .bignum{position:relative;font-weight:700;line-height:.9;letter-spacing:-.03em;
+    font-size:clamp(3.6rem,12vw,8rem);color:var(--amber);margin:.4rem 0 .2rem;display:flex;align-items:flex-start;gap:.05em}
+  .bignum sup{font-size:.36em;line-height:1;margin-top:.25em;color:var(--amber-soft)}
+  .plate .pcap{position:relative;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--soft);text-transform:uppercase}
+  .plate .pmeta{position:relative;margin-top:1.2rem;display:flex;gap:1.4rem;flex-wrap:wrap;font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--dim)}
+  .plate .pmeta b{color:var(--cyan);font-weight:500}
+  @media(max-width:820px){ .specimen{grid-template-columns:1fr;gap:2rem} }
+
+  /* ---------- L1 : disciplines ---------- */
+  .disc{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .disc .cell{background:var(--bg2);padding:clamp(1.4rem,2.6vw,2rem);min-height:150px;display:flex;flex-direction:column;gap:.7rem;
+    transition:background .35s;position:relative}
+  .disc .cell:hover{background:var(--panel)}
+  .disc .ci{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--cyan)}
+  .disc .ct{font-weight:600;font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:1.1;letter-spacing:-.01em;color:var(--ink)}
+  .disc .cd{color:var(--dim);font-size:.95rem;line-height:1.55;max-width:40ch}
+  @media(max-width:680px){ .disc{grid-template-columns:1fr} .disc .cell{min-height:auto} }
+
+  /* ---------- L2 : selected work ---------- */
+  .sheet{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .frame{background:var(--bg2);grid-column:span 4;padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.7rem;
+    position:relative;min-height:180px;transition:background .35s}
+  .frame.feat{grid-column:span 12;flex-direction:row;gap:2.2rem;align-items:stretch;min-height:200px}
+  .frame:hover{background:var(--panel)}
+  .frame .fhead{display:flex;justify-content:space-between;gap:1rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .frame .ft{font-weight:600;font-size:clamp(1.15rem,2.2vw,1.6rem);line-height:1.05;letter-spacing:-.01em;color:var(--ink)}
+  .frame .frole{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+  .frame .fr{font-family:var(--mono);font-size:.74rem;color:var(--soft);letter-spacing:.01em}
+  .frame .fd{color:var(--dim);font-size:.9rem;line-height:1.5;margin-top:auto}
+  .frame .go{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);display:inline-flex;gap:.4rem;transition:color .3s,gap .3s}
+  .frame:hover .go{color:var(--amber);gap:.7rem}
+  .frame.feat .fleft{flex:1.1;display:flex;flex-direction:column;gap:.7rem}
+  .frame.feat .fright{flex:1;border-left:1px solid var(--line);padding-left:2.2rem;display:flex;flex-direction:column;justify-content:center;gap:.3rem}
+  .frame.feat .bignum2{font-weight:700;font-size:clamp(2rem,4.6vw,3.4rem);line-height:.9;letter-spacing:-.02em;color:var(--amber)}
+  .frame.feat .bigl{font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);margin-bottom:.8rem}
+  @media(max-width:900px){ .frame{grid-column:span 6} .frame.feat{flex-direction:column;gap:1.2rem} .frame.feat .fright{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:1.2rem} }
+  @media(max-width:560px){ .frame{grid-column:span 12} }
+
+  /* ---------- L3 : the systems (build stats + AI/SEO) ---------- */
+  .sys{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .scard{background:var(--bg2);padding:clamp(1.4rem,2.8vw,2.2rem);min-height:170px;display:flex;flex-direction:column;justify-content:space-between;gap:1rem}
+  .scard .snum{font-weight:700;font-size:clamp(2.6rem,6vw,4.4rem);line-height:.85;letter-spacing:-.03em;color:var(--ink);display:flex;align-items:flex-start}
+  .scard .snum sup{font-size:.4em;color:var(--cyan);margin-top:.2em}
+  .scard .sl{font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);line-height:1.55;max-width:24ch}
+  .sysnote{margin-top:1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .sysnote .sn{background:var(--panel);padding:1.3rem 1.5rem}
+  .sysnote .sn h4{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:.6rem}
+  .sysnote .sn p{color:var(--soft);font-size:.92rem;line-height:1.55}
+  @media(max-width:680px){ .sys{grid-template-columns:1fr} .scard{min-height:auto;flex-direction:row;align-items:center;justify-content:flex-start;gap:1.2rem} .scard .sl{max-width:none} .sysnote{grid-template-columns:1fr} }
+
+  /* recognition + brands strip under systems */
+  .honours{margin-top:1.4rem;display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(1.4rem,4vw,3rem)}
+  .stamps{display:flex;flex-direction:column}
+  .stamp{display:flex;align-items:center;gap:1rem;padding:.95rem 0;border-top:1px dashed var(--line)}
+  .stamp:last-child{border-bottom:1px dashed var(--line)}
+  .stamp .rg{width:24px;height:24px;border:1px solid var(--hair);border-radius:50%;position:relative;flex:none}
+  .stamp .rg::before,.stamp .rg::after{content:"";position:absolute;background:var(--amber);opacity:.7}
+  .stamp .rg::before{left:50%;top:4px;bottom:4px;width:1px;transform:translateX(-.5px)}
+  .stamp .rg::after{top:50%;left:4px;right:4px;height:1px;transform:translateY(-.5px)}
+  .stamp b{font-weight:600;font-size:1.05rem;display:block;line-height:1.2;color:var(--ink)}
+  .stamp span{font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
+  .brands .bl{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
+  .brands .bgrid{display:flex;flex-wrap:wrap;gap:.5rem}
+  .brands .bgrid span{font-family:var(--mono);font-size:.74rem;border:1px solid var(--line);padding:.45rem .75rem;color:var(--soft)}
+  @media(max-width:720px){ .honours{grid-template-columns:1fr} }
+
+  /* ---------- L4 : about / operator ---------- */
+  .operator{display:grid;grid-template-columns:240px 1fr;gap:clamp(1.6rem,4vw,3rem);align-items:start}
+  .opphoto{position:relative;aspect-ratio:5/6;border:1px solid var(--line);overflow:hidden;background:var(--panel)}
+  .opphoto img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(.25) contrast(1.05) brightness(1.02)}
+  .opphoto::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:18px 18px;opacity:.5;mix-blend-mode:overlay}
+  .opphoto .ph-tag{position:absolute;left:8px;bottom:8px;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);background:rgba(7,10,15,.7);padding:.25rem .5rem;border:1px solid var(--hair)}
+  .oplead{font-weight:600;font-size:clamp(1.3rem,2.8vw,2rem);line-height:1.15;letter-spacing:-.01em;margin-bottom:1.6rem;color:var(--ink)}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem 1.8rem}
+  .fact .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:.4rem}
+  .fact .v{color:var(--soft);font-size:.95rem;line-height:1.45}
+  @media(max-width:720px){ .operator{grid-template-columns:1fr} .opphoto{max-width:220px} .facts{grid-template-columns:1fr} }
+
+  /* ---------- L5 : contact ---------- */
+  .contact{text-align:left}
+  .contact .cl{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:1.2rem;display:inline-flex;align-items:center;gap:.7rem}
+  .contact .cl::before{content:"";width:22px;height:1px;background:var(--cyan)}
+  .contact .big{font-weight:700;font-size:clamp(2.6rem,9vw,6.5rem);line-height:.92;letter-spacing:-.03em}
+  .contact .big a{display:inline-flex;align-items:flex-start;gap:.12em;color:var(--ink);transition:color .3s}
+  .contact .big a .ar{font-size:.36em;margin-top:.2em;color:var(--amber)}
+  .contact .big a:hover{color:var(--amber)}
+  .contact .em{margin-top:1.5rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--dim)}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--hair)}
+  .contact .em a:hover{color:var(--amber);border-color:var(--amber)}
+
+  /* footer (always normal flow, lives after the doc) */
+  footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;position:relative;z-index:3;background:var(--bg)}
+  .foot-in{width:min(1180px,100%);margin:0 auto;padding:0 var(--gut);display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:1rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--faint);text-transform:uppercase}
+  .foot-in a{color:var(--dim)}.foot-in a:hover{color:var(--amber)}
+  body.zoom footer{position:fixed;left:0;right:0;bottom:0;border-top:0;padding:0;background:transparent;pointer-events:none;opacity:0}
+
+  /* the tall scroll driver - only present/relevant in zoom mode */
+  .driver{display:none}
+  body.zoom .driver{display:block;position:relative;z-index:1;pointer-events:none}
+
+  /* a thin "depth" rail on the left during zoom */
+  .depthrail{position:fixed;left:0;top:0;bottom:0;width:2px;z-index:45;background:var(--line);opacity:0;transition:opacity .4s;pointer-events:none}
+  body.zoom .depthrail{opacity:1}
+  .depthrail .fill{position:absolute;left:0;top:0;width:100%;height:var(--dp,0%);background:linear-gradient(var(--amber),var(--cyan));transition:height .12s linear}
+
+  /* skip link for a11y */
+  .skip{position:absolute;left:-999px;top:0;z-index:99;background:var(--amber);color:#1a1206;padding:.6rem 1rem;font-family:var(--mono);font-size:.7rem}
+  .skip:focus{left:.6rem;top:.6rem}
+
+  /* reduced motion / fallback: kill the stage entirely, everything stacks and scrolls */
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+  <a class="skip" href="#L5">Skip to contact</a>
+
+  <!-- optical backdrop -->
+  <div class="optics" aria-hidden="true">
+    <div class="meshfine"></div>
+    <div class="lamp"></div>
+    <div class="scan"></div>
+  </div>
+
+  <!-- HUD instrument overlay -->
+  <div class="hud" aria-hidden="true">
+    <div class="hud-frame"><span class="c2"></span><span class="c3"></span></div>
+    <div class="reticle">
+      <span class="ring"></span><span class="ring r2"></span><span class="ring r3"></span>
+      <span class="x"></span><span class="y"></span>
+      <span class="tick t"></span><span class="tick b"></span><span class="tick l"></span><span class="tick r"></span>
+      <span class="dot"></span>
+    </div>
+    <div class="readout">
+      <span class="lbl">Optical zoom</span>
+      <span class="magbig">MAG <em><span id="magval">1x</span></em></span>
+      <span class="lbl">Field <span id="fieldlbl">Specimen</span></span>
+    </div>
+    <div class="spectag">
+      <span>Specimen 037</span><br/>
+      <b>S. BISWAS</b><br/>
+      <span>Marketer, ships</span>
+    </div>
+    <div class="scalebar">
+      <div class="bar" id="scalebar"><i class="q1"></i><i class="q2"></i><i class="q3"></i></div>
+      <span id="scaletxt">Scale 1.00 mm</span>
+    </div>
+    <div class="ztrack">
+      {layers.map((l, idx) => (
+        <a class="zdot" href={'#' + l.id} data-zi={idx}>
+          <span class="lz">{l.label}</span><span class="mk"></span>
+        </a>
+      ))}
+    </div>
+    <div class="focuscue">Scroll to descend <span class="ar"></span></div>
+  </div>
+
+  <div class="depthrail" aria-hidden="true"><span class="fill" id="depthfill"></span></div>
+
+  <!-- ============ THE DOCUMENT (6 layers) ============ -->
+  <main class="doc" id="doc">
+
+    <!-- L0 - SPECIMEN / HERO / MACRO NUMBER -->
+    <section class="layer" id="L0" data-zi="0">
+      <div class="layer-in">
+        <div class="eyebrow">Senior Product Marketing Manager - LambdaTest</div>
+        <div class="specimen">
+          <div>
+            <h1 class="head">The marketer<br/>who <span class="ships">ships.</span></h1>
+            <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+            <div class="cta">
+              <a class="btn primary" href="#L2">Selected work <span class="ar">&#8599;</span></a>
+              <a class="btn ghost" href="#L5">Get in touch</a>
+            </div>
+          </div>
+          <figure class="plate">
+            <span class="pcorner tl"></span><span class="pcorner tr"></span><span class="pcorner bl"></span><span class="pcorner br"></span>
+            <div class="ptag"><span>Field 1x</span><span>Organic traffic</span></div>
+            <div class="bignum">18.2M<sup>+</sup></div>
+            <div class="pcap">Organic visits, compounded</div>
+            <div class="pmeta">
+              <span>Leads <b>657K+</b></span>
+              <span>Multiplier <b>10x</b></span>
+              <span>Source <b>LambdaTest</b></span>
+            </div>
+          </figure>
+        </div>
+        <div class="lhead" style="margin-top:clamp(1.6rem,4vw,2.6rem)">
+          <span class="ln">L0</span><span class="lt">Specimen - the headline number</span>
+          <span class="lm">Anyone can quote the number. Look closer.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- L1 - DISCIPLINES -->
+    <section class="layer" id="L1" data-zi="1">
+      <div class="layer-in">
+        <div class="lhead"><span class="ln">L1</span><span class="lt">What I do</span><span class="lm">Four disciplines - one operator</span></div>
+        <div class="disc">
+          {pillars.map(p => (
+            <div class="cell">
+              <div class="ci">{p.i}</div>
+              <div class="ct">{p.t}</div>
+              <div class="cd">{p.d}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- L2 - SELECTED WORK -->
+    <section class="layer" id="L2" data-zi="2">
+      <div class="layer-in">
+        <div class="lhead"><span class="ln">L2</span><span class="lt">Selected work</span><span class="lm">Campaigns the number is made of - 2019 to 2026</span></div>
+        <div class="sheet">
+          {work.map(w => (
+            <a href="#" class={'frame' + (w.feat ? ' feat' : '')} aria-label={w.t + ' - ' + w.r}>
+              {w.feat ? (
+                <>
+                  <span class="fleft">
+                    <span class="fhead"><span>Frame {w.i} &middot; Featured</span><span>{w.y}</span></span>
+                    <span class="ft">{w.t}</span>
+                    <span class="frole">{w.role}</span>
+                    <span class="fd">{w.d}</span>
+                    <span class="go">View case <span>&#8599;</span></span>
+                  </span>
+                  <span class="fright">
+                    <span class="bignum2">657K+</span>
+                    <span class="bigl">Leads generated</span>
+                    <span class="bignum2">18.2M+</span>
+                    <span class="bigl" style="margin-bottom:0">Organic traffic driven</span>
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span class="fhead"><span>Frame {w.i}</span><span>{w.y}</span></span>
+                  <span class="ft">{w.t}</span>
+                  <span class="frole">{w.role}</span>
+                  <span class="fr">{w.r}</span>
+                  <span class="fd">{w.d}</span>
+                  <span class="go">View case <span>&#8599;</span></span>
+                </>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- L3 - THE SYSTEMS (build stats + AI/SEO) + recognition/brands -->
+    <section class="layer" id="L3" data-zi="3">
+      <div class="layer-in">
+        <div class="lhead"><span class="ln">L3</span><span class="lt">The systems underneath</span><span class="lm">The agents, code and SEO that made the number</span></div>
+        <div class="sys">
+          {stats.map(s => (
+            <div class="scard">
+              <div class="snum">{s.n}{s.plus && <sup>{s.plus}</sup>}</div>
+              <div class="sl">{s.l}</div>
+            </div>
+          ))}
+        </div>
+        <div class="sysnote">
+          <div class="sn">
+            <h4>AI &amp; Automation</h4>
+            <p>I build the agents and internal tools that do the work - 20+ shipped. Operators, not slide-ware.</p>
+          </div>
+          <div class="sn">
+            <h4>Growth, SEO &amp; AEO</h4>
+            <p>Technical audits, AI-search optimization and demand gen that compounds into the organic engine above.</p>
+          </div>
+        </div>
+        <div class="honours">
+          <div class="stamps">
+            {recognition.map(a => (
+              <div class="stamp"><span class="rg" aria-hidden="true"></span><div><b>{a.t}</b><span>{a.m}</span></div></div>
+            ))}
+          </div>
+          <div class="brands">
+            <div class="bl">Trusted by teams at</div>
+            <div class="bgrid">{brands.map(b => <span>{b}</span>)}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L4 - ABOUT / OPERATOR -->
+    <section class="layer" id="L4" data-zi="4">
+      <div class="layer-in">
+        <div class="lhead"><span class="ln">L4</span><span class="lt">The operator</span><span class="lm">Mumbai, India</span></div>
+        <div class="operator">
+          <div class="opphoto">
+            <img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" loading="lazy" decoding="async" />
+            <span class="ph-tag">8,000x</span>
+          </div>
+          <div>
+            <p class="oplead">I treat my own career like a product - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+            <div class="facts">
+              <div class="fact"><div class="k">Based</div><div class="v">Mumbai, India</div></div>
+              <div class="fact"><div class="k">Tenure</div><div class="v">7+ years marketing &middot; 4+ in B2B SaaS</div></div>
+              <div class="fact"><div class="k">Education</div><div class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</div></div>
+              <div class="fact"><div class="k">Practice</div><div class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L5 - CONTACT -->
+    <section class="layer" id="L5" data-zi="5">
+      <div class="layer-in">
+        <div class="lhead"><span class="ln">L5</span><span class="lt">Contact</span><span class="lm">Deepest field - 10,000x</span></div>
+        <div class="contact">
+          <div class="cl">Let's build something that compounds</div>
+          <div class="big"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello <span class="ar">&#8599;</span></a></div>
+          <div class="em">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- tall scroll driver: only used in zoom mode to provide scroll distance -->
+  <div class="driver" id="driver" aria-hidden="true"></div>
+
+  <footer>
+    <div class="foot-in">
+      <span>Microscope &middot; Concept 37</span>
+      <span>Swapnil Biswas &copy; 2026</span>
+      <span><a href="/redesign/">View all concepts</a></span>
+    </div>
+  </footer>
+
+<script>
+  /* ===========================================================
+     MICROSCOPE - scroll-driven infinite zoom.
+     Pure transform/opacity, rAF-batched, throttled scroll.
+     If reduced-motion or no support: we never add body.zoom, so
+     the document renders as a normal stacked, readable page.
+     =========================================================== */
+  (function microscope(){
+    const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // The zoom stage pins each layer to a single viewport. On small/short screens the
+    // dense layers (work sheet, systems) cannot fit one screenful, so we fall back to
+    // the fully readable stacked document instead of clipping content behind the stage.
+    const SMALL = window.matchMedia('(max-width: 820px), (max-height: 620px), (pointer: coarse)').matches;
+    const STACK = RM || SMALL;
+    const layers = Array.from(document.querySelectorAll('.layer'));
+    const driver = document.getElementById('driver');
+    const N = layers.length;            // 6
+    if (!layers.length || !driver) return;
+
+    // magnification + scale readouts per stop
+    const MAGS  = ['1x','10x','120x','1,400x','8,000x','10,000x'];
+    const FIELDS= ['Specimen','Disciplines','Portfolio','Systems','Operator','Contact'];
+    const SCALES= ['1.00 mm','100 um','10 um','1.0 um','120 nm','40 nm'];
+
+    const magval  = document.getElementById('magval');
+    const fieldlbl= document.getElementById('fieldlbl');
+    const scaletxt= document.getElementById('scaletxt');
+    const scalebar= document.getElementById('scalebar');
+    const depthfill=document.getElementById('depthfill');
+    const zdots   = Array.from(document.querySelectorAll('.zdot'));
+
+    if (STACK){
+      // reduced motion / small screen: do not engage the stage; smooth-anchor only.
+      // Still keep the HUD readouts meaningful via IntersectionObserver.
+      const io = new IntersectionObserver((es)=>{
+        es.forEach(e=>{ if(e.isIntersecting){
+          const i = +e.target.getAttribute('data-zi');
+          setHUD(i, 0);
+          zdots.forEach((d,k)=>d.classList.toggle('on', k===i));
+        }});
+      }, { threshold:.5 });
+      layers.forEach(l=>io.observe(l));
+      return;
+    }
+
+    // ---- engage zoom stage ----
+    document.body.classList.add('zoom');
+
+    // scroll distance: give each transition a comfortable screenful + extra so each stop SETTLES.
+    const PER = 1.15;                   // viewport-heights of scroll per zoom step
+    function sizeDriver(){
+      driver.style.height = ((N - 1) * PER * 100 + 100) + 'vh';
+    }
+    sizeDriver();
+
+    // zoom feel: each step magnifies the world by ZSTEP. Outgoing layer scales up past the
+    // viewport and fades; incoming layer starts small (1/ZSTEP) and settles at scale 1.
+    const ZSTEP = 6.0;
+
+    function setHUD(i, frac){
+      // i = current base stop, frac = 0..1 progress to next
+      const idx = Math.min(N-1, i);
+      if (magval)   magval.textContent  = MAGS[idx];
+      if (fieldlbl) fieldlbl.textContent= FIELDS[idx];
+      if (scaletxt) scaletxt.textContent= 'Scale ' + SCALES[idx];
+      if (scalebar){
+        // shrink the scale bar fill as we go deeper (smaller field of view)
+        const w = 90 - idx * 14;
+        scalebar.style.setProperty('--sb', Math.max(8, w) + '%');
+      }
+      zdots.forEach((d,k)=>d.classList.toggle('on', k===idx));
+    }
+
+    let progress = 0;                   // 0 .. N-1 (continuous)
+    let raf = 0;
+
+    function render(){
+      raf = 0;
+      // global scroll progress 0..1 across the driver
+      const max = (driver.offsetHeight - window.innerHeight) || 1;
+      const t = Math.min(1, Math.max(0, window.scrollY / max));
+      progress = t * (N - 1);
+      const base = Math.floor(progress);
+      let frac = progress - base;       // 0..1 within current step
+
+      // settle window: hold each stop readable for the first/last slice of its step,
+      // only zoom in the middle. This is what stops it being nauseating.
+      const HOLD = 0.30;                // 30% hold at each end -> 40% active zoom
+      let z;
+      if (frac < HOLD) z = 0;
+      else if (frac > 1 - HOLD) z = 1;
+      else z = (frac - HOLD) / (1 - 2*HOLD);
+      // ease the active zoom
+      const ez = z<.5 ? 2*z*z : 1-Math.pow(-2*z+2,2)/2;
+
+      for (let i=0;i<N;i++){
+        const el = layers[i];
+        let scale, opacity, vis = true;
+        if (i < base){
+          // already passed - fully zoomed past, hidden
+          scale = Math.pow(ZSTEP, 1.4); opacity = 0; vis = false;
+        } else if (i === base){
+          // current outgoing layer: scale up toward ZSTEP, fade out as we zoom
+          scale = 1 + (ZSTEP - 1) * ez;
+          opacity = 1 - ez;
+          if (base === N-1){ scale = 1; opacity = 1; } // last layer: just rest
+        } else if (i === base + 1){
+          // incoming layer: starts small, settles to 1
+          scale = (1/ZSTEP) + (1 - 1/ZSTEP) * ez;
+          opacity = ez;
+        } else {
+          // far future layers parked tiny + invisible
+          scale = 1/ (ZSTEP*ZSTEP); opacity = 0; vis = false;
+        }
+        el.style.transform = 'scale(' + scale.toFixed(4) + ')';
+        el.style.opacity = opacity.toFixed(3);
+        el.style.visibility = vis ? 'visible' : (opacity>0.001 ? 'visible':'hidden');
+        el.style.pointerEvents = (i===base && opacity>0.5) ? 'auto' : 'none';
+        el.style.zIndex = (i===base+1) ? 3 : (i===base ? 2 : 1);
+      }
+
+      // HUD reflects the nearest readable stop
+      const shownStop = (frac > 0.5 && base < N-1) ? base+1 : base;
+      setHUD(shownStop, frac);
+      if (depthfill) depthfill.style.height = (t*100).toFixed(2) + '%';
+    }
+
+    function onScroll(){ if(!raf) raf = requestAnimationFrame(render); }
+    window.addEventListener('scroll', onScroll, { passive:true });
+    let rt;
+    window.addEventListener('resize', ()=>{ clearTimeout(rt); rt=setTimeout(()=>{ sizeDriver(); render(); }, 150); });
+
+    // zdots + in-page anchors: convert a target layer index into a scroll position
+    function scrollToStop(i){
+      const max = (driver.offsetHeight - window.innerHeight) || 1;
+      const target = (i / (N-1)) * max;
+      window.scrollTo({ top: target, behavior: 'smooth' });
+    }
+    document.querySelectorAll('a[href^="#L"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (!el) return;
+        const i = +el.getAttribute('data-zi');
+        if (Number.isFinite(i)){ e.preventDefault(); scrollToStop(i); }
+      });
+    });
+
+    render();
+  })();
+</script>
+</body>
+</html>

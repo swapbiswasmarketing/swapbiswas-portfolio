@@ -1,0 +1,783 @@
+---
+// REDESIGN PROTOTYPE - "Solari" - a split-flap departure board (airport / train terminal).
+// Original concept (NOT a reskin of halftone): own layout + interaction + palette + fonts.
+//  - THE MECHANIC: a reusable JS "split-flap" that renders any string as a row of character
+//    tiles; each tile rapidly cycles through a glyph sequence and lands on its target char,
+//    with a per-tile stagger so a word "clatters" into place. Layered top/bottom-half tiles
+//    with a 3D flap on top for the crisp Solari look, plus a center seam + bevel.
+//  - Used for: hero headline, the three big metrics, and the selected-work DEPARTURE BOARD.
+//  - Board masthead with a live clock + "ON TIME" status; work as a departure-board table
+//    that re-flips on scroll-into-view; hovering a row re-flips its STATUS cell.
+// Palette: deep graphite board (#0e0f12) on near-black (#08090b), warm bone flap tiles
+//  (#ece8e1) with darker faces, a single warm-amber accent (#e8a13a). Mono on tiles, clean sans body.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+const stats = [
+  { n: '657K+', l: 'Leads generated at LambdaTest' },
+  { n: '18.2M+', l: 'Organic traffic driven' },
+  { n: '10X',    l: 'Organic growth engineered' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+// status varies for texture but stays truthful: all are shipped / live work.
+const work = [
+  { no: '01', y: '2021-25', client: 'LAMBDATEST',  eng: 'PRODUCT & DIGITAL MKTG', out: '657K+ LEADS', status: 'SHIPPED', feat: true,
+    role: 'Product & digital marketing', d: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { no: '02', y: '2026',    client: 'TESTMU AI',   eng: 'FULL COMPANY REBRAND',  out: 'REBRANDED', status: 'LAUNCHED',
+    role: 'Rebrand lead', d: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { no: '03', y: '2019',    client: 'SAMSUNG',     eng: 'GALAXY M-SERIES LAUNCH', out: 'LAUNCHED', status: 'SHIPPED',
+    role: 'via Sociowash', d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { no: '04', y: '0 TO 1',  client: 'MEDILIFE',    eng: 'WEBSITE / GTM / SOCIAL', out: 'BUILT 0-1', status: 'LIVE',
+    role: 'Marketing & web', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { no: '05', y: '2021',    client: 'LIDO LEARN',  eng: 'CRM & LEAD OPERATIONS',  out: 'OPERATED', status: 'SHIPPED',
+    role: 'Growth / CRM', d: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { no: '06', y: 'FREELNCE',client: 'APPKNOX',     eng: 'SECURITY CONTENT',       out: 'PUBLISHED', status: 'SHIPPED',
+    role: 'Content', d: 'Freelance content writer for the mobile app security company.' },
+];
+const recognition = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+---
+<!doctype html>
+<html lang="en" data-theme="solari">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Spline+Sans+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+<!-- is:global is required: the split-flap tiles are created at runtime by JS (document.createElement),
+     so Astro's scoped [data-astro-cid] attribute is never on them and scoped rules would not match.
+     This page is fully self-contained (own <html>/<body>, no BaseLayout) so global styles are safe here. -->
+<style is:global>
+  :root{
+    /* board / surfaces */
+    --bg:#08090b; --board:#0e0f12; --board2:#121419; --rail:#06070a;
+    /* flap tiles - clear luminance split between halves so each card reads as a physical flap */
+    --tile:#ece8e1; --tile-top:#f6f3ee; --tile-mid:#e4dfd6; --tile-bot:#cfc9bd; --tile-bot2:#bfb9ac;
+    --tile-ink:#15161a; --tile-edge:#070809; --tile-frame:#3a3b3f;
+    /* type colours on dark */
+    --ink:#ece8e1; --bone:#cfcabf; --dim:#9a958b; --faint:#827e74;
+    --accent:#e8a13a; --accent-dim:#b9842f;
+    --line:rgba(236,232,225,.12); --hair:rgba(236,232,225,.24);
+    --sans:"DM Sans",system-ui,sans-serif; --mono:"Spline Sans Mono",ui-monospace,"SFMono-Regular",monospace;
+    --pad:clamp(1.1rem,4.2vw,4.5rem);
+    --th:clamp(2.1rem,5.6vw,4.4rem);   /* hero tile height */
+    --tw:clamp(1.5rem,4vw,3.1rem);     /* hero tile width  */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:100vh;-webkit-font-smoothing:antialiased;
+    line-height:1.6;letter-spacing:.004em;position:relative}
+  /* subtle vignette + brushed-metal sheen behind the board */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(1100px 700px at 50% -8%, rgba(232,161,58,.06), transparent 60%),
+      radial-gradient(900px 900px at 100% 110%, rgba(120,140,170,.05), transparent 55%);}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:#0b0a09}
+  .wrap{width:min(1280px,100%);margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
+  .mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+
+  /* ===================== SPLIT-FLAP TILE ENGINE ===================== */
+  .flap{display:inline-flex;flex-wrap:wrap;gap:var(--gap,.18em);vertical-align:bottom}
+  .flap.tight{--gap:.1em}
+  /* each word's tiles live in a nowrap inline-flex group, so a row breaks only BETWEEN words
+     (at the space tiles), never mid-word into an orphaned single glyph */
+  .flap .flap-word{display:inline-flex;gap:var(--gap,.18em);white-space:nowrap;vertical-align:bottom}
+  .tile{
+    --h:var(--th); --w:var(--tw); --r:calc(var(--h) * .1);
+    --inset:max(1px, calc(var(--h) * .03)); --fh:calc(var(--h) - 2 * var(--inset));
+    position:relative;width:var(--w);height:var(--h);flex:none;
+    font-family:var(--mono);font-weight:700;line-height:1;
+    font-size:calc(var(--h) * .58);
+    color:var(--tile-ink);border-radius:var(--r);
+    /* dark frame around the card so it sits in a slot, like a real flap board */
+    background:var(--tile-frame);
+    padding:max(1px, calc(var(--h) * .03));
+    box-shadow:0 calc(var(--h) * .05) calc(var(--h) * .09) rgba(0,0,0,.55), 0 0 0 1px rgba(0,0,0,.4);
+    overflow:hidden;text-transform:uppercase;
+  }
+  /* the bone card face: a top half (lighter) + bottom half (darker) with a hard seam between them */
+  .tile .ch{position:absolute;inset:var(--inset);z-index:3;border-radius:calc(var(--r) - 1px);overflow:hidden;
+    /* the actual two-tone card face lives here as a background; the glyph is drawn on top */
+    background:
+      linear-gradient(180deg,
+        var(--tile-top) 0%,
+        var(--tile-mid) calc(50% - 1px),
+        var(--tile-edge) calc(50% - 1px),
+        var(--tile-edge) 50%,
+        rgba(255,255,255,.5) 50%,
+        rgba(255,255,255,.5) calc(50% + 1px),
+        var(--tile-bot) calc(50% + 1px),
+        var(--tile-bot2) 100%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.6), inset 0 -1px 2px rgba(0,0,0,.3);
+    display:grid;place-items:center}
+  /* the glyph itself, centered, drawn over the two-tone face */
+  .tile .ch .g{position:relative;z-index:1;line-height:1;display:block;text-align:center;
+    transform:translateY(-1px)}
+  /* the space glyph: a blank dark slot (no card face) */
+  .tile.is-space{background:var(--board2);box-shadow:none}
+  .tile.is-space .ch{background:var(--board2);box-shadow:none}
+  /* accent tiles (status SHIPPED etc.) - dark amber card */
+  .tile.acc{--tile-frame:#2a1d08;color:var(--accent)}
+  .tile.acc .ch{
+    background:
+      linear-gradient(180deg,
+        #2e2109 0%,
+        #241a07 calc(50% - 1px),
+        #000 calc(50% - 1px),
+        #000 50%,
+        rgba(232,161,58,.28) 50%,
+        rgba(232,161,58,.28) calc(50% + 1px),
+        #1d1506 calc(50% + 1px),
+        #140e04 100%);
+    box-shadow:inset 0 1px 0 rgba(232,161,58,.25), inset 0 -1px 2px rgba(0,0,0,.5)}
+  /* the live flap layers (added by JS) - inset to match the card face, drawn above it */
+  .tile .flip-top,.tile .flip-bottom{position:absolute;left:var(--inset);right:var(--inset);
+    height:calc(var(--fh) / 2);overflow:hidden;backface-visibility:hidden;z-index:5}
+  .tile .flip-top{top:var(--inset);border-radius:calc(var(--r) - 1px) calc(var(--r) - 1px) 0 0;
+    background:linear-gradient(180deg,var(--tile-top),var(--tile-mid));transform-origin:bottom;
+    border-bottom:1px solid var(--tile-edge);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+  .tile .flip-bottom{bottom:var(--inset);border-radius:0 0 calc(var(--r) - 1px) calc(var(--r) - 1px);
+    background:linear-gradient(180deg,var(--tile-bot),var(--tile-bot2));transform-origin:top;
+    border-top:1px solid rgba(255,255,255,.5);
+    box-shadow:inset 0 -1px 2px rgba(0,0,0,.3)}
+  /* the glyph inside each leaf: full-face-height block (matches static .g), nudged -1px to match,
+     so top leaf shows the glyph's upper half and bottom leaf its lower half - perfectly aligned */
+  .tile .flip-top span,.tile .flip-bottom span{display:block;width:100%;height:var(--fh);line-height:var(--fh);position:absolute;left:0;text-align:center;transform:translateY(-1px)}
+  .tile .flip-top span{top:0}
+  .tile .flip-bottom span{bottom:0}
+  .tile.acc .flip-top{background:linear-gradient(180deg,#2e2109,#241a07);color:var(--accent)}
+  .tile.acc .flip-bottom{background:linear-gradient(180deg,#1d1506,#140e04);color:var(--accent)}
+
+  /* ===================== MASTHEAD ===================== */
+  .mast{position:fixed;top:0;left:0;right:0;z-index:40;background:linear-gradient(180deg,rgba(8,9,11,.94),rgba(8,9,11,.55) 72%,transparent);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .mast-in{width:min(1280px,100%);margin:0 auto;padding:.8rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-weight:700;letter-spacing:.06em;font-size:.9rem;color:var(--ink)}
+  .brand .led{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);flex:none;animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .mast nav{display:flex;gap:1.5rem}
+  .mast nav a{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);transition:color .3s}
+  .mast nav a:hover{color:var(--ink)}
+  @media(max-width:680px){.mast nav{display:none}}
+
+  /* ===================== BOARD STRIP ===================== */
+  .strip{margin-top:4.4rem;border:1px solid var(--line);border-radius:14px;
+    background:linear-gradient(180deg,var(--board2),var(--board));
+    box-shadow:0 24px 60px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.04);
+    padding:.85rem 1.15rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .strip .title{font-family:var(--mono);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:clamp(.78rem,1.6vw,1rem);color:var(--ink);display:flex;align-items:center;gap:.7rem}
+  .strip .title .sq{width:.62em;height:.62em;background:var(--accent);box-shadow:0 0 10px rgba(232,161,58,.6)}
+  .strip .right{display:flex;align-items:center;gap:1.4rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+  .strip .clock{color:var(--ink);font-variant-numeric:tabular-nums;font-weight:600;letter-spacing:.1em}
+  .strip .status{display:inline-flex;align-items:center;gap:.45rem;color:var(--accent)}
+  .strip .status .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 7px var(--accent);animation:pulse 2.6s ease-in-out infinite}
+  @media(max-width:520px){.strip .right{gap:.9rem;font-size:.66rem}}
+
+  /* ===================== HERO ===================== */
+  header.hero{padding:2.2rem 0 1.5rem;position:relative;z-index:2}
+  .eyebrow{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:.9rem;margin-bottom:clamp(1.6rem,4vw,2.8rem);flex-wrap:wrap}
+  .hero h1{margin:.2rem 0 0;line-height:1}
+  .hero h1 .flap{margin-bottom:.28em}
+  .hero h1 .flap:last-child{margin-bottom:0}
+  .hero .sub{margin-top:clamp(1.5rem,2.8vw,2.2rem);max-width:50ch;color:var(--bone);font-size:clamp(1rem,1.25vw,1.14rem);line-height:1.65}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  .hero .accent-w{color:var(--accent)}
+  .hero .cta{margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.4rem;border:1px solid var(--hair);border-radius:9px;display:inline-flex;gap:.55rem;align-items:center;transition:background .35s,color .35s,border-color .35s,transform .35s}
+  .btn .ar{transition:transform .35s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .btn.primary{background:var(--accent);color:#0b0a09;border-color:var(--accent)}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(232,161,58,.28)}
+  .btn.ghost{color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--ink);background:rgba(236,232,225,.06)}
+
+  /* hero metrics (flip counters) */
+  .metrics{margin-top:clamp(2.4rem,5vw,3.6rem);display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .metric{background:linear-gradient(180deg,var(--board2),var(--board));padding:clamp(1.4rem,3vw,2.1rem) clamp(1.1rem,2.4vw,1.8rem);display:flex;flex-direction:column;gap:1rem}
+  .metric .flap{--th:clamp(1.7rem,4.2vw,2.9rem);--tw:clamp(1.25rem,3vw,2.05rem)}
+  .metric .ml{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.05em;color:var(--dim);text-transform:uppercase;max-width:26ch;line-height:1.55}
+  @media(max-width:740px){.metrics{grid-template-columns:1fr}}
+
+  /* ===================== SECTIONS ===================== */
+  section{padding:clamp(3.4rem,8vh,6rem) 0;position:relative;z-index:2}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;border-bottom:1px solid var(--line);padding-bottom:1.1rem;margin-bottom:2.4rem;flex-wrap:wrap}
+  .shead .idx{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-dim);margin-bottom:.7rem}
+  .shead h2{font-family:var(--mono);font-weight:700;text-transform:uppercase;font-size:clamp(1.4rem,3.4vw,2.4rem);line-height:1;letter-spacing:.04em;color:var(--ink)}
+  .shead .meta{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--dim);text-align:right;text-transform:uppercase;line-height:1.7}
+
+  /* ===================== DISCIPLINES ===================== */
+  .disc .row{display:grid;grid-template-columns:3.2rem 1fr 1.6fr;gap:1.5rem;align-items:baseline;padding:1.5rem 0;border-top:1px solid var(--line)}
+  .disc .row:last-child{border-bottom:1px solid var(--line)}
+  .disc .ri{font-family:var(--mono);color:var(--accent-dim);font-size:.82rem;font-weight:600}
+  .disc .rt{font-family:var(--mono);font-weight:700;text-transform:uppercase;font-size:clamp(1.05rem,2.2vw,1.5rem);line-height:1.05;letter-spacing:.04em;color:var(--ink)}
+  .disc .rd{color:var(--bone);font-size:.98rem;max-width:42ch}
+  .disc .row{transition:background .4s}
+  .disc .row:hover{background:rgba(236,232,225,.03)}
+  @media(max-width:680px){.disc .row{grid-template-columns:2.2rem 1fr;gap:.5rem 1rem}.disc .rd{grid-column:2}}
+
+  /* ===================== DEPARTURE BOARD (WORK) ===================== */
+  .board{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:linear-gradient(180deg,var(--board2),var(--board));
+    box-shadow:0 24px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04)}
+  .board-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table.dep{width:100%;min-width:760px;border-collapse:collapse;table-layout:fixed}
+  table.dep col.c-no{width:5%}
+  table.dep col.c-yr{width:11%}
+  table.dep col.c-cl{width:21%}
+  table.dep col.c-en{width:29%}
+  table.dep col.c-ou{width:18%}
+  table.dep col.c-st{width:16%}
+  table.dep thead th{font-family:var(--mono);font-weight:600;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
+    text-align:left;padding:.95rem 1rem;border-bottom:1px solid var(--hair);background:var(--rail)}
+  table.dep tbody td{padding:.85rem 1rem;border-bottom:1px solid var(--line);vertical-align:middle}
+  table.dep tbody tr:last-child td{border-bottom:0}
+  table.dep tbody tr{transition:background .35s}
+  table.dep tbody tr:hover{background:rgba(232,161,58,.05)}
+  table.dep tbody tr.feat td{background:rgba(232,161,58,.045)}
+  table.dep tbody tr.feat:hover td{background:rgba(232,161,58,.08)}
+  /* table tile sizing - smaller, tabular */
+  table.dep .flap{--th:clamp(1.15rem,1.7vw,1.5rem);--tw:clamp(.82rem,1.15vw,1.02rem);--gap:.08em}
+  table.dep td.cell-detail{padding-top:0}
+  .row-detail{font-size:.86rem;color:var(--dim);line-height:1.5;padding:.1rem 1rem .9rem;border-bottom:1px solid var(--line);background:var(--rail)}
+  .row-detail .rrole{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dim);margin-right:.6rem}
+  tr.detail-row:last-child .row-detail{border-bottom:0}
+  .board-note{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;padding:.85rem 1rem;background:var(--rail);border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+
+  /* stacked card fallback (mobile) - hidden on desktop */
+  .cards{display:none}
+  @media(max-width:720px){
+    .board-scroll{display:none}
+    .board-note{display:none}
+    .cards{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+    .card{background:linear-gradient(180deg,var(--board2),var(--board));padding:1.2rem 1.15rem 1.3rem;display:flex;flex-direction:column;gap:.7rem}
+    .card .crow{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .card .flap{--th:1.3rem;--tw:.92rem;--gap:.08em}
+    .card .cclient .flap{--th:1.6rem;--tw:1.12rem}
+    .card .ckey{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+    .card .cd{font-size:.88rem;color:var(--bone);line-height:1.5}
+    .card .crole{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dim)}
+  }
+
+  /* ===================== RECOGNITION + BRANDS ===================== */
+  .honours-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(2rem,5vw,4rem)}
+  .annot{display:flex;flex-direction:column}
+  .annot .item{display:flex;align-items:center;gap:1.1rem;padding:1.15rem 0;border-top:1px dashed var(--line)}
+  .annot .item:last-child{border-bottom:1px dashed var(--line)}
+  .annot .pin{width:26px;height:26px;border:1px solid var(--accent-dim);border-radius:6px;position:relative;flex:none;display:grid;place-items:center;color:var(--accent);font-family:var(--mono);font-size:.66rem;font-weight:700}
+  .annot b{font-family:var(--mono);font-weight:700;text-transform:uppercase;font-size:1rem;letter-spacing:.04em;display:block;line-height:1.2;color:var(--ink)}
+  .annot span{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--dim);text-transform:uppercase}
+  .brands .bl{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:1.2rem}
+  .brands .bgrid{display:flex;flex-wrap:wrap;gap:.6rem}
+  .brands .bgrid span{font-family:var(--mono);font-size:.76rem;border:1px solid var(--line);border-radius:7px;padding:.5rem .8rem;color:var(--bone);background:var(--board)}
+  @media(max-width:720px){.honours-grid{grid-template-columns:1fr}}
+
+  /* ===================== ABOUT ===================== */
+  .about-grid{display:grid;grid-template-columns:280px 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  .about-photo{position:relative;aspect-ratio:5/6;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--board)}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(.15) contrast(1.04)}
+  .about-photo::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 60px rgba(8,9,11,.6);pointer-events:none}
+  .about-lead{font-family:var(--mono);font-weight:600;text-transform:uppercase;font-size:clamp(1.1rem,2.3vw,1.7rem);line-height:1.25;letter-spacing:.02em;margin-bottom:2rem;color:var(--ink)}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem 2rem}
+  .fact .k{font-family:var(--mono);font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dim);margin-bottom:.4rem}
+  .fact .v{color:var(--bone);font-size:.96rem;line-height:1.45}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr}.about-photo{max-width:260px}.facts{grid-template-columns:1fr}}
+
+  /* ===================== CONTACT ===================== */
+  .contact{border-top:1px solid var(--line)}
+  .contact .cl{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:1.4rem}
+  .contact .big{margin:.2rem 0}
+  .contact .big a{display:inline-flex;align-items:center;gap:.4em;transition:opacity .3s}
+  .contact .big a:hover{opacity:.82}
+  .contact .big .ar{color:var(--accent);font-size:clamp(2rem,7vw,4.5rem);line-height:1}
+  .contact .em{margin-top:1.8rem;font-family:var(--mono);font-size:.82rem;letter-spacing:.04em;color:var(--dim)}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--hair)}
+
+  /* ===================== FOOTER ===================== */
+  footer{border-top:1px solid var(--line);padding:2.2rem 0 3rem;position:relative;z-index:2}
+  .foot-in{width:min(1280px,100%);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--faint);text-transform:uppercase}
+  .foot-in a{color:var(--dim)}.foot-in a:hover{color:var(--ink)}
+
+  /* reveals */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1!important;transform:none!important;transition:none}
+    .brand .led,.strip .status .dot{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+  <header class="mast">
+    <div class="mast-in">
+      <div class="brand"><span class="led" aria-hidden="true"></span>SWAPNIL BISWAS</div>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="/redesign/">All concepts</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- BOARD MASTHEAD STRIP -->
+    <div class="strip" role="banner">
+      <div class="title"><span class="sq" aria-hidden="true"></span>Departures - Shipped Work</div>
+      <div class="right">
+        <span class="clock" id="clock" aria-label="Local time">--:--:--</span>
+        <span class="status"><span class="dot" aria-hidden="true"></span>On Time</span>
+      </div>
+    </div>
+
+    <header class="hero" id="hero">
+      <div class="eyebrow">
+        <span class="mono">Senior Product Marketing Manager &middot; LambdaTest</span>
+        <span class="mono">Concept No. 21 &middot; Solari</span>
+      </div>
+
+      <h1 aria-label="The marketer who ships">
+        <span class="flap" data-flap="THE MARKETER" aria-hidden="true"></span>
+        <span class="flap" data-flap="WHO SHIPS" aria-hidden="true"></span>
+      </h1>
+
+      <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually <span class="accent-w">engineers the growth</span>.</p>
+
+      <div class="cta">
+        <a class="btn primary" href="#work">Selected work <span class="ar">&#8599;</span></a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+
+      <!-- HERO METRICS as flip counters -->
+      <div class="metrics" id="metrics">
+        {stats.map(s => (
+          <div class="metric">
+            <span class="flap tight" data-flap={s.n} data-flap-defer aria-label={s.n}></span>
+            <span class="ml">{s.l}</span>
+          </div>
+        ))}
+      </div>
+    </header>
+
+    <!-- DISCIPLINES -->
+    <section id="what" class="disc">
+      <div class="shead">
+        <div><div class="idx">/ 01 - Disciplines</div><h2 class="reveal">What I do</h2></div>
+        <div class="meta reveal">Four disciplines<br/>one operator</div>
+      </div>
+      <div>
+        {pillars.map(p => (
+          <div class="row reveal">
+            <div class="ri">{p.i}</div>
+            <div class="rt">{p.t}</div>
+            <div class="rd">{p.d}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- SELECTED WORK - DEPARTURE BOARD -->
+    <section id="work">
+      <div class="shead">
+        <div><div class="idx">/ 02 - Portfolio</div><h2 class="reveal">Selected work</h2></div>
+        <div class="meta reveal">Departure board<br/>2019 - 2026</div>
+      </div>
+
+      <div class="board reveal" id="depboard">
+        <div class="board-scroll">
+          <table class="dep">
+            <colgroup>
+              <col class="c-no" /><col class="c-yr" /><col class="c-cl" /><col class="c-en" /><col class="c-ou" /><col class="c-st" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Year</th>
+                <th scope="col">Client</th>
+                <th scope="col">Engagement</th>
+                <th scope="col">Outcome</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {work.map(w => (
+                <>
+                  <tr class={'dep-row' + (w.feat ? ' feat' : '')} data-status={w.status}>
+                    <td><span class="flap" data-flap={w.no} data-flap-defer aria-hidden="true"></span></td>
+                    <td><span class="flap" data-flap={w.y} data-flap-defer aria-hidden="true"></span></td>
+                    <td><span class="flap" data-flap={w.client} data-flap-defer aria-hidden="true"></span></td>
+                    <td><span class="flap" data-flap={w.eng} data-flap-defer aria-hidden="true"></span></td>
+                    <td><span class="flap" data-flap={w.out} data-flap-defer aria-hidden="true"></span></td>
+                    <td><span class="flap flap-status" data-flap={w.status} data-flap-acc data-flap-defer aria-hidden="true"></span></td>
+                  </tr>
+                  <tr class="detail-row">
+                    <td></td>
+                    <td colspan="5" class="cell-detail">
+                      <div class="row-detail"><span class="rrole">{w.role}</span>{w.d}</div>
+                    </td>
+                  </tr>
+                </>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="board-note">
+          <span>* All entries shipped &middot; live work</span>
+          <span>Hover a row to re-flip status</span>
+        </div>
+      </div>
+
+      <!-- mobile stacked cards -->
+      <div class="cards reveal" id="depcards" aria-hidden="false">
+        {work.map(w => (
+          <div class="card" data-status={w.status}>
+            <div class="crow">
+              <span class="cclient"><span class="flap" data-flap={w.client} data-flap-defer aria-hidden="true"></span></span>
+              <span class="flap flap-status" data-flap={w.status} data-flap-acc data-flap-defer aria-hidden="true"></span>
+            </div>
+            <div class="crow">
+              <span class="ckey">No. {w.no} &middot; {w.y}</span>
+              <span class="crole">{w.role}</span>
+            </div>
+            <div class="cd">{w.d}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- RECOGNITION + BRANDS -->
+    <section id="honours">
+      <div class="shead">
+        <div><div class="idx">/ 03 - Honours</div><h2 class="reveal">Recognition &amp; brands</h2></div>
+        <div class="meta reveal">Board annotations</div>
+      </div>
+      <div class="honours-grid">
+        <div class="annot reveal">
+          {recognition.map((a, idx) => (
+            <div class="item"><span class="pin" aria-hidden="true">{String(idx + 1).padStart(2,'0')}</span><div><b>{a.t}</b><span>{a.m}</span></div></div>
+          ))}
+        </div>
+        <div class="brands reveal">
+          <div class="bl">Trusted by teams at</div>
+          <div class="bgrid">{brands.map(b => <span>{b}</span>)}</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="shead">
+        <div><div class="idx">/ 04 - About</div><h2 class="reveal">About the maker</h2></div>
+        <div class="meta reveal">Mumbai, India</div>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo reveal"><img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" loading="lazy" decoding="async" /></div>
+        <div>
+          <p class="about-lead reveal">I treat my own career like a product - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+          <div class="facts">
+            <div class="fact reveal"><div class="k">Based</div><div class="v">Mumbai, India</div></div>
+            <div class="fact reveal"><div class="k">Tenure</div><div class="v">7+ years marketing &middot; 4+ in B2B SaaS</div></div>
+            <div class="fact reveal"><div class="k">Education</div><div class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</div></div>
+            <div class="fact reveal"><div class="k">Practice</div><div class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="cl reveal">Let's build something that compounds</div>
+      <div class="big reveal">
+        <a href="mailto:swapbiswas.marketing@gmail.com" aria-label="Say hello">
+          <span class="flap" data-flap="SAY HELLO" data-flap-defer aria-hidden="true"></span>
+          <span class="ar" aria-hidden="true">&#8599;</span>
+        </a>
+      </div>
+      <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <span>Solari &middot; Concept 21</span>
+      <span>Swapnil Biswas &copy; 2026</span>
+      <span><a href="/redesign/">View all concepts</a></span>
+    </div>
+  </footer>
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ===================== SPLIT-FLAP ENGINE ===================== */
+  // The glyph reel each tile cycles through before landing on its target.
+  const GLYPHS = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+-#./*';
+  const idxOf = (c) => { const i = GLYPHS.indexOf(c); return i < 0 ? 0 : i; };
+
+  // Build a tile element for a single character. Returns { el, set(char), flipTo(char, opts) }.
+  function makeTile(initial, acc){
+    const el = document.createElement('span');
+    el.className = 'tile' + (acc ? ' acc' : '') + (initial === ' ' ? ' is-space' : '');
+    // the static card face (.ch carries the two-tone background + seam); the glyph lives in .g
+    const ch = document.createElement('span');
+    ch.className = 'ch';
+    const g = document.createElement('span');
+    g.className = 'g';
+    g.textContent = initial === ' ' ? '' : initial;
+    ch.appendChild(g);
+    el.appendChild(ch);
+
+    let current = initial;
+    let runToken = 0;            // increments on every new flip run; stale runs abort
+    let leaves = [];            // live leaf {node, anim} pairs - always tracked so we can purge
+    let pendingTimers = [];     // safety timers to clear
+
+    // Remove every leaf node + cancel its animations. After this, ONLY the static face shows.
+    function clearLeaves(){
+      for (const lf of leaves){
+        try { if (lf.a1) lf.a1.cancel(); } catch(e){}
+        try { if (lf.a2) lf.a2.cancel(); } catch(e){}
+        if (lf.node && lf.node.parentNode) lf.node.parentNode.removeChild(lf.node);
+      }
+      leaves = [];
+      for (const t of pendingTimers) clearTimeout(t);
+      pendingTimers = [];
+      // belt-and-braces: nuke any orphaned leaf elements that escaped tracking
+      el.querySelectorAll(':scope > .flip-top, :scope > .flip-bottom').forEach(n => n.remove());
+    }
+
+    function setStatic(c){
+      clearLeaves();             // a rest state shows the printed glyph ONLY
+      current = c;
+      g.textContent = c === ' ' ? '' : c;
+      el.classList.toggle('is-space', c === ' ');
+    }
+
+    // One visual flap step: top half drops to reveal `to`, bottom half rises.
+    // `token` ties this step to its run; if superseded, it self-cleans and stops.
+    function flapOnce(from, to, dur, token){
+      return new Promise((resolve) => {
+        if (token !== runToken){ resolve(); return; }
+        // print the destination char on the static face NOW so when leaves clear it is correct
+        g.textContent = to === ' ' ? '' : to;
+        current = to;
+        el.classList.toggle('is-space', to === ' ');
+
+        const top = document.createElement('div'); top.className = 'flip-top';
+        const topSpan = document.createElement('span'); topSpan.textContent = from === ' ' ? '' : from;
+        top.appendChild(topSpan);
+        const bottom = document.createElement('div'); bottom.className = 'flip-bottom';
+        const botSpan = document.createElement('span'); botSpan.textContent = to === ' ' ? '' : to;
+        bottom.appendChild(botSpan);
+        bottom.style.transform = 'rotateX(90deg)';
+        el.appendChild(top); el.appendChild(bottom);
+
+        const half = dur / 2;
+        const a1 = top.animate(
+          [{ transform: 'rotateX(0deg)' }, { transform: 'rotateX(-90deg)' }],
+          { duration: half, easing: 'cubic-bezier(.36,0,.66,-0.2)', fill: 'forwards' }
+        );
+        const a2 = bottom.animate(
+          [{ transform: 'rotateX(90deg)' }, { transform: 'rotateX(0deg)' }],
+          { duration: half, delay: half, easing: 'cubic-bezier(.34,1.3,.64,1)', fill: 'forwards' }
+        );
+        const lf = { node: top, a1, a2 };
+        const lf2 = { node: bottom, a1: null, a2: null };
+        leaves.push(lf, lf2);
+
+        let done = false;
+        const finish = () => {
+          if (done) return; done = true;
+          // remove just these two leaves (others may belong to a newer step - leave them)
+          [top, bottom].forEach(n => { if (n.parentNode) n.parentNode.removeChild(n); });
+          leaves = leaves.filter(x => x.node !== top && x.node !== bottom);
+          resolve();
+        };
+        a2.onfinish = finish;
+        const tm = setTimeout(finish, dur + 60);   // hard safety: leaves never linger
+        pendingTimers.push(tm);
+      });
+    }
+
+    // Flip from current through the reel to `target`, capped at MAX steps.
+    async function flipTo(target, opts){
+      target = (target || ' ').toUpperCase();
+      // a new run supersedes any in-flight run on this tile and purges its leaves
+      const token = ++runToken;
+      clearLeaves();
+      if (target === current){ return; }
+      if (RM){ setStatic(target); return; }
+      const MAX = (opts && opts.max) || 12;
+      const step = (opts && opts.step) || 34; // ms per flap
+      let from = idxOf(current);
+      const to = idxOf(target);
+      let dist = (to - from + GLYPHS.length) % GLYPHS.length;
+      if (dist === 0) dist = 1;
+      if (dist > MAX){ from = (to - MAX + GLYPHS.length) % GLYPHS.length; dist = MAX; }
+      // seed the face at the reel start (without spawning leaves)
+      current = GLYPHS[from];
+      g.textContent = current === ' ' ? '' : current;
+      el.classList.toggle('is-space', current === ' ');
+      for (let k = 0; k < dist; k++){
+        if (token !== runToken) return;   // superseded - bail, newer run owns the tile
+        const a = GLYPHS[(from + k) % GLYPHS.length];
+        const b = GLYPHS[(from + k + 1) % GLYPHS.length];
+        await flapOnce(a, b, step, token);
+      }
+      if (token !== runToken) return;
+      setStatic(target);                  // guaranteed clean final state: glyph only, no leaves
+    }
+
+    if (initial !== ' ') setStatic(initial);
+    return { el, setStatic, flipTo, clearLeaves, get current(){ return current; } };
+  }
+
+  // Render a string into a .flap container as a row of tiles. Returns an array of tiles.
+  function buildFlap(container){
+    const target = (container.getAttribute('data-flap') || '').toUpperCase();
+    const acc = container.hasAttribute('data-flap-acc');
+    container.textContent = '';
+    const tiles = [];
+    // Group each WORD's tiles in an inline-block nowrap wrapper so a row wraps only BETWEEN
+    // words, never inside one (no orphaned single-glyph wraps). Space chars stay standalone
+    // dark-slot tiles between word groups, preserving the gaps AND the line-break opportunities.
+    let word = null;
+    for (const chRaw of target){
+      const ch = chRaw;
+      // start as a blank BONE card (not a dark slot) so the row already reads as a flap board;
+      // real spaces in the target stay dark slots. We flip up to the target char.
+      const startBlank = ch === ' ' ? ' ' : '';
+      const t = makeTile(startBlank, acc);
+      if (RM) t.setStatic(ch);        // reduced motion: print final immediately
+      if (ch === ' '){
+        word = null;                  // a space ends the current word group and is its own break point
+        container.appendChild(t.el);
+      } else {
+        if (!word){ word = document.createElement('span'); word.className = 'flap-word'; container.appendChild(word); }
+        word.appendChild(t.el);
+      }
+      tiles.push({ t, target: ch });
+    }
+    container._tiles = tiles;
+    container._built = true;
+    return tiles;
+  }
+
+  // Animate a built container into its target string with a left-to-right stagger ("clatter").
+  function flipContainer(container, opts){
+    if (!container._built) buildFlap(container);
+    const tiles = container._tiles || [];
+    if (RM){ tiles.forEach(({ t, target }) => t.setStatic(target)); return; }
+    const stag = (opts && opts.stagger) != null ? opts.stagger : 55;
+    const step = (opts && opts.step) || 34;
+    const max  = (opts && opts.max) || 12;
+    tiles.forEach(({ t, target }, i) => {
+      setTimeout(() => t.flipTo(target, { step, max }), i * stag);
+    });
+  }
+
+  // Instantly settle a container to final state (safety + reduced motion).
+  function settleContainer(container){
+    if (!container._built) buildFlap(container);
+    (container._tiles || []).forEach(({ t, target }) => t.setStatic(target));
+  }
+
+  /* ---------- wire up all flaps ---------- */
+  const allFlaps = Array.from(document.querySelectorAll('.flap[data-flap]'));
+  // Build everyone up front (cheap DOM); animation is what we gate by viewport.
+  allFlaps.forEach(buildFlap);
+
+  if (RM){
+    // reduced motion: everything already printed final by buildFlap. Done.
+    allFlaps.forEach(settleContainer);
+  } else {
+    // Hero headline + non-deferred flaps clatter on load (staggered between rows).
+    const heroFlaps = allFlaps.filter(f => !f.hasAttribute('data-flap-defer'));
+    heroFlaps.forEach((f, i) => setTimeout(() => flipContainer(f, { stagger: 60, step: 32, max: 14 }), 180 + i * 340));
+
+    // Deferred flaps (metrics, work board, contact) flip when scrolled into view.
+    const deferred = allFlaps.filter(f => f.hasAttribute('data-flap-defer'));
+    const seen = new WeakSet();
+    const flapIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && !seen.has(e.target)){
+          seen.add(e.target);
+          flipContainer(e.target, { stagger: 45, step: 30, max: 12 });
+          flapIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
+    deferred.forEach(f => flapIO.observe(f));
+
+    // Safety net: anything never triggered (e.g. observer edge cases) settles after a grace period.
+    setTimeout(() => {
+      allFlaps.forEach(f => {
+        const tiles = f._tiles || [];
+        const incomplete = tiles.some(({ t, target }) => t.current !== (target || ' ').toUpperCase());
+        // only force-settle the ones still off-target AND off-screen-ish; harmless if already correct
+        if (incomplete && !isNearViewport(f)) settleContainer(f);
+      });
+    }, 9000);
+  }
+
+  function isNearViewport(el){
+    const r = el.getBoundingClientRect();
+    return r.top < window.innerHeight * 1.3 && r.bottom > -window.innerHeight * 0.3;
+  }
+
+  /* ---------- re-flip a work row's STATUS on hover ---------- */
+  if (!RM){
+    function hoverReflip(scope){
+      scope.querySelectorAll('.flap-status').forEach(s => {
+        const host = s.closest('tr, .card');
+        if (!host || host._hooked) return;
+        host._hooked = true;
+        host.addEventListener('pointerenter', () => {
+          if (!s._built) buildFlap(s);
+          flipContainer(s, { stagger: 40, step: 28, max: 12 });
+        });
+      });
+    }
+    hoverReflip(document);
+  }
+
+  /* ===================== REVEALS ===================== */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ===================== LIVE CLOCK ===================== */
+  (function clock(){
+    const el = document.getElementById('clock');
+    if (!el) return;
+    function tick(){
+      const d = new Date();
+      const p = (n) => String(n).padStart(2, '0');
+      el.textContent = p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
+</body>
+</html>

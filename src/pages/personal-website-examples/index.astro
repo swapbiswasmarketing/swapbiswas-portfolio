@@ -1,0 +1,439 @@
+---
+// CONCEPT LIBRARY - public, indexable gallery of 41 homepage design concepts.
+// SEO target: "personal website examples" + cluster (homepage design ideas, portfolio website inspiration).
+// Each card shows a static thumbnail of the real page + a LIVE iframe preview on hover (one at a time).
+// The 41 concept demos live at /redesign/{slug} and stay noindex; this page is the indexable one.
+const concepts = [
+  { n: '01', s: 'aurora',     t: 'Aurora',     cat: 'gl',      d: 'Minimal luxury. Calm editorial type over a living WebGL aurora.', c: ['#0a0a14','#b9a7ff','#e8c9a0'] },
+  { n: '02', s: 'monolith',   t: 'Monolith',   cat: 'type',    d: 'Editorial kinetic. Brutal display type, acid accent, scroll energy.', c: ['#0b0b0b','#d8ff3e','#f4f1ea'] },
+  { n: '03', s: 'terminal',   t: 'Terminal',   cat: 'tech',    d: 'Retro-techno. Monospace, phosphor glow, the signal routed.', c: ['#05080f','#37f5b5','#ffb86b'] },
+  { n: '04', s: 'brut',       t: 'Brut',       cat: 'type',    d: 'Brutalist. Raw grid, clashing color, rule-breaking layout.', c: ['#e9e6dd','#1b1b1b','#3b4cff'] },
+  { n: '05', s: 'prism',      t: 'Prism',      cat: 'gl',      d: 'Immersive 3D. Refractive glass and iridescent depth in Three.js.', c: ['#07060d','#8a7bff','#ff7ad9'] },
+  { n: '06', s: 'atelier',    t: 'Atelier',    cat: 'type',    d: 'Light editorial. Paper, ink and print-grade restraint.', c: ['#f3efe6','#161310','#b4451f'] },
+  { n: '07', s: 'console',    t: 'Console',    cat: 'tech',    d: 'Your portfolio as the product. SaaS dashboard, command palette, live charts.', c: ['#0b0e16','#6366f1','#10b981'] },
+  { n: '08', s: 'broadsheet', t: 'Broadsheet', cat: 'type',    d: 'Newspaper front page. Masthead, justified columns, halftone print.', c: ['#f3efe4','#15120c','#c0301d'] },
+  { n: '09', s: 'flux',       t: 'Flux',       cat: 'gl',      d: 'Bright modern SaaS. Flowing gradient mesh and frosted glass.', c: ['#fbfbfd','#6366f1','#fb7185'] },
+  { n: '10', s: 'atlas',      t: 'Atlas',      cat: 'tech',    d: 'Growth, quantified. Swiss data report with animated charts.', c: ['#faf9f6','#e5341c','#3b5bdb'] },
+  { n: '11', s: 'odyssey',    t: 'Odyssey',    cat: 'gl',      d: 'From noise to signal. Cinematic scrollytelling, particle morph.', c: ['#04050a','#4b6cff','#ffcf6b'] },
+  { n: '12', s: 'riso',       t: 'Riso',       cat: 'type',    d: 'Print, overprinted. Risograph duotone, grain and bold shapes.', c: ['#f2ecd9','#ff48a0','#2336ff'] },
+  { n: '13', s: 'bauhaus',    t: 'Bauhaus',    cat: 'type',    d: 'Constructivist geometry. Primary blocks, Futura type, kinetic shapes.', c: ['#f4f1e8','#e63329','#2440d8'] },
+  { n: '14', s: 'noir',       t: 'Noir',       cat: 'mono',    d: 'Cinematic monochrome. A cursor-driven spotlight in the dark, heavy grain.', c: ['#000000','#f7f7f7','#c01622'] },
+  { n: '15', s: 'chrome',     t: 'Chrome',     cat: 'gl',      d: 'Liquid metal. A reflective mercury blob mirroring an oil-slick spectrum.', c: ['#08080c','#c9ccd6','#8a7bff'] },
+  { n: '16', s: 'sketch',     t: 'Sketch',     cat: 'tactile', d: "A strategist's working notebook. Grid paper, marker annotations, sticky notes.", c: ['#fbfaf4','#1a1a1a','#ffe14d'] },
+  { n: '17', s: 'graphite',   t: 'Graphite',   cat: 'mono',    d: 'Monochrome, neutral. A grayscale gallery - grotesk type, hairlines, topographic lines.', c: ['#ecebe9','#5b5c5e','#161719'] },
+  { n: '18', s: 'cobalt',     t: 'Cobalt',     cat: 'mono',    d: 'Monochrome, in blue. One cobalt hue from blueprint black to a cold living aurora.', c: ['#060911','#5b86ff','#aac3ef'] },
+  { n: '19', s: 'sepia',      t: 'Sepia',      cat: 'mono',    d: 'Monochrome, in amber. A warm darkroom - a cursor-lit pool over analog grain.', c: ['#0b0805','#d79a4f','#f4e9d8'] },
+  { n: '20', s: 'halftone',   t: 'Halftone',   cat: 'mono',    d: "A printer's proof. Your portrait as a live dot field that magnifies under a loupe, numerals screened in halftone.", c: ['#0b0a09','#ece6d8','#9c958a'] },
+  { n: '21', s: 'solari',     t: 'Solari',     cat: 'spatial', d: 'A split-flap departure board. Headline, metrics and work clatter into place on bone flap tiles; the work re-flips on scroll.', c: ['#08090b','#ece8e1','#e8a13a'] },
+  { n: '22', s: 'kinetic',    t: 'Kinetic',    cat: 'type',    d: 'A living variable-font specimen. The hero word breathes under the cursor; drag the axis sliders to morph the type.', c: ['#0a0a0b','#f4f1ea','#f5a623'] },
+  { n: '23', s: 'signal',     t: 'Signal Lab', cat: 'tech',    d: 'The page as an oscilloscope. A live trace resolves from noise into signal as you scroll; hover a stat and the scope reads it out.', c: ['#06080a','#7fe9ff','#4fb3cc'] },
+  { n: '24', s: 'draftsman',  t: 'Draftsman',  cat: 'type',    d: 'A pen-plotter technical drawing on vellum. Headline strokes and a continuous-line figure plot themselves; metrics draw on as a growth curve.', c: ['#efe9dd','#1c1a17','#a23b2d'] },
+  { n: '25', s: 'desk',       t: 'Studio Desk', cat: 'tactile', d: 'A tactile physics workspace. Business card, polaroids and sticky notes drop onto the mat - drag and throw them.', c: ['#efe7d8','#2a241c','#b6553a'] },
+  { n: '26', s: 'kernel',     t: 'Kernel',     cat: 'tech',    d: 'A developer OS that boots into a riced tiling window manager. POST sequence, polybar status bar, neofetch specs.', c: ['#0d0f12','#f08a7a','#8aa9d6'] },
+  { n: '27', s: 'cartograph', t: 'Cartograph', cat: 'spatial', d: 'The career as an interactive transit map. Companies are stations on a route that draws itself; pan, zoom and tap a node.', c: ['#0c1014','#ff8a4c','#7fd1c4'] },
+  { n: '28', s: 'patchbay',   t: 'Patchbay',   cat: 'tech',    d: 'A Eurorack modular synth. Disciplines are panels wired by glowing patch cables; a signal pulses through to a lit readout. Route the signal.', c: ['#0e1013','#e8e3d6','#ff9d3c'] },
+  { n: '29', s: 'foil',       t: 'Foil',       cat: 'tactile', d: 'Work as holographic trading cards. Each case study tilts in 3D and its iridescent foil shimmers under the cursor.', c: ['#06070d','#e9c876','#cfd6ee'] },
+  { n: '30', s: 'broadcast',  t: 'Broadcast',  cat: 'spatial', d: 'A vintage CRT television you channel-surf. Each section is a channel; switching plays a static burst and a tracking roll.', c: ['#06080d','#ffb44b','#5fe6ff'] },
+  { n: '31', s: 'foundry',    t: 'Foundry',    cat: 'tactile', d: 'An industrial assembly line where the work gets shipped. A conveyor of work-crates rides past machine stations, each stamped SHIPPED.', c: ['#14171b','#ffb020','#9aa6b2'] },
+  { n: '32', s: 'elements',   t: 'Elements',   cat: 'spatial', d: 'A periodic table of the craft. Disciplines and clients are elements; click a tile and it expands to the work behind it.', c: ['#0a0e14','#5fd0d6','#f0b54e'] },
+  { n: '33', s: 'bside',      t: 'B-Side',     cat: 'tactile', d: 'The career pressed to vinyl. A spinning record and tonearm; an A-side / B-side tracklist, the needle dropping as you select.', c: ['#f3e9d6','#0f0d0c','#e2552b'] },
+  { n: '34', s: 'directory',  t: 'Directory',  cat: 'spatial', d: 'A building lobby and elevator. Each section is a floor; ride between them with a ticking floor-counter and sliding doors.', c: ['#1a1d21','#c79a4b','#7dffb0'] },
+  { n: '35', s: 'circuit',    t: 'Circuit',    cat: 'tech',    d: 'A printed circuit board. The signal routes through copper traces that etch themselves, lighting an LED at each discipline IC on the way to the results chip.', c: ['#0a0e0b','#3dffa0','#d4a843'] },
+  { n: '36', s: 'comic',      t: 'Comic',      cat: 'tactile', d: 'A graphic novel of the career. Splash-page hero, story panels with caption boxes and speech bubbles, metrics landing as onomatopoeia bursts.', c: ['#f3ead6','#e8362f','#1aa7c8'] },
+  { n: '37', s: 'microscope', t: 'Microscope', cat: 'spatial', d: 'An infinite-zoom narrative. Start on the macro number and scroll to zoom in through the funnel, the campaigns and the systems underneath. Look closer.', c: ['#070a0f','#ffb55c','#5fd3e6'] },
+  { n: '38', s: 'spreadsheet', t: 'Spreadsheet', cat: 'tech', d: 'The portfolio as a literal spreadsheet. Cells, a formula bar, sheet tabs; metrics compute via visible formulas and the cell cursor moves with the arrow keys.', c: ['#16181c','#37c180','#e8eaed'] },
+  { n: '39', s: 'receipt',    t: 'Receipt',    cat: 'tactile', d: 'A thermal printer spools out the itemized career, line by line - line items, a running total carrying the numbers, a barcode and a PAID IN FULL / SHIPPED stamp.', c: ['#f4efe3','#23201b','#b83232'] },
+  { n: '40', s: 'constellation', t: 'Constellation', cat: 'spatial', d: 'A planetarium star chart. Companies are stars wired into a constellation that draws itself over a parallax starfield; hover a star to read the work.', c: ['#04060f','#e9c46a','#8fd3ff'] },
+  { n: '41', s: 'origami',    t: 'Origami',    cat: 'tactile', d: 'Sections built from folding paper. Panels unfold in 3D as you scroll, the hero creases into shape and work cards fold open like a fold-out map.', c: ['#f3ecdd','#314a8a','#c0432b'] },
+];
+const catMeta = {
+  gl:      { l: 'WebGL & 3D',          tag: 'WebGL',       col: '#b9a7ff' },
+  type:    { l: 'Editorial & Type',    tag: 'Editorial',   col: '#e8c9a0' },
+  mono:    { l: 'Monochrome',          tag: 'Monochrome',  col: '#b6bcc4' },
+  tech:    { l: 'Tech & Instrument',   tag: 'Instrument',  col: '#5fe6ff' },
+  spatial: { l: 'Interactive & Spatial', tag: 'Interactive', col: '#ff8a4c' },
+  tactile: { l: 'Playful & Tactile',   tag: 'Tactile',     col: '#ffd54d' },
+};
+const catOrder = ['gl', 'type', 'mono', 'tech', 'spatial', 'tactile'];
+const tabs = [{ k: 'all', l: 'All', n: concepts.length }].concat(
+  catOrder.map(k => ({ k, l: catMeta[k].l, n: concepts.filter(c => c.cat === k).length }))
+);
+// classify each concept light/dark by the luminance of its background swatch (c[0])
+const isLight = (hex) => {
+  const h = hex.replace('#', '');
+  const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
+  return (0.2126 * r + 0.7152 * g + 0.0587 * b) / 255 > 0.55;
+};
+const lightCount = concepts.filter(c => isLight(c.c[0])).length;
+
+// ---- SEO ----
+const PAGE_URL = 'https://swapbiswas.com/personal-website-examples/';
+const PAGE_TITLE = 'Personal Website Examples - 41 Homepage Design Concepts';
+const PAGE_DESC = 'Browse 41 homepage design concepts and personal website examples - editorial, 3D, monochrome, retro and interactive directions, each a complete build with a live preview.';
+const OG_IMAGE = 'https://swapbiswas.com/assets/redesign/og-concepts.jpg';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': PAGE_URL + '#webpage',
+      url: PAGE_URL,
+      name: PAGE_TITLE,
+      description: PAGE_DESC,
+      inLanguage: 'en',
+      isPartOf: { '@id': 'https://swapbiswas.com/#website' },
+      about: 'Homepage and portfolio website design concepts and examples',
+      mainEntity: {
+        '@type': 'ItemList',
+        name: '41 homepage design concepts',
+        numberOfItems: concepts.length,
+        itemListElement: concepts.map((c, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: c.t + ' - ' + c.d.split('.')[0].trim(),
+          url: 'https://swapbiswas.com/redesign/' + c.s,
+        })),
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://swapbiswas.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Personal website examples', item: PAGE_URL },
+      ],
+    },
+  ],
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{PAGE_TITLE}</title>
+<meta name="description" content={PAGE_DESC} />
+<link rel="canonical" href={PAGE_URL} />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={PAGE_URL} />
+<meta property="og:title" content={PAGE_TITLE} />
+<meta property="og:description" content={PAGE_DESC} />
+<meta property="og:image" content={OG_IMAGE} />
+<meta property="og:site_name" content="Swapnil Biswas" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={PAGE_TITLE} />
+<meta name="twitter:description" content={PAGE_DESC} />
+<meta name="twitter:image" content={OG_IMAGE} />
+<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#08080b; --bg2:#0c0c11; --ink:#f3efe6; --mut:#8b8893; --dim:#615f6a;
+    --line:rgba(243,239,230,.1); --line2:rgba(243,239,230,.18);
+    --card:rgba(255,255,255,.018); --mono:"JetBrains Mono",ui-monospace,monospace; --serif:"Fraunces",Georgia,serif;
+    --m:clamp(1.15rem,5vw,3.5rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;min-height:100vh;line-height:1.6;
+    background-image:radial-gradient(70% 50% at 50% -8%,rgba(120,90,220,.16),transparent 70%)}
+  a{color:inherit;text-decoration:none}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .wrap{width:min(1320px,100%);margin:0 auto;padding:0 var(--m)}
+
+  /* top bar */
+  .topbar{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(8,8,11,.92),rgba(8,8,11,.55));
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar-in{width:min(1320px,100%);margin:0 auto;padding:.85rem var(--m);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.82rem;letter-spacing:.04em}
+  .brand .dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,#b9a7ff,#e8c9a0);transform:rotate(45deg)}
+  .topbar .right{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+
+  /* intro */
+  .intro{padding:clamp(2.6rem,7vh,5rem) 0 1.8rem}
+  .kick{font-family:var(--mono);font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mut)}
+  .intro h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.1rem,6vw,4.4rem);line-height:1.02;letter-spacing:-.02em;margin:1.1rem 0 .9rem;max-width:18ch}
+  .intro h1 em{font-style:italic;color:#e8c9a0}
+  .intro p{color:var(--mut);max-width:58ch;line-height:1.65;font-size:1.04rem}
+
+  /* toolbar / filters */
+  .toolbar{position:sticky;top:54px;z-index:30;background:linear-gradient(180deg,rgba(8,8,11,.95),rgba(8,8,11,.78) 78%,transparent);
+    backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);padding:.85rem 0 1rem;margin-bottom:1.6rem;border-bottom:1px solid var(--line)}
+  .toolbar-in,.tabsrow{width:min(1320px,100%);margin:0 auto;padding:0 var(--m)}
+  .toolbar-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .tabsrow{margin-top:.8rem}
+  /* search */
+  .search{display:flex;align-items:center;gap:.55rem;border:1px solid var(--line);border-radius:100px;padding:.5rem .9rem;
+    background:rgba(255,255,255,.025);min-width:230px;flex:1;max-width:340px;transition:border-color .3s}
+  .search:focus-within{border-color:var(--line2)}
+  .search svg{width:14px;height:14px;color:var(--mut);flex:none}
+  .search input{background:transparent;border:0;outline:0;color:var(--ink);font-family:inherit;font-size:.86rem;width:100%;min-width:0}
+  .search input::placeholder{color:var(--dim)}
+  .search .clr{display:none;background:transparent;border:0;color:var(--mut);cursor:pointer;font-size:1rem;line-height:1;padding:0 .1rem}
+  .search.has .clr{display:block}
+  /* right controls */
+  .controls{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:100px;padding:.18rem;gap:.1rem}
+  .seg button{font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--mut);background:transparent;border:0;border-radius:100px;
+    padding:.35rem .72rem;cursor:pointer;transition:color .25s,background .25s}
+  .seg button:hover{color:var(--ink)}
+  .seg button.on{color:#0b0b0f;background:var(--ink)}
+  .sort{font-family:var(--mono);font-size:.72rem;letter-spacing:.02em;color:var(--mut);background:rgba(255,255,255,.025);border:1px solid var(--line);
+    border-radius:100px;padding:.45rem 1.7rem .45rem .8rem;cursor:pointer;appearance:none;-webkit-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='%238b8893' stroke-width='1.4'%3E%3Cpath d='M1 1l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .7rem center}
+  .sort:hover{color:var(--ink);border-color:var(--line2)}
+  .count{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);white-space:nowrap;flex:none}
+  /* category tabs */
+  .tabs{display:flex;flex-wrap:wrap;gap:.5rem}
+  .tab{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;color:var(--mut);background:transparent;border:1px solid var(--line);
+    border-radius:100px;padding:.5rem .9rem;cursor:pointer;transition:color .3s,border-color .3s,background .3s;white-space:nowrap;display:inline-flex;gap:.45rem;align-items:center}
+  .tab:hover{color:var(--ink);border-color:var(--line2)}
+  .tab .n{color:var(--dim);font-size:.7rem}
+  .tab.on{color:#0b0b0f;background:var(--ink);border-color:var(--ink)}
+  .tab.on .n{color:rgba(11,11,15,.55)}
+  /* empty state */
+  .empty{display:none;grid-column:1/-1;text-align:center;color:var(--mut);font-family:var(--mono);font-size:.9rem;padding:4.5rem 1rem;line-height:1.8}
+  .empty button{margin-top:.6rem;font-family:var(--mono);font-size:.78rem;color:#0b0b0f;background:var(--ink);border:0;border-radius:100px;padding:.5rem 1rem;cursor:pointer}
+  @media(max-width:680px){.controls{width:100%;justify-content:space-between}.search{max-width:none}}
+
+  /* grid */
+  .grid{width:min(1320px,100%);margin:0 auto;padding:0 var(--m) 5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  @media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.grid{grid-template-columns:1fr}}
+
+  .card{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);display:flex;flex-direction:column;
+    transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s,background .35s}
+  .card:hover{transform:translateY(-6px);border-color:var(--line2);background:rgba(255,255,255,.03);box-shadow:0 24px 60px -28px rgba(0,0,0,.8)}
+  .card.hide{display:none}
+
+  /* thumbnail window (matches a 1280x800 capture = 8/5) */
+  .thumb{position:relative;aspect-ratio:8/5;overflow:hidden;background:#0d0d12;border-bottom:1px solid var(--line)}
+  .thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .3s}
+  .card:hover .thumb img{transform:scale(1.035)}
+  .card.lived .thumb img{opacity:0}
+  .thumb .live-frame{position:absolute;top:0;left:0;width:1280px;height:800px;transform-origin:top left;border:0;opacity:0;transition:opacity .4s ease;pointer-events:none}
+  .card.lived .thumb .live-frame{opacity:1}
+  .thumb .gloss{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 60%,rgba(8,8,11,.5));opacity:.9}
+  .thumb .live{position:absolute;top:.7rem;left:.7rem;display:none;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;
+    text-transform:uppercase;color:#fff;background:rgba(8,8,11,.7);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:.28rem .55rem;backdrop-filter:blur(6px)}
+  .thumb .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#48e08b;box-shadow:0 0 8px #48e08b;animation:blink 1.4s ease-in-out infinite}
+  .card.living .thumb .live{display:inline-flex}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+
+  /* card body */
+  .cbody{padding:1.05rem 1.15rem 1.2rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+  .meta-row{display:flex;align-items:center;gap:.65rem}
+  .num{font-family:var(--mono);font-size:.72rem;color:var(--dim);letter-spacing:.08em}
+  .ctag{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.38rem}
+  .ctag::before{content:"";width:7px;height:7px;border-radius:2px;background:currentColor;opacity:.9}
+  .swatches{margin-left:auto;display:flex;gap:.32rem}
+  .swatches i{width:13px;height:13px;border-radius:50%;display:block;border:1px solid rgba(255,255,255,.14)}
+  .card h2{font-family:var(--serif);font-weight:400;font-size:1.42rem;letter-spacing:-.01em;line-height:1.05;margin-top:.15rem}
+  .card p{color:var(--mut);font-size:.86rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .open{margin-top:auto;padding-top:.7rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);
+    display:flex;align-items:center;gap:.45rem;transition:gap .35s,color .3s}
+  .open span{transition:transform .35s}
+  .card:hover .open{color:var(--ink)}
+  .card:hover .open span{transform:translate(3px,-3px)}
+
+  footer{border-top:1px solid var(--line);padding:2rem 0 3rem}
+  .foot-in{width:min(1320px,100%);margin:0 auto;padding:0 var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--dim)}
+
+  @media(prefers-reduced-motion:reduce){
+    .card,.thumb img,.open span{transition:none}
+    html{scroll-behavior:auto}
+    .thumb .live::before{animation:none}
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-in">
+      <a href="/" class="brand" aria-label="Swapnil Biswas home"><span class="dot" aria-hidden="true"></span> Swapnil Biswas <span style="color:var(--dim)">/ concept library</span></a>
+      <div class="right">41 concepts</div>
+    </div>
+  </div>
+
+  <div class="wrap intro">
+    <div class="kick">Design inspiration &middot; 41 directions</div>
+    <h1>Personal website examples <em>- 41 homepage design concepts</em></h1>
+    <p>A working gallery of 41 homepage design concepts - personal and portfolio website examples, each built as a complete, self-contained page with its own typography, palette, motion and technology. Browse directions across editorial, WebGL and 3D, monochrome, retro and playful interactive styles, from split-flap boards and oscilloscopes to holographic cards, periodic tables and pen-plotter drawings. Filter by category or appearance, search by vibe, and hover any card for a live preview before opening it in full. Whether you are gathering homepage design ideas, hunting portfolio website inspiration, or shortlisting a direction for your own personal site, every concept here is a real, buildable example - forty-one ways to route the signal.</p>
+  </div>
+
+  <div class="toolbar">
+    <div class="toolbar-in">
+      <label class="search" for="q">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input id="q" type="search" placeholder="Search concepts, tech, vibe..." autocomplete="off" aria-label="Search concepts" />
+        <button class="clr" id="clr" type="button" aria-label="Clear search">&times;</button>
+      </label>
+      <div class="controls">
+        <div class="seg" id="theme" role="group" aria-label="Appearance">
+          <button data-th="all" class="on">All</button>
+          <button data-th="light">Light <span class="n">{lightCount}</span></button>
+          <button data-th="dark">Dark <span class="n">{concepts.length - lightCount}</span></button>
+        </div>
+        <select class="sort" id="sort" aria-label="Sort">
+          <option value="num">Sort: Number</option>
+          <option value="az">Sort: A - Z</option>
+        </select>
+        <span class="count"><span id="count">{concepts.length}</span> showing</span>
+      </div>
+    </div>
+    <div class="tabsrow">
+      <div class="tabs" role="tablist">
+        {tabs.map((tb, i) => (
+          <button class={'tab' + (i === 0 ? ' on' : '')} data-f={tb.k} role="tab" aria-selected={i === 0 ? 'true' : 'false'}>
+            {tb.l} <span class="n">{tb.n}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sr-only">Browse 41 personal and portfolio website examples by design direction</h2>
+  <div class="grid" id="grid">
+    {concepts.map((c, i) => (
+      <a class="card" data-cat={c.cat} data-theme={isLight(c.c[0]) ? 'light' : 'dark'} data-slug={c.s} data-i={i} data-title={c.t.toLowerCase()} data-search={(c.t + ' ' + c.d + ' ' + catMeta[c.cat].l + ' ' + (isLight(c.c[0]) ? 'light' : 'dark')).toLowerCase()} href={`/redesign/${c.s}`}>
+        <div class="thumb">
+          <img src={`/assets/redesign/thumb/${c.s}.webp`} alt={`${c.t} concept preview`} loading="lazy" decoding="async" width="760" height="475" />
+          <span class="gloss" aria-hidden="true"></span>
+          <span class="live">Live</span>
+        </div>
+        <div class="cbody">
+          <div class="meta-row">
+            <span class="num">{c.n}</span>
+            <span class="ctag" style={`color:${catMeta[c.cat].col}`}>{catMeta[c.cat].tag}</span>
+            <span class="swatches">{c.c.map(col => <i style={`background:${col}`}></i>)}</span>
+          </div>
+          <h2>{c.t}</h2>
+          <p>{c.d}</p>
+          <div class="open">Open concept <span>&#8599;</span></div>
+        </div>
+      </a>
+    ))}
+    <div class="empty" id="empty">No concepts match these filters.<br/><button id="reset" type="button">Reset filters</button></div>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <span>41 homepage design concepts &middot; Swapnil Biswas</span>
+      <span><a href="/">Back to swapbiswas.com &#8594;</a></span>
+    </div>
+  </footer>
+
+<script>
+  const grid = document.getElementById('grid');
+  const tabs = Array.from(document.querySelectorAll('.tab'));
+  const themeBtns = Array.from(document.querySelectorAll('#theme button'));
+  const cards = Array.from(document.querySelectorAll('.card'));
+  const countEl = document.getElementById('count');
+  const emptyEl = document.getElementById('empty');
+  const qEl = document.getElementById('q');
+  const clrEl = document.getElementById('clr');
+  const searchWrap = qEl ? qEl.closest('.search') : null;
+  const sortEl = document.getElementById('sort');
+  const resetEl = document.getElementById('reset');
+
+  const state = { cat: 'all', theme: 'all', q: '', sort: 'num' };
+
+  // ---- combined filter (category AND appearance AND search) + sort ----
+  function apply(){
+    const q = state.q.trim().toLowerCase();
+    let n = 0;
+    cards.forEach(c => {
+      const okCat = state.cat === 'all' || c.dataset.cat === state.cat;
+      const okTheme = state.theme === 'all' || c.dataset.theme === state.theme;
+      const okQ = !q || (c.dataset.search || '').includes(q);
+      const show = okCat && okTheme && okQ;
+      c.style.display = show ? '' : 'none';  // inline wins regardless of scoped-CSS quirks
+      if (show) n++;
+    });
+    if (countEl) countEl.textContent = String(n);
+    if (emptyEl) emptyEl.style.display = n === 0 ? 'block' : 'none';
+    const sorted = cards.slice().sort((a, b) =>
+      state.sort === 'az'
+        ? (a.dataset.title || '').localeCompare(b.dataset.title || '')
+        : (+a.dataset.i) - (+b.dataset.i));
+    sorted.forEach(c => grid.insertBefore(c, emptyEl));
+    unmount();
+  }
+
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => { x.classList.remove('on'); x.setAttribute('aria-selected', 'false'); });
+    t.classList.add('on'); t.setAttribute('aria-selected', 'true');
+    state.cat = t.dataset.f; apply();
+  }));
+  themeBtns.forEach(t => t.addEventListener('click', () => {
+    themeBtns.forEach(x => x.classList.remove('on'));
+    t.classList.add('on'); state.theme = t.dataset.th; apply();
+  }));
+  if (qEl) qEl.addEventListener('input', () => {
+    state.q = qEl.value;
+    if (searchWrap) searchWrap.classList.toggle('has', qEl.value.length > 0);
+    apply();
+  });
+  if (clrEl) clrEl.addEventListener('click', () => { qEl.value = ''; state.q = ''; if (searchWrap) searchWrap.classList.remove('has'); qEl.focus(); apply(); });
+  if (sortEl) sortEl.addEventListener('change', () => { state.sort = sortEl.value; apply(); });
+  if (resetEl) resetEl.addEventListener('click', () => {
+    state.cat = 'all'; state.theme = 'all'; state.q = ''; state.sort = 'num';
+    tabs.forEach((x, i) => { x.classList.toggle('on', i === 0); x.setAttribute('aria-selected', i === 0 ? 'true' : 'false'); });
+    themeBtns.forEach((x, i) => x.classList.toggle('on', i === 0));
+    if (qEl) qEl.value = ''; if (searchWrap) searchWrap.classList.remove('has');
+    if (sortEl) sortEl.value = 'num';
+    apply();
+  });
+
+  // ---- live preview on hover (one iframe at a time) ----
+  const fine = window.matchMedia('(pointer:fine)').matches;
+  const rm = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  let active = null, timer = null;
+
+  function unmount(){
+    if (!active) return;
+    const f = active.querySelector('.live-frame');
+    if (f) f.remove();
+    active.classList.remove('living', 'lived');
+    active = null;
+  }
+  function mount(card){
+    if (active === card) return;
+    unmount();
+    const thumb = card.querySelector('.thumb');
+    if (!thumb) return;
+    const fr = document.createElement('iframe');
+    fr.className = 'live-frame';
+    fr.setAttribute('scrolling', 'no');
+    fr.setAttribute('tabindex', '-1');
+    fr.setAttribute('aria-hidden', 'true');
+    fr.setAttribute('loading', 'eager');
+    const scale = thumb.clientWidth / 1280;
+    fr.style.transform = 'scale(' + scale + ')';
+    fr.addEventListener('load', () => { if (active === card) card.classList.add('lived'); });
+    fr.src = '/redesign/' + card.dataset.slug;
+    thumb.appendChild(fr);
+    active = card;
+    card.classList.add('living');
+  }
+
+  if (fine && !rm) {
+    cards.forEach(card => {
+      card.addEventListener('pointerenter', () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => mount(card), 160);
+      });
+      card.addEventListener('pointerleave', () => {
+        clearTimeout(timer);
+        unmount();
+      });
+    });
+    // free the preview if the tab is hidden
+    document.addEventListener('visibilitychange', () => { if (document.hidden) unmount(); });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,552 @@
+---
+// REDESIGN PROTOTYPE - "Origami" - sections built from folding paper.
+// Original concept (NOT a reskin): own layout + 3D-fold interaction.
+//  - Crisp paper panels with visible CREASE lines and soft FOLD SHADOWS that give 3D depth.
+//  - THE MECHANIC: panels are flat-folded (rotateX/rotateY hinged along a crease) and UNFOLD in 3D
+//    on load + on scroll-into-view via a single .open class toggled by IntersectionObserver.
+//    The fold shadow eases off as the panel flattens. Hero creases into shape; work cards fold
+//    open like a fold-out booklet; build stats unfold as a strip; contact is a final folded note.
+//  - CRITICAL: every panel is authored OPEN in the markup and only animated DOWN by CSS when the
+//    page JS adds a `.folds` flag to <html>. If JS never runs (or the trigger never fires), panels
+//    stay flat + readable. prefers-reduced-motion = no fold; everything flat + readable.
+//  - Palette: warm paper (pale ivory) with delicate ink + two craft accents (indigo + vermilion).
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css. noindex.
+const stats = [
+  { n: '20', plus: '+', l: 'AI agents & internal tools shipped' },
+  { n: '15', plus: '+', l: 'Marketers mentored & levelled up' },
+  { n: '76', plus: '',  l: 'Long-form articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+const work = [
+  { i: '01', t: 'LambdaTest', y: '2021 - 2025', role: 'Product & digital marketing', r: '657K+ leads · 18.2M+ organic', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', feat: true },
+  { i: '02', t: 'TestMu AI', y: '2026', role: 'Rebrand lead', r: 'Full company rebrand', d: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', t: 'Samsung', y: '2019', role: 'via Sociowash', r: 'Galaxy M-series launch', d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { i: '04', t: 'Medilife Superspeciality', y: '0 to 1', role: 'Marketing & web', r: 'Website · GTM · social', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', t: 'Lido Learning', y: '2021', role: 'Growth / CRM', r: 'CRM & lead operations', d: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { i: '06', t: 'Appknox', y: 'Freelance', role: 'Content', r: 'Security content', d: 'Freelance content writer for the mobile app security company.' },
+];
+const recognition = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+---
+<!doctype html>
+<html lang="en" data-theme="origami">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* warm paper palette - pale ivory stock, ink text, two craft accents */
+    --paper:#f3ecdd;       /* page / lighter sheet */
+    --paper-2:#ece2cd;     /* mid sheet */
+    --paper-3:#e3d6bb;     /* deeper craft fold */
+    --ink:#2a2620;         /* primary text - AA on paper */
+    --ink-2:#544c40;       /* secondary text */
+    --ink-3:#7a7060;       /* muted / labels */
+    --indigo:#314a8a;      /* craft accent 1 */
+    --vermilion:#c0432b;   /* craft accent 2 */
+    --crease:rgba(42,38,32,.16);
+    --crease-soft:rgba(42,38,32,.09);
+    --edge:rgba(42,38,32,.13);
+    --disp:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"Space Mono",ui-monospace,monospace;
+    --m:clamp(1.15rem,4.5vw,5rem);
+    /* soft fold shadow used while a flap is mid-unfold */
+    --foldsh: linear-gradient(180deg, rgba(42,38,32,.28), rgba(42,38,32,0) 60%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);min-height:100vh;-webkit-font-smoothing:antialiased;
+    line-height:1.62;letter-spacing:.004em;position:relative}
+  /* page-wide paper grain + a faint fibre tint, very subtle */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E")}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--ink);color:var(--paper)}
+  .wrap{width:min(1240px,100%);margin:0 auto;padding:0 var(--m);position:relative;z-index:2}
+
+  .mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+
+  /* ===================================================================
+     THE FOLD ENGINE
+     - .scene gives perspective to a panel's children.
+     - .flap is a hinged paper surface. It is authored OPEN (rotate 0).
+     - Only when <html class="folds"> AND the flap lacks .open is it folded
+       shut by CSS. JS adds .open to reveal. So no-JS / no-trigger = open.
+     =================================================================== */
+  .scene{perspective:1400px;perspective-origin:50% 30%;overflow-x:clip}
+  .flap{transform-style:preserve-3d;backface-visibility:hidden;will-change:transform,opacity;
+    transition:transform .9s cubic-bezier(.22,.75,.2,1), opacity .7s ease;
+    transform-origin:top center;position:relative}
+  /* the soft fold shadow overlay - fades out as flap flattens */
+  .flap::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--foldsh);
+    opacity:0;transition:opacity .9s ease;z-index:3}
+  /* default (no folds flag): everything open and flat */
+  /* when JS is active, fold the not-yet-open flaps */
+  html.folds .flap:not(.open){opacity:0}
+  html.folds .flap.fold-down:not(.open){transform:rotateX(-86deg)}
+  html.folds .flap.fold-up:not(.open){transform:rotateX(86deg);transform-origin:bottom center}
+  html.folds .flap.fold-left:not(.open){transform:rotateY(80deg);transform-origin:left center}
+  html.folds .flap.fold-right:not(.open){transform:rotateY(-80deg);transform-origin:right center}
+  html.folds .flap.open{transform:none;opacity:1}
+  html.folds .flap:not(.open)::after{opacity:1}
+  html.folds .flap.open::after{opacity:0}
+
+  /* a thin crease line drawn at a fold seam */
+  .crease{position:relative}
+  .crease::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;pointer-events:none;
+    background:linear-gradient(90deg,transparent,var(--crease) 8%,var(--crease) 92%,transparent);z-index:4}
+
+  /* ===== top bar (a folded paper strip) ===== */
+  .bar{position:fixed;top:0;left:0;right:0;z-index:40;
+    background:linear-gradient(180deg,rgba(243,236,221,.94),rgba(243,236,221,.7) 70%,transparent);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .bar-in{width:min(1240px,100%);margin:0 auto;padding:.8rem var(--m);display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    border-bottom:1px solid var(--edge)}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--disp);font-weight:600;letter-spacing:.01em;font-size:1.02rem;color:var(--ink)}
+  /* a little folded-corner mark */
+  .brand .fold-mark{width:20px;height:20px;flex:none;position:relative;background:var(--indigo);
+    box-shadow:0 2px 5px rgba(42,38,32,.25)}
+  .brand .fold-mark::before{content:"";position:absolute;top:0;right:0;border-width:0 9px 9px 0;border-style:solid;
+    border-color:var(--paper) transparent transparent var(--paper);filter:drop-shadow(-1px 1px 0 rgba(42,38,32,.18))}
+  .bar nav{display:flex;gap:1.4rem}
+  .bar nav a{font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);transition:color .3s}
+  .bar nav a:hover{color:var(--vermilion)}
+  @media(max-width:680px){.bar nav{display:none}}
+
+  /* ===== hero ===== */
+  header.hero{padding:8.2rem 0 2rem;position:relative;z-index:2}
+  .hero-edition{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid var(--edge);
+    padding-bottom:.9rem;margin-bottom:clamp(1.3rem,3.4vw,2.6rem)}
+  .hero-sheet{position:relative;background:
+    linear-gradient(135deg,var(--paper) 0%,var(--paper-2) 100%);
+    border:1px solid var(--edge);border-radius:6px;
+    padding:clamp(1.8rem,4.5vw,3.4rem);
+    box-shadow:0 22px 50px -28px rgba(42,38,32,.4), 0 2px 0 rgba(255,255,255,.5) inset}
+  /* a centre crease running down the hero sheet */
+  .hero-sheet::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;pointer-events:none;
+    background:linear-gradient(90deg,transparent,var(--crease-soft) 6%,var(--crease-soft) 94%,transparent)}
+  .hero-grid{display:grid;grid-template-columns:1.35fr minmax(280px,420px);gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+  .hero h1{font-family:var(--disp);font-weight:600;line-height:.94;letter-spacing:-.015em;
+    font-size:clamp(3rem,9vw,6.6rem);color:var(--ink)}
+  .hero h1 .l2{display:block}
+  .hero h1 .ships{color:var(--vermilion);position:relative;font-style:italic}
+  .hero .sub{margin-top:clamp(1.3rem,2.4vw,1.9rem);max-width:46ch;color:var(--ink-2);font-size:clamp(1rem,1.2vw,1.12rem);line-height:1.62}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  .hero .cta{margin-top:1.8rem;display:flex;gap:.8rem;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.35rem;
+    border:1px solid var(--ink);border-radius:4px;display:inline-flex;gap:.55rem;align-items:center;color:var(--ink);
+    transition:background .35s,color .35s,border-color .35s,transform .35s,box-shadow .35s}
+  .btn .ar{transition:transform .35s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .btn.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 20px -10px rgba(42,38,32,.55)}
+  .btn.ghost:hover{border-color:var(--vermilion);color:var(--vermilion);background:rgba(192,67,43,.05)}
+
+  /* hero portrait as a folded photo card */
+  .photo-card{position:relative;aspect-ratio:5/6;width:100%;border-radius:6px;overflow:hidden;
+    background:var(--paper-3);border:1px solid var(--edge);
+    box-shadow:0 18px 40px -22px rgba(42,38,32,.5)}
+  .photo-card img{width:100%;height:100%;object-fit:cover;object-position:top center;
+    filter:grayscale(.15) contrast(1.03) brightness(1.02);display:block}
+  /* a diagonal fold-shadow across the photo to read as a creased print */
+  .photo-card::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(118deg,rgba(255,255,255,.14) 0 32%,rgba(42,38,32,.14) 33%,transparent 34%)}
+  .photo-card .ptag{position:absolute;left:.8rem;bottom:.7rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--paper);background:rgba(42,38,32,.55);padding:.3rem .55rem;border-radius:3px;backdrop-filter:blur(2px)}
+  @media(max-width:820px){
+    .hero-grid{grid-template-columns:1fr;gap:1.8rem}
+    .photo-card{max-width:300px;aspect-ratio:5/5.4}
+    .hero-sheet::before{display:none}
+  }
+
+  .scrollcue{margin-top:2.4rem;display:flex;align-items:center;gap:.7rem;color:var(--ink-3);font-family:var(--mono);
+    font-size:.64rem;letter-spacing:.16em;text-transform:uppercase}
+  .scrollcue .bar2{width:32px;height:1px;background:var(--crease);position:relative;overflow:hidden}
+  .scrollcue .bar2::after{content:"";position:absolute;inset:0;width:40%;background:var(--vermilion);animation:slide 2.2s linear infinite}
+  @keyframes slide{0%{transform:translateX(-110%)}100%{transform:translateX(280%)}}
+
+  /* ===== section heads ===== */
+  section{padding:clamp(3.4rem,8vh,6rem) 0;position:relative;z-index:2}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;
+    border-bottom:1px solid var(--edge);padding-bottom:1.1rem;margin-bottom:2.4rem}
+  .shead .idx{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.7rem}
+  .shead h2{font-family:var(--disp);font-weight:600;font-size:clamp(1.9rem,4.4vw,3.2rem);line-height:1;letter-spacing:-.01em;color:var(--ink)}
+  .shead .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--ink-3);text-align:right;text-transform:uppercase;line-height:1.7}
+
+  /* ===== numbers - creased paper plates ===== */
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.9rem,1.8vw,1.4rem)}
+  .plate{position:relative;background:linear-gradient(160deg,var(--paper) 0%,var(--paper-2) 60%,var(--paper-3) 100%);
+    border:1px solid var(--edge);border-radius:6px;padding:clamp(1.5rem,3vw,2.4rem);min-height:200px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    box-shadow:0 14px 30px -22px rgba(42,38,32,.45), 0 1px 0 rgba(255,255,255,.45) inset}
+  /* a diagonal crease across each plate */
+  .plate::before{content:"";position:absolute;left:0;right:0;top:38%;height:1px;pointer-events:none;
+    background:linear-gradient(90deg,transparent,var(--crease) 10%,var(--crease) 90%,transparent);
+    box-shadow:0 1px 0 rgba(255,255,255,.5)}
+  .plate .pnum{font-family:var(--disp);font-weight:600;font-size:clamp(3.4rem,8.5vw,6rem);line-height:.82;
+    letter-spacing:-.02em;color:var(--ink);display:inline-flex;align-items:flex-start}
+  .plate .pnum sup{font-size:.4em;line-height:1;margin-top:.2em;color:var(--vermilion)}
+  .plate .nl{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--ink-2);text-transform:uppercase;max-width:24ch;line-height:1.6}
+  @media(max-width:760px){.nums{grid-template-columns:1fr}.plate{min-height:auto;flex-direction:row;align-items:center;gap:1.4rem;justify-content:flex-start}.plate .nl{max-width:none}.plate::before{top:auto;bottom:0;left:42%;right:auto;width:1px;height:100%;background:linear-gradient(180deg,transparent,var(--crease) 10%,var(--crease) 90%,transparent)}}
+
+  /* ===== disciplines - fold-out of four flaps ===== */
+  .flaps{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(.9rem,1.8vw,1.4rem)}
+  .disc{position:relative;background:linear-gradient(155deg,var(--paper) 0%,var(--paper-2) 100%);
+    border:1px solid var(--edge);border-radius:6px;padding:clamp(1.5rem,3vw,2.2rem);
+    box-shadow:0 14px 30px -24px rgba(42,38,32,.4), 0 1px 0 rgba(255,255,255,.45) inset;
+    transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+  .disc:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(42,38,32,.5)}
+  .disc .di{font-family:var(--mono);font-size:.78rem;color:var(--vermilion);letter-spacing:.06em;display:block;margin-bottom:.9rem}
+  .disc .dt{font-family:var(--disp);font-weight:600;font-size:clamp(1.25rem,2.5vw,1.7rem);line-height:1.05;letter-spacing:-.01em;color:var(--ink);margin-bottom:.7rem}
+  .disc .dd{color:var(--ink-2);font-size:.96rem;line-height:1.55;max-width:42ch}
+  /* peel a corner on hover */
+  .disc::after{content:"";position:absolute;top:0;right:0;width:0;height:0;border-style:solid;
+    border-width:0 0 28px 28px;border-color:transparent transparent var(--paper-3) transparent;
+    box-shadow:-2px 2px 5px rgba(42,38,32,.18);transition:border-width .4s;border-bottom-right-radius:6px}
+  .disc:hover::after{border-width:0 0 40px 40px}
+  @media(max-width:680px){.flaps{grid-template-columns:1fr}}
+
+  /* ===== work - fold-open cards, LambdaTest the featured fold ===== */
+  .sheet{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(.9rem,1.8vw,1.4rem)}
+  .card-scene{perspective:1500px;overflow-x:clip}
+  .frame{background:linear-gradient(155deg,var(--paper) 0%,var(--paper-2) 100%);
+    grid-column:span 6;border:1px solid var(--edge);border-radius:6px;padding:1.6rem 1.7rem 1.7rem;
+    display:flex;flex-direction:column;gap:.7rem;position:relative;min-height:228px;
+    box-shadow:0 14px 30px -24px rgba(42,38,32,.4), 0 1px 0 rgba(255,255,255,.45) inset;
+    transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+  .frame:not(.feat):hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 24px 42px -26px rgba(42,38,32,.5)}
+  .frame.feat{grid-column:span 12;flex-direction:row;align-items:stretch;gap:clamp(1.6rem,4vw,3rem);min-height:auto}
+  .frame .fhead{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+  .frame .ft{font-family:var(--disp);font-weight:600;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.02;letter-spacing:-.01em;color:var(--ink)}
+  .frame .fr{font-family:var(--mono);font-size:.76rem;color:var(--indigo);letter-spacing:.01em}
+  .frame .frole{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .frame .fd{color:var(--ink-2);font-size:.92rem;line-height:1.55;margin-top:auto}
+  .frame .go{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+    display:inline-flex;gap:.4rem;transition:color .3s,gap .3s}
+  .frame:hover .go{color:var(--vermilion);gap:.7rem}
+  /* a vertical crease seam down the featured fold */
+  .frame.feat .fleft{flex:1.15;display:flex;flex-direction:column;gap:.7rem}
+  .frame.feat .fright{flex:1;border-left:1px solid var(--crease);padding-left:clamp(1.4rem,3vw,2.6rem);
+    display:flex;flex-direction:column;justify-content:center;gap:.3rem;position:relative}
+  .frame.feat .fright::before{content:"";position:absolute;left:-1px;top:8%;bottom:8%;width:2px;
+    background:linear-gradient(180deg,transparent,var(--crease),transparent)}
+  .frame.feat .bignum{font-family:var(--disp);font-weight:600;font-size:clamp(2.4rem,5.4vw,4rem);line-height:.86;
+    letter-spacing:-.02em;color:var(--ink)}
+  .frame.feat .bignum em{color:var(--vermilion);font-style:normal}
+  .frame.feat .bigl{font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2);margin-bottom:1rem}
+  @media(max-width:900px){
+    .frame{grid-column:span 6}
+    .frame.feat{flex-direction:column;gap:1.4rem}
+    .frame.feat .fright{border-left:0;border-top:1px solid var(--crease);padding-left:0;padding-top:1.4rem}
+    .frame.feat .fright::before{display:none}
+  }
+  @media(max-width:560px){.frame{grid-column:span 12}}
+
+  /* ===== build stats strip (the unfolding strip lives here too) - reused as numbers above;
+     recognition + brands ===== */
+  .honours-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(2rem,5vw,4rem)}
+  .stamps{display:flex;flex-direction:column;gap:0}
+  .stamp{display:flex;align-items:center;gap:1.1rem;padding:1.15rem 0;border-top:1px dashed var(--edge)}
+  .stamp:last-child{border-bottom:1px dashed var(--edge)}
+  .stamp .seal{width:30px;height:30px;flex:none;border-radius:50%;background:var(--vermilion);position:relative;
+    box-shadow:0 3px 6px rgba(42,38,32,.25)}
+  .stamp .seal::before{content:"";position:absolute;inset:5px;border:1px solid rgba(243,236,221,.7);border-radius:50%}
+  .stamp b{font-family:var(--disp);font-weight:600;font-size:1.2rem;letter-spacing:-.005em;display:block;line-height:1.1;color:var(--ink)}
+  .stamp span{font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;color:var(--ink-3);text-transform:uppercase}
+  .brands .bl{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1.2rem}
+  .brands .bgrid{display:flex;flex-wrap:wrap;gap:.6rem}
+  .brands .bgrid span{font-family:var(--mono);font-size:.76rem;border:1px solid var(--edge);border-radius:4px;padding:.5rem .8rem;color:var(--ink-2);background:var(--paper-2)}
+  @media(max-width:720px){.honours-grid{grid-template-columns:1fr}}
+
+  /* ===== about ===== */
+  .about-grid{display:grid;grid-template-columns:280px 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  .about-photo{position:relative;aspect-ratio:5/6;border:1px solid var(--edge);border-radius:6px;overflow:hidden;background:var(--paper-3);
+    box-shadow:0 16px 36px -24px rgba(42,38,32,.45)}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(.12) contrast(1.03) brightness(1.02)}
+  .about-photo::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(118deg,rgba(255,255,255,.12) 0 49%,rgba(42,38,32,.12) 50%,transparent 51%)}
+  .about-lead{font-family:var(--disp);font-weight:600;font-size:clamp(1.4rem,2.8vw,2.1rem);line-height:1.18;letter-spacing:-.01em;margin-bottom:1.8rem;color:var(--ink)}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem 2rem}
+  .fact .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.4rem}
+  .fact .v{color:var(--ink-2);font-size:.95rem;line-height:1.45}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr}.about-photo{max-width:250px}.facts{grid-template-columns:1fr}}
+
+  /* ===== contact - a final folded note ===== */
+  .contact{border-top:1px solid var(--edge)}
+  .note{position:relative;background:linear-gradient(150deg,var(--paper) 0%,var(--paper-2) 70%,var(--paper-3) 100%);
+    border:1px solid var(--edge);border-radius:8px;padding:clamp(2rem,5vw,3.6rem);
+    box-shadow:0 24px 54px -30px rgba(42,38,32,.5), 0 1px 0 rgba(255,255,255,.5) inset;overflow:hidden}
+  /* fold lines crossing the note */
+  .note::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--crease-soft);pointer-events:none}
+  .note::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--crease-soft);pointer-events:none}
+  .contact .cl{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1.1rem;position:relative}
+  .contact .big{font-family:var(--disp);font-weight:600;font-size:clamp(2.6rem,9vw,6.4rem);line-height:.92;letter-spacing:-.02em;position:relative;color:var(--ink)}
+  .contact .big a{display:inline-flex;align-items:flex-start;gap:.1em;transition:color .3s}
+  .contact .big a .ar{font-size:.4em;margin-top:.18em;color:var(--vermilion)}
+  .contact .big a:hover{color:var(--vermilion)}
+  .contact .em{margin-top:1.5rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--ink-3);position:relative}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--crease)}
+  .contact .em a:hover{color:var(--vermilion)}
+
+  /* footer */
+  footer{border-top:1px solid var(--edge);padding:2.2rem 0 3rem;position:relative;z-index:2}
+  .foot-in{width:min(1240px,100%);margin:0 auto;padding:0 var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;color:var(--ink-3);text-transform:uppercase}
+  .foot-in a{color:var(--ink-2)}.foot-in a:hover{color:var(--vermilion)}
+
+  /* ===== reduced motion: NO folds, everything flat + readable ===== */
+  @media(prefers-reduced-motion:reduce){
+    .flap{transition:none!important;transform:none!important;opacity:1!important}
+    .flap::after{display:none}
+    .scrollcue .bar2::after{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-in">
+      <div class="brand"><span class="fold-mark" aria-hidden="true"></span>Swapnil Biswas</div>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="/redesign/">All concepts</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <header class="hero" id="hero">
+      <div class="hero-edition">
+        <span class="mono">Senior Product Marketing Manager &middot; LambdaTest</span>
+        <span class="mono">Folio No. 41 &middot; Origami</span>
+      </div>
+      <div class="scene">
+        <div class="hero-sheet flap fold-down open" id="heroFlap">
+          <div class="hero-grid">
+            <div class="hero-type">
+              <h1>
+                <span class="l1">The marketer</span>
+                <span class="l2">who <span class="ships">ships.</span></span>
+              </h1>
+              <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+              <div class="cta">
+                <a class="btn primary" href="#work">Selected work <span class="ar">&#8599;</span></a>
+                <a class="btn ghost" href="#contact">Get in touch</a>
+              </div>
+              <div class="scrollcue"><span class="bar2"></span> Scroll to unfold</div>
+            </div>
+            <figure class="photo-card" aria-label="Portrait of Swapnil Biswas">
+              <img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" fetchpriority="high" decoding="async" />
+              <figcaption class="ptag">Fig. 01 &middot; folded print</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="wrap">
+    <section id="numbers">
+      <div class="shead">
+        <div><div class="idx">&mdash; 00 / Output</div><h2>What got built &amp; shipped</h2></div>
+        <div class="meta">The leads sit in the headline -<br/>this is the body of work</div>
+      </div>
+      <div class="nums scene">
+        {stats.map((s) => (
+          <div class="plate flap fold-down open" data-fold>
+            <div class="pnum">{s.n}{s.plus && <sup>{s.plus}</sup>}</div>
+            <div class="nl">{s.l}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="what">
+      <div class="shead">
+        <div><div class="idx">&mdash; 01 / Disciplines</div><h2>What I do</h2></div>
+        <div class="meta">Four disciplines<br/>one operator</div>
+      </div>
+      <div class="flaps scene">
+        {pillars.map((p, idx) => (
+          <div class={'disc flap open ' + (idx % 2 === 0 ? 'fold-left' : 'fold-right')} data-fold>
+            <span class="di">{p.i}</span>
+            <div class="dt">{p.t}</div>
+            <div class="dd">{p.d}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="shead">
+        <div><div class="idx">&mdash; 02 / Portfolio</div><h2>Selected work</h2></div>
+        <div class="meta">Fold-out folio<br/>2019 - 2026</div>
+      </div>
+      <div class="sheet card-scene">
+        {work.map(w => (
+          <a href="#" class={'frame flap fold-down open' + (w.feat ? ' feat' : '')} data-fold aria-label={w.t + ' - ' + w.r}>
+            {w.feat ? (
+              <>
+                <span class="fleft">
+                  <span class="fhead"><span>Fold {w.i} &middot; Featured</span><span>{w.y}</span></span>
+                  <span class="ft">{w.t}</span>
+                  <span class="frole">{w.role}</span>
+                  <span class="fd">{w.d}</span>
+                  <span class="go">View case <span>&#8599;</span></span>
+                </span>
+                <span class="fright">
+                  <span class="bignum"><em>657K+</em></span>
+                  <span class="bigl">Leads generated</span>
+                  <span class="bignum"><em>18.2M+</em></span>
+                  <span class="bigl" style="margin-bottom:0">Organic traffic driven</span>
+                </span>
+              </>
+            ) : (
+              <>
+                <span class="fhead"><span>Fold {w.i}</span><span>{w.y}</span></span>
+                <span class="ft">{w.t}</span>
+                <span class="fr">{w.r}</span>
+                <span class="fd">{w.d}</span>
+                <span class="go">View case <span>&#8599;</span></span>
+              </>
+            )}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section id="honours">
+      <div class="shead">
+        <div><div class="idx">&mdash; 03 / Honours</div><h2>Recognition &amp; brands</h2></div>
+      </div>
+      <div class="honours-grid">
+        <div class="stamps">
+          {recognition.map(a => (
+            <div class="stamp"><span class="seal" aria-hidden="true"></span><div><b>{a.t}</b><span>{a.m}</span></div></div>
+          ))}
+        </div>
+        <div class="brands">
+          <div class="bl">Trusted by teams at</div>
+          <div class="bgrid">{brands.map(b => <span>{b}</span>)}</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="shead">
+        <div><div class="idx">&mdash; 04 / Colophon</div><h2>About the maker</h2></div>
+        <div class="meta">Mumbai, India</div>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo"><img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" loading="lazy" decoding="async" /></div>
+        <div>
+          <p class="about-lead">I treat my own career like a product - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+          <div class="facts">
+            <div class="fact"><div class="k">Based</div><div class="v">Mumbai, India</div></div>
+            <div class="fact"><div class="k">Tenure</div><div class="v">7+ years marketing &middot; 4+ in B2B SaaS</div></div>
+            <div class="fact"><div class="k">Education</div><div class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</div></div>
+            <div class="fact"><div class="k">Practice</div><div class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="scene">
+        <div class="note flap fold-up open" data-fold>
+          <div class="cl">Let's build something that compounds</div>
+          <div class="big"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello <span class="ar">&#8599;</span></a></div>
+          <div class="em">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <span>Origami &middot; Concept 41</span>
+      <span>Swapnil Biswas &copy; 2026</span>
+      <span><a href="/redesign/">View all concepts</a></span>
+    </div>
+  </footer>
+
+<script>
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+
+  if (!RM) {
+    // Turn the fold engine ON: this folds shut every .flap that doesn't have .open.
+    // We immediately strip .open from off-screen flaps so they start folded, then the
+    // IntersectionObserver re-adds .open to unfold them as they scroll into view.
+    root.classList.add('folds');
+
+    const flaps = Array.from(document.querySelectorAll('.flap'));
+
+    // Fold shut everything except the hero (hero unfolds on load).
+    flaps.forEach((el) => {
+      if (el.id === 'heroFlap') return;          // hero stays queued to open on load
+      el.classList.remove('open');
+    });
+
+    // Hero: crease into shape shortly after load.
+    const hero = document.getElementById('heroFlap');
+    if (hero) {
+      hero.classList.remove('open');
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        setTimeout(() => hero.classList.add('open'), 90);
+      }));
+    }
+
+    // SAFETY NET: if anything is still folded after 2.6s (observer never fired,
+    // tab backgrounded, etc.), force everything open so no content stays hidden.
+    const failSafe = setTimeout(() => {
+      flaps.forEach((el) => el.classList.add('open'));
+    }, 2600);
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          // stagger siblings within the same grid for a fold-out cascade
+          const parent = el.parentElement;
+          const sibs = parent ? Array.from(parent.children).filter((c) => c.classList.contains('flap')) : [el];
+          const i = Math.max(0, sibs.indexOf(el));
+          setTimeout(() => el.classList.add('open'), i * 110);
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+    flaps.forEach((el) => {
+      if (el.id === 'heroFlap') return;
+      io.observe(el);
+    });
+
+    // Clear the fail-safe once everything is open (avoids a late forced reflow).
+    const checkAll = setInterval(() => {
+      if (flaps.every((el) => el.classList.contains('open'))) {
+        clearTimeout(failSafe);
+        clearInterval(checkAll);
+      }
+    }, 500);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,958 @@
+---
+// REDESIGN PROTOTYPE - "Cartograph" - the career as an interactive transit / route map.
+// Original concept (NOT a reskin of Atlas, which is data charts on a light Swiss report).
+// Theme: "routing the signal". Each company is a STATION node; the career is a single ROUTE
+// line drawn in chronological order (2019 -> 2026) that animates across the map on load.
+//  - The map STAGE is a clipped, pan-able (drag) + zoom-able (scroll / buttons) cartographic plane
+//    on a dark map ground with a faint lat/long grid, a scale bar, a compass and registration marks.
+//  - On load the route DRAWS itself station to station (stroke-dashoffset). reduced-motion = pre-drawn.
+//  - Clicking / hovering a station opens a map PIN POPUP (role, year, outcome, description).
+//  - A "you are here" pulse marks the current role (LambdaTest / TestMu AI).
+//  - A fixed LEGEND panel carries ALL key content (headline, sub, metrics, stop list) so nothing
+//    important is hidden behind pan/zoom. Disciplines / recognition / about / contact are normal
+//    readable map-legend-styled sections below the stage.
+// Palette: dark map ground #0c1014, ONE warm signal-orange route #ff8a4c + a quiet teal #7fd1c4
+//    for "you are here" / secondary marks. Grotesk (Space Grotesk) + mono labels (IBM Plex Mono).
+// CRITICAL: only LambdaTest carries hard numbers (657K+ / 18.2M+). No invented metrics elsewhere.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+
+const stats = [
+  { n: '20+', l: 'AI agents & internal tools shipped' },
+  { n: '15+', l: 'Marketers mentored & levelled up' },
+  { n: '76',  l: 'Long-form articles published' },
+];
+
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+
+// Stations are plotted on a 1200 x 760 map plane. Coordinates are hand-placed so the route
+// threads chronologically (2019 -> 2026) across the map without crossing itself awkwardly.
+// `cur` = current role (you-are-here pulse). `feat` = featured (carries the hard numbers).
+const stations = [
+  { id: 's1', code: 'SMS', t: 'Samsung',                  y: '2019',      role: 'via Sociowash',          out: 'Galaxy M-series launch',      d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.', x: 150,  y2: 600 },
+  { id: 's2', code: 'APX', t: 'Appknox',                  y: 'Freelance', role: 'Content',                out: 'Security content',            d: 'Freelance content writer for the mobile app security company.', x: 330, y2: 420 },
+  { id: 's3', code: 'MED', t: 'Medilife Superspeciality', y: '0 to 1',    role: 'Marketing & web',        out: 'Website / GTM / social',      d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.', x: 510, y2: 560 },
+  { id: 's4', code: 'LDO', t: 'Lido Learning',            y: '2021',      role: 'Growth / CRM',           out: 'CRM & lead operations',       d: 'Ran CRM management and lead routing and assignment for the EdTech.', x: 700, y2: 350 },
+  { id: 's5', code: 'LMT', t: 'LambdaTest',               y: '2021 - 2025', role: 'Product & digital marketing', out: '657K+ leads · 18.2M+ organic', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', x: 920, y2: 540, feat: true },
+  { id: 's6', code: 'TMU', t: 'TestMu AI',                y: '2026',      role: 'Rebrand lead',           out: 'Full company rebrand',        d: 'Led the complete rebrand from LambdaTest to TestMu AI.', x: 1070, y2: 250, cur: true },
+];
+
+const recognition = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+
+// Build the route polyline string in chronological order.
+const routePts = stations.map(s => `${s.x},${s.y2}`).join(' ');
+---
+<!doctype html>
+<html lang="en" data-theme="cartograph">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style is:global>
+  :root{
+    /* map ground + ink */
+    --bg:#0c1014; --bg2:#0e141a; --panel:#11181f; --panel2:#0f161d;
+    --ink:#eef3f6; --bone:#cfd8de; --dim:#9aa6ae; --faint:#828e99;
+    --line:rgba(238,243,246,.10); --hair:rgba(238,243,246,.18);
+    --grid:rgba(127,209,196,.07); --gridhi:rgba(127,209,196,.13);
+    /* ONE route accent + quiet teal secondary */
+    --route:#ff8a4c; --route-deep:#e2703a; --teal:#7fd1c4; --teal-dim:#4f9a90;
+    --sans:"Space Grotesk",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --pad:clamp(1.1rem,4vw,3.2rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);min-height:100vh;
+    -webkit-font-smoothing:antialiased;line-height:1.6;letter-spacing:.005em;position:relative;
+    background-image:
+      radial-gradient(120% 80% at 78% -10%, rgba(255,138,76,.10), transparent 55%),
+      radial-gradient(90% 70% at 10% 110%, rgba(127,209,196,.07), transparent 55%);}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--route);color:#1a0f08}
+  .mono{font-family:var(--mono)}
+  .wrap{width:min(1320px,100%);margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
+
+  /* ===== top bar ===== */
+  .bar{position:fixed;top:0;left:0;right:0;z-index:60;
+    background:linear-gradient(180deg,rgba(12,16,20,.94),rgba(12,16,20,.55) 70%,transparent);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .bar-in{width:min(1320px,100%);margin:0 auto;padding:.8rem var(--pad);display:flex;align-items:center;
+    justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:.65rem;font-family:var(--mono);font-weight:600;
+    letter-spacing:.04em;font-size:.9rem}
+  .brand .reg{width:20px;height:20px;flex:none;position:relative;display:inline-grid;place-items:center}
+  .brand .reg::before{content:"";position:absolute;width:20px;height:20px;border:1.5px solid var(--route);border-radius:50%}
+  .brand .reg::after{content:"";position:absolute;width:7px;height:7px;background:var(--route);border-radius:50%}
+  .bar nav{display:flex;gap:1.4rem}
+  .bar nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);transition:color .3s}
+  .bar nav a:hover{color:var(--ink)}
+  @media(max-width:760px){.bar nav{display:none}}
+
+  /* ===== hero map stage ===== */
+  header.hero{padding-top:5.4rem}
+  .stagewrap{position:relative;width:min(1320px,100%);margin:0 auto;padding:0 var(--pad)}
+  .stage{position:relative;width:100%;height:clamp(460px,72vh,720px);
+    border:1px solid var(--hair);border-radius:18px;overflow:hidden;
+    background:
+      linear-gradient(180deg,var(--bg2),var(--bg) 60%,#0a0e12);
+    touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+  .stage.grabbing{cursor:grabbing}
+  .stage svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .stage svg.map{cursor:inherit}
+
+  /* the pan/zoom group transform lives on #mapLayer via JS */
+  #mapLayer{will-change:transform}
+  .gridline{stroke:var(--grid);stroke-width:1;vector-effect:non-scaling-stroke}
+  .gridline.major{stroke:var(--gridhi)}
+  .gridlabel{fill:var(--faint);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em}
+  .contour{fill:none;stroke:rgba(127,209,196,.06);stroke-width:1;vector-effect:non-scaling-stroke}
+
+  /* route line */
+  .route-base{fill:none;stroke:rgba(255,138,76,.16);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+  .route-draw{fill:none;stroke:var(--route);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;
+    filter:drop-shadow(0 0 6px rgba(255,138,76,.45))}
+
+  /* station nodes (rendered as SVG groups) */
+  .node{cursor:pointer}
+  .node .halo{fill:rgba(255,138,76,.0);transition:fill .3s}
+  .node:hover .halo,.node.active .halo{fill:rgba(255,138,76,.12)}
+  .node .ring{fill:var(--bg);stroke:var(--route);stroke-width:3;vector-effect:non-scaling-stroke}
+  .node .dot{fill:var(--route)}
+  .node.cur .ring{stroke:var(--teal)}
+  .node.cur .dot{fill:var(--teal)}
+  .node .lbl{fill:var(--ink);font-family:"Space Grotesk",sans-serif;font-size:15px;font-weight:600;letter-spacing:.01em}
+  .node .lblbg{fill:rgba(12,16,20,.82)}
+  .node .code{fill:var(--route);font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.12em}
+  .node.cur .code{fill:var(--teal)}
+  .node .yr{fill:var(--dim);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em}
+
+  /* you-are-here pulse */
+  .pulse{fill:none;stroke:var(--teal);stroke-width:2;vector-effect:non-scaling-stroke;transform-box:fill-box;transform-origin:center;
+    animation:ping 2.6s cubic-bezier(.2,.6,.2,1) infinite}
+  @keyframes ping{0%{r:9;opacity:.85}70%{opacity:0}100%{r:30;opacity:0}}
+
+  /* ===== overlays inside stage ===== */
+  .stage .overlay{position:absolute;z-index:5;pointer-events:none}
+  .stage .overlay *{pointer-events:auto}
+
+  /* legend / title panel (carries the key content) */
+  .legend{top:1rem;left:1rem;width:min(380px,calc(100% - 2rem));
+    background:linear-gradient(180deg,rgba(17,24,31,.93),rgba(15,22,29,.93));
+    border:1px solid var(--hair);border-radius:14px;padding:1.15rem 1.25rem 1.2rem;
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    box-shadow:0 18px 50px -24px rgba(0,0,0,.7)}
+  .legend .eyebrow{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);
+    display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem}
+  .legend .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
+  .legend h1{font-family:var(--sans);font-weight:700;font-size:clamp(1.55rem,3.2vw,2.25rem);line-height:1.02;letter-spacing:-.01em;color:var(--ink)}
+  .legend h1 .hl{color:var(--route)}
+  .legend .sub{margin-top:.7rem;color:var(--bone);font-size:.9rem;line-height:1.55}
+  .legend .sub b{color:var(--ink);font-weight:600}
+  .legend .metrics{display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap}
+  .legend .metric{flex:1;min-width:84px}
+  .legend .metric .v{font-family:var(--mono);font-weight:600;font-size:1.15rem;color:var(--route);line-height:1;letter-spacing:.01em}
+  .legend .metric .k{font-size:.66rem;color:var(--dim);line-height:1.3;margin-top:.35rem;letter-spacing:.02em}
+  .legend .cta{margin-top:1.1rem;display:flex;gap:.55rem;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1rem;
+    border:1px solid var(--hair);border-radius:9px;display:inline-flex;gap:.5rem;align-items:center;
+    transition:background .3s,color .3s,border-color .3s,transform .3s;background:transparent;color:var(--ink);cursor:pointer}
+  .btn .ar{transition:transform .3s}
+  .btn:hover .ar{transform:translate(2px,-2px)}
+  .btn.primary{background:var(--route);color:#1a0f08;border-color:var(--route);font-weight:600}
+  .btn.primary:hover{transform:translateY(-2px)}
+  .btn.ghost:hover{border-color:var(--route);background:rgba(255,138,76,.08)}
+
+  /* stops list inside legend - the readable index of the map */
+  .stops{margin-top:1.1rem;border-top:1px solid var(--line);padding-top:.9rem}
+  .stops .sl{font-family:var(--mono);font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:.6rem}
+  .stop{display:flex;align-items:center;gap:.7rem;width:100%;text-align:left;background:transparent;border:0;cursor:pointer;
+    padding:.42rem .35rem;border-radius:8px;color:inherit;transition:background .25s;font-family:var(--sans)}
+  .stop:hover,.stop.active{background:rgba(255,138,76,.08)}
+  .stop .tick{width:11px;height:11px;border-radius:50%;border:2px solid var(--route);flex:none;background:var(--bg)}
+  .stop.cur .tick{border-color:var(--teal)}
+  .stop .nm{font-size:.85rem;color:var(--bone);font-weight:500;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .stop:hover .nm,.stop.active .nm{color:var(--ink)}
+  .stop .yy{font-family:var(--mono);font-size:.66rem;color:var(--faint);flex:none}
+
+  /* map chrome: scale bar, compass, controls, attribution */
+  .compass{top:1rem;right:1rem;width:62px;height:62px;border:1px solid var(--hair);border-radius:50%;
+    background:rgba(12,16,20,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center}
+  .compass svg{position:static;width:46px;height:46px}
+  .compass .n{fill:var(--route)} .compass .s{fill:var(--faint)} .compass .axis{stroke:var(--hair);stroke-width:1}
+  .compass .nlabel{fill:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:9px;font-weight:600}
+
+  .scalebar{bottom:1rem;left:1rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;color:var(--dim);
+    background:rgba(12,16,20,.6);padding:.4rem .55rem;border-radius:7px;border:1px solid var(--line)}
+  .scalebar .bar{display:flex;align-items:flex-end;gap:0;margin-bottom:.3rem}
+  .scalebar .seg{width:24px;height:6px;border:1px solid var(--hair);border-right:0}
+  .scalebar .seg:last-child{border-right:1px solid var(--hair)}
+  .scalebar .seg.on{background:var(--route)}
+
+  .controls{bottom:1rem;right:1rem;display:flex;flex-direction:column;gap:.4rem}
+  .controls button,.controls .grp button{width:38px;height:38px;border:1px solid var(--hair);border-radius:9px;
+    background:rgba(12,16,20,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:var(--ink);
+    font-family:var(--mono);font-size:1.05rem;cursor:pointer;display:grid;place-items:center;transition:background .25s,border-color .25s}
+  .controls button:hover{background:rgba(255,138,76,.14);border-color:var(--route)}
+  .controls .grp{display:flex;flex-direction:column;gap:0;border-radius:9px;overflow:hidden;border:1px solid var(--hair)}
+  .controls .grp button{border:0;border-radius:0;width:38px;height:36px}
+  .controls .grp button:first-child{border-bottom:1px solid var(--hair)}
+  .controls .reset{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase}
+
+  .maphint{bottom:1rem;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--faint);background:rgba(12,16,20,.55);padding:.4rem .7rem;border-radius:20px;
+    border:1px solid var(--line);white-space:nowrap;transition:opacity .6s}
+  .maphint.gone{opacity:0}
+  @media(max-width:560px){.maphint{display:none}}
+
+  /* ===== station popup card ===== */
+  .popup{position:absolute;z-index:8;width:min(300px,calc(100% - 2rem));
+    background:linear-gradient(180deg,rgba(17,24,31,.97),rgba(14,20,27,.97));
+    border:1px solid var(--hair);border-radius:14px;padding:1.05rem 1.1rem 1.1rem;
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    box-shadow:0 22px 60px -22px rgba(0,0,0,.8);
+    opacity:0;transform:translateY(8px) scale(.98);pointer-events:none;transition:opacity .28s,transform .28s}
+  .popup.open{opacity:1;transform:none;pointer-events:auto}
+  .popup::after{content:"";position:absolute;left:var(--tipx,28px);bottom:-7px;width:13px;height:13px;
+    background:rgba(14,20,27,.97);border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);transform:rotate(45deg)}
+  .popup.flip::after{bottom:auto;top:-7px;transform:rotate(225deg)}
+  .popup .ph{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.5rem}
+  .popup .pcode{font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.14em;color:var(--route)}
+  .popup.cur .pcode{color:var(--teal)}
+  .popup .pyr{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--dim)}
+  .popup h3{font-family:var(--sans);font-weight:700;font-size:1.2rem;line-height:1.05;letter-spacing:-.01em;margin-bottom:.35rem}
+  .popup .prole{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:.6rem}
+  .popup .pout{font-family:var(--mono);font-size:.84rem;color:var(--route);letter-spacing:.01em;margin-bottom:.55rem}
+  .popup.cur .pout{color:var(--teal)}
+  .popup .pd{color:var(--bone);font-size:.86rem;line-height:1.5}
+  .popup .pclose{position:absolute;top:.55rem;right:.6rem;width:24px;height:24px;border:0;background:transparent;color:var(--faint);
+    cursor:pointer;font-size:1rem;line-height:1;border-radius:6px;transition:color .25s,background .25s}
+  .popup .pclose:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+
+  /* on small screens the legend reflows ABOVE the map, not overlaid */
+  .legend-static{display:none}
+  @media(max-width:820px){
+    .stage{height:clamp(420px,62vh,560px)}
+    /* hide ONLY the overlaid legend inside the stage - NOT the static one above the map */
+    .overlay.legend{display:none}
+    .legend-static{display:block;margin-bottom:1rem}
+    /* the static legend's inner panel reuses .legend for styling - force it visible + full-width */
+    .legend-static .legend-inner{display:block;position:static;width:100%;max-width:none;border-radius:14px}
+  }
+
+  /* ===== generic sections below the map ===== */
+  section{padding:clamp(3rem,8vh,6rem) 0;position:relative;z-index:2}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;
+    border-bottom:1px solid var(--line);padding-bottom:1rem;margin-bottom:2.4rem}
+  .shead .idx{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.65rem;
+    display:flex;align-items:center;gap:.5rem}
+  .shead .idx::before{content:"";width:18px;height:1px;background:var(--teal)}
+  .shead h2{font-family:var(--sans);font-weight:700;font-size:clamp(1.7rem,4vw,2.8rem);line-height:1;letter-spacing:-.01em}
+  .shead .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--dim);text-align:right;text-transform:uppercase;line-height:1.7}
+
+  /* disciplines as legend keys */
+  .keys{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .key{background:var(--panel2);padding:1.5rem 1.5rem 1.6rem;display:flex;flex-direction:column;gap:.6rem;transition:background .35s;min-height:170px}
+  .key:hover{background:var(--panel)}
+  .key .kh{display:flex;align-items:center;gap:.7rem}
+  .key .ksym{width:18px;height:18px;border-radius:50%;border:2px solid var(--route);background:var(--bg);flex:none;position:relative}
+  .key .ksym::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--route);opacity:.0;transition:opacity .35s}
+  .key:hover .ksym::after{opacity:1}
+  .key .ki{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--faint)}
+  .key h3{font-family:var(--sans);font-weight:600;font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.1;letter-spacing:-.01em;color:var(--ink)}
+  .key p{color:var(--dim);font-size:.92rem;line-height:1.55}
+  @media(max-width:680px){.keys{grid-template-columns:1fr}.key{min-height:auto}}
+
+  /* recognition + brands */
+  .hon-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2rem,5vw,3.5rem)}
+  .stamps{display:flex;flex-direction:column}
+  .stamp{display:flex;align-items:center;gap:1rem;padding:1.1rem 0;border-top:1px solid var(--line)}
+  .stamp:last-child{border-bottom:1px solid var(--line)}
+  .stamp .pin{width:26px;height:26px;flex:none;position:relative}
+  .stamp .pin::before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:18px;height:18px;border-radius:50% 50% 50% 0;
+    background:var(--bg);border:2px solid var(--route);transform:translateX(-50%) rotate(-45deg)}
+  .stamp .pin::after{content:"";position:absolute;left:50%;top:6px;transform:translateX(-50%);width:6px;height:6px;border-radius:50%;background:var(--route)}
+  .stamp b{font-family:var(--sans);font-weight:600;font-size:1.05rem;letter-spacing:-.005em;display:block;line-height:1.2;color:var(--ink)}
+  .stamp span{font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
+  .brands .bl{font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);margin-bottom:1.1rem}
+  .brands .bgrid{display:flex;flex-wrap:wrap;gap:.55rem}
+  .brands .bgrid span{font-family:var(--mono);font-size:.76rem;border:1px solid var(--line);border-radius:7px;padding:.5rem .8rem;color:var(--bone)}
+  @media(max-width:720px){.hon-grid{grid-template-columns:1fr}}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:280px 1fr;gap:clamp(2rem,5vw,3.5rem);align-items:start}
+  .about-photo{position:relative;aspect-ratio:5/6;border:1px solid var(--hair);border-radius:14px;overflow:hidden;background:var(--panel)}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(.25) contrast(1.04)}
+  .about-photo .tagpin{position:absolute;left:.7rem;bottom:.7rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink);background:rgba(12,16,20,.7);border:1px solid var(--hair);border-radius:7px;padding:.35rem .6rem}
+  .about-lead{font-family:var(--sans);font-weight:600;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.18;letter-spacing:-.01em;margin-bottom:1.8rem;color:var(--ink)}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem 2rem}
+  .fact .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);margin-bottom:.4rem}
+  .fact .v{color:var(--bone);font-size:.94rem;line-height:1.45}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr}.about-photo{max-width:260px}.facts{grid-template-columns:1fr}}
+
+  /* contact */
+  .contact{border-top:1px solid var(--line)}
+  .contact .cl{font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin-bottom:1.1rem}
+  .contact .big{font-family:var(--sans);font-weight:700;font-size:clamp(2.4rem,9vw,6rem);line-height:.95;letter-spacing:-.02em}
+  .contact .big a{display:inline-flex;align-items:flex-start;gap:.1em;color:var(--ink);transition:color .3s}
+  .contact .big a .ar{font-size:.32em;margin-top:.25em;color:var(--route)}
+  .contact .big a:hover{color:var(--route)}
+  .contact .em{margin-top:1.5rem;font-family:var(--mono);font-size:.82rem;letter-spacing:.03em;color:var(--dim)}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--hair)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:2rem 0 2.8rem;position:relative;z-index:2}
+  .foot-in{width:min(1320px,100%);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;color:var(--faint);text-transform:uppercase}
+  .foot-in a{color:var(--dim)}.foot-in a:hover{color:var(--ink)}
+
+  /* reveals */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1!important;transform:none!important;transition:none}
+    .pulse{animation:none;r:9}
+    html{scroll-behavior:auto}
+    .route-draw{stroke-dasharray:none!important;stroke-dashoffset:0!important}
+  }
+</style>
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-in">
+      <div class="brand"><span class="reg" aria-hidden="true"></span><b>SWAPNIL BISWAS</b></div>
+      <nav>
+        <a href="#disciplines">Disciplines</a>
+        <a href="#recognition">Recognition</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="/redesign/">All concepts</a>
+      </nav>
+    </div>
+  </header>
+
+  <header class="hero">
+    <div class="stagewrap">
+      <!-- static legend shown ABOVE map on small screens (key content always readable) -->
+      <div class="legend-static">
+        <div class="legend-inner legend" style="position:static">
+          <div class="eyebrow">Senior Product Marketing Manager &middot; LambdaTest</div>
+          <h1>The marketer<br/>who <span class="hl">ships.</span></h1>
+          <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+          <div class="metrics">
+            {stats.map(s => (
+              <div class="metric"><div class="v">{s.n}</div><div class="k">{s.l}</div></div>
+            ))}
+          </div>
+          <div class="cta">
+            <a class="btn primary" href="#recognition">Selected work <span class="ar">&#8599;</span></a>
+            <a class="btn ghost" href="#contact">Get in touch</a>
+          </div>
+          <div class="stops">
+            <div class="sl">Stops on the line &middot; 2019 - 2026</div>
+            {stations.map(s => (
+              <button class={'stop' + (s.cur ? ' cur' : '')} data-stop={s.id} type="button">
+                <span class="tick" aria-hidden="true"></span>
+                <span class="nm">{s.t}</span>
+                <span class="yy">{s.y.replace(' - ', '-')}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="stage" id="stage" role="application" aria-label="Interactive career route map - drag to pan, scroll or use buttons to zoom, select a station for details">
+        <!-- THE MAP -->
+        <svg class="map" id="map" viewBox="0 0 1320 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <radialGradient id="ground" cx="72%" cy="28%" r="85%">
+              <stop offset="0%" stop-color="#101921"/>
+              <stop offset="55%" stop-color="#0c1014"/>
+              <stop offset="100%" stop-color="#090d11"/>
+            </radialGradient>
+          </defs>
+          <rect x="-2000" y="-2000" width="6000" height="6000" fill="url(#ground)"/>
+          <g id="mapLayer">
+            <!-- lat/long grid + contours + labels are injected by JS into these groups -->
+            <g id="gGrid"></g>
+            <g id="gContour"></g>
+            <!-- route -->
+            <polyline class="route-base" points={routePts}/>
+            <polyline class="route-draw" id="routeDraw" points={routePts}/>
+            <!-- nodes injected by JS for precise label measuring -->
+            <g id="gNodes"></g>
+          </g>
+        </svg>
+
+        <!-- overlaid legend (desktop) -->
+        <div class="overlay legend" aria-hidden="false">
+          <div class="eyebrow">Senior Product Marketing Manager &middot; LambdaTest</div>
+          <h1>The marketer<br/>who <span class="hl">ships.</span></h1>
+          <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+          <div class="metrics">
+            {stats.map(s => (
+              <div class="metric"><div class="v">{s.n}</div><div class="k">{s.l}</div></div>
+            ))}
+          </div>
+          <div class="cta">
+            <a class="btn primary" href="#recognition">Selected work <span class="ar">&#8599;</span></a>
+            <a class="btn ghost" href="#contact">Get in touch</a>
+          </div>
+          <div class="stops">
+            <div class="sl">Stops on the line &middot; 2019 - 2026</div>
+            {stations.map(s => (
+              <button class={'stop' + (s.cur ? ' cur' : '')} data-stop={s.id} type="button">
+                <span class="tick" aria-hidden="true"></span>
+                <span class="nm">{s.t}</span>
+                <span class="yy">{s.y.replace(' - ', '-')}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- compass -->
+        <div class="overlay compass" aria-hidden="true">
+          <svg viewBox="0 0 46 46">
+            <line class="axis" x1="23" y1="6" x2="23" y2="40"/>
+            <line class="axis" x1="6" y1="23" x2="40" y2="23"/>
+            <polygon class="n" points="23,7 19,24 23,21 27,24"/>
+            <polygon class="s" points="23,39 19,22 23,25 27,22"/>
+            <text class="nlabel" x="23" y="5" text-anchor="middle">N</text>
+          </svg>
+        </div>
+
+        <!-- scale bar -->
+        <div class="overlay scalebar" aria-hidden="true">
+          <div class="bar"><span class="seg on"></span><span class="seg"></span><span class="seg on"></span><span class="seg"></span></div>
+          <span id="scaleText">1 yr / div</span>
+        </div>
+
+        <!-- controls -->
+        <div class="overlay controls">
+          <div class="grp">
+            <button id="zin" type="button" aria-label="Zoom in">+</button>
+            <button id="zout" type="button" aria-label="Zoom out">&minus;</button>
+          </div>
+          <button class="reset" id="zreset" type="button" aria-label="Reset map view">Fit</button>
+        </div>
+
+        <!-- hint -->
+        <div class="overlay maphint" id="maphint">Drag to pan &middot; scroll to zoom &middot; tap a station</div>
+
+        <!-- station popup (single, repositioned) -->
+        <div class="overlay popup" id="popup" role="dialog" aria-label="Station details">
+          <button class="pclose" id="pclose" type="button" aria-label="Close">&times;</button>
+          <div class="ph"><span class="pcode" id="pCode"></span><span class="pyr" id="pYr"></span></div>
+          <h3 id="pTitle"></h3>
+          <div class="prole" id="pRole"></div>
+          <div class="pout" id="pOut"></div>
+          <p class="pd" id="pDesc"></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section id="disciplines">
+      <div class="shead">
+        <div><div class="idx">01 / Disciplines</div><h2 class="reveal">What I do</h2></div>
+        <div class="meta reveal">Four disciplines<br/>one operator</div>
+      </div>
+      <div class="keys">
+        {pillars.map(p => (
+          <div class="key reveal">
+            <div class="kh"><span class="ksym" aria-hidden="true"></span><span class="ki">{p.i}</span></div>
+            <h3>{p.t}</h3>
+            <p>{p.d}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="recognition">
+      <div class="shead">
+        <div><div class="idx">02 / Recognition</div><h2 class="reveal">Recognition &amp; brands</h2></div>
+        <div class="meta reveal">Honours<br/>on the route</div>
+      </div>
+      <div class="hon-grid">
+        <div class="stamps reveal">
+          {recognition.map(a => (
+            <div class="stamp"><span class="pin" aria-hidden="true"></span><div><b>{a.t}</b><span>{a.m}</span></div></div>
+          ))}
+        </div>
+        <div class="brands reveal">
+          <div class="bl">Trusted by teams at</div>
+          <div class="bgrid">{brands.map(b => <span>{b}</span>)}</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="shead">
+        <div><div class="idx">03 / Surveyor</div><h2 class="reveal">About the maker</h2></div>
+        <div class="meta reveal">Mumbai, India</div>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" loading="lazy" decoding="async" />
+          <span class="tagpin">You are here</span>
+        </div>
+        <div>
+          <p class="about-lead reveal">I treat my own career like a product - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+          <div class="facts">
+            <div class="fact reveal"><div class="k">Based</div><div class="v">Mumbai, India</div></div>
+            <div class="fact reveal"><div class="k">Tenure</div><div class="v">7+ years marketing &middot; 4+ in B2B SaaS</div></div>
+            <div class="fact reveal"><div class="k">Education</div><div class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</div></div>
+            <div class="fact reveal"><div class="k">Practice</div><div class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="cl reveal">Let's build something that compounds</div>
+      <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello <span class="ar">&#8599;</span></a></div>
+      <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <span>Cartograph &middot; Concept 27</span>
+      <span>Swapnil Biswas &copy; 2026</span>
+      <span><a href="/redesign/">View all concepts</a></span>
+    </div>
+  </footer>
+
+  <!-- station data for the script (kept in DOM to avoid templating into JS) -->
+  <script type="application/json" id="stationData" set:html={JSON.stringify(stations)}></script>
+
+<script>
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- reveals ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---------- the map ---------- */
+  (function cartograph(){
+    const stage  = document.getElementById('stage');
+    const svg    = document.getElementById('map');
+    const layer  = document.getElementById('mapLayer');
+    const gGrid  = document.getElementById('gGrid');
+    const gCont  = document.getElementById('gContour');
+    const gNodes = document.getElementById('gNodes');
+    const routeDraw = document.getElementById('routeDraw');
+    const popup  = document.getElementById('popup');
+    if (!stage || !svg || !layer) return;
+
+    const VB = { w: 1320, h: 760 };           // svg user space
+    const stations = JSON.parse(document.getElementById('stationData').textContent);
+
+    /* ----- build grid + contour lines (decorative cartography) ----- */
+    const NS = 'http://www.w3.org/2000/svg';
+    function line(x1,y1,x2,y2,cls){ const l=document.createElementNS(NS,'line'); l.setAttribute('x1',x1);l.setAttribute('y1',y1);l.setAttribute('x2',x2);l.setAttribute('y2',y2);l.setAttribute('class',cls);return l; }
+    // longitude (vertical) every 120, latitude (horizontal) every 95, extend beyond viewbox for pan room
+    for (let x = -240; x <= VB.w + 240; x += 120){
+      const major = (x % 360 === 0);
+      gGrid.appendChild(line(x, -240, x, VB.h + 240, 'gridline' + (major ? ' major' : '')));
+    }
+    for (let y = -240; y <= VB.h + 240; y += 95){
+      const major = (y % 285 === 0);
+      gGrid.appendChild(line(-240, y, VB.w + 240, y, 'gridline' + (major ? ' major' : '')));
+    }
+    // a couple of soft contour rings to read as terrain
+    function contour(cx,cy,r){ const c=document.createElementNS(NS,'circle'); c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',r);c.setAttribute('class','contour');return c; }
+    [60,130,210,300].forEach(r => gCont.appendChild(contour(250, 250, r)));
+    [50,120,200].forEach(r => gCont.appendChild(contour(1060, 560, r)));
+
+    /* ----- build station nodes ----- */
+    // label placement: alternate above/below to avoid the route line
+    const nodeEls = {};
+    stations.forEach((s, i) => {
+      const g = document.createElementNS(NS,'g');
+      g.setAttribute('class', 'node' + (s.cur ? ' cur' : ''));
+      g.setAttribute('data-id', s.id);
+      g.setAttribute('tabindex', '0');
+      g.setAttribute('role', 'button');
+      g.setAttribute('aria-label', s.t + ', ' + s.role + ', ' + s.y);
+      const above = (i % 2 === 0);
+      const labelY = above ? s.y2 - 30 : s.y2 + 40;
+      const codeY  = above ? s.y2 - 48 : s.y2 + 22;
+
+      // measure-free label background: estimate width from text length
+      const tw = Math.max(s.t.length * 9 + 22, 70);
+      const lblX = s.x - tw/2;
+
+      g.innerHTML =
+        `<circle class="halo" cx="${s.x}" cy="${s.y2}" r="26"></circle>` +
+        (s.cur ? `<circle class="pulse" cx="${s.x}" cy="${s.y2}" r="9"></circle>` : '') +
+        `<circle class="ring" cx="${s.x}" cy="${s.y2}" r="9"></circle>` +
+        `<circle class="dot" cx="${s.x}" cy="${s.y2}" r="3.5"></circle>` +
+        `<text class="code" x="${s.x}" y="${codeY}" text-anchor="middle">${s.code} &middot; ${s.y.replace(' - ','-')}</text>` +
+        `<rect class="lblbg" x="${lblX}" y="${labelY - 15}" width="${tw}" height="22" rx="6"></rect>` +
+        `<text class="lbl" x="${s.x}" y="${labelY}" text-anchor="middle">${s.t}</text>`;
+      gNodes.appendChild(g);
+      nodeEls[s.id] = g;
+
+      const open = () => selectStation(s.id);
+      g.addEventListener('click', (e) => { e.stopPropagation(); open(); });
+      g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(); } });
+    });
+    // re-append route on top of grid but BELOW nodes already handled by DOM order (nodes are last child)
+
+    /* ----- route draw animation ----- */
+    (function drawRoute(){
+      let len = 0;
+      try { len = routeDraw.getTotalLength(); } catch(e){ len = 2600; }
+      if (RM || !len){ routeDraw.style.strokeDasharray = 'none'; routeDraw.style.strokeDashoffset = '0'; return; }
+      routeDraw.style.strokeDasharray = len;
+      routeDraw.style.strokeDashoffset = len;
+      const dur = 2200; let t0 = 0; let started = false;
+      function step(now){
+        if (!t0) t0 = now;
+        const p = Math.min(1, (now - t0) / dur);
+        const eased = 1 - Math.pow(1 - p, 2.2);
+        routeDraw.style.strokeDashoffset = String(len * (1 - eased));
+        if (p < 1) requestAnimationFrame(step);
+        else routeDraw.style.strokeDashoffset = '0'; // guarantee fully drawn
+      }
+      // start once the stage is in view (or immediately if already visible)
+      const startIO = new IntersectionObserver((ents) => {
+        ents.forEach(en => { if (en.isIntersecting && !started){ started = true; requestAnimationFrame(step); startIO.disconnect(); } });
+      }, { threshold: 0.25 });
+      startIO.observe(stage);
+      // hard fallback: if observer never fires, finish the draw after 4s
+      setTimeout(() => { if (!started){ started = true; routeDraw.style.strokeDashoffset = '0'; } }, 4000);
+    })();
+
+    /* ===================== PAN / ZOOM ===================== */
+    // view = how svg user-space maps into the layer transform.
+    // We translate+scale #mapLayer. Coordinates from pointer are converted to svg space.
+    const MIN = 0.3, MAX = 3.2;
+    let view = { x: 0, y: 0, k: 1 };          // current
+    let target = { x: 0, y: 0, k: 1 };        // eased target
+    let raf = 0;
+
+    function clampPan(v){
+      // Keep the populated band reachable. Work entirely in USER space (v.x/v.y are user units).
+      // Viewport size in user units:
+      const vpW = svg.clientWidth / pxPerUser || VB.w;
+      const vpH = svg.clientHeight / pxPerUser || VB.h;
+      // Generous slack so the clamp never fights a valid fit (which may legitimately shift the
+      // band well to the right - e.g. to clear the desktop legend, or because slice-cropping on a
+      // narrow viewport pushes content sideways). It still stops a drag from sailing into the void.
+      const mX = 900; // horizontal user-space slack around the content
+      const m  = 360; // vertical user-space slack
+      // screen_x = v.x + v.k*content_x. Keep content x in [-mX, VB.w+mX] reachable within [0, vpW].
+      const maxX = mX * v.k;
+      const minX = vpW - (VB.w + mX) * v.k;
+      const maxY = m * v.k;
+      const minY = vpH - (VB.h + m) * v.k;
+      v.x = Math.min(maxX, Math.max(minX, v.x));
+      v.y = Math.min(maxY, Math.max(minY, v.y));
+      return v;
+    }
+    // Like clampPan but trusts fitView's deliberate horizontal placement (which may legitimately
+    // sit the band right of the legend): only the vertical axis is bounded here.
+    function clampPanFit(v){
+      const vpH = svg.clientHeight / pxPerUser || VB.h;
+      const m = 360;
+      const maxY = m * v.k;
+      const minY = vpH - (VB.h + m) * v.k;
+      v.y = Math.min(maxY, Math.max(minY, v.y));
+      return v;
+    }
+    // svg client size in user units (because preserveAspectRatio slice): we need pixel<->user scale
+    let pxPerUser = 1;
+    function recalcScale(){
+      // slice => scale = max(clientW/vbW, clientH/vbH); user units to px
+      pxPerUser = Math.max(svg.clientWidth / VB.w, svg.clientHeight / VB.h);
+    }
+    // pointer (clientX/Y) -> viewBox-user coords (before #mapLayer transform), accounting for slice centering
+    function clientToVbUser(clientX, clientY){
+      const rect = svg.getBoundingClientRect();
+      const offX = (rect.width  - VB.w * pxPerUser) / 2;
+      const offY = (rect.height - VB.h * pxPerUser) / 2;
+      return {
+        ux: (clientX - rect.left - offX) / pxPerUser,
+        uy: (clientY - rect.top  - offY) / pxPerUser
+      };
+    }
+
+    function apply(){
+      layer.setAttribute('transform', `translate(${view.x} ${view.y}) scale(${view.k})`);
+    }
+    function animate(){
+      const ease = 0.18;
+      view.x += (target.x - view.x) * ease;
+      view.y += (target.y - view.y) * ease;
+      view.k += (target.k - view.k) * ease;
+      apply();
+      repositionPopup();
+      if (Math.abs(target.x-view.x) > .3 || Math.abs(target.y-view.y) > .3 || Math.abs(target.k-view.k) > .002){
+        raf = requestAnimationFrame(animate);
+      } else { view = {...target}; apply(); repositionPopup(); raf = 0; }
+    }
+    function kick(){ if (!raf) raf = requestAnimationFrame(animate); }
+
+    function zoomAt(clientX, clientY, factor){
+      recalcScale();
+      const { ux, uy } = clientToVbUser(clientX, clientY);   // viewBox-user point under cursor
+      // content coord currently under the cursor: content = (ux - target.x) / target.k
+      const cx = (ux - target.x) / target.k;
+      const cy = (uy - target.y) / target.k;
+      const nk = Math.min(MAX, Math.max(MIN, target.k * factor));
+      // solve so the same content point stays under the cursor at the new scale
+      target.k = nk;
+      target.x = ux - cx * nk;
+      target.y = uy - cy * nk;
+      clampPan(target);
+      kick(); hideHint();
+    }
+
+    /* ----- wheel zoom (throttled by rAF via eased target) ----- */
+    stage.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const factor = e.deltaY < 0 ? 1.12 : 1/1.12;
+      zoomAt(e.clientX, e.clientY, factor);
+    }, { passive: false });
+
+    /* ----- drag to pan (pointer) ----- */
+    let dragging = false, moved = false, lastX = 0, lastY = 0, pid = null;
+    stage.addEventListener('pointerdown', (e) => {
+      // never start a pan from an interactive overlay (legend, controls, popup, compass, scale bar)
+      if (e.target.closest('.controls') || e.target.closest('.legend') || e.target.closest('.popup') ||
+          e.target.closest('.compass') || e.target.closest('.scalebar')) return;
+      dragging = true; moved = false; lastX = e.clientX; lastY = e.clientY; pid = e.pointerId;
+      stage.classList.add('grabbing');
+      try { stage.setPointerCapture(pid); } catch(_){}
+    });
+    stage.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - lastX, dy = e.clientY - lastY;
+      if (Math.abs(dx) + Math.abs(dy) > 3) { moved = true; hideHint(); }
+      lastX = e.clientX; lastY = e.clientY;
+      target.x += dx / pxPerUser;
+      target.y += dy / pxPerUser;
+      clampPan(target);
+      // when actively dragging, snap view to target for 1:1 feel
+      view.x += dx / pxPerUser; view.y += dy / pxPerUser; clampPan(view);
+      apply(); repositionPopup();
+    });
+    function endDrag(e){
+      if (!dragging) return;
+      dragging = false; stage.classList.remove('grabbing');
+      try { stage.releasePointerCapture(pid); } catch(_){}
+    }
+    stage.addEventListener('pointerup', endDrag);
+    stage.addEventListener('pointercancel', endDrag);
+    // clicking empty map closes popup (only if it wasn't a drag)
+    svg.addEventListener('click', (e) => {
+      if (moved) return;
+      if (!e.target.closest('.node')) closePopup();
+    });
+
+    /* ----- pinch zoom (two pointers) ----- */
+    const pts = new Map();
+    let pinchDist = 0;
+    stage.addEventListener('pointerdown', (e) => { pts.set(e.pointerId, e); });
+    stage.addEventListener('pointermove', (e) => {
+      if (!pts.has(e.pointerId)) return;
+      pts.set(e.pointerId, e);
+      if (pts.size === 2){
+        dragging = false; stage.classList.remove('grabbing');
+        const [a,b] = [...pts.values()];
+        const d = Math.hypot(a.clientX-b.clientX, a.clientY-b.clientY);
+        const cx = (a.clientX+b.clientX)/2, cy = (a.clientY+b.clientY)/2;
+        if (pinchDist){ zoomAt(cx, cy, d / pinchDist); }
+        pinchDist = d;
+      }
+    });
+    function dropPt(e){ pts.delete(e.pointerId); if (pts.size < 2) pinchDist = 0; }
+    stage.addEventListener('pointerup', dropPt);
+    stage.addEventListener('pointercancel', dropPt);
+
+    /* ----- control buttons ----- */
+    function centerClient(){ const r = svg.getBoundingClientRect(); return { x: r.left + r.width/2, y: r.top + r.height/2 }; }
+    document.getElementById('zin').addEventListener('click', () => { const c=centerClient(); zoomAt(c.x,c.y,1.3); });
+    document.getElementById('zout').addEventListener('click', () => { const c=centerClient(); zoomAt(c.x,c.y,1/1.3); });
+    document.getElementById('zreset').addEventListener('click', () => { fitView(); closePopup(); });
+
+    /* ----- fit the route comfortably in view on load / reset ----- */
+    // Frame the WHOLE populated band (all six stations + their labels) inside the part of the
+    // stage that is actually visible - i.e. to the RIGHT of the desktop legend overlay, and
+    // shrunk enough that the full chronological route reads on narrow / mobile viewports too.
+    function fitView(){
+      recalcScale();
+      const rect = svg.getBoundingClientRect();
+      const offX = (rect.width  - VB.w * pxPerUser) / 2;
+      const offY = (rect.height - VB.h * pxPerUser) / 2;
+      // populated band in user space (nodes + halos + labels): x 90..1130, y 200..640
+      const bx0 = 90, by0 = 200, bx1 = 1130, by1 = 640;
+      const bw = bx1 - bx0, bh = by1 - by0;
+      const bcx = (bx0 + bx1) / 2, bcy = (by0 + by1) / 2;
+
+      // Available PIXEL rectangle inside the stage. On desktop the legend overlay covers the
+      // left third, so the route must live to the right of it; reserve that width dynamically.
+      const gap = 24;
+      const leg = document.querySelector('.overlay.legend');
+      let availL = 18, availR = rect.width - 18, availT = 18, availB = rect.height - 18;
+      if (leg && getComputedStyle(leg).display !== 'none'){
+        const lb = leg.getBoundingClientRect();
+        availL = (lb.right - rect.left) + gap;   // start the route clear of the legend
+        availT = 18; availB = rect.height - 64;  // leave room for the bottom map chrome
+      }
+      const availPxW = Math.max(120, availR - availL);
+      const availPxH = Math.max(120, availB - availT);
+      const availCyPx = availT + availPxH / 2;
+
+      // scale so the band's pixel footprint (bw*k*pxPerUser) fits the available pixel box
+      let k = Math.min(availPxW / (bw * pxPerUser), availPxH / (bh * pxPerUser), MAX);
+      k = Math.max(MIN, k);
+
+      // Horizontal placement. When the legend overlay is present we LEFT-align the band to the
+      // available area so the first station (Samsung) always sits clear of the legend - even at
+      // narrow widths where the band, at MIN scale, is wider than the gap to the right of it.
+      // Otherwise centre it. (px = offX + (target.x + k*coord) * pxPerUser  ->  solve for target.x)
+      const bandPxW = bw * k * pxPerUser;
+      const targetLeftPx = (leg && getComputedStyle(leg).display !== 'none' && bandPxW > availPxW)
+        ? availL                          // band too wide: pin its left edge just past the legend
+        : availL + (availPxW - bandPxW) / 2; // otherwise centre within the available area
+      target.k = k;
+      target.x = (targetLeftPx - offX) / pxPerUser - k * bx0;
+      target.y = (availCyPx - offY) / pxPerUser - k * bcy;
+      clampPanFit(target);
+      kick();
+    }
+
+    /* ===================== POPUP ===================== */
+    let activeId = null;
+    const stopBtns = document.querySelectorAll('.stop');
+
+    function fillPopup(s){
+      popup.classList.toggle('cur', !!s.cur);
+      document.getElementById('pCode').textContent = s.code + ' · ' + (s.cur ? 'Current role' : 'Station');
+      document.getElementById('pYr').textContent = s.y;
+      document.getElementById('pTitle').textContent = s.t;
+      document.getElementById('pRole').textContent = s.role;
+      document.getElementById('pOut').textContent = s.out;
+      document.getElementById('pDesc').textContent = s.d;
+    }
+    function selectStation(id){
+      const s = stations.find(x => x.id === id);
+      if (!s) return;
+      activeId = id;
+      fillPopup(s);
+      // mark active states
+      Object.values(nodeEls).forEach(n => n.classList.remove('active'));
+      nodeEls[id]?.classList.add('active');
+      stopBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-stop') === id));
+      // ensure the station is comfortably in frame: pan toward it if near edge
+      ensureVisible(s);
+      popup.classList.add('open');
+      repositionPopup();
+      hideHint();
+    }
+    function closePopup(){
+      activeId = null;
+      popup.classList.remove('open');
+      Object.values(nodeEls).forEach(n => n.classList.remove('active'));
+      stopBtns.forEach(b => b.classList.remove('active'));
+    }
+    document.getElementById('pclose').addEventListener('click', closePopup);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopup(); });
+
+    // position the popup near the station's CURRENT screen position
+    function stationScreen(s){
+      const rect = svg.getBoundingClientRect();
+      recalcScale();
+      const offX = (rect.width - VB.w * pxPerUser) / 2;
+      const offY = (rect.height - VB.h * pxPerUser) / 2;
+      // user coord after layer transform:
+      const ux = view.x + view.k * s.x;
+      const uy = view.y + view.k * s.y2;
+      // to px within svg viewport:
+      const px = offX + ux * pxPerUser;
+      const py = offY + uy * pxPerUser;
+      return { px, py, rect };
+    }
+    function repositionPopup(){
+      if (!activeId) return;
+      const s = stations.find(x => x.id === activeId);
+      if (!s) return;
+      const { px, py, rect } = stationScreen(s);
+      const pw = popup.offsetWidth || 280, ph = popup.offsetHeight || 200;
+      const gap = 22; // node radius + space
+      // default: popup above the node, centered
+      let left = px - pw/2;
+      let top = py - ph - gap;
+      let flip = false;
+      if (top < 8){ top = py + gap + 14; flip = true; } // not enough room above -> below
+      // clamp horizontally within stage
+      left = Math.min(rect.width - pw - 10, Math.max(10, left));
+      // tip x relative to popup
+      const tipx = Math.min(pw - 24, Math.max(16, px - left - 6));
+      popup.style.left = left + 'px';
+      popup.style.top = top + 'px';
+      popup.style.setProperty('--tipx', tipx + 'px');
+      popup.classList.toggle('flip', flip);
+    }
+
+    // pan so a selected station isn't jammed against an edge / behind the legend
+    function ensureVisible(s){
+      const rect = svg.getBoundingClientRect();
+      recalcScale();
+      const offX = (rect.width - VB.w * pxPerUser) / 2;
+      const offY = (rect.height - VB.h * pxPerUser) / 2;
+      const px = offX + (target.x + target.k * s.x) * pxPerUser;
+      const py = offY + (target.y + target.k * s.y2) * pxPerUser;
+      const legendW = (window.innerWidth > 820) ? 410 : 20;
+      const padL = legendW, padR = 40, padT = 120, padB = 80;
+      let dpx = 0, dpy = 0;
+      if (px < padL) dpx = padL - px;
+      else if (px > rect.width - padR) dpx = (rect.width - padR) - px;
+      if (py < padT) dpy = padT - py;
+      else if (py > rect.height - padB) dpy = (rect.height - padB) - py;
+      if (dpx || dpy){
+        target.x += dpx / pxPerUser;
+        target.y += dpy / pxPerUser;
+        clampPan(target);
+        kick();
+      }
+    }
+
+    stopBtns.forEach(b => b.addEventListener('click', () => selectStation(b.getAttribute('data-stop'))));
+
+    /* ----- hint dismiss ----- */
+    let hintGone = false;
+    function hideHint(){ if (hintGone) return; hintGone = true; document.getElementById('maphint')?.classList.add('gone'); }
+    setTimeout(hideHint, 6000);
+
+    /* ----- init + resize ----- */
+    function init(){ recalcScale(); fitView(); view = {...target}; apply(); }
+    init();
+    let rt;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { recalcScale(); fitView(); repositionPopup(); }, 160); });
+  })();
+</script>
+</body>
+</html>

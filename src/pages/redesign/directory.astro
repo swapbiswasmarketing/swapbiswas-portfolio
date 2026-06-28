@@ -1,0 +1,819 @@
+---
+// REDESIGN PROTOTYPE - "Directory" - an office-building LOBBY + ELEVATOR.
+// Original concept (NOT a reskin of Halftone): own layout, palette, fonts, mechanic.
+//  - The page is a BUILDING. Each section is a FLOOR. The hero is the GROUND-FLOOR LOBBY
+//    with a brushed-steel DIRECTORY BOARD listing every floor + tenant.
+//  - Navigation is an ELEVATOR: a fixed brushed-metal panel with floor buttons and a
+//    digital floor-counter display. Picking a floor (or scrolling / arrow keys) "rides"
+//    you there - the counter ticks through the intermediate numbers, a brief between-floors
+//    motion plays, then the floor content arrives on a plaque.
+//  - prefers-reduced-motion OR no-JS: floors are plain stacked, scrollable sections; the
+//    elevator becomes anchor links. Content is NEVER trapped behind the elevator.
+// Palette: architectural - cool concrete + steel, brushed-aluminium panel, one BRASS accent.
+// Fonts: a signage grotesk (Archivo) + a mono for the counter (JetBrains Mono).
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+
+const floors = [
+  { n: 5, id: 'work',    tenant: 'Selected Work',       sub: 'Portfolio - 2019 to 2026' },
+  { n: 4, id: 'what',    tenant: 'What I Do',           sub: 'Four disciplines, one operator' },
+  { n: 3, id: 'honours', tenant: 'Recognition',         sub: 'Awards & brands' },
+  { n: 2, id: 'about',   tenant: 'About the Maker',     sub: 'Mumbai, India' },
+  { n: 1, id: 'contact', tenant: 'Contact',             sub: 'Let us build something' },
+  { n: 0, id: 'lobby',   tenant: 'Lobby',               sub: 'Ground floor - directory & welcome' },
+];
+
+const buildStats = [
+  { n: 20, plus: '+', l: 'AI agents & internal tools shipped' },
+  { n: 15, plus: '+', l: 'Marketers mentored & levelled up' },
+  { n: 76, plus: '',  l: 'Long-form articles published' },
+];
+
+const metrics = [
+  { v: '657K+',  l: 'Leads generated at LambdaTest' },
+  { v: '18.2M+', l: 'Organic traffic driven' },
+  { v: '10x',    l: 'Organic growth engine built' },
+];
+
+const pillars = [
+  { i: 'A', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: 'B', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: 'C', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: 'D', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+
+const work = [
+  { i: '01', t: 'LambdaTest', y: '2021 - 2025', role: 'Product & digital marketing', r: '657K+ leads · 18.2M+ organic', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', feat: true },
+  { i: '02', t: 'TestMu AI', y: '2026', role: 'Rebrand lead', r: 'Full company rebrand', d: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', t: 'Samsung', y: '2019', role: 'via Sociowash', r: 'Galaxy M-series launch', d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { i: '04', t: 'Medilife Superspeciality', y: '0 to 1', role: 'Marketing & web', r: 'Website · GTM · social', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', t: 'Lido Learning', y: '2021', role: 'Growth / CRM', r: 'CRM & lead operations', d: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { i: '06', t: 'Appknox', y: 'Freelance', role: 'Content', r: 'Security content', d: 'Freelance content writer for the mobile app security company.' },
+];
+
+const recognition = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+
+const facts = [
+  { k: 'Based', v: 'Mumbai, India' },
+  { k: 'Tenure', v: '7+ years marketing · 4+ in B2B SaaS' },
+  { k: 'Education', v: 'Postgrad in Digital Marketing & Growth Strategy, IIM Visakhapatnam' },
+  { k: 'Practice', v: 'PMM & growth strategist who codes AI agents, ships websites and runs technical SEO' },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="directory">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* architectural - concrete / steel + brass accent */
+    --bg:#1a1d21;            /* deep concrete */
+    --bg2:#21252b;           /* lighter slab */
+    --panel:#2a2f36;         /* steel panel */
+    --steel:#3a4048;         /* brushed steel edge */
+    --ink:#eef1f4;           /* signage white */
+    --con:#c4cad2;           /* concrete text */
+    --dim:#9aa2ad;           /* AA on --bg: ~7:1 */
+    --faint:#8e96a1;         /* tertiary labels - AA >=4.5:1 on panel/bg2 */
+    --brass:#c79a4b;         /* brass accent */
+    --brass-lo:#a87f38;
+    --line:rgba(238,241,244,.12);
+    --hair:rgba(238,241,244,.22);
+    --etch:rgba(0,0,0,.35);
+    --grot:"Archivo",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+    --pad:clamp(1.1rem,4vw,4rem);
+    --panelW:clamp(72px,7vw,96px);
+    --brush:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(199,154,75,.06), transparent 60%),
+      linear-gradient(180deg,var(--bg),var(--bg2));
+    background-attachment:fixed;
+    color:var(--ink);font-family:var(--grot);min-height:100vh;-webkit-font-smoothing:antialiased;
+    line-height:1.6;letter-spacing:.005em;position:relative;
+  }
+  /* faint floor-line grid, like polished concrete seams */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:linear-gradient(transparent 95%,rgba(238,241,244,.04) 95%);background-size:100% 64px}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--brass);color:#1a1d21}
+  img{max-width:100%}
+
+  .mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+
+  /* ============ LAYOUT SHELL ============ */
+  /* main stage is inset from the fixed elevator panel on the right (desktop) */
+  .shell{position:relative;z-index:2;padding-right:var(--panelW)}
+  .stage{width:min(1180px,100%);margin:0 auto;padding:0 var(--pad)}
+
+  /* ============ TOP SIGNAGE BAR ============ */
+  .topbar{position:fixed;top:0;left:0;right:var(--panelW);z-index:35;
+    background:linear-gradient(180deg,rgba(26,29,33,.94),rgba(26,29,33,.55) 75%,transparent);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .topbar-in{width:min(1180px,100%);margin:0 auto;padding:.8rem var(--pad);
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line)}
+  .nameplate{display:flex;align-items:center;gap:.7rem;font-family:var(--grot);font-weight:800;letter-spacing:.04em;font-size:.95rem}
+  .nameplate .mk{display:inline-grid;place-items:center;width:24px;height:24px;border:1.5px solid var(--brass);color:var(--brass);
+    font-family:var(--mono);font-weight:700;font-size:.72rem;border-radius:3px;flex:none;background:rgba(199,154,75,.08)}
+  .topbar .addr{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  @media(max-width:760px){.topbar .addr{display:none}}
+
+  /* ============ FLOOR STAGE ============ */
+  /* Each floor is a real, scrollable section. JS adds an "active" treatment but never hides. */
+  .floor{min-height:100vh;padding:7.5rem 0 4.5rem;display:flex;flex-direction:column;justify-content:center;
+    position:relative;scroll-margin-top:0}
+  .floor-inner{width:100%}
+
+  /* floor plaque / header */
+  .plaque{display:flex;align-items:flex-end;justify-content:space-between;gap:1.2rem;
+    border-bottom:2px solid var(--steel);padding-bottom:1rem;margin-bottom:clamp(1.6rem,4vh,2.8rem)}
+  .plaque .ptag{display:flex;align-items:center;gap:.9rem}
+  .plaque .fnum{font-family:var(--mono);font-weight:700;font-size:clamp(1.5rem,3.6vw,2.4rem);color:var(--brass);
+    border:1.5px solid var(--brass-lo);border-radius:6px;padding:.18em .5em;line-height:1;background:rgba(199,154,75,.07);letter-spacing:.02em}
+  .plaque .ptxt .pk{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:.35rem}
+  .plaque h2{font-family:var(--grot);font-weight:800;text-transform:uppercase;font-size:clamp(1.5rem,4vw,2.7rem);line-height:1;letter-spacing:.005em}
+  .plaque .pmeta{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--dim);text-transform:uppercase;text-align:right;line-height:1.7;flex:none}
+  @media(max-width:560px){.plaque{flex-wrap:wrap}.plaque .pmeta{text-align:left;width:100%}}
+
+  /* ============ LOBBY (ground floor / hero) ============ */
+  .lobby-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--brass);margin-bottom:1.4rem}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--brass)}
+  .lobby h1{font-family:var(--grot);font-weight:900;text-transform:uppercase;line-height:.92;letter-spacing:-.01em;
+    font-size:clamp(2.8rem,9vw,6.4rem);color:var(--ink)}
+  .lobby h1 .l2{display:block}
+  /* brass underline reveal on "ships." - no text-shadow/filter on any clipped text anywhere */
+  .lobby h1 .ships{position:relative;display:inline-block;color:var(--brass)}
+  .lobby h1 .ships::after{content:"";position:absolute;left:0;right:.02em;bottom:.04em;height:.06em;background:var(--brass);
+    transform-origin:left;transform:scaleX(0);transition:transform .9s cubic-bezier(.2,.8,.2,1) .35s}
+  body.lit .lobby h1 .ships::after{transform:scaleX(1)}
+  .lobby .sub{margin-top:clamp(1.3rem,2.4vw,1.9rem);max-width:48ch;color:var(--con);font-size:clamp(1rem,1.2vw,1.12rem);line-height:1.65}
+  .lobby .sub b{color:var(--ink);font-weight:700}
+  .lobby .cta{margin-top:1.9rem;display:flex;gap:.8rem;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.3rem;
+    border:1px solid var(--hair);display:inline-flex;gap:.55rem;align-items:center;border-radius:4px;
+    transition:background .3s,color .3s,border-color .3s,transform .3s}
+  .btn .ar{transition:transform .3s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .btn.primary{background:var(--brass);color:#1a1d21;border-color:var(--brass)}
+  .btn.primary:hover{transform:translateY(-2px);background:#d6ab63;border-color:#d6ab63}
+  .btn.ghost:hover{border-color:var(--brass);color:var(--ink);background:rgba(199,154,75,.08)}
+
+  /* DIRECTORY BOARD - brushed-steel lobby sign listing every floor + tenant */
+  .board{background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid var(--steel);border-radius:10px;
+    box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 20px 50px -28px rgba(0,0,0,.8);overflow:hidden;position:relative}
+  .board::before{content:"";position:absolute;inset:0;background:var(--brush);opacity:.5;pointer-events:none}
+  .board-cap{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.85rem 1.1rem;
+    border-bottom:1px solid var(--steel);background:linear-gradient(180deg,rgba(255,255,255,.04),transparent)}
+  .board-cap .bt{font-family:var(--grot);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.82rem;color:var(--ink)}
+  .board-cap .led{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--dim)}
+  .board-cap .led::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--brass);box-shadow:0 0 8px var(--brass)}
+  .board-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1rem;width:100%;
+    padding:.78rem 1.1rem;border-bottom:1px solid rgba(238,241,244,.07);text-align:left;background:none;border-left:0;border-right:0;border-top:0;
+    color:inherit;cursor:pointer;font:inherit;position:relative;transition:background .25s}
+  .board-row:last-child{border-bottom:0}
+  .board-row:hover,.board-row:focus-visible{background:rgba(199,154,75,.09);outline:none}
+  .board-row .bf{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--brass);min-width:2.4ch;text-align:right}
+  .board-row .bn{font-family:var(--grot);font-weight:700;font-size:.98rem;letter-spacing:.01em;color:var(--ink)}
+  .board-row .bn small{display:block;font-family:var(--mono);font-weight:400;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-top:.15rem}
+  .board-row .barr{font-family:var(--mono);color:var(--faint);transition:color .25s,transform .25s}
+  .board-row:hover .barr,.board-row:focus-visible .barr{color:var(--brass);transform:translateX(3px)}
+  .board-row[aria-current="true"]{background:rgba(199,154,75,.07)}
+  .board-row[aria-current="true"]::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--brass)}
+
+  @media(max-width:900px){
+    .lobby-grid{grid-template-columns:1fr;gap:2rem}
+    .board{order:2}
+  }
+
+  /* metric strip in lobby (LambdaTest hard numbers) */
+  .lobby-metrics{margin-top:clamp(2.2rem,5vh,3.4rem);display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--steel);border:1px solid var(--steel);border-radius:8px;overflow:hidden}
+  .lm{background:var(--bg2);padding:1.1rem 1.2rem}
+  .lm .v{font-family:var(--grot);font-weight:900;font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1;color:var(--brass);letter-spacing:-.01em}
+  .lm .l{font-family:var(--mono);font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);margin-top:.5rem;line-height:1.5}
+  @media(max-width:620px){.lobby-metrics{grid-template-columns:1fr}}
+
+  /* ============ FLOOR 5 - WORK ============ */
+  .feat-card{background:linear-gradient(150deg,var(--panel),var(--bg2));border:1px solid var(--steel);border-radius:10px;
+    padding:clamp(1.4rem,3vw,2.2rem);display:flex;gap:clamp(1.6rem,4vw,3rem);margin-bottom:1px;position:relative;overflow:hidden}
+  .feat-card::before{content:"";position:absolute;inset:0;background:var(--brush);opacity:.4;pointer-events:none}
+  .feat-card .fl{flex:1.2;display:flex;flex-direction:column;gap:.7rem;position:relative}
+  .feat-card .fr-side{flex:1;border-left:1px solid var(--steel);padding-left:clamp(1.4rem,3vw,2.4rem);
+    display:flex;flex-direction:column;justify-content:center;gap:.4rem;position:relative}
+  .feat-card .fhead{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);display:flex;justify-content:space-between;gap:1rem}
+  .feat-card .ft{font-family:var(--grot);font-weight:800;text-transform:uppercase;font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:.96;letter-spacing:.005em}
+  .feat-card .frole{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+  .feat-card .fd{color:var(--con);font-size:.96rem;line-height:1.55}
+  .feat-card .bignum{font-family:var(--grot);font-weight:900;font-size:clamp(2rem,4.6vw,3.4rem);line-height:.9;color:var(--brass);letter-spacing:-.01em}
+  .feat-card .bigl{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:.9rem}
+  @media(max-width:760px){.feat-card{flex-direction:column;gap:1.2rem}.feat-card .fr-side{border-left:0;border-top:1px solid var(--steel);padding-left:0;padding-top:1.2rem}}
+
+  .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--steel);
+    border:1px solid var(--steel);border-radius:10px;overflow:hidden;margin-top:1px}
+  .wcard{background:var(--bg2);padding:1.4rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.65rem;min-height:200px;transition:background .3s}
+  .wcard:hover{background:var(--panel)}
+  .wcard .whead{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .wcard .wt{font-family:var(--grot);font-weight:800;text-transform:uppercase;font-size:clamp(1.2rem,2.4vw,1.6rem);line-height:1;letter-spacing:.005em}
+  .wcard .wr{font-family:var(--mono);font-size:.74rem;color:var(--brass);letter-spacing:.01em}
+  .wcard .wd{color:var(--con);font-size:.88rem;line-height:1.5;margin-top:auto}
+
+  /* ============ FLOOR 4 - WHAT I DO + build stats ============ */
+  .pillars{display:grid;grid-template-columns:1fr;gap:1px;background:var(--steel);border:1px solid var(--steel);border-radius:10px;overflow:hidden}
+  .prow{display:grid;grid-template-columns:3rem 1.1fr 1.6fr;gap:1.4rem;align-items:center;padding:1.4rem clamp(1.1rem,2.4vw,1.8rem);
+    background:var(--bg2);transition:background .3s}
+  .prow:hover{background:var(--panel)}
+  .prow .pi{font-family:var(--mono);font-weight:700;color:var(--brass);font-size:1rem;border:1px solid var(--brass-lo);
+    border-radius:5px;width:2.3rem;height:2.3rem;display:grid;place-items:center;background:rgba(199,154,75,.07)}
+  .prow .pt{font-family:var(--grot);font-weight:800;text-transform:uppercase;font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:1.05;letter-spacing:.005em}
+  .prow .pd{color:var(--con);font-size:.94rem;line-height:1.5}
+  @media(max-width:640px){.prow{grid-template-columns:2.3rem 1fr;gap:.7rem 1rem}.prow .pd{grid-column:2}}
+
+  .buildstats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--steel);border:1px solid var(--steel);
+    border-radius:10px;overflow:hidden;margin-top:1.6rem}
+  .bs{background:var(--bg2);padding:1.4rem 1.4rem}
+  .bs .v{font-family:var(--grot);font-weight:900;font-size:clamp(2rem,5vw,3.2rem);line-height:.9;color:var(--ink);letter-spacing:-.01em}
+  .bs .v sup{color:var(--brass);font-size:.5em;vertical-align:super}
+  .bs .l{font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);margin-top:.7rem;line-height:1.5}
+  @media(max-width:640px){.buildstats{grid-template-columns:1fr}.bs{display:flex;align-items:center;gap:1.2rem}.bs .l{margin-top:0}}
+
+  /* ============ FLOOR 3 - RECOGNITION ============ */
+  .hon-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(1.8rem,4vw,3.4rem);align-items:start}
+  .stamps{display:flex;flex-direction:column;gap:1px;background:var(--steel);border:1px solid var(--steel);border-radius:10px;overflow:hidden}
+  .stamp{display:flex;align-items:center;gap:1.1rem;padding:1.2rem 1.4rem;background:var(--bg2);transition:background .3s}
+  .stamp:hover{background:var(--panel)}
+  .stamp .medal{width:30px;height:30px;border:1.5px solid var(--brass-lo);border-radius:50%;flex:none;display:grid;place-items:center;
+    color:var(--brass);font-family:var(--mono);font-weight:700;font-size:.72rem;background:rgba(199,154,75,.08)}
+  .stamp b{font-family:var(--grot);font-weight:800;text-transform:uppercase;font-size:1.1rem;letter-spacing:.01em;display:block;line-height:1.15}
+  .stamp span{font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
+  .brands .bl{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:1.1rem}
+  .brands .bgrid{display:flex;flex-wrap:wrap;gap:.6rem}
+  .brands .bgrid span{font-family:var(--mono);font-size:.76rem;border:1px solid var(--line);padding:.5rem .8rem;border-radius:4px;color:var(--con);transition:border-color .3s,color .3s}
+  .brands .bgrid span:hover{border-color:var(--brass-lo);color:var(--ink)}
+  @media(max-width:720px){.hon-grid{grid-template-columns:1fr}}
+
+  /* ============ FLOOR 2 - ABOUT ============ */
+  .about-grid{display:grid;grid-template-columns:260px 1fr;gap:clamp(1.8rem,4vw,3.4rem);align-items:start}
+  .about-photo{position:relative;aspect-ratio:5/6;border:1px solid var(--steel);border-radius:10px;overflow:hidden;background:var(--panel)}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(.35) contrast(1.04)}
+  .about-photo .ph-tag{position:absolute;left:0;bottom:0;right:0;padding:.6rem .8rem;font-family:var(--mono);font-size:.6rem;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:linear-gradient(transparent,rgba(26,29,33,.85))}
+  .about-lead{font-family:var(--grot);font-weight:800;text-transform:uppercase;font-size:clamp(1.3rem,2.8vw,2rem);line-height:1.1;letter-spacing:.005em;margin-bottom:1.8rem}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem 2rem}
+  .fact .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:.4rem}
+  .fact .v{color:var(--con);font-size:.94rem;line-height:1.45}
+  @media(max-width:680px){.about-grid{grid-template-columns:1fr}.about-photo{max-width:240px}.facts{grid-template-columns:1fr}}
+
+  /* ============ FLOOR 1 - CONTACT ============ */
+  .contact-wrap{text-align:left}
+  .contact-wrap .cl{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-bottom:1.2rem}
+  .contact-wrap .big{font-family:var(--grot);font-weight:900;text-transform:uppercase;font-size:clamp(2.6rem,10vw,7rem);line-height:.9;letter-spacing:-.01em}
+  .contact-wrap .big a{display:inline-flex;align-items:flex-start;gap:.12em;transition:color .3s}
+  .contact-wrap .big a:hover{color:var(--brass)}
+  .contact-wrap .big a .ar{font-size:.36em;margin-top:.2em}
+  .contact-wrap .em{margin-top:1.6rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--dim)}
+  .contact-wrap .em a{color:var(--ink);border-bottom:1px solid var(--brass-lo)}
+  .contact-wrap .em a:hover{color:var(--brass)}
+
+  /* ============ ELEVATOR PANEL (fixed, right) ============ */
+  .elevator{position:fixed;top:0;right:0;bottom:0;width:var(--panelW);z-index:50;
+    background:linear-gradient(100deg,var(--panel),var(--steel));border-left:1px solid #11141800;
+    box-shadow:-14px 0 40px -24px rgba(0,0,0,.85);display:flex;flex-direction:column;align-items:center;
+    padding:1rem .4rem;gap:.7rem}
+  .elevator::before{content:"";position:absolute;inset:0;background:var(--brush);opacity:.6;pointer-events:none}
+  .elevator::after{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--hair),transparent)}
+  /* digital floor-counter display */
+  .counter{position:relative;z-index:2;width:100%;max-width:64px;background:#0c0e10;border:1px solid #000;border-radius:6px;
+    padding:.5rem .2rem .55rem;text-align:center;box-shadow:0 1px 0 rgba(255,255,255,.06) inset}
+  .counter .ck{font-family:var(--mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:#5b6b54;margin-bottom:.2rem}
+  .counter .cdisp{display:flex;align-items:center;justify-content:center;gap:.12em;font-family:var(--mono);font-weight:700;
+    font-size:1.5rem;line-height:1;color:#7dffb0;text-shadow:0 0 10px rgba(125,255,176,.45)}
+  .counter .dir{font-family:var(--mono);font-size:.72rem;color:#5b6b54;transition:color .25s,transform .25s}
+  .counter .dir.up{color:#7dffb0}
+  .counter .dir.down{color:#7dffb0}
+  .counter.moving .cdisp{color:#fbd47a;text-shadow:0 0 10px rgba(251,212,122,.5)}
+
+  .elabel{position:relative;z-index:2;font-family:var(--mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .fbtns{position:relative;z-index:2;display:flex;flex-direction:column;gap:.5rem;align-items:center;width:100%}
+  .fbtn{width:40px;height:40px;border-radius:50%;border:1px solid var(--steel);background:linear-gradient(160deg,#33383f,#262b31);
+    color:var(--con);font-family:var(--mono);font-weight:700;font-size:.9rem;cursor:pointer;display:grid;place-items:center;
+    box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 3px 6px -3px rgba(0,0,0,.6);position:relative;
+    transition:transform .2s,color .2s,box-shadow .2s,border-color .2s}
+  .fbtn:hover{transform:translateY(-1px);color:var(--ink);border-color:var(--brass-lo)}
+  .fbtn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  .fbtn[aria-current="true"]{color:#1a1d21;background:linear-gradient(160deg,var(--brass),var(--brass-lo));border-color:var(--brass);
+    box-shadow:0 0 0 1px var(--brass),0 0 12px -2px var(--brass)}
+  .fbtn .ring{position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--brass);opacity:0;transform:scale(.7);transition:opacity .3s,transform .3s}
+  .fbtn[aria-current="true"] .ring{opacity:.5;transform:scale(1)}
+
+  /* doors overlay - brief between-floors transition over the stage */
+  .doors{position:fixed;top:0;left:0;right:var(--panelW);bottom:0;z-index:45;pointer-events:none;display:flex;opacity:0;visibility:hidden}
+  .doors .leaf{flex:1;background:linear-gradient(100deg,var(--panel),var(--steel));position:relative;transform:translateX(-101%)}
+  .doors .leaf::after{content:"";position:absolute;inset:0;background:var(--brush);opacity:.6}
+  .doors .leaf.r{transform:translateX(101%)}
+  .doors .seam{position:absolute;top:0;bottom:0;left:50%;width:2px;transform:translateX(-1px);background:rgba(0,0,0,.5);z-index:2}
+  body.riding .doors{opacity:1;visibility:visible}
+  body.riding .doors .leaf{transition:transform .42s cubic-bezier(.5,0,.2,1);transform:translateX(0)}
+  body.riding .doors .leaf.r{transform:translateX(0)}
+  body.arriving .doors .leaf{transition:transform .5s cubic-bezier(.3,.1,.2,1);transform:translateX(-101%)}
+  body.arriving .doors .leaf.r{transform:translateX(101%)}
+
+  /* ============ FOOTER ============ */
+  footer{border-top:1px solid var(--line);padding:2rem 0 2.6rem;position:relative;z-index:2}
+  .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:var(--mono);font-size:.68rem;
+    letter-spacing:.06em;color:var(--faint);text-transform:uppercase}
+  .foot-in a{color:var(--dim)}.foot-in a:hover{color:var(--brass)}
+
+  /* ============ REVEALS ============ */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+
+  /* ============ MOBILE: elevator becomes a compact bottom floor selector ============ */
+  @media(max-width:760px){
+    :root{--panelW:0px}
+    .shell{padding-right:0;padding-bottom:64px}
+    .topbar{right:0}
+    .doors{right:0}
+    .elevator{top:auto;left:0;right:0;bottom:0;width:100%;height:auto;flex-direction:row;align-items:center;
+      padding:.5rem .6rem;gap:.5rem;border-left:0;border-top:1px solid var(--steel);box-shadow:0 -12px 30px -22px rgba(0,0,0,.85);
+      overflow-x:auto}
+    .elevator::after{display:none}
+    .counter{max-width:none;width:auto;flex:none;padding:.3rem .55rem .35rem;display:flex;align-items:center;gap:.45rem}
+    .counter .ck{display:none}
+    .counter .cdisp{font-size:1.05rem}
+    .elabel{display:none}
+    .fbtns{flex-direction:row;width:auto;gap:.4rem;flex:1}
+    .fbtn{width:36px;height:36px;font-size:.82rem;flex:none}
+    .floor{min-height:auto;padding:6rem 0 3rem}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1!important;transform:none!important;transition:none}
+    .lobby h1 .ships::after{transition:none;transform:scaleX(1)}
+    .doors,.doors .leaf{transition:none!important}
+    body.riding .doors,body.arriving .doors{opacity:0!important;visibility:hidden!important}
+    .fbtn,.btn{transition:none}
+  }
+
+  /* no-JS safety: counter still shows a sensible value, floors are just sections */
+  .no-js .doors{display:none}
+</style>
+</head>
+<body class="no-js">
+  <!-- TOP SIGNAGE -->
+  <header class="topbar">
+    <div class="topbar-in">
+      <a class="nameplate" href="#lobby"><span class="mk">SB</span> SWAPNIL BISWAS</a>
+      <span class="addr">No. 34 - The Directory Building</span>
+    </div>
+  </header>
+
+  <!-- ELEVATOR PANEL -->
+  <aside class="elevator" aria-label="Elevator - floor navigation">
+    <div class="counter" id="counter" aria-hidden="true">
+      <div class="ck">Floor</div>
+      <div class="cdisp"><span id="cnum">G</span><span class="dir" id="cdir">&#9679;</span></div>
+    </div>
+    <span class="elabel">Floors</span>
+    <nav class="fbtns" aria-label="Floor buttons">
+      {floors.filter(f => f.n !== 0).sort((a,b) => b.n - a.n).map(f => (
+        <button class="fbtn" type="button" data-floor={f.n} data-target={f.id} aria-label={'Floor ' + f.n + ' - ' + f.tenant}>
+          <span class="ring" aria-hidden="true"></span>{f.n}
+        </button>
+      ))}
+      <button class="fbtn" type="button" data-floor="0" data-target="lobby" aria-current="true" aria-label="Ground floor - Lobby">
+        <span class="ring" aria-hidden="true"></span>G
+      </button>
+    </nav>
+  </aside>
+
+  <!-- BETWEEN-FLOORS DOORS -->
+  <div class="doors" aria-hidden="true">
+    <div class="leaf"></div>
+    <div class="seam"></div>
+    <div class="leaf r"></div>
+  </div>
+
+  <div class="shell">
+    <main class="stage">
+
+      <!-- GROUND FLOOR / LOBBY (hero) -->
+      <section class="floor" id="lobby" data-floor="0" tabindex="-1">
+        <div class="floor-inner lobby">
+          <div class="lobby-grid">
+            <div class="lobby-type">
+              <span class="eyebrow">Senior Product Marketing Manager - LambdaTest</span>
+              <h1>
+                <span class="l1">The marketer</span>
+                <span class="l2">who <span class="ships">ships.</span></span>
+              </h1>
+              <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+              <div class="cta">
+                <a class="btn primary" href="#work">Take the elevator up <span class="ar">&#8599;</span></a>
+                <a class="btn ghost" href="#contact">Get in touch</a>
+              </div>
+            </div>
+
+            <!-- DIRECTORY BOARD -->
+            <div class="board" aria-label="Building directory">
+              <div class="board-cap">
+                <span class="bt">Directory</span>
+                <span class="led">In service</span>
+              </div>
+              {floors.map(f => (
+                <button class="board-row" type="button" data-target={f.id} data-floor={f.n} aria-current={f.n === 0 ? 'true' : 'false'}>
+                  <span class="bf">{f.n === 0 ? 'G' : f.n}</span>
+                  <span class="bn">{f.tenant}<small>{f.sub}</small></span>
+                  <span class="barr" aria-hidden="true">&#8594;</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div class="lobby-metrics" aria-label="LambdaTest results">
+            {metrics.map(m => (
+              <div class="lm">
+                <div class="v">{m.v}</div>
+                <div class="l">{m.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FLOOR 5 - SELECTED WORK -->
+      <section class="floor" id="work" data-floor="5" tabindex="-1">
+        <div class="floor-inner">
+          <div class="plaque">
+            <div class="ptag">
+              <span class="fnum">5</span>
+              <div class="ptxt">
+                <div class="pk">Floor Five</div>
+                <h2>Selected Work</h2>
+              </div>
+            </div>
+            <div class="pmeta">Portfolio<br/>2019 - 2026</div>
+          </div>
+
+          {work.filter(w => w.feat).map(w => (
+            <div class="feat-card reveal">
+              <div class="fl">
+                <div class="fhead"><span>Tenant {w.i} - Anchor</span><span>{w.y}</span></div>
+                <div class="ft">{w.t}</div>
+                <div class="frole">{w.role}</div>
+                <div class="fd">{w.d}</div>
+              </div>
+              <div class="fr-side">
+                <div class="bignum">657K+</div>
+                <div class="bigl">Leads generated</div>
+                <div class="bignum">18.2M+</div>
+                <div class="bigl" style="margin-bottom:0">Organic traffic driven</div>
+              </div>
+            </div>
+          ))}
+
+          <div class="work-grid">
+            {work.filter(w => !w.feat).map(w => (
+              <div class="wcard reveal">
+                <div class="whead"><span>Tenant {w.i}</span><span>{w.y}</span></div>
+                <div class="wt">{w.t}</div>
+                <div class="wr">{w.r}</div>
+                <div class="wd">{w.d}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FLOOR 4 - WHAT I DO -->
+      <section class="floor" id="what" data-floor="4" tabindex="-1">
+        <div class="floor-inner">
+          <div class="plaque">
+            <div class="ptag">
+              <span class="fnum">4</span>
+              <div class="ptxt">
+                <div class="pk">Floor Four</div>
+                <h2>What I Do</h2>
+              </div>
+            </div>
+            <div class="pmeta">Four disciplines<br/>one operator</div>
+          </div>
+
+          <div class="pillars">
+            {pillars.map(p => (
+              <div class="prow reveal">
+                <span class="pi">{p.i}</span>
+                <span class="pt">{p.t}</span>
+                <span class="pd">{p.d}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="buildstats" aria-label="What got built and shipped">
+            {buildStats.map(s => (
+              <div class="bs">
+                <div class="v" data-target={s.n}>0{s.plus && <sup>{s.plus}</sup>}</div>
+                <div class="l">{s.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- FLOOR 3 - RECOGNITION -->
+      <section class="floor" id="honours" data-floor="3" tabindex="-1">
+        <div class="floor-inner">
+          <div class="plaque">
+            <div class="ptag">
+              <span class="fnum">3</span>
+              <div class="ptxt">
+                <div class="pk">Floor Three</div>
+                <h2>Recognition</h2>
+              </div>
+            </div>
+            <div class="pmeta">Awards<br/>& brands</div>
+          </div>
+
+          <div class="hon-grid">
+            <div class="stamps reveal">
+              {recognition.map(a => (
+                <div class="stamp">
+                  <span class="medal" aria-hidden="true">&#9733;</span>
+                  <div><b>{a.t}</b><span>{a.m}</span></div>
+                </div>
+              ))}
+            </div>
+            <div class="brands reveal">
+              <div class="bl">Trusted by teams at</div>
+              <div class="bgrid">{brands.map(b => <span>{b}</span>)}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLOOR 2 - ABOUT -->
+      <section class="floor" id="about" data-floor="2" tabindex="-1">
+        <div class="floor-inner">
+          <div class="plaque">
+            <div class="ptag">
+              <span class="fnum">2</span>
+              <div class="ptxt">
+                <div class="pk">Floor Two</div>
+                <h2>About the Maker</h2>
+              </div>
+            </div>
+            <div class="pmeta">Mumbai, India</div>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-photo reveal">
+              <img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" loading="lazy" decoding="async" />
+              <span class="ph-tag">Swapnil Biswas</span>
+            </div>
+            <div>
+              <p class="about-lead reveal">I treat my own career like a product - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+              <div class="facts">
+                {facts.map(f => (
+                  <div class="fact reveal"><div class="k">{f.k}</div><div class="v">{f.v}</div></div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FLOOR 1 - CONTACT -->
+      <section class="floor" id="contact" data-floor="1" tabindex="-1">
+        <div class="floor-inner">
+          <div class="plaque">
+            <div class="ptag">
+              <span class="fnum">1</span>
+              <div class="ptxt">
+                <div class="pk">Floor One</div>
+                <h2>Contact</h2>
+              </div>
+            </div>
+            <div class="pmeta">Let us build<br/>something that compounds</div>
+          </div>
+
+          <div class="contact-wrap">
+            <div class="cl reveal">Press the button. Let us talk.</div>
+            <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello <span class="ar">&#8599;</span></a></div>
+            <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="foot-in">
+          <span>Directory - Concept 34</span>
+          <span>Swapnil Biswas &copy; 2026</span>
+          <span><a href="/redesign/">View all concepts</a></span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+<script>
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.body.classList.remove('no-js');
+
+  /* ---------- reveals ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  setTimeout(() => document.body.classList.add('lit'), 80);
+
+  /* ---------- build-stat count-up ---------- */
+  function countUp(el){
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    if (Number.isNaN(target)) return;
+    const sup = el.querySelector('sup');
+    const supHTML = sup ? sup.outerHTML : '';
+    if (RM){ el.innerHTML = String(target) + supHTML; return; }
+    const dur = 1100; const t0 = performance.now();
+    function step(now){
+      const p = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.innerHTML = Math.round(target * eased) + supHTML;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const numIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ countUp(e.target); numIO.unobserve(e.target); } });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('.bs .v[data-target]').forEach(n => numIO.observe(n));
+
+  /* ============ ELEVATOR ============ */
+  const floorsEls = Array.from(document.querySelectorAll('.floor'));
+  // map floor-number -> section element
+  const byNum = new Map();
+  floorsEls.forEach(f => byNum.set(parseInt(f.getAttribute('data-floor'), 10), f));
+  const allNums = Array.from(byNum.keys()).sort((a,b) => a - b); // ascending
+  const minF = allNums[0], maxF = allNums[allNums.length - 1];
+
+  const cnum = document.getElementById('cnum');
+  const cdir = document.getElementById('cdir');
+  const counter = document.getElementById('counter');
+  const fbtns = Array.from(document.querySelectorAll('.fbtn'));
+  const boardRows = Array.from(document.querySelectorAll('.board-row'));
+  const body = document.body;
+
+  let current = 0;     // ground floor
+  let riding = false;
+
+  function label(n){ return n === 0 ? 'G' : String(n); }
+
+  function setActive(n){
+    current = n;
+    fbtns.forEach(b => b.setAttribute('aria-current', String(parseInt(b.dataset.floor,10) === n)));
+    boardRows.forEach(b => b.setAttribute('aria-current', String(parseInt(b.dataset.floor,10) === n)));
+  }
+
+  function scrollToFloor(n, behavior){
+    const el = byNum.get(n);
+    if (!el) return;
+    el.scrollIntoView({ behavior: behavior || 'smooth', block: 'start' });
+  }
+
+  // Ride the elevator: tick the counter through intermediate floors, play doors, then arrive.
+  function ride(target){
+    if (target === current && !riding) { return; }
+    const dest = byNum.has(target) ? target : current;
+
+    if (RM){
+      // reduced motion - instant, no counter spin, no doors
+      setActive(dest);
+      cnum.textContent = label(dest);
+      scrollToFloor(dest, 'auto');
+      byNum.get(dest)?.focus({ preventScroll: true });
+      return;
+    }
+
+    if (riding) return;
+    riding = true;
+    const dir = dest > current ? 1 : (dest < current ? -1 : 0);
+    cdir.className = 'dir ' + (dir > 0 ? 'up' : dir < 0 ? 'down' : '');
+    cdir.innerHTML = dir > 0 ? '&#9650;' : dir < 0 ? '&#9660;' : '&#9679;';
+    counter.classList.add('moving');
+
+    // close doors over the stage
+    body.classList.add('riding');
+    setActive(dest);
+
+    const distance = Math.abs(dest - current);
+    const steps = [];
+    let n = current;
+    while (n !== dest){ n += dir; steps.push(n); }
+    if (steps.length === 0) steps.push(dest);
+
+    // counter spin timing: total ~ doors closing window
+    const closeMs = 440;
+    const perStep = Math.max(70, Math.min(170, closeMs / Math.max(1, steps.length)));
+    let si = 0;
+    function tick(){
+      cnum.textContent = label(steps[si]);
+      si++;
+      if (si < steps.length){ setTimeout(tick, perStep); }
+    }
+    cnum.textContent = label(current);
+    setTimeout(tick, 60);
+
+    // once doors are closed, jump scroll instantly (hidden behind doors), then open
+    setTimeout(() => {
+      scrollToFloor(dest, 'auto');
+      cnum.textContent = label(dest);
+      body.classList.remove('riding');
+      body.classList.add('arriving');
+      counter.classList.remove('moving');
+      const arr = byNum.get(dest);
+      if (arr) arr.focus({ preventScroll: true });
+      setTimeout(() => {
+        body.classList.remove('arriving');
+        cdir.className = 'dir';
+        cdir.innerHTML = '&#9679;';
+        riding = false;
+      }, 520);
+    }, closeMs + 30);
+  }
+
+  // wire elevator buttons + directory rows
+  function bind(el){
+    el.addEventListener('click', (ev) => {
+      const t = parseInt(el.dataset.floor, 10);
+      if (!Number.isNaN(t)) { ev.preventDefault(); ride(t); }
+    });
+  }
+  fbtns.forEach(bind);
+  boardRows.forEach(bind);
+
+  // CTA anchor links + topbar nameplate -> use elevator ride
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (ev) => {
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if (!el) return;
+      const n = parseInt(el.getAttribute('data-floor'), 10);
+      if (Number.isNaN(n)) return;
+      ev.preventDefault();
+      ride(n);
+    });
+  });
+
+  /* ---------- arrow-key navigation ---------- */
+  window.addEventListener('keydown', (ev) => {
+    if (ev.target && /^(INPUT|TEXTAREA|SELECT)$/.test(ev.target.tagName)) return;
+    if (ev.key === 'ArrowUp' || ev.key === 'PageUp'){
+      const next = current + 1;
+      if (byNum.has(next)) { ev.preventDefault(); ride(next); }
+    } else if (ev.key === 'ArrowDown' || ev.key === 'PageDown'){
+      const prev = current - 1;
+      if (byNum.has(prev)) { ev.preventDefault(); ride(prev); }
+    }
+  });
+
+  /* ---------- keep counter + active state in sync with manual scroll ---------- */
+  // (so trackpad / spacebar scrolling still updates the floor readout)
+  let scrollLock = false;
+  const floorIO = new IntersectionObserver((entries) => {
+    if (riding) return;
+    entries.forEach(e => {
+      if (e.isIntersecting && e.intersectionRatio > 0.55){
+        const n = parseInt(e.target.getAttribute('data-floor'), 10);
+        if (!Number.isNaN(n) && n !== current){
+          setActive(n);
+          if (!RM) cnum.textContent = label(n);
+        }
+      }
+    });
+  }, { threshold: [0.55] });
+  floorsEls.forEach(f => floorIO.observe(f));
+
+  // initial readout
+  cnum.textContent = 'G';
+</script>
+</body>
+</html>

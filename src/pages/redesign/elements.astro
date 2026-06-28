@@ -1,0 +1,542 @@
+---
+// REDESIGN PROTOTYPE - "Elements" - a PERIODIC TABLE of the craft.
+// Original concept (NOT a reskin of Halftone): own layout, palette, fonts, mechanic.
+//  - The centrepiece is a real periodic table. Each tile has proper anatomy:
+//    atomic number top-left (mono), big two-letter SYMBOL, full name below, group tint.
+//  - Three element GROUPS read as periodic-table categories, each with a restrained tint:
+//    Disciplines (cyan), Compounds/Work (amber), Distinctions/Recognition (violet).
+//  - Hovering an element lifts/brightens it. CLICKING selects it and updates a DETAIL PANEL
+//    (periodic-table-explorer style) with the full role / year / outcome / description.
+//  - Default selection = LambdaTest (Lt), the only tile that carries the hard 657K+/18.2M+
+//    numbers. Detail + table render server-side, so they read even before JS runs.
+//  - Stats 20+/15+/76 shown as "key data" / atomic properties in the legend rail.
+// Palette: near-black slate (#0a0e14) + soft paper white (#eef2f7), one neutral accent line,
+// plus the three muted category tints. Scientific Swiss type (Inter/Archivo) + IBM Plex Mono.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css. noindex.
+
+// ---- Element data. category: disc | work | dist  (groups). z = atomic number (sequential).
+const elements = [
+  // Disciplines
+  { sym: 'Pm', name: 'Product Marketing', z: 1,  cat: 'disc', kind: 'Discipline',
+    role: 'Positioning, GTM & launches', meta: 'Core practice',
+    out: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.',
+    desc: 'Product Marketing & GTM. The core discipline - turning a product into a position the market and the sales floor can actually use.' },
+  { sym: 'Se', name: 'SEO', z: 2,  cat: 'disc', kind: 'Discipline',
+    role: 'Technical & organic search', meta: 'Growth engine',
+    out: 'Technical audits and demand gen that compounds over time.',
+    desc: 'Technical SEO audits, on-page and organic strategy. The compounding channel behind 18.2M+ in organic traffic at LambdaTest.' },
+  { sym: 'Ae', name: 'Answer Engines', z: 3,  cat: 'disc', kind: 'Discipline',
+    role: 'AI-search optimization', meta: 'AEO / GEO',
+    out: 'AI-search optimization so the brand surfaces in generated answers.',
+    desc: 'AEO and GEO - optimizing so the brand surfaces inside AI search and generated answers, not just the ten blue links.' },
+  { sym: 'Ai', name: 'AI Agents', z: 4,  cat: 'disc', kind: 'Discipline',
+    role: 'Agents & internal tools', meta: '20+ shipped',
+    out: 'I build the agents and internal tools that do the work - 20+ shipped.',
+    desc: 'I build the agents and internal tools that do the marketing work. Twenty-plus shipped - automation that runs, not slideware.' },
+  { sym: 'Gr', name: 'Growth', z: 5,  cat: 'disc', kind: 'Discipline',
+    role: 'Demand gen that compounds', meta: 'Full-funnel',
+    out: 'Demand gen and growth systems engineered to compound.',
+    desc: 'Full-funnel growth - demand generation, lead operations and the systems that turn a channel into a flywheel.' },
+  { sym: 'Ct', name: 'Content', z: 6,  cat: 'disc', kind: 'Discipline',
+    role: 'Long-form & distribution', meta: '76 articles',
+    out: 'Long-form articles, distribution and editorial systems.',
+    desc: 'Long-form content and distribution. Seventy-six articles published - the editorial layer that feeds search and authority.' },
+  { sym: 'Au', name: 'Automation', z: 7,  cat: 'disc', kind: 'Discipline',
+    role: 'Workflows & internal tools', meta: 'Systems',
+    out: 'Automated workflows and internal tools that remove manual work.',
+    desc: 'Automation and internal tooling. The plumbing that lets a small team operate like a large one.' },
+  { sym: 'Bp', name: 'Building in Public', z: 8,  cat: 'disc', kind: 'Discipline',
+    role: 'Ship in the open', meta: 'This site',
+    out: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.',
+    desc: 'Building in public. This site, eight free tools and seventy-six articles - shipped systems, not slide-ware.' },
+
+  // Compounds / Work
+  { sym: 'Lt', name: 'LambdaTest', z: 21, cat: 'work', kind: 'Compound',
+    role: 'Product & digital marketing', meta: '2021 - 2025', feat: true,
+    out: '657K+ leads · 18.2M+ organic',
+    desc: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { sym: 'Tm', name: 'TestMu AI', z: 22, cat: 'work', kind: 'Compound',
+    role: 'Rebrand lead', meta: '2026',
+    out: 'Full company rebrand',
+    desc: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { sym: 'Sm', name: 'Samsung', z: 23, cat: 'work', kind: 'Compound',
+    role: 'via Sociowash', meta: '2019',
+    out: 'Galaxy M-series launch',
+    desc: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { sym: 'Md', name: 'Medilife', z: 24, cat: 'work', kind: 'Compound',
+    role: 'Marketing & web', meta: '0 to 1',
+    out: 'Website · GTM · social',
+    desc: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { sym: 'Ld', name: 'Lido Learning', z: 25, cat: 'work', kind: 'Compound',
+    role: 'Growth / CRM', meta: '2021',
+    out: 'CRM & lead operations',
+    desc: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { sym: 'Ak', name: 'Appknox', z: 26, cat: 'work', kind: 'Compound',
+    role: 'Content', meta: 'Freelance',
+    out: 'Security content',
+    desc: 'Freelance content writer for the mobile app security company.' },
+
+  // Distinctions / Recognition
+  { sym: 'Va', name: 'Value of Agility', z: 41, cat: 'dist', kind: 'Distinction',
+    role: 'Award', meta: 'LambdaTest, 2024',
+    out: 'Value of Agility Award',
+    desc: 'Value of Agility Award - LambdaTest, 2024. Recognition for moving fast and shipping.' },
+  { sym: 'Wf', name: 'Wall of Fame', z: 42, cat: 'dist', kind: 'Distinction',
+    role: 'Honour', meta: 'LambdaTest',
+    out: 'Wall of Fame',
+    desc: 'Wall of Fame at LambdaTest - a standing recognition of sustained impact.' },
+  { sym: 'Ph', name: 'Product Hunt', z: 43, cat: 'dist', kind: 'Distinction',
+    role: 'Launch', meta: 'Product Hunt',
+    out: '#1 Product of the Day',
+    desc: '#1 Product of the Day on Product Hunt - a launch that landed at the top.' },
+];
+
+const groups = [
+  { id: 'disc', label: 'Disciplines', n: '01-08', note: 'What I do' },
+  { id: 'work', label: 'Compounds / Work', n: '21-26', note: 'Where I did it' },
+  { id: 'dist', label: 'Distinctions', n: '41-43', note: 'Recognition' },
+];
+
+const keyData = [
+  { n: '20', plus: '+', l: 'AI agents & internal tools shipped' },
+  { n: '15', plus: '+', l: 'Marketers mentored & levelled up' },
+  { n: '76', plus: '',  l: 'Long-form articles published' },
+];
+
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+
+const def = elements.find(e => e.sym === 'Lt');
+---
+<!doctype html>
+<html lang="en" data-theme="elements">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0a0e14; --bg2:#0d1219; --panel:#11171f; --panel2:#141b25;
+    --ink:#eef2f7; --soft:#cfd8e3; --dim:#9aa6b4; --faint:#7e8a98;
+    --line:rgba(238,242,247,.10); --hair:rgba(238,242,247,.18);
+    /* category tints (muted, AA-tested on dark) */
+    --disc:#5fd0d6; --disc-bg:rgba(95,208,214,.10); --disc-bd:rgba(95,208,214,.34);
+    --work:#f0b54e; --work-bg:rgba(240,181,78,.10); --work-bd:rgba(240,181,78,.34);
+    --dist:#b79cf2; --dist-bg:rgba(183,156,242,.10); --dist-bd:rgba(183,156,242,.34);
+    --disp:"Archivo",system-ui,sans-serif; --sans:"Inter",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --m:clamp(1.05rem,4vw,3.4rem);
+    --r:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{background:
+      radial-gradient(1200px 800px at 80% -10%, rgba(95,208,214,.06), transparent 60%),
+      radial-gradient(1000px 700px at -5% 110%, rgba(183,156,242,.05), transparent 60%),
+      var(--bg);
+    color:var(--ink);font-family:var(--sans);min-height:100vh;-webkit-font-smoothing:antialiased;
+    line-height:1.6;letter-spacing:.005em;position:relative}
+  /* faint engineering grid backdrop */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:linear-gradient(rgba(238,242,247,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(238,242,247,.022) 1px,transparent 1px);
+    background-size:42px 42px}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--disc);color:#04181a}
+  .wrap{width:min(1320px,100%);margin:0 auto;padding:0 var(--m);position:relative;z-index:2}
+
+  .mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+
+  /* ===== top bar ===== */
+  .bar{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(10,14,20,.94),rgba(10,14,20,.55) 70%,transparent);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .bar-in{width:min(1320px,100%);margin:0 auto;padding:.8rem var(--m);display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:.7rem;font-family:var(--disp);font-weight:700;letter-spacing:.01em;font-size:.98rem}
+  .brand .badge{display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid var(--hair);border-radius:8px;font-family:var(--mono);font-weight:600;font-size:.82rem;color:var(--disc);flex:none;background:var(--disc-bg)}
+  .bar nav{display:flex;gap:1.4rem}
+  .bar nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);transition:color .3s}
+  .bar nav a:hover{color:var(--ink)}
+  @media(max-width:720px){.bar nav{display:none}}
+
+  /* ===== eyebrow row ===== */
+  .eyebrow{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+    border-bottom:1px solid var(--line);padding:1.4rem 0 1rem;margin-top:1.6rem}
+
+  /* ===== hero ===== */
+  header.hero{padding:1.4rem 0 1rem;position:relative;z-index:2}
+  .hero h1{font-family:var(--disp);font-weight:800;line-height:.98;letter-spacing:-.02em;
+    font-size:clamp(2.7rem,7.6vw,5.6rem);color:var(--ink);max-width:16ch}
+  .hero h1 .ships{position:relative;color:var(--disc)}
+  .hero .sub{margin-top:1.3rem;max-width:54ch;color:var(--soft);font-size:clamp(1rem,1.25vw,1.14rem);line-height:1.65}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  .hero .cta{margin-top:1.7rem;display:flex;gap:.7rem;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:.8rem 1.25rem;border:1px solid var(--hair);border-radius:10px;display:inline-flex;gap:.5rem;align-items:center;transition:background .3s,color .3s,border-color .3s,transform .3s}
+  .btn .ar{transition:transform .3s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .btn.primary{background:var(--ink);color:#0a0e14;border-color:var(--ink)}
+  .btn.primary:hover{transform:translateY(-2px)}
+  .btn.ghost:hover{border-color:var(--disc);background:var(--disc-bg);color:var(--ink)}
+
+  /* ===== periodic explorer = table + detail ===== */
+  .explorer{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,388px);gap:clamp(1.2rem,2.5vw,2rem);align-items:start;margin-top:2.4rem}
+
+  /* the table */
+  .table-card{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:var(--r);padding:clamp(1rem,2vw,1.6rem)}
+  .table-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:1.1rem;flex-wrap:wrap}
+  .table-head .th-t{font-family:var(--disp);font-weight:700;font-size:1.05rem;letter-spacing:.01em}
+  .table-head .th-m{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+
+  .ptgroup{margin-bottom:1.2rem}
+  .ptgroup:last-child{margin-bottom:0}
+  .ptg-label{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem}
+  .ptg-dot{width:10px;height:10px;border-radius:3px;flex:none}
+  .ptg-name{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+  .ptg-rng{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:var(--faint);margin-left:auto}
+
+  .ptrow{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:.5rem}
+
+  .tile{position:relative;aspect-ratio:1/1.06;border-radius:11px;border:1px solid var(--line);background:var(--panel2);
+    padding:.46rem .5rem;display:flex;flex-direction:column;cursor:pointer;text-align:left;overflow:hidden;
+    transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .28s,background .28s,box-shadow .28s}
+  .tile .z{font-family:var(--mono);font-size:.62rem;font-weight:500;color:var(--faint);line-height:1;letter-spacing:.02em}
+  .tile .sym{font-family:var(--disp);font-weight:700;line-height:.9;letter-spacing:-.01em;margin-top:auto;
+    font-size:clamp(1rem,2.1vw,1.6rem);color:var(--ink)}
+  .tile .nm{font-size:.56rem;line-height:1.18;color:var(--dim);margin-top:.2rem;letter-spacing:.01em;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .tile::after{content:"";position:absolute;inset:0;border-radius:11px;pointer-events:none;opacity:0;transition:opacity .28s;
+    box-shadow:inset 0 0 0 1.5px currentColor}
+  .tile:hover{transform:translateY(-3px)}
+  .tile:focus-visible{outline:2px solid var(--disc);outline-offset:2px}
+
+  /* category tints */
+  .tile.disc{color:var(--disc)} .tile.work{color:var(--work)} .tile.dist{color:var(--dist)}
+  .tile.disc{background:var(--disc-bg);border-color:var(--disc-bd)}
+  .tile.work{background:var(--work-bg);border-color:var(--work-bd)}
+  .tile.dist{background:var(--dist-bg);border-color:var(--dist-bd)}
+  .tile.disc .z{color:var(--disc)} .tile.work .z{color:var(--work)} .tile.dist .z{color:var(--dist)}
+  .tile:hover{border-color:currentColor}
+  .tile:hover::after{opacity:.5}
+  /* selected */
+  .tile.is-on{transform:translateY(-3px)}
+  .tile.is-on::after{opacity:1}
+  .tile.is-on{box-shadow:0 12px 34px -16px rgba(0,0,0,.7)}
+  /* featured LambdaTest tile spans 2 cols */
+  .tile.feat{grid-column:span 2;aspect-ratio:auto}
+  .tile.feat .sym{font-size:clamp(1.3rem,3vw,2.1rem)}
+  .tile.feat .feat-n{font-family:var(--mono);font-size:.56rem;letter-spacing:.04em;color:var(--work);margin-top:.25rem;line-height:1.3}
+
+  /* ===== detail panel ===== */
+  .detail{position:sticky;top:84px;background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .detail-hd{padding:1.4rem 1.4rem 1.1rem;border-bottom:1px solid var(--line);position:relative}
+  .detail-hd::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,var(--disc));transition:background .3s}
+  .d-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+  .d-z{font-family:var(--mono);font-size:.72rem;color:var(--faint);letter-spacing:.06em}
+  .d-kind{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent,var(--disc));transition:color .3s}
+  .d-sym{font-family:var(--disp);font-weight:800;font-size:clamp(3rem,7vw,4.6rem);line-height:.9;letter-spacing:-.02em;color:var(--ink);margin:.5rem 0 .15rem}
+  .d-name{font-family:var(--disp);font-weight:600;font-size:1.18rem;letter-spacing:.01em;color:var(--soft)}
+  .detail-bd{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:1.1rem}
+  .d-field .dk{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.35rem}
+  .d-field .dv{color:var(--soft);font-size:.95rem;line-height:1.5}
+  .d-out{font-family:var(--disp);font-weight:600;color:var(--ink);font-size:1.02rem}
+  .d-desc{color:var(--dim);font-size:.95rem;line-height:1.6}
+  .d-hint{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;color:var(--faint);text-transform:uppercase;display:flex;align-items:center;gap:.5rem;padding-top:.2rem}
+  .d-hint .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent,var(--disc));animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+
+  @media(max-width:880px){
+    .explorer{grid-template-columns:1fr}
+    .detail{position:static;order:-1}
+    .ptrow{grid-template-columns:repeat(6,minmax(0,1fr))}
+  }
+  @media(max-width:520px){
+    .ptrow{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .tile.feat{grid-column:span 2}
+  }
+
+  /* ===== legend / key data rail ===== */
+  .rail{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(1.2rem,3vw,2.4rem);margin-top:2.6rem;
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.3rem,3vw,2rem)}
+  .legend .lt,.keys .lt{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
+  .legend-grid{display:flex;flex-direction:column;gap:.85rem}
+  .leg{display:flex;align-items:center;gap:.8rem}
+  .leg .swatch{width:18px;height:18px;border-radius:5px;flex:none;border:1px solid currentColor}
+  .leg.disc{color:var(--disc)} .leg.work{color:var(--work)} .leg.dist{color:var(--dist)}
+  .leg .swatch.disc{background:var(--disc-bg)} .leg .swatch.work{background:var(--work-bg)} .leg .swatch.dist{background:var(--dist-bg)}
+  .leg .ln{font-family:var(--disp);font-weight:600;font-size:.96rem;color:var(--ink)}
+  .leg .ln small{font-family:var(--mono);font-weight:400;font-size:.66rem;letter-spacing:.04em;color:var(--dim);text-transform:uppercase;margin-left:.5rem}
+  .keys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+  .key{border:1px solid var(--line);border-radius:10px;padding:.9rem .85rem;background:var(--bg2)}
+  .key .kn{font-family:var(--disp);font-weight:800;font-size:clamp(1.6rem,4vw,2.3rem);line-height:.9;color:var(--ink);letter-spacing:-.01em}
+  .key .kn sup{font-size:.5em;color:var(--disc);vertical-align:super}
+  .key .kl{font-family:var(--mono);font-size:.6rem;letter-spacing:.04em;color:var(--dim);text-transform:uppercase;margin-top:.5rem;line-height:1.45}
+  @media(max-width:720px){.rail{grid-template-columns:1fr}.keys-grid{grid-template-columns:1fr}.key{display:flex;align-items:baseline;gap:1rem}.key .kl{margin-top:0}}
+
+  /* ===== generic sections ===== */
+  section{padding:clamp(3rem,7vh,5.5rem) 0;position:relative;z-index:2}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;border-bottom:1px solid var(--line);padding-bottom:1.1rem;margin-bottom:2.2rem}
+  .shead .idx{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:.6rem}
+  .shead h2{font-family:var(--disp);font-weight:700;font-size:clamp(1.7rem,4vw,2.9rem);line-height:1;letter-spacing:-.01em}
+  .shead .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--dim);text-align:right;text-transform:uppercase;line-height:1.7}
+
+  /* ===== about ===== */
+  .about-grid{display:grid;grid-template-columns:260px 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  .about-photo{position:relative;aspect-ratio:5/6;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--panel)}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+  .about-lead{font-family:var(--disp);font-weight:600;font-size:clamp(1.35rem,2.6vw,2.1rem);line-height:1.16;letter-spacing:-.01em;margin-bottom:1.8rem;color:var(--ink)}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem 2rem}
+  .fact .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.4rem}
+  .fact .v{color:var(--soft);font-size:.95rem;line-height:1.5}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr}.about-photo{max-width:240px}.facts{grid-template-columns:1fr}}
+
+  /* ===== brands ===== */
+  .brands{margin-top:2.4rem}
+  .brands .bl{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
+  .brands .bgrid{display:flex;flex-wrap:wrap;gap:.55rem}
+  .brands .bgrid span{font-family:var(--mono);font-size:.76rem;border:1px solid var(--line);border-radius:8px;padding:.5rem .8rem;color:var(--soft);background:var(--bg2)}
+
+  /* ===== contact ===== */
+  .contact{border-top:1px solid var(--line)}
+  .contact .cl{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:1.1rem}
+  .contact .big{font-family:var(--disp);font-weight:800;font-size:clamp(2.4rem,8vw,5.4rem);line-height:.92;letter-spacing:-.02em}
+  .contact .big a{display:inline-flex;align-items:flex-start;gap:.1em;transition:color .3s}
+  .contact .big a:hover{color:var(--disc)}
+  .contact .big a .ar{font-size:.4em;margin-top:.18em}
+  .contact .em{margin-top:1.5rem;font-family:var(--mono);font-size:.82rem;letter-spacing:.02em;color:var(--dim)}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--hair)}
+  .contact .em a:hover{border-color:var(--disc)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:2rem 0 3rem;position:relative;z-index:2}
+  .foot-in{width:min(1320px,100%);margin:0 auto;padding:0 var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;color:var(--faint);text-transform:uppercase}
+  .foot-in a{color:var(--dim)}.foot-in a:hover{color:var(--ink)}
+
+  /* reveals */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1!important;transform:none!important;transition:none}
+    .tile{transition:none}
+    .d-hint .pulse{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-in">
+      <div class="brand"><span class="badge">Sb</span> Swapnil Biswas</div>
+      <nav>
+        <a href="#table">Table</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="/redesign/">All concepts</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="eyebrow">
+      <span class="mono">Senior Product Marketing Manager - LambdaTest</span>
+      <span class="mono">Elements &middot; an interactive table of the craft</span>
+    </div>
+
+    <header class="hero" id="hero">
+      <h1>The marketer<br/>who <span class="ships">ships.</span></h1>
+      <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+      <div class="cta">
+        <a class="btn primary" href="#table">Explore the table <span class="ar">&#8599;</span></a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <!-- ============ PERIODIC EXPLORER ============ -->
+    <div class="explorer" id="table">
+      <div class="table-card">
+        <div class="table-head">
+          <div class="th-t">The periodic table of his craft</div>
+          <div class="th-m">Select an element &middot; {elements.length} entries</div>
+        </div>
+
+        {groups.map(g => (
+          <div class="ptgroup">
+            <div class="ptg-label">
+              <span class="ptg-dot" style={`background:var(--${g.id})`}></span>
+              <span class="ptg-name">{g.label}</span>
+              <span class="ptg-rng">{g.note} &middot; {g.n}</span>
+            </div>
+            <div class="ptrow">
+              {elements.filter(e => e.cat === g.id).map(e => (
+                <button
+                  type="button"
+                  class={'tile ' + e.cat + (e.feat ? ' feat' : '') + (e.sym === def.sym ? ' is-on' : '')}
+                  data-sym={e.sym}
+                  data-z={e.z}
+                  data-cat={e.cat}
+                  data-kind={e.kind}
+                  data-name={e.name}
+                  data-role={e.role}
+                  data-meta={e.meta}
+                  data-out={e.out}
+                  data-desc={e.desc}
+                  aria-label={e.name + ' - ' + e.kind}
+                  aria-pressed={e.sym === def.sym ? 'true' : 'false'}
+                >
+                  <span class="z">{e.z}</span>
+                  <span class="sym">{e.sym}</span>
+                  <span class="nm">{e.name}</span>
+                  {e.feat && <span class="feat-n">657K+ leads &middot; 18.2M+ organic</span>}
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- detail panel: server-rendered default = LambdaTest -->
+      <aside class="detail" id="detail" aria-live="polite" style={`--accent:var(--${def.cat})`}>
+        <div class="detail-hd">
+          <div class="d-top">
+            <span class="d-z" id="d-z">No. {def.z}</span>
+            <span class="d-kind" id="d-kind">{def.kind}</span>
+          </div>
+          <div class="d-sym" id="d-sym">{def.sym}</div>
+          <div class="d-name" id="d-name">{def.name}</div>
+        </div>
+        <div class="detail-bd">
+          <div class="d-field">
+            <div class="dk">Role</div>
+            <div class="dv" id="d-role">{def.role}</div>
+          </div>
+          <div class="d-field">
+            <div class="dk">Period / Context</div>
+            <div class="dv" id="d-meta">{def.meta}</div>
+          </div>
+          <div class="d-field">
+            <div class="dk">Outcome</div>
+            <div class="dv d-out" id="d-out">{def.out}</div>
+          </div>
+          <div class="d-field">
+            <div class="dk">Detail</div>
+            <div class="dv d-desc" id="d-desc">{def.desc}</div>
+          </div>
+          <div class="d-hint"><span class="pulse"></span> Click any element to inspect</div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ============ LEGEND + KEY DATA ============ -->
+    <div class="rail reveal">
+      <div class="legend">
+        <div class="lt">Legend &middot; element groups</div>
+        <div class="legend-grid">
+          <div class="leg disc"><span class="swatch disc"></span><span class="ln">Disciplines <small>What I do</small></span></div>
+          <div class="leg work"><span class="swatch work"></span><span class="ln">Compounds / Work <small>Where I did it</small></span></div>
+          <div class="leg dist"><span class="swatch dist"></span><span class="ln">Distinctions <small>Recognition</small></span></div>
+        </div>
+      </div>
+      <div class="keys">
+        <div class="lt">Key data &middot; atomic properties</div>
+        <div class="keys-grid">
+          {keyData.map(k => (
+            <div class="key">
+              <div class="kn">{k.n}{k.plus && <sup>{k.plus}</sup>}</div>
+              <div class="kl">{k.l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+      <div class="shead">
+        <div><div class="idx">04 / Composition</div><h2 class="reveal">About the maker</h2></div>
+        <div class="meta reveal">Mumbai, India</div>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo reveal"><img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" loading="lazy" decoding="async" /></div>
+        <div>
+          <p class="about-lead reveal">I treat my own career like a product - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+          <div class="facts">
+            <div class="fact reveal"><div class="k">Based</div><div class="v">Mumbai, India</div></div>
+            <div class="fact reveal"><div class="k">Tenure</div><div class="v">7+ years marketing &middot; 4+ in B2B SaaS</div></div>
+            <div class="fact reveal"><div class="k">Education</div><div class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</div></div>
+            <div class="fact reveal"><div class="k">Practice</div><div class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</div></div>
+          </div>
+          <div class="brands reveal">
+            <div class="bl">Trusted by teams at</div>
+            <div class="bgrid">{brands.map(b => <span>{b}</span>)}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="contact">
+      <div class="cl reveal">Let's build something that compounds</div>
+      <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello <span class="ar">&#8599;</span></a></div>
+      <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <span>Elements &middot; Concept 32</span>
+      <span>Swapnil Biswas &copy; 2026</span>
+      <span><a href="/redesign/">View all concepts</a></span>
+    </div>
+  </footer>
+
+<script>
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- reveals ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.14, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---------- periodic explorer: select element -> update detail ---------- */
+  (function explorer(){
+    const detail = document.getElementById('detail');
+    const tiles = Array.from(document.querySelectorAll('.tile'));
+    if (!detail || !tiles.length) return;
+    const f = {
+      z: document.getElementById('d-z'),
+      kind: document.getElementById('d-kind'),
+      sym: document.getElementById('d-sym'),
+      name: document.getElementById('d-name'),
+      role: document.getElementById('d-role'),
+      meta: document.getElementById('d-meta'),
+      out: document.getElementById('d-out'),
+      desc: document.getElementById('d-desc'),
+    };
+
+    function select(tile){
+      if (tile.classList.contains('is-on')) return;
+      tiles.forEach(t => { t.classList.remove('is-on'); t.setAttribute('aria-pressed', 'false'); });
+      tile.classList.add('is-on');
+      tile.setAttribute('aria-pressed', 'true');
+      const d = tile.dataset;
+      detail.style.setProperty('--accent', 'var(--' + d.cat + ')');
+      f.z.textContent = 'No. ' + d.z;
+      f.kind.textContent = d.kind;
+      f.sym.textContent = d.sym;
+      f.name.textContent = d.name;
+      f.role.textContent = d.role;
+      f.meta.textContent = d.meta;
+      f.out.textContent = d.out;
+      f.desc.textContent = d.desc;
+    }
+
+    tiles.forEach(t => {
+      t.addEventListener('click', () => select(t));
+      // keyboard: buttons already fire click on Enter/Space, but make sure focus selects on Enter
+    });
+  })();
+</script>
+</body>
+</html>

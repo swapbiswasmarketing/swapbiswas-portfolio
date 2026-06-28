@@ -6,6 +6,13 @@
 ## Linked Memory Files
 - [User Role](user_role.md) - Senior Product Marketing Manager at LambdaTest (promoted Apr 2026); prior role + education history
 - [No em-dashes](feedback_no_emdash.md) - never use `—`; default to ` - ` or rewrite; applies to all output including chat
+- [Semrush research tooling](semrush_research_tooling.md) - `scripts/semrush.mjs` keyword-data fallback when Ahrefs MCP is out of units; broad-match vs exact-volume + KD gotcha
+- [Signal homepage redesign](redesign_signal_homepage.md) - in-progress award-targeted homepage revamp on branch `redesign/signal-homepage` (GSAP+Lenis, theme-aware, prototypes in `prototypes/`)
+- [Self-verify visual work](feedback_self_verify_visual.md) - for UI/design work, render & inspect the page myself (testmuai browser-cloud / kane-cli), don't rely on user screenshots
+- [SEO organic strategy](project_seo_organic_strategy.md) - site gets ~0 Google traffic (DR 11, 3 keywords) despite 75 posts; strategy = optimize existing low-KD pages first, AEO angle, build authority; NOT in Ahrefs GSC
+- [Gradient-text shadow gotcha](reference_gradient_text_shadow_gotcha.md) - text-shadow/filter (incl. INHERITED from parent heading) darkens a `background-clip:text` gradient word by ~half in Chrome; set `text-shadow:none` on the word, get contrast from a scrim behind it
+- [Medium cross-posting](reference_medium.md) - which blogs are on Medium, the import prompt, 2-stories/24h rate limit; always set canonical to original
+- [Cross-posting tracker](reference_crossposting.md) - Dev.to / HackerNoon / Hashnode syndication status tables + import prompts; canonical + index-first rules
 
 ## Project Overview
 - Astro 5 static site (portfolio + blog) at `c:\Website\portfolio`

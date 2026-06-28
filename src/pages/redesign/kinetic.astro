@@ -1,0 +1,668 @@
+---
+// REDESIGN PROTOTYPE - "Kinetic" - a living variable-font type specimen.
+// Original concept (NOT a reskin of Halftone): type IS the product.
+//  - Font: ROBOTO FLEX (variable) loaded with full axis ranges via Google Fonts CSS2 API
+//    (opsz, wght, GRAD, slnt, wdth + the registered range). A mono (Spline Sans Mono) for labels.
+//  - THE MECHANIC: the hero headline is split into per-letter <span>s. On pointermove each
+//    letter's distance to the cursor sets its font-variation-settings live - letters near the
+//    cursor get heavier / wider / slightly slanted, tapering with distance. Scroll velocity adds
+//    a global weight + slant push. All handlers throttled with requestAnimationFrame; only
+//    on-screen letters are updated.
+//  - INTERACTIVE SPECIMEN: real <input type=range> sliders (Weight / Width / Optical size) that
+//    live-morph a sample word - a foundry "test it yourself" block.
+//  - Selected-work entries are big specimen lines that thicken + widen on hover.
+//  - Stats are oversized weight-animated numerals. About + contact set as specimen paragraphs.
+// Palette: stark editorial - bone on near-black, one warm amber accent. Type carries everything.
+// prefers-reduced-motion: static optimal weights, no cursor reactivity, sliders still work.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+const stats = [
+  { n: '20', plus: '+', l: 'AI agents & internal tools shipped' },
+  { n: '15', plus: '+', l: 'Marketers mentored & levelled up' },
+  { n: '76', plus: '',  l: 'Long-form articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+const work = [
+  { i: '01', t: 'LambdaTest', y: '2021 - 2025', role: 'Product & digital marketing', r: '657K+ leads · 18.2M+ organic', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', feat: true },
+  { i: '02', t: 'TestMu AI', y: '2026', role: 'Rebrand lead', r: 'Full company rebrand', d: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', t: 'Samsung', y: '2019', role: 'via Sociowash', r: 'Galaxy M-series launch', d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { i: '04', t: 'Medilife Superspeciality', y: '0 to 1', role: 'Marketing & web', r: 'Website · GTM · social', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', t: 'Lido Learning', y: '2021', role: 'Growth / CRM', r: 'CRM & lead operations', d: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { i: '06', t: 'Appknox', y: 'Freelance', role: 'Content', r: 'Security content', d: 'Freelance content writer for the mobile app security company.' },
+];
+const recognition = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+// hero word, split per-letter in markup; space rendered as a gap span
+const heroLine1 = 'THE MARKETER';
+const heroLine2 = 'WHO SHIPS';
+---
+<!doctype html>
+<html lang="en" data-theme="kinetic">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Roboto Flex with full axis ranges (opsz, slnt, wght, GRAD, wdth, XOPQ etc.) + Spline Sans Mono for labels -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wght,GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC@8..144,-10..0,100..1000,-200..150,27..175,323..603,25..135,649..854,-305..-98,560..788,416..570,528..760&family=Spline+Sans+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* stark editorial: bone on near-black + one warm amber accent */
+    --bg:#0a0a0b; --panel:#111113; --ink:#f4f1ea; --bone:#cfcabd; --dim:#8c887e; --faint:#807d74;
+    --accent:#f5a623; --accent-dim:#caa45f;
+    /* --faint lifted to #807d74 so micro-labels (years, View case, scroll cue, footer) clear AA 4.5:1 */
+    --line:rgba(244,241,234,.13); --hair:rgba(244,241,234,.26);
+    --disp:"Roboto Flex","Helvetica Neue",Arial,sans-serif;
+    --mono:"Spline Sans Mono",ui-monospace,monospace;
+    --m:clamp(1.15rem,4.5vw,5rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--disp);min-height:100vh;
+    -webkit-font-smoothing:antialiased;line-height:1.6;position:relative;
+    font-variation-settings:"opsz" 14,"wght" 400,"GRAD" 0,"slnt" 0;}
+  /* faint specimen baseline grid in the page background */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:linear-gradient(rgba(244,241,234,.018) 1px,transparent 1px);
+    background-size:100% 2.4rem;mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent)}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:var(--bg)}
+  .wrap{width:min(1320px,100%);margin:0 auto;padding:0 var(--m);position:relative;z-index:2}
+
+  /* labels / mono - the specimen annotations */
+  .mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:500}
+  .accent{color:var(--accent)}
+
+  /* ===== masthead ===== */
+  .mast{position:fixed;top:0;left:0;right:0;z-index:40;
+    background:linear-gradient(180deg,rgba(10,10,11,.94),rgba(10,10,11,.55) 70%,transparent);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .mast-in{width:min(1320px,100%);margin:0 auto;padding:.85rem var(--m);display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:baseline;gap:.55rem;font-family:var(--disp);letter-spacing:.02em;font-size:.95rem;
+    font-variation-settings:"wght" 760,"wdth" 100,"opsz" 14}
+  .brand .ax{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--accent);font-weight:500;align-self:center}
+  .mast nav{display:flex;gap:1.6rem}
+  .mast nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);transition:color .3s,font-variation-settings .3s}
+  .mast nav a:hover{color:var(--ink)}
+  @media(max-width:680px){.mast nav{display:none}}
+
+  /* ===== hero specimen ===== */
+  header.hero{padding:8.5rem 0 2.4rem;position:relative;z-index:2}
+  .hero-edition{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+    border-bottom:1px solid var(--line);padding-bottom:.9rem;margin-bottom:clamp(1.4rem,4vw,3rem)}
+  /* the reactive hero word */
+  .specimen{position:relative}
+  .hero h1{font-family:var(--disp);text-transform:uppercase;line-height:.82;letter-spacing:-.015em;
+    font-size:clamp(2.6rem,12.2vw,11rem);color:var(--ink);margin:0;max-width:100%;
+    font-variation-settings:"opsz" 144,"wght" 300,"wdth" 100,"GRAD" 0,"slnt" 0}
+  .hero h1 .line{display:block;white-space:nowrap;max-width:100%}
+  .hero h1 .ltr{display:inline-block;will-change:font-variation-settings;
+    font-variation-settings:"opsz" 144,"wght" 300,"wdth" 100,"GRAD" 0,"slnt" 0;
+    transition:font-variation-settings .12s linear}
+  .hero h1 .ltr.sp{width:.26em}
+  .hero h1 .ltr.dot{color:var(--accent)}
+  /* axis annotation lines drawn over the specimen on wide screens */
+  .axisnote{position:absolute;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+    display:flex;align-items:center;gap:.5rem;pointer-events:none}
+  .axisnote::before{content:"";width:clamp(20px,4vw,52px);height:1px;background:var(--hair)}
+  .axisnote.n1{top:-.2rem;right:0}
+  .axisnote.n2{bottom:1.4rem;left:.2rem}
+  @media(max-width:900px){.axisnote{display:none}}
+
+  .hero-foot{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:end;
+    margin-top:clamp(1.8rem,4vw,3rem);border-top:1px solid var(--line);padding-top:clamp(1.4rem,3vw,2.2rem)}
+  .hero .sub{max-width:50ch;color:var(--bone);font-size:clamp(1rem,1.3vw,1.18rem);line-height:1.6;
+    font-variation-settings:"opsz" 18,"wght" 380}
+  .hero .sub b{color:var(--ink);font-variation-settings:"opsz" 18,"wght" 680}
+  .hero .cta{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:flex-end;align-self:end}
+  @media(max-width:780px){.hero-foot{grid-template-columns:1fr;gap:1.6rem}.hero .cta{justify-content:flex-start}}
+  .btn{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.3rem;
+    border:1px solid var(--hair);display:inline-flex;gap:.55rem;align-items:center;font-weight:500;
+    transition:background .35s,color .35s,border-color .35s,transform .35s}
+  .btn .ar{transition:transform .35s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700}
+  .btn.primary:hover{transform:translateY(-2px)}
+  .btn.ghost{color:var(--bone)}
+  .btn.ghost:hover{border-color:var(--ink);color:var(--ink);background:rgba(244,241,234,.05)}
+
+  .scrollcue{margin-top:2.4rem;display:flex;align-items:center;gap:.7rem;color:var(--faint);
+    font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase}
+  .scrollcue .bar{width:34px;height:1px;background:var(--hair);position:relative;overflow:hidden}
+  .scrollcue .bar::after{content:"";position:absolute;inset:0;width:40%;background:var(--accent);animation:slide 2.2s linear infinite}
+  @keyframes slide{0%{transform:translateX(-110%)}100%{transform:translateX(280%)}}
+
+  /* ===== interactive specimen panel ===== */
+  .lab{margin-top:clamp(2.4rem,5vw,4rem);border:1px solid var(--line);background:var(--panel);
+    display:grid;grid-template-columns:1.4fr 1fr;gap:0}
+  .lab-stage{padding:clamp(1.6rem,3.5vw,3rem);display:flex;flex-direction:column;justify-content:center;gap:1rem;border-right:1px solid var(--line);min-width:0;overflow:hidden}
+  .lab-stage .tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  .lab-word{font-family:var(--disp);text-transform:uppercase;line-height:.9;color:var(--ink);
+    font-size:clamp(2.6rem,8vw,6.2rem);letter-spacing:-.01em;
+    font-variation-settings:"opsz" 100,"wght" 600,"wdth" 100,"GRAD" 0;
+    transition:font-variation-settings .05s linear}
+  .lab-readout{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--dim);text-transform:uppercase}
+  .lab-readout b{color:var(--accent);font-weight:500}
+  .lab-controls{padding:clamp(1.6rem,3.5vw,2.6rem);display:flex;flex-direction:column;gap:1.5rem;justify-content:center}
+  .ctl label{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);
+    font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bone);margin-bottom:.6rem}
+  .ctl label .val{color:var(--accent);font-weight:500}
+  .ctl input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:var(--hair);outline:none;cursor:pointer}
+  .ctl input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:16px;border-radius:50%;
+    background:var(--accent);border:2px solid var(--bg);cursor:pointer;transition:transform .2s}
+  .ctl input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.2)}
+  .ctl input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);cursor:pointer}
+  .ctl input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+  @media(max-width:760px){.lab{grid-template-columns:1fr}.lab-stage{border-right:0;border-bottom:1px solid var(--line)}}
+
+  /* ===== section heads ===== */
+  section{padding:clamp(3.4rem,8vh,6.5rem) 0;position:relative;z-index:2}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;
+    border-bottom:1px solid var(--line);padding-bottom:1.1rem;margin-bottom:2.6rem}
+  .shead .idx{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;font-weight:500}
+  .shead h2{font-family:var(--disp);text-transform:uppercase;font-size:clamp(1.8rem,4.4vw,3.4rem);line-height:.95;letter-spacing:-.01em;
+    font-variation-settings:"opsz" 72,"wght" 720,"wdth" 100}
+  .shead .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--dim);text-align:right;text-transform:uppercase;line-height:1.7}
+
+  /* ===== stats - oversized weight-animated numerals ===== */
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .num{background:var(--bg);padding:clamp(1.6rem,3vw,2.6rem) clamp(1.2rem,2.4vw,2rem);min-height:210px;
+    display:flex;flex-direction:column;justify-content:space-between;gap:1.2rem}
+  .num .bignum{font-family:var(--disp);font-size:clamp(3.6rem,9.5vw,7.6rem);line-height:.8;letter-spacing:-.02em;
+    color:var(--ink);display:inline-flex;align-items:flex-start;
+    font-variation-settings:"opsz" 144,"wght" 300,"wdth" 100,"GRAD" 0}
+  .num .bignum sup{font-size:.4em;line-height:1;margin-top:.18em;color:var(--accent)}
+  .num .nl{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--dim);text-transform:uppercase;max-width:24ch;line-height:1.6}
+  @media(max-width:760px){.nums{grid-template-columns:1fr}.num{min-height:auto;flex-direction:row;align-items:center;gap:1.4rem;justify-content:flex-start}.num .nl{max-width:none}}
+
+  /* ===== disciplines as specimen index ===== */
+  .index .row{display:grid;grid-template-columns:3.2rem 1fr 1.5fr;gap:1.5rem;align-items:baseline;padding:1.6rem 0;border-top:1px solid var(--line)}
+  .index .row:last-child{border-bottom:1px solid var(--line)}
+  .index .ri{font-family:var(--mono);color:var(--accent);font-size:.8rem;font-weight:500}
+  .index .rt{font-family:var(--disp);text-transform:uppercase;font-size:clamp(1.3rem,2.6vw,2rem);line-height:1;letter-spacing:-.01em;
+    font-variation-settings:"opsz" 40,"wght" 460,"wdth" 100;transition:font-variation-settings .5s cubic-bezier(.2,.8,.2,1)}
+  .index .rd{color:var(--dim);font-size:.98rem;max-width:42ch;line-height:1.55;font-variation-settings:"opsz" 16,"wght" 380}
+  .index .row{transition:background .4s}
+  .index .row:hover{background:rgba(244,241,234,.025)}
+  .index .row:hover .rt{font-variation-settings:"opsz" 40,"wght" 820,"wdth" 125}
+  @media(max-width:680px){.index .row{grid-template-columns:2.4rem 1fr;gap:.5rem 1rem}.index .rd{grid-column:2}}
+
+  /* ===== selected work - big specimen lines ===== */
+  .specimen-list{border-top:1px solid var(--line)}
+  .wline{display:grid;grid-template-columns:3.4rem 1fr auto;gap:clamp(1rem,3vw,2.4rem);align-items:center;
+    padding:clamp(1.3rem,3vw,2.1rem) 0;border-bottom:1px solid var(--line);position:relative;transition:background .4s}
+  .wline:hover{background:rgba(244,241,234,.025)}
+  .wline .wi{font-family:var(--mono);font-size:.74rem;color:var(--accent);align-self:center;font-weight:500}
+  .wline .wmid{min-width:0}
+  .wline .wt{font-family:var(--disp);text-transform:uppercase;font-size:clamp(1.6rem,5.2vw,4rem);line-height:.92;letter-spacing:-.015em;
+    color:var(--ink);display:block;
+    font-variation-settings:"opsz" 90,"wght" 380,"wdth" 100,"slnt" 0;
+    transition:font-variation-settings .55s cubic-bezier(.2,.8,.2,1),color .4s}
+  .wline:hover .wt{font-variation-settings:"opsz" 90,"wght" 760,"wdth" 130,"slnt" -6}
+  .wline .wmeta{display:flex;gap:.7rem 1.3rem;flex-wrap:wrap;margin-top:.7rem;
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;color:var(--dim)}
+  .wline .wmeta .role{color:var(--bone)}
+  .wline .wmeta .res{color:var(--accent-dim)}
+  .wline .wd{color:var(--dim);font-size:.94rem;line-height:1.55;max-width:54ch;margin-top:.6rem;
+    font-variation-settings:"opsz" 15,"wght" 380}
+  .wline .wyear{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--faint);align-self:center;text-align:right;white-space:nowrap}
+  .wline .go{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+    margin-top:.4rem;transition:color .3s}
+  .wline:hover .go{color:var(--accent)}
+  /* featured: surface the only hard numbers (LambdaTest) as oversized specimen numerals */
+  .wline.feat{grid-template-columns:1fr;gap:1.4rem;padding:clamp(2rem,4vw,3.2rem) 0;background:rgba(244,241,234,.02)}
+  .wfeat-num{display:flex;gap:clamp(1.6rem,5vw,4rem);flex-wrap:wrap;align-items:flex-end}
+  .wfeat-num .stat{display:flex;flex-direction:column;gap:.3rem}
+  .wfeat-num .stat b{font-family:var(--disp);font-size:clamp(2.4rem,7vw,5rem);line-height:.84;letter-spacing:-.02em;color:var(--ink);
+    font-variation-settings:"opsz" 144,"wght" 720,"wdth" 110}
+  .wfeat-num .stat span{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+  .wline.feat:hover .wt{font-variation-settings:"opsz" 90,"wght" 820,"wdth" 135,"slnt" -6}
+  @media(max-width:680px){
+    .wline{grid-template-columns:2.4rem 1fr;gap:.6rem 1rem}
+    .wline .wyear{grid-column:2;text-align:left;margin-top:.4rem}
+  }
+
+  /* ===== recognition & brands ===== */
+  .honours-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(2rem,5vw,4rem)}
+  .stamps{display:flex;flex-direction:column}
+  .stamp{display:flex;align-items:baseline;gap:1.1rem;padding:1.25rem 0;border-top:1px solid var(--line)}
+  .stamp:last-child{border-bottom:1px solid var(--line)}
+  .stamp .sidx{font-family:var(--mono);font-size:.7rem;color:var(--accent);font-weight:500;flex:none}
+  .stamp b{font-family:var(--disp);text-transform:uppercase;font-size:1.4rem;letter-spacing:-.005em;display:block;line-height:1.1;
+    font-variation-settings:"opsz" 28,"wght" 600,"wdth" 100;transition:font-variation-settings .45s}
+  .stamp:hover b{font-variation-settings:"opsz" 28,"wght" 820,"wdth" 120}
+  .stamp span{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--dim);text-transform:uppercase}
+  .brands .bl{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:1.2rem;font-weight:500}
+  .brands .bgrid{display:flex;flex-wrap:wrap;gap:.6rem}
+  .brands .bgrid span{font-family:var(--mono);font-size:.78rem;border:1px solid var(--line);padding:.5rem .8rem;color:var(--bone);transition:border-color .3s,color .3s}
+  .brands .bgrid span:hover{border-color:var(--accent);color:var(--ink)}
+  @media(max-width:720px){.honours-grid{grid-template-columns:1fr}}
+
+  /* ===== about - specimen paragraph ===== */
+  .about-grid{display:grid;grid-template-columns:300px 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  .about-photo{position:relative;aspect-ratio:5/6;border:1px solid var(--line);overflow:hidden;background:var(--panel)}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(1) brightness(1.04) contrast(1.06)}
+  .about-lead{font-family:var(--disp);text-transform:none;font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.08;letter-spacing:-.01em;margin-bottom:2rem;color:var(--ink);
+    font-variation-settings:"opsz" 48,"wght" 480,"wdth" 100}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem 2rem}
+  .fact .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;font-weight:500}
+  .fact .v{color:var(--bone);font-size:.96rem;line-height:1.45;font-variation-settings:"opsz" 16,"wght" 400}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr}.about-photo{max-width:280px}.facts{grid-template-columns:1fr}}
+
+  /* ===== contact ===== */
+  .contact{border-top:1px solid var(--line)}
+  .contact .cl{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:1.2rem;font-weight:500}
+  .contact .big{font-family:var(--disp);text-transform:uppercase;font-size:clamp(3rem,13vw,9.5rem);line-height:.84;letter-spacing:-.02em}
+  .contact .big a{display:inline-flex;align-items:flex-start;gap:.1em;color:var(--ink);
+    font-variation-settings:"opsz" 144,"wght" 360,"wdth" 100,"slnt" 0;
+    transition:font-variation-settings .5s cubic-bezier(.2,.8,.2,1),color .4s}
+  .contact .big a:hover{color:var(--accent);font-variation-settings:"opsz" 144,"wght" 800,"wdth" 125,"slnt" -7}
+  .contact .big a .ar{font-size:.34em;margin-top:.2em}
+  .contact .em{margin-top:1.6rem;font-family:var(--mono);font-size:.82rem;letter-spacing:.03em;color:var(--dim)}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--hair)}
+  .contact .em a:hover{border-color:var(--accent)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:2.2rem 0 3rem;position:relative;z-index:2}
+  .foot-in{width:min(1320px,100%);margin:0 auto;padding:0 var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--faint);text-transform:uppercase}
+  .foot-in a{color:var(--dim)}.foot-in a:hover{color:var(--ink)}
+
+  /* reveals */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1!important;transform:none!important;transition:none}
+    .scrollcue .bar::after{animation:none}
+    html{scroll-behavior:auto}
+    /* static optimal weights, no reactive transitions */
+    .hero h1 .ltr{transition:none;font-variation-settings:"opsz" 144,"wght" 520,"wdth" 105,"GRAD" 0,"slnt" 0!important}
+    .hero h1 .ltr.sp{font-variation-settings:inherit!important}
+  }
+</style>
+</head>
+<body>
+  <header class="mast">
+    <div class="mast-in">
+      <div class="brand">SWAPNIL BISWAS <span class="ax">wght 760</span></div>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="/redesign/">All concepts</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <header class="hero" id="hero">
+      <div class="hero-edition">
+        <span class="mono">Senior Product Marketing Manager &middot; LambdaTest</span>
+        <span class="mono">Specimen 22 &middot; <span class="accent">Roboto Flex</span></span>
+      </div>
+
+      <div class="specimen">
+        <span class="axisnote n1">wght 100 &rarr; 1000</span>
+        <span class="axisnote n2">opsz 8 &rarr; 144 &middot; wdth 25 &rarr; 151</span>
+        <h1 id="heroWord" aria-label="The marketer who ships">
+          <span class="line" data-line="0">
+            {heroLine1.split('').map((ch) => (
+              ch === ' '
+                ? <span class="ltr sp" aria-hidden="true">&nbsp;</span>
+                : <span class="ltr">{ch}</span>
+            ))}
+          </span>
+          <span class="line" data-line="1">
+            {heroLine2.split('').map((ch) => (
+              ch === ' '
+                ? <span class="ltr sp" aria-hidden="true">&nbsp;</span>
+                : <span class="ltr">{ch}</span>
+            ))}<span class="ltr dot" aria-hidden="true">.</span>
+          </span>
+        </h1>
+      </div>
+
+      <div class="hero-foot">
+        <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+        <div class="cta">
+          <a class="btn primary" href="#work">Selected work <span class="ar">&#8599;</span></a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="scrollcue"><span class="bar"></span> Move cursor over the type &middot; scroll to inspect</div>
+
+      <!-- interactive specimen lab -->
+      <div class="lab reveal">
+        <div class="lab-stage">
+          <span class="tag">Test it yourself &middot; Roboto Flex</span>
+          <div class="lab-word" id="labWord">SHIP</div>
+          <div class="lab-readout" id="labReadout">wght <b>600</b> &middot; wdth <b>100</b> &middot; opsz <b>100</b></div>
+        </div>
+        <div class="lab-controls">
+          <div class="ctl">
+            <label for="axWght">Weight<span class="val" id="vWght">600</span></label>
+            <input type="range" id="axWght" min="100" max="1000" value="600" step="1" aria-label="Weight axis" />
+          </div>
+          <div class="ctl">
+            <label for="axWdth">Width<span class="val" id="vWdth">100</span></label>
+            <input type="range" id="axWdth" min="25" max="151" value="100" step="1" aria-label="Width axis" />
+          </div>
+          <div class="ctl">
+            <label for="axOpsz">Optical size<span class="val" id="vOpsz">100</span></label>
+            <input type="range" id="axOpsz" min="8" max="144" value="100" step="1" aria-label="Optical size axis" />
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="wrap">
+    <section id="numbers">
+      <div class="shead">
+        <div><div class="idx">00 / Output</div><h2 class="reveal">What got built &amp; shipped</h2></div>
+        <div class="meta reveal">The leads sit in the headline -<br/>this is the body of work</div>
+      </div>
+      <div class="nums">
+        {stats.map(s => (
+          <div class="num reveal">
+            <div class="bignum" data-target={s.n}>0{s.plus && <sup>{s.plus}</sup>}</div>
+            <div class="nl">{s.l}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="what" class="index">
+      <div class="shead">
+        <div><div class="idx">01 / Disciplines</div><h2 class="reveal">What I do</h2></div>
+        <div class="meta reveal">Four disciplines<br/>one operator</div>
+      </div>
+      <div>
+        {pillars.map(p => (
+          <div class="row reveal">
+            <div class="ri">{p.i}</div>
+            <div class="rt">{p.t}</div>
+            <div class="rd">{p.d}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="shead">
+        <div><div class="idx">02 / Portfolio</div><h2 class="reveal">Selected work</h2></div>
+        <div class="meta reveal">Specimen lines<br/>2019 - 2026</div>
+      </div>
+      <div class="specimen-list">
+        {work.map(w => (
+          w.feat ? (
+            <a href="#" class="wline feat reveal" aria-label={w.t + ' - ' + w.r}>
+              <span class="wmid">
+                <span class="wt">{w.t}</span>
+                <span class="wmeta"><span class="role">{w.role}</span><span>{w.y}</span></span>
+                <span class="wd">{w.d}</span>
+              </span>
+              <span class="wfeat-num">
+                <span class="stat"><b>657K+</b><span>Leads generated</span></span>
+                <span class="stat"><b>18.2M+</b><span>Organic traffic driven</span></span>
+                <span class="stat"><b>10x</b><span>Growth engine, built</span></span>
+              </span>
+              <span class="go">View case &#8599;</span>
+            </a>
+          ) : (
+            <a href="#" class="wline reveal" aria-label={w.t + ' - ' + w.r}>
+              <span class="wi">{w.i}</span>
+              <span class="wmid">
+                <span class="wt">{w.t}</span>
+                <span class="wmeta"><span class="role">{w.role}</span><span class="res">{w.r}</span></span>
+                <span class="wd">{w.d}</span>
+                <span class="go">View case &#8599;</span>
+              </span>
+              <span class="wyear">{w.y}</span>
+            </a>
+          )
+        ))}
+      </div>
+    </section>
+
+    <section id="honours">
+      <div class="shead">
+        <div><div class="idx">03 / Honours</div><h2 class="reveal">Recognition &amp; brands</h2></div>
+      </div>
+      <div class="honours-grid">
+        <div class="stamps reveal">
+          {recognition.map((a, i) => (
+            <div class="stamp"><span class="sidx">{'0' + (i + 1)}</span><div><b>{a.t}</b><span>{a.m}</span></div></div>
+          ))}
+        </div>
+        <div class="brands reveal">
+          <div class="bl">Trusted by teams at</div>
+          <div class="bgrid">{brands.map(b => <span>{b}</span>)}</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="shead">
+        <div><div class="idx">04 / Colophon</div><h2 class="reveal">About the maker</h2></div>
+        <div class="meta reveal">Mumbai, India</div>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo reveal"><img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" loading="lazy" decoding="async" /></div>
+        <div>
+          <p class="about-lead reveal">I treat my own career like a product - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+          <div class="facts">
+            <div class="fact reveal"><div class="k">Based</div><div class="v">Mumbai, India</div></div>
+            <div class="fact reveal"><div class="k">Tenure</div><div class="v">7+ years marketing &middot; 4+ in B2B SaaS</div></div>
+            <div class="fact reveal"><div class="k">Education</div><div class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</div></div>
+            <div class="fact reveal"><div class="k">Practice</div><div class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="cl reveal">Let's build something that compounds</div>
+      <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello <span class="ar">&#8599;</span></a></div>
+      <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <span>Kinetic &middot; Concept 22</span>
+      <span>Swapnil Biswas &copy; 2026</span>
+      <span><a href="/redesign/">View all concepts</a></span>
+    </div>
+  </footer>
+
+<script>
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- reveals ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---------- stat numerals: count-up + weight bloom ---------- */
+  function animateNum(el){
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const sup = el.querySelector('sup');
+    const supHTML = sup ? sup.outerHTML : '';
+    if (RM){
+      el.innerHTML = target + supHTML;
+      el.style.fontVariationSettings = '"opsz" 144,"wght" 720,"wdth" 100,"GRAD" 0';
+      return;
+    }
+    const dur = 1200, t0 = performance.now();
+    function step(now){
+      const p = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(target * eased);
+      const wght = Math.round(300 + eased * 480);   // 300 -> 780 weight bloom
+      const wdth = Math.round(100 + eased * 30);     // 100 -> 130 width bloom
+      el.innerHTML = val + supHTML;
+      el.style.fontVariationSettings = '"opsz" 144,"wght" ' + wght + ',"wdth" ' + wdth + ',"GRAD" 0';
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const numIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ animateNum(e.target.querySelector('.bignum')); numIO.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.num').forEach(n => numIO.observe(n));
+
+  /* ---------- THE MECHANIC: reactive kinetic hero ---------- */
+  (function kinetic(){
+    const word = document.getElementById('heroWord');
+    if (!word) return;
+    const letters = Array.from(word.querySelectorAll('.ltr')).filter(l => !l.classList.contains('sp'));
+    if (!letters.length) return;
+
+    // reduced motion: static optimal weights baked by CSS, no reactivity at all
+    if (RM) return;
+
+    // axis ranges + radius of influence
+    const RADIUS = 280;          // px reach of the cursor field
+    const W_BASE = 300, W_PEAK = 1000;
+    const WD_BASE = 100, WD_PEAK = 151;
+    const SL_PEAK = -9;          // max slant (negative = forward lean)
+    const OPSZ = 144;
+
+    let pointer = { x: -99999, y: -99999, inside: false };
+    let scrollPush = 0;          // 0..1 global push from scroll velocity
+    let lastScrollY = window.scrollY;
+    let centres = [];            // cached letter centres (page coords)
+    let rafPending = false;
+    let active = false;
+
+    function measure(){
+      const sy = window.scrollY;
+      centres = letters.map(l => {
+        const r = l.getBoundingClientRect();
+        return { x: r.left + r.width / 2, y: r.top + sy + r.height / 2, el: l, on: true };
+      });
+    }
+    measure();
+
+    // only update letters that are on screen
+    function updateVisibility(){
+      const top = window.scrollY, bot = top + window.innerHeight;
+      for (const c of centres){
+        c.on = c.y > top - 200 && c.y < bot + 200;
+      }
+    }
+
+    function render(){
+      rafPending = false;
+      const sy = window.scrollY;
+      const px = pointer.x, py = pointer.y + sy;   // pointer in page coords
+      for (const c of centres){
+        if (!c.on) continue;
+        let f = 0;
+        if (pointer.inside){
+          const dx = c.x - px, dy = c.y - py;
+          const d = Math.sqrt(dx*dx + dy*dy);
+          if (d < RADIUS){ const t = 1 - d / RADIUS; f = t * t; }   // ease-in falloff
+        }
+        // scroll velocity adds a global floor of weight + slant
+        const g = scrollPush;
+        const fl = Math.max(f, g * 0.55);
+        const wght = Math.round(W_BASE + fl * (W_PEAK - W_BASE));
+        const wdth = Math.round(WD_BASE + f * (WD_PEAK - WD_BASE));
+        const slnt = (f * SL_PEAK) + (g * SL_PEAK * 0.5);
+        c.el.style.fontVariationSettings =
+          '"opsz" ' + OPSZ + ',"wght" ' + wght + ',"wdth" ' + wdth + ',"GRAD" 0,"slnt" ' + slnt.toFixed(1);
+      }
+      // keep animating while there is residual scroll push so it settles to a legible rest state
+      if (pointer.inside || scrollPush > 0.01){
+        scrollPush *= 0.9;
+        if (pointer.inside || scrollPush > 0.01) schedule();
+      } else if (!settled){
+        settle();
+      }
+    }
+
+    let settled = false;
+    function schedule(){ if (!rafPending){ rafPending = true; settled = false; requestAnimationFrame(render); } }
+
+    // ease every letter back to the legible resting weight when idle
+    function settle(){
+      settled = true;
+      for (const c of centres){
+        c.el.style.fontVariationSettings = '"opsz" ' + OPSZ + ',"wght" 300,"wdth" 100,"GRAD" 0,"slnt" 0';
+      }
+    }
+
+    word.addEventListener('pointermove', (ev) => {
+      pointer.x = ev.clientX; pointer.y = ev.clientY; pointer.inside = true;
+      schedule();
+    });
+    word.addEventListener('pointerleave', () => {
+      pointer.inside = false;
+      schedule();   // render loop will settle once scrollPush decays
+    });
+
+    // scroll velocity -> global push, rAF-throttled
+    let scrollTick = false;
+    window.addEventListener('scroll', () => {
+      if (scrollTick) return;
+      scrollTick = true;
+      requestAnimationFrame(() => {
+        const sy = window.scrollY;
+        const v = Math.min(1, Math.abs(sy - lastScrollY) / 60);
+        lastScrollY = sy;
+        scrollPush = Math.max(scrollPush, v);
+        updateVisibility();
+        schedule();
+        scrollTick = false;
+      });
+    }, { passive: true });
+
+    // re-measure on resize / font load (letter boxes shift once the variable font swaps in)
+    let rt;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { measure(); schedule(); }, 160); });
+    if (document.fonts && document.fonts.ready){
+      document.fonts.ready.then(() => { measure(); schedule(); });
+    }
+    // gentle idle entrance: one settle pass so letters land at rest weight
+    schedule();
+  })();
+
+  /* ---------- interactive specimen sliders ---------- */
+  (function lab(){
+    const wordEl = document.getElementById('labWord');
+    const readout = document.getElementById('labReadout');
+    const wght = document.getElementById('axWght');
+    const wdth = document.getElementById('axWdth');
+    const opsz = document.getElementById('axOpsz');
+    if (!wordEl || !wght || !wdth || !opsz) return;
+    const vW = document.getElementById('vWght'), vD = document.getElementById('vWdth'), vO = document.getElementById('vOpsz');
+    let pending = false;
+    function apply(){
+      pending = false;
+      const w = wght.value, d = wdth.value, o = opsz.value;
+      wordEl.style.fontVariationSettings = '"opsz" ' + o + ',"wght" ' + w + ',"wdth" ' + d + ',"GRAD" 0';
+      vW.textContent = w; vD.textContent = d; vO.textContent = o;
+      readout.innerHTML = 'wght <b>' + w + '</b> &middot; wdth <b>' + d + '</b> &middot; opsz <b>' + o + '</b>';
+    }
+    function onInput(){ if (!pending){ pending = true; requestAnimationFrame(apply); } }
+    [wght, wdth, opsz].forEach(s => s.addEventListener('input', onInput));
+    apply();
+  })();
+</script>
+</body>
+</html>

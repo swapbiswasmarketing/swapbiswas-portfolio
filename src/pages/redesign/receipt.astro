@@ -1,0 +1,516 @@
+---
+// REDESIGN PROTOTYPE - "Receipt" - Concept 39.
+// A thermal POS receipt spools out the itemized career. Original concept (NOT a reskin of
+// halftone): own layout + interaction + palette + fonts + mechanic.
+//  - A long thermal-paper RECEIPT prints out line-by-line on load (sequential reveal with a
+//    moving print-head bar). Career rendered as real receipt anatomy: merchant header, order no.,
+//    itemized line items (client / role / year as "purchases"), subtotal, TOTAL carrying the hard
+//    numbers, a SHIPPED summary, loyalty stamps (recognition), a barcode, and a "PAID IN FULL"
+//    rubber stamp. About = "served by" cashier note. Contact = "come again" footer.
+//  - Warm thermal paper (#f4efe3) + ink (#23201b) on a dark counter (#15130f). One accent: stamp red.
+//  - Monospace receipt type; item/amount columns aligned with a flex leader of dots.
+// Self-contained: own <html>, own Google Fonts <link>, own CSS tokens, noindex. No BaseLayout.
+// GOTCHA NOTES: receipt LINES live in the Astro markup (not injected by JS) so every line is
+// visible even if the print animation never fires; JS only reveals/staggers them. prefers-reduced-
+// motion shows the receipt fully printed. No text-shadow/filter on any background-clip:text element.
+const order = '2018-2026';
+const lineItems = [
+  { sku: 'PMM', name: 'LambdaTest', role: 'Product & digital marketing', y: '2021-25', amt: '657K LEADS', feat: true,
+    d: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { sku: 'BRD', name: 'TestMu AI', role: 'Rebrand lead', y: '2026', amt: 'FULL REBRAND',
+    d: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { sku: 'LCH', name: 'Samsung', role: 'via Sociowash', y: '2019', amt: 'M-SERIES',
+    d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { sku: 'GTM', name: 'Medilife Superspeciality', role: 'Marketing & web', y: '0 to 1', amt: 'WEBSITE + GTM',
+    d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { sku: 'CRM', name: 'Lido Learning', role: 'Growth / CRM', y: '2021', amt: 'LEAD OPS',
+    d: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { sku: 'CNT', name: 'Appknox', role: 'Freelance content', y: 'Freelance', amt: 'SECURITY',
+    d: 'Freelance content writer for the mobile app security company.' },
+];
+const disciplines = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+const shipped = [
+  { n: '20+', l: 'AI agents & internal tools shipped' },
+  { n: '15+', l: 'Marketers mentored & levelled up' },
+  { n: '76',  l: 'Long-form articles published' },
+];
+const rewards = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const metrics = [
+  { v: '657K+',  l: 'Leads' },
+  { v: '18.2M+', l: 'Organic traffic' },
+  { v: '10x',    l: 'Pipeline efficiency' },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="receipt">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --counter:#15130f;     /* dark counter the receipt sits on */
+    --counter2:#1d1a14;
+    --paper:#f4efe3;       /* warm thermal paper */
+    --paper2:#efe8d8;
+    --ink:#23201b;         /* near-black thermal ink - AA on paper */
+    --ink2:#4a443a;        /* secondary ink */
+    --faint:#6b6456;       /* faint thermal print - AA-safe on paper (5.1:1) */
+    --rule:#cfc6b2;        /* dashed rule colour */
+    --rule2:#bdb39c;
+    --stamp:#b83232;       /* rubber-stamp red accent */
+    --stamp-soft:rgba(184,50,50,.12);
+    --disp:"Bebas Neue",Impact,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,"Courier New",monospace;
+    --pad:clamp(18px,5vw,40px);
+    --paperw:min(500px,calc(100vw - 28px));
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth;background:var(--counter)}
+  body{
+    background:
+      radial-gradient(120% 80% at 50% -10%, var(--counter2), var(--counter) 60%),
+      var(--counter);
+    color:var(--ink);font-family:var(--mono);min-height:100vh;-webkit-font-smoothing:antialiased;
+    line-height:1.55;padding:clamp(20px,6vh,72px) 0 clamp(40px,8vh,90px);position:relative;
+  }
+  /* counter texture (very subtle) */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.025) .5px,transparent .6px);background-size:5px 5px}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--ink);color:var(--paper)}
+
+  /* ============ the receipt strip ============ */
+  .receipt{
+    position:relative;z-index:2;width:var(--paperw);margin:0 auto;
+    background:linear-gradient(180deg,var(--paper),var(--paper2));
+    color:var(--ink);padding:0 var(--pad);
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.65), 0 6px 18px rgba(0,0,0,.35);
+    /* faint thermal-paper grain + horizontal print banding */
+    background-image:
+      linear-gradient(180deg,var(--paper),var(--paper2)),
+      repeating-linear-gradient(0deg,rgba(0,0,0,.012) 0 2px,transparent 2px 4px);
+  }
+  /* thermal grain overlay (kept behind text via low opacity) */
+  .receipt::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")}
+
+  /* torn / perforated top + bottom edges */
+  .edge{position:relative;z-index:2;width:var(--paperw);margin:0 auto;height:14px;
+    background:var(--paper)}
+  .edge.top{
+    -webkit-mask:radial-gradient(7px 14px at 7px -2px, transparent 98%, #000) repeat-x 0 0/14px 14px;
+            mask:radial-gradient(7px 14px at 7px -2px, transparent 98%, #000) repeat-x 0 0/14px 14px;
+    box-shadow:none}
+  .edge.bot{
+    -webkit-mask:radial-gradient(7px 14px at 7px 16px, transparent 98%, #000) repeat-x 0 0/14px 14px;
+            mask:radial-gradient(7px 14px at 7px 16px, transparent 98%, #000) repeat-x 0 0/14px 14px}
+  .edge.top{box-shadow:0 -2px 0 0 rgba(0,0,0,0)}
+  /* connect edge shadow to receipt body */
+  .edge::after{content:"";position:absolute;inset:0;
+    box-shadow:0 12px 26px -16px rgba(0,0,0,.6);}
+  .edge.bot::after{box-shadow:0 -12px 26px -16px rgba(0,0,0,.6)}
+
+  /* ============ moving print head (intro only) ============ */
+  .printhead{position:absolute;left:0;right:0;height:30px;z-index:6;pointer-events:none;opacity:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.05) 55%,transparent);
+    border-top:2px solid rgba(0,0,0,.35)}
+  .printhead::after{content:"";position:absolute;left:50%;top:-7px;transform:translateX(-50%);
+    width:46%;height:6px;border-radius:3px;background:var(--ink);opacity:.8}
+
+  /* ============ receipt typography ============ */
+  .center{text-align:center}
+  .small{font-size:11px;letter-spacing:.04em;color:var(--ink2)}
+  .tiny{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .pad-y{padding:14px 0}
+
+  /* dashed rules */
+  .rule{border:0;border-top:1px dashed var(--rule);margin:10px 0}
+  .rule.solid{border-top:1px solid var(--rule2)}
+  .rule.double{border:0;height:3px;border-top:1px solid var(--rule2);border-bottom:1px solid var(--rule2)}
+
+  /* ---- header / merchant ---- */
+  .head{padding-top:26px;text-align:center}
+  .merchant{font-family:var(--disp);font-weight:400;letter-spacing:.04em;line-height:.92;
+    font-size:clamp(40px,12vw,62px);color:var(--ink)}
+  .merchant .l2{display:block}
+  .tag{margin-top:8px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink2)}
+  .est{margin-top:14px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.06em;color:var(--faint)}
+
+  /* hero subline */
+  .lede{margin:16px 0 4px;font-size:13px;line-height:1.7;color:var(--ink);text-align:center}
+  .lede b{color:var(--ink);font-weight:800;background:var(--stamp-soft);padding:0 3px;border-radius:2px;
+    box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+  /* CTA receipt buttons */
+  .cta{display:flex;gap:8px;margin:18px 0 6px;flex-wrap:wrap;justify-content:center}
+  .btn{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    padding:11px 16px;border:1.5px dashed var(--ink);color:var(--ink);display:inline-flex;gap:7px;align-items:center;
+    background:transparent;transition:background .25s,color .25s,transform .25s,border-color .25s}
+  .btn .ar{transition:transform .25s}
+  .btn:hover .ar{transform:translate(2px,-2px)}
+  .btn.primary{background:var(--ink);color:var(--paper);border-style:solid}
+  .btn.primary:hover{transform:translateY(-2px)}
+  .btn.ghost:hover{background:rgba(0,0,0,.05);border-style:solid}
+
+  /* section caption rows like "*** ORDER ***" */
+  .scap{text-align:center;font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--ink);margin:6px 0 4px}
+  .scap .star{color:var(--faint)}
+  .smeta{text-align:center;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+
+  /* ---- itemized line items ---- */
+  .li{padding:11px 0;border-top:1px dashed var(--rule)}
+  .li:first-of-type{border-top:0}
+  .li-top{display:flex;align-items:baseline;gap:8px}
+  .li .nm{font-weight:800;font-size:14px;letter-spacing:.01em;color:var(--ink);white-space:nowrap}
+  .li .leader{flex:1;border-bottom:1.5px dotted var(--rule2);transform:translateY(-3px);min-width:14px}
+  .li .amt{font-weight:700;font-size:12px;letter-spacing:.04em;color:var(--ink);white-space:nowrap}
+  .li .meta{display:flex;justify-content:space-between;gap:10px;margin-top:3px;font-size:11px;color:var(--ink2)}
+  .li .meta .sku{color:var(--faint);letter-spacing:.1em}
+  .li .desc{margin-top:6px;font-size:11px;line-height:1.6;color:var(--ink2)}
+  .li.feat{background:rgba(184,50,50,.05);margin:0 calc(var(--pad) * -1);padding-left:var(--pad);padding-right:var(--pad);
+    border-top:1px dashed var(--rule)}
+  .li.feat .nm{color:var(--stamp)}
+  .li.feat .badge{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);
+    background:var(--stamp);padding:2px 6px;border-radius:2px;white-space:nowrap}
+
+  /* ---- disciplines (services rendered) ---- */
+  .svc{display:flex;gap:10px;padding:9px 0;border-top:1px dotted var(--rule)}
+  .svc:first-child{border-top:0}
+  .svc .si{font-weight:800;color:var(--faint);font-size:11px;flex:none;width:22px}
+  .svc .st{font-weight:700;font-size:12px;color:var(--ink);letter-spacing:.02em}
+  .svc .sd{font-size:11px;color:var(--ink2);line-height:1.55;margin-top:2px}
+
+  /* ---- subtotal / total block ---- */
+  .sub-row{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;color:var(--ink2);padding:4px 0}
+  .sub-row .v{font-weight:700;color:var(--ink)}
+  .total{display:flex;justify-content:space-between;align-items:center;padding:12px 0 6px}
+  .total .tl{font-family:var(--disp);font-size:30px;letter-spacing:.04em;color:var(--ink);line-height:1}
+  .total .tv{font-family:var(--disp);font-size:34px;letter-spacing:.02em;line-height:1;
+    /* dot-fill via background-clip:text - NO text-shadow/filter (Chrome gotcha) */
+    background-image:radial-gradient(var(--stamp) 42%,transparent 46%);background-size:.07em .07em;
+    -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+  .metricline{display:flex;justify-content:space-between;gap:8px;margin-top:8px;text-align:center}
+  .metricline .m{flex:1}
+  .metricline .mv{font-family:var(--disp);font-size:clamp(22px,6vw,30px);color:var(--ink);line-height:1;letter-spacing:.02em}
+  .metricline .ml{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:4px}
+
+  /* ---- shipped summary ---- */
+  .ship{display:flex;justify-content:space-between;gap:8px;text-align:center;margin:4px 0}
+  .ship .s{flex:1}
+  .ship .sn{font-family:var(--disp);font-size:clamp(26px,8vw,38px);color:var(--ink);line-height:1}
+  .ship .sl{font-size:10px;letter-spacing:.04em;color:var(--ink2);margin-top:5px;line-height:1.45}
+
+  /* ---- loyalty rewards / stamps ---- */
+  .reward{display:flex;align-items:center;gap:11px;padding:9px 0;border-top:1px dashed var(--rule)}
+  .reward:first-of-type{border-top:0}
+  .reward .badge{width:34px;height:34px;flex:none;border:1.5px solid var(--stamp);color:var(--stamp);border-radius:50%;
+    display:grid;place-items:center;font-weight:800;font-size:13px;transform:rotate(-8deg)}
+  .reward b{display:block;font-size:12px;font-weight:800;color:var(--ink);letter-spacing:.02em;line-height:1.2}
+  .reward span{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+
+  /* ---- brands chips ---- */
+  .chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:6px}
+  .chips span{font-size:10px;letter-spacing:.04em;border:1px dashed var(--rule2);padding:5px 8px;color:var(--ink2)}
+
+  /* ---- served by / about ---- */
+  .served .lead{font-size:12px;line-height:1.7;color:var(--ink);text-align:center;margin:6px 0 12px}
+  .facts{display:grid;grid-template-columns:1fr;gap:0}
+  .fact{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px dotted var(--rule);font-size:11px}
+  .fact:first-child{border-top:0}
+  .fact .k{color:var(--faint);letter-spacing:.06em;text-transform:uppercase;flex:none}
+  .fact .v{color:var(--ink2);text-align:right}
+
+  /* ---- barcode ---- */
+  .barcode{margin:8px auto 4px;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .bars{height:54px;width:78%;
+    background-image:repeating-linear-gradient(90deg,
+      var(--ink) 0 2px, transparent 2px 4px,
+      var(--ink) 4px 5px, transparent 5px 9px,
+      var(--ink) 9px 12px, transparent 12px 13px,
+      var(--ink) 13px 14px, transparent 14px 18px,
+      var(--ink) 18px 19px, transparent 19px 23px);
+    background-size:23px 100%}
+  .barcode .bc-no{font-size:11px;letter-spacing:.42em;color:var(--ink);padding-left:.42em}
+
+  /* ---- PAID stamp ---- */
+  .stampwrap{position:relative;text-align:center;padding:18px 0 6px}
+  .paid{display:inline-block;border:3px double var(--stamp);color:var(--stamp);
+    font-family:var(--disp);font-size:clamp(26px,9vw,40px);letter-spacing:.08em;line-height:1;
+    padding:8px 20px;transform:rotate(-7deg);border-radius:6px;position:relative;
+    background:repeating-linear-gradient(45deg,transparent 0 6px,rgba(184,50,50,.05) 6px 7px)}
+  .paid .sub{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.3em;margin-top:3px}
+
+  /* ---- contact footer ---- */
+  .come{text-align:center;padding:6px 0 4px}
+  .come .big{font-family:var(--disp);font-size:clamp(34px,11vw,52px);line-height:.92;letter-spacing:.03em;color:var(--ink)}
+  .come .em{margin-top:12px;font-size:11px;letter-spacing:.04em;color:var(--ink2);line-height:1.8;word-break:break-word}
+  .come .em a{color:var(--stamp);border-bottom:1px dashed var(--stamp)}
+  .come .qr{margin:14px auto 4px;width:64px;height:64px;
+    background:
+      conic-gradient(from 0deg, var(--ink) 0 25%, transparent 0 50%, var(--ink) 0 75%, transparent 0) 0 0/16px 16px,
+      linear-gradient(var(--ink),var(--ink)) 0 0/100% 4px no-repeat,
+      linear-gradient(var(--ink),var(--ink)) 0 100%/100% 4px no-repeat,
+      linear-gradient(var(--ink),var(--ink)) 0 0/4px 100% no-repeat,
+      linear-gradient(var(--ink),var(--ink)) 100% 0/4px 100% no-repeat;
+    image-rendering:pixelated;opacity:.92}
+  .thanks{text-align:center;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);padding:8px 0 22px}
+
+  /* counter footer (outside paper) */
+  .counterfoot{position:relative;z-index:2;width:var(--paperw);margin:22px auto 0;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8a826f}
+  .counterfoot a{color:#8c8474;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+  .counterfoot a:hover{color:var(--paper);border-color:#8c8474}
+
+  /* ============ thermal print reveal ============ */
+  /* Default: every line is FULLY VISIBLE. This guarantees content shows even if JS never runs
+     or the print animation never fires (lines live in markup, not injected). */
+  .pl{opacity:1;transform:none;will-change:opacity,transform}
+  /* Only when JS confirms motion is allowed does it add .js-print to <html>, which hides lines
+     so the sequencer can spool them back in. JS then sets inline styles + transition per line. */
+  html.js-print .pl{opacity:0;transform:translateY(8px);
+    transition:opacity .28s ease,transform .28s cubic-bezier(.2,.8,.2,1)}
+  html.js-print .pl.shown{opacity:1;transform:none}
+
+  @media(prefers-reduced-motion:reduce){
+    .pl{opacity:1!important;transform:none!important;transition:none}
+    .printhead{display:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+  <div class="edge top" aria-hidden="true"></div>
+
+  <main class="receipt" id="receipt">
+    <div class="printhead" id="printhead" aria-hidden="true"></div>
+
+    <!-- ===== MERCHANT HEADER ===== -->
+    <section class="head">
+      <h1 class="merchant pl">SWAPNIL<span class="l2">BISWAS</span></h1>
+      <div class="tag pl">Product Marketing &amp; Growth</div>
+      <div class="est pl">
+        <span>EST 2018</span>
+        <span>ORDER NO. {order}</span>
+      </div>
+    </section>
+
+    <hr class="rule double pl" />
+
+    <p class="lede pl">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+    <div class="tiny center pl">Senior Product Marketing Manager - LambdaTest</div>
+
+    <div class="cta pl">
+      <a class="btn primary" href="#order">View order <span class="ar">&#8599;</span></a>
+      <a class="btn ghost" href="#come">Get in touch</a>
+    </div>
+
+    <hr class="rule pl" />
+
+    <!-- ===== ITEMIZED ORDER ===== -->
+    <section id="order">
+      <div class="scap pl"><span class="star">***</span> ORDER &middot; SELECTED WORK <span class="star">***</span></div>
+      <div class="smeta pl">Qty 6 &middot; 2019 to 2026</div>
+
+      {lineItems.map(w => (
+        <div class={'li pl' + (w.feat ? ' feat' : '')}>
+          <div class="li-top">
+            <span class="nm">{w.name}</span>
+            {w.feat && <span class="badge">FEATURED</span>}
+            <span class="leader" aria-hidden="true"></span>
+            <span class="amt">{w.amt}</span>
+          </div>
+          <div class="meta">
+            <span>{w.role}</span>
+            <span class="sku">{w.sku} &middot; {w.y}</span>
+          </div>
+          <div class="desc">{w.d}</div>
+        </div>
+      ))}
+    </section>
+
+    <hr class="rule pl" />
+
+    <!-- ===== SERVICES RENDERED (disciplines) ===== -->
+    <section id="services">
+      <div class="scap pl"><span class="star">***</span> SERVICES RENDERED <span class="star">***</span></div>
+      <div class="smeta pl">Four disciplines &middot; one operator</div>
+      {disciplines.map(p => (
+        <div class="svc pl">
+          <span class="si">{p.i}</span>
+          <div>
+            <div class="st">{p.t}</div>
+            <div class="sd">{p.d}</div>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <hr class="rule pl" />
+
+    <!-- ===== SUBTOTAL + TOTAL ===== -->
+    <section id="total">
+      <div class="sub-row pl"><span>Subtotal &middot; work delivered</span><span class="v">6 ENGAGEMENTS</span></div>
+      <div class="sub-row pl"><span>Years in marketing</span><span class="v">7+</span></div>
+      <div class="sub-row pl"><span>Years in B2B SaaS</span><span class="v">4+</span></div>
+      <hr class="rule solid pl" />
+      <div class="total pl">
+        <span class="tl">TOTAL</span>
+        <span class="tv">657K LEADS</span>
+      </div>
+      <div class="metricline pl">
+        {metrics.map(m => (
+          <div class="m"><div class="mv">{m.v}</div><div class="ml">{m.l}</div></div>
+        ))}
+      </div>
+      <div class="tiny center pl" style="margin-top:10px">Hard numbers from LambdaTest, 2021 to 2025</div>
+    </section>
+
+    <hr class="rule pl" />
+
+    <!-- ===== SHIPPED SUMMARY ===== -->
+    <section id="shipped">
+      <div class="scap pl"><span class="star">&#10097;&#10097;</span> SHIPPED <span class="star">&#10096;&#10096;</span></div>
+      <div class="ship">
+        {shipped.map(s => (
+          <div class="s pl">
+            <div class="sn">{s.n}</div>
+            <div class="sl">{s.l}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <hr class="rule pl" />
+
+    <!-- ===== LOYALTY REWARDS (recognition) ===== -->
+    <section id="rewards">
+      <div class="scap pl"><span class="star">***</span> LOYALTY REWARDS <span class="star">***</span></div>
+      {rewards.map(a => (
+        <div class="reward pl">
+          <span class="badge" aria-hidden="true">&#9733;</span>
+          <div><b>{a.t}</b><span>{a.m}</span></div>
+        </div>
+      ))}
+      <hr class="rule pl" />
+      <div class="tiny center pl">Trusted by teams at</div>
+      <div class="chips pl">{brands.map(b => <span>{b}</span>)}</div>
+    </section>
+
+    <hr class="rule pl" />
+
+    <!-- ===== SERVED BY (about) ===== -->
+    <section id="served" class="served">
+      <div class="scap pl"><span class="star">***</span> SERVED BY <span class="star">***</span></div>
+      <p class="lead pl">I treat my own career like a product - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+      <div class="facts pl">
+        <div class="fact"><span class="k">Based</span><span class="v">Mumbai, India</span></div>
+        <div class="fact"><span class="k">Tenure</span><span class="v">7+ yrs marketing &middot; 4+ in B2B SaaS</span></div>
+        <div class="fact"><span class="k">Education</span><span class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</span></div>
+        <div class="fact"><span class="k">Practice</span><span class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</span></div>
+      </div>
+    </section>
+
+    <hr class="rule double pl" />
+
+    <!-- ===== BARCODE ===== -->
+    <div class="barcode pl">
+      <div class="bars" aria-hidden="true"></div>
+      <div class="bc-no">SHIPS2026</div>
+    </div>
+
+    <!-- ===== PAID STAMP ===== -->
+    <div class="stampwrap">
+      <span class="paid pl">PAID IN FULL<span class="sub">SHIPPED</span></span>
+    </div>
+
+    <hr class="rule pl" />
+
+    <!-- ===== COME AGAIN (contact) ===== -->
+    <section id="come" class="come">
+      <div class="tiny pl">Let's build something that compounds</div>
+      <div class="big pl">COME AGAIN</div>
+      <div class="qr pl" aria-hidden="true"></div>
+      <div class="em pl">
+        <a href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a><br/>
+        <a href="https://www.linkedin.com/in/swapbiswas/">linkedin.com/in/swapbiswas</a>
+      </div>
+    </section>
+
+    <div class="thanks pl">Thank you &middot; come again &middot; <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+  </main>
+
+  <div class="edge bot" aria-hidden="true"></div>
+
+  <footer class="counterfoot">
+    <span>Receipt &middot; Concept 39</span>
+    <span>Swapnil Biswas &copy; 2026</span>
+    <span><a href="/redesign/">View all concepts</a></span>
+  </footer>
+
+<script>
+  // GSAP not required for this mechanic - a tiny vanilla print sequencer keeps it light + 60fps.
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+  const receipt = document.getElementById('receipt');
+  const head = document.getElementById('printhead');
+  const lines = Array.from(document.querySelectorAll('.pl')) as HTMLElement[];
+
+  if (RM || !receipt || !head || !lines.length) {
+    // reduced motion (or nothing to do): leave everything fully visible (default CSS), no head.
+  } else {
+    // Hide lines (CSS: html.js-print .pl -> opacity:0), then spool them back in one by one.
+    root.classList.add('js-print');
+
+    const rcpt = receipt as HTMLElement;
+    const ph = head as HTMLElement;
+    const STEP = Math.max(30, Math.min(70, 1400 / lines.length)); // ms between lines
+    let i = 0;
+    let safety = 0;
+
+    function showHeadAt(el: HTMLElement) {
+      const r = el.getBoundingClientRect();
+      const rr = rcpt.getBoundingClientRect();
+      ph.style.top = (r.bottom - rr.top - 4) + 'px';
+      ph.style.opacity = '1';
+    }
+    function finish() {
+      ph.style.opacity = '0';
+      lines.forEach(el => el.classList.add('shown'));
+      clearTimeout(safety);
+    }
+    function tick() {
+      if (i >= lines.length) { finish(); return; }
+      const el = lines[i];
+      el.classList.add('shown');     // CSS transition reveals it
+      showHeadAt(el);
+      i++;
+      setTimeout(() => requestAnimationFrame(tick), STEP);
+    }
+
+    // Kick off after two frames so fonts/layout settle (keeps the print-head aligned).
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      safety = window.setTimeout(finish, 3500); // hard guarantee: everything visible within 3.5s
+      tick();
+    }));
+  }
+</script>
+</body>
+</html>

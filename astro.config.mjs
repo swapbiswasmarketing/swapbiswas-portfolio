@@ -6,13 +6,18 @@ import rehypeExternalLinks from 'rehype-external-links';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://swapbiswas.com',
+	redirects: {
+		// The concept library lives at /personal-website-examples/; the 41 demos stay at /redesign/{slug} (noindex).
+		'/redesign': '/personal-website-examples/',
+		'/homepage-design-concepts': '/personal-website-examples/',
+	},
 	integrations: [
 		sitemap({
 			// Exclude noindexed routes so they don't bloat the sitemap
 			filter: (page) =>
 				!page.includes('/blog/category/') &&
 				!page.includes('/work/') &&
-				!page.match(/\/work\/?$/),
+				!page.match(/\/work\/?$/) && !page.includes('/redesign'),
 		}),
 		{
 			name: 'sitemap-lastmod',

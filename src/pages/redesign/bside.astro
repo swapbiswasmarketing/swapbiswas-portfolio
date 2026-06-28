@@ -1,0 +1,658 @@
+---
+// REDESIGN PROTOTYPE - "B-Side" - a career pressed to vinyl.
+// Original concept (NOT a reskin of any other prototype): own layout, palette, fonts, mechanic.
+//  - The centerpiece is a real turntable: a spinning VINYL DISC (grooves + center label carrying
+//    his portrait) with a TONEARM/needle that DROPS onto a selected track.
+//  - A TRACKLIST splits A-SIDE (launches / wins) and B-SIDE (experiments / craft). Each TRACK is a
+//    role/work entry. Clicking a track moves the needle to it and "plays" it: the now-playing panel
+//    reveals role / year / outcome / description. LambdaTest is track A1, the headline single, and
+//    carries the only hard numbers (657K+ / 18.2M+).
+//  - Metrics framed as a "total runtime" + "play counts". Disciplines = liner notes. Recognition =
+//    gold records. About = credits. Contact = "request a track".
+// Palette: warm cream sleeve (#f3e9d6) + near-black vinyl (#0f0d0c) + burnt-orange accent (#e2552b).
+// Fonts: "Bebas Neue" display (sleeve type), "Inter" sans (body), "Space Mono" (track #s / runtimes).
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css. noindex.
+//
+// GUARDRAILS honoured: no em-dash; html,body{overflow-x:clip}; reduced-motion = no spin/no needle
+// travel, everything static + readable; default track (A1) shown on load; tracklist + detail readable
+// without the spin; AA body contrast; no horizontal overflow at 1440 / 414; every animated element
+// ends visible. GSAP not required here - vanilla JS + CSS classes drive the now-playing state.
+
+// ---- canonical content (verbatim) ----
+const buildStats = [
+  { n: '20', plus: '+', l: 'AI agents & internal tools shipped' },
+  { n: '15', plus: '+', l: 'Marketers mentored & levelled up' },
+  { n: '76', plus: '',  l: 'Long-form articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+// Tracks - A-side = launches / wins, B-side = experiments / craft.
+// side, no = label like A1/B2, the rest is verbatim work content.
+const tracks = [
+  { side: 'A', no: 'A1', t: 'LambdaTest', y: '2021 - 2025', role: 'Product & digital marketing', r: '657K+ leads · 18.2M+ organic', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', single: true },
+  { side: 'A', no: 'A2', t: 'TestMu AI', y: '2026', role: 'Rebrand lead', r: 'Full company rebrand', d: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { side: 'A', no: 'A3', t: 'Samsung', y: '2019', role: 'via Sociowash', r: 'Galaxy M-series launch', d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { side: 'B', no: 'B1', t: 'Medilife Superspeciality', y: '0 to 1', role: 'Marketing & web', r: 'Website · GTM · social', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { side: 'B', no: 'B2', t: 'Lido Learning', y: '2021', role: 'Growth / CRM', r: 'CRM & lead operations', d: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { side: 'B', no: 'B3', t: 'Appknox', y: 'Freelance', role: 'Content', r: 'Security content', d: 'Freelance content writer for the mobile app security company.' },
+];
+const recognition = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const aSide = tracks.filter(t => t.side === 'A');
+const bSide = tracks.filter(t => t.side === 'B');
+---
+<!doctype html>
+<html lang="en" data-theme="bside">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* warm cream sleeve, near-black vinyl, burnt-orange accent */
+    --cream:#f3e9d6; --cream2:#ece0c8; --paper:#f7efe0;
+    --vinyl:#0f0d0c; --vinyl2:#1c1815; --ink:#16110d; --ink2:#3a322a;
+    --dim:#6f6557; --faint:#756a5c;
+    --accent:#e2552b; --accent2:#c23f18; --gold:#b8893a;
+    --line:rgba(22,17,13,.16); --hair:rgba(22,17,13,.30);
+    --disp:"Bebas Neue",Impact,sans-serif; --sans:"Inter",system-ui,sans-serif; --mono:"Space Mono",ui-monospace,monospace;
+    --m:clamp(1.15rem,4.5vw,5rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  [hidden]{display:none!important}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:var(--sans);min-height:100vh;-webkit-font-smoothing:antialiased;
+    line-height:1.6;letter-spacing:.002em;position:relative}
+  /* warm paper grain */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E")}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:var(--cream)}
+  .wrap{width:min(1240px,100%);margin:0 auto;padding:0 var(--m);position:relative;z-index:2}
+  .mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+
+  /* ===== masthead ===== */
+  .mast{position:fixed;top:0;left:0;right:0;z-index:40;background:linear-gradient(180deg,rgba(243,233,214,.95),rgba(243,233,214,.65) 70%,transparent);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .mast-in{width:min(1240px,100%);margin:0 auto;padding:.8rem var(--m);display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-weight:700;letter-spacing:.06em;font-size:.86rem;color:var(--ink)}
+  .brand .spin{width:18px;height:18px;border-radius:50%;flex:none;position:relative;
+    background:radial-gradient(circle at 50% 50%, var(--accent) 0 16%, var(--vinyl) 18% 100%);
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}
+  .brand .spin::after{content:"";position:absolute;inset:2px;border-radius:50%;
+    background:repeating-radial-gradient(circle at 50% 50%, transparent 0 1.4px, rgba(255,255,255,.06) 1.4px 1.6px)}
+  .mast nav{display:flex;gap:1.5rem}
+  .mast nav a{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);transition:color .3s}
+  .mast nav a:hover{color:var(--accent)}
+  @media(max-width:760px){.mast nav{display:none}}
+
+  /* ===== hero / turntable ===== */
+  header.hero{padding:7.5rem 0 2rem;position:relative;z-index:2}
+  .edition{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:1px solid var(--line);
+    padding-bottom:.85rem;margin-bottom:clamp(1.4rem,3.2vw,2.6rem);flex-wrap:wrap}
+  .edition .acc{color:var(--accent)}
+
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,440px);gap:clamp(1.6rem,4vw,3.6rem);align-items:center}
+
+  /* sleeve type */
+  .album-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;
+    display:flex;align-items:center;gap:.7rem}
+  .album-tag::before{content:"";width:34px;height:1px;background:var(--accent)}
+  .hero h1{font-family:var(--disp);font-weight:400;text-transform:uppercase;line-height:.84;letter-spacing:.01em;
+    font-size:clamp(3.6rem,11vw,8.6rem);color:var(--ink)}
+  .hero h1 .l2{display:block}
+  .hero h1 .ships{color:var(--accent)}
+  .hero .sub{margin-top:clamp(1.3rem,2.6vw,1.9rem);max-width:44ch;color:var(--ink2);font-size:clamp(1rem,1.2vw,1.1rem);line-height:1.62}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  .hero .cta{margin-top:1.8rem;display:flex;gap:.8rem;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.3rem;border:1px solid var(--hair);
+    display:inline-flex;gap:.55rem;align-items:center;color:var(--ink);transition:background .3s,color .3s,border-color .3s,transform .3s}
+  .btn .ar{transition:transform .3s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .btn.primary{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+  .btn.primary:hover{transform:translateY(-2px);background:var(--accent2);border-color:var(--accent2)}
+  .btn.ghost:hover{border-color:var(--ink);background:rgba(22,17,13,.05)}
+
+  .runtime{margin-top:2.4rem;display:flex;align-items:center;gap:.7rem;color:var(--faint);font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase}
+  .runtime .bar{width:40px;height:1px;background:var(--hair);position:relative;overflow:hidden}
+  .runtime .bar::after{content:"";position:absolute;inset:0;width:35%;background:var(--accent);animation:slide 2.4s linear infinite}
+  @keyframes slide{0%{transform:translateX(-115%)}100%{transform:translateX(300%)}}
+
+  /* ----- the turntable ----- */
+  .deck{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;margin:0 auto;justify-self:end}
+  .platter{position:absolute;inset:0;border-radius:50%;
+    background:
+      radial-gradient(circle at 38% 32%, rgba(255,255,255,.06), transparent 45%),
+      radial-gradient(circle at 50% 50%, #2a2420 0 4%, var(--vinyl) 5% 100%);
+    box-shadow:0 26px 60px -20px rgba(20,12,6,.6), inset 0 0 0 1px rgba(0,0,0,.5), inset 0 0 70px rgba(0,0,0,.55);
+  }
+  /* grooves */
+  .platter::before{content:"";position:absolute;inset:7%;border-radius:50%;pointer-events:none;
+    background:repeating-radial-gradient(circle at 50% 50%,
+      rgba(255,255,255,.045) 0 1px, transparent 1px 4px);
+    -webkit-mask:radial-gradient(circle at 50% 50%, transparent 0 26%, #000 27% 100%);
+            mask:radial-gradient(circle at 50% 50%, transparent 0 26%, #000 27% 100%)}
+  /* sheen sweep */
+  .platter::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;mix-blend-mode:screen;opacity:.5;
+    background:conic-gradient(from 210deg at 50% 50%, transparent 0 18%, rgba(255,255,255,.10) 25%, transparent 33% 100%)}
+  /* spinning group = grooves are part of platter; the LABEL spins so motion is visible without the whole disc texture animating */
+  .spinner{position:absolute;inset:0;border-radius:50%;will-change:transform}
+  /* spins up on play, then eases to rest with the portrait upright + readable (no perpetual blur) */
+  .rot{animation:spin 4.4s cubic-bezier(.32,.04,.13,1) forwards}
+  @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(1080deg)}}
+
+  .label{position:absolute;left:50%;top:50%;width:52%;height:52%;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;
+    background:radial-gradient(circle at 50% 38%, var(--accent) 0 58%, var(--accent2) 60% 100%);
+    box-shadow:inset 0 0 0 2px rgba(0,0,0,.25), 0 0 0 6px var(--vinyl2);
+    display:grid;place-items:center}
+  .label img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(.15) contrast(1.04) saturate(1.05);
+    -webkit-mask:radial-gradient(circle at 50% 50%, #000 0 64%, transparent 70%);
+            mask:radial-gradient(circle at 50% 50%, #000 0 64%, transparent 70%);opacity:.96}
+  .label .ring{position:absolute;inset:0;border-radius:50%;pointer-events:none;
+    background:repeating-radial-gradient(circle at 50% 50%, transparent 0 5px, rgba(0,0,0,.07) 5px 6px)}
+  .label .lcap{position:absolute;left:50%;top:8%;transform:translateX(-50%);font-family:var(--disp);font-size:.78rem;letter-spacing:.18em;
+    color:var(--paper);text-transform:uppercase;z-index:2}
+  .label .spindle{position:absolute;left:50%;top:50%;width:9%;height:9%;transform:translate(-50%,-50%);border-radius:50%;
+    background:radial-gradient(circle at 40% 35%, #efe7d6, #b9ad97 70%, #8a7f6c);box-shadow:0 0 0 2px rgba(0,0,0,.35), inset 0 1px 2px rgba(255,255,255,.6);z-index:3}
+
+  /* tonearm */
+  .tonearm{position:absolute;right:1%;top:1%;width:46%;height:46%;transform-origin:88% 12%;
+    transform:rotate(-30deg);transition:transform .85s cubic-bezier(.5,.05,.2,1);z-index:5;pointer-events:none}
+  .tonearm .pivot{position:absolute;right:2%;top:2%;width:20%;aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle at 38% 32%, #514a40, #211d18 70%);box-shadow:0 4px 12px rgba(0,0,0,.4), inset 0 1px 2px rgba(255,255,255,.25)}
+  .tonearm .arm{position:absolute;right:9%;top:9%;width:6px;height:50%;transform-origin:top center;transform:rotate(28deg);
+    background:linear-gradient(90deg,#7d756a,#cfc6b6 45%,#9a9182);border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,.35)}
+  .tonearm .head{position:absolute;left:-5px;bottom:-12px;width:18px;height:22px;border-radius:3px;
+    background:linear-gradient(180deg,#2c2722,#15110d);box-shadow:0 2px 6px rgba(0,0,0,.45)}
+  .tonearm .head::after{content:"";position:absolute;left:50%;bottom:-3px;width:2px;height:6px;transform:translateX(-50%);background:var(--cream2)}
+  .deck.playing .tonearm{transform:rotate(0deg)}
+
+  /* now-playing chip floating on deck */
+  .np-chip{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);background:var(--ink);color:var(--paper);
+    font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:.5rem .9rem;border-radius:999px;
+    display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap;box-shadow:0 10px 24px -10px rgba(20,12,6,.7);z-index:6}
+  .np-chip .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(226,85,43,.6);animation:pulse 1.8s ease-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(226,85,43,.55)}100%{box-shadow:0 0 0 9px rgba(226,85,43,0)}}
+
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:2.6rem}
+    .deck{order:-0;max-width:380px;justify-self:center}
+    .hero-type{order:-1}
+  }
+
+  /* ===== tracklist section ===== */
+  section{padding:clamp(3.2rem,7.5vh,6rem) 0;position:relative;z-index:2}
+  .shead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;border-bottom:1px solid var(--line);padding-bottom:1.1rem;margin-bottom:2.4rem}
+  .shead .idx{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.65rem}
+  .shead h2{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:clamp(2rem,4.6vw,3.6rem);line-height:.92;letter-spacing:.015em;color:var(--ink)}
+  .shead .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--dim);text-align:right;text-transform:uppercase;line-height:1.7}
+
+  .play-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.6rem,3.5vw,3rem);align-items:start}
+  @media(max-width:880px){.play-grid{grid-template-columns:1fr;gap:2rem}}
+
+  .sidewrap{display:flex;flex-direction:column;gap:1.8rem}
+  .side-label{display:flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:.7rem}
+  .side-label b{font-family:var(--disp);font-size:1.4rem;letter-spacing:.06em;color:var(--accent);line-height:1}
+  .side-label .ln{flex:1;height:1px;background:var(--line)}
+
+  .tracklist{display:flex;flex-direction:column}
+  .track{display:grid;grid-template-columns:2.6rem 1fr auto;gap:.9rem;align-items:center;width:100%;text-align:left;
+    padding:.95rem .8rem;border:0;border-top:1px solid var(--line);background:transparent;cursor:pointer;color:var(--ink);
+    font-family:var(--sans);transition:background .25s,padding-left .25s}
+  .tracklist .track:last-child{border-bottom:1px solid var(--line)}
+  .track:hover{background:rgba(22,17,13,.045)}
+  .track:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .track .tno{font-family:var(--mono);font-size:.78rem;color:var(--faint);letter-spacing:.04em}
+  .track .ttl{font-family:var(--disp);font-size:clamp(1.15rem,2.2vw,1.6rem);letter-spacing:.02em;line-height:1;text-transform:uppercase;color:var(--ink)}
+  .track .tsub{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-top:.3rem}
+  .track .tmeta{font-family:var(--mono);font-size:.66rem;color:var(--faint);letter-spacing:.04em;white-space:nowrap}
+  .track .eq{display:inline-flex;gap:2px;align-items:flex-end;height:13px;margin-right:.5rem;opacity:0;transition:opacity .25s}
+  .track .eq i{width:3px;background:var(--accent);height:30%;border-radius:1px}
+  .track.active{background:rgba(226,85,43,.08)}
+  .track.active .ttl{color:var(--accent2)}
+  .track.active .tno{color:var(--accent)}
+  .track.active .eq{opacity:1}
+  .track.active .eq i{animation:eq .9s ease-in-out infinite}
+  .track.active .eq i:nth-child(2){animation-delay:.15s}
+  .track.active .eq i:nth-child(3){animation-delay:.3s}
+  .track.active .eq i:nth-child(4){animation-delay:.45s}
+  @keyframes eq{0%,100%{height:25%}50%{height:100%}}
+  .track .single-tag{font-family:var(--mono);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--accent);
+    padding:.15rem .4rem;border-radius:3px;margin-left:.5rem;vertical-align:.15em}
+
+  /* now playing detail */
+  .now{position:sticky;top:5.2rem;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 18px 50px -28px rgba(20,12,6,.5)}
+  .now .now-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.3rem;border-bottom:1px solid var(--line);
+    background:var(--ink);color:var(--paper)}
+  .now .now-top .nl{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem}
+  .now .now-top .nl .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+  .now .now-top .nr{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:#cfc6b6}
+  .now .now-body{padding:1.6rem 1.4rem 1.7rem}
+  .now .npno{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:.5rem}
+  .now h3{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(1.9rem,4.5vw,3rem);line-height:.94;letter-spacing:.02em;color:var(--ink)}
+  .now .nrole{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-top:.5rem}
+  .now .ndesc{color:var(--ink2);font-size:.98rem;line-height:1.6;margin-top:1.1rem;max-width:46ch}
+  .now .nstat{margin-top:1.3rem;padding-top:1.3rem;border-top:1px solid var(--line);display:flex;gap:1.6rem;flex-wrap:wrap}
+  .now .nstat .s .v{font-family:var(--disp);font-size:clamp(1.8rem,5vw,2.8rem);line-height:.9;letter-spacing:.02em;color:var(--accent2)}
+  .now .nstat .s .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:.35rem}
+  .now .nstat.single .v{color:var(--accent2)}
+  .now .nr-line{font-family:var(--mono);font-size:.74rem;color:var(--ink2);letter-spacing:.02em;margin-top:1.2rem;display:flex;align-items:center;gap:.6rem}
+  .now .nr-line::before{content:"";width:18px;height:1px;background:var(--accent)}
+  .now-body{animation:fadein .45s ease both}
+  @keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  /* ===== liner notes / disciplines ===== */
+  .liner{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .liner .ln-cell{background:var(--paper);padding:1.7rem 1.6rem;display:flex;flex-direction:column;gap:.7rem}
+  .liner .ln-i{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--accent)}
+  .liner .ln-t{font-family:var(--disp);font-size:clamp(1.4rem,2.6vw,2rem);text-transform:uppercase;letter-spacing:.02em;line-height:1;color:var(--ink)}
+  .liner .ln-d{color:var(--ink2);font-size:.96rem;line-height:1.55;max-width:40ch}
+  @media(max-width:680px){.liner{grid-template-columns:1fr}}
+
+  /* ===== runtime / build stats ===== */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .stat{background:var(--paper);padding:clamp(1.6rem,3vw,2.4rem) clamp(1.2rem,2.2vw,1.9rem);min-height:185px;display:flex;flex-direction:column;justify-content:space-between}
+  .stat .sv{font-family:var(--disp);font-size:clamp(3.4rem,9vw,6.8rem);line-height:.82;letter-spacing:.02em;color:var(--ink)}
+  .stat .sv sup{font-size:.42em;color:var(--accent);vertical-align:.9em;margin-left:.04em}
+  .stat .sk{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--dim);text-transform:uppercase;max-width:24ch;line-height:1.6}
+  @media(max-width:760px){.stats{grid-template-columns:1fr}.stat{min-height:auto;flex-direction:row;align-items:center;gap:1.4rem;justify-content:flex-start}.stat .sk{max-width:none}}
+
+  /* ===== gold records / recognition + brands ===== */
+  .honours-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(2rem,5vw,3.6rem)}
+  @media(max-width:760px){.honours-grid{grid-template-columns:1fr}}
+  .golds{display:flex;flex-direction:column;gap:1rem}
+  .gold{display:flex;align-items:center;gap:1.1rem;padding:1rem 1.2rem;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+  .gold .disc{width:48px;height:48px;flex:none;border-radius:50%;position:relative;
+    background:radial-gradient(circle at 38% 32%, #f0d488 0 6%, #c89a3e 8%, #9c7026 60%, #b8893a 100%);
+    box-shadow:inset 0 0 0 2px rgba(0,0,0,.18), 0 4px 10px -4px rgba(120,80,20,.5)}
+  .gold .disc::before{content:"";position:absolute;inset:0;border-radius:50%;
+    background:repeating-radial-gradient(circle at 50% 50%, transparent 0 1.6px, rgba(0,0,0,.10) 1.6px 2.4px)}
+  .gold .disc::after{content:"";position:absolute;left:50%;top:50%;width:30%;height:30%;transform:translate(-50%,-50%);border-radius:50%;
+    background:var(--accent);box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.25)}
+  .gold b{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:1.4rem;letter-spacing:.02em;display:block;line-height:1.05;color:var(--ink)}
+  .gold span{font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;color:var(--dim);text-transform:uppercase}
+  .brands .bl{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
+  .brands .bgrid{display:flex;flex-wrap:wrap;gap:.6rem}
+  .brands .bgrid span{font-family:var(--mono);font-size:.76rem;border:1px solid var(--line);border-radius:8px;padding:.5rem .85rem;color:var(--ink2);background:var(--paper)}
+
+  /* ===== credits / about ===== */
+  .about-grid{display:grid;grid-template-columns:260px 1fr;gap:clamp(2rem,5vw,3.6rem);align-items:start}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr}.about-photo{max-width:240px}.facts{grid-template-columns:1fr}}
+  .about-photo{position:relative;aspect-ratio:5/6;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper)}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:contrast(1.04) saturate(1.04)}
+  .about-photo::after{content:"";position:absolute;left:50%;bottom:-1px;transform:translateX(-50%);width:40%;height:40%;
+    background:radial-gradient(circle at 50% 100%, rgba(226,85,43,.0) 60%, rgba(226,85,43,.0));pointer-events:none}
+  .about-lead{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:clamp(1.6rem,3.2vw,2.6rem);line-height:1.02;letter-spacing:.02em;margin-bottom:1.8rem;color:var(--ink)}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem 2rem}
+  .fact .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+  .fact .v{color:var(--ink2);font-size:.95rem;line-height:1.45}
+
+  /* ===== request a track / contact ===== */
+  .contact{border-top:1px solid var(--line)}
+  .contact .cl{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.1rem}
+  .contact .big{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:clamp(3rem,11vw,8rem);line-height:.84;letter-spacing:.02em;color:var(--ink)}
+  .contact .big a{display:inline-flex;align-items:flex-start;gap:.1em;transition:color .3s}
+  .contact .big a:hover{color:var(--accent)}
+  .contact .big a .ar{font-size:.38em;margin-top:.2em}
+  .contact .em{margin-top:1.5rem;font-family:var(--mono);font-size:.8rem;letter-spacing:.03em;color:var(--dim)}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--hair)}
+  .contact .em a:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:2rem 0 2.8rem;position:relative;z-index:2;margin-top:1rem}
+  .foot-in{width:min(1240px,100%);margin:0 auto;padding:0 var(--m);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;color:var(--faint);text-transform:uppercase}
+  .foot-in a{color:var(--dim)}.foot-in a:hover{color:var(--accent)}
+
+  /* reveals */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1!important;transform:none!important;transition:none}
+    .rot{animation:none!important}
+    .runtime .bar::after{animation:none}
+    .np-chip .dot{animation:none}
+    .track.active .eq i{animation:none;height:60%}
+    .now-body{animation:none}
+    .tonearm{transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+  <header class="mast">
+    <div class="mast-in">
+      <div class="brand"><span class="spin" aria-hidden="true"></span><b>SWAPNIL BISWAS</b></div>
+      <nav>
+        <a href="#tracks">Tracklist</a>
+        <a href="#about">Credits</a>
+        <a href="#contact">Contact</a>
+        <a href="/redesign/">All concepts</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <header class="hero" id="hero">
+      <div class="edition">
+        <span class="mono">Senior Product Marketing Manager <span class="acc">&middot;</span> LambdaTest</span>
+        <span class="mono">B-Side <span class="acc">&middot;</span> Concept 33 RPM</span>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-type">
+          <div class="album-tag">Full-length LP &middot; 6 tracks</div>
+          <h1>
+            <span class="l1">The marketer</span>
+            <span class="l2">who <span class="ships">ships.</span></span>
+          </h1>
+          <p class="sub">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+          <div class="cta">
+            <a class="btn primary" href="#tracks">Play the record <span class="ar">&#8599;</span></a>
+            <a class="btn ghost" href="#contact">Get in touch</a>
+          </div>
+          <div class="runtime"><span class="bar"></span> Drop the needle to play</div>
+        </div>
+
+        <div class="deck" id="deck" aria-hidden="true">
+          <div class="platter">
+            <div class="spinner" id="spinner">
+              <div class="label">
+                <span class="lcap">B - Side</span>
+                <img src="/assets/portrait-cut.webp" alt="" loading="eager" decoding="async" />
+                <span class="ring"></span>
+                <span class="spindle"></span>
+              </div>
+            </div>
+          </div>
+          <div class="tonearm" id="tonearm">
+            <span class="pivot"></span>
+            <span class="arm"><span class="head"></span></span>
+          </div>
+          <div class="np-chip"><span class="dot"></span> <span id="chipText">Now playing - LambdaTest</span></div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="wrap">
+    <!-- ===== tracklist + now playing ===== -->
+    <section id="tracks">
+      <div class="shead">
+        <div><div class="idx">&#47;&#47; Side A / B &middot; Tracklist</div><h2 class="reveal">Selected work, pressed to vinyl</h2></div>
+        <div class="meta reveal">Tap a track to play<br/>2019 - 2026</div>
+      </div>
+
+      <div class="play-grid">
+        <div class="sidewrap reveal">
+          <div>
+            <div class="side-label"><b>A</b> A-Side &middot; Launches &amp; wins <span class="ln"></span></div>
+            <div class="tracklist" role="list">
+              {aSide.map(tk => (
+                <button class="track" type="button" role="listitem"
+                  data-no={tk.no} data-title={tk.t} data-year={tk.y} data-role={tk.role}
+                  data-r={tk.r} data-desc={tk.d} data-single={tk.single ? '1' : '0'}>
+                  <span class="tno">{tk.no}</span>
+                  <span class="tinfo">
+                    <span class="ttl">{tk.t}{tk.single && <span class="single-tag">Single</span>}</span>
+                    <span class="tsub">{tk.role}</span>
+                  </span>
+                  <span class="tmeta"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>{tk.y}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div class="side-label"><b>B</b> B-Side &middot; Experiments &amp; craft <span class="ln"></span></div>
+            <div class="tracklist" role="list">
+              {bSide.map(tk => (
+                <button class="track" type="button" role="listitem"
+                  data-no={tk.no} data-title={tk.t} data-year={tk.y} data-role={tk.role}
+                  data-r={tk.r} data-desc={tk.d} data-single={tk.single ? '1' : '0'}>
+                  <span class="tno">{tk.no}</span>
+                  <span class="tinfo">
+                    <span class="ttl">{tk.t}</span>
+                    <span class="tsub">{tk.role}</span>
+                  </span>
+                  <span class="tmeta"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>{tk.y}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="now reveal" id="now" aria-live="polite">
+          <div class="now-top">
+            <span class="nl"><span class="dot"></span> Now playing</span>
+            <span class="nr" id="npRuntime">Track A1</span>
+          </div>
+          <div class="now-body" id="npBody">
+            <!-- filled by JS; static A1 fallback below for no-JS / reduced motion -->
+            <div class="npno" id="npNo">A1 &middot; The headline single</div>
+            <h3 id="npTitle">LambdaTest</h3>
+            <div class="nrole" id="npRole">Product &amp; digital marketing &middot; 2021 - 2025</div>
+            <p class="ndesc" id="npDesc">Owned product and digital marketing end to end and built the full organic growth engine.</p>
+            <div class="nstat single" id="npStat">
+              <div class="s"><div class="v">657K+</div><div class="k">Leads generated</div></div>
+              <div class="s"><div class="v">18.2M+</div><div class="k">Organic traffic driven</div></div>
+            </div>
+            <div class="nr-line" id="npR" hidden>657K+ leads &middot; 18.2M+ organic</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== liner notes / disciplines ===== -->
+    <section id="liner">
+      <div class="shead">
+        <div><div class="idx">&#47;&#47; Liner notes</div><h2 class="reveal">What I do</h2></div>
+        <div class="meta reveal">Four disciplines<br/>one operator</div>
+      </div>
+      <div class="liner">
+        {pillars.map(p => (
+          <div class="ln-cell reveal">
+            <div class="ln-i">{p.i}</div>
+            <div class="ln-t">{p.t}</div>
+            <div class="ln-d">{p.d}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== runtime / build stats ===== -->
+    <section id="runtime">
+      <div class="shead">
+        <div><div class="idx">&#47;&#47; Total runtime</div><h2 class="reveal">What got built &amp; shipped</h2></div>
+        <div class="meta reveal">The leads sit on track A1 -<br/>this is the body of work</div>
+      </div>
+      <div class="stats">
+        {buildStats.map(s => (
+          <div class="stat reveal">
+            <div class="sv" data-target={s.n}>0{s.plus && <sup>{s.plus}</sup>}</div>
+            <div class="sk">{s.l}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== gold records / recognition + brands ===== -->
+    <section id="honours">
+      <div class="shead">
+        <div><div class="idx">&#47;&#47; Gold records</div><h2 class="reveal">Recognition &amp; labels</h2></div>
+      </div>
+      <div class="honours-grid">
+        <div class="golds reveal">
+          {recognition.map(a => (
+            <div class="gold"><span class="disc" aria-hidden="true"></span><div><b>{a.t}</b><span>{a.m}</span></div></div>
+          ))}
+        </div>
+        <div class="brands reveal">
+          <div class="bl">Pressed with teams at</div>
+          <div class="bgrid">{brands.map(b => <span>{b}</span>)}</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== credits / about ===== -->
+    <section id="about">
+      <div class="shead">
+        <div><div class="idx">&#47;&#47; Credits</div><h2 class="reveal">About the maker</h2></div>
+        <div class="meta reveal">Mumbai, India</div>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo reveal"><img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" loading="lazy" decoding="async" /></div>
+        <div>
+          <p class="about-lead reveal">I treat my own career like a product - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+          <div class="facts">
+            <div class="fact reveal"><div class="k">Based</div><div class="v">Mumbai, India</div></div>
+            <div class="fact reveal"><div class="k">Tenure</div><div class="v">7+ years marketing &middot; 4+ in B2B SaaS</div></div>
+            <div class="fact reveal"><div class="k">Education</div><div class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</div></div>
+            <div class="fact reveal"><div class="k">Practice</div><div class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== request a track / contact ===== -->
+    <section id="contact" class="contact">
+      <div class="cl reveal">Request a track &middot; Let's build something that compounds</div>
+      <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello <span class="ar">&#8599;</span></a></div>
+      <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="foot-in">
+      <span>B-Side &middot; Concept 33</span>
+      <span>Swapnil Biswas &copy; 2026</span>
+      <span><a href="/redesign/">View all concepts</a></span>
+    </div>
+  </footer>
+
+<script>
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- reveals ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---------- count-up build stats ---------- */
+  function countUp(el){
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const sup = el.querySelector('sup');
+    const supHTML = sup ? sup.outerHTML : '';
+    if (RM){ el.innerHTML = String(target) + supHTML; return; }
+    const dur = 1100; const t0 = performance.now();
+    function step(now){
+      const p = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.innerHTML = Math.round(target * eased) + supHTML;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const numIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ countUp(e.target.querySelector('.sv')); numIO.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat').forEach(n => numIO.observe(n));
+
+  /* ---------- turntable / track player ---------- */
+  (function player(){
+    const deck    = document.getElementById('deck');
+    const spinner = document.getElementById('spinner');
+    const chipText= document.getElementById('chipText');
+    const tracks  = Array.from(document.querySelectorAll('.track'));
+    const npNo    = document.getElementById('npNo');
+    const npTitle = document.getElementById('npTitle');
+    const npRole  = document.getElementById('npRole');
+    const npDesc  = document.getElementById('npDesc');
+    const npStat  = document.getElementById('npStat');
+    const npR     = document.getElementById('npR');
+    const npBody  = document.getElementById('npBody');
+    const npRuntime = document.getElementById('npRuntime');
+    if (!tracks.length) return;
+
+    function play(tk, fromClick){
+      const d = tk.dataset;
+      const single = d.single === '1';
+
+      // tracklist active state
+      tracks.forEach(t => t.classList.remove('active'));
+      tk.classList.add('active');
+
+      // now-playing panel (re-trigger fade by reflow)
+      npBody.style.animation = 'none';
+      // eslint-disable-next-line no-unused-expressions
+      npBody.offsetHeight;
+      npBody.style.animation = '';
+
+      npNo.innerHTML = single ? (d.no + ' · The headline single') : (d.no + ' · Track');
+      npTitle.textContent = d.title;
+      npRole.innerHTML = d.role + ' · ' + d.year;
+      npDesc.textContent = d.desc;
+      npRuntime.textContent = 'Track ' + d.no;
+      chipText.textContent = 'Now playing - ' + d.title;
+
+      if (single){
+        npStat.hidden = false;
+        npStat.innerHTML =
+          '<div class="s"><div class="v">657K+</div><div class="k">Leads generated</div></div>' +
+          '<div class="s"><div class="v">18.2M+</div><div class="k">Organic traffic driven</div></div>';
+        npR.hidden = true;
+      } else {
+        npStat.hidden = true;
+        npR.hidden = false;
+        npR.textContent = d.r;
+      }
+
+      // needle sits on the record (static in reduced-motion); spin only when motion allowed
+      deck.classList.add('playing');
+      if (!RM){
+        // restart the spin-and-settle so each play re-spins, then rests with the portrait upright
+        spinner.classList.remove('rot');
+        // eslint-disable-next-line no-unused-expressions
+        spinner.offsetHeight;
+        spinner.classList.add('rot');
+      }
+    }
+
+    tracks.forEach(tk => {
+      tk.addEventListener('click', () => play(tk, true));
+    });
+
+    // default track on load = A1 (LambdaTest); content is already in the markup as a fallback,
+    // so this just sets the active state + (optionally) starts the motion.
+    const first = tracks[0];
+    if (first){
+      first.classList.add('active');
+      if (RM){
+        // reduced motion: needle is already resting on the record, no travel animation
+        deck.classList.add('playing');
+      } else {
+        // small delay so the needle-drop reads as an intentional "play" on load
+        setTimeout(() => { deck.classList.add('playing'); spinner.classList.add('rot'); }, 450);
+      }
+    }
+  })();
+</script>
+</body>
+</html>

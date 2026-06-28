@@ -1,0 +1,858 @@
+---
+// REDESIGN PROTOTYPE - "Graphite" - monochromatic neutral grayscale / gallery editorial.
+// Fully self-contained: own <html>, own fonts, own tokens. No BaseLayout, no global.css.
+// Tech: raw-WebGL fine-line topographic contour shader (barely-there texture) + GSAP scroll reveals + Lenis smooth scroll.
+// Hero ledger carries the OUTCOME figures (657K / 18.2M / 10x).
+// This grid carries the BUILD figures - what got shipped, not what it earned.
+const stats = [
+  { n: '20+', l: 'AI agents & internal tools shipped' },
+  { n: '15+', l: 'Marketers mentored & levelled up' },
+  { n: '76', l: 'Long-form articles published' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+// Each card leads with a DISTINCT typographic / data composition (no shared texture):
+//  kind:'figure'  -> oversized display result line (LambdaTest - the only tile with hard numbers)
+//  kind:'duotone' -> paper+sienna stacked-word treatment (TestMu AI rebrand - identity morph)
+//  kind:'badge'   -> bold rank/launch composition (Samsung - device / broadcast)
+//  kind:'data'    -> twin data block (Medilife / Lido / Appknox - qualitative cells)
+// Only LambdaTest carries hard metrics. All others stay qualitative - no invented numbers.
+const work = [
+  { t: 'LambdaTest', i: '01', kind: 'figure', m: 'Product & digital marketing', role: 'Product & digital marketing', y: '2021 - 2025', d: 'Owned product and digital marketing end to end and built the full organic growth engine.', r: '657K+ leads · 18.2M+ organic traffic', toptag: 'Case study 01 · LambdaTest', big: '657K', sub: '+ leads · 18.2M+ organic traffic' },
+  { t: 'TestMu AI', i: '02', kind: 'duotone', m: 'Rebrand lead', role: 'Rebrand lead', y: '2026', d: 'Led the complete rebrand from LambdaTest to TestMu AI.', r: 'Full company rebrand', big: 'Full company', sub: 'rebrand' },
+  { t: 'Samsung', i: '03', kind: 'badge', m: 'Launch content & distribution', role: 'via Sociowash', y: '2019', d: 'On the Galaxy M-series from inception; ran content distribution (collaborated with Technical Guruji).', r: 'Galaxy M-series launch', big: 'M', sub: 'Galaxy M-series', ph: 'Launch · via Sociowash' },
+  { t: 'Medilife Superspeciality', i: '04', kind: 'data', m: 'Marketing & web · 0 to 1', role: 'Marketing & web · 0 to 1', y: '', d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.', r: 'Website · GTM · social & launch', cells: [{ big: 'Website', sub: 'GTM & launch' }, { big: 'Social', sub: '0 to 1 presence' }] },
+  { t: 'Lido Learning', i: '05', kind: 'data', m: 'Growth / CRM', role: 'Growth / CRM', y: '2021', d: 'Ran CRM management and lead routing/assignment for the EdTech.', r: 'CRM & lead operations', cells: [{ big: 'CRM', sub: 'management' }, { big: 'Routing', sub: 'lead assignment' }] },
+  { t: 'Appknox', i: '06', kind: 'data', m: 'Freelance content', role: 'Freelance content', y: '', d: 'Freelance content writer for the mobile app security company.', r: 'Security content', cells: [{ big: 'Security', sub: 'content writing' }, { big: 'Shield', sub: 'app security' }] },
+];
+const recognition = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+---
+<!doctype html>
+<html lang="en" data-theme="atelier">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#ecebe9; --ink:#161719; --mut:#5b5c5e; --line:rgba(22,23,25,.16);
+    --hair:rgba(22,23,25,.32); --accent:#232427; --soft:#e0dfdc;
+    --metaink:#3a3b3d;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --sans:"Inter",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+    --m:clamp(1.25rem,5vw,6rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;overflow-x:clip;font-weight:400}
+  ::selection{background:var(--accent);color:var(--paper)}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  /* WebGL hero texture - legible cartographic contour linework on paper */
+  canvas#contour{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:1;mix-blend-mode:multiply}
+  .grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.045;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  .wrap{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:0 var(--m)}
+
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+    padding:1.5rem var(--m);transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+  nav.solid{background:rgba(236,235,233,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .logo{font-family:var(--display);font-size:1.2rem;font-weight:600;letter-spacing:-.01em}
+  .logo i{font-style:italic;color:var(--accent)}
+  .navlinks{display:flex;gap:2.2rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+  .navlinks a{position:relative;color:var(--mut);transition:color .3s}
+  .navlinks a:hover{color:var(--ink)}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--accent);transition:width .4s cubic-bezier(.2,.8,.2,1)}
+  .navlinks a:hover::after{width:100%}
+  .navlinks a.allc{color:var(--mut)}
+  .navlinks a.allc:hover{color:var(--ink)}
+  @media(max-width:760px){.navlinks{gap:1.1rem}.navlinks a:not(.allc){display:none}}
+
+  /* micro labels */
+  .label{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#3a3b3d;font-weight:500}
+  .label .acc{color:var(--accent)}
+  /* hero eyebrow - darker, set, readable */
+  .hero .topline .label{font-size:clamp(.74rem,1vw,.82rem);letter-spacing:.1em;color:var(--ink);font-weight:400}
+  .hero .topline .label.muted{color:#3a3b3d}
+
+  /* hairline rule that draws in */
+  .rule{position:relative;height:1px;background:var(--line);overflow:hidden}
+  .rule::after{content:"";position:absolute;inset:0;background:var(--hair);transform:scaleX(var(--rscale,0));transform-origin:left;will-change:transform}
+
+  /* hero */
+  header.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    padding:8rem 0 4rem}
+  .hero-inner{position:relative;z-index:3}
+  .hero .topline{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:1rem;flex-wrap:wrap}
+  .hero .toprule{height:1px;background:var(--hair);margin-bottom:2.6rem;transform-origin:left}
+  .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(3.4rem,11vw,9.5rem);line-height:.92;letter-spacing:-.035em;max-width:13ch}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+  .hero h1 .ink{color:var(--ink)}
+  .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+  .hero h1 .ln>span{display:block;will-change:transform}
+  .hero h1 .italln{display:inline}
+  .hero .lower{margin-top:3.4rem;display:grid;grid-template-columns:1.25fr .9fr;gap:var(--m);align-items:start}
+  .hero .leftcol{display:flex;flex-direction:column;gap:2.2rem;align-items:flex-start}
+  /* paper scrim behind the sub-paragraph: the contour WebGL drifts with the cursor and can lay
+     sienna/ink hairlines directly under this small body text - a soft paper plate guarantees clean read */
+  .hero .sub{position:relative;max-width:46ch;font-size:clamp(1.12rem,1.55vw,1.22rem);color:#1a1a1a;line-height:1.62}
+  .hero .sub::before{content:"";position:absolute;inset:-.5rem -.9rem;z-index:-1;border-radius:5px;
+    background:radial-gradient(120% 110% at 30% 50%,var(--paper) 70%,rgba(236,235,233,0) 100%)}
+  .hero .sub b{color:var(--ink);font-weight:600}
+  .hero .sub b.acc{color:var(--accent)}
+  .cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:flex-start}
+  /* hero right column - vertical metric ledger, composed on a strict baseline */
+  .hero .metrics{position:relative;display:flex;flex-direction:column;border-top:1px solid var(--hair);justify-self:end;width:100%;max-width:320px}
+  /* paper plate behind the ledger so the cursor-reactive contour never crowds the figures + labels */
+  .hero .metrics::before{content:"";position:absolute;inset:-.6rem -.9rem;z-index:-1;border-radius:4px;
+    background:radial-gradient(120% 100% at 60% 50%,var(--paper) 66%,rgba(236,235,233,0) 100%)}
+  /* the figure sits on a fixed baseline; the label is leader-ruled across to it like a ledger entry */
+  .hero .metric{display:flex;align-items:baseline;gap:1rem;height:5.4rem;border-bottom:1px solid var(--line)}
+  .hero .metric .mn{font-family:var(--display);font-weight:500;font-size:clamp(2rem,3vw,2.7rem);letter-spacing:-.02em;line-height:1;flex:none}
+  .hero .metric .mn em{font-style:italic;color:var(--accent)}
+  /* faint sienna leader rule bridging figure -> label so the column reads composed, not placed */
+  .hero .metric .lead{flex:1;height:1px;align-self:center;min-width:1.4rem;
+    background:repeating-linear-gradient(90deg,rgba(35,36,39,.32) 0 2px,transparent 2px 6px)}
+  .hero .metric .ml{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--metaink);text-align:right;max-width:12ch;line-height:1.4;flex:none;align-self:center}
+  @media(max-width:980px){.hero .lower{grid-template-columns:1fr;gap:3rem}.hero .metrics{max-width:none;justify-self:stretch}}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.7rem;border-radius:2px;font-family:var(--mono);
+    font-size:.74rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;
+    transition:transform .4s cubic-bezier(.2,.8,.2,1),background .35s,color .35s,border-color .35s}
+  .btn.primary{background:var(--ink);color:var(--paper)}
+  .btn.primary:hover{background:var(--accent);transform:translateY(-2px)}
+  .btn.ghost{border:1px solid var(--hair);color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn .ar{transition:transform .4s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .scrollcue{position:absolute;bottom:2rem;left:var(--m);z-index:3;font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;
+    color:#3a3b3d;text-transform:uppercase;display:flex;align-items:center;gap:.7rem}
+  .scrollcue .bar{width:1px;height:44px;background:linear-gradient(var(--hair),transparent);display:block}
+  @media(max-width:760px){
+    .cta{justify-content:flex-start}
+    header.hero{padding:6rem 0 2.6rem;min-height:100svh}
+    /* headline dominates the first viewport: commanding scale, tighter leading + tracking */
+    .hero h1{font-size:clamp(4.4rem,18.5vw,7rem);line-height:.82;letter-spacing:-.035em;max-width:none}
+    .hero .topline{margin-bottom:.7rem}
+    .hero .toprule{margin-bottom:1.5rem}
+    .hero h1 .italln{display:block} /* italic 'ships.' ships on its own line */
+    /* sub + cta tighten so the first ledger metric clears the fold */
+    .hero .sub{font-size:1.06rem;line-height:1.55;max-width:38ch}
+    .hero .leftcol{gap:1.6rem}
+    .hero .lower{margin-top:2rem;gap:2.2rem}
+    /* ledger stays punchy: bigger figure, tighter rows, first metric reads as drama */
+    /* give the ledger clear paper so the topographic linework never crowds the figures */
+    .hero .metrics{border-top-color:var(--hair);position:relative}
+    .hero .metrics::before{content:"";position:absolute;inset:-.6rem -.9rem;z-index:-1;border-radius:4px;
+      background:radial-gradient(120% 100% at 50% 50%,var(--paper) 62%,rgba(236,235,233,0) 100%)}
+    .hero .metric{height:4.4rem}
+    .hero .metric .mn{font-size:2.4rem}
+    .hero .metric .ml{font-size:.6rem}
+    /* dial the map back on phones so it stays atmosphere, never competing with the numbers */
+    canvas#contour{opacity:.62}
+  }
+  @media(max-width:760px) and (max-height:740px){
+    /* very short viewports: trim further so headline + ledger top still co-exist above the fold */
+    .hero h1{font-size:clamp(3.9rem,16vw,5.6rem)}
+    .hero .lower{margin-top:1.5rem}
+    .hero .leftcol{gap:1.2rem}
+    .hero .metric{height:4rem}
+  }
+
+  /* static typeset three-statement manifesto row */
+  .manifesto{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);position:relative;z-index:2;background:var(--paper)}
+  .manifesto .row{max-width:1320px;margin:0 auto;padding:clamp(2.4rem,5vw,3.6rem) var(--m);
+    display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:clamp(1.2rem,3vw,3rem)}
+  .manifesto .stmt{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(1.35rem,2.6vw,2.4rem);
+    letter-spacing:-.01em;line-height:1.18;color:var(--ink);text-align:center}
+  .manifesto .stmt:first-child{text-align:left}
+  .manifesto .stmt:last-child{text-align:right}
+  .manifesto .stmt em{color:var(--accent);font-style:italic}
+  /* thin sienna rule + center dot between statements */
+  .manifesto .sep{width:1px;align-self:stretch;background:var(--line);position:relative;justify-self:center;min-height:2.6rem}
+  .manifesto .sep::before{content:"";position:absolute;left:50%;top:50%;width:5px;height:5px;border-radius:50%;
+    background:var(--accent);transform:translate(-50%,-50%)}
+  @media(max-width:820px){
+    .manifesto .row{grid-template-columns:1fr;gap:0}
+    .manifesto .stmt,.manifesto .stmt:first-child,.manifesto .stmt:last-child{text-align:center;padding:1.5rem 0}
+    .manifesto .sep{width:auto;height:1px;min-height:0;justify-self:stretch}
+    .manifesto .sep::before{width:6px;height:6px}
+  }
+
+  /* sections */
+  section{padding:clamp(5rem,11vh,9rem) 0;position:relative;z-index:2}
+  .shead{display:flex;justify-content:space-between;align-items:baseline;gap:2rem;margin-bottom:3.4rem}
+  .shead .idx{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;color:var(--accent);font-weight:700}
+  .shead h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,4vw,3.2rem);letter-spacing:-.03em;line-height:1.05}
+  .shead h2 em{font-style:italic;color:var(--accent)}
+  .shead .meta{font-family:var(--mono);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:#3a3b3d;font-weight:500;text-align:right;line-height:1.65}
+
+  /* stats - editorial figure grid */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hair)}
+  .stat{padding:3rem 1.6rem 2.6rem;border-bottom:1px solid var(--line)}
+  .stat:nth-child(3n+1){padding-left:0}
+  .stat:nth-child(3n+2),.stat:nth-child(3n+3){border-left:1px solid var(--line)}
+  .stat .n{font-family:var(--display);font-weight:500;font-size:clamp(3.4rem,7vw,6rem);letter-spacing:-.025em;line-height:.92}
+  .stat .n em{font-style:italic;color:var(--accent)}
+  .stat .l{margin-top:1.1rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;color:var(--metaink);line-height:1.6;max-width:18ch}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(3n+2),.stat:nth-child(3n+3){border-left:0;padding-left:.5rem}
+    .stat:nth-child(2n){border-left:1px solid var(--line);padding-left:2rem}}
+
+  /* pillars - numbered index */
+  .pillars{display:grid;grid-template-columns:1fr}
+  .pillar{display:grid;grid-template-columns:.7fr 2fr 2.4fr;gap:2rem;align-items:start;
+    padding:2.4rem 0;border-top:1px solid var(--line);transition:padding-left .5s cubic-bezier(.2,.8,.2,1)}
+  .pillar:last-child{border-bottom:1px solid var(--line)}
+  .pillar:hover{padding-left:1.2rem}
+  .pillar .pi{font-family:var(--display);font-style:italic;font-weight:400;color:var(--accent);font-size:1.6rem;line-height:1}
+  .pillar h3{font-family:var(--display);font-size:clamp(1.4rem,2.4vw,2rem);font-weight:500;letter-spacing:-.01em;line-height:1.1}
+  .pillar p{color:#3a3b3d;font-size:1.02rem;line-height:1.62;max-width:44ch;padding-top:.35rem}
+  @media(max-width:760px){.pillar{grid-template-columns:1fr;gap:.7rem}.pillar .pi{font-size:1.2rem}}
+
+  /* full-bleed hairline divider (breaks the column for breathing room) */
+  /* center via margins (NOT transform) so GSAP .reveal can animate transform without breaking the centering */
+  .bleedrule{position:relative;width:100vw;left:50%;margin:clamp(3.5rem,8vh,6.5rem) 0;margin-left:-50vw;height:1px;background:var(--hair)}
+
+  /* manifesto pull-quote band - full-width, left-aligned to the grid, lands as a statement */
+  .statement{padding:clamp(3.5rem,8vh,6rem) 0}
+  .statement .side{font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--metaink);line-height:1.9;display:flex;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.8rem}
+  .statement .side b{color:var(--accent);font-weight:700;letter-spacing:.14em}
+  .statement .side .yr{color:var(--mut)}
+  .statement p{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,5.2vw,4.2rem);line-height:1.18;
+    letter-spacing:-.018em;max-width:26ch}
+  .statement p em{font-style:italic;color:var(--accent)}
+  /* oversized initial cap */
+  .statement p.drop::first-letter{font-style:normal;font-weight:600;color:var(--accent);float:left;
+    font-size:clamp(5rem,12vw,9.5rem);line-height:.72;padding:.04em .14em .02em 0;margin-top:.02em}
+  @media(max-width:760px){.statement p{font-size:clamp(1.9rem,7vw,2.6rem);max-width:none}
+    .statement p.drop::first-letter{font-size:clamp(3.6rem,16vw,5rem)}}
+
+  /* work - the centerpiece: each project a distinct, metric-forward composition.
+     scale is deliberately varied so the section has a peak (hero tile) rather than four equal weights */
+  .work{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,3vw,2.6rem)}
+  /* LambdaTest = the hero case study: spans full width, a taller plate, oversized real-number ledger */
+  .work a.hero-case{grid-column:1 / -1}
+  .work a.hero-case .tile{aspect-ratio:auto;min-height:clamp(15rem,30vw,21rem);display:flex}
+  /* swapbiswas data tile spans full width too, but stays a short, ledger-like band */
+  .work a.wide-case{grid-column:1 / -1}
+  .work a.wide-case .tile{aspect-ratio:auto;min-height:clamp(8rem,16vw,11rem)}
+  @media(max-width:760px){
+    .work a.hero-case .tile{min-height:13rem}
+    .work a.wide-case .tile{min-height:8.5rem}
+  }
+  .work a{position:relative;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:3px;
+    overflow:hidden;background:var(--paper);transition:border-color .45s,transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .55s}
+  .work a:hover,.work a:focus-visible{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 18px 40px -28px rgba(22,23,25,.55)}
+  /* sienna spine that draws down the body on hover - a curatorial "this one" marker */
+  .work a .body::before{content:"";position:absolute;left:0;top:0;width:2px;height:100%;background:var(--accent);
+    transform:scaleY(0);transform-origin:top;transition:transform .6s cubic-bezier(.2,.8,.2,1);z-index:2}
+  .work a:hover .body::before,.work a:focus-visible .body::before{transform:scaleY(1)}
+  /* composition tile - a deliberate typographic/data plate, not a placeholder */
+  .work .tile{position:relative;aspect-ratio:16/9;overflow:hidden;border-bottom:1px solid var(--line)}
+  /* editorial index number, top-left of every plate */
+  .work .tile .idxn{position:absolute;left:1.1rem;top:.85rem;z-index:4;font-family:var(--mono);font-weight:700;
+    font-size:.72rem;letter-spacing:.18em;color:var(--accent)}
+  .work .tile .tag{position:absolute;right:1.1rem;top:.85rem;z-index:4;font-family:var(--mono);font-size:.64rem;
+    letter-spacing:.15em;text-transform:uppercase;color:#3a3b3d}
+  /* the composition layer - distinct per kind, animates on hover */
+  .work .tile .art{position:absolute;inset:0;z-index:1;display:flex;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+  .work a:hover .tile .art{transform:scale(1.035)}
+  /* faint engraving lines shared as a base, kept subtle so type dominates */
+  .work .tile::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background:repeating-linear-gradient(0deg,rgba(22,23,25,.05) 0 25px,transparent 25px 26px)}
+
+  /* 01 LambdaTest - large display result figures on paper (the only tile with hard numbers).
+     distinct treatment: the only tile with a soft sienna glow rising from its baseline - marks it as the hero case */
+  .tile-figure{background:
+    radial-gradient(120% 80% at 12% 118%,rgba(35,36,39,.12),transparent 60%),
+    var(--soft)}
+  .tile-figure .art{flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:1.4rem 1.5rem;gap:.1rem}
+  .tile-figure .big{font-family:var(--display);font-weight:600;font-style:italic;letter-spacing:-.02em;line-height:.9;
+    font-size:clamp(2rem,5.4vw,3.4rem);color:var(--ink)}
+  .tile-figure .big .ac{color:var(--accent);font-style:normal}
+  .tile-figure .sub{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:#3a3b3d;margin-top:.55rem}
+  /* hero-case: the figure plate scales up to a true section peak - oversized italic result, set on its own baseline */
+  .work a.hero-case .tile-figure .art{padding:clamp(1.6rem,4vw,2.8rem);justify-content:space-between}
+  .work a.hero-case .tile-figure .art .toptag{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--accent);font-weight:700}
+  .work a.hero-case .tile-figure .figblock{display:flex;flex-direction:column;align-items:flex-start;gap:.1rem}
+  .work a.hero-case .tile-figure .big{font-size:clamp(3.2rem,8vw,6rem);line-height:.86}
+  .work a.hero-case .tile-figure .sub{font-size:clamp(.74rem,1.1vw,.82rem);margin-top:.85rem;max-width:34ch;color:#3a3b3d}
+  /* LambdaTest figure: twin real-number figures set side by side as a results ledger */
+  .tile-figure .figrow{display:flex;flex-wrap:wrap;gap:clamp(1.4rem,5vw,3.6rem);align-items:flex-end}
+  .tile-figure .figpair{display:flex;flex-direction:column;align-items:flex-start;gap:.35rem;min-width:0}
+  .tile-figure .figlbl{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--metaink)}
+  .work a.hero-case .tile-figure .figpair .big{font-size:clamp(2.6rem,6.6vw,5rem);line-height:.86}
+  @media(max-width:760px){.tile-figure .figrow{gap:1.2rem}}
+
+  /* 02 TestMu AI - duotone: sienna field, paper word knocked out, stacked (rebrand / identity morph) */
+  .tile-duotone{background:var(--accent)}
+  .tile-duotone::before{opacity:.22;background:repeating-linear-gradient(0deg,rgba(236,235,233,.16) 0 25px,transparent 25px 26px)}
+  .tile-duotone .idxn,.tile-duotone .tag{color:rgba(236,235,233,.95)}
+  .tile-duotone .art{flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:1.4rem 1.5rem;gap:0}
+  .tile-duotone .big{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:.88;
+    font-size:clamp(2.1rem,5.8vw,3.7rem);color:var(--paper)}
+  .tile-duotone .sub{font-family:var(--display);font-style:italic;font-weight:500;line-height:.95;
+    font-size:clamp(1.5rem,4.2vw,2.6rem);color:rgba(236,235,233,.95)}
+
+  /* 03 Samsung - bold launch badge composition (Galaxy M-series device / broadcast).
+     distinct treatment: warm ink-wash field + fine diagonal hatch so it reads apart from the paper tiles */
+  .tile-badge{background:#e0dfdc}
+  .tile-badge::before{opacity:.5;
+    background:repeating-linear-gradient(135deg,rgba(35,36,39,.07) 0 1px,transparent 1px 11px),
+               repeating-linear-gradient(0deg,rgba(22,23,25,.05) 0 25px,transparent 25px 26px)}
+  .tile-badge .art{align-items:flex-end;justify-content:flex-start;gap:1.1rem;padding:1.4rem 1.5rem}
+  .tile-badge .big{font-family:var(--display);font-weight:700;letter-spacing:-.03em;line-height:.8;
+    font-size:clamp(3.4rem,9vw,5.6rem);color:var(--accent)}
+  .tile-badge .meta{display:flex;flex-direction:column;gap:.25rem;border-left:1px solid var(--hair);padding-left:1.1rem;padding-bottom:.15rem}
+  .tile-badge .meta .sub{font-family:var(--display);font-weight:500;font-size:clamp(1rem,2.4vw,1.5rem);
+    line-height:1.05;color:var(--ink);max-width:9ch}
+  .tile-badge .meta .ph{font-family:var(--mono);font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:#3a3b3d}
+
+  /* 04-06 Medilife / Lido Learning / Appknox - twin qualitative data block (no invented metrics).
+     distinct treatment: cooler graph-paper field so the data plate reads as a measured ledger, not paper */
+  .tile-data{background:#e0dfdc}
+  .tile-data::before{opacity:.6;
+    background:repeating-linear-gradient(0deg,rgba(22,23,25,.055) 0 25px,transparent 25px 26px),
+               repeating-linear-gradient(90deg,rgba(22,23,25,.045) 0 25px,transparent 25px 26px)}
+  .tile-data .art{align-items:stretch;padding:0}
+  .tile-data .cell{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem 1.5rem;gap:.3rem}
+  .tile-data .cell+.cell{border-left:1px solid var(--line)}
+  .tile-data .cell .big{font-family:var(--display);font-weight:600;letter-spacing:-.025em;line-height:.85;
+    font-size:clamp(1.9rem,5vw,3rem);color:var(--ink)}
+  .tile-data .cell:first-child .big{color:var(--accent)}
+  .tile-data .cell .sub{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#3a3b3d}
+  /* second cell carries a small Lighthouse-score gauge so the data plate reads crafted, not flat */
+  .tile-data .gaugecell{flex-direction:row;align-items:flex-end;gap:clamp(.7rem,1.6vw,1.1rem)}
+  .tile-data .gaugecell .gtxt{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+  .tile-data .gaugecell .gtxt .big{font-size:clamp(1.6rem,4vw,2.5rem)}
+  .tile-data .gauge{position:relative;flex:none;width:clamp(2.6rem,7vw,3.6rem);aspect-ratio:1;border-radius:50%;
+    background:conic-gradient(var(--accent) 0 349deg,rgba(22,23,25,.14) 349deg 360deg);
+    display:flex;align-items:center;justify-content:center}
+  .tile-data .gauge .dial{position:absolute;inset:clamp(.28rem,.8vw,.42rem);border-radius:50%;background:#e0dfdc}
+  .tile-data .gauge .gnum{position:relative;font-family:var(--display);font-weight:600;letter-spacing:-.02em;
+    font-size:clamp(.62rem,1.5vw,.78rem);color:var(--accent);line-height:1}
+
+  /* result metric ribbon - slides up on hover */
+  .work .tile .metric{position:absolute;left:0;right:0;bottom:0;z-index:5;padding:.7rem 1rem;
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);
+    background:var(--ink);transform:translateY(100%);transition:transform .5s cubic-bezier(.2,.8,.2,1);
+    display:flex;align-items:center;gap:.5rem}
+  .work .tile .metric::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
+  .work a:hover .tile .metric{transform:translateY(0)}
+
+  /* metadata hierarchy - title carries the weight, index + role + year support it */
+  .work .body{position:relative;padding:1.5rem 1.6rem 1.7rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+  .work .row1{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+  .work .titlewrap{display:flex;align-items:baseline;gap:.7rem;min-width:0}
+  .work .wn{font-family:var(--mono);font-weight:700;font-size:.8rem;letter-spacing:.1em;color:var(--accent);
+    flex:none;transform:translateY(-.18em)}
+  .work .wt{position:relative;font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,2.9vw,2.3rem);
+    letter-spacing:-.02em;line-height:1.02;
+    transition:color .35s,transform .5s cubic-bezier(.2,.8,.2,1)}
+  /* signature hover: the project name slides sienna-right while its rule draws beneath it */
+  .work a:hover .wt{color:var(--accent);transform:translateX(.4rem)}
+  /* underline-sweep on the title */
+  .work .wt::after{content:"";position:absolute;left:0;bottom:-.1em;width:100%;height:2px;background:var(--accent);
+    transform:scaleX(0);transform-origin:left;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+  .work a:hover .wt::after{transform:scaleX(1)}
+  /* the index number leads the slide, warming to sienna a beat ahead of the title */
+  .work .wn{transition:color .35s,transform .5s cubic-bezier(.2,.8,.2,1)}
+  .work a:hover .wn{transform:translateX(.3rem)}
+  .work .wy{font-family:var(--display);font-style:italic;color:var(--mut);font-size:1.15rem;flex:none;transition:color .35s}
+  .work a:hover .wy{color:var(--ink)}
+  .work .wrole{font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:#3a3b3d;margin-top:-.15rem}
+  .work .wd{font-size:.95rem;color:#3a3b3d;line-height:1.55}
+  /* "VIEW CASE ->" deliberate underlined sienna link - pinned to the body floor so the row aligns */
+  .work .wd{margin-bottom:.4rem}
+  .work .go{margin-top:auto;align-self:flex-start;position:relative;display:inline-flex;align-items:center;gap:.5rem;
+    font-family:var(--mono);font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+    padding-bottom:.28rem;border-bottom:1.5px solid var(--accent)}
+  .work .go .ar{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+  .work a:hover .go .ar{transform:translate(4px,-4px)}
+  @media(max-width:760px){.work{grid-template-columns:1fr;gap:1.4rem}}
+
+  /* recognition + brands */
+  .recog{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--m);align-items:start}
+  .awards{display:flex;flex-direction:column}
+  .award{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:baseline;padding:1.3rem 0;border-top:1px solid var(--line)}
+  .award:last-child{border-bottom:1px solid var(--line)}
+  .award .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);transform:translateY(-2px)}
+  .award b{font-family:var(--display);font-weight:500;font-size:1.25rem}
+  .award span{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-top:.3rem}
+  .brands{display:flex;flex-direction:column}
+  .brands .blabel{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:1.2rem}
+  .brands .bgrid{display:flex;flex-wrap:wrap;gap:.6rem}
+  .brands .bgrid span{font-family:var(--display);font-size:1.05rem;border:1px solid var(--line);border-radius:2px;padding:.5rem 1rem;transition:border-color .3s,color .3s}
+  .brands .bgrid span:hover{border-color:var(--accent);color:var(--accent)}
+  @media(max-width:760px){.recog{grid-template-columns:1fr;gap:3rem}}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--m);align-items:start;padding-top:1rem}
+  .about-grid .lead{font-family:var(--display);font-weight:400;font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.35;letter-spacing:-.01em}
+  .about-grid .lead em{font-style:italic;color:var(--accent)}
+  .about-grid .facts{display:flex;flex-direction:column;gap:1.1rem;padding-top:.6rem}
+  .about-grid .fact{display:grid;grid-template-columns:auto 1fr;gap:1rem;border-top:1px solid var(--line);padding-top:1rem}
+  .about-grid .fact .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .about-grid .fact .v{font-size:.96rem;color:#3a3b3d;line-height:1.5}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:2.4rem}}
+
+  /* contact - closing echo of the hero map atmosphere */
+  .contact{text-align:center;padding-bottom:7rem;position:relative}
+  .contact::before{content:"";position:absolute;left:50%;top:42%;width:120vw;height:120%;transform:translate(-50%,-50%);
+    z-index:-1;pointer-events:none;opacity:.5;
+    background:
+      radial-gradient(closest-side at 50% 50%,rgba(35,36,39,.10),transparent 70%),
+      repeating-radial-gradient(circle at 50% 50%,transparent 0 38px,rgba(22,23,25,.05) 38px 39px)}
+  .contact .label{margin-bottom:2rem}
+  .contact .big{font-family:var(--display);font-weight:500;font-size:clamp(2.8rem,9vw,7.5rem);line-height:1;letter-spacing:-.04em}
+  .contact .big em{font-style:italic;color:var(--accent)}
+  .contact .big a{position:relative;display:inline-block}
+  .contact .big a::after{content:"";position:absolute;left:0;bottom:.04em;width:100%;height:3px;background:var(--accent);
+    transform:scaleX(0);transform-origin:left;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+  .contact .big a:hover::after{transform:scaleX(1)}
+  .contact .em{margin-top:2.6rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;color:#3a3b3d}
+  .contact .em a{color:var(--ink);border-bottom:1px solid var(--hair);padding-bottom:2px;transition:color .3s,border-color .3s}
+  .contact .em a:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* colophon footer */
+  footer{border-top:1px solid var(--hair);padding:3rem var(--m) 2.5rem;position:relative;z-index:2;overflow:hidden}
+  /* large faint display monogram anchoring the footer */
+  .footmono{position:absolute;right:var(--m);bottom:-2.4rem;font-family:var(--display);font-style:italic;font-weight:500;
+    font-size:clamp(9rem,22vw,18rem);line-height:1;color:var(--ink);opacity:.05;pointer-events:none;z-index:0;letter-spacing:-.04em}
+  .footmail{position:relative;z-index:1;max-width:1320px;margin:0 auto 2.4rem;padding-bottom:2rem;border-bottom:1px solid var(--line)}
+  .footmail a{font-family:var(--display);font-size:clamp(1.4rem,3.4vw,2.4rem);color:var(--ink);letter-spacing:-.01em;
+    border-bottom:1px solid transparent;transition:border-color .35s,color .35s}
+  .footmail a:hover{color:var(--accent);border-color:var(--accent)}
+  .colophon{position:relative;z-index:1;max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:#3a3b3d;line-height:1.8}
+  .colophon .col b{display:block;color:var(--ink);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.7rem;font-weight:700}
+  .colophon a:hover{color:var(--accent)}
+  .colophon .concept{color:var(--accent)}
+  @media(max-width:760px){.colophon{grid-template-columns:1fr 1fr;gap:2rem}.footmono{font-size:9rem;bottom:-1.4rem}}
+
+  .reveal{opacity:0;transform:translateY(26px)}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}
+    .rule::after{transform:scaleX(1)!important}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<nav id="nav">
+  <a class="logo" href="/redesign/">Swapnil <i>Biswas</i></a>
+  <div class="navlinks">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a class="allc" href="/redesign/">All concepts</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <canvas id="contour"></canvas>
+  <div class="wrap hero-inner">
+    <div class="topline">
+      <div class="label"><span class="acc">&#9679;</span> Senior Product Marketing Manager &middot; LambdaTest</div>
+      <div class="label muted">Mumbai, India &middot; Est. 2018</div>
+    </div>
+    <div class="toprule"></div>
+    <h1>
+      <span class="ln"><span><span class="ink">The marketer</span></span></span>
+      <span class="ln"><span>who <em class="italln">ships<span class="ink">.</span></em></span></span>
+    </h1>
+    <div class="lower">
+      <div class="leftcol">
+        <p class="sub">I build the agents, sites and SEO systems behind <b class="acc">657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+        <div class="cta">
+          <a class="btn primary" href="#work">Selected work <span class="ar">&#8599;</span></a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="metrics" aria-hidden="true">
+        <div class="metric"><span class="mn">657K<em>+</em></span><span class="lead"></span><span class="ml">Leads generated</span></div>
+        <div class="metric"><span class="mn">18.2M<em>+</em></span><span class="lead"></span><span class="ml">Organic traffic driven</span></div>
+        <div class="metric"><span class="mn">10<em>x</em></span><span class="lead"></span><span class="ml">Conversion lift</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="scrollcue"><span class="bar"></span> Scroll</div>
+</header>
+
+<div class="manifesto">
+  <div class="row reveal">
+    <div class="stmt">Positioning <em>that compiles</em></div>
+    <div class="sep" aria-hidden="true"></div>
+    <div class="stmt">Growth, <em>built not briefed</em></div>
+    <div class="sep" aria-hidden="true"></div>
+    <div class="stmt">Agents <em>over decks</em></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="stats">
+    <div class="shead">
+      <div>
+        <div class="idx reveal">&ndash; 00 / Output</div>
+        <h2 class="reveal">What got <em>built &amp; shipped</em></h2>
+      </div>
+      <div class="meta reveal">The leads sit up top -<br/>this is the body of work</div>
+    </div>
+    <div class="rule reveal" id="rule-stats"></div>
+    <div class="stats">
+      {stats.map(s => (
+        <div class="stat reveal"><div class="n">{s.n}</div><div class="l">{s.l}</div></div>
+      ))}
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="shead">
+      <div>
+        <div class="idx reveal">&ndash; 01 / Disciplines</div>
+        <h2 class="reveal">What I <em>do</em></h2>
+      </div>
+      <div class="meta reveal">Four disciplines<br/>one operator</div>
+    </div>
+    <div class="pillars">
+      {pillars.map(p => (
+        <div class="pillar reveal">
+          <div class="pi">{p.i}</div>
+          <h3>{p.t}</h3>
+          <p>{p.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <div class="bleedrule reveal" aria-hidden="true"></div>
+
+  <section id="statement-sec" style="padding-top:1rem;padding-bottom:1rem">
+    <div class="statement">
+      <div class="side reveal"><span>Manifesto</span><b>No. 17 &middot; Graphite</b><span class="yr">2026</span></div>
+      <p class="drop reveal">Most marketers write the brief. I write the <em>system</em> behind it - the agent, the site, the search engine that keeps working after the campaign ends.</p>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="shead">
+      <div>
+        <div class="idx reveal">&ndash; 02 / Portfolio</div>
+        <h2 class="reveal">Selected <em>work</em></h2>
+      </div>
+      <div class="meta reveal">2019 - 2026</div>
+    </div>
+    <div class="work">
+      {work.map(w => (
+        <a href="#" class={'reveal tile-host tile-' + w.kind + (w.kind === 'figure' ? ' hero-case' : '') + (w.i === '06' ? ' wide-case' : '')} aria-label={w.t + ' - ' + w.r}>
+          <span class={'tile tile-' + w.kind}>
+            <span class="idxn">{w.i}</span>
+            <span class="tag">{w.m}</span>
+            <span class="art" aria-hidden="true">
+              {w.kind === 'figure' && (
+                <>
+                  <span class="toptag">{w.toptag}</span>
+                  <span class="figblock">
+                    <span class="figrow">
+                      <span class="figpair"><span class="big"><span class="ac">657K+</span></span><span class="figlbl">Leads generated</span></span>
+                      <span class="figpair"><span class="big"><span class="ac">18.2M+</span></span><span class="figlbl">Organic traffic</span></span>
+                    </span>
+                    <span class="sub">Owned product &amp; digital marketing end to end and built the full organic growth engine</span>
+                  </span>
+                </>
+              )}
+              {w.kind === 'duotone' && (
+                <>
+                  <span class="big">{w.big}</span>
+                  <span class="sub">{w.sub}.</span>
+                </>
+              )}
+              {w.kind === 'badge' && (
+                <>
+                  <span class="big">{w.big}</span>
+                  <span class="meta">
+                    <span class="sub">{w.sub}</span>
+                    <span class="ph">{w.ph}</span>
+                  </span>
+                </>
+              )}
+              {w.kind === 'data' && (
+                <>
+                  <span class="cell"><span class="big">{w.cells[0].big}</span><span class="sub">{w.cells[0].sub}</span></span>
+                  <span class="cell"><span class="big">{w.cells[1].big}</span><span class="sub">{w.cells[1].sub}</span></span>
+                </>
+              )}
+            </span>
+            <span class="metric">{w.r}</span>
+          </span>
+          <span class="body">
+            <span class="row1">
+              <span class="titlewrap">
+                <span class="wn">{w.i}</span>
+                <span class="wt">{w.t}</span>
+              </span>
+              <span class="wy">{w.y}</span>
+            </span>
+            <span class="wrole">{w.role}</span>
+            <span class="wd">{w.d}</span>
+            <span class="go">View case <span class="ar">&#8599;</span></span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="recognition">
+    <div class="shead">
+      <div>
+        <div class="idx reveal">&ndash; 03 / Honours</div>
+        <h2 class="reveal">Recognition &amp; <em>brands</em></h2>
+      </div>
+    </div>
+    <div class="recog">
+      <div class="awards reveal">
+        {recognition.map(a => (
+          <div class="award"><span class="dot"></span><div><b>{a.t}</b><span>{a.m}</span></div></div>
+        ))}
+      </div>
+      <div class="brands reveal">
+        <div class="blabel">Trusted by teams at</div>
+        <div class="bgrid">
+          {brands.map(b => <span>{b}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="shead">
+      <div>
+        <div class="idx reveal">&ndash; 04 / Colophon</div>
+        <h2 class="reveal"><em>About</em> the maker</h2>
+      </div>
+      <div class="meta reveal">Mumbai, India</div>
+    </div>
+    <div class="about-grid">
+      <p class="lead reveal">I treat my own career like a <em>product</em> - positioned, measured and shipped. Seven years in marketing, four of them deep in B2B SaaS.</p>
+      <div class="facts">
+        <div class="fact reveal"><div class="k">Based</div><div class="v">Mumbai, India</div></div>
+        <div class="fact reveal"><div class="k">Tenure</div><div class="v">7+ years marketing &middot; 4+ in B2B SaaS</div></div>
+        <div class="fact reveal"><div class="k">Education</div><div class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</div></div>
+        <div class="fact reveal"><div class="k">Practice</div><div class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bleedrule reveal" aria-hidden="true"></div>
+
+  <section id="contact" class="contact">
+    <div class="label reveal">Let's build something that compounds</div>
+    <div class="big reveal"><a href="mailto:swapbiswas.marketing@gmail.com">Say <em>hello</em> &#8599;</a></div>
+    <div class="em reveal">swapbiswas.marketing@gmail.com &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a></div>
+  </section>
+</div>
+
+<footer>
+  <div class="footmono" aria-hidden="true">SB</div>
+  <div class="footmail">
+    <a href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a>
+  </div>
+  <div class="colophon">
+    <div class="col">
+      <b>Graphite</b>
+      Swapnil Biswas<br/>
+      Product marketing,<br/>engineered &amp; shipped.
+    </div>
+    <div class="col">
+      <b>Index</b>
+      <a href="#work">Work</a><br/>
+      <a href="#about">About</a><br/>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="col">
+      <b>Elsewhere</b>
+      <a href="https://www.linkedin.com/in/swapbiswas/">LinkedIn</a><br/>
+      <a href="mailto:swapbiswas.marketing@gmail.com">Email</a>
+    </div>
+    <div class="col">
+      <b>Colophon</b>
+      <span class="concept">Concept 17 - Graphite</span><br/>
+      &copy; 2026 &middot; <a href="/redesign/">View all concepts</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from 'lenis';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- WebGL fine-line topographic contour texture (barely-there) ----
+  (function(){
+    const cv = document.getElementById('contour');
+    const gl = cv.getContext('webgl', { antialias:true, alpha:true });
+    if(!gl){ cv.style.background='radial-gradient(120% 90% at 80% 0%,rgba(120,120,122,.10),transparent 55%)'; return; }
+    const vs=`attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}`;
+    const fs=`precision highp float;uniform vec2 r;uniform float t;uniform float prog;uniform float scr;uniform vec2 ptr;
+    float h(vec2 x){return fract(sin(dot(x,vec2(127.1,311.7)))*43758.5453);}
+    float n(vec2 x){vec2 i=floor(x),f=fract(x);float a=h(i),b=h(i+vec2(1,0)),c=h(i+vec2(0,1)),d=h(i+vec2(1,1));vec2 u=f*f*(3.-2.*f);return mix(a,b,u.x)+(c-a)*u.y*(1.-u.x)+(d-b)*u.x*u.y;}
+    float fbm(vec2 x){float v=0.,a=.5;for(int i=0;i<6;i++){v+=a*n(x);x*=2.03;a*=.5;}return v;}
+    void main(){
+      vec2 uv=gl_FragCoord.xy/r.xy;vec2 p=uv;p.x*=r.x/r.y;
+      // continuous idle drift (always alive) + pointer parallax + scroll drift -> the map shifts under the type
+      vec2 wander=vec2(sin(t*0.06)*0.05, cos(t*0.045)*0.045);
+      vec2 par=ptr*0.10+vec2(0.0,scr*0.14)+wander;
+      p+=par;
+      // slowly morphing height field -> topographic contour lines (faster evolution so it reads as living)
+      float field=fbm(p*2.7+vec2(t*.020,t*.028));
+      field+=0.20*fbm(p*5.4-vec2(t*.024,0.0));
+      // index contour bands (every 5th line drawn heavier, like a real map)
+      float lines=field*16.0;
+      float edge=abs(fract(lines)-0.5);
+      float w=fwidth(lines);
+      // thin 1px hairline + a touch of softness so it reads as ink, not aliasing
+      float contour=1.0-smoothstep(w*0.5,w*1.6,edge);
+      // index lines: every 5th contour rendered as a heavier stroke
+      float idx=field*16.0/5.0;
+      float iedge=abs(fract(idx)-0.5);
+      float iw=fwidth(idx);
+      float index=(1.0-smoothstep(iw*0.5,iw*2.0,iedge))*0.7;
+      float strokes=max(contour,index);
+      // faint mid-gray pencil topography hairlines, lifting toward ridge-tops
+      vec3 sienna=vec3(.360,.360,.366);
+      vec3 ink=vec3(.470,.470,.478);
+      vec3 lineCol=mix(ink,sienna,smoothstep(.18,.72,field));
+      // map sheet feathers off toward the empty lower-right quadrant so type stays clean
+      float falloff=smoothstep(1.30,.18,length(uv-vec2(.86,.02)));
+      // gentle left-margin fade so headline column keeps clear paper
+      falloff*=smoothstep(0.04,0.34,uv.x)*0.55+0.45;
+      // draw-on as the page settles
+      float draw=smoothstep(0.0,0.8,prog);
+      // legible target: clearer sienna linework, still calm on paper
+      float a=strokes*falloff*0.84*draw;
+      gl_FragColor=vec4(lineCol,a);
+    }`;
+    // contour shader needs derivatives
+    gl.getExtension('OES_standard_derivatives');
+    function sh(ty,s){const o=gl.createShader(ty);gl.shaderSource(o,s);gl.compileShader(o);return o;}
+    const pr=gl.createProgram();
+    gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));
+    // prepend derivative extension to fragment source
+    gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,'#extension GL_OES_standard_derivatives : enable\n'+fs));
+    gl.linkProgram(pr);gl.useProgram(pr);
+    if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){
+      cv.style.background='radial-gradient(120% 90% at 80% 0%,rgba(120,120,122,.10),transparent 55%)';return;
+    }
+    gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+    const lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t'),
+          uprog=gl.getUniformLocation(pr,'prog'),uscr=gl.getUniformLocation(pr,'scr'),
+          uptr=gl.getUniformLocation(pr,'ptr');
+    // pointer parallax target (smoothed each frame)
+    let ptx=0,pty=0,ptxT=0,ptyT=0;
+    addEventListener('pointermove',e=>{
+      ptxT=(e.clientX/(window.innerWidth||1))*2-1;
+      ptyT=(e.clientY/(window.innerHeight||1))*2-1;
+    },{passive:true});
+    function size(){
+      const host=cv.parentElement;
+      const d=Math.min(window.devicePixelRatio||1,1.6);
+      const w=host.clientWidth, hh=host.clientHeight;
+      cv.width=w*d;cv.height=hh*d;gl.viewport(0,0,cv.width,cv.height);gl.uniform2f(ur,cv.width,cv.height);
+    }
+    size();addEventListener('resize',size);
+    if(reduce){gl.uniform1f(ut,8.0);gl.uniform1f(uprog,1.0);gl.uniform1f(uscr,0.0);gl.uniform2f(uptr,0,0);gl.drawArrays(gl.TRIANGLES,0,3);return;}
+    const start=performance.now();
+    let prog=0;
+    (function loop(now){
+      const tt=(now-start)/1000;
+      prog+=(1-prog)*0.018;                 // draw-on the linework
+      const sc=window.scrollY||0;
+      const scr=Math.min(sc/(window.innerHeight||1),1.0);  // hero-bounded parallax factor
+      ptx+=(ptxT-ptx)*0.08;pty+=(ptyT-pty)*0.08;            // smoothed pointer parallax
+      gl.uniform1f(ut,tt);gl.uniform1f(uprog,prog);gl.uniform1f(uscr,scr);gl.uniform2f(uptr,ptx,pty);
+      gl.drawArrays(gl.TRIANGLES,0,3);requestAnimationFrame(loop);
+    })(start);
+  })();
+
+  // ---- nav solidify on scroll ----
+  const nav=document.getElementById('nav');
+  const onScroll=()=>{ if(window.scrollY>40) nav.classList.add('solid'); else nav.classList.remove('solid'); };
+  onScroll();addEventListener('scroll',onScroll,{passive:true});
+
+  // ---- smooth scroll + reveals ----
+  if(!reduce){
+    const lenis=new Lenis({lerp:.1,smoothWheel:true});
+    function raf(t){lenis.raf(t);requestAnimationFrame(raf);}requestAnimationFrame(raf);
+    gsap.registerPlugin(ScrollTrigger);
+    lenis.on('scroll',ScrollTrigger.update);
+
+    // hero serif line-reveal (clip-mask)
+    gsap.set('.hero h1 .ln>span',{yPercent:118});
+    gsap.set('.hero .topline,.hero .sub,.hero .cta,.hero .metric',{opacity:0,y:18});
+    gsap.set('.hero .toprule',{scaleX:0});
+    const tl=gsap.timeline({delay:.12});
+    tl.to('.hero h1 .ln>span',{yPercent:0,duration:1.15,ease:'expo.out',stagger:.12})
+      .to('.hero .topline',{opacity:1,y:0,duration:.7},.2)
+      .to('.hero .toprule',{scaleX:1,duration:1,ease:'expo.out'},.3)
+      .to('.hero .sub',{opacity:1,y:0,duration:.85},.55)
+      .to('.hero .cta',{opacity:1,y:0,duration:.85},.68)
+      .to('.hero .metric',{opacity:1,y:0,duration:.8,stagger:.1},.62);
+
+    // generic reveals
+    gsap.utils.toArray('.reveal').forEach(el=>{
+      gsap.to(el,{opacity:1,y:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 90%'}});
+    });
+
+    // animated hairline rules draw-in (drives ::after scaleX via custom prop)
+    gsap.utils.toArray('.rule').forEach(el=>{
+      const scaler={v:0};
+      ScrollTrigger.create({trigger:el,start:'top 92%',once:true,onEnter(){
+        gsap.to(scaler,{v:1,duration:1.2,ease:'expo.out',onUpdate(){
+          el.style.setProperty('--rscale',scaler.v);
+        }});
+      }});
+    });
+
+    // magnetic primary button
+    const mag=document.querySelector('.btn.primary');
+    if(mag){
+      const strength=18;
+      mag.addEventListener('mousemove',e=>{
+        const b=mag.getBoundingClientRect();
+        const x=(e.clientX-b.left-b.width/2)/b.width*strength;
+        const y=(e.clientY-b.top-b.height/2)/b.height*strength;
+        gsap.to(mag,{x,y,duration:.4,ease:'power3.out'});
+      });
+      mag.addEventListener('mouseleave',()=>gsap.to(mag,{x:0,y:0,duration:.5,ease:'elastic.out(1,.4)'}));
+    }
+  } else {
+    // reduced-motion: ensure hairline rules are drawn
+    document.querySelectorAll('.rule').forEach(el=>el.style.setProperty('--rscale',1));
+  }
+</script>
+</body>
+</html>

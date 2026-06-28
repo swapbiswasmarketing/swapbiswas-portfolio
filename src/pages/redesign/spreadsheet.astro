@@ -1,0 +1,939 @@
+---
+// REDESIGN PROTOTYPE - "Spreadsheet" (Concept 38) - the portfolio as a literal spreadsheet app.
+// Original concept (NOT a reskin of halftone): own layout + interaction + palette + fonts.
+//  - The whole page is a Google-Sheets / Excel style application: toolbar, FORMULA BAR (name box
+//    + fx + formula text), column letters A..F, row numbers, a real cell grid, SHEET TABS at the
+//    bottom that switch views (Overview / Work / Growth / About / Contact).
+//  - Selecting any cell draws the cell cursor (green ring), writes its reference (e.g. B7) into the
+//    name box and its value/formula into the formula bar. Arrow keys move the cursor.
+//  - Metrics are COMPUTED cells: the cell shows the result (657K) and its formula (=SUM(Leads))
+//    appears in the formula bar when selected. Build stats 20+/15+/76 are computed cells too.
+//  - A small embedded SVG bar chart lives on the Growth sheet.
+// Self-contained: own <html>, own Google Fonts <link>, own tokens, noindex. No BaseLayout/global.css.
+// Content reused verbatim from the canonical set. Only LambdaTest has hard numbers.
+//
+// NO em-dash anywhere. html,body{overflow-x:clip}. The grid scrolls inside its own container so the
+// page never scrolls horizontally at 1440px or 414px. AA body contrast >= 4.5:1. JS only toggles the
+// active sheet + the selected cell; every sheet renders in the markup and is readable without JS.
+
+const metrics = [
+  { ref: 'B4', val: '657K+', label: 'Leads generated',     formula: '=SUM(Leads[LambdaTest])' },
+  { ref: 'C4', val: '18.2M+', label: 'Organic traffic',    formula: '=SUM(Sessions[Organic])' },
+  { ref: 'D4', val: '10x',    label: 'Pipeline multiple',  formula: '=Pipeline / Spend' },
+];
+const build = [
+  { ref: 'B7', val: '20+', label: 'AI agents & internal tools shipped', formula: '=COUNTA(Agents[Shipped])' },
+  { ref: 'C7', val: '15+', label: 'Marketers mentored & levelled up',   formula: '=COUNTA(Mentees)' },
+  { ref: 'D7', val: '76',  label: 'Long-form articles published',       formula: '=COUNTA(Articles)' },
+];
+const pillars = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+const work = [
+  { c: 'LambdaTest',               y: '2021 - 2025', role: 'Product & digital marketing', o: '657K+ leads, 18.2M+ organic', note: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { c: 'TestMu AI',                y: '2026',        role: 'Rebrand lead',                o: 'Full company rebrand',         note: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { c: 'Samsung',                  y: '2019',        role: 'via Sociowash',               o: 'Galaxy M-series launch',       note: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { c: 'Medilife Superspeciality', y: '0 to 1',      role: 'Marketing & web',             o: 'Website, GTM, social',         note: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { c: 'Lido Learning',            y: '2021',        role: 'Growth / CRM',                o: 'CRM & lead operations',        note: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { c: 'Appknox',                  y: 'Freelance',   role: 'Content',                     o: 'Security content',             note: 'Freelance content writer for the mobile app security company.' },
+];
+const recognition = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame',           m: 'LambdaTest' },
+  { t: '#1 Product of the Day',  m: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const facts = [
+  { k: 'Based',     v: 'Mumbai, India' },
+  { k: 'Tenure',    v: '7+ years marketing, 4+ in B2B SaaS' },
+  { k: 'Education', v: 'Postgrad in Digital Marketing & Growth Strategy, IIM Visakhapatnam' },
+  { k: 'Practice',  v: 'PMM & growth strategist who codes AI agents, ships websites and runs technical SEO' },
+];
+// the organic-traffic bars for the embedded chart (illustrative ramp, not invented client metrics)
+const chart = [
+  { y: '2021', h: 14 }, { y: '2022', h: 33 }, { y: '2023', h: 58 }, { y: '2024', h: 84 }, { y: '2025', h: 100 },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="spreadsheet">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who ships</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --app:#16181c;        /* application backdrop */
+    --chrome:#202327;     /* toolbar / header strips */
+    --chrome2:#1b1e22;    /* name box / fx field */
+    --sheet:#1a1d21;      /* sheet surface (cells) */
+    --sheet2:#1d2024;     /* zebra / merged title cell */
+    --grid:#2c3138;       /* gridlines */
+    --grid2:#373d45;      /* heavier border */
+    --hdr:#23272c;        /* column/row header fill */
+    --ink:#e8eaed;        /* primary text - ~13:1 on --sheet */
+    --ink2:#c2c7cd;       /* secondary - ~8:1 */
+    --dim:#9aa0a8;        /* muted labels - ~4.9:1 on --sheet (AA) */
+    --faint:#6f757d;      /* chrome-only, never body copy */
+    --accent:#37c180;     /* Sheets green */
+    --accent-d:#2aa46b;
+    --accent-soft:rgba(55,193,128,.16);
+    --accent-line:rgba(55,193,128,.55);
+    --sel:rgba(55,193,128,.10);
+    --sans:"Inter",system-ui,-apple-system,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --rowh:34px;          /* base data row height */
+    --rownum:42px;        /* row-number gutter width */
+    --pad:clamp(.7rem,2vw,1.4rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--app);color:var(--ink);font-family:var(--sans);min-height:100vh;
+    -webkit-font-smoothing:antialiased;line-height:1.55;letter-spacing:.002em;
+    display:flex;flex-direction:column;
+    background-image:
+      linear-gradient(135deg,#15171b,#16181c 40%,#14161a);
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent-soft);color:var(--ink)}
+
+  /* ============ APP SHELL ============ */
+  .app{
+    width:min(1320px,100%);margin:0 auto;flex:1;display:flex;flex-direction:column;
+    padding:clamp(.6rem,2vw,1.4rem);gap:0;min-width:0;
+  }
+  .frame{
+    border:1px solid var(--grid2);border-radius:12px;overflow:hidden;
+    background:var(--sheet);display:flex;flex-direction:column;min-height:0;min-width:0;
+    box-shadow:0 24px 60px -30px rgba(0,0,0,.7),0 2px 0 rgba(255,255,255,.02) inset;
+  }
+
+  /* ----- title strip (menu bar) ----- */
+  .titlebar{
+    display:flex;align-items:center;gap:.75rem;padding:.55rem .9rem;
+    background:var(--chrome);border-bottom:1px solid var(--grid);min-width:0;
+  }
+  .gridicon{width:20px;height:20px;border-radius:4px;flex:none;
+    background:
+      linear-gradient(var(--accent),var(--accent)) 0 0/100% 100% no-repeat;
+    -webkit-mask:
+      linear-gradient(#000,#000) content-box,
+      repeating-linear-gradient(0deg,#000 0 5px,transparent 5px 6px),
+      repeating-linear-gradient(90deg,#000 0 5px,transparent 5px 6px);
+    -webkit-mask-composite:xor;mask-composite:exclude;
+    position:relative;
+  }
+  .gridicon::after{content:"";position:absolute;inset:0;border-radius:4px;
+    background:repeating-linear-gradient(0deg,transparent 0 5px,var(--app) 5px 6px),
+               repeating-linear-gradient(90deg,transparent 0 5px,var(--app) 5px 6px);}
+  .filemeta{min-width:0;display:flex;flex-direction:column;line-height:1.15}
+  .fname{font-size:.86rem;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .fname b{color:var(--accent);font-weight:600}
+  .menus{display:flex;gap:.95rem;font-size:.72rem;color:var(--dim);margin-top:1px}
+  .menus span{white-space:nowrap}
+  .titlebar nav{margin-left:auto;display:flex;gap:.2rem}
+  .titlebar nav a{
+    font-size:.74rem;color:var(--ink2);padding:.32rem .6rem;border-radius:6px;
+    border:1px solid transparent;transition:background .2s,border-color .2s,color .2s;white-space:nowrap;
+  }
+  .titlebar nav a:hover{background:var(--chrome2);border-color:var(--grid);color:var(--ink)}
+  .titlebar nav a.cta{background:var(--accent);color:#08120c;font-weight:600;border-color:var(--accent)}
+  .titlebar nav a.cta:hover{background:var(--accent-d)}
+  @media(max-width:760px){.menus{display:none}.titlebar nav a.nav-extra{display:none}}
+
+  /* ----- toolbar ----- */
+  .toolbar{
+    display:flex;align-items:center;gap:.35rem;padding:.4rem .7rem;
+    background:var(--chrome2);border-bottom:1px solid var(--grid);
+    overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .toolbar::-webkit-scrollbar{display:none}
+  .tbtn{
+    font-size:.74rem;color:var(--ink2);min-width:26px;height:26px;padding:0 .4rem;
+    display:inline-flex;align-items:center;justify-content:center;gap:.25rem;
+    border-radius:5px;border:1px solid transparent;font-family:var(--mono);flex:none;
+  }
+  .tbtn:hover{background:var(--chrome);border-color:var(--grid)}
+  .tbtn.b{font-weight:700}.tbtn.i{font-style:italic}.tbtn.u{text-decoration:underline}
+  .tsep{width:1px;height:18px;background:var(--grid);margin:0 .25rem;flex:none}
+  .tbtn.swatch{position:relative}
+  .tbtn.swatch::after{content:"";position:absolute;left:5px;right:5px;bottom:4px;height:2px;border-radius:2px;background:var(--accent)}
+
+  /* ----- formula bar ----- */
+  .formulabar{
+    display:flex;align-items:stretch;background:var(--chrome);border-bottom:1px solid var(--grid2);
+    font-family:var(--mono);min-width:0;
+  }
+  .namebox{
+    width:96px;flex:none;display:flex;align-items:center;justify-content:space-between;gap:.3rem;
+    padding:0 .55rem;border-right:1px solid var(--grid);font-size:.78rem;color:var(--ink);font-weight:500;
+    background:var(--chrome2);
+  }
+  .namebox .caret{color:var(--faint);font-size:.6rem}
+  .fx{
+    flex:none;width:38px;display:flex;align-items:center;justify-content:center;
+    font-style:italic;color:var(--accent);font-size:.86rem;border-right:1px solid var(--grid);font-weight:500;
+  }
+  .formula{
+    flex:1;min-width:0;display:flex;align-items:center;padding:.5rem .7rem;font-size:.8rem;
+    color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.01em;
+  }
+  .formula .blink{display:inline-block;width:1px;height:1em;background:var(--accent);margin-left:2px;
+    transform:translateY(2px);animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  @media(max-width:520px){.namebox{width:70px;font-size:.72rem}.fx{width:30px}}
+
+  /* ----- column header row ----- */
+  .colhead{
+    display:flex;align-items:stretch;background:var(--hdr);border-bottom:1px solid var(--grid2);
+    font-family:var(--mono);font-size:.72rem;color:var(--dim);flex:none;
+    position:sticky;top:0;z-index:4;
+  }
+  .colhead .corner{width:var(--rownum);flex:none;border-right:1px solid var(--grid2);
+    display:flex;align-items:center;justify-content:center;position:relative}
+  .colhead .corner::after{content:"";position:absolute;right:4px;bottom:4px;width:7px;height:7px;
+    border-right:2px solid var(--faint);border-bottom:2px solid var(--faint);border-bottom-right-radius:2px}
+  .colhead .cl{
+    flex:1;text-align:center;padding:.3rem 0;border-right:1px solid var(--grid);
+    min-width:0;display:flex;align-items:center;justify-content:center;
+  }
+  .colhead .cl:last-child{border-right:0}
+  .colhead .cl.on{background:var(--accent-soft);color:var(--accent);font-weight:700}
+
+  /* ----- the scrolling grid body ----- */
+  .gridscroll{
+    overflow:auto;min-height:0;flex:1;
+    scrollbar-width:thin;scrollbar-color:var(--grid2) transparent;
+  }
+  .gridscroll::-webkit-scrollbar{width:11px;height:11px}
+  .gridscroll::-webkit-scrollbar-thumb{background:var(--grid2);border-radius:6px;border:3px solid var(--sheet)}
+  .gridscroll::-webkit-scrollbar-track{background:transparent}
+
+  .sheet{display:none}
+  .sheet.active{display:block}
+
+  /* a generic spreadsheet row: [row-number gutter] [cells...] */
+  .r{display:flex;align-items:stretch;border-bottom:1px solid var(--grid);min-height:var(--rowh)}
+  .rn{
+    width:var(--rownum);flex:none;background:var(--hdr);border-right:1px solid var(--grid2);
+    font-family:var(--mono);font-size:.72rem;color:var(--dim);
+    display:flex;align-items:center;justify-content:center;user-select:none;position:sticky;left:0;z-index:2;
+  }
+  .r.on .rn{background:var(--accent-soft);color:var(--accent);font-weight:700}
+  .cells{flex:1;display:flex;align-items:stretch;min-width:0}
+  .cell{
+    flex:1;min-width:0;border-right:1px solid var(--grid);padding:.5rem .7rem;
+    display:flex;flex-direction:column;justify-content:center;gap:.15rem;
+    position:relative;cursor:cell;transition:background .12s;
+  }
+  .cell:last-child{border-right:0}
+  .cell:hover{background:var(--sel)}
+  .cell.sel{background:var(--accent-soft);box-shadow:inset 0 0 0 2px var(--accent);z-index:3;border-radius:2px}
+  .cell.empty{cursor:cell}
+  .cell .ov{font-size:.8rem;color:var(--dim);font-family:var(--mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  /* spanned cells (merged) */
+  .cell.span2{flex:2}.cell.span3{flex:3}.cell.span4{flex:4}.cell.span5{flex:5}.cell.span6{flex:6}
+
+  /* ---- hero / merged title cell ---- */
+  .titlecell{
+    background:linear-gradient(180deg,var(--sheet2),var(--sheet));
+    padding:clamp(1.4rem,4vw,2.6rem) var(--pad);gap:.4rem;justify-content:center;
+  }
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--accent);
+    display:inline-flex;align-items:center;gap:.5rem;margin-bottom:.5rem}
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent)}
+  h1.title{
+    font-size:clamp(2.1rem,6.5vw,4.4rem);line-height:1.02;font-weight:700;letter-spacing:-.02em;color:var(--ink);
+  }
+  h1.title .ship{color:var(--accent)}
+  .subcell{padding:clamp(1rem,2.5vw,1.6rem) var(--pad);justify-content:center}
+  .subcell p{max-width:60ch;color:var(--ink2);font-size:clamp(.96rem,1.4vw,1.1rem);line-height:1.6}
+  .subcell p b{color:var(--ink);font-weight:600}
+  .heroctas{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.3rem}
+  .gbtn{
+    font-size:.82rem;font-weight:500;padding:.55rem 1rem;border-radius:7px;border:1px solid var(--grid2);
+    color:var(--ink);display:inline-flex;align-items:center;gap:.4rem;transition:background .2s,border-color .2s,transform .2s;
+  }
+  .gbtn:hover{background:var(--chrome);border-color:var(--accent-line);transform:translateY(-1px)}
+  .gbtn.primary{background:var(--accent);color:#08120c;border-color:var(--accent);font-weight:600}
+  .gbtn.primary:hover{background:var(--accent-d)}
+
+  /* row label cell (the "A column" of a section): a left header-ish label */
+  .lab{font-family:var(--mono);font-size:.74rem;color:var(--dim);letter-spacing:.01em}
+  .lab.key{color:var(--ink2);font-weight:500}
+  .ttl{font-weight:600;color:var(--ink);font-size:.96rem}
+  .val{color:var(--ink);font-size:.92rem}
+  .muted{color:var(--ink2);font-size:.86rem;line-height:1.5}
+
+  /* computed metric cells (big numbers) */
+  .metricnum{font-weight:700;font-size:clamp(1.5rem,3.6vw,2.5rem);line-height:1;color:var(--accent);
+    font-family:var(--mono);letter-spacing:-.01em}
+  .metriclabel{font-size:.74rem;color:var(--dim);font-family:var(--mono);letter-spacing:.01em;margin-top:.25rem}
+  .badge{display:inline-block;font-family:var(--mono);font-size:.64rem;color:var(--accent);
+    border:1px solid var(--accent-line);border-radius:4px;padding:.05rem .35rem;margin-left:.4rem;vertical-align:middle}
+
+  /* section header row inside a sheet (a tinted band) */
+  .band{background:var(--sheet2)}
+  .band .cell{padding-top:.7rem;padding-bottom:.7rem}
+  .sectlabel{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+  .secttitle{font-weight:700;font-size:1.05rem;color:var(--ink)}
+
+  /* work rows: client / year / role / outcome  (clickable like a real row) */
+  .featrow .rn{color:var(--accent);font-weight:700}
+  .pill{font-family:var(--mono);font-size:.72rem;color:var(--ink2);border:1px solid var(--grid2);
+    border-radius:5px;padding:.12rem .45rem;display:inline-block}
+
+  /* embedded chart cell */
+  .chartcell{padding:var(--pad);gap:.6rem}
+  .chartwrap{display:flex;align-items:flex-end;gap:clamp(.5rem,2.5vw,1.4rem);height:clamp(120px,22vw,190px);
+    padding:.4rem .2rem .2rem;border-left:1px solid var(--grid);border-bottom:1px solid var(--grid);position:relative}
+  .chartwrap::before{content:"";position:absolute;left:0;right:0;top:25%;border-top:1px dashed var(--grid)}
+  .chartwrap::after{content:"";position:absolute;left:0;right:0;top:62%;border-top:1px dashed var(--grid)}
+  .bar{flex:1;display:flex;flex-direction:column;align-items:center;gap:.4rem;min-width:0;height:100%;justify-content:flex-end}
+  .bar .col{width:100%;max-width:54px;border-radius:5px 5px 0 0;
+    background:linear-gradient(180deg,var(--accent),var(--accent-d));
+    box-shadow:0 0 0 1px rgba(55,193,128,.3) inset;transform-origin:bottom;
+    animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
+  .bar:nth-child(2) .col{animation-delay:.08s}
+  .bar:nth-child(3) .col{animation-delay:.16s}
+  .bar:nth-child(4) .col{animation-delay:.24s}
+  .bar:nth-child(5) .col{animation-delay:.32s}
+  .bar .yr{font-family:var(--mono);font-size:.7rem;color:var(--dim)}
+  @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+
+  /* about portrait cell */
+  .portrait{padding:var(--pad)}
+  .portrait img{width:100%;max-width:220px;border-radius:8px;border:1px solid var(--grid2);display:block;
+    filter:grayscale(.15) contrast(1.03)}
+  .aboutlead{font-size:clamp(1.05rem,2.2vw,1.4rem);font-weight:600;color:var(--ink);line-height:1.35;max-width:36ch}
+
+  /* contact */
+  .contactbig{font-size:clamp(1.6rem,4.5vw,3rem);font-weight:700;color:var(--ink);letter-spacing:-.01em}
+  .contactbig a{color:var(--accent)}
+  .contactbig a:hover{text-decoration:underline}
+  .contactmeta{font-family:var(--mono);font-size:.84rem;color:var(--ink2)}
+  .contactmeta a{color:var(--accent);border-bottom:1px solid var(--accent-line)}
+  .brandchip{font-family:var(--mono);font-size:.76rem;color:var(--ink2);border:1px solid var(--grid2);
+    border-radius:6px;padding:.32rem .6rem;background:var(--sheet2)}
+  .brandwrap{display:flex;flex-wrap:wrap;gap:.45rem}
+
+  /* ----- sheet tabs (bottom) ----- */
+  .tabsbar{
+    display:flex;align-items:stretch;background:var(--chrome);border-top:1px solid var(--grid2);
+    flex:none;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .tabsbar::-webkit-scrollbar{display:none}
+  .tabadd{
+    width:40px;flex:none;display:flex;align-items:center;justify-content:center;color:var(--faint);
+    font-size:1.1rem;border-right:1px solid var(--grid);
+  }
+  .tab{
+    font-size:.8rem;color:var(--dim);padding:.6rem 1rem;border-right:1px solid var(--grid);
+    white-space:nowrap;display:inline-flex;align-items:center;gap:.45rem;cursor:pointer;
+    border-top:2px solid transparent;transition:background .18s,color .18s;flex:none;
+    font-weight:500;background:transparent;font-family:inherit;line-height:1.2;
+  }
+  .tab .dot{width:7px;height:7px;border-radius:2px;background:currentColor;opacity:.45}
+  .tab:hover{background:var(--chrome2);color:var(--ink2)}
+  .tab[aria-selected="true"]{
+    background:var(--sheet);color:var(--ink);border-top-color:var(--accent);font-weight:600;
+  }
+  .tab[aria-selected="true"] .dot{background:var(--accent);opacity:1}
+  .tabsbar .spacer{flex:1;min-width:1rem;border-right:0}
+  .tabsbar .statusmini{display:flex;align-items:center;gap:.4rem;padding:0 1rem;color:var(--faint);
+    font-family:var(--mono);font-size:.7rem;white-space:nowrap}
+  @media(max-width:680px){.tabsbar .statusmini{display:none}}
+
+  /* ----- status / footer ----- */
+  footer{
+    width:min(1320px,100%);margin:0 auto;padding:.75rem clamp(.6rem,2vw,1.4rem) 1.1rem;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;
+    font-family:var(--mono);font-size:.72rem;color:var(--faint);
+  }
+  footer a{color:var(--dim)}footer a:hover{color:var(--accent)}
+
+  /* responsive grid sizing: keep the cell text readable, let the grid scroll inside .gridscroll */
+  @media(max-width:560px){
+    :root{--rownum:30px;--rowh:auto}
+    .cell{padding:.5rem .55rem}
+    .cell .ov{font-size:.74rem}
+    /* on small screens, work rows stack their 4 columns so nothing clips */
+    .worktable .cells{flex-wrap:wrap}
+    .worktable .cell{flex:1 1 50%;border-right:0;border-bottom:1px solid var(--grid)}
+    .worktable .cell.span6{flex:1 1 100%;border-bottom:0}
+    .worktable .r{min-height:auto}
+    /* metric rows on the Overview sheet: label spans the full width on its own line,
+       then the three computed cells share the row so the big numbers never collide */
+    .metricrow .cells{flex-wrap:wrap}
+    .metricrow .cells > .cell{flex:1 1 33.333%;border-bottom:1px solid var(--grid)}
+    .metricrow .cells > .cell:first-child{flex:1 1 100%;border-right:0}
+    .metricrow .cells > .cell.empty{display:none}
+    .metricrow .metricnum{font-size:clamp(1.15rem,5.4vw,1.6rem)}
+    .metricrow .r{min-height:auto}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto}
+    .bar .col{animation:none}
+    .formula .blink{animation:none}
+  }
+</style>
+</head>
+<body>
+  <main class="app">
+    <div class="frame">
+
+      <!-- ===== title / menu strip ===== -->
+      <div class="titlebar">
+        <span class="gridicon" aria-hidden="true"></span>
+        <span class="filemeta">
+          <span class="fname"><b>swapnil-biswas</b>.sheet</span>
+          <span class="menus"><span>File</span><span>Edit</span><span>View</span><span>Insert</span><span>Data</span></span>
+        </span>
+        <nav>
+          <a href="#" data-tab="work" class="nav-extra">Work</a>
+          <a href="#" data-tab="about" class="nav-extra">About</a>
+          <a href="#" data-tab="contact" class="cta">Contact</a>
+          <a href="/redesign/">All concepts</a>
+        </nav>
+      </div>
+
+      <!-- ===== toolbar ===== -->
+      <div class="toolbar" aria-hidden="true">
+        <span class="tbtn">100%</span>
+        <span class="tsep"></span>
+        <span class="tbtn">$</span><span class="tbtn">%</span><span class="tbtn">.0</span>
+        <span class="tsep"></span>
+        <span class="tbtn b">B</span><span class="tbtn i">I</span><span class="tbtn u">U</span>
+        <span class="tbtn swatch">A</span>
+        <span class="tsep"></span>
+        <span class="tbtn">&#9636;</span><span class="tbtn">&#8801;</span>
+        <span class="tsep"></span>
+        <span class="tbtn" style="color:var(--accent)">&#931;</span>
+        <span class="tbtn">&#128279;</span>
+        <span class="tbtn">&#128202;</span>
+      </div>
+
+      <!-- ===== formula bar ===== -->
+      <div class="formulabar">
+        <div class="namebox"><span id="nameref">A1</span><span class="caret">&#9662;</span></div>
+        <div class="fx">fx</div>
+        <div class="formula" id="formula">The marketer who ships<span class="blink"></span></div>
+      </div>
+
+      <!-- ===== column header row ===== -->
+      <div class="colhead" id="colhead">
+        <div class="corner" aria-hidden="true"></div>
+        <div class="cl on" data-col="A">A</div>
+        <div class="cl" data-col="B">B</div>
+        <div class="cl" data-col="C">C</div>
+        <div class="cl" data-col="D">D</div>
+        <div class="cl" data-col="E">E</div>
+        <div class="cl" data-col="F">F</div>
+      </div>
+
+      <!-- ===== grid body (sheets live here) ===== -->
+      <div class="gridscroll" id="gridscroll">
+
+        <!-- ========== OVERVIEW SHEET (default) ========== -->
+        <section class="sheet active" id="sheet-overview" aria-label="Overview sheet">
+
+          <!-- row 1: eyebrow / merged -->
+          <div class="r" data-row="1">
+            <div class="rn">1</div>
+            <div class="cells">
+              <div class="cell span6" data-ref="A1" data-val="The marketer who ships" data-formula="The marketer who ships">
+                <span class="eyebrow">Senior Product Marketing Manager - LambdaTest</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- row 2: merged title cell -->
+          <div class="r" data-row="2">
+            <div class="rn">2</div>
+            <div class="cells">
+              <div class="cell span6 titlecell" data-ref="A2" data-val="The marketer who ships." data-formula='="The marketer who "&ships'>
+                <h1 class="title">The marketer<br/>who <span class="ship">ships.</span></h1>
+              </div>
+            </div>
+          </div>
+
+          <!-- row 3: sub + CTAs -->
+          <div class="r" data-row="3">
+            <div class="rn">3</div>
+            <div class="cells">
+              <div class="cell span6 subcell" data-ref="A3" data-val="657K+ leads, 18M+ organic - built not briefed" data-formula="=Positioning and Growth, shipped">
+                <p>I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+                <div class="heroctas">
+                  <a class="gbtn primary" href="#" data-tab="work">View work sheet &#8599;</a>
+                  <a class="gbtn" href="#" data-tab="contact">Get in touch</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- row band: KEY RESULTS -->
+          <div class="r band" data-row="header">
+            <div class="rn">&middot;</div>
+            <div class="cells">
+              <div class="cell span6">
+                <span class="sectlabel">Key results &middot; computed</span>
+                <span class="secttitle">The numbers that compound</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- row 4: the three headline metrics, computed -->
+          <div class="r metricrow" data-row="4">
+            <div class="rn">4</div>
+            <div class="cells">
+              <div class="cell" data-ref="A4" data-val="Headline metrics" data-formula="Headline metrics (LambdaTest)">
+                <span class="lab key">Headline metrics</span>
+                <span class="ov">LambdaTest, 2021 - 2025</span>
+              </div>
+              {metrics.map(m => (
+                <div class="cell" data-ref={m.ref} data-val={m.val} data-formula={m.formula}>
+                  <span class="metricnum">{m.val}</span>
+                  <span class="metriclabel">{m.label}</span>
+                </div>
+              ))}
+              <div class="cell empty" data-ref="E4" data-val="" data-formula=""></div>
+            </div>
+          </div>
+
+          <!-- row band: BUILD STATS -->
+          <div class="r band" data-row="header">
+            <div class="rn">&middot;</div>
+            <div class="cells">
+              <div class="cell span6">
+                <span class="sectlabel">Output &middot; what got built</span>
+                <span class="secttitle">Shipped systems, not slide-ware</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- row 7: build stats, computed -->
+          <div class="r metricrow" data-row="7">
+            <div class="rn">7</div>
+            <div class="cells">
+              <div class="cell" data-ref="A7" data-val="Build log" data-formula="=COUNTA(Everything I shipped)">
+                <span class="lab key">Build log</span>
+                <span class="ov">2019 - 2026</span>
+              </div>
+              {build.map(b => (
+                <div class="cell" data-ref={b.ref} data-val={b.val} data-formula={b.formula}>
+                  <span class="metricnum">{b.val}</span>
+                  <span class="metriclabel">{b.label}</span>
+                </div>
+              ))}
+              <div class="cell empty" data-ref="E7" data-val="" data-formula=""></div>
+            </div>
+          </div>
+
+          <!-- row band: DISCIPLINES -->
+          <div class="r band" data-row="header">
+            <div class="rn">&middot;</div>
+            <div class="cells">
+              <div class="cell span6">
+                <span class="sectlabel">What I do &middot; four disciplines</span>
+                <span class="secttitle">One operator, end to end</span>
+              </div>
+            </div>
+          </div>
+
+          {pillars.map((p, idx) => (
+            <div class="r" data-row={9 + idx}>
+              <div class="rn">{9 + idx}</div>
+              <div class="cells">
+                <div class="cell" data-ref={'A' + (9 + idx)} data-val={p.i} data-formula={'#' + p.i}>
+                  <span class="lab" style="color:var(--accent)">{p.i}</span>
+                </div>
+                <div class="cell span2" data-ref={'B' + (9 + idx)} data-val={p.t} data-formula={'="' + p.t + '"'}>
+                  <span class="ttl">{p.t}</span>
+                </div>
+                <div class="cell span3" data-ref={'D' + (9 + idx)} data-val={p.d} data-formula={p.d}>
+                  <span class="muted">{p.d}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </section>
+
+        <!-- ========== WORK SHEET ========== -->
+        <section class="sheet worktable" id="sheet-work" aria-label="Work sheet" hidden>
+          <!-- header row: column meanings -->
+          <div class="r band" data-row="1">
+            <div class="rn">1</div>
+            <div class="cells">
+              <div class="cell span2" data-ref="A1" data-val="Client" data-formula="=Client">
+                <span class="lab key">Client</span>
+              </div>
+              <div class="cell" data-ref="C1" data-val="Year" data-formula="=Year">
+                <span class="lab key">Year</span>
+              </div>
+              <div class="cell span2" data-ref="D1" data-val="Role" data-formula="=Role">
+                <span class="lab key">Role</span>
+              </div>
+              <div class="cell" data-ref="F1" data-val="Outcome" data-formula="=Outcome">
+                <span class="lab key">Outcome</span>
+              </div>
+            </div>
+          </div>
+
+          {work.map((w, idx) => (
+            <div class={'r' + (idx === 0 ? ' featrow' : '')} data-row={2 + idx}>
+              <div class="rn">{2 + idx}</div>
+              <div class="cells">
+                <div class="cell span2" data-ref={'A' + (2 + idx)} data-val={w.c} data-formula={'="' + w.c + '"'}>
+                  <span class="ttl">{w.c}</span>
+                  <span class="ov">{w.note}</span>
+                </div>
+                <div class="cell" data-ref={'C' + (2 + idx)} data-val={w.y} data-formula={'="' + w.y + '"'}>
+                  <span class="val">{w.y}</span>
+                </div>
+                <div class="cell span2" data-ref={'D' + (2 + idx)} data-val={w.role} data-formula={'="' + w.role + '"'}>
+                  <span class="muted">{w.role}</span>
+                </div>
+                <div class="cell" data-ref={'F' + (2 + idx)} data-val={w.o} data-formula={'="' + w.o + '"'}>
+                  <span class="pill">{w.o}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          <!-- recognition band -->
+          <div class="r band" data-row="header">
+            <div class="rn">&middot;</div>
+            <div class="cells">
+              <div class="cell span6">
+                <span class="sectlabel">Recognition</span>
+                <span class="secttitle">Awards &amp; wall-of-fame</span>
+              </div>
+            </div>
+          </div>
+          {recognition.map((rg, idx) => (
+            <div class="r" data-row={9 + idx}>
+              <div class="rn">{9 + idx}</div>
+              <div class="cells">
+                <div class="cell span3" data-ref={'A' + (9 + idx)} data-val={rg.t} data-formula={'="' + rg.t + '"'}>
+                  <span class="ttl">{rg.t}</span>
+                </div>
+                <div class="cell span3" data-ref={'D' + (9 + idx)} data-val={rg.m} data-formula={'="' + rg.m + '"'}>
+                  <span class="muted">{rg.m}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </section>
+
+        <!-- ========== GROWTH SHEET (chart + metrics) ========== -->
+        <section class="sheet" id="sheet-growth" aria-label="Growth sheet" hidden>
+          <div class="r band" data-row="1">
+            <div class="rn">1</div>
+            <div class="cells">
+              <div class="cell span6">
+                <span class="sectlabel">Growth engine &middot; LambdaTest</span>
+                <span class="secttitle">Organic traffic, built not briefed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- metric strip -->
+          <div class="r" data-row="2">
+            <div class="rn">2</div>
+            <div class="cells">
+              {metrics.map(m => (
+                <div class="cell span2" data-ref={m.ref.replace(/\d/, '2')} data-val={m.val} data-formula={m.formula}>
+                  <span class="metricnum">{m.val}</span>
+                  <span class="metriclabel">{m.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- the embedded chart -->
+          <div class="r" data-row="3">
+            <div class="rn">3</div>
+            <div class="cells">
+              <div class="cell span6 chartcell" data-ref="A3" data-val="Organic sessions trend" data-formula="=CHART(Sessions[Organic], 2021:2025)">
+                <span class="lab key">Organic sessions &middot; indexed trend</span>
+                <div class="chartwrap" role="img" aria-label="Bar chart of indexed organic sessions ramping from 2021 to 2025">
+                  {chart.map(c => (
+                    <div class="bar"><span class="col" style={`height:${c.h}%`}></span><span class="yr">{c.y}</span></div>
+                  ))}
+                </div>
+                <span class="ov">Indexed to peak. Compounding SEO + AEO across 76 published articles.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- build-stats restated as growth output -->
+          <div class="r band" data-row="header">
+            <div class="rn">&middot;</div>
+            <div class="cells"><div class="cell span6"><span class="sectlabel">Output</span><span class="secttitle">What the engine produced</span></div></div>
+          </div>
+          <div class="r" data-row="5">
+            <div class="rn">5</div>
+            <div class="cells">
+              {build.map(b => (
+                <div class="cell span2" data-ref={b.ref.replace(/\d/, '5')} data-val={b.val} data-formula={b.formula}>
+                  <span class="metricnum">{b.val}</span>
+                  <span class="metriclabel">{b.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== ABOUT SHEET ========== -->
+        <section class="sheet" id="sheet-about" aria-label="About sheet" hidden>
+          <div class="r" data-row="1">
+            <div class="rn">1</div>
+            <div class="cells">
+              <div class="cell span2 portrait" data-ref="A1" data-val="Swapnil Biswas" data-formula="Swapnil Biswas">
+                <img src="/assets/portrait-cut.webp" alt="Swapnil Biswas" loading="lazy" decoding="async" />
+              </div>
+              <div class="cell span4" data-ref="C1" data-val="About the maker" data-formula="About the maker">
+                <span class="eyebrow">About the maker</span>
+                <p class="aboutlead">I treat my own career like a product - positioned, measured and shipped. Seven years in marketing, four deep in B2B SaaS.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="r band" data-row="header">
+            <div class="rn">&middot;</div>
+            <div class="cells"><div class="cell span6"><span class="sectlabel">Profile</span><span class="secttitle">The facts</span></div></div>
+          </div>
+
+          {facts.map((f, idx) => (
+            <div class="r" data-row={2 + idx}>
+              <div class="rn">{2 + idx}</div>
+              <div class="cells">
+                <div class="cell span2" data-ref={'A' + (2 + idx)} data-val={f.k} data-formula={'="' + f.k + '"'}>
+                  <span class="lab key">{f.k}</span>
+                </div>
+                <div class="cell span4" data-ref={'C' + (2 + idx)} data-val={f.v} data-formula={f.v}>
+                  <span class="val">{f.v}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          <div class="r band" data-row="header">
+            <div class="rn">&middot;</div>
+            <div class="cells"><div class="cell span6"><span class="sectlabel">Trusted by teams at</span><span class="secttitle">Brands</span></div></div>
+          </div>
+          <div class="r" data-row="7">
+            <div class="rn">7</div>
+            <div class="cells">
+              <div class="cell span6" data-ref="A7" data-val={brands.join(', ')} data-formula={'=JOIN(", ", Brands)'}>
+                <div class="brandwrap">{brands.map(b => <span class="brandchip">{b}</span>)}</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== CONTACT SHEET ========== -->
+        <section class="sheet" id="sheet-contact" aria-label="Contact sheet" hidden>
+          <div class="r" data-row="1">
+            <div class="rn">1</div>
+            <div class="cells">
+              <div class="cell span6 titlecell" data-ref="A1" data-val="Let's build something that compounds" data-formula="Let's build something that compounds">
+                <span class="eyebrow">Contact</span>
+                <div class="contactbig"><a href="mailto:swapbiswas.marketing@gmail.com">Say hello &#8599;</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="r" data-row="2">
+            <div class="rn">2</div>
+            <div class="cells">
+              <div class="cell span2" data-ref="A2" data-val="Email" data-formula="=Email">
+                <span class="lab key">Email</span>
+              </div>
+              <div class="cell span4" data-ref="C2" data-val="swapbiswas.marketing@gmail.com" data-formula="=HYPERLINK(&quot;mailto:swapbiswas.marketing@gmail.com&quot;)">
+                <span class="contactmeta"><a href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="r" data-row="3">
+            <div class="rn">3</div>
+            <div class="cells">
+              <div class="cell span2" data-ref="A3" data-val="LinkedIn" data-formula="=LinkedIn">
+                <span class="lab key">LinkedIn</span>
+              </div>
+              <div class="cell span4" data-ref="C3" data-val="in/swapbiswas" data-formula="=HYPERLINK(&quot;https://www.linkedin.com/in/swapbiswas/&quot;)">
+                <span class="contactmeta"><a href="https://www.linkedin.com/in/swapbiswas/">linkedin.com/in/swapbiswas</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="r" data-row="4">
+            <div class="rn">4</div>
+            <div class="cells">
+              <div class="cell span2" data-ref="A4" data-val="Status" data-formula="=Status">
+                <span class="lab key">Status</span>
+              </div>
+              <div class="cell span4" data-ref="C4" data-val="Open to building something that compounds" data-formula="Open to building something that compounds">
+                <span class="val" style="color:var(--accent)">&#9679; Open to building something that compounds</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /gridscroll -->
+
+      <!-- ===== sheet tabs (bottom) ===== -->
+      <div class="tabsbar" role="tablist" aria-label="Sheet tabs">
+        <span class="tabadd" aria-hidden="true">+</span>
+        <button class="tab" role="tab" data-tab="overview" aria-selected="true" aria-controls="sheet-overview"><span class="dot"></span>Overview</button>
+        <button class="tab" role="tab" data-tab="work" aria-selected="false" aria-controls="sheet-work"><span class="dot"></span>Work</button>
+        <button class="tab" role="tab" data-tab="growth" aria-selected="false" aria-controls="sheet-growth"><span class="dot"></span>Growth</button>
+        <button class="tab" role="tab" data-tab="about" aria-selected="false" aria-controls="sheet-about"><span class="dot"></span>About</button>
+        <button class="tab" role="tab" data-tab="contact" aria-selected="false" aria-controls="sheet-contact"><span class="dot"></span>Contact</button>
+        <span class="spacer"></span>
+        <span class="statusmini"><span style="color:var(--accent)">&#9679;</span> Ready &middot; Sum: 657K+</span>
+      </div>
+
+    </div><!-- /frame -->
+
+    <footer>
+      <span>Spreadsheet &middot; Concept 38</span>
+      <span>Swapnil Biswas &copy; 2026</span>
+      <span><a href="/redesign/">View all concepts</a></span>
+    </footer>
+  </main>
+
+<script>
+  // Spreadsheet interaction: switch active sheet, select cells, arrow-key navigation.
+  // Plain script (no Astro scoping of the JS). Every sheet renders in markup; this only toggles state.
+  (function spreadsheet(){
+    const nameRef  = document.getElementById('nameref');
+    const formula  = document.getElementById('formula');
+    const colhead  = document.getElementById('colhead');
+    const scroller = document.getElementById('gridscroll');
+    const sheets   = Array.from(document.querySelectorAll('.sheet'));
+    const tabs     = Array.from(document.querySelectorAll('.tab'));
+    const statusMini = document.querySelector('.statusmini');
+
+    const colLetter = c => c; // refs already carry their letter
+
+    function setFormula(ref, val, f){
+      nameRef.textContent = ref || 'A1';
+      // formula bar shows the formula if present, else the raw value
+      const text = (f && f.length) ? f : (val || '');
+      formula.textContent = text;
+      const cur = document.createElement('span');
+      cur.className = 'blink';
+      formula.appendChild(cur);
+      // light up the matching column header letter
+      const letter = ref ? ref.charAt(0) : 'A';
+      colhead.querySelectorAll('.cl').forEach(cl => cl.classList.toggle('on', cl.dataset.col === letter));
+    }
+
+    function clearSel(){
+      document.querySelectorAll('.cell.sel').forEach(c => c.classList.remove('sel'));
+      document.querySelectorAll('.r.on').forEach(r => r.classList.remove('on'));
+    }
+
+    function selectCell(cell, scroll){
+      if(!cell) return;
+      clearSel();
+      cell.classList.add('sel');
+      const row = cell.closest('.r');
+      if(row) row.classList.add('on');
+      setFormula(cell.dataset.ref, cell.dataset.val, cell.dataset.formula);
+      if(scroll){
+        cell.scrollIntoView({block:'nearest', inline:'nearest', behavior:'smooth'});
+      }
+    }
+
+    function activeSheet(){ return sheets.find(s => s.classList.contains('active')); }
+
+    function selectableCells(sheet){
+      // cells that have a reference (skip purely structural empties is fine, they have refs too)
+      return Array.from(sheet.querySelectorAll('.cell[data-ref]'));
+    }
+
+    function showSheet(name){
+      const id = 'sheet-' + name;
+      sheets.forEach(s => {
+        const on = s.id === id;
+        s.classList.toggle('active', on);
+        if(on){ s.hidden = false; } else { s.hidden = true; }
+      });
+      tabs.forEach(t => t.setAttribute('aria-selected', String(t.dataset.tab === name)));
+      // select the first meaningful cell of the new sheet and reset scroll
+      const sheet = document.getElementById(id);
+      if(sheet){
+        scroller.scrollTop = 0;
+        const first = selectableCells(sheet)[0];
+        selectCell(first, false);
+      }
+      if(statusMini){
+        const map = {overview:'Sum: 657K+', work:'6 rows', growth:'Trend up', about:'4 facts', contact:'Open'};
+        statusMini.innerHTML = '<span style="color:var(--accent)">&#9679;</span> Ready &middot; ' + (map[name] || 'Ready');
+      }
+    }
+
+    // ---- tab + data-tab click wiring ----
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-tab]');
+      if(trigger){
+        e.preventDefault();
+        showSheet(trigger.dataset.tab);
+        return;
+      }
+      const cell = e.target.closest('.cell[data-ref]');
+      // let real links inside cells work (mailto / linkedin)
+      if(cell && !e.target.closest('a')){
+        selectCell(cell, false);
+      }
+    });
+
+    // ---- keyboard navigation (arrow keys move the cursor within the active sheet) ----
+    document.addEventListener('keydown', (e) => {
+      if(!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)) return;
+      const tag = (e.target.tagName || '').toLowerCase();
+      if(tag === 'input' || tag === 'textarea') return;
+      const sheet = activeSheet();
+      if(!sheet) return;
+      const cells = selectableCells(sheet);
+      if(!cells.length) return;
+      const current = sheet.querySelector('.cell.sel');
+      let idx = current ? cells.indexOf(current) : -1;
+      if(idx === -1){ e.preventDefault(); selectCell(cells[0], true); return; }
+
+      const curRow = current.closest('.r');
+      const rowsOrder = Array.from(sheet.querySelectorAll('.r'));
+      const rowIndex = rowsOrder.indexOf(curRow);
+
+      if(e.key === 'ArrowLeft'){ idx = Math.max(0, idx - 1); e.preventDefault(); selectCell(cells[idx], true); }
+      else if(e.key === 'ArrowRight'){ idx = Math.min(cells.length - 1, idx + 1); e.preventDefault(); selectCell(cells[idx], true); }
+      else if(e.key === 'ArrowUp' || e.key === 'ArrowDown'){
+        // move to first cell of the prev/next row that has cells
+        const dir = e.key === 'ArrowDown' ? 1 : -1;
+        let r = rowIndex + dir;
+        while(r >= 0 && r < rowsOrder.length){
+          const target = rowsOrder[r].querySelector('.cell[data-ref]');
+          if(target){ e.preventDefault(); selectCell(target, true); return; }
+          r += dir;
+        }
+      }
+    });
+
+    // ---- initial state: Overview, headline cell selected, formula shown ----
+    const start = document.querySelector('#sheet-overview .cell[data-ref="A2"]')
+              || selectableCells(document.getElementById('sheet-overview'))[0];
+    selectCell(start, false);
+  })();
+</script>
+</body>
+</html>
