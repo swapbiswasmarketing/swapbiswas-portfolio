@@ -2,14 +2,25 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from 'rehype-external-links';
+import { readdirSync } from 'node:fs';
+
+// The 41 concept demos moved from /redesign/{slug} to /personal-website-examples/{slug} (still noindex).
+// Build per-slug redirects from the new files so any stale /redesign/{slug} link still resolves.
+const demoSlugs = readdirSync('./src/pages/personal-website-examples')
+	.filter((f) => f.endsWith('.astro') && f !== 'index.astro')
+	.map((f) => f.replace(/\.astro$/, ''));
+const demoRedirects = Object.fromEntries(
+	demoSlugs.map((s) => [`/redesign/${s}`, `/personal-website-examples/${s}`])
+);
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://swapbiswas.com',
 	redirects: {
-		// The concept library lives at /personal-website-examples/; the 41 demos stay at /redesign/{slug} (noindex).
+		// The concept library and its 41 demos all live under /personal-website-examples/.
 		'/redesign': '/personal-website-examples/',
 		'/homepage-design-concepts': '/personal-website-examples/',
+		...demoRedirects,
 	},
 	integrations: [
 		sitemap({
@@ -17,7 +28,7 @@ export default defineConfig({
 			filter: (page) =>
 				!page.includes('/blog/category/') &&
 				!page.includes('/work/') &&
-				!page.match(/\/work\/?$/) && !page.includes('/redesign'),
+				!page.match(/\/work\/?$/) && !page.includes('/redesign') && !page.match(/\/personal-website-examples\/[^/]+\/?$/),
 		}),
 		{
 			name: 'sitemap-lastmod',
