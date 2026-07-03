@@ -1240,9 +1240,11 @@ const showSelectedWork = false;
 			// reading text on wide screens. On narrow screens it weaves gently behind.
 			const contentHalf = Math.min(W * 0.46, 664);
 			const gutter = Math.max(0, W / 2 - contentHalf);
-			// Narrow screens have no gutter, so a centered weave would cross the text.
-			// Run the strand down the right edge as a quiet side-accent instead.
-			const narrow = gutter <= 70;
+			// On tablets/phones the content fills most of the width, so a centered weave
+			// would sit on top of the reading column - run the strand down the right edge as
+			// a quiet side-accent there. On desktop/laptop widths (1024px+) it weaves across
+			// the center behind the content (z-index -1), so 1280 reads the same as 1500.
+			const narrow = W < 1024;
 			const amp = contentHalf + Math.min(gutter * 0.55, 130);
 			const edgeX = W - 18;
 			const sels = ['.signal-hero', '.signal-marquee--tags', '.stats', '.skills', '.signal-work', 'main > section.with-cta', '.resume-wrapper', '.signal-brands-sec', '.newsletter-section', 'aside'];
