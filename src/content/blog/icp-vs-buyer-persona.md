@@ -110,7 +110,7 @@ The impact of a well-defined ICP is measurable:
 
 A [buyer persona](/blog/b2b-buyer-persona/) is a semi-fictional representation of your ideal **individual buyer** - the actual human being who influences or makes the purchasing decision inside your target accounts.
 
-Where an ICP is about the company, a buyer persona is about the person: their role, motivations, pain points, goals, and how they make decisions.
+Where an ICP is about the company, a buyer persona is about the person: their role, motivations, pain points, goals, and how they make decisions. Your ICP is also the fit half of how you [prioritize accounts in ABM](/blog/how-to-prioritize-accounts-in-abm/), scoring which companies deserve the effort before you personalize for the person.
 
 ### Buyer Persona Components
 

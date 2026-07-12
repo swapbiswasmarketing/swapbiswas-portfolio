@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="760" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="60" text-anchor="middle" fill="#f0f6fc" font-size="40" font-weight="700">Anatomy of a Win-Loss Analysis Dashboard</text>
+  <text x="700" y="98" text-anchor="middle" fill="#9ca3af" font-size="24">Six panels that turn closed deals into decisions product and sales can act on</text>
+
+  <!-- Filter strip -->
+  <rect x="40" y="126" width="1320" height="48" rx="12" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+  <text x="64" y="156" fill="#9ca3af" font-size="20">Filters:</text>
+  <text x="150" y="156" fill="#c8cfd8" font-size="20">Segment  ·  Competitor  ·  Deal size  ·  Time period  ·  Region</text>
+
+  <!-- P1 Win rate + trend -->
+  <rect x="40" y="200" width="422" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="40" y="200" width="422" height="6" rx="3" fill="#f5a0a1"/>
+  <text x="72" y="248" fill="#f5a0a1" font-size="20" font-weight="700" letter-spacing="0.06em">HEADLINE</text>
+  <text x="72" y="286" fill="#f0f6fc" font-size="24" font-weight="600">Win rate and trend</text>
+  <text x="72" y="368" fill="#f5a0a1" font-size="56" font-weight="700">34%</text>
+  <text x="230" y="360" fill="#9ca3af" font-size="20">up from</text>
+  <text x="230" y="386" fill="#9ca3af" font-size="20">29% last quarter</text>
+
+  <!-- P2 Win rate by segment -->
+  <rect x="489" y="200" width="422" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="489" y="200" width="422" height="6" rx="3" fill="#c084fc"/>
+  <text x="521" y="248" fill="#c084fc" font-size="20" font-weight="700" letter-spacing="0.06em">SEGMENT</text>
+  <text x="521" y="286" fill="#f0f6fc" font-size="24" font-weight="600">Win rate by segment</text>
+  <text x="521" y="332" fill="#c8cfd8" font-size="20">Enterprise</text>
+  <rect x="660" y="320" width="220" height="15" rx="7" fill="#30363d"/><rect x="660" y="320" width="120" height="15" rx="7" fill="#c084fc"/>
+  <text x="521" y="372" fill="#c8cfd8" font-size="20">Mid-market</text>
+  <rect x="660" y="360" width="220" height="15" rx="7" fill="#30363d"/><rect x="660" y="360" width="170" height="15" rx="7" fill="#c084fc"/>
+  <text x="521" y="412" fill="#c8cfd8" font-size="20">SMB</text>
+  <rect x="660" y="400" width="220" height="15" rx="7" fill="#30363d"/><rect x="660" y="400" width="90" height="15" rx="7" fill="#c084fc"/>
+
+  <!-- P3 Top loss reasons -->
+  <rect x="938" y="200" width="422" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="938" y="200" width="422" height="6" rx="3" fill="#60a5fa"/>
+  <text x="970" y="248" fill="#60a5fa" font-size="20" font-weight="700" letter-spacing="0.06em">WHY WE LOSE</text>
+  <text x="970" y="286" fill="#f0f6fc" font-size="24" font-weight="600">Top loss reasons</text>
+  <text x="970" y="332" fill="#c8cfd8" font-size="22">1.  Price and budget</text>
+  <text x="970" y="372" fill="#c8cfd8" font-size="22">2.  Missing feature</text>
+  <text x="970" y="412" fill="#c8cfd8" font-size="22">3.  Lost to a rival</text>
+
+  <!-- P4 Competitor win/loss -->
+  <rect x="40" y="452" width="422" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="40" y="452" width="422" height="6" rx="3" fill="#fb923c"/>
+  <text x="72" y="500" fill="#fb923c" font-size="20" font-weight="700" letter-spacing="0.06em">HEAD TO HEAD</text>
+  <text x="72" y="538" fill="#f0f6fc" font-size="24" font-weight="600">Competitor win/loss</text>
+  <text x="72" y="588" fill="#c8cfd8" font-size="20">Won</text>
+  <rect x="150" y="576" width="280" height="16" rx="8" fill="#30363d"/><rect x="150" y="576" width="180" height="16" rx="8" fill="#60a5fa"/>
+  <text x="72" y="632" fill="#c8cfd8" font-size="20">Lost</text>
+  <rect x="150" y="620" width="280" height="16" rx="8" fill="#30363d"/><rect x="150" y="620" width="100" height="16" rx="8" fill="#fb923c"/>
+
+  <!-- P5 Reason trend over time -->
+  <rect x="489" y="452" width="422" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="489" y="452" width="422" height="6" rx="3" fill="#b388f2"/>
+  <text x="521" y="500" fill="#b388f2" font-size="20" font-weight="700" letter-spacing="0.06em">OVER TIME</text>
+  <text x="521" y="538" fill="#f0f6fc" font-size="24" font-weight="600">Reason trend</text>
+  <polyline points="521,650 580,614 640,632 700,584 760,606 830,560 880,574" fill="none" stroke="#b388f2" stroke-width="3"/>
+  <circle cx="521" cy="650" r="4" fill="#b388f2"/><circle cx="640" cy="632" r="4" fill="#b388f2"/><circle cx="760" cy="606" r="4" fill="#b388f2"/><circle cx="880" cy="574" r="4" fill="#b388f2"/>
+  <text x="521" y="672" fill="#9ca3af" font-size="20">Price objections, last 6 months</text>
+
+  <!-- P6 Deal-level drill-down -->
+  <rect x="938" y="452" width="422" height="230" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="938" y="452" width="422" height="6" rx="3" fill="#f87171"/>
+  <text x="970" y="500" fill="#f87171" font-size="20" font-weight="700" letter-spacing="0.06em">DRILL DOWN</text>
+  <text x="970" y="538" fill="#f0f6fc" font-size="24" font-weight="600">Deal-level detail</text>
+  <text x="970" y="578" fill="#9ca3af" font-size="20">Deal · Segment · Reason</text>
+  <line x1="970" y1="590" x2="1330" y2="590" stroke="#30363d" stroke-width="1"/>
+  <text x="970" y="618" fill="#c8cfd8" font-size="20">Acme · ENT · Price</text>
+  <text x="970" y="650" fill="#c8cfd8" font-size="20">Globex · MM · Feature gap</text>
+
+  <text x="700" y="726" text-anchor="middle" fill="#9ca3af" font-size="20">One clear question per panel, then route each insight to product, sales, and battlecards</text>
+</svg>

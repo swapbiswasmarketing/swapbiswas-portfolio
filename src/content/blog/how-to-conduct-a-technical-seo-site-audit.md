@@ -40,7 +40,7 @@ A technical SEO audit evaluates the infrastructure of your website -the code, se
 
 It's different from a content audit (which evaluates page quality) or a backlink audit (which evaluates your link profile). A technical audit asks: **Is your website set up in a way that allows search engines to do their job?** If you are still building the case internally, see [why an SEO audit is important](/blog/why-seo-audit-is-important/) before you start.
 
-**How often should you do one?**
+**How often should you do one?** (For the full cadence, including the trigger-based audits that jump the queue, see [how often you should do an SEO audit](/blog/how-often-should-you-do-an-seo-audit/).)
 - **Full audit:** Every 3-6 months
 - **Quick checks:** Monthly (Core Web Vitals, indexing status, crawl errors)
 - **After major changes:** Always audit after a redesign, migration, CMS change, or major content restructure

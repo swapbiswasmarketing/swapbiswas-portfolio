@@ -103,7 +103,7 @@ Resist the urge to write a deck. Write recommendations.
 
 ### Stage 6: Dissemination and Action
 
-Share the findings with product, marketing, and sales leadership. Each team picks 1-2 items to act on this quarter. Track whether the action ships.
+Share the findings with product, marketing, and sales leadership. Each team picks 1-2 items to act on this quarter. Track whether the action ships. Most programs stall here because the insights live in a slide nobody reopens, so it is worth building a [win-loss analysis dashboard](/blog/win-loss-analysis-dashboard/) that keeps them visible and interrogable all quarter.
 
 The program that runs all six stages once and stops produces a report nobody reads. The program that runs the loop quarterly produces compounding intelligence.
 

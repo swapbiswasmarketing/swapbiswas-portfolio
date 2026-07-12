@@ -90,7 +90,7 @@ Prioritize publications and communities your buyers already read. Relevance beat
 
 When a user asks an AI tool to recommend a tool or vendor, the model often leans on review platforms and roundups. Your review profile becomes part of the answer.
 
-Maintain strong, current profiles on G2, Capterra, Trustpilot, and category-specific directories. Encourage real reviews and keep product details accurate so models quote correct facts.
+Maintain strong, current profiles on G2, Capterra, Trustpilot, and category-specific directories. Encourage real reviews and keep product details accurate so models quote correct facts. This lever is big enough to deserve its own playbook: here is how [product reviews impact AI search visibility](/blog/product-reviews-ai-search-visibility/) and how to earn AI citations from them.
 
 Third-party "best of" lists are especially powerful. Getting included in a credible roundup can put you in an AI answer even when your own site is not cited.
 

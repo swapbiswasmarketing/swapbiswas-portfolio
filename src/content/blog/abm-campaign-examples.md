@@ -38,7 +38,7 @@ Before the plays, the structure. Account-based marketing splits into three tiers
 
 The mistake I see most often is treating these as a choice. They are not. Strong programs run all three at once and promote accounts up the tiers as intent rises. A one-to-many campaign surfaces an account that is heating up, you move it into a one-to-few cluster, and if it turns into a strategic opportunity you graduate it to one-to-one. The tiers are a conveyor belt, not three separate roads.
 
-One more thing before the plays. None of this works if you have not defined who belongs on the list. If your target accounts are fuzzy, every ABM campaign example here becomes expensive spray-and-pray. Get the [ICP and buyer persona](/blog/icp-vs-buyer-persona/) work done first so the plays have a real audience to point at.
+One more thing before the plays. None of this works if you have not defined who belongs on the list. If your target accounts are fuzzy, every ABM campaign example here becomes expensive spray-and-pray. Get the [ICP and buyer persona](/blog/icp-vs-buyer-persona/) work done first so the plays have a real audience to point at, then [prioritize those accounts](/blog/how-to-prioritize-accounts-in-abm/) so your effort flows to the ones most likely to buy rather than the biggest logos.
 
 ## One-to-One ABM Campaign Examples
 

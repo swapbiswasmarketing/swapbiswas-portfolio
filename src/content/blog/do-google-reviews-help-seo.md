@@ -43,7 +43,7 @@ Positive reviews and star ratings catch users' attention, leading to increased C
 
 ### 3. Providing Fresh, Relevant Content
 
-User-generated content from reviews provides regular, fresh content. Each review naturally contains keywords, which further boosts organic visibility.
+User-generated content from reviews provides regular, fresh content. Each review naturally contains keywords, which further boosts organic visibility. The same reviews increasingly shape [how AI search engines describe your product](/blog/product-reviews-ai-search-visibility/), not just your Google rankings.
 
 ### 4. Increasing Trust and Credibility
 

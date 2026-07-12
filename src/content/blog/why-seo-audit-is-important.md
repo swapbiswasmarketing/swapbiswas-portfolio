@@ -60,7 +60,7 @@ An audit flags the slowest templates and the worst offenders so engineering can 
 
 ### Content Decay and Thin Pages
 
-Content is not "set and forget." Rankings erode as competitors publish fresher material, intent shifts, and your once-strong page slowly slides down the SERP. This is content decay, and it is one of the most common reasons traffic drops without any obvious technical cause.
+Content is not "set and forget." Rankings erode as competitors publish fresher material, intent shifts, and your once-strong page slowly slides down the SERP. This is content decay, and it is one of the most common reasons traffic drops without any obvious technical cause. Because the search landscape keeps shifting, the fix is not a one-off project but knowing [how often to do an SEO audit](/blog/how-often-should-you-do-an-seo-audit/) and holding to that cadence.
 
 An audit identifies which pages are decaying, which are thin enough to drag down the rest of the site, and which deserve a refresh versus a merge or a redirect. Pairing the audit with a clear [SEO report](/blog/what-is-seo-report/) turns those findings into a prioritized action list rather than a wall of data.
 

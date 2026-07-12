@@ -136,7 +136,7 @@ Most SaaS launches over-invest in launch day and under-invest in the 90 days aft
 
 ## Common SaaS Launch Mistakes
 
-Six mistakes account for most underperforming SaaS launches.
+Six mistakes account for most underperforming SaaS launches. They overlap heavily with the broader [risks of launching a new product](/blog/risks-of-launching-a-new-product/), so treat this as the SaaS-specific cut of that list.
 
 | Mistake | What it looks like | Fix |
 |---|---|---|

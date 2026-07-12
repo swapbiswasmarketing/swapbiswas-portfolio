@@ -56,7 +56,7 @@ For how to build positioning, see [product positioning](/blog/product-positionin
 - [ ] **Kickoff meeting** with product, engineering, marketing, sales, CS, and support
 - [ ] **Launch RACI** documented and agreed
 - [ ] **Timeline and milestones** with clear dates and owners
-- [ ] **Risk register** listing known risks with mitigations
+- [ ] **Risk register** listing known risks with mitigations (the [9 biggest risks of launching a new product](/blog/risks-of-launching-a-new-product/) is a good starting list)
 - [ ] **Go/no-go criteria** defined upfront (not invented at the final review)
 - [ ] **Communication cadence** (weekly standup, weekly email update)
 

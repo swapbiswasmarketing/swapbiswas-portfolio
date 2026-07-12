@@ -82,7 +82,7 @@ Be honest about where the competitor is strong. Your reps will lose credibility 
 
 ### 4. Win/Loss Zones
 
-This is the most valuable section. Map out three zones based on your actual win/loss data:
+This is the most valuable section. Map out three zones based on your actual win/loss data, which a [win-loss analysis dashboard](/blog/win-loss-analysis-dashboard/) makes far easier to see:
 
 - **Winning zones** - Scenarios where you consistently beat this competitor
 - **Battling zones** - Areas where you're evenly matched

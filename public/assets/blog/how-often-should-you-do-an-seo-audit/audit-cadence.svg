@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="760" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="64" text-anchor="middle" fill="#f0f6fc" font-size="40" font-weight="700">How Often to Run Each Type of SEO Audit</text>
+  <text x="700" y="102" text-anchor="middle" fill="#9ca3af" font-size="24">Three audits on three clocks, plus a fourth that jumps the queue when something breaks</text>
+
+  <!-- Monthly -->
+  <rect x="40" y="150" width="650" height="245" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="40" y="150" width="650" height="6" rx="3" fill="#60a5fa"/>
+  <text x="72" y="200" fill="#60a5fa" font-size="22" font-weight="700" letter-spacing="0.08em">MONTHLY</text>
+  <text x="72" y="242" fill="#f0f6fc" font-size="28" font-weight="600">Health monitoring</text>
+  <circle cx="84" cy="292" r="5" fill="#60a5fa"/><text x="106" y="299" fill="#c8cfd8" font-size="22">Ranking and traffic dips</text>
+  <circle cx="84" cy="332" r="5" fill="#60a5fa"/><text x="106" y="339" fill="#c8cfd8" font-size="22">Search Console errors</text>
+  <circle cx="84" cy="372" r="5" fill="#60a5fa"/><text x="106" y="379" fill="#c8cfd8" font-size="22">Broken links and Core Web Vitals</text>
+
+  <!-- Quarterly -->
+  <rect x="710" y="150" width="650" height="245" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="710" y="150" width="650" height="6" rx="3" fill="#c084fc"/>
+  <text x="742" y="200" fill="#c084fc" font-size="22" font-weight="700" letter-spacing="0.08em">QUARTERLY</text>
+  <text x="742" y="242" fill="#f0f6fc" font-size="28" font-weight="600">Content and link deep-dive</text>
+  <circle cx="754" cy="292" r="5" fill="#c084fc"/><text x="776" y="299" fill="#c8cfd8" font-size="22">Content decay and refreshes</text>
+  <circle cx="754" cy="332" r="5" fill="#c084fc"/><text x="776" y="339" fill="#c8cfd8" font-size="22">Internal links and cannibalization</text>
+  <circle cx="754" cy="372" r="5" fill="#c084fc"/><text x="776" y="379" fill="#c8cfd8" font-size="22">Backlink profile health</text>
+
+  <!-- Annual -->
+  <rect x="40" y="430" width="650" height="245" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="40" y="430" width="650" height="6" rx="3" fill="#f5a0a1"/>
+  <text x="72" y="480" fill="#f5a0a1" font-size="22" font-weight="700" letter-spacing="0.08em">ANNUAL</text>
+  <text x="72" y="522" fill="#f0f6fc" font-size="28" font-weight="600">Full technical audit</text>
+  <circle cx="84" cy="572" r="5" fill="#f5a0a1"/><text x="106" y="579" fill="#c8cfd8" font-size="22">Full crawl and architecture</text>
+  <circle cx="84" cy="612" r="5" fill="#f5a0a1"/><text x="106" y="619" fill="#c8cfd8" font-size="22">Indexation and canonicals</text>
+  <circle cx="84" cy="652" r="5" fill="#f5a0a1"/><text x="106" y="659" fill="#c8cfd8" font-size="22">Schema and migration debt</text>
+
+  <!-- Trigger-based -->
+  <rect x="710" y="430" width="650" height="245" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1" filter="url(#cardShadow)"/>
+  <rect x="710" y="430" width="650" height="6" rx="3" fill="#fb923c"/>
+  <text x="742" y="480" fill="#fb923c" font-size="22" font-weight="700" letter-spacing="0.08em">AS NEEDED</text>
+  <text x="742" y="522" fill="#f0f6fc" font-size="28" font-weight="600">Trigger-based audit</text>
+  <circle cx="754" cy="572" r="5" fill="#fb923c"/><text x="776" y="579" fill="#c8cfd8" font-size="22">Traffic cliff or ranking loss</text>
+  <circle cx="754" cy="612" r="5" fill="#fb923c"/><text x="776" y="619" fill="#c8cfd8" font-size="22">Site migration or redesign</text>
+  <circle cx="754" cy="652" r="5" fill="#fb923c"/><text x="776" y="659" fill="#c8cfd8" font-size="22">Google core update lands</text>
+
+  <text x="700" y="726" text-anchor="middle" fill="#9ca3af" font-size="20">Small and often beats one big audit a year, because Search never stops changing</text>
+</svg>

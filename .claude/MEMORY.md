@@ -14,6 +14,7 @@
 - [Astro scoped CSS vs JS-created elements](reference_astro_scoped_css_js_elements.md) - Astro scopes `<style>` with `data-astro-cid`; JS-created elements lack it so scoped CSS never applies (bit Solari tiles + the concept-library hover iframe); fix = inline styles / `is:global` / build in markup
 - [Medium cross-posting](reference_medium.md) - which blogs are on Medium, the import prompt, 2-stories/24h rate limit; always set canonical to original
 - [Cross-posting tracker](reference_crossposting.md) - Dev.to / HackerNoon / Hashnode syndication status tables + import prompts; canonical + index-first rules
+- [Sibling sites: raisekind + strictly.fyi](project_sibling_sites.md) - two owned + Vercel-deployed standalone sites (parenting blog + GTM brief) at `c:\Website\raisekind.com` / `strictly.fyi`; repos under `swapbiswasmarketing`; strictly.fyi trademark guardrails; `gh` authed as `swapbiswas` not `swapbiswasmarketing`
 
 ## Project Overview
 - Astro 5 static site (portfolio + blog) at `c:\Website\portfolio`
