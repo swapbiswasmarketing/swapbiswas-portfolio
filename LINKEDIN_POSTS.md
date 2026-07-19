@@ -635,3 +635,51 @@ I wrote the complete SaaS PMM playbook - built from 4+ years of product marketin
 
 #Hashtag1 #Hashtag2 #Hashtag3 #Hashtag4
 ```
+
+## Staged Drafts (from /swapblog Step 15 - not yet posted)
+
+### Product Marketing Career Path: Levels, Salary, Timeline
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark background, a clean ascending staircase of five glowing steps rising left to right, each a subtly brighter accent (teal to blue to purple to violet to orange), minimal and professional, a metaphor for career progression. No text. 1200x628 aspect ratio.
+
+Most people treat the product marketing career path as a title ladder. It isn't - each level is a genuinely different job. 🎯
+
+The real map, Associate to VP:
+• Associate PMM (0-2 yrs): run one workstream
+• PMM (2-5 yrs): own a product's launches
+• Senior PMM (5-8 yrs): own the strategy
+• Director (8-12 yrs): own the portfolio + team
+• VP (12+ yrs, ~$200-250k): own the function
+
+The people who move fastest do the next level's job before they have the title.
+
+What level are you at - and what's the jump you're stuck on?
+
+🔗 https://swapbiswas.com/blog/product-marketing-career-path/?utm_source=linkedin&utm_medium=social&utm_campaign=product-marketing-career-path
+
+#ProductMarketing #PMM #MarketingCareers #B2BMarketing #CareerGrowth
+
+### 12 Win-Loss Analysis Questions to Ask
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark background, five connected glowing nodes flowing left to right as deal stages, a subtle magnifying glass over the center node, cool accent colors, clean and professional, a metaphor for structured inquiry. No text. 1200x628 aspect ratio.
+
+The fastest way to ruin a win-loss interview: open with "so, why didn't you pick us?" 🎯
+
+The buyer gets defensive, blames budget (it's rarely budget), and you learn nothing usable.
+
+The 12 questions that actually work, by deal stage:
+• Trigger - what made them look?
+• Evaluation - who decided, on what criteria?
+• Competition - where did we stand?
+• Decision - what tipped it?
+• Future - what would have changed it?
+
+Ask open questions, use a neutral interviewer, then stay quiet.
+
+What's the one question you always ask?
+
+🔗 https://swapbiswas.com/blog/win-loss-analysis-questions/?utm_source=linkedin&utm_medium=social&utm_campaign=win-loss-analysis-questions
+
+#ProductMarketing #WinLoss #CompetitiveIntelligence #B2BSaaS #PMM

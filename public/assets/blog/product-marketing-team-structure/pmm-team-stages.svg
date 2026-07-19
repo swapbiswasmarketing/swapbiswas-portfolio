@@ -1,0 +1,70 @@
+<svg width="1400" height="560" viewBox="0 0 1400 560" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="560" rx="24" fill="url(#bg)"/>
+
+  <text x="700" y="60" text-anchor="middle" fill="#f0f6fc" font-size="40" font-weight="700">How a Product Marketing Team Structure Evolves</text>
+  <text x="700" y="100" text-anchor="middle" fill="#9ca3af" font-size="24">Structure should follow headcount and complexity, not ambition</text>
+
+  <!-- Card 1: Startup -->
+  <rect x="58" y="150" width="288" height="320" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="86" y="182" width="44" height="6" rx="3" fill="#5eead4"/>
+  <text x="86" y="226" fill="#5eead4" font-size="21" font-weight="700" letter-spacing="0.08em">STARTUP</text>
+  <text x="86" y="264" fill="#f0f6fc" font-size="26" font-weight="700">1-2 PMMs</text>
+  <line x1="86" y1="286" x2="318" y2="286" stroke="#30363d" stroke-width="1.5"/>
+  <text x="86" y="322" fill="#c8cfd8" font-size="22" font-weight="600">Generalist</text>
+  <text x="86" y="358" fill="#9ca3af" font-size="18">One generalist owns</text>
+  <text x="86" y="382" fill="#9ca3af" font-size="18">everything and picks</text>
+  <text x="86" y="406" fill="#9ca3af" font-size="18">the 2-3 that matter</text>
+
+  <!-- Card 2: Growth -->
+  <rect x="390" y="150" width="288" height="320" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="418" y="182" width="44" height="6" rx="3" fill="#60a5fa"/>
+  <text x="418" y="226" fill="#60a5fa" font-size="21" font-weight="700" letter-spacing="0.08em">GROWTH</text>
+  <text x="418" y="264" fill="#f0f6fc" font-size="26" font-weight="700">3-6 PMMs</text>
+  <line x1="418" y1="286" x2="650" y2="286" stroke="#30363d" stroke-width="1.5"/>
+  <text x="418" y="322" fill="#c8cfd8" font-size="22" font-weight="600">By function</text>
+  <text x="418" y="358" fill="#9ca3af" font-size="18">Give each person one</text>
+  <text x="418" y="382" fill="#9ca3af" font-size="18">pillar - dropped work</text>
+  <text x="418" y="406" fill="#9ca3af" font-size="18">finally gets an owner</text>
+
+  <!-- Card 3: Scale -->
+  <rect x="722" y="150" width="288" height="320" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="750" y="182" width="44" height="6" rx="3" fill="#c084fc"/>
+  <text x="750" y="226" fill="#c084fc" font-size="21" font-weight="700" letter-spacing="0.08em">SCALE</text>
+  <text x="750" y="264" fill="#f0f6fc" font-size="26" font-weight="700">7-15 PMMs</text>
+  <line x1="750" y1="286" x2="982" y2="286" stroke="#30363d" stroke-width="1.5"/>
+  <text x="750" y="322" fill="#c8cfd8" font-size="20" font-weight="600">By product or segment</text>
+  <text x="750" y="358" fill="#9ca3af" font-size="18">Pods own a product</text>
+  <text x="750" y="382" fill="#9ca3af" font-size="18">or buyer type,</text>
+  <text x="750" y="406" fill="#9ca3af" font-size="18">end to end</text>
+
+  <!-- Card 4: Enterprise -->
+  <rect x="1054" y="150" width="288" height="320" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="1082" y="182" width="44" height="6" rx="3" fill="#fb923c"/>
+  <text x="1082" y="226" fill="#fb923c" font-size="21" font-weight="700" letter-spacing="0.08em">ENTERPRISE</text>
+  <text x="1082" y="264" fill="#f0f6fc" font-size="26" font-weight="700">15+ PMMs</text>
+  <line x1="1082" y1="286" x2="1314" y2="286" stroke="#30363d" stroke-width="1.5"/>
+  <text x="1082" y="322" fill="#c8cfd8" font-size="22" font-weight="600">Hybrid</text>
+  <text x="1082" y="358" fill="#9ca3af" font-size="18">Central core, plus</text>
+  <text x="1082" y="382" fill="#9ca3af" font-size="18">PMMs embedded in</text>
+  <text x="1082" y="406" fill="#9ca3af" font-size="18">the product teams</text>
+
+  <!-- Arrows between cards -->
+  <line x1="352" y1="310" x2="382" y2="310" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="382,303 382,317 394,310" fill="#5eead4"/>
+  <line x1="684" y1="310" x2="714" y2="310" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="714,303 714,317 726,310" fill="#5eead4"/>
+  <line x1="1016" y1="310" x2="1046" y2="310" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1046,303 1046,317 1058,310" fill="#5eead4"/>
+
+  <text x="700" y="512" text-anchor="middle" fill="#9ca3af" font-size="20">Revisit the structure every time the team roughly doubles</text>
+</svg>

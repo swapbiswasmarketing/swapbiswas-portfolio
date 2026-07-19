@@ -109,7 +109,7 @@ The program that runs all six stages once and stops produces a report nobody rea
 
 ## The 12 Questions Every Win-Loss Interview Should Ask
 
-Use this script as a starting point. Adjust order and follow-ups based on the conversation.
+Use this script as a starting point. Adjust order and follow-ups based on the conversation. For the full set grouped by deal stage, with guidance on how to ask each one so buyers give you the truth, see the dedicated guide to [win-loss analysis questions](/blog/win-loss-analysis-questions/).
 
 1. How did you first realize you needed a product like this? *(Origin story - reveals the trigger.)*
 2. Who was involved in the buying decision, and what role did each person play? *(Buying committee.)*

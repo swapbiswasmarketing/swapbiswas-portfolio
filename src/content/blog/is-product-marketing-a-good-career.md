@@ -60,7 +60,7 @@ PMM compensation, especially at mid-senior levels, sits in the same band as prod
 
 ### 5. Clear Path to Senior Leadership
 
-The PMM path leads to VP of Marketing, CMO, and increasingly to CEO seats - especially in product-led SaaS where positioning fluency is a core executive skill. The cross-functional surface area makes PMMs unusually well-prepared for general management.
+The PMM path leads to VP of Marketing, CMO, and increasingly to CEO seats - especially in product-led SaaS where positioning fluency is a core executive skill. The cross-functional surface area makes PMMs unusually well-prepared for general management. For the level-by-level ladder with salary ranges, see the full [product marketing career path](/blog/product-marketing-career-path/).
 
 ## The Honest Cons
 

@@ -1,0 +1,71 @@
+<svg width="1400" height="640" viewBox="0 0 1400 640" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="640" rx="24" fill="url(#bg)"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-size="40" font-weight="700">How to Become a GTM Engineer</text>
+  <text x="700" y="102" text-anchor="middle" fill="#9ca3af" font-size="24">Three common entry paths, one technical skill layer</text>
+
+  <!-- Entry path A: SDR -->
+  <rect x="70" y="150" width="320" height="120" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="94" y="172" width="40" height="6" rx="3" fill="#5eead4"/>
+  <text x="94" y="200" fill="#5eead4" font-size="15" font-weight="700" letter-spacing="0.08em">ENTRY PATH</text>
+  <text x="94" y="236" fill="#f0f6fc" font-size="22" font-weight="600">SDR / Sales Development</text>
+
+  <!-- Entry path B: RevOps -->
+  <rect x="70" y="285" width="320" height="120" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="94" y="307" width="40" height="6" rx="3" fill="#60a5fa"/>
+  <text x="94" y="335" fill="#60a5fa" font-size="15" font-weight="700" letter-spacing="0.08em">ENTRY PATH</text>
+  <text x="94" y="371" fill="#f0f6fc" font-size="22" font-weight="600">RevOps / Sales Ops</text>
+
+  <!-- Entry path C: Growth -->
+  <rect x="70" y="420" width="320" height="120" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="94" y="442" width="40" height="6" rx="3" fill="#c084fc"/>
+  <text x="94" y="470" fill="#c084fc" font-size="15" font-weight="700" letter-spacing="0.08em">ENTRY PATH</text>
+  <text x="94" y="506" fill="#f0f6fc" font-size="22" font-weight="600">Growth / Marketing Ops</text>
+
+  <!-- Converging arrows into the middle card -->
+  <line x1="398" y1="210" x2="452" y2="210" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="452,203 452,217 464,210" fill="#5eead4"/>
+  <line x1="398" y1="345" x2="452" y2="345" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="452,338 452,352 464,345" fill="#5eead4"/>
+  <line x1="398" y1="480" x2="452" y2="480" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="452,473 452,487 464,480" fill="#5eead4"/>
+
+  <!-- Middle: skills to add -->
+  <rect x="470" y="175" width="380" height="330" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="500" y="205" width="48" height="6" rx="3" fill="#fb923c"/>
+  <text x="500" y="248" fill="#fb923c" font-size="21" font-weight="700">ADD THE TECHNICAL LAYER</text>
+  <line x1="500" y1="270" x2="820" y2="270" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="509" cy="306" r="5" fill="#fb923c"/>
+  <text x="529" y="313" fill="#c8cfd8" font-size="19">SQL + data fluency</text>
+  <circle cx="509" cy="344" r="5" fill="#fb923c"/>
+  <text x="529" y="351" fill="#c8cfd8" font-size="19">Working with APIs</text>
+  <circle cx="509" cy="382" r="5" fill="#fb923c"/>
+  <text x="529" y="389" fill="#c8cfd8" font-size="19">A CRM data model</text>
+  <circle cx="509" cy="420" r="5" fill="#fb923c"/>
+  <text x="529" y="427" fill="#c8cfd8" font-size="19">Clay / n8n / AI automation</text>
+  <circle cx="509" cy="458" r="5" fill="#fb923c"/>
+  <text x="529" y="465" fill="#c8cfd8" font-size="19">Systems thinking</text>
+
+  <!-- Middle -> destination arrow -->
+  <line x1="858" y1="355" x2="918" y2="355" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="918,348 918,362 930,355" fill="#5eead4"/>
+
+  <!-- Destination: GTM Engineer -->
+  <rect x="930" y="270" width="390" height="170" rx="16" fill="#151b23" stroke="#f5a0a1" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="960" y="300" width="48" height="6" rx="3" fill="#f5a0a1"/>
+  <text x="960" y="352" fill="#f0f6fc" font-size="32" font-weight="700">GTM ENGINEER</text>
+  <text x="960" y="392" fill="#9ca3af" font-size="19">Builds automated GTM systems</text>
+
+  <!-- Footer -->
+  <text x="700" y="600" text-anchor="middle" fill="#9ca3af" font-size="20">Demand doubling year over year; comp in the low-to-high six figures</text>
+</svg>

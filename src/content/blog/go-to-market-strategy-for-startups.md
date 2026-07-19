@@ -96,7 +96,7 @@ This is one of the most consequential decisions in your go-to-market strategy fo
 
 But PLG is not the right motion for every startup. If your product requires significant configuration, serves a niche enterprise buyer, or has an ACV above $15K, a sales-led approach may close revenue faster.
 
-Most startups today end up with a hybrid. Start with the motion that matches your product complexity and price point, then layer in the other as you scale. For detailed case studies of companies that nailed PLG, see our [product-led growth examples](/blog/product-led-growth-examples/).
+Most startups today end up with a hybrid. Start with the motion that matches your product complexity and price point, then layer in the other as you scale. For detailed case studies of companies that nailed PLG, see our [product-led growth examples](/blog/product-led-growth-examples/). Once a motion is working, the person who automates it end to end is a [GTM engineer](/blog/what-is-a-gtm-engineer/), increasingly the highest-leverage hire on a startup's revenue team.
 
 ## Step 4: Pick Your Channels (With a Startup Budget)
 

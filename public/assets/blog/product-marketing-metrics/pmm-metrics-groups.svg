@@ -1,0 +1,62 @@
+<svg width="1400" height="720" viewBox="0 0 1400 720" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="720" rx="24" fill="url(#bg)"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-size="40" font-weight="700">Product Marketing Metrics That Prove Impact</text>
+  <text x="700" y="102" text-anchor="middle" fill="#9ca3af" font-size="24">Group by what each metric proves, then promote a tight set to KPIs</text>
+
+  <!-- Card 1: Revenue -->
+  <rect x="90" y="150" width="580" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="120" y="178" width="48" height="6" rx="3" fill="#5eead4"/>
+  <text x="120" y="222" fill="#5eead4" font-size="26" font-weight="700">REVENUE INFLUENCE</text>
+  <line x1="120" y1="242" x2="640" y2="242" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="129" cy="278" r="5" fill="#5eead4"/>
+  <text x="149" y="285" fill="#c8cfd8" font-size="21">Influenced pipeline</text>
+  <circle cx="129" cy="318" r="5" fill="#5eead4"/>
+  <text x="149" y="325" fill="#c8cfd8" font-size="21">Win rate</text>
+  <text x="120" y="372" fill="#9ca3af" font-size="19">Proves: your work touches real pipeline</text>
+
+  <!-- Card 2: Sales -->
+  <rect x="730" y="150" width="580" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="760" y="178" width="48" height="6" rx="3" fill="#60a5fa"/>
+  <text x="760" y="222" fill="#60a5fa" font-size="26" font-weight="700">SALES ENABLEMENT</text>
+  <line x1="760" y1="242" x2="1280" y2="242" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="769" cy="278" r="5" fill="#60a5fa"/>
+  <text x="789" y="285" fill="#c8cfd8" font-size="21">Content adoption by reps</text>
+  <circle cx="769" cy="318" r="5" fill="#60a5fa"/>
+  <text x="789" y="325" fill="#c8cfd8" font-size="21">Sales cycle length</text>
+  <text x="760" y="372" fill="#9ca3af" font-size="19">Proves: reps actually use what you build</text>
+
+  <!-- Card 3: Product -->
+  <rect x="90" y="430" width="580" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="120" y="458" width="48" height="6" rx="3" fill="#c084fc"/>
+  <text x="120" y="502" fill="#c084fc" font-size="26" font-weight="700">PRODUCT ADOPTION</text>
+  <line x1="120" y1="522" x2="640" y2="522" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="129" cy="558" r="5" fill="#c084fc"/>
+  <text x="149" y="565" fill="#c8cfd8" font-size="21">Feature adoption</text>
+  <circle cx="129" cy="598" r="5" fill="#c084fc"/>
+  <text x="149" y="605" fill="#c8cfd8" font-size="21">Retention / churn</text>
+  <text x="120" y="652" fill="#9ca3af" font-size="19">Proves: what you market keeps customers</text>
+
+  <!-- Card 4: Launch + Market -->
+  <rect x="730" y="430" width="580" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="760" y="458" width="48" height="6" rx="3" fill="#fb923c"/>
+  <text x="760" y="502" fill="#fb923c" font-size="26" font-weight="700">LAUNCH + MARKET</text>
+  <line x1="760" y1="522" x2="1280" y2="522" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="769" cy="558" r="5" fill="#fb923c"/>
+  <text x="789" y="565" fill="#c8cfd8" font-size="21">Launch goal attainment</text>
+  <circle cx="769" cy="598" r="5" fill="#fb923c"/>
+  <text x="789" y="605" fill="#c8cfd8" font-size="21">Competitive win rate</text>
+  <text x="760" y="652" fill="#9ca3af" font-size="19">Proves: launches hit pre-set targets</text>
+
+  <text x="700" y="704" text-anchor="middle" fill="#9ca3af" font-size="20">Promote outcomes, demote activity - cap it at six to eight KPIs</text>
+</svg>

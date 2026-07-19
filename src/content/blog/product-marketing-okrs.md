@@ -126,7 +126,7 @@ Every PMM team I have seen sets OKRs the same way the first time. The mistakes a
 
 ### 1. Activity Masquerading as Outcome
 
-"Publish 12 blog posts" is not an OKR. It is a project plan. The OKR would be "grow organic traffic from ICP-relevant queries from 20K to 40K monthly" and the 12 blog posts are how you might get there.
+"Publish 12 blog posts" is not an OKR. It is a project plan. The OKR would be "grow organic traffic from ICP-relevant queries from 20K to 40K monthly" and the 12 blog posts are how you might get there. The same activity-versus-outcome trap shows up on dashboards, which is why the [product marketing metrics](/blog/product-marketing-metrics/) you promote to KPIs should measure impact, not effort.
 
 ### 2. Too Many Objectives
 
