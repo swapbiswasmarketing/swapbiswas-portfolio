@@ -1,8 +1,8 @@
 ---
-// CONCEPT LIBRARY - public, indexable gallery of 41 homepage design concepts.
+// CONCEPT LIBRARY - public, indexable gallery of 45 homepage design concepts.
 // SEO target: "personal website examples" + cluster (homepage design ideas, portfolio website inspiration).
 // Each card shows a static thumbnail of the real page + a LIVE iframe preview on hover (one at a time).
-// The 41 concept demos live at /redesign/{slug} and stay noindex; this page is the indexable one.
+// The concept demos live at /personal-website-examples/{slug} and stay noindex; this index page is the indexable one.
 const concepts = [
   { n: '01', s: 'aurora',     t: 'Aurora',     cat: 'gl',      d: 'Minimal luxury. Calm editorial type over a living WebGL aurora.', c: ['#0a0a14','#b9a7ff','#e8c9a0'] },
   { n: '02', s: 'monolith',   t: 'Monolith',   cat: 'type',    d: 'Editorial kinetic. Brutal display type, acid accent, scroll energy.', c: ['#0b0b0b','#d8ff3e','#f4f1ea'] },
@@ -45,6 +45,10 @@ const concepts = [
   { n: '39', s: 'receipt',    t: 'Receipt',    cat: 'tactile', d: 'A thermal printer spools out the itemized career, line by line - line items, a running total carrying the numbers, a barcode and a PAID IN FULL / SHIPPED stamp.', c: ['#f4efe3','#23201b','#b83232'] },
   { n: '40', s: 'constellation', t: 'Constellation', cat: 'spatial', d: 'A planetarium star chart. Companies are stars wired into a constellation that draws itself over a parallax starfield; hover a star to read the work.', c: ['#04060f','#e9c46a','#8fd3ff'] },
   { n: '41', s: 'origami',    t: 'Origami',    cat: 'tactile', d: 'Sections built from folding paper. Panels unfold in 3D as you scroll, the hero creases into shape and work cards fold open like a fold-out map.', c: ['#f3ecdd','#314a8a','#c0432b'] },
+  { n: '42', s: 'exchange',   t: 'Exchange',   cat: 'tech',    d: 'The career as a live market. A ticker tape streams the wins, candlesticks chart the growth and every metric quotes like a stock. Watch it trade.', c: ['#0a0d0c','#22e39a','#f5b301'] },
+  { n: '43', s: 'ide',        t: 'IDE',        cat: 'tech',    d: 'Your portfolio, open in the editor. A file tree, syntax-lit tabs and an integrated terminal that builds and prints the results. Run the career.', c: ['#0d1117','#58a6ff','#7ee787'] },
+  { n: '44', s: 'passport',   t: 'Passport',   cat: 'spatial', d: "A traveller's document. A tear-off boarding pass, passport pages stamped at every company and a great-circle route that draws itself. Now boarding.", c: ['#f2ede2','#12294a','#b23f28'] },
+  { n: '45', s: 'arcade',     t: 'Arcade',     cat: 'tactile', d: 'Insert coin. A retro arcade cabinet where the career is the game - a HUD scoring the leads, a level per role and a high-score table for the wins. Press start.', c: ['#0a0812','#ff3fa4','#35e6ff'] },
 ];
 const catMeta = {
   gl:      { l: 'WebGL & 3D',          tag: 'WebGL',       col: '#b9a7ff' },
@@ -68,8 +72,8 @@ const lightCount = concepts.filter(c => isLight(c.c[0])).length;
 
 // ---- SEO ----
 const PAGE_URL = 'https://swapbiswas.com/personal-website-examples/';
-const PAGE_TITLE = 'Personal Website Examples - 41 Homepage Design Concepts';
-const PAGE_DESC = 'Browse 41 homepage design concepts and personal website examples - editorial, 3D, monochrome, retro and interactive directions, each a complete build with a live preview.';
+const PAGE_TITLE = `Personal Website Examples - ${concepts.length} Homepage Design Concepts`;
+const PAGE_DESC = `Browse ${concepts.length} homepage design concepts and personal website examples - editorial, 3D, monochrome, retro and interactive directions, each a complete build with a live preview.`;
 const OG_IMAGE = 'https://swapbiswas.com/assets/redesign/og-concepts.jpg';
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -85,7 +89,7 @@ const jsonLd = {
       about: 'Homepage and portfolio website design concepts and examples',
       mainEntity: {
         '@type': 'ItemList',
-        name: '41 homepage design concepts',
+        name: `${concepts.length} homepage design concepts`,
         numberOfItems: concepts.length,
         itemListElement: concepts.map((c, i) => ({
           '@type': 'ListItem',
@@ -254,14 +258,14 @@ const jsonLd = {
   <div class="topbar">
     <div class="topbar-in">
       <a href="/" class="brand" aria-label="Swapnil Biswas home"><span class="dot" aria-hidden="true"></span> Swapnil Biswas <span style="color:var(--dim)">/ concept library</span></a>
-      <div class="right">41 concepts</div>
+      <div class="right">{concepts.length} concepts</div>
     </div>
   </div>
 
   <div class="wrap intro">
-    <div class="kick">Design inspiration &middot; 41 directions</div>
-    <h1>Personal website examples <em>- 41 homepage design concepts</em></h1>
-    <p>A working gallery of 41 homepage design concepts - personal and portfolio website examples, each built as a complete, self-contained page with its own typography, palette, motion and technology. Browse directions across editorial, WebGL and 3D, monochrome, retro and playful interactive styles, from split-flap boards and oscilloscopes to holographic cards, periodic tables and pen-plotter drawings. Filter by category or appearance, search by vibe, and hover any card for a live preview before opening it in full. Whether you are gathering homepage design ideas, hunting portfolio website inspiration, or shortlisting a direction for your own personal site, every concept here is a real, buildable example - forty-one ways to route the signal.</p>
+    <div class="kick">Design inspiration &middot; {concepts.length} directions</div>
+    <h1>Personal website examples <em>- {concepts.length} homepage design concepts</em></h1>
+    <p>A working gallery of {concepts.length} homepage design concepts - personal and portfolio website examples, each built as a complete, self-contained page with its own typography, palette, motion and technology. Browse directions across editorial, WebGL and 3D, monochrome, retro and playful interactive styles, from split-flap boards and oscilloscopes to holographic cards, periodic tables, pen-plotter drawings, trading-floor tickers, code editors and arcade cabinets. Filter by category or appearance, search by vibe, and hover any card for a live preview before opening it in full. Whether you are gathering homepage design ideas, hunting portfolio website inspiration, or shortlisting a direction for your own personal site, every concept here is a real, buildable example - {concepts.length} ways to route the signal.</p>
   </div>
 
   <div class="toolbar">
@@ -295,7 +299,7 @@ const jsonLd = {
     </div>
   </div>
 
-  <h2 class="sr-only">Browse 41 personal and portfolio website examples by design direction</h2>
+  <h2 class="sr-only">Browse {concepts.length} personal and portfolio website examples by design direction</h2>
   <div class="grid" id="grid">
     {concepts.map((c, i) => (
       <a class="card" data-cat={c.cat} data-theme={isLight(c.c[0]) ? 'light' : 'dark'} data-slug={c.s} data-i={i} data-title={c.t.toLowerCase()} data-search={(c.t + ' ' + c.d + ' ' + catMeta[c.cat].l + ' ' + (isLight(c.c[0]) ? 'light' : 'dark')).toLowerCase()} href={`/personal-website-examples/${c.s}`}>
@@ -321,7 +325,7 @@ const jsonLd = {
 
   <footer>
     <div class="foot-in">
-      <span>41 homepage design concepts &middot; Swapnil Biswas</span>
+      <span>{concepts.length} homepage design concepts &middot; Swapnil Biswas</span>
       <span><a href="/">Back to swapbiswas.com &#8594;</a></span>
     </div>
   </footer>

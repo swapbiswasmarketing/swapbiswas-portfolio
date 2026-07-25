@@ -1,0 +1,863 @@
+---
+// REDESIGN PROTOTYPE - "IDE" - Concept 43.
+// The portfolio opened inside a real code editor (VS Code-like). Original concept (NOT a reskin):
+// its own layout + interaction + palette + fonts + mechanic. This is unmistakably a CODE EDITOR -
+// activity bar + file-explorer tree + tab strip + line-number gutter + git-diff gutter + syntax-
+// highlighted panels + integrated terminal + minimap + status bar + Cmd+K command palette.
+//  - Career rendered as source files: hero.md (name/role/lede), work.json (6 engagements),
+//    skills.ts (4 disciplines as a typed const), metrics.sql (a SELECT whose result-set carries the
+//    3 hard numbers), about.md (facts + recognition + brands + shipped), contact.sh (real mailto +
+//    linkedin links). Clicking a tree file or a tab switches the active editor panel (client JS).
+//  - Integrated terminal TYPES "npm run career" then prints build output ending in the 3 metrics +
+//    a green "shipped" line. A caret blinks. Reduced-motion shows the final terminal instantly.
+//  - GitHub-dark palette (bg #0d1117, activity #010409, panels #161b22, ink #e6edf3, accent #58a6ff)
+//    with real syntax colors. JetBrains Mono for the editor, Inter for the chrome.
+// GOTCHA NOTES: every file panel lives in the DOM. With JS OFF (no `.js` class on <html>) the CSS
+//   fallback shows ALL panels stacked so all content (work + metrics + contact) stays visible; the
+//   editor body is not clipped. With JS ON only the active panel shows. prefers-reduced-motion kills
+//   the caret blink + typing + reveals and shows the terminal fully built. No text-shadow/filter on
+//   any background-clip:text element. Real <a> for email (mailto) and LinkedIn.
+
+// ---- syntax token helpers (compose colored spans for set:html) ----
+const k  = (s) => `<span class="tk-k">${s}</span>`;    // keyword
+const st = (s) => `<span class="tk-s">${s}</span>`;    // string
+const fn = (s) => `<span class="tk-f">${s}</span>`;    // function
+const nu = (s) => `<span class="tk-n">${s}</span>`;    // number
+const cm = (s) => `<span class="tk-c">${s}</span>`;    // comment
+const vr = (s) => `<span class="tk-v">${s}</span>`;    // variable
+const pr = (s) => `<span class="tk-prop">${s}</span>`; // json/prop key
+const pn = (s) => `<span class="tk-p">${s}</span>`;    // punctuation
+// ---- markdown token helpers ----
+const mh = (s) => `<span class="md-h">${s}</span>`;
+const mb = (s) => `<span class="md-b">${s}</span>`;
+const mp = (s) => `<span class="md-p">${s}</span>`;
+const mq = (s) => `<span class="md-q">${s}</span>`;
+const ml = `<span class="md-li">-</span>`;
+const B  = (s) => `${mp('**')}${mb(s)}${mp('**')}`; // **bold**
+
+const files = [
+  {
+    id: 'hero', name: 'hero.md', lang: 'Markdown', dot: 'md',
+    lines: [
+      { h: mh('# Swapnil Biswas'), d: '' },
+      { h: '', d: '' },
+      { h: mh('## Senior Product Marketing Manager · LambdaTest'), d: '' },
+      { h: '', d: '' },
+      { h: `${mq('&gt;')} I build the agents, sites and SEO systems behind`, d: 'add' },
+      { h: `${mq('&gt;')} ${B('657K+ leads')} and ${B('18M+ in organic traffic')} - not just`, d: 'add' },
+      { h: `${mq('&gt;')} the decks that describe them. A product marketer`, d: 'add' },
+      { h: `${mq('&gt;')} who actually engineers the growth.`, d: 'add' },
+      { h: '', d: '' },
+      { h: mh('## Highlights'), d: '' },
+      { h: '', d: '' },
+      { h: `${ml} ${B('657K+')}   leads generated`, d: '' },
+      { h: `${ml} ${B('18.2M+')}  organic traffic`, d: '' },
+      { h: `${ml} ${B('10x')}     pipeline efficiency`, d: '' },
+      { h: '', d: '' },
+      { h: `${mp('[')}<a class="md-a" href="#work" data-goto="work">View the work</a>${mp('](#work)')}  ·  ${mp('[')}<a class="md-a" href="#contact" data-goto="contact">Get in touch</a>${mp('](#contact)')}`, d: '' },
+    ],
+  },
+  {
+    id: 'work', name: 'work.json', lang: 'JSON', dot: 'json',
+    lines: [
+      { h: pn('['), d: '' },
+      { h: `  ${pn('{')} ${pr('"client"')}${pn(':')} ${st('"LambdaTest"')}${pn(',')} ${pr('"role"')}${pn(':')} ${st('"Product &amp; digital marketing"')}${pn(',')}`, d: 'add' },
+      { h: `    ${pr('"years"')}${pn(':')} ${st('"2021-25"')}${pn(',')} ${pr('"tag"')}${pn(':')} ${st('"657K LEADS"')}${pn(',')} ${pr('"featured"')}${pn(':')} ${k('true')}${pn(',')}`, d: 'add' },
+      { h: `    ${pr('"note"')}${pn(':')} ${st('"Owned product and digital marketing end to end and built the full organic growth engine."')} ${pn('},')}`, d: 'add' },
+      { h: `  ${pn('{')} ${pr('"client"')}${pn(':')} ${st('"TestMu AI"')}${pn(',')} ${pr('"role"')}${pn(':')} ${st('"Rebrand lead"')}${pn(',')} ${pr('"years"')}${pn(':')} ${st('"2026"')}${pn(',')}`, d: '' },
+      { h: `    ${pr('"tag"')}${pn(':')} ${st('"FULL REBRAND"')}${pn(',')} ${pr('"note"')}${pn(':')} ${st('"Led the complete rebrand from LambdaTest to TestMu AI."')} ${pn('},')}`, d: '' },
+      { h: `  ${pn('{')} ${pr('"client"')}${pn(':')} ${st('"Samsung"')}${pn(',')} ${pr('"role"')}${pn(':')} ${st('"via Sociowash"')}${pn(',')} ${pr('"years"')}${pn(':')} ${st('"2019"')}${pn(',')}`, d: '' },
+      { h: `    ${pr('"tag"')}${pn(':')} ${st('"M-SERIES"')}${pn(',')} ${pr('"note"')}${pn(':')} ${st('"On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji."')} ${pn('},')}`, d: '' },
+      { h: `  ${pn('{')} ${pr('"client"')}${pn(':')} ${st('"Medilife Superspeciality"')}${pn(',')} ${pr('"role"')}${pn(':')} ${st('"Marketing &amp; web"')}${pn(',')}`, d: '' },
+      { h: `    ${pr('"years"')}${pn(':')} ${st('"0 to 1"')}${pn(',')} ${pr('"tag"')}${pn(':')} ${st('"WEBSITE + GTM"')}${pn(',')}`, d: '' },
+      { h: `    ${pr('"note"')}${pn(':')} ${st('"Built the full digital presence and GTM for a NABH-accredited superspeciality hospital in Dehradun."')} ${pn('},')}`, d: '' },
+      { h: `  ${pn('{')} ${pr('"client"')}${pn(':')} ${st('"Lido Learning"')}${pn(',')} ${pr('"role"')}${pn(':')} ${st('"Growth / CRM"')}${pn(',')} ${pr('"years"')}${pn(':')} ${st('"2021"')}${pn(',')}`, d: '' },
+      { h: `    ${pr('"tag"')}${pn(':')} ${st('"LEAD OPS"')}${pn(',')} ${pr('"note"')}${pn(':')} ${st('"Ran CRM management and lead routing and assignment for the EdTech."')} ${pn('},')}`, d: '' },
+      { h: `  ${pn('{')} ${pr('"client"')}${pn(':')} ${st('"Appknox"')}${pn(',')} ${pr('"role"')}${pn(':')} ${st('"Freelance content"')}${pn(',')} ${pr('"years"')}${pn(':')} ${st('"Freelance"')}${pn(',')}`, d: '' },
+      { h: `    ${pr('"tag"')}${pn(':')} ${st('"SECURITY"')}${pn(',')} ${pr('"note"')}${pn(':')} ${st('"Freelance content writer for the mobile app security company."')} ${pn('}')}`, d: '' },
+      { h: pn(']'), d: '' },
+    ],
+  },
+  {
+    id: 'skills', name: 'skills.ts', lang: 'TypeScript', dot: 'ts',
+    lines: [
+      { h: `${cm('// four disciplines - one operator')}`, d: '' },
+      { h: `${k('export')} ${k('type')} ${vr('Discipline')} ${pn('=')} ${pn('{')}`, d: '' },
+      { h: `  ${pr('id')}${pn(':')} ${vr('number')}${pn(';')} ${pr('title')}${pn(':')} ${vr('string')}${pn(';')} ${pr('detail')}${pn(':')} ${vr('string')}${pn(';')}`, d: '' },
+      { h: pn('}'), d: '' },
+      { h: '', d: '' },
+      { h: `${k('export')} ${k('const')} ${vr('disciplines')}${pn(':')} ${vr('Discipline')}${pn('[]')} ${pn('=')} ${pn('[')}`, d: 'add' },
+      { h: `  ${pn('{')} ${pr('id')}${pn(':')} ${nu('1')}${pn(',')} ${pr('title')}${pn(':')} ${st('"Product Marketing &amp; GTM"')}${pn(',')}`, d: 'add' },
+      { h: `    ${pr('detail')}${pn(':')} ${st('"Positioning, launches, battlecards and sales enablement for B2B SaaS."')} ${pn('},')}`, d: 'add' },
+      { h: `  ${pn('{')} ${pr('id')}${pn(':')} ${nu('2')}${pn(',')} ${pr('title')}${pn(':')} ${st('"Growth, SEO &amp; AEO"')}${pn(',')}`, d: 'add' },
+      { h: `    ${pr('detail')}${pn(':')} ${st('"Technical audits, AI-search optimization and demand gen that compounds."')} ${pn('},')}`, d: 'add' },
+      { h: `  ${pn('{')} ${pr('id')}${pn(':')} ${nu('3')}${pn(',')} ${pr('title')}${pn(':')} ${st('"AI &amp; Automation"')}${pn(',')}`, d: '' },
+      { h: `    ${pr('detail')}${pn(':')} ${st('"I build the agents and internal tools that do the work - 20+ shipped."')} ${pn('},')}`, d: '' },
+      { h: `  ${pn('{')} ${pr('id')}${pn(':')} ${nu('4')}${pn(',')} ${pr('title')}${pn(':')} ${st('"Building in public"')}${pn(',')}`, d: '' },
+      { h: `    ${pr('detail')}${pn(':')} ${st('"This site, 8 free tools and 76 articles. Shipped systems, not slide-ware."')} ${pn('},')}`, d: '' },
+      { h: `${pn(']')} ${k('as')} ${k('const')}${pn(';')}`, d: '' },
+    ],
+  },
+  {
+    id: 'metrics', name: 'metrics.sql', lang: 'SQL', dot: 'sql',
+    lines: [
+      { h: cm('-- career impact, aggregated across engagements'), d: '' },
+      { h: `${k('SELECT')} ${vr('metric')}${pn(',')} ${vr('value')}${pn(',')} ${vr('unit')}`, d: 'add' },
+      { h: `${k('FROM')}   ${vr('career')}${pn('.')}${vr('results')}`, d: 'add' },
+      { h: `${k('WHERE')}  ${vr('owner')} ${pn('=')} ${st("'swapnil'")}`, d: 'add' },
+      { h: `${k('ORDER BY')} ${vr('value')} ${k('DESC')}${pn(';')}`, d: 'add' },
+    ],
+  },
+  {
+    id: 'about', name: 'about.md', lang: 'Markdown', dot: 'md',
+    lines: [
+      { h: mh('# About'), d: '' },
+      { h: '', d: '' },
+      { h: `${ml} ${B('Based')}:     Mumbai, India`, d: '' },
+      { h: `${ml} ${B('Tenure')}:    7+ yrs marketing · 4+ in B2B SaaS`, d: '' },
+      { h: `${ml} ${B('Education')}: Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam`, d: '' },
+      { h: `${ml} ${B('Practice')}:  PMM &amp; growth strategist who codes AI agents, ships sites and runs technical SEO`, d: '' },
+      { h: '', d: '' },
+      { h: mh('## Shipped'), d: '' },
+      { h: '', d: '' },
+      { h: `${ml} ${B('20+')} AI agents &amp; internal tools shipped`, d: 'add' },
+      { h: `${ml} ${B('15+')} marketers mentored &amp; levelled up`, d: 'add' },
+      { h: `${ml} ${B('76')}  long-form articles published`, d: 'add' },
+      { h: '', d: '' },
+      { h: mh('## Recognition'), d: '' },
+      { h: '', d: '' },
+      { h: `${ml} Value of Agility Award  ·  LambdaTest, 2024`, d: '' },
+      { h: `${ml} Wall of Fame  ·  LambdaTest`, d: '' },
+      { h: `${ml} #1 Product of the Day  ·  Product Hunt`, d: '' },
+      { h: '', d: '' },
+      { h: mh('## Brands'), d: '' },
+      { h: '', d: '' },
+      { h: `LambdaTest · TestMu AI · Samsung · Medilife · Lido Learning · Appknox`, d: '' },
+    ],
+  },
+  {
+    id: 'contact', name: 'contact.sh', lang: 'Shell', dot: 'sh',
+    lines: [
+      { h: `${cm('#!/usr/bin/env bash')}`, d: '' },
+      { h: `${cm('# reach Swapnil Biswas - let&#39;s build something that compounds')}`, d: '' },
+      { h: `${k('set')} ${pn('-')}${vr('euo')} ${vr('pipefail')}`, d: '' },
+      { h: '', d: '' },
+      { h: `${vr('EMAIL')}${pn('=')}<a class="code-link" href="mailto:swapbiswas.marketing@gmail.com">${st('"swapbiswas.marketing@gmail.com"')}</a>`, d: 'add' },
+      { h: `${vr('LINKEDIN')}${pn('=')}<a class="code-link" href="https://www.linkedin.com/in/swapbiswas/">${st('"https://www.linkedin.com/in/swapbiswas/"')}</a>`, d: 'add' },
+      { h: '', d: '' },
+      { h: `${fn('echo')} ${st('"Email:    $EMAIL"')}`, d: '' },
+      { h: `${fn('echo')} ${st('"LinkedIn: $LINKEDIN"')}`, d: '' },
+      { h: '', d: '' },
+      { h: `${fn('open')} ${st('"mailto:$EMAIL"')}   ${cm('# open a new conversation')}`, d: '' },
+    ],
+  },
+  {
+    id: 'readme', name: 'README.md', lang: 'Markdown', dot: 'md',
+    lines: [
+      { h: mh('# portfolio'), d: '' },
+      { h: '', d: '' },
+      { h: `The career of ${mb('Swapnil Biswas')} rendered as a codebase.`, d: '' },
+      { h: `The product marketer who actually engineers the growth.`, d: '' },
+      { h: '', d: '' },
+      { h: mh('## Contents'), d: '' },
+      { h: '', d: '' },
+      { h: `${ml} hero.md      who I am`, d: '' },
+      { h: `${ml} work.json    six selected engagements`, d: '' },
+      { h: `${ml} skills.ts    four disciplines`, d: '' },
+      { h: `${ml} metrics.sql  the hard numbers`, d: '' },
+      { h: `${ml} about.md     facts, recognition, brands`, d: '' },
+      { h: `${ml} contact.sh   say hello`, d: '' },
+      { h: '', d: '' },
+      { h: mh('## Build output'), d: '' },
+      { h: '', d: '' },
+      { h: `${mb('657K+')} leads · ${mb('18.2M+')} organic traffic · ${mb('10x')} pipeline efficiency`, d: 'add' },
+    ],
+  },
+];
+
+const metricsRows = [
+  { m: 'leads', v: '657K+', u: 'generated' },
+  { m: 'organic_traffic', v: '18.2M+', u: 'sessions' },
+  { m: 'pipeline_efficiency', v: '10x', u: 'multiplier' },
+];
+
+const termOut = [
+  { h: '', cls: '' },
+  { h: `${cm('&gt; swapnil-biswas@2026 career')}`, cls: '' },
+  { h: `${cm('&gt; astro build --profile=growth')}`, cls: '' },
+  { h: '', cls: '' },
+  { h: `  building career graph ...`, cls: 'muted' },
+  { h: `  <span class="ok">✓</span> 6 engagements linked`, cls: '' },
+  { h: `  <span class="ok">✓</span> 4 disciplines compiled`, cls: '' },
+  { h: `  <span class="ok">✓</span> 20+ agents &amp; tools bundled`, cls: '' },
+  { h: '', cls: '' },
+  { h: `  <span class="thead">Impact</span>`, cls: '' },
+  { h: `  <span class="tmv">657K+</span>    leads`, cls: '' },
+  { h: `  <span class="tmv">18.2M+</span>   organic traffic`, cls: '' },
+  { h: `  <span class="tmv">10x</span>      pipeline efficiency`, cls: '' },
+  { h: '', cls: '' },
+  { h: `<span class="ok">✓ shipped in 7 years</span>  ·  ready to deploy`, cls: '' },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="ide">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - The marketer who actually codes</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script is:inline>
+  /* add `js` early so there is no flash of stacked panels; if JS is disabled this never runs and
+     the CSS fallback keeps every panel visible. */
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  :root{
+    --bg:#0d1117;
+    --activity:#010409;
+    --panel:#161b22;
+    --panel2:#0d1117;
+    --tabbar:#0b0f14;
+    --ink:#e6edf3;
+    --ink2:#c9d1d9;
+    --muted:#8b949e;
+    --border:#30363d;
+    --border2:#21262d;
+    --accent:#58a6ff;
+    --accent-soft:rgba(88,166,255,.10);
+    --green:#3fb950;
+    --gutter:#6e7681;
+    /* syntax */
+    --k:#ff7b72; --s:#a5d6ff; --f:#d2a8ff; --n:#79c0ff;
+    --c:#8b949e; --v:#ffa657; --g:#7ee787; --p:#8b949e; --prop:#79c0ff;
+    --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+    --ui:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{background:var(--bg);scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(120% 90% at 80% -10%, #10161f, var(--bg) 55%),
+      var(--bg);
+    color:var(--ink);font-family:var(--ui);min-height:100vh;-webkit-font-smoothing:antialiased;
+    line-height:1.5;padding:clamp(10px,2.4vw,30px);display:flex;flex-direction:column;
+    align-items:center;gap:12px;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(88,166,255,.28)}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+    clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  /* ============ the editor window ============ */
+  .ide{
+    width:min(1180px,100%);
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.85), 0 2px 0 rgba(255,255,255,.02) inset;
+    display:flex;flex-direction:column;
+  }
+
+  /* ---- title bar ---- */
+  .titlebar{
+    display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;
+    background:linear-gradient(180deg,#12161c,#0d1117);
+    border-bottom:1px solid var(--border2);flex:none;
+  }
+  .dots{display:flex;gap:8px;flex:none}
+  .dots i{width:12px;height:12px;border-radius:50%;display:block}
+  .dots .r{background:#ff5f56} .dots .y{background:#ffbd2e} .dots .g{background:#27c93f}
+  .winname{
+    flex:1;text-align:center;font-size:12.5px;color:var(--muted);letter-spacing:.01em;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--ui);
+  }
+  .winname b{color:var(--ink2);font-weight:600}
+  .cmdk{
+    flex:none;display:inline-flex;align-items:center;gap:6px;font-family:var(--ui);
+    font-size:11px;color:var(--muted);background:#0d1117;border:1px solid var(--border);
+    border-radius:6px;padding:5px 8px;cursor:pointer;transition:border-color .2s,color .2s;
+  }
+  .cmdk:hover,.cmdk:focus-visible{border-color:var(--accent);color:var(--ink);outline:none}
+  .cmdk kbd{font-family:var(--mono);font-size:10.5px;background:#161b22;border:1px solid var(--border);
+    border-radius:4px;padding:1px 5px;color:var(--ink2)}
+
+  /* ---- body: activity | explorer | editor | minimap ---- */
+  .shell{display:grid;grid-template-columns:48px 232px minmax(0,1fr) 62px;min-height:0}
+
+  /* activity bar */
+  .activity{
+    background:var(--activity);border-right:1px solid var(--border2);
+    display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0;
+  }
+  .actbtn{
+    width:40px;height:40px;display:grid;place-items:center;color:var(--muted);
+    background:none;border:0;cursor:default;border-left:2px solid transparent;position:relative;
+  }
+  .actbtn svg{width:22px;height:22px}
+  .actbtn.on{color:var(--ink);border-left-color:var(--accent)}
+  .actbtn.grow{margin-top:auto}
+
+  /* explorer */
+  .explorer{
+    background:var(--panel);border-right:1px solid var(--border2);min-width:0;
+    display:flex;flex-direction:column;
+  }
+  .exp-head{
+    font-family:var(--ui);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--muted);padding:12px 14px 8px;
+  }
+  .tree{padding:0 6px 12px;font-family:var(--ui);font-size:13px;overflow:auto}
+  .folder{
+    display:flex;align-items:center;gap:6px;padding:5px 8px;color:var(--ink2);font-weight:600;
+  }
+  .folder .chev{width:14px;height:14px;color:var(--muted)}
+  .folder .fico{color:var(--accent)}
+  .fitem{
+    display:flex;align-items:center;gap:8px;width:100%;padding:5px 8px 5px 24px;
+    color:var(--muted);background:none;border:0;border-radius:6px;cursor:pointer;
+    font-family:var(--ui);font-size:13px;text-align:left;transition:background .15s,color .15s;
+  }
+  .fitem:hover{background:rgba(255,255,255,.04);color:var(--ink2)}
+  .fitem:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .fitem.on{background:var(--accent-soft);color:var(--ink)}
+  .fitem .ext{font-family:var(--mono);font-size:10px;font-weight:700;width:16px;text-align:center;flex:none}
+  .ext.md{color:#58a6ff} .ext.json{color:#ffa657} .ext.ts{color:#79c0ff}
+  .ext.sql{color:#ff7b72} .ext.sh{color:#7ee787}
+  .fitem .gd{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--green);opacity:.8}
+
+  /* editor column */
+  .editor{display:flex;flex-direction:column;min-width:0;background:var(--bg)}
+
+  /* tab strip */
+  .tabs{
+    display:flex;background:var(--tabbar);border-bottom:1px solid var(--border2);
+    overflow-x:auto;overflow-y:hidden;flex:none;scrollbar-width:thin;
+  }
+  .tab{
+    display:flex;align-items:center;gap:8px;padding:9px 14px;white-space:nowrap;flex:none;
+    background:none;border:0;border-right:1px solid var(--border2);cursor:pointer;
+    color:var(--muted);font-family:var(--ui);font-size:12.5px;position:relative;
+    transition:color .15s,background .15s;
+  }
+  .tab .ext{font-family:var(--mono);font-size:10px;font-weight:700}
+  .tab:hover{color:var(--ink2)}
+  .tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .tab.on{color:var(--ink);background:var(--bg)}
+  .tab.on::after{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--accent)}
+  .tab .dotx{width:8px;height:8px;border-radius:50%;background:var(--ink2);opacity:0;transition:opacity .15s}
+  .tab.on .dotx{opacity:.55}
+
+  /* editor body (code + result) */
+  .editor-body{
+    height:clamp(360px,54vh,560px);overflow:auto;position:relative;background:var(--bg);
+    scrollbar-width:thin;scrollbar-color:#30363d transparent;
+  }
+  .editor-body::-webkit-scrollbar{width:12px;height:12px}
+  .editor-body::-webkit-scrollbar-thumb{background:#30363d;border-radius:8px;border:3px solid var(--bg)}
+
+  .panel{padding:8px 0 20px}
+  .panel-head{
+    display:flex;align-items:center;gap:6px;font-family:var(--ui);font-size:11.5px;
+    color:var(--muted);padding:4px 16px 10px;border-bottom:1px solid var(--border2);margin-bottom:6px;
+  }
+  .panel-head .sep{opacity:.5}
+  .panel-head b{color:var(--ink2);font-weight:500}
+
+  /* code rows */
+  .code{font-family:var(--mono);font-size:13px;line-height:1.7;overflow-x:auto;padding-bottom:4px}
+  .row{display:grid;grid-template-columns:52px 16px 1fr;width:max-content;min-width:100%}
+  .row:hover{background:rgba(255,255,255,.022)}
+  .ln{
+    text-align:right;padding-right:14px;color:var(--gutter);opacity:.65;user-select:none;
+    font-size:12px;line-height:1.7;
+  }
+  .dg{position:relative;user-select:none}
+  .dg.add::before{content:"";position:absolute;left:2px;top:2px;bottom:2px;width:3px;
+    border-radius:2px;background:var(--green);opacity:.9}
+  .dg.add::after{content:"+";position:absolute;left:7px;top:0;color:var(--green);font-size:11px;opacity:.55}
+  .line{white-space:pre;padding-right:22px;color:var(--ink2);min-height:1.7em}
+
+  /* syntax colors */
+  .tk-k{color:var(--k)} .tk-s{color:var(--s)} .tk-f{color:var(--f)}
+  .tk-n{color:var(--n)} .tk-c{color:var(--c);font-style:italic} .tk-v{color:var(--v)}
+  .tk-g{color:var(--g)} .tk-p{color:var(--p)} .tk-prop{color:var(--prop)}
+  /* markdown colors */
+  .md-h{color:var(--g);font-weight:700} .md-b{color:var(--ink);font-weight:700}
+  .md-p{color:var(--muted)} .md-q{color:var(--k)} .md-li{color:var(--k)}
+  .md-a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+  .md-a:hover{color:#8ec4ff}
+  .code-link{color:var(--s);text-decoration:underline;text-underline-offset:2px}
+  .code-link:hover{color:#cfe7ff}
+
+  /* sql result grid */
+  .sql-result{margin:14px 16px 0;border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:640px}
+  .sql-meta{
+    font-family:var(--ui);font-size:11px;color:var(--muted);padding:7px 12px;
+    background:var(--panel);border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;
+  }
+  .sql-meta .ok{color:var(--green)}
+  .sql-result table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12.5px}
+  .sql-result th{
+    text-align:left;padding:8px 12px;color:var(--muted);font-weight:600;font-size:11px;
+    letter-spacing:.04em;text-transform:uppercase;background:var(--panel2);border-bottom:1px solid var(--border2);
+  }
+  .sql-result td{padding:9px 12px;border-bottom:1px solid var(--border2);color:var(--ink2)}
+  .sql-result tr:last-child td{border-bottom:0}
+  .sql-result td.metric{color:var(--v)}
+  .sql-result td.val{color:var(--n);font-weight:700;font-size:14px}
+  .sql-result td.unit{color:var(--muted)}
+
+  /* minimap (decorative) */
+  .minimap{
+    background:var(--bg);border-left:1px solid var(--border2);position:relative;overflow:hidden;
+    padding:10px 8px;
+  }
+  .minimap .mm{display:flex;flex-direction:column;gap:4px;opacity:.5}
+  .minimap .mm i{height:3px;border-radius:2px;background:#30363d;display:block}
+  .minimap .mm i:nth-child(3n){background:#3d4657}
+  .minimap .mm i:nth-child(5n){background:#4b5568}
+  .minimap .vp{
+    position:absolute;left:4px;right:4px;top:14px;height:88px;border-radius:4px;
+    background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.22);
+  }
+
+  /* ---- integrated terminal ---- */
+  .terminal{
+    border-top:1px solid var(--border);background:#0a0d12;flex:none;
+    display:flex;flex-direction:column;grid-column:1 / -1;
+  }
+  .term-bar{
+    display:flex;align-items:center;gap:16px;padding:6px 14px;border-bottom:1px solid var(--border2);
+    background:var(--panel);font-family:var(--ui);
+  }
+  .term-tab{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);
+    border-bottom:2px solid var(--accent);padding-bottom:3px;font-weight:600}
+  .term-tab.dim{color:var(--muted);border-color:transparent;font-weight:500}
+  .term-bar .spacer{margin-left:auto;display:flex;gap:12px;color:var(--muted);font-size:11px}
+  .term-body{
+    font-family:var(--mono);font-size:12.5px;line-height:1.65;padding:12px 16px 16px;
+    color:var(--ink2);height:clamp(150px,20vh,190px);overflow:auto;scrollbar-width:thin;
+  }
+  .term-prompt{display:flex;align-items:baseline;flex-wrap:wrap}
+  .term-prompt .who{color:var(--g)} .term-prompt .path{color:var(--accent)} .term-prompt .sig{color:var(--muted)}
+  .term-cmd{color:var(--ink);white-space:pre}
+  .caret{display:inline-block;width:8px;height:15px;background:var(--accent);margin-left:1px;
+    transform:translateY(2px);animation:blink 1.05s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .term-out{margin-top:2px}
+  .term-out .tl{white-space:pre;min-height:1.65em}
+  .term-out .ok{color:var(--green)}
+  .term-out .muted{color:var(--muted)}
+  .term-out .thead{color:var(--ink);font-weight:700}
+  .term-out .tmv{color:var(--n);font-weight:700}
+
+  /* ---- status bar ---- */
+  .statusbar{
+    display:flex;align-items:center;gap:0;height:26px;background:#0b3a75;color:#dbeafe;
+    font-family:var(--ui);font-size:11.5px;flex:none;
+  }
+  .statusbar .si{display:inline-flex;align-items:center;gap:5px;padding:0 10px;height:100%;white-space:nowrap}
+  .statusbar .si.accent{background:var(--accent);color:#04121f;font-weight:600}
+  .statusbar .grow{margin-left:auto}
+  .statusbar .si.ok{color:#bfe6c9}
+  .statusbar svg{width:13px;height:13px}
+
+  /* ---- command palette ---- */
+  .palette{position:fixed;inset:0;z-index:60;display:grid;justify-items:center;align-content:start;
+    padding-top:12vh;background:rgba(1,4,9,.55);backdrop-filter:blur(2px)}
+  .palette[hidden]{display:none}
+  .pbox{
+    width:min(560px,92vw);background:#161b22;border:1px solid var(--border);border-radius:10px;
+    box-shadow:0 30px 80px -20px rgba(0,0,0,.9);overflow:hidden;
+  }
+  .pinput{
+    display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--border2);
+    color:var(--muted);font-family:var(--mono);font-size:13px;
+  }
+  .pinput .cue{color:var(--accent)}
+  .plist{list-style:none}
+  .pitem{width:100%;display:flex;align-items:center;gap:10px;padding:11px 14px;background:none;border:0;
+    cursor:pointer;text-align:left;color:var(--ink2);font-family:var(--ui);font-size:13.5px;
+    border-top:1px solid var(--border2);transition:background .12s}
+  .pitem:hover,.pitem:focus-visible{background:var(--accent-soft);color:var(--ink);outline:none}
+  .pitem .pf{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .pitem svg{width:16px;height:16px;color:var(--accent)}
+
+  /* ---- footer (outside the editor) ---- */
+  .foot{
+    width:min(1180px,100%);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted);padding:2px 4px 6px;
+  }
+  .foot a{color:var(--muted);border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+  .foot a:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* ============ no-JS / JS state gating ============ */
+  /* With JS (html.js): only the active panel shows. Without JS: all panels stay visible + not clipped. */
+  html.js .panel:not(.is-active){display:none}
+  html:not(.js) .editor-body{height:auto}
+  html:not(.js) .panel-head{position:relative}
+  html:not(.js) .palette{display:none}
+  /* terminal reveal gating: JS adds .term-anim to hide output before typing */
+  html.term-anim .term-out{opacity:0}
+  html.term-anim .term-out.done{opacity:1}
+
+  /* ============ responsive ============ */
+  @media (max-width:1000px){
+    .shell{grid-template-columns:48px 210px minmax(0,1fr)}
+    .minimap{display:none}
+  }
+  @media (max-width:720px){
+    .shell{grid-template-columns:44px minmax(0,1fr)}
+    .explorer{display:none}          /* tabs carry navigation on mobile */
+    .cmdk .lbl{display:none}
+    .winname{font-size:11.5px}
+  }
+  @media (max-width:420px){
+    body{padding:6px}
+    .ide{border-radius:9px}
+    .code{font-size:12px}
+    .row{grid-template-columns:38px 14px 1fr}
+    .ln{padding-right:9px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .caret{animation:none;opacity:1}
+    html.term-anim .term-out{opacity:1}
+    *{scroll-behavior:auto !important}
+  }
+</style>
+</head>
+<body>
+  <h1 class="sr-only">Swapnil Biswas - Senior Product Marketing Manager at LambdaTest. The product marketer who actually engineers the growth.</h1>
+
+  <main class="ide" id="ide">
+    <!-- ===== TITLE BAR ===== -->
+    <div class="titlebar">
+      <div class="dots" aria-hidden="true"><i class="r"></i><i class="y"></i><i class="g"></i></div>
+      <div class="winname"><b>swapnil-biswas</b> - portfolio</div>
+      <button class="cmdk" id="cmdk" aria-haspopup="dialog" aria-label="Open command palette">
+        <span class="lbl">Search</span><kbd>&#8984;K</kbd>
+      </button>
+    </div>
+
+    <!-- ===== SHELL: activity | explorer | editor | minimap ===== -->
+    <div class="shell">
+      <!-- activity bar -->
+      <nav class="activity" aria-label="Activity bar">
+        <button class="actbtn on" aria-label="Explorer" title="Explorer" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 5h6l2 2h10v12H3z"/></svg>
+        </button>
+        <button class="actbtn" aria-label="Search" title="Search" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+        </button>
+        <button class="actbtn" aria-label="Source control" title="Source control" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="9" r="2.4"/><path d="M6 8.4v7.2M8.4 6H15a3 3 0 0 1 3 3v.6"/></svg>
+        </button>
+        <button class="actbtn" aria-label="Run and debug" title="Run and debug" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+        </button>
+        <button class="actbtn grow" aria-label="Settings" title="Settings" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M4.2 6.5l2.1 1.2M17.7 16.3l2.1 1.2M3 12h3M18 12h3M4.2 17.5l2.1-1.2M17.7 7.7l2.1-1.2"/></svg>
+        </button>
+      </nav>
+
+      <!-- explorer -->
+      <aside class="explorer" aria-label="File explorer">
+        <div class="exp-head">Explorer</div>
+        <div class="tree">
+          <div class="folder">
+            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            <svg class="fico" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h6l2 2h10v12H3z" opacity=".9"/></svg>
+            <span>portfolio</span>
+          </div>
+          {files.map(f => (
+            <button class={"fitem" + (f.id === 'hero' ? ' on' : '')} data-goto={f.id} type="button">
+              <span class={"ext " + f.dot}>{f.dot.toUpperCase()}</span>
+              <span>{f.name}</span>
+              {f.lines.some(l => l.d === 'add') && <span class="gd" aria-hidden="true">U</span>}
+            </button>
+          ))}
+        </div>
+      </aside>
+
+      <!-- editor -->
+      <div class="editor">
+        <!-- tab strip -->
+        <div class="tabs" role="tablist" aria-label="Open editors">
+          {files.map(f => (
+            <button
+              class={"tab" + (f.id === 'hero' ? ' on' : '')}
+              id={"tab-" + f.id}
+              data-goto={f.id}
+              role="tab"
+              aria-controls={"panel-" + f.id}
+              aria-selected={f.id === 'hero' ? 'true' : 'false'}
+              tabindex={f.id === 'hero' ? 0 : -1}
+              type="button">
+              <span class={"ext " + f.dot}>{f.dot.toUpperCase()}</span>
+              <span>{f.name}</span>
+              <span class="dotx" aria-hidden="true"></span>
+            </button>
+          ))}
+        </div>
+
+        <!-- editor body: all panels in DOM -->
+        <div class="editor-body" id="editorBody">
+          {files.map(f => (
+            <section
+              class={"panel" + (f.id === 'hero' ? ' is-active' : '')}
+              id={"panel-" + f.id}
+              data-panel={f.id}
+              role="tabpanel"
+              tabindex="0"
+              aria-labelledby={"tab-" + f.id}>
+              <div class="panel-head">
+                <span>portfolio</span><span class="sep">/</span><b>{f.name}</b>
+              </div>
+              <div class="code">
+                {f.lines.map((l, idx) => (
+                  <div class="row">
+                    <span class="ln" aria-hidden="true">{idx + 1}</span>
+                    <span class={"dg" + (l.d ? " " + l.d : "")} aria-hidden="true"></span>
+                    <code class="line" set:html={l.h || "&nbsp;"}></code>
+                  </div>
+                ))}
+              </div>
+
+              {f.id === 'metrics' && (
+                <div class="sql-result" aria-label="Query result set">
+                  <div class="sql-meta"><span>3 rows in 0.008s</span><span class="ok">&#10003; success</span></div>
+                  <table>
+                    <thead><tr><th scope="col">metric</th><th scope="col">value</th><th scope="col">unit</th></tr></thead>
+                    <tbody>
+                      {metricsRows.map(r => (
+                        <tr>
+                          <td class="metric">{r.m}</td>
+                          <td class="val">{r.v}</td>
+                          <td class="unit">{r.u}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </section>
+          ))}
+        </div>
+      </div>
+
+      <!-- minimap -->
+      <div class="minimap" aria-hidden="true">
+        <div class="vp"></div>
+        <div class="mm">
+          {Array.from({ length: 46 }).map((_, i) => (
+            <i style={`width:${28 + ((i * 37) % 66)}%`}></i>
+          ))}
+        </div>
+      </div>
+
+      <!-- integrated terminal (spans full width under the panes) -->
+      <section class="terminal" aria-label="Integrated terminal">
+        <div class="term-bar">
+          <span class="term-tab">Terminal</span>
+          <span class="term-tab dim">Output</span>
+          <span class="term-tab dim">Problems</span>
+          <span class="spacer"><span>bash</span><span aria-hidden="true">+</span></span>
+        </div>
+        <div class="term-body" id="termBody">
+          <div class="term-prompt">
+            <span class="who">swapnil@career</span><span class="sig">:</span><span class="path">~/portfolio</span><span class="sig">$&nbsp;</span><span class="term-cmd" id="termCmd">npm run career</span><span class="caret" id="caret" aria-hidden="true"></span>
+          </div>
+          <div class="term-out" id="termOut">
+            {termOut.map(l => (
+              <div class="tl" set:html={l.h || "&nbsp;"}></div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== STATUS BAR ===== -->
+    <div class="statusbar" aria-label="Status bar">
+      <span class="si accent">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="9" r="2.4"/><path d="M6 8.4v7.2M8.4 6H15a3 3 0 0 1 3 3v.6"/></svg>
+        main
+      </span>
+      <span class="si ok">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg>
+        0 problems
+      </span>
+      <span class="si">UTF-8</span>
+      <span class="si">LF</span>
+      <span class="grow"></span>
+      <span class="si" id="stLang">Markdown</span>
+      <span class="si" id="stLnCol">Ln 1, Col 1</span>
+      <span class="si">Astro</span>
+      <span class="si ok" title="Prettier">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg>
+      </span>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER (outside the editor object) ===== -->
+  <footer class="foot">
+    <span>IDE &middot; Concept 43</span>
+    <span>Swapnil Biswas &copy; 2026</span>
+    <span><a href="/personal-website-examples/">View all concepts</a></span>
+  </footer>
+
+  <!-- ===== COMMAND PALETTE ===== -->
+  <div class="palette" id="palette" hidden>
+    <div class="pbox" role="dialog" aria-modal="true" aria-label="Command palette">
+      <div class="pinput"><span class="cue">&gt;</span><span>Type a command...</span></div>
+      <ul class="plist">
+        <li>
+          <button class="pitem" data-goto="work" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16v12H4zM9 7V5h6v2"/></svg>
+            Go to work<span class="pf">work.json</span>
+          </button>
+        </li>
+        <li>
+          <button class="pitem" data-goto="contact" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+            Get in touch<span class="pf">contact.sh</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<script>
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+
+  /* ---------- file switching ---------- */
+  const panels = Array.from(document.querySelectorAll('[data-panel]'));
+  const switchers = Array.from(document.querySelectorAll('[data-goto]'));
+  const tabs = Array.from(document.querySelectorAll('.tab'));
+  const fitems = Array.from(document.querySelectorAll('.fitem'));
+  const stLang = document.getElementById('stLang');
+  const stLnCol = document.getElementById('stLnCol');
+  const body = document.getElementById('editorBody');
+
+  const meta = {
+    hero:    { lang: 'Markdown',   lines: 16 },
+    work:    { lang: 'JSON',       lines: 16 },
+    skills:  { lang: 'TypeScript', lines: 15 },
+    metrics: { lang: 'SQL',        lines: 5  },
+    about:   { lang: 'Markdown',   lines: 22 },
+    contact: { lang: 'Shell',      lines: 11 },
+    readme:  { lang: 'Markdown',   lines: 17 },
+  };
+
+  function activate(id){
+    panels.forEach(p => p.classList.toggle('is-active', p.dataset.panel === id));
+    tabs.forEach(t => {
+      const on = t.dataset.goto === id;
+      t.classList.toggle('on', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+    });
+    fitems.forEach(f => f.classList.toggle('on', f.dataset.goto === id));
+    const m = meta[id];
+    if (m && stLang) stLang.textContent = m.lang;
+    if (m && stLnCol) stLnCol.textContent = 'Ln ' + m.lines + ', Col 1';
+    if (body) body.scrollTop = 0;
+  }
+
+  switchers.forEach(el => {
+    el.addEventListener('click', (e) => {
+      const id = el.dataset.goto;
+      if (!id) return;
+      e.preventDefault();
+      activate(id);
+      closePalette();
+    });
+  });
+
+  /* roving arrow-key navigation across the editor tab strip (WAI tabs pattern) */
+  tabs.forEach((tab, idx) => {
+    tab.addEventListener('keydown', (e) => {
+      let next = -1;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (idx + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (idx - 1 + tabs.length) % tabs.length;
+      else if (e.key === 'Home') next = 0;
+      else if (e.key === 'End') next = tabs.length - 1;
+      if (next < 0) return;
+      e.preventDefault();
+      const t = tabs[next];
+      activate(t.dataset.goto);
+      t.focus();
+    });
+  });
+
+  /* ---------- command palette ---------- */
+  const palette = document.getElementById('palette');
+  const cmdk = document.getElementById('cmdk');
+  let lastFocus = null;
+
+  function openPalette(){
+    if (!palette) return;
+    lastFocus = document.activeElement;
+    palette.hidden = false;
+    const first = palette.querySelector('.pitem');
+    if (first) first.focus();
+  }
+  function closePalette(){
+    if (!palette || palette.hidden) return;
+    palette.hidden = true;
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  if (cmdk) cmdk.addEventListener('click', openPalette);
+  if (palette) palette.addEventListener('click', (e) => { if (e.target === palette) closePalette(); });
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) { e.preventDefault(); palette && palette.hidden ? openPalette() : closePalette(); }
+    if (e.key === 'Escape') closePalette();
+  });
+
+  /* ---------- integrated terminal typing ---------- */
+  const cmdEl = document.getElementById('termCmd');
+  const outEl = document.getElementById('termOut');
+  const caret = document.getElementById('caret');
+  const CMD = 'npm run career';
+
+  if (!RM && cmdEl && outEl) {
+    root.classList.add('term-anim');          // CSS hides output until typed
+    const outLines = Array.from(outEl.children);
+    cmdEl.textContent = '';                    // clear (was full for no-JS fallback)
+    let i = 0;
+    function type(){
+      if (i <= CMD.length){
+        cmdEl.textContent = CMD.slice(0, i);
+        i++;
+        setTimeout(type, 46 + Math.random() * 40);
+      } else {
+        // command done -> reveal output line by line
+        let j = 0;
+        (function reveal(){
+          if (j >= outLines.length) return;
+          outLines[j].classList.add('done');
+          j++;
+          setTimeout(() => requestAnimationFrame(reveal), 70);
+        })();
+      }
+    }
+    // safety: guarantee everything shown within 3s regardless
+    const safety = setTimeout(() => {
+      cmdEl.textContent = CMD;
+      outLines.forEach(l => l.classList.add('done'));
+    }, 3000);
+    // kick off after fonts/layout settle
+    requestAnimationFrame(() => requestAnimationFrame(() => { setTimeout(type, 400); }));
+    // when all done we can stop the caret from implying more typing (leave blinking - it is an idle prompt)
+    void safety;
+  }
+</script>
+</body>
+</html>

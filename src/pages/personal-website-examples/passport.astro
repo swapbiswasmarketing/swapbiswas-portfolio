@@ -1,0 +1,784 @@
+---
+// REDESIGN PROTOTYPE - "Passport" - Concept 44.
+// A traveller's document: a tear-off BOARDING PASS + a PASSPORT stamped at every company +
+// a great-circle ROUTE MAP that draws itself. A warm LIGHT paper world on a dark desk.
+// Original concept (NOT a reskin of solari / receipt / cartograph): its own layout, palette,
+// fonts, motion and signature mechanic. The object's real anatomy drives every section:
+//  - HERO = a boarding pass on the desk (SWAP AIR / Growth Class), passenger, route MKT -> GRW,
+//    flight/gate/seat, the lede as a note, a dashed PERFORATION splitting off a STUB with a
+//    barcode + the two hero numbers, a two-line MRZ machine-readable strip, a BOARDING pill.
+//  - SELECTED WORK = passport entry STAMPS across a page spread; they THUNK in on scroll.
+//  - ROUTE MAP = a minimalist SVG great-circle arc on a faint graticule that DRAWS itself;
+//    stops pulse and read out the role on hover / focus.
+//  - METRICS = a CUSTOMS DECLARATION visa-field block. DISCIPLINES = VISAS GRANTED.
+//  - SHIPPED = stamped tallies. RECOGNITION = embossed entry SEALS. ABOUT = the passport
+//    PHOTO PAGE (ID data fields + monogram). CONTACT = a DEPARTURE / declaration card.
+// GOTCHA NOTES: every stamp, field and line lives in the Astro MARKUP (not injected by JS), so
+// all content is visible with JS disabled. JS only adds html.js-motion to hide-then-thunk stamps
+// and draw the route line. prefers-reduced-motion => stamps final, route fully drawn, no settle,
+// no pulsing. No text-shadow / filter on any background-clip:text element (there are none here).
+// Self-contained: own <html>, own Google Fonts <link>, own CSS tokens, noindex. No BaseLayout.
+const stamps = [
+  { name: 'LambdaTest', role: 'Product & digital marketing', city: 'NOIDA', code: 'IN', y: '2021-25', amt: '657K LEADS', shape: 'round', rot: '-5deg', feat: true,
+    d: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { name: 'TestMu AI', role: 'Rebrand lead', city: 'NOIDA', code: 'IN', y: '2026', amt: 'FULL REBRAND', shape: 'rect', rot: '4deg',
+    d: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { name: 'Samsung', role: 'via Sociowash', city: 'MUMBAI', code: 'IN', y: '2019', amt: 'M-SERIES', shape: 'round', rot: '-8deg',
+    d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { name: 'Medilife', role: 'Marketing & web', city: 'DEHRADUN', code: 'IN', y: '0 to 1', amt: 'WEBSITE + GTM', shape: 'rect', rot: '6deg',
+    d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { name: 'Lido Learning', role: 'Growth / CRM', city: 'MUMBAI', code: 'IN', y: '2021', amt: 'LEAD OPS', shape: 'round', rot: '7deg',
+    d: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { name: 'Appknox', role: 'Freelance content', city: 'BENGALURU', code: 'IN', y: 'Freelance', amt: 'SECURITY', shape: 'rect', rot: '-6deg',
+    d: 'Freelance content writer for the mobile app security company.' },
+];
+// Route-map stops (chronological journey). x/y are viewBox coords in a 1000 x 460 field.
+const stops = [
+  { x: 150, y: 300, code: 'APK', city: 'Appknox',    role: 'Freelance content, security' },
+  { x: 300, y: 190, code: 'SMS', city: 'Samsung',    role: 'M-series, via Sociowash' },
+  { x: 450, y: 320, code: 'MED', city: 'Medilife',   role: 'Website + GTM, 0 to 1' },
+  { x: 610, y: 200, code: 'LDO', city: 'Lido',       role: 'Growth and CRM' },
+  { x: 780, y: 285, code: 'LTG', city: 'LambdaTest', role: '657K leads, growth engine' },
+  { x: 905, y: 150, code: 'TMU', city: 'TestMu AI',  role: 'Rebrand lead, 2026' },
+];
+// Smooth great-circle-style path through the stops (quadratic bows).
+const routePath = 'M150,300 Q220,210 300,190 Q385,175 450,320 Q525,405 610,200 Q690,120 780,285 Q850,345 905,150';
+const disciplines = [
+  { i: 'V-01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: 'V-02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: 'V-03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: 'V-04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+const shipped = [
+  { n: '20+', l: 'AI agents & internal tools shipped' },
+  { n: '15+', l: 'Marketers mentored & levelled up' },
+  { n: '76',  l: 'Long-form articles published' },
+];
+const seals = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024', mono: 'VOA' },
+  { t: 'Wall of Fame', m: 'LambdaTest', mono: 'WOF' },
+  { t: '#1 Product of the Day', m: 'Product Hunt', mono: 'PH1' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const declare = [
+  { k: 'Leads generated', v: '657K+', d: 'Declared' },
+  { k: 'Organic traffic', v: '18.2M+', d: 'Declared' },
+  { k: 'Pipeline efficiency', v: '10x', d: 'Declared' },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="passport">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - Boarding pass to the growth work</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --desk:#161a20;        /* dark desk backdrop */
+    --desk2:#1c222b;
+    --paper:#f2ede2;       /* cream boarding-pass paper */
+    --paper2:#ede6d7;      /* second paper tone */
+    --navy:#12294a;        /* passport navy */
+    --navy2:#1b3a5b;
+    --gold:#c9a24b;        /* gold foil */
+    --gold-dim:#a9853a;    /* gold for borders / decoration / on-navy only */
+    --gold-ink:#7d5f16;    /* AA-safe gold for TEXT on cream (5.1:1) */
+    --red:#b23f28;         /* stamp red - AA on cream (4.95:1) */
+    --red-soft:rgba(192,73,47,.10);
+    --ink:#20242b;         /* near-black ink - AA on cream */
+    --ink2:#4c4a47;        /* secondary ink - AA on cream */
+    --faint:#6b6456;       /* faint ink - AA-safe on cream */
+    --rule:#cdc4b0;        /* dashed rule on paper */
+    --rule2:#bcb29a;
+    --paper-on-navy:#eae3d4;
+    --disp:"Fraunces",Georgia,serif;
+    --mono:"JetBrains Mono",ui-monospace,"Courier New",monospace;
+    --docw:min(760px,calc(100vw - 28px));
+    --pad:clamp(18px,4.5vw,44px);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth;background:var(--desk)}
+  body{
+    background:
+      radial-gradient(130% 90% at 50% -8%, var(--desk2), var(--desk) 62%),
+      var(--desk);
+    color:var(--ink);font-family:var(--mono);min-height:100vh;-webkit-font-smoothing:antialiased;
+    line-height:1.55;padding:clamp(22px,6vh,64px) 0 clamp(44px,8vh,96px);position:relative;
+  }
+  /* desk grain (subtle, fixed, non-scrolling) */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,.022) .5px,transparent .6px);background-size:6px 6px}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--navy);color:var(--paper)}
+
+  .doc{position:relative;z-index:2;width:var(--docw);margin:0 auto}
+  .doc + .doc{margin-top:clamp(20px,4vh,40px)}
+
+  /* paper card shared surface */
+  .card{
+    position:relative;background:linear-gradient(180deg,var(--paper),var(--paper2));
+    color:var(--ink);border-radius:10px;
+    box-shadow:0 30px 60px -22px rgba(0,0,0,.7), 0 8px 20px rgba(0,0,0,.35);
+  }
+  .card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")}
+
+  /* small labels */
+  .kv{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+  .kv.on-navy{color:#b9c6d6}
+  .sectionhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .sectionhead h2{font-family:var(--disp);font-weight:600;font-size:clamp(22px,4.6vw,34px);color:var(--ink);line-height:1.02;letter-spacing:-.01em}
+  .sectionhead .tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+
+  /* ============ HERO / BOARDING PASS ============ */
+  .pass{overflow:hidden}
+  .pass-grid{display:grid;grid-template-columns:1fr 190px}
+  @media(max-width:640px){.pass-grid{grid-template-columns:1fr}}
+
+  .pass-main{padding:var(--pad);position:relative;z-index:3}
+  .pass-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    padding-bottom:14px;border-bottom:2px solid var(--navy)}
+  .airline{display:flex;align-items:center;gap:12px}
+  .roundel{width:40px;height:40px;border-radius:50%;flex:none;background:
+      radial-gradient(circle at 50% 50%, var(--navy) 0 46%, var(--gold) 47% 54%, var(--navy) 55%);
+    position:relative}
+  .roundel::after{content:"";position:absolute;inset:0;margin:auto;width:13px;height:13px;border-radius:50%;
+    background:var(--gold)}
+  .airline .nm{font-family:var(--disp);font-weight:700;font-size:clamp(22px,5.4vw,30px);color:var(--navy);line-height:.95;letter-spacing:.01em}
+  .airline .cl{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-ink);margin-top:3px}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--paper);background:var(--navy);padding:7px 12px;border-radius:100px}
+  .status .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none}
+  @media(prefers-reduced-motion:no-preference){
+    .status .dot{animation:beacon 1.8s ease-in-out infinite}
+  }
+  @keyframes beacon{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.7)}}
+
+  .passenger{margin-top:18px}
+  .passenger .lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+  .passenger h1{font-family:var(--disp);font-weight:600;font-size:clamp(30px,8vw,52px);line-height:.98;color:var(--ink);
+    letter-spacing:-.015em;margin-top:2px}
+
+  .route{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin-top:20px}
+  .route .end{text-align:center}
+  .route .end.to{text-align:center}
+  .route .code{font-family:var(--disp);font-weight:700;font-size:clamp(32px,9vw,58px);color:var(--navy);line-height:.9;letter-spacing:.01em}
+  .route .place{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:4px}
+  .route .arc{display:flex;flex-direction:column;align-items:center;color:var(--gold-dim);min-width:56px}
+  .route .arc svg{width:66px;height:26px;display:block}
+  .route .arc .mi{font-size:8px;letter-spacing:.14em;color:var(--faint);margin-top:2px;text-transform:uppercase}
+
+  .fielrow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px;
+    border-top:1px dashed var(--rule);border-bottom:1px dashed var(--rule);padding:14px 0}
+  @media(max-width:520px){.fielrow{grid-template-columns:repeat(2,1fr);gap:14px}}
+  .field .k{font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  .field .v{font-family:var(--mono);font-weight:700;font-size:14px;color:var(--ink);margin-top:3px;letter-spacing:.02em}
+  .field .v.gold{color:var(--gold-ink)}
+
+  .note{margin-top:16px;font-size:12.5px;line-height:1.7;color:var(--ink);max-width:56ch}
+  .note b{font-weight:800;color:var(--navy);background:var(--red-soft);padding:0 4px;border-radius:3px;
+    box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .note .role{display:block;margin-top:8px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+
+  .cta{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:12px 18px;border:1.5px solid var(--navy);color:var(--navy);display:inline-flex;gap:8px;align-items:center;
+    background:transparent;border-radius:7px;transition:background .25s,color .25s,transform .2s}
+  .btn .ar{transition:transform .25s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .btn.primary{background:var(--navy);color:var(--paper)}
+  .btn.primary:hover{transform:translateY(-2px)}
+  .btn.ghost:hover{background:rgba(18,41,74,.07)}
+  .btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+  /* ---- MRZ machine-readable strip ---- */
+  .mrz{margin-top:20px;background:var(--paper2);border-top:1.5px solid var(--rule2);
+    padding:12px var(--pad);margin-left:calc(var(--pad) * -1);margin-right:calc(var(--pad) * -1);margin-bottom:calc(var(--pad) * -1);
+    overflow-x:auto}
+  .mrz .l{font-family:var(--mono);font-weight:500;font-size:clamp(9px,2.5vw,13px);letter-spacing:.14em;color:var(--ink2);
+    white-space:nowrap;line-height:1.9}
+
+  /* ---- perforation + stub ---- */
+  .perf{position:relative;background:var(--paper2);border-left:2px dashed var(--rule2)}
+  .perf::before,.perf::after{content:"";position:absolute;left:-9px;width:16px;height:16px;border-radius:50%;
+    background:var(--desk)}
+  .perf::before{top:-8px}
+  .perf::after{bottom:-8px}
+  @media(max-width:640px){
+    .perf{border-left:0;border-top:2px dashed var(--rule2)}
+    .perf::before{top:-8px;left:-8px}
+    .perf::after{top:-8px;left:auto;right:-8px;bottom:auto}
+  }
+  .stub{padding:var(--pad) clamp(14px,3vw,20px);display:flex;flex-direction:column;gap:14px;height:100%}
+  .stub .kv{margin-bottom:2px}
+  .stub-num .big{font-family:var(--disp);font-weight:700;font-size:clamp(26px,6vw,34px);color:var(--navy);line-height:.95}
+  .stub-num .sm{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:2px}
+  .barcode{margin-top:auto;display:flex;flex-direction:column;gap:6px}
+  .bars{height:52px;width:100%;
+    background-image:repeating-linear-gradient(90deg,
+      var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 5px, transparent 5px 9px,
+      var(--ink) 9px 12px, transparent 12px 13px, var(--ink) 13px 14px, transparent 14px 18px,
+      var(--ink) 18px 19px, transparent 19px 23px);
+    background-size:23px 100%}
+  .barcode .no{font-size:9px;letter-spacing:.22em;color:var(--ink2);text-align:center}
+
+  /* ============ PASSPORT STAMPS (work) ============ */
+  .spread{padding:clamp(20px,4vw,34px) var(--pad)}
+  .spread .lede{font-size:12px;color:var(--ink2);max-width:60ch;margin-bottom:20px;line-height:1.65}
+  .stamps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,3vw,26px);
+    padding:14px 0;position:relative}
+  @media(max-width:720px){.stamps{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:440px){.stamps{grid-template-columns:1fr;justify-items:center}}
+  /* faint guilloche wash behind the spread */
+  .spread{position:relative}
+  .spread::before{content:"";position:absolute;inset:12px;border-radius:8px;pointer-events:none;opacity:.5;
+    background-image:repeating-linear-gradient(58deg,rgba(18,41,74,.05) 0 1px,transparent 1px 9px),
+      repeating-linear-gradient(-58deg,rgba(18,41,74,.04) 0 1px,transparent 1px 9px)}
+
+  .stamp{position:relative;z-index:2;--rot:0deg;transform:rotate(var(--rot));
+    color:var(--red);border:2.5px solid var(--red);padding:16px 14px;text-align:center;
+    background:repeating-linear-gradient(46deg,transparent 0 7px,rgba(192,73,47,.05) 7px 8px);
+    max-width:230px;width:100%}
+  .stamp.round{border-radius:50%;aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:center;padding:10px}
+  .stamp.rect{border-radius:6px;border-style:double;border-width:4px}
+  .stamp.feat{color:var(--navy);border-color:var(--navy);border-width:3.5px;
+    background:repeating-linear-gradient(46deg,transparent 0 7px,rgba(18,41,74,.06) 7px 8px)}
+  .stamp .adm{font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:700}
+  .stamp .nm{font-family:var(--disp);font-weight:700;font-size:clamp(15px,3.6vw,20px);line-height:1;margin:5px 0;letter-spacing:.01em}
+  .stamp .cc{font-size:9px;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+  .stamp .dv{width:38px;height:1.5px;background:currentColor;margin:7px auto;opacity:.6}
+  .stamp .amt{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .stamp .rl{font-size:8.5px;letter-spacing:.06em;margin-top:5px;opacity:.85;line-height:1.4}
+  .stamp .fb{position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(calc(var(--rot) * -1));
+    font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);
+    background:var(--navy);padding:3px 8px;border-radius:100px;white-space:nowrap}
+  .stamp .desc{position:absolute;inset:auto 0 0;opacity:0;pointer-events:none}
+  /* stamp thunk-in: default = final (visible). Motion path hides then settles. */
+  .stamp{transition:transform .5s cubic-bezier(.2,.9,.25,1),opacity .4s ease}
+  html.js-motion .stamps .stamp{opacity:0;transform:rotate(var(--rot)) scale(1.18)}
+  html.js-motion .stamps .stamp.in{opacity:1;transform:rotate(var(--rot)) scale(1)}
+  .stampcap{margin-top:16px;font-size:10px;letter-spacing:.06em;color:var(--ink2);text-align:center;line-height:1.6}
+
+  /* ============ ROUTE MAP ============ */
+  .mapdoc .card-inner{padding:clamp(20px,4vw,34px) var(--pad)}
+  .mapfield{position:relative;background:var(--navy);border-radius:8px;overflow:hidden;margin-top:8px;
+    box-shadow:inset 0 0 0 1px rgba(201,162,75,.25)}
+  .mapfield svg{display:block;width:100%;height:auto}
+  .graticule line{stroke:rgba(201,162,75,.14);stroke-width:1}
+  .route-line{fill:none;stroke:var(--gold);stroke-width:2.4;stroke-linecap:round;
+    stroke-dasharray:1;stroke-dashoffset:0}
+  html.js-motion .route-line{stroke-dashoffset:1}
+  html.js-motion .mapfield.drawn .route-line{stroke-dashoffset:0;transition:stroke-dashoffset 1.7s cubic-bezier(.4,0,.2,1)}
+  .stopdot{fill:var(--paper)}
+  .stopring{fill:none;stroke:var(--gold);stroke-width:1.6;opacity:.55}
+  @media(prefers-reduced-motion:no-preference){
+    .mapfield.drawn .stopring{transform-box:fill-box;transform-origin:center;animation:ping 2.6s ease-out infinite}
+    .stop:nth-child(4) .stopring{animation-delay:.4s}
+    .stop:nth-child(5) .stopring{animation-delay:.8s}
+    .stop:nth-child(6) .stopring{animation-delay:1.2s}
+    .stop:nth-child(7) .stopring{animation-delay:1.6s}
+    .stop:nth-child(8) .stopring{animation-delay:2s}
+  }
+  @keyframes ping{0%{transform:scale(1);opacity:.6}70%,100%{transform:scale(2.6);opacity:0}}
+  .stop{cursor:default}
+  .stop .stoplbl{fill:var(--paper-on-navy);font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.08em}
+  .stop:hover .stopdot,.stop:focus-visible .stopdot{fill:var(--gold)}
+  .stop:focus-visible{outline:none}
+  .stop:focus-visible .stopring{opacity:1;stroke-width:2.4}
+  .readout{margin-top:14px;min-height:38px;display:flex;align-items:center;gap:12px;
+    border-top:1px dashed var(--rule);padding-top:12px}
+  .readout .rc{font-family:var(--disp);font-weight:700;font-size:20px;color:var(--navy);flex:none}
+  .readout .rt{font-size:11.5px;color:var(--ink2);line-height:1.5}
+  .readout .rt b{color:var(--ink);font-weight:700}
+  .route-legend{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .route-legend li{font-size:10px;letter-spacing:.04em;color:var(--ink2);border:1px solid var(--rule2);border-radius:100px;
+    padding:5px 11px}
+  .route-legend li b{color:var(--navy);font-weight:700}
+
+  /* ============ CUSTOMS DECLARATION (metrics) ============ */
+  .customs .card-inner{padding:clamp(20px,4vw,34px) var(--pad)}
+  .declist{display:grid;grid-template-columns:1fr;gap:0;border-top:1.5px solid var(--rule2)}
+  .decrow{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:14px;
+    padding:16px 0;border-bottom:1px dashed var(--rule)}
+  .decrow .dk{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
+  .decrow .dv{font-family:var(--disp);font-weight:700;font-size:clamp(28px,7vw,44px);color:var(--navy);line-height:.9;letter-spacing:.01em;justify-self:end}
+  .decrow .dstamp{justify-self:end;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red);
+    border:2px solid var(--red);border-radius:5px;padding:4px 8px;transform:rotate(-6deg);white-space:nowrap;
+    background:repeating-linear-gradient(45deg,transparent 0 5px,rgba(192,73,47,.06) 5px 6px)}
+  @media(max-width:520px){
+    .decrow{grid-template-columns:1fr auto}
+    .decrow .dstamp{grid-column:1 / -1;justify-self:start;margin-top:6px}
+  }
+  .customs .foot{margin-top:14px;font-size:10px;letter-spacing:.04em;color:var(--faint)}
+
+  /* ============ VISAS GRANTED (disciplines) ============ */
+  .visas .card-inner{padding:clamp(20px,4vw,34px) var(--pad)}
+  .visa{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:16px 0;
+    border-top:1px dashed var(--rule)}
+  .visa:first-of-type{border-top:0}
+  .visa .seal{width:56px;height:56px;flex:none;border:2px solid var(--gold-dim);border-radius:50%;
+    display:grid;place-items:center;color:var(--gold-dim);font-family:var(--mono);font-weight:700;font-size:11px;
+    letter-spacing:.06em;transform:rotate(-4deg);
+    background:repeating-linear-gradient(45deg,transparent 0 6px,rgba(201,162,75,.07) 6px 7px)}
+  .visa .vt{font-family:var(--disp);font-weight:600;font-size:clamp(16px,3.6vw,21px);color:var(--ink);line-height:1.1}
+  .visa .vd{font-size:11.5px;color:var(--ink2);margin-top:5px;line-height:1.6;max-width:60ch}
+  .visa .grant{font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-top:7px;font-weight:700}
+
+  /* ============ STAMPED TALLIES (shipped) ============ */
+  .tallies .card-inner{padding:clamp(20px,4vw,34px) var(--pad)}
+  .tallygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,3vw,22px)}
+  @media(max-width:560px){.tallygrid{grid-template-columns:1fr;gap:16px}}
+  .tally{border:2px solid var(--navy);border-radius:7px;padding:18px 16px;text-align:center;position:relative;
+    background:repeating-linear-gradient(46deg,transparent 0 8px,rgba(18,41,74,.04) 8px 9px)}
+  .tally .tn{font-family:var(--disp);font-weight:700;font-size:clamp(34px,10vw,48px);color:var(--navy);line-height:.9}
+  .tally .tl{font-size:10px;letter-spacing:.04em;color:var(--ink2);margin-top:8px;line-height:1.5}
+  .tally .ok{position:absolute;top:8px;right:10px;font-size:8px;font-weight:800;letter-spacing:.14em;color:var(--gold-dim)}
+
+  /* ============ EMBOSSED SEALS (recognition) + brands ============ */
+  .seals-doc .card-inner{padding:clamp(20px,4vw,34px) var(--pad)}
+  .seals{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,3vw,22px)}
+  @media(max-width:560px){.seals{grid-template-columns:1fr;gap:16px}}
+  .esseal{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:12px 8px}
+  .emblem{width:88px;height:88px;border-radius:50%;flex:none;position:relative;
+    border:2px solid var(--gold-dim);color:var(--gold-dim);display:grid;place-items:center;
+    background:radial-gradient(circle at 50% 42%, rgba(201,162,75,.14), transparent 62%)}
+  .emblem::before{content:"";position:absolute;inset:7px;border-radius:50%;border:1px dashed var(--gold-dim);opacity:.6}
+  .emblem span{font-family:var(--mono);font-weight:700;font-size:15px;letter-spacing:.08em}
+  .esseal .st{font-family:var(--disp);font-weight:600;font-size:15px;color:var(--ink);line-height:1.2}
+  .esseal .sm{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+  .brandstrip{margin-top:24px;border-top:1px dashed var(--rule);padding-top:16px}
+  .brandstrip .kv{margin-bottom:10px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{font-size:10px;letter-spacing:.04em;color:var(--ink2);border:1px solid var(--rule2);border-radius:100px;padding:6px 12px}
+
+  /* ============ PASSPORT PHOTO PAGE (about) ============ */
+  .idpage .card-inner{padding:clamp(20px,4vw,34px) var(--pad)}
+  .idgrid{display:grid;grid-template-columns:150px 1fr;gap:clamp(18px,4vw,32px);align-items:start}
+  @media(max-width:560px){.idgrid{grid-template-columns:1fr;justify-items:center;text-align:center}}
+  .photo{width:150px;height:186px;flex:none;border:2px solid var(--navy);border-radius:6px;position:relative;
+    background:linear-gradient(160deg,#e7dfcd,#ded4bd);display:grid;place-items:center;overflow:hidden}
+  .photo::before{content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(30deg,rgba(18,41,74,.05) 0 1px,transparent 1px 8px)}
+  .photo .mono{font-family:var(--disp);font-weight:700;font-size:58px;color:var(--navy);letter-spacing:.02em;z-index:2}
+  .photo .cap{position:absolute;bottom:6px;left:0;right:0;text-align:center;font-size:8px;letter-spacing:.2em;color:var(--faint);z-index:2}
+  .idfields{width:100%}
+  .idfields .type{font-family:var(--disp);font-weight:600;font-size:clamp(19px,4.4vw,26px);color:var(--ink);line-height:1.05;margin-bottom:4px}
+  .idfields .sub{font-size:11.5px;color:var(--ink2);line-height:1.65;max-width:56ch;margin-bottom:16px}
+  .idrows{display:grid;grid-template-columns:1fr;gap:0}
+  .idrow{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:9px 0;border-top:1px dotted var(--rule);align-items:baseline}
+  @media(max-width:560px){.idrow{grid-template-columns:1fr;gap:2px;text-align:left}}
+  .idrow:first-child{border-top:0}
+  .idrow .k{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  .idrow .v{font-size:12px;color:var(--ink);line-height:1.5}
+
+  /* ============ DEPARTURE CARD (contact) ============ */
+  .departure{overflow:hidden}
+  .dep-top{background:var(--navy);color:var(--paper-on-navy);padding:clamp(22px,5vw,40px) var(--pad)}
+  .dep-top .kv.on-navy{margin-bottom:12px}
+  .dep-top h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,8vw,54px);color:var(--paper);line-height:.98;letter-spacing:-.01em}
+  .dep-top p{font-size:12.5px;color:#c6d1de;margin-top:12px;max-width:52ch;line-height:1.7}
+  .dep-body{padding:clamp(20px,4vw,34px) var(--pad)}
+  .depfields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:520px){.depfields{grid-template-columns:1fr}}
+  .depfield{border:1px dashed var(--rule2);border-radius:8px;padding:16px}
+  .depfield .k{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+  .depfield a{display:inline-block;margin-top:7px;font-family:var(--mono);font-weight:700;font-size:13px;color:var(--navy);
+    letter-spacing:.02em;word-break:break-word;border-bottom:1.5px solid var(--gold);padding-bottom:1px;
+    transition:color .2s}
+  .depfield a:hover{color:var(--red)}
+  .depfield a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .dep-mrz{margin-top:20px;background:var(--paper2);border-top:1.5px solid var(--rule2);padding:12px 0;overflow-x:auto}
+  .dep-mrz .l{font-family:var(--mono);font-weight:500;font-size:clamp(9px,2.5vw,12px);letter-spacing:.14em;color:var(--ink2);
+    white-space:nowrap;line-height:1.9}
+
+  /* ============ FOOTER (on the desk) ============ */
+  .deskfoot{position:relative;z-index:2;width:var(--docw);margin:26px auto 0;display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:10px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#97917f}
+  .deskfoot a{color:#9a9486;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
+  .deskfoot a:hover{color:var(--paper);border-color:#9a9486}
+  .deskfoot a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .status .dot{animation:none}
+    .stamp,html.js-motion .stamps .stamp{opacity:1!important;transform:rotate(var(--rot))!important;transition:none}
+    .route-line,html.js-motion .route-line{stroke-dashoffset:0!important;transition:none}
+    .stopring{animation:none!important}
+  }
+</style>
+</head>
+<body>
+  <!-- ===================== HERO: BOARDING PASS ===================== -->
+  <div class="doc">
+    <main class="card pass" id="top">
+      <div class="pass-grid">
+        <div class="pass-main">
+          <div class="pass-head">
+            <div class="airline">
+              <span class="roundel" aria-hidden="true"></span>
+              <div>
+                <div class="nm">SWAP AIR</div>
+                <div class="cl">Growth Class &middot; Boarding pass</div>
+              </div>
+            </div>
+            <span class="status"><span class="dot" aria-hidden="true"></span>Boarding</span>
+          </div>
+
+          <div class="passenger">
+            <div class="lbl">Passenger name</div>
+            <h1>Swapnil Biswas</h1>
+          </div>
+
+          <div class="route" aria-label="Route: Marketing to Growth">
+            <div class="end from">
+              <div class="code">MKT</div>
+              <div class="place">Marketing</div>
+            </div>
+            <div class="arc" aria-hidden="true">
+              <svg viewBox="0 0 66 26" role="presentation">
+                <path d="M2,22 Q33,-6 64,22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 3"/>
+                <path d="M60,15 L64,22 L56,22 Z" fill="currentColor"/>
+              </svg>
+              <span class="mi">Direct</span>
+            </div>
+            <div class="end to">
+              <div class="code">GRW</div>
+              <div class="place">Growth</div>
+            </div>
+          </div>
+
+          <div class="fielrow">
+            <div class="field"><div class="k">Flight</div><div class="v">PMM-2026</div></div>
+            <div class="field"><div class="k">Gate</div><div class="v">B2B</div></div>
+            <div class="field"><div class="k">Seat</div><div class="v gold">1A</div></div>
+            <div class="field"><div class="k">Group</div><div class="v">SNR</div></div>
+          </div>
+
+          <p class="note">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b>, not just the decks that describe them. A product marketer who actually engineers the growth.
+            <span class="role">Senior Product Marketing Manager &middot; LambdaTest</span>
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="#work">View the work <span class="ar" aria-hidden="true">&#8599;</span></a>
+            <a class="btn ghost" href="#contact">Get in touch</a>
+          </div>
+
+          <div class="mrz" aria-hidden="true">
+            <div class="l">P&lt;INDBISWAS&lt;&lt;SWAPNIL&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+            <div class="l">PMM2026GROWTH7IND9B2BSAAS4&lt;&lt;657K18M&lt;&lt;&lt;&lt;04</div>
+          </div>
+        </div>
+
+        <aside class="perf">
+          <div class="stub">
+            <div>
+              <div class="kv">SWAP AIR &middot; Stub</div>
+              <div class="stub-num" style="margin-top:12px">
+                <div class="big">657K+</div>
+                <div class="sm">Leads generated</div>
+              </div>
+              <div class="stub-num" style="margin-top:16px">
+                <div class="big">18.2M+</div>
+                <div class="sm">Organic traffic</div>
+              </div>
+            </div>
+            <div class="barcode">
+              <div class="bars" aria-hidden="true"></div>
+              <div class="no">SB&middot;2018&middot;2026</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <!-- ===================== PASSPORT STAMPS: SELECTED WORK ===================== -->
+  <section class="doc" id="work" aria-labelledby="work-h">
+    <div class="card">
+      <div class="spread">
+        <div class="sectionhead">
+          <h2 id="work-h">Entry stamps</h2>
+          <span class="tag">Selected work &middot; 2019 to 2026</span>
+        </div>
+        <p class="lede">Every role is an admission stamp in the book. Six engagements across SaaS, hardware, healthcare and EdTech, each one earned on delivery.</p>
+        <div class="stamps">
+          {stamps.map(s => (
+            <article class={'stamp ' + s.shape + (s.feat ? ' feat' : '')} style={`--rot:${s.rot}`}>
+              {s.feat && <span class="fb">Featured</span>}
+              <div class="adm">Admitted</div>
+              <div class="nm">{s.name}</div>
+              <div class="cc">{s.city} &middot; {s.code} &middot; {s.y}</div>
+              <div class="dv" aria-hidden="true"></div>
+              <div class="amt">{s.amt}</div>
+              <div class="rl">{s.role}</div>
+            </article>
+          ))}
+        </div>
+        <p class="stampcap">Owned product and digital marketing end to end at LambdaTest and built the full organic growth engine. Led the rebrand to TestMu AI in 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ROUTE MAP ===================== -->
+  <section class="doc mapdoc" aria-labelledby="route-h">
+    <div class="card">
+      <div class="card-inner">
+        <div class="sectionhead">
+          <h2 id="route-h">Route flown</h2>
+          <span class="tag">The great-circle career line</span>
+        </div>
+        <div class="mapfield" id="mapfield">
+          <svg viewBox="0 0 1000 460" role="img" aria-label="A map of the career route connecting six career stops from Appknox to TestMu AI.">
+            <g class="graticule" aria-hidden="true">
+              <line x1="0" y1="115" x2="1000" y2="115"/>
+              <line x1="0" y1="230" x2="1000" y2="230"/>
+              <line x1="0" y1="345" x2="1000" y2="345"/>
+              <line x1="200" y1="0" x2="200" y2="460"/>
+              <line x1="400" y1="0" x2="400" y2="460"/>
+              <line x1="600" y1="0" x2="600" y2="460"/>
+              <line x1="800" y1="0" x2="800" y2="460"/>
+            </g>
+            <path class="route-line" pathLength="1" d={routePath} />
+            {stops.map(st => (
+              <g class="stop" tabindex="0" role="button"
+                 aria-label={`${st.city}: ${st.role}`}
+                 data-code={st.code} data-city={st.city} data-role={st.role}>
+                <circle class="stopring" cx={st.x} cy={st.y} r="9" />
+                <circle class="stopdot" cx={st.x} cy={st.y} r="5.5" />
+                <text class="stoplbl" x={st.x} y={st.y - 16} text-anchor="middle">{st.code}</text>
+              </g>
+            ))}
+          </svg>
+        </div>
+        <div class="readout" id="readout" aria-live="polite">
+          <span class="rc" id="readout-code">LTG</span>
+          <span class="rt" id="readout-text"><b>LambdaTest.</b> 657K leads, growth engine. Hover or focus a stop to trace the route.</span>
+        </div>
+        <ul class="route-legend">
+          {stops.map(st => (<li><b>{st.code}</b> {st.city}</li>))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CUSTOMS DECLARATION: METRICS ===================== -->
+  <section class="doc customs" aria-labelledby="dec-h">
+    <div class="card">
+      <div class="card-inner">
+        <div class="sectionhead">
+          <h2 id="dec-h">Customs declaration</h2>
+          <span class="tag">Goods carried &middot; nothing to hide</span>
+        </div>
+        <div class="declist">
+          {declare.map(d => (
+            <div class="decrow">
+              <span class="dk">{d.k}</span>
+              <span class="dv">{d.v}</span>
+              <span class="dstamp">{d.d}</span>
+            </div>
+          ))}
+        </div>
+        <p class="foot">Hard numbers from LambdaTest, 2021 to 2025. 7+ years in marketing, 4+ deep in B2B SaaS.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VISAS GRANTED: DISCIPLINES ===================== -->
+  <section class="doc visas" aria-labelledby="visa-h">
+    <div class="card">
+      <div class="card-inner">
+        <div class="sectionhead">
+          <h2 id="visa-h">Visas granted</h2>
+          <span class="tag">Four disciplines &middot; one operator</span>
+        </div>
+        {disciplines.map(v => (
+          <div class="visa">
+            <div class="seal" aria-hidden="true">{v.i}</div>
+            <div>
+              <div class="vt">{v.t}</div>
+              <div class="vd">{v.d}</div>
+              <div class="grant">Granted &middot; multiple entry</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STAMPED TALLIES: SHIPPED ===================== -->
+  <section class="doc tallies" aria-labelledby="ship-h">
+    <div class="card">
+      <div class="card-inner">
+        <div class="sectionhead">
+          <h2 id="ship-h">Stamped tallies</h2>
+          <span class="tag">Shipped, not slide-ware</span>
+        </div>
+        <div class="tallygrid">
+          {shipped.map(s => (
+            <div class="tally">
+              <span class="ok" aria-hidden="true">&#10003; CLEARED</span>
+              <div class="tn">{s.n}</div>
+              <div class="tl">{s.l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EMBOSSED SEALS: RECOGNITION ===================== -->
+  <section class="doc seals-doc" aria-labelledby="seal-h">
+    <div class="card">
+      <div class="card-inner">
+        <div class="sectionhead">
+          <h2 id="seal-h">Embossed seals</h2>
+          <span class="tag">Recognition on file</span>
+        </div>
+        <div class="seals">
+          {seals.map(a => (
+            <div class="esseal">
+              <div class="emblem" aria-hidden="true"><span>{a.mono}</span></div>
+              <div>
+                <div class="st">{a.t}</div>
+                <div class="sm">{a.m}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="brandstrip">
+          <div class="kv">Ports of call</div>
+          <div class="chips">{brands.map(b => <span>{b}</span>)}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PASSPORT PHOTO PAGE: ABOUT ===================== -->
+  <section class="doc idpage" aria-labelledby="id-h">
+    <div class="card">
+      <div class="card-inner">
+        <div class="sectionhead">
+          <h2 id="id-h">Holder details</h2>
+          <span class="tag">Passport data page</span>
+        </div>
+        <div class="idgrid">
+          <div class="photo" aria-hidden="true">
+            <span class="mono">SB</span>
+            <span class="cap">SWAP AIR / GRW</span>
+          </div>
+          <div class="idfields">
+            <div class="type">Swapnil Biswas</div>
+            <p class="sub">A PMM and growth strategist who codes AI agents, ships websites and runs technical SEO. I treat my own career like a product: positioned, measured and shipped.</p>
+            <div class="idrows">
+              <div class="idrow"><span class="k">Nationality</span><span class="v">Product marketing &amp; growth</span></div>
+              <div class="idrow"><span class="k">Based</span><span class="v">Mumbai, India</span></div>
+              <div class="idrow"><span class="k">Since</span><span class="v">7+ yrs marketing &middot; 4+ in B2B SaaS</span></div>
+              <div class="idrow"><span class="k">Education</span><span class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</span></div>
+              <div class="idrow"><span class="k">Practice</span><span class="v">Builds the agents, sites and SEO systems, not just the decks that describe them</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEPARTURE CARD: CONTACT ===================== -->
+  <section class="doc departure" id="contact" aria-labelledby="dep-h">
+    <div class="card">
+      <div class="dep-top">
+        <div class="kv on-navy">Departure card &middot; declaration</div>
+        <h2 id="dep-h">Cleared for takeoff</h2>
+        <p>If you are building a growth engine and want the person who actually ships it, this is the boarding call. Let's build something that compounds.</p>
+      </div>
+      <div class="dep-body">
+        <div class="depfields">
+          <div class="depfield">
+            <div class="k">Email</div>
+            <a href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a>
+          </div>
+          <div class="depfield">
+            <div class="k">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/swapbiswas/">linkedin.com/in/swapbiswas</a>
+          </div>
+        </div>
+        <div class="dep-mrz" aria-hidden="true">
+          <div class="l">DEP&lt;&lt;SWAPNIL&lt;BISWAS&lt;&lt;GROWTH&lt;CLASS&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</div>
+          <div class="l">CONTACT&lt;MUMBAI&lt;IND&lt;&lt;OPEN&lt;TO&lt;BOARD&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="deskfoot">
+    <span>Passport &middot; Concept 44</span>
+    <span>Swapnil Biswas &copy; 2026</span>
+    <span><a href="/personal-website-examples/">View all concepts</a></span>
+  </footer>
+
+<script>
+  // Vanilla, GPU-only. Content is fully in the markup; JS only enhances.
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+
+  // ---- Route-map readout (works regardless of motion pref; keyboard + hover) ----
+  const readoutCode = document.getElementById('readout-code');
+  const readoutText = document.getElementById('readout-text');
+  function setReadout(el){
+    if(!el || !readoutCode || !readoutText) return;
+    readoutCode.textContent = el.getAttribute('data-code') || '';
+    const city = el.getAttribute('data-city') || '';
+    const role = el.getAttribute('data-role') || '';
+    readoutText.innerHTML = '<b>' + city + '.</b> ' + role + '.';
+  }
+  document.querySelectorAll('.stop').forEach(function(st){
+    st.addEventListener('mouseenter', function(){ setReadout(st); });
+    st.addEventListener('focus', function(){ setReadout(st); });
+  });
+
+  if (!RM) {
+    // Motion allowed: hide stamps + un-draw route line, then reveal on scroll into view.
+    root.classList.add('js-motion');
+
+    // Stamps thunk in, staggered per grid.
+    const stamps = Array.from(document.querySelectorAll<HTMLElement>('.stamps .stamp'));
+    if ('IntersectionObserver' in window && stamps.length) {
+      const so = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting) {
+            const el = e.target;
+            const delay = (Number(el.dataset.i) || 0) * 90;
+            setTimeout(function(){ el.classList.add('in'); }, delay);
+            so.unobserve(el);
+          }
+        });
+      }, { threshold: 0.35, rootMargin: '0px 0px -8% 0px' });
+      stamps.forEach(function(el, i){ el.dataset.i = String(i % 3); so.observe(el); });
+      // Safety: reveal all within 3.5s no matter what.
+      setTimeout(function(){ stamps.forEach(function(el){ el.classList.add('in'); }); }, 3500);
+    } else {
+      stamps.forEach(function(el){ el.classList.add('in'); });
+    }
+
+    // Route line draws itself when the map scrolls in.
+    const map = document.getElementById('mapfield');
+    if (map && 'IntersectionObserver' in window) {
+      const mo = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting) { map.classList.add('drawn'); mo.unobserve(map); }
+        });
+      }, { threshold: 0.3 });
+      mo.observe(map);
+      setTimeout(function(){ map.classList.add('drawn'); }, 3500);
+    } else if (map) {
+      map.classList.add('drawn');
+    }
+  }
+</script>
+</body>
+</html>
