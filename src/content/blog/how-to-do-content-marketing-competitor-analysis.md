@@ -201,7 +201,7 @@ You do not need expensive tools to get started. Here is what is available at eac
 
 ## Building Your Action Plan From the Analysis
 
-A content competitor analysis is only valuable if it changes what you publish. The investment pays off - **[58% of B2B marketers reported that content marketing directly increased their sales and revenue](https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-benchmarks-budgets-and-trends-outlook-for-2024-research)** in 2023, according to the Content Marketing Institute. Here is how to turn findings into a content plan.
+A content competitor analysis is only valuable if it changes what you publish. Once the gaps are clear, feed them into a repeatable [content marketing framework](/blog/content-marketing-framework/) so every new brief is mapped to a buyer-journey stage and a metric, not just a keyword. The investment pays off - **[58% of B2B marketers reported that content marketing directly increased their sales and revenue](https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-benchmarks-budgets-and-trends-outlook-for-2024-research)** in 2023, according to the Content Marketing Institute. Here is how to turn findings into a content plan.
 
 **Immediate wins (execute this month):**
 

@@ -68,7 +68,7 @@ This stage is where lifecycle marketing diverges most from traditional marketing
 
 ### Stage 4: Retention
 
-The customer is paying and using the product. The job becomes habit reinforcement and expansion. Tactics include feature announcements, usage milestones, executive business reviews, in-app prompts to adopt new modules, and renewal reminders.
+The customer is paying and using the product. The job becomes habit reinforcement and expansion. Tactics include feature announcements, usage milestones, executive business reviews, in-app prompts to adopt new modules, and renewal reminders. Much of this runs through [customer enablement](/blog/customer-enablement/), the one-to-many capability layer of docs, courses, and in-app guidance that teaches customers to get more value so they expand and renew.
 
 Net revenue retention is the metric that matters here. A 110% NRR business doubles every seven years even with zero new logos. A 90% NRR business shrinks no matter how much it spends on acquisition.
 
@@ -95,7 +95,7 @@ Demand gen and lifecycle marketing share a database and often a marketing automa
 |---|---|---|
 | Goal | Create and capture pipeline | Activate, retain, expand customers |
 | Stage focus | Awareness, acquisition | Activation, retention, advocacy |
-| Primary metric | Pipeline, CAC, MQL→SQL | Activation rate, GRR, NRR, NPS |
+| Primary metric | Pipeline, CAC, MQL to SQL | Activation rate, GRR, NRR, NPS |
 | Time horizon | Quarterly | Multi-year |
 | Owner | Marketing/demand team | Lifecycle, customer marketing, product marketing |
 
@@ -124,7 +124,7 @@ Pick one north-star metric per stage. Roll the five into one composite view of c
 | Stage | North-star metric | Supporting metrics |
 |---|---|---|
 | Awareness | Branded search volume, share of voice | Organic traffic, podcast downloads, share of search |
-| Acquisition | CAC payback period | Conversion rate, MQL→SQL, opportunity rate |
+| Acquisition | CAC payback period | Conversion rate, MQL to SQL, opportunity rate |
 | Activation | Time-to-value, % activated in 30 days | Onboarding completion, day-1 / day-7 / day-30 active |
 | Retention | Net revenue retention | Gross retention, logo churn, expansion revenue |
 | Advocacy | Referral rate, NPS | Customer-sourced pipeline, case studies published |

@@ -101,7 +101,7 @@ The customer experiences the outcome they bought. Time-to-value lands here. The 
 - **Expansion trigger** - if usage exceeds the original spec, set up the conversation early
 - **Reference qualification** - the customers seeing the most value become case studies, advocates, and referrers
 
-This stage is where customer onboarding hands off to retention, the next phase of [lifecycle marketing](/blog/what-is-lifecycle-marketing/).
+This stage is where customer onboarding hands off to retention, the next phase of [lifecycle marketing](/blog/what-is-lifecycle-marketing/). Once first value lands, the ongoing job shifts to [customer enablement](/blog/customer-enablement/), the one-to-many system that keeps deepening what customers can do on their own.
 
 ## The Activation Metrics That Predict Retention
 

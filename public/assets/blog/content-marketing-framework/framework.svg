@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardshadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="780" rx="24" fill="url(#bg)"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-size="40" font-weight="700">Content Marketing Framework by Buyer-Journey Stage</text>
+  <text x="700" y="105" text-anchor="middle" fill="#9ca3af" font-size="24">Map each stage to a buying question, a content type, and a metric</text>
+
+  <!-- Card 1: Awareness -->
+  <rect x="55" y="150" width="290" height="350" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardshadow)"/>
+  <text x="80" y="200" fill="#60a5fa" font-size="21" font-weight="700" letter-spacing="1.5">01  AWARENESS</text>
+  <text x="80" y="248" fill="#f0f6fc" font-size="24" font-weight="600">Do I have a</text>
+  <text x="80" y="278" fill="#f0f6fc" font-size="24" font-weight="600">problem worth</text>
+  <text x="80" y="308" fill="#f0f6fc" font-size="24" font-weight="600">solving?</text>
+  <text x="80" y="360" fill="#60a5fa" font-size="19" font-weight="700" letter-spacing="1">CONTENT</text>
+  <text x="80" y="388" fill="#c8cfd8" font-size="21">Educational posts,</text>
+  <text x="80" y="414" fill="#c8cfd8" font-size="21">POV, SEO guides</text>
+  <text x="80" y="460" fill="#60a5fa" font-size="19" font-weight="700" letter-spacing="1">METRIC</text>
+  <text x="80" y="488" fill="#c8cfd8" font-size="21">Organic reach</text>
+
+  <!-- Card 2: Consideration -->
+  <rect x="395" y="150" width="290" height="350" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardshadow)"/>
+  <text x="420" y="200" fill="#c084fc" font-size="21" font-weight="700" letter-spacing="1.5">02  CONSIDERATION</text>
+  <text x="420" y="248" fill="#f0f6fc" font-size="24" font-weight="600">What are my</text>
+  <text x="420" y="278" fill="#f0f6fc" font-size="24" font-weight="600">options, and</text>
+  <text x="420" y="308" fill="#f0f6fc" font-size="24" font-weight="600">which fits?</text>
+  <text x="420" y="360" fill="#c084fc" font-size="19" font-weight="700" letter-spacing="1">CONTENT</text>
+  <text x="420" y="388" fill="#c8cfd8" font-size="21">Comparison guides,</text>
+  <text x="420" y="414" fill="#c8cfd8" font-size="21">frameworks, webinars</text>
+  <text x="420" y="460" fill="#c084fc" font-size="19" font-weight="700" letter-spacing="1">METRIC</text>
+  <text x="420" y="488" fill="#c8cfd8" font-size="21">Email opt-ins</text>
+
+  <!-- Card 3: Decision -->
+  <rect x="735" y="150" width="290" height="350" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardshadow)"/>
+  <text x="760" y="200" fill="#fb923c" font-size="21" font-weight="700" letter-spacing="1.5">03  DECISION</text>
+  <text x="760" y="248" fill="#f0f6fc" font-size="24" font-weight="600">Why you, and</text>
+  <text x="760" y="278" fill="#f0f6fc" font-size="24" font-weight="600">why now?</text>
+  <text x="760" y="360" fill="#fb923c" font-size="19" font-weight="700" letter-spacing="1">CONTENT</text>
+  <text x="760" y="388" fill="#c8cfd8" font-size="21">Case studies, ROI</text>
+  <text x="760" y="414" fill="#c8cfd8" font-size="21">proof, docs</text>
+  <text x="760" y="460" fill="#fb923c" font-size="19" font-weight="700" letter-spacing="1">METRIC</text>
+  <text x="760" y="488" fill="#c8cfd8" font-size="21">Pipeline influenced</text>
+
+  <!-- Card 4: Retention & Advocacy -->
+  <rect x="1075" y="150" width="290" height="350" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardshadow)"/>
+  <text x="1100" y="200" fill="#f5a0a1" font-size="21" font-weight="700" letter-spacing="1.5">04  RETENTION</text>
+  <text x="1100" y="248" fill="#f0f6fc" font-size="24" font-weight="600">Am I getting</text>
+  <text x="1100" y="278" fill="#f0f6fc" font-size="24" font-weight="600">real value?</text>
+  <text x="1100" y="360" fill="#f5a0a1" font-size="19" font-weight="700" letter-spacing="1">CONTENT</text>
+  <text x="1100" y="388" fill="#c8cfd8" font-size="21">Onboarding docs,</text>
+  <text x="1100" y="414" fill="#c8cfd8" font-size="21">playbooks, community</text>
+  <text x="1100" y="460" fill="#f5a0a1" font-size="19" font-weight="700" letter-spacing="1">METRIC</text>
+  <text x="1100" y="488" fill="#c8cfd8" font-size="21">Activation, referrals</text>
+
+  <!-- Sequential arrows -->
+  <line x1="351" y1="325" x2="379" y2="325" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="379,318 393,325 379,332" fill="#5eead4"/>
+  <line x1="691" y1="325" x2="719" y2="325" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="719,318 733,325 719,332" fill="#5eead4"/>
+  <line x1="1031" y1="325" x2="1059" y2="325" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1059,318 1073,325 1059,332" fill="#5eead4"/>
+
+  <!-- Distribution + Measurement loop band -->
+  <rect x="55" y="560" width="1310" height="120" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardshadow)"/>
+  <text x="700" y="608" text-anchor="middle" fill="#5eead4" font-size="24" font-weight="700">Distribution and Measurement Loop</text>
+  <text x="700" y="648" text-anchor="middle" fill="#c8cfd8" font-size="21">Publish, distribute across owned and earned channels, measure by stage, feed the results into the next brief</text>
+</svg>

@@ -683,3 +683,156 @@ What's the one question you always ask?
 🔗 https://swapbiswas.com/blog/win-loss-analysis-questions/?utm_source=linkedin&utm_medium=social&utm_campaign=win-loss-analysis-questions
 
 #ProductMarketing #WinLoss #CompetitiveIntelligence #B2BSaaS #PMM
+
+### 21 Product Marketing Interview Questions, With Strong Answers
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark #0d1117-to-#161b22 gradient, five connected cards in a horizontal flow labeled Positioning, GTM & Launch, Metrics, Cross-functional, Take-home, joined by glowing teal arrows left to right, accent dots in salmon/purple/blue/orange/violet, clean type, no faces. 1200x628.
+
+Most people prep for PMM interviews by memorizing frameworks. Then they recite them cleanly and still don't get the offer. 🎯
+
+After sitting on both sides of the table, the pattern is clear: interviewers aren't grading whether you know the four Ps. They're grading whether you've done the job. Every question is one of five rounds:
+• Positioning & messaging - can you make a product make sense to a buyer
+• GTM & launch - can you ship it on a real timeline
+• Metrics & impact - can you prove you moved a number
+• Cross-functional - can you lead teams you don't manage
+• Take-home / case - can you actually do the job
+
+For each round there's an operator answer and a "read-the-operator's-blog" answer. I broke down all 21.
+
+Which round trips you up most?
+
+🔗 https://swapbiswas.com/blog/product-marketing-interview-questions/?utm_source=linkedin&utm_medium=social&utm_campaign=product-marketing-interview-questions
+
+#ProductMarketing #PMM #MarketingCareers #InterviewTips #GoToMarket
+
+### Sales Enablement Strategy: Build From the Deal Backward
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark #0d1117 background, four connected cards labeled Content, Training, Tools, Process flowing left to right with teal connector arrows, feeding into a single track reading "Every asset -> a deal stage -> a metric", purple-to-orange accent, clean editorial tech look. 1200x628.
+
+Sales enablement fails the same way everywhere: a folder of decks nobody opens. 🚀
+
+It's a content dump, not a strategy. The tell? No one can name which asset moved which deal. The Highspot State of Sales Enablement 2025 report found 55% of organizations can't effectively drive their go-to-market initiatives - usually because the content exists, but nothing connects it to the deal.
+
+The build order I use as a PMM:
+• Audit what reps actually lack (interview 5 reps, listen to calls)
+• Map each gap to the deal stage where it costs you deals
+• Build the four elements in priority order: content, training, tools, process
+• Tie every asset to a deal stage AND a metric it should move
+• Measure by comparison, then cut what doesn't move deals
+
+The one rule: before you build an asset, name the deal stage it serves and the metric it should move. Can't name both? You're adding to the dump.
+
+🔗 https://swapbiswas.com/blog/sales-enablement-strategy/?utm_source=linkedin&utm_medium=social&utm_campaign=sales-enablement-strategy
+
+#ProductMarketing #SalesEnablement #GTM #B2BSaaS #RevenueOps
+
+### How to Become a Product Marketing Manager
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark #0d1117-to-#161b22 gradient, a horizontal path of six connected step cards with teal connector arrows labeled Route in, Skills, Certification?, Portfolio, Story, Offer, purple-to-orange accent, minimal flat vector, high-contrast light text, no faces. 1200x628.
+
+Most "how to become a product marketing manager" advice is wrong. It says: get a degree, then a certification, then apply for an entry-level PMM seat. 🎯
+
+Almost no PMM I've worked with took that path. The route that works is lateral:
+• You convert from an adjacent role - product, sales, content, demand gen, agency, or new grad. Nobody starts as a PMM.
+• What gets you hired is judgment - positioning, customer synthesis, clear writing - not tool proficiency or a stack of certs.
+• A certification is optional. A portfolio is not. Four artifacts (positioning teardown, battlecard, launch plan, customer interview) beat resume keywords.
+• Your non-PMM background is the differentiator, not the liability.
+
+The field has room: 41% of companies now lead with product, up from 31% the year before (Product Marketing Alliance, 2025).
+
+Stop treating PMM as a credential to earn. Start treating it as work to demonstrate.
+
+🔗 https://swapbiswas.com/blog/how-to-become-a-product-marketing-manager/?utm_source=linkedin&utm_medium=social&utm_campaign=how-to-become-a-product-marketing-manager
+
+#ProductMarketing #PMM #MarketingCareers #CareerAdvice #GoToMarket
+
+### What Is Customer Enablement (and What It Is Not)
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark #0d1117 background, four labeled cards left to right - Sales Enablement, Onboarding, Customer Enablement (highlighted teal), Customer Success - connected by teal arrows, purple and teal accents, minimal flat vector. 1200x628.
+
+Everyone says "customer enablement" and means four different things. 💡
+
+Here's the boundary I hold to as a PMM:
+• Sales enablement - pre-sale, equips reps to win deals (one-to-many, to reps)
+• Onboarding - gets a customer to first value in the first 7-90 days, then ends
+• Customer enablement - the ongoing one-to-many system (docs, courses, in-product guidance, community) that teaches customers to get more value on their own
+• Customer success - owns the relationship and the renewal, one CSM per account
+
+Enablement is the only one that scales value delivery without scaling headcount in lockstep.
+
+And "customer success enablement" is a fifth, different thing - it enables your CSMs, not your customers.
+
+Which of these owns expansion at your company?
+
+🔗 https://swapbiswas.com/blog/customer-enablement/?utm_source=linkedin&utm_medium=social&utm_campaign=customer-enablement
+
+#ProductMarketing #CustomerSuccess #CustomerEnablement #SaaS #GTM
+
+### 7 B2B SaaS Pricing Models (and How to Choose)
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark gradient #0d1117 to #161b22, seven rounded cards in a 2-column grid labeled Flat-rate, Tiered, Per-seat, Usage-based, Freemium, Per-active-user, Hybrid, each with a short "value metric" line and a thin colored left accent bar, one highlighted teal card reading "How to choose", modern type. 1200x628.
+
+Most "SaaS pricing models" posts hand you a list of seven and stop. 🚀
+
+The list is the easy part. The decision that moves revenue is which model fits your product - and that comes down to one question almost no guide asks: what grows as the customer gets more value?
+
+Answer that (your value metric) and the model picks itself:
+• Value grows with people collaborating -> per-seat (Slack, Zoom)
+• Value grows with volume processed -> usage-based (AWS, Twilio, OpenAI)
+• Value grows with a specific object -> per-object (HubSpot per contact)
+• Value is roughly constant -> flat-rate (Basecamp Pro Unlimited, $299/mo, unlimited users)
+• Bottom-up adoption, unclear value -> freemium first, then layer a metric on
+
+Get the metric wrong and you hit one of two traps: per-seat that caps expansion, or usage pricing procurement can't forecast.
+
+🔗 https://swapbiswas.com/blog/saas-pricing-models/?utm_source=linkedin&utm_medium=social&utm_campaign=saas-pricing-models
+
+#ProductMarketing #SaaS #Pricing #GoToMarket #PMM
+
+### A Content Marketing Framework Built Around the Buyer
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark UI dashboard (bg #0d1117 to #161b22), four horizontal cards left to right labeled Awareness, Consideration, Decision, Retention, each with a short question and a metric chip, connected by thin teal arrows, a full-width band beneath labeled "Distribution and Measurement Loop", subtle purple-to-orange accent. 1200x628.
+
+Most content teams pick topics before they decide who the content is for. Then nobody can say which post influenced a single deal. 📈
+
+A content marketing framework fixes that - but only if it's built around the buyer. The version I use from a product marketing seat maps every piece to a buyer-journey stage and the exact question the buyer is asking there:
+• Awareness: "Do I have a problem?" -> educational posts, SEO. Metric: organic reach
+• Consideration: "What are my options?" -> comparison guides, frameworks. Metric: email opt-ins
+• Decision: "Why you, why now?" -> case studies, ROI proof, docs. Metric: pipeline influenced
+• Retention: "Am I getting value?" -> onboarding, playbooks, community. Metric: activation, referrals
+
+In CMI's B2B research, 97% of marketers say they have a content strategy, yet 23% still name aligning content with the buyer's journey as a challenge. The gap is never the plan - it's the missing operating layer.
+
+If a piece can't name its stage, its buying question, and its metric, it doesn't get a brief.
+
+🔗 https://swapbiswas.com/blog/content-marketing-framework/?utm_source=linkedin&utm_medium=social&utm_campaign=content-marketing-framework
+
+#ContentMarketing #B2BMarketing #ProductMarketing #GTM #DemandGeneration
+
+### The Brand Messaging Framework Is Five Layers, Not Three Pillars
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark near-black background (#0d1117), six connected cards in two rows forming a layered stack labeled Audience Insight, Value Proposition, Messaging Pillars, Proof Points, Messaging Matrix, Messaging Hierarchy, joined by glowing teal arrows, subtle purple-to-orange accent, clean sans-serif. 1200x628.
+
+Most "brand messaging framework" guides hand you three pillars and call it done. 💡
+
+Pillars are one layer. The framework is the whole system that decides what your company says, in what order, to which buyer. The five layers:
+• Audience insight - who you serve and what they struggle with
+• Value proposition - the one reason you're the better choice
+• Messaging pillars - the 3-4 themes that carry it
+• Proof points - evidence under each pillar
+• Activation - the messaging matrix + hierarchy most guides skip
+
+The matrix maps message x audience so one pillar sounds right to a CFO and an end user. The hierarchy ranks what to lead with when you get one sentence. 85% of customers now expect consistent interactions across a company (Salesforce State of the Connected Customer) - that's exactly what these two layers protect.
+
+The post includes a copy-ready matrix template.
+
+🔗 https://swapbiswas.com/blog/brand-messaging-framework/?utm_source=linkedin&utm_medium=social&utm_campaign=brand-messaging-framework
+
+#ProductMarketing #Messaging #GoToMarket #PMM #BrandStrategy

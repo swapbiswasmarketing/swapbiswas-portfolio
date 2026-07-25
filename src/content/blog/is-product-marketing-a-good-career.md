@@ -168,7 +168,7 @@ The traits that correlate with PMMs who stall:
 
 ## How to Become a Product Marketing Manager
 
-There is no certification that gets you the job. There is a portfolio that does.
+There is no certification that gets you the job. There is a portfolio that does. For the full step-by-step version - the routes in, the skills that get you hired, and whether a certification is worth it - see [how to become a product marketing manager](/blog/how-to-become-a-product-marketing-manager/).
 
 ### From Adjacent Marketing Roles
 

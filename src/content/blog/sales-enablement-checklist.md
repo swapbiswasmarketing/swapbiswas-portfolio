@@ -186,4 +186,4 @@ A sales enablement checklist is not about producing content. It is about making 
 
 Start with the six categories above. Assign owners. Set review dates. Measure usage. And be willing to retire content that stops earning its place, because the fastest way to lose sales trust is to pile stale assets on top of good ones.
 
-For context on how enablement fits into broader PMM strategy, see [SaaS product marketing strategy](/blog/saas-product-marketing-strategy/) and [product marketing OKRs](/blog/product-marketing-okrs/) to align what you build against the outcomes you are accountable for.
+For context on how enablement fits into broader PMM strategy, see the [sales enablement strategy](/blog/sales-enablement-strategy/) framework that ties every item here to a deal stage and a metric, plus [SaaS product marketing strategy](/blog/saas-product-marketing-strategy/) and [product marketing OKRs](/blog/product-marketing-okrs/) to align what you build against the outcomes you are accountable for.

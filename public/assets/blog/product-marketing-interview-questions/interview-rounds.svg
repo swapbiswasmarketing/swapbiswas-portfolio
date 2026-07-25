@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 470" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="470" rx="24" fill="url(#bg)"/>
+
+  <text x="700" y="62" text-anchor="middle" font-size="40" font-weight="700" fill="#f0f6fc">The 5 Rounds of a Product Marketing Interview</text>
+  <text x="700" y="100" text-anchor="middle" font-size="24" fill="#9ca3af">What each round tests, and the answer that wins it</text>
+
+  <!-- Card 1: Positioning -->
+  <g>
+    <rect x="50" y="150" width="220" height="260" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+    <rect x="74" y="172" width="48" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="74" y="210" font-size="22" font-weight="700" letter-spacing="0.08em" fill="#f5a0a1">01</text>
+    <text x="74" y="248" font-size="26" font-weight="600" fill="#f0f6fc">Positioning</text>
+    <text x="74" y="280" font-size="26" font-weight="600" fill="#f0f6fc">&amp; Messaging</text>
+    <line x1="74" y1="300" x2="246" y2="300" stroke="#30363d" stroke-width="1.5"/>
+    <text x="74" y="336" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#5eead4">TESTS</text>
+    <text x="74" y="368" font-size="22" fill="#c8cfd8">Make a product</text>
+    <text x="74" y="396" font-size="22" fill="#c8cfd8">make sense</text>
+  </g>
+
+  <!-- Card 2: GTM & Launch -->
+  <g>
+    <rect x="320" y="150" width="220" height="260" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+    <rect x="344" y="172" width="48" height="6" rx="3" fill="#c084fc"/>
+    <text x="344" y="210" font-size="22" font-weight="700" letter-spacing="0.08em" fill="#c084fc">02</text>
+    <text x="344" y="248" font-size="26" font-weight="600" fill="#f0f6fc">GTM &amp;</text>
+    <text x="344" y="280" font-size="26" font-weight="600" fill="#f0f6fc">Launch</text>
+    <line x1="344" y1="300" x2="516" y2="300" stroke="#30363d" stroke-width="1.5"/>
+    <text x="344" y="336" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#5eead4">TESTS</text>
+    <text x="344" y="368" font-size="22" fill="#c8cfd8">Ship it to</text>
+    <text x="344" y="396" font-size="22" fill="#c8cfd8">market</text>
+  </g>
+
+  <!-- Card 3: Metrics & Impact -->
+  <g>
+    <rect x="590" y="150" width="220" height="260" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+    <rect x="614" y="172" width="48" height="6" rx="3" fill="#60a5fa"/>
+    <text x="614" y="210" font-size="22" font-weight="700" letter-spacing="0.08em" fill="#60a5fa">03</text>
+    <text x="614" y="248" font-size="26" font-weight="600" fill="#f0f6fc">Metrics &amp;</text>
+    <text x="614" y="280" font-size="26" font-weight="600" fill="#f0f6fc">Impact</text>
+    <line x1="614" y1="300" x2="786" y2="300" stroke="#30363d" stroke-width="1.5"/>
+    <text x="614" y="336" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#5eead4">TESTS</text>
+    <text x="614" y="368" font-size="22" fill="#c8cfd8">Prove it</text>
+    <text x="614" y="396" font-size="22" fill="#c8cfd8">moved a number</text>
+  </g>
+
+  <!-- Card 4: Cross-functional -->
+  <g>
+    <rect x="860" y="150" width="220" height="260" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+    <rect x="884" y="172" width="48" height="6" rx="3" fill="#fb923c"/>
+    <text x="884" y="210" font-size="22" font-weight="700" letter-spacing="0.08em" fill="#fb923c">04</text>
+    <text x="884" y="248" font-size="26" font-weight="600" fill="#f0f6fc">Cross-</text>
+    <text x="884" y="280" font-size="26" font-weight="600" fill="#f0f6fc">functional</text>
+    <line x1="884" y1="300" x2="1056" y2="300" stroke="#30363d" stroke-width="1.5"/>
+    <text x="884" y="336" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#5eead4">TESTS</text>
+    <text x="884" y="368" font-size="22" fill="#c8cfd8">Lead without</text>
+    <text x="884" y="396" font-size="22" fill="#c8cfd8">authority</text>
+  </g>
+
+  <!-- Card 5: Take-home & Case -->
+  <g>
+    <rect x="1130" y="150" width="220" height="260" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+    <rect x="1154" y="172" width="48" height="6" rx="3" fill="#b388f2"/>
+    <text x="1154" y="210" font-size="22" font-weight="700" letter-spacing="0.08em" fill="#b388f2">05</text>
+    <text x="1154" y="248" font-size="26" font-weight="600" fill="#f0f6fc">Take-home</text>
+    <text x="1154" y="280" font-size="26" font-weight="600" fill="#f0f6fc">&amp; Case</text>
+    <line x1="1154" y1="300" x2="1326" y2="300" stroke="#30363d" stroke-width="1.5"/>
+    <text x="1154" y="336" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#5eead4">TESTS</text>
+    <text x="1154" y="368" font-size="22" fill="#c8cfd8">Do the actual</text>
+    <text x="1154" y="396" font-size="22" fill="#c8cfd8">job</text>
+  </g>
+
+  <!-- Arrows between cards -->
+  <line x1="276" y1="280" x2="306" y2="280" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="306,273 318,280 306,287" fill="#5eead4"/>
+
+  <line x1="546" y1="280" x2="576" y2="280" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="576,273 588,280 576,287" fill="#5eead4"/>
+
+  <line x1="816" y1="280" x2="846" y2="280" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="846,273 858,280 846,287" fill="#5eead4"/>
+
+  <line x1="1086" y1="280" x2="1116" y2="280" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1116,273 1128,280 1116,287" fill="#5eead4"/>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 640" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="640" rx="24" fill="url(#bg)"/>
+
+  <text x="60" y="66" fill="#f0f6fc" font-size="42" font-weight="700">Where Customer Enablement Fits</text>
+  <text x="60" y="108" fill="#9ca3af" font-size="25">Four post-sale disciplines, one customer journey</text>
+
+  <!-- Card 1: Sales Enablement -->
+  <rect x="60" y="160" width="300" height="360" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <text x="84" y="212" fill="#f5a0a1" font-size="21" font-weight="700" letter-spacing="0.08em">PRE-SALE</text>
+  <text x="84" y="256" fill="#f0f6fc" font-size="26" font-weight="600">Sales Enablement</text>
+  <text x="84" y="304" fill="#c8cfd8" font-size="22">Equips reps to win</text>
+  <text x="84" y="336" fill="#c8cfd8" font-size="22">deals</text>
+  <text x="84" y="392" fill="#9ca3af" font-size="20">Model: one-to-many</text>
+  <text x="84" y="422" fill="#9ca3af" font-size="20">Audience: reps</text>
+  <text x="84" y="474" fill="#9ca3af" font-size="20">Owner: PMM + ops</text>
+
+  <!-- Card 2: Onboarding -->
+  <rect x="400" y="160" width="300" height="360" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <text x="424" y="212" fill="#60a5fa" font-size="21" font-weight="700" letter-spacing="0.08em">FIRST 7-90 DAYS</text>
+  <text x="424" y="256" fill="#f0f6fc" font-size="26" font-weight="600">Onboarding</text>
+  <text x="424" y="304" fill="#c8cfd8" font-size="22">Gets to first</text>
+  <text x="424" y="336" fill="#c8cfd8" font-size="22">value, then ends</text>
+  <text x="424" y="392" fill="#9ca3af" font-size="20">Model: time-boxed</text>
+  <text x="424" y="422" fill="#9ca3af" font-size="20">Audience: new users</text>
+  <text x="424" y="474" fill="#9ca3af" font-size="20">Owner: CS + product</text>
+
+  <!-- Card 3: Customer Enablement (highlight) -->
+  <rect x="740" y="160" width="300" height="360" rx="16" fill="#151b23" stroke="#5eead4" stroke-width="2" filter="url(#shadow)"/>
+  <text x="764" y="212" fill="#5eead4" font-size="21" font-weight="700" letter-spacing="0.08em">ONGOING</text>
+  <text x="764" y="256" fill="#f0f6fc" font-size="26" font-weight="600">Customer</text>
+  <text x="764" y="288" fill="#f0f6fc" font-size="26" font-weight="600">Enablement</text>
+  <text x="764" y="336" fill="#c8cfd8" font-size="22">Teaches deeper</text>
+  <text x="764" y="368" fill="#c8cfd8" font-size="22">value, at scale</text>
+  <text x="764" y="418" fill="#9ca3af" font-size="20">Model: one-to-many</text>
+  <text x="764" y="448" fill="#9ca3af" font-size="20">Audience: customers</text>
+  <text x="764" y="494" fill="#9ca3af" font-size="20">Owner: education + PMM</text>
+
+  <!-- Card 4: Customer Success -->
+  <rect x="1080" y="160" width="300" height="360" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <text x="1104" y="212" fill="#c084fc" font-size="21" font-weight="700" letter-spacing="0.08em">ONGOING</text>
+  <text x="1104" y="256" fill="#f0f6fc" font-size="26" font-weight="600">Customer Success</text>
+  <text x="1104" y="304" fill="#c8cfd8" font-size="22">Owns renewal</text>
+  <text x="1104" y="336" fill="#c8cfd8" font-size="22">and expansion</text>
+  <text x="1104" y="392" fill="#9ca3af" font-size="20">Model: one-to-one</text>
+  <text x="1104" y="422" fill="#9ca3af" font-size="20">Audience: accounts</text>
+  <text x="1104" y="474" fill="#9ca3af" font-size="20">Owner: CSM team</text>
+
+  <!-- Arrows between cards (teal line + polygon head) -->
+  <line x1="364" y1="340" x2="384" y2="340" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="384,333 398,340 384,347" fill="#5eead4"/>
+
+  <line x1="704" y1="340" x2="724" y2="340" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="724,333 738,340 724,347" fill="#5eead4"/>
+
+  <line x1="1044" y1="340" x2="1064" y2="340" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1064,333 1078,340 1064,347" fill="#5eead4"/>
+
+  <text x="60" y="590" fill="#9ca3af" font-size="21">Enablement is the one-to-many capability layer that scales value without scaling headcount.</text>
+</svg>

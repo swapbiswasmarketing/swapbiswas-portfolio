@@ -44,7 +44,7 @@ I have watched teams try to run with six or seven pillars because every internal
 
 Messaging pillars do not float on their own. They live inside a structure called the messaging house, and understanding that structure is what keeps your pillars honest.
 
-The messaging house has three layers. The roof is your positioning statement, the single sentence that defines who you are for and why you are different. The pillars are the columns holding that roof up. And beneath each pillar sits the foundation of proof points that make the pillar believable.
+The messaging house has three layers. The roof is your positioning statement, the single sentence that defines who you are for and why you are different. The pillars are the columns holding that roof up. And beneath each pillar sits the foundation of proof points that make the pillar believable. The house itself sits inside a broader [brand messaging framework](/blog/brand-messaging-framework/) that adds a messaging matrix and hierarchy on top of these pillars.
 
 ![Messaging house showing a positioning statement roof resting on three messaging pillars, each with supporting proof points](/assets/blog/messaging-pillars/messaging-house.webp "The Messaging House: Pillars and Proof")
 

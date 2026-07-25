@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="760" rx="24" fill="url(#bg)"/>
+
+  <text x="60" y="62" fill="#f0f6fc" font-size="42" font-weight="700">How to Become a Product Marketing Manager</text>
+  <text x="60" y="104" fill="#9ca3af" font-size="25">Six steps from an adjacent role to the offer</text>
+
+  <!-- Row 1 -->
+  <!-- Card 1 -->
+  <rect x="60" y="140" width="400" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="88" y="184" fill="#f5a0a1" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 1</text>
+  <text x="88" y="224" fill="#f0f6fc" font-size="27" font-weight="600">Pick your route in</text>
+  <text x="88" y="270" fill="#c8cfd8" font-size="22">From product, sales, or</text>
+  <text x="88" y="300" fill="#c8cfd8" font-size="22">content and demand gen</text>
+
+  <!-- Card 2 -->
+  <rect x="500" y="140" width="400" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="528" y="184" fill="#fb923c" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 2</text>
+  <text x="528" y="224" fill="#f0f6fc" font-size="27" font-weight="600">Build hiring skills</text>
+  <text x="528" y="270" fill="#c8cfd8" font-size="22">Positioning, synthesis, and</text>
+  <text x="528" y="300" fill="#c8cfd8" font-size="22">clear writing beat tooling</text>
+
+  <!-- Card 3 -->
+  <rect x="940" y="140" width="400" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="968" y="184" fill="#c084fc" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 3</text>
+  <text x="968" y="224" fill="#f0f6fc" font-size="27" font-weight="600">Certification optional</text>
+  <text x="968" y="270" fill="#c8cfd8" font-size="22">Learn faster; don't buy it</text>
+  <text x="968" y="300" fill="#c8cfd8" font-size="22">as a resume signal</text>
+
+  <!-- Row 2 -->
+  <!-- Card 4 -->
+  <rect x="60" y="440" width="400" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="88" y="484" fill="#60a5fa" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 4</text>
+  <text x="88" y="524" fill="#f0f6fc" font-size="27" font-weight="600">Build a portfolio</text>
+  <text x="88" y="570" fill="#c8cfd8" font-size="22">A teardown, battlecard,</text>
+  <text x="88" y="600" fill="#c8cfd8" font-size="22">launch plan, interview</text>
+
+  <!-- Card 5 -->
+  <rect x="500" y="440" width="400" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="528" y="484" fill="#5eead4" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 5</text>
+  <text x="528" y="524" fill="#f0f6fc" font-size="27" font-weight="600">Craft your story</text>
+  <text x="528" y="570" fill="#c8cfd8" font-size="22">Make your background the</text>
+  <text x="528" y="600" fill="#c8cfd8" font-size="22">advantage, not the risk</text>
+
+  <!-- Card 6 -->
+  <rect x="940" y="440" width="400" height="220" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="968" y="484" fill="#d98ee0" font-size="21" font-weight="700" letter-spacing="0.08em">STEP 6</text>
+  <text x="968" y="524" fill="#f0f6fc" font-size="27" font-weight="600">Apply and negotiate</text>
+  <text x="968" y="570" fill="#c8cfd8" font-size="22">Target scoped roles, bring</text>
+  <text x="968" y="600" fill="#c8cfd8" font-size="22">proof, land the offer</text>
+
+  <!-- Arrows row 1: 1->2 -->
+  <line x1="466" y1="250" x2="488" y2="250" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="488,243 500,250 488,257" fill="#5eead4"/>
+  <!-- 2->3 -->
+  <line x1="906" y1="250" x2="928" y2="250" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="928,243 940,250 928,257" fill="#5eead4"/>
+
+  <!-- Row transition 3->4 -->
+  <line x1="1140" y1="360" x2="1140" y2="400" stroke="#5eead4" stroke-width="3"/>
+  <line x1="1140" y1="400" x2="260" y2="400" stroke="#5eead4" stroke-width="3"/>
+  <line x1="260" y1="400" x2="260" y2="428" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="253,428 260,440 267,428" fill="#5eead4"/>
+
+  <!-- Arrows row 2: 4->5 -->
+  <line x1="466" y1="550" x2="488" y2="550" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="488,543 500,550 488,557" fill="#5eead4"/>
+  <!-- 5->6 -->
+  <line x1="906" y1="550" x2="928" y2="550" stroke="#5eead4" stroke-width="3"/>
+  <polygon points="928,543 940,550 928,557" fill="#5eead4"/>
+
+  <text x="60" y="712" fill="#9ca3af" font-size="22">Every PMM converts from an adjacent role - proof beats a credential.</text>
+</svg>

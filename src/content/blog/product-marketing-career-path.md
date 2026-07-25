@@ -35,7 +35,7 @@ The titles vary a little by company, but nearly every product marketing career p
 
 ### 1. Associate Product Marketing Manager
 
-The entry point. You own one or two workstreams inside a launch - the sales one-pager, the launch email, a competitive teardown - under close supervision. The job at this level is craft: learn to do the core deliverables well and fast. Depth on a few things beats shallow ownership of many.
+The entry point. You own one or two workstreams inside a launch - the sales one-pager, the launch email, a competitive teardown - under close supervision. The job at this level is craft: learn to do the core deliverables well and fast. Depth on a few things beats shallow ownership of many. Getting to this first rung is its own project: see [how to become a product marketing manager](/blog/how-to-become-a-product-marketing-manager/) for the routes in, and the [product marketing interview questions](/blog/product-marketing-interview-questions/) each round tests.
 
 ### 2. Product Marketing Manager
 

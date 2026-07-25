@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 740" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="740" rx="24" fill="url(#bg)"/>
+
+  <text x="700" y="66" text-anchor="middle" fill="#f0f6fc" font-size="40" font-weight="700">The 4 Elements of a Sales Enablement Strategy</text>
+  <text x="700" y="106" text-anchor="middle" fill="#9ca3af" font-size="24">Each element maps to a deal stage and a metric - or it is decoration</text>
+
+  <!-- Card 1: Content -->
+  <rect x="40" y="150" width="300" height="290" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <rect x="66" y="180" width="56" height="6" rx="3" fill="#f5a0a1"/>
+  <text x="66" y="230" fill="#f5a0a1" font-size="22" font-weight="700" letter-spacing="0.08em">CONTENT</text>
+  <text x="66" y="290" fill="#c8cfd8" font-size="22">Decks, battlecards,</text>
+  <text x="66" y="324" fill="#c8cfd8" font-size="22">one-pagers, demos</text>
+  <text x="66" y="384" fill="#9ca3af" font-size="20">What reps show buyers</text>
+
+  <!-- Card 2: Training -->
+  <rect x="380" y="150" width="300" height="290" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <rect x="406" y="180" width="56" height="6" rx="3" fill="#c084fc"/>
+  <text x="406" y="230" fill="#c084fc" font-size="22" font-weight="700" letter-spacing="0.08em">TRAINING</text>
+  <text x="406" y="290" fill="#c8cfd8" font-size="22">Onboarding plus</text>
+  <text x="406" y="324" fill="#c8cfd8" font-size="22">ongoing coaching</text>
+  <text x="406" y="384" fill="#9ca3af" font-size="20">How reps use content</text>
+
+  <!-- Card 3: Tools -->
+  <rect x="720" y="150" width="300" height="290" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <rect x="746" y="180" width="56" height="6" rx="3" fill="#60a5fa"/>
+  <text x="746" y="230" fill="#60a5fa" font-size="22" font-weight="700" letter-spacing="0.08em">TOOLS</text>
+  <text x="746" y="290" fill="#c8cfd8" font-size="22">Findable in 15s,</text>
+  <text x="746" y="324" fill="#c8cfd8" font-size="22">usage tracked</text>
+  <text x="746" y="384" fill="#9ca3af" font-size="20">Where content lives</text>
+
+  <!-- Card 4: Process -->
+  <rect x="1060" y="150" width="300" height="290" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <rect x="1086" y="180" width="56" height="6" rx="3" fill="#fb923c"/>
+  <text x="1086" y="230" fill="#fb923c" font-size="22" font-weight="700" letter-spacing="0.08em">PROCESS</text>
+  <text x="1086" y="290" fill="#c8cfd8" font-size="22">Owners plus review</text>
+  <text x="1086" y="324" fill="#c8cfd8" font-size="22">cadence</text>
+  <text x="1086" y="384" fill="#9ca3af" font-size="20">Keeps it trustworthy</text>
+
+  <!-- Arrows between cards -->
+  <line x1="347" y1="295" x2="367" y2="295" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="367,288 379,295 367,302" fill="#5eead4"/>
+  <line x1="687" y1="295" x2="707" y2="295" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="707,288 719,295 707,302" fill="#5eead4"/>
+  <line x1="1027" y1="295" x2="1047" y2="295" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1047,288 1059,295 1047,302" fill="#5eead4"/>
+
+  <!-- Throughline band -->
+  <rect x="40" y="500" width="1320" height="200" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <text x="700" y="552" text-anchor="middle" fill="#f0f6fc" font-size="26" font-weight="600">The throughline: no metric, no asset</text>
+
+  <rect x="110" y="600" width="300" height="74" rx="14" fill="#0d1117" stroke="#30363d"/>
+  <text x="260" y="645" text-anchor="middle" fill="#f0f6fc" font-size="24" font-weight="600">Every asset</text>
+
+  <rect x="550" y="600" width="300" height="74" rx="14" fill="#0d1117" stroke="#30363d"/>
+  <text x="700" y="645" text-anchor="middle" fill="#f0f6fc" font-size="24" font-weight="600">A deal stage</text>
+
+  <rect x="990" y="600" width="300" height="74" rx="14" fill="#0d1117" stroke="#30363d"/>
+  <text x="1140" y="645" text-anchor="middle" fill="#f0f6fc" font-size="24" font-weight="600">A metric it moves</text>
+
+  <line x1="418" y1="637" x2="536" y2="637" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="536,630 548,637 536,644" fill="#5eead4"/>
+  <line x1="858" y1="637" x2="976" y2="637" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="976,630 988,637 976,644" fill="#5eead4"/>
+</svg>

@@ -71,7 +71,7 @@ Positioning is the single highest-leverage decision in the whole framework. Get 
 
 I define positioning as the choice of who you are for, what you are an alternative to, and why you are the better choice for that person. It is a strategic decision, not a tagline. I write it down as a short internal document that the rest of the team builds on.
 
-If you have never formalized this, start with my walkthrough on [product positioning](/blog/product-positioning/), and pair it with the broader view in [what market positioning means](/blog/what-is-market-positioning/) so you separate product-level and category-level decisions cleanly.
+If you have never formalized this, start with my walkthrough on [product positioning](/blog/product-positioning/), and pair it with the broader view in [what market positioning means](/blog/what-is-market-positioning/) so you separate product-level and category-level decisions cleanly. Once positioning is set, the [brand messaging framework](/blog/brand-messaging-framework/) is how you turn it into the pillars, matrix, and hierarchy the rest of the team writes from.
 
 ### 3. Segmentation: Decide Who You Are Not For
 
@@ -89,7 +89,7 @@ I run launches in tiers. A tier-one launch gets the full motion - sales enableme
 - **Tier 2:** meaningful feature, targeted enablement plus a focused campaign
 - **Tier 3:** minor update, lightweight notes and internal heads-up
 
-For the operational detail of running these, I lean on a reusable [go-to-market strategy template](/blog/go-to-market-strategy-template/) so I am not rebuilding the plan from memory each time.
+For the operational detail of running these, I lean on a reusable [go-to-market strategy template](/blog/go-to-market-strategy-template/) so I am not rebuilding the plan from memory each time. And for the content that fills those campaigns, I map every piece to a buyer-journey stage with a repeatable [content marketing framework](/blog/content-marketing-framework/).
 
 ### 5. Enablement: Arm the People Who Carry the Message
 

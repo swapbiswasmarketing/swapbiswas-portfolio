@@ -88,7 +88,7 @@ The model should match how you deliver value:
 - **Tiered / packaged** - if different customer segments derive different feature value
 - **Hybrid** - usage + platform fee, base + add-ons, seat + usage
 
-Get the model right first. Pricing the wrong model perfectly is worse than pricing the right model imperfectly. The model decision is the strategy decision.
+Get the model right first. Pricing the wrong model perfectly is worse than pricing the right model imperfectly. The model decision is the strategy decision. For a full catalog of the structural billing models with a named example for each, see the [seven B2B SaaS pricing models](/blog/saas-pricing-models/) and the value-metric test that chooses between them.
 
 ### Step 3: Design Packaging
 

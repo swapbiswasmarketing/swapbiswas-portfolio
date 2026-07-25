@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 890" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="890" fill="url(#bg)" rx="24"/>
+
+  <text x="40" y="64" fill="#f0f6fc" font-size="42" font-weight="700">The 7 B2B SaaS Pricing Models</text>
+  <text x="40" y="104" fill="#9ca3af" font-size="24">Each maps to a value metric - the unit that grows as the customer gets more value</text>
+
+  <!-- Row 1 -->
+  <!-- Card 1: Flat-rate -->
+  <rect x="40" y="140" width="640" height="158" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+  <rect x="62" y="174" width="6" height="90" rx="3" fill="#f5a0a1"/>
+  <text x="86" y="196" fill="#f0f6fc" font-size="27" font-weight="600">Flat-rate pricing</text>
+  <text x="86" y="236" fill="#f5a0a1" font-size="21" font-weight="600">Value metric: none, one fixed price</text>
+  <text x="86" y="270" fill="#c8cfd8" font-size="21">Example: Basecamp Pro Unlimited</text>
+
+  <!-- Card 2: Tiered -->
+  <rect x="720" y="140" width="640" height="158" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+  <rect x="742" y="174" width="6" height="90" rx="3" fill="#c084fc"/>
+  <text x="766" y="196" fill="#f0f6fc" font-size="27" font-weight="600">Tiered pricing</text>
+  <text x="766" y="236" fill="#c084fc" font-size="21" font-weight="600">Value metric: the plan a buyer picks</text>
+  <text x="766" y="270" fill="#c8cfd8" font-size="21">Example: HubSpot, Zendesk</text>
+
+  <!-- Row 2 -->
+  <!-- Card 3: Per-seat -->
+  <rect x="40" y="320" width="640" height="158" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+  <rect x="62" y="354" width="6" height="90" rx="3" fill="#60a5fa"/>
+  <text x="86" y="376" fill="#f0f6fc" font-size="27" font-weight="600">Per-seat (per-user) pricing</text>
+  <text x="86" y="416" fill="#60a5fa" font-size="21" font-weight="600">Value metric: number of users</text>
+  <text x="86" y="450" fill="#c8cfd8" font-size="21">Example: Zoom, Salesforce</text>
+
+  <!-- Card 4: Usage-based -->
+  <rect x="720" y="320" width="640" height="158" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+  <rect x="742" y="354" width="6" height="90" rx="3" fill="#5eead4"/>
+  <text x="766" y="376" fill="#f0f6fc" font-size="27" font-weight="600">Usage-based pricing</text>
+  <text x="766" y="416" fill="#5eead4" font-size="21" font-weight="600">Value metric: units consumed</text>
+  <text x="766" y="450" fill="#c8cfd8" font-size="21">Example: AWS, Twilio, OpenAI API</text>
+
+  <!-- Row 3 -->
+  <!-- Card 5: Freemium -->
+  <rect x="40" y="500" width="640" height="158" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+  <rect x="62" y="534" width="6" height="90" rx="3" fill="#fb923c"/>
+  <text x="86" y="556" fill="#f0f6fc" font-size="27" font-weight="600">Freemium</text>
+  <text x="86" y="596" fill="#fb923c" font-size="21" font-weight="600">Value metric: free-to-paid conversion</text>
+  <text x="86" y="630" fill="#c8cfd8" font-size="21">Example: Notion, Zoom</text>
+
+  <!-- Card 6: Per-active-user -->
+  <rect x="720" y="500" width="640" height="158" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+  <rect x="742" y="534" width="6" height="90" rx="3" fill="#b388f2"/>
+  <text x="766" y="556" fill="#f0f6fc" font-size="27" font-weight="600">Per-active-user pricing</text>
+  <text x="766" y="596" fill="#b388f2" font-size="21" font-weight="600">Value metric: active users only</text>
+  <text x="766" y="630" fill="#c8cfd8" font-size="21">Example: Slack (Fair Billing)</text>
+
+  <!-- Row 4 -->
+  <!-- Card 7: Hybrid -->
+  <rect x="40" y="680" width="640" height="158" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow)"/>
+  <rect x="62" y="714" width="6" height="90" rx="3" fill="#d98ee0"/>
+  <text x="86" y="736" fill="#f0f6fc" font-size="27" font-weight="600">Hybrid pricing</text>
+  <text x="86" y="776" fill="#d98ee0" font-size="21" font-weight="600">Value metric: base fee + usage</text>
+  <text x="86" y="810" fill="#c8cfd8" font-size="21">Example: HubSpot (tiers + contacts)</text>
+
+  <!-- Card 8: Chooser rule -->
+  <rect x="720" y="680" width="640" height="158" rx="16" fill="#151b23" stroke="#5eead4" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="742" y="714" width="6" height="90" rx="3" fill="#5eead4"/>
+  <text x="766" y="736" fill="#5eead4" font-size="27" font-weight="600">How to choose</text>
+  <text x="766" y="776" fill="#c8cfd8" font-size="21">Find the value metric - the unit</text>
+  <text x="766" y="810" fill="#c8cfd8" font-size="21">that grows with customer value.</text>
+</svg>

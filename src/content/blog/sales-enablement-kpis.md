@@ -99,7 +99,7 @@ So I report influence, not causation. The honest framing is comparative: reps wh
 
 ### Tie KPIs Back to the Enablement Plan
 
-KPIs are downstream of a plan. If you have not yet mapped what content and training you owe the sales team, the metrics have nothing to measure. Build the program first, then instrument it. My [sales enablement checklist](/blog/sales-enablement-checklist/) covers the deliverables across onboarding, launch, and competitive that these KPIs are meant to evaluate.
+KPIs are downstream of a plan. If you have not yet mapped what content and training you owe the sales team, the metrics have nothing to measure. Start with the [sales enablement strategy](/blog/sales-enablement-strategy/) build order, then instrument it. My [sales enablement checklist](/blog/sales-enablement-checklist/) covers the deliverables across onboarding, launch, and competitive that these KPIs are meant to evaluate.
 
 And remember that enablement does not start at the close. The quality of the pipeline reps are working shapes every one of these numbers. If your [B2B demand generation](/blog/what-is-b2b-demand-generation/) is filling the funnel with poorly-fit leads, even perfect enablement will show weak win rates. Measure enablement in the context of the pipeline it inherits.
 

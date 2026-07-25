@@ -146,7 +146,7 @@ Look at how your product gets shared. Does usage require inviting others (Slack 
 
 ### Step 2: Design the Free Experience
 
-Your free tier should be generous enough to create habitual usage but limited enough to drive upgrades at natural inflection points. Limit by capacity (Miro), by time (Zoom), or by features (Canva) - not by crippling the core experience.
+Your free tier should be generous enough to create habitual usage but limited enough to drive upgrades at natural inflection points. Limit by capacity (Miro), by time (Zoom), or by features (Canva) - not by crippling the core experience. Freemium is just one of several [SaaS pricing models](/blog/saas-pricing-models/), and it works best when a free user creates real pipeline rather than pure cost.
 
 ### Step 3: Instrument Your Activation Path
 
