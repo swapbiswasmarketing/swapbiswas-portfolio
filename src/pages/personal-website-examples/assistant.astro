@@ -1,0 +1,756 @@
+---
+// REDESIGN PROTOTYPE - "Assistant" - Concept 46.
+// The portfolio AS an AI copilot chat app. Deeply on-brand: Swapnil builds AI agents, so his site
+// answers you like one. The whole page is a chat conversation about him. Original concept (NOT a
+// reskin of "console", which is only a command palette): this is a full conversational CHAT APP -
+// slim conversation-list sidebar, a scrolling message thread of alternating user/assistant turns,
+// a bottom composer with a text input + model badge, and suggested-prompt chips.
+//  - ~6 alternating turns. Each USER bubble is a question; each ASSISTANT reply "streams in"
+//    (line-by-line) and renders rich content: hero lede, the 6 work items as an answer list, the
+//    3 metrics as inline stat chips, the 4 disciplines, recognition, about, and a final contact
+//    turn whose answer carries the real mailto + LinkedIn as suggested-action buttons.
+//  - Assistant replies cite sources inline [1][2] that are real links (AEO nod). A "thinking..."
+//    shimmer precedes each reply; a streaming caret; a decorative regenerate/stop icon.
+//  - Palette: dark chat app. bg #0e1013, bubbles #16181d / #1b1e26, ink #e9eaee, muted #8b8f99,
+//    accent violet #b79cff, accent mint #5eead4. Flat premium UI, no WebGL.
+//  - Fonts: Inter (chat), JetBrains Mono (model badge / token bits), Fraunces (assistant name).
+// Self-contained: own <html>, own Google Fonts <link>, own CSS tokens, noindex. No BaseLayout.
+// SAFETY-NET: every message lives in the MARKUP and is fully visible with JS off. JS only adds the
+// stream-in reveal + thinking shimmer AFTER confirming motion is allowed; it (a) reveals anything
+// already in view on load and (b) has a ~2.7s setTimeout that force-finalizes EVERY message.
+// prefers-reduced-motion shows all messages instantly - no caret blink, no shimmer. No text-shadow/
+// filter on any background-clip:text element.
+
+const work = [
+  { name: 'LambdaTest', role: 'Product & digital marketing', y: '2021-25', amt: '657K LEADS', feat: true,
+    d: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { name: 'TestMu AI', role: 'Rebrand lead', y: '2026', amt: 'FULL REBRAND',
+    d: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { name: 'Samsung', role: 'via Sociowash', y: '2019', amt: 'M-SERIES',
+    d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { name: 'Medilife Superspeciality', role: 'Marketing & web', y: '0 to 1', amt: 'WEBSITE + GTM',
+    d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { name: 'Lido Learning', role: 'Growth / CRM', y: '2021', amt: 'LEAD OPS',
+    d: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { name: 'Appknox', role: 'Freelance content', y: 'Freelance', amt: 'SECURITY',
+    d: 'Freelance content writer for the mobile app security company.' },
+];
+const metrics = [
+  { v: '657K+',  l: 'Leads' },
+  { v: '18.2M+', l: 'Organic traffic' },
+  { v: '10x',    l: 'Pipeline efficiency' },
+];
+const disciplines = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+const shipped = [
+  { n: '20+', l: 'AI agents & internal tools shipped' },
+  { n: '15+', l: 'Marketers mentored & levelled up' },
+  { n: '76',  l: 'Long-form articles published' },
+];
+const rewards = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const convos = [
+  { t: 'About Swapnil', s: 'Who is he, really?', on: true },
+  { t: 'The work', s: '6 selected engagements' },
+  { t: 'The numbers', s: '657K leads, 18.2M traffic' },
+  { t: 'His AI work', s: 'Agents, tools & systems' },
+  { t: 'Recognition', s: 'Awards & wall of fame' },
+  { t: 'Hire him', s: 'Email + LinkedIn' },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="assistant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - Ask the assistant</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0e1013;          /* app background */
+    --bg2:#0b0d0f;         /* deepest well */
+    --sidebar:#111318;     /* sidebar surface */
+    --surface:#16181d;     /* assistant bubble / panels */
+    --surface2:#1b1e26;    /* user bubble / raised */
+    --line:#23262e;        /* hairline borders */
+    --line2:#2c303a;       /* stronger border */
+    --ink:#e9eaee;         /* primary text - AA on bg */
+    --ink2:#c3c7d0;        /* body text */
+    --muted:#8b8f99;       /* muted labels - 5.0:1 on bg */
+    --faint:#7c808a;       /* faintest meta - AA (~4.85:1 on bg) */
+    --violet:#b79cff;      /* accent 1 */
+    --violet-d:#8f74e6;
+    --mint:#5eead4;        /* accent 2 */
+    --violet-soft:rgba(183,156,255,.12);
+    --mint-soft:rgba(94,234,212,.12);
+    --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,"SF Mono",monospace;
+    --serif:"Fraunces",Georgia,serif;
+    --r:16px;
+    --shell-h:calc(100dvh - 40px);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{background:var(--bg2)}
+  body{
+    background:
+      radial-gradient(120% 90% at 82% -8%, rgba(183,156,255,.08), transparent 55%),
+      radial-gradient(90% 70% at 0% 108%, rgba(94,234,212,.05), transparent 52%),
+      var(--bg2);
+    color:var(--ink);font-family:var(--sans);min-height:100dvh;-webkit-font-smoothing:antialiased;
+    line-height:1.55;font-size:15px;padding:20px;display:flex;flex-direction:column;gap:14px;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--violet);color:#14121c}
+  :focus-visible{outline:2px solid var(--violet);outline-offset:2px;border-radius:6px}
+
+  /* ============ app shell ============ */
+  .shell{
+    width:min(1180px,100%);margin:0 auto;flex:1;min-height:0;
+    display:grid;grid-template-columns:264px 1fr;
+    background:var(--bg);border:1px solid var(--line);border-radius:22px;overflow:hidden;
+    box-shadow:0 40px 90px -40px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.02) inset;
+    height:var(--shell-h);
+  }
+
+  /* ---- sidebar : conversation list ---- */
+  .side{display:flex;flex-direction:column;background:var(--sidebar);border-right:1px solid var(--line);min-height:0}
+  .side-top{padding:18px 16px 12px;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand .orb{width:30px;height:30px;border-radius:9px;flex:none;position:relative;
+    background:conic-gradient(from 210deg,var(--violet),var(--mint),var(--violet));
+    box-shadow:0 0 0 1px rgba(255,255,255,.08) inset}
+  .brand .orb::after{content:"";position:absolute;inset:6px;border-radius:5px;background:var(--sidebar)}
+  .brand .orb::before{content:"";position:absolute;inset:11px;border-radius:50%;
+    background:var(--violet);z-index:2}
+  .brand .bn{font-family:var(--serif);font-size:17px;font-weight:600;letter-spacing:.01em;color:var(--ink)}
+  .brand .bt{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:1px}
+  .newchat{margin-top:14px;width:100%;display:flex;align-items:center;gap:9px;justify-content:center;
+    padding:9px;border:1px solid var(--line2);border-radius:11px;background:var(--surface);
+    font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink2);letter-spacing:.01em;cursor:pointer;
+    transition:border-color .2s,background .2s,color .2s}
+  .newchat:hover{border-color:var(--violet-d);color:var(--ink);background:var(--surface2)}
+  .newchat svg{width:14px;height:14px}
+
+  .side-scroll{flex:1;overflow-y:auto;padding:12px 10px;min-height:0}
+  .side-label{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--faint);padding:6px 8px 8px}
+  .conv{display:block;width:100%;text-align:left;padding:9px 11px;border-radius:11px;border:1px solid transparent;
+    cursor:pointer;background:transparent;color:inherit;font-family:var(--sans);margin-bottom:2px;
+    transition:background .18s,border-color .18s}
+  .conv:hover{background:var(--surface)}
+  .conv.on{background:var(--surface);border-color:var(--line2)}
+  .conv .ct{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink)}
+  .conv .dot{width:6px;height:6px;border-radius:50%;background:var(--faint);flex:none}
+  .conv.on .dot{background:var(--mint);box-shadow:0 0 8px var(--mint)}
+  .conv .cs{font-size:11.5px;color:var(--muted);margin-top:2px;margin-left:14px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  .side-foot{padding:12px 14px;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px}
+  .avatar{width:32px;height:32px;border-radius:50%;flex:none;display:grid;place-items:center;
+    font-weight:700;font-size:12px;color:#14121c;
+    background:linear-gradient(135deg,var(--violet),var(--mint))}
+  .side-foot .who{font-size:12.5px;font-weight:600;color:var(--ink);line-height:1.2}
+  .side-foot .role{font-size:10.5px;color:var(--muted)}
+
+  /* ---- main chat column ---- */
+  .main{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--bg)}
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:14px 22px;border-bottom:1px solid var(--line);background:rgba(14,16,19,.7);backdrop-filter:blur(8px)}
+  .topbar .tt{display:flex;align-items:center;gap:11px;min-width:0}
+  .topbar h1{font-size:14.5px;font-weight:600;color:var(--ink);letter-spacing:.005em;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis}
+  .topbar .sub{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .status{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--mint);
+    border:1px solid var(--line2);border-radius:20px;padding:5px 10px;background:var(--mint-soft);flex:none}
+  .status .live{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px var(--mint)}
+
+  .thread{flex:1;overflow-y:auto;padding:26px clamp(16px,4vw,42px) 8px;min-height:0;
+    display:flex;flex-direction:column;gap:22px;scroll-behavior:smooth}
+  .thread-inner{width:100%;max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+
+  .day{align-self:center;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--faint);border:1px solid var(--line);border-radius:20px;padding:4px 12px;background:var(--bg2)}
+
+  /* turn wrappers */
+  .turn{display:flex;gap:12px;max-width:100%}
+  .turn.user{flex-direction:row-reverse}
+  .turn .pfp{width:30px;height:30px;border-radius:9px;flex:none;display:grid;place-items:center;
+    font-size:12px;font-weight:700;margin-top:2px}
+  .turn.user .pfp{background:var(--surface2);border:1px solid var(--line2);color:var(--ink2)}
+  .turn.bot .pfp{background:linear-gradient(150deg,rgba(183,156,255,.28),rgba(94,234,212,.2));
+    border:1px solid var(--line2);color:var(--violet);position:relative}
+  .turn.bot .pfp svg{width:15px;height:15px}
+
+  .bubble{border-radius:var(--r);padding:13px 16px;font-size:14.5px;line-height:1.62;min-width:0;position:relative}
+  .turn.user .bubble{background:var(--surface2);border:1px solid var(--line2);color:var(--ink);
+    border-top-right-radius:5px;max-width:80%}
+  .turn.bot .bubble{background:var(--surface);border:1px solid var(--line);color:var(--ink2);
+    border-top-left-radius:5px;flex:1}
+  .turn.user .bubble{margin-left:auto}
+
+  .bubble p{margin:0}
+  .bubble p + p{margin-top:10px}
+  .bubble strong{color:var(--ink);font-weight:700}
+  .kw{color:var(--violet);font-weight:600}
+  .kw.mint{color:var(--mint)}
+
+  /* meta line under bot bubbles */
+  .reply-head{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+  .reply-head .nm{font-family:var(--serif);font-size:13.5px;font-weight:600;color:var(--ink)}
+  .reply-head .badge{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--violet);border:1px solid var(--line2);border-radius:5px;padding:2px 6px}
+  .reply-tools{display:flex;align-items:center;gap:4px;margin-top:11px;padding-top:11px;border-top:1px solid var(--line)}
+  .rt{width:26px;height:26px;display:grid;place-items:center;border-radius:7px;color:var(--faint);
+    border:1px solid transparent;background:transparent;cursor:pointer;transition:color .18s,background .18s,border-color .18s}
+  .rt:hover{color:var(--ink2);background:var(--bg2);border-color:var(--line)}
+  .rt svg{width:14px;height:14px}
+  .rt-src{margin-left:auto;font-family:var(--mono);font-size:9.5px;color:var(--faint);letter-spacing:.04em}
+
+  /* citations */
+  .cite{font-family:var(--mono);font-size:10px;color:var(--violet);vertical-align:super;line-height:1;
+    padding:0 1px;border-radius:3px;transition:color .18s,background .18s}
+  .cite:hover{background:var(--violet-soft);color:#d9cbff}
+
+  /* ---- rich answer content ---- */
+  /* work list */
+  .ans-work{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+  .wk{display:grid;grid-template-columns:auto 1fr auto;gap:10px 12px;align-items:baseline;
+    background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+  .wk.feat{border-color:var(--violet-d);background:linear-gradient(180deg,var(--violet-soft),transparent 60%),var(--bg2)}
+  .wk .idx{font-family:var(--mono);font-size:11px;color:var(--faint)}
+  .wk .nm{font-weight:700;color:var(--ink);font-size:14px}
+  .wk .feat-tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;color:#14121c;
+    background:var(--violet);border-radius:4px;padding:2px 5px;margin-left:8px;text-transform:uppercase;vertical-align:middle}
+  .wk .amt{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.03em;color:var(--mint);
+    background:var(--mint-soft);border:1px solid rgba(94,234,212,.2);border-radius:6px;padding:3px 7px;white-space:nowrap}
+  .wk .meta{grid-column:2/3;font-size:11.5px;color:var(--muted);margin-top:-4px}
+  .wk .desc{grid-column:1/-1;font-size:12.5px;color:var(--ink2);line-height:1.55}
+
+  /* stat chips */
+  .ans-stats{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+  .stat{flex:1;min-width:120px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .stat .sv{font-family:var(--serif);font-size:clamp(24px,5vw,30px);font-weight:600;line-height:1;
+    background:linear-gradient(120deg,var(--violet),var(--mint));-webkit-background-clip:text;background-clip:text;
+    color:transparent;-webkit-text-fill-color:transparent;text-shadow:none}
+  .stat .sl{font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:.02em}
+
+  /* disciplines */
+  .ans-disc{display:flex;flex-direction:column;gap:2px;margin-top:12px}
+  .disc{display:flex;gap:11px;padding:10px 0;border-top:1px solid var(--line)}
+  .disc:first-child{border-top:0}
+  .disc .di{font-family:var(--mono);font-size:11px;color:var(--violet);flex:none;width:22px;padding-top:1px}
+  .disc .dt{font-weight:600;color:var(--ink);font-size:13.5px}
+  .disc .dd{font-size:12.5px;color:var(--ink2);line-height:1.55;margin-top:2px}
+
+  /* shipped inline row */
+  .ans-ship{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+  .ship{flex:1;min-width:130px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+  .ship .sn{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink);line-height:1}
+  .ship .sl{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.4}
+
+  /* recognition */
+  .ans-rec{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+  .rec{display:flex;align-items:center;gap:11px;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:10px 12px}
+  .rec .medal{width:30px;height:30px;flex:none;border-radius:9px;display:grid;place-items:center;
+    background:var(--violet-soft);border:1px solid var(--line2);color:var(--violet)}
+  .rec .medal svg{width:15px;height:15px}
+  .rec b{display:block;font-size:13px;font-weight:600;color:var(--ink);line-height:1.25}
+  .rec span{font-size:11px;color:var(--muted)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .chips span{font-size:11px;color:var(--ink2);border:1px solid var(--line2);border-radius:20px;padding:5px 11px;background:var(--bg2)}
+
+  /* about facts */
+  .ans-facts{display:flex;flex-direction:column;gap:0;margin-top:12px}
+  .fact{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-top:1px solid var(--line);font-size:12.5px}
+  .fact:first-child{border-top:0}
+  .fact .k{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);flex:none;padding-top:2px}
+  .fact .v{color:var(--ink2);text-align:right}
+
+  /* CTA / suggested action buttons in reply */
+  .actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+  .act{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.01em;
+    padding:10px 15px;border-radius:11px;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
+  .act svg{width:15px;height:15px}
+  .act.primary{background:linear-gradient(120deg,var(--violet),var(--violet-d));color:#14121c;border:1px solid transparent}
+  .act.primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(183,156,255,.6)}
+  .act.ghost{background:var(--bg2);border:1px solid var(--line2);color:var(--ink)}
+  .act.ghost:hover{border-color:var(--mint);color:var(--ink)}
+
+  /* thinking shimmer (shown only during stream, hidden by default markup + reduced motion) */
+  .thinking{display:none;align-items:center;gap:9px;font-size:12.5px;color:var(--muted);
+    font-family:var(--mono);letter-spacing:.02em;padding:2px 0}
+  .thinking .tdots{display:inline-flex;gap:4px}
+  .thinking .tdots i{width:6px;height:6px;border-radius:50%;background:var(--violet);opacity:.4;
+    animation:tpulse 1s infinite ease-in-out}
+  .thinking .tdots i:nth-child(2){animation-delay:.15s}
+  .thinking .tdots i:nth-child(3){animation-delay:.3s}
+  @keyframes tpulse{0%,80%,100%{opacity:.3;transform:scale(.8)}40%{opacity:1;transform:scale(1)}}
+  html.js-stream .turn.bot.streaming .thinking{display:inline-flex}
+  html.js-stream .turn.bot.streaming .bubble-body{display:none}
+
+  /* streaming caret */
+  .caret{display:none;width:8px;height:1.05em;background:var(--violet);vertical-align:text-bottom;
+    margin-left:2px;border-radius:1px;animation:blink 1s step-end infinite}
+  @keyframes blink{50%{opacity:0}}
+  html.js-stream .turn.bot.streaming-text .caret{display:inline-block}
+
+  /* stream reveal for message turns */
+  .turn{opacity:1;transform:none}
+  html.js-stream .turn{opacity:0;transform:translateY(10px);
+    transition:opacity .34s ease,transform .34s cubic-bezier(.2,.8,.2,1)}
+  html.js-stream .turn.shown{opacity:1;transform:none}
+
+  /* ---- composer ---- */
+  .composer{border-top:1px solid var(--line);padding:14px clamp(14px,3vw,26px) 16px;background:var(--bg);flex:none}
+  .composer-inner{max-width:760px;margin:0 auto}
+  .chips-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:11px}
+  .prompt-chip{font-size:12px;color:var(--ink2);background:var(--surface);border:1px solid var(--line2);
+    border-radius:20px;padding:7px 13px;cursor:pointer;font-family:var(--sans);
+    display:inline-flex;align-items:center;gap:7px;transition:border-color .18s,color .18s,background .18s}
+  .prompt-chip:hover{border-color:var(--violet-d);color:var(--ink);background:var(--surface2)}
+  .prompt-chip svg{width:12px;height:12px;color:var(--violet)}
+
+  .inputbar{display:flex;align-items:flex-end;gap:10px;background:var(--surface);border:1px solid var(--line2);
+    border-radius:16px;padding:8px 8px 8px 16px;transition:border-color .2s}
+  .inputbar:focus-within{border-color:var(--violet-d)}
+  .inputbar .txt{flex:1;background:transparent;border:0;color:var(--ink);font-family:var(--sans);font-size:14px;
+    resize:none;line-height:1.5;padding:8px 0;max-height:90px;min-height:24px}
+  .inputbar .txt::placeholder{color:var(--faint)}
+  .inputbar .txt:focus{outline:none}
+  .send{width:38px;height:38px;flex:none;border-radius:11px;border:0;cursor:pointer;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--violet),var(--mint));color:#14121c;
+    transition:transform .18s,filter .18s}
+  .send:hover{transform:translateY(-1px);filter:brightness(1.08)}
+  .send svg{width:17px;height:17px}
+  .model-badge{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:11px;
+    font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.02em;text-align:center}
+  .model-badge .mchip{display:inline-flex;align-items:center;gap:6px;color:var(--ink2);
+    border:1px solid var(--line);border-radius:20px;padding:4px 10px;background:var(--bg2)}
+  .model-badge .mchip b{color:var(--violet);font-weight:600}
+  .model-badge .spark{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 7px var(--mint)}
+  .model-badge .disc{color:var(--muted)}
+
+  /* ---- footer (outside the shell) ---- */
+  footer.shellfoot{width:min(1180px,100%);margin:0 auto;display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);
+    padding:2px 4px 6px}
+  footer.shellfoot a{color:var(--muted);border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+  footer.shellfoot a:hover{color:var(--violet);border-color:var(--violet-d)}
+
+  /* ============ responsive ============ */
+  @media(max-width:860px){
+    .shell{grid-template-columns:1fr}
+    .side{display:none}
+    body{padding:12px;gap:10px}
+    :root{--shell-h:calc(100dvh - 24px)}
+  }
+  @media(max-width:520px){
+    body{padding:8px}
+    .thread{padding:18px 12px 6px}
+    .turn.user .bubble{max-width:88%}
+    .wk{grid-template-columns:auto 1fr;gap:6px 10px}
+    .wk .amt{grid-column:1/-1;justify-self:start;margin-top:2px}
+    :root{--shell-h:calc(100dvh - 16px)}
+    .topbar{padding:12px 14px}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .thread{scroll-behavior:auto}
+    .turn{opacity:1!important;transform:none!important;transition:none!important}
+    .caret{display:none!important}
+    .thinking .tdots i{animation:none;opacity:.6}
+    .conv.on .dot,.status .live,.model-badge .spark{box-shadow:none}
+    html.js-stream .turn.bot.streaming .thinking{display:none}
+    html.js-stream .turn.bot.streaming .bubble-body{display:block}
+  }
+</style>
+</head>
+<body>
+  <div class="shell">
+    <!-- ===================== SIDEBAR : conversation list ===================== -->
+    <aside class="side" aria-label="Conversations">
+      <div class="side-top">
+        <div class="brand">
+          <span class="orb" aria-hidden="true"></span>
+          <div>
+            <div class="bn">Swapnil</div>
+            <div class="bt">Portfolio Copilot</div>
+          </div>
+        </div>
+        <button class="newchat" type="button" aria-label="New chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
+          New chat
+        </button>
+      </div>
+      <nav class="side-scroll" aria-label="Recent threads">
+        <div class="side-label">Recent</div>
+        {convos.map((c, idx) => (
+          <a class={'conv' + (c.on ? ' on' : '')} href={'#turn-' + idx} aria-current={c.on ? 'true' : undefined}>
+            <div class="ct"><span class="dot" aria-hidden="true"></span>{c.t}</div>
+            <div class="cs">{c.s}</div>
+          </a>
+        ))}
+      </nav>
+      <div class="side-foot">
+        <span class="avatar" aria-hidden="true">SB</span>
+        <div>
+          <div class="who">Swapnil Biswas</div>
+          <div class="role">Sr. PMM, LambdaTest</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===================== MAIN : chat column ===================== -->
+    <div class="main">
+      <div class="topbar">
+        <div class="tt">
+          <div>
+            <h1>Ask about Swapnil Biswas</h1>
+            <div class="sub">context: 7 yrs GTM &middot; 4 yrs B2B SaaS</div>
+          </div>
+        </div>
+        <span class="status"><span class="live" aria-hidden="true"></span>online</span>
+      </div>
+
+      <div class="thread" id="thread">
+        <div class="thread-inner">
+          <div class="day" aria-hidden="true">Today</div>
+
+          <!-- ===== TURN 0 : intro / hero lede ===== -->
+          <div class="turn user" id="turn-0">
+            <span class="pfp" aria-hidden="true">You</span>
+            <div class="bubble">Who is Swapnil Biswas, in one line?</div>
+          </div>
+          <div class="turn bot">
+            <span class="pfp" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="bubble">
+              <div class="reply-head"><span class="nm">Swapnil-1</span><span class="badge">answer</span></div>
+              <span class="thinking" aria-hidden="true">thinking<span class="tdots"><i></i><i></i><i></i></span></span>
+              <div class="bubble-body">
+                <p>He is a <strong>Senior Product Marketing Manager at LambdaTest</strong> - the product marketer who actually engineers the growth.<span class="caret" aria-hidden="true"></span></p>
+                <p>Swapnil builds the agents, sites and SEO systems behind <span class="kw">657K+ leads</span> and <span class="kw mint">18M+ in organic traffic</span>, not just the decks that describe them.<a class="cite" href="/work" aria-label="Source: work page">[1]</a> Seven years in marketing, four deep in B2B SaaS.<a class="cite" href="/about" aria-label="Source: about page">[2]</a></p>
+                <div class="reply-tools" aria-hidden="true">
+                  <button class="rt" type="button" tabindex="-1" title="Regenerate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 11a8 8 0 1 0-2 5.3M20 4v6h-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                  <button class="rt" type="button" tabindex="-1" title="Stop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="7" width="10" height="10" rx="2"/></svg></button>
+                  <button class="rt" type="button" tabindex="-1" title="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" stroke-linecap="round"/></svg></button>
+                  <span class="rt-src">sources: swapbiswas.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== TURN 1 : selected work ===== -->
+          <div class="turn user" id="turn-1">
+            <span class="pfp" aria-hidden="true">You</span>
+            <div class="bubble">What has he actually shipped?</div>
+          </div>
+          <div class="turn bot">
+            <span class="pfp" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="bubble">
+              <div class="reply-head"><span class="nm">Swapnil-1</span><span class="badge">6 results</span></div>
+              <span class="thinking" aria-hidden="true">retrieving work<span class="tdots"><i></i><i></i><i></i></span></span>
+              <div class="bubble-body">
+                <p>Six selected engagements, most recent first.<a class="cite" href="/work" aria-label="Source: work page">[1]</a><span class="caret" aria-hidden="true"></span></p>
+                <div class="ans-work">
+                  {work.map((w, i) => (
+                    <div class={'wk' + (w.feat ? ' feat' : '')}>
+                      <span class="idx">{'0' + (i + 1)}</span>
+                      <span class="nm">{w.name}{w.feat && <span class="feat-tag">featured</span>}</span>
+                      <span class="amt">{w.amt}</span>
+                      <span class="meta">{w.role} &middot; {w.y}</span>
+                      <span class="desc">{w.d}</span>
+                    </div>
+                  ))}
+                </div>
+                <div class="reply-tools" aria-hidden="true">
+                  <button class="rt" type="button" tabindex="-1" title="Regenerate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 11a8 8 0 1 0-2 5.3M20 4v6h-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                  <button class="rt" type="button" tabindex="-1" title="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" stroke-linecap="round"/></svg></button>
+                  <span class="rt-src">6 of 6 engagements</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== TURN 2 : the numbers ===== -->
+          <div class="turn user" id="turn-2">
+            <span class="pfp" aria-hidden="true">You</span>
+            <div class="bubble">Show me the numbers.</div>
+          </div>
+          <div class="turn bot">
+            <span class="pfp" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="bubble">
+              <div class="reply-head"><span class="nm">Swapnil-1</span><span class="badge">metrics</span></div>
+              <span class="thinking" aria-hidden="true">crunching<span class="tdots"><i></i><i></i><i></i></span></span>
+              <div class="bubble-body">
+                <p>The three hard numbers from LambdaTest, 2021 to 2025.<a class="cite" href="/#stats" aria-label="Source: stats">[1]</a><span class="caret" aria-hidden="true"></span></p>
+                <div class="ans-stats">
+                  {metrics.map(m => (
+                    <div class="stat"><div class="sv">{m.v}</div><div class="sl">{m.l}</div></div>
+                  ))}
+                </div>
+                <div class="reply-tools" aria-hidden="true">
+                  <button class="rt" type="button" tabindex="-1" title="Regenerate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 11a8 8 0 1 0-2 5.3M20 4v6h-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                  <button class="rt" type="button" tabindex="-1" title="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" stroke-linecap="round"/></svg></button>
+                  <span class="rt-src">verified figures</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== TURN 3 : his AI work / disciplines + shipped ===== -->
+          <div class="turn user" id="turn-3">
+            <span class="pfp" aria-hidden="true">You</span>
+            <div class="bubble">What does he do, and where does the AI come in?</div>
+          </div>
+          <div class="turn bot">
+            <span class="pfp" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="bubble">
+              <div class="reply-head"><span class="nm">Swapnil-1</span><span class="badge">4 disciplines</span></div>
+              <span class="thinking" aria-hidden="true">thinking<span class="tdots"><i></i><i></i><i></i></span></span>
+              <div class="bubble-body">
+                <p>He works across four disciplines, and the AI is not a side project - he ships the agents himself.<a class="cite" href="/tools" aria-label="Source: tools">[1]</a><span class="caret" aria-hidden="true"></span></p>
+                <div class="ans-disc">
+                  {disciplines.map(d => (
+                    <div class="disc">
+                      <span class="di">{d.i}</span>
+                      <div><div class="dt">{d.t}</div><div class="dd">{d.d}</div></div>
+                    </div>
+                  ))}
+                </div>
+                <p style="margin-top:14px">Building in public, the ledger looks like this:<a class="cite" href="/blog" aria-label="Source: blog">[2]</a></p>
+                <div class="ans-ship">
+                  {shipped.map(s => (
+                    <div class="ship"><div class="sn">{s.n}</div><div class="sl">{s.l}</div></div>
+                  ))}
+                </div>
+                <div class="reply-tools" aria-hidden="true">
+                  <button class="rt" type="button" tabindex="-1" title="Regenerate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 11a8 8 0 1 0-2 5.3M20 4v6h-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                  <button class="rt" type="button" tabindex="-1" title="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" stroke-linecap="round"/></svg></button>
+                  <span class="rt-src">sources: /tools, /blog</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== TURN 4 : recognition + about ===== -->
+          <div class="turn user" id="turn-4">
+            <span class="pfp" aria-hidden="true">You</span>
+            <div class="bubble">Any recognition? And where is he based?</div>
+          </div>
+          <div class="turn bot">
+            <span class="pfp" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="bubble">
+              <div class="reply-head"><span class="nm">Swapnil-1</span><span class="badge">recognition</span></div>
+              <span class="thinking" aria-hidden="true">thinking<span class="tdots"><i></i><i></i><i></i></span></span>
+              <div class="bubble-body">
+                <p>A few that stand out:<a class="cite" href="/about#awards" aria-label="Source: awards">[1]</a><span class="caret" aria-hidden="true"></span></p>
+                <div class="ans-rec">
+                  {rewards.map(r => (
+                    <div class="rec">
+                      <span class="medal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="9" r="5"/><path d="M9 13l-2 8 5-3 5 3-2-8" stroke-linejoin="round"/></svg></span>
+                      <div><b>{r.t}</b><span>{r.m}</span></div>
+                    </div>
+                  ))}
+                </div>
+                <p style="margin-top:14px">And the essentials:</p>
+                <div class="ans-facts">
+                  <div class="fact"><span class="k">Based</span><span class="v">Mumbai, India</span></div>
+                  <div class="fact"><span class="k">Tenure</span><span class="v">7+ yrs marketing &middot; 4+ in B2B SaaS</span></div>
+                  <div class="fact"><span class="k">Education</span><span class="v">Postgrad in Digital Marketing &amp; Growth Strategy, IIM Visakhapatnam</span></div>
+                  <div class="fact"><span class="k">Practice</span><span class="v">PMM &amp; growth strategist who codes AI agents, ships websites and runs technical SEO</span></div>
+                </div>
+                <p style="margin-top:14px">Teams he has worked with:</p>
+                <div class="chips">{brands.map(b => <span>{b}</span>)}</div>
+                <div class="reply-tools" aria-hidden="true">
+                  <button class="rt" type="button" tabindex="-1" title="Regenerate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 11a8 8 0 1 0-2 5.3M20 4v6h-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                  <button class="rt" type="button" tabindex="-1" title="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" stroke-linecap="round"/></svg></button>
+                  <span class="rt-src">source: /about</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===== TURN 5 : how do I reach him / contact ===== -->
+          <div class="turn user" id="turn-5">
+            <span class="pfp" aria-hidden="true">You</span>
+            <div class="bubble">How do I reach him?</div>
+          </div>
+          <div class="turn bot">
+            <span class="pfp" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" stroke-linejoin="round"/></svg>
+            </span>
+            <div class="bubble">
+              <div class="reply-head"><span class="nm">Swapnil-1</span><span class="badge">contact</span></div>
+              <span class="thinking" aria-hidden="true">opening channels<span class="tdots"><i></i><i></i><i></i></span></span>
+              <div class="bubble-body">
+                <p>Two direct channels - he reads both. If you are hiring or want to build something that compounds, start here.<a class="cite" href="/contact" aria-label="Source: contact page">[1]</a><span class="caret" aria-hidden="true"></span></p>
+                <div class="actions">
+                  <a class="act primary" href="mailto:swapbiswas.marketing@gmail.com">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Email Swapnil
+                  </a>
+                  <a class="act ghost" href="https://www.linkedin.com/in/swapbiswas/">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.4h3.1V21H3.4zM9 8.4h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.09v-5.36c0-1.28-.02-2.92-1.78-2.92-1.78 0-2.05 1.39-2.05 2.83V21H9z"/></svg>
+                    Connect on LinkedIn
+                  </a>
+                </div>
+                <p style="margin-top:14px;font-size:12.5px;color:var(--muted)">swapbiswas.marketing@gmail.com &middot; linkedin.com/in/swapbiswas</p>
+                <div class="reply-tools" aria-hidden="true">
+                  <button class="rt" type="button" tabindex="-1" title="Regenerate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 11a8 8 0 1 0-2 5.3M20 4v6h-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                  <button class="rt" type="button" tabindex="-1" title="Copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" stroke-linecap="round"/></svg></button>
+                  <span class="rt-src">reply generated &middot; end of thread</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===================== COMPOSER ===================== -->
+      <div class="composer">
+        <div class="composer-inner">
+          <div class="chips-row" aria-label="Suggested prompts">
+            <button class="prompt-chip" type="button" data-jump="#turn-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke-linecap="round"/></svg>
+              Show me the numbers
+            </button>
+            <button class="prompt-chip" type="button" data-jump="#turn-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round"/></svg>
+              What has he shipped?
+            </button>
+            <button class="prompt-chip" type="button" data-jump="#turn-5">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              How do I hire him?
+            </button>
+          </div>
+          <form class="inputbar" onsubmit="return false" aria-label="Message composer">
+            <textarea class="txt" rows="1" placeholder="Ask anything about Swapnil - his work, numbers, or how to hire him" aria-label="Ask a question"></textarea>
+            <button class="send" type="submit" aria-label="Send message">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+          <div class="model-badge">
+            <span class="mchip"><span class="spark" aria-hidden="true"></span><b>Swapnil-1</b></span>
+            <span class="disc">fine-tuned on 7 years of GTM &middot; answers may cite real pages</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="shellfoot">
+    <span>Assistant &middot; Concept 46</span>
+    <span>Swapnil Biswas &copy; 2026</span>
+    <span><a href="/personal-website-examples/">View all concepts</a></span>
+  </footer>
+
+<script>
+  // Vanilla stream sequencer - keeps it light + 60fps. Safety-net: every message lives in the
+  // markup and is visible by default. JS only hides-then-streams when motion is allowed, reveals
+  // anything already in view immediately, and a hard setTimeout force-finalizes every turn.
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+  const thread = document.getElementById('thread');
+  const turns = Array.from(document.querySelectorAll('.turn')) as HTMLElement[];
+
+  // suggested-prompt chips + conversation links: smooth-scroll a turn into view (works regardless of RM)
+  function jumpTo(sel: string | null){
+    if(!sel) return;
+    const el = document.querySelector(sel) as HTMLElement | null;
+    if(el && thread){ el.scrollIntoView({behavior: RM ? 'auto' : 'smooth', block: 'center'}); }
+  }
+  document.querySelectorAll('.prompt-chip').forEach(chip => {
+    chip.addEventListener('click', () => jumpTo(chip.getAttribute('data-jump')));
+  });
+  document.querySelectorAll('.conv').forEach(c => {
+    c.addEventListener('click', (e) => {
+      const href = (c as HTMLAnchorElement).getAttribute('href');
+      if(href && href.startsWith('#')){ e.preventDefault(); jumpTo(href);
+        document.querySelectorAll('.conv').forEach(x => x.classList.remove('on'));
+        c.classList.add('on');
+      }
+    });
+  });
+
+  // auto-grow the composer textarea (cosmetic)
+  const ta = document.querySelector('.inputbar .txt') as HTMLTextAreaElement | null;
+  if(ta){
+    ta.addEventListener('input', () => { ta.style.height = 'auto'; ta.style.height = Math.min(90, ta.scrollHeight) + 'px'; });
+  }
+
+  if (RM || !turns.length) {
+    // Reduced motion or nothing to do: leave everything fully visible (default CSS). No streaming.
+  } else {
+    root.classList.add('js-stream');           // CSS now primes .turn hidden
+    let finalized = false;
+
+    function finalizeAll(){
+      if(finalized) return; finalized = true;
+      clearTimeout(safety);
+      turns.forEach(t => {
+        t.classList.add('shown');
+        t.classList.remove('streaming', 'streaming-text');
+      });
+    }
+    // (b) HARD SAFETY NET: force-show every turn within 2.7s no matter what.
+    // Once finalized, every step below bails so the sequence can never re-hide a settled bubble.
+    const safety = window.setTimeout(finalizeAll, 2700);
+
+    // reveal a single bot bubble: thinking shimmer -> caret text -> settled
+    function playBot(turn: HTMLElement, done: () => void){
+      if(finalized) return;
+      turn.classList.add('shown', 'streaming');   // shows thinking, hides body
+      window.setTimeout(() => {
+        if(finalized) return;
+        turn.classList.remove('streaming');
+        turn.classList.add('streaming-text');       // body visible, caret blinking
+        window.setTimeout(() => { if(finalized) return; turn.classList.remove('streaming-text'); done(); }, 520);
+      }, 340);
+    }
+
+    let idx = 0;
+    function next(){
+      if(finalized) return;
+      if(idx >= turns.length){ finalizeAll(); return; }
+      const turn = turns[idx];
+      const isBot = turn.classList.contains('bot');
+      if(isBot){
+        playBot(turn, () => { idx++; window.setTimeout(() => requestAnimationFrame(next), 90); });
+      } else {
+        turn.classList.add('shown');               // user bubble pops in
+        idx++;
+        window.setTimeout(() => requestAnimationFrame(next), 220);
+      }
+    }
+
+    // (a) reveal anything already on screen instantly-ish; kick the sequence after fonts settle
+    requestAnimationFrame(() => requestAnimationFrame(next));
+  }
+</script>
+</body>
+</html>

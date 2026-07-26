@@ -1,0 +1,896 @@
+---
+// REDESIGN PROTOTYPE - "Model Card" - Concept 48.
+// Swapnil specced like a frontier AI model: "Swapnil-1" (v7.2026). A HuggingFace-meets-OpenAI
+// model card / model landing page. Original concept (NOT a reskin of console/ide/assistant):
+// its own layout + interaction + palette (dark AI-lab mint/indigo) + fonts + mechanic.
+//   - HERO: model name + version + lede + spec badges + 2 CTAs over a FLAT canvas latent-dot field.
+//   - CAPABILITIES: 4 disciplines as capability cards, each with a small confidence bar.
+//   - BENCHMARKS: eval TABLE (Benchmark | Score | vs baseline) with score bars that animate up.
+//   - TRAINING DATA: the 6 work items as a dataset table (dataset / epoch / role / note).
+//   - SYSTEM PROMPT: a mono code block encoding brand + voice.
+//   - CITATIONS = recognition/awards.  TRAINED WITH = brand chip row.
+//   - PLAYGROUND: a mock prompt box + a short STREAMED completion (typed on load).
+//   - MODEL DETAILS: about facts as a spec table.  CONTACT = "Get access / Deploy".
+// Self-contained: own <html>, own Google Fonts <link>, own CSS tokens, noindex. No BaseLayout.
+// SAFETY-NET: every score bar, the stream text and every reveal live in markup at FINAL value by
+//   default. JS only animates toward that final state, immediately finalizes anything already in
+//   view, and a ~2.8s setTimeout force-finalizes EVERY bar + the full completion. prefers-reduced-
+//   motion shows the final state (bars full, completion fully written), no stream, no loop.
+//   No text-shadow/filter on any background-clip:text element.
+const model = { name: 'Swapnil-1', version: 'v7.2026', base: 'human-7B' };
+
+const badges = [
+  { k: 'context', v: '7+ yrs' },
+  { k: 'modality', v: 'PMM + Code + SEO' },
+  { k: 'params', v: '4+ yrs B2B SaaS' },
+  { k: 'license', v: 'Open to work' },
+];
+
+const capabilities = [
+  { i: '01', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.', c: 96 },
+  { i: '02', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.', c: 94 },
+  { i: '03', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.', c: 91 },
+  { i: '04', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.', c: 89 },
+];
+
+// Benchmarks/evals: metrics + shipped rendered as scores. `pct` drives the bar width.
+const evals = [
+  { name: 'Leads generated',        score: '657K+',  base: 'SOTA',    pct: 100, sota: true },
+  { name: 'Organic traffic',        score: '18.2M+', base: '+18.2M',  pct: 92 },
+  { name: 'Pipeline efficiency',    score: '10x',    base: '+900%',   pct: 88 },
+  { name: 'Agents & tools shipped', score: '20+',    base: '+20',     pct: 74 },
+  { name: 'Marketers mentored',     score: '15+',    base: '+15',     pct: 66 },
+  { name: 'Articles published',     score: '76',     base: '+76',     pct: 80 },
+];
+
+// Training data: the 6 work items as a dataset table.
+const trainingData = [
+  { dataset: 'LambdaTest', epoch: '2021-25', role: 'Product & digital marketing', tag: '657K LEADS', feat: true,
+    note: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { dataset: 'TestMu AI', epoch: '2026', role: 'Rebrand lead', tag: 'FULL REBRAND',
+    note: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { dataset: 'Samsung', epoch: '2019', role: 'via Sociowash', tag: 'M-SERIES',
+    note: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { dataset: 'Medilife Superspeciality', epoch: '0 to 1', role: 'Marketing & web', tag: 'WEBSITE + GTM',
+    note: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { dataset: 'Lido Learning', epoch: '2021', role: 'Growth / CRM', tag: 'LEAD OPS',
+    note: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { dataset: 'Appknox', epoch: 'Freelance', role: 'Freelance content', tag: 'SECURITY',
+    note: 'Freelance content writer for the mobile app security company.' },
+];
+
+const citations = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+
+const details = [
+  { k: 'developer', v: 'Swapnil Biswas' },
+  { k: 'based', v: 'Mumbai, India' },
+  { k: 'role', v: 'Senior Product Marketing Manager, LambdaTest' },
+  { k: 'tenure', v: '7+ yrs marketing, 4+ in B2B SaaS' },
+  { k: 'education', v: 'Postgrad in Digital Marketing & Growth Strategy, IIM Visakhapatnam' },
+  { k: 'practice', v: 'PMM & growth strategist who codes AI agents, ships websites and runs technical SEO' },
+];
+
+// The streamed completion (playground). Rendered fully visible in markup; JS types it on load.
+const prompt = 'Launch our product.';
+const completion = "Before a single slide, I ship the system. I position it against the real alternatives, build the AEO and SEO pages that compound, wire an agent to qualify inbound, and instrument the funnel so we can see what converts. Then the deck. That order is how you get 657K+ leads and 18.2M+ in organic - not the other way around.";
+---
+<!doctype html>
+<html lang="en" data-theme="model">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - Model Card</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0a0c11;          /* dark AI-lab base */
+    --bg2:#0d1017;
+    --surface:#12151c;     /* card / panel surface */
+    --surface2:#161a23;
+    --border:#222838;      /* hairline border */
+    --border2:#2c3346;
+    --ink:#e8ebf1;         /* primary text - AA on surface */
+    --muted:#8890a0;       /* secondary text - AA on surface (4.9:1) */
+    --faint:#757d8e;       /* tertiary / labels - AA on surface (4.5:1) + body (4.7:1) */
+    --mint:#6ee7b7;        /* accent - mint */
+    --mint-dim:rgba(110,231,183,.14);
+    --indigo:#a5b4fc;      /* accent - indigo */
+    --indigo-dim:rgba(165,180,252,.12);
+    --disp:"Space Grotesk",system-ui,sans-serif;
+    --sans:"Inter",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,"Courier New",monospace;
+    --maxw:1080px;
+    --gap:clamp(16px,3.4vw,26px);
+    --rad:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth;background:var(--bg)}
+  body{
+    background:
+      radial-gradient(130% 90% at 82% -8%, #10131b 0%, transparent 46%),
+      radial-gradient(120% 80% at 6% 4%, #0e1119 0%, transparent 40%),
+      var(--bg);
+    color:var(--ink);font-family:var(--sans);min-height:100vh;line-height:1.55;
+    -webkit-font-smoothing:antialiased;padding:clamp(16px,3vw,30px) clamp(14px,3.4vw,30px) 0;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--mint);color:#06231a}
+
+  .wrap{max-width:var(--maxw);margin:0 auto}
+
+  /* ============ top status bar ============ */
+  .topbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--muted);
+    padding:9px 15px;border:1px solid var(--border);border-radius:11px;background:rgba(18,21,28,.6);
+    margin-bottom:clamp(18px,3vw,28px)}
+  .topbar .brandmark{display:flex;align-items:center;gap:9px;color:var(--ink);font-weight:600}
+  .logo{width:20px;height:20px;flex:none;position:relative}
+  .logo svg{display:block;width:100%;height:100%}
+  .topbar .path{color:var(--faint)}
+  .topbar .path b{color:var(--muted);font-weight:500}
+  .topbar .status{margin-left:auto;display:flex;align-items:center;gap:7px;color:var(--mint)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);flex:none;position:relative}
+  .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--mint);opacity:.5;
+    animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:.6}100%{transform:scale(1.8);opacity:0}}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;border:1px solid var(--border);border-radius:var(--rad);overflow:hidden;
+    background:linear-gradient(180deg,var(--surface),var(--bg2));padding:clamp(26px,5vw,52px) clamp(20px,4vw,48px)}
+  .hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.55;pointer-events:none}
+  /* static CSS fallback dot field behind canvas (visible with no JS) */
+  .hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:radial-gradient(rgba(165,180,252,.10) 1px,transparent 1.4px);background-size:26px 26px;
+    -webkit-mask:radial-gradient(120% 100% at 70% 0%,#000,transparent 72%);
+            mask:radial-gradient(120% 100% at 70% 0%,#000,transparent 72%)}
+  .hero-in{position:relative;z-index:2}
+  .modeltag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--mint);border:1px solid var(--border2);
+    background:var(--mint-dim);padding:5px 11px;border-radius:999px;margin-bottom:18px}
+  .modeltag .ver{color:var(--muted)}
+  h1.name{font-family:var(--disp);font-weight:700;line-height:.94;letter-spacing:-.02em;
+    font-size:clamp(52px,13vw,120px);color:var(--ink)}
+  h1.name .g{color:var(--mint)}
+  .base{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:10px;letter-spacing:.04em}
+  .base b{color:var(--muted);font-weight:500}
+  .lede{max-width:44ch;margin:20px 0 4px;font-size:clamp(15px,1.9vw,18px);line-height:1.68;color:#c3c9d6}
+  .lede b{color:var(--ink);font-weight:600;position:relative}
+  .lede b::after{content:"";position:absolute;left:-1px;right:-1px;bottom:1px;height:6px;z-index:-1;
+    background:var(--mint-dim);border-radius:2px}
+  .role{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--muted);margin-top:14px}
+
+  .badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+  .spec{font-family:var(--mono);font-size:11.5px;border:1px solid var(--border);border-radius:9px;
+    background:rgba(13,16,23,.7);padding:8px 11px;display:flex;gap:7px;align-items:center}
+  .spec .k{color:var(--faint)}
+  .spec .v{color:var(--ink)}
+  .spec.lic .v{color:var(--mint)}
+
+  .cta{display:flex;flex-wrap:wrap;gap:11px;margin-top:26px}
+  .btn{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.02em;
+    padding:12px 18px;border-radius:10px;display:inline-flex;gap:9px;align-items:center;
+    border:1px solid var(--border2);transition:transform .22s,background .22s,border-color .22s,color .22s}
+  .btn .ar{transition:transform .22s}
+  .btn:hover .ar{transform:translate(3px,-3px)}
+  .btn.primary{background:var(--mint);color:#06231a;border-color:var(--mint)}
+  .btn.primary:hover{transform:translateY(-2px);background:#8af0c6}
+  .btn.ghost{color:var(--ink);background:rgba(18,21,28,.5)}
+  .btn.ghost:hover{border-color:var(--indigo);color:var(--indigo)}
+
+  /* ============ section scaffold ============ */
+  section.blk{margin-top:clamp(30px,5vw,58px)}
+  .shead{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+  .shead .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--mint)}
+  .shead h2{font-family:var(--disp);font-weight:600;font-size:clamp(21px,3vw,30px);letter-spacing:-.01em;color:var(--ink)}
+  .shead .note{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.04em}
+
+  .panel{border:1px solid var(--border);border-radius:var(--rad);background:var(--surface);overflow:hidden}
+
+  /* ============ CAPABILITIES ============ */
+  .caps{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
+  .cap{border:1px solid var(--border);border-radius:var(--rad);background:linear-gradient(180deg,var(--surface),var(--bg2));
+    padding:20px 20px 18px;position:relative;transition:border-color .25s,transform .25s}
+  .cap:hover{border-color:var(--border2);transform:translateY(-3px)}
+  .cap .ci{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.1em}
+  .cap h3{font-family:var(--disp);font-weight:600;font-size:17px;margin:8px 0 8px;color:var(--ink);line-height:1.25}
+  .cap p{font-size:13px;color:var(--muted);line-height:1.6;min-height:2.4em}
+  .conf{margin-top:15px}
+  .conf-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;
+    letter-spacing:.06em;color:var(--faint);margin-bottom:6px}
+  .conf-top .cv{color:var(--mint)}
+  .track{height:6px;border-radius:4px;background:#0c0f16;border:1px solid var(--border);overflow:hidden}
+  .fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--indigo),var(--mint));
+    width:var(--w,0%);transition:width 1s cubic-bezier(.2,.75,.25,1)}
+
+  /* ============ BENCHMARKS / EVAL TABLE ============ */
+  .evaltable{width:100%;border-collapse:collapse;font-family:var(--mono)}
+  .evaltable thead th{text-align:left;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--faint);font-weight:500;padding:13px 16px;border-bottom:1px solid var(--border);background:rgba(13,16,23,.5)}
+  .evaltable thead th.num{text-align:right}
+  .evaltable td{padding:14px 16px;border-bottom:1px solid var(--border);vertical-align:middle}
+  .evaltable tr:last-child td{border-bottom:0}
+  .evaltable tr:hover td{background:rgba(165,180,252,.03)}
+  .ev-name{font-family:var(--sans);font-size:13.5px;color:var(--ink);font-weight:500;white-space:nowrap}
+  .ev-bar-cell{width:42%;min-width:110px}
+  .ev-bar{height:8px;border-radius:5px;background:#0c0f16;border:1px solid var(--border);overflow:hidden}
+  .ev-bar span{display:block;height:100%;border-radius:5px;width:var(--w,0%);
+    background:linear-gradient(90deg,var(--mint),#3fd39a);transition:width 1.1s cubic-bezier(.2,.75,.25,1)}
+  .ev-bar.sota span{background:linear-gradient(90deg,var(--indigo),var(--mint))}
+  .ev-score{font-size:15px;font-weight:700;color:var(--ink);text-align:right;white-space:nowrap}
+  .ev-base{text-align:right;font-size:12px;color:var(--mint);white-space:nowrap}
+  .sota-pill{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.12em;color:#06231a;
+    background:var(--mint);padding:2px 6px;border-radius:5px;margin-left:8px;vertical-align:middle}
+  .evalfoot{padding:12px 16px;font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.04em;
+    border-top:1px solid var(--border);background:rgba(13,16,23,.4)}
+
+  /* ============ TRAINING DATA TABLE ============ */
+  .datatable{width:100%;border-collapse:collapse;font-family:var(--mono)}
+  .datatable thead th{text-align:left;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--faint);font-weight:500;padding:13px 16px;border-bottom:1px solid var(--border);background:rgba(13,16,23,.5)}
+  .datatable td{padding:14px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+  .datatable tr:last-child td{border-bottom:0}
+  .datatable tr:hover td{background:rgba(110,231,183,.03)}
+  .td-set{font-family:var(--disp);font-size:14.5px;color:var(--ink);font-weight:600;white-space:nowrap}
+  .td-set .flag{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:.1em;color:var(--mint);
+    border:1px solid var(--mint);border-radius:4px;padding:1px 5px;margin-left:7px;vertical-align:middle;font-family:var(--mono)}
+  .td-epoch{color:var(--muted);font-size:12px;white-space:nowrap}
+  .td-role{color:var(--muted);font-size:12px}
+  .td-tag{font-size:11px;color:var(--indigo);letter-spacing:.04em;white-space:nowrap}
+  .td-note{font-family:var(--sans);font-size:12.5px;color:var(--muted);line-height:1.55;max-width:38ch}
+  .row-feat td{background:rgba(110,231,183,.04)}
+
+  /* stacked cards for training data on small screens */
+  .datacards{display:none}
+
+  /* ============ SYSTEM PROMPT ============ */
+  .codeblk{font-family:var(--mono);font-size:13px;line-height:1.72}
+  .code-top{display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid var(--border);
+    background:rgba(13,16,23,.55);font-size:11px;color:var(--faint);letter-spacing:.05em}
+  .code-top .tl{display:flex;gap:6px}
+  .code-top .tl i{width:11px;height:11px;border-radius:50%;background:#2a3142;display:block}
+  .code-top .fname{margin-left:6px;color:var(--muted)}
+  .code-top .copy{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--muted);
+    border:1px solid var(--border2);border-radius:6px;padding:4px 9px;cursor:pointer;background:transparent;
+    transition:color .2s,border-color .2s}
+  .code-top .copy:hover{color:var(--mint);border-color:var(--mint)}
+  .code-body{padding:18px clamp(16px,3vw,22px);overflow-x:auto}
+  .code-body pre{white-space:pre-wrap;word-break:break-word}
+  .cl{display:block;padding:1px 0}
+  .c-key{color:var(--indigo)}
+  .c-str{color:var(--mint)}
+  .c-com{color:var(--faint)}
+  .c-fn{color:#f0b866}
+
+  /* ============ CITATIONS + BRANDS ============ */
+  .split{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--gap)}
+  .cites{display:flex;flex-direction:column}
+  .cite{display:flex;align-items:center;gap:14px;padding:16px 18px;border-bottom:1px solid var(--border)}
+  .cite:last-child{border-bottom:0}
+  .cite .medal{width:34px;height:34px;flex:none;border-radius:9px;border:1px solid var(--border2);
+    background:var(--indigo-dim);color:var(--indigo);display:grid;place-items:center;font-size:15px}
+  .cite b{display:block;font-family:var(--disp);font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.2}
+  .cite span{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.03em}
+  .trained{padding:18px}
+  .trained .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--faint);margin-bottom:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{font-family:var(--mono);font-size:11.5px;color:var(--muted);border:1px solid var(--border);
+    border-radius:8px;padding:7px 11px;background:rgba(13,16,23,.6);transition:border-color .22s,color .22s}
+  .chips span:hover{border-color:var(--mint);color:var(--ink)}
+
+  /* ============ PLAYGROUND ============ */
+  .play{padding:clamp(16px,3vw,22px)}
+  .pg-tools{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px;
+    font-family:var(--mono);font-size:11px;color:var(--faint)}
+  .slider{display:flex;align-items:center;gap:10px}
+  .slider .val{color:var(--mint);min-width:2.4em}
+  .rail{width:112px;height:5px;border-radius:4px;background:#0c0f16;border:1px solid var(--border);position:relative}
+  .rail .knob{position:absolute;top:50%;left:38%;transform:translate(-50%,-50%);
+    width:14px;height:14px;border-radius:50%;background:var(--mint);border:2px solid #0a0c11;cursor:grab}
+  .rail .track2{position:absolute;left:0;top:0;bottom:0;width:38%;background:var(--indigo-dim);border-radius:4px}
+  .pg-msg{border:1px solid var(--border);border-radius:11px;background:rgba(13,16,23,.55);padding:14px 16px;margin-bottom:12px}
+  .pg-role{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:7px}
+  .pg-role.user{color:var(--indigo)}
+  .pg-role.asst{color:var(--mint)}
+  .pg-user-text{font-family:var(--mono);font-size:13.5px;color:var(--ink)}
+  .pg-asst-text{font-size:14.5px;line-height:1.7;color:#cfd4de}
+  .caret{display:inline-block;width:8px;height:1.05em;background:var(--mint);vertical-align:-2px;margin-left:2px;
+    animation:blink 1s step-end infinite}
+  @keyframes blink{50%{opacity:0}}
+  .pg-foot{display:flex;align-items:center;gap:10px;margin-top:4px;
+    font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+  .pg-foot .tok{margin-left:auto}
+
+  /* ============ MODEL DETAILS ============ */
+  .details{width:100%;border-collapse:collapse;font-family:var(--mono)}
+  .details tr{border-bottom:1px solid var(--border)}
+  .details tr:last-child{border-bottom:0}
+  .details td{padding:13px 16px;vertical-align:top}
+  .details td.k{color:var(--faint);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    width:34%;white-space:nowrap}
+  .details td.v{color:var(--ink);font-family:var(--sans);font-size:13.5px;line-height:1.5}
+
+  /* ============ CONTACT / DEPLOY ============ */
+  .deploy{border:1px solid var(--border2);border-radius:var(--rad);overflow:hidden;
+    background:linear-gradient(150deg,var(--surface2),var(--bg2))}
+  .deploy-in{padding:clamp(24px,4vw,40px);text-align:center}
+  .deploy .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--mint);margin-bottom:12px}
+  .deploy h2{font-family:var(--disp);font-weight:700;font-size:clamp(26px,5vw,44px);letter-spacing:-.01em;
+    color:var(--ink);line-height:1.05}
+  .deploy p{max-width:46ch;margin:14px auto 0;font-size:14.5px;color:var(--muted);line-height:1.65}
+  .deploy-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
+  .endpoint{margin-top:26px;font-family:var(--mono);font-size:11.5px;color:var(--faint);
+    border-top:1px solid var(--border);padding-top:18px;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center}
+  .endpoint a{color:var(--muted);border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+  .endpoint a:hover{color:var(--mint);border-color:var(--mint)}
+
+  /* ============ footer ============ */
+  footer.mfoot{max-width:var(--maxw);margin:clamp(34px,5vw,58px) auto 0;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    padding:22px 2px 40px;border-top:1px solid var(--border);
+    font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--faint)}
+  footer.mfoot a{color:var(--muted);border-bottom:1px solid transparent;transition:color .22s,border-color .22s}
+  footer.mfoot a:hover{color:var(--mint);border-color:var(--mint)}
+
+  /* ============ reveal (content visible by default; JS only adds motion) ============ */
+  html.js-on .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.75,.25,1)}
+  html.js-on .rv.in{opacity:1;transform:none}
+
+  /* ============ responsive ============ */
+  @media(max-width:720px){
+    .caps{grid-template-columns:1fr}
+    .split{grid-template-columns:1fr}
+    .details td.k{width:38%}
+  }
+  @media(max-width:600px){
+    .datatable{display:none}
+    .datacards{display:block}
+    .dcard{border:1px solid var(--border);border-radius:12px;background:var(--surface);padding:15px;margin-bottom:12px}
+    .dcard.feat{border-color:var(--border2);background:rgba(110,231,183,.04)}
+    .dcard .dc-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+    .dcard .dc-set{font-family:var(--disp);font-weight:600;font-size:15px;color:var(--ink)}
+    .dcard .dc-epoch{font-family:var(--mono);font-size:11px;color:var(--muted)}
+    .dcard .dc-role{font-family:var(--mono);font-size:11px;color:var(--indigo);margin-top:6px}
+    .dcard .dc-note{font-size:12.5px;color:var(--muted);line-height:1.55;margin-top:8px}
+    .ev-bar-cell{display:none}
+    .shead .note{width:100%;margin-left:0}
+    /* stop long benchmark names + tight cols from overflowing the clipped panel at 360px */
+    .evaltable td,.evaltable th{padding-left:11px;padding-right:11px}
+    .ev-name{white-space:normal}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important}
+    html.js-on .rv{opacity:1!important;transform:none!important;transition:none}
+    .fill,.ev-bar span{transition:none!important}
+    .caret{display:none!important}
+    html{scroll-behavior:auto}
+    .dot::after{display:none}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- ===== TOP STATUS BAR ===== -->
+    <div class="topbar rv">
+      <span class="brandmark">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2l8.66 5v10L12 22 3.34 17V7L12 2z" stroke="#6ee7b7" stroke-width="1.3"/>
+            <circle cx="12" cy="12" r="2.6" fill="#6ee7b7"/>
+            <path d="M12 4.6v4.8M12 14.6v4.8M6 8.5l4 2.3M18 8.5l-4 2.3M6 15.5l4-2.3M18 15.5l-4-2.3" stroke="#a5b4fc" stroke-width="1"/>
+          </svg>
+        </span>
+        model-hub
+      </span>
+      <span class="path">models&nbsp;/&nbsp;<b>swapnil-biswas</b>&nbsp;/&nbsp;Swapnil-1</span>
+      <span class="status"><span class="dot" aria-hidden="true"></span>deployed &middot; ready</span>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero rv">
+      <canvas id="latent" aria-hidden="true"></canvas>
+      <div class="hero-in">
+        <span class="modeltag">{model.name} <span class="ver">&middot; {model.version}</span></span>
+        <h1 class="name">Swapnil<span class="g">-1</span></h1>
+        <div class="base">base: <b>{model.base}</b> &middot; fine-tuned for B2B SaaS growth</div>
+
+        <p class="lede">I build the agents, sites and SEO systems behind <b>657K+ leads</b> and <b>18M+ in organic traffic</b> - not just the decks that describe them. A product marketer who actually engineers the growth.</p>
+        <div class="role">Senior Product Marketing Manager &middot; LambdaTest</div>
+
+        <div class="badges">
+          {badges.map(b => (
+            <span class={'spec' + (b.k === 'license' ? ' lic' : '')}>
+              <span class="k">{b.k}:</span><span class="v">{b.v}</span>
+            </span>
+          ))}
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href="#playground">Try in the playground <span class="ar" aria-hidden="true">&#8599;</span></a>
+          <a class="btn ghost" href="#deploy">Get access</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== CAPABILITIES ===== -->
+    <section class="blk" id="capabilities">
+      <div class="shead rv">
+        <span class="kicker">capabilities</span>
+        <h2>What the model does well</h2>
+        <span class="note">4 core skills &middot; confidence scored</span>
+      </div>
+      <div class="caps">
+        {capabilities.map(c => (
+          <div class="cap rv">
+            <span class="ci">{c.i}</span>
+            <h3>{c.t}</h3>
+            <p>{c.d}</p>
+            <div class="conf">
+              <div class="conf-top"><span>confidence</span><span class="cv">{c.c}%</span></div>
+              <div class="track"><div class="fill" data-w={c.c} style={`--w:${c.c}%`}></div></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== BENCHMARKS / EVALS ===== -->
+    <section class="blk" id="benchmarks">
+      <div class="shead rv">
+        <span class="kicker">evals</span>
+        <h2>Benchmarks &amp; shipped scores</h2>
+        <span class="note">measured vs baseline</span>
+      </div>
+      <div class="panel rv">
+        <table class="evaltable">
+          <thead>
+            <tr>
+              <th scope="col">Benchmark</th>
+              <th scope="col" class="ev-bar-cell">Score bar</th>
+              <th scope="col" class="num">Score</th>
+              <th scope="col" class="num">vs baseline</th>
+            </tr>
+          </thead>
+          <tbody>
+            {evals.map(e => (
+              <tr>
+                <td>
+                  <span class="ev-name">{e.name}{e.sota && <span class="sota-pill">SOTA</span>}</span>
+                </td>
+                <td class="ev-bar-cell">
+                  <div class={'ev-bar' + (e.sota ? ' sota' : '')}>
+                    <span data-w={e.pct} style={`--w:${e.pct}%`}></span>
+                  </div>
+                </td>
+                <td class="ev-score">{e.score}</td>
+                <td class="ev-base">{e.base}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div class="evalfoot">Hard numbers from LambdaTest, 2021 to 2025. Scores are lifetime totals, not benchmarks.</div>
+      </div>
+    </section>
+
+    <!-- ===== TRAINING DATA ===== -->
+    <section class="blk" id="training">
+      <div class="shead rv">
+        <span class="kicker">training data</span>
+        <h2>Datasets it learned from</h2>
+        <span class="note">6 corpora &middot; 2019 to 2026</span>
+      </div>
+      <div class="panel rv">
+        <table class="datatable">
+          <thead>
+            <tr>
+              <th scope="col">Dataset</th>
+              <th scope="col">Epoch</th>
+              <th scope="col">Role</th>
+              <th scope="col">Contribution</th>
+            </tr>
+          </thead>
+          <tbody>
+            {trainingData.map(d => (
+              <tr class={d.feat ? 'row-feat' : ''}>
+                <td>
+                  <span class="td-set">{d.dataset}{d.feat && <span class="flag">FEATURED</span>}</span>
+                </td>
+                <td class="td-epoch">{d.epoch}</td>
+                <td class="td-role">{d.role}<br /><span class="td-tag">{d.tag}</span></td>
+                <td class="td-note">{d.note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <!-- stacked cards for narrow screens -->
+        <div class="datacards">
+          {trainingData.map(d => (
+            <div class={'dcard' + (d.feat ? ' feat' : '')}>
+              <div class="dc-top">
+                <span class="dc-set">{d.dataset}</span>
+                <span class="dc-epoch">{d.epoch}</span>
+              </div>
+              <div class="dc-role">{d.role} &middot; {d.tag}</div>
+              <div class="dc-note">{d.note}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SYSTEM PROMPT ===== -->
+    <section class="blk" id="system-prompt">
+      <div class="shead rv">
+        <span class="kicker">system prompt</span>
+        <h2>The instructions it runs on</h2>
+        <span class="note">brand + voice</span>
+      </div>
+      <div class="panel rv">
+        <div class="code-top">
+          <span class="tl" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="fname">system.prompt</span>
+          <button class="copy" id="copyBtn" type="button">copy</button>
+        </div>
+        <div class="code-body codeblk">
+<pre><span class="cl"><span class="c-com"># role</span></span>
+<span class="cl"><span class="c-key">You are</span> a product marketer who <span class="c-str">engineers</span> the growth.</span>
+<span class="cl">You ship the <span class="c-str">agents</span>, <span class="c-str">sites</span> and <span class="c-str">SEO systems</span> - not slideware.</span>
+<span class="cl">&nbsp;</span>
+<span class="cl"><span class="c-com"># voice</span></span>
+<span class="cl">- <span class="c-fn">direct</span>, no filler, no hype, no em-dashes.</span>
+<span class="cl">- lead with the <span class="c-str">system</span>, close with the deck.</span>
+<span class="cl">- every claim is backed by a real number.</span>
+<span class="cl">&nbsp;</span>
+<span class="cl"><span class="c-com"># objectives</span></span>
+<span class="cl"><span class="c-key">maximize</span>(<span class="c-fn">qualified_pipeline</span>, <span class="c-fn">compounding_organic</span>)</span>
+<span class="cl"><span class="c-key">minimize</span>(<span class="c-fn">vanity_metrics</span>, <span class="c-fn">busywork</span>)</span>
+<span class="cl">&nbsp;</span>
+<span class="cl"><span class="c-com"># constraints</span></span>
+<span class="cl">position against the <span class="c-str">real</span> alternative. instrument everything.</span>
+<span class="cl">if it can be automated, build the agent first.</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CITATIONS + TRAINED WITH ===== -->
+    <section class="blk" id="citations">
+      <div class="shead rv">
+        <span class="kicker">citations</span>
+        <h2>Recognition &amp; provenance</h2>
+        <span class="note">awards &middot; trained with</span>
+      </div>
+      <div class="split">
+        <div class="panel cites rv">
+          {citations.map(c => (
+            <div class="cite">
+              <span class="medal" aria-hidden="true">&#9733;</span>
+              <div><b>{c.t}</b><span>{c.m}</span></div>
+            </div>
+          ))}
+        </div>
+        <div class="panel trained rv">
+          <div class="lbl">Trained with</div>
+          <div class="chips">
+            {brands.map(b => <span>{b}</span>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PLAYGROUND ===== -->
+    <section class="blk" id="playground">
+      <div class="shead rv">
+        <span class="kicker">playground</span>
+        <h2>Run an inference</h2>
+        <span class="note">sample completion</span>
+      </div>
+      <div class="panel play rv">
+        <div class="pg-tools">
+          <span>model: <span style="color:var(--ink)">Swapnil-1 {model.version}</span></span>
+          <span class="slider">
+            temperature
+            <span class="rail" aria-hidden="true"><span class="track2"></span><span class="knob"></span></span>
+            <span class="val">0.4</span>
+          </span>
+        </div>
+
+        <div class="pg-msg">
+          <div class="pg-role user">User</div>
+          <div class="pg-user-text">{prompt}</div>
+        </div>
+
+        <div class="pg-msg">
+          <div class="pg-role asst">Swapnil-1</div>
+          <div class="pg-asst-text"><span id="stream">{completion}</span></div>
+        </div>
+
+        <div class="pg-foot">
+          <span>finish_reason: stop</span>
+          <span class="tok">78 tokens &middot; 0.9s</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MODEL DETAILS ===== -->
+    <section class="blk" id="details">
+      <div class="shead rv">
+        <span class="kicker">model details</span>
+        <h2>The spec sheet</h2>
+        <span class="note">metadata</span>
+      </div>
+      <div class="panel rv">
+        <table class="details">
+          <tbody>
+            {details.map(d => (
+              <tr>
+                <td class="k">{d.k}</td>
+                <td class="v">{d.v}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT / DEPLOY ===== -->
+    <section class="blk" id="deploy">
+      <div class="deploy rv">
+        <div class="deploy-in">
+          <div class="kicker">get access</div>
+          <h2>Deploy Swapnil-1</h2>
+          <p>Open to work. If you are building something that needs a product marketer who ships the system - agents, sites, SEO - not just the deck, let's talk.</p>
+          <div class="deploy-cta">
+            <a class="btn primary" href="mailto:swapbiswas.marketing@gmail.com">Request access <span class="ar" aria-hidden="true">&#8599;</span></a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/swapbiswas/">Connect on LinkedIn</a>
+          </div>
+          <div class="endpoint">
+            <span>endpoint:</span>
+            <a href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a>
+            <a href="https://www.linkedin.com/in/swapbiswas/">linkedin.com/in/swapbiswas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="mfoot">
+    <span>Model Card &middot; Concept 48</span>
+    <span>Swapnil Biswas &copy; 2026</span>
+    <span><a href="/personal-website-examples/">View all concepts</a></span>
+  </footer>
+
+<script>
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+
+  // ---------- FINAL-STATE helpers (safety net) ----------
+  // Bars carry their target width in data-w AND already have --w set inline in markup.
+  // finalize sets every bar to its target and reveals every .rv - guaranteed final state.
+  function finalizeBars() {
+    document.querySelectorAll('.fill, .ev-bar span').forEach((el) => {
+      const w = el.getAttribute('data-w');
+      if (w) el.style.width = w + '%';
+    });
+  }
+  function revealAll() {
+    document.querySelectorAll('.rv').forEach((el) => el.classList.add('in'));
+  }
+  const streamEl = document.getElementById('stream');
+  const FULL = streamEl ? streamEl.textContent : '';
+  function finalizeStream() {
+    if (streamEl) {
+      streamEl.textContent = FULL;
+      const c = document.getElementById('caret');
+      if (c) c.remove();
+    }
+  }
+
+  if (RM) {
+    // Reduced motion: everything already final in markup. Do nothing (no reveal-hide, no stream).
+    finalizeBars();
+  } else {
+    root.classList.add('js-on'); // enables the hide-then-reveal transition on .rv
+
+    // Prime bars to 0 so they can animate up; markup default (inline --w) is the final value,
+    // so if this line never ran the bars would already be full.
+    document.querySelectorAll('.fill, .ev-bar span').forEach((el) => { el.style.width = '0%'; });
+
+    // HARD SAFETY NET: force everything to final state within 2.8s no matter what.
+    const safety = window.setTimeout(() => {
+      revealAll();
+      finalizeBars();
+      finalizeStream();
+    }, 2800);
+
+    // ---------- reveal-in-view + fill bars when their section enters ----------
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        el.classList.add('in');
+        el.querySelectorAll('.fill, .ev-bar span').forEach((bar) => {
+          const w = bar.getAttribute('data-w');
+          if (w) requestAnimationFrame(() => { bar.style.width = w + '%'; });
+        });
+        io.unobserve(el);
+      });
+    }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+
+    document.querySelectorAll('.rv').forEach((el) => {
+      // (a) anything already in the viewport on load -> reveal immediately.
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92 && r.bottom > 0) {
+        el.classList.add('in');
+        el.querySelectorAll('.fill, .ev-bar span').forEach((bar) => {
+          const w = bar.getAttribute('data-w');
+          if (w) requestAnimationFrame(() => { bar.style.width = w + '%'; });
+        });
+      } else {
+        io.observe(el);
+      }
+    });
+
+    // ---------- typed streaming completion in the playground ----------
+    if (streamEl && FULL) {
+      streamEl.textContent = '';
+      const caret = document.createElement('span');
+      caret.className = 'caret';
+      caret.id = 'caret';
+      caret.setAttribute('aria-hidden', 'true');
+      streamEl.after(caret);
+
+      function startStream() {
+        let i = 0;
+        const total = FULL.length;
+        const per = Math.max(1, Math.round(total / 150)); // ~150 ticks
+        function tick() {
+          i += per + Math.round(Math.random() * 2);
+          if (i >= total) {
+            streamEl.textContent = FULL;
+            caret.remove();
+            return;
+          }
+          streamEl.textContent = FULL.slice(0, i);
+          setTimeout(() => requestAnimationFrame(tick), 16);
+        }
+        tick();
+      }
+
+      // Only stream once the playground scrolls into view; otherwise leave final text (safety).
+      const pg = document.getElementById('playground');
+      if (pg) {
+        const pr = pg.getBoundingClientRect();
+        if (pr.top < window.innerHeight && pr.bottom > 0) {
+          startStream();
+        } else {
+          const so = new IntersectionObserver((ents) => {
+            ents.forEach((e) => {
+              if (e.isIntersecting) { startStream(); so.disconnect(); }
+            });
+          }, { threshold: 0.3 });
+          so.observe(pg);
+        }
+      } else {
+        startStream();
+      }
+    }
+
+    // Clean up the safety timer once we know reveal ran (kept simple: let it fire harmlessly).
+    void safety;
+  }
+
+  // ---------- copy system prompt ----------
+  const copyBtn = document.getElementById('copyBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const pre = document.querySelector('#system-prompt pre');
+      const txt = pre ? pre.textContent : '';
+      if (navigator.clipboard && txt) {
+        navigator.clipboard.writeText(txt).then(() => {
+          const old = copyBtn.textContent;
+          copyBtn.textContent = 'copied';
+          setTimeout(() => { copyBtn.textContent = old; }, 1400);
+        }).catch(() => {});
+      }
+    });
+  }
+
+  // ---------- FLAT latent-dot field on hero canvas (subtle, not WebGL/aurora) ----------
+  if (!RM) {
+    const cv = document.getElementById('latent');
+    if (cv && cv.getContext) {
+      const ctx = cv.getContext('2d');
+      let W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+      let pts = [];
+      let raf = 0, running = true;
+
+      function build() {
+        const host = cv.parentElement;
+        if (!host) return;
+        const rect = host.getBoundingClientRect();
+        W = rect.width; H = rect.height;
+        cv.width = Math.round(W * dpr);
+        cv.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const count = Math.min(46, Math.max(18, Math.round(W / 26)));
+        pts = [];
+        for (let i = 0; i < count; i++) {
+          pts.push({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            vx: (Math.random() - 0.5) * 0.16,
+            vy: (Math.random() - 0.5) * 0.16,
+            r: Math.random() * 1.6 + 0.6,
+          });
+        }
+      }
+
+      function draw() {
+        if (!running) return;
+        ctx.clearRect(0, 0, W, H);
+        // faint connecting lines (latent graph)
+        for (let a = 0; a < pts.length; a++) {
+          const p = pts[a];
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1;
+          if (p.y < 0 || p.y > H) p.vy *= -1;
+          for (let b = a + 1; b < pts.length; b++) {
+            const q = pts[b];
+            const dx = p.x - q.x, dy = p.y - q.y;
+            const d2 = dx * dx + dy * dy;
+            if (d2 < 118 * 118) {
+              const o = (1 - Math.sqrt(d2) / 118) * 0.22;
+              ctx.strokeStyle = 'rgba(165,180,252,' + o.toFixed(3) + ')';
+              ctx.lineWidth = 0.6;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.stroke();
+            }
+          }
+        }
+        // dots
+        for (const p of pts) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(110,231,183,0.5)';
+          ctx.fill();
+        }
+        raf = requestAnimationFrame(draw);
+      }
+
+      build();
+      draw();
+      window.addEventListener('resize', () => { build(); });
+
+      // pause when hero off-screen (perf)
+      const hero = cv.parentElement;
+      if (hero && 'IntersectionObserver' in window) {
+        const ho = new IntersectionObserver((ents) => {
+          ents.forEach((e) => {
+            if (e.isIntersecting && !running) { running = true; draw(); }
+            else if (!e.isIntersecting) { running = false; cancelAnimationFrame(raf); }
+          });
+        }, { threshold: 0 });
+        ho.observe(hero);
+      }
+    }
+  }
+</script>
+</body>
+</html>

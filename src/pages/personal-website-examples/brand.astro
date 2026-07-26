@@ -1,0 +1,874 @@
+---
+// REDESIGN PROTOTYPE - "Brand" - Concept 49.
+// The person rendered as a BRAND GUIDELINES system / brand book. Original concept (NOT a reskin
+// of atelier, graphite or monolith): own layout + interaction + palette + fonts + mechanic.
+//  - A proper numbered brand book (00..12): cover with logotype + SB monogram MARK + section
+//    index, a positioning statement block, logo construction grid + clearspace + lockups, a color
+//    swatch/token table, a type-scale specimen, a "We say / We do not say" voice matrix, brand-in-
+//    action work examples with the metric each drove, brand impact stats, award seals, a trusted-by
+//    logo wall, an "AI tie-in" brand-voice-as-system-prompt mono block, about facts and a contact
+//    colophon. Every section is a real page of a brand manual.
+//  - LIGHT identity system: off-white paper (#f4f2ee), ink (#1a1815), brand purple (#6d28d9) +
+//    brand orange (#ea580c) as the two brand colors, neutral grid lines (#e2ded5). Space Grotesk
+//    display + Inter body + JetBrains Mono for spec labels/tokens.
+//  - Mechanic: an editorial "spec sheet" reveal - section blocks fade/rise in as you scroll, a
+//    fixed page-number rail tracks the active section, swatch tiles copy their hex on click.
+// Self-contained: own <html>, own Google Fonts <link>, own CSS tokens, noindex. No BaseLayout.
+// GOTCHA NOTES: ALL content lives in the Astro markup and is visible with zero JS (default CSS =
+// visible). The reveal-on-scroll only runs after JS confirms motion is allowed (adds html.js-anim);
+// an IntersectionObserver reveals blocks in view + a ~2.7s setTimeout force-finalizes EVERY block
+// so a missed observer can never leave a section blank. prefers-reduced-motion shows everything in
+// final state with no motion. No text-shadow/filter on any background-clip:text element.
+const version = 'v2026.2';
+
+const indexRows = [
+  { n: '01', t: 'Positioning' },
+  { n: '02', t: 'Logotype & Mark' },
+  { n: '03', t: 'Color' },
+  { n: '04', t: 'Typography' },
+  { n: '05', t: 'Voice & Tone' },
+  { n: '06', t: 'Brand in Action' },
+  { n: '07', t: 'Brand Impact' },
+  { n: '08', t: 'Recognition' },
+  { n: '09', t: 'Trusted By' },
+  { n: '10', t: 'Voice, Encoded' },
+  { n: '11', t: 'The Person' },
+  { n: '12', t: 'Contact' },
+];
+
+const swatches = [
+  { name: 'Brand / Purple', token: '--brand-purple', hex: '#6D28D9', rgb: '109 40 217', role: 'Primary. Positioning, links, the point of view.', on: 'light' },
+  { name: 'Brand / Orange', token: '--brand-orange', hex: '#EA580C', rgb: '234 88 12', role: 'Secondary. Energy, metrics, the compounding.', on: 'light' },
+  { name: 'Ink', token: '--ink', hex: '#1A1815', rgb: '26 24 21', role: 'Body text and headlines on paper.', on: 'light' },
+  { name: 'Paper', token: '--paper', hex: '#F4F2EE', rgb: '244 242 238', role: 'Base surface. Warm off-white, never pure.', on: 'dark' },
+  { name: 'Muted', token: '--muted', hex: '#6A655C', rgb: '106 101 92', role: 'Captions, labels, secondary meta.', on: 'light' },
+  { name: 'Grid', token: '--grid', hex: '#E2DED5', rgb: '226 222 213', role: 'Rules, borders, construction lines.', on: 'dark' },
+];
+
+const typeScale = [
+  { role: 'Display / Logotype', sample: 'Swapnil Biswas', font: 'Space Grotesk', size: '72 / 96', weight: '700', ls: '-0.03em' },
+  { role: 'Heading 01', sample: 'Positioning is the product', font: 'Space Grotesk', size: '34 / 44', weight: '600', ls: '-0.02em' },
+  { role: 'Heading 02', sample: 'Growth that compounds', font: 'Space Grotesk', size: '22 / 30', weight: '600', ls: '-0.01em' },
+  { role: 'Body', sample: 'I build the agents, sites and SEO systems behind the numbers, not just the decks.', font: 'Inter', size: '17 / 27', weight: '400', ls: '0' },
+  { role: 'Label / Spec', sample: 'SECTION-03 / COLOR-TOKENS', font: 'JetBrains Mono', size: '12 / 18', weight: '500', ls: '0.08em' },
+];
+
+const say = [
+  'Show the number, then the mechanism behind it.',
+  'Plain verbs: built, shipped, ran, engineered.',
+  'A point of view. Take the position, defend it.',
+  'Proof over adjectives. 657K, not "massive".',
+];
+const dontSay = [
+  'Synergy, leverage, unlock, supercharge, ninja.',
+  'Slide-ware promises with no system underneath.',
+  'Hedged, committee-safe, opinion-free copy.',
+  '"World-class" anything. Show it or drop it.',
+];
+
+const pillars = [
+  { n: 'P1', t: 'Product Marketing & GTM', d: 'Positioning, launches, battlecards and sales enablement for B2B SaaS.' },
+  { n: 'P2', t: 'Growth, SEO & AEO', d: 'Technical audits, AI-search optimization and demand gen that compounds.' },
+  { n: 'P3', t: 'AI & Automation', d: 'I build the agents and internal tools that do the work - 20+ shipped.' },
+  { n: 'P4', t: 'Building in public', d: 'This site, 8 free tools and 76 articles. Shipped systems, not slide-ware.' },
+];
+
+const workItems = [
+  { i: '01', name: 'LambdaTest', role: 'Product & digital marketing', y: '2021-25', metric: '657K leads', feat: true,
+    d: 'Owned product and digital marketing end to end and built the full organic growth engine.' },
+  { i: '02', name: 'TestMu AI', role: 'Rebrand lead', y: '2026', metric: 'Full rebrand',
+    d: 'Led the complete rebrand from LambdaTest to TestMu AI.' },
+  { i: '03', name: 'Samsung', role: 'via Sociowash', y: '2019', metric: 'Galaxy M-series',
+    d: 'On the Galaxy M-series from inception; ran content distribution, collaborated with Technical Guruji.' },
+  { i: '04', name: 'Medilife Superspeciality', role: 'Marketing & web', y: '0 to 1', metric: 'Website + GTM',
+    d: 'Built the full digital presence and go-to-market for a NABH-accredited superspeciality hospital in Dehradun.' },
+  { i: '05', name: 'Lido Learning', role: 'Growth / CRM', y: '2021', metric: 'Lead ops',
+    d: 'Ran CRM management and lead routing and assignment for the EdTech.' },
+  { i: '06', name: 'Appknox', role: 'Freelance content', y: 'Freelance', metric: 'Security',
+    d: 'Freelance content writer for the mobile app security company.' },
+];
+
+const impact = [
+  { v: '657K+', l: 'Leads', c: 'orange' },
+  { v: '18.2M+', l: 'Organic traffic', c: 'purple' },
+  { v: '10x', l: 'Pipeline efficiency', c: 'ink' },
+];
+const shipped = [
+  { n: '20+', l: 'AI agents & internal tools shipped' },
+  { n: '15+', l: 'Marketers mentored & levelled up' },
+  { n: '76', l: 'Long-form articles published' },
+];
+const awards = [
+  { t: 'Value of Agility Award', m: 'LambdaTest, 2024' },
+  { t: 'Wall of Fame', m: 'LambdaTest' },
+  { t: '#1 Product of the Day', m: 'Product Hunt' },
+];
+const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning', 'Appknox'];
+const facts = [
+  { k: 'Based', v: 'Mumbai, India' },
+  { k: 'Tenure', v: '7+ yrs marketing / 4+ in B2B SaaS' },
+  { k: 'Education', v: 'Postgrad in Digital Marketing & Growth Strategy, IIM Visakhapatnam' },
+  { k: 'Practice', v: 'PMM & growth strategist who codes AI agents, ships websites and runs technical SEO' },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="brand">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swapnil Biswas - Brand Guidelines</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f4f2ee;      /* warm off-white base */
+    --paper2:#efece5;     /* slightly deeper panel */
+    --ink:#1a1815;        /* near-black ink - AA on paper */
+    --ink2:#3a352e;       /* secondary ink */
+    --muted:#6a655c;      /* captions/labels - AA on paper (4.9:1) */
+    --grid:#e2ded5;       /* neutral construction lines */
+    --grid2:#d6d1c5;      /* deeper rule */
+    --brand-purple:#6d28d9;
+    --brand-purple-ink:#5b21b6;  /* darker purple for small text -> AA */
+    --brand-orange:#ea580c;
+    --brand-orange-ink:#c2410c;  /* darker orange for small text -> AA */
+    --tint-purple:rgba(109,40,217,.08);
+    --tint-orange:rgba(234,88,12,.09);
+    --disp:"Space Grotesk",system-ui,sans-serif;
+    --sans:"Inter",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,"Courier New",monospace;
+    --maxw:1120px;
+    --pad:clamp(20px,5vw,64px);
+    --gut:clamp(18px,3.5vw,40px);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow-x:clip}
+  html{scroll-behavior:smooth;background:var(--paper);-webkit-text-size-adjust:100%}
+  body{
+    background:var(--paper);
+    color:var(--ink);font-family:var(--sans);min-height:100vh;line-height:1.5;
+    -webkit-font-smoothing:antialiased;position:relative;
+    background-image:
+      linear-gradient(90deg,rgba(226,222,213,.5) 1px,transparent 1px),
+      linear-gradient(0deg,rgba(226,222,213,.35) 1px,transparent 1px);
+    background-size:calc(100%/6) 100%,100% 96px;
+    background-position:var(--pad) 0,0 0;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--ink);color:var(--paper)}
+  img{max-width:100%}
+
+  /* ============ page shell ============ */
+  .book{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;
+    padding:0 var(--pad) clamp(40px,7vh,80px)}
+  .mono{font-family:var(--mono)}
+
+  /* running spec label at top-left of every section */
+  .spec{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+  .spec .no{color:var(--ink);font-weight:700}
+  .spec .bar{flex:1;height:1px;background:var(--grid2);min-width:20px}
+
+  section{padding:clamp(38px,7vh,74px) 0;border-top:1px solid var(--grid2);position:relative}
+  section:first-of-type{border-top:0}
+
+  .lead-h{font-family:var(--disp);font-weight:600;letter-spacing:-.02em;line-height:1.05;
+    font-size:clamp(28px,5vw,46px);color:var(--ink);margin:16px 0 0}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+  /* ============ 00 COVER ============ */
+  .cover{border-top:0;padding-top:clamp(26px,5vh,52px);
+    min-height:clamp(560px,92vh,900px);display:flex;flex-direction:column}
+  .cover-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .cover-top b{color:var(--ink);font-weight:700}
+  .cover-mid{flex:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(28px,6vh,60px) 0}
+  .mark-row{display:flex;align-items:center;gap:clamp(18px,3vw,34px);flex-wrap:wrap}
+  /* SB monogram mark */
+  .mark{width:clamp(88px,13vw,140px);height:clamp(88px,13vw,140px);flex:none;border:2px solid var(--ink);
+    border-radius:16px;display:grid;place-items:center;position:relative;overflow:hidden;background:var(--paper)}
+  .mark::before{content:"";position:absolute;inset:0;
+    background:linear-gradient(135deg,var(--tint-purple),transparent 55%,var(--tint-orange))}
+  .mark .mono-sb{position:relative;font-family:var(--disp);font-weight:700;font-size:clamp(38px,6vw,60px);
+    letter-spacing:-.04em;line-height:1;color:var(--ink)}
+  .mark .mono-sb .s{color:var(--brand-purple)}
+  .mark .mono-sb .b{color:var(--brand-orange)}
+  .logotype{font-family:var(--disp);font-weight:700;letter-spacing:-.035em;line-height:.9;
+    font-size:clamp(46px,12vw,124px);color:var(--ink)}
+  .logotype .l2{display:block}
+  .cover-promise{margin-top:clamp(20px,3.5vh,34px);max-width:32ch;
+    font-family:var(--disp);font-weight:500;font-size:clamp(18px,2.6vw,26px);line-height:1.3;
+    letter-spacing:-.01em;color:var(--ink2)}
+  .cover-promise .u{color:var(--brand-purple-ink);text-decoration:underline;text-decoration-thickness:2px;
+    text-underline-offset:3px;text-decoration-color:var(--brand-orange)}
+  .cover-bot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;
+    padding-top:clamp(20px,4vh,40px);border-top:1px solid var(--grid2);
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .cover-role{color:var(--ink);font-weight:700;font-size:12px}
+  .cover-cta{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    padding:12px 18px;border:1.5px solid var(--ink);color:var(--ink);display:inline-flex;gap:8px;align-items:center;
+    border-radius:8px;transition:background .22s,color .22s,transform .22s}
+  .btn .ar{transition:transform .22s}
+  .btn:hover .ar{transform:translate(2px,-2px)}
+  .btn.primary{background:var(--ink);color:var(--paper)}
+  .btn.primary:hover{transform:translateY(-2px)}
+  .btn.ghost:hover{background:var(--tint-purple);border-color:var(--brand-purple)}
+
+  /* section index on cover */
+  .cover-index{margin-top:clamp(22px,3.5vh,32px);display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1px;
+    background:var(--grid2);border:1px solid var(--grid2)}
+  .cover-index a{background:var(--paper);padding:11px 13px;display:flex;gap:9px;align-items:baseline;
+    font-family:var(--mono);font-size:12px;color:var(--ink2);transition:background .2s,color .2s}
+  .cover-index a .ci-n{color:var(--muted);font-weight:700;font-size:11px}
+  .cover-index a:hover{background:var(--tint-purple);color:var(--brand-purple-ink)}
+
+  /* ============ 01 POSITIONING ============ */
+  .pos-grid{margin-top:24px;display:grid;grid-template-columns:1fr;gap:clamp(22px,3vw,40px)}
+  @media(min-width:820px){.pos-grid{grid-template-columns:1.5fr 1fr}}
+  .pos-statement{font-family:var(--disp);font-weight:500;letter-spacing:-.015em;line-height:1.28;
+    font-size:clamp(21px,3vw,32px);color:var(--ink)}
+  .pos-statement .k{color:var(--muted);font-weight:400}
+  .pos-statement .hi{color:var(--brand-purple-ink)}
+  .pos-statement .ho{color:var(--brand-orange-ink)}
+  .pos-side{border-left:1px solid var(--grid2);padding-left:clamp(18px,2.5vw,28px);
+    display:flex;flex-direction:column;gap:16px;align-self:start}
+  .pos-callout .pc-v{font-family:var(--disp);font-weight:700;font-size:clamp(30px,5vw,44px);
+    letter-spacing:-.02em;line-height:1}
+  .pos-callout:nth-child(1) .pc-v{color:var(--brand-orange-ink)}
+  .pos-callout:nth-child(2) .pc-v{color:var(--brand-purple-ink)}
+  .pos-callout .pc-l{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);margin-top:6px}
+  .pos-frame{margin-top:26px;display:grid;grid-template-columns:1fr;gap:1px;background:var(--grid2);
+    border:1px solid var(--grid2)}
+  @media(min-width:640px){.pos-frame{grid-template-columns:repeat(4,1fr)}}
+  .pf-cell{background:var(--paper);padding:15px 16px}
+  .pf-cell .k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .pf-cell .v{margin-top:6px;font-size:14px;color:var(--ink);font-weight:500;line-height:1.4}
+  .sub-h{font-family:var(--disp);font-weight:600;letter-spacing:-.01em;line-height:1.1;
+    font-size:clamp(20px,3vw,26px);color:var(--ink);margin:12px 0 0}
+  .pillars{margin-top:22px;display:grid;grid-template-columns:1fr;gap:1px;background:var(--grid2);border:1px solid var(--grid2)}
+  @media(min-width:560px){.pillars{grid-template-columns:1fr 1fr}}
+  @media(min-width:960px){.pillars{grid-template-columns:repeat(4,1fr)}}
+  .pillar{background:var(--paper);padding:clamp(18px,2.5vw,22px);display:flex;flex-direction:column;gap:10px;min-height:150px}
+  .pillar .pl-n{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--brand-purple-ink)}
+  .pillar .pl-t{font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:-.01em;color:var(--ink);line-height:1.2}
+  .pillar .pl-d{font-size:12.5px;color:var(--ink2);line-height:1.5}
+
+  /* ============ 02 LOGO / MARK ============ */
+  .logo-grid{margin-top:24px;display:grid;grid-template-columns:1fr;gap:1px;background:var(--grid2);border:1px solid var(--grid2)}
+  @media(min-width:760px){.logo-grid{grid-template-columns:1fr 1fr}}
+  .logo-cell{background:var(--paper);padding:clamp(20px,3vw,32px);position:relative;min-height:220px;
+    display:flex;flex-direction:column}
+  .logo-cell .lc-cap{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .lc-stage{flex:1;display:grid;place-items:center;padding:22px 0}
+  /* construction diagram */
+  .construct{position:relative;width:clamp(120px,20vw,170px);aspect-ratio:1;display:grid;place-items:center}
+  .construct .cmark{width:66%;height:66%;border:2px solid var(--ink);border-radius:12px;display:grid;place-items:center;
+    font-family:var(--disp);font-weight:700;font-size:clamp(30px,5vw,44px);letter-spacing:-.04em;color:var(--ink);
+    position:relative;z-index:2;background:var(--paper)}
+  .construct .cmark .s{color:var(--brand-purple)}
+  .construct .cmark .b{color:var(--brand-orange)}
+  .construct::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(90deg,var(--brand-orange) 0 1px,transparent 1px) 0 0/100% 100%,
+      linear-gradient(0deg,var(--brand-orange) 0 1px,transparent 1px) 0 0/100% 100%,
+      linear-gradient(90deg,rgba(109,40,217,.5) 0 1px,transparent 1px) 50% 0/1px 100% no-repeat,
+      linear-gradient(0deg,rgba(109,40,217,.5) 0 1px,transparent 1px) 0 50%/100% 1px no-repeat;
+    opacity:.55}
+  .construct::after{content:"";position:absolute;inset:17%;border:1px dashed var(--brand-purple);border-radius:14px;
+    opacity:.5}
+  /* clearspace */
+  .clearspace{position:relative;width:clamp(150px,24vw,200px);padding:clamp(16px,3vw,26px);
+    outline:1px dashed var(--grid2);display:grid;place-items:center}
+  .clearspace .cs-inner{width:52px;height:52px;border:2px solid var(--ink);border-radius:11px;display:grid;place-items:center;
+    font-family:var(--disp);font-weight:700;font-size:24px;letter-spacing:-.04em;background:var(--paper)}
+  .clearspace .cs-inner .s{color:var(--brand-purple)}
+  .clearspace .cs-inner .b{color:var(--brand-orange)}
+  .clearspace .x{position:absolute;font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.08em}
+  .clearspace .x.t{top:5px;left:50%;transform:translateX(-50%)}
+  .clearspace .x.l{left:5px;top:50%;transform:translateY(-50%)}
+  /* variant lockups */
+  .lockups{display:flex;flex-direction:column;gap:12px;width:100%}
+  .lockup{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--grid2);border-radius:10px}
+  .lockup.inv{background:var(--ink)}
+  .lockup .lk-mark{width:38px;height:38px;flex:none;border:1.5px solid currentColor;border-radius:9px;display:grid;place-items:center;
+    font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:-.04em}
+  .lockup .lk-name{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:-.02em}
+  .lockup.pos{color:var(--ink)}
+  .lockup.pos .s{color:var(--brand-purple)} .lockup.pos .b{color:var(--brand-orange)}
+  .lockup.inv{color:var(--paper)}
+  .lockup.inv .s{color:#c4b5fd} .lockup.inv .b{color:#fdba74}
+  .lockup.mono2{color:var(--ink)}
+  .lc-note{margin-top:14px;font-size:12.5px;color:var(--muted);line-height:1.5}
+
+  /* ============ 03 COLOR ============ */
+  .swatches{margin-top:24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .swatch{border:1px solid var(--grid2);border-radius:12px;overflow:hidden;background:var(--paper);
+    cursor:pointer;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;text-align:left;
+    font-family:var(--sans);color:var(--ink)}
+  .swatch:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(26,24,21,.5)}
+  .swatch:focus-visible{outline:2px solid var(--brand-purple);outline-offset:2px}
+  .sw-chip{height:96px;position:relative;display:flex;align-items:flex-end;padding:11px 13px}
+  .sw-chip .copy{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+    padding:3px 7px;border-radius:5px;opacity:.85}
+  .sw-chip.on-light .copy{color:var(--ink);background:rgba(244,242,238,.7)}
+  .sw-chip.on-dark .copy{color:var(--paper);background:rgba(26,24,21,.72)}
+  .sw-body{padding:13px;border-top:1px solid var(--grid2)}
+  .sw-name{font-family:var(--disp);font-weight:600;font-size:15px;letter-spacing:-.01em}
+  .sw-meta{margin-top:8px;display:flex;flex-direction:column;gap:3px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .sw-meta .hx{color:var(--ink);font-weight:700;letter-spacing:.04em}
+  .sw-role{margin-top:9px;font-size:12px;color:var(--ink2);line-height:1.45}
+
+  /* ============ 04 TYPE ============ */
+  .type-table{margin-top:24px;display:grid;grid-template-columns:1fr;gap:1px;background:var(--grid2);border:1px solid var(--grid2)}
+  .tr{background:var(--paper);padding:clamp(16px,2.5vw,24px);display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:760px){.tr{grid-template-columns:1fr 200px;align-items:center}}
+  .tr .tr-sample{color:var(--ink);line-height:1.15;overflow-wrap:anywhere}
+  .tr .tr-meta{display:flex;flex-wrap:wrap;gap:6px}
+  .tr .tag{font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--muted);
+    border:1px solid var(--grid2);border-radius:5px;padding:3px 7px;white-space:nowrap}
+  .tr .tag.role{color:var(--ink);font-weight:700}
+
+  /* ============ 05 VOICE ============ */
+  .voice-grid{margin-top:24px;display:grid;grid-template-columns:1fr;gap:1px;background:var(--grid2);border:1px solid var(--grid2)}
+  @media(min-width:720px){.voice-grid{grid-template-columns:1fr 1fr}}
+  .voice-col{background:var(--paper);padding:clamp(20px,3vw,30px)}
+  .voice-col .vh{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;
+    letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+  .voice-col.do .vh{color:var(--brand-purple-ink)}
+  .voice-col.dont .vh{color:var(--brand-orange-ink)}
+  .voice-col .glyph{width:22px;height:22px;flex:none;border-radius:6px;display:grid;place-items:center;
+    font-size:13px;font-weight:700;color:var(--paper)}
+  .voice-col.do .glyph{background:var(--brand-purple)}
+  .voice-col.dont .glyph{background:var(--brand-orange)}
+  .voice-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .voice-col li{display:flex;gap:10px;font-size:14.5px;color:var(--ink);line-height:1.5}
+  .voice-col li::before{content:"";flex:none;width:7px;height:7px;margin-top:8px;border-radius:2px}
+  .voice-col.do li::before{background:var(--brand-purple)}
+  .voice-col.dont li::before{background:var(--brand-orange);transform:rotate(45deg);border-radius:0}
+
+  /* ============ 06 BRAND IN ACTION ============ */
+  .action{margin-top:24px;display:grid;grid-template-columns:1fr;gap:1px;background:var(--grid2);border:1px solid var(--grid2)}
+  @media(min-width:640px){.action{grid-template-columns:1fr 1fr}}
+  @media(min-width:960px){.action{grid-template-columns:1fr 1fr 1fr}}
+  .app{background:var(--paper);padding:clamp(18px,2.5vw,24px);display:flex;flex-direction:column;gap:12px;
+    position:relative;min-height:190px}
+  .app.feat{background:var(--tint-purple)}
+  .app-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .app-i{font-family:var(--mono);font-size:11px;color:var(--muted);font-weight:700}
+  .app-badge{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--paper);background:var(--brand-purple);padding:2px 7px;border-radius:20px}
+  .app-name{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--ink);line-height:1.1}
+  .app-role{font-size:12px;color:var(--muted);margin-top:-6px}
+  .app-desc{font-size:13px;color:var(--ink2);line-height:1.55;flex:1}
+  .app-metric{display:flex;align-items:center;gap:8px;padding-top:12px;border-top:1px solid var(--grid2);
+    font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted)}
+  .app-metric .mv{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:-.01em;color:var(--brand-orange-ink)}
+  .app-metric .yr{margin-left:auto;color:var(--muted)}
+
+  /* ============ 07 IMPACT ============ */
+  .impact{margin-top:24px;display:grid;grid-template-columns:1fr;gap:1px;background:var(--grid2);border:1px solid var(--grid2)}
+  @media(min-width:640px){.impact{grid-template-columns:repeat(3,1fr)}}
+  .imp{background:var(--paper);padding:clamp(24px,4vw,40px) clamp(18px,3vw,28px)}
+  .imp .iv{font-family:var(--disp);font-weight:700;font-size:clamp(40px,8vw,68px);letter-spacing:-.03em;line-height:.95}
+  .imp.orange .iv{color:var(--brand-orange-ink)}
+  .imp.purple .iv{color:var(--brand-purple-ink)}
+  .imp.ink .iv{color:var(--ink)}
+  .imp .il{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+  .ship-row{margin-top:1px;display:grid;grid-template-columns:1fr;gap:1px;background:var(--grid2);border:1px solid var(--grid2);border-top:0}
+  @media(min-width:640px){.ship-row{grid-template-columns:repeat(3,1fr)}}
+  .ship{background:var(--paper);padding:18px clamp(18px,3vw,28px);display:flex;align-items:baseline;gap:12px}
+  .ship .sn{font-family:var(--disp);font-weight:700;font-size:26px;letter-spacing:-.02em;color:var(--ink);flex:none}
+  .ship .sl{font-size:12.5px;color:var(--muted);line-height:1.45}
+
+  /* ============ 08 RECOGNITION ============ */
+  .seals{margin-top:24px;display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:640px){.seals{grid-template-columns:repeat(3,1fr)}}
+  .seal{border:1px solid var(--grid2);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:14px;
+    background:var(--paper)}
+  .seal-mark{width:56px;height:56px;border-radius:50%;border:2px solid var(--brand-purple);display:grid;place-items:center;
+    color:var(--brand-purple);position:relative}
+  .seal-mark::after{content:"";position:absolute;inset:5px;border:1px dashed var(--brand-orange);border-radius:50%;opacity:.6}
+  .seal-mark svg{width:24px;height:24px}
+  .seal b{font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:-.01em;color:var(--ink);line-height:1.2}
+  .seal span{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--muted)}
+
+  /* ============ 09 TRUSTED BY ============ */
+  .wall{margin-top:24px;display:grid;grid-template-columns:1fr;gap:1px;background:var(--grid2);border:1px solid var(--grid2)}
+  @media(min-width:520px){.wall{grid-template-columns:1fr 1fr}}
+  @media(min-width:860px){.wall{grid-template-columns:repeat(3,1fr)}}
+  .wall-cell{background:var(--paper);padding:clamp(22px,4vw,34px) 20px;display:grid;place-items:center;
+    font-family:var(--disp);font-weight:600;font-size:clamp(16px,2.4vw,22px);letter-spacing:-.01em;color:var(--ink2);
+    transition:color .2s,background .2s}
+  .wall-cell:hover{color:var(--brand-purple-ink);background:var(--tint-purple)}
+
+  /* ============ 10 VOICE, ENCODED (AI tie-in) ============ */
+  .encoded{margin-top:24px;border:1px solid var(--grid2);border-radius:14px;overflow:hidden;background:#161310}
+  .enc-bar{display:flex;align-items:center;gap:9px;padding:12px 16px;background:#1f1b16;border-bottom:1px solid #2a251e;
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:#b8b0a2}
+  .enc-dot{width:10px;height:10px;border-radius:50%;flex:none}
+  .enc-dot.p{background:var(--brand-purple)} .enc-dot.o{background:var(--brand-orange)} .enc-dot.n{background:#4a443a}
+  .enc-bar .fn{margin-left:6px;color:#e8e2d6}
+  .enc-bar .rt{margin-left:auto;color:#7c756a}
+  .enc-body{padding:clamp(18px,3vw,26px);font-family:var(--mono);font-size:13px;line-height:1.75;color:#d8d2c6;
+    overflow-x:auto}
+  .enc-body .cm{color:#7c756a}
+  .enc-body .key{color:#c4b5fd}
+  .enc-body .str{color:#fdba74}
+  .enc-body .fn2{color:#93c5fd}
+  .enc-note{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.55;max-width:62ch}
+
+  /* ============ 11 PERSON ============ */
+  .facts{margin-top:24px;display:grid;grid-template-columns:1fr;gap:1px;background:var(--grid2);border:1px solid var(--grid2)}
+  .fact{background:var(--paper);padding:16px clamp(16px,2.5vw,24px);display:grid;grid-template-columns:1fr;gap:6px}
+  @media(min-width:640px){.fact{grid-template-columns:180px 1fr;align-items:baseline;gap:20px}}
+  .fact .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .fact .v{font-size:15px;color:var(--ink);line-height:1.5}
+
+  /* ============ 12 CONTACT ============ */
+  .contact{padding-bottom:clamp(20px,4vh,40px)}
+  .contact-h{font-family:var(--disp);font-weight:700;letter-spacing:-.03em;line-height:.95;
+    font-size:clamp(38px,9vw,88px);color:var(--ink);margin-top:18px}
+  .contact-h .o{color:var(--brand-orange)}
+  .contact-links{margin-top:clamp(22px,4vh,36px);display:grid;grid-template-columns:1fr;gap:1px;
+    background:var(--grid2);border:1px solid var(--grid2)}
+  @media(min-width:640px){.contact-links{grid-template-columns:1fr 1fr}}
+  .clink{background:var(--paper);padding:clamp(18px,3vw,26px);display:flex;flex-direction:column;gap:6px;
+    transition:background .2s}
+  .clink:hover{background:var(--tint-orange)}
+  .clink .ck{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .clink .cv{font-family:var(--disp);font-weight:600;font-size:clamp(16px,2.4vw,21px);letter-spacing:-.01em;
+    color:var(--ink);overflow-wrap:anywhere;display:inline-flex;align-items:center;gap:8px}
+  .clink:hover .cv{color:var(--brand-orange-ink)}
+  .clink .ar{transition:transform .22s}
+  .clink:hover .ar{transform:translate(2px,-2px)}
+
+  /* ============ side page rail (progress) ============ */
+  .rail{position:fixed;top:0;right:clamp(6px,1.5vw,18px);height:100vh;z-index:20;
+    display:none;flex-direction:column;justify-content:center;gap:9px;pointer-events:none}
+  @media(min-width:1180px){.rail{display:flex}}
+  .rail a{pointer-events:auto;display:flex;align-items:center;gap:8px;justify-content:flex-end;
+    font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--muted);opacity:.55;
+    transition:opacity .2s,color .2s}
+  .rail a .rt{opacity:0;transform:translateX(6px);transition:opacity .2s,transform .2s}
+  .rail a .rd{width:18px;height:2px;background:var(--grid2);transition:width .25s,background .25s}
+  .rail a:hover,.rail a.active{opacity:1;color:var(--ink)}
+  .rail a:hover .rt,.rail a.active .rt{opacity:1;transform:none}
+  .rail a.active .rd{width:30px;background:var(--brand-orange)}
+
+  /* ============ footer (outside the book) ============ */
+  .colophon{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;
+    padding:22px var(--pad) 40px;border-top:1px solid var(--grid2);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .colophon a{color:var(--ink);border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+  .colophon a:hover{color:var(--brand-purple-ink);border-color:var(--brand-purple)}
+
+  /* copy toast */
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(16px);z-index:40;
+    background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.05em;
+    padding:10px 16px;border-radius:9px;opacity:0;pointer-events:none;transition:opacity .22s,transform .22s}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* ============ reveal mechanic ============ */
+  /* Default (no JS): everything fully visible. JS adds html.js-anim to opt into the reveal. */
+  .reveal{opacity:1;transform:none}
+  html.js-anim .reveal{opacity:0;transform:translateY(20px);
+    transition:opacity .6s ease,transform .7s cubic-bezier(.2,.75,.25,1)}
+  html.js-anim .reveal.in{opacity:1;transform:none}
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1!important;transform:none!important;transition:none!important}
+    .btn:hover.primary,.swatch:hover{transform:none!important}
+  }
+</style>
+</head>
+<body>
+  <!-- side page rail -->
+  <nav class="rail" aria-label="Sections">
+    {indexRows.map(r => (
+      <a href={'#s' + r.n} data-rail={'s' + r.n}><span class="rt">{r.t}</span><span class="rd" aria-hidden="true"></span></a>
+    ))}
+  </nav>
+
+  <div class="book">
+    <!-- ===== 00 COVER ===== -->
+    <section class="cover" id="s00" aria-label="Cover">
+      <div class="cover-top reveal">
+        <span>Brand Guidelines <b>/ {version}</b></span>
+        <span>Identity System <b>&middot; SB</b></span>
+      </div>
+
+      <div class="cover-mid">
+        <div class="mark-row reveal">
+          <div class="mark" aria-hidden="true">
+            <span class="mono-sb"><span class="s">S</span><span class="b">B</span></span>
+          </div>
+          <h1 class="logotype">Swapnil<span class="l2">Biswas</span></h1>
+        </div>
+        <p class="cover-promise reveal">The product marketer who actually <span class="u">engineers the growth</span> - not just the decks that describe it.</p>
+        <div class="cover-cta reveal">
+          <a class="btn primary" href="#s06">View the work <span class="ar">&#8599;</span></a>
+          <a class="btn ghost" href="#s12">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="cover-index reveal">
+        {indexRows.map(r => (
+          <a href={'#s' + r.n}><span class="ci-n">{r.n}</span><span>{r.t}</span></a>
+        ))}
+      </div>
+
+      <div class="cover-bot reveal">
+        <span class="cover-role">Senior Product Marketing Manager &middot; LambdaTest</span>
+        <span>&copy; 2026 &middot; Mumbai, India</span>
+      </div>
+    </section>
+
+    <!-- ===== 01 POSITIONING ===== -->
+    <section id="s01">
+      <div class="spec reveal"><span class="no">01</span><span>Positioning</span><span class="bar" aria-hidden="true"></span><span>The brand promise</span></div>
+      <h2 class="lead-h reveal">Positioning statement</h2>
+      <div class="pos-grid">
+        <p class="pos-statement reveal">
+          <span class="k">For</span> B2B SaaS teams who need growth that compounds,
+          <span class="hi">Swapnil</span> is the product marketer who
+          <span class="ho">engineers it</span> - building the AI agents, sites and SEO systems behind
+          <b>657K+ leads</b> and <b>18M+ in organic traffic</b>, not just the decks that describe them.
+          <span class="k">Unlike</span> slide-ware PMMs, he ships the systems.
+        </p>
+        <div class="pos-side reveal">
+          <div class="pos-callout"><div class="pc-v">657K+</div><div class="pc-l">Leads generated</div></div>
+          <div class="pos-callout"><div class="pc-v">18.2M+</div><div class="pc-l">Organic traffic</div></div>
+        </div>
+      </div>
+      <div class="pos-frame reveal">
+        <div class="pf-cell"><div class="k">For</div><div class="v">B2B SaaS growth teams</div></div>
+        <div class="pf-cell"><div class="k">Who need</div><div class="v">Growth that compounds</div></div>
+        <div class="pf-cell"><div class="k">Swapnil is</div><div class="v">The PMM who engineers it</div></div>
+        <div class="pf-cell"><div class="k">Unlike</div><div class="v">Deck-only marketers</div></div>
+      </div>
+      <div class="spec reveal" style="margin-top:clamp(32px,5vh,50px)"><span class="no">01.1</span><span>Brand pillars</span><span class="bar" aria-hidden="true"></span><span>What the brand does</span></div>
+      <h3 class="sub-h reveal">Four disciplines</h3>
+      <div class="pillars reveal">
+        {pillars.map(p => (
+          <div class="pillar">
+            <span class="pl-n">{p.n}</span>
+            <div class="pl-t">{p.t}</div>
+            <p class="pl-d">{p.d}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== 02 LOGO / MARK ===== -->
+    <section id="s02">
+      <div class="spec reveal"><span class="no">02</span><span>Logotype &amp; Mark</span><span class="bar" aria-hidden="true"></span><span>Construction &amp; lockups</span></div>
+      <h2 class="lead-h reveal">The SB monogram</h2>
+      <div class="logo-grid reveal">
+        <div class="logo-cell">
+          <span class="lc-cap">2.1 &middot; Construction grid</span>
+          <div class="lc-stage">
+            <div class="construct" aria-hidden="true">
+              <div class="cmark"><span class="s">S</span><span class="b">B</span></div>
+            </div>
+          </div>
+          <p class="lc-note">Built on a square with a 12px radius. Purple axis, orange frame. The mark is geometry, not decoration.</p>
+        </div>
+        <div class="logo-cell">
+          <span class="lc-cap">2.2 &middot; Clearspace</span>
+          <div class="lc-stage">
+            <div class="clearspace" aria-hidden="true">
+              <span class="x t">1x</span><span class="x l">1x</span>
+              <div class="cs-inner"><span class="s">S</span><span class="b">B</span></div>
+            </div>
+          </div>
+          <p class="lc-note">Keep clearspace equal to the mark height (1x) on every side. Never crowd the monogram.</p>
+        </div>
+        <div class="logo-cell">
+          <span class="lc-cap">2.3 &middot; Lockup variants</span>
+          <div class="lc-stage">
+            <div class="lockups">
+              <div class="lockup pos"><span class="lk-mark"><span class="s">S</span><span class="b">B</span></span><span class="lk-name">Swapnil Biswas</span></div>
+              <div class="lockup inv"><span class="lk-mark"><span class="s">S</span><span class="b">B</span></span><span class="lk-name">Swapnil Biswas</span></div>
+              <div class="lockup mono2"><span class="lk-mark">SB</span><span class="lk-name">Monochrome</span></div>
+            </div>
+          </div>
+          <p class="lc-note">Primary, reversed and monochrome. Two brand colors in the mark, never more.</p>
+        </div>
+        <div class="logo-cell">
+          <span class="lc-cap">2.4 &middot; Do not</span>
+          <div class="lc-stage">
+            <div class="lockups">
+              <div class="lockup pos" style="opacity:.55"><span class="lk-mark" style="border-radius:50%"><span class="s">S</span><span class="b">B</span></span><span class="lk-name" style="font-style:italic">Do not restyle</span></div>
+              <div class="lockup pos" style="opacity:.55"><span class="lk-mark" style="transform:skewX(-12deg)"><span class="s">S</span><span class="b">B</span></span><span class="lk-name" style="letter-spacing:.14em">Do not stretch</span></div>
+            </div>
+          </div>
+          <p class="lc-note">No circles, no skew, no extra colors, no gradients on the letterforms. The mark stays square and calm.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 COLOR ===== -->
+    <section id="s03">
+      <div class="spec reveal"><span class="no">03</span><span>Color</span><span class="bar" aria-hidden="true"></span><span>Tokens &middot; click to copy hex</span></div>
+      <h2 class="lead-h reveal">Palette &amp; design tokens</h2>
+      <div class="swatches reveal">
+        {swatches.map(s => (
+          <button class="swatch" type="button" data-hex={s.hex} aria-label={'Copy ' + s.name + ' hex ' + s.hex}>
+            <span class={'sw-chip on-' + s.on} style={'background:' + s.hex}>
+              <span class="copy">{s.hex}</span>
+            </span>
+            <span class="sw-body">
+              <span class="sw-name">{s.name}</span>
+              <span class="sw-meta">
+                <span class="hx">{s.hex}</span>
+                <span>rgb({s.rgb})</span>
+                <span>{s.token}</span>
+              </span>
+              <span class="sw-role">{s.role}</span>
+            </span>
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== 04 TYPOGRAPHY ===== -->
+    <section id="s04">
+      <div class="spec reveal"><span class="no">04</span><span>Typography</span><span class="bar" aria-hidden="true"></span><span>Type scale specimen</span></div>
+      <h2 class="lead-h reveal">Type system</h2>
+      <div class="type-table reveal">
+        {typeScale.map(t => (
+          <div class="tr">
+            <div class="tr-sample" style={'font-family:' + (t.font === 'Space Grotesk' ? 'var(--disp)' : t.font === 'Inter' ? 'var(--sans)' : 'var(--mono)') + ';font-weight:' + t.weight + ';letter-spacing:' + t.ls + ';font-size:' + (t.role.startsWith('Display') ? 'clamp(34px,7vw,64px)' : t.role === 'Heading 01' ? 'clamp(24px,4vw,34px)' : t.role === 'Heading 02' ? 'clamp(19px,3vw,24px)' : t.role === 'Body' ? '17px' : '13px')}>{t.sample}</div>
+            <div class="tr-meta">
+              <span class="tag role">{t.role}</span>
+              <span class="tag">{t.font}</span>
+              <span class="tag">{t.size} px</span>
+              <span class="tag">wt {t.weight}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== 05 VOICE & TONE ===== -->
+    <section id="s05">
+      <div class="spec reveal"><span class="no">05</span><span>Voice &amp; Tone</span><span class="bar" aria-hidden="true"></span><span>Direct, no filler, no slide-ware</span></div>
+      <h2 class="lead-h reveal">We say / We do not say</h2>
+      <div class="voice-grid reveal">
+        <div class="voice-col do">
+          <div class="vh"><span class="glyph" aria-hidden="true">&#10003;</span>We say</div>
+          <ul>
+            {say.map(s => <li>{s}</li>)}
+          </ul>
+        </div>
+        <div class="voice-col dont">
+          <div class="vh"><span class="glyph" aria-hidden="true">&times;</span>We do not say</div>
+          <ul>
+            {dontSay.map(s => <li>{s}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 06 BRAND IN ACTION ===== -->
+    <section id="s06">
+      <div class="spec reveal"><span class="no">06</span><span>Brand in Action</span><span class="bar" aria-hidden="true"></span><span>Six applications</span></div>
+      <h2 class="lead-h reveal">Selected work</h2>
+      <div class="action reveal">
+        {workItems.map(w => (
+          <div class={'app' + (w.feat ? ' feat' : '')}>
+            <div class="app-top">
+              <span class="app-i">{w.i}</span>
+              {w.feat && <span class="app-badge">Featured</span>}
+            </div>
+            <div>
+              <div class="app-name">{w.name}</div>
+              <div class="app-role">{w.role}</div>
+            </div>
+            <p class="app-desc">{w.d}</p>
+            <div class="app-metric"><span class="mv">{w.metric}</span><span class="yr">{w.y}</span></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== 07 BRAND IMPACT ===== -->
+    <section id="s07">
+      <div class="spec reveal"><span class="no">07</span><span>Brand Impact</span><span class="bar" aria-hidden="true"></span><span>The numbers</span></div>
+      <h2 class="lead-h reveal">Impact</h2>
+      <div class="impact reveal">
+        {impact.map(m => (
+          <div class={'imp ' + m.c}>
+            <div class="iv" data-count={m.v}>{m.v}</div>
+            <div class="il">{m.l}</div>
+          </div>
+        ))}
+      </div>
+      <div class="ship-row reveal">
+        {shipped.map(s => (
+          <div class="ship"><span class="sn">{s.n}</span><span class="sl">{s.l}</span></div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== 08 RECOGNITION ===== -->
+    <section id="s08">
+      <div class="spec reveal"><span class="no">08</span><span>Recognition</span><span class="bar" aria-hidden="true"></span><span>Award seals</span></div>
+      <h2 class="lead-h reveal">Recognition</h2>
+      <div class="seals reveal">
+        {awards.map(a => (
+          <div class="seal">
+            <div class="seal-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"></circle><path d="M8.5 14.5 7 22l5-3 5 3-1.5-7.5"></path></svg>
+            </div>
+            <b>{a.t}</b>
+            <span>{a.m}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== 09 TRUSTED BY ===== -->
+    <section id="s09">
+      <div class="spec reveal"><span class="no">09</span><span>Trusted By</span><span class="bar" aria-hidden="true"></span><span>Logo wall</span></div>
+      <h2 class="lead-h reveal">Trusted by teams at</h2>
+      <div class="wall reveal">
+        {brands.map(b => <div class="wall-cell">{b}</div>)}
+      </div>
+    </section>
+
+    <!-- ===== 10 VOICE, ENCODED (AI tie-in) ===== -->
+    <section id="s10">
+      <div class="spec reveal"><span class="no">10</span><span>Voice, Encoded</span><span class="bar" aria-hidden="true"></span><span>Brand meets AI</span></div>
+      <h2 class="lead-h reveal">Brand voice, encoded</h2>
+      <div class="encoded reveal">
+        <div class="enc-bar">
+          <span class="enc-dot p" aria-hidden="true"></span>
+          <span class="enc-dot o" aria-hidden="true"></span>
+          <span class="enc-dot n" aria-hidden="true"></span>
+          <span class="fn">brand-voice.system.txt</span>
+          <span class="rt">read-only</span>
+        </div>
+        <pre class="enc-body"><code><span class="cm"># The brand as an AI system prompt. Marketing meets the agents I build.</span>
+<span class="key">role</span>: <span class="str">"Swapnil Biswas - product marketer who engineers growth"</span>
+<span class="key">voice</span>: <span class="str">"direct, no filler, no slide-ware, opinion-forward"</span>
+
+<span class="fn2">def</span> respond(query):
+    lead_with(<span class="str">"the number, then the mechanism"</span>)   <span class="cm"># 657K, not "massive"</span>
+    use(<span class="str">"plain verbs: built, shipped, ran, engineered"</span>)
+    never(<span class="str">"synergy, unlock, supercharge, world-class"</span>)
+    take_a_position(); defend_it()
+    <span class="key">return</span> proof_over_adjectives(query)</code></pre>
+      </div>
+      <p class="enc-note">Positioning and messaging is the craft. So the brand ships as a spec an agent can run - the same way I build the AI systems behind the marketing.</p>
+    </section>
+
+    <!-- ===== 11 THE PERSON ===== -->
+    <section id="s11">
+      <div class="spec reveal"><span class="no">11</span><span>The Person</span><span class="bar" aria-hidden="true"></span><span>Behind the brand</span></div>
+      <h2 class="lead-h reveal">The person behind the brand</h2>
+      <div class="facts reveal">
+        {facts.map(f => (
+          <div class="fact"><span class="k">{f.k}</span><span class="v">{f.v}</span></div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ===== 12 CONTACT ===== -->
+    <section id="s12" class="contact">
+      <div class="spec reveal"><span class="no">12</span><span>Contact</span><span class="bar" aria-hidden="true"></span><span>Work with the brand</span></div>
+      <h2 class="contact-h reveal">Work with<br/>the br<span class="o">and.</span></h2>
+      <div class="contact-links reveal">
+        <a class="clink" href="mailto:swapbiswas.marketing@gmail.com">
+          <span class="ck">Email</span>
+          <span class="cv">swapbiswas.marketing@gmail.com <span class="ar" aria-hidden="true">&#8599;</span></span>
+        </a>
+        <a class="clink" href="https://www.linkedin.com/in/swapbiswas/">
+          <span class="ck">LinkedIn</span>
+          <span class="cv">linkedin.com/in/swapbiswas <span class="ar" aria-hidden="true">&#8599;</span></span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="colophon">
+    <span>Brand &middot; Concept 49</span>
+    <span>Swapnil Biswas &copy; 2026</span>
+    <span><a href="/personal-website-examples/">View all concepts</a></span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+
+<script>
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+
+  // ---------- reveal-on-scroll (with safety-net) ----------
+  const blocks = Array.from(document.querySelectorAll('.reveal')) as HTMLElement[];
+  if (!RM && blocks.length && 'IntersectionObserver' in window) {
+    root.classList.add('js-anim');          // opt into hidden->reveal (default CSS stays visible without this)
+    const finalizeAll = () => blocks.forEach(b => b.classList.add('in'));
+
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { (e.target as HTMLElement).classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    blocks.forEach(b => {
+      const r = b.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) b.classList.add('in'); // already in view on load
+      else io.observe(b);
+    });
+
+    // SAFETY NET: force every block to final visible state within ~2.7s no matter what.
+    window.setTimeout(finalizeAll, 2700);
+  }
+  // (RM path: no js-anim class added -> default CSS shows all blocks in final state.)
+
+  // ---------- side rail active-section tracking ----------
+  const railLinks = Array.from(document.querySelectorAll('.rail a')) as HTMLElement[];
+  const railMap = new Map(railLinks.map(a => [a.getAttribute('data-rail'), a]));
+  if (railLinks.length && 'IntersectionObserver' in window) {
+    const secObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          railLinks.forEach(a => a.classList.remove('active'));
+          const link = railMap.get(e.target.id);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+    document.querySelectorAll('section[id]').forEach(s => secObs.observe(s));
+  }
+
+  // ---------- swatch: click to copy hex ----------
+  const toast = document.getElementById('toast') as HTMLElement | null;
+  let toastT = 0;
+  function showToast(msg: string) {
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastT);
+    toastT = window.setTimeout(() => toast.classList.remove('show'), 1400);
+  }
+  document.querySelectorAll('.swatch').forEach(el => {
+    el.addEventListener('click', () => {
+      const hex = (el as HTMLElement).getAttribute('data-hex') || '';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(hex).then(() => showToast(hex + ' copied')).catch(() => showToast(hex));
+      } else {
+        showToast(hex);
+      }
+    });
+  });
+</script>
+</body>
+</html>
