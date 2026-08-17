@@ -130,6 +130,8 @@ Pricing rollout has three modes:
 - **Phased increase** - existing customers move to new pricing over 6-12 months with notice. Captures lift faster, requires communication discipline.
 - **Immediate uplift with cap** - all customers move to new pricing at next renewal, with a cap (no more than X% increase in any one renewal). Most common in SaaS.
 
+Choosing the mode is the easy half. Landing it without churning the base is a separate operating problem, and [announcing a price increase](/blog/price-increase-announcement/) covers the segmentation, notice periods, and internal sequencing that decide whether the uplift survives renewal.
+
 After rollout, pricing becomes an ongoing operating discipline:
 
 - **Discount control** - monitor average discount, sales-rep variance, deal-size-vs-discount correlation

@@ -32,6 +32,8 @@ Before anything else, decide what tier the launch is. Treating every release as 
 
 For each launch, write the tier decision down. When scope creeps, the document is the tie-breaker.
 
+One caveat on the Tier 1 line: analyst coverage is not something you switch on for a launch. Analysts form their view of you over quarters of consistent briefings, so [an analyst relations cadence](/blog/analyst-relations/) has to already exist before a launch can lean on it.
+
 ![Product launch checklist framework showing three phases and key deliverables](/assets/blog/product-launch-checklist/launch-phases.webp "Product Launch Phases and Checklist")
 
 ## Phase 1: Pre-Launch (Weeks -12 to -1)

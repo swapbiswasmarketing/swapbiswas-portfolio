@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="760" rx="24" fill="url(#bg2)"/>
+
+  <text x="700" y="66" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700" fill="#f0f6fc">Should You Start Analyst Relations Yet?</text>
+  <text x="700" y="110" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="25" fill="#9ca3af">All three must be true before the first Tier 1 briefing</text>
+
+  <!-- Condition 1 -->
+  <rect x="60" y="150" width="400" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow2)"/>
+  <circle cx="104" cy="196" r="16" fill="#c084fc"/>
+  <text x="104" y="204" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="19" font-weight="700" fill="#0d1117">1</text>
+  <text x="136" y="204" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" fill="#f0f6fc">A repeatable story</text>
+  <text x="88" y="256" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">You can describe the</text>
+  <text x="88" y="288" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">category, buyer, and your</text>
+  <text x="88" y="320" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">differentiation the same</text>
+  <text x="88" y="352" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">way twice, without the</text>
+  <text x="88" y="384" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">founder in the room.</text>
+
+  <!-- Condition 2 -->
+  <rect x="500" y="150" width="400" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow2)"/>
+  <circle cx="544" cy="196" r="16" fill="#60a5fa"/>
+  <text x="544" y="204" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="19" font-weight="700" fill="#0d1117">2</text>
+  <text x="576" y="204" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" fill="#f0f6fc">Real customer proof</text>
+  <text x="528" y="256" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Named customers in the</text>
+  <text x="528" y="288" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">segment you want to be</text>
+  <text x="528" y="320" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">evaluated in, who will</text>
+  <text x="528" y="352" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">take a reference call.</text>
+
+  <!-- Condition 3 -->
+  <rect x="940" y="150" width="400" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow2)"/>
+  <circle cx="984" cy="196" r="16" fill="#fb923c"/>
+  <text x="984" y="204" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="19" font-weight="700" fill="#0d1117">3</text>
+  <text x="1016" y="204" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" fill="#f0f6fc">Sustained capacity</text>
+  <text x="968" y="256" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Roughly a third of one</text>
+  <text x="968" y="288" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">FTE, able to hold a</text>
+  <text x="968" y="320" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">quarterly cadence for a</text>
+  <text x="968" y="352" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">year without heroics.</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="470" x2="1340" y2="470" stroke="#30363d" stroke-width="2"/>
+
+  <!-- Outcome A -->
+  <rect x="60" y="510" width="620" height="190" rx="16" fill="#151b23" stroke="#5eead4" stroke-width="2" filter="url(#cardShadow2)"/>
+  <text x="92" y="562" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" fill="#5eead4" letter-spacing="0.08em">ALL THREE TRUE</text>
+  <text x="92" y="606" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" fill="#f0f6fc">Start the program</text>
+  <text x="92" y="650" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">Pick four to six Tier 1 analysts, book the first</text>
+  <text x="92" y="682" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">briefing, then hold cadence for four quarters.</text>
+
+  <!-- Outcome B -->
+  <rect x="720" y="510" width="620" height="190" rx="16" fill="#151b23" stroke="#f5a0a1" stroke-width="2" filter="url(#cardShadow2)"/>
+  <text x="752" y="562" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" fill="#f5a0a1" letter-spacing="0.08em">ANY ONE FALSE</text>
+  <text x="752" y="606" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" fill="#f0f6fc">Run the free version</text>
+  <text x="752" y="650" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">Briefings need no paid subscription. Fix the</text>
+  <text x="752" y="682" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">missing condition before you spend budget.</text>
+</svg>

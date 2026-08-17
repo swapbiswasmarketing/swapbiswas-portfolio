@@ -836,3 +836,119 @@ The post includes a copy-ready matrix template.
 🔗 https://swapbiswas.com/blog/brand-messaging-framework/?utm_source=linkedin&utm_medium=social&utm_campaign=brand-messaging-framework
 
 #ProductMarketing #Messaging #GoToMarket #PMM #BrandStrategy
+
+### Analyst Relations Is a Distribution Channel, Not a PR Program
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark near-black background (#0d1117 to #161b22), four cards in a 2x2 loop labeled "You brief the analyst", "The analyst forms a view", "The analyst advises buyers", "Market intel returns", connected by glowing teal arrows forming a cycle, one card highlighted with a large stat "510,000+ buyer conversations a year", subtle purple-to-orange accent, clean sans-serif. 1200x628.
+
+Most teams treat analyst relations as chasing a dot on a chart. That is the wrong scoreboard. 🎯
+
+In its FY2025 10-K, Gartner reports more than 2,400 business and technology experts, steady contact with over 13,000 distinct client enterprises, and more than 510,000 direct client interactions in 2025.
+
+Half a million conversations. Almost none of them public. Your buyer is on some of those calls asking "who should we buy from?" and you are not.
+
+That reframes the whole function:
+• The report is a lagging artifact of a view the analyst already formed
+• The leading indicator is whether an analyst can describe your differentiation without notes
+• That is a positioning problem before it is a PR problem
+• Which is why AR belongs to whoever owns the product story, not the media list
+• A Forrester Wave runs roughly 18 weeks from kickoff to publication, so it is a resourcing decision, not a marketing whim
+
+The practical version: brief four to six analysts who actually cover your category, never open with an ask, and hold the cadence for four quarters before you judge it.
+
+Everything you need for that first briefing already exists in a PMM's drive.
+
+🔗 https://swapbiswas.com/blog/analyst-relations/?utm_source=linkedin&utm_medium=social&utm_campaign=analyst-relations
+
+#ProductMarketing #AnalystRelations #B2BSaaS #GoToMarket #PMM
+
+### The Customer Success Story Template Is the Easy 20%
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark near-black background (#0d1117 to #161b22), a five-rung descending ladder graphic labeled "Named + verified", "Named + percentages", "Named + directional", "Described anonymity", "Segment anonymity", each rung with a small credibility chip from teal down to salmon, headline space at top, subtle purple-to-orange accent, clean sans-serif. 1200x628.
+
+Customer stories do not die in the draft. They die in legal. 📄
+
+Every "customer success story template" article hands you Challenge-Solution-Results and stops. That structure is the easy 20%. The other 80% is a production system nobody publishes:
+• Negotiate story rights at contract or QBR time, not after the win
+• Source the metric from the customer's own dashboard, not your CRM
+• Know your fallback before legal strikes the number
+• Instrument whether sales ever actually used the finished asset
+
+That last one matters more than it sounds. In 6sense's 2025 research, 94% of buying groups had already ranked their shortlist before they spoke to a seller. The published story does the selling before you are in the room.
+
+So build the ladder: named customer with hard numbers at the top, down to "a mid-market fintech, direction only" at the bottom. Every rung is publishable. Most teams treat rung 1 as the only option and ship nothing.
+
+🔗 https://swapbiswas.com/blog/customer-success-story-template/?utm_source=linkedin&utm_medium=social&utm_campaign=customer-success-story-template
+
+#ProductMarketing #CustomerMarketing #B2BSaaS #CaseStudies #GTM
+
+### A Price Increase Is a GTM Operations Problem, Not a Copywriting One
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark background (#0d1117 to #161b22), five stacked horizontal cards numbered 01 to 05 connected by downward teal arrows, labeled "Lock the segmentation matrix", "Set the concession ceiling", "Run internal enablement", "Send the announcement", "Read the 30/60/90 scorecard", with card 04 subtly highlighted and a small caption "the email is step 4 of 5", purple-to-orange accent. 1200x628.
+
+There were more than 1,800 pricing changes across the top 500 SaaS and AI companies with transparent pricing in 2025 - about 3.6 per company (PricingSaaS index, via Growth Unhinged). 💰
+
+Price movement is normal now. Landing it is still where teams break.
+
+Every guide treats the price increase as a writing exercise. It is not. The email is step 4 of 5, and the four steps around it decide whether it works:
+• Lock a segmentation matrix: contract type x ARR band x account health
+• Set a concession ceiling with finance BEFORE the save desk starts improvising
+• Run internal enablement: CS talk tracks, sales objections, support macros
+• Then send, with one template variant per tier, not one letter for everybody
+• Read the 30/60/90 scorecard: churn delta by price band, concession depth, realized vs modeled uplift
+
+The concession ceiling is the one nobody publishes. There is a discount at which a retention save mathematically destroys the point of the increase. Agree that number in advance or you will discover it in the renewal report.
+
+🔗 https://swapbiswas.com/blog/price-increase-announcement/?utm_source=linkedin&utm_medium=social&utm_campaign=price-increase-announcement
+
+#ProductMarketing #SaaSPricing #B2BSaaS #GoToMarket #PMM
+
+### Sunsetting a Product Is a Retention Campaign With a Hard End Date
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark background (#0d1117 to #161b22), six connected phase cards in a 3x2 grid labeled Decision Lock, Segmentation, Announcement, Migration, Enforcement, Shutdown, joined by teal arrows with a row transition, a horizontal 90-day timeline band beneath, purple-to-orange accent, clean sans-serif. 1200x628.
+
+"PMM can own comms, right?" 🌇
+
+That is how most product marketers meet a product sunset: a Slack channel you were added to twenty minutes ago, a decision already made, a saving already booked by finance, and a live revenue base attached to the deadline.
+
+The most expensive mistake is treating notice as one date for everybody. It is not one audience:
+• A customer on a signed multi-year contract has contractual rights to check first
+• A customer who built an integration needs lead time measured in engineering sprints
+• A self-serve monthly user needs a clear in-app path, not a legal letter
+• A free-tier user is a migration opportunity, not a liability
+
+Run it as a 90-day program with one named owner per phase: decision lock, segmentation, announcement, migration, enforcement, shutdown. Publish a deprecation policy before you need one, because the vendors who handle sunsets well are the ones who wrote the rules down while nothing was being retired.
+
+A sunset done badly does not just lose the retired product's revenue. It teaches the base that your roadmap is not safe to build on.
+
+🔗 https://swapbiswas.com/blog/product-sunset/?utm_source=linkedin&utm_medium=social&utm_campaign=product-sunset
+
+#ProductMarketing #B2BSaaS #ProductManagement #CustomerRetention #PMM
+
+### Your Sales Kickoff Agenda Is Named After Departments, and That Is the Problem
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Dark background (#0d1117 to #161b22), six phase cards in a 3x2 grid labeled "T-8 Weeks", "T-6 to T-4", "T-3 Weeks", "T-1 Week", "T-0 SKO Days", "T+30 to T+90", connected by teal arrows with a row transition, each card carrying three short bullets, purple-to-orange accent, clean sans-serif. 1200x628.
+
+The fastest way to spot a sales kickoff that will not change anything: the blocks are named after departments. 🎤
+
+"Marketing Update." "Product Session." "Leadership Address." Slots get sized by the seniority of whoever is presenting, the day fills up, and nobody writes down which rep behavior is supposed to be different on the Monday after.
+
+A sales kickoff agenda is a behavior-change plan with timestamps. Every block names the behavior it installs and the one person accountable for proving it stuck:
+• Name three rep behaviors at T-8 weeks, before a single slot is booked
+• Content freeze at T-3 weeks, then dry-run every session
+• Cap sessions at 75 minutes; only certification earns 90
+• One named owner per block: CRO, PMM, Enablement, Product, or a top rep
+• Reinforce at T+30, T+60, T+90 or the whole thing evaporates
+
+Salesforce's 2026 sales research puts reps at 60% of their time on non-selling tasks. An SKO that adds process without removing any is not neutral, it is a withdrawal.
+
+Write it from the product marketing seat and you will notice PMM produces roughly half the agenda anyway: positioning, competitive, roadmap narrative, customer proof.
+
+🔗 https://swapbiswas.com/blog/sales-kickoff-agenda/?utm_source=linkedin&utm_medium=social&utm_campaign=sales-kickoff-agenda
+
+#SalesEnablement #ProductMarketing #SalesKickoff #B2BSaaS #GTM

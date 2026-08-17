@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 790" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="790" fill="url(#bg2)" rx="24"/>
+
+  <text x="40" y="64" fill="#f0f6fc" font-size="42" font-weight="700">The Four-Tier Sunset Customer Triage</text>
+  <text x="40" y="104" fill="#9ca3af" font-size="24">Four parallel segments, four different messages, four different owners</text>
+
+  <!-- Tier 1 -->
+  <rect x="40" y="150" width="640" height="200" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow2)"/>
+  <rect x="62" y="184" width="6" height="130" rx="3" fill="#f5a0a1"/>
+  <text x="86" y="198" fill="#f0f6fc" font-size="27" font-weight="600">Tier 1: Strategic</text>
+  <text x="86" y="240" fill="#f5a0a1" font-size="21" font-weight="600">Top ARR, multi-year contract</text>
+  <text x="86" y="276" fill="#c8cfd8" font-size="21">Named call from AE and CSM first</text>
+  <text x="86" y="310" fill="#9ca3af" font-size="21">Offer: funded migration plan</text>
+
+  <!-- Tier 2 -->
+  <rect x="720" y="150" width="640" height="200" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow2)"/>
+  <rect x="742" y="184" width="6" height="130" rx="3" fill="#fb923c"/>
+  <text x="766" y="198" fill="#f0f6fc" font-size="27" font-weight="600">Tier 2: At risk</text>
+  <text x="766" y="240" fill="#fb923c" font-size="21" font-weight="600">Heavy users of the sunset feature</text>
+  <text x="766" y="276" fill="#c8cfd8" font-size="21">Personal email plus live office hours</text>
+  <text x="766" y="310" fill="#9ca3af" font-size="21">Offer: hands-on migration support</text>
+
+  <!-- Tier 3 -->
+  <rect x="40" y="380" width="640" height="200" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow2)"/>
+  <rect x="62" y="414" width="6" height="130" rx="3" fill="#60a5fa"/>
+  <text x="86" y="428" fill="#f0f6fc" font-size="27" font-weight="600">Tier 3: Self-serve</text>
+  <text x="86" y="470" fill="#60a5fa" font-size="21" font-weight="600">Monthly plans, low touch</text>
+  <text x="86" y="506" fill="#c8cfd8" font-size="21">Lifecycle email and in-app banner</text>
+  <text x="86" y="540" fill="#9ca3af" font-size="21">Offer: docs, video, migration flow</text>
+
+  <!-- Tier 4 -->
+  <rect x="720" y="380" width="640" height="200" rx="16" fill="#151b23" stroke="#30363d" filter="url(#cardShadow2)"/>
+  <rect x="742" y="414" width="6" height="130" rx="3" fill="#c084fc"/>
+  <text x="766" y="428" fill="#f0f6fc" font-size="27" font-weight="600">Tier 4: Dormant</text>
+  <text x="766" y="470" fill="#c084fc" font-size="21" font-weight="600">No login in the last 90 days</text>
+  <text x="766" y="506" fill="#c8cfd8" font-size="21">One email plus the status page</text>
+  <text x="766" y="540" fill="#9ca3af" font-size="21">Offer: self-serve export, no chase</text>
+
+  <!-- Footer rule -->
+  <rect x="40" y="610" width="1320" height="130" rx="16" fill="#151b23" stroke="#5eead4" stroke-width="2" filter="url(#cardShadow2)"/>
+  <rect x="62" y="644" width="6" height="62" rx="3" fill="#5eead4"/>
+  <text x="86" y="662" fill="#5eead4" font-size="26" font-weight="600">The sorting rule</text>
+  <text x="86" y="702" fill="#c8cfd8" font-size="21">Tier by revenue at risk multiplied by switching cost, not by logo size.</text>
+</svg>

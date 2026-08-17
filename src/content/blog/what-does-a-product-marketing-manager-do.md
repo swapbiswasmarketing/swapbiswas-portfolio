@@ -54,6 +54,8 @@ When engineering ships something new, the PMM owns the plan for getting it into 
 
 A launch is where PMMs are most visible. It is also where the most things can go wrong if there is no clear owner. For frameworks around this, see our guide on [go-to-market strategy for startups](/blog/go-to-market-strategy-for-startups/).
 
+The same ownership applies at the other end of the lifecycle. Retiring something is a launch run backwards, and [sunsetting a product](/blog/product-sunset/) lands on the PMM for the same reason launches do: it is a migration and communication problem long before it is an engineering one.
+
 ### 3. Customer and Market Research
 
 You cannot position a product you do not understand, and you cannot understand the product without understanding the customer. PMMs run win/loss interviews, customer panels, survey work, and sit in on sales calls.

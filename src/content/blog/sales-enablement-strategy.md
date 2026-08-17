@@ -104,6 +104,8 @@ The priority order I use:
 
 For the full deliverable list across onboarding, launch, and competitive, the [sales enablement checklist](/blog/sales-enablement-checklist/) is the companion to this step. The launch package specifically should be standardized so every release ships with enablement attached, which the [product launch checklist](/blog/product-launch-checklist/) covers.
 
+Two of these deliverables are big enough to have their own build process. Customer proof is one, and [getting a customer story approved and published](/blog/customer-success-story-template/) fails far more often at the permission stage than at the writing stage. The annual kickoff is the other, and [an hour-by-hour sales kickoff agenda](/blog/sales-kickoff-agenda/) is where most of a year's enablement narrative gets set or wasted.
+
 ## Step 4: Tie Every Asset to a Deal Stage and a Metric
 
 This is the step that separates a strategy from a library, and the one generic enablement guides skip. Every asset gets three tags: the **stage** it serves, the **buyer question** it answers, and the **metric** it should move. No metric, no asset.

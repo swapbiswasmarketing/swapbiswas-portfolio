@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 940" width="1400" height="940" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="940" fill="url(#bg)" rx="24"/>
+
+  <text x="60" y="62" fill="#f0f6fc" font-size="42" font-weight="700">The Price Increase Announcement Operator Sequence</text>
+  <text x="60" y="104" fill="#9ca3af" font-size="24">The customer email is step 4 of 5. The other four steps decide whether it works.</text>
+
+  <!-- Step 1 -->
+  <rect x="60" y="140" width="1280" height="110" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="92" y="207" fill="#f5a0a1" font-size="30" font-weight="700">01</text>
+  <text x="152" y="188" fill="#f0f6fc" font-size="28" font-weight="600">Lock the segmentation matrix</text>
+  <text x="152" y="222" fill="#c8cfd8" font-size="21">Segment by contract type, ARR band, and account health. Fix notice, channel, owner, ceiling.</text>
+
+  <line x1="700" y1="256" x2="700" y2="282" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,282 707,282 700,296" fill="#5eead4"/>
+
+  <!-- Step 2 -->
+  <rect x="60" y="300" width="1280" height="110" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="92" y="367" fill="#c084fc" font-size="30" font-weight="700">02</text>
+  <text x="152" y="348" fill="#f0f6fc" font-size="28" font-weight="600">Set the concession ceiling</text>
+  <text x="152" y="382" fill="#c8cfd8" font-size="21">Agree the maximum retention discount per tier with finance before the save desk improvises.</text>
+
+  <line x1="700" y1="416" x2="700" y2="442" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,442 707,442 700,456" fill="#5eead4"/>
+
+  <!-- Step 3 -->
+  <rect x="60" y="460" width="1280" height="110" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="92" y="527" fill="#60a5fa" font-size="30" font-weight="700">03</text>
+  <text x="152" y="508" fill="#f0f6fc" font-size="28" font-weight="600">Run internal enablement</text>
+  <text x="152" y="542" fill="#c8cfd8" font-size="21">CS talk tracks, sales objections, support macros, billing ops. All of it lands before the email.</text>
+
+  <line x1="700" y1="576" x2="700" y2="602" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,602 707,602 700,616" fill="#5eead4"/>
+
+  <!-- Step 4 -->
+  <rect x="60" y="620" width="1280" height="110" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="92" y="687" fill="#fb923c" font-size="30" font-weight="700">04</text>
+  <text x="152" y="668" fill="#f0f6fc" font-size="28" font-weight="600">Send the announcement</text>
+  <text x="152" y="702" fill="#c8cfd8" font-size="21">One template variant per tier. Named sender, new price, effective date, one route to reply.</text>
+
+  <line x1="700" y1="736" x2="700" y2="762" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,762 707,762 700,776" fill="#5eead4"/>
+
+  <!-- Step 5 -->
+  <rect x="60" y="780" width="1280" height="110" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="92" y="847" fill="#5eead4" font-size="30" font-weight="700">05</text>
+  <text x="152" y="828" fill="#f0f6fc" font-size="28" font-weight="600">Read the 30/60/90 scorecard</text>
+  <text x="152" y="862" fill="#c8cfd8" font-size="21">Churn delta by price band, downgrade rate, concession depth, realized vs modeled uplift, NRR.</text>
+</svg>

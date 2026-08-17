@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 890">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="890" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="76" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">The SKO Build Calendar: T-8 Weeks to T+90</text>
+  <text x="700" y="120" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="24">A sales kickoff agenda is a content project with a deadline, not an event.</text>
+
+  <!-- Card 1 -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="170" width="400" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="50" y="170" width="400" height="6" rx="3" fill="#f5a0a1"/>
+    <text x="78" y="218" fill="#f5a0a1" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">T-8 WEEKS</text>
+    <text x="78" y="260" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Lock the behaviors</text>
+    <text x="78" y="306" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Name 3 rep behaviors</text>
+    <text x="78" y="340" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; CRO signs off outcomes</text>
+    <text x="78" y="374" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Skeleton agenda, no topics</text>
+    <text x="78" y="408" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Book speakers and venue</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="456" y1="305" x2="478" y2="305" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="478,298 492,305 478,312" fill="#5eead4"/>
+
+  <!-- Card 2 -->
+  <g filter="url(#cardShadow)">
+    <rect x="500" y="170" width="400" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="500" y="170" width="400" height="6" rx="3" fill="#c084fc"/>
+    <text x="528" y="218" fill="#c084fc" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">T-6 TO T-4 WEEKS</text>
+    <text x="528" y="260" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">PMM builds the spine</text>
+    <text x="528" y="306" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Positioning refresh done</text>
+    <text x="528" y="340" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Battlecards refreshed</text>
+    <text x="528" y="374" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Roadmap story w/ Product</text>
+    <text x="528" y="408" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Customer proof sourced</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="906" y1="305" x2="928" y2="305" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="928,298 942,305 928,312" fill="#5eead4"/>
+
+  <!-- Card 3 -->
+  <g filter="url(#cardShadow)">
+    <rect x="950" y="170" width="400" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="950" y="170" width="400" height="6" rx="3" fill="#60a5fa"/>
+    <text x="978" y="218" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">T-3 WEEKS</text>
+    <text x="978" y="260" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Freeze and rehearse</text>
+    <text x="978" y="306" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Content freeze on decks</text>
+    <text x="978" y="340" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Dry run every session</text>
+    <text x="978" y="374" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Cap sessions at 75 min</text>
+    <text x="978" y="408" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Certification rubric set</text>
+  </g>
+
+  <!-- Row transition 3 -> 4 -->
+  <line x1="1150" y1="440" x2="1150" y2="505" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1150" y1="505" x2="250" y2="505" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="250" y1="505" x2="250" y2="556" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="243,556 250,570 257,556" fill="#5eead4"/>
+
+  <!-- Card 4 -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="570" width="400" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="50" y="570" width="400" height="6" rx="3" fill="#fb923c"/>
+    <text x="78" y="618" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">T-1 WEEK</text>
+    <text x="78" y="660" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Pre-work goes out</text>
+    <text x="78" y="706" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Pre-read and data to reps</text>
+    <text x="78" y="740" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Deal list per rep ready</text>
+    <text x="78" y="774" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Breakout groups assigned</text>
+    <text x="78" y="808" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Logistics and tech check</text>
+  </g>
+
+  <!-- Arrow 4 -> 5 -->
+  <line x1="456" y1="705" x2="478" y2="705" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="478,698 492,705 478,712" fill="#5eead4"/>
+
+  <!-- Card 5 -->
+  <g filter="url(#cardShadow)">
+    <rect x="500" y="570" width="400" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="500" y="570" width="400" height="6" rx="3" fill="#d98ee0"/>
+    <text x="528" y="618" fill="#d98ee0" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">T-0: SKO DAYS</text>
+    <text x="528" y="660" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Two-day run of show</text>
+    <text x="528" y="706" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Day 1: market + message</text>
+    <text x="528" y="740" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Day 2: practice + certify</text>
+    <text x="528" y="774" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; One named owner per block</text>
+    <text x="528" y="808" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Reps leave with a plan</text>
+  </g>
+
+  <!-- Arrow 5 -> 6 -->
+  <line x1="906" y1="705" x2="928" y2="705" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="928,698 942,705 928,712" fill="#5eead4"/>
+
+  <!-- Card 6 -->
+  <g filter="url(#cardShadow)">
+    <rect x="950" y="570" width="400" height="270" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="950" y="570" width="400" height="6" rx="3" fill="#5eead4"/>
+    <text x="978" y="618" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">T+30 TO T+90</text>
+    <text x="978" y="660" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Reinforce or lose it</text>
+    <text x="978" y="706" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; T+30: certify every rep</text>
+    <text x="978" y="740" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; T+60: call-review coaching</text>
+    <text x="978" y="774" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; T+90: CRM message audit</text>
+    <text x="978" y="808" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Kill what reps ignored</text>
+  </g>
+</svg>

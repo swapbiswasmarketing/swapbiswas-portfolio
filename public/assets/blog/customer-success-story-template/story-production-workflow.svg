@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 790" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="790" rx="24" fill="url(#bg)"/>
+
+  <text x="700" y="66" text-anchor="middle" fill="#f0f6fc" font-size="40" font-weight="700">The Story Production Line</text>
+  <text x="700" y="106" text-anchor="middle" fill="#9ca3af" font-size="24">Six steps that turn an approved account into a published, tracked story</text>
+
+  <!-- Step 1 -->
+  <rect x="90" y="170" width="380" height="240" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <rect x="118" y="198" width="56" height="6" rx="3" fill="#f5a0a1"/>
+  <text x="118" y="248" fill="#f5a0a1" font-size="21" font-weight="700" letter-spacing="0.08em">1. NOMINATE</text>
+  <text x="118" y="304" fill="#c8cfd8" font-size="21">CSM flags the account</text>
+  <text x="118" y="338" fill="#c8cfd8" font-size="21">at the QBR, not later</text>
+  <text x="118" y="382" fill="#9ca3af" font-size="20">Owner: CSM</text>
+
+  <!-- Step 2 -->
+  <rect x="510" y="170" width="380" height="240" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <rect x="538" y="198" width="56" height="6" rx="3" fill="#c084fc"/>
+  <text x="538" y="248" fill="#c084fc" font-size="21" font-weight="700" letter-spacing="0.08em">2. PRE-CLEAR</text>
+  <text x="538" y="304" fill="#c8cfd8" font-size="21">Check the contract for</text>
+  <text x="538" y="338" fill="#c8cfd8" font-size="21">story and logo rights</text>
+  <text x="538" y="382" fill="#9ca3af" font-size="20">Owner: PMM and legal</text>
+
+  <!-- Step 3 -->
+  <rect x="930" y="170" width="380" height="240" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <rect x="958" y="198" width="56" height="6" rx="3" fill="#60a5fa"/>
+  <text x="958" y="248" fill="#60a5fa" font-size="21" font-weight="700" letter-spacing="0.08em">3. INTERVIEW</text>
+  <text x="958" y="304" fill="#c8cfd8" font-size="21">45 minutes, recorded,</text>
+  <text x="958" y="338" fill="#c8cfd8" font-size="21">12 fixed questions</text>
+  <text x="958" y="382" fill="#9ca3af" font-size="20">Owner: PMM</text>
+
+  <!-- Step 4 -->
+  <rect x="90" y="500" width="380" height="240" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <rect x="118" y="528" width="56" height="6" rx="3" fill="#5eead4"/>
+  <text x="118" y="578" fill="#5eead4" font-size="21" font-weight="700" letter-spacing="0.08em">4. SOURCE METRICS</text>
+  <text x="118" y="634" fill="#c8cfd8" font-size="21">Fill number gaps with</text>
+  <text x="118" y="668" fill="#c8cfd8" font-size="21">product telemetry</text>
+  <text x="118" y="712" fill="#9ca3af" font-size="20">Owner: PMM and analytics</text>
+
+  <!-- Step 5 -->
+  <rect x="510" y="500" width="380" height="240" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <rect x="538" y="528" width="56" height="6" rx="3" fill="#fb923c"/>
+  <text x="538" y="578" fill="#fb923c" font-size="21" font-weight="700" letter-spacing="0.08em">5. APPROVE</text>
+  <text x="538" y="634" fill="#c8cfd8" font-size="21">Champion, then comms,</text>
+  <text x="538" y="668" fill="#c8cfd8" font-size="21">then customer legal</text>
+  <text x="538" y="712" fill="#9ca3af" font-size="20">Owner: PMM</text>
+
+  <!-- Step 6 -->
+  <rect x="930" y="500" width="380" height="240" rx="16" fill="#151b23" stroke="#30363d" filter="url(#shadow)"/>
+  <rect x="958" y="528" width="56" height="6" rx="3" fill="#b388f2"/>
+  <text x="958" y="578" fill="#b388f2" font-size="21" font-weight="700" letter-spacing="0.08em">6. INSTRUMENT</text>
+  <text x="958" y="634" fill="#c8cfd8" font-size="21">Track sends, opens and</text>
+  <text x="958" y="668" fill="#c8cfd8" font-size="21">deals the story touched</text>
+  <text x="958" y="712" fill="#9ca3af" font-size="20">Owner: PMM and ops</text>
+
+  <!-- Row 1 arrows -->
+  <line x1="478" y1="290" x2="492" y2="290" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="492,283 504,290 492,297" fill="#5eead4"/>
+  <line x1="898" y1="290" x2="912" y2="290" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="912,283 924,290 912,297" fill="#5eead4"/>
+
+  <!-- Row transition: step 3 to step 4 -->
+  <line x1="1120" y1="410" x2="1120" y2="455" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1120" y1="455" x2="280" y2="455" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="280" y1="455" x2="280" y2="486" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="273,486 280,498 287,486" fill="#5eead4"/>
+
+  <!-- Row 2 arrows -->
+  <line x1="478" y1="620" x2="492" y2="620" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="492,613 504,620 492,627" fill="#5eead4"/>
+  <line x1="898" y1="620" x2="912" y2="620" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="912,613 924,620 912,627" fill="#5eead4"/>
+</svg>

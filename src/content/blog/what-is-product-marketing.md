@@ -47,6 +47,7 @@ Here's a typical week in product marketing, broken into the [four core pillars](
 - Analyzing competitor positioning, pricing, and feature changes
 - Tracking industry trends and market shifts
 - Running win/loss analyses on closed deals
+- [Keeping industry analysts accurately briefed](/blog/analyst-relations/) so research firms describe the product correctly to the buyers who call them
 
 **Data point:** According to [PMA's State of Product Marketing 2025](https://www.productmarketingalliance.com/state-of-product-marketing-report-2025/) report, **88.8% of PMMs work closely with product teams** and **81% with marketing** -making it the most cross-functional marketing role by a wide margin.
 

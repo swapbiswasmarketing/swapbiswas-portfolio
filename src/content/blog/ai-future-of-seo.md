@@ -61,6 +61,8 @@ Research from Princeton shows that the most effective GEO tactics improve AI vis
 
 AI citations are volatile, but brands that show up consistently share structural characteristics - entity clarity, content extractability, and multi-platform presence - that make them easier for AI to trust and reference.
 
+If you are trying to work out how GEO differs from the other two acronyms in circulation, [the three-way breakdown of SEO, AEO and GEO](/blog/aeo-vs-seo/) argues that the overlap is far larger than the vendor marketing suggests.
+
 ## The Future of SEO: What is Changing
 
 ### Content Strategy Shifts
