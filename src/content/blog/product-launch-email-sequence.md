@@ -1,5 +1,5 @@
 ---
-title: "Product Launch Email Sequence: Best Practices and Templates (2026)"
+title: "Product Launch Email Sequence: 4 Templates That Convert"
 description: "Build a product launch email sequence that converts. Get the exact pre-launch, launch-day, and post-launch cadence plus four copyable templates for PMMs."
 publishDate: 2026-06-17
 category: [Product Marketing, Email, Marketing]

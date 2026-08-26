@@ -1,5 +1,5 @@
 ---
-title: "Marketing Automation Workflows: 12 Ready-to-Use Templates for 2026"
+title: "Marketing Automation Workflows: 12 Ready-to-Use Templates"
 description: "Copy these 12 proven marketing automation workflows for lead nurturing, onboarding, re-engagement, and more. Includes trigger logic, email sequences, and timing."
 publishDate: 2026-03-17
 updatedDate: 2026-03-17
@@ -165,7 +165,7 @@ Create separate drip tracks for each topic your audience cares about. For a mark
 
 **Goal:** Complete 3 key setup actions within 14 days (activation milestone).
 
-Nurtured leads produce a **20% increase in sales opportunities** compared to non-nurtured leads ([Demand Gen Report](https://www.demandgenreport.com/industry-topics/demanding-views/2336-the-10-commandments-for-lead-nurturing-success.html)). The same principle applies post-purchase - [onboarded customers](/blog/what-is-customer-onboarding/) retain better than abandoned ones.
+Nurtured leads produce a **20% increase in sales opportunities** compared to non-nurtured leads ([Demand Gen Report](https://www.demandgenreport.com/industry-topics/demanding-views/2336-the-10-commandments-for-lead-nurturing-success.html)). The same principle applies post-purchase - [onboarded customers](/blog/what-is-customer-onboarding/) retain better than abandoned ones. The sequence above only lands if the account-level work is happening alongside it, so map those steps in [a seven-stage onboarding framework](/blog/customer-onboarding-template/) and fire each email off a real milestone rather than a calendar day.
 
 ### 8. Re-engagement (Inactive Users)
 
@@ -237,7 +237,7 @@ Nurtured leads produce a **20% increase in sales opportunities** compared to non
 
 **Set frequency caps.** No contact should receive more than 3-4 automated emails per week across all workflows. Build suppression rules that prevent overlap.
 
-**Use UTM parameters.** Tag every link with campaign, medium, and source parameters so you can track which workflows drive pipeline and revenue in your analytics. [ChatGPT prompts for marketing](/blog/chatgpt-prompts-for-marketing/) can help you quickly draft and iterate on the email copy within these workflows.
+**Use UTM parameters.** Tag every link with campaign, medium, and source parameters so you can track which workflows drive pipeline and revenue in your analytics. Keep `utm_campaign` identical across every email in a workflow and let `utm_content` carry the individual send, or each email becomes its own campaign row and the workflow's pipeline number splits across a dozen lines, so [generating the name and the tracking string from one set of fields](/tools/campaign-name-generator/) is the cheapest way to stop that drift. [ChatGPT prompts for marketing](/blog/chatgpt-prompts-for-marketing/) can help you quickly draft and iterate on the email copy within these workflows.
 
 **Document everything.** Create a workflow map showing all active workflows, their triggers, and how they interconnect. This prevents conflicts and makes debugging easier.
 

@@ -1,5 +1,5 @@
 ---
-title: "What Is YMYL? Google's 'Your Money or Your Life' Pages Explained (2026)"
+title: "What Is YMYL? Google's 'Your Money or Your Life' Explained"
 description: "YMYL (Your Money or Your Life) is the content Google holds to its highest quality bar. Here is what YMYL means, the 4 categories, and how to optimize for it."
 publishDate: 2026-06-09
 category: [SEO, AI, Marketing]
@@ -108,6 +108,8 @@ Run every important page through Google's two questions above. If a careful read
 - **Almost always YMYL:** medical conditions and treatments, drug information, mental health, investing, taxes, loans and mortgages, insurance, legal rights, immigration, voting and elections, child safety, emergency and disaster guidance.
 - **Sometimes YMYL:** nutrition and fitness, parenting, career advice, major purchases (cars, homes), home repairs involving electrical or gas work.
 - **Rarely YMYL:** entertainment, hobbies, recipes for everyday meals, product reviews for low-stakes items, most lifestyle and travel content.
+
+The difference is bigger than the label suggests: a travel piece like [my own five-experience guide to Kerala in winter](/blog/kerala-winter-experiences/) is judged mainly on whether the writer actually went, while a page of the same length on mortgage refinancing is judged on credentials, sourcing and how recently it was reviewed.
 
 The borderline cases are where judgment matters. A recipe is not YMYL - unless it is a recipe for an infant or someone managing diabetes, at which point accuracy starts to affect health.
 

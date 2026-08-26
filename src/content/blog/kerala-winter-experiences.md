@@ -1,6 +1,6 @@
 ---
 title: "Five Winter Experiences You Cannot Miss in God's Own Country"
-description: "Uncover the beauty of Kerala during winter through these five unforgettable experiences, from tranquil backwaters to vibrant festivals."
+description: "Plan your Kerala winter trip around five experiences: backwater houseboats, Theyyam ritual dance, a Thekkady safari, Munnar's tea gardens and the Cochin Carnival."
 publishDate: 2024-06-18
 updatedDate: 2026-03-21
 category: [Travel]

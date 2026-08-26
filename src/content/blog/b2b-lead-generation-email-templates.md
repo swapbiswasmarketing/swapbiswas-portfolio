@@ -1,5 +1,5 @@
 ---
-title: "12 B2B Lead Generation Email Templates (With Subject Lines That Get Replies)"
+title: "12 B2B Lead Generation Email Templates That Get Replies"
 description: "12 copy-paste B2B lead generation email templates organized by funnel stage, each with a tested subject line and the psychology behind why it gets replies."
 publishDate: 2026-06-15
 category: [Marketing, Email]

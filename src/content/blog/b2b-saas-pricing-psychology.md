@@ -1,5 +1,5 @@
 ---
-title: "B2B SaaS Pricing Psychology: Anchors That Survive a Buying Committee (2026)"
+title: "B2B SaaS Pricing Psychology: Anchors for Buying Committees"
 description: "B2B SaaS pricing psychology built for buying committees: where anchoring, decoys and charm pricing break, plus real published prices and a 20-point audit."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]

@@ -1,5 +1,5 @@
 ---
-title: "Rebranding Rollout Plan: The Countdown, the Systems List and the Comms Tiers (2026)"
+title: "Rebranding Rollout Plan: The T-90 Countdown and Comms Tiers"
 description: "A rebranding rollout plan written from inside the company: the T-90 countdown, a systems inventory with an owner per line, and a tiered customer comms matrix."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]
@@ -101,7 +101,7 @@ Four of those lines carry hard external constraints worth knowing before you app
 
 **Review sites have a rebrand convention.** G2 tells sellers to use the official name from the website or legal documentation, avoid promotional language and trademark symbols, and adds: "If you are rebranding, you can include the former name in parentheses for clarity (e.g., New Brand (formerly Old Brand))" ([G2 documentation](https://documentation.g2.com/docs/product-information)). That parenthetical keeps the old name searchable on the profile. What the page does not cover is review history: it addresses the format of the name only, and says nothing about what happens to existing reviews on a rename. Get review carry-over confirmed in writing by each site before the record changes.
 
-**A Google Business Profile edit can cost you verification.** Google warns that "if you change your business name after it's verified, you might need to verify your business again" ([Google Business Profile Help](https://support.google.com/business/answer/3039617?hl=en)). Schedule that at T-7, not on launch morning.
+**A Google Business Profile edit can cost you verification.** Google warns that "if you change your business name after it's verified, you might need to verify your business again" ([Google Business Profile Help](https://support.google.com/business/answer/3039617?hl=en)). Schedule that at T-7, not on launch morning. Re-verification is only half the damage, since the rename also breaks NAP consistency across every data aggregator and directory still carrying the old name, so run the profile edit alongside the citation cleanup sequence in the [20-step map pack checklist](/blog/local-seo-checklist/).
 
 **Changing your primary domain does not change anyone's email.** Google Workspace is explicit that "adding a new domain won't affect or change your current email"; the domain change itself "can take up to 48 hours", and every user's primary address then has to be switched over as a separate step, though Google documents a spreadsheet path to rename addresses in bulk rather than one at a time ([Google Workspace admin help](https://knowledge.workspace.google.com/admin/domains/change-your-primary-domain-for-google-workspace?hl=en)). Four hundred mailboxes needs its own project plan.
 

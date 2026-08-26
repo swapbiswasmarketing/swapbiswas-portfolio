@@ -1,5 +1,5 @@
 ---
-title: "Product-Led Marketing: How to Market a Product That Sells Itself (2026)"
+title: "Product-Led Marketing: How to Make a Product Sell Itself"
 description: "A PMM's practical guide to product led marketing - how to make the product itself the channel, the pitch, and the proof, with frameworks you can apply."
 publishDate: 2026-06-14
 category: [Product Marketing, Marketing]
@@ -93,7 +93,7 @@ When I'm building or fixing a product-led motion, I work through five layers in 
 
 Before anything else, you have to nail what the product is *for* and *who* it's for. In product-led marketing this matters more, not less, because there's no rep to course-correct a confused visitor.
 
-Your [product positioning](/blog/product-positioning/) has to do two jobs in seconds: tell the right person they're in the right place, and make the value sound reachable on their own. If the positioning implies a complicated enterprise rollout, nobody self-serves.
+Your [product positioning](/blog/product-positioning/) has to do two jobs in seconds: tell the right person they're in the right place, and make the value sound reachable on their own. If the positioning implies a complicated enterprise rollout, nobody self-serves. No amount of funnel testing rescues this layer either, since an experiment can only optimize a promise someone already wrote, which is the practical split I mapped in [why positioning work and funnel experiments are different jobs](/blog/product-marketing-vs-growth-marketing/).
 
 Anchor it on a real, specific outcome. Not "the platform for modern teams." Something a person can picture themselves achieving today.
 

@@ -1,5 +1,5 @@
 ---
-title: "What Is Lifecycle Marketing? The Complete Framework with Examples (2026)"
+title: "What Is Lifecycle Marketing? The Complete Framework (2026)"
 description: "Lifecycle marketing explained: the five stages, the metrics that matter, and the channel-by-stage playbook PMMs and growth teams use in 2026."
 publishDate: 2026-05-09
 category: [Marketing, Product Marketing]
@@ -129,7 +129,7 @@ Pick one north-star metric per stage. Roll the five into one composite view of c
 | Retention | Net revenue retention | Gross retention, logo churn, expansion revenue |
 | Advocacy | Referral rate, NPS | Customer-sourced pipeline, case studies published |
 
-The single number worth tracking above all of these is the LTV/CAC ratio. A healthy SaaS business runs at 3:1 or better. If you are below 1:1, no amount of clever lifecycle automation will save you.
+The single number worth tracking above all of these is the LTV/CAC ratio. A healthy SaaS business runs at 3:1 or better. If you are below 1:1, no amount of clever lifecycle automation will save you. Track its direction as well as its level, because a ratio that keeps sliding while ad budget climbs points at the lifecycle stages rather than the ad account, a split I break down in [buying conversions versus compounding them](/blog/growth-marketing-vs-performance-marketing/).
 
 ## The Lifecycle Marketing Tech Stack
 

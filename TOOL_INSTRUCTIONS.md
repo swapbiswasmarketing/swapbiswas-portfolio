@@ -2,7 +2,15 @@
 
 Reference guide for building free interactive tools on swapbiswas.com (e.g., the Sales Battlecard Generator at `/tools/battlecard-generator/`). Follow these steps every time.
 
+**Non-negotiables.** A tool that misses any of these is not shipped:
+- A tool page is only created when a tool was explicitly requested (Section 1)
+- `<title>` is 60 characters or fewer, primary keyword first (Section 3)
+- Scripts bind on `astro:page-load` with an `_initialized` guard, never `DOMContentLoaded` (Section 15)
+- 3+ inbound internal links from related blog posts before it counts as launched (Section 12)
+
 ## 1. Validate the Idea First (Ahrefs MCP)
+
+**Build a tool only when a tool was explicitly requested.** A tool page is its own deliverable with its own brief - never a side effect of another task. Don't spin one up part-way through writing a blog post, running an optimization pass, or doing a "while I'm here" cleanup. This has already happened once: a blog-writing agent created a tool page it was never asked for. If a post would be stronger with a tool that doesn't exist yet, note the idea and stop.
 
 Before building anything, confirm SEO opportunity exists. Tools take more effort than blogs - don't build for keywords that don't search.
 
@@ -35,7 +43,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
 
-const title = "Free {Tool Name} | {Benefit-driven subtitle}";
+const title = "{Primary Keyword}: Free {short benefit}";  // 60 chars max - see Title rules below
 const description = "150-160 char meta description with target keyword naturally included.";
 
 const faqs = [ /* see FAQ section */ ];
@@ -80,6 +88,34 @@ const faqSchema = { /* see Schema section */ };
 - Always end with `<ContactCTA />` *after* `</main>` but *inside* the `stack gap-20` wrapper - this creates the visual gap before the footer (matches contact/about pages)
 - Breadcrumb second-to-last item gets `url: "/tools/"`, last item is plain text (no URL)
 - Tool page wrapper class is `tool-page` (consistent across tools for shared CSS hooks)
+
+### Title rules (hard 60-character ceiling)
+
+The `<title>` must be **60 characters or fewer**, counted with spaces and the separator. Past roughly 60, Google truncates from the end - so whatever sits after the separator is exactly what disappears from the SERP. All 8 tool pages once broke this ceiling at the same time, because they all used the same pattern.
+
+- **Primary keyword first.** Open with the exact term the page targets (`Product One-Pager Template`, `Buyer Persona Generator`). The left side is the only part guaranteed to survive truncation, so nothing should push the keyword rightward.
+- **Avoid the "Free X | Build a Y in N Minutes" pattern.** It names the same noun on both sides of the separator, and that repetition is what blew the budget every time. If the benefit half restates the tool name, the title is already too long.
+- **`:` and `|` both work** as separators. Pick whichever keeps the keyword leftmost.
+- **No `| Swapnil Biswas` suffix** on individual tool pages. The brand costs 17 characters and the tools index already carries it.
+
+**What to cut, in priority order:**
+1. The noun repeated after the separator - "Build a Competitive Battlecard" becomes "Build One"
+2. Filler verbs - "Build a", "Create a", "Generate a"
+3. Adjectives - "Polished", "Competitive", "Complete"
+4. The time promise ("in 5 Minutes") - drop it once cuts 1-3 aren't enough
+5. "Free" - it earns clicks so keep it if it fits, but the keyword outranks it
+
+The two worst offenders from the audit, and what shipped instead:
+- 77 chars: `Free Sales Battlecard Generator | Build a Competitive Battlecard in 2 Minutes` became `Free Sales Battlecard Generator | Build One in 2 Minutes` (56)
+- 81 chars: `Free Product One-Pager Template | Build a Polished Product One-Pager in 5 Minutes` became `Product One-Pager Template: Free Builder, Done in 5 Minutes` (59)
+
+Count every title before committing:
+```bash
+grep -h "^const title" src/pages/tools/*.astro | sed 's/^const title = "//; s/";$//' \
+  | while IFS= read -r t; do printf '%3d  %s\n' "${#t}" "$t"; done
+```
+
+Anything over 60 is a bug, not a preference.
 
 ## 4. Sticky Preview - The Critical Fix
 
@@ -616,6 +652,15 @@ For every tool, there should be a corresponding informational blog post. They ta
 
 This creates a topic cluster that compounds for SEO authority.
 
+**Launch gate: 3 inbound internal links minimum.** A tool is not launched until at least 3 different blog posts link to `/tools/{slug}/` from their body copy. The tools index card, the nav link, and the footer link do not count - they are sitewide furniture and carry no topical signal. Three tools shipped with a single inbound link each and went nowhere; one link reads as an orphan page.
+
+If fewer than 3 genuinely related posts exist, either (a) find the posts where the tool is a real next step and add the CTA there, or (b) hold the tool at `status: "soon"` on the index until the supporting posts are written. Do not force a link into an unrelated post to hit the number.
+
+Verify before calling it launched:
+```bash
+grep -rl "/tools/{slug}/" src/content/blog/*.md | wc -l   # must be >= 3
+```
+
 ## 13. Site-Wide Updates per Tool Launch
 
 When adding the FIRST tool, these are one-time additions (already done):
@@ -649,29 +694,39 @@ After launch, configure GA4 custom dimensions: `tool_name`, `tool_output`. Add `
 
 ## 15. View Transitions Compliance
 
-Every script in a tool page MUST work after View Transition navigations. Two patterns:
+The site runs Astro View Transitions, so a visitor who arrives from any other page never fires `DOMContentLoaded`. Every script in a tool page MUST bind on `astro:page-load` instead. This is the required pattern:
 
 ```js
-// Pattern A: page-load event
+// Bind on astro:page-load, guard against double-binding
 function initTool() {
     const form = document.getElementById('my-form');
-    if (!form || form._initialized) return;
+    if (!form || form._initialized) return;   // already wired on an earlier page-load
     form._initialized = true;
-    // ... wire up
+    // ... wire up listeners, observers, loadState(), update()
 }
-initTool();
-document.addEventListener('astro:page-load', initTool);
+initTool();                                              // first paint / hard refresh
+document.addEventListener('astro:page-load', initTool);  // every client-side nav after that
 ```
 
-**Never use `DOMContentLoaded`** - it doesn't fire on View Transition nav. Always guard with `_initialized` flag (or `_tracked`, etc.) to prevent duplicate listeners.
+**Never use `DOMContentLoaded`** - it doesn't fire on View Transition nav, so the tool arrives dead: inputs accept typing but the preview never updates, and Download/Copy do nothing. It works fine on hard refresh, which is exactly why this slips through - always test by navigating in from `/tools/`, not by reloading the tool URL.
+
+**The `_initialized` guard is not optional.** `astro:page-load` fires again on every navigation, including back/forward. Without the flag you stack a second set of listeners on the same form, and then every keystroke runs `update()` and `saveState()` twice while the export button fires two downloads. Put the flag on the element you wire (`_initialized`), use `_tracked` for delegated handlers, and `window._guardName` for `is:inline` scripts that must run once per session.
+
+Grep the page before shipping - there should be zero hits:
+```bash
+grep -n "DOMContentLoaded" src/pages/tools/{slug}.astro
+```
 
 ## 16. Build & Test Checklist
 
 Before shipping:
+- [ ] Title is 60 characters or fewer, primary keyword first (Section 3)
 - [ ] `npm run build` succeeds (no errors)
 - [ ] Built page exists: `dist/tools/{slug}/index.html`
 - [ ] Built tools index exists: `dist/tools/index.html`
 - [ ] Sitemap contains both URLs: `dist/sitemap-0.xml`
+- [ ] Zero `DOMContentLoaded` in the page - every script binds on `astro:page-load` with an `_initialized` guard (Section 15)
+- [ ] Navigate in from `/tools/` (not a hard refresh) - the tool still works
 - [ ] Hard-refresh `/tools/{slug}/` and test: form input updates preview live
 - [ ] "Load sample data" populates everything
 - [ ] PNG download produces a 1000×N px image at 2x DPR, with all content rendered
@@ -679,6 +734,7 @@ Before shipping:
 - [ ] Scroll the form - preview stays sticky on the right (desktop ≥1024px)
 - [ ] Newsletter form submits successfully (check Kit dashboard)
 - [ ] Mobile (<1024px): form stacks above preview, sticky disabled
+- [ ] 3+ related blog posts link to `/tools/{slug}/` from body copy (Section 12)
 
 ## 17. Fact-Checking Rules (Inherited from Blog)
 

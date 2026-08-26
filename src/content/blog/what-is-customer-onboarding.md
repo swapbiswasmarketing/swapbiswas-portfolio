@@ -1,5 +1,5 @@
 ---
-title: "What Is Customer Onboarding? Frameworks That Reduce Churn (2026)"
+title: "What Is Customer Onboarding? Frameworks That Reduce Churn"
 description: "Customer onboarding explained: the four-stage framework, activation metrics, the email and in-app sequence, and the B2B SaaS playbook to cut early churn."
 publishDate: 2026-05-09
 category: [Product Marketing, Marketing]
@@ -198,7 +198,7 @@ If you are starting without a real onboarding program:
 - **Days 61-90:** layer in in-app guidance, NPS at day 30, and a first-value report.
 - **Quarter 2:** add cohort dashboards, segment by ICP, and start A/B testing the sequence.
 
-The fastest gains come from defining activation and shipping behavior-triggered messaging. Everything else is optimization on top.
+The fastest gains come from defining activation and shipping behavior-triggered messaging. Everything else is optimization on top. The one piece worth borrowing rather than inventing is the plan document itself, so start the day 31-60 build from [a fillable stage table with owners, exit criteria, and target dates](/blog/customer-onboarding-template/) instead of a blank page.
 
 ## The Bottom Line
 

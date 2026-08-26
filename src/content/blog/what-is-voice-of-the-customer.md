@@ -1,5 +1,5 @@
 ---
-title: "What Is Voice of the Customer? Program, Methods & Examples (2026)"
+title: "What Is Voice of the Customer? Program, Methods & Examples"
 description: "Voice of the customer explained: the program framework, the collection methods that work, how to analyze the data, and how PMMs turn VoC into decisions."
 publishDate: 2026-05-30
 updatedDate: 2026-05-30
@@ -49,7 +49,7 @@ The terms overlap, which causes ownership fights. Here is the difference that ma
 | Owner | CX, PMM, Research | Strategy, Product, PMM | Insights / Research function |
 | Time horizon | Days to weeks | Weeks to quarters | Quarters |
 
-If you are a PMM at a SaaS company, VoC is the channel you live in every week. Market research is the channel you run quarterly to make positioning bets. Both feed your understanding of the [ICP and buyer persona](/blog/icp-vs-buyer-persona/).
+If you are a PMM at a SaaS company, VoC is the channel you live in every week. Market research is the channel you run quarterly to make positioning bets. Both feed your understanding of the [ICP and buyer persona](/blog/icp-vs-buyer-persona/). The distinction is worth protecting on the calendar: VoC keeps this month honest, while the quarterly market research project is where pricing, segmentation and competitive bets get settled, and [the strategic calls market research underwrites](/blog/how-does-marketing-research-help-managers/) are the expensive ones to reverse.
 
 ## What Is a Voice of the Customer Program?
 

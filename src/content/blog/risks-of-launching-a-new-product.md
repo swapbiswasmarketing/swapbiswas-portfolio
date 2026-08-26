@@ -34,7 +34,7 @@ A launch almost never fails for a mysterious reason. It fails for one of a small
 
 The failure modes repeat. Different companies, different categories, the same nine ways to bleed out.
 
-These are not bad-luck outcomes; they are risks, which means they can be surfaced, ranked, and reduced on purpose. The best product marketers run a pre-mortem the way an engineer runs a load test: assume the launch failed, then work backward to name every reason it could have.
+These are not bad-luck outcomes; they are risks, which means they can be surfaced, ranked, and reduced on purpose. Ranking them is the part that needs evidence rather than opinion, and [the risk-reduction case for market research](/blog/how-does-marketing-research-help-managers/) is exactly that: it replaces the loudest voice in the room with a number you can argue with. The best product marketers run a pre-mortem the way an engineer runs a load test: assume the launch failed, then work backward to name every reason it could have.
 
 I treat it as a readiness problem in three layers. Is the market ready to want this? Is the offer sharp enough to buy?
 
@@ -146,7 +146,7 @@ Not one of these rows needs a bigger budget to fix. Each is a decision or a piec
 
 You will not fix all nine at once, and you should not try. The order matters because the risks stack. Market readiness comes first, since a sharp offer and a flawless go-to-market cannot rescue a product nobody needs.
 
-Work top to bottom: confirm the need and the buyer, then sharpen positioning, pricing, and message, then ready the enablement, demand, and scorecard. A weakness at a higher layer poisons everything below it.
+Work top to bottom: confirm the need and the buyer, then sharpen positioning, pricing, and message, then ready the enablement, demand, and scorecard. A weakness at a higher layer poisons everything below it. Contradictions between the layers only become visible when the layers sit side by side, so draft all of them on [a single-sheet GTM plan](/tools/go-to-market-strategy-template/) where segment, positioning, pricing, channels, and metrics share one page and a buyer that none of your chosen channels actually reaches is impossible to miss.
 
 Run it as a pre-mortem two to three weeks out: gather the launch team, walk the nine risks, and rate your honest readiness on each. The ones that score low are your launch plan for the remaining runway.
 

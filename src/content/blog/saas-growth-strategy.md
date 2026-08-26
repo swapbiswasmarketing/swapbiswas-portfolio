@@ -153,13 +153,13 @@ Expansion revenue should be your largest growth driver. The best companies at th
 
 **Scaling acquisition before fixing retention.** If monthly churn exceeds 3%, every new customer you acquire is filling a leaky bucket. Fix retention first - it is the highest-leverage growth activity. Building a [competitive intelligence analysis](/blog/competitive-intelligence-analysis/) system also helps you understand why customers might be switching to alternatives.
 
-**Chasing too many channels too early.** Pre-PMF and early growth companies should master 1-2 channels before adding more. Spreading thin means no channel gets enough investment to succeed.
+**Chasing too many channels too early.** Pre-PMF and early growth companies should master 1-2 channels before adding more. Spreading thin means no channel gets enough investment to succeed. A useful gate before adding the next one is a stable, measurable conversion path on the channel you already run, which is why I argue for [sequencing GTM channels rather than switching them all on at once](/blog/saas-go-to-market-strategy/).
 
 **Ignoring expansion revenue.** Most SaaS companies over-invest in new logos and under-invest in growing existing accounts. Expansion is 3-5x more capital efficient than acquisition.
 
 **Pricing too low.** SaaS companies consistently under-price, especially when selling to enterprise. If you have never lost a deal on price, you are almost certainly leaving money on the table.
 
-**No [product marketing](/blog/saas-product-marketing-strategy/) investment.** Product marketing connects your product to your market through positioning, messaging, and competitive intelligence. Without it, sales teams struggle to articulate differentiation and marketing campaigns miss the mark.
+**No [product marketing](/blog/saas-product-marketing-strategy/) investment.** Product marketing connects your product to your market through positioning, messaging, and competitive intelligence. Without it, sales teams struggle to articulate differentiation and marketing campaigns miss the mark. Teams usually respond by running more experiments, which is the wrong fix - a test can lift a page a few percent but cannot make a buyer understand a product they could not describe, a trap I unpacked in [what growth experiments cannot fix on their own](/blog/product-marketing-vs-growth-marketing/).
 
 ## Build Your SaaS Growth Strategy This Quarter
 

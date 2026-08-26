@@ -111,7 +111,7 @@ Here is the sequence I follow when I build a SaaS go-to-market strategy from scr
 - **Define your metric set** tied to the motion, not vanity numbers.
 - **Run, measure, and adjust** on a fixed cadence rather than reacting to every dip.
 
-If you want templated starting points for these steps, the [go-to-market strategy template](/blog/go-to-market-strategy-template/) gives you the structure, and [go-to-market strategy for startups](/blog/go-to-market-strategy-for-startups/) tailors the approach for early teams with limited resources.
+If you want templated starting points for these steps, the [go-to-market strategy template](/blog/go-to-market-strategy-template/) gives you the structure, and [go-to-market strategy for startups](/blog/go-to-market-strategy-for-startups/) tailors the approach for early teams with limited resources. When those decisions are locked, the [free GTM one-pager generator](/tools/go-to-market-strategy-template/) collapses segment, positioning, motion, channels, and metrics onto a single page you can put in front of product, sales, and finance for sign-off before anyone spends budget.
 
 ## How GTM Strategy Connects to Launch Execution
 

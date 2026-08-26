@@ -1,5 +1,5 @@
 ---
-title: "Customer Success Story Template: Copy It, Then Get It Approved (2026)"
+title: "Customer Success Story Template: Copy It, Get It Approved"
 description: "A copy-paste customer success story template for B2B SaaS, plus the approval ladder, metric fallbacks and interview script that get the story published."
 publishDate: 2026-08-15
 category: [Product Marketing, Marketing]
@@ -244,7 +244,7 @@ Most guidance treats repurposing as a distribution list: LinkedIn, newsletter, v
 | Battlecard proof point | 60 words | Results plus one quote | Competitive battlecard | Rep usage in the losing-to-X play |
 | Deck slide | One slide | Headline, before-and-after table, logo | Standard pitch deck | Adoption of the current deck version |
 
-The 60-word cut is the one most teams never make, and it is the highest-value output of the whole exercise. A rep in a competitive deal does not forward a 900-word page. They paste two sentences and a number into an email. Build that version deliberately and drop it straight into the relevant [competitive battlecard](/blog/competitive-battlecard-template/) rather than hoping someone extracts it later.
+The 60-word cut is the one most teams never make, and it is the highest-value output of the whole exercise. A rep in a competitive deal does not forward a 900-word page. They paste two sentences and a number into an email. Build that version deliberately and drop it straight into the relevant [competitive battlecard](/blog/competitive-battlecard-template/) rather than hoping someone extracts it later. The one-pager is the cut teams postpone because the layout is fiddly rather than because the content is missing, so build it in a [one-page case study builder](/tools/case-study-template/) and attach the export to the CRM record the day approval lands.
 
 ## Make the story legible to AI assistants, not just skimmers
 

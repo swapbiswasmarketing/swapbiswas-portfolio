@@ -1,5 +1,5 @@
 ---
-title: "Campaign Naming Convention: A Four-Field System You Can Retrofit (2026)"
+title: "Campaign Naming Convention: The Four-Field System (2026)"
 description: "A four-field campaign naming convention you can retrofit onto a live ad account, plus per-platform character limits and a UTM string that can never drift."
 publishDate: 2026-08-26
 category: [Marketing, Product Marketing]

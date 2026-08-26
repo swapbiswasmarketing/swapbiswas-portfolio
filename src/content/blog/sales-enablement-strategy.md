@@ -1,6 +1,6 @@
 ---
-title: "Sales Enablement Strategy: A PMM's Build-Order Framework (2026)"
-description: "A sales enablement strategy that ties every asset to a deal stage and a metric. The build order a PMM actually ships: audit, map, build, connect to pipeline, measure."
+title: "Sales Enablement Strategy: A PMM's Build-Order Framework"
+description: "A sales enablement strategy that ties every asset to a deal stage and a metric. The build order a PMM ships: audit, map, build, connect to pipeline, measure."
 publishDate: 2026-07-25
 category: [Product Marketing, Marketing]
 img: /assets/stock-1.webp
@@ -148,7 +148,7 @@ The failure mode is treating content as a production target. More decks feels li
 - **Onboarding content:** twice a year
 - **One-pagers:** every release cycle
 
-Set the review date on the asset itself at creation. When a rep opens a battlecard stamped "last reviewed 11 months ago," it has already lost their trust, and a content strategy is mostly the work of keeping that from happening.
+Set the review date on the asset itself at creation. When a rep opens a battlecard stamped "last reviewed 11 months ago," it has already lost their trust, and a content strategy is mostly the work of keeping that from happening. A cadence only holds if the rebuild is cheap, which is why the one-pager belongs in a [fill-and-export one-pager builder](/tools/product-one-pager-template/) rather than a locked design file: refreshing it each release costs about five minutes instead of a ticket to your designer.
 
 ## How a Sales Enablement Strategy Fails
 

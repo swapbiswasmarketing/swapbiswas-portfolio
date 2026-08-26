@@ -71,7 +71,7 @@ Here's the stack that covers 90% of what most marketing teams need - not 27 tool
 
 **What it replaces:** Separate landing page builder, form builder, blog platform, portfolio site
 
-Your website is your marketing foundation. Pick a platform that handles your site, blog, landing pages, and forms in one place. Don't pay for a separate landing page tool when your CMS already does it.
+Your website is your marketing foundation. Pick a platform that handles your site, blog, landing pages, and forms in one place. Don't pay for a separate landing page tool when your CMS already does it. If the recurring hosting bill is what bothers you most, the static-site option in the table below can genuinely cost nothing - our walkthrough of [how a paid WordPress plan got replaced by a zero-cost Astro and Netlify setup](/blog/wordpress-to-astro-netlify-migration/) shows what you trade away (a visual editor) and what you get back (no plugin updates and about 25 Lighthouse points).
 
 **Options by budget:**
 
@@ -135,7 +135,7 @@ Manual posting across 3-4 platforms is a time sink that scales terribly. A sched
 
 **What it replaces:** Separate copywriting tool, SEO content optimizer, brainstorming tool, translation tool, first-draft generator
 
-This is the biggest change since 2023. A single AI assistant now handles what used to require 3-5 separate tools - writing first drafts, generating social copy, brainstorming campaign ideas, repurposing content across formats, and even basic image generation.
+This is the biggest change since 2023. A single AI assistant now handles what used to require 3-5 separate tools - writing first drafts, generating social copy, brainstorming campaign ideas, repurposing content across formats, and even basic image generation. That one-assistant rule holds until publishing volume is itself the revenue model, at which point the writer needs a SERP-brief tool beside it, which is how the [tool stacks built for affiliate publishers](/blog/best-ai-tools-for-affiliate-marketing/) tier out from under $50 to $500-plus a month.
 
 **Options by budget:**
 

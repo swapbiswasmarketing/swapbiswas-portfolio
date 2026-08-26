@@ -1,5 +1,5 @@
 ---
-title: "Product Marketing vs Growth Marketing: The Real Difference (2026)"
+title: "Product Marketing vs Growth Marketing: The Real Difference"
 description: "Product marketing vs growth marketing, explained by a PMM: what each role actually owns, why teams keep confusing them, and how to run both so they compound."
 publishDate: 2026-07-19
 updatedDate: 2026-07-19
@@ -29,7 +29,7 @@ Here is the cleanest way I know to tell them apart.
 
 **Product marketing owns how the market understands and chooses your product.** It sets positioning, messaging, launches, sales enablement, and competitive intelligence. It answers the questions a buyer asks before they commit: why this, why now, why you and not the alternative. If you want the full remit, I broke it down in [what is product marketing](/blog/what-is-product-marketing/).
 
-**Growth marketing owns how usage and revenue compound once people arrive.** It runs experiments across the whole customer lifecycle - acquisition, activation, retention, referral, revenue - and optimizes the numbers at each step. Its home turf is the [AARRR "pirate metrics" funnel introduced by investor Dave McClure](https://amplitude.com/blog/pirate-metrics-framework), and its instinct is to test, measure, and iterate.
+**Growth marketing owns how usage and revenue compound once people arrive.** It runs experiments across the whole customer lifecycle - acquisition, activation, retention, referral, revenue - and optimizes the numbers at each step. Its home turf is the [AARRR "pirate metrics" funnel introduced by investor Dave McClure](https://amplitude.com/blog/pirate-metrics-framework), and its instinct is to test, measure, and iterate. Growth marketing gets confused in the other direction just as often, with the paid ad account it usually runs, a mix-up I unpack in [why buying traffic is only one slice of growth](/blog/growth-marketing-vs-performance-marketing/).
 
 The one-line test I use: **product marketing changes what people believe about your product. Growth marketing changes what people do, measured in a dashboard.**
 
@@ -71,7 +71,7 @@ For years, the neat story was that product marketing owned perception and growth
 
 ### Small teams collapse both into one person
 
-Most companies are not choosing between two departments. They are choosing what to prioritize inside one or two hires. In the 2025 report, [44.3% of product marketing teams are still just one or two people](https://www.productmarketingalliance.com/state-of-product-marketing-report-2025/). When a single marketer runs launches, writes the messaging, and also owns the onboarding experiment backlog, the conceptual line between the two jobs stops mattering day to day - and the strategic work usually loses to the experiment that ships this week.
+Most companies are not choosing between two departments. They are choosing what to prioritize inside one or two hires. In the 2025 report, [44.3% of product marketing teams are still just one or two people](https://www.productmarketingalliance.com/state-of-product-marketing-report-2025/). When a single marketer runs launches, writes the messaging, and also owns the onboarding experiment backlog, the conceptual line between the two jobs stops mattering day to day - and the strategic work usually loses to the experiment that ships this week. The fix is rarely more headcount - it is deciding in advance which of those jobs the seat owns and which it declines, exactly the call you make when you [scope a one-person product marketing function](/blog/product-marketing-team-structure/) before adding a second hire.
 
 ### The funnel overlaps in the middle
 

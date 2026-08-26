@@ -1,5 +1,5 @@
 ---
-title: "Good Better Best Pricing in 2026: How to Build the Three Tiers (With Actual Numbers)"
+title: "Good Better Best Pricing: How to Build the Three Tiers"
 description: "Good better best pricing with the actual numbers: the feature-allocation rule, real price-gap ratios, target tier mix, and how to migrate existing customers."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]

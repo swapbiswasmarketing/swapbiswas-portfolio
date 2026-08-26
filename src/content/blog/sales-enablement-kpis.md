@@ -1,5 +1,5 @@
 ---
-title: "Sales Enablement KPIs: The 12 Metrics That Actually Prove Impact (2026)"
+title: "Sales Enablement KPIs: 12 Metrics That Move Revenue (2026)"
 description: "The sales enablement KPIs that prove your work moves revenue, not activity. 12 metrics across content, training, and deal support that actually matter."
 publishDate: 2026-06-18
 category: [Product Marketing, Marketing]

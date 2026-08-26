@@ -1,5 +1,5 @@
 ---
-title: "B2B Buyer Persona: How to Build One That Sales Actually Uses (2026)"
+title: "B2B Buyer Persona: Build One Sales Actually Uses (2026)"
 description: "A B2B buyer persona is only useful if sales acts on it. Here is how to build one from real research, structure it for the buying committee, and keep it alive."
 publishDate: 2026-06-20
 category: [Product Marketing, Marketing]
@@ -109,7 +109,7 @@ This is where personas live or die. Build around the fields that change behavior
 - **Channels and sources.** Where they go to learn and who they trust.
 - **A real quote.** One sentence in the buyer's voice anchors the whole thing.
 
-Notice what is not on that list: age, hobbies, a stock headshot. None of it survives a discovery call.
+Notice what is not on that list: age, hobbies, a stock headshot. None of it survives a discovery call. The discipline that makes this list usable is a hard cap on each field, because a rep can hold three pains in their head on a live call but will skim a list of ten, which is why [the persona builder I put together](/tools/buyer-persona-generator/) locks you to three goals, three pains, three decision factors, two objections, and one quote before it exports the persona as a PNG.
 
 ### Step 5: Validate, Then Ship It Into Workflows
 

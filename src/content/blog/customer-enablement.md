@@ -1,5 +1,5 @@
 ---
-title: "What Is Customer Enablement? Definition, Components, and Where It Fits (2026)"
+title: "Customer Enablement: Definition, Components, Where It Fits"
 description: "Customer enablement explained: what it is, how it differs from onboarding, sales enablement, and customer success, plus the components of a real program."
 publishDate: 2026-07-25
 updatedDate: 2026-08-15
@@ -65,7 +65,7 @@ These four disciplines share a customer but do completely different jobs. Confus
 
 Read the table down the "delivery model" column and the picture snaps into focus. Sales enablement and customer enablement are both one-to-many content-and-training functions - they just point at different audiences. Customer success is the one-to-one relationship layer. Onboarding is the time-boxed on-ramp that hands the customer from the sales-enablement world into the enablement-and-success world.
 
-The practical takeaway: if a task scales with content and gets reused across your whole base, it is enablement. If it requires a named human to sit with one specific account, it is success. That single rule resolves most ownership disputes.
+The practical takeaway: if a task scales with content and gets reused across your whole base, it is enablement. If it requires a named human to sit with one specific account, it is success. That single rule resolves most ownership disputes. Of the four, onboarding is the one most often run from memory rather than from a document, so give it [a time-boxed plan with one accountable owner per step](/blog/customer-onboarding-template/) before you try to draw the enablement boundary around it.
 
 ## Customer Enablement vs Customer Success (The One People Get Wrong)
 

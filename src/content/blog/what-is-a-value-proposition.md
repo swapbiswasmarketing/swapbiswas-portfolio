@@ -1,5 +1,5 @@
 ---
-title: "What Is a Value Proposition? Definition, Examples, and How to Write One (2026)"
+title: "What Is a Value Proposition? Examples and How to Write One"
 description: "A value proposition is the one sentence that says why a buyer should choose you. Frameworks, examples, and the writing process PMMs actually use."
 publishDate: 2026-05-09
 category: [Product Marketing, Marketing]
@@ -127,7 +127,7 @@ On the other side, list your product's:
 - **Gain creators:** how you produce upside
 - **Products and services:** what you actually sell
 
-Match the two columns. The strongest value proposition is the one where pain reliever and customer pain align tightly.
+Match the two columns. The strongest value proposition is the one where pain reliever and customer pain align tightly. A pain reliever that maps to no listed pain is the tell that you are solving a problem the customer never raised, which is far easier to catch when you [lay all six fields out side by side](/tools/value-proposition-canvas-generator/) instead of keeping the two lists in separate docs.
 
 ### Step 3: Write the One-Sentence Version
 

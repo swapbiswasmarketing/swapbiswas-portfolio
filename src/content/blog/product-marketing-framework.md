@@ -1,5 +1,5 @@
 ---
-title: "The Product Marketing Framework I Use to Run the Whole Function (2026)"
+title: "Product Marketing Framework: The 6 Stages I Use (2026)"
 description: "The product marketing framework I use to run positioning, launches, enablement, and competitive intel - a practical, repeatable system you can adopt this quarter."
 publishDate: 2026-06-26
 category: [Product Marketing, Marketing]
@@ -95,7 +95,7 @@ For the operational detail of running these, I lean on a reusable [go-to-market 
 
 A position nobody can repeat is worthless. Enablement is where the framework meets reality, because your sales team and your product are the ones saying your message out loud every day. If they cannot hold it, your beautiful positioning dies in the field.
 
-The core artifacts I produce are battlecards, a one-pager, a pitch narrative, and an objection-handling guide. The test is simple: can a new rep tell the story correctly after one read? If not, the message is too complex, and that is my problem to fix, not theirs.
+The core artifacts I produce are battlecards, a one-pager, a pitch narrative, and an objection-handling guide. The test is simple: can a new rep tell the story correctly after one read? If not, the message is too complex, and that is my problem to fix, not theirs. That one-read test is also the argument for building the one-pager before the deck, because [forcing the whole story onto a single sheet](/tools/product-one-pager-template/) exposes every claim that only survived because a slide gave it room to breathe.
 
 ### 6. Feedback: Close the Loop or Repeat the Problem
 
@@ -113,7 +113,7 @@ This is also why I resist running stages in isolation. A team that treats enable
 
 ## Adapting the Framework to Your Stage and Team Size
 
-The framework scales down without losing its shape. If you are the only product marketer, you still run all six stages - you just run them lighter. Pick the two stages where you are bleeding, usually positioning and enablement, and bring those to full depth first.
+The framework scales down without losing its shape. If you are the only product marketer, you still run all six stages - you just run them lighter. Pick the two stages where you are bleeding, usually positioning and enablement, and bring those to full depth first. Once you are three or four people the question flips from which stages to run to who owns each one, and the answer turns on whether you split the team by pillar, by product, or by buyer segment - a tradeoff I work through in [the org models that fit each stage of growth](/blog/product-marketing-team-structure/).
 
 For a SaaS context specifically, the rhythm of these stages changes because of free trials, product-led motions, and faster release cycles. I cover that adaptation in my [SaaS product marketing strategy](/blog/saas-product-marketing-strategy/) guide, which maps these same stages onto a product-led world.
 

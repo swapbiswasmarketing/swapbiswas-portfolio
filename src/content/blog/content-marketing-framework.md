@@ -1,5 +1,5 @@
 ---
-title: "Content Marketing Framework for B2B: Map Content to the Buyer Journey (2026)"
+title: "Content Marketing Framework for B2B: Map the Buyer Journey"
 description: "A content marketing framework built for B2B and product teams. Map each content type to a buyer-journey stage and buying question, then run the distribution loop."
 publishDate: 2026-07-25
 category: [Marketing]

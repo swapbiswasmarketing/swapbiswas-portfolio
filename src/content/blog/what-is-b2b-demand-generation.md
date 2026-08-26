@@ -48,7 +48,7 @@ These three terms get used interchangeably in vendor decks and incorrectly in mo
 | Success metric | Pipeline created (sourced + influenced) | MQLs / form fills | Account engagement, opportunity win rate |
 | Common failure | No tied-to-revenue measurement | Volume without quality | Spending on accounts that will never buy |
 
-A common modern motion: broad demand gen builds category awareness and content authority, ABM concentrates 1:1 budget on the top 200-500 accounts inside that aware audience, and lead gen tactics harvest the form fills that result. Treating these as alternatives instead of layers is the most expensive mistake in B2B marketing.
+A common modern motion: broad demand gen builds category awareness and content authority, ABM concentrates 1:1 budget on the top 200-500 accounts inside that aware audience, and lead gen tactics harvest the form fills that result. Treating these as alternatives instead of layers is the most expensive mistake in B2B marketing. Sequence beats labels here: the engagement data from broad demand gen is what tells you which accounts have warmed enough to earn 1:1 budget, the same reason [the wide net and the narrow list work better as one loop](/blog/abm-vs-inbound-marketing/) than as competing bets.
 
 ## The Four Stages of B2B Demand Generation
 

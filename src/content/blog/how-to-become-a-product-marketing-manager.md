@@ -146,7 +146,7 @@ Target roles with these signals:
 - **Real customer access** built into the expectation
 - **A launch process that already exists**, so you are improving a motion, not inventing one alone
 
-Avoid the red flags: a role that bundles content, demand gen, events, and competitive into one seat; no customer access; or a PMM chair that has churned three times in two years. On the internal move, the "interview" is often just consistently doing the work in view of the person who would hire you - which is why it is the fastest path in.
+Avoid the red flags: a role that bundles content, demand gen, events, and competitive into one seat; no customer access; or a PMM chair that has churned three times in two years. On the internal move, the "interview" is often just consistently doing the work in view of the person who would hire you - which is why it is the fastest path in. For the external loop, the questions are less random than they look - they collapse into [five rounds, from positioning to the take-home case](/blog/product-marketing-interview-questions/), so preparing the pattern beats memorizing answers.
 
 ## How Long Does It Take to Become a Product Marketing Manager?
 

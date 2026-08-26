@@ -1,5 +1,5 @@
 ---
-title: "What Is Sales Enablement Software? Categories, Features & a Buyer's Guide (2026)"
+title: "What Is Sales Enablement Software? A Buyer's Guide (2026)"
 description: "Sales enablement software explained: what it does, the five tool categories, must-have features, top platforms, and how to choose without overbuying."
 publishDate: 2026-04-25
 category: [Product Marketing, Tools]

@@ -1,5 +1,5 @@
 ---
-title: "Top-Down vs Bottom-Up Market Sizing: When They Disagree (2026)"
+title: "Top-Down vs Bottom-Up Market Sizing: When They Disagree"
 description: "Top-down vs bottom-up market sizing run on one real market, plus a reconciliation worksheet that names which input broke when the two numbers disagree."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]

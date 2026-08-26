@@ -1,6 +1,6 @@
 ---
-title: "How to Conduct a Technical SEO Site Audit: The Complete Step-by-Step Guide"
-description: "A practical, step-by-step technical SEO audit checklist. From crawlability to Core Web Vitals - with free tools, real benchmarks, and actionable fixes for every issue."
+title: "How to Conduct a Technical SEO Site Audit: The 8-Step Guide"
+description: "Run a technical SEO site audit in 8 steps, from crawlability to Core Web Vitals. Free tools, real benchmarks, and the exact fix for every issue you find."
 publishDate: 2026-03-07
 updatedDate: 2026-03-21
 category: [SEO, Marketing]
@@ -91,7 +91,7 @@ Check your sitemap at `yoursite.com/sitemap.xml`:
 
 **1.3 Crawl Budget**
 
-Check Google Search Console → Settings → Crawl Stats:
+Check Google Search Console > Settings > Crawl Stats:
 
 - How many pages is Google crawling per day?
 - What's the average response time?
@@ -110,12 +110,12 @@ Check Google Search Console → Settings → Crawl Stats:
 
 **2.1 Index Coverage**
 
-In Google Search Console → Pages:
+In Google Search Console > Pages:
 
 - How many pages are indexed vs. excluded?
 - What are the exclusion reasons? Common ones:
-  - "Crawled – currently not indexed" (Google found it but didn't deem it worth indexing)
-  - "Discovered – currently not indexed" (Google knows it exists but hasn't crawled it yet)
+  - "Crawled - currently not indexed" (Google found it but didn't deem it worth indexing)
+  - "Discovered - currently not indexed" (Google knows it exists but hasn't crawled it yet)
   - "Duplicate without user-selected canonical"
   - "Blocked by robots.txt"
 
@@ -136,7 +136,7 @@ Check for pages with `noindex` tags that shouldn't have them:
 - Are important pages accidentally set to `noindex`?
 - Are there `nofollow` tags preventing link equity from flowing to important pages?
 
-**How to check:** Screaming Frog → Configuration → Spider → check "Respect Noindex" and "Respect Nofollow." Then review the "Directives" tab after crawling.
+**How to check:** Screaming Frog > Configuration > Spider > check "Respect Noindex" and "Respect Nofollow." Then review the "Directives" tab after crawling.
 
 ### Step 3: Site Architecture & Internal Linking
 
@@ -146,7 +146,7 @@ Check for pages with `noindex` tags that shouldn't have them:
 
 Every important page should be reachable within **3 clicks** from the homepage.
 
-- Screaming Frog → Crawl your site → Check "Crawl Depth" column
+- Screaming Frog > Crawl your site > Check "Crawl Depth" column
 - Pages with a crawl depth of 4+ are less likely to be crawled frequently and may rank lower
 
 **3.2 Internal Linking**
@@ -155,7 +155,7 @@ Every important page should be reachable within **3 clicks** from the homepage.
 - Is link equity distributed effectively? (Your most important pages should have the most internal links)
 - Are anchor texts descriptive and relevant?
 
-**How to check:** Screaming Frog → Internal → Unique Inlinks. Sort ascending -pages with zero or very few internal links need attention.
+**How to check:** Screaming Frog > Internal > Unique Inlinks. Sort ascending -pages with zero or very few internal links need attention.
 
 **Data point:** Internal links are one of Google's key ranking signals. Orphan pages with no internal links are significantly harder for search engines to discover and rank, regardless of content quality.
 
@@ -178,7 +178,7 @@ This matters more than ever. Google has confirmed Core Web Vitals are a ranking 
 
 **4.1 Core Web Vitals**
 
-Check in Google Search Console → Core Web Vitals, or test individual pages at [PageSpeed Insights](https://pagespeed.web.dev/).
+Check in Google Search Console > Core Web Vitals, or test individual pages at [PageSpeed Insights](https://pagespeed.web.dev/).
 
 | Metric | What It Measures | Good | Needs Improvement | Poor |
 |--------|-----------------|------|-------------------|------|
@@ -198,7 +198,7 @@ Check in Google Search Console → Core Web Vitals, or test individual pages at 
 | Large DOM size | Medium | Reduce nested elements, paginate long lists |
 | No text compression | Low-Medium | Enable Gzip or Brotli compression |
 
-**Quick win:** Image optimization alone can improve LCP by **30-50%** on most sites. Convert all images to WebP format and implement lazy loading.
+**Quick win:** Image optimization alone can improve LCP by **30-50%** on most sites. Convert all images to WebP format and implement lazy loading. The deeper fix is sometimes the platform itself: when plugin bloat, render-blocking scripts, and missing cache headers keep resurfacing audit after audit, [swapping WordPress for a static build served from a CDN](/blog/wordpress-to-astro-netlify-migration/) moved this site's Lighthouse performance from the 70-80 range to 95-100 in one go.
 
 ### Step 5: Mobile Usability
 
@@ -220,7 +220,7 @@ Run your key pages through [Lighthouse](https://developer.chrome.com/docs/lighth
 
 **5.3 Responsive Design Check**
 
-- Open Chrome DevTools (F12) → Toggle Device Toolbar
+- Open Chrome DevTools (F12) > Toggle Device Toolbar
 - Test at common breakpoints: 375px (phone), 768px (tablet), 1024px (small laptop)
 - Check that navigation, images, tables, and forms all work at each size
 
@@ -291,17 +291,17 @@ Use JSON-LD format (Google's preferred method). Here's a basic Article schema:
 
 A redirect chain is when URL A redirects to B, which redirects to C. Each hop loses a small amount of link equity and slows down crawling.
 
-- **Acceptable:** 1 redirect (A → B)
-- **Problematic:** 2+ redirects (A → B → C → D)
+- **Acceptable:** 1 redirect (A to B)
+- **Problematic:** 2+ redirects (A to B to C to D)
 
-**How to check:** Screaming Frog → Reports → Redirect Chains. Fix by updating the original link to point directly to the final destination.
+**How to check:** Screaming Frog > Reports > Redirect Chains. Fix by updating the original link to point directly to the final destination.
 
 **8.2 Broken Links (404s)**
 
 - Internal broken links waste crawl budget and hurt user experience
 - External broken links reduce trust signals
 
-**How to check:** Screaming Frog → Response Codes → filter for 4xx errors. Fix or remove broken links.
+**How to check:** Screaming Frog > Response Codes > filter for 4xx errors. Fix or remove broken links.
 
 **Benchmark:** Aim for **zero broken internal links**. For external links, check quarterly and update or remove dead links.
 

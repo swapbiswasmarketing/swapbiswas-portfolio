@@ -1,6 +1,6 @@
 ---
-title: "Product Positioning: How to Define Where Your Product Stands in the Market"
-description: "Learn what product positioning is, why it matters, and how to create a positioning statement that differentiates your product. With frameworks, examples, and a step-by-step process."
+title: "Product Positioning: Framework, Statement, and Examples"
+description: "Product positioning explained by a PMM: the six-part framework, how to write a positioning statement, real examples, and the mistakes that flatten it."
 publishDate: 2026-03-08
 updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
@@ -196,7 +196,7 @@ Here's a practical process to nail your positioning:
 5. **Test with your sales team** - If they can't use it in a conversation, it's too abstract
 6. **Validate with prospects** - Does it resonate with people who haven't bought yet?
 
-Use your [ICP and buyer persona definitions](/blog/icp-vs-buyer-persona/) to select the right customers for step 1, and our [competitive analysis examples](/blog/competitive-analysis-examples/) provide ready-to-use frameworks for step 2.
+Use your [ICP and buyer persona definitions](/blog/icp-vs-buyer-persona/) to select the right customers for step 1, and our [competitive analysis examples](/blog/competitive-analysis-examples/) provide ready-to-use frameworks for step 2. Step 5 goes faster when the positioning statement is an artifact rather than a paragraph in a doc, so [lay the six elements out on a single page](/tools/product-one-pager-template/) and let reps tell you within one call which of them is still too vague to say out loud.
 
 Product positioning isn't a one-time exercise. It's an ongoing process of understanding your market, your customers, and your competitive advantage - then articulating it so clearly that your buyers can repeat it back to you.
 

@@ -1,5 +1,5 @@
 ---
-title: "How Much Does an SEO Audit Cost in 2026? Real Pricing, Tiers & Hidden Fees"
+title: "How Much Does an SEO Audit Cost? Real 2026 Pricing Tiers"
 description: "How much does an SEO audit cost in 2026? Real pricing by agency, freelancer, and enterprise tier. Plus what drives the cost and how to spot overpriced audits."
 publishDate: 2026-04-11
 category: [SEO, Marketing]

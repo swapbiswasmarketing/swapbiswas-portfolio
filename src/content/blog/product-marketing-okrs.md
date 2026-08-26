@@ -1,5 +1,5 @@
 ---
-title: "Product Marketing OKRs: 15 Ready-to-Use Examples for PMM Teams (2026)"
+title: "Product Marketing OKRs: 15 Ready-to-Use Examples (2026)"
 description: "Product marketing OKRs that actually move revenue. 15 ready-to-use examples across positioning, launches, enablement, competitive intel, and research."
 publishDate: 2026-04-18
 category: [Product Marketing, Marketing]

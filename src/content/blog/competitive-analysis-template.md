@@ -1,5 +1,5 @@
 ---
-title: "Competitive Analysis Template: A Free Framework PMMs Actually Use (2026)"
+title: "Competitive Analysis Template: A Free Framework PMMs Use"
 description: "A free competitive analysis template that PMMs actually use - a step-by-step framework to map rivals, score them, and turn the findings into real action."
 publishDate: 2026-06-24
 category: [Product Marketing, Marketing]

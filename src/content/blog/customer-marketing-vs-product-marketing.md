@@ -1,5 +1,5 @@
 ---
-title: "Customer Marketing vs Product Marketing: Who Owns What (2026)"
+title: "Customer Marketing vs Product Marketing: Who Owns What"
 description: "Customer marketing vs product marketing settled at the deliverable level: a 12-artifact ownership matrix with default owners, co-owners and handoff triggers."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]
@@ -73,7 +73,7 @@ A customer marketing manager's job description varies more than a PMM's, because
 
 Two things are worth noticing. First, roughly half of that list produces assets product marketing consumes. Second, none of it produces the *positioning* those assets sit inside. That asymmetry is the whole boundary problem in one sentence.
 
-Case studies deserve their own note, because they are the single most contested artifact on the list. Content Marketing Institute's [2025 B2B content marketing benchmarks](https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-trends-research-2025) found 43% of B2B marketers naming aligning content across sales and marketing as a challenge, and 40% naming communicating across organizational silos. Those are the exact two conditions a case study gets produced under. An artifact this widely used and this ambiguously owned is a predictable point of failure. For the mechanics rather than the ownership argument, the [customer success story template](/blog/customer-success-story-template/) covers the interview script and the approval chase.
+Case studies deserve their own note, because they are the single most contested artifact on the list. Content Marketing Institute's [2025 B2B content marketing benchmarks](https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-trends-research-2025) found 43% of B2B marketers naming aligning content across sales and marketing as a challenge, and 40% naming communicating across organizational silos. Those are the exact two conditions a case study gets produced under. An artifact this widely used and this ambiguously owned is a predictable point of failure. For the mechanics rather than the ownership argument, the [customer success story template](/blog/customer-success-story-template/) covers the interview script and the approval chase. Ownership arguments get shorter when the artifact is already half-built, so hand both teams the same [fill-in-the-blanks case study one-pager](/tools/case-study-template/) and the only thing left to negotiate is the claim it has to prove.
 
 ### Customer Marketing Strategy: The Three Programs That Have to Exist
 

@@ -126,7 +126,7 @@ This is the judgment call no tool makes for you. Search your target keyword and 
 
 ## Step 5: Content - depth, freshness, and cannibalization
 
-A technically perfect page with shallow content still loses. This step is about whether the content earns the ranking.
+A technically perfect page with shallow content still loses. This step is about whether the content earns the ranking. Grade that content against the stakes of the topic rather than one site-wide standard, because pages answering medical, financial or safety questions sit at the strict end of [the YMYL spectrum](/blog/what-is-ymyl/) and need named authors, primary sources and a dated review cycle long before your low-stakes pages do.
 
 ### Find thin and cannibalizing pages
 

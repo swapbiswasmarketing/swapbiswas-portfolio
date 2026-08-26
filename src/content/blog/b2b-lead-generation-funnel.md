@@ -1,5 +1,5 @@
 ---
-title: "The B2B Lead Generation Funnel: Stages, Metrics, and Fixes (2026)"
+title: "B2B Lead Generation Funnel: Stages, Metrics, Fixes (2026)"
 description: "The B2B lead generation funnel explained by a PMM: the real stages, the MQL-to-SQL handoff, the metric that matters at each step, and how to fix the leaks."
 publishDate: 2026-07-01
 category: [Marketing, Product Marketing]

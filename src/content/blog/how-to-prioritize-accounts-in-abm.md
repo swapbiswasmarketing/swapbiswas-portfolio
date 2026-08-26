@@ -1,5 +1,5 @@
 ---
-title: "How to Prioritize Accounts in ABM: A Fit-and-Intent Framework (2026)"
+title: "How to Prioritize Accounts in ABM: Fit-and-Intent Framework"
 description: "How to prioritize accounts in ABM using fit and intent - a tiering framework to focus effort on the accounts most likely to buy, not just the biggest logos."
 publishDate: 2026-07-10
 category: [Marketing, Product Marketing]

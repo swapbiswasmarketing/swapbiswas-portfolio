@@ -1,5 +1,5 @@
 ---
-title: "LLM Optimization: How to Get Cited by ChatGPT, Perplexity, and Gemini (2026)"
+title: "LLM Optimization: Get Cited by ChatGPT, Perplexity, Gemini"
 description: "LLM optimization is how you earn citations in ChatGPT, Perplexity, Claude, and Gemini answers. Signals that matter, structure they reward, 2026 checklist."
 publishDate: 2026-05-09
 category: [SEO, AI, Marketing]
@@ -32,7 +32,7 @@ LLM optimization is the practice of structuring web content so that large langua
 - **Claude** (claude.ai with web search)
 - **Microsoft Copilot** (Bing-grounded)
 
-Each model has its own retrieval pipeline. Some use partner search indexes (Bing, Google). Some use proprietary crawls. Most use a hybrid. The shared output is the same - a generated answer with inline citations. LLM optimization is how your URL becomes one of those citations.
+Each model has its own retrieval pipeline. Some use partner search indexes (Bing, Google). Some use proprietary crawls. Most use a hybrid. The shared output is the same - a generated answer with inline citations. LLM optimization is how your URL becomes one of those citations. It is worth being precise about the word generated here: these systems compose the answer token by token rather than returning a stored snippet, which is exactly [what the ChatGPT name itself spells out](/blog/what-does-chatgpt-stand-for/), and it is why the same prompt can produce a different set of citations twice in a row.
 
 It is the technical evolution of [AEO vs SEO](/blog/aeo-vs-seo/). Where AEO focused on featured snippets and voice answers, LLM optimization adds the layer of being chunkable, attributable, and topically deep enough to be the source the model trusts.
 

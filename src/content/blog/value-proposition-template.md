@@ -1,5 +1,5 @@
 ---
-title: "Value Proposition Template: Fill-in-the-Blank Frameworks That Work (2026)"
+title: "Value Proposition Template: 3 Fill-in-the-Blank Frameworks"
 description: "A value proposition template gives you a fill-in-the-blank structure to say why buyers should choose you. Frameworks, examples, and the writing process."
 publishDate: 2026-06-25
 category: [Product Marketing, Marketing]
@@ -94,7 +94,7 @@ The template is the easy part. Filling it with something true and specific is th
 - **Write the differentiator a rival cannot claim.** If your competitor's homepage could run your exact sentence, delete it and start the line again.
 - **Compress to one sentence.** The internal version can breathe. The published version cannot.
 
-This is also where the value proposition template stops being a writing exercise and becomes a research exercise. The blanks are easy. The truth that goes in them is what separates a homepage that converts from one that decorates.
+This is also where the value proposition template stops being a writing exercise and becomes a research exercise. The blanks are easy. The truth that goes in them is what separates a homepage that converts from one that decorates. If the research is thin, the fix sits upstream of the template: [mapping customer jobs, pains, and gains against what you actually sell](/tools/value-proposition-canvas-generator/) produces the raw material all three of these formulas are asking you to compress into one sentence.
 
 ## Picking the Right Value Proposition Template for the Job
 

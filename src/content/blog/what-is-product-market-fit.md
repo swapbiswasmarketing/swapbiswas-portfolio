@@ -119,7 +119,7 @@ Slice your data by:
 - Use case (the job they hired you for)
 - Acquisition channel (organic vs paid vs referral)
 
-You will often find a "PMF segment" - the slice of customers where retention is high, expansion is strong, and the disappointment score is well above the average. Then a long tail where PMF is weak.
+You will often find a "PMF segment" - the slice of customers where retention is high, expansion is strong, and the disappointment score is well above the average. Then a long tail where PMF is weak. Writing that segment's jobs, pains, and gains down on its own is what keeps the finding usable, so build [one canvas per slice rather than a blended one](/tools/value-proposition-canvas-generator/) - the moment you merge them, the strong fit disappears back into the average.
 
 The strategic decision: double down on the PMF segment, or invest to win the others. Both can be right. Pretending the average is uniform is always wrong.
 
@@ -174,7 +174,7 @@ PMF is not the finish line. It is the starting line. Post-PMF, the work shifts:
 - **Expansion** - move from one segment to two, with intentional [positioning per segment](/blog/product-positioning/)
 - **Defensibility** - moats become real once growth is real
 
-Most companies stall post-PMF by trying to scale before product-channel fit is solid. The discipline carries: pick a channel, prove it works, then add the next.
+Most companies stall post-PMF by trying to scale before product-channel fit is solid. The discipline carries: pick a channel, prove it works, then add the next. Channel scaling is also where teams quietly swap a growth mandate for an ad budget, so decide early [which of that work is paid acquisition and which is lifecycle experimentation](/blog/growth-marketing-vs-performance-marketing/).
 
 ## Common PMF Mistakes
 

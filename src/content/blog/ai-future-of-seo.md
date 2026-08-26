@@ -1,5 +1,5 @@
 ---
-title: "AI and the Future of SEO: What Changes (and What Doesn't) in 2026"
+title: "AI and the Future of SEO: What Changes and What Doesn't"
 description: "How AI is reshaping SEO in 2026. From AI Overviews to generative engine optimization, learn what's changing and how to adapt your SEO strategy."
 publishDate: 2026-03-18
 updatedDate: 2026-03-18
@@ -44,7 +44,7 @@ Between **40-60% of cited sources in AI search change month to month** ([Profoun
 
 Google's emphasis on Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T) has strengthened specifically because AI can generate generic content at scale. The signal that differentiates human-valuable content is now the "Experience" dimension - first-hand knowledge that AI cannot fabricate.
 
-Content that demonstrates real experience - original data, personal case studies, expert interviews, proprietary research - outperforms AI-generated commodity content in both traditional and AI-powered search.
+Content that demonstrates real experience - original data, personal case studies, expert interviews, proprietary research - outperforms AI-generated commodity content in both traditional and AI-powered search. The unfakeable parts are usually small and specific: [a first-hand account of Kerala's Theyyam season and backwater routes](/blog/kerala-winter-experiences/) rests on knowing which months the ritual is actually performed, the kind of detail a model can only paraphrase from someone else's trip.
 
 ## What is Generative Engine Optimization (GEO)?
 
@@ -111,7 +111,7 @@ Core Web Vitals, mobile responsiveness, page speed, and intuitive navigation rem
 
 ### E-E-A-T Principles Strengthen
 
-If anything, AI amplifies the importance of E-E-A-T. When AI can generate surface-level content on any topic, the differentiator becomes demonstrable expertise and real-world experience. Author bios, credentials, original research, and expert sources matter more than ever.
+If anything, AI amplifies the importance of E-E-A-T. When AI can generate surface-level content on any topic, the differentiator becomes demonstrable expertise and real-world experience. Author bios, credentials, original research, and expert sources matter more than ever. How high that bar goes depends on the subject: Google reserves its strictest quality standards for the health, financial security, safety and civic subjects it labels [Your Money or Your Life topics](/blog/what-is-ymyl/), where even a small inaccuracy can cause real harm.
 
 ### Long-Term Thinking Pays Off
 

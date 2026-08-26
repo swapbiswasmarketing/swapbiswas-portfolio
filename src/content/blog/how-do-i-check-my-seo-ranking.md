@@ -1,5 +1,5 @@
 ---
-title: "How Do I Check My SEO Ranking? 7 Free and Paid Methods (2026)"
+title: "How Do I Check My SEO Ranking? 7 Free and Paid Methods"
 description: "Learn how to check your SEO ranking with free and paid tools. Step-by-step guide using Google Search Console, Ahrefs, Semrush, and manual methods."
 publishDate: 2026-04-01
 updatedDate: 2026-04-01

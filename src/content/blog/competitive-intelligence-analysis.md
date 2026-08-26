@@ -1,5 +1,5 @@
 ---
-title: "Competitive Intelligence Analysis: How to Track and Outmaneuver Competitors"
+title: "Competitive Intelligence Analysis: How to Track Competitors"
 description: "Learn how to build a competitive intelligence analysis system that tracks competitor moves in real time. Includes tools, frameworks, and a CI reporting template."
 publishDate: 2026-03-17
 updatedDate: 2026-03-17

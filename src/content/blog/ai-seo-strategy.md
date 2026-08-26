@@ -153,7 +153,7 @@ Prioritize the top 20 most replicable, high-quality opportunities.
 
 2. **Outreach personalization at scale:** AI can analyze a prospect's recent content and generate personalized outreach angles. This isn't about blasting template emails -it's about making genuine personalization efficient.
 
-3. **Content gap → link magnet identification:** AI can analyze what content types earn the most links in your niche (original research, tools, data visualizations, frameworks).
+3. **Content gap and link magnet identification:** AI can analyze what content types earn the most links in your niche (original research, tools, data visualizations, frameworks).
 
 **What NOT to do:** Don't use AI to mass-generate spammy outreach. Google's SpamBrain algorithm and email providers are both getting better at detecting this. Quality over quantity, always.
 
@@ -219,13 +219,13 @@ What Google DOES penalize:
 - Scaled content that adds no original value
 - Content that's factually wrong or misleading
 
-**The takeaway:** Use AI as a tool in your SEO workflow, but bring original expertise, data, and perspective. That's what ranks.
+**The takeaway:** Use AI as a tool in your SEO workflow, but bring original expertise, data, and perspective. That's what ranks. One caveat scales with the topic: on the health, money and safety subjects Google's raters classify as [its highest-risk content](/blog/what-is-ymyl/), the guidelines single out mass-produced, unverified machine output by name, so someone with a relevant credential has to check every claim before it publishes.
 
 ## The Workflow I Use
 
 Here's my actual AI SEO workflow, start to finish:
 
-1. **Research** (30 min): Ahrefs for keyword data → AI for clustering and prioritization
+1. **Research** (30 min): Ahrefs for keyword data, then AI for clustering and prioritization
 2. **Brief creation** (15 min): AI generates a content brief based on SERP analysis
 3. **Writing** (2-3 hours): I write from my own experience and expertise
 4. **Optimization** (30 min): AI checks topical coverage, suggests improvements

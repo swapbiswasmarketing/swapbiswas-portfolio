@@ -1,5 +1,5 @@
 ---
-title: "Growth Marketing vs Performance Marketing: The Difference (2026)"
+title: "Growth Marketing vs Performance Marketing: The Difference"
 description: "Growth marketing vs performance marketing, explained by a PMM: what each one actually does, why teams confuse them, and how they fit together across the funnel."
 publishDate: 2026-07-19
 updatedDate: 2026-08-15
@@ -78,7 +78,7 @@ That accountability is the whole point. Brand advertising asks you to accept a l
 
 Those IAB format categories overlap, since a video ad sold on a social platform can sit in more than one line, so read them as individual channel sizes rather than slices of a single pie.
 
-**How performance marketing is bought and measured.** Inventory is bought in real-time auctions on CPC, CPM or CPA terms, so the price of a conversion is set by whoever else wants the same audience. Conversions come back through pixels and, increasingly, server-side conversion APIs, then get credited to campaigns inside an attribution window the platform largely defines, with UTM parameters carrying the same campaign labels into your own analytics. Targeting runs on first-party audience lists, retargeting pools and lookalike expansion, and creative is treated as a variable to be tested continuously rather than a deliverable to be signed off. The four numbers that decide everything are ROAS, CPA, CTR and conversion rate.
+**How performance marketing is bought and measured.** Inventory is bought in real-time auctions on CPC, CPM or CPA terms, so the price of a conversion is set by whoever else wants the same audience. Conversions come back through pixels and, increasingly, server-side conversion APIs, then get credited to campaigns inside an attribution window the platform largely defines, with UTM parameters carrying the same campaign labels into your own analytics. Targeting runs on first-party audience lists, retargeting pools and lookalike expansion, and creative is treated as a variable to be tested continuously rather than a deliverable to be signed off. The four numbers that decide everything are ROAS, CPA, CTR and conversion rate. One caveat before you read those four numbers off a GA4 report: Google's multi-network campaign types do not file under Paid Search at all, they get [their own channel grouping called Cross Network](/blog/what-is-cross-network-in-google-analytics/), so a slice of your Google Ads spend sits outside the row you are judging it on.
 
 **Best for:** teams whose funnel already converts and retains and who need volume fast, usually running alongside a broader [SaaS demand generation](/blog/saas-demand-generation/) motion.
 

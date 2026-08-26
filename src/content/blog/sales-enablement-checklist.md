@@ -1,5 +1,5 @@
 ---
-title: "The Sales Enablement Checklist: 40+ Items PMMs Actually Ship (2026)"
+title: "Sales Enablement Checklist: 40+ Items PMMs Actually Ship"
 description: "The sales enablement checklist used by top PMM teams. 40+ deliverables across onboarding, competitive, launch, and deal support - with a clear owner for each."
 publishDate: 2026-04-18
 category: [Product Marketing, Marketing]
@@ -56,7 +56,7 @@ The goal of onboarding is to get a new AE to their first closed-won deal faster.
 
 ### 2. Ongoing Training and Coaching
 
-Enablement does not stop at day 91. Ongoing content is what keeps the middle of the tenure curve performing.
+Enablement does not stop at day 91. Ongoing content is what keeps the middle of the tenure curve performing. The annual sales kickoff is the highest-stakes item in that cadence and the one teams most often build as a list of speakers, so plan it as [a timed run of show with one named owner per block](/blog/sales-kickoff-agenda/).
 
 - [ ] **Monthly product update training** (new features, roadmap context)
 - [ ] **Quarterly sales kickoff or refresher** (positioning, competitive, strategic priorities)

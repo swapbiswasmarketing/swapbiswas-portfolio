@@ -1,6 +1,6 @@
 ---
-title: "What Are Brand Guidelines? + Brand Book and Brand Voice Examples (2026)"
-description: "Brand guidelines explained: what to include in a brand book, how to define brand voice, and the 12 sections every modern brand needs."
+title: "What Are Brand Guidelines? Brand Book and Voice Examples"
+description: "Brand guidelines explained: the 12 sections every brand book needs, how to define a brand voice writers can use, and what a modern brand book looks like now."
 publishDate: 2026-05-09
 category: [Marketing, Design]
 img: /assets/stock-2.webp

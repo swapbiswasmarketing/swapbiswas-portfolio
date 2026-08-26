@@ -109,7 +109,7 @@ A pillar with no proof is an opinion. A pillar with three specific proof points 
 
 ### 6. Pressure-test with sales
 
-The final test is whether a rep can use the pillars in a live conversation. If your sales team cannot repeat them back and build a pitch from them, they are too abstract and you go back to step four. Messaging that only works on a slide is not messaging, it is decoration.
+The final test is whether a rep can use the pillars in a live conversation. If your sales team cannot repeat them back and build a pitch from them, they are too abstract and you go back to step four. Messaging that only works on a slide is not messaging, it is decoration. The cheapest place to run that test across the whole team at once is the annual sales kickoff, where a positioning relaunch followed by [certification against a published scoring rubric](/blog/sales-kickoff-agenda/) tells you within a day which pillars reps can actually carry into a call.
 
 Where all of this sits in the wider go-to-market picture is worth understanding too. Messaging pillars are one component of a larger [product marketing framework](/blog/product-marketing-framework/) that connects positioning, messaging, launch, and enablement into a single system.
 

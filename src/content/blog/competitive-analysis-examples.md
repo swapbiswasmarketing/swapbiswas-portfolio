@@ -1,5 +1,5 @@
 ---
-title: "Competitive Analysis Examples: 5 Real Frameworks You Can Copy"
+title: "Competitive Analysis Examples: 5 Frameworks You Can Copy"
 description: "See real competitive analysis examples from SaaS, ecommerce, and B2B. Includes templates, scoring frameworks, and step-by-step breakdowns you can apply today."
 publishDate: 2026-03-18
 updatedDate: 2026-03-18

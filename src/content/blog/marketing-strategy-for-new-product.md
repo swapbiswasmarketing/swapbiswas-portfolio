@@ -1,6 +1,6 @@
 ---
-title: "Marketing Strategy for New Product: The Complete Launch Playbook (2026)"
-description: "A step-by-step marketing strategy for launching a new product. Covers market research, positioning, channel selection, launch tactics, and post-launch optimization with real data."
+title: "Marketing Strategy for New Product: The Launch Playbook"
+description: "A step-by-step marketing strategy for a new product, from market research and positioning to channel choice, launch-week tactics, and post-launch fixes."
 publishDate: 2026-03-08
 updatedDate: 2026-03-21
 category: [Marketing, Product Marketing]
@@ -34,7 +34,7 @@ New product marketing requires more research, faster iteration, and higher toler
 
 ### Market Validation
 
-Before spending a dollar on marketing, confirm that the market actually wants what you're building.
+Before spending a dollar on marketing, confirm that the market actually wants what you're building. The work does not expire on launch day either, since the same interview notes and demand data go on to set pricing, shape the competitive story and flag risk, which is [how research keeps earning its place in a manager's decisions](/blog/how-does-marketing-research-help-managers/) long after the launch window closes.
 
 **Customer Discovery Interviews:**
 - Talk to 15-20 potential customers

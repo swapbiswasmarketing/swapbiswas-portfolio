@@ -1,5 +1,5 @@
 ---
-title: "What Is Customer Journey Analytics? Tools, Frameworks & Examples (2026)"
+title: "What Is Customer Journey Analytics? Frameworks and Tools"
 description: "Customer journey analytics explained: mapping vs analytics, the four data layers, the metrics that matter, and the tools PMMs and growth teams actually use."
 publishDate: 2026-05-30
 updatedDate: 2026-05-30
@@ -211,6 +211,8 @@ The pattern across companies that do this well:
 
 **Cohort retention at scale.** Mature consumer companies report cohort retention sliced by acquisition channel, device, region, and content type, joined to lifetime value. The infrastructure investment is large. The decisions it enables - which campaigns to scale, which originals to commission, which segments to retire - are larger.
 
+Slicing by acquisition channel only works if the channel values are consistent in the first place, and that breaks earlier than most teams expect: two spellings of the same campaign become two rows that never rejoin, so [a naming system a machine can group](/blog/campaign-naming-convention/) is the unglamorous prerequisite for every cohort chart above.
+
 The pattern: **investment in the unified data view always precedes the operating gains**. Companies that skip the data work and buy a journey platform get dashboards. Companies that build the data foundation first get decisions.
 
 ## How to Improve the Customer Journey
@@ -223,7 +225,7 @@ Trying to improve every stage at once produces no improvement on any. Pick the s
 
 ### 2. Find the Specific Friction
 
-Drill into the data layer at that stage. Where are users dropping off, by exact step, and what does session replay show them doing? What do the surveys say at that moment?
+Drill into the data layer at that stage. Where are users dropping off, by exact step, and what does session replay show them doing? What do the surveys say at that moment? Session replay only ever shows one visitor at a time, so pair it with an aggregated view of the same step: click maps surface the dead clicks on elements users mistake for buttons, and scroll maps tell you whether the step is even reaching the screen, which is where [interpreting click, scroll, and move maps](/blog/how-to-read-a-heatmap/) turns a vague drop-off into a specific fix.
 
 ### 3. Prioritize by Potential Impact
 

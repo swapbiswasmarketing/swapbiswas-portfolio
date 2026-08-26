@@ -32,7 +32,6 @@ export const GET: APIRoute = async () => {
 	lines.push('');
 	lines.push('- [Home](https://swapbiswas.com/): Portfolio homepage with featured work and recent writing.');
 	lines.push('- [About](https://swapbiswas.com/about/): Background, experience, skills, and career timeline.');
-	lines.push('- [Work](https://swapbiswas.com/work/): Case studies of product marketing and growth work.');
 	lines.push('- [Blog](https://swapbiswas.com/blog/): All blog posts, browsable by category.');
 	lines.push('- [Contact](https://swapbiswas.com/contact/): Get in touch for consulting, speaking, or collaboration.');
 	lines.push('');

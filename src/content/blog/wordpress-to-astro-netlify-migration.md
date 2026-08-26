@@ -1,5 +1,5 @@
 ---
-title: "How I Moved My Website from WordPress to Astro and Saved ₹12,000/Year"
+title: "WordPress to Astro Migration: How I Cut Hosting to Zero"
 description: "A step-by-step guide on how I migrated from WordPress to Astro with Netlify - going from ₹12K/year to ₹0 with better performance, speed, and security."
 publishDate: 2026-03-01
 updatedDate: 2026-03-21
@@ -81,7 +81,7 @@ Here's where it gets interesting. **I'm not a developer.** I'm a marketer who un
 
 ### Step 1: Export Content from WordPress
 
-I exported all my content from WordPress as an XML file. This gave me all my blog posts, pages, and media in one download. WordPress makes this easy - it's under **Tools → Export** in the dashboard.
+I exported all my content from WordPress as an XML file. This gave me all my blog posts, pages, and media in one download. WordPress makes this easy - it's under **Tools > Export** in the dashboard.
 
 ### Step 2: Set Up the Astro Project
 

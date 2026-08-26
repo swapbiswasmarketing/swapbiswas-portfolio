@@ -1,5 +1,5 @@
 ---
-title: "What Is an SEO Report? A Complete Guide to SEO Reporting (2026)"
+title: "What Is an SEO Report? Metrics, Template, and Tools (2026)"
 description: "Learn what an SEO report is, what metrics to include, and how to build one that drives action. Step-by-step guide with free templates and tools."
 publishDate: 2026-04-01
 updatedDate: 2026-04-01
@@ -41,7 +41,7 @@ It also protects you. When someone asks "What has SEO done for us lately?" - you
 
 ### ROI Tracking
 
-SEO often competes with paid channels for budget. Reports that tie organic traffic to conversions and revenue make the case for continued investment. According to [BrightEdge research, organic search drives 53.3% of all trackable website traffic](https://www.brightedge.com/resources/research-reports/channel_share) - more than paid search, social, and display combined. And [HubSpot's State of Marketing report](https://www.hubspot.com/state-of-marketing) found that **website, blog, and SEO is the #1 ROI-generating channel for B2B companies**. If you can show that organic search drives the majority of qualified leads at a fraction of the cost-per-acquisition of paid ads, the budget conversation gets much easier.
+SEO often competes with paid channels for budget. Reports that tie organic traffic to conversions and revenue make the case for continued investment. According to [BrightEdge research, organic search drives 53.3% of all trackable website traffic](https://www.brightedge.com/resources/research-reports/channel_share) - more than paid search, social, and display combined. And [HubSpot's State of Marketing report](https://www.hubspot.com/state-of-marketing) found that **website, blog, and SEO is the #1 ROI-generating channel for B2B companies**. If you can show that organic search drives the majority of qualified leads at a fraction of the cost-per-acquisition of paid ads, the budget conversation gets much easier. Just make sure the paid side of that comparison is complete, because [GA4 splits multi-network Google Ads traffic into a Cross Network row of its own](/blog/what-is-cross-network-in-google-analytics/) and a report that counts only Paid Search will understate what paid actually cost.
 
 ### Spotting Problems Early
 

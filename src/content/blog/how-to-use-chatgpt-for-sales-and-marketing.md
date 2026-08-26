@@ -1,5 +1,5 @@
 ---
-title: "How to Use ChatGPT for Sales and Marketing: 10 Proven Workflows (2026)"
+title: "How to Use ChatGPT for Sales and Marketing: 10 Workflows"
 description: "Learn how to use ChatGPT for sales and marketing with 10 proven workflows, prompts, and a framework that actually produces usable output - not generic AI slop."
 publishDate: 2026-04-11
 category: [AI, Marketing, Tools]
@@ -213,7 +213,7 @@ Free and personal ChatGPT accounts can use your inputs as training data unless y
 
 ### Mistake 5: Using ChatGPT for Facts Without Verification
 
-ChatGPT will hallucinate statistics, quotes, and case studies with total confidence. For any factual claim, verify the original source before using it. This is the single biggest reputation risk when using AI in content work.
+ChatGPT will hallucinate statistics, quotes, and case studies with total confidence. For any factual claim, verify the original source before using it. This is the single biggest reputation risk when using AI in content work. Fabrication is not a glitch waiting to be patched out either: the G in [Chat Generative Pre-trained Transformer](/blog/what-does-chatgpt-stand-for/) means the model composes every answer token by token from learned patterns rather than looking one up, so inventing a plausible source costs it exactly as little effort as citing a real one.
 
 ## Where ChatGPT for Sales and Marketing Fits in a Realistic Workflow
 

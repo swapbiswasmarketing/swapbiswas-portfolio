@@ -1,5 +1,5 @@
 ---
-title: "Product Marketing Career Path: Levels, Salary, Timeline (2026)"
+title: "Product Marketing Career Path: Levels, Salary, Timeline"
 description: "The product marketing career path by a PMM: the five levels from Associate to VP, real US salary ranges, timelines, and how to move up faster."
 publishDate: 2026-07-19
 category: [Product Marketing, Career]

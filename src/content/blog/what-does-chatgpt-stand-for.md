@@ -1,5 +1,5 @@
 ---
-title: "What Does ChatGPT Stand For? The Full Meaning Explained (2026)"
+title: "What Does ChatGPT Stand For? The Acronym Explained (2026)"
 description: "ChatGPT stands for Chat Generative Pre-trained Transformer. Learn what each word means, how GPT technology works, and how ChatGPT compares to other AI models."
 publishDate: 2026-04-01
 updatedDate: 2026-04-01

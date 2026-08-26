@@ -1,5 +1,5 @@
 ---
-title: "Ecommerce Marketing Automation: Workflows That Actually Drive Revenue (2026)"
+title: "Ecommerce Marketing Automation: Workflows That Drive Revenue"
 description: "A practitioner's guide to ecommerce marketing automation: the workflows, triggers, and sequencing that turn browsers into repeat buyers in 2026."
 publishDate: 2026-06-21
 category: [Marketing, Tools]

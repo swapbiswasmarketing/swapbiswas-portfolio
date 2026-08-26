@@ -1,5 +1,5 @@
 ---
-title: "ICP vs Buyer Persona: What's the Difference and Why You Need Both (2026)"
+title: "ICP vs Buyer Persona: The Difference and Why You Need Both"
 description: "ICP and buyer persona are not the same thing. Learn the difference, when to use each, and how to build both with frameworks, templates, and real data."
 publishDate: 2026-03-12
 updatedDate: 2026-03-21

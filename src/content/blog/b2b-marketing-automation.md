@@ -95,7 +95,7 @@ Automation breaks down when marketing and sales disagree on what qualifies as a 
 
 ![B2B lead lifecycle from visitor to customer](/assets/blog/b2b-marketing-automation/lead-lifecycle.webp "B2B Lead Lifecycle and Automation")
 
-Automate the handoff: when a lead hits MQL status, create a task in your CRM, notify the assigned rep, and include the lead's full activity history. **14.5% increase in sales productivity** is the reported gain from proper automation handoffs ([Flowlyn](https://flowlyn.com/blog/marketing-automation-statistics)).
+Automate the handoff: when a lead hits MQL status, create a task in your CRM, notify the assigned rep, and include the lead's full activity history. **14.5% increase in sales productivity** is the reported gain from proper automation handoffs ([Flowlyn](https://flowlyn.com/blog/marketing-automation-statistics)). Automating the routing only pays off once both teams agree on the bar, because the MQL-to-SQL seam is [where B2B funnels leak most reliably](/blog/b2b-lead-generation-funnel/) and no CRM task can rescue a definition sales has stopped trusting.
 
 ## B2B Marketing Automation Platform Comparison
 

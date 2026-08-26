@@ -63,7 +63,7 @@ This is where email starts compounding your content investment. Instead of publi
 
 ### Middle of Funnel: Nurture and Qualify
 
-The middle of the funnel is where most leads stall, and where email earns its keep. A contact who downloaded a guide is interested but not ready to buy. Nurture sequences bridge that gap.
+The middle of the funnel is where most leads stall, and where email earns its keep. A contact who downloaded a guide is interested but not ready to buy. Nurture sequences bridge that gap. Before you rewrite the sequence, confirm the stall is actually here: scoring [each funnel stage on the metric that matches its job](/blog/b2b-lead-generation-funnel/) often puts the real drop-off one gate later, at a slow sales handoff rather than at nurture.
 
 Behavior-based sequences work best because they respond to what each lead actually does. This is the core of [B2B demand generation](/blog/what-is-b2b-demand-generation/), where email nurtures captured demand until it is sales-ready instead of pushing for a deal too early.
 
@@ -99,7 +99,7 @@ Those return visits matter. Subscribers who click through from email tend to rea
 
 Email is also the cheapest market research you have. Open and click data tells you which subjects, angles, and offers actually resonate before you commit to a full content or SEO push.
 
-When a newsletter section consistently outperforms, that is a signal to build a pillar page or a tool around it. Email turns your audience into a real-time editorial advisory board.
+When a newsletter section consistently outperforms, that is a signal to build a pillar page or a tool around it. Email turns your audience into a real-time editorial advisory board. Treat that as a signal rather than a finished brief, because an angle that wins in the inbox still has to be assigned a journey stage, the buying question it answers, and a metric before it earns a pillar page, which is the discipline behind [mapping every piece to the buyer's journey](/blog/content-marketing-framework/).
 
 ### Personalization and Segmentation Multiply Results
 

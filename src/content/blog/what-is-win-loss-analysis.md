@@ -1,5 +1,5 @@
 ---
-title: "What Is Win-Loss Analysis? Templates, Questions, and Examples (2026)"
+title: "What Is Win-Loss Analysis? The 6-Stage Process for PMMs"
 description: "Win-loss analysis explained: the interview process, the 12 questions every PMM should ask, the categorization framework, and how to turn findings into pipeline."
 publishDate: 2026-05-09
 category: [Product Marketing, Marketing]

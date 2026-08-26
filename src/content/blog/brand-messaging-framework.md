@@ -1,5 +1,5 @@
 ---
-title: "Brand Messaging Framework: The Full Structure and Matrix (2026)"
+title: "Brand Messaging Framework: Five Layers, Matrix, Hierarchy"
 description: "A PMM's brand messaging framework explained: the five layers from audience insight to activation, plus the messaging matrix and hierarchy template most guides skip."
 publishDate: 2026-07-25
 category: [Product Marketing, Marketing]

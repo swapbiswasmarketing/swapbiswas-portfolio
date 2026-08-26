@@ -1,5 +1,5 @@
 ---
-title: "Demand Generation vs Lead Generation: The Real Difference (2026)"
+title: "Demand Generation vs Lead Generation: Which One You Need"
 description: "Demand generation vs lead generation, explained by a PMM: what each actually does, where teams confuse them, and how to run both without wasting budget."
 publishDate: 2026-06-12
 category: [Marketing, Product Marketing]
@@ -67,7 +67,7 @@ The confusion is not stupidity. It comes from how marketing is funded and how at
 
 ### Attribution rewards the last click
 
-Most analytics setups give credit to the touchpoint closest to the form fill. So the paid search ad that captured an already-decided buyer gets the glory, while the year of content that created the decision gets nothing. Over time, budget migrates to the capture layer because that is where the dashboard says the wins are.
+Most analytics setups give credit to the touchpoint closest to the form fill. So the paid search ad that captured an already-decided buyer gets the glory, while the year of content that created the decision gets nothing. Over time, budget migrates to the capture layer because that is where the dashboard says the wins are. The labels are blurrier than the dashboard suggests: a Performance Max click that closed the form fill lands in GA4's Cross Network row rather than Paid Search, which is [why one Google Ads channel can hide YouTube, Gmail and Discover placements](/blog/what-is-cross-network-in-google-analytics/) behind what looks like a clean last-click search win.
 
 I have watched this play out as a slow strangling of demand gen. The numbers look fine for a few quarters, then pipeline quality drops because nobody is filling the top of the funnel anymore. By the time leadership notices, the brand has gone quiet in its own category.
 
@@ -115,7 +115,7 @@ Do not judge demand gen on form fills. Do not judge lead gen on brand awareness.
 - **Demand gen indicators:** branded search volume, direct traffic, growth in high-fit accounts engaging with your content, and sourced plus influenced pipeline over a quarter.
 - **Lead gen indicators:** form fills, MQL volume, cost per lead, and especially lead-to-opportunity conversion rate, which is the quality check that volume alone hides.
 
-The lead-to-opportunity rate is the one I watch hardest, because it is where a lead gen team optimizing for cheap volume gets exposed.
+The lead-to-opportunity rate is the one I watch hardest, because it is where a lead gen team optimizing for cheap volume gets exposed. One blended rate still hides where accounts actually fall out, so track the conversion between adjacent stages as well - the walkthrough of [the five gates a B2B buying group passes through](/blog/b2b-lead-generation-funnel/) shows why a weak lead-to-opportunity number is usually a handoff problem rather than a traffic one.
 
 ### 3. Protect the upstream budget on purpose
 

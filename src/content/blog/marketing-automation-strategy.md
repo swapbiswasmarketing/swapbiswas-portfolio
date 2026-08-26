@@ -1,5 +1,5 @@
 ---
-title: "Marketing Automation Strategy: A Step-by-Step Framework for 2026"
+title: "Marketing Automation Strategy: A Step-by-Step Framework"
 description: "Build a marketing automation strategy that drives results. Learn how to plan, implement, and optimize automation workflows across email, ads, and CRM."
 publishDate: 2026-03-20
 updatedDate: 2026-03-20

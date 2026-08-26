@@ -1,5 +1,5 @@
 ---
-title: "ABM vs Inbound Marketing: How to Choose and Combine Both (2026)"
+title: "ABM vs Inbound Marketing: How to Choose and Combine Both"
 description: "ABM vs inbound marketing, explained by a PMM: how each motion works, where each wins and fails, and how to combine them instead of picking a side."
 publishDate: 2026-06-30
 category: [Marketing, Product Marketing]
@@ -125,7 +125,7 @@ The honest answer depends on your market size and your average contract value. H
 | Strong awareness, weak account focus | Add ABM | The market knows you, but you are not concentrating on the best logos |
 | Strong account focus, cold accounts | Add inbound | Your targets do not recognize you, so warm them before you sell |
 
-The pattern for most B2B SaaS companies: start with inbound to build awareness and generate signal, then use that signal to select accounts and layer ABM on top. Leading with ABM makes sense only when your market is small and knowable and your deals are large enough to justify per-account spend from the start.
+The pattern for most B2B SaaS companies: start with inbound to build awareness and generate signal, then use that signal to select accounts and layer ABM on top. Leading with ABM makes sense only when your market is small and knowable and your deals are large enough to justify per-account spend from the start. The catch is that a small and knowable market has to come from an account count you built yourself, not from a published total multiplied by a share assumption, because an inflated TAM will push you toward inbound when only forty accounts can realistically buy you: [running the same market both ways and reading the gap between the two numbers](/blog/top-down-vs-bottom-up-market-sizing/) is what tells you which row of this table you actually sit in.
 
 ### Get your targeting foundation right first
 

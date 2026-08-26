@@ -1,6 +1,6 @@
 ---
-title: "How to Create a Competitive Battlecard: Template, Examples, and Best Practices (2026)"
-description: "Learn how to create competitive battlecards that sales teams actually use. Includes a free template, real examples, and the frameworks used by top product marketing teams."
+title: "Competitive Battlecard Template: Examples That Win Deals"
+description: "A competitive battlecard template sales reps actually pull up mid-call: 10 sections, two proven frameworks, and real examples from teams that win."
 publishDate: 2026-03-12
 updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
@@ -129,7 +129,7 @@ What you know about their pricing structure and how to position against it.
 
 ### 9. Proof Points
 
-Evidence that backs up your claims. An audit of 150+ battlecards found that **100% of the highest-retention cards included proof points**, while only 19% of battlecards overall include them ([Klue](https://klue.com/blog/sales-battlecard-mistakes-according-to-the-data)).
+Evidence that backs up your claims. An audit of 150+ battlecards found that **100% of the highest-retention cards included proof points**, while only 19% of battlecards overall include them ([Klue](https://klue.com/blog/sales-battlecard-mistakes-according-to-the-data)). That gap is a production problem, not an evidence problem: the wins exist and nobody writes them up, so pair every closed competitive deal with a [one-page customer proof sheet](/tools/case-study-template/) while the numbers are still fresh.
 
 **Strong proof includes:**
 - Named customer case studies with specific metrics
@@ -205,7 +205,7 @@ Listing features instead of positioning and value differentiation. Buyers don't 
 Nothing destroys sales credibility faster than citing competitor information that's months old. **58% of CI professionals struggle to keep battlecards and competitive content updated** ([Crayon](https://www.crayon.co/blog/sparks-content)). Set a regular update cadence - biweekly at minimum for top competitors.
 
 **4. Poor accessibility.**
-If battlecards live in a shared drive folder nobody checks, they won't get used. Integrate them into your CRM, Slack, or wherever your reps already work.
+If battlecards live in a shared drive folder nobody checks, they won't get used. Integrate them into your CRM, Slack, or wherever your reps already work. Access is only half the problem: a card the rep has never said out loud stays unused under pressure, which is why [the competitive drill block at the annual kickoff](/blog/sales-kickoff-agenda/) should run 75 minutes of live trap objections rather than a walkthrough of the deck.
 
 **5. No measurement.**
 Track battlecard usage, win rates against each competitor, and rep feedback. If a battlecard isn't improving outcomes, fix it or kill it.

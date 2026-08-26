@@ -1,5 +1,5 @@
 ---
-title: "Product Launch Checklist: 50+ Items for a Launch That Lands (2026)"
+title: "Product Launch Checklist: 50+ Items for a Launch That Lands"
 description: "A product launch checklist used by PMMs for Tier 1, 2, and 3 launches. 50+ pre-launch, launch-day, and post-launch items with clear owners and timing."
 publishDate: 2026-04-18
 category: [Product Marketing, Marketing]

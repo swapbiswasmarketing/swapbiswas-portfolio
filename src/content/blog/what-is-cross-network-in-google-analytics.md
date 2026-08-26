@@ -1,6 +1,6 @@
 ---
-title: "What Is Cross Network in Google Analytics? GA4 Channel Grouping Explained"
-description: "Learn what Cross Network means in Google Analytics 4, why it appears in your reports, and how to use it to measure Google Ads Performance Max and cross-channel campaigns."
+title: "What Is Cross Network in Google Analytics? The GA4 Channel"
+description: "Cross Network in Google Analytics 4 is traffic from Performance Max and other multi-network Google Ads campaigns. Why it shows up and how to report on it."
 publishDate: 2026-04-01
 updatedDate: 2026-04-01
 category: [Marketing, Tools]
@@ -125,7 +125,7 @@ For Demand Gen campaigns, you can set custom UTM parameters at the campaign leve
 
 ### Build Custom Channel Groupings
 
-GA4 allows you to create [custom channel groupings](https://support.google.com/analytics/answer/13051316?hl=en) with rules that override the defaults. While you cannot split Cross Network by Google sub-network (because that data is not passed to GA4), you can create custom groupings that combine Cross Network with your other paid channels for a unified "Total Google Ads" view.
+GA4 allows you to create [custom channel groupings](https://support.google.com/analytics/answer/13051316?hl=en) with rules that override the defaults. While you cannot split Cross Network by Google sub-network (because that data is not passed to GA4), you can create custom groupings that combine Cross Network with your other paid channels for a unified "Total Google Ads" view. Custom rules only help once the raw values are sane, though: GA4 pattern-matches `utm_medium` against fixed lists to assign a default channel group in the first place, so a medium like `newsletter` or `nurture` matches nothing and drops into Unassigned, which is precisely the mistake the [campaign name and UTM builder](/tools/campaign-name-generator/) flags before you copy the string.
 
 This is useful when you want to evaluate overall Google Ads performance without the artificial split between Paid Search, Display, and Cross Network. If you are running a [technical SEO audit](/blog/how-to-conduct-a-technical-seo-site-audit/) alongside paid campaigns, having a clean total paid view helps you measure the incremental impact of organic improvements.
 

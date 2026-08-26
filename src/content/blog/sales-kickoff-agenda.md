@@ -129,7 +129,7 @@ The single biggest reason SKO content is thin is that it gets commissioned four 
 
 The content freeze at T-3 weeks is the item most teams skip and most regret. A deck that changes the night before has not been rehearsed, and an unrehearsed session runs 20 minutes long and eats the practice block behind it.
 
-If your SKO also carries a major launch, that workstream should already be feeding this calendar. The dependencies are laid out in the [product launch checklist](/blog/product-launch-checklist/), and the drills block draws directly on the [competitive battlecard template](/blog/competitive-battlecard-template/).
+If your SKO also carries a major launch, that workstream should already be feeding this calendar. The dependencies are laid out in the [product launch checklist](/blog/product-launch-checklist/), and the drills block draws directly on the [competitive battlecard template](/blog/competitive-battlecard-template/). Because the drills block pairs reps against one named rival at a time, that T-6 deliverable is three separate one-page cards rather than a single combined sheet, and a [browser-based battlecard builder](/tools/battlecard-generator/) gets all three drafted and exported in an afternoon instead of a design ticket.
 
 ## Sales kickoff agenda variants by team size
 

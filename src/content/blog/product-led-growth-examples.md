@@ -1,5 +1,5 @@
 ---
-title: "Product-Led Growth Examples: 10 Companies That Nailed PLG in 2026"
+title: "Product-Led Growth Examples: 10 Companies That Nailed PLG"
 description: "Explore real product-led growth examples from Slack, Notion, Figma, and more. Learn PLG strategies, metrics, and frameworks you can apply to your SaaS."
 publishDate: 2026-03-19
 updatedDate: 2026-03-19
@@ -136,7 +136,7 @@ The most important metric varies by stage. Early-stage PLG companies should obse
 | **Best for** | SMB + mid-market | Enterprise + complex deals |
 | **Scaling** | Add features, not headcount | Add reps and managers |
 
-Most successful SaaS companies in 2026 use a hybrid approach - PLG for initial adoption and self-serve revenue, with a sales-assisted motion for enterprise expansion. Figma's **136% NDR** comes from landing with individual designers (PLG) and expanding into organization-wide contracts (sales-assisted).
+Most successful SaaS companies in 2026 use a hybrid approach - PLG for initial adoption and self-serve revenue, with a sales-assisted motion for enterprise expansion. Figma's **136% NDR** comes from landing with individual designers (PLG) and expanding into organization-wide contracts (sales-assisted). Hybrid does not mean funding both equally, though: pick one primary motion, resource it properly, and treat the second as an assist layer, which is how I frame [the motion decision in a SaaS go-to-market plan](/blog/saas-go-to-market-strategy/).
 
 ## How to Apply Product-Led Growth to Your SaaS
 

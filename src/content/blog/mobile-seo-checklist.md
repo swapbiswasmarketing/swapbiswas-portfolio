@@ -1,5 +1,5 @@
 ---
-title: "Mobile SEO Checklist: 15 Fixes to Win Mobile-First Rankings (2026)"
+title: "Mobile SEO Checklist: 15 Fixes to Win Mobile-First Rankings"
 description: "A practical mobile SEO checklist covering Core Web Vitals, responsive design, tap targets, and mobile-first indexing to win rankings where users search."
 publishDate: 2026-06-19
 category: [SEO]
@@ -78,7 +78,7 @@ Your largest above-the-fold element (usually a hero image or headline) should pa
 
 ### 7. Fix INP: stop blocking the main thread
 
-INP replaced First Input Delay as a Core Web Vital on **March 12, 2024**, [as web.dev announced](https://web.dev/blog/inp-cwv-march-12). It measures how quickly your page responds to a tap across the whole visit, not just the first interaction. Break up long JavaScript tasks, defer non-critical scripts, and minimize third-party tags that hijack the main thread on cheaper phones.
+INP replaced First Input Delay as a Core Web Vital on **March 12, 2024**, [as web.dev announced](https://web.dev/blog/inp-cwv-march-12). It measures how quickly your page responds to a tap across the whole visit, not just the first interaction. Break up long JavaScript tasks, defer non-critical scripts, and minimize third-party tags that hijack the main thread on cheaper phones. The cheaper version of this fight is not shipping the JavaScript at all - static-site generators like Astro send 0 KB of it by default, which is the whole premise behind [rebuilding a plugin-heavy blog as pre-rendered HTML](/blog/wordpress-to-astro-netlify-migration/).
 
 ### 8. Fix CLS: reserve space so nothing jumps
 

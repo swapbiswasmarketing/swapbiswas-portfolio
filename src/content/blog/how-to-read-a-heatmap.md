@@ -1,5 +1,5 @@
 ---
-title: "How to Read a Heatmap: A Practical Guide With Examples (2026)"
+title: "How to Read a Heatmap: Click, Scroll, and Move Maps (2026)"
 description: "Learn how to read a heatmap to improve your website's UX and conversions. Covers click maps, scroll maps, and move maps with real interpretation examples."
 publishDate: 2026-04-01
 updatedDate: 2026-04-01

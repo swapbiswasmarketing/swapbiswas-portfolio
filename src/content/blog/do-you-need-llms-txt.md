@@ -1,5 +1,5 @@
 ---
-title: "Do You Need an llms.txt File? Google Says No, and the Data Agrees (2026)"
+title: "Do You Need an llms.txt File? Google Says No (2026)"
 description: "Google says you don't need an llms.txt file, and 97% of the ones that exist never get read. Here's what llms.txt does and whether it's worth it in 2026."
 publishDate: 2026-06-22
 category: [SEO, AI]

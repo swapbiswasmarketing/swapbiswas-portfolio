@@ -10,14 +10,25 @@ Reference guide for creating blog posts on swapbiswas.com. Follow these steps ev
 
 ```yaml
 ---
-title: "Title With Target Keyword (Year)"
-description: "150-160 char meta description with target keyword naturally included"
+title: "Target Keyword First, Then The Hook"   # 60 chars max, no year stamp
+description: "140-165 char meta description with target keyword naturally included"
 publishDate: YYYY-MM-DD
 category: [Category1, Category2]
 img: /assets/blog/{existing-image}.webp
 img_alt: Descriptive alt text
 ---
 ```
+
+- **`title` is capped at 60 characters** including spaces. See Section 2 > Titles for the rule and the audit command
+- **`description` must land between 140 and 165 characters.** This is a hard band, not a target. Under 140 leaves SERP space unused; over 165 gets truncated with an ellipsis in Google. Count the characters before saving, and include the target keyword naturally
+- Write the description as a full sentence that stands on its own in the SERP, not a fragment of the intro
+- Audit the whole corpus before publishing. This reads frontmatter only, so a `description:` inside a fenced code block in body copy is correctly ignored:
+
+```bash
+awk 'FNR==1{fm=0} /^---$/{fm++; next} fm==1 && /^description:/ {d=$0; sub(/^description: */,"",d); gsub(/^"|"$/,"",d); n=length(d); if (n<140 || n>165) printf "%3d  %s\n", n, FILENAME}' src/content/blog/*.md
+```
+
+Every line printed is a description outside the band, with its character count. Clean output means the corpus passes.
 
 - **Categories used so far:** AI, SEO, Marketing, Tools, Product Marketing, Career, Email, Design, Travel
 
@@ -54,6 +65,7 @@ Only use these 4 stock images for the `img` frontmatter field:
 - Use bold for key stats and important terms
 - Use tables for comparisons and data
 - Use code blocks for prompts and technical examples
+- **No HTML comments in shipped markdown.** Astro passes `<!-- ... -->` through untouched, so drafting notes, unfilled placeholders and TODOs end up in the published page source. Delete every one before publishing; a note that needs to survive belongs in the commit message, not the file. Check with `grep -n "<!--" src/content/blog/{slug}.md` (any output is a fail) and sweep the corpus with `grep -rn "<!--" src/content/blog/*.md`
 
 ### Data & Citations
 - **Every stat must be verifiable.** Check the cited URL actually contains the claimed data
@@ -74,8 +86,50 @@ Only use these 4 stock images for the `img` frontmatter field:
 - Target keyword in: title, H1, first paragraph, at least 2 H2s, conclusion
 - Use the exact-match keyword phrase 4-6 times naturally throughout
 - Include related/semantic keywords naturally
-- Add internal links to other blog posts where relevant
 - Keep URLs clean and keyword-rich
+- Internal links are a hard floor, not a judgement call. See Titles and Internal Linking below
+
+### Titles
+
+The frontmatter `title` is what Google prints in the SERP, and the page `<h1>` is generated from the same field, so a compliant title fixes both at once.
+
+- **60 characters is a hard ceiling**, counted including spaces and punctuation. 61 is a fail, not a rounding error. Past roughly 600 pixels Google truncates the title and rewrites the tail, and you lose control of the snippet
+- **Front-load the target keyword.** The exact-match phrase belongs in the first five words, ahead of any colon. `ABM vs Inbound Marketing: How to Choose` passes; `How to Choose Between ABM and Inbound Marketing` buries the keyword behind filler
+- **Drop the year stamp before trimming anything else.** A ` (2026)` suffix costs 7 characters, is the first thing Google cuts, and forces an edit every January. Never ship a title that needs the year to make sense
+- When a title is over, cut words from the half after the colon. The keyword half is never what gets trimmed
+- Never truncate mid-phrase to hit the count. Rewrite the promise shorter instead
+
+Audit every title in the corpus. This reads frontmatter only, so a `title:` inside a fenced code block in body copy is correctly ignored:
+
+```bash
+awk 'FNR==1{fm=0} /^---$/{fm++; next} fm==1 && /^title:/ {t=$0; sub(/^title: */,"",t); gsub(/^"|"$/,"",t); n=length(t); if (n>60) printf "%3d  %s\n", n, FILENAME}' src/content/blog/*.md | sort -rn
+```
+
+Every line printed is an over-length title, longest first. Clean output means the corpus passes.
+
+### Internal Linking
+
+"Where relevant" is what shipped posts with 1-2 links and left new posts orphaned. Both directions are now a floor, and a post is not published until both pass.
+
+- **Out: 3+ links to existing posts**, three distinct destinations, placed inside body copy where the reference is genuinely useful. A dumped "related reading" list at the bottom does not count toward the three
+- **In: 3+ existing posts edited to link to the new one.** Editing those older posts is part of shipping the new post, not a follow-up task. A post nothing links to gets crawled late and ranks like an orphan
+- Use root-relative URLs with the trailing slash: `[descriptive anchor text](/blog/target-slug/)`. Absolute `https://swapbiswas.com/...` links and missing trailing slashes both break the counts below
+- Anchor text describes the destination. No "click here", no bare URLs
+- Never link the same destination twice in one post
+
+Count both directions for a slug before publishing:
+
+```bash
+s=your-post-slug
+grep -o "](/blog/[a-z0-9-]*/)" "src/content/blog/$s.md" | sort -u | wc -l    # outbound distinct, need 3+
+grep -l "](/blog/$s/)" src/content/blog/*.md | grep -v "/$s\.md" | wc -l     # inbound posts, need 3+
+```
+
+List every post in the corpus still under the inbound floor:
+
+```bash
+for f in src/content/blog/*.md; do s=$(basename "$f" .md); n=$(grep -l "](/blog/$s/)" src/content/blog/*.md | grep -vc "/$s\.md"); [ "$n" -lt 3 ] && echo "$n  $s"; done | sort -n
+```
 
 ## 3. SVG Diagrams
 
@@ -122,10 +176,17 @@ Red:            #f87171
 ### File Location & Format
 - Design diagrams as SVGs, then **convert to WebP** before publishing (no SVGs in final output)
 - Save WebP files to `public/assets/blog/{post-slug}/filename.webp`
-- Reference in markdown as `![Alt text](/assets/blog/{post-slug}/filename.webp "Title")`
+- **Every content image ships with explicit `width` and `height`.** Markdown `![Alt text](...)` syntax cannot carry them, and without both the browser reserves no space and the article reflows as the image loads (a layout-shift defect). Write content images as HTML instead - Astro passes it straight through, and the lightbox, border-radius and hover styles all still apply:
+
+```html
+<img src="/assets/blog/{post-slug}/filename.webp" alt="Descriptive alt text" title="Title" width="1200" height="686" loading="lazy" decoding="async" />
+```
+
+- `width` is always `1200` (the resvg render width). `height` is `round(1200 * viewBoxHeight / viewBoxWidth)` - a `0 0 1400 800` viewBox gives `686`. Compute it from the viewBox you actually shipped; do not guess it or reuse the number from another post
+- List any content image in a post that is missing dimensions - a bare markdown image, or an `<img>` with no `width` - with `grep -nE '^!\[|<img' src/content/blog/{slug}.md | grep -v 'width='`. Any output is a fail
 - ViewBox: typically `0 0 1400 680-800` (wide format, large for readability)
 - **Max render width: 1200px** - blog images must not exceed 1200px wide. Render SVGs at 1200px via resvg.
-- **Mobile responsiveness:** All blog content images automatically scale to `max-width: 100%` via CSS. No extra attributes needed in markdown. If an image appears too wide on mobile, the blog template handles it.
+- **Mobile responsiveness:** All blog content images automatically scale via `max-width: 100%; height: auto` in the blog template CSS. The `width` and `height` attributes only reserve the aspect ratio, they do not pin the display size, so they are safe to set and still required. If an image appears too wide on mobile, the blog template handles it.
 
 ### SVG to WebP Conversion
 
@@ -198,6 +259,24 @@ The blog post template (`src/pages/blog/[...slug].astro`) includes:
 - **Breadcrumbs:** Auto-generated in BaseLayout
 - **Content styling:** Tables, code blocks, blockquotes, images all have dark-theme styles
 
+### Non-Article Pages Must Not Be Indexable
+
+Anything that ships HTML but is not an article - the PWA offline fallback at `public/offline/index.html`, demo routes, thank-you pages, any raw file dropped into `public/` - never passes through `MainHead.astro`, so it gets no description and no canonical. That is exactly how the offline fallback ended up indexable.
+
+- Every non-article HTML page carries `<meta name="robots" content="noindex, follow">` in its `<head>`. Use `follow`, not `nofollow`, so internal link equity still flows through the page
+- Pages that render through `BaseLayout` get the tag by passing the `noindex` prop. Do not hand-roll the meta tag there
+- Every indexable page carries a self-referencing canonical. `MainHead.astro` emits `<link rel="canonical" href={Astro.url.href} />` for every page it renders. A page that cannot get a canonical must not be indexable
+- Raw HTML under `public/` is copied verbatim into the build and never passes through a layout, so both tags have to be written into the file by hand
+- Keep noindexed routes out of the sitemap via the `filter` in `astro.config.mjs`
+
+Check every raw HTML file under `public/` for the robots tag:
+
+```bash
+for f in $(find public -name "*.html"); do grep -q 'name="robots"' "$f" || echo "MISSING robots: $f"; done
+```
+
+Any file listed is indexable by accident. Clean output means every raw page passes.
+
 ## 6. Post-Write Fact-Checking (Mandatory)
 
 After writing a blog post, **every single fact, number, quote, and claim must be verified** before publishing. This step is non-negotiable.
@@ -236,13 +315,19 @@ Requires `LT_USERNAME` and `LT_ACCESS_KEY` env vars. Output is JSON with `title`
 ## 7. Pre-Publish Checklist
 
 - [ ] Target keyword in title, first paragraph, and 2+ H2s
+- [ ] **Title is 60 characters or fewer, keyword front-loaded, no year stamp (Section 2 > Titles). The corpus audit prints nothing**
+- [ ] **Description is 140-165 characters and contains the target keyword (Section 1). The corpus audit prints nothing**
 - [ ] **All stats fact-checked against cited URLs (Section 6)**
 - [ ] No emdashes anywhere in the file
+- [ ] **No HTML comments anywhere in the file:** `grep -n "<!--" src/content/blog/{slug}.md` returns nothing
 - [ ] All external links have descriptive anchor text
-- [ ] Internal links to 2-3 other blog posts
+- [ ] **Outbound: 3+ distinct internal links to existing posts, placed in body copy (Section 2 > Internal Linking)**
+- [ ] **Inbound: 3+ existing posts edited to link to this one. The post is not published until this passes**
 - [ ] SVG diagram(s) created for key frameworks/processes
+- [ ] **Every content image is an `<img>` with explicit `width` and `height` (Section 3)**
 - [ ] Frontmatter complete (title, description, publishDate, category, img, img_alt)
 - [ ] Hero image uses only `stock-1` through `stock-4.webp` and doesn't duplicate adjacent posts
+- [ ] **Any new non-article HTML page is `noindex, follow`, has a canonical or is not indexable, and is out of the sitemap (Section 5)**
 - [ ] Run `npx astro build` to verify no errors
 - [ ] Check OG image generates correctly at `/og/{slug}.webp` (should match the hero image)
 - [ ] FAQ schema added for question-based or high-value posts (Section 8)

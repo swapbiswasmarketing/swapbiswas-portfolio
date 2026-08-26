@@ -1,5 +1,5 @@
 ---
-title: "Ecommerce SEO Checklist: Audit Your Store From Category to Cart (2026)"
+title: "Ecommerce SEO Checklist: Audit Your Store, Category to Cart"
 description: "An ecommerce SEO checklist covering faceted navigation, product schema, thin category pages, crawl budget, and internal linking that actually moves rankings."
 publishDate: 2026-06-14
 category: [SEO]

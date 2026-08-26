@@ -155,7 +155,7 @@ When a team asks me to translate all of this into a single reference they can pi
 
 Notice that the cadence gets slower as the audit gets deeper, and that the trigger row has no fixed schedule at all. Fast and shallow every month, slow and deep every quarter, exhaustive once a year, and immediate whenever the ground shifts.
 
-The frequencies here are sensible defaults, not laws of physics. A large ecommerce site publishing daily might pull the quarterly deep dive forward to monthly and the annual technical audit to twice a year. A small brochure site that rarely changes can stretch the quarterly review to twice a year.
+The frequencies here are sensible defaults, not laws of physics. A large ecommerce site publishing daily might pull the quarterly deep dive forward to monthly and the annual technical audit to twice a year. The faster clock is driven by URL volume rather than publishing volume, since every filter and sort option spawns fresh parameter URLs and near-duplicate category variants between audits, which is why [the store-specific audit I run from category to cart](/blog/ecommerce-seo-checklist/) pairs a quarterly full pass with a lighter monthly crawl check. A small brochure site that rarely changes can stretch the quarterly review to twice a year.
 
 The relative order stays the same; the intervals flex with how fast your site and your market move. If your audit keeps surfacing new problems, tighten the cadence. If clean quarters stack up, loosen it.
 

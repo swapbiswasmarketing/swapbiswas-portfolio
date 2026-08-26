@@ -1,5 +1,5 @@
 ---
-title: "Go-To-Market Strategy Template: A Step-by-Step Framework for 2026"
+title: "Go-To-Market Strategy Template: A Step-by-Step Framework"
 description: "Build a go-to-market strategy that works. This step-by-step GTM template covers audience, positioning, channels, pricing, and launch execution with real examples."
 publishDate: 2026-03-08
 updatedDate: 2026-03-21
@@ -39,7 +39,7 @@ A GTM strategy is a subset of your overall marketing strategy, focused on a spec
 
 ## The Go-To-Market Strategy Template
 
-Here's the complete framework. Each section includes what to fill in and why it matters.
+Here's the complete framework. Each section includes what to fill in and why it matters. If you would rather fill the sections in than rebuild them in a doc, the [one-page GTM strategy builder](/tools/go-to-market-strategy-template/) takes the same ICP, positioning, pricing, channel, and metrics inputs and exports them as a PNG or PDF one-pager.
 
 ![Go-To-Market Strategy Template](/assets/blog/go-to-market-strategy/gtm-framework.webp "The 8-step GTM strategy framework")
 

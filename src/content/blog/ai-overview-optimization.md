@@ -1,5 +1,5 @@
 ---
-title: "AI Overview Optimization: How to Get Cited in Google AI Overviews (2026)"
+title: "AI Overview Optimization: How to Get Cited by Google (2026)"
 description: "AI overview optimization is not a separate discipline from SEO. Here's what Google actually requires to earn a citation - and the practical tactics that work."
 publishDate: 2026-04-18
 category: [SEO, AI, Marketing]
@@ -105,7 +105,7 @@ There is a lot of noise. Based on Google's actual documentation and common-sense
 - **Stuffing Q&A blocks at the bottom of every page** - can look manipulative and rarely outperforms a well-structured article
 - **Paying for "AEO audits" that don't touch content quality or site structure** - the audit describes the problem; the fix is still the work
 
-This is not to say experimentation is wrong. It is to say the base rate of clever hacks working is low compared to the base rate of better structure and stronger content working.
+This is not to say experimentation is wrong. It is to say the base rate of clever hacks working is low compared to the base rate of better structure and stronger content working. llms.txt is the cleanest example of that gap: Ahrefs checked 137,210 domains and found 97% of the published files received zero requests in a single month, which is [what the server logs actually show about llms.txt](/blog/do-you-need-llms-txt/).
 
 ## Measuring AI Overview Performance
 

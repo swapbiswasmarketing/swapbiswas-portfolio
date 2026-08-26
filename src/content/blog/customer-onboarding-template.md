@@ -1,5 +1,5 @@
 ---
-title: "Customer Onboarding Template: A Step-by-Step Framework (Free, 2026)"
+title: "Customer Onboarding Template: The Free 7-Stage Framework"
 description: "A free customer onboarding template with stages, owners, milestones, and timelines. Copy, paste, and adapt this SaaS framework in one afternoon today."
 publishDate: 2026-06-11
 category: [Product Marketing, Marketing]

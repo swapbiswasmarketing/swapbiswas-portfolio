@@ -1,5 +1,5 @@
 ---
-title: "How to Do Content Marketing Competitor Analysis: A Step-by-Step Framework"
+title: "How to Do Content Marketing Competitor Analysis in 6 Steps"
 description: "Learn how to do content marketing competitor analysis with a proven framework. Find content gaps, reverse-engineer top performers, and build a winning strategy."
 publishDate: 2026-04-01
 updatedDate: 2026-04-01

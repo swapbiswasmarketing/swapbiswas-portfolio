@@ -1,5 +1,5 @@
 ---
-title: "Customer Advisory Board: The Setup, the Scorecard, and 5 Ways It Dies (2026)"
+title: "Customer Advisory Board: Setup, Scorecard, 5 Ways It Dies"
 description: "How to run a customer advisory board as an instrumented program: member criteria, a copy-paste charter, an hour-by-hour agenda, and a 7-metric ROI scorecard."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]

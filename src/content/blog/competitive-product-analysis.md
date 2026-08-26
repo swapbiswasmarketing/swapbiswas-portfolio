@@ -1,5 +1,5 @@
 ---
-title: "Competitive Product Analysis: A Step-by-Step Framework for Product Marketers (2026)"
+title: "Competitive Product Analysis: A 7-Dimension PMM Framework"
 description: "Learn how to run a competitive product analysis that drives real decisions. Includes frameworks, templates, and a step-by-step process used by top PMM teams."
 publishDate: 2026-03-14
 updatedDate: 2026-03-21

@@ -1,5 +1,5 @@
 ---
-title: "Why an SEO Audit Is Important (and What It Catches Before It Costs You)"
+title: "Why an SEO Audit Is Important (and What It Catches Early)"
 description: "Why an SEO audit is important: how technical and content issues quietly drain organic traffic and revenue, and the business case for auditing on a schedule."
 publishDate: 2026-06-10
 category: [SEO, Marketing]

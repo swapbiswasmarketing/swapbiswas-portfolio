@@ -1,5 +1,5 @@
 ---
-title: "Product Sunset: A 90-Day Playbook for Sunsetting a Product (2026)"
+title: "Product Sunset: A 90-Day Playbook and Comms Plan (2026)"
 description: "A product sunset playbook from a PMM: the notice period matrix by customer tier, a 90-day comms plan, the announcement template, and how to protect renewals."
 publishDate: 2026-08-15
 category: [Product Marketing, Marketing]

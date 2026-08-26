@@ -1,5 +1,5 @@
 ---
-title: "How to Implement Marketing Automation: A Step-by-Step Playbook (2026)"
+title: "How to Implement Marketing Automation: A 6-Phase Playbook"
 description: "How to implement marketing automation without the six-month delay. A 6-phase playbook with data, workflows, and tooling decisions for your first 90 days."
 publishDate: 2026-04-25
 category: [Marketing, Tools]

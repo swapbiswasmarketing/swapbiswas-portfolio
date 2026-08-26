@@ -1,5 +1,5 @@
 ---
-title: "What Is Market Positioning? Frameworks, Examples & a Workshop (2026)"
+title: "What Is Market Positioning? Frameworks and Examples (2026)"
 description: "Market positioning explained: the modern definition, April Dunford's 5-component framework, real examples, and a 4-step workshop to find your own positioning."
 publishDate: 2026-04-25
 category: [Product Marketing, Marketing]

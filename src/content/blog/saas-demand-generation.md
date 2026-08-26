@@ -1,5 +1,5 @@
 ---
-title: "SaaS Demand Generation: A Playbook to Build Pipeline (Not Just Leads)"
+title: "SaaS Demand Generation: Build Pipeline, Not Just Leads"
 description: "A practitioner playbook for SaaS demand generation: the PLG-aware channels, content, and product-qualified metrics that build pipeline, not vanity leads."
 publishDate: 2026-06-10
 category: [Product Marketing, Marketing]

@@ -1,5 +1,5 @@
 ---
-title: "Go-to-Market Strategy for Startups: A Practical Framework (2026)"
+title: "Go-to-Market Strategy for Startups: The 7-Step Framework"
 description: "Build a go-to-market strategy for startups that works with limited budget and team. Covers ICP validation, channel selection, pricing, and launch execution."
 publishDate: 2026-03-14
 updatedDate: 2026-03-21
@@ -39,7 +39,7 @@ The startup advantage is speed. You can test a positioning change on Monday, run
 
 ## Go-to-Market Strategy for Startups: The 7-Step Framework
 
-This framework is sequential for a reason. Each step builds on the previous one. Skip ahead and you will waste time and money on the wrong audience, wrong message, or wrong channel.
+This framework is sequential for a reason. Each step builds on the previous one. Skip ahead and you will waste time and money on the wrong audience, wrong message, or wrong channel. If you want the finished artifact and not just the reasoning behind it, you can [collapse the whole framework onto a single page](/tools/go-to-market-strategy-template/) and see whether your positioning and your chosen channels are actually aimed at the same buyer.
 
 ![The 7-Step Startup GTM Framework showing sequential steps from ICP validation through measurement](/assets/blog/go-to-market-startups/gtm-7-steps.webp "The 7-Step Startup GTM Framework")
 

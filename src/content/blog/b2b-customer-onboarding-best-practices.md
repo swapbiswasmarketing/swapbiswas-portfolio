@@ -1,5 +1,5 @@
 ---
-title: "B2B Customer Onboarding Best Practices That Drive Retention (2026)"
+title: "B2B Customer Onboarding Best Practices That Drive Retention"
 description: "B2B customer onboarding best practices that cut early churn: compress time-to-value, set milestones, blend in-app and human touch, and track activation."
 publishDate: 2026-06-12
 category: [Product Marketing, Marketing]

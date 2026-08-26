@@ -126,7 +126,7 @@ The final two steps separate businesses that hold their rankings from those that
 
 ### 19. Earn local backlinks
 
-Links from local sources carry extra weight for local search. Sponsor a local event, join the chamber of commerce, partner with nearby businesses, or get featured in a local news story. A handful of relevant local links beats dozens of generic directory links.
+Links from local sources carry extra weight for local search. Sponsor a local event, join the chamber of commerce, partner with nearby businesses, or get featured in a local news story. A handful of relevant local links beats dozens of generic directory links. Regional interest guides belong on that list too, since [a seasonal roundup of Kerala's backwaters, hill stations and winter festivals](/blog/kerala-winter-experiences/) names specific towns, venues and operators, and being one of the named businesses earns a contextual local link that no directory submission can imitate.
 
 ### 20. Track your local rankings
 
