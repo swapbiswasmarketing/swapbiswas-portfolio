@@ -106,6 +106,8 @@ The impact of a well-defined ICP is measurable:
 | **Win rates** | Teams aligned around buying groups achieve 2-3x higher win rates vs. lead-centric teams ([Demandbase State of ABM 2026](https://www.demandbase.com/resources/labs/state-of-abm-2026-benchmark-report/)) |
 | **Vendor selection** | 81% of B2B buyers select a preferred vendor before ever speaking to sales ([6sense 2024 Buyer Experience Report](https://6sense.com/science-of-b2b/2024-buyer-experience-report/)) |
 
+A tight ICP has a second use most teams miss: the qualified account count it produces is the input for [sizing the market from the bottom up instead of from a published total](/blog/top-down-vs-bottom-up-market-sizing/).
+
 ## What Is a Buyer Persona?
 
 A [buyer persona](/blog/b2b-buyer-persona/) is a semi-fictional representation of your ideal **individual buyer** - the actual human being who influences or makes the purchasing decision inside your target accounts.

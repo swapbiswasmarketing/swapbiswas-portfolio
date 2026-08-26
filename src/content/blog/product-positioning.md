@@ -55,6 +55,8 @@ What market do you compete in? This sets the buyer's frame of reference.
 
 Pick a category your buyers already understand. You can expand or redefine it later once you have traction.
 
+The category you land on also constrains the name, because [running candidate names through hard-fail gates](/blog/product-naming/) starts with checking who already owns that word inside the category you just picked.
+
 ### 2. Target Audience
 
 Who is this for? Be specific - not "marketing teams" but "B2B marketing teams at companies with 50-500 employees who don't have a dedicated ops person."

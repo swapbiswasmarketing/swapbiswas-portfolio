@@ -787,12 +787,29 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		}
 
 		.toc-list {
-			max-height: none;
-			overflow: visible;
 			margin-top: 0.75rem;
 			max-height: calc(100vh - 10rem);
 			overflow-y: auto;
 			padding-right: 0.5rem;
+			/* Keeps an entry off the cut edge when it is scrolled into view. */
+			scroll-padding-block: 0.875rem;
+		}
+
+		/* Fade whichever edge is actually cut, so a half-visible entry reads as
+		   "more above/below" instead of text sliced under the heading. */
+		.toc-list.is-clipped-top {
+			-webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 1.5rem);
+			mask-image: linear-gradient(to bottom, transparent 0, #000 1.5rem);
+		}
+
+		.toc-list.is-clipped-bottom {
+			-webkit-mask-image: linear-gradient(to top, transparent 0, #000 1.5rem);
+			mask-image: linear-gradient(to top, transparent 0, #000 1.5rem);
+		}
+
+		.toc-list.is-clipped-top.is-clipped-bottom {
+			-webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 1.5rem, #000 calc(100% - 1.5rem), transparent 100%);
+			mask-image: linear-gradient(to bottom, transparent 0, #000 1.5rem, #000 calc(100% - 1.5rem), transparent 100%);
 		}
 
 		/* Thin scrollbar for TOC */
@@ -1155,36 +1172,51 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 </style>
 
 <script>
-	const tocSidebar = document.querySelector('.toc-sidebar') as HTMLElement | null;
-	const contentEl = document.querySelector('.content') as HTMLElement | null;
-	const wrapper = document.querySelector('main.wrapper') as HTMLElement | null;
-	const tocToggle = document.querySelector('.toc-toggle') as HTMLButtonElement | null;
-	const tocItems = document.querySelectorAll('.toc-item');
+	// These are re-resolved on every View Transition navigation. They cannot be `const`
+	// bound once at module scope: with the ClientRouter a bundled module script runs a
+	// single time, so after an in-site navigation the old references point at a detached
+	// document and the TOC silently stops tracking. See bindToc() at the bottom.
+	let tocSidebar: HTMLElement | null = null;
+	let contentEl: HTMLElement | null = null;
+	let tocToggle: HTMLButtonElement | null = null;
+	let tocItems: NodeListOf<Element> | Element[] = [];
+	let headings: { item: Element; el: HTMLElement | null }[] = [];
 	const isDesktop = () => window.matchMedia('(min-width: 72em)').matches;
 
-	const headings = Array.from(tocItems).map((item) => {
-		const link = item.querySelector('a');
-		const id = link?.getAttribute('href')?.slice(1);
-		return { item, el: id ? document.getElementById(id) : null };
-	}).filter((h) => h.el);
+	function refreshTocRefs() {
+		tocSidebar = document.querySelector('.toc-sidebar');
+		contentEl = document.querySelector('.content');
+		tocToggle = document.querySelector('.toc-toggle');
+		tocItems = document.querySelectorAll('.toc-item');
 
-	// Mobile TOC toggle
-	if (tocToggle && tocSidebar) {
-		tocToggle.addEventListener('click', () => {
-			if (isDesktop()) return;
-			const isOpen = tocSidebar.classList.toggle('toc-open');
-			tocToggle.setAttribute('aria-expanded', String(isOpen));
-		});
+		headings = Array.from(tocItems).map((item) => {
+			const link = item.querySelector('a');
+			const id = link?.getAttribute('href')?.slice(1);
+			return { item, el: id ? document.getElementById(id) : null };
+		}).filter((h) => h.el);
 
-		// Close TOC when a link is clicked on mobile
-		tocSidebar.querySelectorAll('.toc-item a').forEach((link) => {
-			link.addEventListener('click', () => {
-				if (!isDesktop()) {
-					tocSidebar.classList.remove('toc-open');
-					tocToggle.setAttribute('aria-expanded', 'false');
-				}
+		// Mobile TOC toggle. The _tocBound flag keeps a second navigation from stacking
+		// a duplicate listener on the same element.
+		if (tocToggle && tocSidebar && !(tocToggle as any)._tocBound) {
+			(tocToggle as any)._tocBound = true;
+			const sidebar = tocSidebar;
+			const toggle = tocToggle;
+			toggle.addEventListener('click', () => {
+				if (isDesktop()) return;
+				const isOpen = sidebar.classList.toggle('toc-open');
+				toggle.setAttribute('aria-expanded', String(isOpen));
 			});
-		});
+
+			// Close TOC when a link is clicked on mobile
+			sidebar.querySelectorAll('.toc-item a').forEach((link) => {
+				link.addEventListener('click', () => {
+					if (!isDesktop()) {
+						sidebar.classList.remove('toc-open');
+						toggle.setAttribute('aria-expanded', 'false');
+					}
+				});
+			});
+		}
 	}
 
 	// The sticky two-column grid handles TOC placement now; clear any stale inline
@@ -1217,134 +1249,259 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		tocItems.forEach((item) => item.classList.remove('active'));
 		current?.item.classList.add('active');
 
-		// Desktop: scroll active TOC item into view
+		// Desktop: keep the active TOC item in view.
+		// Scroll the list itself rather than calling scrollIntoView, which also scrolls
+		// every scrollable ancestor (including the window) and fights the sticky sidebar.
+		// The EDGE_PAD keeps an entry from sitting half-clipped against the top or bottom
+		// edge, which reads as broken text tucked under the "Table of Contents" heading.
 		if (isDesktop()) {
+			const list = tocSidebar.querySelector('.toc-list') as HTMLElement | null;
 			const activeLink = tocSidebar.querySelector('.toc-item.active > a') as HTMLElement | null;
-			if (activeLink) {
-				const list = tocSidebar.querySelector('.toc-list') as HTMLElement;
-				if (list && list.scrollHeight > list.clientHeight) {
-					activeLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+			if (list) {
+				const overflows = list.scrollHeight > list.clientHeight + 1;
+				if (overflows && activeLink) {
+					const EDGE_PAD = 14;
+					const listBox = list.getBoundingClientRect();
+					const linkBox = activeLink.getBoundingClientRect();
+					const itemTop = linkBox.top - listBox.top + list.scrollTop;
+					const itemBottom = itemTop + linkBox.height;
+					const maxScroll = list.scrollHeight - list.clientHeight;
+					let target: number | null = null;
+					if (itemTop - EDGE_PAD < list.scrollTop) {
+						target = itemTop - EDGE_PAD;
+					} else if (itemBottom + EDGE_PAD > list.scrollTop + list.clientHeight) {
+						target = itemBottom + EDGE_PAD - list.clientHeight;
+					}
+					if (target !== null) {
+						const clamped = Math.max(0, Math.min(target, maxScroll));
+						if (Math.abs(clamped - list.scrollTop) > 1) {
+							list.scrollTo({ top: clamped, behavior: 'smooth' });
+						}
+					}
 				}
+				updateTocFade(list, overflows);
 			}
 		}
 	}
 
-	positionToc();
-	onScroll();
-	window.addEventListener('scroll', onScroll, { passive: true });
-	window.addEventListener('resize', () => { positionToc(); onScroll(); }, { passive: true });
+	// Fade the cut edges so a partially scrolled entry degrades gracefully instead of
+	// being sliced through the middle of a line.
+	function updateTocFade(list: HTMLElement, overflows: boolean) {
+		const atTop = list.scrollTop <= 1;
+		const atBottom = list.scrollTop >= list.scrollHeight - list.clientHeight - 1;
+		list.classList.toggle('is-clipped-top', overflows && !atTop);
+		list.classList.toggle('is-clipped-bottom', overflows && !atBottom);
+	}
 
-	// Add anchor links to headings (click copies URL)
-	document.querySelectorAll('.content h2[id], .content h3[id]').forEach((heading) => {
-		const id = heading.getAttribute('id');
-		if (!id || heading.querySelector('.heading-anchor')) return;
-		const anchor = document.createElement('a');
-		anchor.className = 'heading-anchor';
-		anchor.href = `#${id}`;
-		anchor.setAttribute('aria-label', `Copy link to ${heading.textContent}`);
-		anchor.textContent = '#';
-		anchor.addEventListener('click', (e) => {
-			e.preventDefault();
-			const url = `${window.location.origin}${window.location.pathname}#${id}`;
-			navigator.clipboard.writeText(url).then(() => {
-				anchor.textContent = '✓';
-				anchor.classList.add('copied');
-				setTimeout(() => { anchor.textContent = '#'; anchor.classList.remove('copied'); }, 1500);
-			});
-			history.replaceState(null, '', `#${id}`);
-			heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
-		});
-		heading.prepend(anchor);
-	});
+	// Re-resolve the TOC for the page currently on screen. Runs on first load and again
+	// after every View Transition navigation, because the bundled module script itself
+	// only executes once per full page load.
+	function bindToc() {
+		refreshTocRefs();
 
-	// Wrap tables in scrollable container
-	document.querySelectorAll('.content table').forEach((table) => {
-		const wrapper = document.createElement('div');
-		wrapper.className = 'table-wrap';
-		table.parentNode!.insertBefore(wrapper, table);
-		wrapper.appendChild(table);
-	});
+		// Keep the edge fades correct when the reader scrolls the TOC itself.
+		const list = document.querySelector('.toc-list') as HTMLElement | null;
+		if (list && !(list as any)._tocScrollBound) {
+			(list as any)._tocScrollBound = true;
+			list.addEventListener('scroll', () => {
+				updateTocFade(list, list.scrollHeight > list.clientHeight + 1);
+			}, { passive: true });
+		}
 
-	// Copy button for code blocks
-	document.querySelectorAll('.content pre').forEach((pre) => {
-		const btn = document.createElement('button');
-		btn.className = 'copy-btn';
-		btn.textContent = 'Copy';
-		btn.addEventListener('click', async () => {
-			const code = pre.querySelector('code');
-			const text = code ? code.textContent ?? '' : pre.textContent ?? '';
-			await navigator.clipboard.writeText(text);
-			btn.textContent = 'Copied!';
-			setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
-		});
-		pre.appendChild(btn);
-	});
+		positionToc();
+		onScroll();
+	}
 
-	// Image lightbox
-	const lightbox = document.createElement('div');
-	lightbox.className = 'lightbox';
-	const lightboxImg = document.createElement('img');
-	lightboxImg.alt = 'Enlarged image';
-	lightbox.appendChild(lightboxImg);
-	document.body.appendChild(lightbox);
+	bindToc();
+	document.addEventListener('astro:page-load', bindToc);
+
+	// Window-level listeners survive View Transitions, so bind them once.
+	if (!(window as any)._blogTocGlobalBound) {
+		(window as any)._blogTocGlobalBound = true;
+		window.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('resize', () => { positionToc(); onScroll(); }, { passive: true });
+	}
+
+	// ---------------------------------------------------------------------------
+	// Content enhancements.
+	//
+	// Everything below has to run again after every View Transition navigation,
+	// because the bundled module script itself executes only once per full load.
+	// Two rules keep that safe:
+	//   1. DOM creation here is idempotent - each step checks whether it already ran.
+	//   2. Interaction is handled by delegated listeners on `document`, bound once.
+	//      Delegation survives any number of body swaps, so no per-element listener
+	//      can go stale or get stacked twice.
+	// ---------------------------------------------------------------------------
+
+	function getLightbox(): { box: HTMLElement; img: HTMLImageElement } {
+		// The ClientRouter swaps the body, so a previously appended lightbox may be gone.
+		let box = document.querySelector('.lightbox') as HTMLElement | null;
+		if (!box) {
+			box = document.createElement('div');
+			box.className = 'lightbox';
+			const img = document.createElement('img');
+			img.alt = 'Enlarged image';
+			box.appendChild(img);
+			document.body.appendChild(box);
+		}
+		return { box, img: box.querySelector('img') as HTMLImageElement };
+	}
 
 	function closeLightbox() {
-		lightbox.classList.remove('active');
+		document.querySelector('.lightbox')?.classList.remove('active');
 	}
 
-	lightbox.addEventListener('click', closeLightbox);
-	document.addEventListener('keydown', (e) => {
-		if (e.key === 'Escape') closeLightbox();
-	});
-
-	document.querySelectorAll('.content img').forEach((img) => {
-		img.addEventListener('click', () => {
-			lightboxImg.src = (img as HTMLImageElement).src;
-			lightboxImg.alt = (img as HTMLImageElement).alt;
-			lightbox.classList.add('active');
+	function enhanceContent() {
+		// Anchor links on headings
+		document.querySelectorAll('.content h2[id], .content h3[id]').forEach((heading) => {
+			const id = heading.getAttribute('id');
+			if (!id || heading.querySelector('.heading-anchor')) return;
+			const anchor = document.createElement('a');
+			anchor.className = 'heading-anchor';
+			anchor.href = `#${id}`;
+			anchor.setAttribute('aria-label', `Copy link to ${heading.textContent}`);
+			anchor.textContent = '#';
+			heading.prepend(anchor);
 		});
-	});
 
-	// Reading progress bar
-	const progressBar = document.querySelector('.reading-progress-bar') as HTMLElement | null;
-	if (progressBar && contentEl) {
-		window.addEventListener('scroll', () => {
-			const contentRect = contentEl.getBoundingClientRect();
-			const contentTop = contentRect.top + window.scrollY;
-			const contentHeight = contentEl.offsetHeight;
-			const scrolled = window.scrollY - contentTop;
-			const progress = Math.min(100, Math.max(0, (scrolled / (contentHeight - window.innerHeight)) * 100));
-			progressBar.style.width = `${progress}%`;
-		}, { passive: true });
-	}
-
-	// Back to top button
-	const backToTop = document.querySelector('.back-to-top') as HTMLButtonElement | null;
-	if (backToTop) {
-		window.addEventListener('scroll', () => {
-			backToTop.classList.toggle('visible', window.scrollY > 400);
-		}, { passive: true });
-		backToTop.addEventListener('click', () => {
-			window.scrollTo({ top: 0, behavior: 'smooth' });
+		// Wrap tables in a scrollable container. Skip any table already wrapped,
+		// otherwise a second navigation nests wrappers inside wrappers.
+		document.querySelectorAll('.content table').forEach((table) => {
+			if ((table.parentElement as HTMLElement | null)?.classList.contains('table-wrap')) return;
+			const tableWrap = document.createElement('div');
+			tableWrap.className = 'table-wrap';
+			table.parentNode!.insertBefore(tableWrap, table);
+			tableWrap.appendChild(table);
 		});
-	}
 
-	// Interactive task-list checkboxes with per-post localStorage persistence
-	const taskBoxes = document.querySelectorAll<HTMLInputElement>('li.task-list-item input[type="checkbox"]');
-	if (taskBoxes.length > 0) {
-		const slug = location.pathname.replace(/^\/blog\//, '').replace(/\/$/, '') || 'index';
-		const storageKey = 'checklist:' + slug;
-		let saved: Record<string, boolean> = {};
-		try { saved = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch {}
-		taskBoxes.forEach((cb, idx) => {
-			cb.removeAttribute('disabled');
-			cb.disabled = false;
-			const key = String(idx);
-			if (saved[key]) cb.checked = true;
-			cb.addEventListener('change', () => {
-				saved[key] = cb.checked;
-				try { localStorage.setItem(storageKey, JSON.stringify(saved)); } catch {}
+		// Copy button on code blocks, one per <pre>
+		document.querySelectorAll('.content pre').forEach((pre) => {
+			if (pre.querySelector('.copy-btn')) return;
+			const btn = document.createElement('button');
+			btn.className = 'copy-btn';
+			btn.textContent = 'Copy';
+			pre.appendChild(btn);
+		});
+
+		// Make sure the lightbox element exists for this page
+		getLightbox();
+
+		// Interactive task-list checkboxes with per-post localStorage persistence
+		const taskBoxes = document.querySelectorAll<HTMLInputElement>('li.task-list-item input[type="checkbox"]');
+		if (taskBoxes.length > 0) {
+			const slug = location.pathname.replace(/^\/blog\//, '').replace(/\/$/, '') || 'index';
+			const storageKey = 'checklist:' + slug;
+			let saved: Record<string, boolean> = {};
+			try { saved = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch {}
+			taskBoxes.forEach((cb, idx) => {
+				cb.removeAttribute('disabled');
+				cb.disabled = false;
+				const key = String(idx);
+				if (saved[key]) cb.checked = true;
+				if ((cb as any)._taskBound) return;
+				(cb as any)._taskBound = true;
+				cb.addEventListener('change', () => {
+					// Re-read before writing: another tab may have changed the same key.
+					try { saved = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch {}
+					saved[key] = cb.checked;
+					try { localStorage.setItem(storageKey, JSON.stringify(saved)); } catch {}
+				});
 			});
+		}
+	}
+
+	function updateReadingProgress() {
+		const bar = document.querySelector('.reading-progress-bar') as HTMLElement | null;
+		const content = document.querySelector('.content') as HTMLElement | null;
+		if (!bar || !content) return;
+		const contentTop = content.getBoundingClientRect().top + window.scrollY;
+		const scrollable = content.offsetHeight - window.innerHeight;
+		const progress = scrollable <= 0
+			? 0
+			: Math.min(100, Math.max(0, ((window.scrollY - contentTop) / scrollable) * 100));
+		bar.style.width = `${progress}%`;
+	}
+
+	function updateBackToTop() {
+		document.querySelector('.back-to-top')?.classList.toggle('visible', window.scrollY > 400);
+	}
+
+	enhanceContent();
+	document.addEventListener('astro:page-load', () => {
+		enhanceContent();
+		updateReadingProgress();
+		updateBackToTop();
+	});
+
+	// Delegated interaction + window listeners, bound exactly once for the session.
+	if (!(window as any)._blogContentGlobalBound) {
+		(window as any)._blogContentGlobalBound = true;
+
+		window.addEventListener('scroll', updateReadingProgress, { passive: true });
+		window.addEventListener('scroll', updateBackToTop, { passive: true });
+		window.addEventListener('resize', updateReadingProgress, { passive: true });
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape') closeLightbox();
+		});
+
+		document.addEventListener('click', (e) => {
+			const target = e.target as HTMLElement;
+
+			// Heading anchor: copy the deep link
+			const anchor = target.closest('.heading-anchor') as HTMLAnchorElement | null;
+			if (anchor) {
+				e.preventDefault();
+				const id = anchor.getAttribute('href')?.slice(1);
+				if (!id) return;
+				const url = `${window.location.origin}${window.location.pathname}#${id}`;
+				navigator.clipboard.writeText(url).then(() => {
+					anchor.textContent = '✓';
+					anchor.classList.add('copied');
+					setTimeout(() => { anchor.textContent = '#'; anchor.classList.remove('copied'); }, 1500);
+				}).catch(() => {});
+				history.replaceState(null, '', `#${id}`);
+				document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				return;
+			}
+
+			// Code block copy button
+			const copyBtn = target.closest('.copy-btn') as HTMLButtonElement | null;
+			if (copyBtn) {
+				const pre = copyBtn.closest('pre');
+				const code = pre?.querySelector('code');
+				const text = code ? code.textContent ?? '' : pre?.textContent ?? '';
+				navigator.clipboard.writeText(text.replace(/Copy$/, '')).then(() => {
+					copyBtn.textContent = 'Copied!';
+					setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+				}).catch(() => {});
+				return;
+			}
+
+			// Back to top
+			if (target.closest('.back-to-top')) {
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+				return;
+			}
+
+			// Clicking the lightbox backdrop closes it
+			if (target.closest('.lightbox')) {
+				closeLightbox();
+				return;
+			}
+
+			// Clicking a content image opens it
+			const img = target.closest('.content img') as HTMLImageElement | null;
+			if (img) {
+				const { box, img: lightboxImg } = getLightbox();
+				lightboxImg.src = img.src;
+				lightboxImg.alt = img.alt;
+				box.classList.add('active');
+			}
 		});
 	}
+
+	updateReadingProgress();
+	updateBackToTop();
 </script>

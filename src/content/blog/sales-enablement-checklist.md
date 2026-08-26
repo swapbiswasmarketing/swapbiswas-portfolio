@@ -180,6 +180,8 @@ If you are building this from scratch, do not ship all 40 items on day one. Sale
 5. **Review with sales leadership monthly** for the first quarter. Adjust based on usage data, not assumptions.
 6. **Expand to the full checklist** over the next two quarters.
 
+The same staged approach is what saves you during a name change, when every asset on this list carries a dead logo at once. [The rebranding rollout plan](/blog/rebranding-rollout-plan/) sequences which of them reps need rebuilt first.
+
 ## The Bottom Line
 
 A sales enablement checklist is not about producing content. It is about making sure the right content exists, is current, is findable, and is mapped to the moment a rep needs it. The PMM teams that do this well become the partner sales asks for by name. The ones that do not become the team sales quietly works around.

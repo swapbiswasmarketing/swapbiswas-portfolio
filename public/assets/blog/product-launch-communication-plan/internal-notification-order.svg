@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1015" width="1400" height="1015" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="1015" fill="url(#bg)"/>
+
+  <text x="60" y="62" font-size="40" font-weight="700" fill="#f0f6fc">The Internal Notification Order</text>
+  <text x="60" y="104" font-size="24" fill="#9ca3af">Who hears about a product launch first, and how many days out</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="150" width="400" height="195" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="500" y="150" width="400" height="195" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="940" y="150" width="400" height="195" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+  </g>
+
+  <rect x="88" y="176" width="48" height="5" rx="2.5" fill="#f5a0a1"/>
+  <text x="88" y="212" font-size="22" font-weight="700" letter-spacing="1.6" fill="#f5a0a1">D-30 | INTERNAL</text>
+  <text x="88" y="254" font-size="26" font-weight="600" fill="#f0f6fc">Executive sponsor</text>
+  <text x="88" y="292" font-size="20" fill="#c8cfd8">Locks the tier, the date and</text>
+  <text x="88" y="322" font-size="20" fill="#c8cfd8">the one-sentence message.</text>
+  <circle cx="420" cy="194" r="20" fill="#0d1117" stroke="#f5a0a1" stroke-width="2"/>
+  <text x="420" y="201" font-size="20" font-weight="700" fill="#f5a0a1" text-anchor="middle">1</text>
+
+  <rect x="528" y="176" width="48" height="5" rx="2.5" fill="#fb923c"/>
+  <text x="528" y="212" font-size="22" font-weight="700" letter-spacing="1.6" fill="#fb923c">D-21 | INTERNAL</text>
+  <text x="528" y="254" font-size="26" font-weight="600" fill="#f0f6fc">Support leadership</text>
+  <text x="528" y="292" font-size="20" fill="#c8cfd8">Longest build time: macros,</text>
+  <text x="528" y="322" font-size="20" fill="#c8cfd8">help articles, escalations.</text>
+  <circle cx="860" cy="194" r="20" fill="#0d1117" stroke="#fb923c" stroke-width="2"/>
+  <text x="860" y="201" font-size="20" font-weight="700" fill="#fb923c" text-anchor="middle">2</text>
+
+  <rect x="968" y="176" width="48" height="5" rx="2.5" fill="#c084fc"/>
+  <text x="968" y="212" font-size="22" font-weight="700" letter-spacing="1.6" fill="#c084fc">D-14 | INTERNAL</text>
+  <text x="968" y="254" font-size="26" font-weight="600" fill="#f0f6fc">Customer Success</text>
+  <text x="968" y="292" font-size="20" fill="#c8cfd8">Picks which accounts get a</text>
+  <text x="968" y="322" font-size="20" fill="#c8cfd8">heads-up before anyone else.</text>
+  <circle cx="1300" cy="194" r="20" fill="#0d1117" stroke="#c084fc" stroke-width="2"/>
+  <text x="1300" y="201" font-size="20" font-weight="700" fill="#c084fc" text-anchor="middle">3</text>
+
+  <line x1="464" y1="248" x2="484" y2="248" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="484,241 500,248 484,255" fill="#5eead4"/>
+  <line x1="904" y1="248" x2="924" y2="248" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="924,241 940,248 924,255" fill="#5eead4"/>
+
+  <line x1="1140" y1="351" x2="1140" y2="387" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1140" y1="387" x2="260" y2="387" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="260" y1="387" x2="260" y2="414" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="253,414 260,430 267,414" fill="#5eead4"/>
+
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="430" width="400" height="195" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="500" y="430" width="400" height="195" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="940" y="430" width="400" height="195" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+  </g>
+
+  <rect x="88" y="456" width="48" height="5" rx="2.5" fill="#60a5fa"/>
+  <text x="88" y="492" font-size="22" font-weight="700" letter-spacing="1.6" fill="#60a5fa">D-10 | INTERNAL</text>
+  <text x="88" y="534" font-size="26" font-weight="600" fill="#f0f6fc">Sales leaders + reps</text>
+  <text x="88" y="572" font-size="20" fill="#c8cfd8">Pricing, packaging, and the</text>
+  <text x="88" y="602" font-size="20" fill="#c8cfd8">rule for in-flight deals.</text>
+  <circle cx="420" cy="474" r="20" fill="#0d1117" stroke="#60a5fa" stroke-width="2"/>
+  <text x="420" y="481" font-size="20" font-weight="700" fill="#60a5fa" text-anchor="middle">4</text>
+
+  <rect x="528" y="456" width="48" height="5" rx="2.5" fill="#d98ee0"/>
+  <text x="528" y="492" font-size="22" font-weight="700" letter-spacing="1.6" fill="#d98ee0">D-7 | UNDER EMBARGO</text>
+  <text x="528" y="534" font-size="26" font-weight="600" fill="#f0f6fc">Analysts and press</text>
+  <text x="528" y="572" font-size="20" fill="#c8cfd8">Briefed under NDA or embargo,</text>
+  <text x="528" y="602" font-size="20" fill="#c8cfd8">not on launch morning.</text>
+  <circle cx="860" cy="474" r="20" fill="#0d1117" stroke="#d98ee0" stroke-width="2"/>
+  <text x="860" y="481" font-size="20" font-weight="700" fill="#d98ee0" text-anchor="middle">5</text>
+
+  <rect x="968" y="456" width="48" height="5" rx="2.5" fill="#b388f2"/>
+  <text x="968" y="492" font-size="22" font-weight="700" letter-spacing="1.6" fill="#b388f2">D-5 | PRIVATE</text>
+  <text x="968" y="534" font-size="26" font-weight="600" fill="#f0f6fc">Beta customers</text>
+  <text x="968" y="572" font-size="20" fill="#c8cfd8">They already use it. Never</text>
+  <text x="968" y="602" font-size="20" fill="#c8cfd8">let them read it in a blog.</text>
+  <circle cx="1300" cy="474" r="20" fill="#0d1117" stroke="#b388f2" stroke-width="2"/>
+  <text x="1300" y="481" font-size="20" font-weight="700" fill="#b388f2" text-anchor="middle">6</text>
+
+  <line x1="464" y1="528" x2="484" y2="528" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="484,521 500,528 484,535" fill="#5eead4"/>
+  <line x1="904" y1="528" x2="924" y2="528" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="924,521 940,528 924,535" fill="#5eead4"/>
+
+  <line x1="1140" y1="631" x2="1140" y2="667" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1140" y1="667" x2="260" y2="667" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="260" y1="667" x2="260" y2="694" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="253,694 260,710 267,694" fill="#5eead4"/>
+
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="710" width="400" height="195" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="500" y="710" width="400" height="195" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="940" y="710" width="400" height="195" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+  </g>
+
+  <rect x="88" y="736" width="48" height="5" rx="2.5" fill="#f5a0a1"/>
+  <text x="88" y="772" font-size="22" font-weight="700" letter-spacing="1.6" fill="#f5a0a1">D-3 | INTERNAL</text>
+  <text x="88" y="814" font-size="26" font-weight="600" fill="#f0f6fc">The whole company</text>
+  <text x="88" y="852" font-size="20" fill="#c8cfd8">All-hands once every customer</text>
+  <text x="88" y="882" font-size="20" fill="#c8cfd8">team is already trained.</text>
+  <circle cx="420" cy="754" r="20" fill="#0d1117" stroke="#f5a0a1" stroke-width="2"/>
+  <text x="420" y="761" font-size="20" font-weight="700" fill="#f5a0a1" text-anchor="middle">7</text>
+
+  <rect x="528" y="736" width="48" height="5" rx="2.5" fill="#fb923c"/>
+  <text x="528" y="772" font-size="22" font-weight="700" letter-spacing="1.6" fill="#fb923c">D-1 | INTERNAL</text>
+  <text x="528" y="814" font-size="26" font-weight="600" fill="#f0f6fc">Board and partners</text>
+  <text x="528" y="852" font-size="20" fill="#c8cfd8">Only what you can defend if</text>
+  <text x="528" y="882" font-size="20" fill="#c8cfd8">the date moves again.</text>
+  <circle cx="860" cy="754" r="20" fill="#0d1117" stroke="#fb923c" stroke-width="2"/>
+  <text x="860" y="761" font-size="20" font-weight="700" fill="#fb923c" text-anchor="middle">8</text>
+
+  <rect x="968" y="736" width="48" height="5" rx="2.5" fill="#5eead4"/>
+  <text x="968" y="772" font-size="22" font-weight="700" letter-spacing="1.6" fill="#5eead4">D-0 | PUBLIC</text>
+  <text x="968" y="814" font-size="26" font-weight="600" fill="#f0f6fc">Everyone else</text>
+  <text x="968" y="852" font-size="20" fill="#c8cfd8">Customers, prospects, press,</text>
+  <text x="968" y="882" font-size="20" fill="#c8cfd8">community, in that order.</text>
+  <circle cx="1300" cy="754" r="20" fill="#0d1117" stroke="#5eead4" stroke-width="2"/>
+  <text x="1300" y="761" font-size="20" font-weight="700" fill="#5eead4" text-anchor="middle">9</text>
+
+  <line x1="464" y1="808" x2="484" y2="808" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="484,801 500,808 484,815" fill="#5eead4"/>
+  <line x1="904" y1="808" x2="924" y2="808" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="924,801 940,808 924,815" fill="#5eead4"/>
+
+  <text x="60" y="968" font-size="22" fill="#9ca3af">Rule of thumb: nobody customer-facing should learn about the launch from a customer.</text>
+</svg>

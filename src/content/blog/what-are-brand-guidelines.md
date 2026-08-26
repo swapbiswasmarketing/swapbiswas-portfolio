@@ -90,7 +90,7 @@ Tagline, value propositions per [audience](/blog/b2b-buyer-persona/), key messag
 
 ### 10. Naming Conventions
 
-How to name products, features, releases, internal teams. Why this matters - inconsistent product names are a daily friction in marketing and engineering.
+How to name products, features, releases, internal teams. Why this matters - inconsistent product names are a daily friction in marketing and engineering. Write these rules before the next launch needs them, since [naming a product is mostly an elimination process](/blog/product-naming/) across trademark, domain, category and search occupancy rather than a brainstorm.
 
 ### 11. Applications
 

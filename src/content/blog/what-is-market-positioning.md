@@ -49,6 +49,8 @@ The terms get used interchangeably in pitch decks. They are not the same.
 
 If positioning is the foundation, messaging is the paint. Most teams obsess over the paint and never inspect the foundation.
 
+The table also assumes a question already settled, which is whether each product carries the company name at all. That [branded house or house of brands](/blog/house-of-brands-vs-branded-house/) decision is what determines how much equity a new launch inherits on day one.
+
 ## April Dunford's 5-Component Positioning Framework
 
 The most widely adopted modern positioning framework comes from [April Dunford's *Obviously Awesome*](https://www.aprildunford.com/post/a-quickstart-guide-to-positioning). It works because it forces specificity at every step. The five components in the order they should be answered:

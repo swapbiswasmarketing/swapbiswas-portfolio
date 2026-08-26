@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" width="1400" height="850" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="850" fill="url(#bg2)"/>
+
+  <text x="60" y="62" font-size="40" font-weight="700" fill="#f0f6fc">When the Launch Date Slips</text>
+  <text x="60" y="104" font-size="24" fill="#9ca3af">Three kinds of slip, three different comms jobs, all of them internal first</text>
+
+  <g filter="url(#cardShadow2)">
+    <rect x="60" y="150" width="1280" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+  </g>
+  <text x="88" y="202" font-size="28" font-weight="600" fill="#f0f6fc">The date just moved. Which kind of slip is it?</text>
+
+  <line x1="700" y1="244" x2="700" y2="272" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="260" y1="272" x2="1140" y2="272" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="260" y1="272" x2="260" y2="294" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="253,294 260,310 267,294" fill="#5eead4"/>
+  <line x1="700" y1="272" x2="700" y2="294" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,294 700,310 707,294" fill="#5eead4"/>
+  <line x1="1140" y1="272" x2="1140" y2="294" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1133,294 1140,310 1147,294" fill="#5eead4"/>
+
+  <g filter="url(#cardShadow2)">
+    <rect x="60" y="310" width="400" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="500" y="310" width="400" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+    <rect x="940" y="310" width="400" height="430" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+  </g>
+
+  <rect x="88" y="336" width="48" height="5" rx="2.5" fill="#5eead4"/>
+  <text x="88" y="372" font-size="22" font-weight="700" letter-spacing="1.6" fill="#5eead4">SLIP TYPE 1</text>
+  <text x="88" y="414" font-size="26" font-weight="600" fill="#f0f6fc">Nothing is public yet</text>
+  <text x="88" y="466" font-size="20" font-weight="700" letter-spacing="1.6" fill="#9ca3af">TELL FIRST</text>
+  <text x="88" y="498" font-size="20" fill="#c8cfd8">Exec sponsor, then the</text>
+  <text x="88" y="528" font-size="20" fill="#c8cfd8">comms owner, the same day.</text>
+  <text x="88" y="578" font-size="20" font-weight="700" letter-spacing="1.6" fill="#9ca3af">WHAT TO SEND</text>
+  <text x="88" y="610" font-size="20" fill="#c8cfd8">A revised D-0 and a note</text>
+  <text x="88" y="640" font-size="20" fill="#c8cfd8">on every dated asset.</text>
+  <text x="88" y="690" font-size="20" font-weight="700" letter-spacing="1.6" fill="#f87171">DO NOT</text>
+  <text x="88" y="722" font-size="20" fill="#c8cfd8">Brief press or analysts yet.</text>
+
+  <rect x="528" y="336" width="48" height="5" rx="2.5" fill="#fb923c"/>
+  <text x="528" y="372" font-size="22" font-weight="700" letter-spacing="1.6" fill="#fb923c">SLIP TYPE 2</text>
+  <text x="528" y="414" font-size="26" font-weight="600" fill="#f0f6fc">The date is public</text>
+  <text x="528" y="466" font-size="20" font-weight="700" letter-spacing="1.6" fill="#9ca3af">TELL FIRST</text>
+  <text x="528" y="498" font-size="20" fill="#c8cfd8">Support and CS, before</text>
+  <text x="528" y="528" font-size="20" fill="#c8cfd8">the correction goes out.</text>
+  <text x="528" y="578" font-size="20" font-weight="700" letter-spacing="1.6" fill="#9ca3af">WHAT TO SEND</text>
+  <text x="528" y="610" font-size="20" fill="#c8cfd8">One dated update on the</text>
+  <text x="528" y="640" font-size="20" fill="#c8cfd8">original announcement.</text>
+  <text x="528" y="690" font-size="20" font-weight="700" letter-spacing="1.6" fill="#f87171">DO NOT</text>
+  <text x="528" y="722" font-size="20" fill="#c8cfd8">Quietly edit the old page.</text>
+
+  <rect x="968" y="336" width="48" height="5" rx="2.5" fill="#c084fc"/>
+  <text x="968" y="372" font-size="22" font-weight="700" letter-spacing="1.6" fill="#c084fc">SLIP TYPE 3</text>
+  <text x="968" y="414" font-size="26" font-weight="600" fill="#f0f6fc">Customers have plans</text>
+  <text x="968" y="466" font-size="20" font-weight="700" letter-spacing="1.6" fill="#9ca3af">TELL FIRST</text>
+  <text x="968" y="498" font-size="20" fill="#c8cfd8">Named accounts, by their</text>
+  <text x="968" y="528" font-size="20" fill="#c8cfd8">own CSM, on a call.</text>
+  <text x="968" y="578" font-size="20" font-weight="700" letter-spacing="1.6" fill="#9ca3af">WHAT TO SEND</text>
+  <text x="968" y="610" font-size="20" fill="#c8cfd8">A new date plus what you</text>
+  <text x="968" y="640" font-size="20" fill="#c8cfd8">will do in the meantime.</text>
+  <text x="968" y="690" font-size="20" font-weight="700" letter-spacing="1.6" fill="#f87171">DO NOT</text>
+  <text x="968" y="722" font-size="20" fill="#c8cfd8">Guess at the second date.</text>
+
+  <text x="60" y="800" font-size="22" fill="#9ca3af">A slip is a comms event, not a project-management event. Run the same order you ran for launch.</text>
+</svg>

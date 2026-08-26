@@ -62,6 +62,8 @@ For how to build positioning, see [product positioning](/blog/product-positionin
 - [ ] **Go/no-go criteria** defined upfront (not invented at the final review)
 - [ ] **Communication cadence** (weekly standup, weekly email update)
 
+The cadence is the easy half. The harder half is the order in which each audience hears it, which is what [a launch communication plan with day offsets and named owners](/blog/product-launch-communication-plan/) pins down before the date starts moving.
+
 ### Content and Assets (Weeks -8 to -3)
 
 - [ ] **Website landing page** or homepage update

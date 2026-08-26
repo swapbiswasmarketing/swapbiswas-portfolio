@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="1400" height="880">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="50%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#f5a0a1"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="880" rx="24" fill="url(#bg)"/>
+
+  <text x="700" y="66" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700" fill="#f0f6fc">The four brand architecture models</text>
+  <text x="700" y="110" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="25" fill="#9ca3af">A spectrum, not a binary. Most companies sit somewhere in the middle.</text>
+
+  <text x="76" y="160" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="600" fill="#9ca3af" letter-spacing="0.06em">ONE NAME CARRIES EVERYTHING</text>
+  <text x="1340" y="160" text-anchor="end" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="600" fill="#9ca3af" letter-spacing="0.06em">EVERY NAME CARRIES ITSELF</text>
+
+  <rect x="40" y="185" width="10" height="548" rx="5" fill="url(#rail)"/>
+
+  <!-- Model 1 -->
+  <rect x="76" y="185" width="1264" height="122" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="112" y="233" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600" fill="#60a5fa">Branded house</text>
+  <text x="1310" y="233" text-anchor="end" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#60a5fa">Google Maps, Google Cloud</text>
+  <text x="112" y="273" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">One master brand. Products get descriptive names under it.</text>
+
+  <!-- Model 2 -->
+  <rect x="76" y="327" width="1264" height="122" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="112" y="375" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600" fill="#c084fc">Sub-brand</text>
+  <text x="1310" y="375" text-anchor="end" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#c084fc">Microsoft Teams, Adobe Acrobat</text>
+  <text x="112" y="415" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">A real product name that borrows the master brand's trust.</text>
+
+  <!-- Model 3 -->
+  <rect x="76" y="469" width="1264" height="122" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="112" y="517" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600" fill="#fb923c">Endorsed brand</text>
+  <text x="1310" y="517" text-anchor="end" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#fb923c">Fairfield by Marriott</text>
+  <text x="112" y="557" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">Its own name, with the parent credited in a supporting line.</text>
+
+  <!-- Model 4 -->
+  <rect x="76" y="611" width="1264" height="122" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="112" y="659" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600" fill="#f5a0a1">House of brands</text>
+  <text x="1310" y="659" text-anchor="end" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#f5a0a1">Tide, Pampers, Gillette</text>
+  <text x="112" y="699" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">Independent brands. The parent stays off the packaging.</text>
+
+  <!-- Footer -->
+  <rect x="76" y="768" width="1264" height="74" rx="16" fill="#12181f" stroke="#30363d" stroke-width="2"/>
+  <text x="708" y="813" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="24" fill="#c8cfd8">You do not pick one model for the company. You re-pick it for every launch.</text>
+</svg>

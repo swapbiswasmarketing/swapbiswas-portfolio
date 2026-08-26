@@ -121,7 +121,7 @@ Google Ads reporting gives you directional data about network allocation, though
 
 For Demand Gen campaigns, you can set custom UTM parameters at the campaign level. Adding a `utm_content` or `utm_term` parameter that identifies the campaign type helps you segment Cross Network traffic in GA4 Explorations.
 
-**Important note:** Do not add manual UTM tags to Performance Max campaigns. Auto-tagging handles the attribution, and manual tags can conflict with Google's tracking. Stick to auto-tagging for PMax and use Google Ads reports for network-level insights.
+**Important note:** Do not add manual UTM tags to Performance Max campaigns. Auto-tagging handles the attribution, and manual tags can conflict with Google's tracking. Stick to auto-tagging for PMax and use Google Ads reports for network-level insights. Where you do tag manually, the string is only as useful as its structure, so agree [a fixed four-field naming system for campaigns](/blog/campaign-naming-convention/) before the account fills with variants nobody can group later.
 
 ### Build Custom Channel Groupings
 

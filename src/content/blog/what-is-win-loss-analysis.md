@@ -143,6 +143,8 @@ After 30-50 interviews, the same 6-8 patterns appear at most B2B companies. The 
 
 A pattern matters when it appears in 4+ of 12 interviews. Anything below that is anecdote.
 
+When pricing opacity is the pattern that keeps repeating, the fix is structural rather than cosmetic, and [how a price anchor survives a buying committee](/blog/b2b-saas-pricing-psychology/) is a better starting point than another pass at the pricing page copy.
+
 ## Win-Loss Program Outputs
 
 The deliverables that turn research into pipeline:

@@ -63,6 +63,8 @@ Every version, regardless of segment, contains seven things:
 
 Four things do not belong in it. An apology, because apologizing invites a negotiation about whether the price should exist. Inflation as the headline reason, because that is your problem rather than theirs. A blanket "we hope you understand," which is filler. And an unprompted discount, which teaches the entire book that the list price is a suggestion.
 
+One scope check before you write anything: if what is changing is the shape of the tiers rather than the number on an existing one, you are running a repackaging, and [restructuring a Good, Better and Best ladder](/blog/good-better-best-pricing/) comes with its own migration path for customers sitting on the old plans.
+
 ## The Price Increase Segmentation Matrix
 
 "Segment your customers" is where most advice on this stops. Segmentation is only useful once it produces a decision, so here is the rule I use. Three axes - contract type, ARR band, and account health - collapse into five tiers, and each tier gets a fixed answer to five questions.

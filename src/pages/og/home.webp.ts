@@ -5,24 +5,18 @@ import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
 
-// Fetch and cache fonts
-let rubikBold: ArrayBuffer | null = null;
-let rubikRegular: ArrayBuffer | null = null;
+// Load fonts from local disk (bundled in src/assets/fonts) to avoid network dependency at build/dev time
+let rubikBold: Buffer | null = null;
+let rubikRegular: Buffer | null = null;
 
-async function fetchFont(weight: number): Promise<ArrayBuffer> {
-	const res = await fetch(
-		`https://fonts.googleapis.com/css2?family=Rubik:wght@${weight}&display=swap`
-	);
-	const css = await res.text();
-	const fontUrl = css.match(/src: url\(([^)]+)\)/)?.[1];
-	if (!fontUrl) throw new Error('Could not find font URL');
-	const fontRes = await fetch(fontUrl);
-	return fontRes.arrayBuffer();
+function loadFont(filename: string): Buffer {
+	const fontPath = path.join(process.cwd(), 'src', 'assets', 'fonts', filename);
+	return fs.readFileSync(fontPath);
 }
 
-async function getFonts() {
-	if (!rubikBold) rubikBold = await fetchFont(600);
-	if (!rubikRegular) rubikRegular = await fetchFont(400);
+function getFonts() {
+	if (!rubikBold) rubikBold = loadFont('rubik-semibold.ttf');
+	if (!rubikRegular) rubikRegular = loadFont('rubik-regular.ttf');
 	return { rubikBold, rubikRegular };
 }
 
@@ -35,7 +29,7 @@ function getImageDataUri(filename: string): string {
 }
 
 export async function GET(_context: APIContext) {
-	const fonts = await getFonts();
+	const fonts = getFonts();
 	const avatarUri = getImageDataUri('avatar-crop.jpg');
 	const portraitUri = getImageDataUri('portrait-new.jpg');
 

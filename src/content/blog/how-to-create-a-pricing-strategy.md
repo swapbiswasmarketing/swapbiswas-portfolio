@@ -111,6 +111,8 @@ Now the number. Anchor it against:
 
 For self-serve SaaS, end prices in 9 if the segment is price-sensitive, in 0 if the segment is premium. The convention matters less than internal consistency across tiers.
 
+In an enterprise deal the final digit matters far less than the ladder around it, because [the anchor a buying committee actually argues over](/blog/b2b-saas-pricing-psychology/) is set by the tiers immediately above and below the number you quote.
+
 ### Step 5: Test Before Rollout
 
 Test mechanisms ranked by signal quality:

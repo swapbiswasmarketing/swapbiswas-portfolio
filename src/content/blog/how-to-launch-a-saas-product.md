@@ -86,6 +86,8 @@ Run a private beta with 20-50 design partners. The goal is not feedback; the goa
 - Sales kickoff session with live Q&A and certification for Tier 1 launches.
 - Customer success, support, finance, legal, and ops all briefed by week -2.
 
+The order those internal briefings happen in is not arbitrary, and [sequencing every audience from the executive sponsor down to the public announcement](/blog/product-launch-communication-plan/) is worth writing once rather than improvising per launch.
+
 ### Week -2 to 0: Press, Paid, and Final Rehearsal
 
 - Press embargo and analyst briefings.

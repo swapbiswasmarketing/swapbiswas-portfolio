@@ -86,6 +86,8 @@ Three or four plans at rising price points, each built for a segment. The most c
 - **Use it when:** distinct segments derive value from distinct feature sets
 - **The rule:** three tiers is the sweet spot. Two gives you nothing to anchor against; four or more creates paralysis. The middle tier should be the one you want most buyers to choose
 
+The three-tier version carries enough design rules of its own, from feature allocation to price-gap ratios to target revenue mix, to be worth [building Good, Better and Best deliberately](/blog/good-better-best-pricing/) rather than by feel.
+
 ### 3. Per-Seat (Per-User) Pricing
 
 Charge by the number of users. Add a teammate, add a seat. Clean to forecast, easy to sell, and the model buyers understand fastest.

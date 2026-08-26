@@ -151,6 +151,8 @@ The Jobs-to-Be-Done "switch interview" structure works well for VoC. Walk the cu
 
 Open-ended, chronological, focused on the customer's situation - not your product.
 
+When the same handful of accounts is worth hearing from every quarter, that cadence is usually better run as [a standing board of named senior customers](/blog/customer-advisory-board/) than as a fresh recruiting scramble before each round.
+
 ### Surveys
 
 Surveys are good for measuring known things at scale. They are bad for discovering unknowns.

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1030" width="1400" height="1030">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="1030" rx="24" fill="url(#bg)"/>
+
+  <text x="700" y="66" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="40" font-weight="700" fill="#f0f6fc">Sub-brand or master brand: the launch scorecard</text>
+  <text x="700" y="110" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="25" fill="#9ca3af">Score each criterion 0 to 10, multiply by the weight, add the eight, then divide by 10 for a total out of 100.</text>
+
+  <rect x="40" y="145" width="640" height="118" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="62" y="175" width="76" height="58" rx="12" fill="#1c2530" stroke="#f5a0a1" stroke-width="2"/>
+  <text x="100" y="213" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" fill="#f5a0a1">18</text>
+  <text x="158" y="197" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Buyer overlap</text>
+  <text x="158" y="233" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#9ca3af">Sells to a genuinely different buyer?</text>
+
+  <rect x="720" y="145" width="640" height="118" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="742" y="175" width="76" height="58" rx="12" fill="#1c2530" stroke="#fb923c" stroke-width="2"/>
+  <text x="780" y="213" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" fill="#fb923c">16</text>
+  <text x="838" y="197" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Sales motion overlap</text>
+  <text x="838" y="233" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#9ca3af">Different channel, motion or sales team?</text>
+
+  <rect x="40" y="283" width="640" height="118" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="62" y="313" width="76" height="58" rx="12" fill="#1c2530" stroke="#c084fc" stroke-width="2"/>
+  <text x="100" y="351" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" fill="#c084fc">14</text>
+  <text x="158" y="335" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Pricing and packaging</text>
+  <text x="158" y="371" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#9ca3af">Priced and packaged apart from core?</text>
+
+  <rect x="720" y="283" width="640" height="118" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="742" y="313" width="76" height="58" rx="12" fill="#1c2530" stroke="#b388f2" stroke-width="2"/>
+  <text x="780" y="351" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" fill="#b388f2">12</text>
+  <text x="838" y="335" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Acquired, not built</text>
+  <text x="838" y="371" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#9ca3af">Bought with equity you would destroy?</text>
+
+  <rect x="40" y="421" width="640" height="118" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="62" y="451" width="76" height="58" rx="12" fill="#1c2530" stroke="#d98ee0" stroke-width="2"/>
+  <text x="100" y="489" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" fill="#d98ee0">12</text>
+  <text x="158" y="473" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Exit optionality</text>
+  <text x="158" y="509" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#9ca3af">Could it be spun out or sold later?</text>
+
+  <rect x="720" y="421" width="640" height="118" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="742" y="451" width="76" height="58" rx="12" fill="#1c2530" stroke="#60a5fa" stroke-width="2"/>
+  <text x="780" y="489" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" fill="#60a5fa">10</text>
+  <text x="838" y="473" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Review-site category</text>
+  <text x="838" y="509" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#9ca3af">Needs its own G2 category to be found?</text>
+
+  <rect x="40" y="559" width="640" height="118" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="62" y="589" width="76" height="58" rx="12" fill="#1c2530" stroke="#f5a0a1" stroke-width="2"/>
+  <text x="100" y="627" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" fill="#f5a0a1">10</text>
+  <text x="158" y="611" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Budget self-sufficiency</text>
+  <text x="158" y="647" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#9ca3af">Can it fund its own demand gen?</text>
+
+  <rect x="720" y="559" width="640" height="118" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow)"/>
+  <rect x="742" y="589" width="76" height="58" rx="12" fill="#1c2530" stroke="#fb923c" stroke-width="2"/>
+  <text x="780" y="627" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" fill="#fb923c">8</text>
+  <text x="838" y="611" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Support and docs load</text>
+  <text x="838" y="647" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#9ca3af">Own docs, support queue, status page?</text>
+
+  <line x1="700" y1="697" x2="700" y2="733" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="692,733 708,733 700,747" fill="#5eead4"/>
+
+  <rect x="40" y="760" width="1320" height="66" rx="16" fill="#12181f" stroke="#30363d" stroke-width="2"/>
+  <text x="700" y="802" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="24" fill="#c8cfd8">Add the eight weighted scores and divide by 10. The total decides the naming outcome.</text>
+
+  <rect x="40" y="852" width="426" height="132" rx="16" fill="#151b23" stroke="#f5a0a1" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="68" y="896" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" fill="#f5a0a1">0 - 39</text>
+  <text x="68" y="934" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#f0f6fc">Descriptive feature name</text>
+  <text x="68" y="966" font-family="Segoe UI, system-ui, sans-serif" font-size="20" fill="#9ca3af">Ships inside the master brand.</text>
+
+  <rect x="487" y="852" width="426" height="132" rx="16" fill="#151b23" stroke="#fb923c" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="515" y="896" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" fill="#fb923c">40 - 69</text>
+  <text x="515" y="934" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#f0f6fc">Sub-brand or endorsement</text>
+  <text x="515" y="966" font-family="Segoe UI, system-ui, sans-serif" font-size="20" fill="#9ca3af">Named, but never sold alone.</text>
+
+  <rect x="934" y="852" width="426" height="132" rx="16" fill="#151b23" stroke="#60a5fa" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="962" y="896" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="700" fill="#60a5fa">70 - 100</text>
+  <text x="962" y="934" font-family="Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#f0f6fc">Standalone brand</text>
+  <text x="962" y="966" font-family="Segoe UI, system-ui, sans-serif" font-size="20" fill="#9ca3af">Fund the whole cost sheet.</text>
+</svg>

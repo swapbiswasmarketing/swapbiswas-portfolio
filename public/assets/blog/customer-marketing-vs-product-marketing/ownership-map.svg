@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 620" width="1400" height="620" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="620" rx="24" fill="url(#bg)"/>
+
+  <text x="60" y="62" fill="#f0f6fc" font-size="38" font-weight="700">The Product Marketing / Customer Marketing Ownership Map</text>
+  <text x="60" y="104" fill="#9ca3af" font-size="24">Default owners sit on the outside. The middle band is what both teams assume the other owns.</text>
+
+  <!-- Card A: Product Marketing -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="150" width="400" height="350" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2"/>
+  </g>
+  <rect x="60" y="150" width="400" height="6" rx="3" fill="#c084fc"/>
+  <text x="88" y="200" fill="#c084fc" font-size="24" font-weight="700" letter-spacing="0.06em">PRODUCT MARKETING</text>
+  <text x="88" y="232" fill="#9ca3af" font-size="20">Owns the product story</text>
+  <line x1="88" y1="256" x2="432" y2="256" stroke="#30363d" stroke-width="2"/>
+  <text x="88" y="296" fill="#c8cfd8" font-size="21">Positioning and messaging</text>
+  <text x="88" y="334" fill="#c8cfd8" font-size="21">Launch narrative and tiering</text>
+  <text x="88" y="372" fill="#c8cfd8" font-size="21">Competitive proof points</text>
+  <text x="88" y="410" fill="#c8cfd8" font-size="21">Sales enablement assets</text>
+  <text x="88" y="448" fill="#c8cfd8" font-size="21">Pricing and packaging story</text>
+
+  <!-- Card B: Contested middle -->
+  <g filter="url(#cardShadow)">
+    <rect x="500" y="150" width="400" height="350" rx="16" fill="#151b23" stroke="#fb923c" stroke-width="2"/>
+  </g>
+  <rect x="500" y="150" width="400" height="6" rx="3" fill="#fb923c"/>
+  <text x="528" y="200" fill="#fb923c" font-size="24" font-weight="700" letter-spacing="0.06em">THE CONTESTED MIDDLE</text>
+  <text x="528" y="232" fill="#9ca3af" font-size="20">Each assumes the other has it</text>
+  <line x1="528" y1="256" x2="872" y2="256" stroke="#30363d" stroke-width="2"/>
+  <text x="528" y="296" fill="#c8cfd8" font-size="21">Customer references</text>
+  <text x="528" y="334" fill="#c8cfd8" font-size="21">Case studies, testimonials</text>
+  <text x="528" y="372" fill="#c8cfd8" font-size="21">Launch comms to customers</text>
+  <text x="528" y="410" fill="#c8cfd8" font-size="21">Review-site programs</text>
+  <text x="528" y="448" fill="#c8cfd8" font-size="21">Expansion campaigns</text>
+
+  <!-- Card C: Customer Marketing -->
+  <g filter="url(#cardShadow)">
+    <rect x="940" y="150" width="400" height="350" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2"/>
+  </g>
+  <rect x="940" y="150" width="400" height="6" rx="3" fill="#60a5fa"/>
+  <text x="968" y="200" fill="#60a5fa" font-size="24" font-weight="700" letter-spacing="0.06em">CUSTOMER MARKETING</text>
+  <text x="968" y="232" fill="#9ca3af" font-size="20">Owns the customer relationship</text>
+  <line x1="968" y1="256" x2="1312" y2="256" stroke="#30363d" stroke-width="2"/>
+  <text x="968" y="296" fill="#c8cfd8" font-size="21">Advocacy and reference pool</text>
+  <text x="968" y="334" fill="#c8cfd8" font-size="21">Community and customer events</text>
+  <text x="968" y="372" fill="#c8cfd8" font-size="21">Adoption and win-back</text>
+  <text x="968" y="410" fill="#c8cfd8" font-size="21">Voice-of-customer input</text>
+  <text x="968" y="448" fill="#c8cfd8" font-size="21">Advocate tiering and rewards</text>
+
+  <!-- Arrows into the middle -->
+  <line x1="464" y1="325" x2="482" y2="325" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="482,318 496,325 482,332" fill="#5eead4"/>
+  <line x1="936" y1="325" x2="918" y2="325" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="918,318 904,325 918,332" fill="#5eead4"/>
+
+  <text x="60" y="562" fill="#9ca3af" font-size="21">Neither outside list causes trouble. The middle one does, until every row in it has a named owner.</text>
+</svg>

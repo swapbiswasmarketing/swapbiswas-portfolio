@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" width="1400" height="910">
+  <defs>
+    <linearGradient id="bgB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="shadowB" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="910" rx="24" fill="url(#bgB)"/>
+
+  <text x="700" y="66" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700" fill="#f0f6fc">Retrofit a Live Account in Four Waves</text>
+  <text x="700" y="110" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="25" fill="#9ca3af">Rename only what is still serving and still spending. Leave the archive alone.</text>
+
+  <!-- Wave 0 -->
+  <rect x="90" y="150" width="560" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#shadowB)"/>
+  <text x="122" y="196" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" fill="#c084fc" letter-spacing="0.08em">WAVE 0 - WEEK 1</text>
+  <text x="122" y="240" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600" fill="#f0f6fc">Freeze and map</text>
+  <text x="122" y="288" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">Nobody creates a campaign under the</text>
+  <text x="122" y="320" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">old scheme from Monday. Export it all.</text>
+  <text x="122" y="366" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#c084fc">Output: the crosswalk sheet</text>
+
+  <!-- Wave 1 -->
+  <rect x="750" y="150" width="560" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#shadowB)"/>
+  <text x="782" y="196" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" fill="#60a5fa" letter-spacing="0.08em">WAVE 1 - WEEKS 1-4</text>
+  <text x="782" y="240" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600" fill="#f0f6fc">New campaigns only</text>
+  <text x="782" y="288" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">Zero renames. A clean cohort grows</text>
+  <text x="782" y="320" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">beside the mess and proves the schema.</text>
+  <text x="782" y="366" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#60a5fa">Output: live proof, zero risk</text>
+
+  <!-- Arrow 0 -> 1 -->
+  <line x1="662" y1="275" x2="724" y2="275" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="724,268 738,275 724,282" fill="#5eead4"/>
+
+  <!-- Row transition 1 -> 2 -->
+  <line x1="1030" y1="400" x2="1030" y2="445" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1030" y1="445" x2="370" y2="445" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="370" y1="445" x2="370" y2="476" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="363,476 377,476 370,490" fill="#5eead4"/>
+
+  <!-- Wave 2 -->
+  <rect x="90" y="500" width="560" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#shadowB)"/>
+  <text x="122" y="546" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" fill="#fb923c" letter-spacing="0.08em">WAVE 2 - WEEKS 5-8</text>
+  <text x="122" y="590" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600" fill="#f0f6fc">Rename top spend only</text>
+  <text x="122" y="638" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">Still serving and inside the top 80% of</text>
+  <text x="122" y="670" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">90-day spend. Both conditions must hold.</text>
+  <text x="122" y="716" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#fb923c">The campaign ID survives a rename</text>
+
+  <!-- Wave 3 -->
+  <rect x="750" y="500" width="560" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#shadowB)"/>
+  <text x="782" y="546" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" fill="#5eead4" letter-spacing="0.08em">WAVE 3 - WEEKS 9-12</text>
+  <text x="782" y="590" font-family="Segoe UI, system-ui, sans-serif" font-size="29" font-weight="600" fill="#f0f6fc">Archive the tail</text>
+  <text x="782" y="638" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">Paused campaigns keep their old</text>
+  <text x="782" y="670" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">names forever. Flag them and move on.</text>
+  <text x="782" y="716" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#5eead4">Renaming history breaks saved reports</text>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="662" y1="625" x2="724" y2="625" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="724,618 738,625 724,632" fill="#5eead4"/>
+
+  <!-- Footer -->
+  <rect x="90" y="790" width="1220" height="72" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2"/>
+  <text x="700" y="824" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">One published cutover date. One crosswalk sheet mapping old name to new.</text>
+  <text x="700" y="852" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#c8cfd8">Every report annotates the date. Nothing before it gets rewritten.</text>
+</svg>

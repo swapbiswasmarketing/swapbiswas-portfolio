@@ -95,7 +95,7 @@ Positioning is not an abstraction that sits in a slide. When it is done well, it
 
 Start with the locked positioning: the best-fit customer, the alternative you beat, and the differentiated value. Everything below is downstream of those three answers.
 
-- **The name and category cue.** Your positioning names the market category the buyer should compare you in. Branding decides how much of that category to signal in the name, the tagline, and the homepage hero.
+- **The name and category cue.** Your positioning names the market category the buyer should compare you in. Branding decides how much of that category to signal in the name, the tagline, and the homepage hero. In a multi-product company that same call scales up into brand architecture, where you are choosing between [one master brand and a portfolio of separate ones](/blog/house-of-brands-vs-branded-house/).
 - **The voice.** If you are positioned against a slow, bureaucratic incumbent, the brand voice should feel fast and human. If you are positioned as the safe enterprise choice, a scrappy voice actively undercuts the strategy.
 - **The visual identity.** Positioning against "expensive and complex" points toward a clean, approachable, uncluttered identity. Positioning as the premium category leader points somewhere more restrained and considered.
 - **The proof and the experience.** The differentiated value in your positioning is what the branded experience has to make feel real, from the demo to the onboarding to the invoice.

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 790" width="1400" height="790">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="790" rx="24" fill="url(#bg2)"/>
+
+  <text x="700" y="66" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="42" font-weight="700" fill="#f0f6fc">The Matched-Cohort Method</text>
+  <text x="700" y="110" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="24" fill="#9ca3af">Separating what the board did from the selection bias baked into who you invited.</text>
+
+  <!-- Card 1 -->
+  <rect x="70" y="150" width="580" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow2)"/>
+  <text x="102" y="190" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" fill="#5eead4" letter-spacing="0.08em">STEP 1</text>
+  <text x="102" y="234" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" fill="#f0f6fc">Freeze the member list</text>
+  <text x="102" y="276" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Every account holding a seat this cycle.</text>
+  <text x="102" y="306" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Lock it on day one so later joiners do</text>
+  <text x="102" y="336" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">not contaminate the comparison.</text>
+  <text x="102" y="372" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#5eead4">Output: the treated group</text>
+
+  <!-- Card 2 -->
+  <rect x="750" y="150" width="580" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow2)"/>
+  <text x="782" y="190" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" fill="#60a5fa" letter-spacing="0.08em">STEP 2</text>
+  <text x="782" y="234" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" fill="#f0f6fc">Match each member to a twin</text>
+  <text x="782" y="276" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">For every member account, pick a non-</text>
+  <text x="782" y="306" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">member with a similar ARR band, contract</text>
+  <text x="782" y="336" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">tenure, segment and product tier.</text>
+  <text x="782" y="372" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#60a5fa">Output: the control group</text>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="662" y1="275" x2="724" y2="275" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="724,268 738,275 724,282" fill="#5eead4"/>
+
+  <!-- Row transition 2 -> 3 -->
+  <line x1="1040" y1="400" x2="1040" y2="425" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1040" y1="425" x2="360" y2="425" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="360" y1="425" x2="360" y2="436" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="353,436 367,436 360,450" fill="#5eead4"/>
+
+  <!-- Card 3 -->
+  <rect x="70" y="450" width="580" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow2)"/>
+  <text x="102" y="490" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" fill="#c084fc" letter-spacing="0.08em">STEP 3</text>
+  <text x="102" y="534" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" fill="#f0f6fc">Measure the same window</text>
+  <text x="102" y="576" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Run net revenue retention, expansion</text>
+  <text x="102" y="606" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">and gross churn across identical dates</text>
+  <text x="102" y="636" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">for both groups. No moved cutoffs.</text>
+  <text x="102" y="672" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#c084fc">Same metric, same clock</text>
+
+  <!-- Card 4 -->
+  <rect x="750" y="450" width="580" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="2" filter="url(#cardShadow2)"/>
+  <text x="782" y="490" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="700" fill="#fb923c" letter-spacing="0.08em">STEP 4</text>
+  <text x="782" y="534" font-family="Segoe UI, system-ui, sans-serif" font-size="27" font-weight="600" fill="#f0f6fc">Report the gap</text>
+  <text x="782" y="576" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Members at 118% NRR proves nothing on</text>
+  <text x="782" y="606" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">its own. Members at 118% against a</text>
+  <text x="782" y="636" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">matched 106% is a defensible claim.</text>
+  <text x="782" y="672" font-family="Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#fb923c">The gap is the number</text>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="662" y1="575" x2="724" y2="575" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="724,568 738,575 724,582" fill="#5eead4"/>
+
+  <text x="700" y="750" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="22" fill="#9ca3af">You invited your healthiest accounts. Without a control group, you are measuring that choice.</text>
+</svg>

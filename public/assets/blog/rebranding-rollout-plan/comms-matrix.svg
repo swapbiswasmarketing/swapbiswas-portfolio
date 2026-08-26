@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 796" width="1400" height="796" font-family="Segoe UI, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="796" fill="url(#bg)" rx="24"/>
+
+  <text x="60" y="62" fill="#f0f6fc" font-size="40" font-weight="700">The Rebrand Comms Matrix</text>
+  <text x="60" y="100" fill="#9ca3af" font-size="24">Who hears the new name, from whom, and how many days before public</text>
+
+  <!-- header row -->
+  <rect x="60" y="130" width="380" height="70" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="460" y="130" width="300" height="70" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="780" y="130" width="300" height="70" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="1100" y="130" width="240" height="70" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+  <text x="84" y="173" fill="#9ca3af" font-size="20" font-weight="700" letter-spacing="0.08em">AUDIENCE TIER</text>
+  <text x="484" y="173" fill="#9ca3af" font-size="20" font-weight="700" letter-spacing="0.08em">CHANNEL</text>
+  <text x="804" y="173" fill="#9ca3af" font-size="20" font-weight="700" letter-spacing="0.08em">SENDER</text>
+  <text x="1124" y="173" fill="#9ca3af" font-size="20" font-weight="700" letter-spacing="0.08em">LEAD TIME</text>
+
+  <!-- TIER 1 -->
+  <rect x="60" y="212" width="380" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="60" y="228" width="6" height="56" rx="3" fill="#f5a0a1"/>
+  <text x="88" y="246" fill="#f5a0a1" font-size="20" font-weight="700" letter-spacing="0.08em">TIER 1</text>
+  <text x="88" y="278" fill="#f0f6fc" font-size="23" font-weight="600">Top 20 accounts by ARR</text>
+  <rect x="460" y="212" width="300" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="484" y="246" fill="#c8cfd8" font-size="21">1:1 call, then a</text>
+  <text x="484" y="278" fill="#c8cfd8" font-size="21">follow-up email</text>
+  <rect x="780" y="212" width="300" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="804" y="246" fill="#c8cfd8" font-size="21">Named AE, with the</text>
+  <text x="804" y="278" fill="#c8cfd8" font-size="21">CEO on the call</text>
+  <rect x="1100" y="212" width="240" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="1124" y="248" fill="#f5a0a1" font-size="26" font-weight="700">14 days</text>
+  <text x="1124" y="278" fill="#9ca3af" font-size="19">before public</text>
+
+  <!-- TIER 2 -->
+  <rect x="60" y="310" width="380" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="60" y="326" width="6" height="56" rx="3" fill="#fb923c"/>
+  <text x="88" y="344" fill="#fb923c" font-size="20" font-weight="700" letter-spacing="0.08em">TIER 2</text>
+  <text x="88" y="376" fill="#f0f6fc" font-size="23" font-weight="600">Named accounts, live deals</text>
+  <rect x="460" y="310" width="300" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="484" y="344" fill="#c8cfd8" font-size="21">Email from the</text>
+  <text x="484" y="376" fill="#c8cfd8" font-size="21">owner, plus Slack</text>
+  <rect x="780" y="310" width="300" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="804" y="344" fill="#c8cfd8" font-size="21">CSM or AE, sent</text>
+  <text x="804" y="376" fill="#c8cfd8" font-size="21">from their address</text>
+  <rect x="1100" y="310" width="240" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="1124" y="346" fill="#fb923c" font-size="26" font-weight="700">7 days</text>
+  <text x="1124" y="376" fill="#9ca3af" font-size="19">before public</text>
+
+  <!-- TIER 3 -->
+  <rect x="60" y="408" width="380" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="60" y="424" width="6" height="56" rx="3" fill="#c084fc"/>
+  <text x="88" y="442" fill="#c084fc" font-size="20" font-weight="700" letter-spacing="0.08em">TIER 3</text>
+  <text x="88" y="474" fill="#f0f6fc" font-size="23" font-weight="600">Long tail and free users</text>
+  <rect x="460" y="408" width="300" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="484" y="442" fill="#c8cfd8" font-size="21">In-app banner,</text>
+  <text x="484" y="474" fill="#c8cfd8" font-size="21">then one email</text>
+  <rect x="780" y="408" width="300" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="804" y="442" fill="#c8cfd8" font-size="21">Product and</text>
+  <text x="804" y="474" fill="#c8cfd8" font-size="21">lifecycle marketing</text>
+  <rect x="1100" y="408" width="240" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="1124" y="444" fill="#c084fc" font-size="26" font-weight="700">2 days</text>
+  <text x="1124" y="474" fill="#9ca3af" font-size="19">before public</text>
+
+  <!-- TIER 4 -->
+  <rect x="60" y="506" width="380" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <rect x="60" y="522" width="6" height="56" rx="3" fill="#60a5fa"/>
+  <text x="88" y="540" fill="#60a5fa" font-size="20" font-weight="700" letter-spacing="0.08em">TIER 4</text>
+  <text x="88" y="572" fill="#f0f6fc" font-size="23" font-weight="600">Public, press, partners</text>
+  <rect x="460" y="506" width="300" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="484" y="540" fill="#c8cfd8" font-size="21">Newsroom, blog,</text>
+  <text x="484" y="572" fill="#c8cfd8" font-size="21">social, directories</text>
+  <rect x="780" y="506" width="300" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="804" y="540" fill="#c8cfd8" font-size="21">Comms and product</text>
+  <text x="804" y="572" fill="#c8cfd8" font-size="21">marketing</text>
+  <rect x="1100" y="506" width="240" height="88" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow)"/>
+  <text x="1124" y="542" fill="#60a5fa" font-size="26" font-weight="700">Day 0</text>
+  <text x="1124" y="572" fill="#9ca3af" font-size="19">launch morning</text>
+
+  <!-- footer -->
+  <rect x="60" y="620" width="1280" height="116" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="60" y="644" width="6" height="68" rx="3" fill="#5eead4"/>
+  <text x="88" y="666" fill="#c8cfd8" font-size="22">Rule: nobody in Tier 1 or Tier 2 should learn the new name from a press release,</text>
+  <text x="88" y="700" fill="#c8cfd8" font-size="22">an invoice, or a login screen. The pre-brief window is what prevents that.</text>
+</svg>

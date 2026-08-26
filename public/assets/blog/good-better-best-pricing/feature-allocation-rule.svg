@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 990" width="1400" height="990" font-family="Segoe UI, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="990" rx="24" fill="url(#bg)"/>
+
+  <text x="700" y="62" text-anchor="middle" fill="#f0f6fc" font-size="38" font-weight="700">The Feature-Allocation Rule</text>
+  <text x="700" y="102" text-anchor="middle" fill="#9ca3af" font-size="24">Score every feature on three axes, then let the score assign its tier</text>
+
+  <!-- Row 1: three scoring axes -->
+  <rect x="60" y="140" width="400" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="88" y="184" fill="#c084fc" font-size="20" font-weight="700" letter-spacing="0.08em">AXIS 1</text>
+  <text x="88" y="226" fill="#f0f6fc" font-size="28" font-weight="600">Value perception</text>
+  <text x="88" y="268" fill="#c8cfd8" font-size="21">How badly does the buyer</text>
+  <text x="88" y="300" fill="#c8cfd8" font-size="21">want it? Score it 1 to 5.</text>
+
+  <rect x="500" y="140" width="400" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="528" y="184" fill="#60a5fa" font-size="20" font-weight="700" letter-spacing="0.08em">AXIS 2</text>
+  <text x="528" y="226" fill="#f0f6fc" font-size="28" font-weight="600">Cost to serve</text>
+  <text x="528" y="268" fill="#c8cfd8" font-size="21">What does delivering it</text>
+  <text x="528" y="300" fill="#c8cfd8" font-size="21">cost you? Score it 1 to 5.</text>
+
+  <rect x="940" y="140" width="400" height="200" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="968" y="184" fill="#fb923c" font-size="20" font-weight="700" letter-spacing="0.08em">AXIS 3</text>
+  <text x="968" y="226" fill="#f0f6fc" font-size="28" font-weight="600">Differentiation</text>
+  <text x="968" y="268" fill="#c8cfd8" font-size="21">Do rivals give it away,</text>
+  <text x="968" y="300" fill="#c8cfd8" font-size="21">or is it ours? 1 to 5.</text>
+
+  <!-- Arrows row 1 to score bar -->
+  <line x1="260" y1="348" x2="260" y2="381" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="253,381 267,381 260,395" fill="#5eead4"/>
+  <line x1="700" y1="348" x2="700" y2="381" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,381 707,381 700,395" fill="#5eead4"/>
+  <line x1="1140" y1="348" x2="1140" y2="381" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1133,381 1147,381 1140,395" fill="#5eead4"/>
+
+  <!-- Score bar -->
+  <rect x="60" y="405" width="1280" height="80" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="700" y="453" text-anchor="middle" fill="#c8cfd8" font-size="24">The shape of the score assigns the tier, not the number of features</text>
+
+  <!-- Arrows score bar to tiers -->
+  <line x1="260" y1="497" x2="260" y2="530" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="253,530 267,530 260,544" fill="#5eead4"/>
+  <line x1="700" y1="497" x2="700" y2="530" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,530 707,530 700,544" fill="#5eead4"/>
+  <line x1="1140" y1="497" x2="1140" y2="530" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1133,530 1147,530 1140,544" fill="#5eead4"/>
+
+  <!-- Row 2: tiers -->
+  <rect x="60" y="560" width="400" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="88" y="602" fill="#5eead4" font-size="20" font-weight="700" letter-spacing="0.08em">TIER 1</text>
+  <text x="88" y="644" fill="#f0f6fc" font-size="28" font-weight="600">Good</text>
+  <text x="88" y="686" fill="#c8cfd8" font-size="21">Value perception: high</text>
+  <text x="88" y="718" fill="#c8cfd8" font-size="21">Cost to serve: low</text>
+  <text x="88" y="750" fill="#c8cfd8" font-size="21">Differentiation: low</text>
+  <line x1="88" y1="774" x2="432" y2="774" stroke="#30363d" stroke-width="1.5"/>
+  <text x="88" y="806" fill="#9ca3af" font-size="21">Job: fast first value</text>
+
+  <rect x="500" y="560" width="400" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="528" y="602" fill="#f5a0a1" font-size="20" font-weight="700" letter-spacing="0.08em">TIER 2</text>
+  <text x="528" y="644" fill="#f0f6fc" font-size="28" font-weight="600">Better</text>
+  <text x="528" y="686" fill="#c8cfd8" font-size="21">Value perception: high</text>
+  <text x="528" y="718" fill="#c8cfd8" font-size="21">Cost to serve: medium</text>
+  <text x="528" y="750" fill="#c8cfd8" font-size="21">Differentiation: high</text>
+  <line x1="528" y1="774" x2="872" y2="774" stroke="#30363d" stroke-width="1.5"/>
+  <text x="528" y="806" fill="#9ca3af" font-size="21">Job: carry the revenue</text>
+
+  <rect x="940" y="560" width="400" height="280" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="968" y="602" fill="#b388f2" font-size="20" font-weight="700" letter-spacing="0.08em">TIER 3</text>
+  <text x="968" y="644" fill="#f0f6fc" font-size="28" font-weight="600">Best</text>
+  <text x="968" y="686" fill="#c8cfd8" font-size="21">Value perception: any</text>
+  <text x="968" y="718" fill="#c8cfd8" font-size="21">Cost to serve: high</text>
+  <text x="968" y="750" fill="#c8cfd8" font-size="21">Differentiation: high</text>
+  <line x1="968" y1="774" x2="1312" y2="774" stroke="#30363d" stroke-width="1.5"/>
+  <text x="968" y="806" fill="#9ca3af" font-size="21">Job: hold the ceiling</text>
+
+  <!-- Footer -->
+  <rect x="60" y="866" width="1280" height="76" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5"/>
+  <text x="700" y="912" text-anchor="middle" fill="#9ca3af" font-size="22">Allocate by value metric, not feature count. A long list with a flat value metric is padding.</text>
+</svg>

@@ -56,6 +56,8 @@ For a deep breakdown of how to build one, read our guide on [ICP vs buyer person
 - **Document the buying process** - who has the budget, who influences the decision, who blocks it
 - **Validate willingness to pay** - interest is cheap, purchase intent is what matters
 
+A narrow ICP also makes the market question answerable, because once you can count the accounts that match it you can run [a bottom-up estimate against the top-down number](/blog/top-down-vs-bottom-up-market-sizing/) and see which of the two is lying.
+
 ### The "10 Paying Customers" Test
 
 Do not invest in scalable channels until you have at least 10 paying customers acquired through direct outreach. These first customers teach you everything: which pain points resonate, what objections come up, and how long the sales cycle takes.

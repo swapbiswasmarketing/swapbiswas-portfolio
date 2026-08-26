@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 890">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow2">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="890" fill="url(#bg2)" rx="24"/>
+
+  <text x="700" y="76" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">One Market, Sized Both Ways</text>
+  <text x="700" y="120" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="24">A per-seat AI coding assistant sold to US software teams, 2026.</text>
+
+  <!-- Top-down calculation -->
+  <g filter="url(#cardShadow2)">
+    <rect x="70" y="165" width="590" height="450" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="70" y="165" width="590" height="6" rx="3" fill="#60a5fa"/>
+    <text x="98" y="213" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">TOP-DOWN</text>
+    <text x="98" y="258" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Start with $8.42B worldwide</text>
+    <text x="98" y="290" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">Gartner, AI application development</text>
+    <text x="98" y="318" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">platforms, worldwide forecast, 2026</text>
+    <text x="98" y="366" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Multiply by 40% US share</text>
+    <text x="98" y="398" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">An assumption with no published</text>
+    <text x="98" y="426" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">regional split behind it</text>
+    <line x1="98" y1="462" x2="632" y2="462" stroke="#30363d" stroke-width="1.5"/>
+    <text x="98" y="512" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="34" font-weight="700">= $3.37 billion</text>
+    <text x="98" y="556" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">Implies 9.7 million paid US seats</text>
+    <text x="98" y="588" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">at a blended $348 a seat</text>
+  </g>
+
+  <!-- Bottom-up calculation -->
+  <g filter="url(#cardShadow2)">
+    <rect x="740" y="165" width="590" height="450" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="740" y="165" width="590" height="6" rx="3" fill="#fb923c"/>
+    <text x="768" y="213" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">BOTTOM-UP</text>
+    <text x="768" y="258" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Start with 1.9M US seats</text>
+    <text x="768" y="290" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">BLS: 1.7M software developers plus</text>
+    <text x="768" y="318" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">201,700 QA analysts and testers, 2024</text>
+    <text x="768" y="366" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Multiply by $348 a seat</text>
+    <text x="768" y="398" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">GitHub Copilot list price: Business</text>
+    <text x="768" y="426" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="20">$19 and Enterprise $39 a month</text>
+    <line x1="768" y1="462" x2="1302" y2="462" stroke="#30363d" stroke-width="1.5"/>
+    <text x="768" y="512" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="34" font-weight="700">= $662 million</text>
+    <text x="768" y="556" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">Every employed developer and</text>
+    <text x="768" y="588" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">tester holding a paid seat</text>
+  </g>
+
+  <!-- Arrows down into the verdict bar -->
+  <line x1="365" y1="621" x2="365" y2="635" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="358,635 365,649 372,635" fill="#5eead4"/>
+  <line x1="1035" y1="621" x2="1035" y2="635" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1028,635 1035,649 1042,635" fill="#5eead4"/>
+
+  <!-- Verdict bar -->
+  <g filter="url(#cardShadow2)">
+    <rect x="70" y="655" width="1260" height="190" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="70" y="655" width="1260" height="6" rx="3" fill="#f87171"/>
+    <text x="98" y="703" fill="#f87171" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">GAP 5.1x</text>
+    <text x="98" y="745" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="24" font-weight="600">Over 3x, so the top-down share assumption is the first suspect.</text>
+    <text x="98" y="783" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">Re-anchoring it to a real published US share pushes the gap to 9.6x, which means the anchor</text>
+    <text x="98" y="815" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">is measuring a different market, not that the share was slightly off.</text>
+  </g>
+</svg>

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 980">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="980" fill="url(#bg)" rx="24"/>
+
+  <text x="700" y="76" text-anchor="middle" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">The Market Sizing Reconciliation Worksheet</text>
+  <text x="700" y="120" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="24">Divide the larger estimate by the smaller. The ratio names the broken input.</text>
+
+  <!-- Top-down card -->
+  <g filter="url(#cardShadow)">
+    <rect x="110" y="165" width="480" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="110" y="165" width="480" height="6" rx="3" fill="#60a5fa"/>
+    <text x="138" y="213" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">TOP-DOWN</text>
+    <text x="138" y="257" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Published market size</text>
+    <text x="138" y="303" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Take a sourced market total</text>
+    <text x="138" y="335" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Multiply by a share assumption</text>
+    <text x="138" y="367" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Breaks when the share is guessed</text>
+  </g>
+
+  <!-- Bottom-up card -->
+  <g filter="url(#cardShadow)">
+    <rect x="810" y="165" width="480" height="240" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="810" y="165" width="480" height="6" rx="3" fill="#fb923c"/>
+    <text x="838" y="213" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">BOTTOM-UP</text>
+    <text x="838" y="257" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Accounts x ACV</text>
+    <text x="838" y="303" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Count accounts you can name</text>
+    <text x="838" y="335" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Multiply by realistic annual value</text>
+    <text x="838" y="367" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">&#8226; Breaks when a segment is missing</text>
+  </g>
+
+  <!-- Arrows into the gap node -->
+  <line x1="350" y1="411" x2="350" y2="488" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="350" y1="488" x2="402" y2="488" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="402,481 416,488 402,495" fill="#5eead4"/>
+
+  <line x1="1050" y1="411" x2="1050" y2="488" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="1050" y1="488" x2="998" y2="488" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="998,481 984,488 998,495" fill="#5eead4"/>
+
+  <!-- Gap node -->
+  <g filter="url(#cardShadow)">
+    <rect x="430" y="440" width="540" height="96" rx="16" fill="#151b23" stroke="#5eead4" stroke-width="2"/>
+    <text x="700" y="478" text-anchor="middle" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">GAP RATIO</text>
+    <text x="700" y="512" text-anchor="middle" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="24">larger estimate / smaller estimate</text>
+  </g>
+
+  <!-- Distribution bus down to the three bands -->
+  <line x1="700" y1="542" x2="700" y2="570" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="250" y1="570" x2="1150" y2="570" stroke="#5eead4" stroke-width="2.5"/>
+  <line x1="250" y1="570" x2="250" y2="588" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="243,588 250,602 257,588" fill="#5eead4"/>
+  <line x1="700" y1="570" x2="700" y2="588" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="693,588 700,602 707,588" fill="#5eead4"/>
+  <line x1="1150" y1="570" x2="1150" y2="588" stroke="#5eead4" stroke-width="2.5"/>
+  <polygon points="1143,588 1150,602 1157,588" fill="#5eead4"/>
+
+  <!-- Band 1 -->
+  <g filter="url(#cardShadow)">
+    <rect x="50" y="610" width="400" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="50" y="610" width="400" height="6" rx="3" fill="#5eead4"/>
+    <text x="78" y="658" fill="#5eead4" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">GAP 1.5x TO 2x</text>
+    <text x="78" y="700" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Definitional mismatch</text>
+    <text x="78" y="746" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">One word, two scopes.</text>
+    <text x="78" y="778" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">Check units, geography,</text>
+    <text x="78" y="810" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">year and buyer type.</text>
+  </g>
+
+  <!-- Band 2 -->
+  <g filter="url(#cardShadow)">
+    <rect x="500" y="610" width="400" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="500" y="610" width="400" height="6" rx="3" fill="#fb923c"/>
+    <text x="528" y="658" fill="#fb923c" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">GAP 2x TO 3x</text>
+    <text x="528" y="700" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Missing segment</text>
+    <text x="528" y="746" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">The bottom-up count left</text>
+    <text x="528" y="778" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">buyers out. Re-run the</text>
+    <text x="528" y="810" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">account list first.</text>
+  </g>
+
+  <!-- Band 3 -->
+  <g filter="url(#cardShadow)">
+    <rect x="950" y="610" width="400" height="250" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1"/>
+    <rect x="950" y="610" width="400" height="6" rx="3" fill="#f87171"/>
+    <text x="978" y="658" fill="#f87171" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">GAP 3x TO 10x</text>
+    <text x="978" y="700" fill="#f0f6fc" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">Invented share</text>
+    <text x="978" y="746" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">The top-down percentage</text>
+    <text x="978" y="778" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">is not anchored to a</text>
+    <text x="978" y="810" fill="#c8cfd8" font-family="Segoe UI, sans-serif" font-size="21">published split.</text>
+  </g>
+
+  <text x="700" y="902" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">Under 1.5x the methods agree. Over 10x the anchor is the wrong category.</text>
+  <text x="700" y="934" text-anchor="middle" fill="#9ca3af" font-family="Segoe UI, sans-serif" font-size="21">Check definitions, then the bottom-up list, then the share.</text>
+</svg>

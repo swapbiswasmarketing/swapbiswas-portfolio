@@ -176,6 +176,8 @@ Question 10 is the one that saves you weeks. Asking for the report in the room, 
 
 Every template you will find assumes the customer says yes, hands over numbers and lets you use the logo. In B2B SaaS that assumption is where story production actually breaks.
 
+The cheapest way to shorten the gauntlet is to source candidates from accounts that already have an executive relationship with you, which is one of the quieter returns on [running a customer advisory board](/blog/customer-advisory-board/).
+
 ![Six-step customer success story production line from nomination through approval to instrumentation](/assets/blog/customer-success-story-template/story-production-workflow.webp "The Story Production Line")
 
 There are up to five approvers, and asking them in the wrong order is what turns a two-week story into a two-quarter story.

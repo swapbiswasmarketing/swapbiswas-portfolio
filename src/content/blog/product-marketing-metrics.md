@@ -49,7 +49,7 @@ You do not track all eight forever. You pick the ones that match what your leade
 
 ## Revenue and Pipeline Influence
 
-This is the group that ends the "what does product marketing actually do" conversation. **Influenced pipeline** is the dollar value of open and closed deals that touched your work: your positioning, your campaign, your enablement asset. It is harder to attribute than a form fill, which is exactly why it is credible when you get it right.
+This is the group that ends the "what does product marketing actually do" conversation. **Influenced pipeline** is the dollar value of open and closed deals that touched your work: your positioning, your campaign, your enablement asset. It is harder to attribute than a form fill, which is exactly why it is credible when you get it right. Attribution only works if the campaigns underneath it can be grouped at all, which makes [a campaign naming system a machine can parse](/blog/campaign-naming-convention/) the unglamorous prerequisite for every number in this section.
 
 **Win rate** is the other half. If your positioning and competitive work are landing, the rate at which qualified opportunities become customers should move. When win rate climbs after a repositioning, that is the clearest signal product marketing had impact.
 

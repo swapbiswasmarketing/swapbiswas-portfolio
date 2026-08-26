@@ -153,6 +153,8 @@ Build the pillars as a component and the framework as the system that carries th
 
 The framework is also one system inside a larger machine. Messaging is the connective tissue of the wider [product marketing framework](/blog/product-marketing-framework/) that ties positioning, launch, and enablement together - the framework here is how the message stays identical from the first ad to the renewal call.
 
+If the company name itself is what is changing, the framework stops being a document and becomes a migration, and [the T-90 rebrand countdown](/blog/rebranding-rollout-plan/) covers the systems inventory, comms tiers and redirects that have to move with the new language.
+
 ## Conclusion: The Framework Is the Template, Not Just the Pillars
 
 A brand messaging framework is five layers, not three pillars on a slide. Audience insight feeds a value proposition, the value prop is carried by pillars, the pillars are backed by proof, and the whole thing only becomes usable once you add the two tools most guides skip: a messaging matrix that flexes the message across audiences, and a messaging hierarchy that ranks what to lead with.

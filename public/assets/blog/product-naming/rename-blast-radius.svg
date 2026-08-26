@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 980" width="1400" height="980">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="cardShadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="980" rx="24" fill="url(#bg2)"/>
+
+  <text x="60" y="68" font-family="Segoe UI, system-ui, sans-serif" font-size="40" font-weight="700" fill="#f0f6fc">Rename Blast Radius</text>
+  <text x="60" y="104" font-family="Segoe UI, system-ui, sans-serif" font-size="24" fill="#9ca3af">Eight surfaces a product rename touches. Count the ones already live, then price the switch.</text>
+
+  <rect x="60" y="140" width="620" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow2)"/>
+  <text x="84" y="186" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" fill="#fb923c">01</text>
+  <text x="126" y="186" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Docs and help center</text>
+  <rect x="578" y="164" width="78" height="32" rx="8" fill="#2b1f14" stroke="#fb923c" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="590" y="186" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#fb923c">HIGH</text>
+  <text x="84" y="224" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Every article, screenshot and code sample that</text>
+  <text x="84" y="254" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">names the product. The long tail is the problem.</text>
+
+  <rect x="720" y="140" width="620" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow2)"/>
+  <text x="744" y="186" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" fill="#fb923c">02</text>
+  <text x="786" y="186" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">URLs and redirects</text>
+  <rect x="1238" y="164" width="78" height="32" rx="8" fill="#2b1f14" stroke="#fb923c" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="1250" y="186" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#fb923c">HIGH</text>
+  <text x="744" y="224" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Marketing pages, doc paths, changelog. Google</text>
+  <text x="744" y="254" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">says keep the redirects for at least a year.</text>
+
+  <rect x="60" y="310" width="620" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow2)"/>
+  <text x="84" y="356" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" fill="#f87171">03</text>
+  <text x="126" y="356" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">API and SDK references</text>
+  <rect x="532" y="334" width="124" height="32" rx="8" fill="#3a1a1c" stroke="#f87171" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="545" y="356" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#f87171">CRITICAL</text>
+  <text x="84" y="394" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Endpoint paths, method names, packages, env vars.</text>
+  <text x="84" y="424" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">You dual-ship both names or you break customers.</text>
+
+  <rect x="720" y="310" width="620" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow2)"/>
+  <text x="744" y="356" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" fill="#fb923c">04</text>
+  <text x="786" y="356" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">In-app strings</text>
+  <rect x="1238" y="334" width="78" height="32" rx="8" fill="#2b1f14" stroke="#fb923c" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="1250" y="356" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#fb923c">HIGH</text>
+  <text x="744" y="394" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Nav labels, empty states, tooltips, error copy,</text>
+  <text x="744" y="424" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">system emails, and every localization file.</text>
+
+  <rect x="60" y="480" width="620" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow2)"/>
+  <text x="84" y="526" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" fill="#60a5fa">05</text>
+  <text x="126" y="526" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Support macros</text>
+  <rect x="554" y="504" width="102" height="32" rx="8" fill="#16202e" stroke="#60a5fa" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="568" y="526" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#60a5fa">MEDIUM</text>
+  <text x="84" y="564" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Canned replies, help widget articles, chatbot</text>
+  <text x="84" y="594" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">intents, escalation runbooks, QA scripts.</text>
+
+  <rect x="720" y="480" width="620" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow2)"/>
+  <text x="744" y="526" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" fill="#60a5fa">06</text>
+  <text x="786" y="526" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Sales decks and collateral</text>
+  <rect x="1214" y="504" width="102" height="32" rx="8" fill="#16202e" stroke="#60a5fa" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="1228" y="526" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#60a5fa">MEDIUM</text>
+  <text x="744" y="564" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Pitch decks, one-pagers, battlecards, pricing</text>
+  <text x="744" y="594" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">sheets, RFP boilerplate and the demo script.</text>
+
+  <rect x="60" y="650" width="620" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow2)"/>
+  <text x="84" y="696" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" fill="#fb923c">07</text>
+  <text x="126" y="696" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Integration listings</text>
+  <rect x="578" y="674" width="78" height="32" rx="8" fill="#2b1f14" stroke="#fb923c" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="590" y="696" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#fb923c">HIGH</text>
+  <text x="84" y="734" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Partner directories, cloud marketplaces, app</text>
+  <text x="84" y="764" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">stores. Each one has its own review queue.</text>
+
+  <rect x="720" y="650" width="620" height="150" rx="16" fill="#151b23" stroke="#30363d" stroke-width="1.5" filter="url(#cardShadow2)"/>
+  <text x="744" y="696" font-family="Segoe UI, system-ui, sans-serif" font-size="22" font-weight="700" fill="#60a5fa">08</text>
+  <text x="786" y="696" font-family="Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#f0f6fc">Billing descriptors</text>
+  <rect x="1214" y="674" width="102" height="32" rx="8" fill="#16202e" stroke="#60a5fa" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="1228" y="696" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700" letter-spacing="0.06em" fill="#60a5fa">MEDIUM</text>
+  <text x="744" y="734" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Invoice line items, SKU names, order forms,</text>
+  <text x="744" y="764" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">contract exhibits and revenue reporting.</text>
+
+  <rect x="60" y="822" width="1280" height="110" rx="16" fill="#151b23" stroke="#5eead4" stroke-opacity="0.45" stroke-width="1.5" filter="url(#cardShadow2)"/>
+  <text x="84" y="866" font-family="Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#f0f6fc">Scoring this row</text>
+  <text x="84" y="902" font-family="Segoe UI, system-ui, sans-serif" font-size="21" fill="#c8cfd8">Score 3 if none of these surfaces are live yet. Score 0 if six or more already are. Weight x3.</text>
+</svg>

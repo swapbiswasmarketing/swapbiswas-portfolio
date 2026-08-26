@@ -119,6 +119,8 @@ A demand gen campaign without PMM input might get clicks but miss the mark on me
 
 **The relationship:** Brand marketing provides the umbrella identity. Product marketing operates within it, translating brand values into specific product narratives.
 
+The boundary that causes the most day-to-day friction is not on this list at all. Once a company hires someone to market to the customers it already has, [who owns which deliverable between customer marketing and product marketing](/blog/customer-marketing-vs-product-marketing/) has to be settled deliberately rather than by whoever has capacity.
+
 ### The Quick Comparison
 
 | Dimension | Product Marketing | Content Marketing | Demand Gen | Brand Marketing |

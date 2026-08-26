@@ -1,0 +1,947 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+
+const title = "Free Campaign Name and UTM Builder | Four-Field Naming Convention";
+const description = "Build a campaign name and its matching UTM string from one set of fields. Validates per-platform character limits and forbidden characters. Free, no signup.";
+
+const faqs = [
+	{
+		question: "What does this campaign name generator do?",
+		answer: "It takes four fields - tier, motion, offer and period - and emits both the campaign name you paste into the ad platform and the matching UTM string for the landing page. Because both come from the same inputs, the two can never drift apart.",
+	},
+	{
+		question: "Why only four fields?",
+		answer: "A field belongs in a campaign name only if no tool you already own gives you that column. Geo, objective, audience and format all exist as native columns or as utm_content, so encoding them again multiplies your unique campaign names for no reporting gain.",
+	},
+	{
+		question: "Which character limits does the builder check?",
+		answer: "Google Ads at 256 characters, Microsoft Advertising at 128, Amazon Ads at 128 for sellers and 116 for vendors, and a 100-character working ceiling for analytics event parameter values, which is usually the tightest cap in the chain.",
+	},
+	{
+		question: "What characters are forbidden in a campaign name?",
+		answer: "Anything outside a-z, 0-9, underscore and hyphen. Spaces, ampersands, hashes, percent signs, plus signs, equals signs, question marks and slashes all carry structural meaning in a URL query string and either percent-encode into a second version of the same campaign or break the parameter outright.",
+	},
+	{
+		question: "Can I change the allowed values for each field?",
+		answer: "Yes. Every field accepts a custom value as well as the presets. Type your own motion or offer and the builder validates it against the same character rules, then includes it in the schema export.",
+	},
+	{
+		question: "What is the schema export for?",
+		answer: "It downloads your four fields and their allowed values as a JSON file. Attach it to an agency statement of work or drop it in your marketing ops repo so the convention is validated rather than interpreted.",
+	},
+	{
+		question: "Does the builder store my data?",
+		answer: "No. Everything runs in your browser. Your inputs are saved to your own device via localStorage so they survive a refresh, and nothing is sent anywhere.",
+	},
+	{
+		question: "Why does my medium value trigger a warning?",
+		answer: "Analytics matches medium against fixed patterns to assign a default channel group. The paid channels need a medium matching cp, ppc, retargeting or paid. Organic Social needs one of social, social-network, social-media or sm. Display needs display, banner, expandable, interstitial or cpm, and Referral needs referral, app or link. A medium outside every documented list lands in Unassigned unless you build a custom channel group.",
+	},
+];
+
+const softwareSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebApplication",
+	"name": "Campaign Name and UTM Builder",
+	"description": description,
+	"url": "https://swapbiswas.com/tools/campaign-name-generator/",
+	"applicationCategory": "BusinessApplication",
+	"operatingSystem": "Any",
+	"browserRequirements": "Requires JavaScript",
+	"offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+	"creator": { "@type": "Person", "name": "Swapnil Biswas", "url": "https://swapbiswas.com/" }
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqs.map((faq) => ({
+		"@type": "Question",
+		"name": faq.question,
+		"acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+	}))
+};
+
+const tiers = ["t1", "t2", "t3"];
+const motions = ["launch", "demandgen", "brand", "nurture", "event", "abm"];
+const offers = ["demo", "trial", "webinar", "report", "pricing", "waitlist"];
+const mediums = ["cpc", "paid-social", "email", "social", "display", "referral", "affiliate"];
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	breadcrumbs={[{ name: "Tools", url: "/tools/" }, { name: "Campaign Name and UTM Builder" }]}
+>
+	<script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} slot="head" />
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+	<div class="stack gap-20">
+		<main class="wrapper tool-page">
+			<Hero
+				title="Campaign Name and UTM Builder"
+				tagline="Four fields in. A campaign name and its matching UTM string out. Validated against real platform character limits before you copy. No signup."
+				align="start"
+			/>
+
+			<div class="tool-grid">
+				<!-- FORM -->
+				<section class="form-panel" aria-label="Campaign naming inputs">
+					<form id="cnb-form" autocomplete="off">
+						<fieldset>
+							<legend>1. The four fields</legend>
+							<div class="field-row">
+								<div class="field">
+									<label for="cnb-tier">Tier</label>
+									<input type="text" id="cnb-tier" list="cnb-tiers" maxlength="60" placeholder="t1" />
+									<datalist id="cnb-tiers">
+										{tiers.map((t) => <option value={t} />)}
+									</datalist>
+								</div>
+								<div class="field">
+									<label for="cnb-motion">Motion</label>
+									<input type="text" id="cnb-motion" list="cnb-motions" maxlength="60" placeholder="launch" />
+									<datalist id="cnb-motions">
+										{motions.map((m) => <option value={m} />)}
+									</datalist>
+								</div>
+							</div>
+							<div class="field-row">
+								<div class="field">
+									<label for="cnb-offer">Offer</label>
+									<input type="text" id="cnb-offer" list="cnb-offers" maxlength="60" placeholder="webinar" />
+									<datalist id="cnb-offers">
+										{offers.map((o) => <option value={o} />)}
+									</datalist>
+								</div>
+								<div class="field">
+									<label for="cnb-period">Period (YYYY-MM)</label>
+									<input type="text" id="cnb-period" maxlength="7" placeholder="2026-09" />
+								</div>
+							</div>
+							<p class="field-hint">Four fields, joined by underscores, lowercase only. Anything else about this campaign already exists as a column you can filter on.</p>
+						</fieldset>
+
+						<fieldset>
+							<legend>2. The link</legend>
+							<div class="field">
+								<label for="cnb-url">Landing page URL</label>
+								<input type="text" id="cnb-url" maxlength="220" placeholder="https://example.com/webinar" />
+							</div>
+							<div class="field-row">
+								<div class="field">
+									<label for="cnb-source">utm_source</label>
+									<input type="text" id="cnb-source" maxlength="40" placeholder="linkedin" />
+								</div>
+								<div class="field">
+									<label for="cnb-medium">utm_medium</label>
+									<input type="text" id="cnb-medium" list="cnb-mediums" maxlength="40" placeholder="paid-social" />
+									<datalist id="cnb-mediums">
+										{mediums.map((m) => <option value={m} />)}
+									</datalist>
+								</div>
+							</div>
+							<div class="field-row">
+								<div class="field">
+									<label for="cnb-content">utm_content (optional)</label>
+									<input type="text" id="cnb-content" maxlength="60" placeholder="carousel-cfo" />
+								</div>
+								<div class="field">
+									<label for="cnb-id">utm_id (optional)</label>
+									<input type="text" id="cnb-id" maxlength="60" placeholder="21987654321" />
+								</div>
+							</div>
+							<div class="field">
+								<label for="cnb-term">utm_term (paid search only, optional)</label>
+								<input type="text" id="cnb-term" maxlength="60" placeholder="campaign-naming-convention" />
+							</div>
+						</fieldset>
+
+						<div class="form-actions">
+							<details class="sample-picker">
+								<summary class="btn-secondary">Load sample <span class="sample-caret">v</span></summary>
+								<ul class="sample-options">
+									<li><button type="button" class="sample-option" data-sample="launch">T1 launch, paid social</button></li>
+									<li><button type="button" class="sample-option" data-sample="search">T1 demand gen, paid search</button></li>
+									<li><button type="button" class="sample-option" data-sample="email">T2 nurture, lifecycle email</button></li>
+								</ul>
+							</details>
+							<button type="button" class="btn-secondary" id="cnb-reset">Reset</button>
+							<button type="button" class="btn-secondary btn-danger" id="cnb-clear">Clear saved</button>
+						</div>
+					</form>
+				</section>
+
+				<!-- OUTPUT -->
+				<section class="preview-panel" aria-label="Generated strings">
+					<div class="preview-sticky">
+						<div class="preview-controls">
+							<p class="preview-heading">Output</p>
+							<button type="button" class="btn-secondary" id="cnb-schema">Export field schema</button>
+						</div>
+
+						<div class="out-card">
+							<div class="out-head">
+								<span class="out-label">Campaign name</span>
+								<span class="out-count" id="cnb-name-count">0 chars</span>
+							</div>
+							<code class="out-string" id="cnb-name">t1_launch_webinar_2026-09</code>
+							<button type="button" class="btn-primary out-copy" data-copy="cnb-name">Copy campaign name</button>
+						</div>
+
+						<div class="out-card">
+							<div class="out-head">
+								<span class="out-label">Tagged URL</span>
+								<span class="out-count" id="cnb-url-count">0 chars</span>
+							</div>
+							<code class="out-string out-string-wrap" id="cnb-full">https://example.com/webinar?utm_source=linkedin</code>
+							<button type="button" class="btn-primary out-copy" data-copy="cnb-full">Copy tagged URL</button>
+						</div>
+
+						<div class="out-card">
+							<div class="out-head">
+								<span class="out-label">Validation</span>
+								<span class="out-count" id="cnb-verdict">Waiting</span>
+							</div>
+							<ul class="check-list" id="cnb-checks"></ul>
+						</div>
+
+						<p class="autosave-status" id="cnb-status" aria-live="polite"><span id="cnb-saved"></span><span class="fill-counter" id="cnb-counter"></span></p>
+					</div>
+				</section>
+			</div>
+
+			<section class="tool-cta-strip">
+				<div class="cta-text">
+					<strong>Want more PMM tools and templates?</strong>
+					<p>Join the newsletter. Positioning, launch playbooks, persona updates - no spam, just value.</p>
+				</div>
+				<form class="cta-form" id="tool-newsletter-form">
+					<input type="email" name="email_address" placeholder="you@company.com" required autocomplete="email" aria-label="Email address" />
+					<button type="submit">Subscribe</button>
+				</form>
+				<p class="cta-status" id="tool-newsletter-status" aria-live="polite"></p>
+			</section>
+
+			<section class="seo-content">
+				<h2>How to use the campaign name and UTM builder</h2>
+				<ol class="how-to">
+					<li><strong>Set the tier first.</strong> Tier is the field no ad platform, analytics tool or BI table stores for you. Without it you can never compare T1 launch spend against T3 spend at the end of the year.</li>
+					<li><strong>Pick the motion, not the objective.</strong> The bidding objective is already a setting you can filter on. The go-to-market motion - launch, demand gen, brand, nurture, event, ABM - is not stored anywhere else.</li>
+					<li><strong>Name the offer, not the funnel stage.</strong> Funnel stage is derivable from the offer with a two-column lookup. Encoding both means two fields carrying one fact, and they will disagree eventually.</li>
+					<li><strong>Use the start month as the period.</strong> A YYYY-MM period makes an alphabetical sort a chronological sort, and it separates the same offer run twice in one year.</li>
+					<li><strong>Leave channel out of the name.</strong> utm_source and utm_medium already carry it. Keeping it out means the same launch on search, social and email shares one campaign value and rolls up as a single row.</li>
+					<li><strong>Read the validation panel before you copy.</strong> It flags forbidden characters, uppercase, wrong field counts, character limits per platform, and medium values that will not match a default channel group.</li>
+					<li><strong>Export the schema once, then share it.</strong> The JSON export is the artifact you attach to an agency statement of work so the convention gets validated rather than interpreted.</li>
+				</ol>
+
+				<h2>Why the name and the UTM have to come from one input</h2>
+				<p>Google Ads can auto-inject a campaign ID into a tracking template, but there is no ValueTrack parameter that inserts the campaign name. So the ID is machine-generated and the name is hand-typed, which is the structural reason the campaign name in the platform and the utm_campaign value on the landing page slowly stop describing the same thing.</p>
+				<p>Generating both from one field set removes the typing step entirely. That is the whole design of this builder, and the full argument for the four fields, the per-platform limits and the retrofit plan lives in the companion guide:</p>
+				<p><a href="/blog/campaign-naming-convention/" class="seo-link">Read: Campaign Naming Convention: A Four-Field System You Can Retrofit</a></p>
+
+				<h2>Related templates and guides</h2>
+				<ul class="related-links">
+					<li><a href="/blog/campaign-naming-convention/">Campaign Naming Convention: A Four-Field System</a></li>
+					<li><a href="/blog/what-is-cross-network-in-google-analytics/">What Cross-Network Means in Google Analytics</a></li>
+					<li><a href="/blog/what-are-brand-guidelines/">What Are Brand Guidelines?</a></li>
+					<li><a href="/blog/product-launch-checklist/">Product Launch Checklist</a></li>
+					<li><a href="/blog/product-marketing-metrics/">Product Marketing Metrics That Matter</a></li>
+					<li><a href="/tools/product-launch-plan-template/">Free Product Launch Plan Template</a></li>
+				</ul>
+
+				<h2>Frequently asked questions</h2>
+				<div class="faq-list">
+					{faqs.map((faq) => (
+						<details class="faq-item">
+							<summary>{faq.question}</summary>
+							<p>{faq.answer}</p>
+						</details>
+					))}
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<script>
+	const STATE_KEY = 'tool-state-campaign-name-generator';
+
+	const FIELD_IDS = ['cnb-tier', 'cnb-motion', 'cnb-offer', 'cnb-period'];
+	const UTM_IDS = ['cnb-url', 'cnb-source', 'cnb-medium', 'cnb-content', 'cnb-id', 'cnb-term'];
+	const ALL_IDS = FIELD_IDS.concat(UTM_IDS);
+
+	const PLATFORM_LIMITS = [
+		{ name: 'Google Ads', limit: 256 },
+		{ name: 'Microsoft Advertising', limit: 128 },
+		{ name: 'Amazon Ads (seller)', limit: 128 },
+		{ name: 'Amazon Ads (vendor)', limit: 116 },
+		{ name: 'Analytics parameter value', limit: 100 },
+	];
+
+	const FORBIDDEN = [
+		{ ch: ' ', label: 'space', note: 'encodes to %20 or +, so one campaign becomes two rows' },
+		{ ch: '&', label: 'ampersand', note: 'ends the parameter and creates a stray one' },
+		{ ch: '#', label: 'hash', note: 'starts the fragment, so nothing after it reaches the server' },
+		{ ch: '%', label: 'percent', note: 'is the escape character itself' },
+		{ ch: '+', label: 'plus', note: 'decodes back to a space' },
+		{ ch: '=', label: 'equals', note: 'separates a key from its value' },
+		{ ch: '?', label: 'question mark', note: 'starts the query string' },
+		{ ch: '/', label: 'slash', note: 'is a path separator' },
+	];
+
+	const PAID_MEDIUM = /^(.*cp.*|ppc|retargeting|paid.*)$/;
+	const SOCIAL_MEDIUMS = ['social', 'social-network', 'social-media', 'sm', 'social network', 'social media'];
+	const EMAIL_MEDIUMS = ['email', 'e-mail', 'e_mail', 'e mail'];
+	const DISPLAY_MEDIUMS = ['display', 'banner', 'expandable', 'interstitial', 'cpm'];
+	const REFERRAL_MEDIUMS = ['referral', 'app', 'link'];
+	const AFFILIATE_MEDIUMS = ['affiliate'];
+	const OTHER_KNOWN_MEDIUMS = ['sms', 'audio', 'push', 'mobile', 'notification'];
+
+	const SAMPLES: Record<string, Record<string, string>> = {
+		launch: {
+			'cnb-tier': 't1', 'cnb-motion': 'launch', 'cnb-offer': 'webinar', 'cnb-period': '2026-09',
+			'cnb-url': 'https://example.com/webinar', 'cnb-source': 'linkedin', 'cnb-medium': 'paid-social',
+			'cnb-content': 'carousel-cfo', 'cnb-id': '21987654321', 'cnb-term': '',
+		},
+		search: {
+			'cnb-tier': 't1', 'cnb-motion': 'demandgen', 'cnb-offer': 'demo', 'cnb-period': '2026-09',
+			'cnb-url': 'https://example.com/demo', 'cnb-source': 'google', 'cnb-medium': 'cpc',
+			'cnb-content': '', 'cnb-id': '', 'cnb-term': 'campaign-naming-convention',
+		},
+		email: {
+			'cnb-tier': 't2', 'cnb-motion': 'nurture', 'cnb-offer': 'report', 'cnb-period': '2026-09',
+			'cnb-url': 'https://example.com/benchmark-report', 'cnb-source': 'lifecycle', 'cnb-medium': 'email',
+			'cnb-content': 'send-2', 'cnb-id': '', 'cnb-term': '',
+		},
+	};
+
+	function initCampaignNameBuilder() {
+		const form = document.getElementById('cnb-form') as HTMLFormElement | null;
+		if (!form || (form as any)._initialized) return;
+		(form as any)._initialized = true;
+
+		const nameEl = document.getElementById('cnb-name');
+		const fullEl = document.getElementById('cnb-full');
+		const nameCount = document.getElementById('cnb-name-count');
+		const urlCount = document.getElementById('cnb-url-count');
+		const verdictEl = document.getElementById('cnb-verdict');
+		const checksEl = document.getElementById('cnb-checks');
+		const savedEl = document.getElementById('cnb-saved');
+		const counterEl = document.getElementById('cnb-counter');
+
+		function val(id: string): string {
+			const el = document.getElementById(id) as HTMLInputElement | null;
+			return (el?.value || '').trim();
+		}
+
+		function buildName(): string {
+			return FIELD_IDS.map((id) => val(id)).filter((v) => v.length > 0).join('_');
+		}
+
+		function buildUrl(name: string): string {
+			const raw = val('cnb-url') || 'https://example.com/';
+			const hashAt = raw.indexOf('#');
+			const base = hashAt === -1 ? raw : raw.slice(0, hashAt);
+			const hash = hashAt === -1 ? '' : raw.slice(hashAt);
+			const parts: string[] = [];
+			// Keep ValueTrack braces literal - Google Ads does not substitute percent-encoded {campaignid}/{keyword}
+			const push = (k: string, v: string) => { if (v) parts.push(k + '=' + encodeURIComponent(v).replace(/%7B/g, '{').replace(/%7D/g, '}')); };
+			push('utm_source', val('cnb-source'));
+			push('utm_medium', val('cnb-medium'));
+			push('utm_campaign', name);
+			push('utm_content', val('cnb-content'));
+			push('utm_id', val('cnb-id'));
+			push('utm_term', val('cnb-term'));
+			if (!parts.length) return raw;
+			return base + (base.indexOf('?') === -1 ? '?' : '&') + parts.join('&') + hash;
+		}
+
+		function addCheck(list: HTMLElement, state: string, text: string) {
+			const li = document.createElement('li');
+			li.className = 'check check-' + state;
+			const dot = document.createElement('span');
+			dot.className = 'check-dot';
+			dot.textContent = state === 'ok' ? 'OK' : (state === 'warn' ? '!' : 'X');
+			const span = document.createElement('span');
+			span.textContent = text;
+			li.appendChild(dot);
+			li.appendChild(span);
+			list.appendChild(li);
+		}
+
+		function validate(name: string) {
+			if (!checksEl) return;
+			checksEl.textContent = '';
+			let errors = 0;
+			let warnings = 0;
+
+			const filled = FIELD_IDS.filter((id) => val(id).length > 0).length;
+			if (filled < 4) {
+				addCheck(checksEl, 'warn', 'Fill all four fields. ' + filled + ' of 4 done.');
+				warnings++;
+			} else if (FIELD_IDS.some((id) => val(id).indexOf('_') !== -1)) {
+				addCheck(checksEl, 'bad', 'A field value contains an underscore, so this name splits into ' + name.split('_').length + ' parts instead of 4. The underscore is the field separator. Use a hyphen inside a value.');
+				errors++;
+			} else {
+				addCheck(checksEl, 'ok', 'Four fields, three underscores. Parses cleanly.');
+			}
+
+			const badChars = FORBIDDEN.filter((f) => name.indexOf(f.ch) !== -1);
+			if (badChars.length) {
+				badChars.forEach((f) => {
+					addCheck(checksEl, 'bad', 'Remove the ' + f.label + ': it ' + f.note + '.');
+				});
+				errors += badChars.length;
+			} else if (name.length) {
+				addCheck(checksEl, 'ok', 'No reserved URL characters in the name.');
+			}
+
+			const stray = name.replace(/[a-z0-9_-]/g, '');
+			const strayNoKnown = stray.split('').filter((c) => !FORBIDDEN.some((f) => f.ch === c));
+			if (strayNoKnown.length) {
+				addCheck(checksEl, 'bad', 'Characters outside a-z, 0-9, _ and - : ' + strayNoKnown.join(' '));
+				errors++;
+			}
+
+			if (/[A-Z]/.test(name)) {
+				addCheck(checksEl, 'bad', 'Uppercase found. Analytics splits case into separate rows and Microsoft Advertising treats it as a duplicate name.');
+				errors++;
+			}
+
+			if (name.toLowerCase().indexOf('cross-network') !== -1) {
+				addCheck(checksEl, 'bad', 'The token "cross-network" reclassifies manual traffic into the Cross-network channel. Rename it.');
+				errors++;
+			}
+
+			const period = val('cnb-period');
+			if (period && !/^\d{4}-\d{2}$/.test(period)) {
+				addCheck(checksEl, 'warn', 'Period should be YYYY-MM so an alphabetical sort is also a date sort.');
+				warnings++;
+			}
+
+			const landing = val('cnb-url');
+			if (!landing) {
+				addCheck(checksEl, 'warn', 'No landing page URL. The tagged URL below is using the example.com placeholder.');
+				warnings++;
+			}
+
+			PLATFORM_LIMITS.forEach((p) => {
+				if (name.length > p.limit) {
+					addCheck(checksEl, 'bad', p.name + ' caps at ' + p.limit + ' characters. Yours is ' + name.length + '.');
+					errors++;
+				}
+			});
+			if (name.length && name.length <= 100) {
+				addCheck(checksEl, 'ok', name.length + ' characters. Inside every published limit, including the 100-character analytics ceiling.');
+			}
+
+			const medium = val('cnb-medium').toLowerCase();
+			if (medium) {
+				if (DISPLAY_MEDIUMS.indexOf(medium) !== -1) {
+					addCheck(checksEl, 'ok', 'Medium "' + medium + '" matches Display.');
+				} else if (REFERRAL_MEDIUMS.indexOf(medium) !== -1) {
+					addCheck(checksEl, 'ok', 'Medium "' + medium + '" matches Referral.');
+				} else if (AFFILIATE_MEDIUMS.indexOf(medium) !== -1) {
+					addCheck(checksEl, 'ok', 'Medium "' + medium + '" matches Affiliates.');
+				} else if (OTHER_KNOWN_MEDIUMS.indexOf(medium) !== -1) {
+					addCheck(checksEl, 'ok', 'Medium "' + medium + '" matches a documented default channel group.');
+				} else if (PAID_MEDIUM.test(medium)) {
+					addCheck(checksEl, 'ok', 'Medium "' + medium + '" matches the paid channel pattern.');
+				} else if (SOCIAL_MEDIUMS.indexOf(medium) !== -1) {
+					addCheck(checksEl, 'ok', 'Medium "' + medium + '" matches Organic Social.');
+				} else if (EMAIL_MEDIUMS.indexOf(medium) !== -1) {
+					addCheck(checksEl, 'ok', 'Medium "' + medium + '" matches Email.');
+				} else {
+					addCheck(checksEl, 'warn', 'Medium "' + medium + '" matches no default channel group. This traffic lands in Unassigned unless you build a custom group.');
+					warnings++;
+				}
+			}
+
+			if (verdictEl) {
+				if (errors > 0) {
+					verdictEl.textContent = errors + (errors === 1 ? ' problem' : ' problems');
+					verdictEl.className = 'out-count verdict-bad';
+				} else if (warnings > 0) {
+					verdictEl.textContent = warnings + (warnings === 1 ? ' warning' : ' warnings');
+					verdictEl.className = 'out-count verdict-warn';
+				} else {
+					verdictEl.textContent = 'Ready to copy';
+					verdictEl.className = 'out-count verdict-ok';
+				}
+			}
+		}
+
+		function update() {
+			const name = buildName();
+			const url = buildUrl(name);
+			if (nameEl) nameEl.textContent = name || 'tier_motion_offer_period';
+			if (fullEl) fullEl.textContent = url;
+			if (nameCount) nameCount.textContent = name.length + ' chars';
+			if (urlCount) urlCount.textContent = url.length + ' chars';
+			validate(name);
+			if (counterEl) {
+				const filled = ALL_IDS.filter((id) => val(id).length > 0).length;
+				counterEl.textContent = filled + '/' + ALL_IDS.length + ' fields filled' + (filled === ALL_IDS.length ? ' (complete)' : '');
+			}
+		}
+
+		function saveState() {
+			try {
+				const fields: Record<string, string> = {};
+				ALL_IDS.forEach((id) => { const v = val(id); if (v) fields[id] = v; });
+				localStorage.setItem(STATE_KEY, JSON.stringify({ fields, savedAt: Date.now() }));
+				if (savedEl) savedEl.textContent = 'Saved to this browser';
+			} catch (e) {}
+		}
+
+		function loadState(): boolean {
+			try {
+				const raw = localStorage.getItem(STATE_KEY);
+				if (!raw) return false;
+				const saved = JSON.parse(raw);
+				Object.keys(saved.fields || {}).forEach((id) => {
+					const el = document.getElementById(id) as HTMLInputElement | null;
+					if (el && typeof saved.fields[id] === 'string') el.value = saved.fields[id];
+				});
+				if (savedEl) savedEl.textContent = 'Restored from this browser';
+				return true;
+			} catch (e) { return false; }
+		}
+
+		function loadSample(key: string) {
+			const sample = SAMPLES[key];
+			if (!sample) return;
+			ALL_IDS.forEach((id) => {
+				const el = document.getElementById(id) as HTMLInputElement | null;
+				if (el) el.value = sample[id] || '';
+			});
+			update();
+			saveState();
+		}
+
+		let saveTimer: any;
+		form.addEventListener('input', () => {
+			update();
+			clearTimeout(saveTimer);
+			saveTimer = setTimeout(saveState, 400);
+		});
+
+		form.querySelectorAll('.sample-option').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				loadSample((btn as HTMLElement).dataset.sample || '');
+				const picker = btn.closest('details');
+				if (picker) picker.removeAttribute('open');
+			});
+		});
+
+		document.getElementById('cnb-reset')?.addEventListener('click', () => {
+			ALL_IDS.forEach((id) => {
+				const el = document.getElementById(id) as HTMLInputElement | null;
+				if (el) el.value = '';
+			});
+			update();
+			saveState();
+		});
+
+		document.getElementById('cnb-clear')?.addEventListener('click', () => {
+			if (!confirm('Clear the saved copy in this browser?')) return;
+			try { localStorage.removeItem(STATE_KEY); } catch (e) {}
+			ALL_IDS.forEach((id) => {
+				const el = document.getElementById(id) as HTMLInputElement | null;
+				if (el) el.value = '';
+			});
+			if (savedEl) savedEl.textContent = 'Cleared';
+			update();
+		});
+
+		document.querySelectorAll('.out-copy').forEach((btn) => {
+			const label = btn.textContent || 'Copy';
+			btn.addEventListener('click', async () => {
+				const targetId = (btn as HTMLElement).dataset.copy || '';
+				const target = document.getElementById(targetId);
+				const text = target?.textContent || '';
+				const placeholderUrl = targetId === 'cnb-full' && !val('cnb-url');
+				if (!text || text === 'tier_motion_offer_period' || text === 'https://example.com/' || placeholderUrl) {
+					btn.textContent = placeholderUrl ? 'Add a URL first' : 'Nothing to copy';
+					setTimeout(() => { btn.textContent = label; }, 1600);
+					return;
+				}
+				try {
+					await navigator.clipboard.writeText(text);
+					btn.textContent = 'Copied';
+					(window as any).dataLayer = (window as any).dataLayer || [];
+					(window as any).dataLayer.push({ event: 'tool_copy', tool_name: 'campaign-name-generator', tool_output: targetId });
+				} catch (e) {
+					btn.textContent = 'Copy failed';
+				}
+				setTimeout(() => { btn.textContent = label; }, 1600);
+			});
+		});
+
+		document.getElementById('cnb-schema')?.addEventListener('click', () => {
+			const custom = (id: string, presets: string[]) => {
+				const v = val(id);
+				if (!v || !/^[a-z0-9-]+$/.test(v)) return presets;
+				return presets.indexOf(v) === -1 ? presets.concat([v]) : presets;
+			};
+			const schema = {
+				schema_version: '1.0',
+				delimiter: '_',
+				case: 'lower',
+				allowed_chars: 'a-z0-9_-',
+				fields: [
+					{ name: 'tier', values: custom('cnb-tier', ['t1', 't2', 't3']) },
+					{ name: 'motion', values: custom('cnb-motion', ['launch', 'demandgen', 'brand', 'nurture', 'event', 'abm']) },
+					{ name: 'offer', values: custom('cnb-offer', ['demo', 'trial', 'webinar', 'report', 'pricing', 'waitlist']) },
+					{ name: 'period', format: 'YYYY-MM' },
+				],
+				platform_limits: PLATFORM_LIMITS,
+			};
+			const blob = new Blob([JSON.stringify(schema, null, 2)], { type: 'application/json' });
+			const link = document.createElement('a');
+			link.href = URL.createObjectURL(blob);
+			link.download = 'campaign-naming-schema.json';
+			link.click();
+			setTimeout(() => URL.revokeObjectURL(link.href), 2000);
+			(window as any).dataLayer = (window as any).dataLayer || [];
+			(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'campaign-name-generator', tool_output: 'schema_json' });
+		});
+
+		if (!loadState()) loadSample('launch');
+		update();
+	}
+
+	function initToolNewsletter() {
+		const form = document.getElementById('tool-newsletter-form') as HTMLFormElement | null;
+		const status = document.getElementById('tool-newsletter-status');
+		if (!form || (form as any)._initialized) return;
+		(form as any)._initialized = true;
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const emailInput = form.querySelector('input[name="email_address"]') as HTMLInputElement | null;
+			const email = emailInput?.value || '';
+			const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+			if (btn) { btn.textContent = 'Subscribing...'; btn.disabled = true; }
+			const formData = new FormData();
+			formData.append('email_address', email);
+			fetch('https://app.kit.com/forms/9145889/subscriptions', {
+				method: 'POST',
+				body: formData,
+				headers: { 'Accept': 'application/json' }
+			}).then((res) => {
+				if (!res.ok) throw new Error('fail');
+				if (status) { status.textContent = 'Subscribed!'; status.style.color = 'var(--accent-regular)'; }
+				form.reset();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'newsletter_signup', signup_location: 'tool_campaign_name' });
+			}).catch(() => {
+				if (status) { status.textContent = 'Something went wrong.'; status.style.color = '#ca7879'; }
+			}).finally(() => {
+				if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
+			});
+		});
+	}
+
+	initCampaignNameBuilder();
+	initToolNewsletter();
+	document.addEventListener('astro:page-load', () => {
+		initCampaignNameBuilder();
+		initToolNewsletter();
+	});
+</script>
+
+<style>
+	.tool-page { display: flex; flex-direction: column; gap: 3.5rem; }
+	.tool-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+
+	@media (min-width: 64em) {
+		.tool-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; }
+		.preview-panel { position: sticky; top: 1.5rem; align-self: start; }
+	}
+
+	.preview-panel { min-width: 0; }
+	.preview-sticky { display: flex; flex-direction: column; gap: 1rem; }
+
+	.form-panel {
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 1.5rem;
+	}
+	#cnb-form fieldset { border: none; padding: 0; margin: 0 0 1.75rem; }
+	#cnb-form legend {
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		margin-bottom: 0.75rem;
+		padding: 0;
+		width: 100%;
+	}
+	.field { margin-bottom: 0.75rem; }
+	.field-row { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+	@media (min-width: 30em) { .field-row { grid-template-columns: 1fr 1fr; } }
+	.field label {
+		display: block;
+		margin-bottom: 0.35rem;
+		color: var(--gray-300);
+		font-size: var(--text-xs);
+		font-weight: 500;
+	}
+	#cnb-form input[type="text"] {
+		width: 100%;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		transition: border-color 0.15s ease;
+	}
+	#cnb-form input[type="text"]:focus { outline: none; border-color: var(--accent-regular); }
+	.field-hint { margin: 0.5rem 0 0; color: var(--gray-400); font-size: var(--text-xs); line-height: 1.5; }
+
+	.form-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+	.btn-secondary {
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 999rem;
+		background: transparent;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+	.btn-secondary:hover { background: var(--accent-subtle-overlay); color: var(--gray-0); }
+	.btn-danger:hover {
+		background: rgba(239, 68, 68, 0.12);
+		color: #f87171;
+		border-color: rgba(239, 68, 68, 0.3);
+	}
+
+	.sample-picker { position: relative; display: inline-block; }
+	.sample-picker > summary { list-style: none; }
+	.sample-picker > summary::-webkit-details-marker { display: none; }
+	.sample-caret { display: inline-block; margin-left: 0.25rem; font-size: 0.75em; }
+	.sample-options {
+		position: absolute;
+		top: calc(100% + 0.25rem);
+		left: 0;
+		margin: 0;
+		padding: 0.25rem;
+		background: var(--gray-999);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		list-style: none;
+		z-index: 20;
+		min-width: 220px;
+		box-shadow: var(--shadow-md);
+	}
+	.sample-options li { display: block; }
+	.sample-option {
+		display: block;
+		width: 100%;
+		text-align: left;
+		padding: 0.5rem 0.75rem;
+		background: transparent;
+		border: none;
+		color: var(--gray-200);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		cursor: pointer;
+		border-radius: 0.35rem;
+	}
+	.sample-option:hover { background: var(--accent-subtle-overlay); color: var(--gray-0); }
+
+	.preview-controls {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	.preview-heading { font-size: var(--text-md); color: var(--gray-200); margin: 0; }
+
+	.out-card {
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		padding: 1.25rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.85rem;
+	}
+	.out-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+	.out-label {
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-sm);
+		color: var(--gray-0);
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+	.out-count { font-size: var(--text-xs); color: var(--gray-400); font-variant-numeric: tabular-nums; }
+	.verdict-ok { color: #5eead4; }
+	.verdict-warn { color: #fb923c; }
+	.verdict-bad { color: #f87171; }
+
+	.out-string {
+		display: block;
+		padding: 0.85rem 1rem;
+		background: #0d1117;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		color: #5eead4;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: 0.95rem;
+		line-height: 1.55;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+	.out-string-wrap { white-space: normal; word-break: break-all; overflow-x: visible; }
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 999rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		cursor: pointer;
+		align-self: flex-start;
+		transition: box-shadow 0.15s ease, transform 0.15s ease;
+	}
+	.btn-primary:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+
+	.check-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+	.check { display: flex; gap: 0.65rem; align-items: flex-start; font-size: var(--text-sm); line-height: 1.5; color: var(--gray-200); }
+	.check-dot {
+		flex-shrink: 0;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 1.6rem;
+		height: 1.35rem;
+		padding: 0 0.35rem;
+		border-radius: 0.35rem;
+		font-family: var(--font-brand);
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+	}
+	.check-ok .check-dot { background: rgba(94, 234, 212, 0.15); color: #5eead4; }
+	.check-warn .check-dot { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
+	.check-bad .check-dot { background: rgba(248, 113, 113, 0.15); color: #f87171; }
+
+	.autosave-status {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		margin: 0;
+		min-height: 1.1rem;
+		font-size: var(--text-xs);
+		color: var(--gray-400);
+	}
+	.fill-counter { font-variant-numeric: tabular-nums; }
+
+	.tool-cta-strip {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		padding: 1.75rem;
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		align-items: center;
+	}
+	@media (min-width: 50em) { .tool-cta-strip { grid-template-columns: 1fr auto; } }
+	.cta-text strong {
+		display: block;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+	}
+	.cta-text p { margin: 0.25rem 0 0; color: var(--gray-300); font-size: var(--text-sm); }
+	.cta-form { display: flex; gap: 0.5rem; }
+	.cta-form input {
+		flex: 1;
+		min-width: 0;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		background: var(--gray-999_40);
+		color: var(--gray-0);
+		font-size: var(--text-sm);
+	}
+	.cta-form button {
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: 0.5rem;
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		font-family: var(--font-brand);
+		font-weight: 600;
+		font-size: var(--text-sm);
+		cursor: pointer;
+		white-space: nowrap;
+	}
+	.cta-status { grid-column: 1 / -1; margin: 0; font-size: var(--text-sm); min-height: 1rem; }
+
+	.seo-content { max-width: 60rem; }
+	.seo-content h2 { font-size: var(--text-xl); color: var(--gray-0); margin: 2.5rem 0 1rem; }
+	.seo-content h2:first-child { margin-top: 0; }
+	.seo-content p, .seo-content li { color: var(--gray-200); font-size: var(--text-md); line-height: 1.65; }
+	.seo-content .how-to { padding-left: 1.25rem; }
+	.seo-content .how-to li { margin-bottom: 0.75rem; }
+	.seo-content a { color: var(--accent-regular); text-decoration: underline; text-underline-offset: 0.2em; }
+	.seo-link { display: inline-block; font-weight: 600; }
+	.related-links { list-style: none; padding: 0; }
+	.related-links li { margin-bottom: 0.5rem; }
+
+	.faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+	.faq-item {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.5rem;
+		padding: 1rem 1.25rem;
+		background: var(--gray-999_40);
+	}
+	.faq-item summary {
+		cursor: pointer;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		color: var(--gray-0);
+		font-size: var(--text-md);
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+	.faq-item summary::after {
+		content: '+';
+		color: var(--accent-regular);
+		font-size: 1.5rem;
+		font-weight: 400;
+		line-height: 1;
+	}
+	.faq-item[open] summary::after { content: '-'; }
+	.faq-item p { margin: 0.75rem 0 0; color: var(--gray-200); font-size: var(--text-sm); line-height: 1.6; }
+</style>
