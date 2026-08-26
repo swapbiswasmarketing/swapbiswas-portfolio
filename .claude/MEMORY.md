@@ -7,7 +7,7 @@
 - [User Role](user_role.md) - Senior Product Marketing Manager at LambdaTest (promoted Apr 2026); prior role + education history
 - [No em-dashes](feedback_no_emdash.md) - never use `—`; default to ` - ` or rewrite; applies to all output including chat
 - [Semrush research tooling](semrush_research_tooling.md) - `scripts/semrush.mjs` keyword-data fallback when Ahrefs MCP is out of units; broad-match vs exact-volume + KD gotcha
-- [Paper & Signal site revamp](project_paper_signal_redesign.md) - 2026-08-26 site-wide retheme on branch `redesign/paper-ink`: warm paper + ink + vermilion #b53b15, Bricolage/Inter/JetBrains Mono; spec in repo DESIGN.md; why blue/terracotta/Geist were rejected
+- [Paper & Signal site revamp](project_paper_signal_redesign.md) - 2026-08-26 site-wide retheme, LIVE on main since 2026-08-27 (f5415ee): warm paper + ink + vermilion #b53b15, Bricolage/Inter/JetBrains Mono; spec in repo DESIGN.md; why blue/terracotta/Geist were rejected
 - [Signal homepage redesign](redesign_signal_homepage.md) - in-progress award-targeted homepage revamp on branch `redesign/signal-homepage` (GSAP+Lenis, theme-aware, prototypes in `prototypes/`)
 - [Self-verify visual work](feedback_self_verify_visual.md) - for UI/design work, render & inspect the page myself (testmuai browser-cloud / kane-cli), don't rely on user screenshots
 - [No reskin duplicates](feedback_no_reskin_duplicates.md) - a "new" design must be an original layout + interaction mechanic, not a palette/font swap of an existing page (that reads as a duplicate)
@@ -23,7 +23,7 @@
 ## Project Overview
 - Astro 5 static site (portfolio + blog) at `c:\Website\portfolio`
 - Deployed at swapbiswas.com
-- Visual system: "Paper & Signal" (warm paper, ink, vermilion #b53b15 accent; Bricolage Grotesque / Inter / JetBrains Mono) + Renaissance x nature AI paintings - spec in repo DESIGN.md, in progress on branch redesign/paper-ink
+- Visual system: "Paper & Signal" (warm paper, ink, vermilion #b53b15 accent; Bricolage Grotesque / Inter / JetBrains Mono) + Renaissance x nature AI paintings - spec in repo DESIGN.md, live since 2026-08-27
 - GitHub: https://github.com/swapbiswasmarketing/
 
 ## Key Files
