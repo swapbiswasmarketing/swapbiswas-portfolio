@@ -3,8 +3,8 @@ title: "Sales Kickoff Agenda: The Hour-by-Hour Run of Show (2026)"
 description: "A real sales kickoff agenda with start times, durations and a named owner for every block, plus the T-8-week build calendar and the T+90 reinforcement plan."
 publishDate: 2026-08-15
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: "Two-day sales kickoff agenda run of show with time blocks and named owners"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is a sales kickoff?"
     a: "A sales kickoff (SKO) is the annual meeting where a revenue team resets on the number, the market, the product and the pitch for the year ahead. It usually runs one to three days and mixes leadership context, positioning and product updates, competitive training and live practice. The useful version ends with every rep certified on a new behavior, not just motivated."

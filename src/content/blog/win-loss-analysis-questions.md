@@ -3,8 +3,8 @@ title: "12 Win-Loss Analysis Questions to Ask (2026)"
 description: "12 win-loss analysis questions a PMM actually uses, grouped by deal stage, plus how to ask them so buyers give you the truth instead of a polite non-answer."
 publishDate: 2026-07-19
 category: [Product Marketing]
-img: /assets/stock-3.webp
-img_alt: "Win-loss analysis questions grouped by deal stage: trigger, evaluation, competition, decision, and future"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What questions should you ask in a win-loss analysis?"
     a: "Ask open questions across five moments of the deal: what triggered the search, who evaluated and on what criteria, where you stood out or fell short against competitors, what ultimately tipped the decision, and what would have changed the outcome. Favor 'what' and 'why' over yes/no questions, and let the buyer's answers steer follow-ups rather than reading a fixed script."

@@ -4,7 +4,7 @@ description: "Demand generation vs lead generation, explained by a PMM: what eac
 publishDate: 2026-06-12
 category: [Marketing, Product Marketing]
 img: /assets/stock-1.webp
-img_alt: "Two marketing funnels side by side comparing demand generation creating intent versus lead generation capturing contacts"
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is the difference between demand generation and lead generation?"
     a: "Demand generation creates and grows interest in your category and product across a market. Lead generation captures contact information from people who are ready to identify themselves. Demand gen is upstream and harder to attribute; lead gen is downstream and easy to count. Most strong B2B teams run both, with demand gen feeding the pipeline that lead gen later harvests."

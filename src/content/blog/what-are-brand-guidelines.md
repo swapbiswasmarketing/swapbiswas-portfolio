@@ -3,8 +3,8 @@ title: "What Are Brand Guidelines? Brand Book and Voice Examples"
 description: "Brand guidelines explained: the 12 sections every brand book needs, how to define a brand voice writers can use, and what a modern brand book looks like now."
 publishDate: 2026-05-09
 category: [Marketing, Design]
-img: /assets/stock-2.webp
-img_alt: Brand guidelines structure showing twelve sections from logo and color through voice tone messaging and applications
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What are brand guidelines?"
     a: "Brand guidelines are the documented rules for how a brand looks, sounds, and behaves across every touchpoint. A working set covers logo usage, color, typography, photography, iconography, motion, voice and tone, messaging, and the dos and don'ts of how the brand shows up in product, marketing, and HR."

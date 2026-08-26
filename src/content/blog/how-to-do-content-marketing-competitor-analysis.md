@@ -4,8 +4,8 @@ description: "Learn how to do content marketing competitor analysis with a prove
 publishDate: 2026-04-01
 updatedDate: 2026-04-01
 category: [Marketing, SEO]
-img: /assets/stock-4.webp
-img_alt: Content marketing competitor analysis framework
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "How to do content marketing competitor analysis?"
     a: "Start by identifying 3-5 direct competitors, audit their content across all channels, analyze their top-performing pages using tools like Ahrefs or Semrush, identify content gaps, and build a strategy to fill those gaps with better content."

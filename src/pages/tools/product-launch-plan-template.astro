@@ -756,7 +756,7 @@ const faqSchema = {
 		}
 
 		// ===== Shared render helper =====
-		const themeBgColors: Record<string, string> = { dark: '#0d1117', light: '#ffffff', brand: '#1c0056' };
+		const themeBgColors: Record<string, string> = { dark: '#0d1117', light: '#ffffff', brand: '#f6f4ef' };
 
 		async function renderCard(format: 'png' | 'blob'): Promise<any> {
 			const cEl = card as HTMLElement;
@@ -898,12 +898,12 @@ const faqSchema = {
 				headers: { 'Accept': 'application/json' }
 			}).then((res) => {
 				if (!res.ok) throw new Error('fail');
-				if (status) { status.textContent = 'Subscribed!'; status.style.color = 'var(--accent-regular)'; }
+				if (status) { status.textContent = 'Subscribed!'; status.style.color = 'var(--sg-ok)'; }
 				form.reset();
 				(window as any).dataLayer = (window as any).dataLayer || [];
 				(window as any).dataLayer.push({ event: 'newsletter_signup', signup_location: 'tool_launch_plan' });
 			}).catch(() => {
-				if (status) { status.textContent = 'Something went wrong.'; status.style.color = '#ca7879'; }
+				if (status) { status.textContent = 'Something went wrong.'; status.style.color = 'var(--accent-text)'; }
 			}).finally(() => {
 				if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
 			});
@@ -955,9 +955,9 @@ const faqSchema = {
 
 	/* Form panel */
 	.form-panel {
-		background: var(--gray-999_40);
-		border: 1px solid var(--gray-800);
-		border-radius: 1rem;
+		background: var(--sg-panel);
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
 		padding: 1.5rem;
 	}
 
@@ -968,7 +968,7 @@ const faqSchema = {
 	}
 
 	#launch-form legend {
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-weight: 600;
 		font-size: var(--text-md);
 		color: var(--gray-0);
@@ -996,18 +996,19 @@ const faqSchema = {
 	#launch-form input[type="text"] {
 		width: 100%;
 		padding: 0.6rem 0.85rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 0.5rem;
-		background: var(--gray-999_40);
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
 		color: var(--gray-0);
 		font-family: var(--font-body);
 		font-size: var(--text-sm);
-		transition: border-color 0.15s ease;
+		transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 	}
 	#launch-form input[type="text"]:focus {
 		outline: none;
-		border-color: var(--accent-regular);
+		border-color: var(--accent-regular); box-shadow: 0 0 0 3px var(--accent-overlay);
 	}
+	#launch-form input[type="text"]::placeholder { color: var(--gray-600); }
 
 	.form-actions {
 		display: flex;
@@ -1018,26 +1019,22 @@ const faqSchema = {
 
 	.btn-secondary {
 		padding: 0.5rem 1rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 999rem;
-		background: transparent;
-		color: var(--gray-200);
-		font-family: var(--font-brand);
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		color: var(--gray-0);
+		font-family: var(--font-body);
 		font-size: var(--text-sm);
 		font-weight: 500;
 		cursor: pointer;
-		transition: background 0.15s ease, color 0.15s ease;
+		transition: border-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
 	}
 	.btn-secondary:hover {
-		background: var(--accent-subtle-overlay);
+		border-color: var(--gray-0);
 		color: var(--gray-0);
 	}
 
-	.btn-danger:hover {
-		background: rgba(239, 68, 68, 0.12);
-		color: #f87171;
-		border-color: rgba(239, 68, 68, 0.3);
-	}
+	.btn-danger:hover { background: var(--accent-subtle-overlay); color: var(--accent-text); border-color: var(--accent-regular); }
 
 	.sample-picker {
 		position: relative;
@@ -1057,9 +1054,9 @@ const faqSchema = {
 		left: 0;
 		margin: 0;
 		padding: 0.25rem;
-		background: var(--gray-999);
-		border: 1px solid var(--gray-800);
-		border-radius: 0.5rem;
+		background: var(--sg-panel);
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-sm);
 		list-style: none;
 		z-index: 20;
 		min-width: 200px;
@@ -1074,10 +1071,10 @@ const faqSchema = {
 		background: transparent;
 		border: none;
 		color: var(--gray-200);
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-size: var(--text-sm);
 		cursor: pointer;
-		border-radius: 0.35rem;
+		border-radius: var(--radius-xs);
 	}
 	.sample-option:hover {
 		background: var(--accent-subtle-overlay);
@@ -1104,7 +1101,7 @@ const faqSchema = {
 		-webkit-appearance: none;
 		width: 34px;
 		height: 20px;
-		background: var(--gray-800);
+		background: var(--gray-700);
 		border-radius: 999rem;
 		position: relative;
 		cursor: pointer;
@@ -1122,7 +1119,7 @@ const faqSchema = {
 		top: 3px;
 		left: 3px;
 		transition: transform 0.2s ease;
-		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+		box-shadow: 0 0 0 1px var(--gray-600);
 	}
 
 	.section-toggle-input:checked {
@@ -1150,26 +1147,26 @@ const faqSchema = {
 
 	.theme-picker {
 		display: inline-flex;
-		border: 1px solid var(--gray-800);
-		border-radius: 999rem;
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-sm);
 		padding: 2px;
-		background: var(--gray-999_40);
+		background: var(--gray-900);
 	}
 	.theme-btn {
 		padding: 0.35rem 0.75rem;
 		border: none;
 		background: transparent;
 		color: var(--gray-300);
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-size: var(--text-xs);
 		font-weight: 500;
 		cursor: pointer;
-		border-radius: 999rem;
+		border-radius: calc(var(--radius-sm) - 2px);
 		transition: background 0.15s ease, color 0.15s ease;
 	}
 	.theme-btn:hover { color: var(--gray-0); }
 	.theme-btn.active {
-		background: var(--accent-regular);
+		background: var(--gray-0);
 		color: var(--accent-text-over);
 	}
 
@@ -1202,19 +1199,19 @@ const faqSchema = {
 	.launch-card[data-theme="light"] .lp-channel-row,
 	.launch-card[data-theme="light"] .lp-milestone { border-bottom-color: #e2e8f0; }
 
-	/* Brand theme */
+	/* Brand theme - paper, ink, one vermilion signal */
 	.launch-card[data-theme="brand"] {
-		background: linear-gradient(135deg, #1c0056 0%, #7611a6 100%);
-		color: #ffffff;
+		background: #f6f4ef;
+		color: #15130f;
 	}
 	.launch-card[data-theme="brand"] .lp-header,
 	.launch-card[data-theme="brand"] .lp-footer,
-	.launch-card[data-theme="brand"] .lp-card-head { border-color: rgba(255,255,255,0.15); }
+	.launch-card[data-theme="brand"] .lp-card-head { border-color: #e4dfd6; }
 	.launch-card[data-theme="brand"] .lp-card {
-		background: rgba(255,255,255,0.08);
-		border-color: rgba(255,255,255,0.18);
+		background: #ffffff;
+		border-color: #e4dfd6;
 	}
-	.launch-card[data-theme="brand"] .lp-name { color: #ffffff; }
+	.launch-card[data-theme="brand"] .lp-name { color: #15130f; }
 	.launch-card[data-theme="brand"] .lp-tagline,
 	.launch-card[data-theme="brand"] .lp-meta,
 	.launch-card[data-theme="brand"] .lp-meta-row,
@@ -1223,24 +1220,29 @@ const faqSchema = {
 	.launch-card[data-theme="brand"] .lp-channel-row,
 	.launch-card[data-theme="brand"] .lp-milestone,
 	.launch-card[data-theme="brand"] .lp-risk-q,
-	.launch-card[data-theme="brand"] .lp-risk-a { color: rgba(255,255,255,0.92); }
+	.launch-card[data-theme="brand"] .lp-risk-a { color: #3a3632; }
 	.launch-card[data-theme="brand"] .lp-meta-label,
 	.launch-card[data-theme="brand"] .lp-team-role,
-	.launch-card[data-theme="brand"] .lp-footer { color: rgba(255,255,255,0.7); }
-	.launch-card[data-theme="brand"] .lp-footer-url { color: rgba(255,255,255,0.85); }
+	.launch-card[data-theme="brand"] .lp-footer { color: #6a645c; }
+	.launch-card[data-theme="brand"] .lp-footer-url { color: #55504a; }
 	.launch-card[data-theme="brand"] .lp-channel-row,
-	.launch-card[data-theme="brand"] .lp-milestone { border-bottom-color: rgba(255,255,255,0.1); }
-	.launch-card[data-theme="brand"] .lp-label { color: #f5a0a1; }
-	.launch-card[data-theme="brand"] .lp-goals .lp-card-head { color: #5eead4; }
-	.launch-card[data-theme="brand"] .lp-team .lp-card-head { color: #93c5fd; }
-	.launch-card[data-theme="brand"] .lp-channels .lp-card-head { color: #d8b4fe; }
-	.launch-card[data-theme="brand"] .lp-milestones .lp-card-head { color: #fdba74; }
-	.launch-card[data-theme="brand"] .lp-risks .lp-card-head { color: #fda4af; }
+	.launch-card[data-theme="brand"] .lp-milestone { border-bottom-color: #e4dfd6; }
+	.launch-card[data-theme="brand"] .lp-label { color: #b53b15; }
+	.launch-card[data-theme="brand"] .lp-goals .lp-card-head { color: #b53b15; }
+	.launch-card[data-theme="brand"] .lp-team .lp-card-head { color: #b53b15; }
+	.launch-card[data-theme="brand"] .lp-channels .lp-card-head { color: #b53b15; }
+	.launch-card[data-theme="brand"] .lp-milestones .lp-card-head { color: #b53b15; }
+	.launch-card[data-theme="brand"] .lp-risks .lp-card-head { color: #b53b15; }
+	.launch-card[data-theme="brand"] .lp-channel-tier { color: #b53b15; }
+	.launch-card[data-theme="brand"] .lp-phase { color: #b53b15; }
+	.launch-card[data-theme="brand"] .lp-milestone-day0 .lp-phase { color: #2a7347; }
+	.launch-card[data-theme="brand"] .lp-risk-a strong { color: #b53b15; }
 
 	.preview-actions {
 		display: flex;
 		gap: 0.5rem;
 		align-items: center;
+		flex-wrap: wrap;
 	}
 
 	.btn-icon {
@@ -1248,20 +1250,19 @@ const faqSchema = {
 		align-items: center;
 		gap: 0.4rem;
 		padding: 0.5rem 0.85rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 999rem;
-		background: transparent;
-		color: var(--gray-200);
-		font-family: var(--font-brand);
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		color: var(--gray-0);
+		font-family: var(--font-body);
 		font-size: var(--text-sm);
 		font-weight: 500;
 		cursor: pointer;
-		transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+		transition: border-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
 	}
 	.btn-icon:hover:not([disabled]) {
-		background: var(--accent-subtle-overlay);
 		color: var(--gray-0);
-		border-color: var(--accent-regular);
+		border-color: var(--gray-0);
 	}
 	.btn-icon[disabled] {
 		opacity: 0.7;
@@ -1275,7 +1276,7 @@ const faqSchema = {
 		gap: 1rem;
 		margin: 0;
 		min-height: 1.1rem;
-		font-size: var(--text-xs);
+		font-family: var(--font-mono); font-size: var(--text-xs);
 		color: var(--gray-400);
 	}
 
@@ -1293,7 +1294,7 @@ const faqSchema = {
 	}
 	.preview-heading {
 		font-size: var(--text-md);
-		color: var(--gray-200);
+		color: var(--gray-100); font-weight: 600;
 		margin: 0;
 	}
 
@@ -1301,19 +1302,19 @@ const faqSchema = {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
-		padding: 0.6rem 1.25rem;
+		padding: 0.7rem 1.25rem;
 		border: none;
-		border-radius: 999rem;
-		background: var(--gradient-accent-orange);
+		border-radius: var(--radius-sm);
+		background: var(--gray-0);
 		color: var(--accent-text-over);
-		font-family: var(--font-brand);
-		font-size: var(--text-sm);
-		font-weight: 600;
+		font-family: var(--font-body);
+		font-size: 0.9375rem;
+		font-weight: 500;
 		cursor: pointer;
-		transition: box-shadow 0.15s ease, transform 0.15s ease;
+		transition: background 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 	}
 	.btn-primary:hover:not([disabled]) {
-		box-shadow: var(--shadow-md);
+		background: var(--gray-100);
 		transform: translateY(-1px);
 	}
 	.btn-primary[disabled] {
@@ -1325,7 +1326,7 @@ const faqSchema = {
 		position: relative;
 		width: 100%;
 		overflow: hidden;
-		border-radius: 16px;
+		border-radius: var(--radius-lg);
 	}
 
 	/* Launch plan card */
@@ -1359,7 +1360,7 @@ const faqSchema = {
 		font-weight: 600;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
-		color: #c084fc;
+		color: #fb923c;
 		margin-bottom: 8px;
 	}
 
@@ -1431,7 +1432,7 @@ const faqSchema = {
 
 	.lp-goals .lp-card-head { color: #5eead4; }
 	.lp-team .lp-card-head { color: #60a5fa; }
-	.lp-channels .lp-card-head { color: #c084fc; }
+	.lp-channels .lp-card-head { color: #fb923c; }
 	.lp-milestones .lp-card-head { color: #fb923c; }
 	.lp-risks .lp-card-head { color: #f5a0a1; }
 
@@ -1498,7 +1499,7 @@ const faqSchema = {
 	.lp-channel-row:last-child { border-bottom: none; }
 	.lp-channel-tier {
 		font-size: 11px;
-		color: #c084fc;
+		color: #fb923c;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
 		font-weight: 600;
@@ -1564,20 +1565,20 @@ const faqSchema = {
 	/* Newsletter strip */
 	.tool-cta-strip {
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 1rem;
 		padding: 1.75rem;
-		background: var(--gray-999_40);
-		border: 1px solid var(--gray-800);
-		border-radius: 1rem;
+		background: var(--sg-panel);
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
 		align-items: center;
 	}
 	@media (min-width: 50em) {
-		.tool-cta-strip { grid-template-columns: 1fr auto; }
+		.tool-cta-strip { grid-template-columns: minmax(0, 1fr) auto; }
 	}
 	.cta-text strong {
 		display: block;
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-weight: 600;
 		font-size: var(--text-md);
 		color: var(--gray-0);
@@ -1587,25 +1588,29 @@ const faqSchema = {
 		color: var(--gray-300);
 		font-size: var(--text-sm);
 	}
+	.cta-text,
+	.cta-form { min-width: 0; }
 	.cta-form { display: flex; gap: 0.5rem; }
 	.cta-form input {
 		flex: 1;
 		min-width: 0;
 		padding: 0.6rem 0.85rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 0.5rem;
-		background: var(--gray-999_40);
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
 		color: var(--gray-0);
-		font-size: var(--text-sm);
+		font-family: var(--font-body); font-size: var(--text-sm);
 	}
+	.cta-form input:focus { outline: none; border-color: var(--accent-regular); box-shadow: 0 0 0 3px var(--accent-overlay); }
+	.cta-form input::placeholder { color: var(--gray-600); }
 	.cta-form button {
 		padding: 0.6rem 1.25rem;
 		border: none;
-		border-radius: 0.5rem;
-		background: var(--gradient-accent-orange);
+		border-radius: var(--radius-sm);
+		background: var(--gray-0);
 		color: var(--accent-text-over);
-		font-family: var(--font-brand);
-		font-weight: 600;
+		font-family: var(--font-body);
+		font-weight: 500;
 		font-size: var(--text-sm);
 		cursor: pointer;
 		white-space: nowrap;
@@ -1634,9 +1639,9 @@ const faqSchema = {
 	.seo-content .how-to { padding-left: 1.25rem; }
 	.seo-content .how-to li { margin-bottom: 0.75rem; }
 	.seo-content a {
-		color: var(--accent-regular);
+		color: var(--accent-text);
 		text-decoration: underline;
-		text-underline-offset: 0.2em;
+		text-underline-offset: 0.15em; text-decoration-thickness: 1px;
 	}
 	.seo-link {
 		display: inline-block;
@@ -1651,14 +1656,14 @@ const faqSchema = {
 		gap: 0.75rem;
 	}
 	.faq-item {
-		border: 1px solid var(--gray-800);
-		border-radius: 0.5rem;
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
 		padding: 1rem 1.25rem;
-		background: var(--gray-999_40);
+		background: var(--sg-panel);
 	}
 	.faq-item summary {
 		cursor: pointer;
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-weight: 600;
 		color: var(--gray-0);
 		font-size: var(--text-md);
@@ -1670,7 +1675,7 @@ const faqSchema = {
 	}
 	.faq-item summary::after {
 		content: '+';
-		color: var(--accent-regular);
+		color: var(--accent-text);
 		font-size: 1.5rem;
 		font-weight: 400;
 		line-height: 1;

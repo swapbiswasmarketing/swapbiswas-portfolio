@@ -3,8 +3,8 @@ title: "What Does a Product Marketing Manager Do? The Role in 2026"
 description: "What does a product marketing manager do? Real responsibilities, day-to-day tasks, skills, and salary data for the PMM role in 2026 - with industry survey data."
 publishDate: 2026-04-11
 category: [Product Marketing, Career, Marketing]
-img: /assets/stock-1.webp
-img_alt: Product marketing manager responsibilities and role breakdown
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "What does a product marketing manager do?"
     a: "A product marketing manager owns positioning, messaging, product launches, and sales enablement. They translate what the product does into why customers should care, and equip sales with the tools and content to close deals. The role sits at the intersection of product, marketing, and sales."

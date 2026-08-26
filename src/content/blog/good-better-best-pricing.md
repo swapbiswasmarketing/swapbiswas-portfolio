@@ -3,8 +3,8 @@ title: "Good Better Best Pricing: How to Build the Three Tiers"
 description: "Good better best pricing with the actual numbers: the feature-allocation rule, real price-gap ratios, target tier mix, and how to migrate existing customers."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Feature-allocation rule for good better best pricing, scoring every feature on value perception, cost to serve and differentiation to assign it to the Good, Better or Best tier"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What percentage of customers should land in each tier?"
     a: "Track revenue mix, since logo mix flatters the cheap tier and says little about the money. A workable design target is roughly 10-20% of revenue in Good, 55-70% in Better and 20-30% in Best. If Good is taking more than a third of revenue, the middle tier is not differentiated enough to justify the step up."

@@ -3,8 +3,8 @@ title: "House of Brands vs Branded House: The Per-Launch Decision"
 description: "House of brands vs branded house, decided per launch: the four models, a comparison table, an 8-criteria naming scorecard and the real cost of a new brand."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: Brand architecture spectrum from branded house through sub-brand and endorsed brand to house of brands, with a weighted scorecard deciding whether a launch earns its own name
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "Is Apple a branded house or house of brands?"
     a: "Apple is about as close to a pure branded house as any large company gets. iPhone, iPad, Mac, Apple Watch and Apple Music all carry the Apple name and inherit Apple's trust. The exception is Beats, which Apple owns and still runs under its own name, to the point that Apple's newsroom credits an executive as 'vice president of Apple Music and Beats'."

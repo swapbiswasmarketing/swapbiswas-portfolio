@@ -299,6 +299,14 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 
 				if (closeBtn) closeBtn.addEventListener('click', dismiss);
 
+				// Slide the popup away while the footer is on screen so it never covers the footer links.
+				var footerEl = document.querySelector('footer');
+				if (footerEl && 'IntersectionObserver' in window) {
+					new IntersectionObserver(function(entries) {
+						popup.classList.toggle('nl-popup--docked', entries[0].isIntersecting);
+					}, { threshold: 0.05 }).observe(footerEl);
+				}
+
 				if (form) {
 					form.addEventListener('submit', function(e) {
 						e.preventDefault();
@@ -314,13 +322,13 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 							headers: { 'Accept': 'application/json' }
 						}).then(function(res) {
 							if (!res.ok) throw new Error('Subscription failed');
-							if (statusEl) { statusEl.textContent = 'Subscribed!'; statusEl.style.color = 'var(--accent-regular)'; }
+							if (statusEl) { statusEl.textContent = 'Subscribed!'; statusEl.style.color = 'var(--sg-ok)'; }
 							form.reset();
 							window.dataLayer = window.dataLayer || [];
 							window.dataLayer.push({ event: 'newsletter_signup', signup_location: 'popup' });
 							setTimeout(dismiss, 2000);
 						}).catch(function() {
-							if (statusEl) { statusEl.textContent = 'Something went wrong.'; statusEl.style.color = '#ca7879'; }
+							if (statusEl) { statusEl.textContent = 'Something went wrong.'; statusEl.style.color = 'var(--accent-text)'; }
 						}).finally(function() {
 							if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
 						});
@@ -330,7 +338,7 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 		</script>
 
 		<style>
-			/* Newsletter Popup */
+			/* Newsletter Popup - floating surface, so --shadow-lg is allowed */
 			.nl-popup {
 				position: fixed;
 				bottom: 1.5rem;
@@ -339,13 +347,13 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				width: 320px;
 				max-width: calc(100vw - 2rem);
 				padding: 1.5rem;
-				background: var(--gray-999);
-				border: 1px solid var(--gray-800);
-				border-radius: 1rem;
+				background: var(--sg-panel);
+				border: 1px solid var(--sg-hair);
+				border-radius: var(--radius-md);
 				box-shadow: var(--shadow-lg);
 				transform: translateY(120%);
 				opacity: 0;
-				transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+				transition: transform 0.4s var(--ease-out), opacity 0.3s ease;
 				pointer-events: none;
 			}
 
@@ -355,6 +363,12 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				pointer-events: auto;
 			}
 
+			.nl-popup.visible.nl-popup--docked {
+				transform: translateY(120%);
+				opacity: 0;
+				pointer-events: none;
+			}
+
 			.nl-popup-close {
 				position: absolute;
 				top: 0.5rem;
@@ -362,6 +376,7 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				background: none;
 				border: none;
 				color: var(--gray-400);
+				font-family: var(--font-body);
 				font-size: 1.5rem;
 				cursor: pointer;
 				line-height: 1;
@@ -373,9 +388,10 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 			}
 
 			.nl-popup-title {
-				font-family: var(--font-brand);
+				font-family: var(--font-body);
 				font-weight: 600;
 				font-size: var(--text-md);
+				letter-spacing: -0.01em;
 				color: var(--gray-0);
 				margin-bottom: 0.25rem;
 			}
@@ -394,45 +410,50 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 			.nl-popup-form input {
 				flex: 1;
 				padding: 0.5rem 0.75rem;
-				border: 1px solid var(--gray-800);
-				border-radius: 0.5rem;
-				background: var(--gray-999_40);
+				border: 1px solid var(--gray-700);
+				border-radius: var(--radius-sm);
+				background: var(--sg-panel);
 				color: var(--gray-0);
 				font-size: var(--text-sm);
 				font-family: var(--font-body);
 				outline: none;
 				min-width: 0;
+				transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 			}
 
 			.nl-popup-form input:focus {
-				border-color: var(--accent-dark);
+				border-color: var(--accent-regular);
+				box-shadow: 0 0 0 3px var(--accent-overlay);
 			}
 
 			.nl-popup-form input::placeholder {
-				color: var(--gray-400);
+				color: var(--gray-600);
 			}
 
 			.nl-popup-form button {
 				padding: 0.5rem 1rem;
-				border: none;
-				border-radius: 0.5rem;
-				background: var(--gradient-accent-orange);
+				border: 1px solid var(--gray-0);
+				border-radius: var(--radius-sm);
+				background: var(--gray-0);
 				color: var(--accent-text-over);
 				font-size: var(--text-sm);
-				font-weight: 600;
-				font-family: var(--font-brand);
+				font-weight: 500;
+				font-family: var(--font-body);
 				cursor: pointer;
 				white-space: nowrap;
-				transition: opacity 0.2s ease;
+				transition: background-color 0.2s var(--ease-out), border-color 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 			}
 
 			.nl-popup-form button:hover {
-				opacity: 0.9;
+				background: var(--gray-100);
+				border-color: var(--gray-100);
+				transform: translateY(-1px);
 			}
 
 			.nl-popup-form button:disabled {
 				opacity: 0.6;
 				cursor: not-allowed;
+				transform: none;
 			}
 
 			.nl-popup-status {
@@ -448,16 +469,16 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 					left: 0;
 					width: 100%;
 					max-width: 100%;
-					border-radius: 1rem 1rem 0 0;
+					border-radius: var(--radius-md) var(--radius-md) 0 0;
 					transform: translateY(100%);
 				}
 			}
 
-			/* Breadcrumb Navigation */
+			/* Breadcrumb Navigation - mono meta */
 			.breadcrumb-nav {
 				max-width: 83rem;
 				margin-inline: auto;
-				padding: 1.25rem 1.5rem 0;
+				padding: 1.25rem 1.5rem 0.75rem;
 			}
 
 			.breadcrumb-list {
@@ -468,7 +489,9 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				list-style: none;
 				padding: 0;
 				margin: 0;
-				font-size: var(--text-sm);
+				font-family: var(--font-mono);
+				font-size: 0.75rem;
+				color: var(--gray-400);
 			}
 
 			.breadcrumb-item {
@@ -485,11 +508,11 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				align-items: center;
 				color: var(--gray-400);
 				text-decoration: none;
-				transition: color 0.2s ease;
+				transition: color 0.2s var(--ease-out);
 			}
 
 			.breadcrumb-item a:hover {
-				color: var(--accent-regular);
+				color: var(--accent-text);
 			}
 
 			.breadcrumb-chevron {
@@ -520,11 +543,12 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				transform: translateX(-50%);
 				z-index: 10000;
 				padding: 0.75rem 1.5rem;
-				background: var(--accent-regular);
+				background: var(--gray-0);
 				color: var(--accent-text-over);
-				font-family: var(--font-brand);
-				font-weight: 600;
-				border-radius: 0 0 0.5rem 0.5rem;
+				font-family: var(--font-body);
+				font-weight: 500;
+				font-size: 0.9375rem;
+				border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 				text-decoration: none;
 				transition: top 0.2s ease;
 			}
@@ -533,71 +557,32 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				top: 0;
 			}
 
+			/* Legacy background tokens - neutralized. index.astro / about.astro still
+			   reference --bg-image-subtle-* / --bg-scale inside .with-background::before
+			   (which both pages set to display: none). Kept so var() lookups resolve to
+			   nothing visible; no image URLs are requested anymore. */
 			:root {
 				--_placeholder-bg: linear-gradient(transparent, transparent);
-				--bg-image-main: url('/assets/backgrounds/bg-main-light-800w.jpg');
-				--bg-image-main-curves: url('/assets/backgrounds/bg-main-light.svg');
+				--bg-image-main: var(--_placeholder-bg);
+				--bg-image-main-curves: var(--_placeholder-bg);
 				--bg-image-subtle-1: var(--_placeholder-bg);
 				--bg-image-subtle-2: var(--_placeholder-bg);
 				--bg-image-footer: var(--_placeholder-bg);
-				--bg-svg-blend-mode: overlay;
-				--bg-blend-mode: darken;
+				--bg-svg-blend-mode: normal;
+				--bg-blend-mode: normal;
 				--bg-image-aspect-ratio: 2.25;
-				--bg-scale: 1.68;
+				--bg-scale: 1;
 				--bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
-				--bg-gradient-size: calc(var(--bg-scale) * 100%);
+				--bg-gradient-size: 100%;
 			}
 
-			:root.theme-dark {
-				--bg-image-main: url('/assets/backgrounds/bg-main-dark-800w.jpg');
-				--bg-image-main-curves: url('/assets/backgrounds/bg-main-dark.svg');
-				--bg-svg-blend-mode: darken;
-				--bg-blend-mode: lighten;
-			}
-
-			/* These backgrounds are displayed below the fold, so we lazy load them
-			   once the `.loaded` class has been set.  */
-			:root.loaded {
-				--bg-image-subtle-1: url('/assets/backgrounds/bg-subtle-1-light-800w.jpg');
-				--bg-image-subtle-2: url('/assets/backgrounds/bg-subtle-2-light-800w.jpg');
-				--bg-image-footer: url('/assets/backgrounds/bg-footer-light-800w.jpg');
-			}
-			:root.loaded.theme-dark {
-				--bg-image-subtle-1: url('/assets/backgrounds/bg-subtle-1-dark-800w.jpg');
-				--bg-image-subtle-2: url('/assets/backgrounds/bg-subtle-2-dark-800w.jpg');
-				--bg-image-footer: url('/assets/backgrounds/bg-footer-dark-800w.jpg');
-			}
-
-			@media (min-width: 50em) {
-				:root {
-					--bg-scale: 1;
-					--bg-image-main: url('/assets/backgrounds/bg-main-light-1440w.jpg');
-				}
-				:root.theme-dark {
-					--bg-image-main: url('/assets/backgrounds/bg-main-dark-1440w.jpg');
-				}
-
-				:root.loaded {
-					--bg-image-subtle-1: url('/assets/backgrounds/bg-subtle-1-light-1440w.jpg');
-					--bg-image-subtle-2: url('/assets/backgrounds/bg-subtle-2-light-1440w.jpg');
-					--bg-image-footer: url('/assets/backgrounds/bg-footer-light-1440w.jpg');
-				}
-				:root.loaded.theme-dark {
-					--bg-image-subtle-1: url('/assets/backgrounds/bg-subtle-1-dark-1440w.jpg');
-					--bg-image-subtle-2: url('/assets/backgrounds/bg-subtle-2-dark-1440w.jpg');
-					--bg-image-footer: url('/assets/backgrounds/bg-footer-dark-1440w.jpg');
-				}
-			}
-
+			/* Page canvas: plain paper with one barely-there cream wash at the top edge */
 			.backgrounds {
 				min-height: 100%;
 				isolation: isolate;
-				/* Unified clean "void" canvas with a subtle static brand glow - matches
-				   the homepage atmosphere site-wide, no heavy effects on content pages. */
 				background:
-					radial-gradient(55% 45% at 82% -5%, rgba(118, 17, 166, 0.13), transparent 70%),
-					radial-gradient(45% 40% at -5% 22%, rgba(197, 97, 246, 0.08), transparent 70%),
-					var(--sg-void);
+					radial-gradient(60% 40% at 50% 0%, var(--gray-900), transparent 70%),
+					var(--gray-999);
 			}
 			@media (forced-colors: active) {
 				/* Deactivate custom backgrounds for high contrast users. */

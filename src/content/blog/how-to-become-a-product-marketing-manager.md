@@ -3,8 +3,8 @@ title: "How to Become a Product Marketing Manager (2026)"
 description: "How to become a product marketing manager: the real routes in, the skills that get you hired, whether you need a certification, and the portfolio that wins offers."
 publishDate: 2026-07-25
 category: [Career, Product Marketing]
-img: /assets/stock-4.webp
-img_alt: "Six-step path to becoming a product marketing manager: pick your route in, build hiring skills, decide on a certification, build a portfolio, craft your story, and apply"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 howTo:
   name: "How to Become a Product Marketing Manager"
   steps:

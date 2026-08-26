@@ -4,7 +4,7 @@ description: "Your vibe-coded website looks finished in the browser but renders 
 publishDate: 2026-06-27
 category: [SEO, AI]
 img: /assets/stock-3.webp
-img_alt: "Split view of a website rendering fully in a browser while Googlebot sees an empty HTML shell"
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "Do vibe-coded websites rank on Google?"
     a: "They can, but most do not by default. AI coding tools usually ship a client-side React app, so the raw HTML Googlebot fetches first is nearly empty. If your content only appears after JavaScript runs, Google may index a blank page. Adding server-side rendering or static generation fixes it."

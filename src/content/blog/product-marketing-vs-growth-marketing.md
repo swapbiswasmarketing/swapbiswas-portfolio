@@ -4,8 +4,8 @@ description: "Product marketing vs growth marketing, explained by a PMM: what ea
 publishDate: 2026-07-19
 updatedDate: 2026-07-19
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: "Product marketing vs growth marketing compared side by side: one discipline owns positioning and messaging, the other owns lifecycle experiments"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is the difference between product marketing and growth marketing?"
     a: "Product marketing owns how the market understands and chooses your product: positioning, messaging, launches, sales enablement, and competitive intelligence. Growth marketing owns how usage and revenue compound after people arrive, running experiments across acquisition, activation, retention, referral, and revenue. Product marketing changes what people believe; growth marketing changes what people do, measured in a dashboard."

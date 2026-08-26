@@ -4,7 +4,7 @@ description: "The product marketing interview questions a working PMM asks, grou
 publishDate: 2026-07-25
 category: [Career, Product Marketing]
 img: /assets/stock-2.webp
-img_alt: "Product marketing interview questions grouped into five rounds: positioning and messaging, GTM and launch, metrics and impact, cross-functional, and the take-home case"
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What questions are asked in a product marketing interview?"
     a: "Product marketing interviews cluster into five rounds: positioning and messaging, go-to-market and launch, metrics and impact, cross-functional and stakeholder judgment, and a take-home or live case. Each round tests a different ability, from making a product make sense to a buyer, to proving your work moved a number, to leading teams you do not manage."

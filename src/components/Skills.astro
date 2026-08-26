@@ -5,17 +5,17 @@ import Icon from './Icon.astro';
 <section class="box skills">
 	<h2 class="sr-only">What I do</h2>
 	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<Icon icon="strategy" size="2.5rem" />
 		<h3>Product & GTM Strategy</h3>
 		<p>Go-to-market campaigns, product launches, positioning, and competitive strategy for B2B SaaS.</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
+		<Icon icon="terminal-window" size="2.5rem" />
 		<h3>AI & Marketing Automation</h3>
 		<p>AI agents, workflow automation, and predictive analytics to scale marketing operations.</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<Icon icon="trophy" size="2.5rem" />
 		<h3>Data Analytics & Growth</h3>
 		<p>Growth hacking, market research, conversion rate optimization, and data-driven decision making.</p>
 	</div>
@@ -25,12 +25,9 @@ import Icon from './Icon.astro';
 <style>
 	.box {
 		border: 1px solid var(--sg-hair);
-		border-radius: 0.75rem;
+		border-radius: var(--radius-md);
 		padding: 1.5rem;
-		/* frosted glass: the strand passes BEHIND and reads as a soft blur through the panel */
-		background-color: color-mix(in srgb, var(--sg-panel) 50%, transparent);
-		backdrop-filter: blur(20px) saturate(1.4);
-		-webkit-backdrop-filter: blur(20px) saturate(1.4);
+		background: var(--sg-panel);
 	}
 
 	.skills {
@@ -39,28 +36,37 @@ import Icon from './Icon.astro';
 		gap: 3rem;
 	}
 
+	/* Icons render with currentColor - ink */
+	.skills > .stack {
+		color: var(--gray-0);
+	}
+
 	.skills h3 {
-		font-size: var(--text-lg);
+		font-family: var(--font-display);
+		font-weight: 600;
+		font-size: 1.25rem;
+		line-height: 1.15;
+		letter-spacing: -0.01em;
+		color: var(--gray-0);
 	}
 
 	.skills p {
-		color: var(--gray-400);
+		color: var(--gray-300);
 	}
 
 	@media (min-width: 50em) {
 		.box {
-			border-radius: 1.5rem;
 			padding: 2.5rem;
 		}
 
 		.skills {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			gap: 5rem;
+			gap: 4rem;
 		}
 
 		.skills h3 {
-			font-size: var(--text-2xl);
+			font-size: 1.5rem;
 		}
 	}
 </style>

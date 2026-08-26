@@ -72,6 +72,10 @@ export default defineConfig({
 		},
 	],
 	markdown: {
+		shikiConfig: {
+			themes: { light: 'github-light', dark: 'github-dark-dimmed' },
+			defaultColor: false,
+		},
 		rehypePlugins: [
 			[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
 		],

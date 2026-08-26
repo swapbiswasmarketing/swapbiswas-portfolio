@@ -4,8 +4,8 @@ description: "Product positioning explained by a PMM: the six-part framework, ho
 publishDate: 2026-03-08
 updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: Product positioning strategy framework
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 ---
 
 **91% of product marketers** say positioning and messaging is their core responsibility ([PMA State of Product Marketing 2025](https://www.productmarketingalliance.com/state-of-product-marketing-report-2025/)). Yet most companies get product positioning wrong - or skip it entirely.

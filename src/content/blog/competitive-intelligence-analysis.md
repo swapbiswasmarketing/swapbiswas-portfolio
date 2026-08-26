@@ -4,8 +4,8 @@ description: "Learn how to build a competitive intelligence analysis system that
 publishDate: 2026-03-17
 updatedDate: 2026-03-17
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: Competitive intelligence analysis framework and tools
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is competitive intelligence analysis?"
     a: "Competitive intelligence analysis is the systematic process of gathering, analyzing, and acting on information about competitors, market trends, and industry shifts to make better strategic decisions."

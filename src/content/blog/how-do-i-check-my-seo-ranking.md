@@ -5,7 +5,7 @@ publishDate: 2026-04-01
 updatedDate: 2026-04-01
 category: [SEO, Tools]
 img: /assets/stock-3.webp
-img_alt: SEO ranking check tools and methods
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "How do I check my SEO ranking for free?"
     a: "Google Search Console is the best free tool to check your SEO rankings. It shows your average position for every keyword your site ranks for, along with clicks, impressions, and CTR data directly from Google."

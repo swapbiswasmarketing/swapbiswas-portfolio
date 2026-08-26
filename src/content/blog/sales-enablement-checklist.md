@@ -3,8 +3,8 @@ title: "Sales Enablement Checklist: 40+ Items PMMs Actually Ship"
 description: "The sales enablement checklist used by top PMM teams. 40+ deliverables across onboarding, competitive, launch, and deal support - with a clear owner for each."
 publishDate: 2026-04-18
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: Sales enablement checklist with onboarding launch and competitive categories
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is a sales enablement checklist?"
     a: "A sales enablement checklist is the list of content, training, and systems that equip a sales team to sell effectively. It spans onboarding (first-90-days content), ongoing training, launch collateral, competitive battlecards, deal-stage assets, and technology enablement. A good checklist assigns a clear owner and review cadence to every item."

@@ -3,8 +3,8 @@ title: "Brand Messaging Framework: Five Layers, Matrix, Hierarchy"
 description: "A PMM's brand messaging framework explained: the five layers from audience insight to activation, plus the messaging matrix and hierarchy template most guides skip."
 publishDate: 2026-07-25
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "The brand messaging framework as a layered stack: audience insight, value proposition, messaging pillars, proof points, messaging matrix, and messaging hierarchy"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is a brand messaging framework?"
     a: "A brand messaging framework is the single structure that decides what your company says and why. It stacks five layers: audience insight, a value proposition, three or four messaging pillars, proof points under each pillar, and an activation layer - the messaging matrix and messaging hierarchy that turn all of it into per-audience copy. Messaging pillars are one layer inside it, not the whole thing."

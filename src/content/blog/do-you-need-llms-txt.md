@@ -3,8 +3,8 @@ title: "Do You Need an llms.txt File? Google Says No (2026)"
 description: "Google says you don't need an llms.txt file, and 97% of the ones that exist never get read. Here's what llms.txt does and whether it's worth it in 2026."
 publishDate: 2026-06-22
 category: [SEO, AI]
-img: /assets/stock-2.webp
-img_alt: "Illustration comparing sites that publish an llms.txt file against the AI crawlers that actually read it"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "What is an llms.txt file?"
     a: "An llms.txt file is a markdown file placed at the root of a domain (yoursite.com/llms.txt) that gives large language models a curated, easy-to-read map of your most important content. It was proposed by Jeremy Howard of Answer.AI in September 2024 as a voluntary convention, similar in spirit to robots.txt or sitemap.xml."

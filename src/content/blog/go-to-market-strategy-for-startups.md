@@ -4,8 +4,8 @@ description: "Build a go-to-market strategy for startups that works with limited
 publishDate: 2026-03-14
 updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: Go-to-market strategy framework for startups
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 ---
 
 **One of the top reasons startups fail is building something nobody wants.** CB Insights' analysis of startup post-mortems ranks "no market need" among the leading failure reasons ([CB Insights](https://www.cbinsights.com/research/report/startup-failure-reasons-top/)). Not because the product was bad. Because the founders never figured out who to sell to, how to reach them, or why anyone should care.

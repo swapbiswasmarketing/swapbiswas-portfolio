@@ -10,13 +10,30 @@ export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map((post) => ({
 		params: { slug: post.id },
-		props: { title: post.data.title, categories: post.data.category, img: post.data.img },
+		props: {
+			title: post.data.title,
+			description: post.data.description,
+			categories: post.data.category,
+			img: post.data.img,
+		},
 	}));
 }
 
+// Paper & Signal palette (mirrors DESIGN.md section 2 / 6 - light values, OG cards are always light)
+const PAPER = '#f6f4ef';
+const PANEL = '#ffffff';
+const CREAM = '#eeebe4';
+const HAIR = '#e4dfd6';
+const INK = '#15130f';
+const LEDE = '#55504a';
+const MUTED = '#6a645c';
+const ACCENT = '#b53b15';
+
 // Load fonts from local disk (bundled in src/assets/fonts) to avoid network dependency at build/dev time
-let rubikBold: Buffer | null = null;
-let rubikRegular: Buffer | null = null;
+let bricolage600: Buffer | null = null;
+let inter400: Buffer | null = null;
+let inter500: Buffer | null = null;
+let jbmono500: Buffer | null = null;
 
 function loadFont(filename: string): Buffer {
 	const fontPath = path.join(process.cwd(), 'src', 'assets', 'fonts', filename);
@@ -24,47 +41,90 @@ function loadFont(filename: string): Buffer {
 }
 
 function getFonts() {
-	if (!rubikBold) rubikBold = loadFont('rubik-semibold.ttf');
-	if (!rubikRegular) rubikRegular = loadFont('rubik-regular.ttf');
-	return { rubikBold, rubikRegular };
+	if (!bricolage600) bricolage600 = loadFont('bricolage-600.ttf');
+	if (!inter400) inter400 = loadFont('inter-400.ttf');
+	if (!inter500) inter500 = loadFont('inter-500.ttf');
+	if (!jbmono500) jbmono500 = loadFont('jbmono-500.ttf');
+	return { bricolage600, inter400, inter500, jbmono500 };
 }
 
-// Load and cache stock images as base64 data URIs
-const stockImageCache: Record<string, string> = {};
+// Right-side image panel dimensions (card is 1200x630, 6px rule + 56px padding top/bottom)
+const PANEL_W = 400;
+const PANEL_H = 512;
 
-function getStockImageDataUri(filename: string): string {
-	if (stockImageCache[filename]) return stockImageCache[filename];
+// Load and cache images as base64 data URIs
+const imageCache: Record<string, string> = {};
+
+function getImageDataUri(filename: string): string {
+	if (imageCache[filename]) return imageCache[filename];
 	const imgPath = path.join(process.cwd(), 'public', 'assets', filename);
 	const buffer = fs.readFileSync(imgPath);
-	const base64 = buffer.toString('base64');
-	const dataUri = `data:image/jpeg;base64,${base64}`;
-	stockImageCache[filename] = dataUri;
+	const dataUri = `data:image/jpeg;base64,${buffer.toString('base64')}`;
+	imageCache[filename] = dataUri;
 	return dataUri;
 }
 
-// Category config: accent color per category
-const categoryConfig: Record<string, { bg: string; glow: string }> = {
-	SEO: { bg: '#2563eb', glow: 'rgba(37, 99, 235, 0.35)' },
-	Marketing: { bg: '#7611a6', glow: 'rgba(118, 17, 166, 0.35)' },
-	Travel: { bg: '#0d9488', glow: 'rgba(13, 148, 136, 0.35)' },
-	AI: { bg: '#e05d22', glow: 'rgba(224, 93, 34, 0.35)' },
-	'Thought Leadership': { bg: '#b45309', glow: 'rgba(180, 83, 9, 0.35)' },
+// The brand stock images are WebP (src/assets/stock-1..4.webp, mirrored in public/assets).
+// Satori / resvg want PNG or JPEG, so crop-to-panel and re-encode with sharp once per file.
+async function getStockPanelDataUri(filename: string): Promise<string> {
+	const key = `panel:${filename}`;
+	if (imageCache[key]) return imageCache[key];
+	const imgPath = path.join(process.cwd(), 'public', 'assets', filename);
+	const png = await sharp(imgPath)
+		.resize(PANEL_W, PANEL_H, { fit: 'cover', position: 'centre' })
+		.png({ compressionLevel: 9 })
+		.toBuffer();
+	const dataUri = `data:image/png;base64,${png.toString('base64')}`;
+	imageCache[key] = dataUri;
+	return dataUri;
+}
+
+// Category config: every category derives from the single vermilion signal.
+// Only the chip label may vary; colour is always accent text on cream.
+const categoryConfig: Record<string, { label: string }> = {
+	SEO: { label: 'SEO' },
+	Marketing: { label: 'Marketing' },
+	'Product Marketing': { label: 'Product Marketing' },
+	AI: { label: 'AI' },
+	Tools: { label: 'Tools' },
+	Career: { label: 'Career' },
+	Email: { label: 'Email' },
+	Design: { label: 'Design' },
+	Travel: { label: 'Travel' },
+	'Thought Leadership': { label: 'Thought Leadership' },
 };
 
-// Map frontmatter .webp paths to .jpg filenames for OG image rendering
+// Map frontmatter image paths to the stock filename used for the panel
 function getStockFromFrontmatter(img: string): string {
 	const match = img.match(/stock-(\d)\.webp$/);
-	if (match) return `stock-${match[1]}.jpg`;
-	return 'stock-1.jpg'; // fallback
+	if (match) return `stock-${match[1]}.webp`;
+	return 'stock-1.webp'; // fallback
+}
+
+// Keep the description to at most four lines at 21px in a 600px column
+function truncate(text: string, max: number): string {
+	if (!text || text.length <= max) return text || '';
+	const cut = text.slice(0, max);
+	const lastSpace = cut.lastIndexOf(' ');
+	return `${cut.slice(0, lastSpace > 80 ? lastSpace : max).replace(/[,;:.\s-]+$/, '')}...`;
 }
 
 export async function GET({ props }: APIContext) {
-	const { title, categories, img } = props as { title: string; categories: string[]; img: string };
+	const { title, description, categories, img } = props as {
+		title: string;
+		description?: string;
+		categories: string[];
+		img: string;
+	};
 	const fonts = getFonts();
-	const primaryCategory = categories[0] || 'Marketing';
-	const config = categoryConfig[primaryCategory] || categoryConfig.Marketing;
-	const bgImageUri = getStockImageDataUri(getStockFromFrontmatter(img));
-	const avatarUri = getStockImageDataUri('avatar-crop.jpg');
+	const chips = (categories.length ? categories : ['Marketing']).slice(0, 2).map((cat) => {
+		return (categoryConfig[cat] || { label: cat }).label;
+	});
+	const panelImageUri = await getStockPanelDataUri(getStockFromFrontmatter(img));
+	const avatarUri = getImageDataUri('avatar-crop.jpg');
+	const summary = truncate(description || '', 170);
+
+	const titleSize = title.length > 56 ? '42px' : title.length > 40 ? '48px' : '54px';
 
 	const svg = await satori(
 		{
@@ -76,26 +136,11 @@ export async function GET({ props }: APIContext) {
 					display: 'flex',
 					position: 'relative',
 					overflow: 'hidden',
-					fontFamily: 'Rubik',
+					fontFamily: 'Inter',
+					background: PAPER,
 				},
 				children: [
-					// Background stock image - fully visible
-					{
-						type: 'img',
-						props: {
-							src: bgImageUri,
-							style: {
-								position: 'absolute',
-								top: '0',
-								left: '0',
-								width: '1200px',
-								height: '630px',
-								objectFit: 'cover',
-							},
-						},
-					},
-
-					// Light scrim - just enough to unify the image, not blacken it
+					// Vermilion signal rule along the top edge
 					{
 						type: 'div',
 						props: {
@@ -104,54 +149,39 @@ export async function GET({ props }: APIContext) {
 								top: '0',
 								left: '0',
 								right: '0',
-								bottom: '0',
-								background: 'linear-gradient(160deg, rgba(12, 14, 22, 0.25) 0%, rgba(12, 14, 22, 0.35) 100%)',
+								height: '6px',
+								background: ACCENT,
 							},
 						},
 					},
 
-					// Top gradient accent bar
+					// Body: left text column + right image panel
 					{
 						type: 'div',
 						props: {
 							style: {
-								position: 'absolute',
-								top: '0',
-								left: '0',
-								right: '0',
-								height: '4px',
-								background: `linear-gradient(90deg, #ca7879 0%, ${config.bg} 50%, #1c0056 100%)`,
-							},
-						},
-					},
-
-					// Content area - frosted glass panel pinned to bottom
-					{
-						type: 'div',
-						props: {
-							style: {
-								position: 'absolute',
-								bottom: '0',
-								left: '0',
-								right: '0',
 								display: 'flex',
-								flexDirection: 'column',
-								padding: '40px 64px 44px',
-								background: 'linear-gradient(180deg, rgba(12, 14, 22, 0.0) 0%, rgba(12, 14, 22, 0.55) 15%, rgba(12, 14, 22, 0.88) 40%, rgba(12, 14, 22, 0.95) 100%)',
+								flexDirection: 'row',
+								alignItems: 'stretch',
+								gap: '40px',
+								width: '100%',
+								height: '100%',
+								padding: '62px 64px 56px',
 							},
 							children: [
-								// Category pill row
+								// Left column
 								{
 									type: 'div',
 									props: {
 										style: {
 											display: 'flex',
-											alignItems: 'center',
+											flexDirection: 'column',
 											justifyContent: 'space-between',
-											marginBottom: '20px',
+											flex: '1',
+											minWidth: '0',
 										},
 										children: [
-											// Category pills
+											// Category chips (mono, accent on cream)
 											{
 												type: 'div',
 												props: {
@@ -160,154 +190,172 @@ export async function GET({ props }: APIContext) {
 														alignItems: 'center',
 														gap: '8px',
 													},
+													children: chips.map((label) => ({
+														type: 'div',
+														props: {
+															style: {
+																display: 'flex',
+																padding: '7px 12px 6px',
+																borderRadius: '4px',
+																border: `1px solid ${HAIR}`,
+																background: CREAM,
+																color: ACCENT,
+																fontFamily: 'JetBrains Mono',
+																fontSize: '13px',
+																fontWeight: '500',
+																letterSpacing: '0.1em',
+																textTransform: 'uppercase' as const,
+																lineHeight: '1',
+															},
+															children: label,
+														},
+													})),
+												},
+											},
+
+											// Title + description
+											{
+												type: 'div',
+												props: {
+													style: {
+														display: 'flex',
+														flexDirection: 'column',
+														gap: '18px',
+														paddingTop: '24px',
+														paddingBottom: '24px',
+													},
 													children: [
 														{
 															type: 'div',
 															props: {
 																style: {
-																	width: '10px',
-																	height: '10px',
-																	borderRadius: '50%',
-																	background: config.bg,
-																	boxShadow: `0 0 14px ${config.glow}`,
+																	fontFamily: 'Bricolage Grotesque',
+																	fontSize: titleSize,
+																	fontWeight: '600',
+																	color: INK,
+																	lineHeight: '1.06',
+																	letterSpacing: '-0.02em',
 																},
+																children: title,
 															},
 														},
-														...categories.map((cat: string) => ({
-															type: 'div',
-															props: {
-																style: {
-																	padding: '6px 16px',
-																	borderRadius: '999px',
-																	border: '1px solid rgba(255, 255, 255, 0.18)',
-																	background: 'rgba(255, 255, 255, 0.1)',
-																	color: '#e8ecf4',
-																	fontSize: '13px',
-																	fontWeight: '400',
-																	letterSpacing: '0.08em',
-																	textTransform: 'uppercase' as const,
-																},
-																children: cat,
-															},
-														})),
+														...(summary
+															? [
+																	{
+																		type: 'div',
+																		props: {
+																			style: {
+																				fontFamily: 'Inter',
+																				fontSize: '21px',
+																				fontWeight: '400',
+																				color: LEDE,
+																				lineHeight: '1.45',
+																			},
+																			children: summary,
+																		},
+																	},
+																]
+															: []),
 													],
 												},
 											},
-											// Site branding
+
+											// Footer: avatar + name + domain
 											{
 												type: 'div',
 												props: {
 													style: {
-														fontSize: '15px',
-														color: 'rgba(255, 255, 255, 0.5)',
-														letterSpacing: '0.04em',
+														display: 'flex',
+														alignItems: 'center',
+														gap: '12px',
 													},
-													children: 'swapbiswas.com',
+													children: [
+														{
+															type: 'img',
+															props: {
+																src: avatarUri,
+																style: {
+																	width: '36px',
+																	height: '36px',
+																	borderRadius: '50%',
+																	objectFit: 'cover',
+																	border: `1px solid ${HAIR}`,
+																},
+															},
+														},
+														{
+															type: 'div',
+															props: {
+																style: {
+																	fontFamily: 'Inter',
+																	fontSize: '16px',
+																	fontWeight: '500',
+																	color: INK,
+																},
+																children: 'Swapnil Biswas',
+															},
+														},
+														{
+															type: 'div',
+															props: {
+																style: {
+																	width: '1px',
+																	height: '16px',
+																	background: HAIR,
+																},
+															},
+														},
+														{
+															type: 'div',
+															props: {
+																style: {
+																	fontFamily: 'JetBrains Mono',
+																	fontSize: '14px',
+																	fontWeight: '500',
+																	color: MUTED,
+																	letterSpacing: '0.02em',
+																},
+																children: 'swapbiswas.com',
+															},
+														},
+													],
 												},
 											},
 										],
 									},
 								},
 
-								// Title
-								{
-									type: 'div',
-									props: {
-										style: {
-											fontSize: title.length > 60 ? '40px' : title.length > 40 ? '48px' : '54px',
-											fontWeight: '600',
-											color: '#ffffff',
-											lineHeight: '1.2',
-											maxWidth: '1000px',
-											letterSpacing: '-0.02em',
-											textShadow: '0 2px 16px rgba(0, 0, 0, 0.4)',
-											marginBottom: '24px',
-										},
-										children: title,
-									},
-								},
-
-								// Author row
+								// Right image panel (white panel, hair border, radius 12)
 								{
 									type: 'div',
 									props: {
 										style: {
 											display: 'flex',
-											alignItems: 'center',
-											gap: '14px',
+											width: `${PANEL_W}px`,
+											height: `${PANEL_H}px`,
+											flexShrink: '0',
+											borderRadius: '12px',
+											border: `1px solid ${HAIR}`,
+											background: PANEL,
+											overflow: 'hidden',
 										},
 										children: [
-											// Author avatar photo
 											{
 												type: 'img',
 												props: {
-													src: avatarUri,
+													src: panelImageUri,
 													style: {
-														width: '40px',
-														height: '40px',
-														borderRadius: '50%',
+														width: `${PANEL_W}px`,
+														height: `${PANEL_H}px`,
 														objectFit: 'cover',
-														boxShadow: '0 2px 10px rgba(0, 0, 0, 0.25)',
-														border: '2px solid rgba(255, 255, 255, 0.2)',
+														borderRadius: '11px',
 													},
-												},
-											},
-											// Author name
-											{
-												type: 'div',
-												props: {
-													style: {
-														fontSize: '16px',
-														color: '#d0d5e0',
-														fontWeight: '600',
-													},
-													children: 'Swapnil Biswas',
-												},
-											},
-											// Separator dot
-											{
-												type: 'div',
-												props: {
-													style: {
-														width: '4px',
-														height: '4px',
-														borderRadius: '50%',
-														background: 'rgba(255, 255, 255, 0.3)',
-													},
-												},
-											},
-											// Role
-											{
-												type: 'div',
-												props: {
-													style: {
-														fontSize: '14px',
-														color: 'rgba(255, 255, 255, 0.4)',
-														fontWeight: '400',
-													},
-													children: 'Product Marketing & Growth',
 												},
 											},
 										],
 									},
 								},
 							],
-						},
-					},
-
-					// Bottom border accent
-					{
-						type: 'div',
-						props: {
-							style: {
-								position: 'absolute',
-								bottom: '0',
-								left: '0',
-								right: '0',
-								height: '3px',
-								background: `linear-gradient(90deg, transparent 0%, ${config.bg} 30%, #ca7879 70%, transparent 100%)`,
-								opacity: '0.6',
-							},
 						},
 					},
 				],
@@ -318,15 +366,27 @@ export async function GET({ props }: APIContext) {
 			height: 630,
 			fonts: [
 				{
-					name: 'Rubik',
-					data: fonts.rubikBold,
+					name: 'Bricolage Grotesque',
+					data: fonts.bricolage600,
 					weight: 600,
 					style: 'normal' as const,
 				},
 				{
-					name: 'Rubik',
-					data: fonts.rubikRegular,
+					name: 'Inter',
+					data: fonts.inter400,
 					weight: 400,
+					style: 'normal' as const,
+				},
+				{
+					name: 'Inter',
+					data: fonts.inter500,
+					weight: 500,
+					style: 'normal' as const,
+				},
+				{
+					name: 'JetBrains Mono',
+					data: fonts.jbmono500,
+					weight: 500,
 					style: 'normal' as const,
 				},
 			],

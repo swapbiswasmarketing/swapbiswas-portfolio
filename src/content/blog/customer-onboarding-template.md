@@ -4,7 +4,7 @@ description: "A free customer onboarding template with stages, owners, milestone
 publishDate: 2026-06-11
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
-img_alt: "A structured customer onboarding template showing stages, owners, and milestones across a timeline"
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is a customer onboarding template?"
     a: "A customer onboarding template is a reusable framework that maps every stage a new customer moves through, from contract signed to first value and full adoption. It assigns an owner, a milestone, and a target timeline to each step so nothing gets dropped between sales and success."

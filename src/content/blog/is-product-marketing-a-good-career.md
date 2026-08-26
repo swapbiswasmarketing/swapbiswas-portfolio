@@ -4,8 +4,8 @@ description: "Is product marketing a good career? An honest look at the work, sa
 publishDate: 2026-05-30
 updatedDate: 2026-05-30
 category: [Career, Product Marketing]
-img: /assets/stock-4.webp
-img_alt: Product marketing career path diagram showing progression from APMM to PMM to Senior PMM to Director and VP with skills and decisions at each stage
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "Is product marketing a good career?"
     a: "For people who like sitting at the intersection of product, sales, and customers - yes. It is one of the highest-leverage roles in tech: the work shapes positioning, launches, pricing, and revenue. The compensation is competitive with adjacent product and marketing roles, the growth path leads to VP and CMO seats, and the skills transfer across industries. The catch is the role is broad - PMMs who try to do everything do nothing well."

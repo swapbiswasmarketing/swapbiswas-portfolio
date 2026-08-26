@@ -3,8 +3,8 @@ title: "Customer Marketing vs Product Marketing: Who Owns What"
 description: "Customer marketing vs product marketing settled at the deliverable level: a 12-artifact ownership matrix with default owners, co-owners and handoff triggers."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: Ownership map dividing deliverables between product marketing, a contested middle band, and customer marketing
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "Is customer marketing part of product marketing?"
     a: "No. Customer marketing is a separate function that markets to people who have already bought, while product marketing takes the product to the market. In small teams one person does both, which is why the two get conflated, but they have different audiences, different triggers, and different metrics. The two only need a formal boundary once a second marketing hire lands."

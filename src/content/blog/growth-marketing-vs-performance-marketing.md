@@ -4,8 +4,8 @@ description: "Growth marketing vs performance marketing, explained by a PMM: wha
 publishDate: 2026-07-19
 updatedDate: 2026-08-15
 category: [Marketing]
-img: /assets/stock-3.webp
-img_alt: "Growth marketing vs performance marketing compared: full-funnel lifecycle experimentation versus paid, bottom-funnel, ROAS-driven acquisition"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is the difference between growth marketing and performance marketing?"
     a: "Performance marketing is paid media bought and optimized for a measurable action, judged on metrics like ROAS and CPA. It mostly works the acquisition end of the funnel and delivers fast, attributable results. Growth marketing is a full-funnel system of experiments spanning acquisition, activation, retention, referral, and revenue, optimized for long-term compounding value. Performance marketing buys traffic; growth marketing engineers the whole loop that turns traffic into retained, expanding revenue."

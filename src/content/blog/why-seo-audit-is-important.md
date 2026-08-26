@@ -3,8 +3,8 @@ title: "Why an SEO Audit Is Important (and What It Catches Early)"
 description: "Why an SEO audit is important: how technical and content issues quietly drain organic traffic and revenue, and the business case for auditing on a schedule."
 publishDate: 2026-06-10
 category: [SEO, Marketing]
-img: /assets/stock-4.webp
-img_alt: SEO audit dashboard highlighting technical and content issues that drain organic traffic
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "Why is an SEO audit important?"
     a: "An SEO audit is important because organic search drives the largest share of website traffic, and small technical or content problems quietly cap how much of that traffic you can earn. An audit finds the indexation errors, broken links, slow pages, and decaying content that lose you rankings before they show up as a revenue dip."

@@ -3,8 +3,8 @@ title: "9 Biggest Risks of Launching a New Product (2026)"
 description: "The 9 biggest risks of launching a new product, from no market need to weak positioning and sales misalignment, and how product marketers de-risk each one."
 publishDate: 2026-07-08
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: "A grid of the nine biggest risks of launching a new product, grouped by market, product, and go-to-market readiness"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is the biggest risk of launching a new product?"
     a: "The biggest risk is launching something with no real market need or weak product-market fit. If the underlying pain is not strong enough that buyers will pay or switch, no amount of positioning, pricing, or promotion downstream can rescue the launch. Validate genuine demand before you commit to a date."

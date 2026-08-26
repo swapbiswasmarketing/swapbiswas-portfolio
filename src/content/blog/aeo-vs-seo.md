@@ -4,8 +4,8 @@ description: "AEO vs SEO vs GEO: what actually differs across the three, what do
 publishDate: 2026-04-18
 updatedDate: 2026-08-15
 category: [SEO, AI, Thought Leadership, Marketing]
-img: /assets/stock-3.webp
-img_alt: AEO vs SEO vs GEO comparison showing the overlap between answer engine optimization, generative engine optimization, and SEO
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "What is the difference between AEO and SEO?"
     a: "AEO (answer engine optimization) is the practice of structuring content so AI-powered answer engines like Google AI Overviews, ChatGPT, and Perplexity can cite it. SEO is the broader practice of earning visibility across search engines. Based on Google's own documentation, AEO is a subset of SEO, not a replacement for it. The core requirements - quality content, crawlability, topical authority, strong E-E-A-T - are identical."

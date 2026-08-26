@@ -4,8 +4,8 @@ description: "A step-by-step guide on how I migrated from WordPress to Astro wit
 publishDate: 2026-03-01
 updatedDate: 2026-03-21
 category: [Marketing]
-img: /assets/stock-3.webp
-img_alt: WordPress to Astro migration illustration
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 ---
 
 I was paying close to ₹12,000 a year for a WordPress Business plan. For a personal portfolio site that I updated maybe once a quarter, that felt like paying rent on a house I barely lived in.

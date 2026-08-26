@@ -3,8 +3,8 @@ title: "B2B Lead Generation Funnel: Stages, Metrics, Fixes (2026)"
 description: "The B2B lead generation funnel explained by a PMM: the real stages, the MQL-to-SQL handoff, the metric that matters at each step, and how to fix the leaks."
 publishDate: 2026-07-01
 category: [Marketing, Product Marketing]
-img: /assets/stock-2.webp
-img_alt: A B2B lead generation funnel showing awareness, interest, consideration, intent, and conversion stages with the MQL to SQL handoff
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What are the stages of the B2B lead generation funnel?"
     a: "The B2B lead generation funnel has five working stages: awareness (the market learns the problem and your category exist), interest or engagement (a contact starts consuming your content), consideration (they actively research and compare), intent (they signal they are evaluating to buy), and conversion (the account becomes an opportunity and closes). The MQL-to-SQL handoff sits between consideration and intent."

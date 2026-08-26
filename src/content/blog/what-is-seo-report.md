@@ -4,8 +4,8 @@ description: "Learn what an SEO report is, what metrics to include, and how to b
 publishDate: 2026-04-01
 updatedDate: 2026-04-01
 category: [SEO, Marketing]
-img: /assets/stock-4.webp
-img_alt: SEO report guide and metrics illustration
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "What is an SEO report?"
     a: "An SEO report is a document that tracks and summarizes your website's search engine optimization performance, including metrics like organic traffic, keyword rankings, backlinks, and technical health."

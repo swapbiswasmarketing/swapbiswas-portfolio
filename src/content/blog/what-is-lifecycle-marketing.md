@@ -3,8 +3,8 @@ title: "What Is Lifecycle Marketing? The Complete Framework (2026)"
 description: "Lifecycle marketing explained: the five stages, the metrics that matter, and the channel-by-stage playbook PMMs and growth teams use in 2026."
 publishDate: 2026-05-09
 category: [Marketing, Product Marketing]
-img: /assets/stock-3.webp
-img_alt: Lifecycle marketing framework showing five customer stages from awareness through advocacy with channels and metrics
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is lifecycle marketing?"
     a: "Lifecycle marketing is the practice of designing distinct campaigns and experiences for each stage a customer moves through with your product, from first awareness to advocacy. Instead of treating every prospect the same, you match the message, channel, and offer to where the person is in their journey across the five stages - awareness, acquisition, activation, retention, and advocacy."

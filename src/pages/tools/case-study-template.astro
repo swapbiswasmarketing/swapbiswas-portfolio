@@ -748,7 +748,7 @@ const faqSchema = {
 			(document as any).fonts.ready.then(scaleCard);
 		}
 
-		const themeBgColors: Record<string, string> = { dark: '#0d1117', light: '#ffffff', brand: '#1c0056' };
+		const themeBgColors: Record<string, string> = { dark: '#0d1117', light: '#ffffff', brand: '#f6f4ef' };
 
 		async function renderCard(format: 'png' | 'blob'): Promise<any> {
 			const cEl = card as HTMLElement;
@@ -886,12 +886,12 @@ const faqSchema = {
 				headers: { 'Accept': 'application/json' }
 			}).then((res) => {
 				if (!res.ok) throw new Error('fail');
-				if (status) { status.textContent = 'Subscribed!'; status.style.color = 'var(--accent-regular)'; }
+				if (status) { status.textContent = 'Subscribed!'; status.style.color = 'var(--sg-ok)'; }
 				form.reset();
 				(window as any).dataLayer = (window as any).dataLayer || [];
 				(window as any).dataLayer.push({ event: 'newsletter_signup', signup_location: 'tool_case_study' });
 			}).catch(() => {
-				if (status) { status.textContent = 'Something went wrong.'; status.style.color = '#ca7879'; }
+				if (status) { status.textContent = 'Something went wrong.'; status.style.color = 'var(--accent-text)'; }
 			}).finally(() => {
 				if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
 			});
@@ -919,14 +919,14 @@ const faqSchema = {
 	.preview-sticky { display: flex; flex-direction: column; gap: 1rem; }
 
 	.form-panel {
-		background: var(--gray-999_40);
-		border: 1px solid var(--gray-800);
-		border-radius: 1rem;
+		background: var(--sg-panel);
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
 		padding: 1.5rem;
 	}
 	#casestudy-form fieldset { border: none; padding: 0; margin: 0 0 1.75rem; }
 	#casestudy-form legend {
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-weight: 600;
 		font-size: var(--text-md);
 		color: var(--gray-0);
@@ -951,36 +951,33 @@ const faqSchema = {
 	#casestudy-form input[type="text"] {
 		width: 100%;
 		padding: 0.6rem 0.85rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 0.5rem;
-		background: var(--gray-999_40);
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
 		color: var(--gray-0);
 		font-family: var(--font-body);
 		font-size: var(--text-sm);
-		transition: border-color 0.15s ease;
+		transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 	}
-	#casestudy-form input[type="text"]:focus { outline: none; border-color: var(--accent-regular); }
+	#casestudy-form input[type="text"]:focus { outline: none; border-color: var(--accent-regular); box-shadow: 0 0 0 3px var(--accent-overlay); }
+	#casestudy-form input[type="text"]::placeholder { color: var(--gray-600); }
 
 	.form-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
 
 	.btn-secondary {
 		padding: 0.5rem 1rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 999rem;
-		background: transparent;
-		color: var(--gray-200);
-		font-family: var(--font-brand);
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		color: var(--gray-0);
+		font-family: var(--font-body);
 		font-size: var(--text-sm);
 		font-weight: 500;
 		cursor: pointer;
-		transition: background 0.15s ease, color 0.15s ease;
+		transition: border-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
 	}
-	.btn-secondary:hover { background: var(--accent-subtle-overlay); color: var(--gray-0); }
-	.btn-danger:hover {
-		background: rgba(239, 68, 68, 0.12);
-		color: #f87171;
-		border-color: rgba(239, 68, 68, 0.3);
-	}
+	.btn-secondary:hover { border-color: var(--gray-0); color: var(--gray-0); }
+	.btn-danger:hover { background: var(--accent-subtle-overlay); color: var(--accent-text); border-color: var(--accent-regular); }
 
 	.sample-picker { position: relative; display: inline-block; }
 	.sample-picker > summary { list-style: none; }
@@ -993,9 +990,9 @@ const faqSchema = {
 		left: 0;
 		margin: 0;
 		padding: 0.25rem;
-		background: var(--gray-999);
-		border: 1px solid var(--gray-800);
-		border-radius: 0.5rem;
+		background: var(--sg-panel);
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-sm);
 		list-style: none;
 		z-index: 20;
 		min-width: 200px;
@@ -1010,10 +1007,10 @@ const faqSchema = {
 		background: transparent;
 		border: none;
 		color: var(--gray-200);
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-size: var(--text-sm);
 		cursor: pointer;
-		border-radius: 0.35rem;
+		border-radius: var(--radius-xs);
 	}
 	.sample-option:hover { background: var(--accent-subtle-overlay); color: var(--gray-0); }
 
@@ -1023,7 +1020,7 @@ const faqSchema = {
 		-webkit-appearance: none;
 		width: 34px;
 		height: 20px;
-		background: var(--gray-800);
+		background: var(--gray-700);
 		border-radius: 999rem;
 		position: relative;
 		cursor: pointer;
@@ -1040,7 +1037,7 @@ const faqSchema = {
 		top: 3px;
 		left: 3px;
 		transition: transform 0.2s ease;
-		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+		box-shadow: 0 0 0 1px var(--gray-600);
 	}
 	.section-toggle-input:checked { background: var(--accent-regular); }
 	.section-toggle-input:checked::before { transform: translateX(14px); }
@@ -1052,25 +1049,25 @@ const faqSchema = {
 
 	.theme-picker {
 		display: inline-flex;
-		border: 1px solid var(--gray-800);
-		border-radius: 999rem;
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-sm);
 		padding: 2px;
-		background: var(--gray-999_40);
+		background: var(--gray-900);
 	}
 	.theme-btn {
 		padding: 0.35rem 0.75rem;
 		border: none;
 		background: transparent;
 		color: var(--gray-300);
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-size: var(--text-xs);
 		font-weight: 500;
 		cursor: pointer;
-		border-radius: 999rem;
+		border-radius: calc(var(--radius-sm) - 2px);
 		transition: background 0.15s ease, color 0.15s ease;
 	}
 	.theme-btn:hover { color: var(--gray-0); }
-	.theme-btn.active { background: var(--accent-regular); color: var(--accent-text-over); }
+	.theme-btn.active { background: var(--gray-0); color: var(--accent-text-over); }
 
 	.preview-actions { display: flex; gap: 0.5rem; align-items: center; }
 	.btn-icon {
@@ -1078,20 +1075,19 @@ const faqSchema = {
 		align-items: center;
 		gap: 0.4rem;
 		padding: 0.5rem 0.85rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 999rem;
-		background: transparent;
-		color: var(--gray-200);
-		font-family: var(--font-brand);
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		color: var(--gray-0);
+		font-family: var(--font-body);
 		font-size: var(--text-sm);
 		font-weight: 500;
 		cursor: pointer;
-		transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+		transition: border-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
 	}
 	.btn-icon:hover:not([disabled]) {
-		background: var(--accent-subtle-overlay);
 		color: var(--gray-0);
-		border-color: var(--accent-regular);
+		border-color: var(--gray-0);
 	}
 	.btn-icon[disabled] { opacity: 0.7; cursor: not-allowed; }
 
@@ -1102,7 +1098,7 @@ const faqSchema = {
 		gap: 1rem;
 		margin: 0;
 		min-height: 1.1rem;
-		font-size: var(--text-xs);
+		font-family: var(--font-mono); font-size: var(--text-xs);
 		color: var(--gray-400);
 	}
 	.fill-counter { font-variant-numeric: tabular-nums; }
@@ -1114,27 +1110,27 @@ const faqSchema = {
 		gap: 1rem;
 		flex-wrap: wrap;
 	}
-	.preview-heading { font-size: var(--text-md); color: var(--gray-200); margin: 0; }
+	.preview-heading { font-size: var(--text-md); color: var(--gray-100); font-weight: 600; margin: 0; }
 
 	.btn-primary {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
-		padding: 0.6rem 1.25rem;
+		padding: 0.7rem 1.25rem;
 		border: none;
-		border-radius: 999rem;
-		background: var(--gradient-accent-orange);
+		border-radius: var(--radius-sm);
+		background: var(--gray-0);
 		color: var(--accent-text-over);
-		font-family: var(--font-brand);
-		font-size: var(--text-sm);
-		font-weight: 600;
+		font-family: var(--font-body);
+		font-size: 0.9375rem;
+		font-weight: 500;
 		cursor: pointer;
-		transition: box-shadow 0.15s ease, transform 0.15s ease;
+		transition: background 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 	}
-	.btn-primary:hover:not([disabled]) { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+	.btn-primary:hover:not([disabled]) { background: var(--gray-100); transform: translateY(-1px); }
 	.btn-primary[disabled] { opacity: 0.7; cursor: not-allowed; }
 
-	.preview-frame { position: relative; width: 100%; overflow: hidden; border-radius: 16px; }
+	.preview-frame { position: relative; width: 100%; overflow: hidden; border-radius: var(--radius-lg); }
 
 	/* Case study card */
 	.casestudy-card {
@@ -1166,7 +1162,7 @@ const faqSchema = {
 		font-weight: 600;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
-		color: #c084fc;
+		color: #fb923c;
 		margin-bottom: 10px;
 	}
 	.cs-headline {
@@ -1245,7 +1241,7 @@ const faqSchema = {
 	.cs-challenge-card .cs-card-head { color: #f5a0a1; }
 	.cs-solution-card .cs-card-head { color: #5eead4; }
 	.cs-results-card .cs-card-head { color: #fb923c; }
-	.cs-quote-card .cs-card-head { color: #c084fc; }
+	.cs-quote-card .cs-card-head { color: #fb923c; }
 	.cs-future-card .cs-card-head { color: #60a5fa; }
 
 	.cs-challenge-card, .cs-solution-card { grid-column: span 3; }
@@ -1295,7 +1291,7 @@ const faqSchema = {
 		color: #e6edf3;
 		line-height: 1.5;
 		padding-left: 14px;
-		border-left: 3px solid #c084fc;
+		border-left: 3px solid #fb923c;
 	}
 	.cs-quote-author { padding-left: 14px; }
 	.cs-author-name {
@@ -1351,7 +1347,7 @@ const faqSchema = {
 	.casestudy-card[data-theme="light"] .cs-footer-url { color: #94a3b8; }
 	.casestudy-card[data-theme="light"] .cs-intro { color: #0f172a !important; }
 	.casestudy-card[data-theme="light"] .cs-author-name { color: #0f172a; }
-	.casestudy-card[data-theme="light"] .cs-quote-text { color: #0f172a; border-left-color: #7611a6; }
+	.casestudy-card[data-theme="light"] .cs-quote-text { color: #0f172a; border-left-color: #b53b15; }
 	.casestudy-card[data-theme="light"] .cs-hero {
 		background: rgba(94, 234, 212, 0.12);
 		border-color: rgba(94, 234, 212, 0.4);
@@ -1361,86 +1357,92 @@ const faqSchema = {
 	.casestudy-card[data-theme="light"] .cs-result { background: rgba(251, 146, 60, 0.1); border-color: rgba(251, 146, 60, 0.3); }
 	.casestudy-card[data-theme="light"] .cs-result-num { color: #ea580c; }
 
-	/* Brand theme */
+	/* Brand theme - paper, ink, one vermilion signal */
 	.casestudy-card[data-theme="brand"] {
-		background: linear-gradient(135deg, #1c0056 0%, #7611a6 100%);
-		color: #ffffff;
+		background: #f6f4ef;
+		color: #15130f;
 	}
 	.casestudy-card[data-theme="brand"] .cs-header,
 	.casestudy-card[data-theme="brand"] .cs-footer,
-	.casestudy-card[data-theme="brand"] .cs-card-head { border-color: rgba(255,255,255,0.15); }
+	.casestudy-card[data-theme="brand"] .cs-card-head { border-color: #e4dfd6; }
 	.casestudy-card[data-theme="brand"] .cs-card {
-		background: rgba(255,255,255,0.08);
-		border-color: rgba(255,255,255,0.18);
+		background: #ffffff;
+		border-color: #e4dfd6;
 	}
-	.casestudy-card[data-theme="brand"] .cs-headline { color: #ffffff; }
-	.casestudy-card[data-theme="brand"] .cs-label { color: #f5a0a1; }
+	.casestudy-card[data-theme="brand"] .cs-headline { color: #15130f; }
+	.casestudy-card[data-theme="brand"] .cs-label { color: #b53b15; }
 	.casestudy-card[data-theme="brand"] .cs-card p,
 	.casestudy-card[data-theme="brand"] .cs-card ul,
 	.casestudy-card[data-theme="brand"] .cs-result-label,
 	.casestudy-card[data-theme="brand"] .cs-quote-text,
-	.casestudy-card[data-theme="brand"] .cs-meta { color: rgba(255,255,255,0.92); }
+	.casestudy-card[data-theme="brand"] .cs-meta { color: #3a3632; }
 	.casestudy-card[data-theme="brand"] .cs-meta-label,
 	.casestudy-card[data-theme="brand"] .cs-footer,
-	.casestudy-card[data-theme="brand"] .cs-author-title { color: rgba(255,255,255,0.7); }
-	.casestudy-card[data-theme="brand"] .cs-footer-url { color: rgba(255,255,255,0.85); }
-	.casestudy-card[data-theme="brand"] .cs-quote-text { border-left-color: #f5a0a1; }
-	.casestudy-card[data-theme="brand"] .cs-author-name { color: #ffffff; }
+	.casestudy-card[data-theme="brand"] .cs-author-title { color: #6a645c; }
+	.casestudy-card[data-theme="brand"] .cs-footer-url { color: #55504a; }
+	.casestudy-card[data-theme="brand"] .cs-quote-text { border-left-color: #b53b15; }
+	.casestudy-card[data-theme="brand"] .cs-author-name { color: #15130f; }
 	.casestudy-card[data-theme="brand"] .cs-hero {
-		background: rgba(94, 234, 212, 0.15);
-		border-color: rgba(94, 234, 212, 0.35);
+		background: #ffffff;
+		border-color: #e4dfd6;
 	}
-	.casestudy-card[data-theme="brand"] .cs-hero-stat { color: #5eead4; }
+	.casestudy-card[data-theme="brand"] .cs-hero-stat { color: #b53b15; }
 	.casestudy-card[data-theme="brand"] .cs-result {
-		background: rgba(253, 186, 116, 0.12);
-		border-color: rgba(253, 186, 116, 0.3);
+		background: rgba(181, 59, 21, 0.06);
+		border-color: rgba(181, 59, 21, 0.22);
 	}
-	.casestudy-card[data-theme="brand"] .cs-result-num { color: #fdba74; }
-	.casestudy-card[data-theme="brand"] .cs-challenge-card .cs-card-head { color: #fda4af; }
-	.casestudy-card[data-theme="brand"] .cs-solution-card .cs-card-head { color: #5eead4; }
-	.casestudy-card[data-theme="brand"] .cs-results-card .cs-card-head { color: #fdba74; }
-	.casestudy-card[data-theme="brand"] .cs-quote-card .cs-card-head { color: #d8b4fe; }
-	.casestudy-card[data-theme="brand"] .cs-future-card .cs-card-head { color: #93c5fd; }
+	.casestudy-card[data-theme="brand"] .cs-result-num { color: #b53b15; }
+	.casestudy-card[data-theme="brand"] .cs-challenge-card .cs-card-head { color: #b53b15; }
+	.casestudy-card[data-theme="brand"] .cs-solution-card .cs-card-head { color: #b53b15; }
+	.casestudy-card[data-theme="brand"] .cs-results-card .cs-card-head { color: #b53b15; }
+	.casestudy-card[data-theme="brand"] .cs-quote-card .cs-card-head { color: #b53b15; }
+	.casestudy-card[data-theme="brand"] .cs-future-card .cs-card-head { color: #b53b15; }
+	.casestudy-card[data-theme="brand"] .cs-intro { color: #15130f !important; }
+	.casestudy-card[data-theme="brand"] .cs-hero-label { color: #6a645c; }
 
 	/* Newsletter strip */
 	.tool-cta-strip {
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 1rem;
 		padding: 1.75rem;
-		background: var(--gray-999_40);
-		border: 1px solid var(--gray-800);
-		border-radius: 1rem;
+		background: var(--sg-panel);
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
 		align-items: center;
 	}
-	@media (min-width: 50em) { .tool-cta-strip { grid-template-columns: 1fr auto; } }
+	@media (min-width: 50em) { .tool-cta-strip { grid-template-columns: minmax(0, 1fr) auto; } }
 	.cta-text strong {
 		display: block;
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-weight: 600;
 		font-size: var(--text-md);
 		color: var(--gray-0);
 	}
 	.cta-text p { margin: 0.25rem 0 0; color: var(--gray-300); font-size: var(--text-sm); }
+	.cta-text,
+	.cta-form { min-width: 0; }
 	.cta-form { display: flex; gap: 0.5rem; }
 	.cta-form input {
 		flex: 1;
 		min-width: 0;
 		padding: 0.6rem 0.85rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 0.5rem;
-		background: var(--gray-999_40);
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
 		color: var(--gray-0);
-		font-size: var(--text-sm);
+		font-family: var(--font-body); font-size: var(--text-sm);
 	}
+	.cta-form input:focus { outline: none; border-color: var(--accent-regular); box-shadow: 0 0 0 3px var(--accent-overlay); }
+	.cta-form input::placeholder { color: var(--gray-600); }
 	.cta-form button {
 		padding: 0.6rem 1.25rem;
 		border: none;
-		border-radius: 0.5rem;
-		background: var(--gradient-accent-orange);
+		border-radius: var(--radius-sm);
+		background: var(--gray-0);
 		color: var(--accent-text-over);
-		font-family: var(--font-brand);
-		font-weight: 600;
+		font-family: var(--font-body);
+		font-weight: 500;
 		font-size: var(--text-sm);
 		cursor: pointer;
 		white-space: nowrap;
@@ -1454,21 +1456,21 @@ const faqSchema = {
 	.seo-content p, .seo-content li { color: var(--gray-200); font-size: var(--text-md); line-height: 1.65; }
 	.seo-content .how-to { padding-left: 1.25rem; }
 	.seo-content .how-to li { margin-bottom: 0.75rem; }
-	.seo-content a { color: var(--accent-regular); text-decoration: underline; text-underline-offset: 0.2em; }
+	.seo-content a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 0.15em; text-decoration-thickness: 1px; }
 	.seo-link { display: inline-block; font-weight: 600; }
 	.related-links { list-style: none; padding: 0; }
 	.related-links li { margin-bottom: 0.5rem; }
 
 	.faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
 	.faq-item {
-		border: 1px solid var(--gray-800);
-		border-radius: 0.5rem;
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
 		padding: 1rem 1.25rem;
-		background: var(--gray-999_40);
+		background: var(--sg-panel);
 	}
 	.faq-item summary {
 		cursor: pointer;
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-weight: 600;
 		color: var(--gray-0);
 		font-size: var(--text-md);
@@ -1480,7 +1482,7 @@ const faqSchema = {
 	}
 	.faq-item summary::after {
 		content: '+';
-		color: var(--accent-regular);
+		color: var(--accent-text);
 		font-size: 1.5rem;
 		font-weight: 400;
 		line-height: 1;

@@ -4,8 +4,8 @@ description: "Cross Network in Google Analytics 4 is traffic from Performance Ma
 publishDate: 2026-04-01
 updatedDate: 2026-04-01
 category: [Marketing, Tools]
-img: /assets/stock-3.webp
-img_alt: Google Analytics cross network channel explained
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "What is cross network in Google Analytics?"
     a: "Cross Network is a default channel grouping in GA4 that captures traffic from Google Ads campaigns that serve ads across multiple Google properties simultaneously, such as Performance Max and Smart Shopping campaigns."

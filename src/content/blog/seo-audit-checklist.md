@@ -3,8 +3,8 @@ title: "SEO Audit Checklist: The 2026 Step-by-Step Guide (Free)"
 description: "A practical SEO audit checklist for 2026, covering crawlability, indexation, on-page, content, technical health, and backlinks - in the order I actually work them."
 publishDate: 2026-06-23
 category: [SEO, Marketing]
-img: /assets/stock-1.webp
-img_alt: "A desk with a laptop showing a search console dashboard next to a printed audit checklist with items ticked off"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "What is an SEO audit checklist?"
     a: "It is a structured, prioritized list of checks you run against a website to find what is blocking it from ranking. A good one moves from the highest-leverage issues, like crawlability and indexation, down to refinements like internal linking and content depth."

@@ -4,7 +4,7 @@ description: "A B2B buyer persona is only useful if sales acts on it. Here is ho
 publishDate: 2026-06-20
 category: [Product Marketing, Marketing]
 img: /assets/stock-1.webp
-img_alt: "Product marketer mapping a B2B buyer persona across a buying committee whiteboard"
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is a B2B buyer persona?"
     a: "A B2B buyer persona is a research-based profile of a specific role inside the companies you sell to. It captures that person's goals, the pressures they answer to, the objections they raise, and how they prefer to buy, so marketing and sales can tailor messaging to them."

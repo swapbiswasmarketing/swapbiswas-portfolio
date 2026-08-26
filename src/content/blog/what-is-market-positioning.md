@@ -3,8 +3,8 @@ title: "What Is Market Positioning? Frameworks and Examples (2026)"
 description: "Market positioning explained: the modern definition, April Dunford's 5-component framework, real examples, and a 4-step workshop to find your own positioning."
 publishDate: 2026-04-25
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: Market positioning framework with five components feeding into a positioning statement template
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is market positioning in simple terms?"
     a: "Market positioning is the deliberate choice of where your product sits in the buyer's mind relative to alternatives. It is the answer to 'what is this, who is it for, and why is it better than what they would do otherwise.' Strong positioning makes the buyer's decision obvious. Weak positioning forces them to do the comparison work themselves."

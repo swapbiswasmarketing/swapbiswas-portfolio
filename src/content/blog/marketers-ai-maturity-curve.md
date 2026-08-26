@@ -4,8 +4,8 @@ description: "Find your stage on the AI maturity curve, from AI-curious to AI-na
 publishDate: 2026-03-06
 updatedDate: 2026-03-21
 category: [AI, Marketing, Thought Leadership]
-img: /assets/stock-2.webp
-img_alt: AI maturity curve for marketers illustration
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 ---
 
 Here's a number that should make you uncomfortable: **91% of marketers now say they actively use AI** in their work ([Jasper State of AI in Marketing 2026](https://www.jasper.ai/state-of-ai-marketing-2026)). That's up from 63% just a year ago.

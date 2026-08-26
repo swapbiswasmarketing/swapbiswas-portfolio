@@ -163,20 +163,21 @@ const collectionSchema = {
 		flex-wrap: wrap;
 	}
 
+	/* Filter chips: cream fill, hairline, radius-xs. Active = ink fill + paper text. */
 	.filter-btn {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.35rem;
-		padding: 0.5rem 1rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 999rem;
-		background: var(--gray-999_40);
+		gap: 0.4rem;
+		padding: 0.45rem 0.8rem;
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-xs);
+		background: var(--gray-900);
 		color: var(--gray-300);
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-size: var(--text-sm);
 		font-weight: 500;
 		text-decoration: none;
-		transition: all 0.2s ease;
+		transition: border-color 0.2s var(--ease-out), color 0.2s var(--ease-out), background 0.2s var(--ease-out);
 	}
 
 	.filter-btn:link,
@@ -186,13 +187,14 @@ const collectionSchema = {
 
 	.filter-btn:hover {
 		border-color: var(--gray-700);
+		background: var(--sg-panel);
 		color: var(--gray-0);
 	}
 
 	.filter-btn.active {
-		background: var(--gradient-accent-orange);
+		background: var(--gray-0);
 		color: var(--accent-text-over);
-		border-color: transparent;
+		border-color: var(--gray-0);
 	}
 
 	.filter-btn.active:link,
@@ -201,26 +203,29 @@ const collectionSchema = {
 	}
 
 	.filter-count {
+		font-family: var(--font-mono);
 		font-size: 0.7rem;
-		padding: 0.1rem 0.4rem;
-		border-radius: 999rem;
-		background: rgba(255, 255, 255, 0.15);
+		padding: 0.05rem 0.35rem;
+		border-radius: var(--radius-xs);
+		background: color-mix(in srgb, currentColor 12%, transparent);
 	}
 
 	.filter-btn.active .filter-count {
-		background: rgba(255, 255, 255, 0.25);
+		background: color-mix(in srgb, currentColor 18%, transparent);
 	}
 
 	.post-count {
+		font-family: var(--font-mono);
+		font-size: 0.8125rem;
 		color: var(--gray-400);
-		font-size: var(--text-sm);
 		margin: 0;
 	}
 
+	/* Same grid rhythm as /blog/: 1 col, 2 cols from 50em, 3 cols from 72em */
 	.blog-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-		gap: 2rem;
+		grid-template-columns: 1fr;
+		gap: 1rem;
 		list-style: none;
 		padding: 0;
 		margin: 0;
@@ -232,23 +237,32 @@ const collectionSchema = {
 
 	.back-nav {
 		padding-top: 2rem;
-		border-top: 1px solid var(--gray-800);
+		border-top: 1px solid var(--sg-hair);
 	}
 
 	.back-nav a {
 		color: var(--gray-300);
 		text-decoration: none;
+		font-family: var(--font-body);
 		font-size: var(--text-sm);
+		font-weight: 500;
+		transition: color 0.2s var(--ease-out);
 	}
 
 	.back-nav a:hover {
-		color: var(--accent-regular);
+		color: var(--accent-text);
 	}
 
 	@media (min-width: 50em) {
 		.blog-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.5rem;
+		}
+	}
+
+	@media (min-width: 72em) {
+		.blog-grid {
 			grid-template-columns: repeat(3, 1fr);
-			gap: 2.5rem;
 		}
 	}
 </style>

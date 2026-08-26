@@ -23,6 +23,7 @@ const fallbackPosts = posts.slice(0, 4);
 const popular = featuredPosts.length >= 4 ? featuredPosts : fallbackPosts;
 
 const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
+import SiteMark from './SiteMark.astro';
 ---
 
 <footer class="site-footer">
@@ -30,7 +31,7 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 		<div class="footer-grid">
 			<div class="col col-brand">
 				<a href="/" class="brand" aria-label="Swapnil Biswas home">
-					<span class="brand-mark" aria-hidden="true">SB</span>
+					<SiteMark size="2.25rem" class="brand-mark" />
 					<span class="brand-name">Swapnil Biswas</span>
 				</a>
 				<p class="tagline">
@@ -175,12 +176,12 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 						headers: { 'Accept': 'application/json' }
 					}).then(function (res) {
 						if (!res.ok) throw new Error('failed');
-						if (statusEl) { statusEl.textContent = 'Subscribed! Check your inbox.'; statusEl.style.color = 'var(--accent-regular)'; }
+						if (statusEl) { statusEl.textContent = 'Subscribed! Check your inbox.'; statusEl.style.color = 'var(--sg-ok)'; }
 						form.reset();
 						window.dataLayer = window.dataLayer || [];
 						window.dataLayer.push({ event: 'newsletter_signup', signup_location: 'footer' });
 					}).catch(function () {
-						if (statusEl) { statusEl.textContent = 'Something went wrong. Please try again.'; statusEl.style.color = '#ca7879'; }
+						if (statusEl) { statusEl.textContent = 'Something went wrong. Please try again.'; statusEl.style.color = 'var(--accent-text)'; }
 					}).finally(function () {
 						if (btn) { btn.innerHTML = original || 'Subscribe'; btn.disabled = false; }
 					});
@@ -202,6 +203,7 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 </script>
 
 <style>
+	/* Cream band with a hairline top rule. No frosted glass, no shadow. See DESIGN.md section 4. */
 	.site-footer {
 		margin-top: auto;
 		padding: 3rem 1.25rem 1.5rem;
@@ -209,10 +211,7 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 		font-size: var(--text-sm);
 		position: relative;
 		border-top: 1px solid var(--sg-hair);
-		/* frosted glass: the strand passes BEHIND and reads as a soft blur through the footer */
-		background-color: color-mix(in srgb, var(--sg-panel) 50%, transparent);
-		backdrop-filter: blur(20px) saturate(1.4);
-		-webkit-backdrop-filter: blur(20px) saturate(1.4);
+		background-color: var(--gray-900);
 	}
 
 	.footer-inner {
@@ -237,28 +236,16 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 		gap: 2.25rem;
 	}
 
-	/* Section heading */
+	/* Section heading: mono eyebrow, no underline rule */
 	.col-heading {
-		font-family: var(--font-brand);
-		font-size: 0.78rem;
-		font-weight: 700;
-		color: var(--gray-0);
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		font-weight: 500;
+		color: var(--gray-400);
 		margin: 0 0 1rem;
 		text-transform: uppercase;
 		letter-spacing: 0.12em;
-		position: relative;
-		padding-bottom: 0.5rem;
-	}
-
-	.col-heading::after {
-		content: '';
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 1.75rem;
-		height: 2px;
-		border-radius: 2px;
-		background: var(--gradient-accent-orange);
+		line-height: 1.4;
 	}
 
 	/* Link lists */
@@ -275,13 +262,13 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 	.link-list a {
 		color: var(--gray-300);
 		text-decoration: none;
-		transition: color 0.2s ease, transform 0.2s ease;
+		transition: color 0.18s var(--ease-out), transform 0.18s var(--ease-out);
 		display: inline-block;
 	}
 
 	.link-list a:hover,
 	.link-list a:focus-visible {
-		color: var(--accent-dark);
+		color: var(--gray-0);
 		transform: translateX(2px);
 	}
 
@@ -292,15 +279,14 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 		color: var(--gray-300);
 		text-decoration: none;
 		line-height: 1.45;
-		transition: color 0.2s ease;
+		transition: color 0.18s var(--ease-out);
 	}
 
 	.post-list a :global(svg) {
 		flex-shrink: 0;
 		margin-top: 0.3rem;
-		color: var(--accent-dark);
-		opacity: 0.7;
-		transition: transform 0.2s ease, opacity 0.2s ease;
+		color: var(--gray-400);
+		transition: transform 0.18s var(--ease-out), color 0.18s var(--ease-out);
 	}
 
 	.post-list a:hover,
@@ -311,7 +297,7 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 	.post-list a:hover :global(svg),
 	.post-list a:focus-visible :global(svg) {
 		transform: translateX(3px);
-		opacity: 1;
+		color: var(--accent-text);
 	}
 
 	.post-list span {
@@ -330,25 +316,19 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 		text-decoration: none;
 	}
 
+	/* Ink rounded square. In dark mode --gray-0 is paper and the text token flips to ink. */
 	.brand-mark {
 		width: 2.25rem;
 		height: 2.25rem;
-		display: grid;
-		place-items: center;
-		border-radius: 0.625rem;
-		background: var(--gradient-accent-orange);
-		color: var(--accent-text-over);
-		font-family: var(--font-brand);
-		font-weight: 700;
-		font-size: 0.95rem;
-		letter-spacing: 0.02em;
-		box-shadow: var(--shadow-sm);
+		display: block;
+		flex: none;
 	}
 
 	.brand-name {
-		font-family: var(--font-brand);
+		font-family: var(--font-display);
 		font-weight: 600;
 		font-size: var(--text-md);
+		letter-spacing: -0.01em;
 		color: var(--gray-0);
 	}
 
@@ -356,20 +336,23 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 		margin: 0 0 0.85rem;
 		max-width: 32ch;
 		line-height: 1.55;
-		color: var(--gray-200);
+		color: var(--gray-300);
 	}
 
+	/* Availability badge: the one place a pill radius is allowed in the footer */
 	.now-line {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
 		margin-bottom: 1.15rem;
-		padding: 0.35rem 0.75rem;
+		padding: 0.4rem 0.75rem;
 		border-radius: 999px;
-		border: 1px solid var(--gray-800);
-		background: var(--gray-999_40);
+		border: 1px solid var(--sg-hair);
+		background: var(--sg-panel);
 		color: var(--gray-200);
-		font-size: 0.8125rem;
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		letter-spacing: 0.02em;
 		line-height: 1;
 		width: fit-content;
 	}
@@ -380,17 +363,17 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 		width: 0.5rem;
 		height: 0.5rem;
 		border-radius: 999px;
-		background: #22c55e;
-		box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+		background: var(--sg-ok);
+		box-shadow: 0 0 0 3px color-mix(in srgb, var(--sg-ok) 25%, transparent);
 		animation: pulse 2.4s ease-in-out infinite;
 	}
 
 	@keyframes pulse {
-		0%, 100% { box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18); }
-		50%      { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.05); }
+		0%, 100% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--sg-ok) 25%, transparent); }
+		50%      { box-shadow: 0 0 0 6px color-mix(in srgb, var(--sg-ok) 8%, transparent); }
 	}
 
-	/* Socials — high specificity to beat .col ul / .link-list */
+	/* Socials - high specificity to beat .col ul / .link-list */
 	.col-brand .socials {
 		list-style: none;
 		padding: 0;
@@ -405,48 +388,45 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 		place-items: center;
 		width: 2.25rem;
 		height: 2.25rem;
-		border-radius: 0.55rem;
-		border: 1px solid var(--gray-800);
-		color: var(--gray-200);
-		background: var(--gray-999_40);
-		transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+		border-radius: var(--radius-sm);
+		border: 1px solid var(--sg-hair);
+		color: var(--gray-300);
+		background: var(--sg-panel);
+		transition:
+			transform 0.18s var(--ease-out),
+			border-color 0.18s var(--ease-out),
+			color 0.18s var(--ease-out);
 	}
 
 	.col-brand .socials a:hover,
 	.col-brand .socials a:focus-visible {
-		color: var(--accent-text-over);
-		background: var(--gradient-accent-orange);
-		border-color: transparent;
+		color: var(--gray-0);
+		border-color: var(--gray-700);
 		transform: translateY(-2px);
 	}
 
-	/* Subscribe card */
+	/* Subscribe card: white panel, hairline, no glow */
 	.subscribe-card {
 		padding: 1.5rem;
-		border-radius: 1rem;
-		border: 1px solid var(--gray-800);
-		background:
-			radial-gradient(120% 120% at 100% 0%, rgba(202, 120, 121, 0.08), transparent 60%),
-			radial-gradient(120% 120% at 0% 100%, rgba(118, 17, 166, 0.08), transparent 60%),
-			var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
+		border-radius: var(--radius-md);
+		border: 1px solid var(--sg-hair);
+		background: var(--sg-panel);
 	}
 
 	.subscribe-card .col-heading {
-		font-size: 0.9rem;
+		font-family: var(--font-body);
+		font-size: 1rem;
+		font-weight: 600;
+		letter-spacing: -0.01em;
 		text-transform: none;
-		letter-spacing: 0;
-		font-weight: 700;
-	}
-
-	.subscribe-card .col-heading::after {
-		display: none;
+		color: var(--gray-0);
+		margin-bottom: 0.5rem;
 	}
 
 	.subscribe-desc {
 		margin: 0 0 1rem;
 		line-height: 1.55;
-		color: var(--gray-200);
+		color: var(--gray-300);
 	}
 
 	.footer-nl-form {
@@ -457,45 +437,51 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 
 	.footer-nl-form input {
 		padding: 0.7rem 0.9rem;
-		border-radius: 0.55rem;
-		border: 1px solid var(--gray-800);
-		background: var(--gray-999);
+		border-radius: var(--radius-sm);
+		border: 1px solid var(--gray-700);
+		background: var(--sg-panel);
 		color: var(--gray-0);
 		font-size: var(--text-sm);
 		font-family: var(--font-body);
 		outline: none;
-		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+		transition: border-color 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out);
 	}
 
 	.footer-nl-form input:focus {
-		border-color: var(--accent-dark);
-		box-shadow: 0 0 0 3px rgba(118, 17, 166, 0.15);
+		border-color: var(--accent-regular);
+		box-shadow: 0 0 0 3px var(--accent-overlay);
 	}
 
 	.footer-nl-form input::placeholder {
-		color: var(--gray-400);
+		color: var(--gray-600);
 	}
 
+	/* Ink primary button */
 	.footer-nl-form button {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		gap: 0.5rem;
-		padding: 0.7rem 1rem;
-		border: none;
-		border-radius: 0.55rem;
-		background: var(--gradient-accent-orange);
+		padding: 0.7rem 1.25rem;
+		border: 1px solid var(--gray-0);
+		border-radius: var(--radius-sm);
+		background: var(--gray-0);
 		color: var(--accent-text-over);
-		font-size: var(--text-sm);
-		font-weight: 600;
-		font-family: var(--font-brand);
+		font-size: 0.9375rem;
+		font-weight: 500;
+		font-family: var(--font-body);
 		cursor: pointer;
-		transition: transform 0.2s ease, filter 0.2s ease;
+		transition:
+			transform 0.18s var(--ease-out),
+			background-color 0.18s var(--ease-out),
+			border-color 0.18s var(--ease-out);
 	}
 
-	.footer-nl-form button:hover {
+	.footer-nl-form button:hover,
+	.footer-nl-form button:focus-visible {
+		background: var(--gray-100);
+		border-color: var(--gray-100);
 		transform: translateY(-1px);
-		filter: brightness(1.05);
 	}
 
 	.footer-nl-form button:disabled {
@@ -518,35 +504,42 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 		align-items: center;
 		gap: 0.45rem;
 		padding-top: 1.75rem;
-		border-top: 1px solid var(--gray-800);
+		border-top: 1px solid var(--sg-hair);
 	}
 
 	.tags-label {
-		font-size: 0.75rem;
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		font-weight: 500;
 		text-transform: uppercase;
 		letter-spacing: 0.12em;
 		color: var(--gray-400);
 		margin-right: 0.5rem;
-		font-weight: 600;
 	}
 
 	.tag-chip {
 		display: inline-block;
-		padding: 0.3rem 0.75rem;
-		border-radius: 999px;
-		border: 1px solid var(--gray-800);
-		background: var(--gray-999_40);
-		color: var(--gray-200);
-		font-size: 0.8125rem;
+		padding: 0.3rem 0.6rem;
+		border-radius: var(--radius-xs);
+		border: 1px solid var(--sg-hair);
+		background: var(--sg-panel);
+		color: var(--gray-300);
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		font-weight: 500;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
 		text-decoration: none;
-		transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+		transition:
+			border-color 0.18s var(--ease-out),
+			color 0.18s var(--ease-out),
+			transform 0.18s var(--ease-out);
 	}
 
 	.tag-chip:hover,
 	.tag-chip:focus-visible {
-		color: var(--accent-text-over);
-		background: var(--gradient-accent-orange);
-		border-color: transparent;
+		color: var(--gray-0);
+		border-color: var(--gray-700);
 		transform: translateY(-1px);
 	}
 
@@ -557,7 +550,7 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 		gap: 0.6rem;
 		align-items: flex-start;
 		padding-top: 1.25rem;
-		border-top: 1px solid var(--gray-800);
+		border-top: 1px solid var(--sg-hair);
 		color: var(--gray-400);
 		font-size: 0.8125rem;
 	}
@@ -566,14 +559,27 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 	.back-to-top {
 		color: var(--gray-300);
 		text-decoration: none;
-		transition: color 0.2s ease;
+		transition: color 0.18s var(--ease-out);
+	}
+
+	/* The "Astro" link sits inside a sentence, so it keeps a visible underline */
+	.copyright a {
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.15em;
+		text-decoration-color: color-mix(in srgb, currentColor 55%, transparent);
 	}
 
 	.footer-bottom a:hover,
 	.footer-bottom a:focus-visible,
 	.back-to-top:hover,
 	.back-to-top:focus-visible {
-		color: var(--accent-dark);
+		color: var(--gray-0);
+	}
+
+	.copyright a:hover,
+	.copyright a:focus-visible {
+		text-decoration-color: currentColor;
 	}
 
 	.copyright {
@@ -605,11 +611,31 @@ const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 
 	.back-to-top :global(svg) {
 		transform: rotate(-90deg);
-		transition: transform 0.2s ease;
+		transition: transform 0.18s var(--ease-out);
 	}
 
 	.back-to-top:hover :global(svg) {
 		transform: rotate(-90deg) translateX(3px);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.now-dot {
+			animation: none;
+		}
+		.link-list a,
+		.post-list a :global(svg),
+		.col-brand .socials a,
+		.footer-nl-form button,
+		.tag-chip,
+		.back-to-top :global(svg) {
+			transition: none;
+		}
+		.link-list a:hover,
+		.col-brand .socials a:hover,
+		.footer-nl-form button:hover,
+		.tag-chip:hover {
+			transform: none;
+		}
 	}
 
 	/* Responsive */

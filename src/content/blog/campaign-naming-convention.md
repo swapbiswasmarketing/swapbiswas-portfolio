@@ -3,8 +3,8 @@ title: "Campaign Naming Convention: The Four-Field System (2026)"
 description: "A four-field campaign naming convention you can retrofit onto a live ad account, plus per-platform character limits and a UTM string that can never drift."
 publishDate: 2026-08-26
 category: [Marketing, Product Marketing]
-img: /assets/stock-2.webp
-img_alt: "Four campaign name fields - tier, motion, offer and period - merging into a matching ad platform campaign name and GA4 utm_campaign string"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "How do you name a campaign?"
     a: "Encode only what no other tool already stores, in a fixed order, with one delimiter. Four fields do it: tier, motion, offer and start period, joined by underscores and written in lowercase, which produces a name like t1_launch_webinar_2026-09. Channel, geo, audience and format stay out of the name because every one of them already exists as a queryable column."

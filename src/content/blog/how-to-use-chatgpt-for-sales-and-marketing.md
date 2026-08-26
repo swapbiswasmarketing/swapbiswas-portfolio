@@ -3,8 +3,8 @@ title: "How to Use ChatGPT for Sales and Marketing: 10 Workflows"
 description: "Learn how to use ChatGPT for sales and marketing with 10 proven workflows, prompts, and a framework that actually produces usable output - not generic AI slop."
 publishDate: 2026-04-11
 category: [AI, Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: ChatGPT for sales and marketing workflows and prompt framework
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "How do marketers use ChatGPT?"
     a: "Marketers use ChatGPT for drafting blog posts, generating ad variations, summarizing customer interviews, writing email sequences, building landing page copy, creating social media posts, and producing first-pass positioning and messaging documents. The most effective users treat it as a junior writer that needs specific context and strong editing."

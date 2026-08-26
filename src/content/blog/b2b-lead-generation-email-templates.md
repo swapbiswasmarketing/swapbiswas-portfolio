@@ -3,8 +3,8 @@ title: "12 B2B Lead Generation Email Templates That Get Replies"
 description: "12 copy-paste B2B lead generation email templates organized by funnel stage, each with a tested subject line and the psychology behind why it gets replies."
 publishDate: 2026-06-15
 category: [Marketing, Email]
-img: /assets/stock-2.webp
-img_alt: "B2B lead generation email templates organized by funnel stage with subject lines"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "What makes a good B2B lead generation email?"
     a: "A good B2B lead generation email is short, relevant to one specific trigger or pain point, and asks for one small commitment. It leads with the prospect's context, not your product, and ends with a single clear call to action rather than a list of options."

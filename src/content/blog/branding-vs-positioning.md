@@ -3,8 +3,8 @@ title: "Branding vs Positioning: The Difference and How to Align"
 description: "Branding vs positioning, explained by a PMM: positioning is the strategic choice you make inside, branding is how the market sees it. Here is how they align."
 publishDate: 2026-06-28
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: Branding vs positioning shown as the strategic choice of where you compete versus the expression of how the brand looks and feels
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is the difference between branding and positioning?"
     a: "Positioning is the strategic decision about who you are for, what category you compete in, what you beat, and why you win. Branding is the expression of that decision - the name, identity, voice, and experience the market actually sees. Positioning is made on the inside; branding is what shows up on the outside. Positioning comes first and directs branding."

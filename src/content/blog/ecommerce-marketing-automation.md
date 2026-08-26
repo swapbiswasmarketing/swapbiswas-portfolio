@@ -3,8 +3,8 @@ title: "Ecommerce Marketing Automation: Workflows That Drive Revenue"
 description: "A practitioner's guide to ecommerce marketing automation: the workflows, triggers, and sequencing that turn browsers into repeat buyers in 2026."
 publishDate: 2026-06-21
 category: [Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "Ecommerce marketing automation workflows connecting cart, email, and SMS triggers to revenue"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "What is ecommerce marketing automation?"
     a: "It is software that triggers personalized messages and offers based on what a shopper actually does - browsing a category, abandoning a cart, buying, or going quiet. The point is to send the right message at the right moment without a human pressing send."

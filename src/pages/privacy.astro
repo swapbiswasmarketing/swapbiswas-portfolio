@@ -109,13 +109,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	}
 
 	.content p {
-		color: var(--gray-300);
+		color: var(--gray-200);
 		line-height: 1.7;
 		margin-bottom: 1rem;
 	}
 
 	.content ul {
-		color: var(--gray-300);
+		color: var(--gray-200);
 		line-height: 1.7;
 		margin-bottom: 1rem;
 		padding-left: 1.5rem;
@@ -126,13 +126,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	}
 
 	.content a {
-		color: var(--accent-dark);
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
+		color: var(--link-color);
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.15em;
+		text-decoration-color: color-mix(in srgb, currentColor 55%, transparent);
+		transition: color var(--theme-transition), text-decoration-color var(--theme-transition);
 	}
 
 	.content a:hover {
+		color: var(--accent-dark);
 		text-decoration-color: currentColor;
 	}
 </style>

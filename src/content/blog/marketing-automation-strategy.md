@@ -4,8 +4,8 @@ description: "Build a marketing automation strategy that drives results. Learn h
 publishDate: 2026-03-20
 updatedDate: 2026-03-20
 category: [Marketing, Tools]
-img: /assets/stock-2.webp
-img_alt: Marketing automation strategy framework and workflow
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is a marketing automation strategy?"
     a: "A marketing automation strategy is a planned approach to using software tools to automate repetitive marketing tasks like email sequences, lead scoring, and campaign triggers, aligned with specific business goals and customer journey stages."

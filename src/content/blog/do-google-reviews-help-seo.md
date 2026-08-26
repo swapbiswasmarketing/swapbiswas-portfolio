@@ -4,8 +4,8 @@ description: "Learn how Google Reviews impact your local SEO rankings in 2026. D
 publishDate: 2025-03-23
 updatedDate: 2026-03-21
 category: [SEO]
-img: /assets/stock-4.webp
-img_alt: Google Reviews and SEO guide illustration
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "Do Google Reviews help SEO?"
     a: "Yes. Google Reviews directly influence local SEO rankings. Google's local ranking algorithm considers review quantity, quality, recency, and response rate as key factors in determining which businesses appear in the Local Pack and Maps results."

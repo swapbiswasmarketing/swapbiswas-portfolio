@@ -4,7 +4,7 @@ description: "Learn how email marketing fuels your inbound strategy by nurturing
 publishDate: 2026-06-16
 category: [Marketing, Email]
 img: /assets/stock-1.webp
-img_alt: "Marketer mapping email campaigns to each stage of an inbound marketing funnel"
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "How does email marketing fit into an inbound strategy?"
     a: "Email is the connective tissue of inbound. SEO, content, and social capture attention and contacts, then email nurtures those contacts, converts them into customers, and retains them. It is the channel you own outright, so it works the leads every other channel brings in."

@@ -4,8 +4,8 @@ description: "Discover why AI is a companion to marketers, not a competitor. Exp
 publishDate: 2024-06-23
 updatedDate: 2026-03-21
 category: [Marketing, AI]
-img: /assets/stock-2.webp
-img_alt: AI and marketing illustration
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "Will AI replace marketers?"
     a: "No. AI automates repetitive marketing tasks like data analysis, ad optimization, and content drafting, but it cannot replace human creativity, strategic thinking, emotional intelligence, and relationship building that are core to effective marketing."

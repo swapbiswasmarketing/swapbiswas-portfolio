@@ -3,8 +3,8 @@ title: "Product Sunset: A 90-Day Playbook and Comms Plan (2026)"
 description: "A product sunset playbook from a PMM: the notice period matrix by customer tier, a 90-day comms plan, the announcement template, and how to protect renewals."
 publishDate: 2026-08-15
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "The 90-day product sunset program showing six sequential phases with named owners, from locking the plan through announcement, migration push, and shutdown"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What does it mean to sunset a product?"
     a: "Sunsetting a product means announcing a dated end to it and running a managed wind-down: customers get notice, a migration path, and a data export window before the product stops working. It is different from quietly deprecating a feature, which discourages use but leaves it running."

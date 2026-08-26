@@ -4,7 +4,7 @@ description: "Product marketing OKRs that actually move revenue. 15 ready-to-use
 publishDate: 2026-04-18
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
-img_alt: Product marketing OKR framework showing objectives and key results
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What are product marketing OKRs?"
     a: "Product marketing OKRs are the objectives and key results a PMM team commits to each quarter. A strong PMM OKR pairs a clear, outcome-based objective (e.g. improve sales confidence in our top three competitors) with 2-4 measurable key results (e.g. rep confidence score moves from 3.1 to 4.2, battlecard usage hits 65% of logged deals)."

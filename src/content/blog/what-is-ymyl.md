@@ -3,8 +3,8 @@ title: "What Is YMYL? Google's 'Your Money or Your Life' Explained"
 description: "YMYL (Your Money or Your Life) is the content Google holds to its highest quality bar. Here is what YMYL means, the 4 categories, and how to optimize for it."
 publishDate: 2026-06-09
 category: [SEO, AI, Marketing]
-img: /assets/stock-1.webp
-img_alt: Diagram of the YMYL spectrum showing clear, possible, and non-YMYL topics
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "What does YMYL stand for?"
     a: "YMYL stands for 'Your Money or Your Life.' It is Google's label for topics that could significantly impact a person's health, financial stability, or safety, or the welfare or well-being of society. Google defines it in its Search Quality Rater Guidelines and holds YMYL pages to its highest quality standards."

@@ -5,7 +5,7 @@ publishDate: 2026-05-30
 updatedDate: 2026-05-30
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
-img_alt: Pricing strategy framework showing six steps from value research through model selection, packaging, testing, rollout, and ongoing optimization
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "How do you create a pricing strategy?"
     a: "Start with willingness-to-pay research, pick a pricing model that matches your value-delivery pattern (subscription, usage, per-seat, value-based), design packaging that creates clear upgrade paths, test before full rollout, and treat price as an ongoing experiment - not a one-time decision."

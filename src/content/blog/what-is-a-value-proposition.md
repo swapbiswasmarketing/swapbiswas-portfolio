@@ -3,8 +3,8 @@ title: "What Is a Value Proposition? Examples and How to Write One"
 description: "A value proposition is the one sentence that says why a buyer should choose you. Frameworks, examples, and the writing process PMMs actually use."
 publishDate: 2026-05-09
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: Four building blocks of a value proposition - customer, job, outcome, and differentiator - shown as a 2x2 card grid
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is a value proposition?"
     a: "A value proposition is the single most compelling reason a specific customer should choose your product over the alternatives. It names the customer, the job they are trying to do, the outcome you deliver, and what makes you different from anyone else who claims to do the same thing."

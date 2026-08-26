@@ -3,8 +3,8 @@ title: "ABM vs Inbound Marketing: How to Choose and Combine Both"
 description: "ABM vs inbound marketing, explained by a PMM: how each motion works, where each wins and fails, and how to combine them instead of picking a side."
 publishDate: 2026-06-30
 category: [Marketing, Product Marketing]
-img: /assets/stock-3.webp
-img_alt: ABM vs inbound marketing compared as narrow-and-deep versus wide-and-shallow motions that combine into one program
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is the difference between ABM and inbound marketing?"
     a: "Inbound marketing casts a wide net and waits for buyers to find you through content, SEO, and organic reach. ABM reverses the direction: you pick a defined list of high-value accounts and go to them with targeted, personalized outreach. Inbound is they-find-you and wide; ABM is you-pick-them and narrow. Strong teams run both."

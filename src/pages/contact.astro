@@ -49,6 +49,20 @@ const faqs = [
 				align="start"
 			/>
 
+			<figure class="contact-art">
+				<img
+					src="/assets/art/contact-window.webp"
+					srcset="/assets/art/contact-window-800.webp 800w, /assets/art/contact-window.webp 2000w"
+					sizes="(min-width: 83rem) 80rem, calc(100vw - 3rem)"
+					width="2000"
+					height="1493"
+					alt="Oil painting of a scholar's desk beside a tall window: folded letters, a quill, an inkwell and a red wax seal in warm afternoon light"
+					loading="lazy"
+					decoding="async"
+				/>
+				<figcaption>Studio, correspondence and quiet hours</figcaption>
+			</figure>
+
 			<div class="contact-grid">
 				<section class="form-section">
 					<h2>It all starts with hello..</h2>
@@ -174,6 +188,13 @@ const faqs = [
 		const accordions = document.querySelectorAll(".accordion");
 		accordions.forEach((accordion) => {
 			const trigger = accordion.querySelector(".accordion-trigger");
+			trigger?.addEventListener("keydown", (e) => {
+				const key = (e as KeyboardEvent).key;
+				if (key === "Enter" || key === " ") {
+					e.preventDefault();
+					(trigger as HTMLElement).click();
+				}
+			});
 			trigger?.addEventListener("click", () => {
 				const isActive = accordion.classList.contains("active");
 				accordions.forEach((a) => {
@@ -210,10 +231,45 @@ const faqs = [
 		gap: 3.5rem;
 	}
 
+	/* Breathing room between the breadcrumb (BaseLayout) and the hero eyebrow */
+	.contact > :global(.hero) {
+		margin-top: 1.25rem;
+	}
+
 	.contact-grid {
 		display: flex;
 		flex-direction: column;
 		gap: 3rem;
+	}
+
+	/* Scholar's desk painting: a wide band between the page header and the form + FAQ grid.
+	   .contact is a flex column with a 3.5rem gap, so the bottom margin is set relative to
+	   that gap to land at a net 2.5rem below the band. */
+	.contact-art {
+		margin: 0 0 calc(2.5rem - 3.5rem);
+		width: 100%;
+	}
+
+	.contact-art img {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		object-position: center 40%;
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
+	}
+
+	.contact-art figcaption {
+		margin-top: 0.75rem;
+		text-align: right;
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		font-weight: 400;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--gray-400);
 	}
 
 	h2 {
@@ -234,33 +290,35 @@ const faqs = [
 	label {
 		display: block;
 		margin-bottom: 0.5rem;
-		color: var(--sg-muted);
+		color: var(--gray-300);
+		font-family: var(--font-body);
 		font-size: var(--text-sm);
+		font-weight: 500;
 	}
 
 	input,
 	textarea {
 		width: 100%;
-		padding: 0.85rem 1rem;
-		border: 1px solid var(--sg-hair);
-		border-radius: 0.75rem;
-		background: var(--sg-void);
-		color: var(--sg-text);
+		padding: 0.75rem 1rem;
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		color: var(--gray-0);
 		font-family: var(--font-body);
-		font-size: var(--text-md);
-		transition: border-color var(--theme-transition), box-shadow var(--theme-transition);
+		font-size: var(--text-base);
+		transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 	}
 
 	input::placeholder,
 	textarea::placeholder {
-		color: var(--sg-muted);
+		color: var(--gray-600);
 	}
 
 	input:focus,
 	textarea:focus {
 		outline: none;
-		border-color: var(--sg-strand-0);
-		box-shadow: 0 0 0 3px rgba(197, 97, 246, 0.18);
+		border-color: var(--accent-regular);
+		box-shadow: 0 0 0 3px var(--accent-overlay);
 	}
 
 	textarea {
@@ -269,56 +327,59 @@ const faqs = [
 
 	button[type="submit"] {
 		display: inline-block;
-		padding: 0.85rem 2rem;
+		padding: 0.7rem 1.25rem;
 		border: none;
-		border-radius: 999rem;
-		background: linear-gradient(120deg, var(--sg-strand-0), var(--sg-warm));
-		color: #ffffff;
-		font-family: var(--font-brand);
-		font-size: var(--text-md);
-		font-weight: 600;
+		border-radius: var(--radius-sm);
+		background: var(--gray-0);
+		color: var(--accent-text-over);
+		font-family: var(--font-body);
+		font-size: 0.9375rem;
+		font-weight: 500;
+		line-height: 1.4;
 		cursor: pointer;
-		transition: box-shadow var(--theme-transition), filter var(--theme-transition);
+		transition: background-color 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 	}
 
 	button[type="submit"]:hover {
-		filter: brightness(1.06);
-		box-shadow: 0 8px 24px rgba(197, 97, 246, 0.28);
+		background: var(--gray-100);
+		transform: translateY(-1px);
 	}
 
 	button[type="submit"]:disabled {
-		opacity: 0.7;
+		opacity: 0.6;
 		cursor: not-allowed;
+		transform: none;
 	}
 
 	.form-message {
 		padding: 0.75rem 1rem;
-		border-radius: 0.5rem;
+		border-radius: var(--radius-xs);
 		margin-bottom: 1rem;
 		font-size: var(--text-sm);
+		line-height: 1.5;
 	}
 
 	.form-message.success {
-		background: #065f4620;
-		color: #34d399;
-		border: 1px solid #34d39940;
+		color: var(--sg-ok);
+		background: color-mix(in srgb, var(--sg-ok) 10%, transparent);
+		border-left: 2px solid var(--sg-ok);
 	}
 
 	.form-message.error {
-		background: #7f1d1d20;
-		color: #f87171;
-		border: 1px solid #f8717140;
+		color: var(--accent-text);
+		background: var(--accent-subtle-overlay);
+		border-left: 2px solid var(--accent-regular);
 	}
 
 	.form-message.error a {
-		color: #f87171;
+		color: var(--accent-text);
 		text-decoration: underline;
 	}
 
 	/* FAQ Styles */
 	.faq-box {
 		border: 1px solid var(--sg-hair);
-		border-radius: 1rem;
+		border-radius: var(--radius-md);
 		padding: 1.5rem;
 		background-color: var(--sg-panel);
 	}
@@ -340,23 +401,30 @@ const faqs = [
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 1rem;
 		padding: 1.25rem 0;
 		cursor: pointer;
+		font-family: var(--font-body);
 		font-size: var(--text-md);
 		font-weight: 600;
+		letter-spacing: -0.01em;
+		line-height: 1.3;
 		color: var(--sg-text);
 		user-select: none;
 		margin: 0;
+		transition: color 0.2s var(--ease-out);
 	}
 
 	.accordion-trigger:hover {
-		color: var(--sg-strand-0);
+		color: var(--accent-text);
 	}
 
 	.accordion-icon {
+		font-family: var(--font-mono);
 		font-size: var(--text-lg);
-		color: var(--sg-muted);
-		transition: transform 0.2s ease;
+		font-weight: 400;
+		color: var(--accent-text);
+		transition: transform 0.2s var(--ease-out);
 	}
 
 	.accordion.active .accordion-icon {
@@ -366,7 +434,7 @@ const faqs = [
 	.accordion-content {
 		max-height: 0;
 		overflow: hidden;
-		transition: max-height 0.25s ease-out, opacity 0.25s ease-out;
+		transition: max-height 0.25s var(--ease-out), opacity 0.25s var(--ease-out);
 		opacity: 0;
 	}
 
@@ -381,6 +449,10 @@ const faqs = [
 	}
 
 	@media (min-width: 50em) {
+		.contact-art img {
+			aspect-ratio: 21 / 9;
+		}
+
 		.contact-grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -388,7 +460,7 @@ const faqs = [
 		}
 
 		.faq-box {
-			border-radius: 1.25rem;
+			border-radius: var(--radius-md);
 			padding: 2.5rem;
 		}
 	}

@@ -3,8 +3,8 @@ title: "Content Marketing Framework for B2B: Map the Buyer Journey"
 description: "A content marketing framework built for B2B and product teams. Map each content type to a buyer-journey stage and buying question, then run the distribution loop."
 publishDate: 2026-07-25
 category: [Marketing]
-img: /assets/stock-3.webp
-img_alt: "Content marketing framework mapping four buyer-journey stages to a buying question, content type, and metric, with a distribution and measurement loop"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is a content marketing framework?"
     a: "A content marketing framework is a repeatable system for deciding what content to create, who it is for, and how it moves someone toward a purchase. A useful one maps every content type to a buyer-journey stage and the specific buying question a person is asking at that stage, then adds a distribution plan and a measurement loop so the whole thing ties back to pipeline instead of traffic."

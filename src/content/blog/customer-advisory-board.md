@@ -3,8 +3,8 @@ title: "Customer Advisory Board: Setup, Scorecard, 5 Ways It Dies"
 description: "How to run a customer advisory board as an instrumented program: member criteria, a copy-paste charter, an hour-by-hour agenda, and a 7-metric ROI scorecard."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: "The CAB Scorecard showing four leading indicators and three lagging indicators for measuring customer advisory board ROI"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "Do customer advisory board members get paid?"
     a: "Usually not. The standard currency is access rather than cash: early product previews, direct executive time, peer networking, and speaking slots. HubSpot's public CAB program page lists exactly those benefits and no honorarium. Hosts normally cover travel and accommodation for in-person sessions. My own view is that paying members directly is a mistake, because it converts candid advice into a paid deliverable."

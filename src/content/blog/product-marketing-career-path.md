@@ -3,8 +3,8 @@ title: "Product Marketing Career Path: Levels, Salary, Timeline"
 description: "The product marketing career path by a PMM: the five levels from Associate to VP, real US salary ranges, timelines, and how to move up faster."
 publishDate: 2026-07-19
 category: [Product Marketing, Career]
-img: /assets/stock-4.webp
-img_alt: "The product marketing career path in five levels from Associate PMM to VP of Product Marketing with US salary ranges and years of experience"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "What is the product marketing career path?"
     a: "The product marketing career path runs through five levels: Associate PMM (0-2 years), Product Marketing Manager (2-5 years), Senior PMM (5-8 years), Director of Product Marketing (8-12 years), and VP of Product Marketing (12+ years). Each level is a different job, not just a bigger title: you move from executing one workstream, to owning a product's launches, to owning strategy, to owning the function."

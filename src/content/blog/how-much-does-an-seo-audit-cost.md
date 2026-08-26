@@ -4,7 +4,7 @@ description: "How much does an SEO audit cost in 2026? Real pricing by agency, f
 publishDate: 2026-04-11
 category: [SEO, Marketing]
 img: /assets/stock-3.webp
-img_alt: SEO audit cost breakdown and pricing tiers illustration
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "How much does an SEO audit cost?"
     a: "A basic SEO audit typically costs $300 to $800, a comprehensive mid-market audit ranges from $1,500 to $5,000, and enterprise-level audits start at $10,000 and scale higher for large or multi-region sites. The price depends on website size, industry competition, and the depth of analysis."

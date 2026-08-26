@@ -3,8 +3,8 @@ title: "Messaging Pillars: How to Build Them, With Examples (2026)"
 description: "A PMM's practical guide to messaging pillars: what they are, how they sit in the messaging house, how to build them in steps, and worked SaaS examples."
 publishDate: 2026-06-29
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: A messaging house diagram with three messaging pillars supporting a positioning statement, each pillar backed by proof points
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What are messaging pillars?"
     a: "Messaging pillars are the three or four core themes that carry your product's value proposition. Each pillar names one distinct reason a buyer should care, and each one is backed by concrete proof points. Together they turn a single positioning statement into repeatable talking points a whole company can use."

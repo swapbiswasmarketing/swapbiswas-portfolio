@@ -3,8 +3,8 @@ title: "How Often Should You Do an SEO Audit? (2026 Cadence Guide)"
 description: "How often should you do an SEO audit? A practical cadence: monthly checks, quarterly deep dives, annual technical audits, plus the triggers that demand one now."
 publishDate: 2026-07-12
 category: [SEO]
-img: /assets/stock-2.webp
-img_alt: "An SEO audit cadence showing monthly checks, quarterly deep dives, annual technical audits, and event-based triggers"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "How often should you do an SEO audit?"
     a: "Run a light monitoring audit monthly to catch ranking drops and errors early, a deeper analytical audit quarterly for content decay and internal linking, and a full technical audit once a year. On top of that fixed cadence, run an unscheduled audit any time a major event hits, such as a traffic cliff, a migration, or a Google core update."

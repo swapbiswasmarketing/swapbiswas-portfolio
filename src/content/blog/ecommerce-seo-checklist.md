@@ -3,8 +3,8 @@ title: "Ecommerce SEO Checklist: Audit Your Store, Category to Cart"
 description: "An ecommerce SEO checklist covering faceted navigation, product schema, thin category pages, crawl budget, and internal linking that actually moves rankings."
 publishDate: 2026-06-14
 category: [SEO]
-img: /assets/stock-4.webp
-img_alt: "Online store dashboard showing product categories, filters, and a shopping cart on a laptop screen"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "What is an ecommerce SEO checklist?"
     a: "An ecommerce SEO checklist is a structured audit of the technical and on-page factors specific to online stores, such as faceted navigation, product and category schema, thin or duplicate category pages, crawl budget, and internal linking. It exists because stores generate far more URLs than a typical content site."

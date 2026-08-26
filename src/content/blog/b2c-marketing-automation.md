@@ -4,8 +4,8 @@ description: "Master B2C marketing automation with proven workflows, tool compar
 publishDate: 2026-03-14
 updatedDate: 2026-03-21
 category: [Marketing, Tools]
-img: /assets/stock-1.webp
-img_alt: B2C marketing automation workflows and tools guide
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 ---
 
 **75% of marketers** now use at least one type of marketing automation tool ([EmailMonday](https://www.emailmonday.com/marketing-automation-statistics-overview/)). Yet most of them are running B2B playbooks - lead scoring, drip nurture, MQL handoffs - that don't translate to consumer brands.

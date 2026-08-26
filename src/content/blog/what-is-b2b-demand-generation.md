@@ -3,8 +3,8 @@ title: "What Is B2B Demand Generation? The Modern Playbook (2026)"
 description: "B2B demand generation explained: the four-stage funnel, the difference from lead gen and ABM, the modern tech stack, and the metrics buyers actually act on."
 publishDate: 2026-04-25
 category: [Marketing, Product Marketing]
-img: /assets/stock-3.webp
-img_alt: B2B demand generation funnel showing awareness creation engagement capture and pipeline acceleration stages
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is B2B demand generation in simple terms?"
     a: "B2B demand generation is the discipline of creating awareness and intent for your category and product among the right accounts, then capturing and accelerating that intent into pipeline. It is everything that happens before a lead becomes a tracked record in the CRM, and the orchestrated motion that gets that record to a sales-accepted opportunity."

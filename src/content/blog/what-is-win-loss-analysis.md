@@ -3,8 +3,8 @@ title: "What Is Win-Loss Analysis? The 6-Stage Process for PMMs"
 description: "Win-loss analysis explained: the interview process, the 12 questions every PMM should ask, the categorization framework, and how to turn findings into pipeline."
 publishDate: 2026-05-09
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: Win-loss analysis six-stage process flow from deal selection through outreach interview coding synthesis and action
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is win-loss analysis?"
     a: "Win-loss analysis is a structured research process that interviews recently won and lost prospects to understand why deals went the way they did. The output is a list of patterns - product gaps, sales mistakes, competitor strengths, and pricing friction - that get fed into product, marketing, and sales decisions."

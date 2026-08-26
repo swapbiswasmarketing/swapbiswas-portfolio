@@ -3,8 +3,8 @@ title: "Mobile SEO Checklist: 15 Fixes to Win Mobile-First Rankings"
 description: "A practical mobile SEO checklist covering Core Web Vitals, responsive design, tap targets, and mobile-first indexing to win rankings where users search."
 publishDate: 2026-06-19
 category: [SEO]
-img: /assets/stock-1.webp
-img_alt: "Smartphone displaying a search results page with a checklist of mobile SEO optimization tasks"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "What is a mobile SEO checklist?"
     a: "A mobile SEO checklist is a structured set of fixes that make your site rank and convert well on phones. It covers mobile-first indexing, Core Web Vitals (LCP, INP, CLS), responsive design, viewport setup, and tap target sizing."

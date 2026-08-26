@@ -1,5 +1,5 @@
 ---
-title: "Not\u2014Pot"
+title: "Not-Pot"
 description: |
   Branding project covering visual identity, website design, and marketing strategy for a product brand.
 publishDate: 2024-02-01

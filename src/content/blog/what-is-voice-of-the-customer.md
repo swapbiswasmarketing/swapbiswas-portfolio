@@ -5,7 +5,7 @@ publishDate: 2026-05-30
 updatedDate: 2026-05-30
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
-img_alt: Voice of the customer five-stage program framework showing collect, analyze, distribute, act, and measure stages with input sources and outcomes
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is voice of the customer?"
     a: "Voice of the customer (VoC) is the structured discipline of collecting, analyzing, and acting on customer feedback - what they want, what frustrates them, what they expect. It pulls from surveys, interviews, reviews, support tickets, sales calls, and product usage, then distributes the insight to the teams that can act on it."

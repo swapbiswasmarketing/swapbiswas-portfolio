@@ -3,8 +3,8 @@ title: "How to Prioritize Accounts in ABM: Fit-and-Intent Framework"
 description: "How to prioritize accounts in ABM using fit and intent - a tiering framework to focus effort on the accounts most likely to buy, not just the biggest logos."
 publishDate: 2026-07-10
 category: [Marketing, Product Marketing]
-img: /assets/stock-4.webp
-img_alt: "A fit-versus-intent framework for prioritizing accounts in ABM into tiers from one-to-one to one-to-many"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "How do you prioritize accounts in ABM?"
     a: "Score every target account on two axes: fit, meaning how closely it resembles your best customers based on firmographics, tech stack, and use case, and intent, meaning whether the buying group is actively researching right now. Plot both scores into a fit-versus-intent matrix and give the most effort to accounts that score high on both."

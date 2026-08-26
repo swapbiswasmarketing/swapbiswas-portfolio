@@ -4,8 +4,8 @@ description: "Customer enablement explained: what it is, how it differs from onb
 publishDate: 2026-07-25
 updatedDate: 2026-08-15
 category: [Marketing, Product Marketing]
-img: /assets/stock-1.webp
-img_alt: "Four post-sale disciplines on one customer timeline: sales enablement, onboarding, customer enablement, and customer success with their owners"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is customer enablement?"
     a: "Customer enablement is the ongoing system that teaches customers to get more value from a product so they adopt more of it, expand, and renew. It runs across the entire post-sale relationship through education, documentation, in-product guidance, community, and certification. Unlike onboarding, which ends once a customer reaches first value, enablement is continuous - it keeps raising what the customer is capable of doing on their own."

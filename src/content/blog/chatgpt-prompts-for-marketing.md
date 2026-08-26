@@ -4,8 +4,8 @@ description: "20 battle-tested ChatGPT prompts for marketing, covering content, 
 publishDate: 2026-03-07
 updatedDate: 2026-03-21
 category: [AI, Marketing, Tools]
-img: /assets/stock-3.webp
-img_alt: ChatGPT prompts for marketing illustration
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 ---
 
 Most marketers use ChatGPT like a search engine. They type "write me a blog post about X" and wonder why the output sounds generic.

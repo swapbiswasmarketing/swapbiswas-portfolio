@@ -4,8 +4,8 @@ description: "Learn how to run a competitive product analysis that drives real d
 publishDate: 2026-03-14
 updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: Competitive product analysis framework for product marketers
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 ---
 
 **Sellers face direct competition in 68% of deals, yet the average sales team rates its competitive preparedness at just 3.8 out of 10** ([Crayon State of CI 2025](https://www.crayon.co/state-of-competitive-intelligence)). That gap between competitive reality and competitive readiness is costing companies millions in winnable deals.

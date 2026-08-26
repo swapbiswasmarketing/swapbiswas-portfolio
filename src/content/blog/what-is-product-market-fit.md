@@ -4,8 +4,8 @@ description: "Product-market fit explained: the four signals that predict PMF, t
 publishDate: 2026-05-30
 updatedDate: 2026-05-30
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: Product-market fit signals showing the four leading indicators - retention curves, organic pull, sales cycle compression, and the disappointment survey result
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is product-market fit?"
     a: "Product-market fit (PMF) is the stage where a product satisfies a strong market demand - customers buy it without heavy persuasion, retain at high rates, and tell others about it. A working definition: PMF is the state where the market pulls the product out of the team faster than the team can build it."

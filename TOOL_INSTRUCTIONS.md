@@ -117,6 +117,18 @@ grep -h "^const title" src/pages/tools/*.astro | sed 's/^const title = "//; s/";
 
 Anything over 60 is a bug, not a preference.
 
+### Visual style (follow DESIGN.md)
+
+Every tool page uses the site's Paper & Signal system. `DESIGN.md` is the source of truth and wins over anything older in this file.
+- **Colors** come from the tokens in `src/styles/global.css`: page `var(--gray-999)`, form + preview panels `var(--sg-panel)` with a `1px solid var(--sg-hair)` border, body text `var(--gray-200)`, help/muted text `var(--gray-400)`, accent as text `var(--accent-text)` (never `--accent-regular` as text, never `--accent-light` as text, never `--gray-500` as body text). No hard-coded purple, navy, rose, or Tailwind hexes anywhere in the page CSS
+- **Fonts:** page h1-h3 `var(--font-display)` (Bricolage Grotesque) at weight 600, labels/buttons/inputs/card titles `var(--font-body)` (Inter) 500, field counters/eyebrows/index numbers `var(--font-mono)` (JetBrains Mono). Space Grotesk and Public Sans are gone
+- **Shape:** buttons + inputs `var(--radius-sm)`, panels + cards `var(--radius-md)`, chips `var(--radius-xs)`. No `999px` pills on controls
+- **Buttons:** primary = ink fill (`var(--gray-0)`) with `var(--accent-text-over)` text; secondary = panel fill with a `1px var(--gray-700)` border and ink text. No gradients, no glow, no box-shadow at rest
+- **Surfaces:** no `backdrop-filter` glass, no gradient backgrounds, no shadow on panels at rest. `--shadow-md` / `--shadow-lg` only on floating surfaces (dropdowns, popups)
+- **Inputs:** panel fill, `1px var(--gray-700)` border, placeholder `var(--gray-600)`, focus = `var(--accent-regular)` border + `0 0 0 3px var(--accent-overlay)` ring
+- **Dark mode** inverts automatically through the tokens under `:root.theme-dark`; hard-coded `rgba()` / white values do not, so tokenize them
+- The exported card (the thing users download) is a product artifact and may carry its own dark / light / brand themes (Section 8), but those theme colors are also drawn from the `DESIGN.md` tables
+
 ## 4. Sticky Preview - The Critical Fix
 
 Tool pages have a form on the left and a live preview on the right. The preview MUST stay visible as the user scrolls the form. **This is broken by default** because of a global CSS rule.
@@ -239,7 +251,7 @@ async function renderCard(format) {
         if (frameEl) frameEl.style.height = cEl.scrollHeight + 'px';
         const opts = {
             pixelRatio: 2,
-            backgroundColor: '#0d1117',
+            backgroundColor: '#151311', // literal hex required (html-to-image ignores CSS vars); DESIGN.md dark ground. Use themeBgColors[theme] when the card has a theme picker
             cacheBust: true,
             width: 1000,
             height: cEl.scrollHeight,
@@ -281,7 +293,7 @@ downloadBtn?.addEventListener('click', async () => {
 **Why the inline transform fix matters:**
 - `pixelRatio: 2` for retina/print-quality
 - Always pass explicit `width: 1000` and `height: cardEl.scrollHeight` (otherwise html-to-image picks up the scaled bounding box and you get the blank-space bug)
-- Override `style.transform = 'none'` directly inside `renderCard`. **Do not** try to lock `--<tool>-scale` to `1` — the ResizeObserver/MutationObserver will undo it during the network await
+- Override `style.transform = 'none'` directly inside `renderCard`. **Do not** try to lock `--<tool>-scale` to `1` - the ResizeObserver/MutationObserver will undo it during the network await
 - Lazy-load the module BEFORE locking the transform (so the network await doesn't happen with the card temporarily un-scaled in the visible UI)
 - Restore the inline transform in `finally` so a render error doesn't leave the preview broken
 - Generate filename from user inputs (lowercase, kebab-case, fallback to generic name like `'launch-plan.png'` when empty)
@@ -507,7 +519,9 @@ Three themes via `data-theme` attribute on the card. Defaults to dark. The theme
 ```
 
 ```js
-const themeBgColors = { dark: '#0d1117', light: '#ffffff', brand: '#1c0056' };
+// Literal hexes from DESIGN.md (html-to-image needs a real color, not a CSS var):
+// dark = warm charcoal ground, light = paper, brand = the vermilion signal with paper text
+const themeBgColors = { dark: '#151311', light: '#f6f4ef', brand: '#b53b15' };
 
 function applyTheme(theme: string) {
     card.dataset.theme = theme;
@@ -518,7 +532,7 @@ function applyTheme(theme: string) {
 // Persist in saveState/loadState. Use themeBgColors[theme] in renderCard's backgroundColor opt.
 ```
 
-CSS overrides target `.tool-card[data-theme="light"]` and `[data-theme="brand"]` and override colors only - keep the dark theme as the default unscoped rule.
+CSS overrides target `.tool-card[data-theme="light"]` and `[data-theme="brand"]` and override colors only - keep the dark theme as the default unscoped rule. Pull every card color from `DESIGN.md` section 2: the dark table for the dark card (ground `#151311`, panel `#1d1a17`, hairline `#2e2a26`, text `#f4f0e8`, accent `#ff7a50`), the light table for the light card (ground `#f6f4ef`, panel `#ffffff`, hairline `#e4dfd6`, ink `#15130f`, body `#3a3632`, accent `#b53b15`), and for the brand card a `#b53b15` ground with `#f6f4ef` text and `#15130f` ink panels. No purple, navy, or Tailwind slate values (`#0f172a`, `#475569`, `#e2e8f0`), and keep `themeBgColors` in sync with the CSS.
 
 ### PDF download
 
@@ -746,11 +760,12 @@ The same rules apply to tool page SEO content:
 
 ## 18. Image Generation (if needed)
 
-Tools generally don't need separate hero images (the live preview *is* the image). If a tool needs supporting visuals (diagrams, examples), follow the [Diagram Design System in MEMORY.md](.claude/MEMORY.md):
-- Background `#0d1117` to `#161b22`
-- Cards `#151b23` fill, `#30363d` border, rx 16
-- Light accent colors only - never dark purple on dark backgrounds
-- Save as WebP to `public/assets/tools/{slug}/`
+Tools generally don't need separate hero images (the live preview *is* the image). If a tool needs supporting visuals (diagrams, examples), follow `DESIGN.md` section 8 (expanded in [BLOG_INSTRUCTIONS.md section 3](BLOG_INSTRUCTIONS.md)):
+- Background `#f6f4ef` paper, flat (no gradient)
+- Cards `#ffffff` fill, `#e4dfd6` 1px border, rx 12, no shadow
+- Title `#15130f` Bricolage Grotesque 600 38px, headings 26px 600, body `#3a3632` Inter 20px, labels JetBrains Mono - always with system fallbacks (resvg uses installed fonts)
+- Accent `#b53b15` for ONE emphasized element per image, `#2a7347` for "good", `#6a645c` for muted, ink `#15130f` for default arrows and dots
+- ViewBox 1400 wide, render at 1200px, save as WebP to `public/assets/tools/{slug}/`
 
 ## 19. LinkedIn Launch Pattern
 

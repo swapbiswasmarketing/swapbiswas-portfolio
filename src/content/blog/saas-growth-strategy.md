@@ -4,8 +4,8 @@ description: "Build a SaaS growth strategy that works. Learn 7 data-backed playb
 publishDate: 2026-03-19
 updatedDate: 2026-03-19
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: SaaS growth strategy playbooks and frameworks
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is a SaaS growth strategy?"
     a: "A SaaS growth strategy is a structured plan for scaling a software business across acquisition, activation, retention, and expansion. It combines product, marketing, and sales tactics aligned to specific growth metrics."

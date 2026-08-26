@@ -3,8 +3,8 @@ title: "Analyst Relations: What It Is and How a PMM Runs It (2026)"
 description: "Analyst relations explained: what AR is, who owns it, when to start, how to tier analysts, and what a Magic Quadrant or Forrester Wave submission demands."
 publishDate: 2026-08-15
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: "The analyst relations loop: brief the analyst, the analyst forms a view, the analyst answers buyer inquiries, and market intel returns to positioning"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is analyst relations?"
     a: "Analyst relations (AR) is the practice of managing a company's relationships with industry research firms such as Gartner, Forrester, and IDC so those analysts describe your product accurately to the buyers who ask them for advice. It covers analyst briefings, inquiry calls, research submissions like the Magic Quadrant and the Forrester Wave, and the competitive intelligence that flows back to your team."

@@ -7,6 +7,7 @@
 - [User Role](user_role.md) - Senior Product Marketing Manager at LambdaTest (promoted Apr 2026); prior role + education history
 - [No em-dashes](feedback_no_emdash.md) - never use `—`; default to ` - ` or rewrite; applies to all output including chat
 - [Semrush research tooling](semrush_research_tooling.md) - `scripts/semrush.mjs` keyword-data fallback when Ahrefs MCP is out of units; broad-match vs exact-volume + KD gotcha
+- [Paper & Signal site revamp](project_paper_signal_redesign.md) - 2026-08-26 site-wide retheme on branch `redesign/paper-ink`: warm paper + ink + vermilion #b53b15, Bricolage/Inter/JetBrains Mono; spec in repo DESIGN.md; why blue/terracotta/Geist were rejected
 - [Signal homepage redesign](redesign_signal_homepage.md) - in-progress award-targeted homepage revamp on branch `redesign/signal-homepage` (GSAP+Lenis, theme-aware, prototypes in `prototypes/`)
 - [Self-verify visual work](feedback_self_verify_visual.md) - for UI/design work, render & inspect the page myself (testmuai browser-cloud / kane-cli), don't rely on user screenshots
 - [No reskin duplicates](feedback_no_reskin_duplicates.md) - a "new" design must be an original layout + interaction mechanic, not a palette/font swap of an existing page (that reads as a duplicate)
@@ -22,7 +23,7 @@
 ## Project Overview
 - Astro 5 static site (portfolio + blog) at `c:\Website\portfolio`
 - Deployed at swapbiswas.com
-- Dark theme with purple/orange brand gradient
+- Visual system: "Paper & Signal" (warm paper, ink, vermilion #b53b15 accent; Bricolage Grotesque / Inter / JetBrains Mono) + Renaissance x nature AI paintings - spec in repo DESIGN.md, in progress on branch redesign/paper-ink
 - GitHub: https://github.com/swapbiswasmarketing/
 
 ## Key Files
@@ -107,14 +108,11 @@
 - Tracking and import prompt stored in `memory/reference_medium.md`
 
 ## Diagram Design System (for SVG source files)
-- Background: `#0d1117` to `#161b22`
-- Cards: `#151b23` fill, `#30363d` border, rx 16
-- Use LIGHT accent colors: `#f5a0a1`, `#c084fc`, `#60a5fa`, `#fb923c`, `#5eead4`, `#d98ee0`, `#b388f2`
-- Never use dark purple (#7611a6) on dark backgrounds - unreadable
-- Font: Segoe UI, Title `#f0f6fc` 38px 700, Heading 28px 600, Body `#c8cfd8` 21px, 32px line spacing
-- ViewBox: 1400px wide, render at 1200px max for WebP
-- Save WebP to `public/assets/blog/{slug}/`
-
+- Paper & Signal palette (replaces the old dark #0d1117 system; see repo DESIGN.md section 8)
+- Background: `#f6f4ef`; cards: `#ffffff` fill, `#e4dfd6` 1px border, rx 12
+- Ink `#15130f` for titles (Bricolage Grotesque 600, 38px), headings 26px 600; body `#3a3632` Inter 20px; muted `#6a645c`
+- One accent element per diagram in vermilion `#b53b15`; "good" = `#2a7347`; never purple, never dark backgrounds
+- ViewBox 1400px wide, render at 1200px max for WebP; save to `public/assets/blog/{slug}/`
 ## User Preferences
 - Thorough fact-checking is critical - verify every claim
 - Prefers practical, actionable content with data citations

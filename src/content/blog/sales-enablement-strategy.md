@@ -3,8 +3,8 @@ title: "Sales Enablement Strategy: A PMM's Build-Order Framework"
 description: "A sales enablement strategy that ties every asset to a deal stage and a metric. The build order a PMM ships: audit, map, build, connect to pipeline, measure."
 publishDate: 2026-07-25
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Sales enablement strategy framework showing four elements mapped to deal stages and pipeline metrics"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is a sales enablement strategy?"
     a: "A sales enablement strategy is the plan for the content, training, tools, and process that equip reps to move deals through each stage of the funnel. Unlike a content library, a real strategy ties every asset to a specific deal stage and a pipeline metric, so you can prove it changed rep behavior and not just that you shipped it."

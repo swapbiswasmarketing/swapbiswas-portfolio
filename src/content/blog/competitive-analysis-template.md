@@ -3,8 +3,8 @@ title: "Competitive Analysis Template: A Free Framework PMMs Use"
 description: "A free competitive analysis template that PMMs actually use - a step-by-step framework to map rivals, score them, and turn the findings into real action."
 publishDate: 2026-06-24
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: "Product marketer filling in a structured competitive analysis grid comparing rival products"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is a competitive analysis template?"
     a: "It is a reusable structure - usually a grid or document - that standardizes how you research and compare competitors across dimensions like pricing, features, positioning, and strengths. The point is consistency, so every competitor gets evaluated the same way."

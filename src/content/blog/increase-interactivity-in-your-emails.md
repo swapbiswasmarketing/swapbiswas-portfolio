@@ -4,8 +4,8 @@ description: "Boost email engagement with interactive elements like social proof
 publishDate: 2024-06-22
 updatedDate: 2026-03-21
 category: [Marketing]
-img: /assets/stock-3.webp
-img_alt: Email interactivity strategies illustration
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 ---
 
 An intuitive e-mail incorporates functional components that welcome perusers to lock in with the substance by tapping, swiping, clicking, or essentially observing. Intuitively components can be anything from a GIF and outline to a test or commencement timer.

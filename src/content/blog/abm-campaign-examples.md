@@ -3,8 +3,8 @@ title: "ABM Campaign Examples: 8 Real Plays B2B Teams Run in 2026"
 description: "Eight concrete ABM campaign examples across one-to-one, one-to-few, and one-to-many tiers, with the trigger, channels, and what good looks like for each play."
 publishDate: 2026-07-02
 category: [Marketing, Product Marketing]
-img: /assets/stock-1.webp
-img_alt: Account-based marketing campaign plays mapped across one-to-one, one-to-few, and one-to-many ABM tiers
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What are the three tiers of ABM?"
     a: "The three tiers are one-to-one (deep personalization for a handful of strategic accounts), one-to-few (light personalization for clusters of similar accounts, usually by industry or use case), and one-to-many (programmatic, intent-driven campaigns across a larger target list). Most strong programs run all three at once and move accounts between tiers as intent rises."

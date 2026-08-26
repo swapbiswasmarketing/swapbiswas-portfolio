@@ -4,7 +4,7 @@ description: "How to build a win-loss analysis dashboard sales and product actua
 publishDate: 2026-07-09
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
-img_alt: "The anatomy of a win-loss analysis dashboard showing win rate, loss reasons, competitor splits, and deal-level drill-downs"
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is a win-loss analysis dashboard?"
     a: "A win-loss analysis dashboard is a live report that combines CRM closed-won and closed-lost data with structured loss reasons and interview themes so sales, product, and marketing can see win rates, top loss reasons, and competitor splits in one place. It replaces the static slide deck with something teams can filter and drill into on their own."

@@ -3,8 +3,8 @@ title: "How to Implement Marketing Automation: A 6-Phase Playbook"
 description: "How to implement marketing automation without the six-month delay. A 6-phase playbook with data, workflows, and tooling decisions for your first 90 days."
 publishDate: 2026-04-25
 category: [Marketing, Tools]
-img: /assets/stock-1.webp
-img_alt: Marketing automation implementation roadmap with six phases from data foundation to operating cadence
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "How long does it take to implement marketing automation?"
     a: "A focused implementation reaches a working welcome series, lead scoring, and one nurture in 30 to 45 days. Full coverage across acquisition, lifecycle, and revenue attribution typically takes 90 to 120 days. The variable that breaks timelines is data, not tooling."

@@ -3,8 +3,8 @@ title: "Product Launch Email Sequence: 4 Templates That Convert"
 description: "Build a product launch email sequence that converts. Get the exact pre-launch, launch-day, and post-launch cadence plus four copyable templates for PMMs."
 publishDate: 2026-06-17
 category: [Product Marketing, Email, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Marketer mapping a multi-step product launch email sequence on a timeline"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "How many emails should a product launch sequence have?"
     a: "Most launches run 6 to 9 emails across three phases: 2 to 3 pre-launch teasers, 2 to 3 launch-day emails, and 2 to 3 post-launch follow-ups. Send fewer if your list is small or your buying cycle is short."

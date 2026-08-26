@@ -3,8 +3,8 @@ title: "Local SEO Checklist: 20 Steps to Rank in the Map Pack (2026)"
 description: "A 20-step local SEO checklist for small businesses and solo marketers. Optimize your Google Business Profile, citations, and reviews to rank in the map pack."
 publishDate: 2026-06-18
 category: [SEO]
-img: /assets/stock-4.webp
-img_alt: "Map pin marker on a smartphone screen representing local search results"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "What is a local SEO checklist?"
     a: "A local SEO checklist is a step-by-step list of the actions that help a business rank in local search and the Google map pack. It covers your Google Business Profile, NAP citations, reviews, on-page local signals, and local backlinks."

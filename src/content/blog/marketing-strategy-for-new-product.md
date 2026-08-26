@@ -4,8 +4,8 @@ description: "A step-by-step marketing strategy for a new product, from market r
 publishDate: 2026-03-08
 updatedDate: 2026-03-21
 category: [Marketing, Product Marketing]
-img: /assets/stock-4.webp
-img_alt: Marketing strategy for new product launch
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 ---
 
 Only **40% of developed products ever reach the market**. Of those, just **60% generate any revenue** ([G2](https://learn.g2.com/product-launch-statistics)). The gap between building something and successfully launching it is where most products die.

@@ -3,8 +3,8 @@ title: "How to Check a Competitor's Email Marketing Without Guessing"
 description: "Learn how to check a competitor's email marketing legally: study their cadence, offers, and subject lines with free signups, tools, and teardown frameworks."
 publishDate: 2026-06-13
 category: [Marketing, Email]
-img: /assets/stock-2.webp
-img_alt: "Marketer reviewing a competitor's email campaigns and subject lines on a laptop inbox"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "Is it legal to study a competitor's email marketing?"
     a: "Yes. Subscribing to a public newsletter with your own address and analyzing the emails you receive is completely legal. You are a customer on their list like anyone else. Just do not scrape private data, impersonate someone, or republish their copy as your own."

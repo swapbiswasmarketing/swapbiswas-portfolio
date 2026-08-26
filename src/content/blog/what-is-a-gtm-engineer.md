@@ -3,8 +3,8 @@ title: "What Is a GTM Engineer? Role, Skills, and Salary (2026)"
 description: "What is a GTM engineer? A PMM's guide to what they actually do, the skills and salary, how to become one, and how the role differs from RevOps."
 publishDate: 2026-07-19
 category: [Product Marketing, Career]
-img: /assets/stock-1.webp
-img_alt: "A GTM engineer sits between RevOps and software engineering, building automated go-to-market systems from the CRM, sales tools, data, and AI"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "What is a GTM engineer?"
     a: "A GTM engineer builds and automates the systems that run a company's go-to-market. They connect the CRM, sales tools, and data sources with code, APIs, and AI so revenue teams move faster. Sitting between RevOps and software engineering, they turn go-to-market strategy into working automated pipelines instead of manual busywork."

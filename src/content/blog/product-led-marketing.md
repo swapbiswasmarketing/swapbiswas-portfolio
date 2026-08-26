@@ -3,8 +3,8 @@ title: "Product-Led Marketing: How to Make a Product Sell Itself"
 description: "A PMM's practical guide to product led marketing - how to make the product itself the channel, the pitch, and the proof, with frameworks you can apply."
 publishDate: 2026-06-14
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Product-led marketing framework showing the product itself as the primary growth channel"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is product-led marketing?"
     a: "Product-led marketing is a strategy where the product itself becomes the primary way you acquire, activate, and convert users. Instead of relying only on ads and sales calls, you use free trials, freemium plans, in-product moments, and shareable outputs to let people experience value before they pay."

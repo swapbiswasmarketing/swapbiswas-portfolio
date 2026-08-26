@@ -4,7 +4,7 @@ description: "The product marketing metrics that prove impact to leadership, fro
 publishDate: 2026-07-19
 category: [Product Marketing]
 img: /assets/stock-2.webp
-img_alt: "Product marketing metrics grouped by what they prove: pipeline influence, sales enablement adoption, product adoption, launch impact, and win rate"
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What are the most important product marketing metrics?"
     a: "The ones that map to revenue and adoption, not activity. A strong core set is influenced pipeline, sales enablement adoption (are reps using your content), product adoption of the features you market, launch impact against pre-set goals, and competitive win rate. Track a tight set of these rather than a long list of impressions and downloads leadership does not care about."

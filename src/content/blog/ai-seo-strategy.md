@@ -5,7 +5,7 @@ publishDate: 2026-03-07
 updatedDate: 2026-03-21
 category: [AI, SEO, Marketing]
 img: /assets/stock-4.webp
-img_alt: AI SEO strategy illustration
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 ---
 
 Here's what changed: **58-60% of Google searches now end without a click** to any website ([SparkToro Zero-Click Study, 2024](https://sparktoro.com/blog/2024-zero-click-search-study-for-every-1000-us-google-searches-only-374-clicks-go-to-the-open-web-in-the-eu-its-360/)). AI Overviews now appear in a growing share of Google searches and reach over **2 billion monthly users** across 200+ countries. When AI Overviews show up, organic CTR drops by **61%** ([Search Engine Land / Seer Interactive, 2025](https://searchengineland.com/google-ai-overviews-drive-drop-organic-paid-ctr-464212)).

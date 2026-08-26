@@ -4,8 +4,8 @@ description: "Run a technical SEO site audit in 8 steps, from crawlability to Co
 publishDate: 2026-03-07
 updatedDate: 2026-03-21
 category: [SEO, Marketing]
-img: /assets/stock-1.webp
-img_alt: Technical SEO audit guide illustration
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 howTo:
   name: "How to Conduct a Technical SEO Site Audit"
   totalTime: "PT2H"

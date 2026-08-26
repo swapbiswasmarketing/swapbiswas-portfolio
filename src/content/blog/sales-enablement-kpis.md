@@ -3,8 +3,8 @@ title: "Sales Enablement KPIs: 12 Metrics That Move Revenue (2026)"
 description: "The sales enablement KPIs that prove your work moves revenue, not activity. 12 metrics across content, training, and deal support that actually matter."
 publishDate: 2026-06-18
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: "Dashboard showing sales enablement KPIs for content usage, ramp time, and win rate"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What are sales enablement KPIs?"
     a: "Sales enablement KPIs are the metrics that show whether your enablement work (content, training, and deal support) actually helps reps sell more. They split into leading indicators like content usage and rep confidence, and lagging indicators like ramp time, win rate, and deal velocity."

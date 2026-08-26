@@ -29,6 +29,21 @@ const posts = popular.length >= 3 ? popular : fallback;
 <BaseLayout title="Page Not Found | Swapnil Biswas" description="404 Error - this page was not found" noindex={true}>
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
+			<!-- Hero visual: Renaissance-style ruins painting in a paper panel -->
+			<div class="nf-art">
+				<img
+					class="nf-art-img"
+					src="/assets/art/notfound-ruins.webp"
+					srcset="/assets/art/notfound-ruins-800.webp 800w, /assets/art/notfound-ruins.webp 2000w"
+					sizes="(min-width: 60em) 880px, calc(100vw - 3rem)"
+					width="2000"
+					height="1116"
+					alt="Painting of classical ruins with a path leading away"
+					loading="eager"
+					decoding="async"
+				/>
+			</div>
+
 			<Hero title="404 - Page Not Found" tagline="The page you're looking for doesn't exist, moved, or was never written. Try a search or one of the links below." align="start" />
 
 			<!-- Pagefind-powered search -->
@@ -177,12 +192,12 @@ const posts = popular.length >= 3 ? popular : fallback;
 					headers: { Accept: 'application/json' }
 				}).then(function (res) {
 					if (!res.ok) throw new Error('failed');
-					if (statusEl) { statusEl.textContent = 'Subscribed! Check your inbox.'; statusEl.style.color = 'var(--accent-regular)'; }
+					if (statusEl) { statusEl.textContent = 'Subscribed! Check your inbox.'; statusEl.style.color = 'var(--sg-ok)'; }
 					form.reset();
 					window.dataLayer = window.dataLayer || [];
 					window.dataLayer.push({ event: 'newsletter_signup', signup_location: '404' });
 				}).catch(function () {
-					if (statusEl) { statusEl.textContent = 'Something went wrong. Please try again.'; statusEl.style.color = '#ca7879'; }
+					if (statusEl) { statusEl.textContent = 'Something went wrong. Please try again.'; statusEl.style.color = 'var(--accent-text)'; }
 				}).finally(function () {
 					if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
 				});
@@ -207,6 +222,32 @@ const posts = popular.length >= 3 ? popular : fallback;
 		border: 0;
 	}
 
+	/* Hero art panel: ruins painting, 16:9 on mobile, 21:9 crop on desktop */
+	.nf-art {
+		width: 100%;
+		max-width: 880px;
+		margin: 0 auto 2rem;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
+		background: var(--sg-panel);
+	}
+
+	.nf-art-img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 55%;
+	}
+
+	@media (min-width: 50em) {
+		.nf-art {
+			aspect-ratio: 21 / 9;
+		}
+	}
+
 	/* Search */
 	.notfound-search {
 		position: relative;
@@ -214,16 +255,16 @@ const posts = popular.length >= 3 ? popular : fallback;
 		align-items: center;
 		gap: 0.5rem;
 		max-width: 40rem;
-		padding: 0.35rem 0.5rem 0.35rem 2.75rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 999px;
-		background: var(--gray-999_40);
-		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+		padding: 0.3rem 0.3rem 0.3rem 2.75rem;
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 	}
 
 	.notfound-search:focus-within {
-		border-color: var(--accent-dark);
-		box-shadow: 0 0 0 3px rgba(118, 17, 166, 0.15);
+		border-color: var(--accent-regular);
+		box-shadow: 0 0 0 3px var(--accent-overlay);
 	}
 
 	.search-icon {
@@ -236,7 +277,7 @@ const posts = popular.length >= 3 ? popular : fallback;
 	.notfound-search-input {
 		flex: 1;
 		min-width: 0;
-		padding: 0.65rem 0;
+		padding: 0.6rem 0;
 		border: none;
 		background: transparent;
 		color: var(--gray-0);
@@ -246,24 +287,24 @@ const posts = popular.length >= 3 ? popular : fallback;
 	}
 
 	.notfound-search-input::placeholder {
-		color: var(--gray-400);
+		color: var(--gray-600);
 	}
 
 	.notfound-search-btn {
 		padding: 0.55rem 1.1rem;
 		border: none;
-		border-radius: 999px;
-		background: var(--gradient-accent-orange);
+		border-radius: calc(var(--radius-sm) - 2px);
+		background: var(--gray-0);
 		color: var(--accent-text-over);
-		font-family: var(--font-brand);
-		font-weight: 600;
+		font-family: var(--font-body);
+		font-weight: 500;
 		font-size: var(--text-sm);
 		cursor: pointer;
-		transition: filter 0.2s ease, transform 0.2s ease;
+		transition: background-color 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 	}
 
 	.notfound-search-btn:hover {
-		filter: brightness(1.05);
+		background: var(--gray-100);
 		transform: translateY(-1px);
 	}
 
@@ -276,7 +317,8 @@ const posts = popular.length >= 3 ? popular : fallback;
 	}
 
 	.nf-search-count {
-		font-size: var(--text-sm);
+		font-family: var(--font-mono);
+		font-size: 0.8125rem;
 		color: var(--gray-400);
 		margin: 0 0 0.65rem;
 	}
@@ -300,18 +342,17 @@ const posts = popular.length >= 3 ? popular : fallback;
 	.nf-search-list a {
 		display: block;
 		padding: 0.85rem 1rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
-		background: var(--gray-999_40);
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
+		background: var(--sg-panel);
 		text-decoration: none;
 		color: var(--gray-200);
-		transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+		transition: border-color 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 	}
 
 	.nf-search-list a:hover,
 	.nf-search-list a:focus-visible {
-		border-color: var(--accent-dark);
-		background: var(--gray-999);
+		border-color: var(--gray-700);
 		transform: translateX(2px);
 	}
 
@@ -319,8 +360,9 @@ const posts = popular.length >= 3 ? popular : fallback;
 		display: block;
 		color: var(--gray-0);
 		font-weight: 600;
-		font-family: var(--font-brand);
+		font-family: var(--font-body);
 		font-size: var(--text-base);
+		letter-spacing: -0.01em;
 		margin-bottom: 0.2rem;
 	}
 
@@ -332,10 +374,10 @@ const posts = popular.length >= 3 ? popular : fallback;
 	}
 
 	.nf-result-excerpt :global(mark) {
-		background: rgba(118, 17, 166, 0.2);
+		background: var(--accent-overlay);
 		color: var(--gray-0);
 		padding: 0 0.15rem;
-		border-radius: 0.2rem;
+		border-radius: var(--radius-xs);
 	}
 
 	/* Actions */
@@ -349,24 +391,27 @@ const posts = popular.length >= 3 ? popular : fallback;
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
-		padding: 0.75rem 1.5rem;
-		border: 1px solid var(--gray-800);
-		border-radius: 999rem;
-		background: var(--gradient-subtle);
-		color: var(--gray-200);
-		font-family: var(--font-brand);
+		padding: 0.7rem 1.25rem;
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: 0.9375rem;
 		font-weight: 500;
 		text-decoration: none;
-		transition: box-shadow var(--theme-transition), color var(--theme-transition);
+		transition: border-color 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 	}
 
 	.action-link:hover {
-		box-shadow: var(--shadow-md);
+		border-color: var(--gray-0);
 		color: var(--gray-0);
+		transform: translateY(-1px);
 	}
 
 	.action-icon {
 		font-size: 1.2em;
+		color: var(--accent-text);
 	}
 
 	.recent-posts {
@@ -399,16 +444,13 @@ const posts = popular.length >= 3 ? popular : fallback;
 
 	.nf-newsletter-inner {
 		padding: 1.75rem;
-		border-radius: 1rem;
-		border: 1px solid var(--gray-800);
-		background:
-			radial-gradient(120% 120% at 100% 0%, rgba(202, 120, 121, 0.10), transparent 55%),
-			radial-gradient(120% 120% at 0% 100%, rgba(118, 17, 166, 0.10), transparent 55%),
-			var(--gray-999_40);
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--sg-hair);
+		background: var(--sg-panel);
 	}
 
 	.nf-newsletter h2 {
-		font-family: var(--font-brand);
+		font-family: var(--font-display);
 		font-size: var(--text-xl);
 		color: var(--gray-0);
 		margin: 0 0 0.35rem;
@@ -429,39 +471,52 @@ const posts = popular.length >= 3 ? popular : fallback;
 		flex: 1;
 		min-width: 16rem;
 		padding: 0.7rem 0.9rem;
-		border-radius: 0.55rem;
-		border: 1px solid var(--gray-800);
-		background: var(--gray-999);
+		border-radius: var(--radius-sm);
+		border: 1px solid var(--gray-700);
+		background: var(--sg-panel);
 		color: var(--gray-0);
 		font-family: var(--font-body);
 		font-size: var(--text-sm);
 		outline: none;
+		transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+	}
+
+	.nf-newsletter-form input::placeholder {
+		color: var(--gray-600);
 	}
 
 	.nf-newsletter-form input:focus {
-		border-color: var(--accent-dark);
-		box-shadow: 0 0 0 3px rgba(118, 17, 166, 0.15);
+		border-color: var(--accent-regular);
+		box-shadow: 0 0 0 3px var(--accent-overlay);
 	}
 
 	.nf-newsletter-form button {
 		padding: 0.7rem 1.25rem;
 		border: none;
-		border-radius: 0.55rem;
-		background: var(--gradient-accent-orange);
+		border-radius: var(--radius-sm);
+		background: var(--gray-0);
 		color: var(--accent-text-over);
-		font-family: var(--font-brand);
-		font-weight: 600;
+		font-family: var(--font-body);
+		font-size: 0.9375rem;
+		font-weight: 500;
 		cursor: pointer;
-		transition: filter 0.2s ease, transform 0.2s ease;
+		transition: background-color 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 	}
 
 	.nf-newsletter-form button:hover {
-		filter: brightness(1.05);
+		background: var(--gray-100);
 		transform: translateY(-1px);
+	}
+
+	.nf-newsletter-form button:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+		transform: none;
 	}
 
 	.nf-newsletter-status {
 		margin: 0.5rem 0 0 !important;
+		font-family: var(--font-mono);
 		font-size: 0.8125rem;
 		min-height: 1rem;
 	}

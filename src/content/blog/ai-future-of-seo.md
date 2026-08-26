@@ -5,7 +5,7 @@ publishDate: 2026-03-18
 updatedDate: 2026-03-18
 category: [AI, SEO]
 img: /assets/stock-4.webp
-img_alt: AI and the future of SEO strategy
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "Will AI replace SEO?"
     a: "AI will not replace SEO but is fundamentally changing it. Search still drives billions of queries daily. What's changing is how results are displayed (AI Overviews, zero-click answers) and how content needs to be optimized for both traditional and AI-powered search."

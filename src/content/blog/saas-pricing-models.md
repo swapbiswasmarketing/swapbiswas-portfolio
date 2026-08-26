@@ -3,8 +3,8 @@ title: "7 B2B SaaS Pricing Models With Examples (2026)"
 description: "The 7 B2B SaaS pricing models with real examples, plus the value-metric question a PMM uses to pick the right one and the traps that quietly cap expansion."
 publishDate: 2026-07-25
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: "The seven B2B SaaS pricing models mapped to their value metric, from flat-rate through tiered, per-seat, usage-based, freemium, per-active-user, and hybrid"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What are the main B2B SaaS pricing models?"
     a: "The seven models most B2B SaaS companies use are flat-rate, tiered, per-seat (per-user), usage-based, freemium, per-active-user, and hybrid. Tiered and hybrid dominate in practice because pure single-model pricing rarely fits how a real product delivers value across segments."

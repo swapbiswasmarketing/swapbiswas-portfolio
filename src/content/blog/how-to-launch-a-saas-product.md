@@ -4,7 +4,7 @@ description: "How to launch a SaaS product without burning your one shot at atte
 publishDate: 2026-04-25
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
-img_alt: SaaS product launch timeline showing brief narrative positioning private beta enablement and post-launch phases
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "How long should a SaaS product launch take?"
     a: "Plan for 12 weeks of pre-launch work for a Tier 1 launch and a 90-day post-launch window where most of the pipeline impact actually shows up. The mistake is treating launch day as the finish line. Launch day is when the meter starts."

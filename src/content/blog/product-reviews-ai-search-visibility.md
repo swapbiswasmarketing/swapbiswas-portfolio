@@ -3,8 +3,8 @@ title: "How Product Reviews Impact AI Search Visibility (2026)"
 description: "How product reviews shape your AI search visibility - why LLMs and AI assistants pull from ratings and reviews, and how to earn citations in AI answers."
 publishDate: 2026-07-11
 category: [AI, SEO]
-img: /assets/stock-3.webp
-img_alt: "How product reviews feed AI search engines and shape whether your brand appears in AI-generated answers and recommendations"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "Do product reviews affect AI search visibility?"
     a: "Yes. Answer engines like ChatGPT, Perplexity, and Google AI Overviews summarize third-party reviews when they describe a product, so the volume, recency, and rating quality of your reviews directly shape what those tools say about you and whether they recommend you."

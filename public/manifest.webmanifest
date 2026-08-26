@@ -4,8 +4,8 @@
   "description": "Product Marketing & Growth Strategist specializing in AI, SEO, and content.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#090b11",
-  "theme_color": "#090b11",
+  "background_color": "#f6f4ef",
+  "theme_color": "#f6f4ef",
   "icons": [
     {
       "src": "/icon-192.png",

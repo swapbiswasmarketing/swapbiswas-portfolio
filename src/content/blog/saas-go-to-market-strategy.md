@@ -3,8 +3,8 @@ title: "SaaS Go-to-Market Strategy: A PMM's Framework for 2026"
 description: "A practitioner's SaaS go-to-market strategy framework for 2026: pick a motion, nail positioning, sequence channels, and align product, sales, and marketing."
 publishDate: 2026-06-16
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: "Whiteboard sketch of a SaaS go-to-market strategy connecting positioning, motion, channels, and metrics"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is a SaaS go-to-market strategy?"
     a: "A SaaS go-to-market strategy is the plan for how you bring a software product to a specific market and turn strangers into paying customers. It covers who you target, how they buy, the motion you use to sell, and how product, marketing, and sales work together."

@@ -5,7 +5,7 @@ publishDate: 2026-03-14
 updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
-img_alt: SaaS product marketing strategy framework and playbook
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 ---
 
 **Acquiring a new SaaS customer costs 5-25x more than retaining an existing one** ([Lighter Capital](https://www.lightercapital.com/blog/saas-customer-retention-important-acquisition)). Meanwhile, the median net revenue retention for bootstrapped SaaS companies ($3M-$20M ARR) sits at just 104% ([SaaS Capital](https://www.saas-capital.com/blog-posts/benchmarking-metrics-for-bootstrapped-saas-companies/)). These two numbers explain why a SaaS product marketing strategy demands a fundamentally different approach than marketing a one-time purchase product.

@@ -4,8 +4,8 @@ description: "Explore real product-led growth examples from Slack, Notion, Figma
 publishDate: 2026-03-19
 updatedDate: 2026-03-19
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: Product-led growth examples and SaaS company strategies
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is product-led growth?"
     a: "Product-led growth (PLG) is a go-to-market strategy where the product itself drives acquisition, activation, and retention. Users experience value through free trials or freemium plans before converting to paid."

@@ -4,7 +4,7 @@ description: "Customer onboarding explained: the four-stage framework, activatio
 publishDate: 2026-05-09
 category: [Product Marketing, Marketing]
 img: /assets/stock-1.webp
-img_alt: Customer onboarding four-stage framework with day ranges showing job and tactics for welcome activation adoption and value realization
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is customer onboarding?"
     a: "Customer onboarding is the structured process that takes a new customer from sign-up to first meaningful value with your product. It usually spans the first 7-90 days and combines product UX, email and in-app sequences, customer success outreach, and milestone tracking. The goal is to compress time-to-value before the customer's initial enthusiasm decays."

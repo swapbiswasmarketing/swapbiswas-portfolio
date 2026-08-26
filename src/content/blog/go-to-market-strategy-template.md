@@ -4,8 +4,8 @@ description: "Build a go-to-market strategy that works. This step-by-step GTM te
 publishDate: 2026-03-08
 updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: Go-to-market strategy template and framework
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 ---
 
 **95% of new products fail** ([G2](https://learn.g2.com/product-launch-statistics)). Not because the product is bad - but because the go-to-market strategy is missing, incomplete, or wrong.

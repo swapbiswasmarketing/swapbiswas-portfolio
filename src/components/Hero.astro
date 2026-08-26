@@ -21,7 +21,7 @@ const { align = 'center', tagline, title, eyebrow } = Astro.props;
 <style>
 	.hero {
 		font-size: var(--text-lg);
-		text-align: center;
+		text-align: start;
 	}
 
 	.title,
@@ -30,11 +30,24 @@ const { align = 'center', tagline, title, eyebrow } = Astro.props;
 		margin-inline: auto;
 	}
 
+	/* Ink display title: tight tracking, no gradient text. */
 	.title {
-		font-size: var(--text-3xl);
+		font-family: var(--font-display);
+		font-weight: 600;
+		font-synthesis: none;
+		font-size: clamp(2.75rem, 6.5vw, 5rem);
 		color: var(--gray-0);
-		letter-spacing: -0.02em;
-		line-height: 1.02;
+		letter-spacing: -0.03em;
+		line-height: 1;
+	}
+
+	.tagline {
+		font-family: var(--font-body);
+		font-weight: 400;
+		font-size: var(--text-lg);
+		line-height: 1.5;
+		color: var(--gray-400);
+		max-width: 52ch;
 	}
 
 	@media (min-width: 50em) {
@@ -49,10 +62,6 @@ const { align = 'center', tagline, title, eyebrow } = Astro.props;
 		.start .title,
 		.start .tagline {
 			margin-inline: unset;
-		}
-
-		.title {
-			font-size: var(--text-5xl);
 		}
 	}
 </style>

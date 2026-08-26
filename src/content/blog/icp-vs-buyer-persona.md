@@ -4,8 +4,8 @@ description: "ICP and buyer persona are not the same thing. Learn the difference
 publishDate: 2026-03-12
 updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: ICP vs buyer persona comparison for product marketers
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is the difference between an ICP and a buyer persona?"
     a: "An ICP (Ideal Customer Profile) describes the type of company that is the best fit for your product - based on firmographics like industry, company size, and revenue. A buyer persona describes the individual person within that company who makes or influences the purchase decision - based on demographics, job role, goals, and pain points."

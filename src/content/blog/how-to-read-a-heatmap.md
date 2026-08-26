@@ -4,8 +4,8 @@ description: "Learn how to read a heatmap to improve your website's UX and conve
 publishDate: 2026-04-01
 updatedDate: 2026-04-01
 category: [Marketing, Tools]
-img: /assets/stock-1.webp
-img_alt: Website heatmap analysis and interpretation guide
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "How to read a heatmap?"
     a: "Heatmaps use a warm-to-cool color spectrum. Red and orange areas show high activity (most clicks, attention, or scrolling), yellow shows moderate activity, and blue or green shows low activity. Compare hot zones against your page goals to find UX issues."

@@ -3,8 +3,8 @@ title: "Product Naming: A 7-Criteria Elimination Process (2026)"
 description: "A product naming process built on elimination: four hard-fail gates, three weighted criteria, and the rename migration cost that no naming guide prices for you."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: "The Name Kill Sheet showing four hard-fail product naming gates followed by three weighted scoring criteria"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is an example of a product name?"
     a: "Stripe Atlas, MongoDB Atlas and ChatGPT Atlas are three shipped product names built on the same word, each one carrying a permanent parent-brand prefix so buyers can tell them apart. That prefix is what a crowded name costs you: nobody in those categories can say just Atlas and be understood."

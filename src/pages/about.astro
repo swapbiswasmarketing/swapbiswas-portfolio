@@ -96,16 +96,29 @@ const brands = [
 					</div>
 				</Hero>
 
-				<div class="hero-portrait-wrap">
-					<Image
-						src={portraitImg}
-						alt="Swapnil Biswas"
-						widths={[480, 768, 1024]}
+				<div class="hero-visual">
+					<img
+						class="hero-art"
+						src="/assets/art/about-garden-800.webp"
+						srcset="/assets/art/about-garden-800.webp 800w, /assets/art/about-garden.webp 1195w"
 						sizes="(max-width: 50em) 100vw, 480px"
-						format="avif"
-						fallbackFormat="webp"
-						class="hero-portrait"
+						width="1195"
+						height="1600"
+						alt="Oil painting of a garden loggia with climbing roses and a stone fountain"
+						loading="lazy"
+						decoding="async"
 					/>
+					<div class="hero-portrait-wrap">
+						<Image
+							src={portraitImg}
+							alt="Swapnil Biswas"
+							widths={[480, 768, 1024]}
+							sizes="(max-width: 50em) 100vw, 480px"
+							format="avif"
+							fallbackFormat="webp"
+							class="hero-portrait"
+						/>
+					</div>
 				</div>
 			</header>
 
@@ -152,6 +165,7 @@ const brands = [
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background">
 				<header class="section-header stack gap-2 lg:gap-4">
+					<p class="section-eyebrow">01 &middot; Story</p>
 					<h3>Background</h3>
 					<p>
 						With over 4 years in B2B SaaS marketing, I've helped drive 18M+ organic traffic
@@ -172,6 +186,7 @@ const brands = [
 			<!-- Skills -->
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
+					<p class="section-eyebrow">02 &middot; Toolkit</p>
 					<h3>Skills</h3>
 					<p>Core competencies I bring to every project and engagement.</p>
 				</header>
@@ -181,7 +196,7 @@ const brands = [
 						{skills.map((skill) => (
 							<div class="skill-card">
 								<div class="skill-card-header">
-									<Icon icon={skill.icon} color="var(--accent-regular)" size="1.5rem" gradient />
+									<Icon icon={skill.icon} size="1.5rem" />
 									<div class="skill-card-info">
 										<h4>{skill.name}</h4>
 										<span class="skill-pct">{skill.percentage}%</span>
@@ -200,6 +215,7 @@ const brands = [
 			<!-- Experience -->
 			<section class="section with-background">
 				<header class="section-header stack gap-2 lg:gap-4">
+					<p class="section-eyebrow">03 &middot; Career</p>
 					<h3>Experience</h3>
 					<p>My professional journey through marketing, growth, and product strategy.</p>
 				</header>
@@ -222,6 +238,7 @@ const brands = [
 			<!-- Education -->
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
+					<p class="section-eyebrow">04 &middot; Learning</p>
 					<h3>Education</h3>
 					<p>Academic foundation in marketing and business administration.</p>
 				</header>
@@ -244,6 +261,7 @@ const brands = [
 			<!-- Certifications -->
 			<section class="section with-background">
 				<header class="section-header stack gap-2 lg:gap-4">
+					<p class="section-eyebrow">05 &middot; Credentials</p>
 					<h3>Certifications</h3>
 					<p>Industry-recognized credentials and professional development.</p>
 				</header>
@@ -264,6 +282,7 @@ const brands = [
 			<!-- Awards -->
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
+					<p class="section-eyebrow">06 &middot; Recognition</p>
 					<h3>Awards & Recognition</h3>
 					<p>Highlights from my professional career.</p>
 				</header>
@@ -286,6 +305,7 @@ const brands = [
 			<!-- Brands -->
 			<section class="section with-background">
 				<header class="section-header stack gap-2 lg:gap-4">
+					<p class="section-eyebrow">07 &middot; Clients</p>
 					<h3>Brands I've Worked With</h3>
 					<p>Had the privilege of working with these companies throughout my career.</p>
 				</header>
@@ -311,10 +331,17 @@ const brands = [
 		const stats = document.querySelectorAll('.stat[data-count]');
 		if (!stats.length) return;
 
-		// Reset values for re-animation
+		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		const finalText = (stat: Element) => {
+			const target = parseFloat(stat.getAttribute('data-count') || '0');
+			return stat.hasAttribute('data-decimal') ? target.toFixed(1) : target.toString();
+		};
+
+		// Reset values for re-animation (reduced motion: show the final value straight away)
 		stats.forEach((stat) => {
 			const valueEl = stat.querySelector('.stat-value') as HTMLElement;
-			if (valueEl) valueEl.textContent = '0';
+			if (valueEl) valueEl.textContent = reduceMotion ? finalText(stat) : '0';
 		});
 
 		const animateCountUp = () => {
@@ -323,6 +350,11 @@ const brands = [
 				const hasDecimal = stat.hasAttribute('data-decimal');
 				const valueEl = stat.querySelector('.stat-value') as HTMLElement;
 				if (!valueEl) return;
+
+				if (reduceMotion) {
+					valueEl.textContent = finalText(stat);
+					return;
+				}
 
 				const duration = 2000;
 				const startTime = performance.now();
@@ -365,9 +397,12 @@ const brands = [
 		const statsSection = document.querySelector('.stats');
 		if (statsSection) statsObserver.observe(statsSection);
 
-		// Reset and animate skill bars on scroll
+		// Reset and animate skill bars on scroll (reduced motion: set the final width immediately)
 		const skillFills = document.querySelectorAll('.skill-fill') as NodeListOf<HTMLElement>;
-		skillFills.forEach((fill) => { fill.style.width = '0'; });
+		skillFills.forEach((fill) => {
+			fill.style.width = reduceMotion ? fill.style.getPropertyValue('--pct') : '0';
+		});
+		if (reduceMotion) return;
 
 		const skillsObserver = new IntersectionObserver(
 			(entries) => {
@@ -402,31 +437,50 @@ const brands = [
 		display: none;
 	}
 
-	.hero-portrait-wrap {
-		position: relative;
-		border-radius: 1.5rem;
-		overflow: hidden;
+	/* Role chips: Pill already renders a cream chip with a hair border; ink text here, icons follow currentColor */
+	.roles :global(.pill) {
+		color: var(--gray-0);
 	}
 
-	.hero-portrait-wrap::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		border-radius: 1.5rem;
-		background: linear-gradient(150deg, var(--sg-strand-0) 0%, transparent 45%, var(--sg-warm) 100%);
-		mix-blend-mode: soft-light;
-		opacity: 0.5;
-		pointer-events: none;
+	/* Garden painting panel with the portrait pinned over its bottom-left corner.
+	   Mobile: painting first (4:3 crop), portrait below it overlapping by ~2rem. */
+	.hero-visual {
+		position: relative;
+		width: 100%;
+		max-width: 34rem;
+		margin-inline: auto;
+	}
+
+	.hero .hero-art {
+		display: block;
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		object-position: center;
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
+	}
+
+	.hero-portrait-wrap {
+		position: relative;
+		z-index: 1;
+		width: 62%;
+		margin: -2rem 0 0 1rem;
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-lg);
+		background: var(--sg-panel);
+		/* 4px paper outline so the portrait reads as pinned over the painting */
+		box-shadow: 0 0 0 4px var(--gray-999);
+		overflow: hidden;
 	}
 
 	.hero img {
 		display: block;
+		width: 100%;
 		aspect-ratio: 5 / 4;
 		object-fit: cover;
 		object-position: top;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-		filter: grayscale(0.35) contrast(1.06);
+		border-radius: calc(var(--radius-lg) - 1px);
 	}
 
 	@media (min-width: 50em) {
@@ -443,19 +497,34 @@ const brands = [
 			gap: 0.5rem;
 		}
 
-		.hero-portrait-wrap,
-		.hero-portrait-wrap::after {
-			border-radius: 4.5rem;
-		}
-
 		.hero img {
 			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
 			object-fit: cover;
+		}
+
+		/* Painting fills the right column at 3:4; the bottom margin reserves room
+		   for the portrait's 12% downward overhang so nothing collides below. */
+		.hero-visual {
+			max-width: none;
+			margin-inline: 0;
+			margin-bottom: 11%;
+		}
+
+		.hero .hero-art {
+			aspect-ratio: 3 / 4;
+		}
+
+		.hero-portrait-wrap {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 68%;
+			margin: 0;
+			transform: translate(-18%, 12%);
 		}
 	}
 
-	/* Social Links */
+	/* Social Links - secondary buttons */
 	.social-row {
 		display: flex;
 		flex-wrap: wrap;
@@ -467,21 +536,26 @@ const brands = [
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
-		padding: 0.5rem 1.25rem;
-		border: 1px solid var(--sg-hair);
-		border-radius: 999rem;
+		padding: 0.6rem 1.1rem;
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
 		background: var(--sg-panel);
-		color: var(--sg-lede);
-		font-family: var(--font-brand);
-		font-size: var(--text-sm);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: 0.9375rem;
 		font-weight: 500;
+		line-height: 1.2;
 		text-decoration: none;
-		transition: all 0.2s ease;
+		transition:
+			border-color 0.2s var(--ease-out),
+			color 0.2s var(--ease-out),
+			transform 0.2s var(--ease-out);
 	}
 
 	.social-link:hover {
-		border-color: var(--sg-strand-0);
-		color: var(--sg-text);
+		border-color: var(--gray-0);
+		color: var(--gray-0);
+		transform: translateY(-1px);
 	}
 
 	.social-link svg {
@@ -495,13 +569,15 @@ const brands = [
 		gap: 1.25rem;
 		text-align: center;
 		padding: 2rem 0;
+		border-top: 1px solid var(--sg-hair);
+		border-bottom: 1px solid var(--sg-hair);
 	}
 
 	.stat {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 0.6rem;
 		padding: 1.5rem 0.75rem;
 	}
 
@@ -512,32 +588,32 @@ const brands = [
 	}
 
 	.stat-value {
+		font-family: var(--font-display);
 		font-size: var(--text-3xl);
-		font-family: var(--font-brand);
 		font-weight: 600;
+		font-synthesis: none;
+		font-variant-numeric: tabular-nums;
 		line-height: 1;
-		color: var(--sg-warm);
-		background: linear-gradient(120deg, var(--sg-strand-0), var(--sg-warm));
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+		letter-spacing: -0.03em;
+		color: var(--gray-0);
 	}
 
 	.stat-suffix {
+		font-family: var(--font-display);
 		font-size: var(--text-xl);
-		font-family: var(--font-brand);
 		font-weight: 600;
-		color: var(--sg-warm);
-		background: linear-gradient(120deg, var(--sg-strand-0), var(--sg-warm));
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+		font-synthesis: none;
+		line-height: 1;
+		color: var(--accent-text);
 	}
 
 	.stat-label {
-		font-size: var(--text-sm);
-		color: var(--sg-muted);
-		letter-spacing: 0.02em;
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		font-weight: 400;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--gray-400);
 	}
 
 	@media (min-width: 50em) {
@@ -575,7 +651,7 @@ const brands = [
 		position: relative;
 	}
 
-	/* Old per-section background washes suppressed - the unified clean void canvas
+	/* Old per-section background washes suppressed - the unified paper canvas
 	   (BaseLayout) now provides the backdrop, consistent with the homepage. */
 	.with-background::before {
 		display: none;
@@ -590,11 +666,17 @@ const brands = [
 		text-align: center;
 		max-width: 50ch;
 		font-size: var(--text-md);
-		color: var(--sg-muted);
+		color: var(--gray-200);
+	}
+
+	.section-header .section-eyebrow {
+		margin: 0;
 	}
 
 	.section-header h3 {
 		font-size: var(--text-2xl);
+		letter-spacing: -0.02em;
+		color: var(--gray-0);
 	}
 
 	@media (min-width: 50em) {
@@ -630,19 +712,27 @@ const brands = [
 		gap: 0.75rem;
 		padding: 1.5rem;
 		border: 1px solid var(--sg-hair);
-		border-radius: 0.75rem;
+		border-radius: var(--radius-md);
 		background: var(--sg-panel);
-		transition: border-color 0.2s ease;
+		transition:
+			border-color 0.2s var(--ease-out),
+			transform 0.2s var(--ease-out);
 	}
 
 	.skill-card:hover {
-		border-color: var(--sg-strand-0);
+		border-color: var(--gray-700);
+		transform: translateY(-2px);
 	}
 
 	.skill-card-header {
 		display: flex;
 		align-items: center;
 		gap: 0.75rem;
+	}
+
+	.skill-card-header :global(svg) {
+		flex-shrink: 0;
+		color: var(--accent-text);
 	}
 
 	.skill-card-info {
@@ -653,36 +743,39 @@ const brands = [
 	}
 
 	.skill-card-info h4 {
+		font-family: var(--font-body);
 		font-size: var(--text-md);
-		color: var(--sg-text);
-		font-weight: 500;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		color: var(--gray-0);
 	}
 
 	.skill-pct {
-		font-size: var(--text-sm);
-		color: var(--sg-muted);
-		font-family: var(--font-brand);
+		font-family: var(--font-mono);
+		font-size: 0.8125rem;
+		font-variant-numeric: tabular-nums;
+		color: var(--gray-400);
 	}
 
 	.skill-track {
 		width: 100%;
-		height: 0.375rem;
-		background: var(--sg-hair);
-		border-radius: 999rem;
+		height: 4px;
+		background: var(--gray-900);
+		border-radius: 2px;
 		overflow: hidden;
 	}
 
 	.skill-fill {
 		height: 100%;
 		width: 0;
-		background: linear-gradient(120deg, var(--sg-strand-0), var(--sg-warm));
-		border-radius: 999rem;
-		transition: width 1s ease-out;
+		background: var(--accent-regular);
+		border-radius: 2px;
+		transition: width 1s var(--ease-out);
 	}
 
 	.skill-desc {
 		font-size: var(--text-sm);
-		color: var(--sg-muted);
+		color: var(--gray-400);
 		line-height: 1.5;
 	}
 
@@ -693,7 +786,6 @@ const brands = [
 		}
 
 		.skill-card {
-			border-radius: 1rem;
 			padding: 2rem;
 		}
 	}
@@ -715,47 +807,51 @@ const brands = [
 		border-left-color: transparent;
 	}
 
+	/* 8px ink dot with a 1px paper ring on a hairline */
 	.timeline-dot {
 		position: absolute;
 		left: 0;
-		top: 0.35rem;
-		width: 0.75rem;
-		height: 0.75rem;
+		top: 0.4rem;
+		width: 10px;
+		height: 10px;
 		transform: translateX(-50%);
 		border-radius: 50%;
-		background: var(--gray-600);
-		border: 2px solid var(--gray-900);
+		background: var(--gray-0);
+		border: 1px solid var(--gray-999);
 	}
 
 	.timeline-item.current .timeline-dot {
-		background: var(--sg-strand-0);
-		box-shadow: 0 0 0 3px var(--accent-overlay);
+		background: var(--accent-regular);
+		outline: 1px solid var(--accent-regular);
+		outline-offset: 0;
 	}
 
 	.timeline-period {
 		display: block;
-		font-size: var(--text-sm);
-		color: var(--sg-muted);
-		margin-bottom: 0.25rem;
-		font-family: var(--font-brand);
+		font-family: var(--font-mono);
+		font-size: 0.8125rem;
+		color: var(--gray-400);
+		margin-bottom: 0.35rem;
 	}
 
 	.timeline-item h4 {
+		font-family: var(--font-body);
 		font-size: var(--text-lg);
-		color: var(--sg-text);
-		font-weight: 500;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		color: var(--gray-0);
 		margin-bottom: 0.125rem;
 	}
 
 	.timeline-company {
 		font-size: var(--text-base);
-		color: var(--sg-lede);
+		color: var(--gray-200);
 		margin-bottom: 0.5rem;
 	}
 
 	.timeline-desc {
 		font-size: var(--text-sm);
-		color: var(--sg-muted);
+		color: var(--gray-400);
 		line-height: 1.6;
 	}
 
@@ -767,35 +863,50 @@ const brands = [
 
 	.cert-card {
 		border: 1px solid var(--sg-hair);
-		border-radius: 0.75rem;
+		border-radius: var(--radius-md);
 		padding: 1.25rem;
 		background: var(--sg-panel);
-		transition: border-color 0.2s ease;
+		transition:
+			border-color 0.2s var(--ease-out),
+			transform 0.2s var(--ease-out);
 	}
 
 	.cert-card:hover {
-		border-color: var(--sg-strand-0);
+		border-color: var(--gray-700);
+		transform: translateY(-2px);
 	}
 
 	.card-index {
 		display: block;
-		font-size: var(--text-sm);
-		color: var(--sg-muted);
-		font-family: var(--font-brand);
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		letter-spacing: 0.08em;
+		color: var(--gray-600);
 		margin-bottom: 0.75rem;
+	}
+
+	.card-index::before {
+		content: '[ ';
+	}
+
+	.card-index::after {
+		content: ' ]';
 	}
 
 	.cert-card h4,
 	.award-card h4 {
+		font-family: var(--font-body);
 		font-size: var(--text-md);
-		color: var(--sg-text);
-		font-weight: 500;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		color: var(--gray-0);
 		margin-bottom: 0.25rem;
 	}
 
 	.card-meta {
-		font-size: var(--text-sm);
-		color: var(--sg-muted);
+		font-family: var(--font-mono);
+		font-size: 0.8125rem;
+		color: var(--gray-400);
 	}
 
 	@media (min-width: 50em) {
@@ -814,18 +925,21 @@ const brands = [
 		flex-direction: column;
 		gap: 0.5rem;
 		border: 1px solid var(--sg-hair);
-		border-radius: 0.75rem;
+		border-radius: var(--radius-md);
 		padding: 1.5rem;
 		background: var(--sg-panel);
-		transition: border-color 0.2s ease;
+		transition:
+			border-color 0.2s var(--ease-out),
+			transform 0.2s var(--ease-out);
 	}
 
 	.award-card:hover {
-		border-color: var(--sg-strand-0);
+		border-color: var(--gray-700);
+		transform: translateY(-2px);
 	}
 
 	.award-icon {
-		color: var(--sg-strand-0);
+		color: var(--accent-text);
 	}
 
 	@media (min-width: 30em) {
@@ -848,9 +962,17 @@ const brands = [
 		align-items: center;
 		text-align: center;
 		border: 1px solid var(--sg-hair);
-		border-radius: 1rem;
-		color: var(--sg-muted);
+		border-radius: var(--radius-md);
+		color: var(--gray-400);
 		background: var(--sg-panel);
+		transition:
+			border-color 0.2s var(--ease-out),
+			transform 0.2s var(--ease-out);
+	}
+
+	.mention-card:hover {
+		border-color: var(--gray-700);
+		transform: translateY(-2px);
 	}
 
 	.brand-logo {
@@ -881,6 +1003,26 @@ const brands = [
 
 		.brand-logo {
 			height: 2.8rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.social-link,
+		.skill-card,
+		.cert-card,
+		.award-card,
+		.mention-card,
+		.skill-fill,
+		.brand-logo {
+			transition: none;
+		}
+
+		.social-link:hover,
+		.skill-card:hover,
+		.cert-card:hover,
+		.award-card:hover,
+		.mention-card:hover {
+			transform: none;
 		}
 	}
 </style>

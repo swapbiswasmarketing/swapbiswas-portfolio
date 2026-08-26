@@ -3,8 +3,8 @@ title: "Rebranding Rollout Plan: The T-90 Countdown and Comms Tiers"
 description: "A rebranding rollout plan written from inside the company: the T-90 countdown, a systems inventory with an owner per line, and a tiered customer comms matrix."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Rebranding rollout plan showing a T-90 countdown, a systems inventory with owners and a tiered customer comms matrix"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "How do you roll out a rebrand?"
     a: "Work backwards from launch day in five phases: lock the name and build a systems inventory by T-90, rebuild collateral and draft the 301 map by T-60, pre-brief your top accounts and stage the systems by T-30, run tiered comms and freeze changes by T-7, then flip, redirect and sweep for leftovers from Day 0 to T+30. Every line of the inventory needs one named owner and one deadline."
