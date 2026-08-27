@@ -1,46 +1,37 @@
-// Build the site monogram (Bricolage "S" in paper on an ink rounded square + vermilion signal dot)
+// Build the site mark ("Strand S": the S drawn as the homepage Signal stroke ending in a vermilion head)
 // and export every icon format from the same vector:
-//   public/favicon.svg, public/favicon.png (32), public/favicon.ico (16/32/48), public/apple-touch-icon.png (180),
-//   public/icon-192.png, public/icon-512.png (maskable: full-bleed), src/components/SiteMark.astro (inline SVG).
+//   src/components/SiteMark.astro  - bare stroke mark for the nav/footer (stroke = --gray-0, so it inverts in dark mode)
+//   public/favicon.svg, favicon.png (32), favicon.ico (16/32/48), apple-touch-icon.png (180),
+//   icon-192.png, icon-512.png (maskable, full-bleed)  - tile variant: paper stroke on an ink rounded square
 // Usage: node scripts/make-brand-mark.cjs
 const fs = require('fs');
 const path = require('path');
-const opentype = require('opentype.js');
 const { Resvg } = require('@resvg/resvg-js');
 const sharp = require('sharp');
 
 const INK = '#15130f', PAPER = '#f6f4ef', ACCENT = '#b53b15';
 const repo = path.resolve(__dirname, '..');
-const font = opentype.loadSync(path.join(repo, 'src/assets/fonts/bricolage-700.ttf'));
-
-// Glyph "S" scaled so its cap height is ~54% of a 64-unit box, centered slightly left to leave room for the dot.
 const BOX = 64;
-const glyph = font.charToGlyph('S');
-const probe = glyph.getPath(0, 0, 100).getBoundingBox();
-const glyphH = probe.y2 - probe.y1; // in 100-unit space
-const size = (BOX * 0.56) / (glyphH / 100);
-const p = glyph.getPath(0, 0, size);
-const bb = p.getBoundingBox();
-const cx = (bb.x1 + bb.x2) / 2, cy = (bb.y1 + bb.y2) / 2;
-const dx = BOX * 0.47 - cx, dy = BOX * 0.52 - cy;
-const moved = glyph.getPath(dx, dy, size);
-const d = moved.toPathData(2);
-const DOT = { cx: 50, cy: 15, r: 5.2 };
 
-function svg({ rounded = true, dot = true, bg = true, fg = PAPER, bgColor = INK, pad = 0 } = {}) {
-  const s = BOX - pad * 2;
-  const inner = pad ? `<g transform="translate(${pad} ${pad}) scale(${s / BOX})">` : '';
-  const close = pad ? '</g>' : '';
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${BOX} ${BOX}" width="${BOX}" height="${BOX}">` +
-    (bg ? `<rect width="${BOX}" height="${BOX}" rx="${rounded ? 14 : 0}" fill="${bgColor}"/>` : '') +
-    inner + `<path d="${d}" fill="${fg}"/>` + (dot ? `<circle cx="${DOT.cx}" cy="${DOT.cy}" r="${DOT.r}" fill="${ACCENT}"/>` : '') + close + `</svg>`;
+// The strand: one continuous S stroke, top-right entry, diagonal spine, vermilion head at the bottom-left terminal.
+const STRAND = 'M47.5 16.5 C44 10.5 36 8 28 10.5 C18.5 13.5 16 23.5 22.5 27.5 C28 31 36.5 32 42 36 C50.5 42 48 52.5 39 55 C31 57.3 22 54.5 17.5 47.5';
+const HEAD = { cx: 17.5, cy: 47.5, r: 5.8 };
+
+function bare({ stroke = INK, width = 7 } = {}) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${BOX} ${BOX}" width="${BOX}" height="${BOX}"><path d="${STRAND}" fill="none" stroke="${stroke}" stroke-width="${width}" stroke-linecap="round" stroke-linejoin="round"/><circle cx="${HEAD.cx}" cy="${HEAD.cy}" r="${HEAD.r}" fill="${ACCENT}"/></svg>`;
+}
+
+// Tile variant for favicons / app icons: ink rounded square, paper stroke (slightly heavier so 16px holds), scaled to leave margin.
+function tile({ rounded = true, scale = 0.82 } = {}) {
+  const off = (BOX * (1 - scale)) / 2;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${BOX} ${BOX}" width="${BOX}" height="${BOX}"><rect width="${BOX}" height="${BOX}" rx="${rounded ? 14 : 0}" fill="${INK}"/><g transform="translate(${off} ${off}) scale(${scale})"><path d="${STRAND}" fill="none" stroke="${PAPER}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="${HEAD.cx}" cy="${HEAD.cy}" r="6.4" fill="${ACCENT}"/></g></svg>`;
 }
 
 function png(svgText, px) {
   return new Resvg(svgText, { fitTo: { mode: 'width', value: px }, background: 'rgba(0,0,0,0)' }).render().asPng();
 }
 
-// Minimal ICO packer (PNG-encoded entries are valid ICO since Vista).
+// Minimal ICO packer (PNG-encoded entries).
 function ico(pngs) {
   const count = pngs.length;
   const header = Buffer.alloc(6); header.writeUInt16LE(0, 0); header.writeUInt16LE(1, 2); header.writeUInt16LE(count, 4);
@@ -54,32 +45,38 @@ function ico(pngs) {
 
 (async () => {
   const pub = path.join(repo, 'public');
-  fs.writeFileSync(path.join(pub, 'favicon.svg'), svg() + '\n');
-  fs.writeFileSync(path.join(pub, 'favicon.png'), png(svg(), 32));
-  fs.writeFileSync(path.join(pub, 'apple-touch-icon.png'), png(svg({ rounded: false }), 180)); // iOS applies its own mask
-  fs.writeFileSync(path.join(pub, 'icon-192.png'), png(svg(), 192));
-  fs.writeFileSync(path.join(pub, 'icon-512.png'), png(svg({ rounded: false, pad: 6 }), 512)); // maskable: full-bleed ink, glyph inside safe zone
-  fs.writeFileSync(path.join(pub, 'favicon.ico'), ico([16, 32, 48].map((s) => ({ size: s, buf: png(svg(), s) }))));
+  fs.writeFileSync(path.join(pub, 'favicon.svg'), tile() + '\n');
+  fs.writeFileSync(path.join(pub, 'favicon.png'), png(tile(), 32));
+  fs.writeFileSync(path.join(pub, 'apple-touch-icon.png'), png(tile({ rounded: false }), 180)); // iOS applies its own mask
+  fs.writeFileSync(path.join(pub, 'icon-192.png'), png(tile(), 192));
+  fs.writeFileSync(path.join(pub, 'icon-512.png'), png(tile({ rounded: false, scale: 0.72 }), 512)); // maskable safe zone
+  fs.writeFileSync(path.join(pub, 'favicon.ico'), ico([16, 32, 48].map((s) => ({ size: s, buf: png(tile(), s) }))));
+  fs.writeFileSync(path.join(pub, 'logo-strand.svg'), bare() + '\n'); // bare ink mark for external use (press, social)
 
   const component = `---
-// Site monogram: Bricolage "S" in paper on an ink square with the vermilion signal dot.
+// Site mark "Strand S": the S drawn as the homepage Signal stroke, ending in the vermilion head.
 // Generated by scripts/make-brand-mark.cjs - edit that script, not this file.
 interface Props { size?: string; class?: string; }
 const { size = '1.5em', class: cls = '' } = Astro.props;
 ---
 
 <svg class={\`site-mark-svg \${cls}\`} viewBox="0 0 ${BOX} ${BOX}" width={size} height={size} aria-hidden="true" focusable="false" style={\`width:\${size};height:\${size}\`}>
-	<rect width="${BOX}" height="${BOX}" rx="14" fill="var(--gray-0)"></rect>
-	<path d="${d}" fill="var(--gray-999)"></path>
-	<circle cx="${DOT.cx}" cy="${DOT.cy}" r="${DOT.r}" fill="var(--accent-regular)"></circle>
+	<path d="${STRAND}" fill="none" stroke="var(--gray-0)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path>
+	<circle cx="${HEAD.cx}" cy="${HEAD.cy}" r="${HEAD.r}" fill="var(--accent-regular)"></circle>
 </svg>
 `;
   fs.writeFileSync(path.join(repo, 'src/components/SiteMark.astro'), component);
 
-  // Review sheet: the mark at favicon sizes on paper and on dark chrome.
-  const sheet = `<svg xmlns="http://www.w3.org/2000/svg" width="520" height="200"><rect width="260" height="200" fill="${PAPER}"/><rect x="260" width="260" height="200" fill="#202124"/>` +
-    [16, 32, 64, 128].map((s, i) => { const x = 16 + [0, 40, 100, 200][i]; return `<g transform="translate(${x} ${100 - s / 2}) scale(${s / BOX})">${svg().replace(/<svg[^>]*>|<\/svg>/g, '')}</g><g transform="translate(${x + 260} ${100 - s / 2}) scale(${s / BOX})">${svg().replace(/<svg[^>]*>|<\/svg>/g, '')}</g>`; }).join('') + '</svg>';
-  const out = path.join(process.env.TEMP || '/tmp', 'claude', 'brand-mark-sheet.png');
-  fs.writeFileSync(out, png(sheet, 1040));
-  console.log('wrote favicon.svg/png/ico, apple-touch-icon.png, icon-192/512.png, SiteMark.astro; sheet ->', out);
+  // Review sheet: tile at favicon sizes on paper and dark, bare mark on paper and dark.
+  const cell = (svg, s, x, y) => `<g transform="translate(${x} ${y}) scale(${s / BOX})">${svg.replace(/<svg[^>]*>|<\/svg>/g, '')}</g>`;
+  let sheet = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="220"><rect width="380" height="220" fill="${PAPER}"/><rect x="380" width="380" height="220" fill="#202124"/>`;
+  [[16, 20], [32, 60], [64, 120], [128, 210]].forEach(([s, x]) => { sheet += cell(tile(), s, x, 110 - s / 2) + cell(tile(), s, x + 380, 110 - s / 2); });
+  sheet += `</svg>`;
+  let sheet2 = `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="120"><rect width="380" height="120" fill="${PAPER}"/><rect x="380" width="380" height="120" fill="#202124"/>`;
+  [[24, 20], [40, 70], [80, 140]].forEach(([s, x]) => { sheet2 += cell(bare(), s, x, 60 - s / 2) + cell(bare({ stroke: PAPER }), s, x + 380, 60 - s / 2); });
+  sheet2 += `</svg>`;
+  const outDir = path.join(process.env.TEMP || '/tmp', 'claude');
+  fs.writeFileSync(path.join(outDir, 'brand-mark-sheet.png'), png(sheet, 1520));
+  fs.writeFileSync(path.join(outDir, 'brand-mark-bare.png'), png(sheet2, 1520));
+  console.log('wrote favicon.svg/png/ico, apple-touch-icon.png, icon-192/512.png, logo-strand.svg, SiteMark.astro; sheets ->', outDir);
 })();
