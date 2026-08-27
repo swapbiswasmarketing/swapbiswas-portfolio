@@ -6,6 +6,7 @@
 ## Linked Memory Files
 - [User Role](user_role.md) - Senior Product Marketing Manager at LambdaTest (promoted Apr 2026); prior role + education history
 - [No em-dashes](feedback_no_emdash.md) - never use `—`; default to ` - ` or rewrite; applies to all output including chat
+- [Avoid AI-writing tropes](feedback_avoid_ai_tropes.md) - all 49 tropes.fyi tells banned in every output incl. chat (no "It's not X, it's Y" stacking, "quietly", "load-bearing", "Here's the thing", "In summary", bold-first-every-bullet); rulebook repo `.claude/writing-tropes.md`, gate `scripts/lint-tropes.cjs` must end `TROPE GATE: PASS` (`--baseline=` for optimize passes); carve-outs for keyword H2s, FAQ questions, Title Case H2s, "competitive landscape"
 - [Semrush research tooling](semrush_research_tooling.md) - `scripts/semrush.mjs` keyword-data fallback when Ahrefs MCP is out of units; broad-match vs exact-volume + KD gotcha
 - [Paper & Signal site revamp](project_paper_signal_redesign.md) - 2026-08-26 site-wide retheme, LIVE on main since 2026-08-27 (f5415ee): warm paper + ink + vermilion #b53b15, Bricolage/Inter/JetBrains Mono; spec in repo DESIGN.md; why blue/terracotta/Geist were rejected
 - [Signal homepage redesign](redesign_signal_homepage.md) - in-progress award-targeted homepage revamp on branch `redesign/signal-homepage` (GSAP+Lenis, theme-aware, prototypes in `prototypes/`)
@@ -43,6 +44,7 @@
 
 ## Blog Writing Conventions
 - **No emdashes** - use hyphens with spaces or rewrite
+- **No AI-writing tropes** - rulebook `.claude/writing-tropes.md`; gate `node scripts/lint-tropes.cjs src/content/blog/{slug}.md` must end `TROPE GATE: PASS`, every WARN fixed or defended, section D judgment audit answered in writing
 - **Fact-check every stat** against cited URL before publishing
 - **Images: WebP only** - design as SVG, convert to WebP via resvg + sharp (render at 1200px max)
 - **SEO:** Target keyword in title, first paragraph, 2+ H2s, and conclusion

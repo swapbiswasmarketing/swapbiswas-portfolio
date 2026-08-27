@@ -57,12 +57,14 @@ Only use these 4 stock images for the `img` frontmatter field:
 - Use H2 for main sections, H3 for subsections
 - Keep paragraphs short (2-3 sentences max)
 - Include practical, actionable takeaways in every section
-- End with a clear conclusion/CTA section
+- End with a clear conclusion/CTA section - no "In conclusion" / "To sum up" label, and do not restate every point already made; land one thing the reader does next
 
 ### Style
 - **No emdashes.** Use hyphens with spaces (` - `) or rewrite the sentence
 - **No filler phrases:** "In this article", "It's no secret", "Let's dive in"
-- Direct, confident tone. Write like you're explaining to a smart colleague
+- **No AI-writing tropes.** The site rulebook is `.claude/writing-tropes.md` (built from the 49 tells catalogued at tropes.fyi). Hard bans include negative parallelism stacked more than twice ("It's not X. It's Y."), "Here's the kicker", "Think of it as", "It's worth noting", sentence-opening "Importantly,", vague attributions ("studies show", "experts agree"), "Not X. Not Y. Just Z.", model vocabulary (delve, leverage as a verb, robust, streamline, tapestry, paradigm, load-bearing), and more than 3 significance-adverbs per 1,000 words (quietly, deeply, fundamentally, genuinely). Keyword-form headings ("What Is X?", "How to X"), FAQ questions, listicle numbers in titles, and "competitive landscape" are exempt - the rulebook lists every carve-out
+- **Trope gate (mechanical, mandatory):** `node scripts/lint-tropes.cjs src/content/blog/{slug}.md` must end with `TROPE GATE: PASS`. Every `WARN` line is read and either fixed or defended in one line. The judgment-only tropes (premise stacking, self-echo, synonym cycling, one-point dilution, never-ending conclusion, rule-of-three stacking) are audited in writing per the rulebook's section D
+- Direct, confident tone. Write like you're explaining to a smart colleague. First-person "I" is the site voice; "we" only when it names a real team
 - Use bold for key stats and important terms
 - Use tables for comparisons and data
 - Use code blocks for prompts and technical examples
@@ -326,6 +328,7 @@ Requires `LT_USERNAME` and `LT_ACCESS_KEY` env vars. Output is JSON with `title`
 - [ ] **Description is 140-165 characters and contains the target keyword (Section 1). The corpus audit prints nothing**
 - [ ] **All stats fact-checked against cited URLs (Section 6)**
 - [ ] No emdashes anywhere in the file
+- [ ] **Trope gate: `node scripts/lint-tropes.cjs src/content/blog/{slug}.md` ends with `TROPE GATE: PASS`; every WARN read and fixed or defended; section D judgment audit answered (Section 2 > Style, `.claude/writing-tropes.md`)**
 - [ ] **No HTML comments anywhere in the file:** `grep -n "<!--" src/content/blog/{slug}.md` returns nothing
 - [ ] All external links have descriptive anchor text
 - [ ] **Outbound: 3+ distinct internal links to existing posts, placed in body copy (Section 2 > Internal Linking)**

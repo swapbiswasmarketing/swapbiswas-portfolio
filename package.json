@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build && npx pagefind --site dist",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:tropes": "node scripts/lint-tropes.cjs"
   },
   "dependencies": {
     "@anthropic-ai/claude-code": "^2.1.101",

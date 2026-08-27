@@ -16,14 +16,15 @@ _Optional modes (plain-language, not a strict parser): lead `$ARGUMENTS` with **
 Run autonomously. **Immediately seed a TodoWrite list with one item per step (0-15)** and mark each done as you finish it. Only stop at the one checkpoint marked below, or when a genuine fork needs the user's judgment.
 
 ## Context (auto-loaded before you plan)
-The two source-of-truth files are injected here - read them in full before planning:
+The source-of-truth files are injected here - read them in full before planning:
 @BLOG_INSTRUCTIONS.md
 @.claude/MEMORY.md
+@.claude/writing-tropes.md
 
 ---
 
 ## Step 0 - Read the rules first
-- Read the two files auto-injected above in full: `BLOG_INSTRUCTIONS.md` (source of truth for writing/formatting/image/schema/fact-check) and repo `.claude/MEMORY.md` (hard conventions: no em-dashes, WebP-only images, stock-1..4 hero rule, View-Transition script pattern, analytics events, and the **SEO organic strategy** - DR 11, ~0 traffic, so target winnable low-KD long-tails and lean on AEO).
+- Read the three files auto-injected above in full: `BLOG_INSTRUCTIONS.md` (source of truth for writing/formatting/image/schema/fact-check), `.claude/writing-tropes.md` (the AI-writing-trope rulebook the Step 13 gate enforces), and repo `.claude/MEMORY.md` (hard conventions: no em-dashes, WebP-only images, stock-1..4 hero rule, View-Transition script pattern, analytics events, and the **SEO organic strategy** - DR 11, ~0 traffic, so target winnable low-KD long-tails and lean on AEO).
 - Read the keyword backlog at `~/.claude/projects/c--Website-portfolio/memory/project_keyword_backlog.md` (Claude persistent-memory dir, **NOT** the repo - it does not exist under `c:\Website\portfolio`). Its opportunity tiers and footprint table (Step 6) drive backlog runs.
 - Pre-flight: the pipeline needs `SEMRUSH_API_KEY` (Semrush) and, only for the browser-cloud fact-check fallback, `LT_USERNAME` + `LT_ACCESS_KEY`. If a key is missing, fall back per each step's tool-priority order rather than failing.
 
@@ -129,13 +130,19 @@ Per `BLOG_INSTRUCTIONS.md`:
 - **Answer box (archetype-conditional, footprint-tracked - NOT every post):** for **"what is", "X vs Y", and listicle** archetypes, lead the body with a snippet-liftable direct-answer / TL;DR box whose **format matches the Step 4 snippet shape** - a list snippet gets a compact lead list, a table snippet a small lead table, and a paragraph snippet (or no snippet) defaults to a **40-60 word prose box**. A prose box is structurally ineligible for a list/table snippet, so matching the shape is the difference between eligible and a guaranteed miss. Also phrase at least one H2 as the head question with a concise 1-2 sentence answer as its first sentence. Use it deliberately per the Step 6 footprint decision, not by default; for non-AEO archetypes keep the compelling-stat/hook opener from `BLOG_INSTRUCTIONS.md`.
 - **Internal links:** 2-3+ contextual links to related existing posts - verify each slug exists in `src/content/blog/`. Link each source URL only once (first mention); no duplicate hrefs. **One forward link must point UP to the cluster hub** - the existing post targeting the Step 3 parent/broadest term - with a descriptive, varied anchor (never a forced exact-match keyword). If no post covers the parent term, do not invent one; flag it for Step 14.
 
-**Avoid the AI-writing tells** (they read as machine-written and cheapen the voice):
+**Avoid the AI-writing tells** - the full site rulebook is `.claude/writing-tropes.md` (auto-loaded above; 49 tropes from tropes.fyi with the site's carve-outs). It is enforced twice: mechanically at Step 13 (`scripts/lint-tropes.cjs`, must end `TROPE GATE: PASS`) and in writing at Step 11 (the judgment-only tropes). Write to it from the first draft rather than patching at the gate; the rules that bite most often:
 - No em-dashes (hard rule) and no smart quotes or unicode arrows - plain ASCII only.
-- No negative-parallelism crutch ("It's not X - it's Y") as a repeated device, no "Here's the kicker", "Let's dive in", "In today's digital landscape", "It's no secret".
-- No self-posed drama questions ("But what does that mean? Well...") and no signposted filler ("In conclusion,").
-- No invented, Capitalized concept-labels dressed up as established terms.
-- **No vague authority attributions** - "studies show", "research suggests", "experts agree", "teams report", "many marketers find", "it's widely known", "most B2B teams". Each is both an AI tell and an E-E-A-T anti-signal (authority asserted with no traceable source and no first-hand basis), and it silently bypasses the Step 10 fact-check table. Rewrite each as EITHER a linked named primary source (which then enters the Step 10 table) OR an explicit first-person claim the author can stand behind ("In the launches I've run..."). This does not apply to obvious/general statements that make no research claim.
-- Every sentence teaches something specific or helps the reader decide. Zero filler transitions.
+- **Negative parallelism ("It's not X. It's Y.", "X was never A; it was B.") at most twice per post** - the detector found it in 64 corpus posts, 24 of them over the limit, so never add one casually. "Not X. Not Y. Just Z." is banned outright.
+- No "Here's the kicker", "Let's dive in", "Think of it as", "Imagine a world", "In today's digital landscape", "It's no secret", "It's worth noting", sentence-opening "Importantly,". No self-posed drama questions ("The result? Devastating.") beyond one. No signposting: no "In conclusion", no sentence-initial "In this post", no "As we've seen", no "To recap".
+- **No model vocabulary** - delve, utilize, leverage (verb), robust, streamline, harness, tapestry, paradigm, synergy, ever-evolving, fast-paced, myriad, "a testament to", "cannot be overstated", and the current-generation tell **"load-bearing"** (12 hits across 9 posts on the baseline). No brochure words (seamless, effortless, all-in-one, best-in-class, "unlock the power"). No "landscape"/"ecosystem" as a field-word except the term of art "competitive landscape".
+- **Significance adverbs capped at 3 per 1,000 words** - quietly, silently, subtly, deeply, fundamentally, genuinely, truly, certainly, remarkably, arguably, materially, "unusually [anything]". "quietly" appears 72 times across 43 post bodies; delete it or replace it with the number that made the thing feel significant.
+- **No manufactured rhythm** - at most 2 standalone fragment paragraphs ("Done.") and at most 1 run of three clipped sentences; no three consecutive sentences opening with the same words; one tricolon per section, never stacked.
+- **Headings and lists** - editorial Wh-headings ("What we do differently", "Where the market is stuck") max 3; keyword-form headings ("What Is X?", "How to X") and the one AEO head-question H2 are exempt. One bold-label list per post; vary the rest (plain bullets, a table, prose). Bold key stats, never a bold standalone aphorism sentence. Title Case for H2/H3 (site convention) - do not mix cases in one post.
+- No invented, Capitalized concept-labels ("the X paradox", "the Y trap") dressed up as established terms; your own framework is fine when presented as yours.
+- **No vague authority attributions** - "studies show", "research suggests", "experts agree", "teams report", "many marketers find", "it's widely known", "most B2B teams", "the data says". Each is both an AI tell and an E-E-A-T anti-signal (authority asserted with no traceable source and no first-hand basis), and it silently bypasses the Step 10 fact-check table. Rewrite each as EITHER a linked named primary source (which then enters the Step 10 table) OR an explicit first-person claim the author can stand behind ("In the launches I've run..."). This does not apply to obvious/general statements that make no research claim.
+- First-person "I" voice; "we" only when it names a real team. No "As we move forward", "our focus shifts to".
+- Every sentence teaches something specific or helps the reader decide. Zero filler transitions. End on one short sentence with a noun the reader can act on - no never-ending conclusion, no tie-back to the intro.
+- **Writer self-check before handoff:** run `node scripts/lint-tropes.cjs src/content/blog/<slug>.md` on your own post (read-only, allowed inside the writer scope), fix every FAIL and read every WARN, and report in the handoff: the last line, the WARN count, and one line per remaining WARN saying fixed or defended and why (only the writer knows whether "all-in-one" was the vendor's own tagline). The orchestrator re-runs the gate at Step 13 and copies those lines into the Step 14 Gates row; a handoff without them is incomplete.
 
 ## Step 9 - Branded diagram(s)
 - Build **1+ SVG** per the `BLOG_INSTRUCTIONS.md` diagram design system (auto-injected above - see its **SVG Diagrams** section for exact colors, `rx`, arrow rules, minimum text sizes, and the `title y>=62` / `first row y>=130` padding). The most-violated rules: teal `#5eead4` arrows as `<line>` + `<polygon>` heads (never `<marker>`, never `#484f58`), and body text >= 20px. Save to `public/assets/blog/<slug>/`.
@@ -161,7 +168,8 @@ Before delivering, build and complete this table for every stat/number/price/cla
 2. What will they DO differently after reading? (a concrete action)
 3. What original value does this add to the SERP? (the Step 4 "Our angle" - point to the **exact sentence(s)** in the body where it is asserted; if you cannot, it was not executed)
 4. Will the reader need to search again? If yes, fix the gap.
-Vague answers fail - revise and re-audit until all four are concrete.
+5. **Trope self-audit (the judgment-only tells the script cannot see - `.claude/writing-tropes.md` section D):** one line each for premise stacking, belaboring the unnecessary, self-echo, synonym cycling, one-point dilution, content duplication, never-ending conclusion, comma-clipped tails, rule-of-three stacking, plain-text quotable one-liners, forced figurative language, and whole-piece promotional register - "none" or what you cut. Re-read the draft once specifically for these before answering; "none" across all twelve on a first draft is a sign the read was skipped, not that the draft is clean.
+Vague answers fail - revise and re-audit until all five are concrete.
 
 ## Step 12 - Reciprocal internal links (de-orphaning + hub-and-spoke)
 Edit **at least 3 existing related posts** to add a contextual link TO the new post, so it is not orphaned and receives internal link equity. **Make one of these edits the hub -> new-spoke down-link** (the Step 8 cluster hub links down to this post), completing the cluster in both directions; the others are relevant de-orphaning links.
@@ -176,6 +184,7 @@ Expected output: **`3` or greater**. If it prints 0-2, the edits did not land (w
 
 ## Step 13 - Pre-publish checks + build (verify loop, max 3 passes)
 - Punctuation gate (broadened beyond the em-dash; **run in the Bash tool, not PowerShell** - PowerShell has no `grep` and prints nothing on error, a false pass): `LC_ALL=C.UTF-8 grep -nP "[\x{2012}-\x{2015}\x{2018}\x{2019}\x{201C}\x{201D}\x{2190}-\x{2194}]" src/content/blog/<slug>.md`. Interpret by **exit code**, never by "looks empty": exit 1 (no output) = clean pass; exit 0 (lines printed) = FAIL, fix each flagged em/en-dash, curly quote, or arrow and re-run; exit 2 or "command not found" = tooling error (wrong shell/locale), NOT a pass. The `LC_ALL=C.UTF-8` prefix is required or `grep -P` errors on a non-UTF-8 locale.
+- **Trope gate (Step 8 rules, enforced not advised).** Run in the Bash tool from the repo root: `node scripts/lint-tropes.cjs src/content/blog/<slug>.md`. Interpret by the **last line and the exit code**: `TROPE GATE: PASS` (exit 0) = pass; `TROPE GATE: FAIL` (exit 1) = fix every `FAIL` line and re-run; exit 2 or "command not found" = tooling error, NOT a pass. `WARN` lines do not block the build but each one must be read and either fixed or defended in one line in the Step 14 report - a report that lists a WARN count with no fixed/defended split has skipped this. The script cannot see the judgment tropes; those are the Step 11 item 5 answers, which must exist before this gate counts as passed.
 - **Title + description length gate (Step 8 ceilings, enforced not advised).** Run in the Bash tool from the repo root:
 ```
 awk '/^---$/{n++; if(n==2) exit}
@@ -202,10 +211,10 @@ PASS description 158
   - Header: `<slug> | <verdict> | KD <n> / vol <n> / <source>`
   - **Decisions:** niche-fit | angle (+ linkable asset) | intent+format | archetype+hook+answer-box | origin (first-hand/synthesized) | hub used or flag
   - **SERP proof (Step 4):** the sub-DR-40 page-1 URL + rough DR that justifies a `winnable` verdict, or `none - reframed/dropped`. A `winnable` verdict with this field empty is a KD-trap pick and must be re-checked.
-  - **Gates (Step 13), as measured, not asserted:** `title <n> chars | description <n> chars | inbound internal links <n> | HTML comments: none`
+  - **Gates (Step 13), as measured, not asserted:** `title <n> chars | description <n> chars | inbound internal links <n> | HTML comments: none | trope gate PASS, <n> WARN (fixed <n> / defended <n>: <one line each>)`
   - **Output:** words | internal links (new N / reciprocal N) | staged distribution (LinkedIn + cross-post, or skipped) | build pass/fail + OG confirmed
   - **First-hand gap:** the `FIRST_HAND_UPGRADES.md` question appended for this slug, or `n/a (first-hand artifact supplied)`
-  - Then the completed **Step 10 fact-check table** in full, then the four **Step 11 People-First answers** as a numbered list.
+  - Then the completed **Step 10 fact-check table** in full, then the five **Step 11 People-First answers** as a numbered list (item 5 expanded into its twelve one-line trope-audit answers).
 - **Do not commit** unless the user explicitly asks.
 
 ## Step 15 - Distribution handoff (stage assets, never auto-post; skip with --no-dist)
@@ -215,7 +224,7 @@ For a DR-11 site with near-zero backlinks, distribution is the real ranking leve
 
 ## Guardrails
 - **Writer-agent scope (restated from Step 6 because it was violated once).** A writer agent creates **ONLY** its own `src/content/blog/<slug>.md` and its own `public/assets/blog/<slug>/`. **No tool pages, no page under `src/pages/`, no edits to other posts, no edits to shared files, no build.** Anything outside that brief is a recommendation in the handoff, not an action. The orchestrator owns Steps 12-15 and the single build.
-- **Nothing self-attests.** Every gate with a command (punctuation, title/description length, HTML comments, inbound-link count, build) is passed by running the command and reading its real output. Never report a gate as passed from memory, from intent, or because the edit "should have" worked.
+- **Nothing self-attests.** Every gate with a command (punctuation, title/description length, HTML comments, inbound-link count, trope gate, build) is passed by running the command and reading its real output. Never report a gate as passed from memory, from intent, or because the edit "should have" worked.
 - Never write the Semrush/Ahrefs API key into any committed file - env var only.
 - Word-count targets are completeness floors, not padding goals.
 - Year stamps only on genuinely current/researched content.
