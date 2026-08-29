@@ -154,6 +154,7 @@ The post-launch phase is where the launch stops being a one-time event and becom
 
 ### 60-Day Iteration
 
+- [ ] **Release notes rewritten** for adoption rather than changelog completeness ([how to write SaaS release notes](/blog/saas-release-notes/))
 - [ ] **Messaging refinement** based on customer language and objections heard
 - [ ] **Website updates** based on conversion data
 - [ ] **Sales objection handling update** for the top 3 objections

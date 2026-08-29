@@ -259,6 +259,8 @@ Four readiness numbers predict launch week better than anything you can collect 
 
 After launch, measure the comms rather than the product, and treat one number as the headline: the share of support tickets in the first 72 hours whose answer already existed in a macro or the FAQ. A high ratio means the internal half of the plan worked. A low one means support was told too late, whatever the open rates say. Everything else, engagement by segment and changelog traffic, is context around that. For the wider set a launch rolls up into, the [product marketing metrics](/blog/product-marketing-metrics/) breakdown covers what belongs on the quarterly view.
 
+Changelog traffic is the weakest of those signals, and it is the one most teams over-read. Treating [SaaS release notes](/blog/saas-release-notes/) as an adoption asset rather than a documentation chore changes both what goes in them and what you count afterwards, which is feature adoption among the people who read them.
+
 ## The Bottom Line
 
 A product launch communication plan is judged on the order people find out, not on the quality of the announcement. The announcement is the easy half, and it is almost never the thing that goes wrong. What goes wrong is a CSM reading about your launch from her own customer, a support queue with no macro, and a rep quoting a changelog entry on a live call.

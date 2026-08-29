@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1140" width="1400" height="1140">
+  <rect x="0" y="0" width="1400" height="1140" fill="#f6f4ef"/>
+
+  <text x="60" y="64" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">What a Jobs to Be Done Template Must Capture</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Page-one templates ship the first two fields. The other ten decide whether the output is usable.</text>
+
+  <text x="60" y="152" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">GROUP A / USUALLY PRESENT</text>
+
+  <rect x="60" y="170" width="610" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">1. Job Statement</text>
+  <text x="88" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The progress the customer wants, in plain verbs.</text>
+  <text x="88" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Verb + object + context, not a feature request.</text>
+
+  <rect x="730" y="170" width="610" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="758" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">2. Circumstance</text>
+  <text x="758" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The situation that started the search.</text>
+  <text x="758" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Time, place, pressure, who else was in the room.</text>
+
+  <line x1="60" y1="345" x2="1340" y2="345" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="60" y="392" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#b53b15">GROUP B / USUALLY MISSING</text>
+
+  <rect x="60" y="410" width="610" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="452" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">3. Competing Alternative</text>
+  <text x="88" y="490" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">What got fired to hire you, including doing nothing.</text>
+
+  <rect x="730" y="410" width="610" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="758" y="452" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">4. Push</text>
+  <text x="758" y="490" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">What made the old way hurt, in the buyer's words.</text>
+
+  <rect x="60" y="538" width="610" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="580" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">5. Pull</text>
+  <text x="88" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">What made the new way attractive, before the demo.</text>
+
+  <rect x="730" y="538" width="610" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="758" y="580" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">6. Anxiety</text>
+  <text x="758" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The fear of switching that survives your pitch.</text>
+
+  <rect x="60" y="666" width="610" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="708" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">7. Habit</text>
+  <text x="88" y="746" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">What is already paid for, trained and scheduled.</text>
+
+  <rect x="730" y="666" width="610" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="758" y="708" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">8. Hiring Criteria</text>
+  <text x="758" y="746" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The checks they run before money moves.</text>
+
+  <rect x="60" y="794" width="610" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="836" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">9. Firing Criteria</text>
+  <text x="88" y="874" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The threshold that sends them back or elsewhere.</text>
+
+  <rect x="730" y="794" width="610" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="758" y="836" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">10. Success Test</text>
+  <text x="758" y="874" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Direction + metric + object + context.</text>
+
+  <rect x="60" y="922" width="610" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="964" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">11. Trade-off Accepted</text>
+  <text x="88" y="1002" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">What they gave up in order to switch.</text>
+
+  <rect x="730" y="922" width="610" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="758" y="964" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">12. Evidence</text>
+  <text x="758" y="1002" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Who said it, when, and where the quote lives.</text>
+
+  <text x="60" y="1090" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Field sources: Christensen Institute (progress, circumstances), Moesta and Spiek (four forces), Bettencourt and Ulwick (desired outcomes).</text>
+</svg>

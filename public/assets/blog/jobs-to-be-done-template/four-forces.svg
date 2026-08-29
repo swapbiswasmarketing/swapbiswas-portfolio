@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760">
+  <rect x="0" y="0" width="1400" height="760" fill="#f6f4ef"/>
+
+  <text x="60" y="64" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">The Four Forces Behind Every Switch</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Two forces move the customer toward you. Two hold them where they are. A usable template records all four.</text>
+
+  <rect x="60" y="150" width="610" height="380" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">FORCES THAT DRIVE THE SWITCH</text>
+  <text x="88" y="248" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Push</text>
+  <text x="88" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The problem with the current situation:</text>
+  <text x="88" y="314" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the broken moment that starts the search.</text>
+  <line x1="88" y1="350" x2="642" y2="350" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="400" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Pull</text>
+  <text x="88" y="436" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The magnetism of the new way: the progress</text>
+  <text x="88" y="466" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the customer can picture for themselves.</text>
+
+  <rect x="730" y="150" width="610" height="380" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="758" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">FORCES THAT BLOCK THE SWITCH</text>
+  <text x="758" y="248" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Anxiety</text>
+  <text x="758" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Fear of the unknown: will it work, how long</text>
+  <text x="758" y="314" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">will it take, what happens to my data.</text>
+  <line x1="758" y1="350" x2="1312" y2="350" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="758" y="400" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Habit</text>
+  <text x="758" y="436" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The comfortable inertia of what people</text>
+  <text x="758" y="466" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">already know and already do.</text>
+
+  <rect x="60" y="574" width="1280" height="100" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="700" y="636" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#b53b15">Push + Pull &gt; Anxiety + Habit, and the switch happens</text>
+
+  <text x="60" y="722" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Model credited to Bob Moesta and Chris Spiek, published at jobstobedone.org.</text>
+</svg>

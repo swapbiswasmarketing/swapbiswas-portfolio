@@ -46,3 +46,31 @@ For a product, feature or company rename you personally ran, which accounts or s
 
 When you built the pricing tiers, what account count did you multiply by what ACV to size each tier, and what did the first pass get wrong that forced you to re-cut the segment?
 
+
+---
+
+# Batch of 2026-08-29
+
+Five posts written 2026-08-29 (developer marketing, customer discovery, jobs to be done, B2B segmentation, SaaS release notes). The user was asked for a first-hand artifact before writing and chose the "named public examples" fallback again, so all five ship as `synthesized`. Same rule as above: answering a question in 3-5 sentences upgrades that post, and no answer is needed to publish.
+
+`developer-marketing` is the highest-value one to answer. The author is a PMM at a developer testing platform, so it is the only post in this batch whose SERP competitors (glossary pages and agency blogs) genuinely cannot match a real operator answer.
+
+## b2b-customer-segmentation
+
+In a real segmentation you ran, how many candidate segments went into the room, how many survived, and which single one of the five tests killed the most candidates? The answer belongs as a two-to-three sentence lead-in to the "Scoring Four Proposed Segments" H2, replacing or framing the observability-vendor illustration with a real before/after count and the name of the test that did the most work.
+
+## customer-discovery
+
+In the last discovery round you actually ran, which specific sentence in the request to the AE or CSM unlocked account access after an initial refusal, and how many of the requested accounts stayed blocked? The answer replaces the generic AE brief code block in the "How to Get Account Access When Sales Owns the Relationship" H2 with the real one that worked, plus a real hit rate. That section is the weakest first-hand gap, because the whole angle rests on the gatekeeping problem being solvable.
+
+## developer-marketing
+
+What is the actual median and 90th-percentile time-to-first-successful-API-call for a new self-serve account on a product you have worked on, and which single change to the quickstart or docs moved that number (with the before and after)? The answer belongs in the "What Replaces the MQL in Developer Marketing" section, immediately after the instrumentation table, replacing the generic instruction to report time to first successful call as a median and a 90th percentile. That one paragraph converts the post's strongest section from synthesized to first-hand.
+
+## jobs-to-be-done-template
+
+In a JTBD switch interview you personally ran, which of the template fields came back empty or wrong first, and what specific decision did that blank change: a line of onboarding copy, an objection slide, a pricing page claim? The answer belongs in the "Where Jobs to Be Done Templates Break" section, replacing the generic final failure mode with a named, dated instance.
+
+## saas-release-notes
+
+For one Tier 3 release you shipped, what was the actual 30-day adoption gap between accounts that saw the release note (in-app announcement opened, digest clicked, or on the CS outreach list) and eligible accounts that did not? The answer belongs in the "How to Measure Whether SaaS Release Notes Worked" section, replacing the generic description of the cohort-split method with one real number and the window it was measured over.

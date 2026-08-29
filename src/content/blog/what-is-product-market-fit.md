@@ -141,6 +141,8 @@ Pre-PMF, the only problems worth solving are the ones the customer is willing to
 
 Pre-PMF teams ship more not because they engineer faster but because they decide faster. They read what customers say in a continuous [voice of the customer](/blog/what-is-voice-of-the-customer/) loop, watch what customers do in product, and pick the next thing to build with high signal. Customer interviews, support tickets, and usage data feed every iteration.
 
+Teams past their first PMF have the opposite problem: plenty of customers to ask, and a strong prior about what the answer should be. Running [customer discovery when you already have customers](/blog/customer-discovery/) is mostly a discipline of not leading the witness, because the accounts closest to hand are the ones most likely to agree with you.
+
 ### 4. Measure Retention From Day One
 
 Build the retention dashboard before you have retention. Once cohorts start, you will see the curve early - and adjust the product faster than competitors who measure only sign-ups.

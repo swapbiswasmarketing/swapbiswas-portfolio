@@ -124,6 +124,8 @@ Most SaaS launches over-invest in launch day and under-invest in the 90 days aft
 - **Action:** debug the onboarding flow with session recordings. Most launches have one specific drop-off point that is responsible for the majority of churn.
 - **Pivot signal:** if branded search is up but trial-to-paid is flat, the issue is product, not marketing.
 
+This is also the window where existing customers find out what shipped. Well-written [SaaS release notes](/blog/saas-release-notes/) do adoption work that launch-day PR cannot, because they reach the people already paying you.
+
 ### T+60: Sales Motion
 
 - **Top metric:** opportunities sourced from launch attribution.

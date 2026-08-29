@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
+  <rect x="0" y="0" width="1400" height="780" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.6">Anatomy of a Release Note That Gets Used</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Six parts. A minor fix uses three of them; a feature uses all six and still fits on a phone screen.</text>
+
+  <!-- row 1 -->
+  <rect x="60" y="140" width="620" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">PART 01</text>
+  <text x="88" y="216" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">The date, first and unambiguous</text>
+  <text x="88" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Write it out: 26 August 2026. Add a version number</text>
+  <text x="88" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">only when your customers actually pin versions.</text>
+
+  <rect x="720" y="140" width="620" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="720" y="140" width="6" height="160" rx="3" fill="#b53b15"/>
+  <text x="752" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#b53b15" letter-spacing="2">PART 02</text>
+  <text x="752" y="216" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">A headline that names the job</text>
+  <text x="752" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">"Keep audit logs for as long as your auditor asks",</text>
+  <text x="752" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">not "Configurable audit log retention".</text>
+
+  <!-- row 2 -->
+  <rect x="60" y="324" width="620" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="364" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">PART 03</text>
+  <text x="88" y="400" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">The eligibility line</text>
+  <text x="88" y="434" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Applies to: workspace admins on Business and</text>
+  <text x="88" y="460" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Enterprise. Two seconds to self-identify, or nothing.</text>
+
+  <rect x="720" y="324" width="620" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="752" y="364" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">PART 04</text>
+  <text x="752" y="400" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">What changed, and what it replaces</text>
+  <text x="752" y="434" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Two to four sentences. Name the workaround that</text>
+  <text x="752" y="460" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">dies, because that is the real competitor.</text>
+
+  <!-- row 3 -->
+  <rect x="60" y="508" width="620" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="548" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">PART 05</text>
+  <text x="88" y="584" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">The next click</text>
+  <text x="88" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Settings &gt; Compliance &gt; Audit log retention.</text>
+  <text x="88" y="644" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">An exact path beats available in your settings.</text>
+
+  <rect x="720" y="508" width="620" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="752" y="548" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">PART 06</text>
+  <text x="752" y="584" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">The reference and the reply route</text>
+  <text x="752" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Docs for the reader who wants depth, and a way</text>
+  <text x="752" y="644" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">to answer back for the one who has a problem.</text>
+
+  <line x1="60" y1="706" x2="1340" y2="706" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="60" y="742" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Publishing test: can a CSM forward this entry to a named account, unedited, and have it read as a message from a person?</text>
+</svg>

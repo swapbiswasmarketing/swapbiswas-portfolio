@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 740" width="1400" height="740">
+  <rect x="0" y="0" width="1400" height="740" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Docs as Marketing Surface: Who Owns Which Page</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">Engineering owns correctness. Product marketing owns whether a stranger gets anywhere.</text>
+
+  <!-- column 1 -->
+  <rect x="60" y="140" width="408" height="450" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">ENGINEERING OWNS</text>
+  <line x1="88" y1="204" x2="440" y2="204" stroke="#e4dfd6" stroke-width="1"/>
+  <circle cx="96" cy="243" r="4" fill="#6a645c"/>
+  <text x="114" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">API reference accuracy</text>
+  <circle cx="96" cy="303" r="4" fill="#6a645c"/>
+  <text x="114" y="310" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Code sample correctness</text>
+  <circle cx="96" cy="363" r="4" fill="#6a645c"/>
+  <text x="114" y="370" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">SDK and version notes</text>
+  <circle cx="96" cy="423" r="4" fill="#6a645c"/>
+  <text x="114" y="430" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Error and status messages</text>
+  <circle cx="96" cy="483" r="4" fill="#6a645c"/>
+  <text x="114" y="490" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Changelog entries</text>
+  <circle cx="96" cy="543" r="4" fill="#6a645c"/>
+  <text x="114" y="550" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Deprecation notices</text>
+
+  <!-- column 2 -->
+  <rect x="496" y="140" width="408" height="450" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="524" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CO-OWNED</text>
+  <line x1="524" y1="204" x2="876" y2="204" stroke="#e4dfd6" stroke-width="1"/>
+  <circle cx="532" cy="243" r="4" fill="#6a645c"/>
+  <text x="550" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The quickstart page</text>
+  <circle cx="532" cy="303" r="4" fill="#6a645c"/>
+  <text x="550" y="310" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Sample apps and templates</text>
+  <circle cx="532" cy="363" r="4" fill="#6a645c"/>
+  <text x="550" y="370" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Search and navigation</text>
+  <circle cx="532" cy="423" r="4" fill="#6a645c"/>
+  <text x="550" y="430" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Migration guides</text>
+  <circle cx="532" cy="483" r="4" fill="#6a645c"/>
+  <text x="550" y="490" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Machine-readable versions</text>
+  <circle cx="532" cy="543" r="4" fill="#6a645c"/>
+  <text x="550" y="550" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Monthly docs analytics</text>
+
+  <!-- column 3 (accent) -->
+  <rect x="932" y="140" width="408" height="450" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="1.5"/>
+  <rect x="932" y="140" width="408" height="8" rx="4" fill="#b53b15"/>
+  <text x="960" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#b53b15">PRODUCT MARKETING OWNS</text>
+  <line x1="960" y1="204" x2="1312" y2="204" stroke="#e4dfd6" stroke-width="1"/>
+  <circle cx="968" cy="243" r="4" fill="#2a7347"/>
+  <text x="986" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The first fifteen minutes</text>
+  <circle cx="968" cy="303" r="4" fill="#2a7347"/>
+  <text x="986" y="310" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Concept and overview pages</text>
+  <circle cx="968" cy="363" r="4" fill="#2a7347"/>
+  <text x="986" y="370" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Use-case entry points</text>
+  <circle cx="968" cy="423" r="4" fill="#2a7347"/>
+  <text x="986" y="430" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Naming and terminology</text>
+  <circle cx="968" cy="483" r="4" fill="#2a7347"/>
+  <text x="986" y="490" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Limits, pricing and quotas</text>
+  <circle cx="968" cy="543" r="4" fill="#2a7347"/>
+  <text x="986" y="550" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Comparison and claim pages</text>
+
+  <!-- footer -->
+  <rect x="60" y="620" width="1280" height="80" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="654" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">The split breaks when nobody owns the first fifteen minutes. Engineering assumes marketing has it,</text>
+  <text x="88" y="682" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">marketing assumes engineering does, and the authentication diagram stays on top of the quickstart.</text>
+</svg>

@@ -138,9 +138,9 @@ If the program cannot point at decisions it changed, it is not a program. It is 
 
 The highest-fidelity input. Done right, **8-12 interviews per quarter surface 80% of the strategic themes** worth chasing.
 
-Structure: 30 minutes, open-ended, recorded, transcribed. Do not pitch product and do not ask leading questions. Ask the customer to walk you through the last time they used the relevant capability.
+Structure: 30 minutes, open-ended, recorded, transcribed. Do not pitch product and do not ask leading questions. Ask the customer to walk you through the last time they used the relevant capability. VoC listens continuously across the whole base; when the goal is narrower, validating one new feature or segment before you commit to it, [customer discovery](/blog/customer-discovery/) covers how to recruit and run that shorter, sharper round.
 
-The Jobs-to-Be-Done "switch interview" structure works well for VoC. Walk the customer through their last "switch" - the moment they hired your product or replaced an existing solution:
+The Jobs-to-Be-Done "switch interview" structure works well for VoC. Walk the customer through their last "switch" - the moment they hired your product or replaced an existing solution. To capture the answers in a form the rest of the team can reuse, the [jobs to be done template](/blog/jobs-to-be-done-template/) has fields for the competing alternative and the four forces, which is where most switch interviews lose their value:
 
 ```
 1. What was happening in your work when you started looking for a solution?

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" width="1400" height="950">
+  <rect x="0" y="0" width="1400" height="950" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.5">The Customer Segmentation Matrix</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">What a segment earns is set by how differently it buys and what it is worth.</text>
+
+  <text transform="translate(88 520) rotate(-90)" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c" letter-spacing="1.8">SEGMENT REVENUE POTENTIAL</text>
+  <text x="186" y="200" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c" letter-spacing="1.2">HIGH</text>
+  <text x="186" y="815" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c" letter-spacing="1.2">LOW</text>
+
+  <rect x="200" y="190" width="560" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="232" y="232" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#6a645c" letter-spacing="1.4">HIGH VALUE / FAMILIAR BUYING</text>
+  <text x="232" y="274" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Same motion, new proof</text>
+  <text x="232" y="320" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Keep one team and one play. Swap the</text>
+  <text x="232" y="352" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">case studies, the ROI math and the</text>
+  <text x="232" y="384" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">objection handling.</text>
+  <text x="232" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">No new headcount is required.</text>
+
+  <rect x="780" y="190" width="560" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="780" y="190" width="7" height="300" fill="#b53b15"/>
+  <text x="818" y="232" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#b53b15" letter-spacing="1.4">HIGH VALUE / DISTINCT BUYING</text>
+  <text x="818" y="274" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#b53b15">Give it its own motion</text>
+  <text x="818" y="320" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Its own owner, message and pipeline</text>
+  <text x="818" y="352" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">target. This is the only quadrant that</text>
+  <text x="818" y="384" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">earns dedicated people.</text>
+  <text x="818" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Cap the count at four across the business.</text>
+
+  <rect x="200" y="520" width="560" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="232" y="562" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#6a645c" letter-spacing="1.4">LOW VALUE / FAMILIAR BUYING</text>
+  <text x="232" y="604" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Collapse into the core</text>
+  <text x="232" y="650" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Delete the slide. Tracking this as a</text>
+  <text x="232" y="682" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">separate segment costs reporting</text>
+  <text x="232" y="714" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">time and returns nothing.</text>
+  <text x="232" y="762" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Keep the accounts, drop the label.</text>
+
+  <rect x="780" y="520" width="560" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="812" y="562" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#6a645c" letter-spacing="1.4">LOW VALUE / DISTINCT BUYING</text>
+  <text x="812" y="604" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Named play, no team</text>
+  <text x="812" y="650" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Write the play, hand it to the core</text>
+  <text x="812" y="682" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">team, tag the accounts in the CRM.</text>
+  <text x="812" y="714" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Revisit when the segment doubles.</text>
+  <text x="812" y="762" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">A play is cheap. A team is not.</text>
+
+  <text x="480" y="862" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c" letter-spacing="1.4">SIMILAR TO THE CORE</text>
+  <text x="1060" y="862" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c" letter-spacing="1.4">DISTINCT FROM THE CORE</text>
+  <line x1="200" y1="884" x2="1340" y2="884" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="770" y="920" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c" letter-spacing="1.8">HOW DIFFERENTLY THE SEGMENT BUYS</text>
+</svg>

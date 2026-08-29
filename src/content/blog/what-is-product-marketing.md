@@ -121,6 +121,8 @@ A demand gen campaign without PMM input might get clicks but miss the mark on me
 
 The boundary that causes the most day-to-day friction is not on this list at all. Once a company hires someone to market to the customers it already has, [who owns which deliverable between customer marketing and product marketing](/blog/customer-marketing-vs-product-marketing/) has to be settled deliberately rather than by whoever has capacity.
 
+Audience can reshape the role more than the org chart does. When the buyer is an engineer, the standard machinery stops working: [developer marketing](/blog/developer-marketing/) drops the gated asset, hands part of the documentation to the PMM, and measures progress by a first successful API call rather than an MQL.
+
 ### The Quick Comparison
 
 | Dimension | Product Marketing | Content Marketing | Demand Gen | Brand Marketing |

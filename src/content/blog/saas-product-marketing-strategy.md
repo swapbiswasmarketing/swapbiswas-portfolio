@@ -26,6 +26,8 @@ A SaaS customer who churns after three months destroys your unit economics. The 
 
 **58% of B2B SaaS companies now run a product-led growth motion** ([ProductLed](https://productled.com/blog/product-led-growth-benchmarks)). See our [product-led growth examples](/blog/product-led-growth-examples/) for how top companies like Slack, Figma, and Canva execute this. When users can try before they buy, the in-product experience becomes your most powerful marketing asset. PMMs must collaborate with product teams to optimize onboarding flows, activation milestones, and upgrade prompts.
 
+When the product is bought by engineers, that channel extends into the documentation itself, and the PMM ends up owning part of it. [Developer marketing](/blog/developer-marketing/) covers what changes when the buyer reads the API reference before they ever read the homepage.
+
 ### Buyers and Users Are Often Different People
 
 The VP who signs the contract is rarely the person using the product daily. SaaS product marketers need messaging for both the economic buyer (ROI, security, compliance) and the end user (ease of use, time saved, workflow fit). Your [ICP and buyer personas](/blog/icp-vs-buyer-persona) must account for this split.

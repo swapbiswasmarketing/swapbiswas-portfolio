@@ -952,3 +952,134 @@ Write it from the product marketing seat and you will notice PMM produces roughl
 🔗 https://swapbiswas.com/blog/sales-kickoff-agenda/?utm_source=linkedin&utm_medium=social&utm_campaign=sales-kickoff-agenda
 
 #SalesEnablement #ProductMarketing #SalesKickoff #B2BSaaS #GTM
+
+---
+
+## Batch of 2026-08-29
+
+Five posts published 2026-08-29. Every statistic below is lifted from that post's completed fact-check table, so no claim here is new or unverified. Image prompts use the **Paper & Signal** palette (warm paper #f6f4ef, ink #15130f, vermilion #b53b15 accent), not the retired dark #0d1117 system.
+
+Suggested cadence: one per publishing day, Tue/Wed/Thu/Fri. Lead with developer-marketing, which has the strongest SERP and the most distinct point of view.
+
+### Developer Marketing Is Standard PMM With Three Parts Swapped Out
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), three white cards with soft 1px #e4dfd6 borders and 12px radius in a horizontal row, each showing a crossed-out old mechanic above its replacement: "Gated ebook" struck through above "Open docs", "MQL" struck through above "First successful API call", "Marketing owns the site" struck through above "PMM co-owns the docs". Single vermilion (#b53b15) accent on the middle card. Bricolage Grotesque headings, clean and editorial. 1200x628.
+
+Marketing to developers is not a harder version of B2B marketing. It is the same job with three specific mechanisms swapped out. 👨‍💻
+
+Everything else transfers. Positioning, segmentation, launch tiering, competitive work: all of it survives contact with a developer audience. These three do not:
+
+• The gated asset. Technical documentation was the most-used learning resource in the last Stack Overflow Developer Survey at 67.8%, ahead of blogs and podcasts at 34.8%. Your ebook is competing with docs, and losing.
+• The MQL. A form fill from an engineer evaluating your API means close to nothing. The State of Developer Relations report has active users as the top measure of program success at 44.3%, with newsletter signups dead last at 3.7%.
+• Sole engineering ownership of the docs. If docs are the top acquisition surface, product marketing has to own part of them. That is an org conversation, not a content one.
+
+The uncomfortable version: most developer marketing programs are measured on the one number their audience is least likely to generate.
+
+Swap the unit of progress to time-to-first-successful-call and the whole funnel reorganizes itself around something the buyer actually did.
+
+🔗 https://swapbiswas.com/blog/developer-marketing/?utm_source=linkedin&utm_medium=social&utm_campaign=developer-marketing
+
+#DeveloperMarketing #ProductMarketing #DevRel #B2BSaaS #DeveloperExperience
+
+### Customer Discovery Is Harder When You Already Have Customers
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), a horizontal funnel of four white rounded cards labeled "Recruit without leading", "Ask about the last time, not the next time", "Separate the request from the job", "Stop at saturation, per segment", with thin ink arrows between them. One vermilion (#b53b15) accent on the third card. Editorial, uncluttered, generous whitespace. 1200x628.
+
+Almost every guide to customer discovery is written for a founder with no product and no customers. 🔍
+
+That is the easy version. You have no opinions to defend and nobody to protect.
+
+The harder version is running discovery at a company that already has customers, an installed base, and a roadmap somebody already promised. The failure mode flips completely: it stops being "I cannot find anyone to talk to" and becomes "everyone I can easily reach will agree with me."
+
+Four things change:
+• Your warmest accounts are your most biased sample. The customers Sales will hand you fastest are the ones who already like you.
+• Sales owns the relationship, so account access is a negotiation before it is a research task.
+• You have to separate the feature they requested from the job they were hiring it for. Two customers asking for the same thing for different reasons is the normal case, not the edge case.
+• Saturation applies per segment. Nielsen Norman Group suggests starting with a small representative sample of 5 to 6 and analyzing as you go, and explicitly warns against the "5 per persona" multiplication rule.
+
+Worth sitting with: in Product Talk's survey of 1,999 product people, 45.3% had spoken to a customer in the past week, but only 16.3% had run a story-based interview. Talking to customers and doing discovery are not the same activity.
+
+🔗 https://swapbiswas.com/blog/customer-discovery/?utm_source=linkedin&utm_medium=social&utm_campaign=customer-discovery
+
+#CustomerDiscovery #ProductMarketing #ProductManagement #B2BSaaS #VoiceOfCustomer
+
+### Most Jobs to Be Done Templates Capture the Wrong Thing
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), two column groups of white cards. Left column headed "Usually present" with 2 cards (Job Statement, Circumstance). Right column headed "Usually missing" in vermilion (#b53b15) with 4 cards (Competing Alternative, Push and Pull, Anxiety and Habit, Success Test). Clear visual imbalance between the two columns. Editorial, generous whitespace. 1200x628.
+
+Most jobs to be done templates give you a nicely worded sentence that nobody can act on. 📋
+
+They capture the job statement, the "when I [situation], I want to [motivation], so I can [outcome]" line, and stop there. That sentence is real work. It is also about a fifth of what you need.
+
+What gets left out is everything that explains the switch:
+• The competing alternative that got fired, including doing nothing
+• Push and pull: what made the old way hurt, what made the new way attractive
+• Anxiety and habit, which is where most deals actually die
+• A success test that is measurable, so you can tell later whether the job got done
+
+Miss those and you have written a persona restatement in JTBD grammar.
+
+Two things worth correcting while we are here, because both get repeated constantly:
+
+The milkshake study never names McDonald's. Harvard Business School's own 2011 write-up says only "a fast-food restaurant chain" and notes the details were disguised. The finding stands: 40% of milkshakes were bought first thing in the morning by commuters ordering to go.
+
+And the job story format was not originated by the post everyone cites. Alan Klement's 2013 Intercom piece opens by crediting Paul Adams.
+
+🔗 https://swapbiswas.com/blog/jobs-to-be-done-template/?utm_source=linkedin&utm_medium=social&utm_campaign=jobs-to-be-done-template
+
+#JobsToBeDone #JTBD #ProductMarketing #ProductManagement #CustomerResearch
+
+### How Many B2B Segments Can You Actually Operate?
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), a vertical scorecard of five white rounded rows labeled "Size", "Reach", "Buying behavior", "Value driver", "Operability", each with a small "2" in the right margin. Below them a wider vermilion-tinted (#b53b15 at low opacity) bar reading "PASS MARK 8 of 10". Clean editorial layout, JetBrains Mono for the small labels. 1200x628.
+
+Every guide to B2B customer segmentation lists the variables you can cut a market on. Firmographic, technographic, behavioural, needs-based. 📊
+
+Almost none of them answer the two questions a team actually has: how many segments can we run before the model becomes theatre, and what has to be true for a segment to deserve its own budget?
+
+Here is the test I would apply. Score each proposed segment 0, 1 or 2 on five things:
+• Size: can it fund one campaign and carry one quota for a year?
+• Reach: can you build the account list this week from data you already own?
+• Buying behavior: different trigger, different buying group, different cycle length?
+• Value driver: does it buy for a different reason, so the proof points have to change?
+• Operability: can you name the owner, the message and the CRM field on day one?
+
+Pass mark is 8 of 10, with no zeros. Below that, the segment gets a play, not a team of its own.
+
+That last test is the one that kills the most candidates, and it is the one nobody writes about. Bain found 70% of companies fail to integrate their sales plays into their revenue tooling, across more than 1,200 senior commercial executives in 18 industries. Segmentation sits one level above sales plays and inherits exactly the same gap.
+
+A segment that never becomes a CRM field cannot be measured, so it cannot be defended, so next planning cycle starts from scratch.
+
+🔗 https://swapbiswas.com/blog/b2b-customer-segmentation/?utm_source=linkedin&utm_medium=social&utm_campaign=b2b-customer-segmentation
+
+#B2BMarketing #CustomerSegmentation #ProductMarketing #GTM #RevOps
+
+### Release Notes Are an Adoption Asset, Not a Docs Chore
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), a before/after pair of white cards. Left card headed "Before" in muted grey containing the line "Various bug fixes and improvements." Right card headed "After" in vermilion (#b53b15) containing a longer structured entry with a bolded job-shaped headline and a small "Who this is for" label. Clear visual weight on the right. Editorial, 1200x628.
+
+"Various bug fixes and improvements." 🚢
+
+Every SaaS company has shipped that line, and it is a small act of self-sabotage. You did the work, then declined to tell anyone what it was for.
+
+Release notes get treated as a documentation chore, graded on clarity and owned by whoever has capacity. Reframe them as a product marketing asset with a job (drive adoption of the thing that just shipped, and give CS and Sales a reason to re-open an account) and four things change:
+
+• Who writes them. A changelog describes the object that changed. A release note describes the job the customer can now do.
+• What goes in. Lead with the outcome, name who it is for, and say what to do next.
+• Where they go. A changelog page nobody visits is not distribution.
+• What you measure. Feature adoption among people who saw it, not pageviews.
+
+The stakes are not small. Userpilot puts average core feature adoption for SaaS at 24.5%, drawn from 547 companies. Zylo's 2026 index, built on more than 40 million licenses, found organisations leave an average of 36% of SaaS licenses unused.
+
+Some of that gap is product. A real share of it is that nobody told the customer, in language about their work, that the thing exists.
+
+Keep a Changelog said it in four words in 2014: changelogs are for humans.
+
+🔗 https://swapbiswas.com/blog/saas-release-notes/?utm_source=linkedin&utm_medium=social&utm_campaign=saas-release-notes
+
+#ProductMarketing #SaaS #ProductLaunch #CustomerMarketing #ProductAdoption

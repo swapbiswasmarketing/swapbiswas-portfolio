@@ -88,7 +88,7 @@ The "so that" is the part I love. It pushes you past the feature and past the im
 The template is the easy part. Filling it with something true and specific is the work. Here is the order I follow, and the order matters.
 
 - **Start with the customer, not the product.** Write the most specific buyer you can defend. "RevOps leader at a 50-rep SaaS company" beats "sales teams."
-- **Find the job in their words.** Pull language from sales calls, reviews, and support tickets. If you are inventing the phrasing, you are guessing.
+- **Find the job in their words.** Pull language from sales calls, reviews, and support tickets. If you are inventing the phrasing, you are guessing. A filled-in [jobs to be done template](/blog/jobs-to-be-done-template/) is the cleanest source for this line, because it already separates the job from the feature request it arrived disguised as.
 - **Write the outcome, then push it one level deeper.** Use the "so that" test until you hit something the buyer would say out loud.
 - **Name the alternative honestly.** Often the alternative is a spreadsheet or doing nothing, not a named competitor.
 - **Write the differentiator a rival cannot claim.** If your competitor's homepage could run your exact sentence, delete it and start the line again.

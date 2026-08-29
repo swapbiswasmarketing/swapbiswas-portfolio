@@ -148,6 +148,8 @@ Look at how your product gets shared. Does usage require inviting others (Slack 
 
 Your free tier should be generous enough to create habitual usage but limited enough to drive upgrades at natural inflection points. Limit by capacity (Miro), by time (Zoom), or by features (Canva) - not by crippling the core experience. Freemium is just one of several [SaaS pricing models](/blog/saas-pricing-models/), and it works best when a free user creates real pipeline rather than pure cost.
 
+Products bought by engineers are the strictest version of this. A free tier that expires or throttles the core call gets abandoned during evaluation, which is why [developer marketing](/blog/developer-marketing/) treats the free tier as documentation the buyer can execute rather than as a trial.
+
 ### Step 3: Instrument Your Activation Path
 
 Identify the 3-5 actions that predict long-term retention and build your onboarding around driving users to complete them as fast as possible. Measure time to value in minutes, not days.

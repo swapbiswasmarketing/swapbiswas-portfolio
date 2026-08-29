@@ -58,6 +58,8 @@ Start with the structural basics: industry, company size, revenue band, geograph
 
 A 40-person startup is a bad fit for an enterprise-priced product, no matter how excited the founder is. Firmographics are the coarse cut, and they keep you from wasting a one-to-one play on an account your product was never built to serve.
 
+Fit scoring ranks accounts inside a segment. Deciding which segments deserve their own motion in the first place is a separate exercise, and [B2B customer segmentation](/blog/b2b-customer-segmentation/) covers the test I use to keep that list short enough to actually run.
+
 ### Tech stack and use-case fit
 
 This is where the fit score gets sharp. An account running a complementary tool in their stack, or a competitor's product approaching renewal, is a far better fit than a look-alike with no relevant technology in place. Tech-stack data, plus your own [win-loss analysis dashboard](/blog/win-loss-analysis-dashboard/) showing which profiles actually convert, turns a generic firmographic match into a specific, defensible reason to prioritize.

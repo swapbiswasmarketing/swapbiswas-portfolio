@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">What Replaces the MQL in Developer Marketing</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">Five stages. Each one has an observable product event and a number you can report.</text>
+
+  <text x="88" y="152" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STAGE</text>
+  <text x="470" y="152" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">OBSERVABLE EVENT</text>
+  <text x="950" y="152" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">THE NUMBER YOU REPORT</text>
+  <line x1="60" y1="170" x2="1340" y2="170" stroke="#e4dfd6" stroke-width="1"/>
+
+  <!-- row 1 -->
+  <rect x="60" y="186" width="1280" height="78" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">1. Discover</text>
+  <text x="470" y="222" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Reads a docs page or a tutorial</text>
+  <text x="950" y="222" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Unique docs readers</text>
+  <text x="88" y="248" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">No form, no email</text>
+
+  <!-- row 2 (accent) -->
+  <rect x="60" y="276" width="1280" height="78" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="1.5"/>
+  <text x="88" y="312" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#b53b15">2. First success</text>
+  <text x="470" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Gets a 200 back from the API</text>
+  <text x="950" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Time to first successful call</text>
+  <text x="88" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#8f2e0f">The stage that predicts the rest</text>
+
+  <!-- row 3 -->
+  <rect x="60" y="366" width="1280" height="78" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="402" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">3. Habit</text>
+  <text x="470" y="402" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Returns on 3+ days in one month</text>
+  <text x="950" y="402" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Weekly active developers</text>
+  <text x="88" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Measured per API key</text>
+
+  <!-- row 4 -->
+  <rect x="60" y="456" width="1280" height="78" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="492" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">4. Team spread</text>
+  <text x="470" y="492" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A second developer on one account</text>
+  <text x="950" y="492" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Accounts with 2+ developers</text>
+  <text x="88" y="518" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Your first buying signal</text>
+
+  <!-- row 5 -->
+  <rect x="60" y="546" width="1280" height="78" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="582" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">5. Paid</text>
+  <text x="470" y="582" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Adds a card or signs a contract</text>
+  <text x="950" y="582" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Self-serve conversion rate</text>
+  <text x="88" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sales enters here, not earlier</text>
+
+  <!-- footer -->
+  <rect x="60" y="656" width="1280" height="92" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="694" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Nothing on this list needs a gated form. Every signal is a product or docs event you already log,</text>
+  <text x="88" y="724" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">which is why the developer funnel is instrumented by engineering and reported by product marketing.</text>
+</svg>

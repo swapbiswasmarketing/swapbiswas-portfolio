@@ -73,7 +73,9 @@ Pull a list of your most recent closed-won deals and a handful of closed-lost on
 - Talk to people who chose a competitor. Lost deals expose your weak spots faster than won ones.
 - Sit with sales and customer success and ask which patterns repeat. They already have a persona in their head; your job is to make it explicit.
 
-If you have never structured these conversations, my notes on [voice of the customer](/blog/what-is-voice-of-the-customer/) cover how to run interviews that produce usable quotes instead of polite vagueness.
+If you have never structured these conversations, my notes on [voice of the customer](/blog/what-is-voice-of-the-customer/) cover how to run interviews that produce usable quotes instead of polite vagueness, and the [customer discovery](/blog/customer-discovery/) walkthrough has the question set I use when the goal is validating a new segment rather than describing an existing one.
+
+A persona describes who the buyer is. It does not capture what made them move. For that, a [jobs to be done template](/blog/jobs-to-be-done-template/) records the competing alternative they fired and the forces that pushed them, which is the part sales actually needs to reproduce.
 
 ### Step 2: Mine the Data You Already Have
 

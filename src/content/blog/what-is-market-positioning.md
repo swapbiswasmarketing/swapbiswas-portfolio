@@ -49,6 +49,8 @@ The terms get used interchangeably in pitch decks. They are not the same.
 
 If positioning is the foundation, messaging is the paint. Most teams obsess over the paint and never inspect the foundation.
 
+Positioning is also segment-specific, which means the segment list comes first. If you cannot say which segments you serve and why each one buys for a different reason, you are writing one position for an average customer who does not exist. The [B2B customer segmentation](/blog/b2b-customer-segmentation/) test is the upstream step that keeps that list honest.
+
 The table also assumes a question already settled, which is whether each product carries the company name at all. That [branded house or house of brands](/blog/house-of-brands-vs-branded-house/) decision is what determines how much equity a new launch inherits on day one.
 
 ## April Dunford's 5-Component Positioning Framework

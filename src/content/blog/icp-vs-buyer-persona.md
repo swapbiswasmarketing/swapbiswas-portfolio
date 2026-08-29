@@ -286,7 +286,7 @@ Snowflake scaled their 1:1 ABM program to 2,000+ accounts and saw a **75% increa
 Always start with the ICP. If you're targeting the wrong companies, even the best buyer personas won't save you. Define the "where" before the "who."
 
 **2. Making the ICP too broad.**
-"All B2B companies with 50+ employees" is not an ICP. It's a total addressable market. The whole point of an ICP is to narrow your focus so you can dominate a specific segment.
+"All B2B companies with 50+ employees" is not an ICP. It's a total addressable market. The whole point of an ICP is to narrow your focus so you can dominate a specific segment. The opposite failure is just as common: splitting the base into more segments than the team can actually staff. A [B2B customer segmentation](/blog/b2b-customer-segmentation/) model only earns its keep when each segment has a named owner, a distinct message, and a field in the CRM to measure it against.
 
 **3. Using only demographics for personas.**
 Job title alone tells you almost nothing. A "VP of Marketing" at a 50-person startup has completely different needs than one at a Fortune 500 company. Add psychographic and behavioral data.
