@@ -20,13 +20,17 @@ const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 3);
 
+// w/h are the files' real intrinsic sizes. They are needed so the browser can
+// reserve each logo's box from its aspect ratio before the image loads - without
+// them the marquee reflows on load (Lighthouse: "image elements do not have
+// explicit width and height").
 const brands = [
-	{ name: 'LambdaTest', logo: '/assets/brands/lambdatest-trim.webp' },
-	{ name: 'Samsung', logo: '/assets/brands/samsung-trim.webp' },
-	{ name: 'Sociowash', logo: '/assets/brands/sociowash-trim.png' },
-	{ name: 'Medilife', logo: '/assets/brands/medilife-trim.webp' },
-	{ name: 'Appknox', logo: '/assets/brands/appknox.svg' },
-	{ name: 'Lido Learning', logo: '/assets/brands/lido-trim.webp' },
+	{ name: 'LambdaTest', logo: '/assets/brands/lambdatest-trim.webp', w: 1211, h: 210 },
+	{ name: 'Samsung', logo: '/assets/brands/samsung-trim.webp', w: 820, h: 140 },
+	{ name: 'Sociowash', logo: '/assets/brands/sociowash-trim.webp', w: 232, h: 140 },
+	{ name: 'Medilife', logo: '/assets/brands/medilife-trim.webp', w: 168, h: 110 },
+	{ name: 'Appknox', logo: '/assets/brands/appknox.svg', w: 115, h: 26 },
+	{ name: 'Lido Learning', logo: '/assets/brands/lido-trim.webp', w: 281, h: 86 },
 ];
 
 // The Selected Work showcase is built and ready, but the work entries currently
@@ -43,6 +47,29 @@ const showSelectedWork = false;
 		// Enable the Signal intro loader before paint (only with JS + no reduced-motion),
 		// so no-JS / reduced-motion visitors always see content immediately.
 		(function () {
+			// Preload the hero painting this visitor will actually see. It is the LCP
+			// element, and the day/dusk variants are swapped by a class on <html> rather
+			// than a media query, so a static <link> in the markup could not know which
+			// one to fetch. MainHead's theme script has already resolved the class by
+			// the time this runs, so we can pick correctly and still be in <head>,
+			// ahead of the parser reaching the <img>.
+			// imagesrcset/imagesizes must match the <img> byte-for-byte or the browser
+			// downloads the painting twice.
+			try {
+				var stem = document.documentElement.classList.contains('theme-dark')
+					? '/assets/art/hero-landscape-dusk'
+					: '/assets/art/hero-landscape';
+				var pl = document.createElement('link');
+				pl.rel = 'preload';
+				pl.as = 'image';
+				pl.setAttribute('fetchpriority', 'high');
+				pl.setAttribute(
+					'imagesrcset',
+					stem + '-800.webp 800w, ' + stem + '-1200.webp 1200w, ' + stem + '-1600.webp 1600w, ' + stem + '.webp 2000w'
+				);
+				pl.setAttribute('imagesizes', '(min-width: 1552px) 900px, (min-width: 50em) 58vw, 100vw');
+				document.head.appendChild(pl);
+			} catch (e) {}
 			try {
 				var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 				if (!reduce && !window.__signalLoaderShown) {
@@ -50,9 +77,12 @@ const showSelectedWork = false;
 				}
 			} catch (e) {}
 			// Safety: never let the loader trap content if the main script fails to run.
+			// __signalReleased tells the GSAP code the failsafe already fired, so it must
+			// NOT re-hide the hero start states and re-run the intro after the fact.
 			setTimeout(function () {
 				var l = document.getElementById('signal-loader');
 				if (l) l.style.display = 'none';
+				window.__signalReleased = true;
 				document.documentElement.classList.remove('signal-js');
 			}, 6000);
 		})();
@@ -102,6 +132,93 @@ const showSelectedWork = false;
 				<div class="sl-bar"><span id="signal-bar"></span></div>
 			</div>
 		</div>
+		<script is:inline>
+			// The intro loader drives itself.
+			//
+			// It used to be a GSAP timeline built inside initSignal(), which Astro's
+			// ClientRouter only fires on `astro:page-load` - and on a first navigation
+			// that event is dispatched from window `load`. So the loader waited for every
+			// image and all of GTM/GA/Clarity/AdSense before it could even start counting.
+			// Measured on a throttled phone profile: the overlay painted at ~4.0s showing
+			// "0", sat frozen there, and was killed by the 6s failsafe before GSAP ever
+			// ran. This script is inline and sits directly after the markup, so it starts
+			// on the very first frame after the loader paints.
+			//
+			// The timeline below is a transcription of the GSAP one it replaces - same
+			// durations, same offsets, same easing functions (copied from gsap-core.js)
+			// - so the animation is unchanged. It just no longer waits for a 46 KiB bundle.
+			(function () {
+				var root = document.documentElement;
+				var el = document.getElementById('signal-loader');
+				if (!el || !root.classList.contains('signal-js')) return;
+
+				var inner = el.querySelector('.sl-inner');
+				var pctEl = document.getElementById('signal-pct');
+				var barEl = document.getElementById('signal-bar');
+
+				// Returning to the homepage via a View Transition: the intro plays once.
+				if (window.__signalLoaderShown) {
+					el.style.display = 'none';
+					window.__signalRevealReady = true;
+					return;
+				}
+				window.__signalLoaderShown = true;
+
+				// gsap eases, verbatim from node_modules/gsap/gsap-core.js.
+				// power2 is Cubic, power3 is Quart; Expo is gsap's blended variant, not
+				// the textbook 2^(10(p-1)).
+				function power2InOut(p) { return p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; }
+				function power3In(p) { return p * p * p * p; }
+				function expoIn(p) { return Math.pow(2, 10 * (p - 1)) * p + p * p * p * p * p * p * (1 - p); }
+				function expoInOut(p) { return p < 0.5 ? expoIn(p * 2) / 2 : 1 - expoIn((1 - p) * 2) / 2; }
+
+				// Seconds on the original timeline:
+				//   count  0.00 -> 1.40  power2.inOut
+				//   inner  1.52 -> 2.02  power3.in    (+0.12 after the count)
+				//   slide  1.84 -> 2.79  expo.inOut   (-0.18 from the inner fade's end)
+				//   reveal @ 2.17                     (-0.62 from the slide's end)
+				var COUNT_END = 1.4, INNER_A = 1.52, INNER_B = 2.02, SLIDE_A = 1.84, SLIDE_B = 2.79, REVEAL_AT = 2.17;
+
+				var t0 = null, revealed = false, finished = false;
+
+				function fireReveal() {
+					if (revealed) return;
+					revealed = true;
+					window.__signalRevealReady = true;
+					document.dispatchEvent(new Event('signal:reveal'));
+				}
+				function finish() {
+					if (finished) return;
+					finished = true;
+					el.style.display = 'none';
+					fireReveal();
+				}
+				function seg(t, a, b) { return Math.min(1, Math.max(0, (t - a) / (b - a))); }
+
+				function frame(now) {
+					if (t0 === null) t0 = now;
+					var t = (now - t0) / 1000;
+
+					var c = power2InOut(seg(t, 0, COUNT_END));
+					if (pctEl) pctEl.textContent = String(Math.round(c * 100));
+					if (barEl) barEl.style.transform = 'scaleX(' + c + ')';
+
+					if (inner && t >= INNER_A) {
+						var i = power3In(seg(t, INNER_A, INNER_B));
+						inner.style.transform = 'translateY(' + -24 * i + 'px)';
+						inner.style.opacity = String(1 - i);
+					}
+					if (t >= SLIDE_A) {
+						el.style.transform = 'translateY(' + -100 * expoInOut(seg(t, SLIDE_A, SLIDE_B)) + '%)';
+					}
+					if (t >= REVEAL_AT) fireReveal();
+
+					if (t >= SLIDE_B) { finish(); return; }
+					requestAnimationFrame(frame);
+				}
+				requestAnimationFrame(frame);
+			})();
+		</script>
 		<svg class="signal-strand" id="signal-strand" aria-hidden="true" preserveAspectRatio="none">
 			<defs>
 				<linearGradient id="signalGrad" x1="0" y1="0" x2="0" y2="1">
@@ -128,22 +245,27 @@ const showSelectedWork = false;
 				<span class="signal-bgword" aria-hidden="true">SIGNAL</span>
 				<!-- Renaissance backdrop: the sitter (portrait) in front of a landscape. Day in light
 				     mode, dusk in dark mode; the theme is a class, so two <img> toggled by CSS. -->
+				<!-- srcset ladder: 800 / 1200 / 1600 / 2000. Without the two middle
+				     rungs a 412px phone at DPR 2 needs 824px, finds nothing between
+				     800w and 2000w, and downloads the 365 KB master for what is a
+				     masked decorative backdrop. This is the LCP element. -->
 				<div class="hero-art" aria-hidden="true">
 					<img
 						class="hero-art--day"
 						src="/assets/art/hero-landscape-800.webp"
-						srcset="/assets/art/hero-landscape-800.webp 800w, /assets/art/hero-landscape.webp 2000w"
+						srcset="/assets/art/hero-landscape-800.webp 800w, /assets/art/hero-landscape-1200.webp 1200w, /assets/art/hero-landscape-1600.webp 1600w, /assets/art/hero-landscape.webp 2000w"
 						sizes="(min-width: 1552px) 900px, (min-width: 50em) 58vw, 100vw"
 						width="2000"
 						height="1116"
 						alt=""
 						loading="eager"
+						fetchpriority="high"
 						decoding="async"
 					/>
 					<img
 						class="hero-art--dusk"
 						src="/assets/art/hero-landscape-dusk-800.webp"
-						srcset="/assets/art/hero-landscape-dusk-800.webp 800w, /assets/art/hero-landscape-dusk.webp 2000w"
+						srcset="/assets/art/hero-landscape-dusk-800.webp 800w, /assets/art/hero-landscape-dusk-1200.webp 1200w, /assets/art/hero-landscape-dusk-1600.webp 1600w, /assets/art/hero-landscape-dusk.webp 2000w"
 						sizes="(min-width: 1552px) 900px, (min-width: 50em) 58vw, 100vw"
 						width="2000"
 						height="1116"
@@ -171,15 +293,23 @@ const showSelectedWork = false;
 				<div class="signal-cue" aria-hidden="true"><span>scroll</span><span class="line"></span></div>
 
 				<div class="signal-portrait-wrap" data-cursor="that's me">
+					{/* No fetchpriority here: the LCP element is the hero painting, and the
+					    portrait starts clipped to circle(0%) so it is not even visible for
+					    the first couple of seconds. Holding "high" here made the two images
+					    compete and pushed the actual LCP resource further down the queue.
+					    sizes matches the real box - .signal-portrait-wrap is
+					    width: min(360px, 80%), so it never renders wider than 360px, and
+					    measured 250/291/346/360px at 360/412/480/768px viewports. The old
+					    100vw made a 412px phone at DPR 2 ask for 824px and fetch the 1024w
+					    file instead of the 768w one. */}
 					<Picture
 						src={portraitImg}
 						alt="Swapnil Biswas - AI, Product & Digital Growth Marketer"
 						widths={[480, 768, 1024]}
-						sizes="(max-width: 50em) 100vw, 480px"
+						sizes="min(360px, 72vw)"
 						formats={['avif', 'webp']}
 						fallbackFormat="webp"
 						loading="eager"
-						fetchpriority="high"
 						pictureAttributes={{ class: "signal-portrait-pic" }}
 						class="signal-portrait"
 					/>
@@ -324,7 +454,7 @@ const showSelectedWork = false;
 				<div class="signal-marquee signal-marquee--brands" aria-hidden="true">
 					<div class="mq-track" id="mq-brands">
 						{[...brands, ...brands, ...brands, ...brands, ...brands, ...brands].map((brand) => (
-							<span class="mq-logo"><img src={brand.logo} alt={brand.name} loading="lazy" decoding="async" /></span>
+							<span class="mq-logo"><img src={brand.logo} alt={brand.name} width={brand.w} height={brand.h} loading="lazy" decoding="async" /></span>
 						))}
 					</div>
 				</div>
@@ -627,7 +757,7 @@ const showSelectedWork = false;
 		top: 0;
 		transform: translateY(-75%) translateX(-50%);
 		background:
-			url('/assets/backgrounds/noise.png') top center/220px repeat,
+			url('/assets/backgrounds/noise.webp') top center/220px repeat,
 			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
 			var(--gray-999);
 		background-blend-mode: overlay, normal, normal, normal;
@@ -995,6 +1125,22 @@ const showSelectedWork = false;
 	.sl-bar { width: min(320px, 60vw); height: 2px; background: var(--sg-hair); overflow: hidden; }
 	.sl-bar span { display: block; height: 100%; width: 100%; transform: scaleX(0); transform-origin: left; background: var(--accent-regular); }
 
+	/* Pre-paint start states for the intro reveal.
+	   These used to be applied only by gsap.set() inside initSignal(). Now that the
+	   loader slides away on its own schedule instead of waiting for the GSAP bundle,
+	   the hero would briefly show itself fully revealed and then snap back to hidden
+	   when GSAP finally landed. Declaring the same start values in CSS - under the
+	   same html.signal-js flag that shows the loader - closes that window. GSAP writes
+	   inline styles, which override these, and the 6s failsafe drops .signal-js so
+	   nothing can ever be left invisible.
+	   The h1 is deliberately NOT armed here: its .ltr spans are built in JS and never
+	   receive Astro's scope attribute, so `.signal-h1 .ltr { display: inline-block }`
+	   does not apply to them, transforms are ignored on the resulting inline boxes,
+	   and the letter reveal has therefore never rendered. Arming it in CSS would add
+	   an animation the live design does not currently have. */
+	:global(html.signal-js) .signal-hero [data-fade] { opacity: 0; transform: translateY(24px); }
+	:global(html.signal-js) .signal-portrait-wrap .signal-portrait { clip-path: circle(0% at 50% 45%); }
+
 	/* the continuous strand - spans the whole page, drawn on scroll */
 	.signal-strand { position: absolute; top: 0; left: 0; width: 100%; z-index: -1; pointer-events: none; }
 	.signal-strand path { fill: none; }
@@ -1047,7 +1193,17 @@ const showSelectedWork = false;
 	@keyframes auraDrift1 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(8vw, 6vh) scale(1.15); } }
 	@keyframes auraDrift2 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-7vw, 10vh) scale(1.12); } }
 	@keyframes auraDrift3 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(6vw, -8vh) scale(1.2); } }
-	.signal-grain { position: fixed; inset: 0; z-index: 1; pointer-events: none; background-image: url('/assets/backgrounds/noise.png'); background-size: 200px; opacity: 0.035; mix-blend-mode: multiply; }
+	/* No blend mode in light mode. The tile is 220x220 with RGB exactly (0,0,0) on
+	   every pixel and only alpha varying 0..25, so over an opaque backdrop `multiply`
+	   and normal source-over are the same formula:
+	     multiply: Co = as*ab*(Cb*Cs) + (1-as)*ab*Cb  ->  (1-as)Cb   when Cs=0, ab=1
+	     normal:   Co = as*Cs + (1-as)*ab*Cb          ->  (1-as)Cb
+	   The blend mode was buying an identical pixel result at the cost of forcing the
+	   compositor to isolate `.backgrounds` (which has isolation: isolate) into an
+	   offscreen surface and re-blend the full viewport on every damaged frame - and
+	   the page is damaged every frame, because the strand ticker writes an SVG
+	   attribute per rAF. Dark mode keeps `overlay` so its rendering is untouched. */
+	.signal-grain { position: fixed; inset: 0; z-index: 1; pointer-events: none; background-image: url('/assets/backgrounds/noise.webp'); background-size: 200px; opacity: 0.035; }
 	:global(:root.theme-dark) .signal-grain { mix-blend-mode: overlay; }
 
 	/* scroll progress bar */
@@ -1731,29 +1887,32 @@ const showSelectedWork = false;
 			document.documentElement.classList.remove('signal-js');
 			const ld = document.getElementById('signal-loader'); if (ld) ld.style.display = 'none';
 			gsap.set(pBase, { strokeDashoffset: 0 });
+		} else if ((window as any).__signalReleased) {
+			// The 6s failsafe already fired, so the hero is on screen. Don't re-hide it
+			// and replay the intro after the fact - just settle the strand.
+			gsap.set(pBase, { strokeDashoffset: len - len * 0.045 });
 		} else {
-			// set the hidden start states for the reveal
+			// The loader itself is driven by the inline script beside its markup, so it
+			// has been counting since first paint and does not wait for this bundle.
+			// All we do here is arm the reveal's start states (CSS already holds the
+			// same values pre-paint; these inline ones are what reveal() animates from)
+			// and hook the cue the loader emits.
 			gsap.set(pBase, { strokeDashoffset: len });
 			if (letters.length) gsap.set(letters, { yPercent: 115 });
 			if (fades.length) gsap.set(fades, { opacity: 0, y: 24 });
 			if (portrait) gsap.set(portrait, { clipPath: 'circle(0% at 50% 45%)' });
 
-			if ((window as any).__signalLoaderShown) {
-				const ld = document.getElementById('signal-loader'); if (ld) ld.style.display = 'none';
+			if ((window as any).__signalRevealReady) {
 				reveal();
 			} else {
-				(window as any).__signalLoaderShown = true;
-				const pctEl = document.getElementById('signal-pct');
-				const barEl = document.getElementById('signal-bar');
-				const o = { v: 0 };
-				S.tl = gsap.timeline()
-					.to(o, { v: 100, duration: 1.4, ease: 'power2.inOut', onUpdate: () => {
-						if (pctEl) pctEl.textContent = String(Math.round(o.v));
-						if (barEl) barEl.style.transform = `scaleX(${o.v / 100})`;
-					} })
-					.to('.sl-inner', { y: -24, opacity: 0, duration: 0.5, ease: 'power3.in' }, '+=0.12')
-					.to('#signal-loader', { yPercent: -100, duration: 0.95, ease: 'expo.inOut', onComplete: () => { const ld = document.getElementById('signal-loader'); if (ld) ld.style.display = 'none'; } }, '-=0.18')
-					.add(reveal, '-=0.62');
+				// Wait for the inline loader's cue, but never depend on it arriving.
+				// If that script's rAF loop is interrupted - a backgrounded tab, or a
+				// View Transition away and back before the cue fires - the hero would
+				// otherwise sit hidden behind the start states forever.
+				let cued = false;
+				const fire = () => { if (cued) return; cued = true; reveal(); };
+				addL(document, 'signal:reveal', fire, { once: true });
+				S.delayed.push(gsap.delayedCall(3.2, fire)); // loader ends at 2.79s
 			}
 		}
 	}
@@ -1775,6 +1934,14 @@ const showSelectedWork = false;
 		S = null;
 	}
 
+	// Run as soon as this module executes. Astro's ClientRouter dispatches
+	// `astro:page-load` from the window `load` event on a first navigation, so
+	// relying on it alone delayed every homepage animation until after all images
+	// and all of GTM/GA/Clarity/AdSense had finished - measured at ~17s on a
+	// throttled phone profile. This is a deferred module script, so the DOM is
+	// already parsed by the time it runs. initSignal() early-returns when it has
+	// already initialised, so the listener below stays safe for soft navigations.
+	initSignal();
 	document.addEventListener('astro:page-load', initSignal);
 	document.addEventListener('astro:before-swap', teardownSignal);
 </script>

@@ -135,10 +135,16 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 			addEventListener('load', () => document.documentElement.classList.add('loaded'));
 		</script>
 
-		<!-- Service Worker Registration -->
+		<!-- Service Worker Registration.
+		     Deferred to after `load`: registering during page load spawns the worker
+		     and fires its install-time precache (4 extra requests) while the LCP image
+		     is still in flight. Nothing on the first visit is served by the worker
+		     anyway - it only controls subsequent navigations. -->
 		<script is:inline>
 			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('/sw.js');
+				addEventListener('load', function () {
+					navigator.serviceWorker.register('/sw.js');
+				});
 			}
 		</script>
 
@@ -241,23 +247,43 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 					});
 				}
 
-				// Blog reading progress milestones
-				var article = document.querySelector('.content-column') || document.querySelector('article');
+				// Blog reading progress milestones.
+				// The old selector ended in `|| document.querySelector('article')`, and on
+				// the homepage that matched the first <article class="card"> rendered by
+				// BlogPreview. So the homepage ran getBoundingClientRect() on a ~300px blog
+				// card on every scroll frame - a forced layout, interleaved with the strand
+				// ticker's per-frame SVG writes - and reported blog_read_progress against
+				// that card. .content-column only exists in blog/[...slug].astro, which is
+				// the only page this belongs on.
+				var article = document.querySelector('.content-column');
 				if (article && !article._tracked) {
 					article._tracked = true;
 					var milestones = { 25: false, 50: false, 75: false, 100: false };
-					var scrollHandler = function() {
+					// The article box does not move while scrolling, so measure it once and
+					// refresh on resize instead of forcing a layout on every scroll event.
+					var articleTop = 0, articleHeight = 1;
+					var measure = function() {
 						var rect = article.getBoundingClientRect();
-						var articleTop = rect.top + window.scrollY;
-						var articleHeight = rect.height;
-						var scrollPos = window.scrollY + window.innerHeight - articleTop;
-						var pct = Math.min(Math.round((scrollPos / articleHeight) * 100), 100);
-						for (var m in milestones) {
-							if (!milestones[m] && pct >= parseInt(m)) {
-								milestones[m] = true;
-								track('blog_read_progress', { read_percent: parseInt(m), blog_title: document.title });
+						articleTop = rect.top + window.scrollY;
+						articleHeight = rect.height || 1;
+					};
+					measure();
+					window.addEventListener('resize', measure, { passive: true });
+					var ticking = false;
+					var scrollHandler = function() {
+						if (ticking) return;
+						ticking = true;
+						requestAnimationFrame(function() {
+							ticking = false;
+							var scrollPos = window.scrollY + window.innerHeight - articleTop;
+							var pct = Math.min(Math.round((scrollPos / articleHeight) * 100), 100);
+							for (var m in milestones) {
+								if (!milestones[m] && pct >= parseInt(m)) {
+									milestones[m] = true;
+									track('blog_read_progress', { read_percent: parseInt(m), blog_title: document.title });
+								}
 							}
-						}
+						});
 					};
 					window.addEventListener('scroll', scrollHandler, { passive: true });
 				}

@@ -1,3 +1,64 @@
+/* ── Fonts ─────────────────────────────────────────────────────────────────
+   Self-hosted. These are the exact woff2 files Google was serving for the
+   css2 query this site used to request, copied byte-for-byte, so glyphs,
+   hinting, variable axes and unicode-range are unchanged - text renders
+   identically, it just no longer costs two cross-origin connections
+   (fonts.googleapis.com + fonts.gstatic.com) and a serialized 11.5 KB CSS
+   round trip before the first byte of a font can be requested.
+
+   All three families are SIL OFL 1.1, which permits redistribution.
+
+   Only the `latin` subset is vendored. Google's other subsets (latin-ext,
+   greek, cyrillic, vietnamese) were never actually downloaded by this site:
+   unicode-range means a browser fetches a face only when a glyph needs it,
+   and there are no non-latin codepoints in the content.
+
+   No <link rel="preload"> for these on purpose. Astro now inlines the CSS
+   into the document (build.inlineStylesheets), so these rules are parsed with
+   the HTML and the fetches start just as early as a preload would - without
+   180 KB of fonts competing against the LCP hero image for bandwidth.
+
+   The `opsz` axis is load-bearing: global.css sets font-optical-sizing: auto,
+   and dropping opsz would widen the h1 by ~10%. Do not "optimise" it away. */
+
+@font-face {
+	font-family: 'Bricolage Grotesque';
+	font-style: normal;
+	font-weight: 400 800;
+	font-stretch: 100%;
+	font-display: swap;
+	src: url('/fonts/bricolage-grotesque-latin.woff2') format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400 600;
+	font-display: swap;
+	src: url('/fonts/inter-latin.woff2') format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: 'Inter';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/inter-italic-latin.woff2') format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* 400 and 500 are the same variable file; Google served it twice too. */
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 400 500;
+	font-display: swap;
+	src: url('/fonts/jetbrains-mono-latin.woff2') format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 html {
 	scroll-behavior: smooth;
 }

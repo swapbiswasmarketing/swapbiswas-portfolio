@@ -58,13 +58,15 @@ const socials = [
 	{ name: 'GitHub', url: 'https://github.com/swapbiswasmarketing/', icon: 'M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22' },
 ];
 
+// w/h are the files' real intrinsic sizes, so the browser can reserve each
+// logo's box from its aspect ratio before the image loads.
 const brands = [
-	{ name: 'LambdaTest', logo: '/assets/brands/lambdatest-trim.webp' },
-	{ name: 'Samsung', logo: '/assets/brands/samsung-trim.webp' },
-	{ name: 'Sociowash', logo: '/assets/brands/sociowash-trim.png' },
-	{ name: 'Medilife', logo: '/assets/brands/medilife-trim.webp' },
-	{ name: 'Appknox', logo: '/assets/brands/appknox.svg' },
-	{ name: 'Lido Learning', logo: '/assets/brands/lido-trim.webp' },
+	{ name: 'LambdaTest', logo: '/assets/brands/lambdatest-trim.webp', w: 1211, h: 210 },
+	{ name: 'Samsung', logo: '/assets/brands/samsung-trim.webp', w: 820, h: 140 },
+	{ name: 'Sociowash', logo: '/assets/brands/sociowash-trim.webp', w: 232, h: 140 },
+	{ name: 'Medilife', logo: '/assets/brands/medilife-trim.webp', w: 168, h: 110 },
+	{ name: 'Appknox', logo: '/assets/brands/appknox.svg', w: 115, h: 26 },
+	{ name: 'Lido Learning', logo: '/assets/brands/lido-trim.webp', w: 281, h: 86 },
 ];
 ---
 
@@ -314,7 +316,7 @@ const brands = [
 					<Grid variant="small">
 						{brands.map((brand) => (
 							<li class="mention-card">
-								<img src={brand.logo} alt={brand.name} class="brand-logo" loading="lazy" decoding="async" />
+								<img src={brand.logo} alt={brand.name} class="brand-logo" width={brand.w} height={brand.h} loading="lazy" decoding="async" />
 							</li>
 						))}
 					</Grid>

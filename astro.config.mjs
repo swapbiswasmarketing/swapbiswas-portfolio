@@ -16,6 +16,19 @@ const demoRedirects = Object.fromEntries(
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://swapbiswas.com',
+	build: {
+		// The homepage shipped two render-blocking stylesheets: its own page chunk
+		// (~35 KB raw) and the shared Nav/Footer/ThemeToggle/BaseLayout/global.css
+		// chunk (~27 KB raw, misleadingly named after the `about` entry). Both lost a
+		// bandwidth race on slow 4G against the third-party scripts that start higher
+		// up in <head>, which is why PSI timed two similarly sized files at 170ms and
+		// 520ms. Inlining them ships the CSS with the document: measured 3 requests
+		// (2 render-blocking) -> 1 request (0 render-blocking), and slightly FEWER
+		// bytes on the wire, because one brotli stream over HTML+CSS beats three.
+		// Cascade order is preserved - Astro sorts sheets with cssOrder() and merges
+		// adjacent inline ones, so the emitted order is unchanged.
+		inlineStylesheets: 'always',
+	},
 	redirects: {
 		// The concept library and its 41 demos all live under /personal-website-examples/.
 		'/redesign': '/personal-website-examples/',

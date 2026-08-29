@@ -86,43 +86,25 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 <link rel="manifest" href="/manifest.webmanifest" />
 <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#151311" media="(prefers-color-scheme: dark)" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="dns-prefetch" href="https://api.kit.com" />
-<link
-	rel="preload"
-	as="style"
-	href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:ital,opsz,wght@0,14..32,400..600;1,14..32,400&family=JetBrains+Mono:wght@400;500&display=swap"
-	onload="this.onload=null;this.rel='stylesheet'"
-/>
-<noscript>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:ital,opsz,wght@0,14..32,400..600;1,14..32,400&family=JetBrains+Mono:wght@400;500&display=swap"
-		rel="stylesheet"
-	/>
-</noscript>
+<!-- Fonts are self-hosted from /public/fonts and declared in global.css, so there
+     is nothing to preconnect to and no third-party stylesheet to wait on. See the
+     comment at the top of src/styles/global.css. -->
 <!-- Analytics: only load on production -->
 <script is:inline>
 	if (location.hostname === 'swapbiswas.com' || location.hostname === 'www.swapbiswas.com') {
-		// Preconnect hints for analytics domains
-		var pc1=document.createElement('link');pc1.rel='preconnect';pc1.href='https://www.googletagmanager.com';document.head.appendChild(pc1);
-		var pc2=document.createElement('link');pc2.rel='preconnect';pc2.href='https://scripts.clarity.ms';pc2.crossOrigin='';document.head.appendChild(pc2);
-
-		// Google Tag Manager
+		// Google Tag Manager.
+		// GTM loads GA4 (G-32PVYX6VRH) itself - you can see it request
+		// gtag/js?id=G-32PVYX6VRH&cx=c&gtm=... - so this page must NOT also load a
+		// standalone gtag.js. Doing both shipped two ~166 KiB copies of the same
+		// library and cost ~138ms of long tasks. dataLayer is still created here so
+		// anything pushed before gtm.js arrives is queued and replayed.
+		window.dataLayer = window.dataLayer || [];
 		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-WGNTLP2R');
-
-		// Google Analytics (GA4)
-		var s=document.createElement('script');s.async=true;
-		s.src='https://www.googletagmanager.com/gtag/js?id=G-32PVYX6VRH';
-		document.head.appendChild(s);
-		window.dataLayer=window.dataLayer||[];
-		var gtag=function(){dataLayer.push(arguments);};
-		gtag('js',new Date());
-		gtag('config','G-32PVYX6VRH');
 
 		// Microsoft Clarity
 		(function(c,l,a,r,i,t,y){
