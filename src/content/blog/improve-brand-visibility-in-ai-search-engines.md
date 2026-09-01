@@ -58,6 +58,8 @@ You cannot buy your way onto those platforms, but you can show up authentically.
 
 The goal is simple. Be present, accurate, and useful on the pages AI models already pull from.
 
+Your own pages can earn citations too, but only when they carry something an engine cannot find in ten other places: a claim with a position, original data, or a method you actually ran. That is the working definition of [thought leadership content](/blog/thought-leadership-content/), and it is why most branded content gets published and never cited.
+
 ## 4. Publish Answer-Shaped Content
 
 AI engines reward content that is easy to lift and quote. Long, meandering pages get skipped in favor of pages that answer a question cleanly in the first two sentences.

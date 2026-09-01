@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
+  <rect x="0" y="0" width="1400" height="780" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">One Deal Set, Five Win Rates</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The same quarter of closed business, computed five defensible ways.</text>
+
+  <rect x="60" y="140" width="430" height="430" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">THE QUARTER</text>
+
+  <text x="92" y="230" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Opportunities created</text>
+  <text x="458" y="230" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">240</text>
+
+  <text x="92" y="264" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Reached qualified stage</text>
+  <text x="458" y="264" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">150</text>
+
+  <text x="92" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Closed in the period</text>
+  <text x="458" y="298" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">120</text>
+
+  <text x="92" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Closed-won</text>
+  <text x="458" y="332" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">30</text>
+
+  <text x="92" y="366" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Lost to a competitor</text>
+  <text x="458" y="366" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">45</text>
+
+  <text x="92" y="400" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Lost to no decision</text>
+  <text x="458" y="400" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">45</text>
+
+  <text x="92" y="434" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Still open at period end</text>
+  <text x="458" y="434" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">120</text>
+
+  <line x1="92" y1="458" x2="458" y2="458" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="92" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Won ARR</text>
+  <text x="458" y="494" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">$1.20M</text>
+
+  <text x="92" y="528" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Total closed ARR</text>
+  <text x="458" y="528" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">$5.25M</text>
+
+  <rect x="530" y="140" width="810" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="562" y="186" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Won over all closed deals (30 / 120)</text>
+  <text x="1310" y="190" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">25.0%</text>
+
+  <rect x="530" y="228" width="810" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="562" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Competitive outcomes only, no decision dropped (30 / 75)</text>
+  <text x="1310" y="278" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#b53b15">40.0%</text>
+
+  <rect x="530" y="316" width="810" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="562" y="362" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Won over every opportunity created (30 / 240)</text>
+  <text x="1310" y="366" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">12.5%</text>
+
+  <rect x="530" y="404" width="810" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="562" y="450" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">All qualified opportunities, including open (30 / 150)</text>
+  <text x="1310" y="454" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">20.0%</text>
+
+  <rect x="530" y="492" width="810" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="562" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">ARR-weighted, won value over closed value</text>
+  <text x="1310" y="542" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">22.9%</text>
+
+  <rect x="60" y="612" width="1280" height="110" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="660" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Spread across the five definitions: 27.5 percentage points, from one set of records.</text>
+  <text x="92" y="694" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Nothing about how the team sold changed. Only the denominator did.</text>
+</svg>

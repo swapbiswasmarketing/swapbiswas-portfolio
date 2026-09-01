@@ -98,6 +98,8 @@ Run the review on a fixed cadence:
 
 That loop is what separates a content marketing framework from a content calendar. The calendar tells you what ships next week. The framework tells you why, and how you will know if it worked.
 
+Two things make that loop harder in SaaS than the table suggests. The buying cycle is long and multi-touch, so last-touch attribution misreports which pieces worked; [how to measure SaaS content marketing](/blog/how-to-measure-saas-content-marketing/) covers the model I would defend in a board review, including what cannot be attributed at all. And at the awareness stage, the pieces that earn citations are the ones carrying a claim someone could argue with, which is the difference between publishing volume and publishing [thought leadership content](/blog/thought-leadership-content/).
+
 ## Common Mistakes That Break the Framework
 
 - **Starting from formats.** Deciding you need a podcast before you know which buying question it answers. Format is the last call, not the first.

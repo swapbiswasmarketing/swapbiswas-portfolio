@@ -82,6 +82,8 @@ With inputs in place, the build is really a question of which panels to include 
 
 The top-left panel, always. A single win-rate number for the selected period and a trend line showing its direction over the last several quarters. This is the number leadership checks first, so it sets the frame for everything below it.
 
+Decide the denominator before you build the panel, and write it on the dashboard. The same quarter of deals produces wildly different rates depending on whether you count all opportunities, only qualified ones, or exclude no-decision losses, which is also why published [SaaS win rate benchmarks](/blog/saas-win-rate-benchmark/) are mostly not comparable to yours.
+
 ### Win rate by segment, competitor, and deal size
 
 The workhorse panel. A set of bar charts breaking the headline rate down by the dimensions you captured: which segment converts best, which competitor you beat or lose to, whether large deals close at a different rate than small ones.

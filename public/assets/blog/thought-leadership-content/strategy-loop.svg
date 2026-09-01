@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 660" width="1400" height="660">
+  <rect x="0" y="0" width="1400" height="660" fill="#f6f4ef"/>
+
+  <text x="40" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">A Thought Leadership Content Strategy in Four Steps</text>
+  <text x="40" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Claims first, formats last. Nothing enters production without an owner and a proof source.</text>
+
+  <rect x="40" y="170" width="296" height="245" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="62" y="214" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 01</text>
+  <text x="62" y="258" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claim Inventory</text>
+  <text x="62" y="302" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">List 10 to 15 positions</text>
+  <text x="62" y="330" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">your team can defend in</text>
+  <text x="62" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">a customer meeting</text>
+
+  <line x1="344" y1="292" x2="364" y2="292" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="364,285 378,292 364,299" fill="#15130f"/>
+
+  <rect x="381" y="170" width="296" height="245" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="403" y="214" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 02</text>
+  <text x="403" y="258" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Owner and Proof</text>
+  <text x="403" y="302" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">One named author and</text>
+  <text x="403" y="330" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">one owned evidence</text>
+  <text x="403" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">source per claim</text>
+
+  <line x1="685" y1="292" x2="705" y2="292" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="705,285 719,292 705,299" fill="#15130f"/>
+
+  <rect x="722" y="170" width="296" height="245" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="214" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 03</text>
+  <text x="744" y="258" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Publishing Rhythm</text>
+  <text x="744" y="302" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">One defensible piece a</text>
+  <text x="744" y="330" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">month beats four in a</text>
+  <text x="744" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">launch week</text>
+
+  <line x1="1026" y1="292" x2="1046" y2="292" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1046,285 1060,292 1046,299" fill="#15130f"/>
+
+  <rect x="1063" y="170" width="296" height="245" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1085" y="214" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 04</text>
+  <text x="1085" y="258" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Track Citations</text>
+  <text x="1085" y="302" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Count who quotes and</text>
+  <text x="1085" y="330" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">links to the claim,</text>
+  <text x="1085" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">not page views</text>
+
+  <rect x="40" y="460" width="1320" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="80" y="548" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="48" font-weight="600" fill="#b53b15">4%</text>
+  <text x="190" y="522" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">of B2B marketers rate their thought leadership program as leading.</text>
+  <text x="190" y="556" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Content Marketing Institute and MarketingProfs, 2026 B2B trends survey.</text>
+</svg>

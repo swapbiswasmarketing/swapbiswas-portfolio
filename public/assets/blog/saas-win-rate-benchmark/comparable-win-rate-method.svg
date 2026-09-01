@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 680" width="1400" height="680">
+  <rect x="0" y="0" width="1400" height="680" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">How to Compute a Comparable Win Rate</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Five decisions made once, then written down next to the number.</text>
+
+  <rect x="60" y="150" width="400" height="210" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 01</text>
+  <text x="88" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Fix the Window</text>
+  <text x="88" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Count by close date inside</text>
+  <text x="88" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">one fixed period. A created-</text>
+  <text x="88" y="334" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">date cohort is another metric.</text>
+
+  <line x1="464" y1="255" x2="482" y2="255" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="482,248 496,255 482,262" fill="#15130f"/>
+
+  <rect x="500" y="150" width="400" height="210" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 02</text>
+  <text x="528" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Fix the Entry Gate</text>
+  <text x="528" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Name the stage where a deal</text>
+  <text x="528" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">starts counting, and publish</text>
+  <text x="528" y="334" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">that stage next to the number.</text>
+
+  <line x1="904" y1="255" x2="922" y2="255" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="922,248 936,255 922,262" fill="#15130f"/>
+
+  <rect x="940" y="150" width="400" height="210" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 03</text>
+  <text x="968" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Split the Losses</text>
+  <text x="968" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Competitive loss and no</text>
+  <text x="968" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">decision are two outcomes.</text>
+  <text x="968" y="334" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Never merge the buckets.</text>
+
+  <line x1="1140" y1="360" x2="1140" y2="380" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="1140" y1="380" x2="260" y2="380" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="260" y1="380" x2="260" y2="386" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="253,386 260,400 267,386" fill="#15130f"/>
+
+  <rect x="60" y="400" width="400" height="210" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="442" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 04</text>
+  <text x="88" y="484" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Count or Dollars</text>
+  <text x="88" y="524" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Deal-count and ARR-weighted</text>
+  <text x="88" y="554" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">win rates differ. Report one,</text>
+  <text x="88" y="584" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and label which one it is.</text>
+
+  <line x1="464" y1="505" x2="482" y2="505" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="482,498 496,505 482,512" fill="#15130f"/>
+
+  <rect x="500" y="400" width="400" height="210" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="442" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 05</text>
+  <text x="528" y="484" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Recut by Segment</text>
+  <text x="528" y="524" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Split by segment, ACV band</text>
+  <text x="528" y="554" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and source before comparing</text>
+  <text x="528" y="584" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">yourself to anyone outside.</text>
+
+  <line x1="904" y1="505" x2="922" y2="505" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="922,498 936,505 922,512" fill="#15130f"/>
+
+  <rect x="940" y="400" width="400" height="210" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+  <text x="968" y="442" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#b53b15">OUTPUT</text>
+  <text x="968" y="484" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A Defensible Number</text>
+  <text x="968" y="524" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Definition, window and split</text>
+  <text x="968" y="554" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">published together. Now an</text>
+  <text x="968" y="584" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">external figure is comparable.</text>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" width="1400" height="700">
+  <rect x="0" y="0" width="1400" height="700" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">What an Expansion Trigger Needs to Fire</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Miss any one link and the play never runs</text>
+
+  <!-- Card 1 -->
+  <rect x="60" y="150" width="290" height="320" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 01</text>
+  <text x="84" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Signal</text>
+  <text x="84" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Which behaviour</text>
+  <text x="84" y="294" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">shows the second</text>
+  <text x="84" y="320" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">job has arrived?</text>
+  <line x1="84" y1="346" x2="326" y2="346" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="378" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="15" font-weight="500" letter-spacing="0.1em" fill="#6a645c">IF MISSING</text>
+  <text x="84" y="408" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Renewal dates get</text>
+  <text x="84" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">worked instead.</text>
+
+  <line x1="354" y1="310" x2="376" y2="310" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="376,303 390,310 376,317" fill="#15130f"/>
+
+  <!-- Card 2 -->
+  <rect x="390" y="150" width="290" height="320" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="414" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 02</text>
+  <text x="414" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Threshold</text>
+  <text x="414" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">At what value</text>
+  <text x="414" y="294" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">does the behaviour</text>
+  <text x="414" y="320" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">start to count?</text>
+  <line x1="414" y1="346" x2="656" y2="346" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="414" y="378" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="15" font-weight="500" letter-spacing="0.1em" fill="#6a645c">IF MISSING</text>
+  <text x="414" y="408" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Every account looks</text>
+  <text x="414" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">equally ready.</text>
+
+  <line x1="684" y1="310" x2="706" y2="310" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="706,303 720,310 706,317" fill="#15130f"/>
+
+  <!-- Card 3 -->
+  <rect x="720" y="150" width="290" height="320" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 03</text>
+  <text x="744" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Owner</text>
+  <text x="744" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Whose queue does</text>
+  <text x="744" y="294" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">it land in this</text>
+  <text x="744" y="320" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">week?</text>
+  <line x1="744" y1="346" x2="986" y2="346" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="378" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="15" font-weight="500" letter-spacing="0.1em" fill="#6a645c">IF MISSING</text>
+  <text x="744" y="408" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">It sits on a board</text>
+  <text x="744" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">nobody opens.</text>
+
+  <line x1="1014" y1="310" x2="1036" y2="310" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1036,303 1050,310 1036,317" fill="#15130f"/>
+
+  <!-- Card 4 -->
+  <rect x="1050" y="150" width="290" height="320" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1074" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 04</text>
+  <text x="1074" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Play</text>
+  <text x="1074" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">What do they do</text>
+  <text x="1074" y="294" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">in the next five</text>
+  <text x="1074" y="320" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">working days?</text>
+  <line x1="1074" y1="346" x2="1316" y2="346" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1074" y="378" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="15" font-weight="500" letter-spacing="0.1em" fill="#6a645c">IF MISSING</text>
+  <text x="1074" y="408" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">The rep improvises</text>
+  <text x="1074" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">and the story drifts.</text>
+
+  <!-- Footer band -->
+  <rect x="60" y="510" width="1280" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="84" y="536" width="5" height="58" rx="2.5" fill="#b53b15"/>
+  <text x="112" y="558" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#b53b15">THE COMMON FAILURE</text>
+  <text x="112" y="592" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Signal sits in an analytics tool, threshold unstated, owner is the account team, play is a template email.</text>
+</svg>

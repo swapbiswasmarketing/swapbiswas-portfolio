@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760">
+  <rect x="0" y="0" width="1400" height="760" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">The Three-Part Thought Leadership Test</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Run it on a draft before it publishes. A no on any line is a rewrite instruction.</text>
+
+  <rect x="60" y="140" width="400" height="420" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">TEST 01</text>
+  <text x="88" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A Disputable Claim</text>
+  <text x="88" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Could a well-informed reader in</text>
+  <text x="88" y="308" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">your market argue with this?</text>
+  <line x1="88" y1="344" x2="432" y2="344" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="378" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.08em" fill="#2a7347">PASS</text>
+  <text x="88" y="406" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">States a position someone in</text>
+  <text x="88" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the field could argue against</text>
+  <text x="88" y="470" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.08em" fill="#6a645c">FAIL</text>
+  <text x="88" y="498" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Restates what the category</text>
+  <text x="88" y="524" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">already agrees on</text>
+
+  <rect x="500" y="140" width="400" height="420" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#b53b15">TEST 02</text>
+  <text x="528" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Evidence You Own</text>
+  <text x="528" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Could only you produce this</text>
+  <text x="528" y="308" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">proof from your own work?</text>
+  <line x1="528" y1="344" x2="872" y2="344" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="378" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.08em" fill="#2a7347">PASS</text>
+  <text x="528" y="406" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Product telemetry, a method</text>
+  <text x="528" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">you ran, your own numbers</text>
+  <text x="528" y="470" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.08em" fill="#6a645c">FAIL</text>
+  <text x="528" y="498" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Three vendor blogs and one</text>
+  <text x="528" y="524" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">analyst chart, recycled</text>
+
+  <rect x="940" y="140" width="400" height="420" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">TEST 03</text>
+  <text x="968" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A Named Author</text>
+  <text x="968" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Is a named human on the</text>
+  <text x="968" y="308" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">byline and accountable?</text>
+  <line x1="968" y1="344" x2="1312" y2="344" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="378" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.08em" fill="#2a7347">PASS</text>
+  <text x="968" y="406" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">One expert signs it and can</text>
+  <text x="968" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">defend it in a meeting</text>
+  <text x="968" y="470" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.08em" fill="#6a645c">FAIL</text>
+  <text x="968" y="498" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Published by the brand,</text>
+  <text x="968" y="524" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">written by nobody in particular</text>
+
+  <rect x="60" y="600" width="1280" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="650" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">A draft that fails any line can still be useful content.</text>
+  <text x="88" y="682" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">It will not carry authority, and an answer engine has no distinctive claim to cite.</text>
+</svg>

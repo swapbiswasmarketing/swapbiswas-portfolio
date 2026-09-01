@@ -70,6 +70,8 @@ You cannot price what you have not measured. Three research methods every PMM sh
 3. At what price would it be so expensive you would not consider it?
 4. At what price would it be so cheap you would question the quality?
 
+Asking the four questions is the easy half. Cleaning the responses that answer them in an impossible order, deciding how many responses you need before the crossing points mean anything, and knowing what the method cannot tell you are where most studies go wrong. The full walkthrough is in [how to run the Van Westendorp price sensitivity meter](/blog/van-westendorp-price-sensitivity-meter/).
+
 Plot the responses. The intersections give you a defensible range - the optimal price point, the price of indifference, and the upper and lower bounds.
 
 **Gabor-Granger.** Iteratively test specific price points - "would you buy at $X? At $Y?" - and chart the demand curve. Tighter than Van Westendorp for setting a specific number.

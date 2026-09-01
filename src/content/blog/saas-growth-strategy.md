@@ -41,6 +41,8 @@ Companies like Figma (**$1.056B revenue, 136% NRR**) and Canva (**$4B ARR, 265M 
 
 **Key metrics:** Activation rate, free-to-paid conversion, time to value.
 
+The expansion half of this playbook is usually treated as a sales tactic and loses money for it. What decides whether an account can grow is a packaging choice made before the first contract, which is the argument in [land and expand](/blog/land-and-expand/).
+
 ### Playbook 2: Content-Led SEO
 
 Build a content engine that captures search demand across your buyer's journey. Target keywords at every stage - awareness ("what is X"), consideration ("X vs Y"), and decision ("best X for Y").

@@ -136,6 +136,8 @@ Set the target distribution before you launch, then treat every deviation as a d
 
 Those are design targets, not benchmarks. What matters is that you decided the number in advance and can now tell whether the packaging is behaving.
 
+Setting the levels is a separate exercise from setting the tiers, and it is worth a real study rather than a guess: [the Van Westendorp price sensitivity meter](/blog/van-westendorp-price-sensitivity-meter/) is the cheapest method that produces a defensible range, provided you clean the responses properly.
+
 The cautionary case is public. Netflix reported that its ads plan, priced at $8.99 in the US, represented **over 60% of all Q1 sign-ups within its ads countries** ([Netflix Q1 2026 shareholder letter](https://www.sec.gov/Archives/edgar/data/1065280/000106528026000137/ex991_q126.htm)). A cheap entry tier will take the mix if you let it. That is fine for Netflix because a second revenue stream, advertising, rides on that tier. Most B2B products have no second stream, so a Good tier eating the mix is straightforwardly a revenue problem dressed up as an adoption win.
 
 ## Good Better Best Pricing Examples

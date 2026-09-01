@@ -96,6 +96,8 @@ The questions only work with the right technique. A few rules I hold to:
 
 Once you have run enough interviews, the patterns are what matter. Roll the answers into a running view of why you win and lose, like the one in my [win-loss analysis dashboard](/blog/win-loss-analysis-dashboard/) guide.
 
+Interviews also surface the losses your CRM files wrongly. Deals that ended because the buying group never reached a decision are not competitive losses, and how you count them decides whether your number can be compared to any [SaaS win rate benchmark](/blog/saas-win-rate-benchmark/) at all.
+
 ## The Takeaway
 
 Win-loss analysis lives or dies on the questions. Ask closed, defensive, or leading questions and you get the polite non-answers that make everyone feel fine and change nothing. Ask open questions across the trigger, evaluation, competition, decision, and future - with a neutral interviewer who knows when to stay quiet - and buyers will tell you exactly why you win and lose.

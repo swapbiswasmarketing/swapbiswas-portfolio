@@ -62,6 +62,8 @@ Run your product through this:
 
 If seats go up but the value the customer gets does not, per-seat pricing will cap your expansion revenue at headcount. If usage goes up unpredictably, usage pricing will hand procurement a bill they cannot forecast. The value metric is where a pricing model is won or lost, which is why it sits upstream of every other pricing decision a product marketer makes.
 
+Picking the metric also decides whether expansion is possible at all. A [land and expand](/blog/land-and-expand/) motion needs an entry package that deliberately leaves something out, and a usage signal you instrumented before the first contract, not after. Once the model is chosen, [the Van Westendorp price sensitivity meter](/blog/van-westendorp-price-sensitivity-meter/) is the cheapest way to put a defensible number on the level.
+
 ## The 7 B2B SaaS Pricing Models, With Examples
 
 ![The seven B2B SaaS pricing models each mapped to their value metric and a named public example, plus the chooser rule](/assets/blog/saas-pricing-models/pricing-models-map.webp "The 7 B2B SaaS pricing models mapped to value metrics")

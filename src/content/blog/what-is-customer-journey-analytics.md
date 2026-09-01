@@ -116,7 +116,7 @@ Not every journey metric is signal. Here are the ones that consistently predict 
 
 ### Acquisition Stage
 
-- **Channel-attributed conversion rate** - of visitors arriving from a channel, what percentage convert to a known event (sign-up, demo request)
+- **Channel-attributed conversion rate** - of visitors arriving from a channel, what percentage convert to a known event (sign-up, demo request). Treat this as descriptive, not causal: a journey view shows which paths preceded conversion, and only an experiment shows which spend caused it. [Marketing mix modeling vs attribution vs incrementality](/blog/marketing-mix-modeling-vs-attribution/) covers where each method breaks.
 - **Cost per qualified lead** by channel and segment - not just CPL, but CPL filtered by who fits the [ICP](/blog/icp-vs-buyer-persona/)
 - **Time from first touch to qualified opportunity** - long times signal weak targeting; short times signal strong fit
 

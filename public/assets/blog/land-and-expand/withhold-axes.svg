@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 660" width="1400" height="660">
+  <rect x="0" y="0" width="1400" height="660" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Which Axis You Cap Follows From Your Positioning</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The same four withhold axes, chosen by where the product wins</text>
+
+  <!-- Question bar -->
+  <rect x="60" y="136" width="1280" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="84" y="158" width="5" height="34" rx="2.5" fill="#b53b15"/>
+  <text x="112" y="172" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#b53b15">ANSWER THIS FIRST</text>
+  <text x="112" y="200" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">Do you win on depth in one workflow, or on breadth across several?</text>
+
+  <!-- Connectors -->
+  <line x1="370" y1="212" x2="370" y2="238" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="363,238 377,238 370,250" fill="#15130f"/>
+  <line x1="1030" y1="212" x2="1030" y2="238" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1023,238 1037,238 1030,250" fill="#15130f"/>
+
+  <!-- Branch A -->
+  <rect x="60" y="250" width="620" height="356" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="292" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">IF YOU WIN ON DEPTH</text>
+  <text x="92" y="334" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Cap volume and time depth</text>
+
+  <text x="92" y="376" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="15" font-weight="500" letter-spacing="0.1em" fill="#6a645c">POSITIONING</text>
+  <text x="92" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Differentiation is depth in a single workflow</text>
+
+  <text x="92" y="446" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="15" font-weight="500" letter-spacing="0.1em" fill="#6a645c">BECAUSE</text>
+  <text x="92" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">An adjacency cap invites a point</text>
+  <text x="92" y="500" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">competitor into the account</text>
+
+  <text x="92" y="542" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="15" font-weight="500" letter-spacing="0.1em" fill="#6a645c">EXPANSION THEN LOOKS LIKE</text>
+  <text x="92" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">More of the same job, billed by usage</text>
+
+  <!-- Branch B -->
+  <rect x="720" y="250" width="620" height="356" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="752" y="292" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">IF YOU WIN ON BREADTH</text>
+  <text x="752" y="334" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Cap the adjacent job</text>
+
+  <text x="752" y="376" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="15" font-weight="500" letter-spacing="0.1em" fill="#6a645c">POSITIONING</text>
+  <text x="752" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Differentiation is breadth across workflows</text>
+
+  <text x="752" y="446" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="15" font-weight="500" letter-spacing="0.1em" fill="#6a645c">BECAUSE</text>
+  <text x="752" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">That second workflow is the thing</text>
+  <text x="752" y="500" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">you want them to buy next</text>
+
+  <text x="752" y="542" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="15" font-weight="500" letter-spacing="0.1em" fill="#6a645c">EXPANSION THEN LOOKS LIKE</text>
+  <text x="752" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A second job, bought as a new module</text>
+</svg>

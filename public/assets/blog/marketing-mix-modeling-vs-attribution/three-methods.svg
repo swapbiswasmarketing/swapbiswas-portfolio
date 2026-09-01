@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 890" width="1400" height="890">
+  <rect x="0" y="0" width="1400" height="890" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.6">Three Methods, Three Different Questions</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">They disagree because of how each one is built, not because one of them is broken.</text>
+
+  <text x="88" y="138" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">METHOD AND QUESTION</text>
+  <text x="545" y="138" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">WHAT IT NEEDS</text>
+  <text x="960" y="138" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">WHAT IT CANNOT TELL YOU</text>
+
+  <rect x="60" y="150" width="1280" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">METHOD 01</text>
+  <text x="88" y="230" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Attribution</text>
+  <text x="88" y="266" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Which recorded touchpoints</text>
+  <text x="88" y="294" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">preceded this conversion?</text>
+  <text x="545" y="204" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">User-level event tracking</text>
+  <text x="545" y="232" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and a lookback window that</text>
+  <text x="545" y="260" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">covers the buying cycle</text>
+  <text x="960" y="204" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Whether the spend caused</text>
+  <text x="960" y="232" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">anything, plus any channel</text>
+  <text x="960" y="260" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">it cannot click-track</text>
+
+  <rect x="60" y="350" width="1280" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="390" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">METHOD 02</text>
+  <text x="88" y="430" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Marketing mix modeling</text>
+  <text x="88" y="466" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">How does aggregate spend</text>
+  <text x="88" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">track aggregate outcomes?</text>
+  <text x="545" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Two to three years of weekly</text>
+  <text x="545" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">spend and outcome data, with</text>
+  <text x="545" y="460" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">real variation in the spend</text>
+  <text x="960" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Which keyword or creative</text>
+  <text x="960" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">to change, or the effect of</text>
+  <text x="960" y="460" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">a channel that held flat</text>
+
+  <rect x="60" y="550" width="1280" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="60" y="550" width="6" height="180" rx="3" fill="#b53b15"/>
+  <text x="88" y="590" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#b53b15" letter-spacing="2">METHOD 03</text>
+  <text x="88" y="630" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Incrementality</text>
+  <text x="88" y="666" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">What would have happened</text>
+  <text x="88" y="694" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">without this spend?</text>
+  <text x="545" y="604" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The ability to withhold spend</text>
+  <text x="545" y="632" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">from a randomized cell big</text>
+  <text x="545" y="660" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">enough to detect the effect</text>
+  <text x="960" y="604" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Anything outside the cell,</text>
+  <text x="960" y="632" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the window and the creative</text>
+  <text x="960" y="660" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">you actually tested</text>
+
+  <rect x="60" y="758" width="1280" height="92" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="796" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Same brand-search budget, opposite verdicts: last-click attribution ranks it a top converter, while</text>
+  <text x="88" y="824" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the eBay field experiment found brand-keyword ads had no measurable short-term benefits.</text>
+</svg>

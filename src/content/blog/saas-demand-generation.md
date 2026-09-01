@@ -98,6 +98,8 @@ The discipline is to measure efficiency and pipeline, not activity. Reassuringly
 
 Yet measurement maturity still lags. The same report notes that **only 52% of marketing teams measure marketing cost per dollar of pipeline**. If you cannot connect spend to pipeline, you cannot defend your budget when growth slows.
 
+Content is the hardest line to defend on that basis, because it influences deals it never receives credit for under last-touch. [How to measure SaaS content marketing](/blog/how-to-measure-saas-content-marketing/) sets out which effects can be attributed, which cannot, and how to report the difference honestly.
+
 | Vanity metric | Replace with | Why it matters |
 | --- | --- | --- |
 | Total leads | Sourced pipeline | Counts dollars, not form fills |

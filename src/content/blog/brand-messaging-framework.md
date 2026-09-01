@@ -151,6 +151,8 @@ These get used interchangeably, and that mix-up is why so many "frameworks" are 
 
 Build the pillars as a component and the framework as the system that carries them across every audience and channel. If you want the deeper mechanics of the pillar layer specifically - naming them as outcomes, the messaging house, worked SaaS examples - that is the [messaging pillars guide](/blog/messaging-pillars/). If you want the brand-versus-positioning distinction that sits above all of this, [branding vs positioning](/blog/branding-vs-positioning/) draws that line.
 
+A messaging framework tells the company what to say consistently. It will not, on its own, produce anything worth citing, because consistency and a defensible point of view are different jobs. [Thought leadership content](/blog/thought-leadership-content/) covers the second one, and it starts with a claim your competitors could disagree with.
+
 The framework is also one system inside a larger machine. Messaging is the connective tissue of the wider [product marketing framework](/blog/product-marketing-framework/) that ties positioning, launch, and enablement together - the framework here is how the message stays identical from the first ad to the renewal call.
 
 If the company name itself is what is changing, the framework stops being a document and becomes a migration, and [the T-90 rebrand countdown](/blog/rebranding-rollout-plan/) covers the systems inventory, comms tiers and redirects that have to move with the new language.

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.02em">Four answers become four crossings</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Worked example: 20 valid responses out of 24 collected, per-seat monthly price</text>
+
+  <rect x="60" y="130" width="1280" height="560" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <rect x="368" y="195" width="138" height="365" fill="#f3dcd2"/>
+
+  <line x1="170" y1="195" x2="950" y2="195" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="170" y1="286.3" x2="950" y2="286.3" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="170" y1="377.5" x2="950" y2="377.5" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="170" y1="468.8" x2="950" y2="468.8" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="170" y1="560" x2="950" y2="560" stroke="#6a645c" stroke-width="1.5"/>
+  <line x1="170" y1="195" x2="170" y2="560" stroke="#6a645c" stroke-width="1.5"/>
+
+  <text x="152" y="202" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">100%</text>
+  <text x="152" y="293" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">75%</text>
+  <text x="152" y="384" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">50%</text>
+  <text x="152" y="476" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">25%</text>
+  <text x="152" y="567" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">0%</text>
+
+  <text x="170" y="590" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">$0</text>
+  <text x="290" y="590" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">$20</text>
+  <text x="416" y="590" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#b53b15">OPP $41</text>
+  <text x="530" y="590" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">$60</text>
+  <text x="650" y="590" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">$80</text>
+  <text x="770" y="590" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">$100</text>
+  <text x="890" y="590" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">$120</text>
+
+  <polyline fill="none" stroke="#6a645c" stroke-width="2.5" stroke-dasharray="7 5" points="170,195 206,195 206,213.3 212,213.3 212,231.5 224,231.5 224,249.8 230,249.8 230,268 236,268 236,304.5 248,304.5 248,322.8 260,322.8 260,341 266,341 266,359.3 272,359.3 272,377.5 284,377.5 284,395.8 296,395.8 296,414 308,414 308,432.3 326,432.3 326,450.5 344,450.5 344,468.8 356,468.8 356,487 368,487 368,505.3 386,505.3 386,523.5 416,523.5 416,541.8 476,541.8 476,560 950,560"/>
+  <polyline fill="none" stroke="#6a645c" stroke-width="2.5" points="170,195 248,195 248,213.3 266,213.3 266,231.5 284,231.5 284,249.8 290,249.8 290,268 296,268 296,286.3 308,286.3 308,304.5 326,304.5 326,322.8 332,322.8 332,341 344,341 344,359.3 356,359.3 356,377.5 368,377.5 368,395.8 386,395.8 386,414 416,414 416,432.3 446,432.3 446,450.5 464,450.5 464,468.8 506,468.8 506,487 524,487 524,505.3 536,505.3 536,523.5 596,523.5 596,541.8 656,541.8 656,560 950,560"/>
+  <polyline fill="none" stroke="#15130f" stroke-width="2.5" points="170,560 320,560 320,541.8 338,541.8 338,523.5 350,523.5 350,505.3 380,505.3 380,487 398,487 398,468.8 410,468.8 410,450.5 422,450.5 422,432.3 440,432.3 440,414 458,414 458,395.8 470,395.8 470,377.5 500,377.5 500,359.3 530,359.3 530,341 560,341 560,322.8 590,322.8 590,304.5 620,304.5 620,286.3 680,286.3 680,268 710,268 710,249.8 740,249.8 740,231.5 770,231.5 770,213.3 890,213.3 890,195 950,195"/>
+  <polyline fill="none" stroke="#15130f" stroke-width="2.5" stroke-dasharray="7 5" points="170,560 410,560 410,541.8 440,541.8 440,523.5 470,523.5 470,505.3 500,505.3 500,487 518,487 518,468.8 530,468.8 530,450.5 542,450.5 542,432.3 560,432.3 560,414 590,414 590,395.8 620,395.8 620,377.5 680,377.5 680,359.3 710,359.3 710,341 770,341 770,304.5 830,304.5 830,286.3 890,286.3 890,268 950,268"/>
+
+  <circle cx="368" cy="505.3" r="7" fill="#15130f"/>
+  <circle cx="422" cy="432.3" r="7" fill="#15130f"/>
+  <circle cx="506" cy="487" r="7" fill="#15130f"/>
+  <circle cx="416" cy="541.8" r="9" fill="#b53b15"/>
+  <line x1="416" y1="550" x2="416" y2="568" stroke="#b53b15" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <rect x="261" y="479" width="95" height="26" rx="4" fill="#ffffff"/>
+  <text x="350" y="498" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">PMC $33</text>
+  <rect x="430" y="407" width="76" height="26" fill="#f3dcd2"/>
+  <rect x="506" y="407" width="19" height="26" fill="#ffffff"/>
+  <text x="436" y="426" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">IPP $42</text>
+  <rect x="514" y="501" width="95" height="26" rx="4" fill="#ffffff"/>
+  <text x="520" y="520" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">PME $56</text>
+
+  <line x1="980" y1="195" x2="980" y2="620" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="1015" y="212" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#b53b15" letter-spacing="0.12em">READOUT</text>
+
+  <text x="1015" y="262" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">PMC $33</text>
+  <text x="1015" y="290" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">too cheap crosses expensive</text>
+
+  <text x="1015" y="342" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#b53b15">OPP $41</text>
+  <text x="1015" y="370" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">too cheap crosses too expensive</text>
+
+  <text x="1015" y="422" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">IPP $42</text>
+  <text x="1015" y="450" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">cheap crosses expensive</text>
+
+  <text x="1015" y="502" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">PME $56</text>
+  <text x="1015" y="530" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">cheap crosses too expensive</text>
+
+  <line x1="1015" y1="560" x2="1300" y2="560" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1015" y="595" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Acceptable range: <tspan font-weight="600" fill="#15130f">$33 to $56</tspan></text>
+
+  <line x1="170" y1="626" x2="186" y2="626" stroke="#6a645c" stroke-width="2.5"/>
+  <line x1="192" y1="626" x2="208" y2="626" stroke="#6a645c" stroke-width="2.5"/>
+  <text x="222" y="633" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Too cheap (quality doubted)</text>
+  <line x1="600" y1="626" x2="640" y2="626" stroke="#6a645c" stroke-width="2.5"/>
+  <text x="654" y="633" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Cheap / bargain</text>
+
+  <line x1="170" y1="662" x2="210" y2="662" stroke="#15130f" stroke-width="2.5"/>
+  <text x="222" y="669" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Expensive (buyer hesitates)</text>
+  <line x1="600" y1="662" x2="616" y2="662" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="622" y1="662" x2="638" y2="662" stroke="#15130f" stroke-width="2.5"/>
+  <text x="654" y="669" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Too expensive (walks away)</text>
+
+  <text x="60" y="740" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Shaded band is the range of acceptable prices, from the point of marginal cheapness to the point of marginal expensiveness.</text>
+  <text x="60" y="770" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">At 20 responses each curve is a staircase, so every crossing is a short plateau. Each label sits at the lowest price on its plateau.</text>
+</svg>

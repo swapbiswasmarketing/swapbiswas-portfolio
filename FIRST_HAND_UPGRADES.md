@@ -74,3 +74,41 @@ In a JTBD switch interview you personally ran, which of the template fields came
 ## saas-release-notes
 
 For one Tier 3 release you shipped, what was the actual 30-day adoption gap between accounts that saw the release note (in-app announcement opened, digest clicked, or on the CS outreach list) and eligible accounts that did not? The answer belongs in the "How to Measure Whether SaaS Release Notes Worked" section, replacing the generic description of the cohort-split method with one real number and the window it was measured over.
+
+---
+
+# Batch of 2026-08-31
+
+Four posts published 2026-08-31 (Van Westendorp, thought leadership content, land and expand, SaaS content marketing measurement). The artifact question was NOT re-raised before writing: it was asked on 2026-08-29 and declined in favour of named public examples, so per the standing rule it gets raised once here and the posts shipped as `synthesized`.
+
+Priority order below is real. `van-westendorp-price-sensitivity-meter` names its own weakest spot, and `land-and-expand` sits in packaging, one of the four areas with confirmed first-hand history.
+
+## van-westendorp-price-sensitivity-meter
+
+Have you ever run, or sat in the readout for, a Van Westendorp study? If so: what was the raw response count, how many rows failed the too-cheap < cheap < expensive < too-expensive consistency check, and did the price that eventually shipped land inside or outside the acceptable range the study produced? A real drop rate and a real inside/outside verdict would replace a simulated 43% figure and a public health-economics example with a first-hand anchor. The writer flagged this as the single weakest spot in the post.
+
+## land-and-expand
+
+For a plan you own the packaging on, which specific capability did you deliberately keep OUT of the entry tier, what was the internal argument against keeping it out, and what happened to the upgrade rate into the next tier in the two quarters after that boundary moved? One named capability plus a before/after number turns the withhold-axes section from public-example synthesis into first-hand evidence.
+
+## thought-leadership-content
+
+Pick one piece you shipped under your own byline and name three things: the exact claim sentence, the evidence you actually owned (product telemetry, a win-loss pattern, an infrastructure cost number, a method your team ran), and one downstream signal a view count would never show - an analyst or journalist quoting it, a competitor publishing a response, a rep reporting a prospect raised it unprompted, or an AI answer engine citing it.
+
+## how-to-measure-saas-content-marketing
+
+From one content program you owned: the exact influenced-account rule you agreed with sales ops, the two-quarter content-touched versus untouched win rates and deal counts, the same period recomputed under last touch, and what the CRO said when you presented both figures side by side.
+
+---
+
+# Batch of 2026-09-01
+
+Two posts written 2026-09-01 (MMM vs attribution vs incrementality, SaaS win rate benchmarks). Both `synthesized`. Both questions below are unusually high-value because both posts compete on methodological honesty, and a single real number would be something no competing page on either SERP can produce.
+
+## marketing-mix-modeling-vs-attribution
+
+Have you ever run, or sat in on, a geo holdout, platform lift test or campaign pause where the incrementality result contradicted what the attribution dashboard had been reporting for that channel? Which channel, roughly how big was the gap between the two readings, and what happened to that budget line afterwards (cut, held, reallocated, or argued about and left alone)? One named channel plus the direction and rough size of the disagreement would give the opening counterexample a second leg that is not the eBay study.
+
+## saas-win-rate-benchmark
+
+In a win-rate reset you have actually run: what was the reported blended win rate before you fixed the loss-reason picklist, and what was it after no-decision was split out as its own value? The two numbers, the quarter, and roughly how many closed opportunities were in the cohort. A single before/after pair with the deal count attached would turn the "One Deal Set, Five Win Rates" section from a constructed illustration into a first-hand artifact.

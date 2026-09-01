@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" width="1400" height="850">
+  <rect x="0" y="0" width="1400" height="850" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.6">Which Measurement Method Your Data Allows</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Work the gates in order and stop at the first one you can answer yes to.</text>
+
+  <text x="88" y="136" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">THE GATE</text>
+  <text x="848" y="136" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">IF YES, USE THIS</text>
+
+  <rect x="60" y="150" width="700" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="60" y="150" width="6" height="140" rx="3" fill="#b53b15"/>
+  <text x="88" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#b53b15" letter-spacing="2">GATE 01</text>
+  <text x="88" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Can you withhold spend from a test cell?</text>
+  <text x="88" y="262" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">And is the cell large enough to detect the effect?</text>
+  <line x1="772" y1="220" x2="812" y2="220" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="812,213 826,220 812,227" fill="#15130f"/>
+  <rect x="838" y="150" width="502" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="866" y="200" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">Incrementality experiment</text>
+  <text x="866" y="234" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Believe it over both dashboards.</text>
+  <text x="866" y="260" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">It is the only causal read.</text>
+
+  <rect x="60" y="320" width="700" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="358" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">GATE 02</text>
+  <text x="88" y="396" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Do you have 2+ years of weekly spend data?</text>
+  <text x="88" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">With real variation across weeks or markets?</text>
+  <line x1="772" y1="390" x2="812" y2="390" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="812,383 826,390 812,397" fill="#15130f"/>
+  <rect x="838" y="320" width="502" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="866" y="370" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">Marketing mix model</text>
+  <text x="866" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Calibrate it with any experiment</text>
+  <text x="866" y="430" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">result you already own.</text>
+
+  <rect x="60" y="490" width="700" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="528" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">GATE 03</text>
+  <text x="88" y="566" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Is the channel click-trackable end to end?</text>
+  <text x="88" y="602" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">And does one lookback window cover the cycle?</text>
+  <line x1="772" y1="560" x2="812" y2="560" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="812,553 826,560 812,567" fill="#15130f"/>
+  <rect x="838" y="490" width="502" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="866" y="540" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">Attribution, as a signal</text>
+  <text x="866" y="574" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Steer keywords and creative,</text>
+  <text x="866" y="600" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">not budget splits.</text>
+
+  <rect x="60" y="660" width="700" height="140" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="698" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">GATE 04</text>
+  <text x="88" y="736" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">None of the above applies</text>
+  <text x="88" y="772" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Long cycle, no holdout, thin history, offline touchpoints.</text>
+  <line x1="772" y1="730" x2="812" y2="730" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="812,723 826,730 812,737" fill="#15130f"/>
+  <rect x="838" y="660" width="502" height="140" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="866" y="710" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">Pre / post, clearly labelled</text>
+  <text x="866" y="744" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Model the counterfactual and</text>
+  <text x="866" y="770" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">report it as an estimate.</text>
+</svg>

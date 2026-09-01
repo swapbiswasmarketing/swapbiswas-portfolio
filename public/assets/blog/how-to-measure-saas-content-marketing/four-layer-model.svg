@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.6">The Four Layers of SaaS Content Measurement</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Each layer has its own evidence standard, time lag and audience. Never promote one layer into another layer's meeting.</text>
+
+  <text x="680" y="132" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">EXAMPLE METRICS</text>
+  <text x="1320" y="132" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">SIGNAL / AUDIENCE</text>
+
+  <rect x="60" y="145" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="183" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">LAYER 01</text>
+  <text x="88" y="221" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Production</text>
+  <text x="88" y="253" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Did we ship what we said we would?</text>
+  <text x="680" y="217" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Pieces shipped, brief-to-publish</text>
+  <text x="680" y="243" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">days, calendar hit rate</text>
+  <text x="1320" y="217" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">Weekly</text>
+  <text x="1320" y="243" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Content team only</text>
+
+  <rect x="60" y="305" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="343" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">LAYER 02</text>
+  <text x="88" y="381" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Leading indicators</text>
+  <text x="88" y="413" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Is this reaching the right buyers?</text>
+  <text x="680" y="377" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Organic share on the query set,</text>
+  <text x="680" y="403" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">distinct readers per account</text>
+  <text x="1320" y="377" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">4 to 12 weeks</text>
+  <text x="1320" y="403" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Marketing leadership</text>
+
+  <rect x="60" y="465" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="503" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">LAYER 03</text>
+  <text x="88" y="541" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Lagging revenue</text>
+  <text x="88" y="573" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Did touched accounts become revenue?</text>
+  <text x="680" y="537" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Influenced pipeline, win rate</text>
+  <text x="680" y="563" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">delta, cost per opportunity</text>
+  <text x="1320" y="537" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">2 to 3 sales cycles</text>
+  <text x="1320" y="563" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">CRO, CFO, board</text>
+
+  <rect x="60" y="625" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="60" y="625" width="6" height="140" rx="3" fill="#b53b15"/>
+  <text x="88" y="663" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#b53b15" letter-spacing="2">LAYER 04</text>
+  <text x="88" y="701" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Unattributable effect</text>
+  <text x="88" y="733" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">What did content cause that we cannot trace?</text>
+  <text x="680" y="697" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Dark social, brand recall, AI</text>
+  <text x="680" y="723" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">answers, unlogged sales calls</text>
+  <text x="1320" y="697" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">Tested, not tracked</text>
+  <text x="1320" y="723" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Board, with a label</text>
+</svg>

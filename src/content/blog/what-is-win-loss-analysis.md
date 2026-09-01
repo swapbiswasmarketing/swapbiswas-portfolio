@@ -130,6 +130,8 @@ The most valuable answers come from questions 5, 7, 9, and 11. Train interviewer
 
 After 30-50 interviews, the same 6-8 patterns appear at most B2B companies. The framework below is a starter kit for what to look for.
 
+Before you read any pattern as a trend, settle what your win rate actually counts. Whether no-decision losses sit in the denominator changes the number more than most of these patterns do, and it is the reason [SaaS win rate benchmarks](/blog/saas-win-rate-benchmark/) rarely survive contact with your own data.
+
 | Pattern | What it sounds like | Fix lives in |
 |---|---|---|
 | Discovery shallow | "They jumped to demo without understanding our process" | Sales (discovery script) |

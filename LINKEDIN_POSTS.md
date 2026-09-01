@@ -1083,3 +1083,178 @@ Keep a Changelog said it in four words in 2014: changelogs are for humans.
 🔗 https://swapbiswas.com/blog/saas-release-notes/?utm_source=linkedin&utm_medium=social&utm_campaign=saas-release-notes
 
 #ProductMarketing #SaaS #ProductLaunch #CustomerMarketing #ProductAdoption
+
+---
+
+## Batch of 2026-08-31
+
+Four posts published 2026-08-31. Every figure below comes from that post's completed fact-check table. Paper & Signal palette for all image prompts.
+
+Suggested order: land-and-expand first (the NRR-comparability point is the most argued-with), then thought-leadership, van-westendorp, measurement.
+
+### Every SaaS Company Defines Net Revenue Retention Differently
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), four white rounded cards in a row, each headed with a company name and a large NRR percentage, and beneath it a small monospace line stating that company's inclusion rule (e.g. "customers over $10k ARR only", "accounts with $5 of revenue"). One vermilion (#b53b15) band across the bottom reading "Four different denominators". Editorial, generous whitespace, JetBrains Mono for the rule lines. 1200x628.
+
+Four net revenue retention numbers, four different denominators. 📊
+
+From the most recent filings: Figma reports 136%, Snowflake 126%, Twilio 116%, Datadog in the low 120s. Put them on a slide together and you have made a comparison that means nothing.
+
+Read the definitions and the reason becomes obvious:
+
+• Figma counts only paid customers above $10,000 in ARR
+• Twilio counts any account with at least $5 of revenue in the quarter's last month
+• Snowflake uses a trailing two-year window on capacity-contract customers
+• Datadog includes all customers from 12 months prior with no minimum size
+
+Twilio says it outright in its own filing: the measure "is not based on any standardized industry methodology and is not necessarily calculated in the same manner" as similarly titled metrics elsewhere.
+
+For context on what a normal company looks like, SaaS Capital's April 2026 survey of more than 1,000 private B2B SaaS companies puts median NRR at 103% for bootstrapped businesses between $3M and $20M ARR. The public numbers are not the benchmark. They are four differently-drawn cohorts.
+
+The deeper point: land-and-expand is treated as a sales tactic, and it is really a packaging decision. Datadog's 10-Q says the model is "centered around offering products that are easy to adopt" - and about 85% of its customers now use two or more products. That only works if there is somewhere to expand into.
+
+🔗 https://swapbiswas.com/blog/land-and-expand/?utm_source=linkedin&utm_medium=social&utm_campaign=land-and-expand
+
+#SaaS #ProductMarketing #NetRevenueRetention #GTM #Pricing
+
+### Only 4% of B2B Teams Rate Their Thought Leadership as Leading
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), a horizontal five-segment maturity bar labeled Exploratory 17%, Developing 36%, Established 36%, Advanced 7%, Leading 4%, with the last two segments visibly tiny and picked out in vermilion (#b53b15). Below it a single white card reading "80% measure engagement / 38% measure authority". Clean editorial layout. 1200x628.
+
+The B2B thought leadership numbers are worse than the discourse suggests. 📉
+
+In CMI and MarketingProfs' 16th annual B2B survey, across 1,015 B2B marketers: **4% rate their thought leadership program "leading" and 7% "advanced"**. Everyone else is Exploratory, Developing or Established.
+
+The demand side agrees. In Edelman and LinkedIn's 2024 B2B Thought Leadership Impact Report, covering nearly 3,500 management-level professionals, fewer than half said the quality of what they read is good. Only 15% called it very good.
+
+Three structural reasons, all visible in the same research:
+
+• **Nobody with expertise is writing.** 37% report minimal employee participation, meaning fewer than 5% of people with specialized knowledge contribute anything.
+• **The measurement rewards the wrong thing.** 80% measure by audience engagement (views, downloads, shares). Only 38% track brand authority such as citations and speaking invitations.
+• **The thing readers value most is the thing hardest to fake.** 55% of decision-makers named strong research and data as a top characteristic of quality.
+
+A view count cannot tell you whether anyone changed their mind. Authority signals can, and almost nobody collects them.
+
+Worth knowing who is actually reading: Edelman's 2025 work found 71% of "hidden buyers" in finance, legal, procurement and operations have little or no interaction with sales teams. Your content is the only thing reaching them.
+
+🔗 https://swapbiswas.com/blog/thought-leadership-content/?utm_source=linkedin&utm_medium=social&utm_campaign=thought-leadership-content
+
+#ThoughtLeadership #B2BMarketing #ContentMarketing #ProductMarketing #DemandGen
+
+### The Van Westendorp Step Nobody Writes About: Throwing Data Away
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), left side a white card showing four stacked survey questions in muted grey with a small "raw n = 250" label, an arrow to the right into a second white card labeled "n = 143 analyzed" with a vermilion (#b53b15) "107 removed" tag. Beneath, one line: "too cheap < cheap < expensive < too expensive". Editorial, uncluttered. 1200x628.
+
+Everyone can name the four Van Westendorp questions. Almost nobody writes about the step between asking them and reading the chart. 🧹
+
+A meaningful share of respondents answer in an order that cannot be true: the price they call "too cheap" comes in above the price they call "too expensive". Those rows are not noise you can average out. Left in, they bend all four curves and move the crossing points you are about to price against.
+
+How standard is discarding them? The reference R implementation of the method makes consistency checking the default, keeping only respondents whose answers run too cheap < cheap < expensive < too expensive. In that package's own demonstration dataset, 107 of 250 respondents fail the check and 143 remain.
+
+Two other things worth knowing before you present a range:
+
+• The method measures stated price acceptability with no purchase intent and no volume attached. Sawtooth Software says plainly that without the Newton-Miller-Smith extension it "doesn't directly predict purchase behavior or sales volume at different price points".
+• It never asks the respondent to choose between you and a competitor at specific prices, which is exactly the decision your buyer actually makes.
+
+Peter van Westendorp presented this at the ESOMAR congress in 1976. It is cheap, fast and genuinely useful for bounding a conversation. It is not a pricing decision.
+
+Report the drop rate alongside the range. If nobody asks what it was, ask it yourself.
+
+🔗 https://swapbiswas.com/blog/van-westendorp-price-sensitivity-meter/?utm_source=linkedin&utm_medium=social&utm_campaign=van-westendorp-price-sensitivity-meter
+
+#Pricing #ProductMarketing #PricingStrategy #MarketResearch #SaaS
+
+### Buyers and Your Analytics Disagree About Where They Came From
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), four horizontal bars showing overlap percentages between self-reported and tracked last touch: Social 60%, Search 53%, Email 21%, Display 2.5%. Bars in ink with the Display bar a stub picked out in vermilion (#b53b15). Header line: "How often last touch agreed with the buyer". Clean, editorial, plenty of whitespace. 1200x628.
+
+HockeyStack asked 8,528 people who had just booked a demo how they heard about the product, then compared each answer to the last touch their analytics recorded. 🔍
+
+The two agreed less than half the time. By channel:
+
+• Social: 60% overlap
+• Search: 53%
+• Email: 21%
+• Display: 2.5%
+
+Their conclusion, in their words: "the majority of prospects' last touch and self-reported attribution did not overlap."
+
+This is not a tracking bug to fix. It is what a long, multi-touch, largely self-serve buying cycle looks like when you insist on crediting one click. And the incentive it creates is the real damage: content that influences deals it never gets credited for gets cut, while content that happens to sit at the end of a session looks like the winner.
+
+There is precedent for how wrong this can get. In eBay's controlled field experiments, Blake, Nosko and Tadelis found returns from paid search were "a fraction of conventional non-experimental estimates", with brand-keyword ads showing no measurable benefit at all. The measurement was not slightly off. It was pointing the wrong way.
+
+What to do instead: separate leading from lagging indicators, run a holdout on a segment where you can afford to, and say out loud which effects your tooling genuinely cannot attribute. A defensible number with a stated boundary beats a precise one that is wrong.
+
+Content teams get cut on bad attribution more than on bad content.
+
+🔗 https://swapbiswas.com/blog/how-to-measure-saas-content-marketing/?utm_source=linkedin&utm_medium=social&utm_campaign=how-to-measure-saas-content-marketing
+
+#ContentMarketing #B2BMarketing #MarketingAttribution #SaaS #MarketingMeasurement
+
+---
+
+## Batch of 2026-09-01
+
+Two posts published 2026-09-01. Every figure below is from that post's completed fact-check table. Paper & Signal palette on both image prompts.
+
+Both posts compete on methodological honesty, so the LinkedIn copy leads with the uncomfortable finding rather than the framework.
+
+### Three Ways to Measure Marketing, and They Disagree by Design
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), three white rounded cards side by side headed "Attribution", "Marketing mix modeling" and "Incrementality". Under each, one short monospace line stating the question it answers: "which touches preceded it", "how does spend correlate with outcomes", "what would have happened anyway". The third card outlined in vermilion (#b53b15). Below, a single line: "Only one of these is causal". Editorial, generous whitespace. 1200x628.
+
+Attribution, marketing mix modeling and incrementality do not disagree because one of them is broken. They disagree because they answer three different questions. 📐
+
+• Attribution: which touchpoints preceded the conversion
+• Marketing mix modeling: how aggregate spend correlates with aggregate outcomes over time
+• Incrementality: what would have happened without the spend
+
+Only the third is causal, and the gap that opens up is not small.
+
+Tom Blake, Chris Nosko and Steven Tadelis ran controlled experiments at eBay, switching paid search off in some markets. Brand-keyword ads showed **no measurable short-term benefits**. For non-brand keywords, new and infrequent users were positively influenced, while frequent users whose behaviour was unaffected accounted for most of the spend, producing average returns that were negative.
+
+Gordon, Moakler and Zettelmeyer then compared 663 large-scale Facebook experiments against the observational methods marketers actually use. Median lift by funnel stage came out at **29% / 18% / 5%** under randomised trials, against **83% / 58% / 24%** for one common observational approach and **173% / 176% / 64%** for another. Their conclusion, with full user-level data available: they were "unable to reliably estimate an ad campaign's causal effect."
+
+Two practical notes most comparison posts skip:
+
+• Experiments are not free. Lewis and Rao looked at 25 large field experiments representing $2.8m of spend and found the median confidence interval on ROI was **over 100 percentage points wide**.
+• Mix models are hungry. Google's own Meridian guidance asks for two years of weekly geo-level data, and warns that a 12-channel model with 26 parameters against 104 weekly data points is too little to estimate reliably.
+
+The useful move is not picking a winner. It is knowing which question you are asking, and what your answer costs.
+
+🔗 https://swapbiswas.com/blog/marketing-mix-modeling-vs-attribution/?utm_source=linkedin&utm_medium=social&utm_campaign=marketing-mix-modeling-vs-attribution
+
+#MarketingAttribution #MarketingMixModeling #Incrementality #B2BMarketing #MarketingMeasurement
+
+### I Tried to Source the B2B Win Rate Benchmarks. Most Do Not Exist.
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), a vertical stack of five white cards each showing a commonly-quoted win-rate figure ("19%", "21%", "35%+", "20-30%", "47% vs 20%") struck through in muted grey, with a small vermilion (#b53b15) tag beside each reading "no dated primary". At the bottom one clean card reading "Fix your denominator first". Editorial, uncluttered. 1200x628.
+
+I went looking for the source of the B2B win rate benchmarks everyone quotes. Most of them do not have one. 🔎
+
+The most-cited figure is "the average B2B win rate is 19%, down from 29%," attributed to a well-known GTM benchmarks report. That report publishes a year-over-year change of -10% for 2025 against -18% for 2024, and a series by how long a deal slipped. It publishes no average win rate at all, and states on its own page that its percentages are relative.
+
+Eight commonly-repeated figures went into the post's discard pile for the same reason: no dated primary, or no stated denominator, or both.
+
+Here is why the denominator matters more than the benchmark. One quarter of deals produces completely different win rates depending on what you count:
+
+• Won over all opportunities created
+• Won over qualified opportunities only
+• Won over decided deals, with no-decision losses excluded
+• Won over head-to-head competitive deals only
+
+Same data. Rates ranging from 12.5% to 40%.
+
+And the excluded category is the biggest one. Matthew Dixon and Ted McKenna, working from more than 2.5 million recorded sales conversations, found **40% to 60% of deals end lost to buyers who state an intent to purchase and then fail to act**. File those anywhere but "lost" and you are publishing a head-to-head competitive record under the name win rate.
+
+Fix your own denominator, write it on the dashboard, then worry about what other companies report.
+
+🔗 https://swapbiswas.com/blog/saas-win-rate-benchmark/?utm_source=linkedin&utm_medium=social&utm_campaign=saas-win-rate-benchmark
+
+#WinLossAnalysis #B2BSaaS #SalesBenchmarks #ProductMarketing #RevOps

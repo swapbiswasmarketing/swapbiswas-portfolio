@@ -55,6 +55,8 @@ This is the group that ends the "what does product marketing actually do" conver
 
 These two are worth the attribution headache because they speak the language of the room. Pair them with the sourced-versus-influenced discipline I cover in [product marketing OKRs](/blog/product-marketing-okrs/) so the numbers hold up under scrutiny.
 
+Two cautions on this pair. Attribution is only one of three ways to measure impact, and the three routinely disagree: [marketing mix modeling vs attribution vs incrementality](/blog/marketing-mix-modeling-vs-attribution/) covers which to trust when they do. And a win rate is only comparable to itself until you fix the denominator, which is why [published SaaS win rate benchmarks](/blog/saas-win-rate-benchmark/) are mostly unusable as targets.
+
 ## Sales Enablement Adoption
 
 You can build the best battlecard in the company, but if reps never open it, it produced nothing. **Enablement content adoption** - the share of reps actually using your one-pagers, decks, and battlecards - is the metric that tells you whether the work is landing where it is supposed to.
@@ -89,7 +91,7 @@ My rule of thumb:
 3. **Promote outcomes, demote activity.** Keep your activity metrics for your own optimization, but only show the business the outcome metrics.
 4. **Set targets before the period, not after.** A metric with no pre-agreed target is a story, not a KPI.
 
-If you want the wider framework these metrics plug into, start with [what is product marketing](/blog/what-is-product-marketing/) and the [product marketing framework](/blog/product-marketing-framework/) that ties strategy to measurement.
+If you want the wider framework these metrics plug into, start with [what is product marketing](/blog/what-is-product-marketing/) and the [product marketing framework](/blog/product-marketing-framework/) that ties strategy to measurement. Content is the line item that survives this cut least often, because the influence is real and the attribution is not; [how to measure SaaS content marketing](/blog/how-to-measure-saas-content-marketing/) separates the leading indicators from the lagging ones so the number you show is defensible.
 
 ## The Takeaway
 

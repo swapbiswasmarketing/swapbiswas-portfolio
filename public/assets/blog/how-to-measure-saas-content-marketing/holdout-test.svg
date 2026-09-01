@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.6">The Topic-Cluster Holdout Test</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Two matched clusters. One gets built out, one is left alone, and the pipeline gap is read after two sales cycles.</text>
+
+  <text x="60" y="132" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">STEP 01 MATCH</text>
+  <text x="500" y="132" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">STEP 02 RUN</text>
+  <text x="940" y="132" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">STEP 03 READ</text>
+
+  <rect x="60" y="150" width="380" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="60" y="150" width="6" height="190" rx="3" fill="#b53b15"/>
+  <text x="88" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#b53b15" letter-spacing="2">TREATED</text>
+  <text x="88" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Cluster A</text>
+  <text x="88" y="262" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">8 to 12 posts of comparable</text>
+  <text x="88" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">search demand and buying</text>
+  <text x="88" y="314" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">intent.</text>
+
+  <rect x="500" y="150" width="380" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">PUBLISH</text>
+  <text x="528" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Build it out</text>
+  <text x="528" y="262" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Write and promote for two</text>
+  <text x="528" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">full quarters. Nothing else</text>
+  <text x="528" y="314" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">about the cluster changes.</text>
+
+  <rect x="940" y="150" width="400" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">RESULT A</text>
+  <text x="968" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Measure</text>
+  <text x="968" y="262" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Influenced pipeline from</text>
+  <text x="968" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">accounts that read cluster A</text>
+  <text x="968" y="314" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">before opportunity creation.</text>
+
+  <line x1="452" y1="245" x2="484" y2="245" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="484,238 498,245 484,252" fill="#15130f"/>
+  <line x1="892" y1="245" x2="924" y2="245" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="924,238 938,245 924,252" fill="#15130f"/>
+
+  <rect x="60" y="380" width="380" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="418" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">HOLDOUT</text>
+  <text x="88" y="456" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Cluster B</text>
+  <text x="88" y="492" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Matched on size, search</text>
+  <text x="88" y="518" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">demand and commercial</text>
+  <text x="88" y="544" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">intent.</text>
+
+  <rect x="500" y="380" width="380" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="418" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">WITHHOLD</text>
+  <text x="528" y="456" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Leave it alone</text>
+  <text x="528" y="492" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">No new posts, no refresh,</text>
+  <text x="528" y="518" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">no promotion, across the</text>
+  <text x="528" y="544" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">same two quarters.</text>
+
+  <rect x="940" y="380" width="400" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="418" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="2">RESULT B</text>
+  <text x="968" y="456" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Baseline</text>
+  <text x="968" y="492" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Influenced pipeline from</text>
+  <text x="968" y="518" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">accounts that read cluster B</text>
+  <text x="968" y="544" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">over the same period.</text>
+
+  <line x1="452" y1="475" x2="484" y2="475" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="484,468 498,475 484,482" fill="#15130f"/>
+  <line x1="892" y1="475" x2="924" y2="475" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="924,468 938,475 924,482" fill="#15130f"/>
+
+  <line x1="60" y1="610" x2="1340" y2="610" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="60" y="656" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Result A minus result B is an estimate of incremental effect, not attribution</text>
+  <text x="60" y="694" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Write the expected effect size down before you start. Run for at least two full sales cycles. Never hold out</text>
+  <text x="60" y="724" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">your highest-intent cluster to prove a point, and tell sales leadership the test is running.</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760">
+  <rect x="0" y="0" width="1400" height="760" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.02em">Which pricing method answers your question</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Pick by the decision you have to defend, not by the budget you have</text>
+
+  <rect x="60" y="140" width="400" height="440" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="1.5"/>
+  <rect x="500" y="140" width="400" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="940" y="140" width="400" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="92" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#b53b15" letter-spacing="0.12em">RANGE FINDER</text>
+  <text x="532" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#6a645c" letter-spacing="0.12em">DEMAND CURVE</text>
+  <text x="972" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#6a645c" letter-spacing="0.12em">TRADE-OFF MODEL</text>
+
+  <text x="92" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">Van Westendorp</text>
+  <text x="532" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">Gabor-Granger</text>
+  <text x="972" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">Conjoint</text>
+
+  <line x1="92" y1="258" x2="428" y2="258" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="532" y1="258" x2="868" y2="258" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="972" y1="258" x2="1308" y2="258" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="92" y="292" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#3a3632">Answers</text>
+  <text x="92" y="322" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">What band of prices does</text>
+  <text x="92" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">this market read as sane?</text>
+
+  <text x="532" y="292" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#3a3632">Answers</text>
+  <text x="532" y="322" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">How many buy at $29,</text>
+  <text x="532" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$39, $49, $59?</text>
+
+  <text x="972" y="292" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#3a3632">Answers</text>
+  <text x="972" y="322" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Which features justify</text>
+  <text x="972" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">which tier, at what price?</text>
+
+  <text x="92" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#3a3632">Use when</text>
+  <text x="92" y="434" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The category is new to you</text>
+  <text x="92" y="462" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and you have no candidate</text>
+  <text x="92" y="490" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">prices to test yet.</text>
+
+  <text x="532" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#3a3632">Use when</text>
+  <text x="532" y="434" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">You already have three or</text>
+  <text x="532" y="462" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">four candidate prices and</text>
+  <text x="532" y="490" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">need revenue per price.</text>
+
+  <text x="972" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#3a3632">Use when</text>
+  <text x="972" y="434" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Packaging is the real</text>
+  <text x="972" y="462" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">question and competitors</text>
+  <text x="972" y="490" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">are in the choice set.</text>
+
+  <line x1="92" y1="518" x2="428" y2="518" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="532" y1="518" x2="868" y2="518" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="972" y1="518" x2="1308" y2="518" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="92" y="552" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#6a645c">No purchase intent</text>
+  <text x="532" y="552" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#6a645c">No feature trade-offs</text>
+  <text x="972" y="552" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#6a645c">Costs the most to run</text>
+
+  <rect x="60" y="620" width="1280" height="90" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="662" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Sequence that works: Van Westendorp to find the band, then Gabor-Granger inside it to pick the number.</text>
+  <text x="92" y="692" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Sawtooth Software treats choice-based conjoint as its default and the price sensitivity meter as the simpler fallback.</text>
+</svg>
