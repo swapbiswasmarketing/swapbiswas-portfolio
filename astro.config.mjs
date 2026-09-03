@@ -9,13 +9,20 @@ import { readdirSync } from 'node:fs';
 const demoSlugs = readdirSync('./src/pages/personal-website-examples')
 	.filter((f) => f.endsWith('.astro') && f !== 'index.astro')
 	.map((f) => f.replace(/\.astro$/, ''));
+// Destinations keep the trailing slash: without it the emitted redirect stubs carry a
+// slashless <link rel="canonical">, which disagrees with the real page's self-canonical
+// and, once the trailing-slash 308 is live, costs an extra hop.
 const demoRedirects = Object.fromEntries(
-	demoSlugs.map((s) => [`/redesign/${s}`, `/personal-website-examples/${s}`])
+	demoSlugs.map((s) => [`/redesign/${s}`, `/personal-website-examples/${s}/`])
 );
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://swapbiswas.com',
+	// Every route already emits <path>/index.html and every sitemap <loc> already ends in
+	// a slash, so this locks in current behaviour rather than changing it. It pairs with
+	// the 308 in vercel.json: without that redirect both /page and /page/ return 200.
+	trailingSlash: 'always',
 	build: {
 		// The homepage shipped two render-blocking stylesheets: its own page chunk
 		// (~35 KB raw) and the shared Nav/Footer/ThemeToggle/BaseLayout/global.css

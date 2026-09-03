@@ -33,4 +33,8 @@ pnpm-debug.log*
 !package.json
 !package-lock.json
 !tsconfig.json
+!vercel.json
 *.xml
+
+# Search Console API credentials + exports (never commit)
+.gsc/
