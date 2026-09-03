@@ -8,6 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint:tropes": "node scripts/lint-tropes.cjs",
+    "lint:claims": "node scripts/lint-claims.cjs",
     "gsc": "node scripts/gsc.mjs",
     "gsc:auth": "node scripts/gsc.mjs auth",
     "gsc:perf": "node scripts/gsc.mjs perf",

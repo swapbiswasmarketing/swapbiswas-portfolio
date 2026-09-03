@@ -309,6 +309,27 @@ After writing a blog post, **every single fact, number, quote, and claim must be
 - Rounding or misattributing percentages
 - Citing a source that says something different from what you claim
 
+### Claim Gate (mechanical, mandatory)
+
+Checking that a number is real does not check that the sentence around it is true. Two defects have shipped repeatedly past a clean fact-check:
+
+1. **Manufactured claims.** Several sources' separate numbers get combined into one superlative or ranking that none of them publishes. This shipped in four consecutive batches. The 2026-09-03 instance: three vendors publish device counts, and the draft claimed all three advertise "the widest device and browser coverage". None of the three uses that word anywhere.
+2. **Causal frames over correct arithmetic.** Two verified dates, correct subtraction, false conclusion. Google shipped Deep Research 53 days before OpenAI shipped deep research, which the draft turned into "the modern ceiling on how long a feature stays yours". Neither source describes a copy relationship.
+
+Both survive a fact-check table, because every individual number in them is correct. Run the claim gate as well:
+
+```bash
+node scripts/lint-claims.cjs src/content/blog/{slug}.md
+# or: npm run lint:claims -- src/content/blog/{slug}.md
+# --offline skips the network and reports everything as REVIEW
+```
+
+It finds every sentence or table row carrying a superlative, a ranking, a causal frame or a multi-source assertion alongside a citation, then **fetches the cited page and checks the claim word is actually on it**.
+
+- `FAIL` - the claim and its citation are in the same sentence or row, and the word does not appear on that page. Blocks publishing. Reword to what the source says, or cite a source that says it
+- `REVIEW` - either a causal frame (no string match can settle it, so read it and decide), or a claim checked against a citation elsewhere in the same table. Read and resolve each one, the same discipline as a trope `WARN`
+- Interpret by the last line and the exit code: `CLAIM GATE: PASS` (0), `CLAIM GATE: FAIL` (1), exit 2 is a tooling error and never a pass
+
 ### What to Do When a Stat Fails Verification
 Do NOT leave unverified stats in the post. Either find a real source or rewrite the sentence to make the point without a specific number. A post with fewer stats that are all accurate is better than a post full of impressive-sounding numbers that can't be verified.
 
@@ -327,6 +348,7 @@ Requires `LT_USERNAME` and `LT_ACCESS_KEY` env vars. Output is JSON with `title`
 - [ ] **Title is 60 characters or fewer, keyword front-loaded, no year stamp (Section 2 > Titles). The corpus audit prints nothing**
 - [ ] **Description is 140-165 characters and contains the target keyword (Section 1). The corpus audit prints nothing**
 - [ ] **All stats fact-checked against cited URLs (Section 6)**
+- [ ] **Claim gate: `node scripts/lint-claims.cjs src/content/blog/{slug}.md` ends with `CLAIM GATE: PASS`; every REVIEW read and resolved (Section 6 > Claim Gate)**
 - [ ] No emdashes anywhere in the file
 - [ ] **Trope gate: `node scripts/lint-tropes.cjs src/content/blog/{slug}.md` ends with `TROPE GATE: PASS`; every WARN read and fixed or defended; section D judgment audit answered (Section 2 > Style, `.claude/writing-tropes.md`)**
 - [ ] **No HTML comments anywhere in the file:** `grep -n "<!--" src/content/blog/{slug}.md` returns nothing
