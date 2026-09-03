@@ -28,6 +28,8 @@ Market positioning is the deliberate choice of where your product sits in the bu
 2. **Who is it for?** (the specific best-fit customer who will get the most value)
 3. **Why is it better?** (the differentiated value vs the alternatives that customer is weighing)
 
+That third question is the one that decays. Competitors close feature gaps, and the answer that won deals last year stops landing, so it is worth knowing [which claims survive being copied](/blog/how-to-differentiate-your-product-when-competitors-copy-your-features/) before you rebuild the whole position.
+
 The output of positioning is not a tagline. It is a one-page document that drives every downstream message: pricing pages, sales decks, ad copy, demo scripts, even the homepage hero. When positioning is strong, every asset feels written by the same person. When it is weak, the homepage promises one thing and the sales call delivers another.
 
 For the product-level cousin of this concept, see [product positioning](/blog/product-positioning/).
@@ -89,7 +91,7 @@ Example, applied to a fictional product analytics tool:
 
 > For B2B SaaS product teams who need to understand activation behavior across 50+ events, Lumen is a product analytics platform that ships pre-built activation models out of the box. Unlike Amplitude or homegrown SQL dashboards, we produce a working activation funnel in week one instead of quarter two.
 
-The statement is internal. It is not a tagline. Its job is to align every team on the same answers. Once the statement is locked, marketing translates it into customer-facing language for the homepage, ad copy, and sales decks.
+The statement is an internal alignment document rather than customer-facing copy. Its job is to get every team to the same answers. Once the statement is locked, marketing translates it into customer-facing language for the homepage, ad copy, and sales decks.
 
 ## A 4-Step Workshop to Find Your Positioning
 

@@ -16,9 +16,9 @@ This guide walks through a complete framework for running competitive product an
 
 ## Why Competitive Product Analysis Matters
 
-Competitive product analysis is the foundation of every other competitive deliverable your team produces. Without it, your [battlecards](/blog/competitive-battlecard-template) are guesswork, your [positioning](/blog/product-positioning) is reactive, and your sales team is improvising against competitors who came prepared.
+Competitive product analysis is the foundation of every other competitive deliverable your team produces. Without it, your [battlecards](/blog/competitive-battlecard-template) are guesswork, your [positioning](/blog/product-positioning) is reactive, and your sales team is improvising against competitors who came prepared. The analysis also tells you which of your own advantages are temporary, which matters most [once a competitor copies the feature you led with](/blog/how-to-differentiate-your-product-when-competitors-copy-your-features/).
 
-The data backs this up. **61% of businesses report direct revenue impact from their competitive intelligence investments** ([Crayon](https://www.crayon.co/blog/new-data-competitive-intelligence-increases-revenue)). And companies using conversational intelligence tools for competitive insights report **82% higher sales effectiveness** ([Crayon State of CI 2025](https://www.crayon.co/state-of-competitive-intelligence)).
+**61% of businesses report direct revenue impact from their competitive intelligence investments** ([Crayon](https://www.crayon.co/blog/new-data-competitive-intelligence-increases-revenue)). And companies using conversational intelligence tools for competitive insights report **82% higher sales effectiveness** ([Crayon State of CI 2025](https://www.crayon.co/state-of-competitive-intelligence)).
 
 But the quality of those insights depends entirely on the rigor of your underlying analysis. Surface-level comparison tables don't drive decisions. Structured, evidence-based product analysis does.
 

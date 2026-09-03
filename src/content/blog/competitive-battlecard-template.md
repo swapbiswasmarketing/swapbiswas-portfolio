@@ -12,7 +12,7 @@ img_alt: "Renaissance-style painting of a walled hill town at dawn with market s
 
 That's a massive gap between what works and what teams actually do.
 
-A competitive battlecard is a concise, one-page reference document that gives your sales team everything they need to win against a specific competitor. Not a 20-page competitor analysis. Not a feature comparison spreadsheet. A focused, actionable guide they can pull up mid-call.
+A competitive battlecard is a concise, one-page reference document that gives your sales team everything they need to win against a specific competitor, in a form they can pull up mid-call rather than a 20-page analysis or a feature comparison spreadsheet. It is also where a claim goes when it stops being a differentiator: [a feature a competitor has matched](/blog/how-to-differentiate-your-product-when-competitors-copy-your-features/) can still win an objection even after it stops leading the pitch.
 
 This guide covers exactly how to build one - with a template, real frameworks, and the data to back it up.
 
@@ -55,7 +55,7 @@ Keep this section short. Its purpose is context, not analysis.
 
 ### 2. Product Comparison
 
-A side-by-side feature comparison table. But here's the key - don't just list features. **Frame the comparison around what your target buyers care about most.**
+A side-by-side feature comparison table, framed around what your target buyers care about most rather than a flat feature list.
 
 | Capability | Us | Competitor |
 |-----------|:--:|:---------:|

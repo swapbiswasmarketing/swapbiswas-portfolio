@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="1400" height="860">
+  <rect x="0" y="0" width="1400" height="860" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.02em">The Differentiation Durability Test</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">Sort every candidate claim by how long a funded competitor needs to copy it</text>
+
+  <text x="60" y="150" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c" letter-spacing="0.12em">TALKING POINTS</text>
+  <text x="700" y="150" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#b53b15" letter-spacing="0.1em">2-QUARTER LINE</text>
+  <text x="1340" y="150" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c" letter-spacing="0.12em">DIFFERENTIATORS</text>
+
+  <line x1="700" y1="172" x2="700" y2="650" stroke="#b53b15" stroke-width="2.5" stroke-dasharray="9 9"/>
+
+  <rect x="60" y="180" width="600" height="96" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A shipped feature</text>
+  <text x="88" y="254" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Copy time: 1 to 2 quarters</text>
+
+  <rect x="60" y="300" width="600" height="96" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="342" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A price or packaging tweak</text>
+  <text x="88" y="374" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Copy time: 1 quarter, faster if it is public</text>
+
+  <rect x="60" y="420" width="600" height="96" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="462" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Integration or device count</text>
+  <text x="88" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Copy time: 1 to 2 quarters, coverage is bought</text>
+
+  <rect x="740" y="180" width="600" height="96" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="768" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A proprietary data asset</text>
+  <text x="768" y="254" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Copy time: years, and only at scale</text>
+
+  <rect x="740" y="300" width="600" height="96" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="768" y="342" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A business model change</text>
+  <text x="768" y="374" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Copy time: it costs the copier revenue</text>
+
+  <rect x="740" y="420" width="600" height="96" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="768" y="462" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Workflow depth across a job</text>
+  <text x="768" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Copy time: 2 or more years of product work</text>
+
+  <rect x="740" y="540" width="600" height="96" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="768" y="582" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Community and partners</text>
+  <text x="768" y="614" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Copy time: years, and still forkable</text>
+
+  <rect x="60" y="680" width="1280" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="722" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Decision rule</text>
+  <text x="88" y="756" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">If a funded competitor can ship it inside two quarters, it is a talking point, not a differentiator.</text>
+  <text x="88" y="788" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Every claim that clears the line ships with a proof asset the buyer can check without calling you.</text>
+</svg>

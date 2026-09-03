@@ -45,7 +45,7 @@ Every strong positioning statement addresses six elements:
 
 ![The Positioning Framework](/assets/blog/product-marketing/positioning-framework.webp "The six elements of product positioning")
 
-Let's break each one down.
+Each one is worth taking separately.
 
 ### 1. Category
 
@@ -79,7 +79,7 @@ Nobody cares that you have "AI-powered analytics." They care that they can "find
 
 Why is your approach better than alternatives? This is the hardest part.
 
-True differentiation isn't "better UI" or "more features." It's a structural advantage - something that's hard to copy. Think: unique data, proprietary methodology, different business model, or a fundamentally different approach to the problem.
+True differentiation isn't "better UI" or "more features." It's a structural advantage - something that's hard to copy. Think: unique data, proprietary methodology, different business model, or a fundamentally different approach to the problem. When a competitor ships your headline feature anyway, the fix is to re-score the claim rather than defend the feature: [rank every differentiator by how long it takes to copy](/blog/how-to-differentiate-your-product-when-competitors-copy-your-features/) and lead with what survives.
 
 ### 6. Proof
 
