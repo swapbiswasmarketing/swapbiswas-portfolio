@@ -2,7 +2,7 @@
 title: "Product-Led Growth Examples: 10 Companies That Nailed PLG"
 description: "Explore real product-led growth examples from Slack, Notion, Figma, and more. Learn PLG strategies, metrics, and frameworks you can apply to your SaaS."
 publishDate: 2026-03-19
-updatedDate: 2026-03-19
+updatedDate: 2026-09-03
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
 img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
@@ -65,7 +65,7 @@ Calendly reached **over 20 million users** and a **$3 billion valuation** ([Cont
 
 **PLG mechanic:** A free tier with a 40-minute limit that creates predictable conversion moments.
 
-Zoom generated **$4.67 billion in revenue** in fiscal year 2025 with over **300 million daily active users** ([DemandSage](https://www.demandsage.com/zoom-statistics/)). The 40-minute cap on free group meetings is one of the most effective PLG friction points ever designed - it is annoying enough to drive upgrades but not so restrictive that people leave.
+Zoom generated **$4.67 billion in revenue** in fiscal year 2025 with over **300 million daily active users** ([DemandSage](https://www.demandsage.com/zoom-statistics/)). The 40-minute cap is one of the most effective PLG friction points ever designed - it is annoying enough to drive upgrades but not so restrictive that people leave. Since 2 May 2022 it applies to every meeting a Basic user hosts, including one-to-one calls, which used to be unlimited ([Zoom](https://community.zoom.com/t5/Zoom-Meetings/Basic-Free-Accounts-New-Limit-for-1-1-Meetings/m-p/57381)). Closing that exception is itself the lesson: the exception was where the free tier leaked.
 
 **Key PLG lesson:** Design your free tier limits around natural pain points that grow with usage. Time-based limits work because they hit at the exact moment users are getting value.
 

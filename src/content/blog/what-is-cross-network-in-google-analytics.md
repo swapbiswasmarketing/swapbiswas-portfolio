@@ -2,7 +2,7 @@
 title: "What Is Cross Network in Google Analytics? The GA4 Channel"
 description: "Cross Network in Google Analytics 4 is traffic from Performance Max and other multi-network Google Ads campaigns. Why it shows up and how to report on it."
 publishDate: 2026-04-01
-updatedDate: 2026-04-01
+updatedDate: 2026-09-03
 category: [Marketing, Tools]
 img: /assets/stock-5.webp
 img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
@@ -23,7 +23,11 @@ Since Universal Analytics [stopped processing data on July 1, 2023](https://supp
 
 Cross Network is one of GA4's [default channel groupings](https://support.google.com/analytics/answer/9756891?hl=en). Google defines it as traffic that comes from campaigns serving ads across multiple Google-owned channels simultaneously. Unlike Paid Search (which only captures search ads) or Display (which only captures banner ads), Cross Network groups together traffic from campaigns that span several networks in a single campaign type.
 
-The technical rule is straightforward. GA4 assigns traffic to the Cross Network channel when the campaign type contains the value `Cross-network`. This happens automatically when Google Ads passes campaign metadata to GA4 through auto-tagging.
+The technical rule has two branches, and most explanations only give you one of them.
+
+For Google Ads traffic, GA4 assigns a session to Cross Network when the source platform is `Google Ads` and the ad network type is either `Cross-network` or `Google owned channels`, or when the Google Ads campaign type is one of Performance Max, App, Smart, Demand Gen or Local. This happens automatically through auto-tagging.
+
+For manual traffic, there is a second rule that catches people out: GA4 also assigns a session to Cross Network when the campaign name contains `cross-network`. That branch has nothing to do with Google Ads, which is why Cross Network can show up in accounts that have never run a Google Ads campaign.
 
 **Cross Network is not a campaign you create.** It is a classification that GA4 applies based on the type of Google Ads campaign sending the traffic.
 

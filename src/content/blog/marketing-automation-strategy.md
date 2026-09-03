@@ -2,7 +2,7 @@
 title: "Marketing Automation Strategy: A Step-by-Step Framework"
 description: "Build a marketing automation strategy that drives results. Learn how to plan, implement, and optimize automation workflows across email, ads, and CRM."
 publishDate: 2026-03-20
-updatedDate: 2026-03-20
+updatedDate: 2026-09-03
 category: [Marketing, Tools]
 img: /assets/stock-1.webp
 img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
@@ -94,7 +94,7 @@ High-impact automation opportunities for most teams:
 | Post-purchase onboarding | Medium | Medium |
 | Review/testimonial requests | Medium | Low |
 
-Start with 2-3 high-impact, low-complexity workflows. Expand after they prove results. For ready-to-use templates you can deploy immediately, see our [12 marketing automation workflow templates](/blog/marketing-automation-workflows/).
+Start with 2-3 high-impact, low-complexity workflows. Expand after they prove results. For ready-to-use templates you can deploy immediately, see our [12 marketing automation workflow templates](/blog/marketing-automation-workflows/). Strategy and rollout are separate problems, so once the plan is agreed, work through [marketing automation implementation](/blog/how-to-implement-marketing-automation/) phase by phase rather than switching everything on at once.
 
 ### Step 4: Choose Your Platform
 

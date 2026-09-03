@@ -2,7 +2,7 @@
 title: "Marketing Automation Workflows: 12 Ready-to-Use Templates"
 description: "Copy these 12 proven marketing automation workflows for lead nurturing, onboarding, re-engagement, and more. Includes trigger logic, email sequences, and timing."
 publishDate: 2026-03-17
-updatedDate: 2026-03-17
+updatedDate: 2026-09-03
 category: [Marketing, Email]
 img: /assets/stock-7.webp
 img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
@@ -107,7 +107,7 @@ Build workflows that are specific enough to feel personal but broad enough to sc
 - Score reaches 100: Create sales task + high priority alert
 - Score drops below 20: Move to re-engagement workflow
 
-**Pro tip:** Review scoring thresholds quarterly with sales. If they reject more than 30% of MQLs, your threshold is too low or your scoring criteria need adjustment. Build this into your [marketing automation strategy](/blog/marketing-automation-strategy/).
+**Pro tip:** Review scoring thresholds quarterly with sales. If they reject more than 30% of MQLs, your threshold is too low or your scoring criteria need adjustment. Build this into your [marketing automation strategy](/blog/marketing-automation-strategy/), and sequence the build itself with a [marketing automation implementation](/blog/how-to-implement-marketing-automation/) plan so scoring goes live only after the data feeding it is clean.
 
 ### 5. Content Drip by Interest/Topic
 
