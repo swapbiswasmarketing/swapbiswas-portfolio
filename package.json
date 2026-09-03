@@ -7,7 +7,14 @@
     "build": "astro build && npx pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
-    "lint:tropes": "node scripts/lint-tropes.cjs"
+    "lint:tropes": "node scripts/lint-tropes.cjs",
+    "gsc": "node scripts/gsc.mjs",
+    "gsc:auth": "node scripts/gsc.mjs auth",
+    "gsc:perf": "node scripts/gsc.mjs perf",
+    "gsc:queries": "node scripts/gsc.mjs queries",
+    "gsc:pages": "node scripts/gsc.mjs pages",
+    "gsc:striking": "node scripts/gsc.mjs striking",
+    "gsc:coverage": "node scripts/gsc.mjs coverage"
   },
   "dependencies": {
     "@anthropic-ai/claude-code": "^2.1.101",
@@ -26,6 +33,8 @@
     "web-vitals": "^5.2.0"
   },
   "devDependencies": {
+    "@googleapis/searchconsole": "^7.1.0",
+    "google-auth-library": "^11.0.2",
     "opentype.js": "^1.3.4",
     "pagefind": "^1.4.0",
     "playwright": "^1.61.1",
