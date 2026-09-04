@@ -358,19 +358,42 @@ import SiteMark from './SiteMark.astro';
 	}
 
 	.now-dot {
+		position: relative;
 		display: inline-block;
 		flex-shrink: 0;
 		width: 0.5rem;
 		height: 0.5rem;
 		border-radius: 999px;
 		background: var(--sg-ok);
-		box-shadow: 0 0 0 3px color-mix(in srgb, var(--sg-ok) 25%, transparent);
-		animation: pulse 2.4s ease-in-out infinite;
 	}
 
-	@keyframes pulse {
-		0%, 100% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--sg-ok) 25%, transparent); }
-		50%      { box-shadow: 0 0 0 6px color-mix(in srgb, var(--sg-ok) 8%, transparent); }
+	/* The halo used to be a box-shadow on .now-dot itself with its spread animated
+	   from 3px to 6px. Chrome cannot run box-shadow on the compositor, so every frame
+	   of this infinite 2.4s loop cost a style recalc and a repaint on the main thread
+	   for the life of the page, and Lighthouse counted it under "Avoid non-composited
+	   animations". The halo is now a disc on a pseudo-element that changes only
+	   transform and opacity, which the compositor runs on its own thread. The disc is
+	   the dot's own colour at 25% alpha, so where it overlaps the dot it composites
+	   back to exactly the dot's colour: visually identical to the old ring in both
+	   themes, and with no gap between dot and halo mid-pulse the way a scaled ring
+	   would have. 250% of the 8px dot is 20px, the outer diameter the old 6px spread
+	   reached, and scale(0.7) brings that back to the 14px of the resting 3px spread. */
+	.now-dot::after {
+		content: '';
+		position: absolute;
+		left: -75%;
+		top: -75%;
+		width: 250%;
+		height: 250%;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--sg-ok) 25%, transparent);
+		transform: scale(0.7);
+		animation: now-dot-pulse 2.4s ease-in-out infinite;
+	}
+
+	@keyframes now-dot-pulse {
+		0%, 100% { transform: scale(0.7); opacity: 1; }
+		50%      { transform: scale(1); opacity: 0.32; }
 	}
 
 	/* Socials - high specificity to beat .col ul / .link-list */
@@ -619,7 +642,8 @@ import SiteMark from './SiteMark.astro';
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.now-dot {
+		/* animation:none leaves the declared scale(0.7)/opacity 1, i.e. the old resting halo. */
+		.now-dot::after {
 			animation: none;
 		}
 		.link-list a,

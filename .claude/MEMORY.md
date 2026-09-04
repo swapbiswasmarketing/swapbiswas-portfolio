@@ -22,6 +22,7 @@
 - [Cross-posting tracker](reference_crossposting.md) - Dev.to / HackerNoon / Hashnode syndication status tables + import prompts; canonical + index-first rules
 - [Sibling sites: raisekind + strictly.fyi](project_sibling_sites.md) - two owned + Vercel-deployed standalone sites (parenting blog + GTM brief) at `c:\Website\raisekind.com` / `strictly.fyi`; repos under `swapbiswasmarketing`; strictly.fyi trademark guardrails; `gh` authed as `swapbiswas` not `swapbiswasmarketing`
 - [Concept gallery pipeline](reference_concept_gallery_pipeline.md) - add + thumbnail a new concept at /personal-website-examples/ (now 49; +Exchange/IDE/Passport/Arcade, +Assistant/SERP/Model/Brand marketing-AI set); counts derive from concepts.length; primed-hidden JS reveals need a safety-net timeout or they show empty/0
+- [Perf build pipeline](project_perf_pipeline.md) - image-variant + font-subset build steps (2026-09-04); bump the font `s1` suffix on any re-subset, run `npm run img:variants` after adding a diagram; **deferring GTM/AdSense/Clarity was built then reverted on the user's call - do not re-propose it**
 
 ## Project Overview
 - Astro 5 static site (portfolio + blog) at `c:\Website\portfolio`

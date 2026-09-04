@@ -148,28 +148,17 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 			}
 		</script>
 
-		<!-- Core Web Vitals → dataLayer → GTM → GA4 -->
-		<script>
-			import { onCLS, onINP, onLCP, onFCP, onTTFB } from 'web-vitals';
-
-			function sendToDataLayer({ name, value, rating, id, navigationType }: { name: string; value: number; rating: string; id: string; navigationType: string }) {
-				window.dataLayer = window.dataLayer || [];
-				window.dataLayer.push({
-					event: 'web_vitals',
-					cwv_metric: name,
-					cwv_value: Math.round(name === 'CLS' ? value * 1000 : value),
-					cwv_rating: rating,
-					cwv_id: id,
-					cwv_navigation_type: navigationType,
-				});
-			}
-
-			onCLS(sendToDataLayer);
-			onINP(sendToDataLayer);
-			onLCP(sendToDataLayer);
-			onFCP(sendToDataLayer);
-			onTTFB(sendToDataLayer);
-		</script>
+		<!-- Core Web Vitals are collected by the SpeedInsights component in the head
+		     above, which reports LCP, CLS, INP, FCP and TTFB per route to Vercel. A
+		     hand-rolled web-vitals module used to sit here measuring the same five a
+		     second time and pushing them to dataLayer as a `web_vitals` event that no GTM
+		     tag consumed. It compiled to its own chunk (5,927 bytes raw) which was the
+		     748ms node setting max critical path latency in PageSpeed's dependency tree,
+		     and one of only three module requests on the page. It was a deferred module,
+		     so removing it does not move FCP or LCP; what it removes is one request,
+		     roughly 6 KB of parse and evaluation, and a duplicate set of LCP/CLS/INP/FCP/
+		     TTFB PerformanceObservers. If GA4 needs Core Web Vitals again, pull them from
+		     CrUX in Looker Studio rather than re-adding a second in-page collector. -->
 
 		<!-- Analytics Event Tracking -->
 		<script is:inline>
@@ -227,6 +216,67 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 			});
 			themeObs.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
+			// Blog reading-progress milestone state.
+			//
+			// This lives outside initPageTracking(), and the scroll listener is bound once
+			// for the session, because .content-column is a different element after every
+			// View Transition navigation. Binding per element meant the `_tracked` guard
+			// never matched, so each blog-to-blog navigation stacked another live scroll
+			// handler, all but the newest measuring a detached node.
+			//
+			// The measurement is deferred to the first scroll frame. This inline script is
+			// the last thing in <body>, so its getBoundingClientRect() used to be the first
+			// layout read in the document and the browser billed the whole initial layout to
+			// it - PageSpeed reported a 52ms forced reflow at exactly this line. That layout
+			// was discarded straight away by enhanceContent()'s DOM writes and the font swap,
+			// so it bought nothing. Nothing needs these numbers until the reader scrolls, and
+			// taking them inside the rAF that already throttles this handler gets a settled
+			// layout for free.
+			//
+			// This only pays off together with the single rAF scroll frame in
+			// blog/[...slug].astro. That file's bindToc() -> onScroll() is the other
+			// pre-first-paint layout read; leave it synchronous and the same 52ms simply
+			// gets re-attributed to the blog page chunk. Do not revert one without the other.
+			//
+			// The trade: once a blog post has been seen, a scroll and a resize listener stay
+			// bound on window for the rest of the session, even on non-blog pages. Both
+			// bodies are a flag check and an early return, which is cheaper than rebinding.
+			var progressEl = null, progressMilestones = null;
+			var progressTop = 0, progressHeight = 1, progressMeasured = false;
+			var progressTicking = false, progressBound = false;
+
+			function measureProgress() {
+				var rect = progressEl.getBoundingClientRect();
+				progressTop = rect.top + window.scrollY;
+				progressHeight = rect.height || 1;
+				progressMeasured = true;
+			}
+
+			function bindProgressScroll() {
+				if (progressBound) return;
+				progressBound = true;
+				// Only invalidate on resize; re-measuring here would force a layout inside a
+				// resize handler for numbers that are not read until the next scroll frame.
+				window.addEventListener('resize', function() { progressMeasured = false; }, { passive: true });
+				window.addEventListener('scroll', function() {
+					if (progressTicking) return;
+					progressTicking = true;
+					requestAnimationFrame(function() {
+						progressTicking = false;
+						if (!progressEl || !progressMilestones) return;
+						if (!progressMeasured) measureProgress();
+						var scrollPos = window.scrollY + window.innerHeight - progressTop;
+						var pct = Math.min(Math.round((scrollPos / progressHeight) * 100), 100);
+						for (var m in progressMilestones) {
+							if (!progressMilestones[m] && pct >= parseInt(m)) {
+								progressMilestones[m] = true;
+								track('blog_read_progress', { read_percent: parseInt(m), blog_title: document.title });
+							}
+						}
+					});
+				}, { passive: true });
+			}
+
 			// Re-init page-specific tracking on every navigation (View Transitions)
 			function initPageTracking() {
 				// Newsletter homepage form
@@ -256,36 +306,17 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				// that card. .content-column only exists in blog/[...slug].astro, which is
 				// the only page this belongs on.
 				var article = document.querySelector('.content-column');
-				if (article && !article._tracked) {
+				if (!article) {
+					// Navigated to a non-blog page: drop the reference so the shared scroll
+					// handler stops measuring the article we just left.
+					progressEl = null;
+					progressMilestones = null;
+				} else if (!article._tracked) {
 					article._tracked = true;
-					var milestones = { 25: false, 50: false, 75: false, 100: false };
-					// The article box does not move while scrolling, so measure it once and
-					// refresh on resize instead of forcing a layout on every scroll event.
-					var articleTop = 0, articleHeight = 1;
-					var measure = function() {
-						var rect = article.getBoundingClientRect();
-						articleTop = rect.top + window.scrollY;
-						articleHeight = rect.height || 1;
-					};
-					measure();
-					window.addEventListener('resize', measure, { passive: true });
-					var ticking = false;
-					var scrollHandler = function() {
-						if (ticking) return;
-						ticking = true;
-						requestAnimationFrame(function() {
-							ticking = false;
-							var scrollPos = window.scrollY + window.innerHeight - articleTop;
-							var pct = Math.min(Math.round((scrollPos / articleHeight) * 100), 100);
-							for (var m in milestones) {
-								if (!milestones[m] && pct >= parseInt(m)) {
-									milestones[m] = true;
-									track('blog_read_progress', { read_percent: parseInt(m), blog_title: document.title });
-								}
-							}
-						});
-					};
-					window.addEventListener('scroll', scrollHandler, { passive: true });
+					progressEl = article;
+					progressMilestones = { 25: false, 50: false, 75: false, 100: false };
+					progressMeasured = false;
+					bindProgressScroll();
 				}
 			}
 

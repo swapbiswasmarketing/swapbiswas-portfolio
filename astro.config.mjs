@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from 'rehype-external-links';
+import rehypeResponsiveImages from './src/lib/rehype-responsive-images.mjs';
 import { readdirSync } from 'node:fs';
 
 // The 41 concept demos moved from /redesign/{slug} to /personal-website-examples/{slug} (still noindex).
@@ -98,6 +99,10 @@ export default defineConfig({
 		},
 		rehypePlugins: [
 			[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+			// Adds srcset/sizes/width/height/loading to the hand-authored diagrams under
+			// /assets/blog/. Reads src/data/image-manifest.json, which is written by
+			// `npm run img:variants` - the prebuild step keeps it in step with the files.
+			rehypeResponsiveImages,
 		],
 	},
 });

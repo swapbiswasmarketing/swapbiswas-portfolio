@@ -1,0 +1,1413 @@
+{
+	"/assets/blog/abm-campaign-examples/abm-tiers.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "d396fac6ec9b098a"
+	},
+	"/assets/blog/abm-vs-inbound-marketing/abm-vs-inbound.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "e414e783d90de47b"
+	},
+	"/assets/blog/aeo-vs-seo/aeo-vs-seo-overlap.webp": {
+		"w": 1200,
+		"h": 814,
+		"v": [
+			660
+		],
+		"hash": "3cc866e0b04aa24e"
+	},
+	"/assets/blog/ai-future-of-seo/search-ecosystem.webp": {
+		"w": 1800,
+		"h": 669,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "40aa69ee6475d72e"
+	},
+	"/assets/blog/ai-marketing/delve-chart.webp": {
+		"w": 1024,
+		"h": 508,
+		"v": [
+			660
+		],
+		"hash": "69cbe49efa2e7073"
+	},
+	"/assets/blog/ai-marketing.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "3cbf9aa5afb48766"
+	},
+	"/assets/blog/ai-maturity-curve/maturity-stages.webp": {
+		"w": 1200,
+		"h": 560,
+		"v": [
+			660
+		],
+		"hash": "d6619d8a6f4b0fe0"
+	},
+	"/assets/blog/ai-maturity-curve/spar-framework.webp": {
+		"w": 1200,
+		"h": 453,
+		"v": [
+			660
+		],
+		"hash": "c8eec375afaa8802"
+	},
+	"/assets/blog/ai-overview-optimization/ai-overview-framework.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "43533aa9d0296142"
+	},
+	"/assets/blog/ai-seo-strategy/workflow.webp": {
+		"w": 1800,
+		"h": 1054,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "8ab78587a7ad0d9d"
+	},
+	"/assets/blog/ai-tools-affiliate-marketing/tool-stacks.webp": {
+		"w": 1800,
+		"h": 964,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "74baa5b2941e2226"
+	},
+	"/assets/blog/analyst-relations/ar-loop.webp": {
+		"w": 1200,
+		"h": 754,
+		"v": [
+			660
+		],
+		"hash": "db1dba92cc79c04b"
+	},
+	"/assets/blog/analyst-relations/ar-readiness-gate.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "c55d6e356b5fca4e"
+	},
+	"/assets/blog/b2b-buyer-persona/persona-anatomy.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "48f407c512ba75c6"
+	},
+	"/assets/blog/b2b-customer-segmentation/segment-score.webp": {
+		"w": 1200,
+		"h": 789,
+		"v": [
+			660
+		],
+		"hash": "da86837a67690020"
+	},
+	"/assets/blog/b2b-customer-segmentation/segmentation-matrix.webp": {
+		"w": 1200,
+		"h": 814,
+		"v": [
+			660
+		],
+		"hash": "8e54da8efbdbe99e"
+	},
+	"/assets/blog/b2b-lead-generation-funnel/funnel-stages.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "9deea9a643708446"
+	},
+	"/assets/blog/b2b-marketing-automation/lead-lifecycle.webp": {
+		"w": 1800,
+		"h": 669,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "1b7f763f14cc48bf"
+	},
+	"/assets/blog/b2b-marketing-automation/nurture-workflow.webp": {
+		"w": 1800,
+		"h": 746,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "332896108eac0ed0"
+	},
+	"/assets/blog/b2b-saas-pricing-psychology/anchor-survival-chain.webp": {
+		"w": 1200,
+		"h": 960,
+		"v": [
+			660
+		],
+		"hash": "7ccfff11295d68f9"
+	},
+	"/assets/blog/b2c-marketing-automation/automation-workflows.webp": {
+		"w": 1800,
+		"h": 797,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "2b408689f2b982c3"
+	},
+	"/assets/blog/brand-messaging-framework/framework-layers.webp": {
+		"w": 1200,
+		"h": 626,
+		"v": [
+			660
+		],
+		"hash": "15050870531bdc56"
+	},
+	"/assets/blog/branding-vs-positioning/brand-vs-positioning.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "c2233f1d4b2c1a1e"
+	},
+	"/assets/blog/campaign-naming-convention/one-artifact.webp": {
+		"w": 1200,
+		"h": 780,
+		"v": [
+			660
+		],
+		"hash": "4e6a0fb146b11212"
+	},
+	"/assets/blog/campaign-naming-convention/retrofit-waves.webp": {
+		"w": 1200,
+		"h": 780,
+		"v": [
+			660
+		],
+		"hash": "7d43c912b97e5aa8"
+	},
+	"/assets/blog/competitive-analysis-examples/decision-tree.webp": {
+		"w": 1800,
+		"h": 771,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "0195df3479922eab"
+	},
+	"/assets/blog/competitive-analysis-examples/positioning-map.webp": {
+		"w": 1800,
+		"h": 720,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "51b23b0864ff278b"
+	},
+	"/assets/blog/competitive-analysis-template/template-fields.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "bae11a75b1e60f8d"
+	},
+	"/assets/blog/competitive-battlecard/battlecard-template.webp": {
+		"w": 1800,
+		"h": 1054,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "7431d7415634c157"
+	},
+	"/assets/blog/competitive-battlecard-hero.webp": {
+		"w": 1800,
+		"h": 945,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "aa35436438eeb5ef"
+	},
+	"/assets/blog/competitive-intelligence-analysis/ci-framework.webp": {
+		"w": 1800,
+		"h": 669,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "1fbdaf38d33a8d76"
+	},
+	"/assets/blog/competitive-intelligence-analysis/ci-types.webp": {
+		"w": 1800,
+		"h": 617,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "893749f914607362"
+	},
+	"/assets/blog/competitive-product-analysis/analysis-framework.webp": {
+		"w": 1800,
+		"h": 1131,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "7eabbe754dc2251e"
+	},
+	"/assets/blog/content-marketing-framework/framework.webp": {
+		"w": 1200,
+		"h": 669,
+		"v": [
+			660
+		],
+		"hash": "eadef0102f157a8c"
+	},
+	"/assets/blog/customer-advisory-board/cab-scorecard.webp": {
+		"w": 1200,
+		"h": 934,
+		"v": [
+			660
+		],
+		"hash": "e38705e403a36cf6"
+	},
+	"/assets/blog/customer-advisory-board/matched-cohort.webp": {
+		"w": 1200,
+		"h": 677,
+		"v": [
+			660
+		],
+		"hash": "96e39867472baf0b"
+	},
+	"/assets/blog/customer-discovery/discovery-loop.webp": {
+		"w": 1200,
+		"h": 711,
+		"v": [
+			660
+		],
+		"hash": "efb374ebbee289d8"
+	},
+	"/assets/blog/customer-discovery/interview-arc.webp": {
+		"w": 1200,
+		"h": 729,
+		"v": [
+			660
+		],
+		"hash": "90de37027a5d08ec"
+	},
+	"/assets/blog/customer-enablement/enablement-vs-disciplines.webp": {
+		"w": 1200,
+		"h": 549,
+		"v": [
+			660
+		],
+		"hash": "3bff61a5704fea05"
+	},
+	"/assets/blog/customer-marketing-vs-product-marketing/handoff-trigger.webp": {
+		"w": 1200,
+		"h": 489,
+		"v": [
+			660
+		],
+		"hash": "13f0dd4372b0262b"
+	},
+	"/assets/blog/customer-marketing-vs-product-marketing/ownership-map.webp": {
+		"w": 1200,
+		"h": 531,
+		"v": [
+			660
+		],
+		"hash": "fa644c06be1047e7"
+	},
+	"/assets/blog/customer-onboarding-template/stages.webp": {
+		"w": 1200,
+		"h": 514,
+		"v": [
+			660
+		],
+		"hash": "cd4b7cdc9063d1e7"
+	},
+	"/assets/blog/customer-success-story-template/anonymization-ladder.webp": {
+		"w": 1200,
+		"h": 806,
+		"v": [
+			660
+		],
+		"hash": "39381a592cdc29ce"
+	},
+	"/assets/blog/customer-success-story-template/story-production-workflow.webp": {
+		"w": 1200,
+		"h": 677,
+		"v": [
+			660
+		],
+		"hash": "84ee9f364426190f"
+	},
+	"/assets/blog/demand-generation-vs-lead-generation/demand-vs-lead.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "40bd0fe0836836e4"
+	},
+	"/assets/blog/developer-marketing/developer-funnel.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "0e56f39b5fa75139"
+	},
+	"/assets/blog/developer-marketing/docs-ownership.webp": {
+		"w": 1200,
+		"h": 634,
+		"v": [
+			660
+		],
+		"hash": "400ccd6ddda382ba"
+	},
+	"/assets/blog/do-you-need-llms-txt/publish-vs-consume.webp": {
+		"w": 1200,
+		"h": 626,
+		"v": [
+			660
+		],
+		"hash": "930d7dcb751fa556"
+	},
+	"/assets/blog/do-you-need-llms-txt/should-you-create.webp": {
+		"w": 1200,
+		"h": 566,
+		"v": [
+			660
+		],
+		"hash": "75a2bf8db6b03888"
+	},
+	"/assets/blog/ecommerce-marketing-automation/workflow-order.webp": {
+		"w": 1200,
+		"h": 549,
+		"v": [
+			660
+		],
+		"hash": "23413a8c454f8716"
+	},
+	"/assets/blog/ecommerce-seo-checklist/checklist.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "3d3c183cd8260909"
+	},
+	"/assets/blog/email/image1.webp": {
+		"w": 665,
+		"h": 641,
+		"v": [],
+		"hash": "b7d07963cfc82889"
+	},
+	"/assets/blog/email/image10.webp": {
+		"w": 600,
+		"h": 326,
+		"v": [],
+		"hash": "7455e5d9808e2927"
+	},
+	"/assets/blog/email/image13.webp": {
+		"w": 262,
+		"h": 375,
+		"v": [],
+		"hash": "c555994a1af0a8d8"
+	},
+	"/assets/blog/email/image5-1.webp": {
+		"w": 674,
+		"h": 283,
+		"v": [],
+		"hash": "4addb69bf8d0031a"
+	},
+	"/assets/blog/email/image6.webp": {
+		"w": 999,
+		"h": 583,
+		"v": [
+			660
+		],
+		"hash": "841c195363781fe0"
+	},
+	"/assets/blog/email-interactivity.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "8ff3daf31adfd0c4"
+	},
+	"/assets/blog/go-to-market-startups/gtm-7-steps.webp": {
+		"w": 1800,
+		"h": 1080,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "47954b735f681bf0"
+	},
+	"/assets/blog/go-to-market-strategy/gtm-framework.webp": {
+		"w": 1800,
+		"h": 1054,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "9730ec4ff2d41c06"
+	},
+	"/assets/blog/good-better-best-pricing/feature-allocation-rule.webp": {
+		"w": 1200,
+		"h": 849,
+		"v": [
+			660
+		],
+		"hash": "e5719cd131a48f12"
+	},
+	"/assets/blog/good-better-best-pricing/gap-math.webp": {
+		"w": 1200,
+		"h": 694,
+		"v": [
+			660
+		],
+		"hash": "9683ca5de6651740"
+	},
+	"/assets/blog/google-reviews-seo/local-pack.webp": {
+		"w": 800,
+		"h": 480,
+		"v": [
+			660
+		],
+		"hash": "1e1f8c0d2c354899"
+	},
+	"/assets/blog/google-reviews-seo.webp": {
+		"w": 1792,
+		"h": 1024,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "0f527f79c5dd310d"
+	},
+	"/assets/blog/growth-marketing-vs-performance-marketing/growth-vs-performance-funnel.webp": {
+		"w": 1200,
+		"h": 506,
+		"v": [
+			660
+		],
+		"hash": "f267548a0e9b5867"
+	},
+	"/assets/blog/house-of-brands-vs-branded-house/brand-architecture-models.webp": {
+		"w": 1200,
+		"h": 754,
+		"v": [
+			660
+		],
+		"hash": "bacc65dc781b236c"
+	},
+	"/assets/blog/house-of-brands-vs-branded-house/launch-naming-scorecard.webp": {
+		"w": 1200,
+		"h": 883,
+		"v": [
+			660
+		],
+		"hash": "7b0f54341020f372"
+	},
+	"/assets/blog/how-do-i-check-my-seo-ranking/method-guide.webp": {
+		"w": 1800,
+		"h": 1003,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "6286045644ef7f0f"
+	},
+	"/assets/blog/how-much-does-an-seo-audit-cost/pricing-tiers.webp": {
+		"w": 1200,
+		"h": 737,
+		"v": [
+			660
+		],
+		"hash": "c0227d77d7767a4a"
+	},
+	"/assets/blog/how-often-should-you-do-an-seo-audit/audit-cadence.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "77d60b616e7afd66"
+	},
+	"/assets/blog/how-to-become-a-product-marketing-manager/routes-into-pmm.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "649c74e054ba8c14"
+	},
+	"/assets/blog/how-to-create-a-pricing-strategy/pricing-workflow.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "3bb8d0421ee319e0"
+	},
+	"/assets/blog/how-to-differentiate-your-product-when-competitors-copy-your-features/durability-scorecard.webp": {
+		"w": 1200,
+		"h": 737,
+		"v": [
+			660
+		],
+		"hash": "449995043dc1405b"
+	},
+	"/assets/blog/how-to-do-content-marketing-competitor-analysis/framework.webp": {
+		"w": 1800,
+		"h": 964,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "777d702c91f8e569"
+	},
+	"/assets/blog/how-to-implement-marketing-automation/implementation-roadmap.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "549ae5fa50247421"
+	},
+	"/assets/blog/how-to-launch-a-saas-product/launch-timeline.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "1f6ade8b8e10b61e"
+	},
+	"/assets/blog/how-to-measure-saas-content-marketing/four-layer-model.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "28c7c45080b65a33"
+	},
+	"/assets/blog/how-to-measure-saas-content-marketing/holdout-test.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "95ce9aa73f24bbbf"
+	},
+	"/assets/blog/how-to-prioritize-accounts-in-abm/account-prioritization-matrix.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "831fba3ef2981761"
+	},
+	"/assets/blog/how-to-read-a-heatmap/heatmap-types.webp": {
+		"w": 1800,
+		"h": 1029,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "5c017be87f22a304"
+	},
+	"/assets/blog/how-to-use-chatgpt-for-sales-and-marketing/prompt-framework.webp": {
+		"w": 1200,
+		"h": 737,
+		"v": [
+			660
+		],
+		"hash": "131259fcca8f235b"
+	},
+	"/assets/blog/icp-buyer-persona-hero.webp": {
+		"w": 1800,
+		"h": 945,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "d2a7db1247132644"
+	},
+	"/assets/blog/icp-vs-buyer-persona/icp-vs-persona.webp": {
+		"w": 1800,
+		"h": 964,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "5f0a238b305bfc2f"
+	},
+	"/assets/blog/improve-brand-visibility-in-ai-search-engines/strategies.webp": {
+		"w": 1200,
+		"h": 780,
+		"v": [
+			660
+		],
+		"hash": "d0bbff3ed1bb0b57"
+	},
+	"/assets/blog/is-product-marketing-a-good-career/pmm-career-path.webp": {
+		"w": 1200,
+		"h": 566,
+		"v": [
+			660
+		],
+		"hash": "b6ffbe919485c0d9"
+	},
+	"/assets/blog/jobs-to-be-done-template/four-forces.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "24036d8d59230ef2"
+	},
+	"/assets/blog/jobs-to-be-done-template/template-anatomy.webp": {
+		"w": 1200,
+		"h": 977,
+		"v": [
+			660
+		],
+		"hash": "56db15ed445aff37"
+	},
+	"/assets/blog/kerala/carnival.webp": {
+		"w": 845,
+		"h": 440,
+		"v": [
+			660
+		],
+		"hash": "0efa04a748e226d8"
+	},
+	"/assets/blog/kerala/houseboat.webp": {
+		"w": 1024,
+		"h": 577,
+		"v": [
+			660
+		],
+		"hash": "35d0ade9bb46545f"
+	},
+	"/assets/blog/kerala/munnar.webp": {
+		"w": 169,
+		"h": 300,
+		"v": [],
+		"hash": "6588d9cdb0422ada"
+	},
+	"/assets/blog/kerala/thekkady.webp": {
+		"w": 1024,
+		"h": 577,
+		"v": [
+			660
+		],
+		"hash": "2ca64d3c4ad87563"
+	},
+	"/assets/blog/kerala/theyyam.webp": {
+		"w": 1024,
+		"h": 683,
+		"v": [
+			660
+		],
+		"hash": "6341d4c008f12907"
+	},
+	"/assets/blog/kerala-winter.webp": {
+		"w": 1792,
+		"h": 1024,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "12a70c3ec9c577ad"
+	},
+	"/assets/blog/land-and-expand/expansion-trigger.webp": {
+		"w": 1200,
+		"h": 600,
+		"v": [
+			660
+		],
+		"hash": "c094cc3dbe0afd8d"
+	},
+	"/assets/blog/land-and-expand/withhold-axes.webp": {
+		"w": 1200,
+		"h": 566,
+		"v": [
+			660
+		],
+		"hash": "7dd5e62fc76a28cc"
+	},
+	"/assets/blog/llm-optimization/llm-signal-layers.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "6a8c811012775b9d"
+	},
+	"/assets/blog/local-seo-checklist/checklist.webp": {
+		"w": 1200,
+		"h": 660,
+		"v": [
+			660
+		],
+		"hash": "0b0a083dffd7ea30"
+	},
+	"/assets/blog/marketing-automation-strategy/customer-journey.webp": {
+		"w": 1800,
+		"h": 540,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "a408185d653ced79"
+	},
+	"/assets/blog/marketing-automation-strategy/strategy-framework.webp": {
+		"w": 1800,
+		"h": 669,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "d471a8a10c136e84"
+	},
+	"/assets/blog/marketing-automation-workflows/workflows-overview.webp": {
+		"w": 1800,
+		"h": 797,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "2e765505f9286c4d"
+	},
+	"/assets/blog/marketing-mix-modeling-vs-attribution/decision-rule.webp": {
+		"w": 1200,
+		"h": 729,
+		"v": [
+			660
+		],
+		"hash": "229ac135997a44ca"
+	},
+	"/assets/blog/marketing-mix-modeling-vs-attribution/three-methods.webp": {
+		"w": 1200,
+		"h": 763,
+		"v": [
+			660
+		],
+		"hash": "0804f0d6a7f03418"
+	},
+	"/assets/blog/marketing-research/survey.webp": {
+		"w": 900,
+		"h": 357,
+		"v": [
+			660
+		],
+		"hash": "ba4c2da04b346fc7"
+	},
+	"/assets/blog/marketing-research.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "cbe40e152367373f"
+	},
+	"/assets/blog/marketing-strategy-for-new-product/launch-phases.webp": {
+		"w": 1800,
+		"h": 900,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "65228fc8d760245f"
+	},
+	"/assets/blog/marketing-tools-you-need/five-tool-stack.webp": {
+		"w": 1800,
+		"h": 1350,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "f23158458a848439"
+	},
+	"/assets/blog/messaging-pillars/messaging-house.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "e765c7980c416d59"
+	},
+	"/assets/blog/mobile-seo-checklist/checklist.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "598070378edb854a"
+	},
+	"/assets/blog/price-increase-announcement/concession-ceiling.webp": {
+		"w": 1200,
+		"h": 600,
+		"v": [
+			660
+		],
+		"hash": "6d75b4f44241992b"
+	},
+	"/assets/blog/price-increase-announcement/operator-sequence.webp": {
+		"w": 1200,
+		"h": 806,
+		"v": [
+			660
+		],
+		"hash": "f89131d41e887b26"
+	},
+	"/assets/blog/product-launch-checklist/launch-phases.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "2b17f539cd61349b"
+	},
+	"/assets/blog/product-launch-communication-plan/internal-notification-order.webp": {
+		"w": 1200,
+		"h": 870,
+		"v": [
+			660
+		],
+		"hash": "caee01a91951c880"
+	},
+	"/assets/blog/product-launch-communication-plan/launch-date-slips.webp": {
+		"w": 1200,
+		"h": 729,
+		"v": [
+			660
+		],
+		"hash": "369682c7d55912cb"
+	},
+	"/assets/blog/product-led-growth-examples/growth-loops.webp": {
+		"w": 1800,
+		"h": 669,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "6cfd0e6cbb441ec8"
+	},
+	"/assets/blog/product-led-marketing/product-led-framework.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "87ca7236b88fc606"
+	},
+	"/assets/blog/product-marketing/positioning-framework.webp": {
+		"w": 1800,
+		"h": 1054,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "623e916605112bf8"
+	},
+	"/assets/blog/product-marketing-career-path/pmm-career-ladder.webp": {
+		"w": 1200,
+		"h": 377,
+		"v": [
+			660
+		],
+		"hash": "39d2e87309dfd68f"
+	},
+	"/assets/blog/product-marketing-framework/six-stages.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "061743fec0fc4570"
+	},
+	"/assets/blog/product-marketing-interview-questions/interview-rounds.webp": {
+		"w": 1200,
+		"h": 403,
+		"v": [
+			660
+		],
+		"hash": "0a09bf887411b93e"
+	},
+	"/assets/blog/product-marketing-metrics/pmm-metrics-groups.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "c659fe45dab57adf"
+	},
+	"/assets/blog/product-marketing-okrs/okr-framework.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "cfefa16824a31d33"
+	},
+	"/assets/blog/product-marketing-team-structure/pmm-team-stages.webp": {
+		"w": 1200,
+		"h": 480,
+		"v": [
+			660
+		],
+		"hash": "14ca75f36f69fbfe"
+	},
+	"/assets/blog/product-marketing-vs-growth-marketing/pmm-vs-growth-loop.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "72ef486650e3f788"
+	},
+	"/assets/blog/product-naming/name-kill-sheet.webp": {
+		"w": 1200,
+		"h": 711,
+		"v": [
+			660
+		],
+		"hash": "cc9adc460941ac93"
+	},
+	"/assets/blog/product-naming/rename-blast-radius.webp": {
+		"w": 1200,
+		"h": 840,
+		"v": [
+			660
+		],
+		"hash": "ab011fc75f0c2b5e"
+	},
+	"/assets/blog/product-reviews-ai-search-visibility/reviews-to-ai-visibility.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "ef1c4fc384fb72d9"
+	},
+	"/assets/blog/product-sunset/sunset-90-day-program.webp": {
+		"w": 1200,
+		"h": 724,
+		"v": [
+			660
+		],
+		"hash": "d04752264c0483c6"
+	},
+	"/assets/blog/product-sunset/sunset-customer-triage.webp": {
+		"w": 1200,
+		"h": 677,
+		"v": [
+			660
+		],
+		"hash": "066b551227473576"
+	},
+	"/assets/blog/rebranding-rollout-plan/comms-matrix.webp": {
+		"w": 1200,
+		"h": 682,
+		"v": [
+			660
+		],
+		"hash": "ddc94d24cec29560"
+	},
+	"/assets/blog/rebranding-rollout-plan/countdown.webp": {
+		"w": 1200,
+		"h": 797,
+		"v": [
+			660
+		],
+		"hash": "03955abd62a59bfa"
+	},
+	"/assets/blog/risks-of-launching-a-new-product/launch-risks-grid.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "eb68fec159e44e88"
+	},
+	"/assets/blog/saas-go-to-market-strategy/five-layers.webp": {
+		"w": 1200,
+		"h": 746,
+		"v": [
+			660
+		],
+		"hash": "988c77deefa6b0d0"
+	},
+	"/assets/blog/saas-growth-strategy/growth-by-stage.webp": {
+		"w": 1800,
+		"h": 617,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "383ea7e5c19a274d"
+	},
+	"/assets/blog/saas-growth-strategy/seven-playbooks.webp": {
+		"w": 1800,
+		"h": 797,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "bed21a50d54e1b9b"
+	},
+	"/assets/blog/saas-pricing-models/pricing-models-map.webp": {
+		"w": 1200,
+		"h": 763,
+		"v": [
+			660
+		],
+		"hash": "9f46c47f9ecc1563"
+	},
+	"/assets/blog/saas-product-marketing/six-pillars.webp": {
+		"w": 1800,
+		"h": 926,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "cc1022ab31531da4"
+	},
+	"/assets/blog/saas-release-notes/release-note-anatomy.webp": {
+		"w": 1200,
+		"h": 669,
+		"v": [
+			660
+		],
+		"hash": "cb4273e8e96b3b93"
+	},
+	"/assets/blog/saas-release-notes/release-note-distribution.webp": {
+		"w": 1200,
+		"h": 795,
+		"v": [
+			660
+		],
+		"hash": "e0f749cd9fb1071f"
+	},
+	"/assets/blog/saas-win-rate-benchmark/comparable-win-rate-method.webp": {
+		"w": 1200,
+		"h": 583,
+		"v": [
+			660
+		],
+		"hash": "86c580df59e970a6"
+	},
+	"/assets/blog/saas-win-rate-benchmark/one-deal-set-five-win-rates.webp": {
+		"w": 1200,
+		"h": 669,
+		"v": [
+			660
+		],
+		"hash": "00d56169bb4985b1"
+	},
+	"/assets/blog/sales-enablement-checklist/enablement-checklist.webp": {
+		"w": 1200,
+		"h": 771,
+		"v": [
+			660
+		],
+		"hash": "326a4bbd5c07da3e"
+	},
+	"/assets/blog/sales-enablement-kpis/kpi-map.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "951c7fef539e8350"
+	},
+	"/assets/blog/sales-enablement-strategy/enablement-framework.webp": {
+		"w": 1200,
+		"h": 634,
+		"v": [
+			660
+		],
+		"hash": "057f2d4aef4047d5"
+	},
+	"/assets/blog/sales-kickoff-agenda/sko-build-calendar.webp": {
+		"w": 1200,
+		"h": 763,
+		"v": [
+			660
+		],
+		"hash": "e3bbb632ad2104c8"
+	},
+	"/assets/blog/seo-audit-checklist/audit-steps.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "77163f0dab34870d"
+	},
+	"/assets/blog/sustainable-modern-architectural.webp": {
+		"w": 1740,
+		"h": 1160,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "e6a9b84045eeac8a"
+	},
+	"/assets/blog/technical-seo-audit/checklist.webp": {
+		"w": 1800,
+		"h": 1054,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "8325d2c36105bd7c"
+	},
+	"/assets/blog/thought-leadership-content/publish-test.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "afd79c0ffb8a00e2"
+	},
+	"/assets/blog/thought-leadership-content/strategy-loop.webp": {
+		"w": 1200,
+		"h": 566,
+		"v": [
+			660
+		],
+		"hash": "a130ad939215a38e"
+	},
+	"/assets/blog/top-down-vs-bottom-up-market-sizing/one-market-two-ways.webp": {
+		"w": 1200,
+		"h": 763,
+		"v": [
+			660
+		],
+		"hash": "6444d2a0f1aed0b5"
+	},
+	"/assets/blog/top-down-vs-bottom-up-market-sizing/reconciliation-worksheet.webp": {
+		"w": 1200,
+		"h": 840,
+		"v": [
+			660
+		],
+		"hash": "043558eef4b2fef8"
+	},
+	"/assets/blog/value-proposition-template/vp-anatomy.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "b16f9651b5ea60a6"
+	},
+	"/assets/blog/van-westendorp-price-sensitivity-meter/method-choice.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "f704e5d352117376"
+	},
+	"/assets/blog/van-westendorp-price-sensitivity-meter/psm-curves.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "7b48f77034468dde"
+	},
+	"/assets/blog/vibe-coded-website-seo/crawler-view.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "4bdc80a26f2d84a2"
+	},
+	"/assets/blog/what-are-brand-guidelines/brand-book-sections.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "4a55aa23cfab3c34"
+	},
+	"/assets/blog/what-does-a-product-marketing-manager-do/pmm-responsibilities.webp": {
+		"w": 1200,
+		"h": 754,
+		"v": [
+			660
+		],
+		"hash": "a20c462d147ad3bd"
+	},
+	"/assets/blog/what-does-chatgpt-stand-for/name-breakdown.webp": {
+		"w": 1800,
+		"h": 874,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "0cf988af398df8ac"
+	},
+	"/assets/blog/what-is-a-gtm-engineer/gtm-engineer-roadmap.webp": {
+		"w": 1200,
+		"h": 549,
+		"v": [
+			660
+		],
+		"hash": "df6d0fb7d097f68b"
+	},
+	"/assets/blog/what-is-a-value-proposition/value-prop-canvas.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "2432296a68d66383"
+	},
+	"/assets/blog/what-is-b2b-demand-generation/demand-gen-funnel.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "55630e28a6f708bc"
+	},
+	"/assets/blog/what-is-cross-network-in-google-analytics/channel-map.webp": {
+		"w": 1800,
+		"h": 1029,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "d0d1163665194636"
+	},
+	"/assets/blog/what-is-customer-journey-analytics/cja-framework.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "1c9b14230c7578b6"
+	},
+	"/assets/blog/what-is-customer-onboarding/onboarding-stages.webp": {
+		"w": 1200,
+		"h": 566,
+		"v": [
+			660
+		],
+		"hash": "b86512970755f413"
+	},
+	"/assets/blog/what-is-lifecycle-marketing/lifecycle-stages.webp": {
+		"w": 1200,
+		"h": 549,
+		"v": [
+			660
+		],
+		"hash": "dce923acc89d9d32"
+	},
+	"/assets/blog/what-is-market-positioning/positioning-framework.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "678979b610ffcec9"
+	},
+	"/assets/blog/what-is-product-market-fit/pmf-signals.webp": {
+		"w": 1200,
+		"h": 566,
+		"v": [
+			660
+		],
+		"hash": "b5f261f0301c9cf2"
+	},
+	"/assets/blog/what-is-sales-enablement-software/enablement-stack.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "c75f0de842ee0cc5"
+	},
+	"/assets/blog/what-is-seo-report/report-anatomy.webp": {
+		"w": 1800,
+		"h": 1054,
+		"v": [
+			660,
+			1320
+		],
+		"hash": "ed1beeeb70546b13"
+	},
+	"/assets/blog/what-is-voice-of-the-customer/voc-program.webp": {
+		"w": 1200,
+		"h": 566,
+		"v": [
+			660
+		],
+		"hash": "b7a78509b2ebba39"
+	},
+	"/assets/blog/what-is-win-loss-analysis/win-loss-process.webp": {
+		"w": 1200,
+		"h": 600,
+		"v": [
+			660
+		],
+		"hash": "1f59ac8e9b9dffaa"
+	},
+	"/assets/blog/what-is-ymyl/ymyl-spectrum.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "0803db83298b96df"
+	},
+	"/assets/blog/win-loss-analysis-dashboard/dashboard-anatomy.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "b570c0c501622088"
+	},
+	"/assets/blog/win-loss-analysis-questions/win-loss-stages.webp": {
+		"w": 1200,
+		"h": 377,
+		"v": [
+			660
+		],
+		"hash": "b72c95ada979addf"
+	}
+}

@@ -6,17 +6,31 @@ import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
 
+// The card renders at 1200x630 because that is what og:image consumers want, but the
+// same file is also the article hero, and .content-column caps the body at 66ch
+// (measured 658px). A DPR-1 desktop was downloading 52.6 KiB to paint 658x345, about
+// 3.3x the pixels it needed. These extra widths exist only for the on-page
+// <img srcset>; /og/{slug}.webp keeps its URL and stays the social card.
+const HERO_WIDTHS = [400, 660];
+
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: {
+	return posts.flatMap((post) => {
+		const props = {
+			slug: post.id,
 			title: post.data.title,
 			description: post.data.description,
 			categories: post.data.category,
 			img: post.data.img,
-		},
-	}));
+		};
+		return [
+			{ params: { slug: post.id }, props: { ...props, width: 1200 } },
+			...HERO_WIDTHS.map((width) => ({
+				params: { slug: `${post.id}-${width}w` },
+				props: { ...props, width },
+			})),
+		];
+	});
 }
 
 // Paper & Signal palette (mirrors DESIGN.md section 2 / 6 - light values, OG cards are always light)
@@ -54,6 +68,12 @@ const PANEL_H = 512;
 
 // Load and cache images as base64 data URIs
 const imageCache: Record<string, string> = {};
+
+// satori + resvg is roughly 300ms per card and Astro calls GET once for every emitted
+// path, so without this the three-width ladder would rasterise each card three times
+// and add about a minute to a 137-post build. One 1200x630 PNG is held per post, which
+// is far cheaper than re-rendering it.
+const cardPngCache = new Map<string, Buffer>();
 
 function getImageDataUri(filename: string): string {
 	if (imageCache[filename]) return imageCache[filename];
@@ -110,12 +130,20 @@ function truncate(text: string, max: number): string {
 }
 
 export async function GET({ props }: APIContext) {
-	const { title, description, categories, img } = props as {
+	const { slug, width, title, description, categories, img } = props as {
+		slug: string;
+		width: number;
 		title: string;
 		description?: string;
 		categories: string[];
 		img: string;
 	};
+
+	// satori + resvg is the whole cost of this route. Once a card has been rasterised,
+	// the other two widths in the ladder are just a sharp resize off the cached PNG.
+	const cached = cardPngCache.get(slug);
+	if (cached) return respond(await encodeCard(cached, width));
+
 	const fonts = getFonts();
 	const chips = (categories.length ? categories : ['Marketing']).slice(0, 2).map((cat) => {
 		return (categoryConfig[cat] || { label: cat }).label;
@@ -396,15 +424,22 @@ export async function GET({ props }: APIContext) {
 	const resvg = new Resvg(svg, {
 		fitTo: { mode: 'width', value: 1200 },
 	});
-	const pngData = resvg.render();
-	const pngBuffer = pngData.asPng();
+	const pngBuffer = Buffer.from(resvg.render().asPng());
+	cardPngCache.set(slug, pngBuffer);
 
-	// Convert PNG to WebP for smaller file size
-	const webpBuffer = await sharp(Buffer.from(pngBuffer))
-		.webp({ quality: 82 })
-		.toBuffer();
+	return respond(await encodeCard(pngBuffer, width));
+}
 
-	return new Response(new Uint8Array(webpBuffer), {
+// Downscale off the 1200px PNG, not off the finished WebP: re-encoding an already lossy
+// WebP smears the thin type in the card headline.
+async function encodeCard(png: Buffer, width: number): Promise<Buffer> {
+	const pipeline = sharp(png);
+	if (width < 1200) pipeline.resize({ width });
+	return pipeline.webp({ quality: 82 }).toBuffer();
+}
+
+function respond(webp: Buffer): Response {
+	return new Response(new Uint8Array(webp), {
 		headers: {
 			'Content-Type': 'image/webp',
 			'Cache-Control': 'public, max-age=31536000, immutable',

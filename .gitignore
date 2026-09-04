@@ -34,6 +34,10 @@ pnpm-debug.log*
 !package-lock.json
 !tsconfig.json
 !vercel.json
+# Written by scripts/gen-image-variants.mjs alongside the committed -660w/-1320w
+# files it emits. Tracked with them so a build never has to trust that the prebuild
+# step ran: a missing manifest silently drops every diagram srcset.
+!src/data/image-manifest.json
 *.xml
 
 # Search Console API credentials + exports (never commit)

@@ -6,6 +6,8 @@ import Hero from '../../components/Hero.astro';
 import Pill from '../../components/Pill.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import portraitImg from '../../assets/portrait-new.webp';
 
 interface Props {
 	entry: CollectionEntry<'blog'>;
@@ -205,7 +207,25 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 						</aside>
 					)}
 					<div class="stack gap-10 content-column" data-pagefind-body>
-						<img src={`/og/${entry.id}.webp`} alt={entry.data.img_alt || ''} width="1200" height="630" fetchpriority="high" />
+						{/* sizes is derived, not guessed: .content-column is max-width min(66ch, 100%)
+						   inside .wrapper (max-width 83rem, padding-inline 1.5rem), and the >=72em grid
+						   still hands it min(66ch, calc(100% - 32rem)), so 66ch is the ceiling at every
+						   breakpoint. 66ch of Inter at 17px measures 658px, which is exactly what PSI
+						   reported. Below a 706px viewport the column is just the wrapper content box.
+						   Every condition is viewport-only, so the preload scanner can pick a candidate
+						   before layout and the LCP request is not delayed. The -400w and -660w files
+						   come from the width ladder in src/pages/og/[...slug].webp.ts - this markup and
+						   that route have to ship together, because a srcset candidate that 404s does
+						   NOT fall back to src. */}
+						<img
+							src={`/og/${entry.id}.webp`}
+							srcset={`/og/${entry.id}-400w.webp 400w, /og/${entry.id}-660w.webp 660w, /og/${entry.id}.webp 1200w`}
+							sizes="(min-width: 45em) 660px, calc(100vw - 3rem)"
+							alt={entry.data.img_alt || ''}
+							width="1200"
+							height="630"
+							fetchpriority="high"
+						/>
 						<div class="content">
 							<Content />
 						</div>
@@ -231,7 +251,27 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 
 						<!-- Author Bio -->
 						<a href="/about/" class="author-bio">
-							<img src="/assets/portrait-new.webp" alt="Swapnil Biswas" class="author-avatar" width="64" height="64" loading="lazy" />
+							{/* portrait-new.webp is 1024x1280 and 79.9 KiB; .author-avatar paints it into
+							   a 64px circle. densities (not widths) emits a 64px src plus 2x and 3x
+							   candidates, about 8 KiB in total and content-hashed so they cache immutably.
+							   The 3x rung is not padding: densities emits x descriptors, so the browser
+							   picks purely on device pixel ratio and a ladder ending at 2x paints 128px
+							   into a 192-device-pixel box on every flagship phone.
+							   widths would additionally emit a full-size 1024px fallback that no srcset-
+							   capable browser fetches, and would stamp width="1024" height="1280" on a
+							   64px element. height={80} keeps the source's 4:5 ratio: Astro's sharp
+							   service resizes by width alone when no fit is given, and .author-avatar's
+							   object-fit: cover does the square crop, exactly as it does today. */}
+							<Image
+								src={portraitImg}
+								alt="Swapnil Biswas"
+								class="author-avatar"
+								width={64}
+								height={80}
+								densities={[1, 2, 3]}
+								loading="lazy"
+								decoding="async"
+							/>
 							<div class="author-info">
 								<p class="author-name">Written by <strong>Swapnil Biswas</strong></p>
 								<p class="author-desc">Product Marketing & Growth Strategist. I write about AI, SEO, and marketing strategy from real experience - not theory.</p>
@@ -245,7 +285,22 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 								<div class="related-grid">
 									{relatedPosts.map((post) => (
 										<a href={`/blog/${post.id}/`} class="related-card">
-											<img src={`/og/${post.id}.webp`} alt={post.data.title} width="1200" height="630" loading="lazy" decoding="async" />
+											{/* .related-grid is 3 columns from 50em inside the 658px content column with a
+											   1rem gap, so a card box is (658 - 32) / 3 = 209px wide by 10rem tall. The
+											   sizes value says 320px rather than 209px on purpose: object-fit: cover on a
+											   1.90 source in a 1.30 box scales to cover the height, so the source is drawn
+											   at about 305px wide even though the box is 209px. sizes ignores object-fit,
+											   so the crop has to be built into the number or the cards go soft. */}
+											<img
+												src={`/og/${post.id}.webp`}
+												srcset={`/og/${post.id}-400w.webp 400w, /og/${post.id}-660w.webp 660w, /og/${post.id}.webp 1200w`}
+												sizes="(min-width: 50em) 320px, (min-width: 45em) 660px, calc(100vw - 3rem)"
+												alt={post.data.title}
+												width="1200"
+												height="630"
+												loading="lazy"
+												decoding="async"
+											/>
 											<span class="related-title">{post.data.title}</span>
 										</a>
 									))}
@@ -277,9 +332,24 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 
 	.reading-progress-bar {
 		height: 100%;
-		width: 0%;
+		/* Full width scaled down, rather than a percentage width. Progress used to be
+		   written as `width: N%` against `transition: width 0.1s linear`, so every scroll
+		   event started a fresh main-thread transition that re-ran layout and paint on a
+		   fixed element stacked above the whole page, and kept repainting for 100ms after
+		   the scroll stopped. The pending width change also dirtied layout, which forced
+		   the next scroll listener's getBoundingClientRect to flush a synchronous one.
+		   scaleX is handled by the compositor and invalidates no layout, which is also
+		   what "Avoid non-composited animations" was flagging. width:100% with a left
+		   transform-origin renders identically to the old width:0-to-100%. */
+		width: 100%;
+		transform: scaleX(0);
+		transform-origin: 0 50%;
 		background: var(--accent-regular);
-		transition: width 0.1s linear;
+		transition: transform 0.1s linear;
+		/* The transition retriggers on nearly every frame while scrolling, so hold the
+		   compositor layer open rather than promoting and demoting it each time. The
+		   layer is a 3px strip, so the memory cost is negligible. */
+		will-change: transform;
 	}
 
 	/* Meta line (date, reading time, updated) */
@@ -1318,72 +1388,214 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		if (tocSidebar) tocSidebar.style.left = '';
 	}
 
-	function onScroll() {
-		if (!contentEl || !tocSidebar) return;
+	// ---------------------------------------------------------------------------
+	// Scroll pipeline.
+	//
+	// Everything on this page that reacts to scroll - the TOC active heading, the
+	// TOC's scroll-into-view and edge fades, the reading progress bar and the
+	// back-to-top button - is driven by ONE passive listener whose only job is to
+	// schedule a frame. Inside that frame every layout read happens first and every
+	// style write second, so a frame can never force a second layout.
+	//
+	// What this replaced: three unthrottled scroll listeners. Per scroll event they
+	// read getBoundingClientRect() on all 7 TOC headings, wrote the .active class
+	// onto 8 list items, then read list.scrollHeight / clientHeight / two rects (a
+	// forced layout, because those class writes had just dirtied style), toggled two
+	// more classes, then read .content's rect and offsetHeight (a second forced
+	// layout) and wrote bar.style.width. Three synchronous layouts per event.
+	//
+	// The measurements are all scroll-independent - a heading's distance from the top
+	// of the document, and a link's offset inside the TOC's scroll box, do not change
+	// as the window scrolls - so they are taken once and reused. The only live reads
+	// left are window.scrollY, window.innerHeight and the TOC list's own scrollTop,
+	// all taken at the top of the frame while layout is still clean from the previous
+	// paint, which makes them free.
+	//
+	// The other half of this fix is in BaseLayout.astro, where the read-progress
+	// tracker's getBoundingClientRect() was the first layout read in the document.
+	// Both were pre-first-paint reads, so leaving either one synchronous just makes
+	// PageSpeed re-attribute the same 52ms forced reflow to the other. Do not revert
+	// one without the other.
+	// ---------------------------------------------------------------------------
 
-		// Desktop: the sticky TOC lives in its own grid column and naturally scrolls
-		// away when the article ends, so no manual show/hide is needed. On mobile,
-		// clear any stale inline styles from a previous desktop layout.
-		if (!isDesktop()) {
-			tocSidebar.style.opacity = '';
-			tocSidebar.style.pointerEvents = '';
-			tocSidebar.style.left = '';
+	// Cached geometry. metricsDirty is set on bind, on resize, and by a ResizeObserver
+	// on the article - which covers everything that actually moves a heading: the font
+	// swap, a lazily loaded image that did not reserve space, enhanceContent() wrapping
+	// tables, and an FAQ <details> being opened. Nothing the write phase touches
+	// changes the article's height, so the observer cannot feed back on itself.
+	let metricsDirty = true;
+	let headingTops: number[] = [];
+	let tocLinkOffsets: { top: number; height: number }[] = [];
+	let tocScrollMax = 0;
+	let tocClientHeight = 0;
+	let tocOverflows = false;
+	let contentTop = 0;
+	let contentHeight = 0;
+	let tocList: HTMLElement | null = null;
+	let progressBar: HTMLElement | null = null;
+	let backToTopBtn: Element | null = null;
+	let contentResizeObs: ResizeObserver | null = null;
+
+	// Last values written, so the write phase can skip a no-op. A View Transition hands
+	// us a DOM with none of these applied, so bindToc() resets them.
+	let lastActive = -1;
+	let lastProgress = -1;
+	let lastBackToTop = false;
+	let lastClipTop = false;
+	let lastClipBottom = false;
+	let mobileStylesCleared = false;
+
+	function measureLayout() {
+		metricsDirty = false;
+		const scrollY = window.scrollY;
+
+		headingTops = headings.map((h) => h.el!.getBoundingClientRect().top + scrollY);
+
+		if (tocList) {
+			tocClientHeight = tocList.clientHeight;
+			const scrollHeight = tocList.scrollHeight;
+			tocOverflows = scrollHeight > tocClientHeight + 1;
+			tocScrollMax = scrollHeight - tocClientHeight;
+			// Origin of the list's scrollable content in viewport coordinates. A link's
+			// offset within that content is (linkTop - origin), which is what the old code
+			// computed live as linkBox.top - listBox.top + list.scrollTop.
+			const listOrigin = tocList.getBoundingClientRect().top - tocList.scrollTop;
+			tocLinkOffsets = headings.map((h) => {
+				const link = h.item.querySelector('a') as HTMLElement | null;
+				if (!link) return { top: 0, height: 0 };
+				const box = link.getBoundingClientRect();
+				return { top: box.top - listOrigin, height: box.height };
+			});
+		} else {
+			tocOverflows = false;
+			tocScrollMax = 0;
+			tocClientHeight = 0;
+			tocLinkOffsets = [];
 		}
 
-		// Active heading tracking
-		let current = headings[0];
-		for (const h of headings) {
-			if (h.el!.getBoundingClientRect().top <= 120) {
-				current = h;
-			} else {
-				break;
-			}
-		}
-		tocItems.forEach((item) => item.classList.remove('active'));
-		current?.item.classList.add('active');
-
-		// Desktop: keep the active TOC item in view.
-		// Scroll the list itself rather than calling scrollIntoView, which also scrolls
-		// every scrollable ancestor (including the window) and fights the sticky sidebar.
-		// The EDGE_PAD keeps an entry from sitting half-clipped against the top or bottom
-		// edge, which reads as broken text tucked under the "Table of Contents" heading.
-		if (isDesktop()) {
-			const list = tocSidebar.querySelector('.toc-list') as HTMLElement | null;
-			const activeLink = tocSidebar.querySelector('.toc-item.active > a') as HTMLElement | null;
-			if (list) {
-				const overflows = list.scrollHeight > list.clientHeight + 1;
-				if (overflows && activeLink) {
-					const EDGE_PAD = 14;
-					const listBox = list.getBoundingClientRect();
-					const linkBox = activeLink.getBoundingClientRect();
-					const itemTop = linkBox.top - listBox.top + list.scrollTop;
-					const itemBottom = itemTop + linkBox.height;
-					const maxScroll = list.scrollHeight - list.clientHeight;
-					let target: number | null = null;
-					if (itemTop - EDGE_PAD < list.scrollTop) {
-						target = itemTop - EDGE_PAD;
-					} else if (itemBottom + EDGE_PAD > list.scrollTop + list.clientHeight) {
-						target = itemBottom + EDGE_PAD - list.clientHeight;
-					}
-					if (target !== null) {
-						const clamped = Math.max(0, Math.min(target, maxScroll));
-						if (Math.abs(clamped - list.scrollTop) > 1) {
-							list.scrollTo({ top: clamped, behavior: 'smooth' });
-						}
-					}
-				}
-				updateTocFade(list, overflows);
-			}
+		if (contentEl) {
+			contentTop = contentEl.getBoundingClientRect().top + scrollY;
+			contentHeight = contentEl.offsetHeight;
 		}
 	}
 
-	// Fade the cut edges so a partially scrolled entry degrades gracefully instead of
-	// being sliced through the middle of a line.
-	function updateTocFade(list: HTMLElement, overflows: boolean) {
-		const atTop = list.scrollTop <= 1;
-		const atBottom = list.scrollTop >= list.scrollHeight - list.clientHeight - 1;
-		list.classList.toggle('is-clipped-top', overflows && !atTop);
-		list.classList.toggle('is-clipped-bottom', overflows && !atBottom);
+	// Two entry points share the frame. A window scroll or resize runs the whole
+	// pipeline; a scroll of the TOC list itself repaints only the edge fades, because
+	// running the scroll-into-view branch there would pull the list back to the active
+	// item while the reader is browsing it.
+	let frameQueued = false;
+	let wantFull = false;
+
+	function scheduleFrame(full: boolean) {
+		if (full) wantFull = true;
+		if (frameQueued) return;
+		frameQueued = true;
+		requestAnimationFrame(runFrame);
+	}
+
+	function runFrame() {
+		frameQueued = false;
+		const full = wantFull;
+		wantFull = false;
+		// Guard on the article only, not on the sidebar. .toc-sidebar is rendered only
+		// when a post has more than two h2/h3 headings, and the progress bar and the
+		// back-to-top button have to keep working on a post that has no TOC.
+		if (!contentEl) return;
+
+		// ---- read phase ------------------------------------------------------
+		if (metricsDirty) measureLayout();
+		const scrollY = window.scrollY;
+		const viewportH = window.innerHeight;
+		const listScrollTop = tocList ? tocList.scrollTop : 0;
+		const desktop = isDesktop();
+
+		// ---- write phase -----------------------------------------------------
+		if (full) {
+			// Mobile: clear inline styles left by a previous desktop layout. Once per
+			// bind is enough; the old code rewrote them on every scroll event.
+			if (!desktop && !mobileStylesCleared && tocSidebar) {
+				mobileStylesCleared = true;
+				tocSidebar.style.opacity = '';
+				tocSidebar.style.pointerEvents = '';
+				tocSidebar.style.left = '';
+			}
+
+			// Active heading: the last one whose top has passed y=120, defaulting to the
+			// first. Identical test to the old h.el.getBoundingClientRect().top <= 120,
+			// just against a cached document-relative top instead of a fresh layout read.
+			let active = headings.length ? 0 : -1;
+			for (let i = 0; i < headingTops.length; i++) {
+				if (headingTops[i] - scrollY <= 120) active = i;
+				else break;
+			}
+			if (active !== lastActive) {
+				lastActive = active;
+				tocItems.forEach((item) => item.classList.remove('active'));
+				if (active >= 0) headings[active].item.classList.add('active');
+			}
+
+			// Desktop: keep the active TOC item in view. Scroll the list itself rather
+			// than calling scrollIntoView, which also scrolls every scrollable ancestor
+			// (including the window) and fights the sticky sidebar. The EDGE_PAD keeps an
+			// entry from sitting half-clipped against the top or bottom edge, which reads
+			// as broken text tucked under the "Table of Contents" heading. This still runs
+			// every frame, not just when the active item changes, so a reader who scrolls
+			// the list away from the active entry gets pulled back exactly as before - it
+			// is pure arithmetic now, so running it every frame costs nothing.
+			if (desktop && tocList && tocOverflows && active >= 0 && tocLinkOffsets[active]) {
+				const EDGE_PAD = 14;
+				const itemTop = tocLinkOffsets[active].top;
+				const itemBottom = itemTop + tocLinkOffsets[active].height;
+				let target: number | null = null;
+				if (itemTop - EDGE_PAD < listScrollTop) {
+					target = itemTop - EDGE_PAD;
+				} else if (itemBottom + EDGE_PAD > listScrollTop + tocClientHeight) {
+					target = itemBottom + EDGE_PAD - tocClientHeight;
+				}
+				if (target !== null) {
+					const clamped = Math.max(0, Math.min(target, tocScrollMax));
+					if (Math.abs(clamped - listScrollTop) > 1) {
+						tocList.scrollTo({ top: clamped, behavior: 'smooth' });
+					}
+				}
+			}
+
+			// Reading progress. Rounding to 0.1% skips the write entirely when nothing
+			// visible changed, which is most frames of a slow scroll.
+			if (progressBar) {
+				const scrollable = contentHeight - viewportH;
+				const progress = scrollable <= 0
+					? 0
+					: Math.min(100, Math.max(0, ((scrollY - contentTop) / scrollable) * 100));
+				const rounded = Math.round(progress * 10) / 10;
+				if (rounded !== lastProgress) {
+					lastProgress = rounded;
+					progressBar.style.transform = 'scaleX(' + rounded / 100 + ')';
+				}
+			}
+
+			// Back to top
+			const showTop = scrollY > 400;
+			if (showTop !== lastBackToTop) {
+				lastBackToTop = showTop;
+				backToTopBtn?.classList.toggle('visible', showTop);
+			}
+		}
+
+		// Fade whichever edge of the TOC is actually cut, so a partially scrolled entry
+		// degrades gracefully instead of being sliced through the middle of a line.
+		if (tocList) {
+			const clipTop = tocOverflows && listScrollTop > 1;
+			const clipBottom = tocOverflows && listScrollTop < tocScrollMax - 1;
+			if (clipTop !== lastClipTop) {
+				lastClipTop = clipTop;
+				tocList.classList.toggle('is-clipped-top', clipTop);
+			}
+			if (clipBottom !== lastClipBottom) {
+				lastClipBottom = clipBottom;
+				tocList.classList.toggle('is-clipped-bottom', clipBottom);
+			}
+		}
 	}
 
 	// Re-resolve the TOC for the page currently on screen. Runs on first load and again
@@ -1391,28 +1603,76 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 	// only executes once per full page load.
 	function bindToc() {
 		refreshTocRefs();
+		tocList = tocSidebar ? tocSidebar.querySelector('.toc-list') : null;
+		progressBar = document.querySelector('.reading-progress-bar') as HTMLElement | null;
+		// Document order puts this page's floating button before the footer's own
+		// .back-to-top, which is what the old querySelector already relied on.
+		backToTopBtn = document.querySelector('.back-to-top');
 
 		// Keep the edge fades correct when the reader scrolls the TOC itself.
-		const list = document.querySelector('.toc-list') as HTMLElement | null;
-		if (list && !(list as any)._tocScrollBound) {
-			(list as any)._tocScrollBound = true;
-			list.addEventListener('scroll', () => {
-				updateTocFade(list, list.scrollHeight > list.clientHeight + 1);
-			}, { passive: true });
+		if (tocList && !(tocList as any)._tocScrollBound) {
+			(tocList as any)._tocScrollBound = true;
+			tocList.addEventListener('scroll', () => scheduleFrame(false), { passive: true });
+		}
+
+		// A View Transition hands us a fresh DOM with none of our classes or inline
+		// styles applied, so forget what was written to the previous page's elements.
+		metricsDirty = true;
+		lastActive = -1;
+		lastProgress = -1;
+		lastBackToTop = false;
+		lastClipTop = false;
+		lastClipBottom = false;
+		mobileStylesCleared = false;
+
+		// Re-point the invalidation observer at this page's article. Anything that
+		// changes the article's height moves the headings the TOC tracks - and so does
+		// anything that changes the height of something ABOVE it, which resizes neither
+		// .content nor .content-column: the mobile TOC drawer opening (+458px) and an ad
+		// slot injected above the article are both invisible to an observer on those two.
+		// document.body's height moves for all of them, so observe it as well. The
+		// ClientRouter swaps document.body on every navigation, hence re-observing here.
+		// Still no feedback loop: the write phase only sets a transform on a fixed 3px
+		// bar, toggles colour-only classes and writes an element's own scrollTop, none of
+		// which changes any layout box height.
+		if ('ResizeObserver' in window) {
+			if (!contentResizeObs) {
+				contentResizeObs = new ResizeObserver(() => {
+					metricsDirty = true;
+					scheduleFrame(true);
+				});
+			}
+			contentResizeObs.disconnect();
+			if (contentEl) contentResizeObs.observe(contentEl);
+			const column = document.querySelector('.content-column');
+			if (column) contentResizeObs.observe(column);
+			contentResizeObs.observe(document.body);
 		}
 
 		positionToc();
-		onScroll();
+		// Scheduled, not called inline. The old code ran onScroll() here during initial
+		// script execution, before the browser had laid the page out even once, so its
+		// getBoundingClientRect() calls forced that first layout synchronously - and it
+		// was thrown away moments later by enhanceContent()'s DOM writes and the font
+		// swap. A frame here measures once, after first paint, against settled layout.
+		scheduleFrame(true);
 	}
 
 	bindToc();
 	document.addEventListener('astro:page-load', bindToc);
 
-	// Window-level listeners survive View Transitions, so bind them once.
-	if (!(window as any)._blogTocGlobalBound) {
-		(window as any)._blogTocGlobalBound = true;
-		window.addEventListener('scroll', onScroll, { passive: true });
-		window.addEventListener('resize', () => { positionToc(); onScroll(); }, { passive: true });
+	// One window scroll listener drives the whole page. Its body is a flag check and a
+	// rAF schedule; all the work is in runFrame(). Window listeners survive View
+	// Transitions, so this is bound once for the session.
+	if (!(window as any)._blogScrollBound) {
+		(window as any)._blogScrollBound = true;
+		window.addEventListener('scroll', () => scheduleFrame(true), { passive: true });
+		window.addEventListener('resize', () => {
+			metricsDirty = true;
+			mobileStylesCleared = false;
+			positionToc();
+			scheduleFrame(true);
+		}, { passive: true });
 	}
 
 	// ---------------------------------------------------------------------------
@@ -1477,8 +1737,11 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 			pre.appendChild(btn);
 		});
 
-		// Make sure the lightbox element exists for this page
-		getLightbox();
+		// The lightbox is NOT built here. It used to be created on every page load and
+		// every View Transition navigation, which put a full-viewport fixed node and an
+		// <img> with no src into the render tree of every post - and PageSpeed listed that
+		// srcless image under "Image elements do not have explicit width and height".
+		// getLightbox() is idempotent, so the click handler below builds it on first use.
 
 		// Interactive task-list checkboxes with per-post localStorage persistence
 		const taskBoxes = document.querySelectorAll<HTMLInputElement>('li.task-list-item input[type="checkbox"]');
@@ -1504,36 +1767,16 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		}
 	}
 
-	function updateReadingProgress() {
-		const bar = document.querySelector('.reading-progress-bar') as HTMLElement | null;
-		const content = document.querySelector('.content') as HTMLElement | null;
-		if (!bar || !content) return;
-		const contentTop = content.getBoundingClientRect().top + window.scrollY;
-		const scrollable = content.offsetHeight - window.innerHeight;
-		const progress = scrollable <= 0
-			? 0
-			: Math.min(100, Math.max(0, ((window.scrollY - contentTop) / scrollable) * 100));
-		bar.style.width = `${progress}%`;
-	}
-
-	function updateBackToTop() {
-		document.querySelector('.back-to-top')?.classList.toggle('visible', window.scrollY > 400);
-	}
-
 	enhanceContent();
-	document.addEventListener('astro:page-load', () => {
-		enhanceContent();
-		updateReadingProgress();
-		updateBackToTop();
-	});
+	// The scroll pipeline above owns the reading progress bar and the back-to-top
+	// button now. bindToc() is registered on astro:page-load first, so the frame it
+	// schedules runs after this DOM mutation and measures the wrapped tables and the
+	// prepended heading anchors rather than the raw markup.
+	document.addEventListener('astro:page-load', enhanceContent);
 
 	// Delegated interaction + window listeners, bound exactly once for the session.
 	if (!(window as any)._blogContentGlobalBound) {
 		(window as any)._blogContentGlobalBound = true;
-
-		window.addEventListener('scroll', updateReadingProgress, { passive: true });
-		window.addEventListener('scroll', updateBackToTop, { passive: true });
-		window.addEventListener('resize', updateReadingProgress, { passive: true });
 
 		document.addEventListener('keydown', (e) => {
 			if (e.key === 'Escape') closeLightbox();
@@ -1590,11 +1833,16 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 				const { box, img: lightboxImg } = getLightbox();
 				lightboxImg.src = img.src;
 				lightboxImg.alt = img.alt;
+				// The box is built on first use, so on the very first open its style has never
+				// been computed and adding .active in the same task would resolve to a single
+				// computed style with no from-state, skipping the fade. Reading a layout
+				// property flushes the opacity:0 / scale(0.95) starting style first.
+				// requestAnimationFrame is not enough: its callbacks run before the frame's
+				// style recalc, so the element would still have no from-state. One forced
+				// layout on a deliberate click is not worth optimising away.
+				void box.offsetWidth;
 				box.classList.add('active');
 			}
 		});
 	}
-
-	updateReadingProgress();
-	updateBackToTop();
 </script>

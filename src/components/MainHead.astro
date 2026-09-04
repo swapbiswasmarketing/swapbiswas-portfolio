@@ -87,7 +87,7 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#151311" media="(prefers-color-scheme: dark)" />
 <link rel="dns-prefetch" href="https://api.kit.com" />
-<!-- Fonts are self-hosted from /public/fonts and declared in global.css, so there
+<!-- Fonts are self-hosted from /public/assets/fonts and declared in global.css, so there
      is nothing to preconnect to and no third-party stylesheet to wait on. See the
      comment at the top of src/styles/global.css. -->
 <!-- Analytics: only load on production -->
@@ -113,8 +113,11 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 			y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 		})(window,document,"clarity","script","myl5bf3yc1");
 
-		// Google AdSense (production only)
-		var pc3=document.createElement('link');pc3.rel='preconnect';pc3.href='https://pagead2.googlesyndication.com';pc3.crossOrigin='';document.head.appendChild(pc3);
+		// Google AdSense (production only).
+		// There is deliberately no preconnect hint for pagead2. The old one was a
+		// <link rel=preconnect> appended by JS one statement before the script that used
+		// it, in the same tick, so the script's own request opened the connection just as
+		// fast and PageSpeed reported it as an unused preconnect.
 		var ad=document.createElement('script');ad.async=true;ad.crossOrigin='anonymous';
 		ad.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3086200953871328';
 		document.head.appendChild(ad);

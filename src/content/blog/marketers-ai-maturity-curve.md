@@ -22,7 +22,7 @@ Let me walk you through each stage, where the data says most teams are stuck, an
 
 I've adapted this framework from [Gartner's AI Maturity Model](https://www.gartner.com/en/chief-information-officer/research/ai-maturity-model-toolkit) and [MIT Sloan's research on AI maturity levels](https://mitsloan.mit.edu/ideas-made-to-matter/whats-your-companys-ai-maturity-level), tailored specifically for marketing teams.
 
-![The Marketer's AI Maturity Curve - 5 stages from AI-Curious to AI-Native](/assets/blog/ai-maturity-curve/maturity-stages.svg "The Marketer's AI Maturity Curve")
+![The Marketer's AI Maturity Curve - 5 stages from AI-Curious to AI-Native](/assets/blog/ai-maturity-curve/maturity-stages.webp "The Marketer's AI Maturity Curve")
 
 ### Stage 1: AI-Curious (Awareness)
 
@@ -143,7 +143,7 @@ If you're not measuring AI's impact, you can't justify scaling it. Only 31% of A
 
 Here's my simple framework for advancing one stage at a time. I call it **SPAR**:
 
-![The SPAR Framework - Standardize, Process, Accountability, Results](/assets/blog/ai-maturity-curve/spar-framework.svg "The SPAR Framework")
+![The SPAR Framework - Standardize, Process, Accountability, Results](/assets/blog/ai-maturity-curve/spar-framework.webp "The SPAR Framework")
 
 ### **S - Standardize**
 Pick your tools. Document your processes. Create prompt libraries. Make AI usage consistent across the team. Choose them by the step that actually jams rather than by category, since a team stuck on first drafts needs a different shortlist than one stuck on keyword clustering, and this [bottleneck-first way of assembling an AI stack](/blog/best-ai-tools-for-affiliate-marketing/) runs that decision through content, SEO, analytics and email one layer at a time.
