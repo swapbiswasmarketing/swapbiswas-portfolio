@@ -57,6 +57,8 @@ Most B2B SaaS companies end up with a **hybrid** - value-based positioning ancho
 
 ## How to Create a Pricing Strategy: The Six-Step Workflow
 
+Packaging is step three, and the part teams underestimate is the labelling: [what to call each pricing tier](/blog/pricing-tier-names/) decides who self-selects into it and who gets routed to sales.
+
 ![Six-step pricing strategy framework from research through model selection, packaging, testing, rollout, and optimization](/assets/blog/how-to-create-a-pricing-strategy/pricing-workflow.webp "How to Create a Pricing Strategy: The Six-Step Workflow")
 
 ### Step 1: Research Willingness to Pay

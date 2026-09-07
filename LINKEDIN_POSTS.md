@@ -1258,3 +1258,130 @@ Fix your own denominator, write it on the dashboard, then worry about what other
 🔗 https://swapbiswas.com/blog/saas-win-rate-benchmark/?utm_source=linkedin&utm_medium=social&utm_campaign=saas-win-rate-benchmark
 
 #WinLossAnalysis #B2BSaaS #SalesBenchmarks #ProductMarketing #RevOps
+
+---
+
+## Batch of 2026-09-07
+
+Four posts. Every figure below is lifted from the published post's fact-checked table; no new claims. Rotate topics across the week rather than shipping two pricing posts back to back.
+
+### Design Partner or Beta Customer? One Question Settles It
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef). Two white cards side by side with hairline borders, left labelled "DESIGN PARTNER" with the caption "the design is still open", right labelled "BETA CUSTOMER" with the caption "only the durability is". Between them a single vermilion (#b53b15) dividing rule. Below, four smaller muted cards in a row reading "Pilot", "POC", "Early access", "CAB". Editorial, uncluttered, lots of white space. 1200x628.
+
+Most teams pick the label first and work out the program afterwards. It should run the other way. 🧭
+
+One question settles it: what is still open?
+
+• If what is open is **what to build**, you want a design partner.
+• If what is open is whether the thing you already built survives real data and real load, you want a beta customer.
+• Pilot, proof of concept and early access each close a third kind of decision.
+
+Swap the labels and you get a design partner program that produces a bug list.
+
+The part almost nobody plans is what the program owes you back. An early customer program is a marketing instrument with a contract attached, and the reference is a checkbox on the cover page, not a favour you go asking for in week twelve.
+
+Common Paper's Contract Benchmark Report puts numbers on what those agreements actually contain:
+
+• **45%** carry a case study commitment
+• **42%** name the partner as a reference
+• **25%** include fees, so three quarters are unpaid
+• **43%** offer a future discount instead
+• Terms cluster at **27%** three months, **22%** six months, **19%** a year
+
+That last line is the one to steal. The fixed term is the exit mechanism. Set it, write it down, and let it expire rather than negotiating your way out of a partnership that stopped producing signal.
+
+The post has the full decision table: six program types across product-maturity trigger, cohort size, duration, what each side owes, exit condition, and the launch deliverable each one has to produce.
+
+🔗 https://swapbiswas.com/blog/design-partner-vs-beta-customer/?utm_source=linkedin&utm_medium=social&utm_campaign=design-partner-vs-beta-customer
+
+#ProductMarketing #GoToMarket #ProductLaunch #B2BSaaS #CustomerResearch
+
+### I Counted the Tier Names on 41 SaaS Pricing Pages
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef), four white stat cards in a 2x2 grid with hairline borders and rounded corners. Card one reads "35 of 41" in large vermilion (#b53b15) with "use the word Enterprise" beneath. The other three read "21 of 32", "24 of 33" and "21 of 37" in ink, with small captions. A thin mono footnote line at the bottom. Editorial, print-like, generous white space. 1200x628.
+
+Every article about naming pricing tiers recycles the same list of name ideas and the same unsourced conversion statistic. So I went and counted instead. 📊
+
+On 7 September I captured 52 live B2B SaaS pricing pages. 43 returned tier names, 41 were usable. Here is what the labels actually look like:
+
+• **35 of 41** ladders use the word Enterprise somewhere, and 31 use it as an exact label
+• **21 of 32** free rungs are labelled exactly "Free". The other eleven use Hobby, Starter, Personal, Individual, Developer and four more
+• **24 of 33** ladders with a confirmed order hide the top price behind contact sales. Nine publish a number
+• **21 of 37** seat-priced ladders run exactly four rungs
+
+Two details I liked. Loom uses "Starter" for its free tier while Miro uses "Starter" for its first paid one, which is the same word doing opposite jobs. Sentry and LaunchDarkly both name their free rung "Developer".
+
+The practical point is that a tier name is a routing instruction, not a branding exercise. If "Team" is self-serve on your page but your 25-seat buyers actually need a quote, the name is lying and the page leaks.
+
+Caveats are in the post, because they matter: this is 44 hand-picked pages, not a random sample. Two rows were dropped as low confidence, nine URLs failed, and eight rows carry an order caveat so I make no claim about which rung is highest for those.
+
+Full audit table, company by company, in the post.
+
+🔗 https://swapbiswas.com/blog/pricing-tier-names/?utm_source=linkedin&utm_medium=social&utm_campaign=pricing-tier-names
+
+#SaaSPricing #PricingStrategy #ProductMarketing #Packaging #B2BSaaS
+
+### 383 Queries in Striking Distance Earned Me 10 Clicks
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef). A simple five-row table on a white card with hairline borders, rows labelled "1-3", "4-10", "11-20", "21-50", "51+" with a CTR column reading "6.98%", "0.047%", "0.022%", "0.005%", "0.003%". The top row's figure in vermilion (#b53b15), every other figure in ink. Title above in Bricolage-style sans: "What each position band actually paid". Editorial, print-like. 1200x628.
+
+The striking distance playbook says to filter Search Console for positions 11-20, push those pages onto page one, and collect the traffic. I ran the numbers on my own site. 📉
+
+Across 16 months and the top 1,000 queries:
+
+• Positions 1-3: 12 queries, 516 impressions, 36 clicks. **6.98% CTR**
+• Positions 4-10: 149 queries, 8,561 impressions, **4 clicks**
+• Positions 11-20: 234 queries, 27,339 impressions, **6 clicks**
+• Positions 21-50: 390 queries, 37,368 impressions, 2 clicks
+
+The whole striking distance band, positions 4 through 20, is 383 queries and 35,900 impressions that produced **ten clicks**. Moving a query from 15 to 8 bought me essentially nothing.
+
+And the 1-3 row is not the counterexample it looks like. One branded query, my own name, accounts for 289 of that band's 516 impressions and 35 of its 36 clicks. Strip it out and the remaining eleven top-three queries earned 1 click from 227 impressions.
+
+The targeting half of the method is fine. Filtering by position band is a fast, honest way to find queries you already rank for. What fails without announcing itself is the payoff estimate underneath it, which assumes arriving on page one converts impressions at published-curve rates.
+
+Published curves put position 4 around 7%. Mine measured 0.047%. Those are not like-for-like, and that is the point: neither number predicts the other, so borrowing one to forecast the other was always going to be wrong.
+
+This is one site, DR 11, one 488-day window, mostly informational queries. It is a worked example with its numbers shown, not a law. The post has the twenty-minute procedure to build the same band table for your own property before you spend a quarter on page-two optimisation.
+
+🔗 https://swapbiswas.com/blog/striking-distance-keywords/?utm_source=linkedin&utm_medium=social&utm_campaign=striking-distance-keywords
+
+#SEO #SearchConsole #ContentStrategy #SEOStrategy #Analytics
+
+### 6.2% of Developers Use Company Forums. 84.2% Use Stack Overflow.
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Warm paper background (#f6f4ef). A horizontal bar chart on a white card with hairline borders: "Stack Overflow 84.2%", "Public GitHub 66.9%", "Reddit 53.7%", "Discord 38.9%", "Company forum 6.2%". The top four bars in ink (#15130f), the bottom "company forum" bar in vermilion (#b53b15) and visibly tiny. Clean editorial chart, generous white space, no gradients. 1200x628.
+
+When a developer community strategy lands on the roadmap, the first question is usually about platform. Discord or a forum, who staffs it on a Sunday, whether the hosted community tool is worth the licence. 🛠️
+
+That is the cheapest decision in the document to reverse.
+
+The 2025 Stack Overflow Developer Survey asked 30,190 respondents which community platforms they had used considerably or consistently in the past year:
+
+• Stack Overflow **84.2%**
+• Public GitHub **66.9%**
+• Reddit **53.7%**
+• Discord **38.9%**
+• Company forum **6.2%**
+
+Your developers are already somewhere. Mostly somewhere you do not own.
+
+That changes the job. A strategy that opens with "pick a platform" has already lost the audience it was written for, because the work is influencing surfaces you cannot control: GitHub issues and discussions, Stack Overflow answers, Reddit threads, someone else's Discord.
+
+Two decisions actually settle whether the program survives its first budget cycle:
+
+• **Which surfaces you have to work without owning them**, and what each one is genuinely good for
+• **Which product number the community is graded on**, and what that number cannot prove
+
+Most guides close with a measurement section listing member counts, posts and engagement rate. Those measure the community's health, not the product's. The number a finance team will accept has to connect to activation, retention or deflection, and you have to be honest that most of those links are correlational unless you hold cohorts.
+
+The post has the surface map: each platform against who owns it internally, the one product-linked measure it can support, and how it fails.
+
+🔗 https://swapbiswas.com/blog/developer-community-strategy/?utm_source=linkedin&utm_medium=social&utm_campaign=developer-community-strategy
+
+#DeveloperMarketing #DevRel #DeveloperCommunity #ProductMarketing #B2BSaaS

@@ -68,7 +68,7 @@ Lock the launch brief and the narrative before anything else.
 
 ### Week -8 to -6: Private Beta
 
-Run a private beta with 20-50 design partners. The goal is not feedback; the goal is to find what is broken before scale finds it.
+Run a private beta with 20-50 design partners. The goal is not feedback; the goal is to find what is broken before scale finds it. Which of the two you are running here matters: [design partner or beta customer](/blog/design-partner-vs-beta-customer/) turns on whether the design is still open, or only the durability.
 
 - Recruit a mix of segments and use cases.
 - Weekly check-ins with each partner for 4 weeks.

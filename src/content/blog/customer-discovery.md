@@ -341,6 +341,8 @@ That last section is the one senior stakeholders read first, and including it is
 
 Discovery run against a live product also gives you a cleaner read on [product-market fit](/blog/what-is-product-market-fit/) than any survey, because you are hearing which constraint each segment still cannot get past.
 
+Discovery ends where a build commitment begins. What replaces it is a structured early-customer program, and [design partner, beta, pilot and proof of concept](/blog/design-partner-vs-beta-customer/) are four different commitments, not four words for one.
+
 ## Four Ways Discovery Fails Inside an Established Company
 
 1. The work is outsourced and comes back as a deck. A central research team runs the calls, writes the synthesis, and presents it. Teresa Torres puts the opposite condition at the centre of her definition: the team building the product has to do the talking, because the useful part of an interview is the unplanned follow-up. Keep the person who owns the decision on every call, even when a trained researcher is asking the questions.

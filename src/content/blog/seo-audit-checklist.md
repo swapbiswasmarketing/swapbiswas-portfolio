@@ -147,7 +147,7 @@ Last, because it is the polish, not the foundation. But internal linking is the 
 
 ### Internal linking
 
-Make sure your most important pages are not buried five clicks from the homepage. Strong, descriptive internal links from relevant pages pass authority and signal what matters. I treat orphan pages, the ones with no internal links pointing at them, as a priority fix.
+Before you commit a quarter to lifting page-two pages, measure what a lift is worth on your own property: [the striking distance payoff curve](/blog/striking-distance-keywords/) is site-specific, and on some sites the 4-20 band pays almost nothing. Make sure your most important pages are not buried five clicks from the homepage. Strong, descriptive internal links from relevant pages pass authority and signal what matters. I treat orphan pages, the ones with no internal links pointing at them, as a priority fix.
 
 ### Backlink health
 

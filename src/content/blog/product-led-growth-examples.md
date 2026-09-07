@@ -39,7 +39,7 @@ Slack grew to an estimated **47 million daily active users** by 2025 ([DemandSag
 
 ### 2. Notion - Freemium Plus Template Marketplace
 
-**PLG mechanic:** A generous free tier combined with a community-driven template ecosystem that turns users into distribution channels.
+**PLG mechanic:** A generous free tier combined with a community-driven template ecosystem that turns users into distribution channels. Reproducing that for a developer product means working surfaces you do not own, which is a different plan: see [developer community strategy](/blog/developer-community-strategy/).
 
 Notion crossed **100 million users** and **$500 million in ARR** by September 2025 ([CNBC](https://www.cnbc.com/2025/09/18/notion-launches-ai-agent-as-it-crosses-500-million-in-annual-revenue.html)). The template marketplace is brilliant - creators build and share Notion templates, driving new signups from people who discover them through search and social.
 

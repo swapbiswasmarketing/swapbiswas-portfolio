@@ -205,6 +205,8 @@ Three to five bullet points covering the biggest wins, losses, and recommended n
 - Prioritized list of recommended actions
 - Status update on last month's action items
 
+One number worth adding to any report built on Search Console: clicks per position band. [The band table](/blog/striking-distance-keywords/) shows whether ranking gains are converting on your property or stalling short of the top three.
+
 ## Common SEO Reporting Mistakes
 
 **Reporting metrics without context.** Saying "we rank #4 for target keyword" means nothing if you were #3 last month and #15 the month before. Always show the trajectory.

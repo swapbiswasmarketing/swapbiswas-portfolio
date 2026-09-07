@@ -68,7 +68,7 @@ This is the spine. Every audience in a launch gets a position in a queue, and th
 | **D-14** | Customer success managers | They need time to decide which named accounts get a personal heads-up, and to book those conversations. |
 | **D-10** | Sales leadership, then reps | Pricing, packaging, the demo, the objection list, and the rule for deals already in flight. |
 | **D-7** | Analysts and press, under embargo | Their calendars, not yours, set this date. |
-| **D-5** | Beta and design partners | They already use the thing. Finding out via a public blog post reads as a downgrade in status. |
+| **D-5** | Beta and design partners | They already use the thing. Finding out via a public blog post reads as a downgrade in status. Which of them you owe what depends on [which early-customer program you actually ran](/blog/design-partner-vs-beta-customer/). |
 | **D-3** | The whole company | An all-hands or written post lands well once every customer-facing team is already trained, and badly before that. |
 | **D-1** | Board, investors and partners | Late enough that the date is real, early enough that nobody is surprised. |
 | **D-0** | Everyone else | Customers, prospects, press, community, in that order, on the hour. |

@@ -208,6 +208,7 @@ Channel choice follows from where the audience already learns. Asked how they ha
 | Channel | What it returns | Real cost | How it fails |
 |---|---|---|---|
 | Docs and reference | Evaluation completions, citations in AI answers | Ongoing editorial time | Owned by nobody, so it rots |
+| Community surfaces | Answers that keep working, plus support deflection | Staffing on other people's platforms | [Measured on its own health, not the product's](/blog/developer-community-strategy/) |
 | Search and answer engines | Compounding discovery on problem queries | Content plus technical SEO | Written for keywords, not for tasks |
 | Open source and sample repos | Trust, plus a fast path to first success | Engineering hours, issue triage | Abandoned repo with stale dependencies |
 | Public Q&A and forums | Long-tail discovery from other people's questions | Named humans answering | Marketing voice; the audience detects it instantly |

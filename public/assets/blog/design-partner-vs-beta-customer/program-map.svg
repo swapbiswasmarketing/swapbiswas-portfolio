@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="40" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Where Each Program Sits on the Product Maturity Line</text>
+  <text x="40" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Four of the six are fixed to a stage of the build. Two are fixed to a deal instead.</text>
+
+  <line x1="180" y1="150" x2="180" y2="548" stroke="#e4dfd6" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="470" y1="150" x2="470" y2="548" stroke="#e4dfd6" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="760" y1="150" x2="760" y2="548" stroke="#e4dfd6" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="1050" y1="150" x2="1050" y2="548" stroke="#c9c2b7" stroke-width="2"/>
+  <line x1="1340" y1="150" x2="1340" y2="548" stroke="#e4dfd6" stroke-width="1" stroke-dasharray="4 6"/>
+
+  <text x="150" y="200" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Design Partner</text>
+  <rect x="180" y="214" width="420" height="26" rx="8" fill="#f7ded6" stroke="#b53b15" stroke-width="2"/>
+  <text x="628" y="234" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">ends before the design is frozen, then graduates or retires</text>
+
+  <text x="700" y="286" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Beta Customer</text>
+  <rect x="700" y="300" width="350" height="26" rx="8" fill="#ffffff" stroke="#c9c2b7" stroke-width="2"/>
+
+  <text x="850" y="372" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Early Access Program</text>
+  <rect x="850" y="386" width="200" height="26" rx="8" fill="#ffffff" stroke="#c9c2b7" stroke-width="2"/>
+  <text x="838" y="432" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">beta and early access overlap here, and both end at GA</text>
+  <path d="M 850 426 L 1050 426 M 850 420 L 850 432 M 1050 420 L 1050 432" stroke="#a89f93" stroke-width="1.5" fill="none"/>
+
+  <text x="1050" y="458" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Customer Advisory Board</text>
+  <rect x="1050" y="472" width="290" height="26" rx="8" fill="#ffffff" stroke="#c9c2b7" stroke-width="2"/>
+  <text x="1035" y="492" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">starts where the pre-GA programs stop</text>
+
+  <line x1="180" y1="548" x2="1340" y2="548" stroke="#15130f" stroke-width="2"/>
+  <path d="M 180 542 L 180 554 M 470 542 L 470 554 M 760 542 L 760 554 M 1050 542 L 1050 554 M 1340 542 L 1340 554" stroke="#15130f" stroke-width="2"/>
+
+  <text x="180" y="580" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.06em" fill="#6a645c">PROBLEM VALIDATED</text>
+  <text x="470" y="580" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.06em" fill="#6a645c">DESIGN IN FLUX</text>
+  <text x="760" y="580" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.06em" fill="#6a645c">FEATURE COMPLETE</text>
+  <text x="1050" y="580" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.06em" fill="#15130f">GENERAL AVAILABILITY</text>
+  <text x="1340" y="580" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.06em" fill="#6a645c">POST-GA</text>
+
+  <rect x="40" y="618" width="1320" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="72" y="662" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Proof of Concept and Pilot</text>
+  <text x="72" y="696" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Both are fixed to a deal rather than to a stage of the build, so they can land anywhere on the line</text>
+  <text x="72" y="722" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">above. That is why they get confused with the four programs that cannot move.</text>
+
+  <text x="40" y="778" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Adjacent programs are the ones that get merged. The bars show which pairs actually touch.</text>
+</svg>

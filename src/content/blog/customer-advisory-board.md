@@ -41,7 +41,7 @@ Four things routinely get called a CAB. Only one of them is:
 | Focus group | Recruited per session, often paid | One-off | Nothing after the session |
 | Beta or design partner program | Product-specific, tactical | Per release | Access to the build |
 
-The board sits at the strategic end of a broader listening system. It is one input in a [voice of the customer](/blog/what-is-voice-of-the-customer/) program, and the most expensive one per data point, which is exactly why it needs measuring.
+The three rows above are separate programs with separate exit conditions, and picking the wrong one is common enough to be worth its own decision table: see [design partner vs beta customer](/blog/design-partner-vs-beta-customer/) for the trigger that routes you to each. The board sits at the strategic end of a broader listening system. It is one input in a [voice of the customer](/blog/what-is-voice-of-the-customer/) program, and the most expensive one per data point, which is exactly why it needs measuring.
 
 Some companies use "customer council" for the same thing. Others split the two: an executive board for strategy, an operator-level customer council for workflow detail. Either naming works. Put your choice in the charter.
 

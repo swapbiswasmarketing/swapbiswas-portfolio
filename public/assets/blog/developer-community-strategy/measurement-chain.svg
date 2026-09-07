@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 540" width="1400" height="540">
+  <rect x="0" y="0" width="1400" height="540" fill="#f6f4ef"/>
+
+  <text x="50" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">From a Community Surface to a Number That Reports Up</text>
+  <text x="50" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Four steps, and the caveat that has to travel with the result</text>
+
+  <rect x="50" y="140" width="295" height="205" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="72" y="178" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 01</text>
+  <text x="72" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Capture the Source</text>
+  <text x="72" y="258" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Referrer or invite code</text>
+  <text x="72" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">stored on the account</text>
+  <text x="72" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">record, not only in GA</text>
+
+  <line x1="352" y1="242" x2="376" y2="242" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="376,235 390,242 376,249" fill="#15130f"/>
+
+  <rect x="395" y="140" width="295" height="205" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="417" y="178" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 02</text>
+  <text x="417" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Join the Identity</text>
+  <text x="417" y="258" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Discord or GitHub</text>
+  <text x="417" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">handle mapped to the</text>
+  <text x="417" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">account, with consent</text>
+
+  <line x1="697" y1="242" x2="721" y2="242" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="721,235 735,242 721,249" fill="#15130f"/>
+
+  <rect x="740" y="140" width="295" height="205" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="762" y="178" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 03</text>
+  <text x="762" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Read the Product</text>
+  <text x="762" y="258" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">First successful call,</text>
+  <text x="762" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">day-90 retention, seats</text>
+  <text x="762" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">on the account</text>
+
+  <line x1="1042" y1="242" x2="1066" y2="242" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1066,235 1080,242 1066,249" fill="#15130f"/>
+
+  <rect x="1085" y="140" width="295" height="205" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1107" y="178" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 04</text>
+  <text x="1107" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Report the Delta</text>
+  <text x="1107" y="258" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Community cohort vs</text>
+  <text x="1107" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">everyone else, with the</text>
+  <text x="1107" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">cohort size attached</text>
+
+  <rect x="50" y="395" width="6" height="100" rx="3" fill="#b53b15"/>
+  <rect x="68" y="395" width="1282" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="437" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Step 04 is correlational. Developers who join a community are likely to have been more invested already,</text>
+  <text x="96" y="469" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">so the delta measures selection and program effect together. Report the cohort definition and size next to it.</text>
+</svg>

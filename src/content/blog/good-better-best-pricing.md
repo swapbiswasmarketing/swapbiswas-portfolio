@@ -53,7 +53,7 @@ That order matters. Teams that start with the feature list end up with three arb
 | Value metric | One metric, the same across all three tiers | Tiers that cannot be compared, so buyers stall |
 | Tier count | Three published, plus optional bookends | Choice overload above four or five options |
 | Feature access | Cumulative and additive | Buyers doing feature-grid archaeology |
-| Naming | Describe the buyer or the level, never the internal roadmap | Names nobody can self-select into |
+| Naming | Describe the buyer or the level, never the internal roadmap ([what 41 live ladders actually use](/blog/pricing-tier-names/)) | Names nobody can self-select into |
 | Enterprise | Quote-based, sits above Best | A published number that caps your biggest deals |
 
 Look at what the published pages actually do with the metric. Semrush lists **Starter at $199/mo, Pro+ at $299/mo and Advanced at $549/mo** on monthly billing, alongside a narrower SEO plan at $139. The feature list adds a handful of items per step: Pro+ layers on historical data, content optimization and cannibalization analysis, Advanced adds share of voice and API access. The metric moves far harder: **5, 15 and 40 websites to monitor, and 500, 1,500 and 5,000 keywords tracked daily** ([Semrush pricing](https://www.semrush.com/prices/)). Same product, three levels of the same unit.

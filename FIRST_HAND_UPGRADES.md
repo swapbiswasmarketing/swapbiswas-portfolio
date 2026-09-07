@@ -112,3 +112,25 @@ Have you ever run, or sat in on, a geo holdout, platform lift test or campaign p
 ## saas-win-rate-benchmark
 
 In a win-rate reset you have actually run: what was the reported blended win rate before you fixed the loss-reason picklist, and what was it after no-decision was split out as its own value? The two numbers, the quarter, and roughly how many closed opportunities were in the cohort. A single before/after pair with the deal count attached would turn the "One Deal Set, Five Win Rates" section from a constructed illustration into a first-hand artifact.
+
+---
+
+# Batch of 2026-09-07
+
+Four posts written 2026-09-07 (design partner vs beta customer, pricing tier names, striking distance keywords, developer community strategy). One is `first-hand` already: striking-distance-keywords publishes this site's own Google Search Console band table. The other three are `synthesized` and use named public examples, per the standing preference set on 2026-08-29.
+
+## design-partner-vs-beta-customer
+
+For the last two LambdaTest features that shipped with a private beta: how many accounts were enrolled, how many produced a usable named quote or case study by GA day, and was reference permission asked for at enrolment or after the beta closed? A single conversion rate ("we enrolled 34 accounts and got 3 publishable references, all 3 from accounts we asked at enrolment") would replace the weakest paragraph in the post, the generic "ask for reference rights in the same document as the feedback obligations" advice closing "Every Program Owes Your Launch a Named Deliverable". Second best: the three design-partner exit gates in "How to Instrument an Early Customer Program" are currently asserted with nothing behind them; naming one real program that failed a gate and what was done about it would make that section first-hand.
+
+## pricing-tier-names
+
+Have you ever renamed a live pricing tier, and if so, which of the nine surfaces in the rename diagram was the one everybody forgot until it broke? One sentence naming the surface and what it cost would convert the rename section from operator reasoning into first-hand evidence, and it is the one part of this post with no primary claim behind it. Second best: what does your own pricing page's top rung publish today, a number or a contact-sales CTA, and what was the argument that settled it?
+
+## striking-distance-keywords
+
+Already `first-hand` on its band table, but one upgrade would make it a controlled test rather than a snapshot. The four striking-distance posts optimized on 2026-08-15 have a re-measure due around 2026-09-26. For those four URLs: average position, impressions and clicks in the 30 days before 2026-08-15 versus the 30 days after the re-measure, and did any cross from the 11-20 band into 4-10 with clicks following? That belongs in "Do Striking Distance Keywords Work?" as a before/after table.
+
+## developer-community-strategy
+
+When a developer asks a question in a public GitHub issue or a community channel about LambdaTest, which internal queue does that thread land in first, and does any system link that thread back to an account record? If the identity join does not exist, what blocked it: consent, tooling, or nobody owning it? The answer belongs in "The Developer Community Ownership Map", replacing the generic Escalation column with one real routing path, and in the "Identity join" row of the 90-day table, where a sentence on what actually stops teams building that join would turn the strongest section from prescription into reporting.

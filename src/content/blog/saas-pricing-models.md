@@ -84,7 +84,7 @@ Flat-rate is underrated for a first commercial release and almost always wrong o
 Three or four plans at rising price points, each built for a segment. The most common model in B2B SaaS, and the default for a reason.
 
 - **Value metric:** the plan itself, which bundles features, limits, and support
-- **Example:** HubSpot, Zendesk, and most self-serve SaaS run Starter / Professional / Enterprise ladders
+- **Example:** HubSpot, Zendesk, and most self-serve SaaS run Starter / Professional / Enterprise ladders. That convergence is measurable: across [41 live SaaS pricing ladders](/blog/pricing-tier-names/), 35 use the word Enterprise somewhere
 - **Use it when:** distinct segments derive value from distinct feature sets
 - **The rule:** three tiers is the sweet spot. Two gives you nothing to anchor against; four or more creates paralysis. The middle tier should be the one you want most buyers to choose
 

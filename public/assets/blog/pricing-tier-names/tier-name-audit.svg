@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 660" width="1400" height="660">
+  <rect x="0" y="0" width="1400" height="660" fill="#f6f4ef"/>
+
+  <text x="40" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">What 41 SaaS Pricing Ladders Are Named</text>
+  <text x="40" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Counted from 41 usable ladders captured on 7 September 2026 from 52 pricing pages</text>
+
+  <rect x="40" y="150" width="640" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="72" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="42" font-weight="600" fill="#b53b15">35 of 41</text>
+  <text x="72" y="264" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">ladders use the word Enterprise somewhere</text>
+  <text x="72" y="296" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">in their tier names.</text>
+  <text x="72" y="330" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">31 of them use Enterprise as an exact label.</text>
+
+  <rect x="720" y="150" width="640" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="752" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="42" font-weight="600" fill="#15130f">21 of 32</text>
+  <text x="752" y="264" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">free rungs are labeled exactly Free. The</text>
+  <text x="752" y="296" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">other eleven use nine different labels.</text>
+  <text x="752" y="330" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Hobby, Starter, Personal, Individual, Developer and four more.</text>
+
+  <rect x="40" y="380" width="640" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="72" y="448" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="42" font-weight="600" fill="#15130f">21 of 37</text>
+  <text x="72" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">seat-priced ladders run exactly four rungs.</text>
+  <text x="72" y="526" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The full range is three rungs to eight.</text>
+  <text x="72" y="560" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Box is the widest at eight rungs.</text>
+
+  <rect x="720" y="380" width="640" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="752" y="448" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="42" font-weight="600" fill="#15130f">24 of 33</text>
+  <text x="752" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">ladders with a confirmed order hide the top</text>
+  <text x="752" y="526" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">tier price behind contact sales.</text>
+  <text x="752" y="560" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Nine publish a number on the top rung.</text>
+
+  <text x="40" y="626" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Two low-confidence pages excluded. Four usage-priced pages excluded from the rung count.</text>
+</svg>

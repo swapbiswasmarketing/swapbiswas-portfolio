@@ -193,6 +193,8 @@ If you need ranking data at scale - hundreds of thousands of keywords across mul
 
 **Recommendation:** Start with Google Search Console. Every site should have it set up. If you need daily tracking and competitor data, add Ahrefs or Semrush based on your budget and workflow preference.
 
+Before acting on a position band, check what that band is worth on your own site. [Measuring the striking distance payoff curve](/blog/striking-distance-keywords/) takes one Search Console export and can show that the 4-20 band converts at close to nothing.
+
 ## What to Do After You Check Your Rankings
 
 Checking your ranking is step one. The real value comes from acting on what you find. Here's how to turn ranking data into SEO improvements.

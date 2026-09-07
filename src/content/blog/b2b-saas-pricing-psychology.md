@@ -162,7 +162,7 @@ Two of those deserve a note.
 
 ## The Tier Boundary Is What Manufactures the Anchor
 
-A tier boundary reads as a claim about who you are, made to people deciding whether you are built for a company like theirs. They treat the feature list underneath it as evidence for that claim.
+A tier boundary reads as a claim about who you are, made to people deciding whether you are built for a company like theirs. They treat the feature list underneath it as evidence for that claim, and [the label you put on the boundary](/blog/pricing-tier-names/) is the first part of it they read.
 
 What a committee infers from your boundaries:
 

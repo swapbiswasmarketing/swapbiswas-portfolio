@@ -241,6 +241,8 @@ Track who quotes the claim, who links to it, which analysts repeat it, and wheth
 
 Review the inventory once a quarter against two questions. Did at least two new evidenced claims get added, or did the same claims come back wearing new headlines? And can anyone in the field name a piece they sent to a buyer without being asked to?
 
+For developer audiences most of that reach happens on platforms the company does not control, and [who owns each of those surfaces](/blog/developer-community-strategy/) decides whether the work is repeatable or personal.
+
 ## B2B Thought Leadership Reaches Buyers You Never Meet
 
 The strongest practical case for b2b thought leadership is reach into a stakeholder your sales team will never book a meeting with.

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
+  <rect x="0" y="0" width="1400" height="780" fill="#f6f4ef"/>
+
+  <text x="40" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Where a Pricing Tier Name Is Written</text>
+  <text x="40" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Every surface a rename has to reach, not just the pricing page</text>
+
+  <rect x="40" y="150" width="420" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="66" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#b53b15">WHAT YOU RENAMED</text>
+  <text x="66" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Pricing Page</text>
+  <text x="66" y="264" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The public label. Usually the</text>
+  <text x="66" y="296" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">only line the plan budgets for.</text>
+
+  <rect x="490" y="150" width="420" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="516" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">BILLING</text>
+  <text x="516" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Plan IDs</text>
+  <text x="516" y="264" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Internal IDs outlive labels.</text>
+  <text x="516" y="296" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rename the display, not the ID.</text>
+
+  <rect x="940" y="150" width="420" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="966" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">LEGAL</text>
+  <text x="966" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Signed Order Forms</text>
+  <text x="966" y="264" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Contracts name the old plan.</text>
+  <text x="966" y="296" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Map old to new in writing.</text>
+
+  <rect x="40" y="342" width="420" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="66" y="378" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PRODUCT</text>
+  <text x="66" y="418" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">In-App Upgrade Prompts</text>
+  <text x="66" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Paywalls, seat-limit banners,</text>
+  <text x="66" y="488" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and the plan badge in settings.</text>
+
+  <rect x="490" y="342" width="420" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="516" y="378" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">SUPPORT</text>
+  <text x="516" y="418" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Macros and Help Center</text>
+  <text x="516" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Saved replies and articles</text>
+  <text x="516" y="488" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">that route by plan name.</text>
+
+  <rect x="940" y="342" width="420" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="966" y="378" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">DOCS</text>
+  <text x="966" y="418" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">API Refs and Errors</text>
+  <text x="966" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A rate-limit error that names</text>
+  <text x="966" y="488" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">a plan is shipped code.</text>
+
+  <rect x="40" y="534" width="420" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="66" y="570" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">SALES</text>
+  <text x="66" y="610" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Quotes and Battlecards</text>
+  <text x="66" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Templates, discount approvals,</text>
+  <text x="66" y="680" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and the competitor grid.</text>
+
+  <rect x="490" y="534" width="420" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="516" y="570" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">DATA</text>
+  <text x="516" y="610" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Reporting Dimensions</text>
+  <text x="516" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A rename splits every revenue</text>
+  <text x="516" y="680" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">chart into before and after.</text>
+
+  <rect x="940" y="534" width="420" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="966" y="570" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">OWED</text>
+  <text x="966" y="610" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Legacy Plan Page</text>
+  <text x="966" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Grandfathered customers need</text>
+  <text x="966" y="680" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">old-to-new mapped in public.</text>
+
+  <text x="40" y="746" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Count the surfaces before you commit to a rename date.</text>
+</svg>

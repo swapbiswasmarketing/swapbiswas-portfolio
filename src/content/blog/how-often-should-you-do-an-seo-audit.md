@@ -90,7 +90,7 @@ Every 90 days, go beyond vital signs and actually investigate. This is where you
 
 Content decay is the silent killer. Pages that used to rank slowly slide as competitors publish fresher, more complete answers and as the query itself evolves. Nothing broke, so nothing alerts you.
 
-A quarterly pass through your top pages, comparing their current position and traffic to last quarter, surfaces the posts that need a refresh before they fall out of striking distance. Catch a decaying page early and a light update restores it. Catch it late and you are rebuilding from scratch.
+A quarterly pass through your top pages, comparing their current position and traffic to last quarter, surfaces the posts that need a refresh before they fall out of [striking distance](/blog/striking-distance-keywords/). Catch a decaying page early and a light update restores it. Catch it late and you are rebuilding from scratch.
 
 ### Internal linking
 

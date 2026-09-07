@@ -65,7 +65,7 @@ Build a sales team that targets high-value accounts through cold outreach, demos
 
 Build a community of users, practitioners, and advocates who drive product adoption, support each other, and create content.
 
-Notion's template marketplace, Figma's community files, and HubSpot's Academy all demonstrate how community creates distribution that the company does not have to pay for.
+Notion's template marketplace, Figma's community files, and HubSpot's Academy all demonstrate how community creates distribution that the company does not have to pay for. For developer audiences the surfaces are mostly ones you do not own, which changes both the plan and the reporting line: see [developer community strategy](/blog/developer-community-strategy/).
 
 **When to use:** Products with power users who create shareable output or have strong professional identities around the tool category.
 

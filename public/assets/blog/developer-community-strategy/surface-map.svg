@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1010" width="1400" height="1010">
+  <rect x="0" y="0" width="1400" height="1010" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">The Developer Community Surface Map</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Where the conversation happens, the product measure it can support, and how a migration off it fails</text>
+
+  <text x="60" y="148" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#b53b15">EARNED / YOU DO NOT OWN IT</text>
+  <rect x="60" y="160" width="620" height="6" fill="#b53b15"/>
+  <text x="720" y="148" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">OWNED / YOU RUN IT</text>
+  <rect x="720" y="160" width="620" height="6" fill="#e4dfd6"/>
+
+  <rect x="60" y="190" width="620" height="178" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">GitHub Issues and Discussions</text>
+  <text x="84" y="272" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Good for: bug reports, feature requests, real usage</text>
+  <text x="84" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Measure: threads that became changelog items</text>
+  <text x="84" y="336" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Fails when: closing threads buries indexed pages</text>
+
+  <rect x="60" y="390" width="620" height="178" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="434" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Stack Overflow and Public Q&amp;A</text>
+  <text x="84" y="472" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Good for: people mid-problem, at search intent</text>
+  <text x="84" y="504" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Measure: tickets avoided on answered topics</text>
+  <text x="84" y="536" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Fails when: a tag cannot be migrated at all</text>
+
+  <rect x="60" y="590" width="620" height="178" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="634" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Reddit and Hacker News</text>
+  <text x="84" y="672" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Good for: unfiltered objections and reaction</text>
+  <text x="84" y="704" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Measure: objections that changed a message</text>
+  <text x="84" y="736" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Fails when: a forum link reads as extraction</text>
+
+  <rect x="60" y="790" width="620" height="178" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="834" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Third-Party Discord and Slack</text>
+  <text x="84" y="872" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Good for: peer help you never onboarded</text>
+  <text x="84" y="904" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Measure: none you can honestly claim</text>
+  <text x="84" y="936" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Fails when: recruiting gets you removed</text>
+
+  <rect x="720" y="190" width="620" height="178" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Your Forum</text>
+  <text x="744" y="272" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Good for: durable, indexable, canonical answers</text>
+  <text x="744" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Measure: tickets avoided on topics it answers</text>
+  <text x="744" y="336" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Fails when: launched before the earned ones</text>
+
+  <rect x="720" y="390" width="620" height="178" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="434" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Your Discord or Slack</text>
+  <text x="744" y="472" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Good for: fast help while the product changes</text>
+  <text x="744" y="504" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Measure: activation of referred signups</text>
+  <text x="744" y="536" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Fails when: chat is gone by the next release</text>
+
+  <rect x="720" y="590" width="620" height="178" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="634" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Docs Feedback and Changelog</text>
+  <text x="744" y="672" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Good for: the exact page that loses evaluations</text>
+  <text x="744" y="704" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Measure: time to first successful integration</text>
+  <text x="744" y="736" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Fails when: routed away from the page owner</text>
+
+  <rect x="720" y="790" width="620" height="178" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="834" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Meetups, Events, Newsletter</text>
+  <text x="744" y="872" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Good for: reaching the people who rarely post</text>
+  <text x="744" y="904" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Measure: retention delta for attendees</text>
+  <text x="744" y="936" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Fails when: gating turns trust into a lead form</text>
+</svg>

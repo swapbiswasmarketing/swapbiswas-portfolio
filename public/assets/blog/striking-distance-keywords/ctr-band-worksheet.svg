@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 870" width="1400" height="870">
+  <rect x="0" y="0" width="1400" height="870" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">The CTR Band Worksheet</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">Measure your own payoff curve before you spend a quarter optimizing page 2</text>
+
+  <rect x="60" y="140" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 1</text>
+  <text x="240" y="180" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Export the query table</text>
+  <text x="240" y="214" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Search Console, Performance, Queries tab. Set the longest date range you have. Export all rows.</text>
+
+  <line x1="700" y1="240" x2="700" y2="264" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,264 707,264 700,278" fill="#15130f"/>
+
+  <rect x="60" y="278" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="318" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 2</text>
+  <text x="240" y="318" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Bucket every row by average position</text>
+  <text x="240" y="352" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Five bands: 1-3, 4-10, 11-20, 21-50, 51 and worse. Write the boundary rule down.</text>
+
+  <line x1="700" y1="378" x2="700" y2="402" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,402 707,402 700,416" fill="#15130f"/>
+
+  <rect x="60" y="416" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="456" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 3</text>
+  <text x="240" y="456" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Sum each band, then reconcile</text>
+  <text x="240" y="490" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Total queries, impressions and clicks per band. The query counts must add back to the export.</text>
+
+  <line x1="700" y1="516" x2="700" y2="540" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,540 707,540 700,554" fill="#15130f"/>
+
+  <rect x="60" y="554" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="594" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 4</text>
+  <text x="240" y="594" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Read the gap between 11-20 and 4-10</text>
+  <text x="240" y="628" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Clicks divided by impressions in each band. That difference is what a page-2 promotion buys.</text>
+
+  <line x1="700" y1="654" x2="700" y2="684" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="370" y1="684" x2="1030" y2="684" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="370" y1="684" x2="370" y2="702" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="1030" y1="684" x2="1030" y2="702" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="363,702 377,702 370,716" fill="#15130f"/>
+  <polygon points="1023,702 1037,702 1030,716" fill="#15130f"/>
+
+  <rect x="60" y="720" width="620" height="126" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="762" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#2a7347">4-10 CTR clearly beats 11-20</text>
+  <text x="96" y="796" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Page-2 work pays on this property. Pick</text>
+  <text x="96" y="824" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the highest-impression queries and re-measure.</text>
+
+  <rect x="720" y="720" width="620" height="126" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="756" y="762" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#b53b15">Both bands round to zero</text>
+  <text x="756" y="796" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Position is not the binding constraint. Fix</text>
+  <text x="756" y="824" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the CTR problem, or aim one page at 1-3.</text>
+</svg>
