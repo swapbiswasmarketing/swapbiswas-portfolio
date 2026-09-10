@@ -443,15 +443,30 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 					document.head.appendChild(s);
 				}
 
-				// Collapse a no-fill only once it is confirmed off screen. Collapsing the moment
-				// AdSense stamps the attribute is a ~0.4 CLS event when the slot is on screen.
+				// Collapse a no-fill ONLY when the slot is entirely BELOW the viewport, so the
+				// only content that moves up is content the reader has not reached yet.
+				//
+				// "not intersecting" on its own is not enough, and assuming it was cost 0.3777
+				// of CLS in live measurement on a 390x844 viewport at flick-scroll speed. It is
+				// equally true the instant a slot scrolls off the TOP, and collapsing 280px
+				// there yanks whatever sits directly beneath it up the screen - on a blog post
+				// that is the author bio, and it was the single largest shift on the page.
+				// Scroll anchoring does not reliably absorb it.
+				//
+				// A slot the reader has already scrolled past is therefore left reserved for
+				// good. That is dead space they have already seen, and collapsing it later can
+				// only ever be a jump. rootBounds and boundingClientRect arrive on the entry,
+				// so this reads no layout.
 				function ensureCollapseObserver() {
 					if (collapseObserver || !('IntersectionObserver' in window)) return;
 					collapseObserver = new IntersectionObserver(function (entries) {
 						for (var i = 0; i < entries.length; i++) {
-							if (entries[i].isIntersecting) continue;
-							collapseObserver.unobserve(entries[i].target);
-							entries[i].target.classList.add('ad-slot--collapsed');
+							var e = entries[i];
+							if (e.isIntersecting) continue;
+							var rb = e.rootBounds;
+							if (!rb || e.boundingClientRect.top < rb.bottom) continue;
+							collapseObserver.unobserve(e.target);
+							e.target.classList.add('ad-slot--collapsed');
 						}
 					});
 				}
