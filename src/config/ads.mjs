@@ -140,7 +140,7 @@ export const AD_SLOTS = {
 	// 30px of dead space under a 250px creative. That trade - a few percent of RPM for a
 	// structurally impossible layout shift - is the whole point of this design.
 	blogInArticle: {
-		slot: 'PLACEHOLDER-IN-ARTICLE-1',
+		slot: '5113486560',
 		variant: 'rect',
 		style: 'display:block;',
 		format: 'rectangle',
@@ -155,7 +155,7 @@ export const AD_SLOTS = {
 	// Second mid-article unit, long posts only. Same shape on purpose: two ids so the
 	// AdSense reporting separates them.
 	blogInArticleLong: {
-		slot: 'PLACEHOLDER-IN-ARTICLE-2',
+		slot: '3478534362',
 		variant: 'rect',
 		style: 'display:block;',
 		format: 'rectangle',
@@ -164,7 +164,7 @@ export const AD_SLOTS = {
 
 	// After the FAQ accordion, before the author bio. Same bounded rectangle.
 	blogEndOfPost: {
-		slot: 'PLACEHOLDER-END-OF-POST',
+		slot: '6673980240',
 		variant: 'rect',
 		style: 'display:block;',
 		format: 'rectangle',
@@ -176,7 +176,7 @@ export const AD_SLOTS = {
 	// 336x280 block. horizontal pins it to a banner shape whose tallest member is 320x100,
 	// so the 100px floor in global.css is also its ceiling and it cannot shift either.
 	blogIndexFeed: {
-		slot: 'PLACEHOLDER-BLOG-INDEX',
+		slot: '9828320292',
 		variant: 'banner',
 		style: 'display:block;',
 		format: 'horizontal',
@@ -185,7 +185,7 @@ export const AD_SLOTS = {
 
 	// Bottom of six tool pages, after the SEO section.
 	toolFooter: {
-		slot: 'PLACEHOLDER-TOOL-FOOTER',
+		slot: '8515238623',
 		variant: 'banner',
 		style: 'display:block;',
 		format: 'horizontal',
