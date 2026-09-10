@@ -503,15 +503,27 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 					});
 				}
 
+				// Two independent signals that a unit came back empty, and neither is reliable
+				// on its own. data-ad-status="unfilled" is the documented one but AdSense does
+				// not always write it: measured live, it collapses a slot by writing
+				// `min-height: 0px !important` inline on the WRAPPER and in many cases never
+				// sets the attribute at all, which left the caption sitting over a collapsed
+				// box on 12 of 18 audited slots. So watch the wrapper's style too.
 				// "unfill-optimized" is not matched: AdSense filled the space with its own thing.
 				function ensureStatusObserver() {
 					if (statusObserver || !('MutationObserver' in window)) return;
 					statusObserver = new MutationObserver(function (records) {
 						for (var i = 0; i < records.length; i++) {
 							var el = records[i].target;
-							if (el.getAttribute('data-ad-status') !== 'unfilled') continue;
-							var slot = el.parentNode;
+							var slot = el.classList && el.classList.contains('ad-slot') ? el : el.parentNode;
 							if (!slot || !slot.classList || !slot.classList.contains('ad-slot')) continue;
+							var ins = slot.querySelector('ins.adsbygoogle');
+							if (!ins) continue;
+							var status = ins.getAttribute('data-ad-status');
+							// A real ad is in there. Leave the caption alone, it is the disclosure.
+							if (status === 'filled') continue;
+							var collapsedInline = /min-height:\s*0px\s*!important/.test(slot.getAttribute('style') || '');
+							if (status !== 'unfilled' && !collapsedInline) continue;
 							// Drop the caption immediately, wherever the slot is. It is our markup,
 							// not the ad, and an "Advertisement" label over an empty box is the one
 							// state that looks broken rather than merely empty.
@@ -535,6 +547,11 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 							if (pushObserver) pushObserver.unobserve(el);
 							if (statusObserver) {
 								statusObserver.observe(el, { attributes: true, attributeFilter: ['data-ad-status'] });
+								// The wrapper too: AdSense collapses a slot by writing inline style
+								// here, sometimes without ever setting data-ad-status on the <ins>.
+								if (el.parentNode && el.parentNode.classList && el.parentNode.classList.contains('ad-slot')) {
+									statusObserver.observe(el.parentNode, { attributes: true, attributeFilter: ['style'] });
+								}
 							}
 							try {
 								(window.adsbygoogle = window.adsbygoogle || []).push({});
