@@ -32,8 +32,20 @@ self.addEventListener('fetch', (event) => {
   // Only handle GET requests
   if (request.method !== 'GET') return;
 
-  // Navigation requests: network first, offline fallback
-  if (request.mode === 'navigate') {
+  const url = new URL(request.url);
+
+  // Same-origin navigations: network first, offline fallback.
+  //
+  // The origin check is a local assertion, not a bug fix. For a navigation request
+  // the browser selects the service worker by matching a registration against the
+  // REQUEST's URL, not the parent page's controller, so a cross-origin ad frame or
+  // consent-message frame never reaches this worker to begin with. The check states
+  // that invariant here instead of trusting it, and costs one comparison.
+  //
+  // The || below is the real fix: caches.match resolves undefined when /offline/ is
+  // missing (install race, evicted cache), and respondWith(undefined) rejects into a
+  // hard network error instead of the offline page it was supposed to show.
+  if (request.mode === 'navigate' && url.origin === self.location.origin) {
     event.respondWith(
       fetch(request)
         .then((response) => {
@@ -42,10 +54,13 @@ self.addEventListener('fetch', (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           return response;
         })
-        .catch(() => caches.match(OFFLINE_URL))
+        .catch(() => caches.match(OFFLINE_URL).then((r) => r || Response.error()))
     );
     return;
   }
+
+
+AND delete the now-duplicate declaration at old line 61, so the asset branch reads:
 
   // Same-origin static assets (CSS, JS, images, fonts): cache first, network fallback.
   //
@@ -58,7 +73,6 @@ self.addEventListener('fetch', (event) => {
   //
   // Cache-first is safe for what remains: /_astro/** is content-hashed, and the
   // un-hashed /assets/** files are invalidated by bumping CACHE_NAME above.
-  const url = new URL(request.url);
   if (
     url.origin === self.location.origin &&
     (request.destination === 'style' ||

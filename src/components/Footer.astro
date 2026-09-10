@@ -145,6 +145,10 @@ import SiteMark from './SiteMark.astro';
 				<a href="/privacy/">Privacy</a>
 				<span aria-hidden="true">&middot;</span>
 				<a href="/contact/">Contact</a>
+				<!-- Consent re-open control. Hidden until the bridge in BaseLayout.astro
+				     confirms the European message applies to this visitor. -->
+				<span aria-hidden="true" data-consent-ui hidden>&middot;</span>
+				<button class="back-to-top" type="button" data-consent-ui data-consent-open hidden>Privacy and cookie settings</button>
 				<span aria-hidden="true">&middot;</span>
 				<button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
 					Back to top <Icon icon="arrow-right" size="0.85em" />
@@ -630,6 +634,13 @@ import SiteMark from './SiteMark.astro';
 		padding: 0;
 		font: inherit;
 		cursor: pointer;
+	}
+
+	/* [hidden] is only a UA rule, so the author display above beats it and the
+	   consent control would render for every visitor on earth. Same fix and same
+	   reason as .menu-button[hidden] in Nav.astro. Do not delete this. */
+	[data-consent-ui][hidden] {
+		display: none;
 	}
 
 	.back-to-top :global(svg) {

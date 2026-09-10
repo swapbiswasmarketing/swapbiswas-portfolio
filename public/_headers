@@ -6,4 +6,28 @@
   X-XSS-Protection: 1; mode=block
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Cross-Origin-Opener-Policy: same-origin
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://scripts.clarity.ms https://www.clarity.ms https://api.kit.com https://app.kit.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://region1.google-analytics.com https://scripts.clarity.ms https://www.clarity.ms https://api.kit.com https://app.kit.com https://*.clarity.ms; frame-src https://www.googletagmanager.com; object-src 'none'; base-uri 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://scripts.clarity.ms https://www.clarity.ms https://api.kit.com https://app.kit.com https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://adservice.google.com https://www.gstatic.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://region1.google-analytics.com https://scripts.clarity.ms https://www.clarity.ms https://*.clarity.ms https://api.kit.com https://app.kit.com https://formsubmit.co https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://csi.gstatic.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google; frame-src 'self' https://www.googletagmanager.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://pagead2.googlesyndication.com https://fundingchoicesmessages.google.com https://www.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google; object-src 'none'; base-uri 'self'
+
+# This file is Netlify / Cloudflare Pages syntax and is INERT on Vercel, which serves
+# no headers from it. It is also COPIED VERBATIM INTO THE BUILD, so it is publicly
+# readable at https://swapbiswas.com/_headers. It is kept in sync so that activating it
+# (a vercel.json headers block, or a host change) does not silently break the site, but
+# it has never been enforced, so treat every line as untested. Activate it behind
+# Content-Security-Policy-Report-Only first and read the violation reports.
+#
+# Four entries are load-bearing and easy to delete by accident:
+#   frame-src 'self'     - the concept-gallery hover preview at
+#                          /personal-website-examples/ creates a same-origin iframe in
+#                          JS. frame-src does NOT fall back to default-src when it is
+#                          present, so dropping 'self' blocks all 49 previews.
+#   formsubmit.co        - contact.astro does an AJAX POST to it. Removing it breaks the
+#                          contact form's primary path.
+#   Referrer-Policy      - must stay strict-origin-when-cross-origin, origin,
+#                          origin-when-cross-origin or unsafe-url. same-origin stops
+#                          Google's consent message serving at all.
+#   googlesyndication /  - the consent dialog and every ad creative are cross-origin
+#   fundingchoicesmessages iframes and cross-origin fetches.
+#
+# fonts.googleapis.com and fonts.gstatic.com were removed on purpose: fonts are
+# self-hosted from /public/assets/fonts (see MainHead.astro), so those entries were
+# stale allow-list surface for nothing.

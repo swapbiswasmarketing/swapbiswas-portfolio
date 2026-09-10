@@ -90,16 +90,39 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 <!-- Fonts are self-hosted from /public/assets/fonts and declared in global.css, so there
      is nothing to preconnect to and no third-party stylesheet to wait on. See the
      comment at the top of src/styles/global.css. -->
-<!-- Analytics: only load on production -->
+<!-- Analytics + Consent Mode v2: only load on production -->
 <script is:inline>
-	if (location.hostname === 'swapbiswas.com' || location.hostname === 'www.swapbiswas.com') {
+	// __tagBoot is belt and braces. Astro dedupes this block by exact textContent so
+	// it already runs once per session, but any future edit that interpolates a value
+	// into it breaks that key and would re-emit the consent default AFTER the CMP
+	// granted. Whether a late default downgrades a granted state is undocumented.
+	if (!window.__tagBoot && (location.hostname === 'swapbiswas.com' || location.hostname === 'www.swapbiswas.com')) {
+		window.__tagBoot = 1;
+
+		// Consent Mode v2 default. Must run before gtm.js is requested below: the
+		// container replays dataLayer from index 0, so this is processed before any
+		// tag reads consent. Region-scoped with no unscoped default on purpose, so
+		// every visitor outside the list stays in the "not set" state they are in
+		// today. Keep the stub's arguments-object shape - a rest or arrow rewrite
+		// pushes a real Array and GTM stops recognising the command. The 39 codes and
+		// the 500ms are argued in CONSENT.md; do not edit them from memory.
+		window.dataLayer = window.dataLayer || [];
+		window.gtag = function gtag() { dataLayer.push(arguments); };
+		window.gtag('consent', 'default', {
+			'ad_storage': 'denied',
+			'ad_user_data': 'denied',
+			'ad_personalization': 'denied',
+			'analytics_storage': 'denied',
+			'wait_for_update': 500,
+			'region': ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH','AX','GF','GP','MQ','RE','YT','MF']
+		});
+
 		// Google Tag Manager.
 		// GTM loads GA4 (G-32PVYX6VRH) itself - you can see it request
 		// gtag/js?id=G-32PVYX6VRH&cx=c&gtm=... - so this page must NOT also load a
 		// standalone gtag.js. Doing both shipped two ~166 KiB copies of the same
-		// library and cost ~138ms of long tasks. dataLayer is still created here so
-		// anything pushed before gtm.js arrives is queued and replayed.
-		window.dataLayer = window.dataLayer || [];
+		// library and cost ~138ms of long tasks. The stub above is not gtag.js, it
+		// only queues commands into dataLayer, which gtm.js replays when it arrives.
 		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

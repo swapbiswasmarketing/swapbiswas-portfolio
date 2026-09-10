@@ -586,6 +586,113 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 			})();
 		</script>
 
+		<!-- Consent bridge. Google's CMP updates Consent Mode for the Google tags itself,
+		     so there is deliberately no gtag('consent','update') here. What it never does
+		     is tell Microsoft Clarity. Comments are short because this ships on every
+		     view; every decision below is argued in CONSENT.md. -->
+		<script is:inline>
+			(function () {
+				if (window._consentInit) return;
+				if (location.hostname !== 'swapbiswas.com' && location.hostname !== 'www.swapbiswas.com') return;
+				window._consentInit = true;
+
+				// null until the TCF API says. Fail-closed: nothing is revealed and nothing
+				// is sent to Clarity unless this is strictly true.
+				var GDPR = null;
+				var lastSent = '';
+				var queueRef = null;
+
+				function fc() {
+					window.googlefc = window.googlefc || {};
+					window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+					return window.googlefc;
+				}
+
+				function revealConsentUi() {
+					if (!window.__consentUi) return;
+					var els = document.querySelectorAll('[data-consent-ui]');
+					for (var i = 0; i < els.length; i++) els[i].hidden = false;
+				}
+
+				// GRANTED is the only status that means granted. UNKNOWN, NOT_APPLICABLE
+				// and NOT_CONFIGURED are not consent.
+				function word(s, E) {
+					return s === E.GRANTED ? 'granted' : 'denied';
+				}
+
+				function syncClarity() {
+					if (GDPR !== true) return;
+					var g = fc();
+					var E = g.ConsentModePurposeStatusEnum;
+					var read = g.getGoogleConsentModeValues;
+					if (!E || typeof read !== 'function') return;
+					var v = read();
+					if (!v) return;
+
+					// All NOT_CONFIGURED in scope = the AdSense consent mode checkboxes are off.
+					if (v.adStoragePurposeConsentStatus === E.NOT_CONFIGURED &&
+						v.analyticsStoragePurposeConsentStatus === E.NOT_CONFIGURED &&
+						!window.__consentWarned) {
+						window.__consentWarned = true;
+						window.dataLayer = window.dataLayer || [];
+						window.dataLayer.push({ event: 'consent_misconfigured' });
+					}
+
+					var ad = word(v.adStoragePurposeConsentStatus, E);
+					var an = word(v.analyticsStoragePurposeConsentStatus, E);
+					var key = ad + '|' + an;
+					if (key === lastSent) return;
+					var downgrade = lastSent === 'granted|granted' && key !== 'granted|granted';
+					lastSent = key;
+					if (typeof window.clarity !== 'function') return;
+					window.clarity('consentv2', { ad_Storage: ad, analytics_Storage: an });
+					// consentv2 does not erase cookies already written.
+					if (downgrade) window.clarity('consent', false);
+				}
+
+				function onTcf(tcData, success) {
+					if (!success || !tcData) return;
+					GDPR = tcData.gdprApplies === true;
+					if (GDPR && !window.__consentUi) {
+						window.__consentUi = true;
+						revealConsentUi();
+					}
+					syncClarity();
+				}
+
+				// ensureLoader() re-appends adsbygoogle.js after every head swap, so the fc
+				// kernel can hand us a fresh callbackQueue. Re-register only if it changed.
+				function register() {
+					var g = fc();
+					if (g.callbackQueue === queueRef) return;
+					queueRef = g.callbackQueue;
+					queueRef.push({
+						'CONSENT_API_READY': function () {
+							if (typeof window.__tcfapi !== 'function') return;
+							window.__tcfapi('addEventListener', 2, onTcf);
+						}
+					});
+					queueRef.push({ 'CONSENT_MODE_DATA_READY': syncClarity });
+				}
+
+				register();
+
+				document.addEventListener('astro:after-swap', revealConsentUi);
+				document.addEventListener('astro:page-load', function () {
+					register();
+					revealConsentUi();
+					syncClarity();
+				});
+				document.addEventListener('click', function (e) {
+					if (!e.target || !e.target.closest) return;
+					if (!e.target.closest('[data-consent-open]')) return;
+					var g = fc();
+					if (typeof g.showRevocationMessage !== 'function') return;
+					g.callbackQueue.push(g.showRevocationMessage);
+				});
+			})();
+		</script>
+
 		<style>
 			/* Newsletter Popup - floating surface, so --shadow-lg is allowed */
 			.nl-popup {

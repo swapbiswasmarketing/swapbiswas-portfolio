@@ -1,6 +1,9 @@
 ---
 import Hero from '../components/Hero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Bump by hand whenever a section below changes.
+const lastUpdated = '10 September 2026';
 ---
 
 <BaseLayout title="Privacy Policy | Swapnil Biswas" description="Privacy policy for swapbiswas.com">
@@ -13,8 +16,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			/>
 
 			<div class="content">
+				<p class="updated">Last updated: {lastUpdated}</p>
+
 				<h2>Who We Are</h2>
 				<p>Our website address is: <a href="https://swapbiswas.com">https://swapbiswas.com</a></p>
+				<p>This site is operated by Swapnil Biswas, who is the data controller for the personal information described below. You can reach the controller at <a href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a>.</p>
 
 				<h2>Information We Collect</h2>
 				<p>We collect personal information from our users, including names, email addresses, and project descriptions. We collect this information through the contact form and newsletter signup on our website.</p>
@@ -28,10 +34,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					<li><strong>Google Analytics (GA4)</strong> - Collects anonymized usage data such as pages visited, session duration, and traffic sources to help us understand how visitors use our site.</li>
 					<li><strong>Google Tag Manager (GTM)</strong> - Manages and deploys marketing and analytics tags on our website.</li>
 					<li><strong>Google AdSense</strong> - Displays advertisements on this website. AdSense and its third-party advertising partners may use cookies, web beacons, and similar technologies to serve ads based on your prior visits to this and other websites. See the <a href="#advertising">Advertising</a> section below for details and opt-out options.</li>
-					<li><strong>Microsoft Clarity</strong> - Records anonymized session replays and heatmaps to help us improve user experience. Clarity does not collect personal information.</li>
+					<li><strong>Microsoft Clarity</strong> - Records session replays and heatmaps to help us improve user experience. Clarity receives your IP address and user agent and records a replay of your interaction with the page. See <a href="#your-privacy-choices">Your Privacy Choices</a> below.</li>
 					<li><strong>Kit (formerly ConvertKit)</strong> - Processes newsletter subscriptions. Your email address is stored by Kit when you subscribe.</li>
 					<li><strong>FormSubmit</strong> - Processes contact form submissions via email.</li>
+					<li><strong>Vercel Web Analytics and Speed Insights</strong> - Vercel hosts this site and measures page views and page-loading performance. Both run on every page for every visitor, use no cookies, and are not covered by the consent signals described under Your Privacy Choices.</li>
 				</ul>
+				<p>Google LLC, Microsoft Corporation, Kit, FormSubmit and Vercel are established in the United States, so using this site involves transferring personal information outside the European Economic Area and the United Kingdom.</p>
 				<p>Each of these services has its own privacy policy governing how they handle data.</p>
 
 				<h2 id="advertising">Advertising</h2>
@@ -54,11 +62,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				<p>This website uses cookies and similar technologies for the following purposes:</p>
 				<ul>
 					<li><strong>Theme preference</strong> - Remembers your light/dark mode choice (stored in localStorage).</li>
+					<li><strong>Site preferences and saved work</strong> - localStorage also remembers that you dismissed the newsletter prompt, your reading progress on a blog post, and any draft you enter into a tool at /tools/. Saved work stays in your browser and is never sent to us.</li>
 					<li><strong>Analytics cookies</strong> - Google Analytics sets cookies to distinguish users and track sessions. These expire after 2 years of inactivity.</li>
 					<li><strong>Microsoft Clarity</strong> - Sets cookies to track sessions and generate heatmaps. These typically expire within 1 year.</li>
 					<li><strong>Advertising cookies</strong> - Google AdSense and its third-party partners set cookies (including the DoubleClick DART cookie) to serve ads based on your visits to this and other websites. See the Advertising section above for opt-out options.</li>
+					<li><strong>Consent</strong> - If you are shown the consent message described under Your Privacy Choices below, Google's consent management platform stores your answer on this device, in first-party storage on this domain, as the cookies FCCDCF and FCNEC. They expire after 13 months, or sooner if you clear them.</li>
 				</ul>
 				<p>You can disable cookies through your browser settings. Disabling cookies may affect some features of this website.</p>
+
+				<h2 id="your-privacy-choices">Your Privacy Choices</h2>
+				<p>If you are in the European Economic Area, the United Kingdom or Switzerland, a consent message appears the first time you visit this site. Until you answer it, nothing on this site reads or writes advertising or analytics storage on your device, and you can change your answer at any time.</p>
+				<p><strong>Changing your choice:</strong> the "Privacy and cookie settings" control at the bottom of every page reopens the message, so you can consent to, or refuse, each purpose and each vendor again. Reopening the message clears the choice currently on record.</p>
+				<p class="consent-cta" data-consent-ui hidden><button type="button" class="consent-open" data-consent-open>Open privacy and cookie settings</button></p>
+				<p><strong>Who manages consent:</strong> the message is served by Google's consent management platform, operated by Google LLC and registered with the IAB Europe Transparency and Consent Framework under CMP ID 300. It is certified by Google and built to the TCF v2.3 specification. Your choice is stored on your device by that platform, in first-party storage on this domain, and is made available to this site and to TCF vendors as a consent string. We read that signal in order to forward your choice to Microsoft Clarity, as described below.</p>
+				<p><strong>What your choice controls:</strong> your answer sets four Google Consent Mode signals - ad storage, ad user data, ad personalization and analytics storage. All four default to denied for visitors in the European Economic Area, the United Kingdom and Switzerland. While they are denied, no advertising or analytics cookies are written and Google Analytics receives only cookieless measurement. We forward the same choice to Microsoft Clarity through Clarity's own consent interface, because Clarity does not read Google's signals. Please note that when consent is denied, Clarity still records the page without cookies and without linking your page views to one another; it does not stop recording. The Vercel services listed under Third-Party Services are not covered by these signals.</p>
+				<p><strong>Refusing does not remove the ads.</strong> If you do not consent, this site may still show non-personalized or limited ads, which are chosen from the content of the page rather than from anything about you.</p>
+				<p><strong>Outside those regions:</strong> no consent message is shown, and the services listed under Third-Party Services run as described in the Advertising and Cookies sections above. You can still opt out of personalized advertising through the links in the Advertising section, and you can block or delete cookies in your browser at any time.</p>
 
 				<h2>Data Retention</h2>
 				<p>Contact form submissions are retained in email indefinitely unless you request deletion. Newsletter subscriber data is retained by Kit until you unsubscribe. Analytics data is retained for 14 months (Google Analytics default).</p>
@@ -68,6 +87,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 				<h2>Accessing, Modifying, and Deleting Your Information</h2>
 				<p>Users may request to access, modify, or delete their personal information by contacting us at <a href="mailto:swapbiswas.marketing@gmail.com">swapbiswas.marketing@gmail.com</a>.</p>
+				<p>If data protection law in your country applies to you, you also have the right to object to processing, to ask us to restrict it, to receive a copy of the information you gave us in a portable form, and to withdraw any consent you have given at any time without affecting what was done before you withdrew it. Withdrawing consent for cookies and similar storage is described under Your Privacy Choices; withdrawing consent for the newsletter is the unsubscribe link in any email. You also have the right to lodge a complaint with your national data protection supervisory authority.</p>
 
 				<h2>Data Breaches</h2>
 				<p>In the event of a data breach, we will take immediate steps to contain the breach, investigate the cause, and notify affected users as required by law.</p>
