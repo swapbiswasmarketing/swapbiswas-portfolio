@@ -563,6 +563,31 @@ samp {
 	min-height: 100px;
 }
 
+/* The same reserve repeated on the WRAPPER, and it is not redundant.
+   AdSense writes `height: auto !important; min-height: 0px !important` inline on an
+   unfilled unit whose format is horizontal, and an inline !important beats any author
+   rule, so the reserve above is gone the moment such a unit reports no fill. Measured
+   on the live site: a tool-page banner collapsed to 26px and left the caption sitting
+   over an empty strip. AdSense never touches the wrapper, so putting the floor here
+   holds in both cases. Rectangle units get `height: 0px` with no min-height override
+   and are unaffected, but carry the same backstop so the two formats behave alike
+   rather than differing for a reason nobody remembers later. */
+.ad-slot--rect {
+	min-height: 280px;
+}
+
+.ad-slot--banner {
+	min-height: 100px;
+}
+
+/* Never caption an empty box. Set by the initialiser when a unit reports no fill, and
+   independent of the collapse below, which only runs when the slot is off screen. The
+   caption is our own markup rather than part of the ad unit, so hiding it is not
+   hiding an ad. */
+.ad-slot--unfilled .ad-label {
+	display: none;
+}
+
 /* Collapse of an unfilled unit.
 
    This is a CLASS, toggled by the initialiser in BaseLayout.astro, not the pure-CSS

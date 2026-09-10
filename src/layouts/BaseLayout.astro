@@ -512,6 +512,10 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 							if (el.getAttribute('data-ad-status') !== 'unfilled') continue;
 							var slot = el.parentNode;
 							if (!slot || !slot.classList || !slot.classList.contains('ad-slot')) continue;
+							// Drop the caption immediately, wherever the slot is. It is our markup,
+							// not the ad, and an "Advertisement" label over an empty box is the one
+							// state that looks broken rather than merely empty.
+							slot.classList.add('ad-slot--unfilled');
 							if (collapseObserver) collapseObserver.observe(slot);
 							else slot.classList.add('ad-slot--collapsed');
 						}
