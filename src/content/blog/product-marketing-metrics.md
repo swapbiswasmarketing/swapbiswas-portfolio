@@ -67,7 +67,7 @@ High adoption signals your content is relevant; low adoption is a warning you ar
 
 ## Product Adoption and Retention
 
-Product marketing does not stop at the sale. If you run campaigns to drive usage of a feature, **feature adoption** is the direct measure of whether that worked. Define "adopted" against your product's real usage pattern, then track the lift from your campaigns.
+Product marketing does not stop at the sale. If you run campaigns to drive usage of a feature, **feature adoption** is the direct measure of whether that worked. Define "adopted" against your product's real usage pattern, then track the lift from your campaigns. Which population you divide by is what decides the number, and the [feature adoption rate](/blog/feature-adoption-rate/) denominator table walks through the realistic choices.
 
 **Retention and churn** close the loop. The features and value you market are supposed to keep customers, so retention is a slow but honest verdict on whether your positioning matched reality. Marketing that oversells produces a bump in adoption and a spike in churn, and this metric is where that shows up.
 

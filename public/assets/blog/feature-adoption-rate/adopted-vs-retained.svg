@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 660" width="1400" height="660">
+  <rect x="0" y="0" width="1400" height="660" fill="#f6f4ef"/>
+
+  <text x="80" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Adopted once and retained are two different rates</text>
+  <text x="80" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Same 30-day window, same 600 eligible users, two definitions of the word adopted.</text>
+
+  <rect x="80" y="150" width="580" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="112" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">ADOPTED ONCE</text>
+  <text x="112" y="256" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="46" font-weight="600" fill="#15130f">270</text>
+  <text x="112" y="292" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">of 600 users who reached the feature</text>
+  <text x="112" y="336" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">45.0%</text>
+  <line x1="112" y1="364" x2="628" y2="364" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="112" y="400" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Fired the event at least once inside the</text>
+  <text x="112" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">30-day window. Counts curiosity as a win.</text>
+
+  <line x1="672" y1="300" x2="712" y2="300" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="712,293 726,300 712,307" fill="#15130f"/>
+
+  <rect x="740" y="150" width="580" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="772" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">RETAINED</text>
+  <text x="772" y="256" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="46" font-weight="600" fill="#b53b15">135</text>
+  <text x="772" y="292" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">of the same 600 users</text>
+  <text x="772" y="336" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">22.5%</text>
+  <line x1="772" y1="364" x2="1288" y2="364" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="772" y="400" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Fired the event in two separate weeks, the</text>
+  <text x="772" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">second at least 7 days after the first.</text>
+
+  <rect x="80" y="500" width="1240" height="106" rx="12" fill="#eeebe4"/>
+  <text x="112" y="546" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Decision rule: report both, or report the retained number alone. An adopted-once rate on its own</text>
+  <text x="112" y="576" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">cannot separate a feature people need from a feature people opened.</text>
+</svg>

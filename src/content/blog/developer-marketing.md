@@ -65,7 +65,7 @@ There is a second reason the old scoring model fails. In the same survey, **89% 
 
 ## Developer Marketing vs Developer Relations: Who Owns What
 
-DevRel is usually the people-facing arm: advocates, talks, community moderation, sample code, the person answering at 11pm. Product marketing owns the written positioning, the packaging, the measurement model, and the narrative the advocates repeat. Neither one owns the API reference.
+DevRel is usually the people-facing arm: advocates, talks, community moderation, sample code, the person answering at 11pm. Product marketing owns the written positioning, the packaging, the measurement model, and the narrative the advocates repeat. Neither one owns the API reference. When the two functions disagree about where developers are losing time, a [developer experience survey](/blog/developer-experience-survey/) is the instrument that settles it with evidence rather than anecdote.
 
 | Artifact | Default owner | Who supplies the input |
 |---|---|---|

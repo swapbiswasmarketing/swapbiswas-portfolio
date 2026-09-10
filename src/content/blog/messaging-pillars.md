@@ -81,7 +81,7 @@ Here is the process I run every time, whether the product is brand new or being 
 
 ### 1. Lock your positioning first
 
-You cannot build columns before you have a roof. Confirm your positioning statement: who the product is for, what category it competes in, and why it is different. Every pillar you write has to be a reason that positioning is true, so this has to be settled before anything else.
+You cannot build columns before you have a roof. Confirm your positioning statement: who the product is for, what category it competes in, and why it is different. Every pillar you write has to be a reason that positioning is true, so this has to be settled before anything else. If you are not certain which of the two layers is actually broken, diagnose that first in [positioning vs messaging](/blog/positioning-vs-messaging/).
 
 ### 2. Mine the raw material from customers
 

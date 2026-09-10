@@ -1385,3 +1385,82 @@ The post has the surface map: each platform against who owns it internally, the 
 🔗 https://swapbiswas.com/blog/developer-community-strategy/?utm_source=linkedin&utm_medium=social&utm_campaign=developer-community-strategy
 
 #DeveloperMarketing #DevRel #DeveloperCommunity #ProductMarketing #B2BSaaS
+
+---
+
+## [DRAFTED] Positioning vs Messaging - which layer is actually broken
+
+Most teams rewrite the website when the launch underperforms.
+
+That is the second thing to check, not the first. Positioning and messaging fail in different ways, and the symptoms tell you which one you are looking at before you change a word.
+
+Four checks, run in order, stop at the first that fires:
+
+- Do buyers name an alternative you never listed? Check the last 20 opportunities. Five or more off-list is a positioning problem, and the fix is the alternatives list.
+- Does one segment stall while the others hold? Positioning again, at the best-fit segment.
+- Does the deck land where the page does not? Messaging. Fix the hero and subhead.
+- Do three reps define the product three different ways? Messaging, at the pillars and proof.
+
+If none of them fires, both layers are sound and the problem is upstream in pricing, the product, or the segment you chose. No rewrite of either layer will move it.
+
+The post has the full routing table plus who owns which artifact.
+
+🔗 https://swapbiswas.com/blog/positioning-vs-messaging/?utm_source=linkedin&utm_medium=social&utm_campaign=positioning-vs-messaging
+
+#ProductMarketing #Positioning #Messaging #B2BSaaS #GTM
+
+**Nano Banana image prompt (1200x628):** Renaissance-style oil painting, warm paper background #f6f4ef, a scholar's desk with two separate documents side by side - one a folded architectural plan, one a set of printed handbills - a single vermilion red cord running from the plan to the handbills showing derivation, muted earth tones, one red accent only, no text.
+
+---
+
+## [DRAFTED] Feature adoption rate is four different numbers
+
+"Feature adoption is 3%." "No, it is 45%."
+
+Both teams were right. Same feature, same 30 days, same 270 users who adopted. Only the denominator changed.
+
+Divide those 270 by:
+
+- All provisioned seats: 3.0%
+- Seats on entitled accounts: 6.0%
+- Monthly active users: 7.5%
+- MAU on entitled accounts: 12.0%
+- Users whose role owns the job: 30.0%
+- Users who actually reached the screen: 45.0%
+
+Lowest to highest is a factor of 15, and nobody in that argument was lying.
+
+Two rules that end it:
+
+1. Never publish the rate without publishing the denominator in the same sentence.
+2. "Adopted once" and "retained" are different metrics. Firing the event once inside 30 days counts curiosity as a win. Report both, or report retained alone.
+
+The post has the denominator decision table and a fully worked example.
+
+🔗 https://swapbiswas.com/blog/feature-adoption-rate/?utm_source=linkedin&utm_medium=social&utm_campaign=feature-adoption-rate
+
+#ProductMarketing #ProductAnalytics #SaaSMetrics #B2BSaaS #ProductLedGrowth
+
+**Nano Banana image prompt (1200x628):** Renaissance-style still life, warm paper background #f6f4ef, a brass balance scale on a scholar's bench where one pan holds a small fixed weight and six different-sized counterweights sit waiting beside it, a single vermilion red ribbon marking the largest counterweight, muted earth tones, one red accent only, no text.
+
+---
+
+## [DRAFTED] A developer experience survey is only as good as its instrument
+
+Every vendor will tell you why to run a developer experience survey. Almost nobody hands you the questions.
+
+What actually decides whether the results are usable:
+
+- Two full rounds a year at 22 scored items, short 8-item pulses in between. Longer instruments do not fail because developers are busy; they fail because item quality collapses near the end.
+- Separate the perceptual question from the workflow question. "Are you satisfied with build speed" and "how many minutes is your local build" measure different things, and only one of them survives a manager reading the report.
+- A fixed KPI block whose wording never changes, so a redesign does not destroy the trend.
+- Segment before you average. A 60-person platform team and a 6-person team averaged together produce a number that describes nobody.
+- Publish results and named owners within 14 days of close. That, more than question design, is what the next round's response rate depends on.
+
+The post has the copy-ready question bank grouped by DevEx dimension.
+
+🔗 https://swapbiswas.com/blog/developer-experience-survey/?utm_source=linkedin&utm_medium=social&utm_campaign=developer-experience-survey
+
+#DeveloperExperience #DevEx #DeveloperMarketing #DevRel #EngineeringLeadership
+
+**Nano Banana image prompt (1200x628):** Renaissance-style painting, warm paper background #f6f4ef, a printer's composing tray holding neat rows of small type slugs arranged in three labelled groups, one slug lifted out and held in tweezers, a single vermilion red mark on that one slug, muted earth tones, one red accent only, no text.

@@ -49,6 +49,8 @@ The terms get used interchangeably in pitch decks. They are not the same.
 | Messaging | The downstream language: taglines, ad copy, decks | Quarterly | Marketing + sales |
 | Category design | Defining or claiming a brand-new category | Multi-year bet | Founder + CMO |
 
+The row that causes the most trouble in practice is the last-but-one. If a launch is underperforming and nobody can agree whether the problem sits in the strategy or the words, [positioning vs messaging](/blog/positioning-vs-messaging/) works through the symptoms that tell the two apart.
+
 If positioning is the foundation, messaging is the paint. Most teams obsess over the paint and never inspect the foundation.
 
 Positioning is also segment-specific, which means the segment list comes first. If you cannot say which segments you serve and why each one buys for a different reason, you are writing one position for an average customer who does not exist. The [B2B customer segmentation](/blog/b2b-customer-segmentation/) test is the upstream step that keeps that list honest.

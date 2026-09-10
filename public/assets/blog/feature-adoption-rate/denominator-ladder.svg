@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect x="0" y="0" width="1400" height="820" fill="#f6f4ef"/>
+
+  <text x="80" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">One numerator, six feature adoption rates</text>
+  <text x="80" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">270 users scheduled a report in a 30-day window. Only the denominator changes below.</text>
+
+  <rect x="80" y="140" width="1240" height="44" rx="12" fill="#eeebe4"/>
+  <text x="110" y="169" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">DENOMINATOR</text>
+  <text x="790" y="169" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">COUNT</text>
+  <text x="840" y="169" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">RATE</text>
+  <text x="950" y="169" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">RELATIVE SIZE</text>
+
+  <rect x="80" y="206" width="1240" height="78" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="110" y="253" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">All provisioned seats, every plan</text>
+  <text x="790" y="253" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">9,000</text>
+  <text x="840" y="255" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">3.0%</text>
+  <rect x="950" y="236" width="23" height="18" rx="4" fill="#15130f"/>
+
+  <rect x="80" y="296" width="1240" height="78" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="110" y="343" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Seats on accounts entitled to the feature</text>
+  <text x="790" y="343" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">4,500</text>
+  <text x="840" y="345" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">6.0%</text>
+  <rect x="950" y="326" width="45" height="18" rx="4" fill="#15130f"/>
+
+  <rect x="80" y="386" width="1240" height="78" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="110" y="433" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Monthly active users, every plan</text>
+  <text x="790" y="433" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">3,600</text>
+  <text x="840" y="435" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">7.5%</text>
+  <rect x="950" y="416" width="57" height="18" rx="4" fill="#15130f"/>
+
+  <rect x="80" y="476" width="1240" height="78" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="110" y="523" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Monthly active users on entitled accounts</text>
+  <text x="790" y="523" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">2,250</text>
+  <text x="840" y="525" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">12.0%</text>
+  <rect x="950" y="506" width="91" height="18" rx="4" fill="#15130f"/>
+
+  <rect x="80" y="566" width="1240" height="78" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="110" y="613" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Users whose role owns recurring reporting</text>
+  <text x="790" y="613" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">900</text>
+  <text x="840" y="615" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">30.0%</text>
+  <rect x="950" y="596" width="227" height="18" rx="4" fill="#15130f"/>
+
+  <rect x="80" y="656" width="1240" height="78" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="110" y="703" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Users who opened the Reports screen at least once</text>
+  <text x="790" y="703" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">600</text>
+  <text x="840" y="705" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#b53b15">45.0%</text>
+  <rect x="950" y="686" width="340" height="18" rx="4" fill="#b53b15"/>
+
+  <text x="80" y="776" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Illustrative figures computed for this example. The lowest and highest rows differ by a factor of 15.</text>
+</svg>

@@ -8,7 +8,7 @@ img: /assets/stock-1.webp
 img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 ---
 
-**95% of new products fail** ([G2](https://learn.g2.com/product-launch-statistics)). Not because the product is bad - but because the go-to-market strategy is missing, incomplete, or wrong.
+Four questions decide whether a launch lands: who you are selling to, how you will reach them, what you will say, and how you will know it worked. The launches I have watched struggle are the ones where nobody wrote those answers down before the date was locked, so sales improvised and the date arrived anyway.
 
 A go-to-market strategy is your plan for launching a product into the market and driving adoption. It covers who you're selling to, how you'll reach them, what you'll say, and how you'll measure success.
 

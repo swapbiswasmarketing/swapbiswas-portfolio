@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 890" width="1400" height="890">
+  <rect x="0" y="0" width="1400" height="890" fill="#f6f4ef"/>
+
+  <text x="60" y="64" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Anatomy of a Developer Experience Survey</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Three DevEx dimensions, two kinds of measure, one fixed KPI block on top</text>
+
+  <rect x="60" y="136" width="1280" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="174" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">KPI BLOCK / ASKED EVERY ROUND</text>
+  <text x="88" y="204" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Overall satisfaction, perceived productivity, ease of shipping, intent to stay.</text>
+  <text x="88" y="232" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Four items that never change wording, so the trend survives a redesign.</text>
+
+  <text x="340" y="292" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#b53b15">PERCEPTUAL (SURVEY ITEM)</text>
+  <text x="850" y="292" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">WORKFLOW (SELF-REPORT)</text>
+
+  <rect x="60" y="316" width="260" height="150" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="380" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Feedback loops</text>
+  <text x="84" y="412" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Speed and quality of</text>
+  <text x="84" y="436" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">responses to actions</text>
+
+  <rect x="340" y="316" width="490" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="364" y="353" width="7" height="7" fill="#6a645c"/>
+  <text x="382" y="364" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Satisfaction with local build speed</text>
+  <rect x="364" y="385" width="7" height="7" fill="#6a645c"/>
+  <text x="382" y="396" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Satisfaction with review turnaround</text>
+  <rect x="364" y="417" width="7" height="7" fill="#6a645c"/>
+  <text x="382" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Confidence that CI results are right</text>
+
+  <rect x="850" y="316" width="490" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="874" y="353" width="7" height="7" fill="#6a645c"/>
+  <text x="892" y="364" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Local build time, in minutes</text>
+  <rect x="874" y="385" width="7" height="7" fill="#6a645c"/>
+  <text x="892" y="396" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Hours from PR open to first review</text>
+  <rect x="874" y="417" width="7" height="7" fill="#6a645c"/>
+  <text x="892" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Share of CI runs that fail on flake</text>
+
+  <rect x="60" y="488" width="260" height="150" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="552" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Cognitive load</text>
+  <text x="84" y="584" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Mental processing a</text>
+  <text x="84" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">single task demands</text>
+
+  <rect x="340" y="488" width="490" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="364" y="525" width="7" height="7" fill="#6a645c"/>
+  <text x="382" y="536" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Ease of reading unfamiliar code</text>
+  <rect x="364" y="557" width="7" height="7" fill="#6a645c"/>
+  <text x="382" y="568" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Docs answer it the first time</text>
+  <rect x="364" y="589" width="7" height="7" fill="#6a645c"/>
+  <text x="382" y="600" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Local setup is a solved problem</text>
+
+  <rect x="850" y="488" width="490" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="874" y="525" width="7" height="7" fill="#6a645c"/>
+  <text x="892" y="536" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Tools touched per routine change</text>
+  <rect x="874" y="557" width="7" height="7" fill="#6a645c"/>
+  <text x="892" y="568" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Length of last environment repair</text>
+  <rect x="874" y="589" width="7" height="7" fill="#6a645c"/>
+  <text x="892" y="600" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Systems reasoned about per change</text>
+
+  <rect x="60" y="660" width="260" height="150" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="724" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Flow state</text>
+  <text x="84" y="756" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Energized focus with</text>
+  <text x="84" y="780" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">few interruptions</text>
+
+  <rect x="340" y="660" width="490" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="364" y="697" width="7" height="7" fill="#6a645c"/>
+  <text x="382" y="708" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Enough uninterrupted focus time</text>
+  <rect x="364" y="729" width="7" height="7" fill="#6a645c"/>
+  <text x="382" y="740" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Clarity on this week's priority</text>
+  <rect x="364" y="761" width="7" height="7" fill="#6a645c"/>
+  <text x="382" y="772" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Say in how the work gets done</text>
+
+  <rect x="850" y="660" width="490" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="874" y="697" width="7" height="7" fill="#6a645c"/>
+  <text x="892" y="708" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Meeting hours in a normal week</text>
+  <rect x="874" y="729" width="7" height="7" fill="#6a645c"/>
+  <text x="892" y="740" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Unplanned work displacing plans</text>
+  <rect x="874" y="761" width="7" height="7" fill="#6a645c"/>
+  <text x="892" y="772" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Context switches per day</text>
+
+  <text x="60" y="848" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Dimensions from Noda, Storey, Forsgren and Greiler, ACM Queue, 2023. Item wording is my own.</text>
+</svg>

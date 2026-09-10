@@ -134,3 +134,15 @@ Already `first-hand` on its band table, but one upgrade would make it a controll
 ## developer-community-strategy
 
 When a developer asks a question in a public GitHub issue or a community channel about LambdaTest, which internal queue does that thread land in first, and does any system link that thread back to an account record? If the identity join does not exist, what blocked it: consent, tooling, or nobody owning it? The answer belongs in "The Developer Community Ownership Map", replacing the generic Escalation column with one real routing path, and in the "Identity join" row of the 90-day table, where a sentence on what actually stops teams building that join would turn the strongest section from prescription into reporting.
+
+## positioning-vs-messaging
+
+The symptom diagnostic is the whole post and every threshold in it is my design judgment, not measured. Have you ever run the twenty-deal check for real, and if so what came back: how many of the last twenty opportunities named an alternative that was not on your positioning's alternatives list, and did fixing the alternatives list actually change win rate in the following quarter? One real run with the count and the outcome would convert "Step 01" from a proposed rule into evidence, which is the single weakest joint in the post. Second best: name one product where you changed the messaging first, found it did not work, and then discovered the problem was positioning - the post asserts that sequence is common and has no case behind it.
+
+## feature-adoption-rate
+
+The denominator ladder uses illustrative numbers I computed, and the post says so. For one real LambdaTest feature launch: which denominator did the team actually report to leadership, was it challenged, and did anyone ever recompute the same launch against a different denominator and get a materially different story? A single before/after pair ("we reported 31% against entitled seats; against users who reached the surface it was 62%, and the second number is the one that changed the roadmap call") would replace the illustrative ladder with a real one and make this the strongest post in the batch. Second best: what window does your team use for "retained", and what was the argument that settled on that number rather than 7 or 30 days?
+
+## developer-experience-survey
+
+This is the post where first-hand detail would move the needle most in the batch, because every page-one competitor sells the survey as a product and cannot say what it is like to field one. Has a developer experience or developer satisfaction survey ever been fielded at LambdaTest, and if so: how many items, what response rate, and did publishing the results within two weeks measurably change the next round's response rate? The post asserts the 14-day publication rule as a design principle with nothing behind it. Second best: the question bank groups items by DevEx dimension, but which single question has historically produced the most actionable answer for you, and which one did you cut because nobody could act on it?

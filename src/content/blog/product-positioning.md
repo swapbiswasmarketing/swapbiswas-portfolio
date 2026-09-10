@@ -8,7 +8,7 @@ img: /assets/stock-1.webp
 img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 ---
 
-**91% of product marketers** say positioning and messaging is their core responsibility ([PMA State of Product Marketing 2025](https://www.productmarketingalliance.com/state-of-product-marketing-report-2025/)). Yet most companies get product positioning wrong - or skip it entirely.
+Positioning sits with the smallest team in the building. **44.3% of product marketing teams are still just 1 to 2 people**, and **88.8% work closely with product** ([PMA State of Product Marketing 2025](https://www.productmarketingalliance.com/state-of-product-marketing-report-2025/)). Positioning is the work those one or two people are expected to get right before anything else ships, and most companies still get it wrong or skip it entirely.
 
 The result? Products that sound like everything else, sales teams that can't articulate the difference, and marketing campaigns that fall flat.
 
@@ -38,6 +38,8 @@ These terms get used interchangeably, but they're different:
 | **Example** | "Slack replaces email for team communication" | "Slack makes work life simpler" |
 
 You need both, but product positioning comes first. You can't build a brand promise without knowing what your products actually deliver.
+
+Messaging gets confused with positioning even more often than branding does. I separate those two at the artifact level in [positioning vs messaging](/blog/positioning-vs-messaging/).
 
 ## The Positioning Framework
 

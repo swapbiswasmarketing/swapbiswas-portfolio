@@ -1,7 +1,8 @@
 ---
 title: "How Much Does an SEO Audit Cost? Real 2026 Pricing Tiers"
-description: "How much does an SEO audit cost in 2026? Real pricing by agency, freelancer, and enterprise tier. Plus what drives the cost and how to spot overpriced audits."
+description: "How much does an SEO audit cost? Real prices by audit type and hourly rate, technical versus full, one-time versus retainer, and how to check a quote."
 publishDate: 2026-04-11
+updatedDate: 2026-09-10
 category: [SEO, Marketing]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
@@ -14,6 +15,8 @@ faqs:
     a: "You can cover most technical and on-page issues for free using Google Search Console, PageSpeed Insights, and the free version of Screaming Frog (up to 500 URLs). You'll still need a paid tool like Ahrefs or Semrush for backlink and keyword analysis beyond the basics."
   - q: "How often should I run an SEO audit?"
     a: "Run a full audit annually, with a lighter technical health check every quarter. Also audit immediately after a major site migration, a Google core update that affects rankings, or a CMS change."
+  - q: "How much should I charge for an SEO audit?"
+    a: "Price it as hours multiplied by your rate. In the Ahrefs survey of 439 SEO professionals, $75 to $100 an hour is the most popular rate, and Clutch puts agency rates at $100 to $149 an hour. A twenty-hour audit therefore quotes at $1,500 to $2,980, and a forty-hour audit at $3,000 to $5,960. Put the hour count in the proposal so the client can see what they are buying."
 ---
 
 **[Ahrefs surveyed 439 SEO professionals](https://ahrefs.com/blog/seo-pricing/) and found that the most common per-project fee charged by SEO agencies falls between $2,501 and $5,000** - yet the full range in the same survey stretches from under $500 to well over $10,000 for a single engagement. That is the problem with **how much an SEO audit cost** figures circulate online: the "average" is hiding a 10x spread, and most buyers have no way to tell which end of the range they should actually be paying.
@@ -33,6 +36,41 @@ There is no single answer because "SEO audit" covers everything from a one-hour 
 These ranges are consistent with [Kleverish's 2025 SEO audit pricing breakdown](https://www.kleverish.com/blog/2025-seo-audit-pricing-explained/), which cites $300 to $800 for basic audits, $1,500 to $5,000 for comprehensive audits, and $10,000 and up for enterprise work.
 
 For context on where audits sit within the broader SEO pricing landscape: according to [Ahrefs' SEO pricing survey](https://ahrefs.com/blog/seo-pricing/), which polled 439 SEO professionals, the most common per-project fee for SEO agencies falls in the $2,501 to $5,000 range. Agencies also charge roughly double the monthly retainer of freelancers.
+
+## SEO Audit Price by Type: Technical, Full, and One-Time
+
+Those three tiers answer "what should a site my size pay." Most people arrive with a narrower question: what does *this* audit cost, where "this" is a technical audit, a one-off project, or a quote already sitting in their inbox. The scope checklist further down this page splits an audit into five areas, and a technical audit covers one of them, which is why the same firm can quote eight hours of work for one audit and eighty for another without either number being dishonest.
+
+Some agencies sell the identical deliverable as a website audit or a site audit rather than an SEO audit. The label does not move the price. The scope does, so compare the five areas rather than the name on the invoice.
+
+### Technical SEO Audit Price vs a Full SEO Audit
+
+A technical SEO audit stops at the crawl: indexation, site architecture, Core Web Vitals, structured data, redirects, broken links. That is the first block in the [SEO audit checklist](/blog/seo-audit-checklist/) below, and it is one scope area out of five. A full SEO audit adds on-page, content and topical coverage, backlinks, and competitive analysis on top of it.
+
+So when you compare a technical SEO audit price against a full audit price from the same firm, you are comparing one area against five, not two versions of the same document. Ask which of the five the quote covers before you compare it to anything. If the answer is only the first, benchmark it against other technical-only quotes, not against the agency down the road pricing all five.
+
+### How Much to Charge for an SEO Audit
+
+If you are the one writing the quote rather than paying it, the number is hours multiplied by your rate, and both halves are published. In the Ahrefs survey of 439 SEO professionals, $75 to $100 an hour is the most popular hourly rate, charged by 24% of respondents. [Clutch's SEO pricing data](https://clutch.co/seo-firms/pricing) puts agency rates at $100 to $149 an hour. Run the arithmetic across that span and the quote falls out:
+
+| Hours in the audit | At $75/hour | At $100/hour | At $149/hour |
+|--------------------|-------------|--------------|--------------|
+| 8 | $600 | $800 | $1,192 |
+| 20 | $1,500 | $2,000 | $2,980 |
+| 40 | $3,000 | $4,000 | $5,960 |
+| 80 | $6,000 | $8,000 | $11,920 |
+
+That table reconciles with the three tiers at the top of this page, which is the useful part. The basic tier is four to eight hours: $300 is four hours at $75, $800 is eight hours at $100. The comprehensive tier is twenty to forty hours: $1,500 is twenty hours at $75, $5,000 is forty hours at $125. The enterprise tier starts around eighty hours at $125. The tiers are hour bands with a markup on top.
+
+The same arithmetic works in reverse when you are buying. Divide the quote by the going rate and you get the hours you are being sold. A $900 audit at $100 an hour is nine hours of work, which is a crawl and a summary. If the proposal attached to that $900 promises content gap analysis, backlink cleanup, and competitor share of voice, the hours to do that work do not exist and at least one item on the list is a template.
+
+### One-Time SEO Audit Cost vs a Monthly Retainer
+
+A one-time SEO audit is priced as a project rather than a subscription. Clutch describes that model plainly: "A fixed-price SEO package allows clients to sign a contract and then pay a set fee for a specific SEO service." In the Ahrefs survey, the most popular per-project fee is $2,501 to $5,000, charged by 21.2% of respondents, and that per-project figure is the closest thing to a published one-time audit price.
+
+Whether you can buy one standalone depends on who you ask. In the same survey, 78.2% of respondents charge monthly retainers and 48.9% charge per project. Those two add to more than 100%, so plenty of respondents run both models, but only about half price work by the project at all. The rest do not quote projects, so with them the audit sits inside a retainer, where the most common agency price is $500 to $1,000 a month.
+
+The choice is easier once you put the two on the same scale. A $3,000 one-time audit costs the same as three to six months of a $500 to $1,000 retainer. If you only need the diagnosis and you have people who can implement it, the project is cheaper and it ends. If you need the fixes executed too, the retainer is buying implementation rather than a longer audit, and you should get that distinction written into the scope before you sign.
 
 ## What Actually Drives the Price of an SEO Audit
 
@@ -63,14 +101,14 @@ A written report is one thing. A report plus a 90-minute walkthrough call, a pri
 Professional SEO audits lean on a stack of paid tools. Running one audit does not justify annual subscriptions, but the cost is baked into the price you pay. As published on their pricing pages, representative tool costs include:
 
 - **[Ahrefs](https://ahrefs.com/pricing) Lite**: $129/month
-- **Semrush Pro**: $139.95/month (see [Semrush pricing](https://www.semrush.com/pricing/))
+- **Semrush SEO plan**: $117.33/month billed annually (see [Semrush pricing](https://www.semrush.com/pricing/))
 - **[Screaming Frog SEO Spider](https://www.screamingfrog.co.uk/seo-spider/licence/)**: £199/year per user license
 
 ### 6. Who Is Doing the Work
 
-The same audit costs very different amounts depending on who runs it. An in-house analyst charges nothing extra, while a mid-level freelancer or consultant typically bills in the $75 to $150 per hour range consistent with the most common rates reported in the [Ahrefs SEO pricing survey](https://ahrefs.com/blog/seo-pricing/).
+The same audit costs very different amounts depending on who runs it. An in-house analyst adds no fee at all. A freelancer or consultant tends to bill near the survey's most common rate of $75 to $100 an hour, and an agency near Clutch's $100 to $149 band. Take whichever rate applies and run it through the hours table above.
 
-A senior consultant or boutique agency can bill $200 or more per hour, and large agencies often price projects at a flat fee that reflects senior oversight, project management, and brand premium.
+Large agencies more often price the audit as a flat project fee instead of by the hour, which absorbs senior oversight, project management, and an account team. That is the same work at a higher effective rate, so ask how many hours the flat fee assumes and check it against the table.
 
 ![SEO audit pricing tiers and cost drivers](/assets/blog/how-much-does-an-seo-audit-cost/pricing-tiers.webp "SEO Audit Pricing Tiers")
 

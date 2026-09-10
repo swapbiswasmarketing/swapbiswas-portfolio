@@ -61,7 +61,7 @@ Four artifacts get confused with each other, and the confusion is upstream of mo
 | Product announcement | One launch narrative | Tier 1 and Tier 2 launches only | Prospects and the market | It gets used for a bug fix |
 | Documentation | How the thing works, in full | Updated on change | Someone already trying to do the task | It carries the news instead of the reference |
 
-The best-known published convention here is the [Keep a Changelog specification](https://keepachangelog.com/en/1.1.0/), which sets out six change types (Added, Changed, Deprecated, Removed, Fixed, Security) and opens with the principle that "Changelogs are for humans, not machines." It names the failure mode directly too: "Using commit log diffs as changelogs is a bad idea: they're full of noise." That spec settled the structure question for engineering teams. What it does not do, because it was never trying to, is tell you what a customer should feel or do after reading an entry.
+A widely referenced published convention here is the [Keep a Changelog specification](https://keepachangelog.com/en/1.1.0/), which sets out six change types (Added, Changed, Deprecated, Removed, Fixed, Security) and opens with the principle that "Changelogs are for humans, not machines." It names the failure mode directly too: "Using commit log diffs as changelogs is a bad idea: they're full of noise." That spec settled the structure question for engineering teams. What it does not do, because it was never trying to, is tell you what a customer should feel or do after reading an entry.
 
 ## Why SaaS Release Notes Belong to Product Marketing
 
@@ -325,7 +325,7 @@ The customer success row is the one that turns a note into revenue conversations
 
 Changelog pageviews are the vanity metric here. They confirm a page was loaded and say nothing about whether anyone did anything differently afterwards.
 
-The measurement that answers the question is a cohort split. Tag the accounts that saw the note (opened the in-app announcement, clicked from the digest, or sat on the CS outreach list), then compare feature usage in that group against eligible accounts that did not see it, over a fixed window such as 30 days. That is the gap between a number about content and a number about behaviour.
+The measurement that answers the question is a cohort split. Tag the accounts that saw the note (opened the in-app announcement, clicked from the digest, or sat on the CS outreach list), then compare feature usage in that group against eligible accounts that did not see it, over a fixed window such as 30 days. That is the gap between a number about content and a number about behaviour. The cohort split only means something if both groups share a denominator, which is the trap [feature adoption rate](/blog/feature-adoption-rate/) works through.
 
 | Metric | Definition | Read it as |
 |---|---|---|

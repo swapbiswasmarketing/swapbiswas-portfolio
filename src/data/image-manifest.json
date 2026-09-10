@@ -396,6 +396,22 @@
 		],
 		"hash": "6aa296e20207878c"
 	},
+	"/assets/blog/developer-experience-survey/instrument-map.webp": {
+		"w": 1200,
+		"h": 763,
+		"v": [
+			660
+		],
+		"hash": "b2c5eda1ecc3e60a"
+	},
+	"/assets/blog/developer-experience-survey/survey-cadence.webp": {
+		"w": 1200,
+		"h": 591,
+		"v": [
+			660
+		],
+		"hash": "ba180700e82283ca"
+	},
 	"/assets/blog/developer-marketing/developer-funnel.webp": {
 		"w": 1200,
 		"h": 686,
@@ -483,6 +499,22 @@
 			660
 		],
 		"hash": "8ff3daf31adfd0c4"
+	},
+	"/assets/blog/feature-adoption-rate/adopted-vs-retained.webp": {
+		"w": 1200,
+		"h": 566,
+		"v": [
+			660
+		],
+		"hash": "d522a00190bf6114"
+	},
+	"/assets/blog/feature-adoption-rate/denominator-ladder.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "47ec713a39445878"
 	},
 	"/assets/blog/go-to-market-startups/gtm-7-steps.webp": {
 		"w": 1800,
@@ -895,6 +927,14 @@
 			660
 		],
 		"hash": "598070378edb854a"
+	},
+	"/assets/blog/positioning-vs-messaging/positioning-messaging-diagnostic.webp": {
+		"w": 1200,
+		"h": 771,
+		"v": [
+			660
+		],
+		"hash": "6ac6d75152952111"
 	},
 	"/assets/blog/price-increase-announcement/concession-ceiling.webp": {
 		"w": 1200,

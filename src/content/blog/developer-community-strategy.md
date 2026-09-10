@@ -126,6 +126,8 @@ Community measurement usually stops at the community's own health: members, post
 
 Five measures do answer it. Each one needs a specific piece of instrumentation, and each one has a limit that belongs on the same slide.
 
+Behavioural measures tell you what people did, not why they stopped. Pairing them with a [developer experience survey](/blog/developer-experience-survey/) is how you get the perceptual half of the picture.
+
 | Measure | What it counts | Instrumentation it needs | What it cannot prove |
 |---|---|---|---|
 | Activation of community-referred signups | Share of accounts arriving from a community surface that reach first successful use | Referrer or invite code captured at signup and stored on the account record, not only in analytics | That the community caused the activation; these people self-selected |

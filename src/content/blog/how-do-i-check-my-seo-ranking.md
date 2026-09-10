@@ -1,8 +1,8 @@
 ---
 title: "How Do I Check My SEO Ranking? 7 Free and Paid Methods"
-description: "Learn how to check your SEO ranking with free and paid tools. Step-by-step guide using Google Search Console, Ahrefs, Semrush, and manual methods."
+description: "Learn how to check your SEO ranking with 7 free and paid methods, then track rankings over time using Search Console, incognito search and rank trackers."
 publishDate: 2026-04-01
-updatedDate: 2026-04-01
+updatedDate: 2026-09-10
 category: [SEO, Tools]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
@@ -13,19 +13,25 @@ faqs:
     a: "Google personalizes search results based on your location, search history, and device. Use an incognito window or a rank tracking tool for accurate, unbiased ranking data."
   - q: "How often should I check my SEO rankings?"
     a: "Check rankings weekly for active campaigns and monthly for general monitoring. Daily checks create noise since rankings naturally fluctuate. Focus on trends over 30-90 day periods."
+  - q: "How do I track my SEO rankings over time?"
+    a: "Freeze a keyword list, export a dated baseline from Google Search Console, then compare the last 28 days against the previous 28 days on that same list. Treat a move as real only once it holds across two consecutive windows."
+  - q: "Is average position in Google Search Console my actual ranking?"
+    a: "No. Google defines it as the topmost position your page occupied, averaged across every query where the page appeared, and a position is only recorded when the result earns an impression. Read it as direction over weeks, not as today's rank."
 ---
 
 Google processes **[more than 5 trillion searches per year](https://blog.google/products/ads-commerce/ai-personalization-and-the-future-of-shopping/)** - roughly 13.7 billion per day. Yet the **[#1 organic result captures 39.8% of all clicks](https://firstpagesage.com/reports/google-click-through-rates-ctrs-by-ranking-position/)**, while position 10 gets just 1.6%. If you're not tracking where you rank, you have no idea how much of that traffic you're capturing - or leaving on the table.
 
 So **how do I check my SEO ranking** - and am I even showing up? The frustrating part is that simply Googling your keyword doesn't give you the real answer. Google personalizes results based on your location, search history, and device. What you see on your screen is not what your customers see on theirs.
 
-There are better ways to get accurate ranking data. Here are seven methods - from free tools you can use in the next five minutes to professional-grade rank trackers that monitor your positions daily.
+There are better ways to get accurate ranking data. Here are seven methods - from free tools you can use in the next five minutes to professional-grade rank trackers that monitor your positions daily. After the methods, there is a four-step setup for tracking those positions over time instead of checking them once.
 
 ## What "SEO Ranking" Actually Means
 
 Before checking anything, get clear on what you're measuring.
 
 Your **SEO ranking** (or search engine ranking) is the position your page holds in Google's organic search results for a specific keyword. Position 1 means you're the first organic result. Position 11 means you're at the top of page two.
+
+The same number goes by several names. **SERP ranking**, keyword ranking, search engine ranking and organic position all describe one thing: the slot your page occupies on the search engine results page for a single query. Checking your SERP ranking and checking your SEO ranking are the same task, so the seven methods below cover both.
 
 Why does position matter so much? According to [First Page Sage's 2025 CTR study](https://firstpagesage.com/reports/google-click-through-rates-ctrs-by-ranking-position/), **the #1 organic result gets a 39.8% click-through rate**, while position 10 gets just 1.6%. The **top 3 results capture 68.7% of all clicks** on the page. [Backlinko's analysis of 4 million Google search results](https://backlinko.com/google-ctr-stats) found that **the #1 result is 10x more likely to receive a click than the #10 result**. If you're not tracking where you stand, you're flying blind.
 
@@ -169,15 +175,15 @@ If you need ranking data at scale - hundreds of thousands of keywords across mul
 | API Provider | Starting Price | Queries Included |
 |-------------|---------------|-----------------|
 | [SerpApi](https://serpapi.com/pricing) | $75/month | 5,000 searches |
-| [DataForSEO](https://dataforseo.com/apis/serp-api/pricing) | Pay-as-you-go | ~$0.60 per 1,000 searches |
-| [ValueSERP](https://www.valueserp.com/) | $50/month | 2,500 searches |
-| [Scale SERP](https://www.scaleserp.com/) | $79/month | 10,000 searches |
+| [DataForSEO](https://dataforseo.com/apis/serp-api) | Pay-as-you-go | ~$0.60 per 1,000 SERPs |
+| [ValueSERP](https://trajectdata.com/serp/value-serp-api/) | $50/month | 25,000 credits |
+| [Scale SERP](https://trajectdata.com/serp/scale-serp-api/) | $66/month | 10,000 credits |
 
 **Use case example:** You run an agency with 50 clients, each tracking 200 keywords across 3 locations. That's 30,000 keyword-location combinations. A SERP API can pull this data nightly and feed it into a custom dashboard.
 
 **Best for:** SEO agencies, SaaS products, and developers building custom rank tracking solutions. Not necessary for individual site owners.
 
-![How to check SEO rankings - choose your method based on your needs](/assets/blog/how-do-i-check-my-seo-ranking/method-guide.webp "SEO Ranking Check Method Guide")
+<img src="/assets/blog/how-do-i-check-my-seo-ranking/method-guide.webp" alt="How to check SEO rankings - choose your method based on your needs" title="SEO Ranking Check Method Guide" width="1200" height="669" loading="lazy" decoding="async" />
 
 ## How Do I Check My SEO Ranking? Comparison of All 7 Methods
 
@@ -189,11 +195,51 @@ If you need ranking data at scale - hundreds of thousands of keywords across mul
 | Semrush Position Tracking | From $139/mo | High | Daily updates | Yes (Guru+) | Yes | Agencies, large teams |
 | GA4 + GSC Integration | Free | High | No (2-3 day delay) | Yes | No | Business-focused analysis |
 | Free Rank Checkers | Free | Medium | Snapshot only | No | Limited | Occasional checks |
-| SERP APIs | [From $50/mo](https://serpapi.com/pricing) | High | On-demand | Build your own | Yes | Developers, agencies at scale |
+| SERP APIs | [From $50/mo](https://trajectdata.com/serp/value-serp-api/) | High | On-demand | Build your own | Yes | Developers, agencies at scale |
 
 **Recommendation:** Start with Google Search Console. Every site should have it set up. If you need daily tracking and competitor data, add Ahrefs or Semrush based on your budget and workflow preference.
 
 Before acting on a position band, check what that band is worth on your own site. [Measuring the striking distance payoff curve](/blog/striking-distance-keywords/) takes one Search Console export and can show that the 4-20 band converts at close to nothing.
+
+## How to Track SEO Rankings Over Time
+
+Checking a ranking answers one question once. Tracking answers whether the page is moving, and that needs a different setup: the same lookup, run against a frozen keyword list on a fixed schedule, so a real move separates from ordinary daily movement.
+
+|  | Checking (one-off) | Tracking (ongoing) |
+|---|---|---|
+| Answers | Where do I rank right now for this keyword? | Is this page moving up or down? |
+| Input | One keyword | A frozen keyword list |
+| Frequency | Once, on demand | On a schedule |
+| Output | A number | A trend line |
+| Free setup | Incognito search, or a Search Console query filter | Search Console date comparison, or a dated export each week |
+| Breaks when | You read one number as a trend | The keyword list changes between checks |
+
+### Step 1: Freeze the Keyword List
+
+A list that changes every week produces a trend line about nothing, so pick it once and leave it alone.
+
+The free way to build it: in Google Search Console, filter Performance to the page you care about, sort the Queries tab by impressions, and take the top 20 to 50. Every query on that list already earns impressions, so it holds a position that can move. Queries with no impressions have nothing to track yet.
+
+### Step 2: Export a Dated Baseline
+
+Before you change a title tag, add a section, or build a link, export the query table with the date in the filename. That file is your baseline. Without one you can still see that this month differs from last month, but you cannot tie the difference to anything you did.
+
+### Step 3: Read Average Position Correctly
+
+Search Console's Position column is not your rank on a given day. Google's documentation defines it as ["the topmost position occupied by a link to your property or page in search results, averaged across all queries in which your property appeared"](https://support.google.com/webmasters/answer/7042828). That changes how you read the number:
+
+- **It is an average over a date range.** A page that sat at 8 for three weeks and 30 for one week reports a figure in between, and holds neither position.
+- **Positions nobody scrolled to are missing from it.** Google's rule is that ["A link must get an impression for its position to be recorded"](https://support.google.com/webmasters/answer/7042828), illustrated with a result sitting on page 3 when the user only views page 1. Your deepest positions are the ones recorded least often.
+
+Use average position for direction across weeks. For "where do I rank today", use the incognito check in Method 2 or a rank tracker, both of which read the live results page instead of averaging your own impressions.
+
+### Step 4: Set a Cadence and a Comparison Window
+
+Weekly is enough for keywords you are working on now, monthly for the rest. Daily checking mostly records normal volatility rather than your progress.
+
+Compare like for like. In Search Console, open the date filter, switch to the Compare tab, and put the last 28 days against the previous 28 days. A 28-day window contains four of every weekday, so weekend dips cancel out instead of shifting the average. Keep that window identical every time: comparing 7 days against 28 shows a move that never happened.
+
+Treat a change as real once it holds across two consecutive windows, and report the trend next to the impressions behind it rather than the position on its own. [What belongs in an SEO report](/blog/what-is-seo-report/) covers that format. When tracking shows a page sliding for a full quarter, the position data has done its job and the next step is diagnosis, which is what [how often you should run an SEO audit](/blog/how-often-should-you-do-an-seo-audit/) sets a schedule for.
 
 ## What to Do After You Check Your Rankings
 

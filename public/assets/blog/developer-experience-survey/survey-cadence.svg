@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 690" width="1400" height="690">
+  <rect x="0" y="0" width="1400" height="690" fill="#f6f4ef"/>
+
+  <text x="60" y="64" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">A Developer Experience Survey Calendar</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Two full rounds a year, short pulses between, transactional prompts always on</text>
+
+  <text x="60" y="148" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PERIODIC</text>
+
+  <rect x="60" y="170" width="290" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="206" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">Q1 CENSUS</text>
+  <text x="84" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">22 scored items</text>
+  <text x="84" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Full dimension coverage</text>
+
+  <rect x="390" y="170" width="290" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="414" y="206" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">Q2 PULSE</text>
+  <text x="414" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">8 items</text>
+  <text x="414" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Trend continuity only</text>
+
+  <rect x="720" y="170" width="290" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="206" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">Q3 CENSUS</text>
+  <text x="744" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">22 scored items</text>
+  <text x="744" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Full dimension coverage</text>
+
+  <rect x="1050" y="170" width="290" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1074" y="206" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">Q4 PULSE</text>
+  <text x="1074" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">8 items</text>
+  <text x="1074" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Trend continuity only</text>
+
+  <line x1="60" y1="330" x2="1340" y2="330" stroke="#e4dfd6" stroke-width="2"/>
+  <text x="60" y="362" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">JAN</text>
+  <text x="390" y="362" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">APR</text>
+  <text x="720" y="362" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">JUL</text>
+  <text x="1050" y="362" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">OCT</text>
+
+  <text x="60" y="406" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">TRANSACTIONAL, ALWAYS ON</text>
+
+  <rect x="60" y="426" width="406" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="462" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">AFTER ONBOARDING</text>
+  <text x="84" y="498" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Two items on day 30, sent</text>
+  <text x="84" y="526" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">once to every new hire</text>
+
+  <rect x="497" y="426" width="406" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="521" y="462" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">AFTER A BROKEN BUILD</text>
+  <text x="521" y="498" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">One item, capped at one</text>
+  <text x="521" y="526" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">prompt per person per week</text>
+
+  <rect x="934" y="426" width="406" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="958" y="462" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">AFTER A PLATFORM TICKET</text>
+  <text x="958" y="498" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">One item on whether the fix</text>
+  <text x="958" y="526" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">actually unblocked the work</text>
+
+  <line x1="60" y1="590" x2="1340" y2="590" stroke="#b53b15" stroke-width="3"/>
+  <text x="60" y="628" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Results and named owners published within 14 days of close. Without that, the next round's response rate falls.</text>
+</svg>

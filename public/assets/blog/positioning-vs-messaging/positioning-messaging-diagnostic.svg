@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <rect x="0" y="0" width="1400" height="900" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Positioning or Messaging: Route the Symptom</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Work top to bottom. The first yes names the layer, and you change only that artifact.</text>
+
+  <!-- STEP 1 -->
+  <rect x="60" y="140" width="860" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="176" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 01</text>
+  <text x="90" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Do buyers name an alternative you never listed?</text>
+  <text x="90" y="246" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Check the last 20 opportunities. Five or more off-list is a yes.</text>
+  <line x1="924" y1="205" x2="940" y2="205" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="940,198 954,205 940,212" fill="#15130f"/>
+  <rect x="960" y="140" width="380" height="130" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="1"/>
+  <text x="990" y="176" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#b53b15">IF YES</text>
+  <text x="990" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#b53b15">Positioning</text>
+  <text x="990" y="246" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Fix the alternatives list</text>
+
+  <line x1="490" y1="278" x2="490" y2="297" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="483,297 497,297 490,309" fill="#15130f"/>
+
+  <!-- STEP 2 -->
+  <rect x="60" y="315" width="860" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="351" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 02</text>
+  <text x="90" y="389" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Does one segment stall while the others hold?</text>
+  <text x="90" y="421" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Compare segment win rates across two full quarters.</text>
+  <line x1="924" y1="380" x2="940" y2="380" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="940,373 954,380 940,387" fill="#15130f"/>
+  <rect x="960" y="315" width="380" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="990" y="351" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">IF YES</text>
+  <text x="990" y="389" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Positioning</text>
+  <text x="990" y="421" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Fix the best-fit segment</text>
+
+  <line x1="490" y1="453" x2="490" y2="472" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="483,472 497,472 490,484" fill="#15130f"/>
+
+  <!-- STEP 3 -->
+  <rect x="60" y="490" width="860" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="526" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 03</text>
+  <text x="90" y="564" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Does the deck land where the page does not?</text>
+  <text x="90" y="596" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Read the deck's first three sentences next to the hero.</text>
+  <line x1="924" y1="555" x2="940" y2="555" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="940,548 954,555 940,562" fill="#15130f"/>
+  <rect x="960" y="490" width="380" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="990" y="526" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">IF YES</text>
+  <text x="990" y="564" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Messaging</text>
+  <text x="990" y="596" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Fix the hero and subhead</text>
+
+  <line x1="490" y1="628" x2="490" y2="647" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="483,647 497,647 490,659" fill="#15130f"/>
+
+  <!-- STEP 4 -->
+  <rect x="60" y="665" width="860" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="701" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 04</text>
+  <text x="90" y="739" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Do three reps give three different answers?</text>
+  <text x="90" y="771" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Ask each to define the product in one sentence, cold.</text>
+  <line x1="924" y1="730" x2="940" y2="730" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="940,723 954,730 940,737" fill="#15130f"/>
+  <rect x="960" y="665" width="380" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="990" y="701" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">IF YES</text>
+  <text x="990" y="739" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Messaging</text>
+  <text x="990" y="771" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Fix the pillars and proof</text>
+
+  <line x1="60" y1="825" x2="1340" y2="825" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="60" y="862" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">No yes anywhere? Both layers are sound. Look upstream at pricing, product gaps, or the segment you target.</text>
+</svg>

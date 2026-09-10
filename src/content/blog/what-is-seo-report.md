@@ -1,8 +1,8 @@
 ---
-title: "What Is an SEO Report? Metrics, Template, and Tools (2026)"
-description: "Learn what an SEO report is, what metrics to include, and how to build one that drives action. Step-by-step guide with free templates and tools."
+title: "SEO Report Example, Metrics, and Reporting Template"
+description: "An SEO report example with real Search Console numbers, plus the metrics to track, a nine-section reporting template, and the free tools that build it."
 publishDate: 2026-04-01
-updatedDate: 2026-04-01
+updatedDate: 2026-09-10
 category: [SEO, Marketing]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
@@ -13,6 +13,10 @@ faqs:
     a: "Most teams create SEO reports monthly, with weekly check-ins for high-priority campaigns. Quarterly reports work well for executive stakeholders who need a broader view of trends."
   - q: "What tools can I use to create an SEO report?"
     a: "Google Search Console and Google Analytics are free essentials. For more advanced reports, tools like Ahrefs, Semrush, and Screaming Frog provide deeper keyword, backlink, and technical audit data."
+  - q: "What does an SEO report look like?"
+    a: "A filled SEO report is a short executive summary, a query table showing impressions, clicks and average position for every term, and a list of actions. The worked example in this guide uses 16 months of Google Search Console data for this site."
+  - q: "What goes in a basic SEO report?"
+    a: "A basic SEO report covers total clicks and impressions for the period, a query table with average position for each term, and the decisions those numbers support. Everything else is optional detail for a specific audience."
 ---
 
 Most businesses invest in SEO but can't answer basic questions like "Which keywords are driving traffic?" or "Is our organic performance improving?" They publish content, build links, and tweak meta tags - but never build a system to track whether any of it works. Consider this: **[96.55% of all content gets zero traffic from Google](https://ahrefs.com/blog/search-traffic-study/)**. The gap between doing SEO and measuring it is enormous - and without reporting, you have no way to know if you're in the lucky 3.45% or not.
@@ -41,7 +45,7 @@ It also protects you. When someone asks "What has SEO done for us lately?" - you
 
 ### ROI Tracking
 
-SEO often competes with paid channels for budget. Reports that tie organic traffic to conversions and revenue make the case for continued investment. According to [BrightEdge research, organic search drives 53.3% of all trackable website traffic](https://www.brightedge.com/resources/research-reports/channel_share) - more than paid search, social, and display combined. And [HubSpot's State of Marketing report](https://www.hubspot.com/state-of-marketing) found that **website, blog, and SEO is the #1 ROI-generating channel for B2B companies**. If you can show that organic search drives the majority of qualified leads at a fraction of the cost-per-acquisition of paid ads, the budget conversation gets much easier. Just make sure the paid side of that comparison is complete, because [GA4 splits multi-network Google Ads traffic into a Cross Network row of its own](/blog/what-is-cross-network-in-google-analytics/) and a report that counts only Paid Search will understate what paid actually cost.
+SEO often competes with paid channels for budget. Reports that tie organic traffic to conversions and revenue make the case for continued investment. According to [BrightEdge research, organic search drives 53.3% of all trackable website traffic](https://www.brightedge.com/resources/research-reports/channel_share) - more than paid search, social, and display combined. If you can show that organic search drives the majority of qualified leads at a fraction of the cost-per-acquisition of paid ads, the budget conversation gets much easier. Just make sure the paid side of that comparison is complete, because [GA4 splits multi-network Google Ads traffic into a Cross Network row of its own](/blog/what-is-cross-network-in-google-analytics/) and a report that counts only Paid Search will understate what paid actually cost.
 
 ### Spotting Problems Early
 
@@ -207,6 +211,47 @@ Three to five bullet points covering the biggest wins, losses, and recommended n
 
 One number worth adding to any report built on Search Console: clicks per position band. [The band table](/blog/striking-distance-keywords/) shows whether ranking gains are converting on your property or stalling short of the top three.
 
+## SEO Report Example: A Filled-In Monthly Report
+
+An SEO report example is the template above with real numbers dropped into it. The one below is mine: Google Search Console data for swapbiswas.com covering the 16 months that ended on 31 August 2026, pulled with the free stack from the tools table.
+
+### Executive Summary Example
+
+- Organic impressions reached 164,000 over the period. Clicks reached 186, a site-wide CTR of **0.11%**.
+- 63% of those impressions came from queries where the site ranked at position 21 or worse.
+- Queries that ranked in positions 1-3 earned a **6.98% CTR**. Queries in positions 4-10 earned **0.048%**.
+- One cluster of 52 queries about SEO reporting produced 29,394 impressions and zero clicks.
+- The page answering that cluster - this one - averages position 44.5 and has earned a single click on 34,303 impressions.
+
+### Query Performance Table
+
+These are 11 of the 52 queries in that cluster, ordered by impressions. This table is the part of an SEO report that changes what anyone does next.
+
+| Query | Impressions | Clicks | Avg. position |
+|-------|-------------|--------|---------------|
+| seo reporting | 6,297 | 0 | 55.7 |
+| seo report | 5,613 | 0 | 38.3 |
+| report seo | 3,625 | 0 | 57.7 |
+| seo reports | 3,616 | 0 | 54.7 |
+| what is an seo report | 2,044 | 0 | 21.4 |
+| basic seo report | 1,144 | 0 | 22.9 |
+| what is seo reporting | 1,068 | 0 | 8.0 |
+| search engine optimization report | 792 | 0 | 43.2 |
+| what is a seo report | 633 | 0 | 39.0 |
+| google seo report | 390 | 0 | 51.5 |
+| seo report summary | 297 | 0 | 37.6 |
+
+The split in that table is the finding. The page holds position 8 for the definition question and sits between 38 and 58 for every head term, which tells me Google has filed it as a page that defines a phrase rather than a page that produces a report. Impressions keep accumulating on queries the page will not be seated for, and impressions with no clicks behind them are not progress.
+
+### Actions the Report Produced
+
+1. Give the head term what it asks for. What Google seats for "seo report" is mostly report generators and worked client reports, so a page that only defines the phrase has no route onto that first page. The section you are reading is the response.
+2. Watch "what is seo reporting" at position 8 and leave the rest of the cluster alone. It is the only query in the table close enough to the 6.98% band for a title or intro change to pay for itself.
+3. Stop counting cluster impressions as a win. 29,394 impressions at an average position of 44 measures how often a page was printed, not how often it was chosen.
+4. Re-measure the same table in 90 days on the same date window and read the position column first. If Search Console is not set up yet, [checking your SEO ranking](/blog/how-do-i-check-my-seo-ranking/) covers the free ways to pull position data.
+
+One bullet list, one query table and four decisions is a complete basic SEO report. Pulling it took about twenty minutes, and it named the next quarter of work.
+
 ## Common SEO Reporting Mistakes
 
 **Reporting metrics without context.** Saying "we rank #4 for target keyword" means nothing if you were #3 last month and #15 the month before. Always show the trajectory.
@@ -227,4 +272,4 @@ Understanding **what is an SEO report** is just the starting point. The real val
 
 Start with the free tools - Google Search Console, GA4, and Looker Studio. Use the template above to structure your first report. Focus on the metrics that matter to your specific audience, and always tie data to decisions.
 
-The best SEO report isn't the longest or the prettiest. It's the one that answers "What should we do next?" with clarity and evidence. With organic search driving over half of all website traffic and [Google rolling out multiple core updates every year](https://searchengineland.com/google-algorithm-updates-2024-449417), the businesses that report consistently are the ones that adapt fastest. Build that report consistently, and SEO stops being a black box and starts being a measurable growth channel.
+The best SEO report isn't the longest or the prettiest. It's the one that answers "What should we do next?" with clarity and evidence. With organic search driving over half of all website traffic and [Google rolling out multiple core updates every year](https://searchengineland.com/google-algorithm-updates-2024-449417), a business that reports consistently catches a ranking change while it is still small. Build that report consistently, and SEO stops being a black box and starts being a measurable growth channel.

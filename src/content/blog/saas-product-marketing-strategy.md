@@ -105,7 +105,7 @@ Every significant launch needs a [go-to-market strategy](/blog/go-to-market-stra
 
 ## Driving Product Adoption and Retention
 
-This is where SaaS product marketing strategy diverges most sharply from traditional product marketing. After the sale, PMMs must drive users to their "aha moment" as fast as possible.
+This is where SaaS product marketing strategy diverges most sharply from traditional product marketing. After the sale, PMMs must drive users to their "aha moment" as fast as possible. Before you report on that, settle how you are counting it: [feature adoption rate](/blog/feature-adoption-rate/) is four different numbers depending on who you treat as eligible.
 
 ### The Activation Framework
 
