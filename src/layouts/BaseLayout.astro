@@ -377,11 +377,43 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				if (closeBtn) closeBtn.addEventListener('click', dismiss);
 
 				// Slide the popup away while the footer is on screen so it never covers the footer links.
+				var dockFooter = false, dockAd = false;
+				function applyDock() {
+					popup.classList.toggle('nl-popup--docked', dockFooter || dockAd);
+				}
 				var footerEl = document.querySelector('footer');
 				if (footerEl && 'IntersectionObserver' in window) {
 					new IntersectionObserver(function(entries) {
-						popup.classList.toggle('nl-popup--docked', entries[0].isIntersecting);
+						dockFooter = entries[0].isIntersecting;
+						applyDock();
 					}, { threshold: 0.05 }).observe(footerEl);
+				}
+
+				// The same rule for ad units, and this one is not a nicety. Measured on the
+				// live site at 390x844, the popup covered 62.9 percent of the end-of-post
+				// unit: it is a full-width bottom sheet below the mobile breakpoint, and the
+				// end of the article is exactly where a reader is when the 60 percent scroll
+				// trigger fires. That is lost viewability and it is also the AdSense rule
+				// against content obscuring an ad. It happens on desktop too once the window
+				// is narrow enough for the 320px card to reach the centred content column.
+				//
+				// The root is shrunk to the bottom 280px of the viewport, the tallest the
+				// popup gets at either breakpoint, so an ad docks the popup only when it is
+				// genuinely in the popup's band rather than any time one is on screen. That
+				// distinction is what keeps the popup alive on the rest of the page.
+				var adSlots = document.querySelectorAll('.ad-slot');
+				if (adSlots.length && 'IntersectionObserver' in window) {
+					var adObs = new IntersectionObserver(function(entries) {
+						for (var i = 0; i < entries.length; i++) {
+							entries[i].target._inPopupBand = entries[i].isIntersecting;
+						}
+						dockAd = false;
+						for (var j = 0; j < adSlots.length; j++) {
+							if (adSlots[j]._inPopupBand) { dockAd = true; break; }
+						}
+						applyDock();
+					}, { rootMargin: '-' + Math.max(0, window.innerHeight - 280) + 'px 0px 0px 0px' });
+					for (var k = 0; k < adSlots.length; k++) adObs.observe(adSlots[k]);
 				}
 
 				if (form) {
