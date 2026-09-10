@@ -42,3 +42,6 @@ pnpm-debug.log*
 
 # Search Console API credentials + exports (never commit)
 .gsc/
+
+# ad-hoc local test scripts
+_*.cjs
