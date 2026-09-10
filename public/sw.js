@@ -59,9 +59,6 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-
-AND delete the now-duplicate declaration at old line 61, so the asset branch reads:
-
   // Same-origin static assets (CSS, JS, images, fonts): cache first, network fallback.
   //
   // The same-origin check matters. Without it this branch also matched
