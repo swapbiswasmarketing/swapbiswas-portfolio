@@ -563,15 +563,27 @@ samp {
 	min-height: 100px;
 }
 
-/* The same reserve repeated on the WRAPPER, and it is not redundant.
-   AdSense writes `height: auto !important; min-height: 0px !important` inline on an
-   unfilled unit whose format is horizontal, and an inline !important beats any author
-   rule, so the reserve above is gone the moment such a unit reports no fill. Measured
-   on the live site: a tool-page banner collapsed to 26px and left the caption sitting
-   over an empty strip. AdSense never touches the wrapper, so putting the floor here
-   holds in both cases. Rectangle units get `height: 0px` with no min-height override
-   and are unaffected, but carry the same backstop so the two formats behave alike
-   rather than differing for a reason nobody remembers later. */
+/* The same reserve repeated on the WRAPPER. What it does and does not buy, measured on
+   the live site rather than assumed, because the obvious reading of it is wrong:
+
+   On a no-fill, AdSense writes `height: auto !important; min-height: 0px !important`
+   inline, and it writes it on the WRAPPER as well as the <ins>. An inline !important
+   beats every author rule, so nothing here can keep a collapsed unit open. Confirmed at
+   1440px on /tools/campaign-name-generator/: before the response the wrapper computes
+   min-height 100px and the box is 190px; after it, the wrapper carries that inline pair
+   and the box is 90px.
+
+   So this rule is not a floor for the collapsed state. It is a floor for the WINDOW
+   BEFORE THE RESPONSE ARRIVES, which is the only window that matters for layout
+   stability: the space is held from first paint until Google answers, so nothing moves
+   while the request is in flight. After that, a collapse is Google's call and is the
+   better outcome anyway, since an empty labelled band helps nobody.
+
+   The two formats differ and only one is affected. A `rectangle` unit gets a bare
+   `height: 0px` with no min-height override, so its 280px reserve survives a no-fill
+   intact - that is the 300 blog units. Only `horizontal` gets the forced collapse, and
+   that is the 7 banner units. Both carry the rule so the two do not diverge for a
+   reason nobody remembers later. */
 .ad-slot--rect {
 	min-height: 280px;
 }
