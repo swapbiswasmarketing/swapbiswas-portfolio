@@ -481,3 +481,108 @@ samp {
 		gap: 12rem;
 	}
 }
+
+/* ---------------------------------------------------------------------------
+   AdSense manual units.
+
+   Global, not scoped to a component, on purpose. The mid-article units are spliced
+   into the markdown output by src/lib/rehype-ad-slots.mjs, so they never carry an
+   Astro data-astro-cid attribute and a scoped rule would silently skip them. One
+   stylesheet serves both those and the ones placed by AdUnit.astro.
+
+   build.inlineStylesheets is 'always', so these rules ship inside the HTML of every
+   page using MainHead, including the ones that carry no ad. That is roughly 350 bytes
+   brotli per document, paid per view rather than once per session - small, but a real
+   cost, not a free ride, which is why this block is as short as it is.
+
+   Markup, from adUnitHtml() in src/config/ads.mjs:
+     <div class="ad-slot ad-slot--VARIANT" data-pagefind-ignore>
+       <span class="ad-label">Advertisement</span>
+       <ins class="adsbygoogle" ...></ins>
+     </div>
+   --------------------------------------------------------------------------- */
+.ad-slot {
+	display: block;
+	width: 100%;
+}
+
+.ad-slot--rect {
+	/* Padding, not margin. Inside a blog post this sits in .content, whose
+	   `> * + *` rule already hands it 1rem of margin-top, and that rule wins the
+	   cascade because Astro scoping makes its selector more specific than a bare
+	   class here. Padding is not in that fight, so the unit ends up with 2.5rem of
+	   clear space above it and 2.5 to 3rem below (1.5rem here plus whichever of the
+	   next heading's 1.5rem margin or the sibling rule's 1rem wins) with no
+	   !important anywhere. */
+	padding-block: 1.5rem;
+	text-align: center;
+}
+
+.ad-slot--banner {
+	/* 2rem, and larger than the rect units get, because both banner placements have a
+	   clickable control immediately below them: on /blog/ the pagination nav (whose own
+	   margin-top is only 1rem) and on the tool pages the ContactCTA. 16px between a
+	   100px banner and a row of Prev/Next buttons on a 390px phone is the canonical
+	   accidental-click layout. */
+	padding-block: 2rem;
+}
+
+.ad-label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	/* --sg-muted rather than the --accent-text of a section eyebrow. "Advertisement"
+	   is a disclosure, and an accented one competes with the article for attention. */
+	color: var(--sg-muted);
+	/* .ad-slot--rect centres its contents; the caption stays flush left. */
+	text-align: left;
+}
+
+/* Reserved height. These are floors AND ceilings, which is the whole reason the units
+   are data-ad-format="rectangle" and "horizontal" rather than "auto" or "fluid":
+
+     rectangle  - tallest member that fits these containers is 336x280, so 280px is
+                  exact. A 250px creative leaves 30px of dead space; nothing can push
+                  the page down.
+     horizontal - tallest member is 320x100, so 100px is exact. A 728x90 leaves 10px.
+
+   There is deliberately NO rule releasing min-height once data-ad-status="filled".
+   Releasing it would turn every short fill into an upward shift, trading permanent
+   dead space (invisible to CLS, costs nothing but pixels) for a real layout shift on
+   every impression. Measure the served heights after a week and trim these two numbers
+   if the dead space is worse than expected. */
+.ad-slot--rect ins.adsbygoogle {
+	min-height: 280px;
+}
+
+.ad-slot--banner ins.adsbygoogle {
+	min-height: 100px;
+}
+
+/* Collapse of an unfilled unit.
+
+   This is a CLASS, toggled by the initialiser in BaseLayout.astro, not the pure-CSS
+   ins.adsbygoogle[data-ad-status='unfilled'] { display:none } recipe Google publishes.
+   The CSS version fires the instant AdSense stamps the attribute, and the slot is
+   frequently on screen at that moment: at a normal flick-scroll velocity the slot
+   enters the viewport 240-600ms after the push, and an AdSense request-to-status round
+   trip is 200-800ms. Those distributions overlap almost completely, and a ~330px
+   collapse at the top of a 720px viewport is roughly 0.4 CLS from one event. Below-fold
+   collapses cost nothing; on-screen ones cost everything, and the CSS rule cannot tell
+   the difference. The initialiser only adds this class when the slot is confirmed out
+   of view, so an on-screen no-fill stays as reserved whitespace until the reader
+   scrolls past it. Note that "unfill-optimized" is deliberately not matched: that value
+   means AdSense filled the space with something of its own. */
+.ad-slot--collapsed {
+	display: none !important;
+}
+
+@media print {
+	.ad-slot {
+		display: none !important;
+	}
+}

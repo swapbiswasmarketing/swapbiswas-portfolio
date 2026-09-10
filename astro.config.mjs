@@ -3,6 +3,13 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeResponsiveImages from './src/lib/rehype-responsive-images.mjs';
+import rehypeAdSlots from './src/lib/rehype-ad-slots.mjs';
+// Imported here, not inside the plugin, on purpose: passing these as plugin OPTIONS is
+// what puts them inside config.markdown.rehypePlugins, which is part of the hashed
+// Astro config. Editing a slot id then changes astroConfigDigest and clears
+// .astro/data-store.json, so the 144 cached posts re-render. Import them inside the
+// plugin instead and a pasted slot id changes nothing the cache can see.
+import { AD_SLOTS, IN_ARTICLE_PLAN, UNSAFE_BEFORE_TAGS } from './src/config/ads.mjs';
 import { readdirSync } from 'node:fs';
 
 // The 41 concept demos moved from /redesign/{slug} to /personal-website-examples/{slug} (still noindex).
@@ -103,6 +110,12 @@ export default defineConfig({
 			// /assets/blog/. Reads src/data/image-manifest.json, which is written by
 			// `npm run img:variants` - the prebuild step keeps it in step with the files.
 			rehypeResponsiveImages,
+			// Splices the mid-article AdSense units into blog posts at the first h2 with
+			// enough prose above and below it and a safe block immediately above. Emits
+			// nothing while the slot ids are placeholders. The plan and slot table are
+			// passed as OPTIONS rather than imported inside the plugin so that changing a
+			// slot id changes this config's digest and invalidates the content-layer cache.
+			[rehypeAdSlots, { plan: IN_ARTICLE_PLAN, slots: AD_SLOTS, unsafeBefore: UNSAFE_BEFORE_TAGS }],
 		],
 	},
 });

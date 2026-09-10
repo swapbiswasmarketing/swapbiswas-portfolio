@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 
+import AdUnit from '../../components/AdUnit.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 import Pill from '../../components/Pill.astro';
@@ -248,6 +249,15 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 								</div>
 							</section>
 						)}
+
+						{/* End-of-article unit. A flex child of .content-column, so the column's
+						   2.5rem gap gives it clear space above and below with no margin of its
+						   own. It is after the FAQ accordion, not after </div class="content">:
+						   126 of 144 posts have an faqs array, so the earlier position would be
+						   mid-page on most of the corpus and would sit 2.5rem above the share
+						   links. Renders nothing while the slot id in src/config/ads.mjs is a
+						   placeholder. */}
+						<AdUnit name="blogEndOfPost" />
 
 						<!-- Author Bio -->
 						<a href="/about/" class="author-bio">
@@ -1643,9 +1653,15 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 				});
 			}
 			contentResizeObs.disconnect();
-			if (contentEl) contentResizeObs.observe(contentEl);
-			const column = document.querySelector('.content-column');
-			if (column) contentResizeObs.observe(column);
+			// document.body ONLY. It was originally observed alongside .content and
+			// .content-column because its height moves for cases those two miss, but the
+			// converse also holds: both are in the body's flow, so nothing can resize
+			// either without resizing the body. Observing all three fired this callback
+			// three times per resize, and each call schedules a frame whose read phase
+			// runs getBoundingClientRect() once per TOC heading. With ad slots inside both
+			// .content and .content-column, and an AdSense unit changing size at least
+			// twice per fill, that would be 8-12 forced synchronous layouts landing in the
+			// busiest part of the load. One observation, one callback, same coverage.
 			contentResizeObs.observe(document.body);
 		}
 

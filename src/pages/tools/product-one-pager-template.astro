@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
+import AdUnit from '../../components/AdUnit.astro';
 
 const title = "Product One-Pager Template: Free Builder, Done in 5 Minutes";
 const description = "Free product one-pager template. Capture the product, problem, solution, differentiators, use cases, proof, and CTA on a polished one-page PNG. No signup.";
@@ -371,6 +372,12 @@ const faqSchema = {
 					))}
 				</div>
 			</section>
+
+			<!-- After the .seo-content section, so the unit sits below the page's editorial
+			     content rather than beside the generator. Never inside .tool-grid: that column
+			     holds .preview-sticky and the export path rewrites the preview frame height
+			     mid-render. -->
+			<AdUnit name="toolFooter" />
 		</main>
 
 		<ContactCTA />

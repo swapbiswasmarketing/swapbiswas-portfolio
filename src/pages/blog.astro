@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import AdUnit from '../components/AdUnit.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import BlogPreview from '../components/BlogPreview.astro';
@@ -91,6 +92,19 @@ const POSTS_PER_PAGE = 9;
 			<div class="empty-state" style="display:none">
 				<p>No articles match that search. Try another keyword or pick a topic below.</p>
 			</div>
+
+			<!-- One banner unit, deliberately OUTSIDE <ul class="blog-grid"> and outside the
+			     .blog-item set. render() collects items by that class and hides every one of
+			     them before showing a slice, so an ad in the feed would either be
+			     display:none'd by a user filter (which the ad-code policy forbids) or, if
+			     given the .blog-item class, would inflate the page count and match every
+			     search query, because the Pagefind matcher's url.endsWith(href) test is true
+			     for an empty href. It is also BELOW the pagination nav: .blog-grid has no
+			     margin-bottom and .pagination only 1rem of margin-top, so sitting between
+			     them would put a banner flush against the last card and 16px above the
+			     Prev/Next buttons. Here it has the Browse by Topic hub under it as real
+			     content. -->
+			<AdUnit name="blogIndexFeed" />
 
 			<!-- Browse by topic (SEO-discoverable category hub links) -->
 			<section class="topic-hub" aria-labelledby="topic-hub-heading">

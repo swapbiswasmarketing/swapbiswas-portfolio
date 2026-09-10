@@ -1,0 +1,27 @@
+---
+import { adUnitHtml } from '../config/ads.mjs';
+
+interface Props {
+	/** A key of AD_SLOTS in src/config/ads.mjs. An unknown key throws at build time. */
+	name: string;
+}
+
+const { name } = Astro.props;
+
+// adUnitHtml() returns '' while the slot id is still a placeholder, and Astro renders
+// nothing at all for a falsy expression: no wrapper, no gap, no reserved height, no
+// console noise. It THROWS on a name that is not in AD_SLOTS, which is the difference
+// between "not configured yet" and "you typed the key wrong" - the two used to look
+// identical and this component is applied by hand across six separate tool pages.
+//
+// The markup is built in ads.mjs rather than written out here so this component and the
+// rehype plugin that injects the mid-article units emit identical HTML from one source.
+//
+// There is no <style> block in this file. The mid-article units come out of markdown
+// and so never carry this component's data-astro-cid attribute, which means a scoped
+// rule here would style the template-placed units and silently miss the injected ones.
+// Every .ad-slot rule lives in src/styles/global.css for that reason.
+const html = adUnitHtml(name);
+---
+
+{html && <Fragment set:html={html} />}

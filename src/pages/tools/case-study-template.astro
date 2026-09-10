@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
+import AdUnit from '../../components/AdUnit.astro';
 
 const title = "Case Study Template: Free B2B Case Study in 10 Minutes";
 const description = "Free case study template. Capture the customer, challenge, solution, results, and quote on a polished one-page PNG. Built for B2B SaaS PMMs. No signup.";
@@ -402,6 +403,12 @@ const faqSchema = {
 					))}
 				</div>
 			</section>
+
+			<!-- After the .seo-content section, so the unit sits below the page's editorial
+			     content rather than beside the generator. Never inside .tool-grid: that column
+			     holds .preview-sticky and the export path rewrites the preview frame height
+			     mid-render. -->
+			<AdUnit name="toolFooter" />
 		</main>
 
 		<ContactCTA />

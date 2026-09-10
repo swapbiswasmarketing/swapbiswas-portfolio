@@ -244,6 +244,9 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 			var progressEl = null, progressMilestones = null;
 			var progressTop = 0, progressHeight = 1, progressMeasured = false;
 			var progressTicking = false, progressBound = false;
+			// Invalidates the cached article geometry when an ad slot fills or collapses.
+			// See the comment in bindProgressScroll().
+			var progressResizeObs = null;
 
 			function measureProgress() {
 				var rect = progressEl.getBoundingClientRect();
@@ -258,6 +261,16 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				// Only invalidate on resize; re-measuring here would force a layout inside a
 				// resize handler for numbers that are not read until the next scroll frame.
 				window.addEventListener('resize', function() { progressMeasured = false; }, { passive: true });
+				// An ad slot filling or collapsing inside .content-column changes the article
+				// height without firing a resize, so progressHeight would stay at its stale
+				// pre-fill value and every read_percent milestone would fire at the wrong
+				// scroll depth for the rest of the page view. Same invalidate-only, measure-
+				// later discipline as the resize listener: the callback sets a flag and reads
+				// no layout. progressEl is re-pointed on every navigation by initPageTracking.
+				if ('ResizeObserver' in window) {
+					progressResizeObs = new ResizeObserver(function() { progressMeasured = false; });
+					if (progressEl) progressResizeObs.observe(progressEl);
+				}
 				window.addEventListener('scroll', function() {
 					if (progressTicking) return;
 					progressTicking = true;
@@ -311,12 +324,19 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 					// handler stops measuring the article we just left.
 					progressEl = null;
 					progressMilestones = null;
+					if (progressResizeObs) progressResizeObs.disconnect();
 				} else if (!article._tracked) {
 					article._tracked = true;
 					progressEl = article;
 					progressMilestones = { 25: false, 50: false, 75: false, 100: false };
 					progressMeasured = false;
 					bindProgressScroll();
+					// The router swaps document.body, so this is a different element from the
+					// one the observer was watching a navigation ago.
+					if (progressResizeObs) {
+						progressResizeObs.disconnect();
+						progressResizeObs.observe(article);
+					}
 				}
 			}
 
@@ -390,6 +410,131 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 							if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
 						});
 					});
+				}
+			})();
+		</script>
+
+		<!-- AdSense manual units. Full rationale for every decision below - the head-swap
+		     loader loss, the positional push, the deferred collapse - is in the RUNTIME
+		     NOTES block in src/config/ads.mjs, which is build-time only. Comments are kept
+		     short here because this script is inlined into every page and ships on every
+		     view. -->
+		<script is:inline>
+			(function () {
+				var AD_LOADER = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3086200953871328';
+				var pushObserver = null;
+				var collapseObserver = null;
+				var statusObserver = null;
+
+				function isProd() {
+					return location.hostname === 'swapbiswas.com' || location.hostname === 'www.swapbiswas.com';
+				}
+
+				// Astro's head swap deletes the loader element MainHead created, and MainHead's
+				// inline creator is deduped by textContent so it cannot rebuild it. Without this
+				// Auto ads places nothing on pages 2..N of a session.
+				function ensureLoader() {
+					if (!isProd()) return;
+					if (document.querySelector('script[src*="adsbygoogle.js"]')) return;
+					var s = document.createElement('script');
+					s.async = true;
+					s.crossOrigin = 'anonymous';
+					s.src = AD_LOADER;
+					document.head.appendChild(s);
+				}
+
+				// Collapse a no-fill only once it is confirmed off screen. Collapsing the moment
+				// AdSense stamps the attribute is a ~0.4 CLS event when the slot is on screen.
+				function ensureCollapseObserver() {
+					if (collapseObserver || !('IntersectionObserver' in window)) return;
+					collapseObserver = new IntersectionObserver(function (entries) {
+						for (var i = 0; i < entries.length; i++) {
+							if (entries[i].isIntersecting) continue;
+							collapseObserver.unobserve(entries[i].target);
+							entries[i].target.classList.add('ad-slot--collapsed');
+						}
+					});
+				}
+
+				// "unfill-optimized" is not matched: AdSense filled the space with its own thing.
+				function ensureStatusObserver() {
+					if (statusObserver || !('MutationObserver' in window)) return;
+					statusObserver = new MutationObserver(function (records) {
+						for (var i = 0; i < records.length; i++) {
+							var el = records[i].target;
+							if (el.getAttribute('data-ad-status') !== 'unfilled') continue;
+							var slot = el.parentNode;
+							if (!slot || !slot.classList || !slot.classList.contains('ad-slot')) continue;
+							if (collapseObserver) collapseObserver.observe(slot);
+							else slot.classList.add('ad-slot--collapsed');
+						}
+					});
+				}
+
+				// push({}) is POSITIONAL: it claims the first unclaimed ins.adsbygoogle in
+				// document order, not the element that triggered anything. So claim the whole
+				// unclaimed prefix up to `target`, or a back-button scroll restore permanently
+				// orphans a slot. The walk covers Auto ads units too - they consume positions.
+				function pushThrough(target) {
+					var slots = document.querySelectorAll('ins.adsbygoogle');
+					for (var i = 0; i < slots.length; i++) {
+						var el = slots[i];
+						if (!el.hasAttribute('data-ad-pushed') && !el.hasAttribute('data-adsbygoogle-status')) {
+							el.setAttribute('data-ad-pushed', '1');
+							if (pushObserver) pushObserver.unobserve(el);
+							if (statusObserver) {
+								statusObserver.observe(el, { attributes: true, attributeFilter: ['data-ad-status'] });
+							}
+							try {
+								(window.adsbygoogle = window.adsbygoogle || []).push({});
+							} catch (e) {
+								// The three guards above are the correctness layer, not this catch.
+							}
+						}
+						if (el === target) return;
+					}
+				}
+
+				function initAds() {
+					// Before the early return: Auto ads needs the loader on every page.
+					ensureLoader();
+
+					// Only OUR units are observed - an Auto ads unit is processed by the library
+					// itself. pushThrough still walks past them for ordering.
+					var slots = document.querySelectorAll('.ad-slot > ins.adsbygoogle:not([data-ad-pushed])');
+					if (!slots.length) return;
+					ensureCollapseObserver();
+					ensureStatusObserver();
+
+					if (!('IntersectionObserver' in window)) {
+						pushThrough(slots[slots.length - 1]);
+						return;
+					}
+					if (!pushObserver) {
+						// 2000px so the response resolves before the slot is visible, while still
+						// keeping the request off the critical path during the LCP image fetch.
+						pushObserver = new IntersectionObserver(function (entries) {
+							for (var i = 0; i < entries.length; i++) {
+								if (entries[i].isIntersecting) pushThrough(entries[i].target);
+							}
+						}, { rootMargin: '2000px 0px' });
+					}
+					for (var j = 0; j < slots.length; j++) pushObserver.observe(slots[j]);
+				}
+
+				initAds();
+
+				// Astro dedupes this whole block by its text, so it runs once per session and
+				// the listener below covers every later navigation. Same shape as MainHead.
+				if (!window._adsInit) {
+					window._adsInit = true;
+					// The observers hold strong refs to targets the router is about to discard.
+					document.addEventListener('astro:before-swap', function () {
+						if (pushObserver) pushObserver.disconnect();
+						if (collapseObserver) collapseObserver.disconnect();
+						if (statusObserver) statusObserver.disconnect();
+					});
+					document.addEventListener('astro:page-load', initAds);
 				}
 			})();
 		</script>
