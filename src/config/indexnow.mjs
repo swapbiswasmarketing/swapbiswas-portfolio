@@ -85,3 +85,16 @@ export const REQUEST_TIMEOUT_MS = 15000;
  * the time this is read every blog URL carries a date.
  */
 export const SITEMAP_FILE = 'sitemap-0.xml';
+
+/**
+ * The same sitemap as served by the live site.
+ *
+ * DURING A BUILD THIS IS THE PREVIOUS DEPLOYMENT'S SITEMAP, and that is the point.
+ * Vercel promotes a deployment only after the build finishes, so while the hook runs
+ * the production domain still serves the last one. Fetching it gives the build a
+ * record of what was published last time without storing any state - the live site
+ * IS the state. Diffing it against the sitemap just built yields exactly the URLs
+ * this deploy changed. (It is the same fact that makes the first deploy skip: the key
+ * file is not live yet either.)
+ */
+export const PUBLISHED_SITEMAP_URL = `${SITE_ORIGIN}/${SITEMAP_FILE}`;

@@ -9,9 +9,9 @@
  *
  * USAGE:
  *   node scripts/indexnow.mjs verify              Is the origin serving the key file?
- *   node scripts/indexnow.mjs status [--days N]   What WOULD be submitted (no network)
- *   node scripts/indexnow.mjs submit [--days N]   Announce fresh URLs from the sitemap
- *   node scripts/indexnow.mjs submit --url URL    Announce one URL
+ *   node scripts/indexnow.mjs status [--days N]   What WOULD be submitted
+ *   node scripts/indexnow.mjs submit [--days N]   Announce recently changed URLs
+ *   node scripts/indexnow.mjs submit --url URL    Announce one URL (probed first)
  *   node scripts/indexnow.mjs submit --all        Announce every URL in the sitemap
  *   node scripts/indexnow.mjs key                 Print the key and its public location
  *
@@ -20,11 +20,17 @@
  *   --url URL    submit exactly this URL, repeatable
  *   --all        ignore lastmod, submit everything in the sitemap
  *   --dry-run    print the payload, make no request
- *   --sitemap P  read a sitemap from P instead of dist/sitemap-0.xml
+ *   --sitemap P  read a LOCAL sitemap from P instead of the live site
+ *   --force      skip the liveness probe on --url (announce it anyway)
  *
- * `status` and `--dry-run` never touch the network, so they are safe to run anywhere.
- * `submit` is the only command that announces anything, and it refuses to run until
- * `verify` passes - announcing against a key the origin is not serving earns a 403.
+ * URLS COME FROM THE LIVE SITE BY DEFAULT, not from dist/. A local build reflects the
+ * working tree, which is routinely ahead of production, and announcing a built-but-not-
+ * deployed URL points the engine at a 404. --sitemap opts back into a local file.
+ *
+ * `submit` is the only command that announces anything. It refuses to run until the
+ * key file is live (announcing against a key the origin is not serving earns a 403),
+ * and it probes any URL named with --url, since those bypass the sitemap and so bypass
+ * the guarantee that a URL is deployed.
  */
 
 import fs from 'node:fs';
@@ -37,13 +43,16 @@ import {
   HOST,
   INDEXNOW_KEY,
   KEY_LOCATION,
+  PUBLISHED_SITEMAP_URL,
   SITE_ORIGIN,
   SITEMAP_FILE,
 } from '../src/config/indexnow.mjs';
 
 import {
   buildPayload,
+  fetchPublishedSitemap,
   parseSitemapEntries,
+  probeUrl,
   selectFreshUrls,
   submitUrls,
   verifyKeyFile,
@@ -102,15 +111,43 @@ function ok(msg) {
 }
 
 /**
- * Read the sitemap, or return null if it is not there.
+ * Read a local sitemap, or return null if it is not there.
  *
- * Whether a missing sitemap is fatal is the CALLER's decision, not this function's:
- * `submit` cannot proceed without one, but `status` reporting "you have not built yet"
- * is an answer rather than an error.
+ * Whether a missing file is fatal is the CALLER's decision, not this function's:
+ * `submit` cannot proceed without a URL list, but `status` reporting "you have not
+ * built yet" is an answer rather than an error.
  */
-function readSitemapIfPresent() {
-  if (!fs.existsSync(SITEMAP_PATH)) return null;
-  return parseSitemapEntries(fs.readFileSync(SITEMAP_PATH, 'utf8'));
+function readLocalSitemap(file) {
+  if (!fs.existsSync(file)) return null;
+  return parseSitemapEntries(fs.readFileSync(file, 'utf8'));
+}
+
+/**
+ * Where the URL list comes from.
+ *
+ * THE DEFAULT IS THE LIVE SITE, NOT dist/. This used to read the local build, and that
+ * is wrong for a command run by hand: dist/ reflects the working tree, which is
+ * routinely AHEAD of production. Announcing a URL that is built but not deployed points
+ * the engine at a 404, which is the one outcome this tool must never produce. It nearly
+ * happened - a local dist/ built while another process was adding posts would have
+ * announced 21 URLs, 12 of them undeployed.
+ *
+ * The live sitemap contains, by construction, only URLs that are actually served, so
+ * this is structural rather than a check that can be forgotten. --sitemap opts back
+ * into a local file for the cases that genuinely want one (a dry run against a build
+ * before deploying it), and says so in the source line.
+ *
+ * The deploy hook does NOT use this. It reads its own dist/, which is correct there:
+ * that build IS the deployment being shipped.
+ */
+async function loadEntries() {
+  if (flags.sitemap) {
+    const entries = readLocalSitemap(SITEMAP_PATH);
+    return { entries, source: `local ${path.basename(SITEMAP_PATH)} (may contain undeployed URLs)` };
+  }
+  const published = await fetchPublishedSitemap({ fetchImpl: fetch });
+  if (!published.ok) die(`could not read ${PUBLISHED_SITEMAP_URL}: ${published.message}`);
+  return { entries: published.entries, source: `live sitemap at ${PUBLISHED_SITEMAP_URL}` };
 }
 
 /**
@@ -124,22 +161,22 @@ function readSitemapIfPresent() {
  * that disagrees with the command it previews is worse than no preview, and it
  * disagreed in the dangerous direction - it under-reported.
  */
-function resolveUrls({ requireSitemap = true } = {}) {
+async function resolveUrls({ requireSitemap = true } = {}) {
   if (explicitUrls.length) {
-    return { urls: explicitUrls, source: `${explicitUrls.length} --url flag(s)` };
+    return { urls: explicitUrls, source: `${explicitUrls.length} --url flag(s)`, entries: null };
   }
-  const entries = readSitemapIfPresent();
+  const { entries, source } = await loadEntries();
   if (entries === null) {
     if (requireSitemap) {
-      die(`no sitemap at ${SITEMAP_PATH}\n         Run \`npm run build\` first, or pass --sitemap <path>.`);
+      die(`no sitemap at ${SITEMAP_PATH}\n         Run \`npm run build\` first, or drop --sitemap to use the live site.`);
     }
-    return { urls: [], source: 'no sitemap built yet' };
+    return { urls: [], source: 'no sitemap built yet', entries: null };
   }
   if (flags.all) {
-    return { urls: entries.map((e) => e.loc), source: `every URL in ${path.basename(SITEMAP_PATH)}` };
+    return { urls: entries.map((e) => e.loc), source: `every URL in the ${source}`, entries };
   }
   const fresh = selectFreshUrls(entries, new Date(), WINDOW_DAYS);
-  return { urls: fresh, source: `lastmod within ${WINDOW_DAYS} day(s)` };
+  return { urls: fresh, source: `lastmod within ${WINDOW_DAYS} day(s), from the ${source}`, entries };
 }
 
 // ---------------------------------------------------------------- commands
@@ -158,18 +195,18 @@ async function cmdVerify() {
   ok(result.message);
 }
 
-function cmdStatus() {
-  // The sitemap line describes the FILE; the selection lines describe what would be
-  // submitted. Keeping them separate is why an existing-but-empty sitemap now reports
-  // "(0 URLs)" rather than "(not built)" - the file was read, it was just empty.
-  const entries = readSitemapIfPresent();
-  const { urls, source } = resolveUrls({ requireSitemap: false });
+async function cmdStatus() {
+  // The source line describes WHERE the URLs come from; the selection lines describe
+  // what would be submitted. Keeping them separate is why an existing-but-empty local
+  // sitemap reports "(0 URLs)" rather than "(not built)" - it was read, it was empty.
+  const { urls, source, entries } = await resolveUrls({ requireSitemap: false });
+  const origin = flags.sitemap ? SITEMAP_PATH : PUBLISHED_SITEMAP_URL;
   console.log('');
   console.log(`  key           ${INDEXNOW_KEY}`);
   console.log(`  keyLocation   ${KEY_LOCATION}`);
   console.log(`  host          ${HOST}`);
   console.log(`  endpoint      ${ENDPOINT}`);
-  console.log(`  sitemap       ${SITEMAP_PATH}${entries ? ` (${entries.length} URLs)` : ' (not built)'}`);
+  console.log(`  sitemap       ${origin}${entries ? ` (${entries.length} URLs)` : ' (not built)'}`);
   console.log(`  window        ${WINDOW_DAYS} day(s)`);
   console.log(`  selection     ${source}`);
   console.log('');
@@ -180,7 +217,7 @@ function cmdStatus() {
 }
 
 async function cmdSubmit() {
-  const { urls, source } = resolveUrls();
+  const { urls, source } = await resolveUrls();
   if (!urls.length) {
     ok(`nothing to submit (${source})`);
     return;
@@ -202,7 +239,28 @@ async function cmdSubmit() {
   if (!check.ok) die(`${check.message}\n         Run \`npm run indexnow:verify\` for detail.`);
   console.log(`  key file verified: ${check.message}`);
 
-  const result = await submitUrls({ urls, fetchImpl: fetch });
+  // URLs named with --url skipped the sitemap, so nothing has established they are
+  // deployed. Probe them. A URL taken from a sitemap is deployed by construction and
+  // needs no probe, which is what keeps this from costing a request per URL on the
+  // normal path. --force is for announcing a page that is live but not yet in the
+  // sitemap, which is legitimate but should be a deliberate act.
+  let toSubmit = urls;
+  if (explicitUrls.length && !flags.force) {
+    const live = [];
+    for (const url of urls) {
+      const probe = await probeUrl({ url, fetchImpl: fetch });
+      console.log(`  probe ${url} -> ${probe.message}`);
+      if (probe.ok) live.push(url);
+    }
+    const refused = urls.length - live.length;
+    if (refused) {
+      console.log(`  refusing ${refused} URL(s) that are not served (pass --force to override)`);
+    }
+    if (!live.length) die('none of the named URLs are served; nothing submitted');
+    toSubmit = live;
+  }
+
+  const result = await submitUrls({ urls: toSubmit, fetchImpl: fetch });
   for (const batch of result.batches) {
     console.log(`  batch of ${batch.count}: HTTP ${batch.status ?? 'n/a'} - ${batch.message}`);
   }
@@ -229,13 +287,16 @@ function usage() {
   IndexNow CLI - swapbiswas.com
 
     verify              Is the origin serving the key file?
-    status [--days N]   What WOULD be submitted (no network)
-    submit [--days N]   Announce fresh URLs from the sitemap
-    submit --url URL    Announce one URL (repeatable)
+    status [--days N]   What WOULD be submitted
+    submit [--days N]   Announce recently changed URLs
+    submit --url URL    Announce one URL, repeatable (probed first)
     submit --all        Announce every URL in the sitemap
     key                 Print the key and its public location
 
-  Flags: --days N  --url URL  --all  --dry-run  --sitemap PATH
+  Flags: --days N  --url URL  --all  --dry-run  --sitemap PATH  --force
+
+  URLs come from the live site by default, not dist/, so a built-but-undeployed
+  page can never be announced. --sitemap PATH opts into a local file.
 `);
 }
 

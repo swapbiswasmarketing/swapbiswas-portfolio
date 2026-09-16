@@ -118,8 +118,14 @@ export default defineConfig({
 					const path = await import('node:path');
 					const { fileURLToPath } = await import('node:url');
 					const { FRESH_WINDOW_DAYS, SITEMAP_FILE } = await import('./src/config/indexnow.mjs');
-					const { parseSitemapEntries, resolveDeployContext, selectFreshUrls, submitUrls, verifyKeyFile } =
-						await import('./src/lib/indexnow.mjs');
+					const {
+						fetchPublishedSitemap,
+						parseSitemapEntries,
+						resolveDeployContext,
+						selectUrlsToAnnounce,
+						submitUrls,
+						verifyKeyFile,
+					} = await import('./src/lib/indexnow.mjs');
 
 					const say = (msg) => (logger ? logger.info(msg) : console.log(`[indexnow-submit] ${msg}`));
 
@@ -137,11 +143,29 @@ export default defineConfig({
 						}
 
 						const entries = parseSitemapEntries(fs.readFileSync(sitemapPath, 'utf8'));
-						const urls = selectFreshUrls(entries, new Date(), FRESH_WINDOW_DAYS);
+
+						// The live site is still serving the PREVIOUS deployment at this point, so its
+						// sitemap is a free record of what was published last time. Diffing against it
+						// catches an edit whose lastmod has already aged out of the window. If it cannot
+						// be read we pass null, which falls back to the window alone - passing [] would
+						// mean "nothing was ever published" and announce all 159 URLs.
+						const published = await fetchPublishedSitemap({ fetchImpl: fetch });
+						if (!published.ok) {
+							say(`could not read the published sitemap (${published.message}); using the ${FRESH_WINDOW_DAYS}-day window alone`);
+						}
+
+						const selection = selectUrlsToAnnounce({
+							currentEntries: entries,
+							previousEntries: published.ok ? published.entries : null,
+							now: new Date(),
+							windowDays: FRESH_WINDOW_DAYS,
+						});
+						const urls = selection.urls;
 						if (urls.length === 0) {
-							say(`nothing to announce - no URL has a lastmod inside ${FRESH_WINDOW_DAYS} days`);
+							say(`nothing to announce - no URL changed against the published sitemap or has a lastmod inside ${FRESH_WINDOW_DAYS} days`);
 							return;
 						}
+						say(`${urls.length} URL(s) to announce (${selection.changed.length} changed vs published, ${selection.fresh.length} inside the ${FRESH_WINDOW_DAYS}-day window)`);
 
 						// The key has to be live at the origin BEFORE anything can be announced, and
 						// on the deploy that first adds it the production domain is still serving the

@@ -28,6 +28,7 @@ import {
   KEY_LOCATION,
   KEY_PATTERN,
   MAX_URLS_PER_REQUEST,
+  PUBLISHED_SITEMAP_URL,
   REQUEST_TIMEOUT_MS,
   SITE_ORIGIN,
   SITEMAP_FILE,
@@ -38,12 +39,16 @@ import {
   chunkUrls,
   classifyResponse,
   daysBetween,
+  diffSitemaps,
+  fetchPublishedSitemap,
   filterUrlsForOrigin,
   isValidKey,
   keyFilePath,
   parseSitemapEntries,
+  probeUrl,
   resolveDeployContext,
   selectFreshUrls,
+  selectUrlsToAnnounce,
   submitBatch,
   submitUrls,
   validatePayload,
@@ -101,6 +106,21 @@ function stubFetch(responses) {
   };
   impl.calls = calls;
   return impl;
+}
+
+/**
+ * A fetch whose headers arrive cleanly and whose BODY then fails, which is what a
+ * connection reset mid-response looks like from undici. Distinct from a failed request:
+ * response.ok is true and the status is 200, so only reading the body reveals it.
+ */
+function bodyFailsFetch(message = 'terminated (cause: other side closed)') {
+  return async () => ({
+    ok: true,
+    status: 200,
+    text: async () => {
+      throw new TypeError(message);
+    },
+  });
 }
 
 const NOW = new Date('2026-09-16T12:00:00Z');
@@ -461,6 +481,232 @@ test('parse + select composes end to end', () => {
   assert.deepEqual(urls, ['https://swapbiswas.com/blog/alpha/']);
 });
 
+// ============================================================ diffSitemaps
+
+console.log('\n--- diffSitemaps ---');
+
+const PREV = [
+  { loc: 'https://swapbiswas.com/blog/a/', lastmod: '2026-01-01' },
+  { loc: 'https://swapbiswas.com/blog/b/', lastmod: '2026-01-01' },
+  { loc: 'https://swapbiswas.com/about/', lastmod: null },
+];
+
+test('a brand new URL counts as changed', () => {
+  const cur = [...PREV, { loc: 'https://swapbiswas.com/blog/new/', lastmod: '2026-09-16' }];
+  assert.deepEqual(diffSitemaps(PREV, cur), ['https://swapbiswas.com/blog/new/']);
+});
+
+test('a new URL with NO lastmod still counts (the window cannot see these)', () => {
+  // A new /tools/ page has no frontmatter date, so it never enters the window.
+  const cur = [...PREV, { loc: 'https://swapbiswas.com/tools/new-tool/', lastmod: null }];
+  assert.deepEqual(diffSitemaps(PREV, cur), ['https://swapbiswas.com/tools/new-tool/']);
+});
+
+test('a changed lastmod counts as changed', () => {
+  const cur = PREV.map((e) => (e.loc.endsWith('/a/') ? { ...e, lastmod: '2026-09-16' } : e));
+  assert.deepEqual(diffSitemaps(PREV, cur), ['https://swapbiswas.com/blog/a/']);
+});
+
+test('an identical sitemap yields no changes', () => {
+  assert.deepEqual(diffSitemaps(PREV, PREV), []);
+});
+
+test('two entries both lacking lastmod are unchanged, not changed', () => {
+  // Otherwise every static page re-announces on every single deploy.
+  assert.deepEqual(diffSitemaps([{ loc: 'https://swapbiswas.com/about/', lastmod: null }], [{ loc: 'https://swapbiswas.com/about/', lastmod: null }]), []);
+});
+
+test('a lastmod appearing where there was none counts as changed', () => {
+  const prev = [{ loc: 'https://swapbiswas.com/x/', lastmod: null }];
+  const cur = [{ loc: 'https://swapbiswas.com/x/', lastmod: '2026-09-16' }];
+  assert.deepEqual(diffSitemaps(prev, cur), ['https://swapbiswas.com/x/']);
+});
+
+test('a removed URL is not reported (nothing to announce for a deletion)', () => {
+  assert.deepEqual(diffSitemaps(PREV, [PREV[0]]), []);
+});
+
+test('an empty previous sitemap makes every current URL new', () => {
+  assert.equal(diffSitemaps([], PREV).length, 3);
+});
+
+test('diffSitemaps tolerates null inputs', () => {
+  assert.deepEqual(diffSitemaps(null, null), []);
+  assert.deepEqual(diffSitemaps(null, PREV).length, 3);
+});
+
+test('result keeps current-sitemap order', () => {
+  const cur = [
+    { loc: 'https://swapbiswas.com/blog/z/', lastmod: '2026-09-16' },
+    { loc: 'https://swapbiswas.com/blog/a/', lastmod: '2026-09-16' },
+  ];
+  assert.deepEqual(diffSitemaps(PREV, cur), ['https://swapbiswas.com/blog/z/', 'https://swapbiswas.com/blog/a/']);
+});
+
+// ============================================================ selectUrlsToAnnounce
+
+console.log('\n--- selectUrlsToAnnounce (the union) ---');
+
+test('the diff catches an edit whose lastmod aged out of the window', () => {
+  // THE LIMITATION THE UNION EXISTS TO REMOVE. Edited 30 days ago, never deployed
+  // since. The window alone would miss it forever.
+  const previous = [{ loc: 'https://swapbiswas.com/blog/a/', lastmod: '2026-01-01' }];
+  const current = [{ loc: 'https://swapbiswas.com/blog/a/', lastmod: '2026-08-17' }];
+  assert.deepEqual(selectFreshUrls(current, NOW, 7), [], 'window alone should miss it');
+  const r = selectUrlsToAnnounce({ currentEntries: current, previousEntries: previous, now: NOW, windowDays: 7 });
+  assert.deepEqual(r.urls, ['https://swapbiswas.com/blog/a/']);
+});
+
+test('the window catches a second same-day edit the diff cannot see', () => {
+  // lastmod is date-only, so both edits produce the same string and the diff is blind.
+  const previous = [{ loc: 'https://swapbiswas.com/blog/a/', lastmod: '2026-09-16' }];
+  const current = [{ loc: 'https://swapbiswas.com/blog/a/', lastmod: '2026-09-16' }];
+  assert.deepEqual(diffSitemaps(previous, current), [], 'diff alone should miss it');
+  const r = selectUrlsToAnnounce({ currentEntries: current, previousEntries: previous, now: NOW, windowDays: 7 });
+  assert.deepEqual(r.urls, ['https://swapbiswas.com/blog/a/']);
+});
+
+test('the union deduplicates a URL both signals select', () => {
+  const previous = [{ loc: 'https://swapbiswas.com/blog/a/', lastmod: '2026-01-01' }];
+  const current = [{ loc: 'https://swapbiswas.com/blog/a/', lastmod: '2026-09-16' }];
+  const r = selectUrlsToAnnounce({ currentEntries: current, previousEntries: previous, now: NOW, windowDays: 7 });
+  assert.equal(r.urls.length, 1);
+  assert.equal(r.fresh.length, 1);
+  assert.equal(r.changed.length, 1);
+});
+
+test('an unchanged, stale sitemap announces nothing', () => {
+  const same = [{ loc: 'https://swapbiswas.com/blog/a/', lastmod: '2026-01-01' }];
+  assert.deepEqual(selectUrlsToAnnounce({ currentEntries: same, previousEntries: same, now: NOW, windowDays: 7 }).urls, []);
+});
+
+test('previousEntries null falls back to the window alone', () => {
+  // Must NOT be read as "nothing published yet" - that would announce the whole site.
+  const current = [
+    { loc: 'https://swapbiswas.com/blog/fresh/', lastmod: '2026-09-16' },
+    { loc: 'https://swapbiswas.com/blog/stale/', lastmod: '2026-01-01' },
+  ];
+  const r = selectUrlsToAnnounce({ currentEntries: current, previousEntries: null, now: NOW, windowDays: 7 });
+  assert.deepEqual(r.urls, ['https://swapbiswas.com/blog/fresh/']);
+  assert.deepEqual(r.changed, []);
+});
+
+test('previousEntries [] DOES mean everything is new', () => {
+  const current = [{ loc: 'https://swapbiswas.com/blog/stale/', lastmod: '2026-01-01' }];
+  const r = selectUrlsToAnnounce({ currentEntries: current, previousEntries: [], now: NOW, windowDays: 7 });
+  assert.deepEqual(r.urls, ['https://swapbiswas.com/blog/stale/']);
+});
+
+test('the union preserves current-sitemap order', () => {
+  const previous = [];
+  const current = [
+    { loc: 'https://swapbiswas.com/b/', lastmod: '2026-01-01' },
+    { loc: 'https://swapbiswas.com/a/', lastmod: '2026-09-16' },
+  ];
+  const r = selectUrlsToAnnounce({ currentEntries: current, previousEntries: previous, now: NOW, windowDays: 7 });
+  assert.deepEqual(r.urls, ['https://swapbiswas.com/b/', 'https://swapbiswas.com/a/']);
+});
+
+test('the union reports both signals separately for logging', () => {
+  const previous = [{ loc: 'https://swapbiswas.com/old/', lastmod: '2026-01-01' }];
+  const current = [
+    { loc: 'https://swapbiswas.com/old/', lastmod: '2026-01-01' },
+    { loc: 'https://swapbiswas.com/new/', lastmod: '2026-09-16' },
+  ];
+  const r = selectUrlsToAnnounce({ currentEntries: current, previousEntries: previous, now: NOW, windowDays: 7 });
+  assert.deepEqual(r.fresh, ['https://swapbiswas.com/new/']);
+  assert.deepEqual(r.changed, ['https://swapbiswas.com/new/']);
+});
+
+// ============================================================ fetchPublishedSitemap
+
+console.log('\n--- fetchPublishedSitemap ---');
+
+await testAsync('parses a served sitemap', async () => {
+  const f = stubFetch({ status: 200, body: SAMPLE_SITEMAP });
+  const r = await fetchPublishedSitemap({ fetchImpl: f });
+  assert.equal(r.ok, true);
+  assert.equal(r.entries.length, 4);
+});
+
+await testAsync('appends a cache buster so a stale edge copy is not compared against', async () => {
+  const f = stubFetch({ status: 200, body: SAMPLE_SITEMAP });
+  await fetchPublishedSitemap({ fetchImpl: f, cacheBuster: 'abc123' });
+  assert.match(f.calls[0].url, /indexnow-diff=abc123/);
+});
+
+await testAsync('targets the published sitemap URL', async () => {
+  const f = stubFetch({ status: 200, body: SAMPLE_SITEMAP });
+  await fetchPublishedSitemap({ fetchImpl: f });
+  assert.ok(f.calls[0].url.startsWith(PUBLISHED_SITEMAP_URL));
+});
+
+await testAsync('a 404 returns entries null, NOT an empty array', async () => {
+  // [] would mean "nothing was ever published" and announce the whole site.
+  const r = await fetchPublishedSitemap({ fetchImpl: stubFetch({ status: 404, body: '' }) });
+  assert.equal(r.ok, false);
+  assert.equal(r.entries, null);
+});
+
+await testAsync('a network error returns entries null and does not throw', async () => {
+  const r = await fetchPublishedSitemap({ fetchImpl: stubFetch(new Error('ENOTFOUND')) });
+  assert.equal(r.ok, false);
+  assert.equal(r.entries, null);
+  assert.match(r.message, /could not fetch/);
+});
+
+await testAsync('a connection dropped MID-BODY returns entries null, it does not throw', async () => {
+  // If this throws, the hook's outer catch swallows it and the deploy announces NOTHING,
+  // skipping the window fallback that exists precisely for this case.
+  const r = await fetchPublishedSitemap({ fetchImpl: bodyFailsFetch() });
+  assert.equal(r.ok, false);
+  assert.equal(r.entries, null);
+  assert.match(r.message, /could not read/);
+});
+
+await testAsync('a mid-body failure still lets the union fall back to the window', async () => {
+  // The end-to-end consequence, asserted rather than assumed.
+  const published = await fetchPublishedSitemap({ fetchImpl: bodyFailsFetch() });
+  const current = [
+    { loc: 'https://swapbiswas.com/blog/fresh/', lastmod: '2026-09-16' },
+    { loc: 'https://swapbiswas.com/blog/stale/', lastmod: '2026-01-01' },
+  ];
+  const sel = selectUrlsToAnnounce({
+    currentEntries: current,
+    previousEntries: published.ok ? published.entries : null,
+    now: NOW,
+    windowDays: 7,
+  });
+  assert.deepEqual(sel.urls, ['https://swapbiswas.com/blog/fresh/']);
+});
+
+await testAsync('an empty but served sitemap gives [], which is different from null', async () => {
+  const r = await fetchPublishedSitemap({ fetchImpl: stubFetch({ status: 200, body: '<urlset></urlset>' }) });
+  assert.equal(r.ok, true);
+  assert.deepEqual(r.entries, []);
+});
+
+// ============================================================ probeUrl
+
+console.log('\n--- probeUrl ---');
+
+await testAsync('a 200 passes', async () => {
+  const r = await probeUrl({ url: 'https://swapbiswas.com/blog/a/', fetchImpl: stubFetch({ status: 200, body: '' }) });
+  assert.equal(r.ok, true);
+});
+
+await testAsync('a 404 fails and says so', async () => {
+  const r = await probeUrl({ url: 'https://swapbiswas.com/blog/ghost/', fetchImpl: stubFetch({ status: 404, body: '' }) });
+  assert.equal(r.ok, false);
+  assert.match(r.message, /not served/);
+});
+
+await testAsync('an unreachable host fails without throwing', async () => {
+  const r = await probeUrl({ url: 'https://swapbiswas.com/x/', fetchImpl: stubFetch(new Error('timeout')) });
+  assert.equal(r.ok, false);
+  assert.equal(r.status, null);
+});
+
 // ============================================================ chunkUrls
 
 console.log('\n--- chunkUrls ---');
@@ -725,6 +971,15 @@ await testAsync('verifyKeyFile never throws', async () => {
   await verifyKeyFile({ fetchImpl: stubFetch(new Error('boom')) });
 });
 
+await testAsync('a connection dropped MID-BODY returns, it does not throw', async () => {
+  // The headers arrive (200) and the socket then drops, which rejects response.text()
+  // with undici's "terminated". This used to escape the function, and because callers
+  // branch on the returned shape it skipped their fallback entirely.
+  const r = await verifyKeyFile({ fetchImpl: bodyFailsFetch() });
+  assert.equal(r.ok, false);
+  assert.match(r.message, /could not read/);
+});
+
 // ============================================================ submitBatch
 
 console.log('\n--- submitBatch ---');
@@ -954,8 +1209,11 @@ test('`--days abc` is refused instead of announcing every URL', () => {
 });
 
 test('`--days -1` is refused', () => {
+  // Asserts the MESSAGE, not just the exit code: status tolerates a missing sitemap and
+  // exits 0, so a bare status===1 check could pass for an unrelated reason.
   const r = runCli(['status', '--sitemap', path.join(ROOT, 'dist', SITEMAP_FILE), '--days', '-1']);
   assert.equal(r.status, 1);
+  assert.match(r.stderr, /--days must be a non-negative number/);
 });
 
 test('a failure exits 1, not 127 (no libuv assertion on exit)', () => {
