@@ -17,7 +17,12 @@
     "gsc:queries": "node scripts/gsc.mjs queries",
     "gsc:pages": "node scripts/gsc.mjs pages",
     "gsc:striking": "node scripts/gsc.mjs striking",
-    "gsc:coverage": "node scripts/gsc.mjs coverage"
+    "gsc:coverage": "node scripts/gsc.mjs coverage",
+    "indexnow": "node scripts/indexnow.mjs",
+    "indexnow:verify": "node scripts/indexnow.mjs verify",
+    "indexnow:status": "node scripts/indexnow.mjs status",
+    "indexnow:submit": "node scripts/indexnow.mjs submit",
+    "test:indexnow": "node scripts/test-indexnow.mjs"
   },
   "dependencies": {
     "@anthropic-ai/claude-code": "^2.1.101",

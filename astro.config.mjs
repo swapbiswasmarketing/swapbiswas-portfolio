@@ -98,6 +98,68 @@ export default defineConfig({
 				},
 			},
 		},
+		{
+			// Announces new and edited URLs to IndexNow (Bing, Yandex, Seznam, Naver) at the
+			// end of a production build. Google does not participate, so this changes nothing
+			// there - the sitemap is still the only signal Google gets.
+			//
+			// ORDER MATTERS. This must stay AFTER sitemap-lastmod in this array: Astro runs
+			// astro:build:done hooks in integration order, and this one reads the <lastmod>
+			// values that hook injects. Move it above and every URL parses as "no lastmod",
+			// so a deploy would announce nothing and still log success.
+			//
+			// This hook can fail the announcement but must never fail the build. The pages
+			// are already built and the sitemap still carries them; the worst case of a
+			// failure here is that Bing finds the change on its own schedule.
+			name: 'indexnow-submit',
+			hooks: {
+				'astro:build:done': async ({ dir, logger }) => {
+					const fs = await import('node:fs');
+					const path = await import('node:path');
+					const { fileURLToPath } = await import('node:url');
+					const { FRESH_WINDOW_DAYS, SITEMAP_FILE } = await import('./src/config/indexnow.mjs');
+					const { parseSitemapEntries, resolveDeployContext, selectFreshUrls, submitUrls, verifyKeyFile } =
+						await import('./src/lib/indexnow.mjs');
+
+					const say = (msg) => (logger ? logger.info(msg) : console.log(`[indexnow-submit] ${msg}`));
+
+					try {
+						const context = resolveDeployContext(process.env);
+						if (!context.shouldSubmit) {
+							say(`skipped - ${context.reason}`);
+							return;
+						}
+
+						const sitemapPath = path.join(fileURLToPath(dir), SITEMAP_FILE);
+						if (!fs.existsSync(sitemapPath)) {
+							say(`skipped - no ${SITEMAP_FILE} in the build output`);
+							return;
+						}
+
+						const entries = parseSitemapEntries(fs.readFileSync(sitemapPath, 'utf8'));
+						const urls = selectFreshUrls(entries, new Date(), FRESH_WINDOW_DAYS);
+						if (urls.length === 0) {
+							say(`nothing to announce - no URL has a lastmod inside ${FRESH_WINDOW_DAYS} days`);
+							return;
+						}
+
+						// The key has to be live at the origin BEFORE anything can be announced, and
+						// on the deploy that first adds it the production domain is still serving the
+						// previous deployment. That first build logs this and skips; the next submits.
+						const keyCheck = await verifyKeyFile({ fetchImpl: fetch });
+						if (!keyCheck.ok) {
+							say(`skipped - ${keyCheck.message}`);
+							return;
+						}
+
+						const result = await submitUrls({ urls, fetchImpl: fetch });
+						say(result.ok ? result.message : `announcement failed - ${result.message}`);
+					} catch (error) {
+						say(`skipped - unexpected error: ${error?.message || error}`);
+					}
+				},
+			},
+		},
 	],
 	markdown: {
 		shikiConfig: {
