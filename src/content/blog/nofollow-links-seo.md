@@ -1,7 +1,7 @@
 ---
 title: "Nofollow Links SEO: What Four Platforms Actually Stamp"
 description: "Nofollow links SEO advice argues theory. I read the served HTML on Medium, Dev.to, HackerNoon and Hashnode: four platforms, five different rel strings."
-publishDate: 2026-09-19
+publishDate: 2026-09-15
 category: [SEO]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"

@@ -1,7 +1,7 @@
 ---
 title: "Latent Semantic Indexing SEO: I Ran the Algorithm"
 description: "Latent semantic indexing SEO advice sells a keyword list the real algorithm cannot output. I ran a truncated SVD over 147 posts to show what LSI produces."
-publishDate: 2026-09-17
+publishDate: 2026-09-14
 category: [SEO]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"

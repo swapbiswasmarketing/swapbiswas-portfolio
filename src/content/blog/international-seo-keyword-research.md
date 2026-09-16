@@ -1,7 +1,7 @@
 ---
 title: "International SEO Keyword Research Starts in Search Console"
 description: "International SEO keyword research usually opens a tool. I opened my own Search Console country report instead: 193 countries, 186 clicks, one row worth reading."
-publishDate: 2026-09-20
+publishDate: 2026-09-16
 category: [SEO]
 faqs:
   - q: "Where does international SEO keyword research start?"

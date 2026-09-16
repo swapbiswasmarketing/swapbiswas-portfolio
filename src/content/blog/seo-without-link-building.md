@@ -1,7 +1,7 @@
 ---
 title: "SEO Without Link Building: 164,564 Impressions, 186 Clicks"
 description: "I ran SEO without link building for 16 months on a Domain Rating 13 site. Here is the measured result: 164,564 impressions, 186 clicks, and where they landed."
-publishDate: 2026-09-16
+publishDate: 2026-09-13
 category: [SEO]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"

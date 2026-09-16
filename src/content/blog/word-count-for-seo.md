@@ -1,7 +1,7 @@
 ---
 title: "Word Count for SEO: What 147 Posts on One Domain Show"
 description: "Word count for SEO is always measured across sites, where domain authority confounds it. I held the domain constant over 147 posts and the correlation vanished."
-publishDate: 2026-09-16
+publishDate: 2026-09-13
 category: [SEO]
 faqs:
   - q: "Does word count affect SEO rankings?"

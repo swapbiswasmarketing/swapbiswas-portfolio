@@ -1,7 +1,7 @@
 ---
 title: "301 Redirect SEO: What Your Host Actually Sends"
 description: "Most 301 redirect SEO advice assumes your server emits a 301. Mine emits 308 on every permanent redirect. Here is the curl output and what Google does with it."
-publishDate: 2026-09-19
+publishDate: 2026-09-15
 category: [SEO]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"

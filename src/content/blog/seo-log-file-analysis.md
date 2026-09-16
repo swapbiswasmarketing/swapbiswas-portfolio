@@ -1,7 +1,7 @@
 ---
 title: "SEO Log File Analysis When the Log File Does Not Exist"
 description: "Most SEO log file analysis guides assume a raw access log on disk. On Vercel, Netlify and Cloudflare it is not there. Here is what each host gives you instead."
-publishDate: 2026-09-18
+publishDate: 2026-09-14
 category: [SEO]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"

@@ -1,7 +1,7 @@
 ---
 title: "Alt Text and SEO: 159 Posts, Only 8 Alt Strings"
 description: "Alt text and SEO advice checks whether the attribute exists. My 159 posts all pass that test, and they share 8 alt strings, one of them on 52 pages."
-publishDate: 2026-09-20
+publishDate: 2026-09-15
 category: [SEO, Design]
 faqs:
   - q: "Does alt text help SEO?"

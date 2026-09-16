@@ -1,7 +1,7 @@
 ---
 title: "SEO Keyword Map: Retrofitting 147 Published Posts"
 description: "Most SEO keyword map guides start from a blank sheet. Mine started from 147 live posts and a Search Console export. Here is the real page distribution."
-publishDate: 2026-09-21
+publishDate: 2026-09-16
 category: [SEO]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"

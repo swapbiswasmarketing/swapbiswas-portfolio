@@ -1,7 +1,7 @@
 ---
 title: "SEO Long Tail Keywords: 42% of Impressions, 10% of Clicks"
 description: "Four-plus word queries took 42% of my impressions and 10% of listed clicks. What 1,000 Search Console rows say about SEO long tail keywords on a DR 13 site."
-publishDate: 2026-09-18
+publishDate: 2026-09-14
 category: [SEO]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"

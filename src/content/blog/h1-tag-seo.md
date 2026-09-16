@@ -1,7 +1,7 @@
 ---
 title: "H1 Tag SEO: Should Your H1 Match the Title Tag?"
 description: "H1 tag SEO advice says the H1 should match the title tag. Across 147 pages where the two strings are identical by construction, here is what the data shows."
-publishDate: 2026-09-21
+publishDate: 2026-09-16
 category: [SEO]
 faqs:
   - q: "Should the H1 match the title tag?"
