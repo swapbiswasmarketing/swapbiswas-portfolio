@@ -912,6 +912,14 @@
 		],
 		"hash": "f23158458a848439"
 	},
+	"/assets/blog/message-testing-examples/split-check.webp": {
+		"w": 1200,
+		"h": 669,
+		"v": [
+			660
+		],
+		"hash": "0e170b6cf5ffa7c8"
+	},
 	"/assets/blog/messaging-pillars/messaging-house.webp": {
 		"w": 1200,
 		"h": 651,
@@ -927,6 +935,14 @@
 			660
 		],
 		"hash": "598070378edb854a"
+	},
+	"/assets/blog/mql-to-sql-conversion-rate-benchmark/one-publisher-two-benchmarks.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "347ade510a38a181"
 	},
 	"/assets/blog/positioning-vs-messaging/positioning-messaging-diagnostic.webp": {
 		"w": 1200,
@@ -1252,6 +1268,14 @@
 			660
 		],
 		"hash": "77163f0dab34870d"
+	},
+	"/assets/blog/share-of-voice-vs-market-share/sov-substitution.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "04394ec71978447a"
 	},
 	"/assets/blog/striking-distance-keywords/ctr-band-worksheet.webp": {
 		"w": 1200,

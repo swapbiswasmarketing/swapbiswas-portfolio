@@ -106,7 +106,7 @@ The single biggest failure mode in VoC is the insight sits with the analyst and 
 | Audience | Format | Cadence |
 |---|---|---|
 | Product team | Top 5 themes + verbatims, tied to roadmap areas | Monthly |
-| Marketing / PMM | Customer language for messaging tests | Bi-weekly |
+| Marketing / PMM | Customer language for [messaging tests](/blog/message-testing-examples/) | Bi-weekly |
 | Sales | Objections, competitor mentions, win language | Weekly |
 | CS | Risk flags by account | Real-time on negative signals |
 | Executives | Trend summary, biggest unmet need | Quarterly |

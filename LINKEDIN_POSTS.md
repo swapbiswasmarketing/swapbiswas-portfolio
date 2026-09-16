@@ -1464,3 +1464,87 @@ The post has the copy-ready question bank grouped by DevEx dimension.
 #DeveloperExperience #DevEx #DeveloperMarketing #DevRel #EngineeringLeadership
 
 **Nano Banana image prompt (1200x628):** Renaissance-style painting, warm paper background #f6f4ef, a printer's composing tray holding neat rows of small type slugs arranged in three labelled groups, one slug lifted out and held in tweezers, a single vermilion red mark on that one slug, muted earth tones, one red accent only, no text.
+
+---
+
+## Batch of 2026-09-12
+
+### [DRAFTED] The message test everyone describes and nobody hands over
+
+Every guide to message testing explains the concept. I went looking for the actual instrument and could not find one.
+
+GLG's guide gives you three phases: explore, evaluate, select. No survey questions. No scoring rubric. No sample sizes. The vendor pages put the instrument behind a product. The consultancy pages put it behind a call.
+
+So the post prints it. The whole thing, copy-paste:
+
+- 12 five-point items across four axes: clarity, relevance, differentiation, believability
+- An unaided comprehension question asked before any scale, because once you show someone a scale you have told them what to think about
+- A forced-rank exercise
+- The weights, and the arithmetic that turns 12 items into one comparable composite
+
+Then the part nobody writes about, which is what you are allowed to conclude at a B2B sample size.
+
+You cannot recruit 400 qualified technical buyers. You can get 40. At 20 per cell, two variants have to differ by 0.62 points before the gap means anything. At 15 per cell it is 0.72. Below that, run it as an interview guide and stop pretending it is a survey.
+
+And the rule I would defend hardest: when the survey scores disagree with your lost-deal notes, follow the deals. Respondents rate messages. Buyers reveal what stopped them.
+
+🔗 https://swapbiswas.com/blog/message-testing-examples/?utm_source=linkedin&utm_medium=social&utm_campaign=message-testing-examples
+
+#ProductMarketing #Messaging #B2BMarketing #MarketResearch #DeveloperMarketing
+
+**Nano Banana image prompt (1200x628):** Renaissance-style still life, warm paper background #f6f4ef, a scholar's bench with a printed questionnaire sheet held flat by a brass weight, a quill resting beside it, and two small identical wax-sealed envelopes set apart from each other to suggest two audiences, one vermilion red wax seal and one plain, muted earth tones, one red accent only, no text.
+
+---
+
+### [DRAFTED] I tried to source the MQL-to-SQL benchmarks. The trail ends fast.
+
+Published MQL-to-SQL conversion rates run from 13% to 45%. I went looking for where each number comes from.
+
+What I found on page one:
+
+- The 13% everyone quotes traces to one SEO agency publishing its own client data. Every page citing it names the firm. Not one supplies a URL.
+- One page does cite sources with real links. All 14 domains are vendors or agencies publishing their own benchmark posts. Six of the fourteen state no sample size at all.
+- Exactly one genuine primary sample exists on the SERP, and it is self-published with no external validation.
+
+Then the part that explains the spread. First Page Sage publishes 13% in one report and 28-46% in another, for the same metric on the same customer type. The reports are not inconsistent. They qualify leads at different points: in one, intent and budget sit in the MQL bar; in the other, both sit in the SQL bar.
+
+Move two qualifying tests one stage down the funnel and the published rate roughly triples. That is the whole 13-to-45 range, and it is a definition artifact, not a performance one.
+
+Which is also why these benchmarks do not transfer to a product-led or developer-tool funnel at all. The high-intent signal there is a first test run or a CI integration, not a form fill.
+
+Baseline against your own trailing quarters. Write the definition down next to the number.
+
+🔗 https://swapbiswas.com/blog/mql-to-sql-conversion-rate-benchmark/?utm_source=linkedin&utm_medium=social&utm_campaign=mql-to-sql-conversion-rate-benchmark
+
+#DemandGeneration #B2BMarketing #SaaSMetrics #MarketingOps #ProductMarketing
+
+**Nano Banana image prompt (1200x628):** Renaissance-style still life, warm paper background #f6f4ef, a scholar's desk with a chain of small folded paper notes linked end to end that stops abruptly in mid-air over the desk edge, a magnifying glass resting beside the break, a single vermilion red thread running through the chain and ending where it breaks, muted earth tones, one red accent only, no text.
+
+---
+
+### [DRAFTED] Your share of voice formula does not compute
+
+The textbook definition is your share of category advertising spend. In developer tools, nobody buys category advertising. The denominator does not exist, so the formula returns nothing.
+
+So teams substitute. They count mentions instead, run the same formula, and keep the growth rule that was fitted on spend.
+
+Talkwalker's guide does it in public: it publishes the formula as brand mentions over total category mentions, then two paragraphs later says market share gains 0.5% for every 10% of excess share of voice. The formula counts mentions. The 0.5 was fitted on advertising spend. Nothing on the page connects them.
+
+I traced that constant. It is not one number:
+
+- 0.5 comes from a Nielsen study of 123 brands across 30 categories, offered as a norm for fast moving consumer goods
+- 0.6 and 0.7 come from Binet and Field's IPA databank work, B2C and B2B respectively
+
+All three were fitted on spend share. None was fitted on mentions, reviews, or AI citations.
+
+The post has six substitute proxies with the specific way each one lies, and a worked count where three different counters on one platform gave the same vendor 1.0%, 4.7% and 5.3% on the same day. The spelling of the query alone moved another vendor by more than half.
+
+Two rules: publish the query string, not just the vendor name. And compare this quarter's voice against last quarter's share, because one is a leading indicator and the other is a lagging one.
+
+🔗 https://swapbiswas.com/blog/share-of-voice-vs-market-share/?utm_source=linkedin&utm_medium=social&utm_campaign=share-of-voice-vs-market-share
+
+#BrandMarketing #B2BMarketing #MarketingMeasurement #ProductMarketing #ShareOfVoice
+
+**Nano Banana image prompt (1200x628):** Renaissance-style still life, warm paper background #f6f4ef, a scholar's bench holding three different brass measuring vessels of visibly different sizes, each filled to a different level with the same dark ink, a single vermilion red ribbon tied around the smallest vessel, an empty measuring jar tipped on its side at the edge of the bench, muted earth tones, one red accent only, no text.
+
+---

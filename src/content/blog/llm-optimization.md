@@ -48,6 +48,8 @@ Three disciplines overlap but optimize for different outputs.
 
 The on-page work overlaps heavily. The difference is that LLMs reward structure and clarity that traditional rankings tolerate but do not require. A page that ranks #4 in Google can still be the only one ChatGPT cites - because it answered the question more cleanly.
 
+Citation share of voice in that table is the newest member of an old family of proxies, and it inherits the same denominator problem as every other one: you have to decide what counts as the category before the percentage means anything. [Share of voice vs market share](/blog/share-of-voice-vs-market-share/) sets out which proxies survive that test.
+
 For the AEO foundation, see [AEO vs SEO](/blog/aeo-vs-seo/) and [AI Overview Optimization](/blog/ai-overview-optimization/).
 
 ## The Four Signal Layers LLMs Care About

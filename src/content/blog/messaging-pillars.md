@@ -107,6 +107,8 @@ For each pillar, list three to five proof points that make it believable. These 
 
 A pillar with no proof is an opinion. A pillar with three specific proof points is an argument. Always build the foundation before you present the pillar to anyone.
 
+Before the named pillars go anywhere near a deck, put the candidate wordings in front of people outside the building and score them. [Message testing examples](/blog/message-testing-examples/) has the question bank, the four axes worth scoring on, and what a gap has to clear at a realistic B2B sample size before it means anything.
+
 ### 6. Pressure-test with sales
 
 The final test is whether a rep can use the pillars in a live conversation. If your sales team cannot repeat them back and build a pitch from them, they are too abstract and you go back to step four. Messaging that only works on a slide is not messaging, it is decoration. The cheapest place to run that test across the whole team at once is the annual sales kickoff, where a positioning relaunch followed by [certification against a published scoring rubric](/blog/sales-kickoff-agenda/) tells you within a day which pillars reps can actually carry into a call.

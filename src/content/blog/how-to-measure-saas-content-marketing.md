@@ -50,6 +50,8 @@ The fix is to stop asking one question of the data. "Did content work?" bundles 
 
 Ahrefs published a version of the first half of this split in March 2023, dividing [content marketing KPIs into inputs and outputs](https://ahrefs.com/blog/content-marketing-kpis/): quantity, proportion and distribution power on one side, organic share of voice, traffic, leads, engagement, product usage, feedback and backlinks on the other. The model below extends that idea downstream, because in SaaS the outputs themselves separate into things that move this quarter, things that move after a sales cycle, and things that never resolve into a number at all.
 
+Organic share of voice sits in that list without a definition attached, which is where it usually goes wrong. It is a lagging brand measure with a contested denominator, not a content output you can read weekly, and the difference matters when you put it next to market share on the same chart. I separate the two in [share of voice vs market share](/blog/share-of-voice-vs-market-share/), and the [share of voice calculator](/tools/share-of-voice-calculator/) does the computation.
+
 | Layer | What it answers | Time to signal | Who should see it |
 |---|---|---|---|
 | 1. Production | Did we ship what we said we would? | Weekly | The content team only |

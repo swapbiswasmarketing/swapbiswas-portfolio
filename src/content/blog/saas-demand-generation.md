@@ -90,6 +90,8 @@ A PQL definition is product-specific, but the method is consistent. Find the in-
 
 Build this and your sales team spends time on users who already raised their hand with their behavior, not their email address. For the wider growth context this sits inside, see this [SaaS growth strategy](/blog/saas-growth-strategy/) breakdown.
 
+This is also why borrowed funnel benchmarks travel so badly into product-led motions. The published MQL to SQL rates assume a form fill is the qualifying event, which a product-led funnel does not have, and I trace where each of those figures actually comes from in [the MQL to SQL conversion rate benchmarks](/blog/mql-to-sql-conversion-rate-benchmark/).
+
 ## SaaS Demand Generation Metrics That Build Pipeline Accountability
 
 The fastest way to kill a SaaS demand program is to report on lead volume. Lead counts go up while pipeline stays flat, and the team optimizes for the wrong outcome.

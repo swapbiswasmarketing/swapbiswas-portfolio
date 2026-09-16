@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect x="0" y="0" width="1400" height="820" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.7">One Publisher, Two B2B SaaS MQL-to-SQL Benchmarks</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">First Page Sage publishes 13% and 28-46% for the same metric on the same customer type.</text>
+  <text x="60" y="134" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The gap is two qualifying tests sitting at different stages of the funnel.</text>
+
+  <rect x="60" y="172" width="620" height="448" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="216" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">MQL to SQL Rate by Industry</text>
+  <text x="92" y="250" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.8">UPDATED DEC 2025 / DATA 2019-2025</text>
+  <line x1="92" y1="278" x2="648" y2="278" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">MQL bar</text>
+  <text x="92" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">indicated intent to buy, plus</text>
+  <text x="92" y="378" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">determined able to afford it</text>
+  <text x="92" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">SQL bar</text>
+  <text x="92" y="460" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">vetted by a salesperson, and</text>
+  <text x="92" y="488" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">met or booked a meeting</text>
+  <line x1="92" y1="520" x2="648" y2="520" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="554" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Published B2B SaaS rate</text>
+  <text x="92" y="600" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600" fill="#b53b15">13%</text>
+
+  <rect x="720" y="172" width="620" height="448" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="752" y="216" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">B2B SaaS Funnel Benchmarks</text>
+  <text x="752" y="250" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.8">UPDATED JUN 2025 / 50+ SAAS CLIENTS</text>
+  <line x1="752" y1="278" x2="1308" y2="278" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="752" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">MQL bar</text>
+  <text x="752" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">a lead who fits the target</text>
+  <text x="752" y="378" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">market or a customer persona</text>
+  <text x="752" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">SQL bar</text>
+  <text x="752" y="460" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">product is desirable, within</text>
+  <text x="752" y="488" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">budget, speaking with sales</text>
+  <line x1="752" y1="520" x2="1308" y2="520" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="752" y="554" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Published B2B SaaS rate</text>
+  <text x="752" y="600" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600" fill="#15130f">28% to 46%</text>
+
+  <rect x="60" y="656" width="1280" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="700" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Same publisher, same metric, same customer type. Intent and budget both sit in the MQL bar on the</text>
+  <text x="92" y="734" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">left and in the SQL bar on the right. Those two placements are worth 25 points at the mean.</text>
+</svg>

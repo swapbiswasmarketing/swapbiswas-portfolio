@@ -161,7 +161,7 @@ Track these metrics monthly to justify your automation investment:
 
 | Metric | What It Measures | Target Benchmark |
 |---|---|---|
-| **MQL to SQL rate** | Lead quality from automation | 25-35% |
+| **MQL to SQL rate** | Lead quality from automation | Your own trailing four quarters, not a published band |
 | **Lead velocity** | Speed of pipeline growth | Increasing month over month |
 | **Email engagement** | Nurture effectiveness | 35%+ open rate, 5%+ CTR |
 | **Pipeline influenced** | Revenue touched by automation | 40-60% of total pipeline |
@@ -169,6 +169,8 @@ Track these metrics monthly to justify your automation investment:
 | **Automation ROI** | Revenue attributed / automation cost | 5:1 or higher |
 
 Automated emails account for **37% of all email-generated sales** despite making up just 2% of total email volume ([Sender](https://www.sender.net/blog/lead-nurturing-statistics/)). That efficiency gap is the core argument for B2B marketing automation investment.
+
+The MQL to SQL row deliberately has no number in it. Published ranges for that metric run from 13% to 45%, and the spread is mostly a definition artifact rather than a performance one, which is why I traced every circulating figure back to its source in [what the MQL to SQL conversion rate benchmarks actually rest on](/blog/mql-to-sql-conversion-rate-benchmark/). Set the target from your own trailing quarters and write the definition down beside it.
 
 ## Build Your B2B Marketing Automation Stack
 

@@ -1,0 +1,1665 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import AdUnit from '../../components/AdUnit.astro';
+
+const title = "Share of Voice Calculator: Free SOV and ESOV Tool";
+const description = "Free share of voice calculator. Enter your brand and up to five competitors to get SOV percentages, excess share of voice, and a result card you can download.";
+
+const faqs = [
+	{
+		question: "What is share of voice?",
+		answer: "Share of voice is your brand's portion of the total attention in a category, expressed as a percentage. The original definition counts advertising spend: your category ad spend divided by total category ad spend. Syndicated ad-spend panels measure placements in TV, digital, social, audio, print, out of home and cinema, so a budget spent on conference sponsorship, documentation and developer relations does not enter the panel at all. Teams substitute another countable signal such as mentions, organic visibility, review velocity or AI citations, and the substitution changes what the number means.",
+	},
+	{
+		question: "How do you calculate share of voice?",
+		answer: "Divide your brand's volume of one chosen metric by the category total for the same metric over the same window, then multiply by 100. This calculator does that for your brand and up to five competitors at once, so every share comes from the same denominator. Shares are rounded to one decimal place using the largest remainder method, which makes the column total exactly 100.0 rather than 99.9 or 100.1.",
+	},
+	{
+		question: "What is excess share of voice, and how does the calculator use it?",
+		answer: "Excess share of voice, or ESOV, is share of voice minus share of market in percentage points. LinkedIn's 2020 guide to the rule works it as a cloud services example: a brand holding 10 percent market share while buying 20 percent of category advertising has a 10 percent ESOV, which that page pairs with 0.7 percent annual share growth. Enter your market share in the optional field and the calculator prints your ESOV signed, labels it as a growth-side or deficit position, and shows the indicated annual share change at all three published constants: 0.5 from Nielsen's 2009 fast-moving-consumer-goods analysis, and 0.7 for B2B and 0.6 for B2C from the 2020 LinkedIn write-up of the IPA Effectiveness Databank work with Binet and Field. All three source pages are linked in the section above these questions.",
+	},
+	{
+		question: "What data do I need before I start?",
+		answer: "One number per brand, counted the same way for every brand, over the same window. That is it. You also need the competitor set fixed in advance, because adding or dropping one vendor changes every share in the table. Your own market share is optional and only feeds the ESOV block. Paste figures in whatever shape your spreadsheet or ad panel hands you: commas, spaces, a leading currency symbol and the magnitude suffixes k, m and bn are all read, so 1,250,000 and $1.2m are the same input. Anything else is rejected rather than salvaged, left out of the denominator, and named in a note under the card. The calculator fetches nothing and connects to no data source, so whatever you paste in is the whole input.",
+	},
+	{
+		question: "Which voice proxy should I pick?",
+		answer: "Pick the one you can count consistently for every brand in the set, then name it next to the number forever. Advertising spend is the only proxy the ESOV constant was actually fitted on. Organic SERP share, review velocity, mentions, sponsorship slots and AI answer citations are all substitutes, and the calculator prints the specific failure mode of whichever one you choose on the result card so it travels with the screenshot.",
+	},
+	{
+		question: "Is this share of voice calculator free, and does it store my numbers?",
+		answer: "It is free, with no account and no signup. Everything runs in your browser. Your inputs are saved to your own device with localStorage so they survive a refresh, and the Clear saved button deletes that copy. Nothing is sent to a server.",
+	},
+	{
+		question: "What does the output not tell me?",
+		answer: "It does not tell you whether the metric you counted behaves like advertising spend, whether your category has a measurable total size, or when any effect would arrive. The ESOV growth figures are an indication drawn from two advertising-spend datasets, not a forecast for your brand, and the constant sits at 0.5 (Nielsen, 2009), 0.6 or 0.7 (LinkedIn with Binet and Field, 2020) depending on which corpus you quote. Nielsen's own page adds that variance across categories and brands in its study was large and that a brand should measure its own SOV to SOM relationship rather than lean on the norm. The 2009 date matters too: that figure is old, and it was fitted on fast-moving consumer goods, so it is a reference point rather than a current cross-category constant. Voice moves in weeks and category share moves across renewal cycles, so the two numbers are not from the same moment.",
+	},
+	{
+		question: "How often should I measure share of voice?",
+		answer: "Quarterly is enough for most B2B categories, and the window matters more than the frequency. Because share of voice is a leading indicator, compare voice from an earlier quarter against market share for the quarter just closed rather than reading both from the same three months. Research by Professor John Dawes for the LinkedIn B2B Institute found that companies change providers of services such as banking, legal advice, software or telecoms roughly every five years, so only 20 percent are in the market for those services in a given year and just 5 percent in a given quarter. That figure was measured on those service categories rather than on every B2B purchase, but where your category behaves the same way, voice reaching the other 95 percent cannot show up in this quarter's share.",
+	},
+	{
+		question: "What format is the output, and what size is the file?",
+		answer: "Two formats, both generated in your browser. Download PNG renders the result card to a PNG at 1000 CSS pixels wide and a device pixel ratio of 2, so the saved file is 2000 pixels across; the height varies with how many brands you entered and whether the ESOV block is showing. The file is named after your brand, for example northwind-labs-share-of-voice.png. Copy results puts a plain-text version on your clipboard: the ranked table, your share of voice, market share and ESOV, the indication at all three constants, the failure mode of the proxy you picked, and the rounding method. There is no PDF and no spreadsheet export.",
+	},
+	{
+		question: "What makes a great share of voice measurement?",
+		answer: "One that somebody else can rebuild from what you published. Name the metric in the label instead of writing the bare phrase share of voice, publish the competitor set and the exact query or keyword list that produced the counts, and keep the raw counts next to the percentage, because 125 out of 2,350 survives an audit six weeks later in a way that 5.3 percent does not. Then hold all of it still: same platform, same query string, same date range, same set, quarter after quarter. A great measurement is boring and repeatable, and it is compared against a market share figure from an earlier quarter rather than the one it sits beside.",
+	},
+];
+
+const softwareSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebApplication",
+	"name": "Share of Voice Calculator",
+	"description": description,
+	"url": "https://swapbiswas.com/tools/share-of-voice-calculator/",
+	"applicationCategory": "BusinessApplication",
+	"operatingSystem": "Any",
+	"browserRequirements": "Requires JavaScript",
+	"offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+	"creator": { "@type": "Person", "name": "Swapnil Biswas", "url": "https://swapbiswas.com/" }
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqs.map((faq) => ({
+		"@type": "Question",
+		"name": faq.question,
+		"acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+	}))
+};
+
+const proxyOptions = [
+	{ value: "ad-spend", label: "Advertising spend (the textbook definition)" },
+	{ value: "serp", label: "Organic SERP share" },
+	{ value: "reviews", label: "Review volume or velocity" },
+	{ value: "mentions", label: "Social and forum mentions" },
+	{ value: "events", label: "Conference and sponsorship slots" },
+	{ value: "ai-citations", label: "AI answer citations" },
+	{ value: "custom", label: "Custom metric" },
+];
+
+const competitorRows = [1, 2, 3, 4, 5];
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	breadcrumbs={[{ name: "Tools", url: "/tools/" }, { name: "Share of Voice Calculator" }]}
+>
+	<script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} slot="head" />
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
+
+	<div class="stack gap-20">
+		<main class="wrapper tool-page">
+			<Hero
+				title="Share of Voice Calculator"
+				tagline="Enter the counts you already have. Get share of voice for every brand in your set, excess share of voice against your market share, and a result card you can download. Nothing is fetched, you supply the numbers."
+				align="start"
+			/>
+
+			<div class="tool-grid">
+				<!-- FORM -->
+				<section class="form-panel" aria-label="Share of voice inputs">
+					<form id="sov-form" autocomplete="off">
+						<fieldset>
+							<legend>1. What are you counting?</legend>
+							<div class="field">
+								<label for="sov-proxy">Voice proxy</label>
+								<select id="sov-proxy">
+									{proxyOptions.map((opt) => <option value={opt.value}>{opt.label}</option>)}
+								</select>
+							</div>
+							<div class="field">
+								<label for="sov-window">Measurement window (optional)</label>
+								<input type="text" id="sov-window" maxlength="30" placeholder="Q3 2026" />
+							</div>
+							<p class="field-hint" id="sov-proxy-hint">Count the same way for every brand, over the same window. The selector changes the labels below, never the arithmetic.</p>
+						</fieldset>
+
+						<fieldset>
+							<legend>2. Your brand</legend>
+							<div class="field-row">
+								<div class="field">
+									<label for="sov-brand">Brand name</label>
+									<input type="text" id="sov-brand" maxlength="40" placeholder="NorthWind Labs" />
+								</div>
+								<div class="field">
+									<label for="sov-value" id="sov-value-label">Mentions in the period</label>
+									<input type="text" id="sov-value" inputmode="decimal" maxlength="18" placeholder="2140" />
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>3. Competitors</legend>
+							{competitorRows.map((n) => (
+								<div class="comp-row" id={`sov-c${n}-row`} hidden={n > 2}>
+									<div class="field">
+										<label for={`sov-c${n}-name`}>Competitor {n}</label>
+										<input type="text" id={`sov-c${n}-name`} maxlength="40" placeholder={`Competitor ${n}`} />
+									</div>
+									<div class="field">
+										<label for={`sov-c${n}-value`} class="comp-value-label">Value</label>
+										<input type="text" id={`sov-c${n}-value`} inputmode="decimal" maxlength="18" placeholder="0" />
+									</div>
+									<button type="button" class="comp-remove" data-remove={n} aria-label={`Remove competitor ${n}`}>Remove</button>
+								</div>
+							))}
+							<div class="comp-actions">
+								<button type="button" class="btn-secondary" id="sov-add">Add competitor</button>
+								<span class="comp-count" id="sov-comp-count">2 of 5 rows shown</span>
+							</div>
+							<p class="field-hint">Fix the competitor set before you count. Adding or dropping one vendor changes every share in the table, so a share that moved because the set moved is not a result.</p>
+						</fieldset>
+
+						<fieldset>
+							<legend>4. Your market share (optional)</legend>
+							<div class="field">
+								<label for="sov-market">Market share, percent</label>
+								<input type="text" id="sov-market" inputmode="decimal" maxlength="8" placeholder="12" />
+							</div>
+							<p class="field-hint">Only used for the excess share of voice block. Leave it blank and the calculator still returns every share of voice percentage.</p>
+						</fieldset>
+
+						<div class="form-actions">
+							<details class="sample-picker">
+								<summary class="btn-secondary">Load sample data <span class="sample-caret">v</span></summary>
+								<ul class="sample-options">
+									<li><button type="button" class="sample-option" data-sample="mentions">Mention share, B2B SaaS</button></li>
+									<li><button type="button" class="sample-option" data-sample="serp">Organic SERP share, dev tools</button></li>
+									<li><button type="button" class="sample-option" data-sample="spend">Advertising spend, consumer</button></li>
+								</ul>
+							</details>
+							<button type="button" class="btn-secondary" id="sov-reset">Reset</button>
+							<button type="button" class="btn-secondary btn-danger" id="sov-clear">Clear saved</button>
+						</div>
+					</form>
+				</section>
+
+				<!-- PREVIEW -->
+				<section class="preview-panel" aria-label="Share of voice result card">
+					<div class="preview-sticky">
+						<div class="preview-controls">
+							<p class="preview-heading">Result card</p>
+							<div class="preview-actions">
+								<div class="theme-picker" role="radiogroup" aria-label="Card theme">
+									<button type="button" class="theme-btn active" data-theme="dark">Dark</button>
+									<button type="button" class="theme-btn" data-theme="light">Light</button>
+									<button type="button" class="theme-btn" data-theme="brand">Brand</button>
+								</div>
+								<button type="button" id="sov-copy" class="btn-icon">Copy results</button>
+								<button type="button" id="sov-download" class="btn-primary">Download PNG</button>
+							</div>
+						</div>
+						<p class="autosave-status" id="sov-status" aria-live="polite"><span id="sov-saved"></span><span class="fill-counter" id="sov-counter"></span></p>
+
+						<div class="preview-frame" id="preview-frame">
+							<div id="sov-card" class="sov-card" data-theme="dark">
+								<header class="sov-head">
+									<div class="sov-head-left">
+										<span class="sov-eyebrow">Share of voice</span>
+										<h3 class="sov-title" id="sov-card-title">Your brand</h3>
+									</div>
+									<div class="sov-meta">
+										<div class="sov-meta-row"><span class="sov-meta-label">Metric</span><span id="sov-card-metric">Mention share</span></div>
+										<div class="sov-meta-row" id="sov-window-row"><span class="sov-meta-label">Window</span><span id="sov-card-window">Q3 2026</span></div>
+									</div>
+								</header>
+
+								<div class="sov-table">
+									<div class="sov-thead">
+										<span>Brand</span>
+										<span class="sov-num">Value</span>
+										<span class="sov-num">Share</span>
+										<span class="sov-bar-head"></span>
+									</div>
+									<div class="sov-row" id="sov-row-0" hidden>
+										<span class="sov-row-name"></span>
+										<span class="sov-row-value sov-num"></span>
+										<span class="sov-row-pct sov-num"></span>
+										<span class="sov-bar"><span class="sov-bar-fill"></span></span>
+									</div>
+									<div class="sov-row" id="sov-row-1" hidden>
+										<span class="sov-row-name"></span>
+										<span class="sov-row-value sov-num"></span>
+										<span class="sov-row-pct sov-num"></span>
+										<span class="sov-bar"><span class="sov-bar-fill"></span></span>
+									</div>
+									<div class="sov-row" id="sov-row-2" hidden>
+										<span class="sov-row-name"></span>
+										<span class="sov-row-value sov-num"></span>
+										<span class="sov-row-pct sov-num"></span>
+										<span class="sov-bar"><span class="sov-bar-fill"></span></span>
+									</div>
+									<div class="sov-row" id="sov-row-3" hidden>
+										<span class="sov-row-name"></span>
+										<span class="sov-row-value sov-num"></span>
+										<span class="sov-row-pct sov-num"></span>
+										<span class="sov-bar"><span class="sov-bar-fill"></span></span>
+									</div>
+									<div class="sov-row" id="sov-row-4" hidden>
+										<span class="sov-row-name"></span>
+										<span class="sov-row-value sov-num"></span>
+										<span class="sov-row-pct sov-num"></span>
+										<span class="sov-bar"><span class="sov-bar-fill"></span></span>
+									</div>
+									<div class="sov-row" id="sov-row-5" hidden>
+										<span class="sov-row-name"></span>
+										<span class="sov-row-value sov-num"></span>
+										<span class="sov-row-pct sov-num"></span>
+										<span class="sov-bar"><span class="sov-bar-fill"></span></span>
+									</div>
+									<div class="sov-total" id="sov-total-row">
+										<span>Set total</span>
+										<span class="sov-num" id="sov-total-value">0</span>
+										<span class="sov-num" id="sov-total-pct">100.0%</span>
+										<span></span>
+									</div>
+									<p class="sov-empty" id="sov-empty" hidden>Enter a value above zero for at least one brand.</p>
+								</div>
+
+								<div class="sov-figures">
+									<div class="sov-fig">
+										<span class="sov-fig-label">Your share of voice</span>
+										<span class="sov-fig-value" id="sov-fig-sov">0.0%</span>
+									</div>
+									<div class="sov-fig">
+										<span class="sov-fig-label">Your market share</span>
+										<span class="sov-fig-value" id="sov-fig-ms">Not set</span>
+									</div>
+									<div class="sov-fig sov-fig-accent">
+										<span class="sov-fig-label">Excess share of voice</span>
+										<span class="sov-fig-value" id="sov-fig-esov">Not set</span>
+										<span class="sov-fig-note" id="sov-fig-esov-note">Add your market share to get ESOV</span>
+									</div>
+								</div>
+
+								<div class="sov-indication" id="sov-indication" hidden>
+									<div class="sov-ind-head">Indicated annual market share change at each published constant</div>
+									<div class="sov-ind-row"><span class="sov-ind-label">0.5 per 10 points of ESOV (Nielsen, 2009, FMCG norm)</span><span class="sov-ind-value" id="sov-ind-0">0.00pp a year</span></div>
+									<div class="sov-ind-row"><span class="sov-ind-label">0.7 per 10 points of ESOV (LinkedIn with Binet and Field, IPA databank, 2020, B2B)</span><span class="sov-ind-value" id="sov-ind-1">0.00pp a year</span></div>
+									<div class="sov-ind-row"><span class="sov-ind-label">0.6 per 10 points of ESOV (LinkedIn with Binet and Field, IPA databank, 2020, B2C)</span><span class="sov-ind-value" id="sov-ind-2">0.00pp a year</span></div>
+									<p class="sov-ind-scope" id="sov-ind-scope">All three figures were fitted on advertising spend share, not on any of the substitute proxies in this tool. Nielsen tested 123 brands across 30 categories in 2009 and offered 0.5 as a norm for fast moving consumer goods; the 0.6 and 0.7 come from the IPA Effectiveness Databank campaigns Binet and Field analysed for LinkedIn, published in 2020. Nielsen adds that variance across categories and brands was large, and a 2009 consumer goods figure is not a current cross-category constant. An indication, not a promise of growth.</p>
+								</div>
+
+								<div class="sov-caveat">
+									<p><strong>What this does not tell you.</strong> Whether the metric above behaves like advertising spend, whether this category has a measurable total size, or when any effect would arrive. Voice moves in weeks and category share moves across renewal cycles, so read this against a market share figure from an earlier quarter.</p>
+									<p class="sov-proxy-note" id="sov-proxy-note">Where this proxy breaks: three counters on one platform on one day gave the same vendor 1.0%, 4.7% and 5.3%, and the spelling of the query moved another vendor by more than half. Publish the query string, not just the vendor name.</p>
+									<p class="sov-method" id="sov-method">Shares rounded to one decimal place by the largest remainder method, so the column totals exactly 100.0. Every number was supplied by the user, nothing was fetched.</p>
+								</div>
+
+								<footer class="sov-foot">
+									<span>swapbiswas.com/tools/share-of-voice-calculator/</span>
+								</footer>
+							</div>
+						</div>
+
+						<ul class="sov-notes" id="sov-notes"></ul>
+					</div>
+				</section>
+			</div>
+
+			<section class="tool-cta-strip">
+				<div class="cta-text">
+					<strong>Want more PMM tools and templates?</strong>
+					<p>Join the newsletter. Positioning, launch playbooks, persona updates - no spam, just value.</p>
+				</div>
+				<form class="cta-form" id="tool-newsletter-form">
+					<input type="email" name="email_address" placeholder="you@company.com" required autocomplete="email" aria-label="Email address" />
+					<button type="submit">Subscribe</button>
+				</form>
+				<p class="cta-status" id="tool-newsletter-status" aria-live="polite"></p>
+			</section>
+
+			<section class="seo-content">
+				<h2>How to use the share of voice calculator</h2>
+				<ol class="how-to">
+					<li><strong>Pick the voice proxy first.</strong> Advertising spend is the original definition and the only input the excess share of voice rule was fitted on. Everything else in the list is a substitute, so choosing here decides what your percentage is actually measuring.</li>
+					<li><strong>Fix the competitor set before you count anything.</strong> Write the list down and keep it for the year. Adding or dropping one vendor changes every share in the table, which means a share that moved because the set moved is not a result.</li>
+					<li><strong>Count every brand the same way, over the same window.</strong> One platform, one query string, one date range. Three counters run on one platform on one day returned 1.0 percent, 4.7 percent and 5.3 percent for the same vendor, so mixing methods silently invents a winner.</li>
+					<li><strong>Enter your brand, then up to five competitors.</strong> Commas, spaces, a leading currency symbol and the magnitude suffixes k, m and bn are all read, so $1.2m and 1,250,000 both land as the same figure when you paste straight from a spreadsheet or an ad panel. Anything the parser cannot read is rejected rather than turned into a smaller number: that row drops out of the denominator and a note under the card names the value it ignored. Rows with no value are left out too, not counted as zero.</li>
+					<li><strong>Add your market share only if you have a defensible one.</strong> That field is optional because in most private categories nobody publishes the denominator. Without it you still get every share of voice percentage, you just do not get ESOV.</li>
+					<li><strong>Read the indication block as a range, not a number.</strong> The growth constant is published at 0.5 (Nielsen, 2009), 0.7 and 0.6 (LinkedIn with Binet and Field, 2020) by two different research bases, so the card prints all three with the year and the scope attached to each. If the spread between them changes your decision, the decision was not supported by the rule.</li>
+					<li><strong>Download the PNG and keep the caveat attached.</strong> The card exports 1000 pixels wide at 2x device pixel ratio, so the file lands at 2000 pixels across. The proxy name, the failure mode of that proxy, the rounding method and the scope of the growth constant are all printed on the card, so the screenshot cannot be separated from the conditions it was true under.</li>
+				</ol>
+
+				<h2>Where the three ESOV growth constants come from</h2>
+				<p>The card prints every published version of the rule instead of picking one, because the three figures come from two research bases, measured on different buyers, more than a decade apart. All three sources are linked here so you can read the wording for yourself before you quote the number in a deck.</p>
+				<p>The 0.5 is the oldest and the most repeated. Nielsen's August 2009 analysis <a href="https://www.nielsen.com/insights/2009/budgeting-for-the-upturn-does-share-of-voice-matter" rel="nofollow noopener" target="_blank">Budgeting for the Upturn: Does Share of Voice Matter?</a> found that "on average, a 10 point difference between SOV and SOM leads to 0.5% of extra market share growth" across 123 brands in 30 product categories, and recommended the 10 to 0.5 ratio as a norm for fast moving consumer goods brands. The same page records the limit on its own finding: variances across particular categories and brands were large, so a brand should measure its specific SOV to SOM relationship to get an accurate benchmark.</p>
+				<p>The 0.7 and the 0.6 are a single source published in January 2020, <a href="https://www.linkedin.com/business/marketing/blog/linkedin-ads/the-b2b-marketers-guide-to-the-share-of-voice-rule" rel="nofollow noopener" target="_blank">The B2B Marketer's Guide to the Share of Voice Rule</a> on LinkedIn's marketing blog, drawn from the work Les Binet and Peter Field did with LinkedIn on the IPA Effectiveness Databank (<a href="https://ipa.co.uk/knowledge/effectiveness-research-analysis/les-binet-peter-field" rel="nofollow noopener" target="_blank">the IPA's index of their key works</a>). That page puts B2B at "an ESOV of 10% leads to market share growth of 0.7% per year" and B2C at 0.6, and works the arithmetic through a cloud services brand holding 10 percent market share while buying 20 percent of category advertising.</p>
+				<p>Two caveats travel with all three. Every one of them was fitted on share of advertising spend, which is the first option in the proxy list and none of the other six, so a mention share or an AI citation share run through the same multiplier is an extrapolation rather than a reading of the research. And the 0.5 is a 2009 consumer goods figure, well past the five-year age limit anything else on this site would have to clear. It stays on the card because it is the genuine provenance of the most widely repeated form of the rule, and because its date belongs next to the 2020 figures where a reader can weigh it.</p>
+
+				<h2>What makes a good share of voice measurement</h2>
+				<p>A good share of voice measurement is one somebody else can rebuild. That means the metric is named in the label rather than left as the bare phrase "share of voice", the competitor set and the query that produced the counts are published alongside the percentage, and the raw counts sit next to the share. A figure like 125 out of 2,350 survives an audit six weeks later in a way that 5.3 percent does not, because the second version hides which denominator produced it. Four widely cited pages publish a share of voice formula and they do not agree on what belongs in the bottom of that fraction, with one of them dividing by your own auction eligibility rather than by anything the category did, so a number is only comparable to a benchmark computed the same way.</p>
+				<p>The second half is timing. Share of voice is an input that moves in weeks, and market share is an outcome settled by contracts already signed, so comparing the two inside one quarter compares two different moments. Research by Professor John Dawes for the LinkedIn B2B Institute, summarised on the Ehrenberg-Bass Institute's own site, found that companies change providers of services such as banking, legal advice, software or telecoms roughly every five years, so "only 20% are in the market for those services in a given year and just 5% in a given quarter" (<a href="https://marketingscience.info/news-and-insights/ehrenberg-bass-95-of-b2b-buyers-are-not-in-the-market-for-your-products" rel="nofollow noopener" target="_blank">Ehrenberg-Bass Institute</a>). Voice reaching the other 95 percent cannot convert into share this quarter, because those accounts have nothing to buy. The full argument, the primary-source trace of the ESOV constant, the six substitute proxies and a worked calculation on public data are all in the companion guide:</p>
+				<p><a href="/blog/share-of-voice-vs-market-share/" class="seo-link">Read the full guide: Share of Voice vs Market Share: ESOV Without Ad Spend</a></p>
+
+				<h2>Related templates and guides</h2>
+				<ul class="related-links">
+					<li><a href="/blog/share-of-voice-vs-market-share/">Share of Voice vs Market Share: ESOV Without Ad Spend</a></li>
+					<li><a href="/blog/marketing-mix-modeling-vs-attribution/">Marketing Mix Modeling vs Attribution vs Incrementality</a></li>
+					<li><a href="/blog/how-to-measure-saas-content-marketing/">How to Measure SaaS Content Marketing</a></li>
+					<li><a href="/blog/competitive-intelligence-analysis/">Competitive Intelligence Analysis</a></li>
+					<li><a href="/blog/improve-brand-visibility-in-ai-search-engines/">Improve Brand Visibility in AI Search Engines</a></li>
+					<li><a href="/blog/top-down-vs-bottom-up-market-sizing/">Top-Down vs Bottom-Up Market Sizing</a></li>
+				</ul>
+
+				<h2>Frequently asked questions</h2>
+				<div class="faq-list">
+					{faqs.map((faq) => (
+						<details class="faq-item">
+							<summary>{faq.question}</summary>
+							<p>{faq.answer}</p>
+						</details>
+					))}
+				</div>
+			</section>
+
+			<!-- After .seo-content so the unit sits below the editorial content rather than
+			     beside the calculator. Never inside .tool-grid: that column holds
+			     .preview-sticky and the export path rewrites the frame height mid-render. -->
+			<AdUnit name="toolFooter" />
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<script>
+	const STATE_KEY = 'tool-state-share-of-voice-calculator';
+	const MAX_COMPETITORS = 5;
+
+	type Proxy = {
+		valueLabel: string;
+		cardMetric: string;
+		hint: string;
+		breaks: string;
+	};
+
+	const PROXIES: Record<string, Proxy> = {
+		'ad-spend': {
+			valueLabel: 'Spend in the period',
+			cardMetric: 'Advertising spend share',
+			hint: 'One currency, one window, every brand. This is the only proxy the excess share of voice constant was actually fitted on.',
+			breaks: 'Where this proxy breaks: syndicated ad-spend panels measure placements in TV, digital, audio, print, out of home and cinema. Conference sponsorship, documentation and developer relations headcount are not placements, so neither your numerator nor the category total is in the panel.',
+		},
+		'serp': {
+			valueLabel: 'Organic traffic or weighted rank points',
+			cardMetric: 'Organic SERP share',
+			hint: 'Same keyword set for every brand, and write the keyword list down before you run it.',
+			breaks: 'Where this proxy breaks: you choose the keyword set, so the denominator is editable. Swapping ten keywords moves the number more than a quarter of publishing will.',
+		},
+		'reviews': {
+			valueLabel: 'New reviews in the period',
+			cardMetric: 'Review velocity share',
+			hint: 'One review site, one window. Count new reviews rather than lifetime totals.',
+			breaks: 'Where this proxy breaks: review volume is purchasable through gift-card campaigns, so it often measures incentive budget rather than attention. The review site decides who is in the category.',
+		},
+		'mentions': {
+			valueLabel: 'Mentions in the period',
+			cardMetric: 'Mention share',
+			hint: 'One platform, one query string. A tag count, a post count and a question count are three different measurements.',
+			breaks: 'Where this proxy breaks: three counters on one platform on one day gave the same vendor 1.0%, 4.7% and 5.3%, and the spelling of the query moved another vendor by more than half. Publish the query string, not just the vendor name.',
+		},
+		'events': {
+			valueLabel: 'Weighted slots across the year',
+			cardMetric: 'Sponsorship slot share',
+			hint: 'Fix the event list first, then weight by sponsor tier. A keynote and a booth are not one unit each.',
+			breaks: 'Where this proxy breaks: the organiser caps the inventory, so your ceiling is set by someone else rather than by your budget.',
+		},
+		'ai-citations': {
+			valueLabel: 'Citations across your prompt set',
+			cardMetric: 'AI citation share',
+			hint: 'Fixed prompt set, run on a schedule, same engine. Record the run date with the count.',
+			breaks: 'Where this proxy breaks: answers are non-deterministic, so the same prompt returns different citations on consecutive runs, and the prompt set is yours, which makes the denominator editable again.',
+		},
+		'custom': {
+			valueLabel: 'Value in the period',
+			cardMetric: 'Custom metric share',
+			hint: 'Whatever you count, count it identically for every brand and name it on every chart.',
+			breaks: 'Where this proxy breaks: whatever you counted is not advertising spend, which is the input the growth constant was fitted on, so the indication below is an extrapolation.',
+		},
+	};
+
+	// The growth constant is published at three values by two different research bases.
+	// All three pages were re-checked on 12 September 2026 and still carry these figures.
+	//   0.5 - Nielsen, "Budgeting for the Upturn" (Aug 2009): "a 10 point difference between
+	//         SOV and SOM leads to 0.5% of extra market share growth", from 123 brands across
+	//         30 categories, recommended as a norm for fast moving consumer goods brands.
+	//   0.7 - LinkedIn, "The B2B Marketer's Guide to the Share of Voice Rule" (Jan 2020):
+	//         "an ESOV of 10% leads to market share growth of 0.7% per year", labelled B2B,
+	//         from its joint report with Binet and Field on the IPA Effectiveness Databank.
+	//   0.6 - the same 2020 page: "10% ESOV drives 0.6% annual growth", labelled B2C.
+	// Keep these in sync with the row labels in the markup above.
+	const CONSTANTS = [0.5, 0.7, 0.6];
+
+	// Must stay word-for-word identical to the .sov-ind-scope paragraph in the markup:
+	// the same sentence ships on screen, in the exported PNG and in the copied text.
+	const SCOPE_NOTE = 'All three figures were fitted on advertising spend share, not on any of the substitute proxies in this tool. Nielsen tested 123 brands across 30 categories in 2009 and offered 0.5 as a norm for fast moving consumer goods; the 0.6 and 0.7 come from the IPA Effectiveness Databank campaigns Binet and Field analysed for LinkedIn, published in 2020. Nielsen adds that variance across categories and brands was large, and a 2009 consumer goods figure is not a current cross-category constant. An indication, not a promise of growth.';
+
+	type Sample = { proxy: string; window: string; brand: string; value: string; market: string; comps: string[][] };
+
+	const SAMPLES: Record<string, Sample> = {
+		mentions: {
+			proxy: 'mentions',
+			window: 'Q3 2026',
+			brand: 'NorthWind Labs',
+			value: '2140',
+			market: '12',
+			comps: [['Acme Analytics', '4880'], ['RivalCo', '3010'], ['Meridian Data', '1290']],
+		},
+		serp: {
+			proxy: 'serp',
+			window: 'Q3 2026',
+			brand: 'Kestrel CI',
+			value: '18400',
+			market: '9',
+			comps: [['Forgewright', '52300'], ['Acme Pipelines', '31700'], ['Bellweather Build', '9850']],
+		},
+		spend: {
+			proxy: 'ad-spend',
+			window: 'FY 2026',
+			brand: 'Harborline',
+			value: '1250000',
+			market: '14',
+			comps: [['Acme Home', '4800000'], ['RivalCo', '2400000'], ['Northfield', '900000']],
+		},
+	};
+
+	const themeBgColors: Record<string, string> = { dark: '#151311', light: '#f6f4ef', brand: '#b53b15' };
+
+	function compIds(n: number) {
+		return { name: 'sov-c' + n + '-name', value: 'sov-c' + n + '-value' };
+	}
+
+	const TEXT_IDS: string[] = ['sov-window', 'sov-brand', 'sov-value', 'sov-market'];
+	for (let i = 1; i <= MAX_COMPETITORS; i++) {
+		TEXT_IDS.push(compIds(i).name, compIds(i).value);
+	}
+
+	const MAGNITUDES: Record<string, number> = { k: 1e3, m: 1e6, mn: 1e6, b: 1e9, bn: 1e9 };
+
+	/**
+	 * Parses one pasted figure. Commas, spaces and a currency or percent symbol on
+	 * either end are stripped, and a k / m / mn / b / bn magnitude suffix
+	 * is APPLIED rather than dropped, so "$1.2M" is 1,200,000 and not 1.2.
+	 * Anything that is not that exact shape returns null, so the caller leaves the row
+	 * out of the denominator and names it in a note instead of silently using a wrong
+	 * number. Negatives clamp to zero - a count of attention cannot be below nothing.
+	 */
+	function parseNum(raw: string): number | null {
+		let s = String(raw == null ? '' : raw).trim().toLowerCase();
+		if (!s) return null;
+		s = s.replace(/,/g, '').replace(/\s/g, '');
+		// Currency and percent symbols on either end are noise. Stray LETTERS are not
+		// stripped, so "1200 usd" or "12abc" fails the match below instead of becoming 1200.
+		s = s.replace(/^[^0-9a-z.+-]+/, '').replace(/[^0-9a-z]+$/, '');
+		const m = s.match(/^([+-]?(?:\d+(?:\.\d+)?|\.\d+))(bn|mn|k|m|b)?$/);
+		if (!m) return null;
+		let n = parseFloat(m[1]);
+		if (!isFinite(n)) return null;
+		if (m[2]) n = n * MAGNITUDES[m[2]];
+		if (!isFinite(n)) return null;
+		return n < 0 ? 0 : n;
+	}
+
+	/**
+	 * Largest remainder rounding to one decimal place. Plain per-row rounding can
+	 * leave the column at 99.9 or 100.1, which reads as a bug on a downloaded card.
+	 * This distributes the leftover tenths to the largest fractional parts, so the
+	 * displayed shares total exactly 100.0 whenever the total is above zero.
+	 */
+	function roundShares(values: number[], total: number): number[] {
+		if (!(total > 0)) return values.map(() => 0);
+		const scaled = values.map((v) => (v / total) * 1000);
+		const floors = scaled.map((s) => Math.floor(s));
+		let remaining = 1000 - floors.reduce((a, b) => a + b, 0);
+		const order = scaled
+			.map((s, i) => ({ i: i, frac: s - Math.floor(s) }))
+			.sort((a, b) => b.frac - a.frac);
+		let k = 0;
+		while (remaining > 0 && order.length > 0) {
+			floors[order[k % order.length].i] += 1;
+			remaining -= 1;
+			k += 1;
+		}
+		return floors.map((f) => f / 10);
+	}
+
+	function fmtValue(n: number): string {
+		if (!isFinite(n)) return '0';
+		const rounded = Math.round(n * 100) / 100;
+		return rounded.toLocaleString('en-US', { maximumFractionDigits: 2 });
+	}
+
+	function signed(n: number, digits: number): string {
+		const fixed = n.toFixed(digits);
+		return n > 0 ? '+' + fixed : fixed;
+	}
+
+	function initShareOfVoice() {
+		const form = document.getElementById('sov-form') as HTMLFormElement | null;
+		if (!form || (form as any)._initialized) return;
+		(form as any)._initialized = true;
+
+		const card = document.getElementById('sov-card') as HTMLElement | null;
+		const frame = document.getElementById('preview-frame') as HTMLElement | null;
+		if (!card) return;
+
+		const proxySel = document.getElementById('sov-proxy') as HTMLSelectElement | null;
+		const notesEl = document.getElementById('sov-notes');
+		const savedEl = document.getElementById('sov-saved');
+		const counterEl = document.getElementById('sov-counter');
+		const compCountEl = document.getElementById('sov-comp-count');
+		const addBtn = document.getElementById('sov-add') as HTMLButtonElement | null;
+
+		let visibleComps = 2;
+		let lastText = '';
+
+		function val(id: string): string {
+			const el = document.getElementById(id) as HTMLInputElement | null;
+			return (el && el.value ? el.value : '').trim();
+		}
+
+		function setText(id: string, text: string) {
+			const el = document.getElementById(id);
+			if (el) el.textContent = text;
+		}
+
+		function currentProxy(): Proxy {
+			const key = proxySel && proxySel.value ? proxySel.value : 'mentions';
+			return PROXIES[key] || PROXIES.mentions;
+		}
+
+		function applyProxyLabels() {
+			const p = currentProxy();
+			setText('sov-value-label', p.valueLabel);
+			setText('sov-proxy-hint', p.hint);
+			setText('sov-card-metric', p.cardMetric);
+			setText('sov-proxy-note', p.breaks);
+			form.querySelectorAll('.comp-value-label').forEach((el) => {
+				el.textContent = p.valueLabel;
+			});
+		}
+
+		function applyCompVisibility() {
+			for (let i = 1; i <= MAX_COMPETITORS; i++) {
+				const row = document.getElementById('sov-c' + i + '-row');
+				if (row) row.hidden = i > visibleComps;
+			}
+			if (addBtn) addBtn.disabled = visibleComps >= MAX_COMPETITORS;
+			if (compCountEl) compCountEl.textContent = visibleComps + ' of ' + MAX_COMPETITORS + ' rows shown';
+		}
+
+		function addNote(list: HTMLElement, text: string) {
+			const li = document.createElement('li');
+			li.textContent = text;
+			list.appendChild(li);
+		}
+
+		type Row = { name: string; value: number; you: boolean };
+
+		function update() {
+			applyProxyLabels();
+
+			const notes: string[] = [];
+			const rows: Row[] = [];
+
+			const brandName = val('sov-brand') || 'Your brand';
+			const brandRaw = val('sov-value');
+			const brandVal = parseNum(brandRaw);
+			if (brandVal === null) {
+				if (brandRaw) notes.push('"' + brandRaw + '" is not a number, so your brand was left out of the total.');
+				else notes.push('Add a value for your brand to get your share of voice.');
+			} else {
+				rows.push({ name: brandName, value: brandVal, you: true });
+			}
+
+			for (let i = 1; i <= visibleComps; i++) {
+				const ids = compIds(i);
+				const nm = val(ids.name);
+				const rawv = val(ids.value);
+				if (!nm && !rawv) continue;
+				const v = parseNum(rawv);
+				if (v === null) {
+					notes.push('"' + (rawv || 'blank') + '" is not a number, so ' + (nm || 'competitor ' + i) + ' was left out of the total.');
+					continue;
+				}
+				rows.push({ name: nm || 'Competitor ' + i, value: v, you: false });
+			}
+
+			const total = rows.reduce((a, r) => a + r.value, 0);
+			const sorted = rows.slice().sort((a, b) => b.value - a.value);
+			const shares = roundShares(sorted.map((r) => r.value), total);
+			const maxShare = shares.length ? Math.max.apply(null, shares) : 0;
+
+			// Title and window
+			setText('sov-card-title', brandName);
+			const windowVal = val('sov-window');
+			const windowRow = document.getElementById('sov-window-row');
+			if (windowRow) windowRow.hidden = !windowVal;
+			setText('sov-card-window', windowVal);
+
+			// Table rows
+			for (let i = 0; i < 6; i++) {
+				const rowEl = document.getElementById('sov-row-' + i);
+				if (!rowEl) continue;
+				if (i >= sorted.length || !(total > 0)) {
+					rowEl.hidden = true;
+					continue;
+				}
+				rowEl.hidden = false;
+				const r = sorted[i];
+				const share = shares[i];
+				rowEl.classList.toggle('is-you', r.you);
+				const nameEl = rowEl.querySelector('.sov-row-name');
+				const valEl = rowEl.querySelector('.sov-row-value');
+				const pctEl = rowEl.querySelector('.sov-row-pct');
+				const fillEl = rowEl.querySelector('.sov-bar-fill') as HTMLElement | null;
+				if (nameEl) nameEl.textContent = r.name + (r.you ? ' (you)' : '');
+				if (valEl) valEl.textContent = fmtValue(r.value);
+				if (pctEl) pctEl.textContent = share.toFixed(1) + '%';
+				if (fillEl) fillEl.style.width = (maxShare > 0 ? (share / maxShare) * 100 : 0) + '%';
+			}
+
+			const totalRow = document.getElementById('sov-total-row');
+			const emptyEl = document.getElementById('sov-empty');
+			if (totalRow) totalRow.hidden = !(total > 0);
+			if (emptyEl) emptyEl.hidden = total > 0;
+			setText('sov-total-value', fmtValue(total));
+			setText('sov-total-pct', total > 0 ? '100.0%' : '0.0%');
+
+			if (!(total > 0) && rows.length > 0) {
+				notes.push('Every value is zero, so there is no denominator to divide by.');
+			}
+			if (total > 0 && rows.length === 1) {
+				notes.push('Only one brand has a value, so its share is 100%. Add competitors for a denominator that means something.');
+			}
+
+			// Your share of voice
+			let mySov: number | null = null;
+			for (let i = 0; i < sorted.length; i++) {
+				if (sorted[i].you && total > 0) mySov = shares[i];
+			}
+			setText('sov-fig-sov', mySov === null ? 'Not set' : mySov.toFixed(1) + '%');
+
+			// Market share and ESOV
+			const marketRaw = val('sov-market');
+			let market = parseNum(marketRaw);
+			if (market !== null && market > 100) {
+				market = 100;
+				notes.push('Market share was above 100%, so it was capped at 100%.');
+			}
+			// Round market share ONCE, here, before it is either displayed or subtracted.
+			// Every share of voice out of roundShares is already an exact tenth, so this
+			// makes the three printed figures agree: an entered 12.35 used to display as
+			// 12.3 while ESOV was computed from 12.35, and 18.9 minus 12.3 is not 6.5.
+			if (market !== null) market = Math.round(market * 10) / 10;
+			if (market === null && marketRaw) {
+				notes.push('"' + marketRaw + '" is not a number, so market share was ignored.');
+			}
+			setText('sov-fig-ms', market === null ? 'Not set' : market.toFixed(1) + '%');
+
+			const esovEl = document.getElementById('sov-fig-esov');
+			const esovNote = document.getElementById('sov-fig-esov-note');
+			const indEl = document.getElementById('sov-indication');
+			let esov: number | null = null;
+
+			if (mySov !== null && market !== null) {
+				esov = Math.round((mySov - market) * 10) / 10;
+			}
+
+			if (esov === null) {
+				if (esovEl) esovEl.textContent = 'Not set';
+				if (esovNote) esovNote.textContent = mySov === null
+					? 'Add your brand value to get ESOV'
+					: 'Add your market share to get ESOV';
+				if (indEl) indEl.hidden = true;
+			} else {
+				if (esovEl) esovEl.textContent = signed(esov, 1) + ' pts';
+				if (esovNote) {
+					esovNote.textContent = esov > 0
+						? 'Growth-side position: voice above share'
+						: (esov < 0 ? 'Deficit: share above voice' : 'At parity: voice equals share');
+				}
+				if (indEl) indEl.hidden = false;
+				for (let i = 0; i < CONSTANTS.length; i++) {
+					const pp = (esov / 10) * CONSTANTS[i];
+					setText('sov-ind-' + i, signed(pp, 2) + 'pp a year');
+				}
+				setText('sov-ind-scope', esov < 0
+					? SCOPE_NOTE + ' The published statements describe the positive side of the rule, so the negative figures above are the same line run backwards.'
+					: SCOPE_NOTE);
+			}
+
+			// Notes list
+			if (notesEl) {
+				notesEl.textContent = '';
+				notes.forEach((n) => addNote(notesEl, n));
+				notesEl.hidden = notes.length === 0;
+			}
+
+			// Field counter
+			if (counterEl) {
+				const activeIds = ['sov-window', 'sov-brand', 'sov-value', 'sov-market'];
+				for (let i = 1; i <= visibleComps; i++) {
+					activeIds.push(compIds(i).name, compIds(i).value);
+				}
+				const filled = activeIds.filter((id) => val(id).length > 0).length;
+				counterEl.textContent = filled + '/' + activeIds.length + ' fields filled' + (filled === activeIds.length ? ' (complete)' : '');
+			}
+
+			lastText = buildText(sorted, shares, total, mySov, market, esov);
+			scaleCard();
+		}
+
+		function buildText(
+			sorted: Row[],
+			shares: number[],
+			total: number,
+			mySov: number | null,
+			market: number | null,
+			esov: number | null
+		): string {
+			const p = currentProxy();
+			const lines: string[] = [];
+			const windowVal = val('sov-window');
+			lines.push('Share of voice - ' + p.cardMetric + (windowVal ? ' - ' + windowVal : ''));
+			lines.push('');
+			if (total > 0) {
+				for (let i = 0; i < sorted.length; i++) {
+					const label = (i + 1) + '. ' + sorted[i].name + (sorted[i].you ? ' (you)' : '');
+					lines.push(label.padEnd(34, ' ') + fmtValue(sorted[i].value).padStart(14, ' ') + shares[i].toFixed(1).padStart(8, ' ') + '%');
+				}
+				lines.push('Set total'.padEnd(34, ' ') + fmtValue(total).padStart(14, ' ') + '100.0'.padStart(8, ' ') + '%');
+			} else {
+				lines.push('No values above zero yet.');
+			}
+			lines.push('');
+			lines.push('Your share of voice: ' + (mySov === null ? 'not set' : mySov.toFixed(1) + '%'));
+			lines.push('Your market share: ' + (market === null ? 'not set' : market.toFixed(1) + '%'));
+			lines.push('Excess share of voice: ' + (esov === null ? 'not set' : signed(esov, 1) + ' points'));
+			if (esov !== null) {
+				lines.push('');
+				lines.push('Indicated annual market share change at each published constant:');
+				lines.push('  0.5 per 10 points (Nielsen, 2009, FMCG norm): ' + signed((esov / 10) * 0.5, 2) + 'pp');
+				lines.push('  0.7 per 10 points (LinkedIn with Binet and Field, IPA databank, 2020, B2B): ' + signed((esov / 10) * 0.7, 2) + 'pp');
+				lines.push('  0.6 per 10 points (LinkedIn with Binet and Field, IPA databank, 2020, B2C): ' + signed((esov / 10) * 0.6, 2) + 'pp');
+				lines.push(SCOPE_NOTE);
+			}
+			lines.push('');
+			lines.push(p.breaks);
+			lines.push('Shares rounded to one decimal place by the largest remainder method, so the column totals exactly 100.0. Every number was supplied by the user, nothing was fetched.');
+			lines.push('Built with the free share of voice calculator at https://swapbiswas.com/tools/share-of-voice-calculator/');
+			return lines.join('\n');
+		}
+
+		function scaleCard() {
+			// A stale listener from a previous View Transition can still hold this closure,
+			// so bail out once the nodes it captured have left the document.
+			if (!frame || !card || !frame.isConnected) return;
+			const widthScale = Math.min(1, frame.clientWidth / 1000);
+			const prev = card.style.getPropertyValue('--sov-scale');
+			card.style.setProperty('--sov-scale', '1');
+			const naturalHeight = card.scrollHeight;
+			card.style.setProperty('--sov-scale', prev || String(widthScale));
+
+			const isDesktop = window.matchMedia('(min-width: 64em)').matches;
+			let heightScale = 1;
+			if (isDesktop && naturalHeight > 0) {
+				const available = window.innerHeight - 24 - 24 - 96;
+				heightScale = available / naturalHeight;
+			}
+			let scale = Math.min(widthScale, heightScale, 1);
+			// A very short viewport can drive heightScale to zero or below. Falling back to
+			// the width fit keeps the card visible instead of collapsing it to nothing.
+			if (!isFinite(scale) || scale <= 0) scale = widthScale > 0 ? widthScale : 1;
+			card.style.setProperty('--sov-scale', String(scale));
+			frame.style.height = Math.max(0, naturalHeight * scale) + 'px';
+		}
+
+		function applyTheme(theme: string) {
+			card.dataset.theme = theme;
+			document.querySelectorAll('.theme-btn').forEach((btn) => {
+				btn.classList.toggle('active', (btn as HTMLElement).dataset.theme === theme);
+			});
+		}
+
+		function saveState() {
+			try {
+				const fields: Record<string, string> = {};
+				TEXT_IDS.forEach((id) => { const v = val(id); if (v) fields[id] = v; });
+				localStorage.setItem(STATE_KEY, JSON.stringify({
+					fields: fields,
+					proxy: proxySel ? proxySel.value : 'mentions',
+					visibleComps: visibleComps,
+					theme: card.dataset.theme || 'dark',
+					savedAt: Date.now(),
+				}));
+				if (savedEl) savedEl.textContent = 'Saved to this browser';
+			} catch (e) {}
+		}
+
+		function loadState(): boolean {
+			try {
+				const raw = localStorage.getItem(STATE_KEY);
+				if (!raw) return false;
+				const saved = JSON.parse(raw);
+				const fields = saved && saved.fields ? saved.fields : {};
+				Object.keys(fields).forEach((id) => {
+					const el = document.getElementById(id) as HTMLInputElement | null;
+					if (el && typeof fields[id] === 'string') el.value = fields[id];
+				});
+				if (proxySel && typeof saved.proxy === 'string' && PROXIES[saved.proxy]) proxySel.value = saved.proxy;
+				if (typeof saved.visibleComps === 'number' && saved.visibleComps >= 1 && saved.visibleComps <= MAX_COMPETITORS) {
+					visibleComps = Math.floor(saved.visibleComps);
+				}
+				if (typeof saved.theme === 'string' && themeBgColors[saved.theme]) applyTheme(saved.theme);
+				applyCompVisibility();
+				if (savedEl) savedEl.textContent = 'Restored from this browser';
+				return true;
+			} catch (e) { return false; }
+		}
+
+		function clearFields() {
+			TEXT_IDS.forEach((id) => {
+				const el = document.getElementById(id) as HTMLInputElement | null;
+				if (el) el.value = '';
+			});
+		}
+
+		function loadSample(key: string) {
+			const sample = SAMPLES[key];
+			if (!sample) return;
+			clearFields();
+			if (proxySel) proxySel.value = sample.proxy;
+			const setVal = (id: string, v: string) => {
+				const el = document.getElementById(id) as HTMLInputElement | null;
+				if (el) el.value = v;
+			};
+			setVal('sov-window', sample.window);
+			setVal('sov-brand', sample.brand);
+			setVal('sov-value', sample.value);
+			setVal('sov-market', sample.market);
+			visibleComps = Math.max(2, Math.min(MAX_COMPETITORS, sample.comps.length));
+			applyCompVisibility();
+			sample.comps.forEach((pair, idx) => {
+				const ids = compIds(idx + 1);
+				setVal(ids.name, pair[0]);
+				setVal(ids.value, pair[1]);
+			});
+			update();
+			saveState();
+		}
+
+		async function renderCard(format: 'png' | 'blob'): Promise<any> {
+			const frameEl = frame;
+			const prevTransform = card.style.transform;
+			const prevFrameHeight = frameEl ? frameEl.style.height : '';
+			const mod: any = await import('https://esm.sh/html-to-image@1.11.13' as any);
+			try {
+				card.style.transform = 'none';
+				if (frameEl) frameEl.style.height = card.scrollHeight + 'px';
+				const theme = card.dataset.theme || 'dark';
+				const opts = {
+					pixelRatio: 2,
+					backgroundColor: themeBgColors[theme] || '#151311',
+					cacheBust: true,
+					skipFonts: true,
+					width: 1000,
+					height: card.scrollHeight,
+				};
+				return format === 'blob' ? await mod.toBlob(card, opts) : await mod.toPng(card, opts);
+			} finally {
+				card.style.transform = prevTransform;
+				if (frameEl) frameEl.style.height = prevFrameHeight;
+			}
+		}
+
+		function safeFilename(): string {
+			const brand = val('sov-brand') || 'share-of-voice';
+			const slug = brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+			return (slug || 'share-of-voice') + '-share-of-voice.png';
+		}
+
+		// Events
+		let saveTimer: any;
+		form.addEventListener('input', () => {
+			update();
+			clearTimeout(saveTimer);
+			saveTimer = setTimeout(saveState, 400);
+		});
+		form.addEventListener('change', () => {
+			update();
+			clearTimeout(saveTimer);
+			saveTimer = setTimeout(saveState, 400);
+		});
+
+		addBtn?.addEventListener('click', () => {
+			if (visibleComps >= MAX_COMPETITORS) return;
+			visibleComps += 1;
+			applyCompVisibility();
+			update();
+			saveState();
+		});
+
+		form.querySelectorAll('.comp-remove').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const n = parseInt((btn as HTMLElement).dataset.remove || '0', 10);
+				if (!n) return;
+				// Shift every row below this one up, then drop the last visible row.
+				for (let i = n; i < visibleComps; i++) {
+					const from = compIds(i + 1);
+					const to = compIds(i);
+					const fromName = document.getElementById(from.name) as HTMLInputElement | null;
+					const fromValue = document.getElementById(from.value) as HTMLInputElement | null;
+					const toName = document.getElementById(to.name) as HTMLInputElement | null;
+					const toValue = document.getElementById(to.value) as HTMLInputElement | null;
+					if (toName && fromName) toName.value = fromName.value;
+					if (toValue && fromValue) toValue.value = fromValue.value;
+				}
+				const last = compIds(visibleComps);
+				const lastName = document.getElementById(last.name) as HTMLInputElement | null;
+				const lastValue = document.getElementById(last.value) as HTMLInputElement | null;
+				if (lastName) lastName.value = '';
+				if (lastValue) lastValue.value = '';
+				if (visibleComps > 1) visibleComps -= 1;
+				applyCompVisibility();
+				update();
+				saveState();
+			});
+		});
+
+		form.querySelectorAll('.sample-option').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				loadSample((btn as HTMLElement).dataset.sample || '');
+				const picker = btn.closest('details');
+				if (picker) picker.removeAttribute('open');
+			});
+		});
+
+		document.getElementById('sov-reset')?.addEventListener('click', () => {
+			clearFields();
+			if (proxySel) proxySel.value = 'mentions';
+			visibleComps = 2;
+			applyCompVisibility();
+			applyTheme('dark');
+			update();
+			saveState();
+		});
+
+		document.getElementById('sov-clear')?.addEventListener('click', () => {
+			if (!confirm('Clear the saved copy in this browser?')) return;
+			try { localStorage.removeItem(STATE_KEY); } catch (e) {}
+			clearFields();
+			if (proxySel) proxySel.value = 'mentions';
+			visibleComps = 2;
+			applyCompVisibility();
+			if (savedEl) savedEl.textContent = 'Cleared';
+			update();
+		});
+
+		document.querySelectorAll('.theme-btn').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				applyTheme((btn as HTMLElement).dataset.theme || 'dark');
+				saveState();
+			});
+		});
+
+		const copyBtn = document.getElementById('sov-copy') as HTMLButtonElement | null;
+		copyBtn?.addEventListener('click', async () => {
+			const label = 'Copy results';
+			try {
+				await navigator.clipboard.writeText(lastText);
+				copyBtn.textContent = 'Copied';
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_copy', tool_name: 'share-of-voice-calculator', tool_output: 'text' });
+			} catch (e) {
+				copyBtn.textContent = 'Copy failed';
+			}
+			setTimeout(() => { copyBtn.textContent = label; }, 1600);
+		});
+
+		const downloadBtn = document.getElementById('sov-download') as HTMLButtonElement | null;
+		downloadBtn?.addEventListener('click', async () => {
+			const label = 'Download PNG';
+			downloadBtn.disabled = true;
+			downloadBtn.textContent = 'Rendering...';
+			try {
+				const dataUrl = await renderCard('png');
+				const link = document.createElement('a');
+				link.download = safeFilename();
+				link.href = dataUrl;
+				link.click();
+				downloadBtn.textContent = 'Downloaded';
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'tool_download', tool_name: 'share-of-voice-calculator', tool_output: 'png' });
+			} catch (e) {
+				downloadBtn.textContent = 'Export failed';
+			}
+			downloadBtn.disabled = false;
+			setTimeout(() => { downloadBtn.textContent = label; }, 1600);
+		});
+
+		// Keep the card fitted when the column, the viewport or the content changes.
+		if (frame && 'ResizeObserver' in window) {
+			const ro = new ResizeObserver(() => scaleCard());
+			ro.observe(frame);
+		}
+		if ('MutationObserver' in window) {
+			// attributeFilter deliberately excludes "style": scaleCard writes --sov-scale to
+			// the card's style attribute, so observing style here would re-enter scaleCard on
+			// every pass and spin. hidden and class are the two attributes that change height.
+			const mo = new MutationObserver(() => scaleCard());
+			mo.observe(card, {
+				childList: true,
+				subtree: true,
+				characterData: true,
+				attributes: true,
+				attributeFilter: ['hidden', 'class'],
+			});
+		}
+		window.addEventListener('resize', scaleCard);
+		if (document.fonts && (document.fonts as any).ready) {
+			(document.fonts as any).ready.then(() => scaleCard());
+		}
+
+		applyCompVisibility();
+		if (!loadState()) loadSample('mentions');
+		update();
+		scaleCard();
+	}
+
+	function initToolNewsletter() {
+		const form = document.getElementById('tool-newsletter-form') as HTMLFormElement | null;
+		const status = document.getElementById('tool-newsletter-status');
+		if (!form || (form as any)._initialized) return;
+		(form as any)._initialized = true;
+
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const emailInput = form.querySelector('input[name="email_address"]') as HTMLInputElement | null;
+			const email = emailInput?.value || '';
+			const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+			if (btn) { btn.textContent = 'Subscribing...'; btn.disabled = true; }
+			const formData = new FormData();
+			formData.append('email_address', email);
+			fetch('https://app.kit.com/forms/9145889/subscriptions', {
+				method: 'POST',
+				body: formData,
+				headers: { 'Accept': 'application/json' }
+			}).then((res) => {
+				if (!res.ok) throw new Error('fail');
+				if (status) { status.textContent = 'Subscribed!'; status.style.color = 'var(--sg-ok)'; }
+				form.reset();
+				(window as any).dataLayer = (window as any).dataLayer || [];
+				(window as any).dataLayer.push({ event: 'newsletter_signup', signup_location: 'tool_share_of_voice_calculator' });
+			}).catch(() => {
+				if (status) { status.textContent = 'Something went wrong.'; status.style.color = 'var(--accent-text)'; }
+			}).finally(() => {
+				if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
+			});
+		});
+	}
+
+	initShareOfVoice();
+	initToolNewsletter();
+	document.addEventListener('astro:page-load', () => {
+		initShareOfVoice();
+		initToolNewsletter();
+	});
+</script>
+
+<style>
+	/* ---------- Page chrome: tokens only ---------- */
+	.tool-page { display: flex; flex-direction: column; gap: 3.5rem; }
+	.tool-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+
+	@media (min-width: 64em) {
+		.tool-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; }
+		.preview-panel { position: sticky; top: 1.5rem; align-self: start; }
+	}
+
+	.preview-panel { min-width: 0; }
+	.preview-sticky { display: flex; flex-direction: column; gap: 1rem; }
+
+	.form-panel {
+		background: var(--sg-panel);
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
+		padding: 1.5rem;
+	}
+	#sov-form fieldset { border: none; padding: 0; margin: 0 0 1.75rem; }
+	#sov-form legend {
+		font-family: var(--font-body);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		margin-bottom: 0.75rem;
+		padding: 0;
+		width: 100%;
+	}
+	.field { margin-bottom: 0.75rem; min-width: 0; }
+	.field-row { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+	@media (min-width: 30em) { .field-row { grid-template-columns: 1fr 1fr; } }
+	.field label {
+		display: block;
+		margin-bottom: 0.35rem;
+		color: var(--gray-300);
+		font-family: var(--font-body);
+		font-size: var(--text-xs);
+		font-weight: 500;
+	}
+	#sov-form input[type="text"],
+	#sov-form select {
+		width: 100%;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+	}
+	#sov-form input[type="text"]:focus,
+	#sov-form select:focus { outline: none; border-color: var(--accent-regular); box-shadow: 0 0 0 3px var(--accent-overlay); }
+	#sov-form input[type="text"]::placeholder { color: var(--gray-600); }
+	.field-hint { margin: 0.5rem 0 0; color: var(--gray-400); font-size: var(--text-xs); line-height: 1.5; }
+
+	.comp-row { display: grid; grid-template-columns: 1fr; gap: 0.75rem; align-items: end; margin-bottom: 0.75rem; }
+	.comp-row[hidden] { display: none; }
+	@media (min-width: 30em) { .comp-row { grid-template-columns: 1fr 1fr auto; } }
+	.comp-remove {
+		margin-bottom: 0.75rem;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		color: var(--gray-400);
+		font-family: var(--font-body);
+		font-size: var(--text-xs);
+		font-weight: 500;
+		cursor: pointer;
+		transition: color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+	}
+	.comp-remove:hover { color: var(--accent-text); border-color: var(--accent-regular); }
+	.comp-actions { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.25rem; }
+	.comp-count { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--gray-400); }
+
+	.form-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+	.btn-secondary {
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: border-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+	}
+	.btn-secondary:hover { border-color: var(--gray-0); color: var(--gray-0); }
+	.btn-secondary[disabled] { opacity: 0.5; cursor: not-allowed; }
+	.btn-danger:hover { background: var(--accent-subtle-overlay); color: var(--accent-text); border-color: var(--accent-regular); }
+
+	.sample-picker { position: relative; display: inline-block; }
+	.sample-picker > summary { list-style: none; }
+	.sample-picker > summary::-webkit-details-marker { display: none; }
+	.sample-caret { display: inline-block; margin-left: 0.25rem; font-size: 0.75em; }
+	.sample-options {
+		position: absolute;
+		top: calc(100% + 0.25rem);
+		left: 0;
+		margin: 0;
+		padding: 0.25rem;
+		background: var(--sg-panel);
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-sm);
+		list-style: none;
+		z-index: 20;
+		min-width: 240px;
+		box-shadow: var(--shadow-md);
+	}
+	.sample-options li { display: block; }
+	.sample-option {
+		display: block;
+		width: 100%;
+		text-align: left;
+		padding: 0.5rem 0.75rem;
+		background: transparent;
+		border: none;
+		color: var(--gray-200);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		border-radius: var(--radius-xs);
+	}
+	.sample-option:hover { background: var(--accent-subtle-overlay); color: var(--gray-0); }
+
+	.preview-controls {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	.preview-heading { font-family: var(--font-body); font-size: var(--text-md); color: var(--gray-100); font-weight: 600; margin: 0; }
+	.preview-actions { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+
+	.theme-picker {
+		display: inline-flex;
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		overflow: hidden;
+	}
+	.theme-btn {
+		padding: 0.45rem 0.7rem;
+		border: none;
+		background: var(--sg-panel);
+		color: var(--gray-400);
+		font-family: var(--font-body);
+		font-size: var(--text-xs);
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out);
+	}
+	.theme-btn:hover { color: var(--gray-0); }
+	.theme-btn.active { background: var(--gray-0); color: var(--accent-text-over); }
+
+	.btn-icon {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.5rem 0.9rem;
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+		font-weight: 500;
+		cursor: pointer;
+		transition: border-color 0.2s var(--ease-out);
+	}
+	.btn-icon:hover { border-color: var(--gray-0); }
+
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 0.6rem 1.1rem;
+		border: none;
+		border-radius: var(--radius-sm);
+		background: var(--gray-0);
+		color: var(--accent-text-over);
+		font-family: var(--font-body);
+		font-size: 0.9375rem;
+		font-weight: 500;
+		cursor: pointer;
+		transition: background 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+	}
+	.btn-primary:hover:not([disabled]) { background: var(--gray-100); transform: translateY(-1px); }
+	.btn-primary[disabled] { opacity: 0.7; cursor: not-allowed; }
+
+	.autosave-status {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		margin: 0;
+		min-height: 1.1rem;
+		font-family: var(--font-mono);
+		font-size: var(--text-xs);
+		color: var(--gray-400);
+	}
+	.fill-counter { font-variant-numeric: tabular-nums; }
+
+	.preview-frame { position: relative; width: 100%; overflow: hidden; border-radius: var(--radius-lg); }
+
+	.sov-notes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+	.sov-notes[hidden] { display: none; }
+	.sov-notes :global(li) {
+		padding: 0.5rem 0.75rem;
+		border-left: 2px solid var(--accent-regular);
+		background: var(--accent-subtle-overlay);
+		border-radius: var(--radius-xs);
+		color: var(--gray-200);
+		font-family: var(--font-body);
+		font-size: var(--text-xs);
+		line-height: 1.5;
+	}
+
+	/* ---------- The exported card ----------
+	   html-to-image ignores CSS custom properties on the cloned node in some browsers
+	   and the PNG must match the on-screen card exactly, so every colour below is a
+	   literal hex taken from the DESIGN.md section 2 tables. Dark is the unscoped
+	   default; light and brand override colour only. themeBgColors in the script above
+	   carries the three ground values and must stay in sync with these three blocks. */
+	.sov-card {
+		width: 1000px;
+		background: #151311;
+		color: #cfc8bd;
+		border-radius: 16px;
+		padding: 36px;
+		font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		transform-origin: top left;
+		transform: scale(var(--sov-scale, 1));
+	}
+
+	.sov-head {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		gap: 24px;
+		align-items: flex-start;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #2e2a26;
+	}
+	.sov-eyebrow {
+		display: block;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: #ff7a50;
+		margin-bottom: 10px;
+	}
+	.sov-title {
+		font-size: 34px;
+		font-weight: 600;
+		line-height: 1.15;
+		letter-spacing: -0.02em;
+		margin: 0;
+		color: #f4f0e8;
+	}
+	.sov-meta { text-align: right; font-size: 14px; color: #cfc8bd; min-width: 220px; }
+	.sov-meta-row { margin-bottom: 4px; }
+	.sov-meta-row[hidden] { display: none; }
+	.sov-meta-label { color: #998f82; font-weight: 600; margin-right: 8px; }
+
+	.sov-table { display: flex; flex-direction: column; }
+	.sov-thead,
+	.sov-row,
+	.sov-total {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 140px 90px 300px;
+		gap: 16px;
+		align-items: center;
+	}
+	.sov-row[hidden],
+	.sov-total[hidden] { display: none; }
+	.sov-thead {
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #998f82;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #2e2a26;
+	}
+	.sov-num { text-align: right; font-variant-numeric: tabular-nums; }
+	.sov-bar-head { text-align: left; }
+	.sov-row { padding: 12px 0; border-bottom: 1px solid #2e2a26; }
+	.sov-row-name {
+		font-size: 17px;
+		font-weight: 500;
+		color: #f4f0e8;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.sov-row.is-you .sov-row-name { color: #ff7a50; font-weight: 600; }
+	.sov-row-value { font-size: 16px; color: #cfc8bd; }
+	.sov-row-pct { font-size: 18px; font-weight: 600; color: #f4f0e8; }
+	.sov-bar { display: block; width: 100%; height: 10px; border-radius: 2px; background: #262220; overflow: hidden; }
+	.sov-bar-fill { display: block; height: 100%; width: 0; border-radius: 2px; background: #57514a; }
+	.sov-row.is-you .sov-bar-fill { background: #ff7a50; }
+	.sov-total {
+		padding-top: 14px;
+		font-size: 14px;
+		font-weight: 600;
+		color: #998f82;
+	}
+	.sov-empty { margin: 16px 0 0; font-size: 15px; color: #998f82; }
+	.sov-empty[hidden] { display: none; }
+
+	.sov-figures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+	.sov-fig {
+		background: #1d1a17;
+		border: 1px solid #2e2a26;
+		border-radius: 12px;
+		padding: 18px;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+	.sov-fig-label {
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #998f82;
+	}
+	.sov-fig-value { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; color: #f4f0e8; }
+	.sov-fig-accent .sov-fig-value { color: #ff7a50; }
+	.sov-fig-note { font-size: 12px; line-height: 1.4; color: #998f82; }
+
+	.sov-indication {
+		background: #1d1a17;
+		border: 1px solid #2e2a26;
+		border-radius: 12px;
+		padding: 18px 20px;
+	}
+	.sov-indication[hidden] { display: none; }
+	.sov-ind-head {
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #998f82;
+		margin-bottom: 12px;
+	}
+	.sov-ind-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 16px;
+		padding: 7px 0;
+		border-bottom: 1px solid #2e2a26;
+		font-size: 14px;
+		color: #cfc8bd;
+	}
+	.sov-ind-value { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; color: #f4f0e8; }
+	.sov-ind-scope { margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #998f82; }
+
+	.sov-caveat { border-top: 1px solid #2e2a26; padding-top: 18px; }
+	.sov-caveat p { margin: 0 0 8px; font-size: 13px; line-height: 1.55; color: #cfc8bd; }
+	.sov-caveat p:last-child { margin-bottom: 0; }
+	.sov-caveat strong { color: #f4f0e8; }
+	.sov-method { color: #998f82; }
+	.sov-proxy-note { color: #998f82; }
+
+	.sov-foot {
+		display: flex;
+		justify-content: flex-end;
+		font-size: 12px;
+		letter-spacing: 0.04em;
+		color: #998f82;
+	}
+
+	/* Light card: DESIGN.md light table */
+	.sov-card[data-theme="light"] { background: #f6f4ef; color: #3a3632; }
+	.sov-card[data-theme="light"] .sov-head,
+	.sov-card[data-theme="light"] .sov-thead,
+	.sov-card[data-theme="light"] .sov-row,
+	.sov-card[data-theme="light"] .sov-ind-row { border-bottom-color: #e4dfd6; }
+	.sov-card[data-theme="light"] .sov-caveat { border-top-color: #e4dfd6; }
+	.sov-card[data-theme="light"] .sov-eyebrow { color: #b53b15; }
+	.sov-card[data-theme="light"] .sov-title,
+	.sov-card[data-theme="light"] .sov-row-name,
+	.sov-card[data-theme="light"] .sov-row-pct,
+	.sov-card[data-theme="light"] .sov-fig-value,
+	.sov-card[data-theme="light"] .sov-ind-value,
+	.sov-card[data-theme="light"] .sov-caveat strong { color: #15130f; }
+	.sov-card[data-theme="light"] .sov-meta,
+	.sov-card[data-theme="light"] .sov-row-value,
+	.sov-card[data-theme="light"] .sov-ind-row,
+	.sov-card[data-theme="light"] .sov-caveat p { color: #3a3632; }
+	.sov-card[data-theme="light"] .sov-meta-label,
+	.sov-card[data-theme="light"] .sov-thead,
+	.sov-card[data-theme="light"] .sov-total,
+	.sov-card[data-theme="light"] .sov-empty,
+	.sov-card[data-theme="light"] .sov-fig-label,
+	.sov-card[data-theme="light"] .sov-fig-note,
+	.sov-card[data-theme="light"] .sov-ind-head,
+	.sov-card[data-theme="light"] .sov-ind-scope,
+	.sov-card[data-theme="light"] .sov-method,
+	.sov-card[data-theme="light"] .sov-proxy-note,
+	.sov-card[data-theme="light"] .sov-foot { color: #6a645c; }
+	.sov-card[data-theme="light"] .sov-row.is-you .sov-row-name,
+	.sov-card[data-theme="light"] .sov-fig-accent .sov-fig-value { color: #b53b15; }
+	.sov-card[data-theme="light"] .sov-fig,
+	.sov-card[data-theme="light"] .sov-indication { background: #ffffff; border-color: #e4dfd6; }
+	.sov-card[data-theme="light"] .sov-bar { background: #eeebe4; }
+	.sov-card[data-theme="light"] .sov-bar-fill { background: #aca69c; }
+	.sov-card[data-theme="light"] .sov-row.is-you .sov-bar-fill { background: #b53b15; }
+
+	/* Brand card: vermilion ground, paper text, ink panels */
+	.sov-card[data-theme="brand"] { background: #b53b15; color: #f6f4ef; }
+	.sov-card[data-theme="brand"] .sov-head,
+	.sov-card[data-theme="brand"] .sov-thead,
+	.sov-card[data-theme="brand"] .sov-row { border-bottom-color: #8f2e0f; }
+	.sov-card[data-theme="brand"] .sov-caveat { border-top-color: #8f2e0f; }
+	.sov-card[data-theme="brand"] .sov-eyebrow,
+	.sov-card[data-theme="brand"] .sov-meta-label,
+	.sov-card[data-theme="brand"] .sov-thead,
+	.sov-card[data-theme="brand"] .sov-total,
+	.sov-card[data-theme="brand"] .sov-empty,
+	.sov-card[data-theme="brand"] .sov-row-value,
+	.sov-card[data-theme="brand"] .sov-proxy-note,
+	.sov-card[data-theme="brand"] .sov-foot { color: #f3dcd2; }
+	.sov-card[data-theme="brand"] .sov-title,
+	.sov-card[data-theme="brand"] .sov-meta,
+	.sov-card[data-theme="brand"] .sov-row-name,
+	.sov-card[data-theme="brand"] .sov-row-pct,
+	.sov-card[data-theme="brand"] .sov-caveat p,
+	.sov-card[data-theme="brand"] .sov-caveat strong { color: #f6f4ef; }
+	.sov-card[data-theme="brand"] .sov-row.is-you .sov-row-name { color: #f6f4ef; }
+	.sov-card[data-theme="brand"] .sov-bar { background: #8f2e0f; }
+	.sov-card[data-theme="brand"] .sov-bar-fill { background: #15130f; }
+	.sov-card[data-theme="brand"] .sov-row.is-you .sov-bar-fill { background: #f6f4ef; }
+	.sov-card[data-theme="brand"] .sov-fig,
+	.sov-card[data-theme="brand"] .sov-indication { background: #15130f; border-color: #8f2e0f; }
+	.sov-card[data-theme="brand"] .sov-fig-label,
+	.sov-card[data-theme="brand"] .sov-fig-note,
+	.sov-card[data-theme="brand"] .sov-ind-head,
+	.sov-card[data-theme="brand"] .sov-ind-scope { color: #998f82; }
+	.sov-card[data-theme="brand"] .sov-fig-value,
+	.sov-card[data-theme="brand"] .sov-ind-value { color: #f4f0e8; }
+	.sov-card[data-theme="brand"] .sov-fig-accent .sov-fig-value { color: #ff7a50; }
+	.sov-card[data-theme="brand"] .sov-ind-row { color: #cfc8bd; border-bottom-color: #2e2a26; }
+
+	/* ---------- SEO content ---------- */
+	.tool-cta-strip {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 1rem;
+		padding: 1.75rem;
+		background: var(--sg-panel);
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
+		align-items: center;
+	}
+	@media (min-width: 50em) { .tool-cta-strip { grid-template-columns: minmax(0, 1fr) auto; } }
+	.cta-text strong {
+		display: block;
+		font-family: var(--font-body);
+		font-weight: 600;
+		font-size: var(--text-md);
+		color: var(--gray-0);
+	}
+	.cta-text p { margin: 0.25rem 0 0; color: var(--gray-300); font-size: var(--text-sm); }
+	.cta-text,
+	.cta-form { min-width: 0; }
+	.cta-form { display: flex; gap: 0.5rem; }
+	.cta-form input {
+		flex: 1;
+		min-width: 0;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--gray-700);
+		border-radius: var(--radius-sm);
+		background: var(--sg-panel);
+		color: var(--gray-0);
+		font-family: var(--font-body);
+		font-size: var(--text-sm);
+	}
+	.cta-form input:focus { outline: none; border-color: var(--accent-regular); box-shadow: 0 0 0 3px var(--accent-overlay); }
+	.cta-form input::placeholder { color: var(--gray-600); }
+	.cta-form button {
+		padding: 0.6rem 1.25rem;
+		border: none;
+		border-radius: var(--radius-sm);
+		background: var(--gray-0);
+		color: var(--accent-text-over);
+		font-family: var(--font-body);
+		font-weight: 500;
+		font-size: var(--text-sm);
+		cursor: pointer;
+		white-space: nowrap;
+	}
+	.cta-status { grid-column: 1 / -1; margin: 0; font-size: var(--text-sm); min-height: 1rem; }
+
+	.seo-content { max-width: 60rem; }
+	.seo-content h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-xl); color: var(--gray-0); margin: 2.5rem 0 1rem; }
+	.seo-content h2:first-child { margin-top: 0; }
+	.seo-content p, .seo-content li { color: var(--gray-200); font-size: var(--text-md); line-height: 1.65; }
+	.seo-content .how-to { padding-left: 1.25rem; }
+	.seo-content .how-to li { margin-bottom: 0.75rem; }
+	.seo-content a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 0.15em; text-decoration-thickness: 1px; }
+	.seo-link { display: inline-block; font-weight: 600; }
+	.related-links { list-style: none; padding: 0; }
+	.related-links li { margin-bottom: 0.5rem; }
+
+	.faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+	.faq-item {
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
+		padding: 1rem 1.25rem;
+		background: var(--sg-panel);
+	}
+	.faq-item summary {
+		cursor: pointer;
+		font-family: var(--font-body);
+		font-weight: 600;
+		color: var(--gray-0);
+		font-size: var(--text-md);
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+	.faq-item summary::-webkit-details-marker { display: none; }
+	.faq-item summary::after {
+		content: '+';
+		color: var(--accent-text);
+		font-size: 1.5rem;
+		font-weight: 400;
+		line-height: 1;
+	}
+	.faq-item[open] summary::after { content: '-'; }
+	.faq-item p { margin: 0.75rem 0 0; color: var(--gray-200); font-size: var(--text-sm); line-height: 1.6; }
+</style>

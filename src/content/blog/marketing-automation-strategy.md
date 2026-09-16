@@ -142,13 +142,15 @@ Automated emails account for **37% of all email-generated sales** despite making
 |---|---|---|
 | **Email open rate** | Subject line + list quality | 35%+ for automated emails |
 | **Click-through rate** | Content relevance | 5%+ for nurture sequences |
-| **MQL to SQL conversion** | Lead quality | 25-35% |
+| **MQL to SQL conversion** | Lead quality | Your own trailing baseline, not a published band |
 | **Workflow completion rate** | Sequence effectiveness | 60%+ |
 | **Unsubscribe rate** | Email fatigue | Below 0.5% per send |
 | **Revenue influenced** | Pipeline impact | 40-60% of total pipeline |
 | **Automation ROI** | Overall return | 5:1 or better |
 
 Review these monthly. Adjust workflows that underperform and scale those that work. If your SaaS product depends heavily on automation for growth, tie these KPIs into your broader [SaaS growth strategy](/blog/saas-growth-strategy/).
+
+One row above carries no target on purpose. The published MQL to SQL figures disagree by a factor of three because the reports behind them qualify leads at different points in the funnel, a gap I unpick in [tracing the MQL to SQL benchmarks back to their sources](/blog/mql-to-sql-conversion-rate-benchmark/). Baseline yourself before you borrow anyone else's number.
 
 ## Marketing Automation Strategy by Channel
 

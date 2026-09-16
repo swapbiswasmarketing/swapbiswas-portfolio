@@ -66,6 +66,8 @@ The job: become the credible voice in your category before the buyer has a need.
 
 KPI: branded search volume, share of voice in category, qualified organic traffic, podcast and community reach. Not MQLs. Top-of-funnel measured on MQL volume becomes a click-bait machine.
 
+Share of voice needs a denominator before it means anything, and in most B2B software categories nobody buys category advertising, so the textbook formula returns no number at all. I work through the substitutes that do compute, and how each one breaks, in [share of voice vs market share](/blog/share-of-voice-vs-market-share/). You can run the arithmetic on your own figures with the [share of voice calculator](/tools/share-of-voice-calculator/).
+
 ### 2. Capture Intent (Mid-Funnel)
 
 The job: be present and credible when the buyer starts actively researching.

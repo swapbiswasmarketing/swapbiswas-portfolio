@@ -99,6 +99,8 @@ Then run these in order and stop at the first that fires, the same rule the ladd
 
 The interview questions that produce quotable buyer language are in [win-loss analysis questions](/blog/win-loss-analysis-questions/), and the mechanics of running the program properly sit in [what win-loss analysis is](/blog/what-is-win-loss-analysis/). For the segment comparison in step two of the ladder, [SaaS win rate benchmarks](/blog/saas-win-rate-benchmark/) give you a reference point for what a real drop looks like against normal variance.
 
+The twenty-deal check tells you what buyers revealed under pressure. If you want the stated-preference half as well, before a rewrite rather than after it, [message testing examples](/blog/message-testing-examples/) carries the survey instrument and the rule for what to do when the scores and the lost deals disagree.
+
 ## Product Positioning and Messaging Examples: Linear
 
 The split is checkable from outside the company. Linear's public pages carry both layers, checked on 10 September 2026.

@@ -147,6 +147,8 @@ The cheapest test is a five-second test. Show the value prop to five people in y
 
 A more expensive test: change your homepage hero, run it for a week, and look at scroll depth, demo conversion, and outbound reply rates. Numbers move within 14 days when the prop is clearly better - or clearly worse.
 
+Between those two sits the quantitative version, where you score several variants against the same axes and read the gap rather than the winner. The copy-paste instrument, the scoring rubric and the sample sizes that make a small B2B panel defensible are in [message testing examples](/blog/message-testing-examples/).
+
 ## Value Proposition Statement vs Value Proposition
 
 A value proposition is the underlying strategic truth. A value proposition statement is the written articulation, usually one sentence long, used on a homepage hero or sales deck. They are not the same thing.

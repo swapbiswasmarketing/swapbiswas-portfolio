@@ -271,6 +271,8 @@ The reporting split I would run:
 
 Keeping those on separate slides stops the quarterly argument about which number is correct, because the three are never answering the same question at the same altitude. The same discipline applies to the wider set of [product marketing metrics](/blog/product-marketing-metrics/) you take into a leadership review: label what each number is evidence of.
 
+Brand measures belong on a fourth line with a much longer clock. All three methods here attribute revenue to spend; none of them tells you whether you are being heard more than the competitor you are losing to. That is the [share of voice vs market share](/blog/share-of-voice-vs-market-share/) question, and the [share of voice calculator](/tools/share-of-voice-calculator/) computes it, including the excess-share-of-voice gap.
+
 ## Which Method Should You Believe When They Disagree?
 
 Believe the one with a control group. Ranked by how much weight I would put on a conflicting answer:

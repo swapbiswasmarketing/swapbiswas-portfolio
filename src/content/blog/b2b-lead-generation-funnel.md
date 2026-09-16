@@ -98,6 +98,8 @@ The root cause is almost always a definition problem. Marketing optimizes for MQ
 
 The tighter your upstream targeting, the less this hurts. A funnel fed by a sharp [ICP and buyer persona](/blog/icp-vs-buyer-persona/) produces leads that already fit, so the handoff argument mostly disappears. Most handoff fights are really targeting fights wearing a disguise.
 
+That definition problem is also why the published numbers for this stage are close to useless: the same funnel reports anything from 13% to 45% depending on where the qualifying test sits. I audited where each circulating figure actually comes from in [the MQL to SQL conversion rate benchmarks, traced to source](/blog/mql-to-sql-conversion-rate-benchmark/).
+
 ## The Most Common Leaks and How to Fix Them
 
 Every stage leaks in its own way. Diagnosing the funnel means finding the specific gate where accounts drop, not just noting that "conversion is low."

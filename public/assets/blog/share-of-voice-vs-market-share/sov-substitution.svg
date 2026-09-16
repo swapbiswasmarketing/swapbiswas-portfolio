@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760">
+  <rect x="0" y="0" width="1400" height="760" fill="#f6f4ef"/>
+
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.02em">Share of Voice vs Market Share</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">The substitution step for categories that buy no category advertising</text>
+
+  <rect x="60" y="150" width="390" height="272" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="194" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="0.12em">STEP 01</text>
+  <text x="88" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Classic Denominator</text>
+  <text x="88" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">SOV = your category ad</text>
+  <text x="88" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">spend divided by total</text>
+  <text x="88" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">category ad spend</text>
+  <text x="88" y="372" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Ad panels measure broadcast</text>
+  <text x="88" y="398" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">media, not booths or docs</text>
+
+  <line x1="462" y1="286" x2="487" y2="286" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="487,279 501,286 487,293" fill="#15130f"/>
+
+  <rect x="505" y="150" width="390" height="272" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="533" y="194" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="0.12em">STEP 02</text>
+  <text x="533" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Substitute Proxy</text>
+  <text x="533" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Organic SERP share</text>
+  <text x="533" y="302" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Review velocity share</text>
+  <text x="533" y="330" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Developer question share</text>
+  <text x="533" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">AI answer citation share</text>
+  <text x="533" y="398" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Name the one you used</text>
+
+  <line x1="907" y1="286" x2="932" y2="286" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="932,279 946,286 932,293" fill="#15130f"/>
+
+  <rect x="950" y="150" width="390" height="272" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="978" y="194" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="0.12em">STEP 03</text>
+  <text x="978" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Excess Share of Voice</text>
+  <text x="978" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">ESOV = proxy share of</text>
+  <text x="978" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">voice minus share of</text>
+  <text x="978" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">market, in points</text>
+  <text x="978" y="372" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">The sign flips with the</text>
+  <text x="978" y="398" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">proxy you picked</text>
+
+  <rect x="60" y="470" width="1280" height="230" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="518" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Voice Leads, Market Share Lags</text>
+
+  <text x="200" y="576" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Share of voice moves this quarter</text>
+  <text x="1312" y="576" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Market share moves after the renewal cycle</text>
+
+  <circle cx="200" cy="606" r="6" fill="#15130f"/>
+  <line x1="206" y1="606" x2="1298" y2="606" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="1298,599 1312,606 1298,613" fill="#b53b15"/>
+
+  <text x="200" y="654" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Compare Q1 voice against Q4 share. Comparing both for the same quarter reads two different moments.</text>
+</svg>
