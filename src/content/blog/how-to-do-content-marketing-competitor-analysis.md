@@ -81,6 +81,8 @@ Once you know who to study, catalog what they publish. This is the foundation of
 | **Content length** | Average word count for top-performing pieces | Indicates depth expectations in your niche |
 | **Content freshness** | How often they update older posts | Signals whether they invest in content maintenance |
 
+Record their average length as context, not as a target to match. When I measured [word count for SEO against ranking position](/blog/word-count-for-seo/) across 147 posts on a single domain, word count explained 0.5% of the variance and the sign of the correlation flipped depending on which pages were included.
+
 You can pull blog URLs at scale using Ahrefs Site Explorer or Screaming Frog. For a quick manual audit, browse their blog archive and sitemap.
 
 Pay attention to what they do **not** cover. Gaps in a competitor's content library are just as valuable as their strengths.

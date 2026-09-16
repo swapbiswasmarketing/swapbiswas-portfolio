@@ -66,7 +66,7 @@ Organic traffic is the highest-ROI channel for most affiliate sites. With [AI re
 
 **Best for:** On-page optimization and content scoring for affiliate articles.
 
-Surfer analyzes SERP competitors and gives you a real-time content score as you write. For affiliate content, it helps you hit the right keyword density, heading structure, and content length to compete. The Grow Flow feature suggests weekly SEO tasks.
+Surfer analyzes SERP competitors and gives you a real-time content score as you write. For affiliate content, it helps you hit the right keyword density, heading structure, and content length to compete. The length target is the softest of those three: [word count measured against Search Console position across 147 posts on one domain](/blog/word-count-for-seo/) explained 0.5% of the variance. The Grow Flow feature suggests weekly SEO tasks.
 
 **Pricing:** Essential plan at $99/month ($79/month annual). Scale plan at $219/month ($175/month annual).
 

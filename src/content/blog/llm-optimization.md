@@ -81,7 +81,7 @@ LLMs do not read pages the way humans do. They chunk content into short token se
 - Use comparison tables for "X vs Y" content - LLMs parse tables cleanly
 - Keep sentence structure simple. One claim per sentence beats a complex multi-clause one.
 
-The "lead with the answer" pattern is the single highest-ROI structural change. A page that buries the answer in paragraph four is harder to chunk than one that opens with it.
+The "lead with the answer" pattern is the single highest-ROI structural change. A page that buries the answer in paragraph four is harder to chunk than one that opens with it. How the headings are worded carries the weight here, not how many of them there are: Google documents no ideal heading count, and across 147 of my own posts [H2 count explained 0.7% of the variation in average ranking position](/blog/how-many-h2-tags-per-page/).
 
 ### Layer 3: Authority
 

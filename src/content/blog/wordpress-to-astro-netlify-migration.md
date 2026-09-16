@@ -48,7 +48,7 @@ My new stack is three tools. That's it.
 
 Astro has [48,000+ stars on GitHub](https://astro.build/blog/year-in-review-2025/) and achieves **perfect 100 Lighthouse scores** with literally **0 KB of JavaScript** by default. It only sends JavaScript to the browser when you explicitly need interactivity. That static-HTML output is also a quiet SEO advantage: unlike [vibe-coded React sites that render client-side and struggle to get indexed by Google](/blog/vibe-coded-website-seo/), Astro ships real HTML that search engines can read immediately.
 
-**Netlify** hosts the generated HTML files on a global CDN (Content Delivery Network). Your site is served from the server closest to your visitor, which means fast load times worldwide. It also handles SSL certificates (HTTPS), custom domains, and automatic deployments - all for free.
+**Netlify** hosts the generated HTML files on a global CDN (Content Delivery Network). Your site is served from the server closest to your visitor, which means fast load times worldwide. It also handles SSL certificates (HTTPS), custom domains, and automatic deployments - all for free. The host decides what your URLs do at the edge too, so [check which status code yours returns on a permanent redirect](/blog/301-redirect-seo/) after any platform change.
 
 **GitHub** stores my code and acts as the trigger for deployments. When I push an update, Netlify automatically rebuilds and deploys the site in under 60 seconds.
 

@@ -76,6 +76,8 @@ Map the actual questions buyers ask an AI tool: "best X for Y," "X vs Z," "is X 
 
 Models trust brands that demonstrate depth across a topic, not a single thin article. Coverage signals expertise.
 
+Depth means covering the questions a buyer asks rather than sprinkling related terms across a page. The tactic usually sold for that, "LSI keywords", falls apart under the math: I ran [a truncated SVD over 147 posts](/blog/latent-semantic-indexing-seo/) and what the algorithm hands back is document and term vectors, never a keyword list you can paste into a brief.
+
 Cluster your content. A pillar page like this one links to focused posts on each sub-tactic, and those posts link back, forming a tight, crawlable web of authority.
 
 That structure tells both search crawlers and AI retrieval systems that you own the topic. For the broader playbook, see [LLM optimization](/blog/llm-optimization/).

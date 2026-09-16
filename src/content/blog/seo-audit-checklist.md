@@ -65,9 +65,9 @@ Pull up your `robots.txt` file at the root domain and read it line by line. The 
 
 ### Look for crawl traps and broken links
 
-Run a crawl and watch for explosions of near-identical URLs, usually caused by faceted navigation or session parameters. These burn crawl budget on large sites and bury the pages you care about. Flag every 4xx and 5xx response, and map your redirect chains so nothing hops more than once.
+Run a crawl and watch for explosions of near-identical URLs, usually caused by faceted navigation or session parameters. These burn crawl budget on large sites and bury the pages you care about. Flag every 4xx and 5xx response, and map your redirect chains so nothing hops more than once. Check the status code your host actually returns while you are there, because [a permanent redirect can come back as a 308 rather than a 301](/blog/301-redirect-seo/) without anyone configuring it.
 
-For the deep version of this layer, including log file analysis and crawl budget, follow my [technical SEO site audit walkthrough](/blog/how-to-conduct-a-technical-seo-site-audit/). It picks up exactly where this section gets demanding.
+For the deep version of this layer, including log file analysis and crawl budget, follow my [technical SEO site audit walkthrough](/blog/how-to-conduct-a-technical-seo-site-audit/). It picks up exactly where this section gets demanding. If your site sits on Vercel, Netlify or Cloudflare Pages, check first whether you can even get the log: I went through [the plan tiers and retention windows for each host](/blog/seo-log-file-analysis/) and the answer is often no.
 
 ## Step 2: Indexation - the right pages in, the wrong pages out
 
@@ -111,7 +111,7 @@ Now we are at the layer most people think of as "SEO." Here I am checking whethe
 
 ### Title tags and headings
 
-Every indexable page needs a unique, descriptive title that leads with the primary keyword and reads like something a human would click. Run your crawler's filter for missing, duplicate, and over-length titles. Then confirm each page has a single, sensible H1 and a logical heading structure beneath it.
+Every indexable page needs a unique, descriptive title that leads with the primary keyword and reads like something a human would click. Run your crawler's filter for missing, duplicate, and over-length titles. Then confirm each page has a single, sensible H1 and a logical heading structure beneath it. I tested [whether the H1 should match the title tag](/blog/h1-tag-seo/) on 147 URLs where the two are byte-identical by construction. And there is [no ideal H2 count to hit](/blog/how-many-h2-tags-per-page/): the one-H2-per-250-words rule you see repeated traces back to a Yoast readability heuristic, and Google documents no ideal heading count.
 
 ### Search intent match
 
@@ -130,7 +130,7 @@ A technically perfect page with shallow content still loses. This step is about 
 
 ### Find thin and cannibalizing pages
 
-Look for pages that target the same keyword and compete with each other, splitting your authority. Consolidate them into one strong page and redirect the rest. Then flag thin pages that exist only to "have a page" - they dilute site quality and rarely justify their place in the index.
+Look for pages that target the same keyword and compete with each other, splitting your authority. Consolidate them into one strong page and redirect the rest, then write down which URL owns which query so the overlap cannot grow back. That record is a keyword map, and I built [a keyword map for a site that already had 147 posts](/blog/seo-keyword-map/) from a Search Console export rather than a blank template. Then flag thin pages that exist only to "have a page" - they dilute site quality and rarely justify their place in the index. Thin is about missing answers rather than a low word count: when I correlated [word count for SEO against Search Console position](/blog/word-count-for-seo/) across 147 posts on one domain, length explained 0.5% of the variance.
 
 - **Thin content** - improve substantially, consolidate, or remove
 - **Cannibalization** - merge competing pages into one canonical winner
@@ -151,7 +151,7 @@ Before you commit a quarter to lifting page-two pages, measure what a lift is wo
 
 ### Backlink health
 
-Scan your backlink profile for broken inbound links pointing at dead URLs, then recover that equity with a redirect. You do not need to obsess over a "toxic links" cleanup for most sites. Focus on reclaiming links you already earned that are currently wasted.
+Scan your backlink profile for broken inbound links pointing at dead URLs, then recover that equity with a redirect. You do not need to obsess over a "toxic links" cleanup for most sites. Focus on reclaiming links you already earned that are currently wasted. While you are in there, read the rel attribute on the links you placed yourself: I pulled [the rel attribute each syndication platform stamps on your link back](/blog/nofollow-links-seo/) straight out of the rendered HTML, and most of them are nofollow, which Google has treated as a hint rather than a directive since March 2020.
 
 ## When to bring in a specialist
 

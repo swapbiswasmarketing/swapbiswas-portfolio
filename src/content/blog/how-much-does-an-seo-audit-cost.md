@@ -78,7 +78,7 @@ The same website can get quoted $800 or $8,000 depending on what the auditor is 
 
 ### 1. Site Size and Technical Complexity
 
-A 40-page brochure site takes a few hours to crawl and assess. A 40,000-page [e-commerce site](/blog/ecommerce-seo-checklist/) with faceted navigation, multiple subdomains, and product variants needs log file analysis, crawl budget modeling, and indexation strategy - all of which take days, not hours.
+A 40-page brochure site takes a few hours to crawl and assess. A 40,000-page [e-commerce site](/blog/ecommerce-seo-checklist/) with faceted navigation, multiple subdomains, and product variants needs log file analysis, crawl budget modeling, and indexation strategy - all of which take days, not hours. Confirm the first of those is even possible before it goes into the scope, because [a serverless host may keep no raw access log for you to analyze](/blog/seo-log-file-analysis/): Netlify documents Log Drains on Enterprise plans as the route to traffic logs, and Vercel keeps runtime logs for one hour on Hobby.
 
 As a rough rule: every 10x increase in page count adds a tier of complexity, and therefore cost.
 

@@ -142,7 +142,7 @@ Let's get into it.
 
 **Best for:** Social media graphics, presentations, infographics, and quick visual content. The AI features help non-designers create professional-looking assets.
 
-**Honest take:** Canva's free tier is one of the most generous in all of marketing tech. You can run a solid visual content operation without paying a cent. The AI features (Magic Design, Magic Write) are bonuses on top of an already excellent free product.
+**Honest take:** Canva's free tier is one of the most generous in all of marketing tech. You can run a solid visual content operation without paying a cent. The AI features (Magic Design, Magic Write) are bonuses on top of an already excellent free product. What none of these tools write for you is the alt text on what they generate, and [alt text for charts and diagrams](/blog/alt-text-and-seo/) is where volume does the most damage: an audit of the 147 posts on this site found their hero images sharing 15 alt strings between them.
 
 ### 12. Microsoft Designer (Free)
 

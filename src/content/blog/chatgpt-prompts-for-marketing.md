@@ -153,7 +153,7 @@ Do NOT use these phrases: "In today's world", "It's no secret",
 Tone: [your brand voice description]
 ```
 
-These content prompts pair well with an [AI SEO strategy](/blog/ai-seo-strategy/) - use them to draft content, then optimize for search using the frameworks in that guide.
+These content prompts pair well with an [AI SEO strategy](/blog/ai-seo-strategy/) - use them to draft content, then optimize for search using the frameworks in that guide. The headline prompt leaves one decision to you, because the line you pick usually ships twice, once as the title tag and once as the on-page heading: I measured [whether the H1 should match the title tag](/blog/h1-tag-seo/) across 147 URLs where the two are byte-identical by construction.
 
 ### Content Repurposing
 

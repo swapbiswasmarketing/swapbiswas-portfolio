@@ -3,8 +3,8 @@ title: "Why Your Vibe-Coded Website May Never Rank on Google (2026)"
 description: "Your vibe-coded website looks finished in the browser but renders blank to Googlebot. Here is why it never ranks on Google, and how to fix it quickly."
 publishDate: 2026-06-27
 category: [SEO, AI]
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "Do vibe-coded websites rank on Google?"
     a: "They can, but most do not by default. AI coding tools usually ship a client-side React app, so the raw HTML Googlebot fetches first is nearly empty. If your content only appears after JavaScript runs, Google may index a blank page. Adding server-side rendering or static generation fixes it."
@@ -90,6 +90,8 @@ A few faster, rougher checks you can run in seconds:
 - **Site search.** Search `site:yourdomain.com` on Google. If few or none of your pages appear, your content is likely not being indexed.
 - **Unique sentence search.** Copy a distinctive sentence from your page and search it in quotes. If Google cannot find your own exact text, it has not indexed that content.
 - **Disable JavaScript.** Turn off JavaScript in your browser and reload. What remains is close to what a crawler gets on the first pass. If the page goes blank, that is your answer.
+
+Server logs answer the other half of the question, which is whether Googlebot ever came back to render the page. On the hosts these projects deploy to, that file may not exist at all: Netlify keeps Log Drains on its Enterprise plan and Vercel holds runtime logs for about an hour on Hobby, so [log file analysis without raw server access](/blog/seo-log-file-analysis/) covers what to use instead.
 
 These checks are the difference between assuming you rank and knowing you do. To run them across a whole site, my [technical SEO site audit](/blog/how-to-conduct-a-technical-seo-site-audit/) walks through the process, and the shorter [SEO audit checklist](/blog/seo-audit-checklist/) is a good companion.
 

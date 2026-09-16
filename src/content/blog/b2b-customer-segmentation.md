@@ -3,8 +3,8 @@ title: "B2B Customer Segmentation: A 5-Test Qualifying Score"
 description: "A working guide to b2b customer segmentation: a 5-test score for qualifying segments, a hard cap on how many you can run, and the CRM fields that prove it."
 publishDate: 2026-08-29
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style oil painting of a hilltop signal tower with a single red pennant above a wooded valley"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "How many customer segments should a B2B company have?"
     a: "Three or four operating segments plus a core is the working ceiling for most B2B companies. B2B International reports that the average business-to-business segmentation study produces 3 or 4 segments, and SurveyMonkey's guide says the same. The constraint is not analysis, it is staffing: every live segment needs an owner, a message, a campaign budget and a report, every quarter."
@@ -180,7 +180,7 @@ Kubernetes users are the interesting failure. The group is enormous and triviall
 
 The migration segment reaches the same total from the opposite direction. It is small at any moment and hard to detect before the buyer raises a hand, but the trigger is an event, the budget comes from a project rather than a line item, and the buyer is paying for continuity rather than capability. That combination makes a competitive play with a named owner rather than a standing segment with a headcount line.
 
-Mid-market EMEA fails despite a respectable total. A zero on value driver means the region changes nothing about why anyone buys. Geography that only changes the language of the email is a reporting cut. Keep it as a filter on the dashboard and stop calling it a segment.
+Mid-market EMEA fails despite a respectable total. A zero on value driver means the region changes nothing about why anyone buys. Geography that only changes the language of the email is a reporting cut, and the report someone brings to defend the region usually proves less than it looks like it does. [Search Console's country report](/blog/international-seo-keyword-research/) carries the same flaw: impressions from a country record where Google showed a page rather than demand in that country's language. Keep it as a filter on the dashboard and stop calling it a segment.
 
 Those scores are an illustration, and they are worth nothing without evidence behind each digit. When you run this on your own candidates, hold every 2 to a specific standard:
 

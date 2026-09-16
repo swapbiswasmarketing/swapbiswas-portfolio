@@ -67,7 +67,7 @@ If you are trying to work out how GEO differs from the other two acronyms in cir
 
 ### Content Strategy Shifts
 
-**From keyword targeting to answer engineering.** AI engines want clear, structured answers they can extract and cite. Format content with explicit definitions, numbered steps, and data-backed claims.
+**From keyword targeting to answer engineering.** AI engines want clear, structured answers they can extract and cite. Format content with explicit definitions, numbered steps, and data-backed claims. The habit this replaces is sprinkling supposed LSI keywords through the copy, which never matched what the algorithm behind the name does: [a truncated SVD run over my own 147 posts](/blog/latent-semantic-indexing-seo/) returns concept dimensions for the whole corpus, never a term list for a single page.
 
 **From volume to depth.** Publishing 20 thin articles per month loses to 4 comprehensive pieces backed by original research. The [AI SEO strategy](/blog/ai-seo-strategy/) that works in 2026 prioritizes depth, originality, and structured data over output volume.
 
@@ -86,7 +86,7 @@ For a deep technical foundation, see our [technical SEO audit guide](/blog/how-t
 
 ### Link Building Evolves
 
-Links still matter for traditional rankings, but AI search adds a new dimension. Being cited on platforms where AI models pull citations - Reddit, Quora, industry forums, and authoritative publications - creates AI visibility that traditional backlinks alone do not provide.
+Links still matter for traditional rankings, but AI search adds a new dimension. Being cited on platforms where AI models pull citations - Reddit, Quora, industry forums, and authoritative publications - creates AI visibility that traditional backlinks alone do not provide. For a measured baseline of the other extreme, my own site ran [16 months of SEO without link building](/blog/seo-without-link-building/) and earned 164,564 impressions against 186 clicks.
 
 ### Intent Becomes Everything
 

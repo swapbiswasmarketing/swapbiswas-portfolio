@@ -3,8 +3,8 @@ title: "How to Measure SaaS Content Marketing: A 4-Layer Model"
 description: "How to measure SaaS content marketing when the buying cycle runs ten months: a four-layer model, a holdout test, and the metrics worth deleting outright."
 publishDate: 2026-08-31
 category: [Marketing, Product Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "How do you measure SaaS content marketing?"
     a: "Split the measurement into four layers: production output, leading indicators that move inside a quarter, lagging revenue indicators tied to closed deals, and the effects your stack cannot attribute at all. Report all four, label the fourth as an estimate, and use a holdout test rather than last-touch attribution when you need to know whether a content bet actually caused the revenue."

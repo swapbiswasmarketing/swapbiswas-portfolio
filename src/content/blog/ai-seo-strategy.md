@@ -57,7 +57,7 @@ For each cluster, identify:
 
 4. **Build a content map** from the clusters
 
-**Why this works:** Manually clustering 500 keywords takes hours. AI does it in seconds, and it catches semantic relationships humans miss. For example, "ai seo strategy" and "how to use artificial intelligence for search optimization" are the same intent -AI groups them instantly.
+**Why this works:** Manually clustering 500 keywords takes hours. AI does it in seconds, and it catches semantic relationships humans miss. For example, "ai seo strategy" and "how to use artificial intelligence for search optimization" are the same intent -AI groups them instantly. One thing AI clustering does not do is surface "LSI keywords". [A truncated SVD run over 147 posts on this site](/blog/latent-semantic-indexing-seo/) shows why: the method produces topic weights across documents, not a list of terms you can paste into a page.
 
 **Real impact:** Targeting keyword clusters instead of individual keywords lets you cover significantly more search queries with the same number of articles. One well-clustered piece can rank for dozens of related terms.
 
@@ -135,7 +135,7 @@ This alone can improve your chances of appearing in rich results. Pages with str
 
 ### 4. AI for Link Building Intelligence
 
-Link building is still critical -**backlinks remain a key Google ranking signal** ([Backlinko ranking factors study](https://backlinko.com/google-ranking-factors)). But AI changes how you approach it.
+Link building is still critical -**backlinks remain a key Google ranking signal** ([Backlinko ranking factors study](https://backlinko.com/google-ranking-factors)). But AI changes how you approach it. Before you budget for outreach, look at what the no-link floor pays: this site runs at Domain Rating 13 with [no links built to it at all](/blog/seo-without-link-building/), and 16 months of Search Console data put that at 164,564 impressions, 186 clicks, and a CTR gap of roughly 99x between positions 1-3 and positions 4-10.
 
 **AI-powered link building workflow:**
 
@@ -150,6 +150,8 @@ Categorize them by:
 
 Prioritize the top 20 most replicable, high-quality opportunities.
 ```
+
+AI can sort that export, but it cannot see the `rel` attribute on each link. Check that separately, because [the attribute a platform stamps on your link back](/blog/nofollow-links-seo/) decides how much of it Google is willing to count, and nofollow has been a hint rather than a directive since March 2020.
 
 2. **Outreach personalization at scale:** AI can analyze a prospect's recent content and generate personalized outreach angles. This isn't about blasting template emails -it's about making genuine personalization efficient.
 
@@ -188,6 +190,8 @@ Set up AI to monitor your SEO performance and alert you to opportunities:
   - New keywords you're ranking for unintentionally (expansion opportunities)
 
 - **Automated content decay detection:** Use AI to flag pages where traffic dropped >20% month-over-month. These are your update priorities.
+
+The query export has a hole in it that AI will not flag for you. On this site's 16-month pull, [137 of 186 clicks could not be matched to any query row](/blog/seo-long-tail-keywords/), and queries of four words or more carried 42% of impressions while returning 10% of clicks. Read any long-tail conclusion from that table as a partial count.
 
 **Prompt for performance analysis:**
 

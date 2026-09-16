@@ -3,8 +3,8 @@ title: "Van Westendorp Price Sensitivity Meter: How to Run It"
 description: "How to run the Van Westendorp price sensitivity meter end to end: the four questions, cleaning illogical responses, reading the crossings, and its real limits."
 publishDate: 2026-08-31
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style oil painting of a hill town at dusk with a single vermilion roof catching the last light"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is the Van Westendorp price sensitivity meter?"
     a: "It is a survey technique that asks four open-ended price questions, plots the answers as four cumulative curves, and reads a range of acceptable prices from where those curves cross. Peter van Westendorp presented it at the ESOMAR congress in 1976. It produces a price band, not a demand forecast."

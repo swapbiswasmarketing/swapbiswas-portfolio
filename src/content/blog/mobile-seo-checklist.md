@@ -74,7 +74,7 @@ All three thresholds are documented on [web.dev's Web Vitals reference](https://
 
 ### 6. Fix LCP: get the main content rendering fast
 
-Your largest above-the-fold element (usually a hero image or headline) should paint within 2.5 seconds. Compress and properly size hero images, serve modern formats like WebP, and preload the LCP resource.
+Your largest above-the-fold element (usually a hero image or headline) should paint within 2.5 seconds. Compress and properly size hero images, serve modern formats like WebP, and preload the LCP resource. While you are editing those image tags, check what the `alt` attribute says. An audit of this site turned up [147 alt values that resolved to only 15 unique strings](/blog/alt-text-and-seo/), a template default that gives a screen reader user on a phone nothing to work with.
 
 ### 7. Fix INP: stop blocking the main thread
 

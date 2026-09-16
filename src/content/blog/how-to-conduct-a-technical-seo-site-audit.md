@@ -97,7 +97,9 @@ Check Google Search Console > Settings > Crawl Stats:
 - What's the average response time?
 - Are there crawl errors or 5xx responses?
 
-**Why it matters:** Google allocates a crawl budget to every site. If your site wastes that budget on redirect chains, duplicate pages, or low-value URLs, your important pages get crawled less frequently.
+**Why it matters:** Google allocates a crawl budget to every site. If your site wastes that budget on redirect chains, duplicate pages, or low-value URLs, your important pages get crawled less frequently. Confirm the codes as well as the chains: [what your host emits for a permanent redirect](/blog/301-redirect-seo/) is often a 308 you never configured.
+
+Crawl Stats is the aggregate view. If you want per-URL crawl frequency you need a server log, and on static or serverless hosting that file may not exist at all: here is [what SEO log file analysis looks like without server access](/blog/seo-log-file-analysis/).
 
 **Ideal metrics:**
 - Response time: Under 200ms
@@ -127,7 +129,7 @@ In Google Search Console > Pages:
 - Do canonical tags point to the correct URL?
 - Are there conflicting canonicals (page says one thing, sitemap says another)?
 
-**Common issue:** Canonical tag misconfigurations are one of the most frequent technical SEO problems. Self-referencing canonicals are fine and recommended. But make sure paginated pages, filtered pages, and URL parameters all have proper canonicals. For international sites, hreflang implementation adds another layer of complexity - over **67% of domains** using hreflang have issues ([Ahrefs hreflang study](https://ahrefs.com/blog/hreflang-study/)).
+**Common issue:** Canonical tag misconfigurations are one of the most frequent technical SEO problems. Self-referencing canonicals are fine and recommended. But make sure paginated pages, filtered pages, and URL parameters all have proper canonicals. For international sites, hreflang implementation adds another layer of complexity - over **67% of domains** using hreflang have issues ([Ahrefs hreflang study](https://ahrefs.com/blog/hreflang-study/)). Before you take that complexity on, confirm the market is real, because impressions from a country are not evidence of local-language demand: [choosing an international market from your own Search Console country report](/blog/international-seo-keyword-research/) is the step that comes first.
 
 **2.3 Meta Robots Tags**
 
@@ -198,7 +200,7 @@ Check in Google Search Console > Core Web Vitals, or test individual pages at [P
 | Large DOM size | Medium | Reduce nested elements, paginate long lists |
 | No text compression | Low-Medium | Enable Gzip or Brotli compression |
 
-**Quick win:** Image optimization alone can improve LCP by **30-50%** on most sites. Convert all images to WebP format and implement lazy loading. The deeper fix is sometimes the platform itself: when plugin bloat, render-blocking scripts, and missing cache headers keep resurfacing audit after audit, [swapping WordPress for a static build served from a CDN](/blog/wordpress-to-astro-netlify-migration/) moved this site's Lighthouse performance from the 70-80 range to 95-100 in one go.
+**Quick win:** Image optimization alone can improve LCP by **30-50%** on most sites. Convert all images to WebP format and implement lazy loading. The alt attributes deserve a pass in the same sweep: an audit of this site found 147 img_alt values collapsing to only 15 unique strings, and [how to write alt text for charts and diagrams](/blog/alt-text-and-seo/) covers the rewrite. The deeper fix is sometimes the platform itself: when plugin bloat, render-blocking scripts, and missing cache headers keep resurfacing audit after audit, [swapping WordPress for a static build served from a CDN](/blog/wordpress-to-astro-netlify-migration/) moved this site's Lighthouse performance from the 70-80 range to 95-100 in one go.
 
 ### Step 5: Mobile Usability
 

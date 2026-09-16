@@ -3,8 +3,8 @@ title: "Customer Discovery for Teams That Already Have Customers"
 description: "Customer discovery for established B2B teams: how to recruit without leading the witness, a copy-paste interview template, and how many interviews to run."
 publishDate: 2026-08-29
 category: [Product Marketing, Marketing]
-img: /assets/stock-4.webp
-img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is customer discovery?"
     a: "Customer discovery is structured research into how customers currently get a job done and what constrains them, run before you commit to building or positioning anything. It comes from Steve Blank's customer development model, where discovery is the first of four stages. The evidence it collects is stories about past behaviour, not opinions about future features."

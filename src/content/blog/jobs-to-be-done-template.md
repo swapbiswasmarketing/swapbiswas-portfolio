@@ -4,7 +4,7 @@ description: "Most jobs to be done templates stop at a job statement. This one a
 publishDate: 2026-08-29
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, measuring tools and a red ribbon"
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is a jobs to be done template?"
     a: "A jobs to be done template is a fixed set of fields you fill in after customer interviews so the research turns into decisions. A usable one captures the job statement, the circumstance, the competing alternative that got fired, the four forces pushing and blocking the switch, the hiring and firing criteria, a measurable success test, the trade-off the customer accepted, and the source of every quote."

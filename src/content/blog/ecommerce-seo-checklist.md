@@ -51,7 +51,7 @@ The `rel="nofollow"` attribute on filter links can also discourage crawling, but
 
 A crawl trap is a near-infinite URL space a bot can wander into. Sort orders, pagination combined with filters, and session IDs are common culprits.
 
-Check your server logs for how often Googlebot hits parameter URLs versus real product and category pages. If the bot is spending most of its visits on `?color=`, `?sort=`, and `?page=` combinations, your important pages are getting crawled less often than they should.
+Check your server logs for how often Googlebot hits parameter URLs versus real product and category pages. If the bot is spending most of its visits on `?color=`, `?sort=`, and `?page=` combinations, your important pages are getting crawled less often than they should. Getting hold of those logs is the hard part on hosted platforms: [Netlify keeps log drains behind its Enterprise plan and Vercel holds runtime logs for an hour on Hobby](/blog/seo-log-file-analysis/), so confirm you can export raw requests before you plan the analysis.
 
 ## Category Pages: Thin and Duplicate Content
 

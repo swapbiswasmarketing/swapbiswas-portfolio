@@ -3,8 +3,8 @@ title: "SaaS Release Notes: 8 Rewrites That Drive Adoption"
 description: "SaaS release notes are a product marketing asset, not a docs chore. Eight before-and-after rewrites, a distribution plan, and the metrics that prove adoption."
 publishDate: 2026-08-29
 category: [Product Marketing, Marketing]
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What are release notes?"
     a: "Release notes are the customer-facing record of what changed in a product and what the reader can now do about it. A working note names the job the change serves, says which customers it applies to, and points at the exact place in the product to go next. Version numbers and component names are supporting detail."
@@ -90,7 +90,7 @@ This is the same boundary problem I worked through in [customer marketing versus
 Six parts. A minor fix uses three of them and takes one line. A meaningful feature uses all six and still fits on a phone screen.
 
 - **The date, first and unambiguous.** Write it out (26 August 2026), because numeric formats read differently on either side of the Atlantic. Version numbers go next to the date when your customers pin versions, and get dropped when they do not.
-- **A headline that names the job.** "Keep audit logs for as long as your auditor asks" rather than "Configurable audit log retention". The headline is the only part most readers will ever see, so it carries the value or nothing does.
+- **A headline that names the job.** "Keep audit logs for as long as your auditor asks" rather than "Configurable audit log retention". The headline is the only part most readers will ever see, so it carries the value or nothing does. Where each entry has its own permalink, that headline also becomes the page title and the H1 that search and AI answer engines read, so it is worth knowing [what the evidence says about matching an H1 to the title tag](/blog/h1-tag-seo/).
 - **The eligibility line.** Which plan, which role, which region, which integration. A reader who cannot tell in two seconds whether this applies to them will assume it does not.
 - **Two to four sentences of what changed.** Include what it replaces, because the reader has an existing workaround and it is the workaround that has to die for adoption to happen.
 - **The next click.** An exact path, a deep link, or a button. "Settings > Compliance > Audit log retention" beats "available in your settings", because one of them is a route and the other is a hint.

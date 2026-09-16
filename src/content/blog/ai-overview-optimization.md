@@ -59,6 +59,8 @@ Go through your top 10-20 pages and rewrite them for extraction. For each H2:
 - The supporting paragraphs come after. If you must lead with context, keep it to one short sentence.
 - Lists and tables are lifted more often than dense prose. Use them where they are accurate, not for show.
 
+Count is not part of this. Google documents no ideal number of headings, and the "one H2 per 250-500 words" rule that gets quoted in audits traces back to a Yoast readability heuristic with no research behind it, which is the longer answer in [how many H2 tags a page should have](/blog/how-many-h2-tags-per-page/).
+
 This is not writing for robots. It is writing the way journalists write leads: the most useful sentence goes first. That it also happens to get pulled into AI Overviews is a side effect, not the point.
 
 ### 2. Answer Completeness

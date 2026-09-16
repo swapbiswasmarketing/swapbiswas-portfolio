@@ -34,7 +34,7 @@ An audit is how you catch that slide while it is still cheap to fix. It connects
 
 Inaction is not free, it is just unbilled. Every month a fixable issue sits unaddressed is a month of traffic you could have had and did not.
 
-Consider what "normal" looks like on the open web. **[96.55% of pages get zero traffic from Google](https://ahrefs.com/blog/search-traffic-study/)**, according to Ahrefs' 2023 study of roughly 14 billion pages. Most of those pages are not unlucky, they have a diagnosable problem - Ahrefs points to no backlinks, a topic with no search demand, or content that does not match search intent. An audit is the difference between being in the 3.45% on purpose and ending up in the 96.55% by accident.
+Consider what "normal" looks like on the open web. **[96.55% of pages get zero traffic from Google](https://ahrefs.com/blog/search-traffic-study/)**, according to Ahrefs' 2023 study of roughly 14 billion pages. Most of those pages are not unlucky, they have a diagnosable problem - Ahrefs points to no backlinks, a topic with no search demand, or content that does not match search intent. An audit is the difference between being in the 3.45% on purpose and ending up in the 96.55% by accident. I published my own version of that arithmetic in a breakdown of [SEO without link building on a Domain Rating 13 site](/blog/seo-without-link-building/), where 63% of the exported query impressions sat at an average position of 21 or worse.
 
 ## What an SEO Audit Catches Before It Costs You
 

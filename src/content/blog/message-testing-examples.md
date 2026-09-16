@@ -15,7 +15,7 @@ faqs:
   - q: "What is monadic testing and when should B2B teams use sequential monadic instead?"
     a: "Monadic testing shows each respondent a single variant, which keeps the score uncontaminated but needs a separate cell of people per variant. Qualtrics recommends no more than four concepts per person and makes you pick a number between two and four, and sequential monadic is usually the right call in B2B because one scarce qualified respondent can rate every variant."
 img: /assets/stock-1.webp
-img_alt: "Renaissance-style oil painting of a walled hill town at dawn with market stalls and a red banner rising above the square"
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 ---
 
 Two people read the same product headline in the same week. The one who signs the contract reads a line like "ship 40% faster with confidence" and hears a number that survives a budget meeting. The engineer who will run the thing reads the identical line, looks for the mechanism behind the number, finds none, and files the page under marketing. Both of them scored your message. Their scores point in opposite directions, and a pooled average from a single recruited audience reports neither one. That split is the failure the message testing examples below are built to catch.

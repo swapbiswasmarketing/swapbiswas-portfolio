@@ -219,7 +219,7 @@ A rename is a coordinated change across every surface that has ever carried the 
 
 Two rows deserve a note:
 
-- **API references break; they do not redirect.** Renaming a marketing page is a 301. Renaming a method signature means dual-shipping both names through a deprecation window and carrying the maintenance until the old one dies. That is why the row is banded critical.
+- **API references break; they do not redirect.** Renaming a marketing page is a permanent redirect, and [the status code your host actually sends](/blog/301-redirect-seo/) may not be the 301 you wrote into the ticket: two lines of `vercel.json` on this site return 308 on every permanent redirect. Renaming a method signature means dual-shipping both names through a deprecation window and carrying the maintenance until the old one dies. That is why the row is banded critical.
 - **URLs have a published floor rather than an estimate.** Google's site-move guidance puts a floor of about a year on how long the redirects have to stay up. Budget a year of redirect infrastructure and several weeks of degraded search visibility, per rename. The full 301 map, the Change of Address step and the brand-term recovery curve belong to the migration itself, and I have laid those out in [the rebranding rollout plan](/blog/rebranding-rollout-plan/); this row only exists so you can price the rename before you pick the name.
 
 ### Three renames worth studying

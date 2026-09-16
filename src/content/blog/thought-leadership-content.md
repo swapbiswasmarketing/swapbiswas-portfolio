@@ -3,8 +3,8 @@ title: "Thought Leadership Content: A Test Before You Publish"
 description: "Most thought leadership content is published and cited by nobody. Run a three-part test on any draft: a disputable claim, evidence you own, a named byline."
 publishDate: 2026-08-31
 category: [Marketing, Product Marketing]
-img: /assets/stock-4.webp
-img_alt: "Renaissance-style oil painting of a brass orrery on a scholar's desk beside charts, with one red cord marking a single orbit"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is thought leadership content?"
     a: "Thought leadership content is published work that advances a specific, disputable point of view about how a market works, backed by evidence the publisher owns and signed by a named expert. It is judged on the originality of the claim and the proof behind it, not on format or production quality."

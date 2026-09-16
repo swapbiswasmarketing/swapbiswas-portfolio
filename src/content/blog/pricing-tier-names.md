@@ -3,8 +3,8 @@ title: "Pricing Tier Names: What 41 SaaS Pricing Pages Use"
 description: "I counted the pricing tier names on 41 live B2B SaaS pricing pages. The full audit table, what the free and top rungs are called, and how to rename one safely."
 publishDate: 2026-09-07
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What are common SaaS pricing tier names?"
     a: "Across the 41 usable ladders in my 7 September 2026 capture of live B2B SaaS pricing pages, the most repeated exact labels were Enterprise (31 companies), Free (21), Business (10), Standard (7), Team (7), Starter (7), Pro (6) and Advanced (6). Enterprise appeared somewhere in the tier names of 35 of the 41."

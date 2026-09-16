@@ -98,7 +98,7 @@ Internal links are the part of technical SEO you actually control fully, and the
 
 ### Keyword cannibalization
 
-When two or three of your own pages target the same intent, they split signals and confuse Google about which to rank. Cannibalization usually creeps in over time as you publish adjacent content. A quarterly review of which URLs rank for your priority queries catches pages fighting each other so you can consolidate, redirect, or re-differentiate them.
+When two or three of your own pages target the same intent, they split signals and confuse Google about which to rank. Cannibalization usually creeps in over time as you publish adjacent content. A quarterly review of which URLs rank for your priority queries catches pages fighting each other so you can consolidate, redirect, or re-differentiate them. Those collisions are easier to see against a table that names one target query per URL, and on a site that is already published you fill that column by [building the keyword map from a Search Console export](/blog/seo-keyword-map/) instead of a blank research template.
 
 ### Backlink health
 

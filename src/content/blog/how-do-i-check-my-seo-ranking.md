@@ -33,7 +33,7 @@ Your **SEO ranking** (or search engine ranking) is the position your page holds 
 
 The same number goes by several names. **SERP ranking**, keyword ranking, search engine ranking and organic position all describe one thing: the slot your page occupies on the search engine results page for a single query. Checking your SERP ranking and checking your SEO ranking are the same task, so the seven methods below cover both.
 
-Why does position matter so much? According to [First Page Sage's 2025 CTR study](https://firstpagesage.com/reports/google-click-through-rates-ctrs-by-ranking-position/), **the #1 organic result gets a 39.8% click-through rate**, while position 10 gets just 1.6%. The **top 3 results capture 68.7% of all clicks** on the page. [Backlinko's analysis of 4 million Google search results](https://backlinko.com/google-ctr-stats) found that **the #1 result is 10x more likely to receive a click than the #10 result**. If you're not tracking where you stand, you're flying blind.
+Why does position matter so much? According to [First Page Sage's 2025 CTR study](https://firstpagesage.com/reports/google-click-through-rates-ctrs-by-ranking-position/), **the #1 organic result gets a 39.8% click-through rate**, while position 10 gets just 1.6%. The **top 3 results capture 68.7% of all clicks** on the page. [Backlinko's analysis of 4 million Google search results](https://backlinko.com/google-ctr-stats) found that **the #1 result is 10x more likely to receive a click than the #10 result**. My own property shows the same cliff at a much smaller scale: over [16 months of SEO with no links built to the site](/blog/seo-without-link-building/), positions 1-3 returned a 5.014% CTR against 0.050% from positions 4-10. If you're not tracking where you stand, you're flying blind.
 
 Rankings are not static. They fluctuate based on algorithm updates, competitor activity, user behavior, and hundreds of other signals. The [Semrush Sensor](https://www.semrush.com/sensor/) tracks daily Google volatility on a 0 - 10 scale, and scores between **2 and 5 are considered normal fluctuation** - meaning some movement happens every single day. A page can rank #3 in the morning and #7 by evening.
 
@@ -61,7 +61,7 @@ You'll see four metrics for each keyword:
 
 **Pro tip:** Filter by page to see which keywords a specific URL ranks for. Click **+ New** > **Page** > enter your URL. This shows you every query driving impressions to that page.
 
-**Limitations:** GSC shows average position over a date range, not real-time rankings. Data has a 2-3 day delay, and [Google retains only 16 months of performance data](https://developers.google.com/search/blog/2018/01/introducing-new-search-console) - anything older is permanently deleted. It also doesn't show competitor rankings.
+**Limitations:** GSC shows average position over a date range, not real-time rankings. Data has a 2-3 day delay, and [Google retains only 16 months of performance data](https://developers.google.com/search/blog/2018/01/introducing-new-search-console) - anything older is permanently deleted. The query table is incomplete too: on my own export, [137 of the 186 clicks belonged to no listed query](/blog/seo-long-tail-keywords/), because Search Console caps the table at 1,000 rows and withholds queries searched very few times. It also doesn't show competitor rankings.
 
 ### Method 2: Manual Google Search (Incognito Method)
 
@@ -76,7 +76,7 @@ The quickest way to check a ranking is to search for your keyword in Google your
 
 **Why incognito isn't perfect:** Even in incognito mode, Google still personalizes results based on your IP address and geographic location. If you're in Mumbai and your audience is in New York, you'll see different results.
 
-**Workaround:** Use a VPN to simulate your target location, or append `&gl=us` to the Google URL to force US results (`&gl=uk` for UK, `&gl=in` for India).
+**Workaround:** Use a VPN to simulate your target location, or append `&gl=us` to the Google URL to force US results (`&gl=uk` for UK, `&gl=in` for India). Which country to force is a question your own data answers first, since [the Search Console country report shows which markets already see your pages](/blog/international-seo-keyword-research/), with the caveat that impressions from a country are not evidence of demand in its language.
 
 This method works for a quick spot-check on a few keywords. It does not scale for tracking dozens or hundreds of keywords over time.
 
@@ -218,7 +218,7 @@ Checking a ranking answers one question once. Tracking answers whether the page 
 
 A list that changes every week produces a trend line about nothing, so pick it once and leave it alone.
 
-The free way to build it: in Google Search Console, filter Performance to the page you care about, sort the Queries tab by impressions, and take the top 20 to 50. Every query on that list already earns impressions, so it holds a position that can move. Queries with no impressions have nothing to track yet.
+The free way to build it: in Google Search Console, filter Performance to the page you care about, sort the Queries tab by impressions, and take the top 20 to 50. Every query on that list already earns impressions, so it holds a position that can move. Queries with no impressions have nothing to track yet. For a whole site rather than a single page, that same export is the input to [a keyword map retrofitted onto posts that are already published](/blog/seo-keyword-map/), one target query per URL.
 
 ### Step 2: Export a Dated Baseline
 
@@ -251,9 +251,9 @@ These are your biggest opportunities. According to [Backlinko's CTR study](https
 
 **Actions to take:**
 
-- **Improve content depth.** Add sections that competing top-10 pages cover but yours doesn't
+- **Improve content depth.** Add sections that competing top-10 pages cover but yours doesn't. Depth means covering the question, not hitting a length target: my measurement of [word count for SEO across 147 posts](/blog/word-count-for-seo/) found length explained 0.5% of the variance in average position
 - **Build internal links.** Link to the underperforming page from your highest-authority pages. Our guide on [how to conduct a technical SEO site audit](/blog/how-to-conduct-a-technical-seo-site-audit/) covers internal linking strategy in detail
-- **Earn backlinks.** Pages on page 2 often lack the link authority to break into the top 10
+- **Earn backlinks.** Pages on page 2 often lack the link authority to break into the top 10, and the links you already have are worth checking: [the rel attribute each syndication platform stamps on your link back](/blog/nofollow-links-seo/) is readable in the served HTML
 
 ### Keywords Ranking in Positions 4-10
 

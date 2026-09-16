@@ -58,7 +58,7 @@ Here are the tactics that show up most often in AEO service decks. Each one is e
 
 ### 1. "Optimize for question-based queries"
 
-This is keyword research. Specifically, it is the part of keyword research that has been taught for fifteen years where you organize content around the questions a buyer asks at each stage of their journey. The difference with AEO is that you are more disciplined about making the H2 match the question exactly and the first sentence answer it directly.
+This is keyword research. Specifically, it is the part of keyword research that has been taught for fifteen years where you organize content around the questions a buyer asks at each stage of their journey. The difference with AEO is that you are more disciplined about making the H2 match the question exactly and the first sentence answer it directly. What matters there is the fit of each H2 to a question rather than how many you use: Google documents no ideal heading count, and the [one H2 every 250 to 500 words rule](/blog/how-many-h2-tags-per-page/) traces back to a WordPress readability check that cites no research.
 
 That is not a new discipline. That is better structure inside the existing one.
 
@@ -84,7 +84,7 @@ If this were five unrelated tactics that happened to be SEO-adjacent, it might b
 
 To be fair, there are three real differences in the AI Overview era. They do not add up to a new discipline, but they do matter.
 
-**1. The answer often replaces the click.** For some queries, the AI Overview answers completely and the user does not click a single source. This is real, measurable, and the strategic response is to prioritize queries where the click still matters and to develop content forms that can't be summarized away (original research, interactive tools, deeply personalized recommendations).
+**1. The answer often replaces the click.** For some queries, the AI Overview answers completely and the user does not click a single source. This is real, measurable, and the strategic response is to prioritize queries where the click still matters and to develop content forms that can't be summarized away (original research, interactive tools, deeply personalized recommendations). Which queries those are is measurable on your own property: splitting my Search Console export by query length put [four-plus-word queries at 42% of impressions and 10% of the attributable clicks](/blog/seo-long-tail-keywords/).
 
 **2. Citation counts are a new, lower-resolution signal.** Traditional SEO tracked rank position. AEO asks you to track whether you are cited in an AI Overview at all. It is a less granular signal, which means the feedback loop on what works is slower. The response is patience and better measurement, not a new methodology.
 

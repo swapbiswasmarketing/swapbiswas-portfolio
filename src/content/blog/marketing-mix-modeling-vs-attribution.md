@@ -3,8 +3,8 @@ title: "Marketing Mix Modeling vs Attribution vs Incrementality"
 description: "Marketing mix modeling vs attribution vs incrementality: what each method measures, what it needs, when each one lies, and a decision rule for picking one."
 publishDate: 2026-09-01
 category: [Marketing, Product Marketing]
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style oil painting of a hilltop signal tower relaying a message across a wooded valley"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is the difference between incrementality and attribution?"
     a: "Attribution splits credit for a conversion among the touchpoints that were recorded before it. Incrementality compares a group exposed to the spend against a randomized group that was not, so it estimates what would have happened if you had never run the campaign. Attribution describes observed paths; incrementality estimates a counterfactual. Only the second one answers a causal question."

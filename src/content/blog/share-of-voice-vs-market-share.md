@@ -14,8 +14,8 @@ faqs:
     a: "Usually by substitution, because syndicated ad-spend panels measure broadcast and published media rather than conference sponsorship, documentation or open-source work. Teams swap in organic search visibility across a fixed keyword set, review velocity on G2 or Capterra, developer question volume, sponsorship slots, or AI-answer citation counts. Each substitution changes what the ESOV rule is predicting."
   - q: "Is share of voice a leading indicator of market share?"
     a: "It is treated as one, including by Sprout Social, whose share of voice guide calls a high share of voice a leading indicator. The lag matters: in B2B software a contract has to come up for renewal before category share can move, so voice measured this quarter cannot be checked against share measured this quarter."
-img: /assets/stock-4.webp
-img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 ---
 
 Share of voice has one canonical formula, and for an entire class of companies it returns nothing. Every comparison of share of voice vs market share starts by dividing your category advertising spend by total category advertising spend. Nielsen Ad Intel, one of the syndicated panels that sells that denominator, describes its coverage as "TV, CTV, digital, social, audio, print, out of home, and cinema" across "90+ international and 29+ local markets" ([Nielsen](https://www.nielsen.com/solutions/media-planning/ad-intel/)). The biggest line items in a developer-tools budget are conference sponsorship, documentation, developer relations headcount and open-source maintenance, and none of those is a placement in any of those channels. They do not enter the panel, so neither your numerator nor the category's denominator is in there to divide.

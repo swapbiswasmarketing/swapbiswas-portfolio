@@ -123,6 +123,8 @@ Gather data from your core tools:
 - **Ahrefs or Semrush** for keyword rankings, backlink profile, and competitor data
 - **Screaming Frog** for technical crawl data (if including a technical section)
 
+If a reader asks how often Googlebot fetches a specific URL, none of those sources answers it. That question needs a raw access log, and on modern static hosting the file is [harder to get than every log analysis guide assumes](/blog/seo-log-file-analysis/).
+
 ### Step 3: Analyze Trends - Not Just Snapshots
 
 Raw numbers mean nothing without context. For every metric, compare against:
@@ -191,6 +193,8 @@ Three to five bullet points covering the biggest wins, losses, and recommended n
 - Top new links acquired
 - Toxic or spammy links identified
 
+Record the `rel` attribute next to each new referring domain, because [the attribute a syndication platform stamps on your link back](/blog/nofollow-links-seo/) decides how much of that link Google is willing to count, and nofollow has been a hint rather than a directive since March 2020.
+
 ### 6. Technical Health
 - Core Web Vitals status
 - Crawl errors and index coverage changes
@@ -213,7 +217,7 @@ One number worth adding to any report built on Search Console: clicks per positi
 
 ## SEO Report Example: A Filled-In Monthly Report
 
-An SEO report example is the template above with real numbers dropped into it. The one below is mine: Google Search Console data for swapbiswas.com covering the 16 months that ended on 31 August 2026, pulled with the free stack from the tools table.
+An SEO report example is the template above with real numbers dropped into it. The one below is mine: Google Search Console data for swapbiswas.com covering the 16 months that ended on 31 August 2026, pulled with the free stack from the tools table. Read as a result rather than a template demo, the same export is [what a Domain Rating 13 site earned with no links built to it](/blog/seo-without-link-building/).
 
 ### Executive Summary Example
 
