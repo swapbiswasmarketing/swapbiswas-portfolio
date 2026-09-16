@@ -31,7 +31,10 @@ for (const f of files) {
   const fm = lines.slice(1, end);
   const catLine = fm.find((l) => /^category:\s*\[/.test(l));
   const cats = catLine ? catLine.replace(/^category:\s*\[|\]\s*$/g, '').split(',').map((c) => c.trim().replace(/^["']|["']$/g, '')) : [];
-  const candidates = [...new Set(cats.map((c) => map[c]).filter(Boolean))];
+  // category_map values may be a single cover or a list of acceptable covers. A category with
+  // only one cover cannot alternate, so a run of same-category posts all land on the same image
+  // and break the no-adjacent-duplicates rule on the index.
+  const candidates = [...new Set(cats.flatMap((c) => (Array.isArray(map[c]) ? map[c] : [map[c]])).filter(Boolean))];
   if (!candidates.length) candidates.push('stock-1');
   // Least-used candidate wins; never repeat the previous post's cover when there is an alternative.
   const ranked = candidates.sort((a, b) => (used[a] || 0) - (used[b] || 0));

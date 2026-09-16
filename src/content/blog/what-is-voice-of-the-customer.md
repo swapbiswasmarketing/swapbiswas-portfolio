@@ -4,8 +4,8 @@ description: "Voice of the customer explained: the program framework, the collec
 publishDate: 2026-05-30
 updatedDate: 2026-05-30
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "What is voice of the customer?"
     a: "Voice of the customer (VoC) is the structured discipline of collecting, analyzing, and acting on customer feedback - what they want, what frustrates them, what they expect. It pulls from surveys, interviews, reviews, support tickets, sales calls, and product usage, then distributes the insight to the teams that can act on it."

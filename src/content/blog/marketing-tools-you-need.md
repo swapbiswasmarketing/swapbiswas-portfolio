@@ -4,8 +4,8 @@ description: "15,384 martech tools exist and most teams use a fraction of what t
 publishDate: 2026-04-03
 updatedDate: 2026-04-03
 category: [Marketing, Tools]
-img: /assets/stock-5.webp
-img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "How many marketing tools does the average company use?"
     a: "The average company uses 106 SaaS applications according to BetterCloud's 2025 State of SaaS report, down from a peak of 130 in 2022. However, most teams only actively use a fraction of those tools on a daily basis."

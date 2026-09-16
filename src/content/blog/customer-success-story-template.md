@@ -3,8 +3,8 @@ title: "Customer Success Story Template: Copy It, Get It Approved"
 description: "A copy-paste customer success story template for B2B SaaS, plus the approval ladder, metric fallbacks and interview script that get the story published."
 publishDate: 2026-08-15
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "What should a customer success story template include?"
     a: "Seven blocks: a headline carrying the outcome, a customer snapshot, the trigger event, what the customer tried first, what they actually did, results with a before number and a time window, and one attributed quote plus a next step. The trigger and the failed alternative are the two blocks most templates skip, and they are what make the story believable."

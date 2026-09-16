@@ -3,8 +3,8 @@ title: "Developer Community Strategy: Who Owns It, How to Measure"
 description: "A developer community strategy that starts with the surfaces you do not own, names an internal owner for each one, and reports numbers that show the product moved."
 publishDate: 2026-09-07
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is a developer community strategy?"
     a: "A developer community strategy is a written answer to three questions: which surfaces your developers already use, who inside the company owns each surface, and which product event the program reports against. Platform choice comes last and is the cheapest decision to reverse."

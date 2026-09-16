@@ -14,8 +14,8 @@ faqs:
     a: "Google's SEO Starter Guide states that semantic heading order is valuable for screen readers but does not matter from a Google Search perspective. Keep the hierarchy correct for accessibility rather than for ranking."
   - q: "Should I add more H2 tags to rank higher?"
     a: "Nothing in my data supports that. Across the 71 posts I measured with at least 100 impressions, posts with 9 to 10 H2 tags had a worse median position than posts with 5 to 6, and the correlation changes sign depending on which impression floor I pick."
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 ---
 
 The 147 posts on this site carry between 5 and 19 H2 tags each, at a median of 8. I ran that spread against every post's average position in Google Search Console, and H2 count accounts for **0.7% of the variation in position**, at a two-tailed p of 0.47. That is what a non-effect looks like when you measure it on real pages.

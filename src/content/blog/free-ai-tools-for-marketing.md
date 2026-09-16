@@ -4,8 +4,8 @@ description: "Cut through the noise. Here are the best genuinely free AI tools f
 publishDate: 2026-03-07
 updatedDate: 2026-03-21
 category: [AI, Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 ---
 
 There are over **15,000 marketing technology solutions** in the landscape right now ([ChiefMartec MarTech Map 2025](https://chiefmartec.com/2025/05/2025-marketing-technology-landscape-supergraphic-100x-growth-since-2011-but-now-with-ai/)). That number keeps growing every year.

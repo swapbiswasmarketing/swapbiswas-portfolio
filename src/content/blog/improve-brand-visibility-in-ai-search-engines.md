@@ -3,8 +3,8 @@ title: "Improve Brand Visibility in AI Search Engines: 9 Strategies"
 description: "Nine field-tested strategies to improve brand visibility in AI search engines like ChatGPT, Perplexity, Gemini, and Google AI Overviews, with steps to start."
 publishDate: 2026-06-20
 category: [SEO, AI, Marketing]
-img: /assets/stock-4.webp
-img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "What does brand visibility in AI search engines mean?"
     a: "It means how often AI tools like ChatGPT, Perplexity, Gemini, and Google AI Overviews mention, cite, or recommend your brand when users ask related questions. Unlike traditional rankings, it is measured by mentions and citations, not blue-link positions."

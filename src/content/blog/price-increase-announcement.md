@@ -3,8 +3,8 @@ title: "Price Increase Announcement: Templates by Segment (2026)"
 description: "How to run a price increase announcement end to end: the segmentation matrix, notice periods by contract, email templates per tier, and a 90-day scorecard."
 publishDate: 2026-08-15
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "How do you announce a price increase to customers?"
     a: "Segment the book first, then send one message variant per segment. Give annual enterprise accounts 90 days notice on a live call, annual mid-market and SMB 60 days by email from a named human, and monthly self-serve 30 days by email plus in-app. Every version states the current price, the new price, the effective date, what shipped since the last change, and one route to reply."

@@ -4,8 +4,8 @@ description: "Build a go-to-market strategy that works. This step-by-step GTM te
 publishDate: 2026-03-08
 updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 ---
 
 Four questions decide whether a launch lands: who you are selling to, how you will reach them, what you will say, and how you will know it worked. The launches I have watched struggle are the ones where nobody wrote those answers down before the date was locked, so sales improvised and the date arrived anyway.

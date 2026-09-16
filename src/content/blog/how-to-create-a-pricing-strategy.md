@@ -4,8 +4,8 @@ description: "How to create a pricing strategy step by step: research, model sel
 publishDate: 2026-05-30
 updatedDate: 2026-05-30
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "How do you create a pricing strategy?"
     a: "Start with willingness-to-pay research, pick a pricing model that matches your value-delivery pattern (subscription, usage, per-seat, value-based), design packaging that creates clear upgrade paths, test before full rollout, and treat price as an ongoing experiment - not a one-time decision."

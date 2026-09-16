@@ -4,8 +4,8 @@ description: "Master B2B marketing automation with proven strategies for lead nu
 publishDate: 2026-03-20
 updatedDate: 2026-03-20
 category: [Marketing, Tools]
-img: /assets/stock-5.webp
-img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is B2B marketing automation?"
     a: "B2B marketing automation uses software to automate repetitive marketing tasks like email nurturing, lead scoring, and campaign management, allowing teams to scale personalized outreach across longer B2B sales cycles."

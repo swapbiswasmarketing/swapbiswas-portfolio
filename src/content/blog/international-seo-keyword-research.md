@@ -14,8 +14,8 @@ faqs:
     a: "Query mix, branded search and the composition of the results page are all candidates, and a country report has a column for none of them. On this site India returned 1.16% against the United States at 0.05% at almost the same average position, and the export cannot say which explanation is right."
   - q: "Do impressions from many countries mean you should localize?"
     a: "Impressions measure where Google showed your pages, and Google counts one whenever a result appears on the current page of results, scrolled into view or not. Wide country coverage on an English-only site is a fact about the index rather than evidence that a translated page would earn clicks."
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 ---
 
 Between 2025-05-01 and 2026-08-31, Google put this site in front of searchers in 193 countries. It is written in English, publishes no localized content, and carries a Domain Rating of 13. That country report arrived without being requested, and it is where international SEO keyword research begins for most site owners: a table of markets nobody targeted, compiled by a search engine that does not care which one you meant.

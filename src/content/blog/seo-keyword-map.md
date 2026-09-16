@@ -3,8 +3,8 @@ title: "SEO Keyword Map: Retrofitting 147 Published Posts"
 description: "Most SEO keyword map guides start from a blank sheet. Mine started from 147 live posts and a Search Console export. Here is the real page distribution."
 publishDate: 2026-09-16
 category: [SEO]
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "What is an SEO keyword map?"
     a: "An SEO keyword map is a table with one row per URL and a named target query in each row, so every page on the site has a query it is responsible for and no query has two pages chasing it. On a site that is already published, the target column is filled from what Search Console shows the page already ranks for rather than from a keyword research list."

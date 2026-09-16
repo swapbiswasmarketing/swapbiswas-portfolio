@@ -3,8 +3,8 @@ title: "LLM Optimization: Get Cited by ChatGPT, Perplexity, Gemini"
 description: "LLM optimization is how you earn citations in ChatGPT, Perplexity, Claude, and Gemini answers. Signals that matter, structure they reward, 2026 checklist."
 publishDate: 2026-05-09
 category: [SEO, AI, Marketing]
-img: /assets/stock-4.webp
-img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "What is LLM optimization?"
     a: "LLM optimization is the practice of structuring web content so it gets retrieved, parsed, and cited by large language models like ChatGPT, Perplexity, Claude, and Gemini. It overlaps with SEO and AEO but adds requirements unique to how LLMs ingest and ground their answers - chunkability, source authority, and unambiguous factual claims."

@@ -3,8 +3,8 @@ title: "Product Marketing Framework: The 6 Stages I Use (2026)"
 description: "The product marketing framework I use to run positioning, launches, enablement, and competitive intel - a practical, repeatable system you can adopt this quarter."
 publishDate: 2026-06-26
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "What is a product marketing framework?"
     a: "A product marketing framework is a repeatable system that organizes the work of product marketing - research, positioning, messaging, go-to-market, enablement, and feedback - so launches and ongoing work are consistent instead of one-off. It is the operating manual for the function, not a single template."

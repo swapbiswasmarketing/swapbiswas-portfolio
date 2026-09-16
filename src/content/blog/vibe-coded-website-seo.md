@@ -3,8 +3,8 @@ title: "Why Your Vibe-Coded Website May Never Rank on Google (2026)"
 description: "Your vibe-coded website looks finished in the browser but renders blank to Googlebot. Here is why it never ranks on Google, and how to fix it quickly."
 publishDate: 2026-06-27
 category: [SEO, AI]
-img: /assets/stock-4.webp
-img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "Do vibe-coded websites rank on Google?"
     a: "They can, but most do not by default. AI coding tools usually ship a client-side React app, so the raw HTML Googlebot fetches first is nearly empty. If your content only appears after JavaScript runs, Google may index a blank page. Adding server-side rendering or static generation fixes it."

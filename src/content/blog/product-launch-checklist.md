@@ -3,8 +3,8 @@ title: "Product Launch Checklist: 50+ Items for a Launch That Lands"
 description: "A product launch checklist used by PMMs for Tier 1, 2, and 3 launches. 50+ pre-launch, launch-day, and post-launch items with clear owners and timing."
 publishDate: 2026-04-18
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "What is a product launch checklist?"
     a: "A product launch checklist is the complete list of deliverables and decisions a product marketing team works through before, during, and after a launch. It typically spans three phases: pre-launch (positioning, messaging, assets, enablement), launch day (announcements, activations, monitoring), and post-launch (adoption tracking, win/loss, retrospective)."

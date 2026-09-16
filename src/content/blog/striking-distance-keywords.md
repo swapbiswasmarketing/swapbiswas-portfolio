@@ -3,8 +3,8 @@ title: "Striking Distance Keywords: The Payoff Curve, Measured"
 description: "Striking distance keywords promise easy page-1 wins. I banded 1,000 Search Console queries by position and measured what moving from page 2 actually paid."
 publishDate: 2026-09-07
 category: [SEO]
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "What are striking distance keywords?"
     a: "Striking distance keywords are queries a site already ranks for, close enough to page 1 that a small improvement could move them into positions that earn clicks. The band is usually defined as positions 11-20, though the boundary varies: my own earlier writeup on AI-assisted SEO uses 5-15."

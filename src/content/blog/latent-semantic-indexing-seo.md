@@ -3,8 +3,8 @@ title: "Latent Semantic Indexing SEO: I Ran the Algorithm"
 description: "Latent semantic indexing SEO advice sells a keyword list the real algorithm cannot output. I ran a truncated SVD over 147 posts to show what LSI produces."
 publishDate: 2026-09-14
 category: [SEO]
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "Are LSI keywords real?"
     a: "Latent semantic indexing is a real algorithm from a 1990 paper and a 1988 patent, but LSI keywords are not something it produces. Google's John Mueller said in July 2019 that there is no such thing as LSI keywords, and the algorithm itself returns concept dimensions over a whole document collection rather than a term list for one page."

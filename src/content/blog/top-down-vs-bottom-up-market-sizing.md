@@ -3,8 +3,8 @@ title: "Top-Down vs Bottom-Up Market Sizing: When They Disagree"
 description: "Top-down vs bottom-up market sizing run on one real market, plus a reconciliation worksheet that names which input broke when the two numbers disagree."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "What is bottom-up market size?"
     a: "Bottom-up market size is the number you get by counting the accounts you could realistically sell to and multiplying that count by a realistic annual contract value. It is built from your own units rather than from a published market total, which makes every input something you can defend line by line."

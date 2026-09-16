@@ -14,8 +14,8 @@ faqs:
     a: "Both, and they answer different questions. The user-level rate tells you whether individuals picked the feature up; the account-level rate tells your customer success and renewal teams how many accounts have any exposure to it at all. Reporting only one hides the other."
   - q: "What is the difference between feature adoption and feature retention?"
     a: "Adoption counts a first qualifying use inside the window. Retention counts a repeat use in a later part of that window, so it separates curiosity from habit. Publishing only the adoption number makes a feature that everyone tried once look identical to one people rely on."
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 ---
 
 Feature adoption rate fails in a specific, repeatable way, and the failure has nothing to do with the number being low. The rate gets computed once, lands on a slide, and then nobody can reconstruct what was in the bottom of the fraction. Six weeks later somebody rebuilds it from a different table, gets 31% where the slide said 12%, and both numbers survive the argument because neither was ever defined.

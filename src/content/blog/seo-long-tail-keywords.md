@@ -3,8 +3,8 @@ title: "SEO Long Tail Keywords: 42% of Impressions, 10% of Clicks"
 description: "Four-plus word queries took 42% of my impressions and 10% of listed clicks. What 1,000 Search Console rows say about SEO long tail keywords on a DR 13 site."
 publishDate: 2026-09-14
 category: [SEO]
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "Do long tail keywords convert better?"
     a: "Google Search Console reports clicks, not conversions, so an export cannot answer this question at all. On the click side of my own 16-month export, queries of four words or more carried 42% of impressions and returned 5 of the 49 clicks attributable to a listed query."

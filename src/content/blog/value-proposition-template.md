@@ -3,8 +3,8 @@ title: "Value Proposition Template: 3 Fill-in-the-Blank Frameworks"
 description: "A value proposition template gives you a fill-in-the-blank structure to say why buyers should choose you. Frameworks, examples, and the writing process."
 publishDate: 2026-06-25
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "What is a value proposition template?"
     a: "It is a fill-in-the-blank structure that forces you to name the customer, the job they are doing, the outcome you deliver, and what makes you different. The template does not write the value prop for you. It just makes sure you do not skip the part that actually matters."

@@ -3,8 +3,8 @@ title: "What Is Sales Enablement Software? A Buyer's Guide (2026)"
 description: "Sales enablement software explained: what it does, the five tool categories, must-have features, top platforms, and how to choose without overbuying."
 publishDate: 2026-04-25
 category: [Product Marketing, Tools]
-img: /assets/stock-5.webp
-img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "What is sales enablement software?"
     a: "Sales enablement software is the technology layer that helps sales reps find the right content, learn the right pitch, and surface insights from buyer interactions. It typically combines a content management system, training and coaching tools, conversation intelligence, and analytics in one platform."

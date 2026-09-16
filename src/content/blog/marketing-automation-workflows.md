@@ -4,8 +4,8 @@ description: "Copy these 12 proven marketing automation workflows for lead nurtu
 publishDate: 2026-03-17
 updatedDate: 2026-09-03
 category: [Marketing, Email]
-img: /assets/stock-7.webp
-img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "What is a marketing automation workflow?"
     a: "A marketing automation workflow is a series of automated actions triggered by specific user behaviors or conditions. It typically includes triggers (what starts it), actions (emails, tags, scores), delays, and branching logic."

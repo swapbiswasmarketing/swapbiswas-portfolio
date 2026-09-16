@@ -3,8 +3,8 @@ title: "B2B Customer Segmentation: A 5-Test Qualifying Score"
 description: "A working guide to b2b customer segmentation: a 5-test score for qualifying segments, a hard cap on how many you can run, and the CRM fields that prove it."
 publishDate: 2026-08-29
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "How many customer segments should a B2B company have?"
     a: "Three or four operating segments plus a core is the working ceiling for most B2B companies. B2B International reports that the average business-to-business segmentation study produces 3 or 4 segments, and SurveyMonkey's guide says the same. The constraint is not analysis, it is staffing: every live segment needs an owner, a message, a campaign budget and a report, every quarter."

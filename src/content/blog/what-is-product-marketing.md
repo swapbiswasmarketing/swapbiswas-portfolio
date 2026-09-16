@@ -4,8 +4,8 @@ description: "What product marketing actually is, what PMMs do all week, how the
 publishDate: 2026-03-07
 updatedDate: 2026-03-21
 category: [Marketing, Product Marketing, Career]
-img: /assets/stock-6.webp
-img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "What is product marketing?"
     a: "Product marketing is the function that connects a product to its market. It owns positioning, messaging, go-to-market strategy, competitive intelligence, and sales enablement - bridging the gap between product, marketing, and sales teams."

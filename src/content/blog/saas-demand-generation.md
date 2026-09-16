@@ -3,8 +3,8 @@ title: "SaaS Demand Generation: Build Pipeline, Not Just Leads"
 description: "A practitioner playbook for SaaS demand generation: the PLG-aware channels, content, and product-qualified metrics that build pipeline, not vanity leads."
 publishDate: 2026-06-10
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "What is SaaS demand generation?"
     a: "SaaS demand generation is the discipline of creating and capturing buyer intent for a software product, then converting that intent into qualified pipeline and revenue. In SaaS it is distinct because the product itself, through free trials and freemium usage, becomes a primary demand channel alongside content and paid media."

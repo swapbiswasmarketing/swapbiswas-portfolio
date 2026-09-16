@@ -14,8 +14,8 @@ faqs:
     a: "The DevEx paper by Noda, Storey, Forsgren and Greiler states that a quarterly or semi-annual cadence is optimal for most organizations, with transactional surveys mixed in at specific touchpoints for higher-frequency feedback. The same paper names lack of follow-up action as the common cause of falling participation."
   - q: "What should a developer satisfaction survey ask about?"
     a: "Cover the three DevEx dimensions of feedback loops, cognitive load and flow state, plus a short KPI block that never changes between rounds. Ask a satisfaction question and a friction question separately, because a developer can be content with a slow build they have already planned around."
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 ---
 
 Take stock of what is on the shelf when you sit down to build a developer experience survey.

@@ -3,8 +3,8 @@ title: "SaaS Release Notes: 8 Rewrites That Drive Adoption"
 description: "SaaS release notes are a product marketing asset, not a docs chore. Eight before-and-after rewrites, a distribution plan, and the metrics that prove adoption."
 publishDate: 2026-08-29
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "What are release notes?"
     a: "Release notes are the customer-facing record of what changed in a product and what the reader can now do about it. A working note names the job the change serves, says which customers it applies to, and points at the exact place in the product to go next. Version numbers and component names are supporting detail."

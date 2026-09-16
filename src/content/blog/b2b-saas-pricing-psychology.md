@@ -3,8 +3,8 @@ title: "B2B SaaS Pricing Psychology: Anchors for Buying Committees"
 description: "B2B SaaS pricing psychology built for buying committees: where anchoring, decoys and charm pricing break, plus real published prices and a 20-point audit."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "What is an example of psychological pricing?"
     a: "Salesforce publishes Sales Cloud at $25, $100, $175, $350 and $550 per user per month. Few buyers land on $550, and its job is to set a ceiling that every negotiation over $175 then happens well below. The persuasion is done by the published ladder itself, before a seller joins the conversation."

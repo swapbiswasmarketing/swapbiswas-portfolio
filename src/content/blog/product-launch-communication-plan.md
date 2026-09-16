@@ -3,8 +3,8 @@ title: "Product Launch Communication Plan: Who Hears It First (2026)"
 description: "A product launch communication plan built on internal sequencing: the notification order with day offsets, a filled-in nine-audience matrix, and delay comms."
 publishDate: 2026-08-26
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "What are the 7 steps of a product launch communication plan?"
     a: "Set the launch tier, list every audience with internal ones first, fix the notification order with day offsets, assign one named owner per audience, pick one channel and one message per audience, build the assets backwards from the earliest date, and write the slip protocol before you need it. The tier decision comes first because it sets how deep every other step goes."

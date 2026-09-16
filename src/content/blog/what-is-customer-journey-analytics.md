@@ -4,8 +4,8 @@ description: "Customer journey analytics explained: mapping vs analytics, the fo
 publishDate: 2026-05-30
 updatedDate: 2026-05-30
 category: [Marketing, Tools]
-img: /assets/stock-5.webp
-img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "What is customer journey analytics?"
     a: "Customer journey analytics is the practice of measuring and analyzing every interaction a customer has with a company - across channels, devices, and stages - to understand what drives conversion, retention, and churn. It combines behavioral data, qualitative feedback, and revenue signals into a single view of the journey."

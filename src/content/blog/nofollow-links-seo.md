@@ -3,8 +3,8 @@ title: "Nofollow Links SEO: What Four Platforms Actually Stamp"
 description: "Nofollow links SEO advice argues theory. I read the served HTML on Medium, Dev.to, HackerNoon and Hashnode: four platforms, five different rel strings."
 publishDate: 2026-09-15
 category: [SEO]
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "Do nofollow links help SEO?"
     a: "Google documents nofollow, sponsored and ugc as hints rather than directives. The announcement is dated 10 September 2019, and nofollow became a hint for crawling and indexing on 1 March 2020. A nofollowed link is therefore neither guaranteed to be discarded nor guaranteed to count, and Google publishes no figure for how often either happens."

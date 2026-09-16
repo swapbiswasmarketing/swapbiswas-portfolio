@@ -4,8 +4,8 @@ description: "Marketing research empowers managers with vital insights to make i
 publishDate: 2024-07-10
 updatedDate: 2026-03-21
 category: [Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 ---
 
 Marketing research is the backbone of any good marketing manager. It helps us to gather market intelligence and makes us fully equipped to make informed decisions, identify opportunities, and reduce some types of risks. In this article, I'll explain how marketing research helps managers.

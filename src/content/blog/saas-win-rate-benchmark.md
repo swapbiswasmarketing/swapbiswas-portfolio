@@ -3,8 +3,8 @@ title: "SaaS Win Rate Benchmark: The Numbers You Can Verify"
 description: "Most SaaS win rate benchmark figures online have no traceable source. Here are the published numbers with their dates, sample sizes and denominators attached."
 publishDate: 2026-09-01
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "What is a good win rate in SaaS?"
     a: "There is no single number, because the denominator is not standardized. Against ICONIQ's 2026 State of Go-to-Market data, which defines win rate as closed-won divided by closed-won plus closed-lost, sales-sourced opportunities land at 43%, channel and partner at 39%, marketing-sourced at 27% and customer-success-sourced at 52%. Compare yourself only after matching that definition."

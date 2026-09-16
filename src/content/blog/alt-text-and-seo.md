@@ -1,6 +1,6 @@
 ---
 title: "Alt Text and SEO: 159 Posts, Only 8 Alt Strings"
-description: "Alt text and SEO advice checks whether the attribute exists. My 159 posts all pass that test, and they share 8 alt strings, one of them on 52 pages."
+description: "Alt text and SEO advice checks whether the attribute exists. My 159 posts all pass that test, and between them they use only 8 alt strings, about 20 posts each."
 publishDate: 2026-09-15
 category: [SEO, Design]
 faqs:
@@ -11,18 +11,18 @@ faqs:
   - q: "What should the alt text be for a decorative image?"
     a: "An empty alt attribute. The W3C WAI decision tree gives that answer for images that are purely decorative, and WCAG 2.2 carves out non-text content that is pure decoration or used only for visual formatting so assistive technology can ignore it."
   - q: "Is duplicate alt text across pages an SEO problem?"
-    a: "I cannot show a ranking cost, because 8 strings across 159 pages leaves no variation to test against. The cost I can show is the accessibility one: 52 of my pages announce a painting that has nothing to do with the article underneath it."
+    a: "I cannot show a ranking cost, because 8 strings across 159 pages leaves no variation to test against. The cost I can show is the accessibility one: all 159 of my pages announce a painting that has nothing to do with the article underneath it."
   - q: "How do you audit alt text across a whole site?"
     a: "Count unique values rather than missing ones. A crawler reporting full alt coverage is answering a different question. If a content directory has far more pages than distinct alt strings, something automated is writing them."
 img: /assets/stock-2.webp
 img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 ---
 
-Every one of the 159 posts on this site carries alt text on its hero image. I counted the values on 2026-09-16 and they resolve to 8 unique strings. One of them sits on 52 posts:
+Every one of the 159 posts on this site carries alt text on its hero image. I counted the values on 2026-09-16 and they resolve to 8 unique strings, each one sitting on about 20 posts. Here is the most-used, on 21 of them:
 
 > Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square
 
-None of those 52 posts is about a hill town. They cover pricing, launch planning, account prioritization in ABM and email design; one of them is my breakdown of [SaaS pricing models](/blog/saas-pricing-models/). Advice about alt text and SEO is built around the missing `alt` attribute, and against that test my corpus scores 159 out of 159. The defect I actually have is the other shape: alt text that is present, valid, descriptive, free of keyword stuffing, and worthless on the page it sits on.
+None of those 21 posts is about a hill town. They cover marketing automation, launch risk, account prioritization in ABM and email design; one of them is my elimination process for [naming a new product](/blog/product-naming/). Advice about alt text and SEO is built around the missing `alt` attribute, and against that test my corpus scores 159 out of 159. The defect I actually have is the other shape: alt text that is present, valid, descriptive, free of keyword stuffing, and worthless on the page it sits on.
 
 The cause is mine. `scripts/assign-blog-covers.cjs` picks one of the stock cover paintings by the post's category and writes the matching `img_alt` into the frontmatter. It knows the category and it knows the painting. It has never read the article.
 
@@ -40,19 +40,20 @@ grep -h "^img_alt:" src/content/blog/*.md | sort | uniq -c | sort -rn
 
 This is what it returned on 2026-09-16.
 
-| Alt string, ranked by use | Posts carrying it |
+| Alt string, shortened and ranked by use | Posts carrying it |
 |---|---:|
-| 1st | 52 |
-| 2nd | 47 |
-| 3rd | 23 |
-| 4th | 13 |
-| 5th | 11 |
-| 6th | 7 |
-| the 2 remaining strings combined | 6 |
+| mountain path climbing toward a monastery | 21 |
+| walled hill town at dawn with market stalls | 21 |
+| lighthouse tower on a cliff guiding ships | 20 |
+| orrery and geometric instruments on a scholar's table | 20 |
+| open library with globes and folios | 20 |
+| printing workshop with a wooden press | 19 |
+| craftsman's bench with a finished astrolabe | 19 |
+| sealed letters, a quill and an open ledger | 19 |
 
-Six strings account for 153 of the 159 values. Two strings account for 99 of them.
+The six most-used strings account for 121 of the 159 values, and the two most-used account for 42. The spread runs from 19 to 21, which means every one of the eight is doing the same amount of work across about 20 unrelated articles apiece.
 
-These totals changed after I added 12 posts and re-ran `scripts/assign-blog-covers.cjs` over the corpus, and running it again will change them again.
+These totals have already moved twice. Adding posts changed them once. Then I fixed `scripts/assign-blog-covers.cjs` so a category can draw on several paintings instead of being locked to one, re-ran it over the corpus, and it rewrote the alt text on 116 existing posts, which is what flattened the column above. Running it again will move them again.
 
 Any check counting empty `alt` attributes passes this corpus cleanly. Every page has a value, no value is blank, no value is stuffed with keywords, none of them opens with "image of". The markup is correct and the content is wrong, a state that no attribute-level check is built to report.
 
@@ -70,7 +71,7 @@ WCAG 2.2 Success Criterion 1.1.1 requires non-text content to have "a text alter
 
 Google's image documentation points somewhere else. It says "Google uses alt text along with computer vision algorithms and the contents of the page to understand the subject matter of the image", and it warns against "filling `alt` attributes with keywords (also known as keyword stuffing) as it results in a negative user experience and may cause your site to be seen as spam" ([Google Search Central](https://developers.google.com/search/docs/appearance/google-images)). The example it labels "Best" on that page is `alt="Dalmatian puppy playing fetch"`.
 
-Put the two targets side by side and my 52 duplicates land somewhere odd. They are accurate about the image, which is what Google's sentence asks for. They fail the WCAG test, because the purpose that painting serves on a page about pricing models is decoration, and announcing decoration as content is not an equivalent purpose. The W3C WAI decision tree gives the fix for that case in four words: "Use an empty `alt` attribute" ([W3C WAI](https://www.w3.org/WAI/tutorials/images/decision-tree/)).
+Put the two targets side by side and all 159 of my values land somewhere odd. They are accurate about the image, which is what Google's sentence asks for. They fail the WCAG test, because the purpose that painting serves on a page about naming a product is decoration, and announcing decoration as content is not an equivalent purpose. The W3C WAI decision tree gives the fix for that case in four words: "Use an empty `alt` attribute" ([W3C WAI](https://www.w3.org/WAI/tutorials/images/decision-tree/)).
 
 So the honest reading of my audit is not that I wrote bad descriptions. I wrote good descriptions of the wrong object, 159 times, and shipped them into an attribute whose job is something else.
 
@@ -82,7 +83,7 @@ On this property I cannot test it either way, and the constraint is worth statin
 
 What the export does show is the shape of the traffic these pages get. Across the window, the 169 queries where this site averaged positions 4 through 10 returned 5 clicks on 9,917 impressions, a CTR of 0.050%. Image markup is not the variable deciding that number; position is, and on a Domain Rating 13 site with 159 posts the sample behind any single-factor ranking claim is small enough that I would not act on it.
 
-My case for fixing alt text here rests on the 52 pages, not on rankings.
+My case for fixing alt text here rests on all 159 pages, not on rankings.
 
 ## How to Write Alt Text When the Image Is Decoration
 
@@ -108,13 +109,13 @@ The tutorial's own bar chart example makes the division concrete. It says the lo
 
 Read the short half of that same example and it complicates the rule in a useful way. The alt attribute on the tutorial's chart reads "Bar chart showing monthly and total visitors for the first quarter 2025 for sites 1 to 3", which names the chart type before anything else. That is right, and the surrounding markup is what makes it right: a long description sits on the same page, so the alt only has to say which figure the description belongs to. Move that same string onto a page carrying no long description and it becomes the entire text alternative, and then it delivers a chart type and nothing else.
 
-Apply that to my own data. If the duplication table above had shipped as a bar chart, the alt text any generator has enough information to write is "Bar chart showing alt text duplication across 159 blog posts". Someone listening to that has learned a chart exists. The information in the chart is that six strings cover 153 of 159 posts and the top string covers 52 on its own, and that sentence is the alternative text. The chart type is packaging.
+Apply that to my own data. If the duplication table above had shipped as a bar chart, the alt text any generator has enough information to write is "Bar chart showing alt text duplication across 159 blog posts". Someone listening to that has learned a chart exists. The information in the chart is that 8 strings cover all 159 posts and the most-used covers only 21, so no single string is an outlier, and that sentence is the alternative text. The chart type is packaging.
 
 The practical consequence is an ordering rule: write the paragraph before you draw the chart. The W3C WAI decision tree's route for complex information is to "include the information contained in the image elsewhere on the page" ([W3C WAI](https://www.w3.org/WAI/tutorials/images/decision-tree/)). Once the finding is a sentence in the body, the short alt can identify the figure and stop, and nobody is depending on a one-line attribute to carry a five-series comparison.
 
 Heatmaps are the clearest case of this. The image is a color field and the finding is where attention stops. Working through [how to read a heatmap](/blog/how-to-read-a-heatmap/), every sentence that mattered was about the scale and the drop-off point rather than about the picture. Those sentences are what the alt text owes a reader.
 
-This post ships no diagram, on the same logic. The audit is seven numbers in a table. A bar chart of seven numbers would add a picture and no information, and then it would need alt text carrying the seven numbers back.
+This post ships no diagram, on the same logic. The audit is eight numbers in a table. A bar chart of eight numbers would add a picture and no information, and then it would need alt text carrying the eight numbers back.
 
 ## Long Descriptions Belong in the Page Body
 

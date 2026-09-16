@@ -4,8 +4,8 @@ description: "A competitive battlecard template sales reps actually pull up mid-
 publishDate: 2026-03-12
 updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 ---
 
 **71% of businesses using battlecards report improved win rates.** Among those, **93% say the improvement exceeds 20%** ([Crayon Sales Enablement Statistics](https://www.crayon.co/blog/sales-enablement-statistics)). Yet only 35% of competitive intelligence professionals actually create them ([Crayon](https://www.crayon.co/blog/sales-enablement-statistics)).

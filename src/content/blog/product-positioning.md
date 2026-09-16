@@ -4,8 +4,8 @@ description: "Product positioning explained by a PMM: the six-part framework, ho
 publishDate: 2026-03-08
 updatedDate: 2026-03-21
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 ---
 
 Positioning sits with the smallest team in the building. **44.3% of product marketing teams are still just 1 to 2 people**, and **88.8% work closely with product** ([PMA State of Product Marketing 2025](https://www.productmarketingalliance.com/state-of-product-marketing-report-2025/)). Positioning is the work those one or two people are expected to get right before anything else ships, and most companies still get it wrong or skip it entirely.

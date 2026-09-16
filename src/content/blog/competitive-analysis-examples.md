@@ -4,8 +4,8 @@ description: "See real competitive analysis examples from SaaS, ecommerce, and B
 publishDate: 2026-03-18
 updatedDate: 2026-03-18
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "What is a competitive analysis example?"
     a: "A competitive analysis example is a real-world demonstration of how a company systematically evaluates its competitors across dimensions like pricing, features, positioning, and market share to inform strategic decisions."

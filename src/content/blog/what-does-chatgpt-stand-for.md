@@ -4,8 +4,8 @@ description: "ChatGPT stands for Chat Generative Pre-trained Transformer. Learn 
 publishDate: 2026-04-01
 updatedDate: 2026-04-01
 category: [AI, Tools]
-img: /assets/stock-4.webp
-img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "What does ChatGPT stand for?"
     a: "ChatGPT stands for Chat Generative Pre-trained Transformer. 'Chat' refers to its conversational interface, 'Generative' means it creates new text, 'Pre-trained' means it learned from large datasets before deployment, and 'Transformer' is the neural network architecture it uses."

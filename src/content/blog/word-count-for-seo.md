@@ -14,8 +14,8 @@ faqs:
     a: "Because they measure across many sites at once, so domain authority varies alongside length and nothing separates the two. Search Engine Land describes these domain-level influences as a black box when you only observe the SERP. My own within-site result changed sign from -0.141 to +0.046 based purely on which impression threshold I used to filter pages."
   - q: "Should I add words to a page that is not ranking?"
     a: "John Mueller of Google, quoted by Search Engine Journal, said that blindly adding more and more text to a page does not make it better. If a page is stuck, the more useful checks are whether it answers the query the impressions are actually arriving on and whether anything links to it."
-img: /assets/stock-3.webp
-img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 ---
 
 Backlinko analyzed 11.8 million Google search results and published the sentence that every word count for SEO article quotes: "Overall, the average word count of a Google top 10 result is 1,447 words" ([Backlinko](https://backlinko.com/search-engine-ranking)). The same page, from the same dataset, also says this: "Pages with higher word count appear to have the same chance of ranking highly on the first page compared to pages with a lower word count."

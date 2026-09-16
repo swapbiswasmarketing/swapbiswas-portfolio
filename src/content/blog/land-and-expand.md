@@ -3,8 +3,8 @@ title: "Land and Expand Strategy: What to Withhold and Why"
 description: "Land and expand is a packaging decision, not a sales tactic. What to withhold from the entry tier, which usage signal fires the expansion play, and who owns it."
 publishDate: 2026-08-31
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "What is a land and expand strategy?"
     a: "A land and expand strategy sells a deliberately small first contract to one team or one use case, then grows account revenue through usage, seats and cross-sell. The entry package is designed to be easy to approve and easy to outgrow, so most of the account's lifetime revenue arrives after the first signature rather than in it."

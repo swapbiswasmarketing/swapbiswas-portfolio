@@ -3,8 +3,8 @@ title: "B2B Customer Onboarding Best Practices That Drive Retention"
 description: "B2B customer onboarding best practices that cut early churn: compress time-to-value, set milestones, blend in-app and human touch, and track activation."
 publishDate: 2026-06-12
 category: [Product Marketing, Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "What are the most important B2B customer onboarding best practices?"
     a: "Compress time-to-value so new accounts hit a real outcome fast, define activation milestones tied to value rather than feature tours, blend in-app guidance with human customer success touches, and track activation rate as your leading retention metric. The single highest-leverage move is getting the account to first value before early enthusiasm fades."

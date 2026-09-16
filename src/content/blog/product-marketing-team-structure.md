@@ -4,8 +4,8 @@ description: "Product marketing team structure, explained by a PMM: the 5 org mo
 publishDate: 2026-07-19
 updatedDate: 2026-08-15
 category: [Product Marketing]
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "How should a product marketing team be structured?"
     a: "There are five common models: by function (splitting people across positioning, launches, enablement, and competitive intelligence), by product or feature (each PMM paired with a product area), by segment or persona (aligned to how sales is organized), by line of business, and hybrid (a centralized core plus PMMs embedded in product teams). The right one depends on company size, product complexity, and where your go-to-market bottleneck sits, not on a fixed formula."

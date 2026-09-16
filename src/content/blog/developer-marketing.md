@@ -3,8 +3,8 @@ title: "Developer Marketing Strategy: A PMM Operating Model"
 description: "Developer marketing is marketing to developers as the buyer. The PMM operating model: why gated content backfires, what replaces the MQL, who owns the docs."
 publishDate: 2026-08-29
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "What is developer marketing?"
     a: "Developer marketing is the practice of taking a technical product to market when the buyer, or the person who can veto the buy, writes code. It covers positioning, documentation, free tiers, developer education, community, and technical proof. The defining constraint is that the audience evaluates the product by using it before speaking to anyone in sales."

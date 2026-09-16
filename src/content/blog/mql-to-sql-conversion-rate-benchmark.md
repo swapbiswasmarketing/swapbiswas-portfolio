@@ -14,8 +14,8 @@ faqs:
     a: "Usually because the MQL bar is set low enough to hit a volume target, so the denominator fills with contacts nobody intended to buy from. A rate can also read low because untouched leads sit in the denominator, or because this month's SQLs are being divided by this month's MQLs when the qualification lag is six weeks."
   - q: "Does the MQL to SQL conversion rate vary by channel?"
     a: "In the only channel dataset on this topic with a disclosed sample, First Page Sage's B2B SaaS funnel report drawn from 50-plus SaaS clients, MQL to SQL runs 51% for SEO, 46% for email, 39% for webinars, 30% for LinkedIn and 26% for PPC. Those five figures recirculate across the category, usually without the report they came from."
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 ---
 
 The number you will meet first is 13%. [GrowthSpree's benchmark page](https://www.growthspreeofficial.com/blogs/mql-to-sql-conversion-rate-benchmarks-b2b-saas-2026), which ranked top of this search when I pulled these pages in September 2026, puts it plainly: "The cross-industry average MQL to SQL conversion rate is 13%. This number comes from First Page Sage's analysis of client data gathered between 2019 and 2025." The firm is named, no URL is offered, and the trail has to be walked by hand from there.

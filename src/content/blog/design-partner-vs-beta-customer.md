@@ -3,8 +3,8 @@ title: "Design Partner vs Beta Customer: Which Program to Run"
 description: "Design partner vs beta customer, plus pilot, POC and early access: a decision table with the trigger, cohort, exit rule and launch proof each program owes you."
 publishDate: 2026-09-07
 category: [Product Marketing, Marketing]
-img: /assets/stock-1.webp
-img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
+img: /assets/stock-4.webp
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "What is a design partner?"
     a: "A design partner is an early customer who gets access to a product before it is finished and, in exchange, commits to scheduled feedback sessions and workflow access so the product can be shaped around their real work. Common Paper's standard Design Partner Agreement assigns ownership of that feedback to the provider and sets a fixed term, most often three or six months."

@@ -3,8 +3,8 @@ title: "AI Overview Optimization: How to Get Cited by Google (2026)"
 description: "AI overview optimization is not a separate discipline from SEO. Here's what Google actually requires to earn a citation - and the practical tactics that work."
 publishDate: 2026-04-18
 category: [SEO, AI, Marketing]
-img: /assets/stock-4.webp
-img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "What is AI overview optimization?"
     a: "AI overview optimization is the practice of structuring content so that Google's AI Overviews and AI Mode are more likely to cite it as a source. Google's own guidance is that standard SEO fundamentals apply. The differentiator is clean content structure, strong E-E-A-T signals, and sections written to answer one question per H2."

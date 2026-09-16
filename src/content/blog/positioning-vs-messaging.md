@@ -14,8 +14,8 @@ faqs:
     a: "Run four tests in order. If buyers keep naming an alternative missing from your list, positioning. If one segment stalls while the rest hold, positioning. If the sales deck lands where the website does not, messaging. If three reps define the product three ways, messaging. The first test that fires names the layer."
   - q: "What is a positioning and messaging framework?"
     a: "A stack, not a document. Positioning inputs (alternatives, differentiated value, best-fit customer, category) produce a positioning statement. That statement produces a value proposition, three or four messaging pillars, and proof under each. The pillars then flex per audience and channel through a messaging matrix."
-img: /assets/stock-2.webp
-img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 ---
 
 The word positioning gets attached to at least three different objects in a normal week: a strategy document, a slide in a board deck, and the headline at the top of the homepage. Messaging gets attached to the same three. The definitions are settled, and April Dunford's quickstart guide is blunt about them: ["Positioning is not equivalent to messaging. It isn't a tagline."](https://www.aprildunford.com/post/a-quickstart-guide-to-positioning) That settles the words. It does not settle what positioning vs messaging means when you have to open a file and change something.
