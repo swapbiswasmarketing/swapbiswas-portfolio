@@ -2,7 +2,7 @@
 title: "Product-Led Growth Examples: 10 Companies That Nailed PLG"
 description: "Explore real product-led growth examples from Slack, Notion, Figma, and more. Learn PLG strategies, metrics, and frameworks you can apply to your SaaS."
 publishDate: 2026-03-19
-updatedDate: 2026-09-03
+updatedDate: 2026-09-16
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
 img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
@@ -108,6 +108,27 @@ Miro hit a **$17.5 billion valuation** in 2022 and grew to over **80 million use
 HubSpot crossed **$3.13 billion in annual revenue** in 2025 with **20% Q4 growth** ([HubSpot IR](https://ir.hubspot.com/news-releases/news-release-details/hubspot-reports-strong-q4-and-full-year-2025-results)). The free CRM is the trojan horse - once your customer data lives in HubSpot, the switching cost to a competitor is enormous. Marketing Hub, Sales Hub, and Service Hub become natural extensions.
 
 **Key PLG lesson:** Give away the sticky product (CRM) for free and monetize the workflows built around it. Data gravity is the ultimate moat.
+
+## What These Product-Led Growth Examples Have in Common
+
+Every company above runs one of three growth loops, and the loop decides what its free tier is allowed to meter.
+
+| Company | Growth loop | Where the free tier stops |
+|---|---|---|
+| Slack | Viral invite | One workspace, with external messaging capped at 1:1 ([Slack pricing](https://slack.com/pricing)) |
+| Figma | Viral invite | 3 Figma Design files, 3 FigJam files, 30 days of version history ([Figma Starter plan](https://help.figma.com/hc/en-us/articles/13838684089751-Starter-plan-overview)) |
+| Miro | Viral invite | 3 editable boards ([Miro pricing](https://miro.com/pricing/)) |
+| Zoom | Viral invite | 40 minutes per meeting, 1:1 calls included ([Zoom](https://community.zoom.com/t5/Zoom-Meetings/Basic-Free-Accounts-New-Limit-for-1-1-Meetings/m-p/57381)) |
+| Loom | Shareable output | 25 videos per person, 5 minutes per recording ([Loom pricing](https://www.loom.com/pricing)) |
+| Calendly | Shareable output | One event type on one calendar connection ([Calendly pricing](https://calendly.com/pricing)) |
+| Notion | Shareable output | 10 guests, 5 MB file uploads, 7 days of page history ([Notion pricing](https://www.notion.com/pricing)) |
+| Dropbox | Data gravity | 2 GB of storage ([Dropbox plans](https://www.dropbox.com/plans)) |
+| HubSpot | Data gravity | 2 users on the free tools ([HubSpot pricing](https://www.hubspot.com/pricing/crm)) |
+| Canva | Data gravity | 5 GB of uploads ([Canva Help Center](https://www.canva.com/help/upload-formats-requirements/)) |
+
+The gate meters whatever the loop produces. Slack's loop produces conversations, so its free plan caps workspaces and outside contacts rather than message volume. Dropbox's loop produces stored files, so it meters gigabytes. Choosing the wrong axis is how a free tier ends up costing more than it returns, which is the same tier-boundary problem I work through in [land and expand](/blog/land-and-expand/).
+
+Which loop a product can run follows from what one user leaves behind after a single session. A shared surface other people have to join supports a viral invite loop. An artifact sent outside the account supports a shareable output loop. Stored records that would be expensive to move support data gravity. When a session leaves nothing behind, the free tier produces support cost without a loop, and a sales-assisted motion is the better first bet.
 
 ## PLG Frameworks and Metrics That Matter
 

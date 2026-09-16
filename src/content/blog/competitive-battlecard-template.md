@@ -2,10 +2,21 @@
 title: "Competitive Battlecard Template: Examples That Win Deals"
 description: "A competitive battlecard template sales reps actually pull up mid-call: 10 sections, two proven frameworks, and real examples from teams that win."
 publishDate: 2026-03-12
-updatedDate: 2026-03-21
+updatedDate: 2026-09-16
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
 img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
+faqs:
+  - q: "What is a competitive battlecard template?"
+    a: "It is a reusable one-page structure a rep fills in for one named competitor. The frame holds the competitor overview, a feature comparison, win and loss zones, objection responses, talk tracks, trap-setting questions, pricing intelligence, proof points, and recent moves. You keep one filled-in copy per competitor you actually meet in deals."
+  - q: "What should a competitive battlecard include?"
+    a: "Ten sections: competitor overview, product comparison, strengths and weaknesses, win/loss zones, objection handling, talk tracks, trap-setting questions, pricing intelligence, proof points, and recent competitor moves. Build objection handling and talk tracks first. Those are the two sections a rep opens with a prospect on the line; the rest can fill in over following weeks."
+  - q: "How long should a competitive battlecard be?"
+    a: "One page, scannable in under two minutes. Two to three sentences per section is the working limit, because the rep is reading it during a live call rather than before one. When a section needs more room, link out to the full competitive analysis and keep the card itself short."
+  - q: "What is the difference between a competitive battlecard and a product battlecard?"
+    a: "A competitive battlecard is built around one named rival and answers how to win a contested deal against them. A product battlecard is built around one of your own products and covers buyer pain points, use cases, pricing tiers, and cross-sell paths. Teams selling a multi-product line usually keep both under the same owner."
+  - q: "Why do sales reps ignore battlecards?"
+    a: "Three failure modes account for most of it: the card runs too long to read with a prospect on the line, it sits in a drive folder instead of the CRM or Slack where the rep already works, and its competitor intel has aged past the point anyone trusts it. Fix access and freshness before length."
 ---
 
 **71% of businesses using battlecards report improved win rates.** Among those, **93% say the improvement exceeds 20%** ([Crayon Sales Enablement Statistics](https://www.crayon.co/blog/sales-enablement-statistics)). Yet only 35% of competitive intelligence professionals actually create them ([Crayon](https://www.crayon.co/blog/sales-enablement-statistics)).

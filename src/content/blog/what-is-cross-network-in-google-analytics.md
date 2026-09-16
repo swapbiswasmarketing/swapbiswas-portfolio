@@ -2,7 +2,7 @@
 title: "What Is Cross Network in Google Analytics? The GA4 Channel"
 description: "Cross Network in Google Analytics 4 is traffic from Performance Max and other multi-network Google Ads campaigns. Why it shows up and how to report on it."
 publishDate: 2026-04-01
-updatedDate: 2026-09-03
+updatedDate: 2026-09-16
 category: [Marketing, Tools]
 img: /assets/stock-5.webp
 img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
@@ -11,6 +11,8 @@ faqs:
     a: "Cross Network is a default channel grouping in GA4 that captures traffic from Google Ads campaigns that serve ads across multiple Google properties simultaneously, such as Performance Max and Smart Shopping campaigns."
   - q: "Is cross network traffic the same as paid search?"
     a: "No. Paid Search only captures traffic from search ads. Cross Network captures traffic from campaigns like Performance Max that span Search, Display, YouTube, Gmail, Discover, and Maps simultaneously."
+  - q: "Why do I see cross network traffic in GA4 if I never ran a Performance Max campaign?"
+    a: "GA4 routes five Google Ads campaign types into Cross Network: Performance Max, App, Smart, Demand Gen and the retired Local campaigns. A Smart campaign created in Google Ads Smart Mode or an App install campaign will populate the channel on its own. GA4 also assigns any manually tagged session whose campaign name contains the string cross-network, which is why the channel can appear in properties that have no Google Ads link at all."
   - q: "Can I break down cross network traffic by specific channel?"
     a: "Not directly in GA4's default reports. However, you can use Google Ads reports to see which network (Search, Display, YouTube, etc.) drove specific conversions within your Performance Max campaigns."
 ---
@@ -35,7 +37,18 @@ For manual traffic, there is a second rule that catches people out: GA4 also ass
 
 ## Why Cross Network Appears in Your GA4 Reports
 
-Three campaign types trigger the Cross Network classification:
+GA4's rule names five Google Ads campaign types, plus the retired Smart Shopping campaigns that were folded into Performance Max. Each one serves on a different mix of Google properties, and two of them can no longer be created at all.
+
+| Campaign type | Where its ads run | Can you still create it? |
+|---|---|---|
+| **Performance Max** | Search, Display, YouTube, Gmail, Discover, Maps | Yes |
+| **Demand Gen** | YouTube including Shorts, Discover, Gmail, Maps, Display Network | Yes |
+| **App** | Search, Google Play, YouTube, Display Network, Discover | Yes |
+| **Smart** | Search, Maps, YouTube, Google partner sites, Display Network | Only in Smart Mode accounts |
+| **Smart Shopping** | Shopping inventory plus display remarketing | No, upgraded in 2022 |
+| **Local** | Store-visit inventory across Google properties | No, upgraded in 2022 |
+
+Local campaigns went through the same forced migration as Smart Shopping: Google upgraded them automatically "from August through September" 2022 ([Google Ads blog](https://blog.google/products/ads-commerce/upgrade-to-performance-max/)), and their store-visit goals now sit inside Performance Max for store goals, which promotes locations across "the Google Search Network, Google Maps, Waze, YouTube, Gmail, and the Google Display Network" ([Google Ads Help](https://support.google.com/google-ads/answer/9118422?hl=en)).
 
 ### Performance Max Campaigns
 
@@ -55,7 +68,13 @@ You may still see legacy Smart Shopping data in GA4 if your reporting range exte
 
 ### Demand Gen Campaigns
 
-Demand Gen campaigns (formerly Discovery campaigns) serve ads across YouTube, Gmail, and the Discover feed. Because these campaigns also span multiple Google properties, their traffic lands in the Cross Network channel grouping in GA4.
+Demand Gen campaigns (formerly Discovery campaigns) now reach further than the YouTube-and-Gmail format they launched as. Google's current definition has them capturing "engagement and action across YouTube (including Shorts), Discover, Gmail, Maps, and the Google Display Network" ([Google Ads Help](https://support.google.com/google-ads/answer/13695777?hl=en)), after Google folded standard Display Ads campaigns into Demand Gen and opened image inventory across the Display Network in 2025 ([Google Ads Help](https://support.google.com/google-ads/answer/17051545?hl=en)). If your older notes say Demand Gen is a YouTube and Discover product, the Display half of its traffic is now landing in Cross Network too.
+
+### App and Smart Campaigns
+
+These two explain most cases where Cross Network turns up in an account that never set up a Performance Max campaign. App campaigns promote a mobile app and can appear "across multiple Google properties" including Google Search, Google Play, YouTube, the Display Network and Discover ([Google Ads Help](https://support.google.com/google-ads/answer/6247380?hl=en)). Smart campaigns are the automated format small advertisers get in Smart Mode, and their ads "automatically show to potential customers across Google Search, Google Maps, YouTube, Google partner websites, and the Google Display Network" ([Google Ads Help](https://support.google.com/google-ads/answer/7652860?hl=en)).
+
+Neither type is labeled "cross network" anywhere in the Google Ads interface, so the channel reads as if it arrived from nowhere. Add **Session campaign** as a secondary dimension in Traffic acquisition to settle it: an App or Smart campaign shows its own campaign name against the Cross Network rows, while sessions with no Google Ads campaign behind them point at the manual naming branch instead.
 
 ## Cross Network vs Other GA4 Channel Groupings
 
