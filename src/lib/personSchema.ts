@@ -16,6 +16,17 @@ export const personSchema = {
 	familyName: 'Biswas',
 	url: 'https://swapbiswas.com',
 	image: 'https://swapbiswas.com/assets/portrait-new.webp',
+	telephone: '+91-7678047077',
+	email: 'swapbiswas.marketing@gmail.com',
+	contactPoint: {
+		'@type': 'ContactPoint',
+		contactType: 'Business enquiries',
+		telephone: '+91-7678047077',
+		email: 'swapbiswas.marketing@gmail.com',
+		url: 'https://swapbiswas.com/contact/',
+		availableLanguage: ['English', 'Hindi'],
+		areaServed: 'Worldwide',
+	},
 	jobTitle: 'Senior Product Marketing Manager',
 	description:
 		'Senior Product Marketing Manager specializing in AI, SEO, content, and growth strategy for B2B SaaS. 4+ years in marketing with experience at TestMu AI (formerly LambdaTest), Samsung, Appknox, Sociowash, and Lido Learning.',

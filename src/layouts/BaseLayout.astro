@@ -182,6 +182,11 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 					track('cta_click', { cta_type: 'email', cta_text: link.textContent.trim() });
 				}
 
+				// Phone CTA clicks
+				if (href.indexOf('tel:') === 0) {
+					track('cta_click', { cta_type: 'phone', cta_text: link.textContent.trim() });
+				}
+
 				// Share button clicks
 				if (link.classList.contains('share-btn')) {
 					var platform = 'unknown';

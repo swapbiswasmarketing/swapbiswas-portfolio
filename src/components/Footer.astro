@@ -37,6 +37,10 @@ import SiteMark from './SiteMark.astro';
 				<p class="tagline">
 					Senior Product Marketing Manager writing about marketing, AI, SEO, and growth. Based in Mumbai.
 				</p>
+				<a class="footer-phone" href="tel:+917678047077">
+					<Icon icon="phone" size="1em" />
+					<span>+91 76780 47077</span>
+				</a>
 				<span class="now-line">
 					<span class="now-dot" aria-hidden="true"></span>
 					<span>Currently at TestMu AI</span>
@@ -65,6 +69,11 @@ import SiteMark from './SiteMark.astro';
 					<li>
 						<a href="mailto:swapbiswas.marketing@gmail.com" aria-label="Email">
 							<Icon icon="paper-plane-tilt" size="1.15em" />
+						</a>
+					</li>
+					<li>
+						<a href="tel:+917678047077" aria-label="Phone">
+							<Icon icon="phone" size="1.15em" />
 						</a>
 					</li>
 				</ul>
@@ -341,6 +350,24 @@ import SiteMark from './SiteMark.astro';
 		max-width: 32ch;
 		line-height: 1.55;
 		color: var(--gray-300);
+	}
+
+	.footer-phone {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 0.85rem;
+		color: var(--gray-200);
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		letter-spacing: 0.02em;
+		text-decoration: none;
+		width: fit-content;
+		transition: color 0.2s var(--ease-out);
+	}
+
+	.footer-phone:hover {
+		color: var(--accent-text);
 	}
 
 	/* Availability badge: the one place a pill radius is allowed in the footer */

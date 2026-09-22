@@ -1,6 +1,7 @@
 ---
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const faqs = [
@@ -18,7 +19,7 @@ const faqs = [
 	},
 	{
 		question: "How can I hire you?",
-		answer: "Simply send me a message through the contact form or email me directly at swapbiswas.marketing@gmail.com. I typically respond within 24 hours.",
+		answer: "Simply send me a message through the contact form, email me directly at swapbiswas.marketing@gmail.com, or call me on +91 76780 47077. I typically respond within 24 hours.",
 	},
 	{
 		question: "Do you work remotely?",
@@ -45,9 +46,33 @@ const faqs = [
 			<Hero
 				eyebrow="Get in touch"
 				title="Contact"
-				tagline="Let's Talk. Reach out using the form below or email me directly."
+				tagline="Let's Talk. Call me, email me, or send a note with the form below."
 				align="start"
 			/>
+
+			<section class="direct-lines" aria-label="Direct contact details">
+				<a class="line" href="tel:+917678047077" data-cta="phone">
+					<span class="line-icon" aria-hidden="true"><Icon icon="phone" size="1.1em" /></span>
+					<span class="line-body">
+						<span class="line-label">Call</span>
+						<span class="line-value">+91 76780 47077</span>
+					</span>
+				</a>
+				<a class="line" href="mailto:swapbiswas.marketing@gmail.com">
+					<span class="line-icon" aria-hidden="true"><Icon icon="paper-plane-tilt" size="1.1em" /></span>
+					<span class="line-body">
+						<span class="line-label">Email</span>
+						<span class="line-value">swapbiswas.marketing@gmail.com</span>
+					</span>
+				</a>
+				<p class="line line-static">
+					<span class="line-icon" aria-hidden="true"><Icon icon="map-pin" size="1.1em" /></span>
+					<span class="line-body">
+						<span class="line-label">Based in</span>
+						<span class="line-value">Mumbai, India &middot; replies within 24 hours</span>
+					</span>
+				</p>
+			</section>
 
 			<figure class="contact-art">
 				<img
@@ -272,6 +297,79 @@ const faqs = [
 		color: var(--gray-400);
 	}
 
+	/* Direct lines: phone, email and where I am, above the form. */
+	.direct-lines {
+		margin-top: calc(1.75rem - 3.5rem);
+		display: grid;
+		gap: 1px;
+		background: var(--sg-hair);
+		border: 1px solid var(--sg-hair);
+		border-radius: var(--radius-md);
+		overflow: hidden;
+	}
+
+	.line {
+		display: flex;
+		align-items: center;
+		gap: 0.85rem;
+		margin: 0;
+		padding: 1.15rem 1.35rem;
+		background: var(--sg-panel);
+		text-decoration: none;
+		color: var(--sg-text);
+		transition: background-color 0.2s var(--ease-out);
+	}
+
+	a.line:hover {
+		background: var(--accent-subtle-overlay);
+	}
+
+	.line-icon {
+		display: inline-flex;
+		color: var(--accent-text);
+	}
+
+	.line-body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+		min-width: 0;
+	}
+
+	.line-label {
+		font-family: var(--font-mono);
+		font-size: 0.68rem;
+		font-weight: 400;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--gray-400);
+	}
+
+	.line-value {
+		font-size: var(--text-base);
+		font-weight: 500;
+		line-height: 1.35;
+		overflow-wrap: anywhere;
+	}
+
+	.line-static .line-value {
+		font-weight: 400;
+		color: var(--sg-lede);
+	}
+
+	/* On a phone the tiles stack full width, and the email is one long unbreakable
+	   token: step the value down so it sits on a single line instead of splitting
+	   mid-word. */
+	@media (max-width: 30em) {
+		.line {
+			padding: 1rem 1.1rem;
+		}
+
+		.line-value {
+			font-size: 0.9rem;
+		}
+	}
+
 	h2 {
 		font-size: var(--text-2xl);
 		color: var(--sg-text);
@@ -449,6 +547,10 @@ const faqs = [
 	}
 
 	@media (min-width: 50em) {
+		.direct-lines {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
 		.contact-art img {
 			aspect-ratio: 21 / 9;
 		}
