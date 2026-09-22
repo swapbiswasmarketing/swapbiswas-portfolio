@@ -5,7 +5,7 @@
 
 ## Linked Memory Files
 - [User Role](user_role.md) - Senior Product Marketing Manager at LambdaTest (promoted Apr 2026); prior role + education history
-- [No git branches](feedback_no_branches.md) - commit straight to `main` and push; no feature branches for this repo
+- [No git branches + NEVER push unasked](feedback_no_branches.md) - `main` auto-deploys to Vercel, so a push IS a prod release: commit on `main`, then ASK before pushing; no feature branches
 - [No em-dashes](feedback_no_emdash.md) - never use `—`; default to ` - ` or rewrite; applies to all output including chat
 - [Avoid AI-writing tropes](feedback_avoid_ai_tropes.md) - all 49 tropes.fyi tells banned in every output incl. chat (no "It's not X, it's Y" stacking, "quietly", "load-bearing", "Here's the thing", "In summary", bold-first-every-bullet); rulebook repo `.claude/writing-tropes.md`, gate `scripts/lint-tropes.cjs` must end `TROPE GATE: PASS` (`--baseline=` for optimize passes); carve-outs for keyword H2s, FAQ questions, Title Case H2s, "competitive landscape"
 - [Semrush research tooling](semrush_research_tooling.md) - `scripts/semrush.mjs` keyword-data fallback when Ahrefs MCP is out of units; broad-match vs exact-volume + KD gotcha
