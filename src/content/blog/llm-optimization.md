@@ -195,7 +195,7 @@ Run this on any page where citation share matters.
 | llms.txt published at root | `domain.com/llms.txt` returns 200 |
 | Robots allow GPTBot, PerplexityBot, ClaudeBot, Google-Extended | Or blocked deliberately, with a reason |
 
-If any check fails, fix it before publishing the next page. The compound effect of fixing them across an entire site is bigger than any single tactic.
+If any check fails, fix it before publishing the next page. The compound effect of fixing them across an entire site is bigger than any single tactic. [GEO audit skills for Claude Code](/blog/claude-marketing-skills/) can run parts of this audit, such as the robots.txt check for AI crawlers, and also score content for AI citation readiness.
 
 ## How to Measure LLM Citations
 

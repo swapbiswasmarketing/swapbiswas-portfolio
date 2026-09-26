@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" width="1400" height="700">
+  <rect x="0" y="0" width="1400" height="700" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">How a Claude skill loads</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Three levels of progressive disclosure, shown on the skill-creator folder</text>
+
+  <rect x="60" y="140" width="380" height="400" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5"/>
+  <text x="88" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#b53b15">LEVEL 1 - ALWAYS</text>
+  <text x="88" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Name + description</text>
+  <text x="88" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Read at session start for</text>
+  <text x="88" y="302" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">every installed skill.</text>
+  <text x="88" y="334" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">About 100 tokens each.</text>
+  <line x1="88" y1="378" x2="412" y2="378" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="416" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">skill-creator:</text>
+  <text x="88" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the 4-line frontmatter</text>
+  <text x="88" y="484" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">at the top of SKILL.md</text>
+
+  <line x1="448" y1="340" x2="494" y2="340" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="494,333 508,340 494,347" fill="#15130f"/>
+
+  <rect x="510" y="140" width="380" height="400" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="538" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">LEVEL 2 - WHEN TRIGGERED</text>
+  <text x="538" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">SKILL.md instructions</text>
+  <text x="538" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Loads when a request</text>
+  <text x="538" y="302" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">matches the description</text>
+  <text x="538" y="334" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">or you type /name.</text>
+  <line x1="538" y1="378" x2="862" y2="378" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="538" y="416" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">skill-creator:</text>
+  <text x="538" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the rest of a 485-line</text>
+  <text x="538" y="484" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">SKILL.md file</text>
+
+  <line x1="898" y1="340" x2="944" y2="340" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="944,333 958,340 944,347" fill="#15130f"/>
+
+  <rect x="960" y="140" width="380" height="400" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="988" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">LEVEL 3 - AS NEEDED</text>
+  <text x="988" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Scripts + references</text>
+  <text x="988" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Read or run only when</text>
+  <text x="988" y="302" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">a step points to them.</text>
+  <text x="988" y="334" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Scripts return output only.</text>
+  <line x1="988" y1="378" x2="1312" y2="378" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="988" y="416" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">skill-creator:</text>
+  <text x="988" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">scripts/, agents/,</text>
+  <text x="988" y="484" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">references/, eval-viewer/</text>
+
+  <rect x="60" y="570" width="1280" height="70" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="612" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">An idle skill costs only its header, so the description decides whether the rest ever loads.</text>
+</svg>

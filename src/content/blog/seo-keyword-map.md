@@ -136,7 +136,7 @@ Steps one to four are an afternoon. Step five is the project. Doing them in that
 | Position 4-10 | Mapped correctly | Do not touch the target; work the title and snippet |
 | Two URLs at similar positions on one topic | Possible cannibalization | Unprovable from this export; needs per-page query pulls first |
 
-The bottom row is a rule I apply without evidence from this dataset, and I would rather label it that way than let it read as a finding. Every other row follows from the distribution table.
+The bottom row is a rule I apply without evidence from this dataset, and I would rather label it that way than let it read as a finding. Every other row follows from the distribution table. For new URLs I screen overlap before the page exists, with [a custom slash command for keyword overlap checks](/blog/claude-code-commands/) that greps existing posts and tool pages for the same topic.
 
 One caveat over the whole table: these are 147 posts on one DR 13 domain with no link building behind them. The bands would sit at different positions on a stronger domain, and the 4-10 row in particular would carry clicks that mine does not. If you want the ordering logic, take the ordering logic. Do not take my thresholds as benchmarks.
 

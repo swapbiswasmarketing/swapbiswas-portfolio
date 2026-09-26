@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+<rect width="1400" height="820" fill="#f6f4ef"/>
+<text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Daily impressions on this site vs Google's 2026 updates</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Google Search Console, 1 Mar to 31 Aug 2026, Pacific time. One line: impressions per day.</text>
+<rect x="60" y="134" width="28" height="20" rx="3" fill="#f3dcd2"/><text x="98" y="150" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Spam update rollout</text>
+<rect x="320" y="134" width="28" height="20" rx="3" fill="#eeebe4" stroke="#e4dfd6"/><text x="358" y="150" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">Core update rollout</text>
+<polygon points="592,152 600,136 608,152" fill="#15130f"/><text x="620" y="150" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#3a3632">A push to the live site that added new posts (22 in total, two on 12 Mar)</text>
+<rect x="292.9" y="300" width="80.7" height="340" fill="#eeebe4"/>
+<rect x="659.5" y="300" width="78.7" height="340" fill="#eeebe4"/>
+<rect x="275.8" y="300" width="5.4" height="340" fill="#f3dcd2"/>
+<rect x="885.0" y="300" width="13.5" height="340" fill="#f3dcd2"/>
+<rect x="1249.8" y="300" width="17.8" height="340" fill="#f3dcd2"/>
+<line x1="120" y1="640.0" x2="1340" y2="640.0" stroke="#aca69c" stroke-width="1"/>
+<text x="106" y="646.0" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">0</text>
+<line x1="120" y1="557.5" x2="1340" y2="557.5" stroke="#e4dfd6" stroke-width="1"/>
+<text x="106" y="563.5" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">600</text>
+<line x1="120" y1="475.0" x2="1340" y2="475.0" stroke="#e4dfd6" stroke-width="1"/>
+<text x="106" y="481.0" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">1,200</text>
+<line x1="120" y1="392.5" x2="1340" y2="392.5" stroke="#e4dfd6" stroke-width="1"/>
+<text x="106" y="398.5" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">1,800</text>
+<line x1="120" y1="310.0" x2="1340" y2="310.0" stroke="#e4dfd6" stroke-width="1"/>
+<text x="106" y="316.0" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">2,400</text>
+<line x1="120.0" y1="640" x2="120.0" y2="648" stroke="#aca69c" stroke-width="1"/><text x="126.0" y="706" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Mar</text>
+<line x1="325.5" y1="640" x2="325.5" y2="648" stroke="#aca69c" stroke-width="1"/><text x="331.5" y="706" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Apr</text>
+<line x1="524.5" y1="640" x2="524.5" y2="648" stroke="#aca69c" stroke-width="1"/><text x="530.5" y="706" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">May</text>
+<line x1="730.0" y1="640" x2="730.0" y2="648" stroke="#aca69c" stroke-width="1"/><text x="736.0" y="706" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Jun</text>
+<line x1="928.9" y1="640" x2="928.9" y2="648" stroke="#aca69c" stroke-width="1"/><text x="934.9" y="706" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Jul</text>
+<line x1="1134.5" y1="640" x2="1134.5" y2="648" stroke="#aca69c" stroke-width="1"/><text x="1140.5" y="706" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Aug</text>
+<polygon points="188.0,674 195.0,658 202.0,674" fill="#15130f"/>
+<polygon points="189.4,674 196.4,658 203.4,674" fill="#15130f"/>
+<polygon points="202.7,674 209.7,658 216.7,674" fill="#15130f"/>
+<polygon points="254.6,674 261.6,658 268.6,674" fill="#15130f"/>
+<polygon points="335.3,674 342.3,658 349.3,674" fill="#15130f"/>
+<polygon points="387.9,674 394.9,658 401.9,674" fill="#15130f"/>
+<polygon points="433.0,674 440.0,658 447.0,674" fill="#15130f"/>
+<polygon points="481.2,674 488.2,658 495.2,674" fill="#15130f"/>
+<polygon points="580.7,674 587.7,658 594.7,674" fill="#15130f"/>
+<polygon points="731.6,674 738.6,658 745.6,674" fill="#15130f"/>
+<polygon points="779.3,674 786.3,658 793.3,674" fill="#15130f"/>
+<polygon points="849.4,674 856.4,658 863.4,674" fill="#15130f"/>
+<polygon points="865.3,674 872.3,658 879.3,674" fill="#15130f"/>
+<polygon points="885.6,674 892.6,658 899.6,674" fill="#15130f"/>
+<polygon points="896.7,674 903.7,658 910.7,674" fill="#15130f"/>
+<polygon points="938.4,674 945.4,658 952.4,674" fill="#15130f"/>
+<polygon points="998.1,674 1005.1,658 1012.1,674" fill="#15130f"/>
+<polygon points="1043.6,674 1050.6,658 1057.6,674" fill="#15130f"/>
+<polygon points="1084.0,674 1091.0,658 1098.0,674" fill="#15130f"/>
+<polygon points="1233.4,674 1240.4,658 1247.4,674" fill="#15130f"/>
+<polygon points="1295.5,674 1302.5,658 1309.5,674" fill="#15130f"/>
+<polygon points="1314.8,674 1321.8,658 1328.8,674" fill="#15130f"/>
+<polyline points="123.3,637.1 129.9,637.5 136.6,635.6 143.2,636.7 149.8,637.1 156.5,635.6 163.1,635.7 169.7,637.0 176.4,636.0 183.0,636.8 189.6,634.2 196.3,635.7 202.9,635.9 209.5,634.1 216.1,627.6 222.8,628.3 229.4,629.7 236.0,635.2 242.7,636.3 249.3,633.8 255.9,637.4 262.6,634.8 269.2,636.1 275.8,626.4 282.4,626.5 289.1,624.7 295.7,626.8 302.3,628.9 309.0,623.8 315.6,625.1 322.2,624.3 328.9,623.1 335.5,620.1 342.1,618.8 348.8,617.2 355.4,627.9 362.0,623.2 368.6,618.1 375.3,624.3 381.9,612.9 388.5,624.7 395.2,605.1 401.8,509.6 408.4,483.3 415.1,498.0 421.7,478.3 428.3,484.8 434.9,473.5 441.6,470.7 448.2,464.1 454.8,407.6 461.5,391.4 468.1,388.5 474.7,391.9 481.4,367.1 488.0,342.9 494.6,371.6 501.3,394.1 507.9,431.6 514.5,443.2 521.1,459.5 527.8,430.3 534.4,475.1 541.0,482.3 547.7,484.8 554.3,537.4 560.9,528.9 567.6,530.1 574.2,532.1 580.8,556.1 587.4,577.9 594.1,569.5 600.7,569.7 607.3,570.7 614.0,564.2 620.6,562.7 627.2,566.7 633.9,584.9 640.5,579.8 647.1,593.9 653.8,589.4 660.4,584.3 667.0,579.2 673.6,597.0 680.3,590.6 686.9,603.0 693.5,599.6 700.2,595.3 706.8,599.6 713.4,600.1 720.1,592.0 726.7,598.1 733.3,594.4 739.9,600.4 746.6,589.7 753.2,598.3 759.8,600.7 766.5,607.1 773.1,599.4 779.7,592.0 786.4,597.2 793.0,596.1 799.6,585.0 806.3,575.1 812.9,577.4 819.5,570.4 826.1,580.6 832.8,572.4 839.4,524.9 846.0,587.1 852.7,585.3 859.3,571.5 865.9,537.1 872.6,565.1 879.2,557.0 885.8,572.2 892.4,560.8 899.1,563.0 905.7,553.9 912.3,550.9 919.0,552.4 925.6,531.4 932.2,526.3 938.9,563.7 945.5,558.7 952.1,444.6 958.8,396.1 965.4,328.3 972.0,353.3 978.6,310.8 985.3,377.4 991.9,373.4 998.5,408.7 1005.2,369.1 1011.8,372.7 1018.4,388.1 1025.1,403.4 1031.7,420.3 1038.3,446.4 1044.9,469.6 1051.6,453.1 1058.2,406.1 1064.8,477.8 1071.5,487.5 1078.1,489.9 1084.7,489.3 1091.4,504.8 1098.0,501.1 1104.6,454.8 1111.2,421.1 1117.9,429.6 1124.5,402.9 1131.1,438.1 1137.8,427.4 1144.4,441.3 1151.0,462.1 1157.7,451.4 1164.3,389.1 1170.9,424.9 1177.6,455.3 1184.2,449.4 1190.8,445.0 1197.4,414.1 1204.1,407.4 1210.7,393.5 1217.3,391.4 1224.0,454.1 1230.6,444.2 1237.2,414.8 1243.9,415.5 1250.5,364.0 1257.1,392.6 1263.8,401.3 1270.4,441.9 1277.0,449.7 1283.6,454.1 1290.3,430.6 1296.9,425.8 1303.5,431.7 1310.2,391.4 1316.8,376.7 1323.4,365.6 1330.1,380.7 1336.7,348.8" fill="none" stroke="#15130f" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="275.8" y1="617.4" x2="275.8" y2="284" stroke="#b53b15" stroke-width="2"/>
+<circle cx="275.8" cy="626.4" r="7" fill="#b53b15" stroke="#f6f4ef" stroke-width="2"/>
+<text x="263.8" y="214" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" font-weight="600" fill="#15130f">24 Mar: 28 to 99</text>
+<text x="263.8" y="239" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#3a3632">spam update day one,</text>
+<text x="263.8" y="264" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#3a3632">2 days after 8 new posts</text>
+<line x1="401.8" y1="500.6" x2="401.8" y2="284" stroke="#15130f" stroke-width="1.5"/>
+<circle cx="401.8" cy="509.6" r="6" fill="#15130f" stroke="#f6f4ef" stroke-width="2"/>
+<text x="413.8" y="214" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" font-weight="600" fill="#15130f">12 Apr: 254 to 948</text>
+<text x="413.8" y="239" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#3a3632">no update running,</text>
+<text x="413.8" y="264" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#3a3632">a day after a push</text>
+<line x1="952.1" y1="435.6" x2="952.1" y2="284" stroke="#15130f" stroke-width="1.5"/>
+<circle cx="952.1" cy="444.6" r="6" fill="#15130f" stroke="#f6f4ef" stroke-width="2"/>
+<text x="940.1" y="214" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" font-weight="600" fill="#15130f">4 Jul: 591 to 1,421</text>
+<text x="940.1" y="239" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#3a3632">no update running,</text>
+<text x="940.1" y="264" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#3a3632">a day after a push</text>
+<text x="60" y="780" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Rollout windows: Google Search Status Dashboard. Clicks are not plotted: 0 to 6 a day is too few to read.</text>
+</svg>

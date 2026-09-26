@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 730" width="1400" height="730">
+  <rect x="0" y="0" width="1400" height="730" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Two Layers of Claude Code Memory</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">What loads when a session starts, per Anthropic's docs, September 2026</text>
+
+  <rect x="60" y="140" width="620" height="360" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">YOU WRITE IT</text>
+  <text x="96" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">CLAUDE.md files</text>
+  <text x="96" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Managed policy, ~/.claude, project root</text>
+  <text x="96" y="300" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and CLAUDE.local.md</text>
+  <text x="96" y="346" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Every file in the launch path loads in full</text>
+  <text x="96" y="378" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Subfolder files load when Claude reads a file there</text>
+  <text x="96" y="424" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Target: under 200 lines per file</text>
+  <text x="96" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Shared with a team through git</text>
+
+  <rect x="720" y="140" width="620" height="360" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="756" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CLAUDE WRITES IT</text>
+  <text x="756" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Auto memory</text>
+
+  <rect x="756" y="246" width="548" height="112" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="784" y="288" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">MEMORY.md index</text>
+  <text x="784" y="328" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">First 200 lines or 25KB, every session</text>
+
+  <rect x="756" y="376" width="548" height="100" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="784" y="416" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Topic files</text>
+  <text x="784" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Read on demand, never at startup</text>
+
+  <line x1="370" y1="500" x2="370" y2="546" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="363,546 377,546 370,560" fill="#15130f"/>
+  <text x="388" y="536" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">all files in the launch path</text>
+
+  <line x1="1030" y1="500" x2="1030" y2="546" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1023,546 1037,546 1030,560" fill="#15130f"/>
+  <text x="1048" y="536" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">the index only</text>
+
+  <rect x="60" y="560" width="1280" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="604" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Session context at startup</text>
+  <text x="96" y="642" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">CLAUDE.md files plus the MEMORY.md index. Topic files join only when Claude opens one.</text>
+</svg>

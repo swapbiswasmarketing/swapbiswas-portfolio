@@ -29,7 +29,7 @@ export const personSchema = {
 	},
 	jobTitle: 'Senior Product Marketing Manager',
 	description:
-		'Senior Product Marketing Manager specializing in AI, SEO, content, and growth strategy for B2B SaaS. 4+ years in marketing with experience at TestMu AI (formerly LambdaTest), Samsung, Appknox, Sociowash, and Lido Learning.',
+		'Senior Product Marketing Manager specializing in AI, SEO, content, and growth strategy for B2B SaaS. 5+ years in marketing with experience at TestMu AI (formerly LambdaTest), Samsung, Appknox, Sociowash, and Lido Learning.',
 	worksFor: {
 		'@type': 'Organization',
 		name: 'TestMu AI',

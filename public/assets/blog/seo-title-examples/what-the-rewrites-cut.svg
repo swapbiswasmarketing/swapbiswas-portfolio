@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
+  <rect x="0" y="0" width="1400" height="780" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What changed in 87 over-long blog titles</text>
+  <text x="60" y="114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Rewrites showing each change. One title can show several, so the bars do not sum to 87.</text>
+  <line x1="60" y1="146" x2="1340" y2="146" stroke="#e4dfd6" stroke-width="1"/>
+
+  <line x1="1220" y1="160" x2="1220" y2="676" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1220" y="700" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">all 87</text>
+
+  <text x="60" y="198" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Year removed entirely</text>
+  <rect x="560" y="172" width="417" height="38" rx="4" fill="#b53b15"/>
+  <text x="991" y="199" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="600" fill="#b53b15">55</text>
+
+  <text x="60" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">Deletions only, no new word</text>
+  <rect x="560" y="244" width="379" height="38" rx="4" fill="#3a3632"/>
+  <text x="953" y="271" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="600" fill="#15130f">50</text>
+
+  <text x="60" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">At least one new word written in</text>
+  <rect x="560" y="316" width="281" height="38" rx="4" fill="#3a3632"/>
+  <text x="855" y="343" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="600" fill="#15130f">37</text>
+
+  <text x="60" y="414" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">The year was the only change</text>
+  <rect x="560" y="388" width="144" height="38" rx="4" fill="#3a3632"/>
+  <text x="718" y="415" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="600" fill="#15130f">19</text>
+
+  <text x="60" y="486" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">A number in digits added</text>
+  <rect x="560" y="460" width="91" height="38" rx="4" fill="#3a3632"/>
+  <text x="665" y="487" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="600" fill="#15130f">12</text>
+
+  <text x="60" y="558" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">Opening words cut so the keyword leads</text>
+  <rect x="560" y="532" width="61" height="38" rx="4" fill="#3a3632"/>
+  <text x="635" y="559" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="600" fill="#15130f">8</text>
+
+  <text x="60" y="630" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">The word Actually deleted</text>
+  <rect x="560" y="604" width="38" height="38" rx="4" fill="#3a3632"/>
+  <text x="612" y="631" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="600" fill="#15130f">5</text>
+
+  <text x="60" y="738" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Source: swapbiswas.com git commit b623785 (2026-08-26), title field of 125 blog posts before and after.</text>
+</svg>

@@ -1,4 +1,20 @@
 {
+	"/assets/blog/4-ps-of-marketing-examples/4ps-4cs-7ps.webp": {
+		"w": 1200,
+		"h": 643,
+		"v": [
+			660
+		],
+		"hash": "785477c16817900d"
+	},
+	"/assets/blog/4-ps-of-marketing-examples/who-owns-each-p.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "40484c8ab19cb70b"
+	},
 	"/assets/blog/abm-campaign-examples/abm-tiers.webp": {
 		"w": 1200,
 		"h": 651,
@@ -204,6 +220,86 @@
 			660
 		],
 		"hash": "7d43c912b97e5aa8"
+	},
+	"/assets/blog/claude-code-commands/command-anatomy.webp": {
+		"w": 1200,
+		"h": 655,
+		"v": [
+			660
+		],
+		"hash": "701fc05fdc822f22"
+	},
+	"/assets/blog/claude-code-commands/kw-check-flow.webp": {
+		"w": 1200,
+		"h": 600,
+		"v": [
+			660
+		],
+		"hash": "1efeedeedaf85bb5"
+	},
+	"/assets/blog/claude-code-memory/memory-anatomy.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "f660673a160de89e"
+	},
+	"/assets/blog/claude-code-memory/memory-layers.webp": {
+		"w": 1200,
+		"h": 626,
+		"v": [
+			660
+		],
+		"hash": "f9ac19085b53021e"
+	},
+	"/assets/blog/claude-marketing-skills/vetting-findings.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "130b9dde6f6bbd7b"
+	},
+	"/assets/blog/claude-sonnet-vs-opus/cost-per-job.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "e55e8e247e40f90c"
+	},
+	"/assets/blog/claude-sonnet-vs-opus/model-routing.webp": {
+		"w": 1200,
+		"h": 583,
+		"v": [
+			660
+		],
+		"hash": "d1a4cc53fabb577f"
+	},
+	"/assets/blog/claude-vs-chatgpt/job-map.webp": {
+		"w": 1200,
+		"h": 866,
+		"v": [
+			660
+		],
+		"hash": "0ddfc70edb1aee71"
+	},
+	"/assets/blog/claude-vs-claude-code/claude-routing-decision.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "9c162a1b663aef56"
+	},
+	"/assets/blog/claude-vs-claude-code/search-console-join-boundary.webp": {
+		"w": 1200,
+		"h": 609,
+		"v": [
+			660
+		],
+		"hash": "2edc2d149c9d516f"
 	},
 	"/assets/blog/competitive-analysis-examples/decision-tree.webp": {
 		"w": 1800,
@@ -566,6 +662,22 @@
 			1320
 		],
 		"hash": "0f527f79c5dd310d"
+	},
+	"/assets/blog/google-september-2026-spam-update/four-checks.webp": {
+		"w": 1200,
+		"h": 497,
+		"v": [
+			660
+		],
+		"hash": "f83d09f06e167bb1"
+	},
+	"/assets/blog/google-september-2026-spam-update/impressions-vs-updates.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "da943d9f6139d3eb"
 	},
 	"/assets/blog/growth-marketing-vs-performance-marketing/growth-vs-performance-funnel.webp": {
 		"w": 1200,
@@ -1146,6 +1258,14 @@
 		],
 		"hash": "03955abd62a59bfa"
 	},
+	"/assets/blog/recent-innovative-marketing-examples/campaigns-by-mechanic.webp": {
+		"w": 1200,
+		"h": 720,
+		"v": [
+			660
+		],
+		"hash": "a0dcd794605bf218"
+	},
 	"/assets/blog/risks-of-launching-a-new-product/launch-risks-grid.webp": {
 		"w": 1200,
 		"h": 651,
@@ -1269,6 +1389,22 @@
 		],
 		"hash": "77163f0dab34870d"
 	},
+	"/assets/blog/seo-title-examples/title-cut-order.webp": {
+		"w": 1200,
+		"h": 634,
+		"v": [
+			660
+		],
+		"hash": "3dca0963f424b0d7"
+	},
+	"/assets/blog/seo-title-examples/what-the-rewrites-cut.webp": {
+		"w": 1200,
+		"h": 669,
+		"v": [
+			660
+		],
+		"hash": "4b614340c27cf7d6"
+	},
 	"/assets/blog/share-of-voice-vs-market-share/sov-substitution.webp": {
 		"w": 1200,
 		"h": 651,
@@ -1391,6 +1527,22 @@
 			1320
 		],
 		"hash": "0cf988af398df8ac"
+	},
+	"/assets/blog/what-is-a-claude-skill/extension-load-timing.webp": {
+		"w": 1200,
+		"h": 655,
+		"v": [
+			660
+		],
+		"hash": "6eca2248ddb3be62"
+	},
+	"/assets/blog/what-is-a-claude-skill/skill-loading-levels.webp": {
+		"w": 1200,
+		"h": 600,
+		"v": [
+			660
+		],
+		"hash": "d5adffba13cc5d5e"
 	},
 	"/assets/blog/what-is-a-gtm-engineer/gtm-engineer-roadmap.webp": {
 		"w": 1200,

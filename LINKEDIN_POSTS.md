@@ -450,7 +450,7 @@ Tools covered: @Hotjar, @Microsoft Clarity (free!), @Crazy Egg, and more.
 
 Every PMM has heard this. At dinner parties. In standups. From their own CEO.
 
-After 4+ years as a Product Marketing Manager at @LambdaTest, I wrote the honest guide I wish existed when I started 👇
+After 5 years in marketing, most of them at @LambdaTest, I wrote the honest guide I wish existed when I started 👇
 
 🎯 What PMMs actually do (not the job description version)
 🔀 How it's different from content, growth, demand gen
@@ -601,7 +601,7 @@ Two numbers every SaaS PMM should tattoo on their wall: 🧱
 
 SaaS product marketing isn't just about acquisition. The real leverage is in adoption, expansion, and retention. 📈
 
-I wrote the complete SaaS PMM playbook - built from 4+ years of product marketing at @LambdaTest:
+I wrote the complete SaaS PMM playbook - built from 5 years in marketing, most of them at @LambdaTest:
 
 🎯 Positioning for a crowded market
 🚀 Launch strategy (new product vs. feature release)
@@ -1546,5 +1546,289 @@ Two rules: publish the query string, not just the vendor name. And compare this 
 #BrandMarketing #B2BMarketing #MarketingMeasurement #ProductMarketing #ShareOfVoice
 
 **Nano Banana image prompt (1200x628):** Renaissance-style still life, warm paper background #f6f4ef, a scholar's bench holding three different brass measuring vessels of visibly different sizes, each filled to a different level with the same dark ink, a single vermilion red ribbon tied around the smallest vessel, an empty measuring jar tipped on its side at the edge of the bench, muted earth tones, one red accent only, no text.
+
+---
+
+### Recent Innovative Marketing Examples: 15 Launched 2025-2026
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's desk with a stack of dated almanacs, one almanac pulled out and lying open beside a brass calendar dial, older volumes pushed to the back in shadow, a single vermilion red bookmark in the open almanac, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+A roundup published on January 5, 2026 listed the GM and Netflix Will Ferrell ad among the campaigns that "shaped 2025". That spot ran during the Super Bowl in February 2023.
+
+So my list of recent innovative marketing examples has one filter: a trade or news page has to date the launch to January 2025 or later, and that page is linked on the row. 15 campaigns passed. A few of them:
+
+- Duolingo killed its owl in February 2025, and bringing Duo back took a language lesson. Adweek reports the TikTok funeral was watched by 66 million people.
+- Olipop put 5,000 influencer-style PR boxes on Amazon at 5 cents each. 35,000 people signed up to be notified, and the boxes sold out in two minutes.
+- Kalshi's NBA Finals ad was made with Veo 3 for roughly $2,000, idea to live in three days (per Kalshi). It took 300 to 400 generations to get 15 usable clips.
+- Anthropic's Super Bowl line "Ads are coming to AI. But not to Claude." won the Super Clio. It names something the product will not do, which any user can check.
+- Staples gave its Easy Button a Hard Button alter ego in September 2026, aimed first at business decision-makers. Its CMO: "We don't have an awareness problem, we have a perception problem."
+
+Four of the 15 come from companies that sell to businesses. Every entry ends with the move a B2B or SaaS team can take from it, and the post closes with a table mapping each mechanic to what you should count.
+
+Which of these would you actually run for your next launch?
+
+🔗 https://swapbiswas.com/blog/recent-innovative-marketing-examples/?utm_source=linkedin&utm_medium=social&utm_campaign=recent-innovative-marketing-examples
+
+#Marketing #B2BMarketing #ProductMarketing #MarketingCampaigns #BrandMarketing
+
+---
+
+### Claude Sonnet vs Opus vs Haiku: Costs and When to Use Each
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's brass balance scale on a wooden bench with four stacks of coins of rising height laid out in a row beside it, from a small stack to a tall one, a single vermilion red ribbon tied around the second stack, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+$2.67 on Haiku 4.5. $36.00 on Fable 5.1. That is what tagging 10,000 customer reviews costs at Anthropic's September 2026 list prices, by my arithmetic.
+
+I build with Claude Code, so I priced four marketing jobs on each Claude model instead of guessing. The figures are calculated from per-token prices, not measured runs, and they leave out thinking tokens, so read them as floors.
+
+What came out of it:
+
+- Opus 5.5 ($4 / $20 per million tokens) costs exactly twice Sonnet 5 ($2 / $10) on every job. A 2,000-word blog draft is about 6 cents on Sonnet and 12 on Opus.
+- Haiku 4.5 lands at about 37% of Sonnet's cost, below its 50% sticker ratio, because its older tokenizer turns the same words into fewer tokens.
+- Per finished job the order can flip. In Anthropic's internal runs on a SWE-bench Pro subset, Opus 5.5 cost $0.22 per solved task against $0.84 for Sonnet 5.
+- The Batch API takes 50% off, so the review-tagging job on Sonnet 5 drops to $3.60.
+- Claude Code defaults to Opus 5.5 from v2.1.280. Switch with /model sonnet or /model haiku.
+
+My routing rule: checkable bulk jobs to Haiku 4.5, single-pass writing and jobs repeated at volume to Sonnet 5, multi-step or figure-heavy work to Opus 5.5. Fable 5.1 only when Opus at xhigh or max effort falls short.
+
+Which model are your bulk jobs running on right now, and have you priced one?
+
+🔗 https://swapbiswas.com/blog/claude-sonnet-vs-opus/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-sonnet-vs-opus
+
+#Claude #ClaudeCode #AIForMarketing #MarketingOps #Anthropic
+
+---
+
+### What Is the Difference Between Claude and ChatGPT? (2026)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a craftsman's workbench split between two tools of a trade, a quill and inkwell with a written manuscript on the left and a painter's palette with brushes and a small sketched canvas on the right, a single vermilion red wax seal on the manuscript, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Claude Pro and ChatGPT Plus both cost $20 a month. Commit for a year and Claude costs $40 less, because ChatGPT Plus has no annual billing.
+
+Billing is one of three real differences. The other two are images and free-plan limits, and I checked every row against Anthropic's and OpenAI's own pages on 26 September 2026:
+
+- Images: Anthropic's help center says Claude "doesn't generate photos or illustrations". ChatGPT generates and edits them. For ad visuals and mockups, start in ChatGPT.
+- Free plans: ChatGPT Free lists unlimited text chats on GPT-5.6 Luna, subject to abuse guardrails. Claude Free covers file creation, code execution and one custom connector.
+- Writing: in a Tom's Guide same-prompt test published 24 September, Claude won the rewrite round because it rethought how to explain the features. ChatGPT also kept every fact and was the more direct of the two.
+- Limits: Claude Pro runs one usage pool across claude.ai, Claude Code and Claude Desktop, so a long coding session eats into chat.
+- Research, files, memory, connectors and coding agents: comparable on both $20 plans. The tools you already run should decide.
+
+My bias runs toward Claude, since this site and its free tools were built with Claude Code. So the post ends with a three-brief test you can run on both free plans in an afternoon before paying.
+
+What was the one job that decided which one you pay for?
+
+🔗 https://swapbiswas.com/blog/claude-vs-chatgpt/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-vs-chatgpt
+
+#Claude #ChatGPT #AIForMarketing #ContentMarketing #MarketingTools
+
+---
+
+### 4 Ps of Marketing Examples: Coca-Cola, Nike and 5 More
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a wooden cabinet of four square compartments on a merchant's table, each holding a different object (a glass bottle, a shoe last, a small set of scales, a rolled handbill), a single vermilion red ribbon tied around the scales, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+In fiscal 2026, Nike's wholesale revenue rose 6% to $27.5 billion while NIKE Direct fell 6% to $17.7 billion. A 4 Ps grid that says "Nike sells direct" misses where most of the money went.
+
+So I filled in seven marketing mix grids using only what each company publishes: earnings releases, SEC filings, pricing pages and online stores, with every grid dated.
+
+What the real numbers show:
+
+- Coca-Cola's Place row is a partner network: 200+ bottling partners and 950+ production facilities, and the company says it "does not own, manage or control most local bottling companies."
+- McDonald's has over 45,000 locations, about 95% run by independent owners, so a Price or Promotion plan reaches most customers only if those owners carry it out.
+- Apple's Price row is a ladder from $699 to $1,999 across the iPhone line, before trade-in credit and monthly terms.
+- HubSpot's Price row has three parts: the subscription, usage allowances like contacts and credits, and a one-time onboarding fee on Professional and Enterprise.
+- Slack's Free plan does part of the promotion. Huddles and Slack Connect are 1:1 only on Free, which gives a team a reason to upgrade.
+
+As a PMM, the part I care about most is the section textbook grids skip: who inside a software company owns each P, and what breaks when the rows stop matching.
+
+Which of the four Ps has no clear owner where you work?
+
+🔗 https://swapbiswas.com/blog/4-ps-of-marketing-examples/?utm_source=linkedin&utm_medium=social&utm_campaign=4-ps-of-marketing-examples
+
+#ProductMarketing #MarketingMix #MarketingStrategy #B2BSaaS #PMM
+
+---
+
+### SEO Title Examples: 95 Real Rewrites and What They Cut
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a printer's composing stick on a wooden bench holding a short line of metal type, a small heap of discarded type slugs swept to one side, a pair of brass tweezers lifting one slug away, a single vermilion red mark on the composing stick, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+My longest page title was 85 characters: "How to Create a Competitive Battlecard: Template, Examples, and Best Practices (2026)". The rewrite that ships today is 56.
+
+On 2026-08-26 a crawl audit found 95 titles on my site over 60 characters. I rewrote all 95 in one git commit, and every before-and-after pair is still in the history, so I counted what the cuts had in common:
+
+- 50 of the 87 blog rewrites added no new word at all. Deletion did most of the work.
+- The year came out of 55 titles and stayed in the 20 where it still fit under 60.
+- "Step-by-Step" became a real count: 8-Step, 6 Steps, 6-Phase, 7-Stage, 7-Dimension.
+- "Actually" went from 5 of the 8 titles that had it, and "Proven" from both that used it.
+- 72 of the 78 titles with a colon or question mark kept every word before it.
+
+I have no click or ranking data that isolates these rewrites, so the pairs show what a hard 60-character cap forces out of a title, not what it earns. The post has all 95 pairs by page type, a CSV, a one-line awk audit and the six cuts in the order I make them.
+
+How long is the longest title on your site right now?
+
+🔗 https://swapbiswas.com/blog/seo-title-examples/?utm_source=linkedin&utm_medium=social&utm_campaign=seo-title-examples
+
+#SEO #OnPageSEO #ContentMarketing #TechnicalSEO #SEOTips
+
+---
+
+### Claude Code Commands: Cheat Sheet and Custom Command Guide
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an old printer's wooden type cabinet with shallow drawers, one drawer pulled halfway open to show rows of small metal type slugs, a composing stick resting on the bench beside it, a single vermilion red ribbon tied around the open drawer's handle, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+On 26 September 2026, Anthropic's Claude Code commands reference had 114 rows.
+I build this site with Claude Code, and a marketer needs about eight of them to start.
+
+What the post covers:
+- The eight to learn first: /clear, /compact, /context, /rewind, /resume, /plan, /model and /usage. Between them they control what Claude keeps in context, what it may change, which model it uses and what a session costs.
+- Custom commands still work. Anthropic's docs call a Markdown file in .claude/commands/ the older format and prefer a skill for new work. When a skill and a command share a name, the skill runs.
+- Where the file lives decides who gets it. ~/.claude/commands/ follows you into every project on your machine. A project's .claude/commands/ loads only in that repo, and anyone who clones it gets the command too.
+- A dollar sign before a digit is read as a placeholder. A pricing prompt that says $1.00 needs \$1.00, or the price gets replaced whenever you pass a second argument.
+- A research-only keyword command you can copy. Its overlap check runs before any search, because in one of my September research cycles, overlap with an argument the site had already published was the most common reason a keyword died: 20 of 39 topics.
+
+Which routine do you paste into chat often enough that it should be a command?
+
+🔗 https://swapbiswas.com/blog/claude-code-commands/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-code-commands
+
+#ClaudeCode #AIForMarketing #MarketingOps #ProductMarketing #SEO
+
+---
+
+### What Is a Claude Skill? How It Works and How to Build One
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's table with a closed leather portfolio tied with cord, a small folded card resting on its cover, and behind it a wooden cabinet of little drawers with one drawer open to reveal brass instruments, a single vermilion red cord binding the portfolio, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+I checked the frontmatter of the 23 Claude skills installed on my machine.
+20 of them run past the 200-character description limit in Anthropic's claude.ai help article.
+
+That matters because the description is the trigger. What the post covers:
+- A skill is a folder with a SKILL.md file. Claude keeps only the name and description in context, about 100 tokens per skill, loads the instructions when a task matches, and opens bundled scripts and references only when a step needs them.
+- Only 7 of the 23 say when to use the skill with a "Use when" clause. The shortest is 145 characters of style words and never names a request.
+- The limit depends on which Anthropic page you read: 200 characters in the help article, 1,024 in the Agent Skills spec, and Claude Code truncates at 1,536. If one file has to work everywhere, write for 200.
+- 6 of the 23 run past the 500-line SKILL.md guideline. The longest is 1,465 lines.
+- Skills vs MCP, in Anthropic's own words: "MCP connects Claude to external services and data sources. Skills provide procedural knowledge." My Ahrefs and Semrush servers bring keyword data; my rules for what counts as a usable keyword are skill material.
+
+The post ends with a brand-voice skill you can copy, with a script that prints PASS or FAIL.
+
+What procedure have you pasted into chat three times this month?
+
+🔗 https://swapbiswas.com/blog/what-is-a-claude-skill/?utm_source=linkedin&utm_medium=social&utm_campaign=what-is-a-claude-skill
+
+#ClaudeAI #ClaudeCode #AIForMarketing #MarketingOps #BrandVoice
+
+---
+
+### Claude Code Memory: CLAUDE.md, MEMORY.md and What Loads
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Renaissance-style still life by a window, warm paper background #f6f4ef, a thin index card propped against a tall stack of bound ledgers and notebooks, a quill and inkwell beside them, a single vermilion red ribbon bookmark hanging from one ledger, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+The repo behind my site holds 159 published posts, nine free tools and no CLAUDE.md.
+Every Claude Code session still starts with my house rules in reach, WebP-only images among them.
+
+What carries them is the other half of Claude Code memory:
+- Auto memory: notes Claude writes for itself, fronted by a MEMORY.md index that loads every session. Mine is 133 lines and 15,011 bytes, under the caps of 200 lines and 25KB.
+- 23 topic files sit behind the index and load only when a task needs one. The biggest, my keyword research log, runs 924 lines, about seven times the whole index.
+- CLAUDE.md is the part you write. It loads in full and travels through git. Auto memory stays on one machine, so once a second person or a second computer works in the repo, you want a CLAUDE.md as well.
+- The weak spot is the stale number. My index held a Domain Rating of 11 after it had moved to 13, and a post count that was still wrong on 26 September 2026.
+
+The habit I keep now: every measured number gets its source and date on the same line, and a correction sits next to the value it replaces.
+
+When did you last read your own MEMORY.md?
+
+🔗 https://swapbiswas.com/blog/claude-code-memory/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-code-memory
+
+#ClaudeCode #AIForMarketing #MarketingOps #ContentMarketing
+
+---
+
+### Claude vs Claude Code: Which One a Non-Developer Needs
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Renaissance-style painting, warm paper background #f6f4ef, two adjoining workspaces in one room: on the left a small writing desk with a single letter and a quill, on the right a craftsman's workbench covered with bundled folders of papers and hand tools, a single vermilion red thread running from the letter across to the workbench, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+One job settled which Claude I open: joining a Search Console export to the 159 post files on my laptop.
+A chat takes up to 20 file uploads. Claude Code starts inside the folder.
+
+How I route marketing work now:
+- Words you will paste somewhere go to the Claude app: positioning drafts, launch emails, one exported CSV.
+- Work on files you maintain, built or committed with your own scripts and git, goes to Claude Code.
+- Run there, the join found 35 posts with no row in the export: 25 published after the window closed, the other 10 between 15 and 31 August. That points to recency, not posts Google skipped.
+- Claude Code is included in every paid plan, Pro at $20 a month among them, and it draws from the same usage pool as your chats. The Free plan does not include it.
+- Since 16 September 2026, Anthropic has been merging Cowork and chat into one Claude app, starting with Pro and Max. What is left between Cowork and a local Claude Code session is whose machine runs the commands.
+
+I am a marketer, not a developer, and I run Claude Code inside VS Code. The VS Code extension and the desktop app's Code tab both run it without a terminal window.
+
+Which of your recurring jobs lives in a folder, and which lives in a chat window?
+
+🔗 https://swapbiswas.com/blog/claude-vs-claude-code/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-vs-claude-code
+
+#ClaudeCode #ClaudeAI #AIForMarketing #MarketingOps #ProductMarketing
+
+---
+
+### Claude Marketing Skills: 14 Vetted Picks by Marketing Job
+**Status:** [DRAFTED]
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an apothecary shelf holding a neat row of small glass jars of different shapes, a brass magnifying glass lying in front of them, one jar sealed with vermilion red wax while the rest stay plain, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Before I recommend a Claude skill, I want to know who maintains it, what license it ships under and what it will run on my machine.
+So I checked 14 marketing picks against six questions on 26 September 2026.
+
+A few things the checks turned up:
+- Corey Haines' marketingskills library holds 50 MIT-licensed skills that all read one product-marketing context file first. Version 2.0 renamed 17 skills, so a v1 install leaves stale folders beside the new ones.
+- GEO-SEO Claude's headline install pipes a remote script straight into bash. Clone it by hand and read install.sh before it runs.
+- Anthropic's pptx, docx, xlsx and pdf skills are source-available under a proprietary license that bars derivative works, so you cannot fork the pptx skill into a company deck skill.
+- Anthropic's marketing plugin README lists five skills, but its skills folder held eight folders the day I checked. Read the folder, not the README.
+- The Claude app upload rejects any SKILL.md frontmatter field outside six allowed ones, and several of the 14 picks carried extra fields.
+
+Of the 14, only Taste Skill, seven of Emil Kowalski's skills and skill-creator run in my own setup. The rest I vetted from their repos and docs, and the post says which is which.
+
+Which marketing job would you hand to a skill first?
+
+🔗 https://swapbiswas.com/blog/claude-marketing-skills/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-marketing-skills
+
+#ClaudeCode #AIForMarketing #ProductMarketing #MarketingOps #SEO
+
+---
+
+### Google September 2026 Spam Update: Did It Hit Your Site?
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a brass surveyor's level on a small wooden tripod beside an open field ledger with a hand-drawn wavy line, a half-run hourglass next to it, a single vermilion red thread marking one point on the ledger line, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+On 24 March my site's Google impressions went from 28 to 99 in a day. Google started its March spam update that same day.
+Two days earlier I had pushed eight new posts, and I still can't tell you which one moved the number.
+
+Google started the September 2026 spam update on 24 September, and this time the rollout "may take up to two weeks" (the March, June and August spam updates each said "a few days"). Before you read your Search Console this month, run four checks, in order:
+
+- Is the change inside Google's rollout window, with no other update overlapping?
+- Is it outside your noise band, built from past weeks the same distance apart? On my site the median week-over-week change in impressions was 26.5%, and 61.1% between weeks three apart.
+- Did you ship anything that week? I put new posts live 22 times between 12 March and 31 August.
+- Do the pages that fell share a practice Google's spam policies name?
+
+None of my three 2026 spam windows got past check 2. A two-week rollout also makes that check weaker: between weeks three apart, 10 of 14 ordinary comparisons still landed outside the band.
+
+The post has the Search Console steps, both tables and the chart.
+
+What do you check first when traffic moves during an update?
+
+🔗 https://swapbiswas.com/blog/google-september-2026-spam-update/?utm_source=linkedin&utm_medium=social&utm_campaign=google-september-2026-spam-update
+
+#SEO #GoogleSearch #SearchConsole #TechnicalSEO #ContentMarketing
 
 ---

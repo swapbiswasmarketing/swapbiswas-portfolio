@@ -147,4 +147,4 @@ I would rather publish a result with a stated sample size than an opinion with n
 
 ## SEO Without Link Building Is a Query Selection Problem
 
-The question worth asking before writing a post is whether the specific query you are chasing can be reached without links. Open the top three results, look at who holds them, and decide honestly whether a page from your domain can displace one of them. If it cannot, you are writing for the 0.008% band, and 147 posts will tell you so 16 months later.
+The question worth asking before writing a post is whether the specific query you are chasing can be reached without links. Open the top three results, look at who holds them, and decide honestly whether a page from your domain can displace one of them. I run that check through a [research-only Claude Code command](/blog/claude-code-commands/), which checks the live results and returns a verdict without changing a file. If it cannot, you are writing for the 0.008% band, and 147 posts will tell you so 16 months later.

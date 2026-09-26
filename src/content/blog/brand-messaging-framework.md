@@ -162,3 +162,5 @@ If the company name itself is what is changing, the framework stops being a docu
 A brand messaging framework is five layers, not three pillars on a slide. Audience insight feeds a value proposition, the value prop is carried by pillars, the pillars are backed by proof, and the whole thing only becomes usable once you add the two tools most guides skip: a messaging matrix that flexes the message across audiences, and a messaging hierarchy that ranks what to lead with.
 
 Build all five and you get what the 85% consistency expectation demands - one company that sounds like one company, whether the buyer meets you in an ad, a demo, or a support ticket. Stop at the pillars and you are back to five people describing five products, just with a nicer diagram.
+
+If your team drafts with Claude, put the finished pillars and proof points into [a Claude skill that checks copy against your framework](/blog/what-is-a-claude-skill/).

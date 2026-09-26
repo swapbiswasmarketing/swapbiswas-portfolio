@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Builder Masthead LinkedIn</title>
+<link rel="stylesheet" href="/design/social-banners/brand.css">
+<style>
+	/* Builder masthead, v2 final. Block inside the phone crop (228-1356): measure 266-1326.
+	   Grid: A = 266 (nameplate, URL slot), B = 600 (deck, stack, first proof slot; ~48px clear of
+	   the phone avatar's right edge at ~552), C = 1072 (plate, second proof slot).
+	   The nameplate is the positioning, on one line, two-tone (DESIGN.md s.3): "A marketer" in
+	   muted, "who builds." in ink. LinkedIn prints the name and headline under the banner, so the
+	   big type never spends itself on the name.
+	   Dateline = two proofs, one marketing outcome and one builder output (desktop texture).
+	   Stack row: fixed cell padding either side of hairline separators, flush left at B and
+	   flush right at the plate edge (1326). 35px names with 23.25px padding = 0.67em, the same
+	   rhythm as X (42px / 28.35px). First cell is "Claude", the tool he named; the shorter name
+	   is what lets the row clear the 34px legibility floor with five cells.
+	   B stays at 600 rather than under "who" (~650): hanging from "who" would leave 676px for
+	   the row, too narrow for five names at a legible size.
+	   Deck is set in a banner-only Inter subset that keeps cv08 (serifed capital I), so
+	   "I love AI" cannot read as "l love Al" at phone size. Same Inter 4.001 metrics otherwise.
+	   Deck line 2 names tools and automations, so it does not restate the dateline's "agents & apps".
+	   The strand leaves the avatar as a vermilion wave and settles into an ink rule by column B.
+	   The headline period stays ink so the painting's ribbon is the vermilion note in the frame. */
+	@font-face { font-family: 'Inter Banner'; font-style: normal; font-weight: 100 900;
+		src: url('/design/social-banners/fonts/inter-cv08-latin.woff2') format('woff2'); }
+	body { background: var(--paper); color: var(--ink); position: relative; }
+	.rule { position: absolute; left: 0; right: 0; height: 0; border-top: 1px solid var(--hair-strong); }
+	.rule.ink { border-top: 1.5px solid var(--ink); }
+
+	.slot { position: absolute; top: 33px; height: 36px; display: flex; align-items: center; gap: 10px;
+		font: 500 17px/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+	.slot b { font-weight: 500; color: var(--ink); }
+	.slot svg { width: 22px; height: 22px; flex: none; margin-left: -4.1px; }
+
+	.nameplate { position: absolute; left: 264.5px; top: 80px; font: 600 80px/0.9 var(--font-display); letter-spacing: -0.03em; white-space: nowrap; }
+	.nameplate .dim { color: var(--muted); }
+
+	.deck { position: absolute; left: 600px; top: 186px; font: 400 30px/1.2 'Inter Banner', var(--font-body); font-feature-settings: 'cv08' 1; letter-spacing: -0.016em; color: var(--lede); white-space: nowrap; }
+	.deck b { font-weight: 600; color: var(--ink); }
+
+	.stack { position: absolute; left: 600px; right: 258px; top: 272px; }
+	.stack .lab { display: flex; align-items: center; gap: 12px; margin-bottom: 11px;
+		font: 500 15px/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+	.stack .lab::after { content: ''; flex: 1; height: 0; border-top: 1px solid var(--hair-strong); }
+	.stack .row { display: flex; white-space: nowrap; }
+	.stack .t { font: 600 35px/1 var(--font-body); letter-spacing: -0.012em; padding: 0 23.25px; border-left: 1px solid var(--hair-strong); }
+	.stack .t:first-child { padding-left: 0; border-left: 0; }
+	.stack .t:last-child { padding-right: 0; }
+	.stack .t.more { color: var(--muted); font-weight: 500; }
+
+	.plate { position: absolute; left: 1072px; top: 89px; width: 254px; height: 159px; border-radius: 12px; border: 1px solid var(--hair); overflow: hidden; }
+	/* source crop x 1250-2326, y 360-1034 of 2400x1792: same framing as the X plate. */
+	.plate img { position: absolute; width: 566.4px; left: -295px; top: -85px; }
+
+	.strand { position: absolute; left: 0; top: 0; }
+</style>
+</head>
+<body>
+	<div class="rule ink" style="top:32px"></div>
+	<div class="slot" style="left:266px"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M47.5 16.5 C44 10.5 36 8 28 10.5 C18.5 13.5 16 23.5 22.5 27.5 C28 31 36.5 32 42 36 C50.5 42 48 52.5 39 55 C31 57.3 22 54.5 17.5 47.5" fill="none" stroke="#15130f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17.5" cy="47.5" r="5.8" fill="#b53b15"/></svg><b>swapbiswas.com</b></div>
+	<div class="slot" style="left:600px"><b>18M+</b>organic visits</div>
+	<div class="slot" style="left:1072px"><b>20+</b>AI agents &amp; apps</div>
+	<div class="rule" style="top:68px"></div>
+
+	<div class="nameplate"><span class="dim">A marketer</span> who builds.</div>
+
+	<div class="rule" style="top:174px; left:600px; right:544px"></div>
+	<p class="deck"><b>I love AI</b> enough to ship my own<br>tools and automations.</p>
+
+	<div class="stack">
+		<div class="lab">Stack</div>
+		<div class="row">
+			<span class="t">Claude</span>
+			<span class="t">Replit</span>
+			<span class="t">Lovable</span>
+			<span class="t">Gemini</span>
+			<span class="t more">+ more</span>
+		</div>
+	</div>
+
+	<div class="plate"><img src="/design/social-banners/art/tools-workshop.jpg" alt=""></div>
+
+	<svg class="strand" width="1584" height="396" viewBox="0 0 1584 396" aria-hidden="true">
+		<defs>
+			<linearGradient id="sg" gradientUnits="userSpaceOnUse" x1="530" y1="0" x2="850" y2="0">
+				<stop offset="0" stop-color="#b53b15"/>
+				<stop offset=".45" stop-color="#6a3a2a"/>
+				<stop offset=".75" stop-color="#15130f"/>
+				<stop offset="1" stop-color="#15130f"/>
+			</linearGradient>
+		</defs>
+		<path id="strand" fill="none" stroke="url(#sg)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+	</svg>
+	<script>
+		// Raw carrier -> settled rule. Deterministic, so re-renders match.
+		(function () {
+			var c = { x0: 320, x1: 1584, y: 356, s0: 330, s1: 610, A: 7, P: 58 };
+			var d = '';
+			for (var x = c.x0; x <= c.s1; x += 1) {
+				var t = Math.min(1, Math.max(0, (x - c.s0) / (c.s1 - c.s0)));
+				var k = 1 - t * t * (3 - 2 * t);
+				var n = 0.82 * Math.sin(2 * Math.PI * (x - c.x0) / c.P) + 0.22 * Math.sin(2 * Math.PI * (x - c.x0) / (c.P * 0.43) + 1.1);
+				d += (x === c.x0 ? 'M' : 'L') + x + ' ' + (c.y + c.A * k * n).toFixed(2);
+			}
+			d += 'L' + c.x1 + ' ' + c.y;
+			document.getElementById('strand').setAttribute('d', d);
+		})();
+	</script>
+</body>
+</html>

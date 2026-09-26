@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect x="0" y="0" width="1400" height="820" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Anatomy of a Real Auto Memory Folder</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">swapbiswas.com auto memory, measured 26 September 2026</text>
+
+  <rect x="60" y="140" width="1280" height="210" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">LOADS EVERY SESSION</text>
+  <text x="96" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">MEMORY.md index</text>
+
+  <text x="96" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Lines</text>
+  <rect x="220" y="256" width="800" height="24" rx="4" fill="#eeebe4"/>
+  <rect x="220" y="256" width="532" height="24" rx="4" fill="#b53b15"/>
+  <text x="1044" y="275" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">133 of 200</text>
+
+  <text x="96" y="322" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Bytes</text>
+  <rect x="220" y="304" width="800" height="24" rx="4" fill="#eeebe4"/>
+  <rect x="220" y="304" width="480" height="24" rx="4" fill="#15130f"/>
+  <text x="1044" y="323" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">15,011 of 25KB</text>
+
+  <text x="60" y="392" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">23 TOPIC FILES, READ ON DEMAND</text>
+
+  <rect x="60" y="410" width="305" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="448" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">USER</text>
+  <text x="88" y="502" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="48" font-weight="600" fill="#15130f">2</text>
+  <text x="88" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">role and preferences</text>
+
+  <rect x="385" y="410" width="305" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="413" y="448" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">FEEDBACK</text>
+  <text x="413" y="502" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="48" font-weight="600" fill="#15130f">5</text>
+  <text x="413" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">corrections given</text>
+
+  <rect x="710" y="410" width="305" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="738" y="448" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PROJECT</text>
+  <text x="738" y="502" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="48" font-weight="600" fill="#15130f">8</text>
+  <text x="738" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">work and decisions</text>
+
+  <rect x="1035" y="410" width="305" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1063" y="448" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">REFERENCE</text>
+  <text x="1063" y="502" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="48" font-weight="600" fill="#15130f">8</text>
+  <text x="1063" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">where things live</text>
+
+  <rect x="60" y="590" width="820" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="632" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Largest topic file: the research log</text>
+  <text x="96" y="678" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Research log, 924 lines</text>
+  <rect x="380" y="662" width="460" height="22" rx="4" fill="#15130f"/>
+  <text x="96" y="716" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Whole index, 133 lines</text>
+  <rect x="380" y="700" width="66" height="22" rx="4" fill="#6a645c"/>
+  <text x="96" y="752" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Loaded only when a task needs it</text>
+
+  <rect x="900" y="590" width="440" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="936" y="632" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">CLAUDE.md</text>
+  <text x="936" y="674" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">None in the repo, its .claude</text>
+  <text x="936" y="706" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">folder, the parent or ~/.claude</text>
+  <text x="936" y="746" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">House rules sit in the index</text>
+</svg>

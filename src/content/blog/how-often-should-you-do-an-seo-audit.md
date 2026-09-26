@@ -134,7 +134,7 @@ The three clocks handle normal life. Some events are not normal, and they demand
 
 **A migration, redesign, or replatform.** Any time you change domains, restructure URLs, move CMS, or ship a major redesign, run a focused audit before and after launch. Migrations are the single most common way sites accidentally delete their own SEO, usually through botched redirects or newly blocked resources.
 
-**A Google core update.** When Google confirms a broad core update, audit your winners and losers once it finishes rolling out. Core updates are exactly the kind of large-scale change that the constant experimentation feeding Search eventually ships, and they can rearrange your rankings in ways no on-site change caused.
+**A Google core update.** When Google confirms a broad core update, audit your winners and losers once it finishes rolling out. Core updates are exactly the kind of large-scale change that the constant experimentation feeding Search eventually ships, and they can rearrange your rankings in ways no on-site change caused. Confirmed spam updates belong on the trigger list too, once you have ruled out ordinary noise; I walk through that test for the [September 2026 spam update](/blog/google-september-2026-spam-update/).
 
 **A CMS or template change.** A new theme, a plugin update, or an edited page template can silently alter meta tags, heading structure, canonical logic, or page speed across thousands of URLs at once. Audit the affected templates right after the change, not next quarter.
 

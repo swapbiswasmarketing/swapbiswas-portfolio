@@ -106,7 +106,7 @@ Do NOT suggest keyword stuffing. Focus on topical completeness.
 
 ### 3. Technical SEO Automation
 
-AI shines brightest in technical SEO -it's pattern recognition at scale, which is exactly what machines do well.
+AI shines brightest in technical SEO -it's pattern recognition at scale, which is exactly what machines do well. If you work in Claude Code, open-source [SEO audit skills for Claude](/blog/claude-marketing-skills/) package several of the checks below, from technical SEO to schema markup, behind one audit command.
 
 **What to automate with AI:**
 

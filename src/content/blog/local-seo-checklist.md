@@ -106,7 +106,7 @@ Your website still matters. On-page local signals tell Google which city and ser
 
 ### 15. Optimize title tags and meta descriptions
 
-Put your primary service and city in the title tag of your most important pages, such as "Emergency Plumber in Austin, TX." Keep titles under about 60 characters so they do not truncate in the results.
+Put your primary service and city in the title tag of your most important pages, such as "Emergency Plumber in Austin, TX." Keep titles under about 60 characters so they do not truncate in the results. My [title tag examples by page type](/blog/seo-title-examples/) include a service-plus-city pattern for local pages, with the business name at the end.
 
 ### 16. Create dedicated location and service pages
 

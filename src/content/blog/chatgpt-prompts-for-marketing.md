@@ -16,7 +16,7 @@ Over **86% of marketing teams** now use AI in their workflows ([HubSpot 2026 Sta
 
 **Prompt quality matters more than model quality.** The difference between a vague prompt and a well-structured one is the difference between generic filler and content that actually converts.
 
-Here are 50+ prompts I use in my own marketing work, organized by use case. For the bigger picture on workflows, see [how to use ChatGPT for sales and marketing](/blog/how-to-use-chatgpt-for-sales-and-marketing/). If you're still building your AI toolkit, start with our guide to [free AI tools for marketing](/blog/free-ai-tools-for-marketing/) - many of these prompts work across ChatGPT, Claude, and Gemini. But first, the techniques that make them work.
+Here are 50+ prompts I use in my own marketing work, organized by use case. For the bigger picture on workflows, see [how to use ChatGPT for sales and marketing](/blog/how-to-use-chatgpt-for-sales-and-marketing/). If you're still building your AI toolkit, start with our guide to [free AI tools for marketing](/blog/free-ai-tools-for-marketing/) - many of these prompts work across ChatGPT, Claude, and Gemini. If you are deciding between the first two, my comparison of [Claude and ChatGPT for marketing work](/blog/claude-vs-chatgpt/) maps each one to the jobs it fits. But first, the techniques that make them work.
 
 ## The 5 Prompting Techniques That Actually Matter
 
@@ -565,6 +565,8 @@ Don't just bookmark these ChatGPT prompts for marketing. Build a living prompt l
 3. **Note what worked** and what needed tweaking
 4. **Iterate on your best prompts** -small changes compound over time
 5. **Share with your team** -a shared prompt library is a multiplier
+
+If your team works in Claude, the prompts you reuse most can be packaged as skills, and [this list of installable Claude skills for marketing](/blog/claude-marketing-skills/) shows ready-made ones for copy, SEO and email.
 
 The marketers who are getting the most out of AI aren't the ones with the fanciest tools. They're the ones with the best prompts -refined through iteration, grounded in strategy, and specific to their business.
 

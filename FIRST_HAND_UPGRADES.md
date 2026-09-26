@@ -158,3 +158,47 @@ The traceability audit is original and fully sourced, so this post does not need
 ## share-of-voice-vs-market-share
 
 The proxy substitution table is the original asset and the worked Stack Exchange count uses public data, so the post is defensible as written. What it cannot do is tell the reader which proxy survives contact with a real reporting cycle. When you picked a share-of-voice proxy for LambdaTest, which one did you land on, which did you reject and on what grounds, and did anyone challenge the number once it was on a leadership slide? That belongs in "Reporting Share of Voice vs Market Share Without Overclaiming", which currently gives rules with no instance behind them. Second best: the post argues voice leads and share lags, and recommends offsetting the comparison by one sales cycle. Have you ever seen a measured lag - a quarter where voice moved first and pipeline or share followed, with a rough interval - or a case where voice moved and nothing followed at all? Either answer is publishable and the second is more useful than the first.
+
+## recent-innovative-marketing-examples
+
+Have you run or pitched a B2B version of one of these mechanics (a creator-led launch, a product action as the campaign payoff, a capped early-access drop, a sign-up page behind a big event moment, or a 'we will not' positioning line)? If so, tell me which mechanic, roughly when, the channel, and one outcome number you are allowed to publish. It would go in the 'How to Steal the Mechanic for a B2B or SaaS Launch' section, under the table.
+
+## claude-sonnet-vs-opus
+
+Which Claude model and effort level does your Claude Code session show in /status when you build this site's tools and scripts? Can you share one real job (for example, building one tool page or one research script) with its actual token count and cost from the Claude Console or Claude Code, so the cost table in 'What One Marketing Deliverable Costs on Each Claude Model' can carry one measured row next to the calculated ones?
+
+## claude-vs-chatgpt
+
+Do you actively use ChatGPT, and if so on which plan? Would you run the same three real PMM briefs (a launch email, a positioning statement and a 1,200-word blog section) through Claude and ChatGPT on one day and keep both outputs plus the edit count for each? That same-brief bakeoff would go in the H3 'Claude vs ChatGPT for Writing and Editing Copy', beside the Tom's Guide result.
+
+## 4-ps-of-marketing-examples
+
+In a product you marketed (any public-safe example, no internal numbers or customer names), which of the 4 Ps was decided by a team outside marketing - for example pricing set by leadership/finance or a channel run by partners - and what did you as the PMM change in positioning or packaging when that row disagreed with the others? The answer belongs in 'The Owner of Each P Inside a Company', right after the four-bullet split and before the diagram.
+
+## claude-code-commands
+
+Which built-in commands do you run in a typical Claude Code session (for example /clear, /compact, /context, /rewind, /model, /usage), and at what point in the work do you reach for each? One line per command would let the answer-box column in claude-code-commands switch from "When a marketer would use it" to "When I use it" (belongs in the H2 "What Are Claude Code Commands?" table).
+
+## what-is-a-claude-skill
+
+Build one real skill with skill-creator on a marketing task you actually run. One option is to turn the post's brand-voice-check example into a working skill using your own style rules and banned phrases. Then record three things: the description before and after skill-creator's description optimizer, the trigger rate on its 20-query eval set (should-trigger vs near-miss), and one request it wrongly fired or missed. That data belongs in a new H3 under 'How to Create a Claude Skill With Skill Creator', where it would replace the docs-sourced step 7 with first-hand numbers.
+
+## claude-code-memory
+
+Can you name one time a stale fact in your Claude Code memory (the DR 11 figure, the 'keyword well is dry' verdict, or the old post count) actually steered a session wrong before it was corrected? What did Claude do with it, and how did you catch it? (Belongs in the 'Memory Rot: Three Places This Index Went Stale' section, directly under the table.)
+
+## claude-vs-claude-code
+
+Since the 16 September 2026 merge, have you run one real job through Cowork inside the Claude app? A good test is a connected folder of briefs or call notes, or the same Search Console export plus the posts folder. If you have: what could it reach, where did it stall, and how did the result compare with running the same job in Claude Code? The answer belongs in the H2 'Claude Cowork vs Claude Code After the September 2026 Merge'. It would replace the closing sentence 'Everything in this section comes from Anthropic's pages, because I have not run Cowork on real work.' It would also move the two 'docs only, untested by me' rows in the jobs table to first-hand.
+
+## claude-marketing-skills
+
+Install one marketing library from this post on a real, public task, for example coreyhaines31/marketingskills with only product-marketing and copywriting, run against a swapbiswas.com tool page. What did the product-marketing context file end up containing, which skill triggered without being named, and what one output would you actually ship? This belongs as a short 'What happened when I installed it' paragraph under '### 1. Marketing Skills by Corey Haines'. It would also let the post drop the 'vetted from their repos and docs, not from my own installs' line.
+
+## seo-title-examples
+
+Could you export page-level Search Console data for 2026-08-27 to 2026-09-26? I'd compare the 87 rewritten posts against the 38 blog posts whose titles were not touched, looking at CTR, impressions and average position before and after the 2026-08-26 rewrite. Any real before/after numbers, even 'no measurable change', would go in a short section after 'How I Pulled 95 Title Pairs Out of Git' and would replace the post's 'I have no click or ranking data' caveat.
+
+## google-september-2026-spam-update
+
+Already first-hand (it publishes this site's daily Search Console series against the 2026 update windows). The upgrade is the missing row: once Google posts the September completion note and one more week has passed, could you export daily Search Console data from 4 June to one week after completion? I'd run the post's own Check 2 on the September window (the band built from weeks the same distance apart) and list what shipped from 17 September onwards. The result, even "inside the band", becomes a fourth row in the tables under 'Three 2026 Spam Updates Run Through the Four Checks', and the H2 changes to four updates.

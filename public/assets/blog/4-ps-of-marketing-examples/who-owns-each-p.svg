@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720">
+  <rect x="0" y="0" width="1400" height="720" fill="#f6f4ef"/>
+
+  <text x="51" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.5">Who Owns Each P Inside a Software Company</text>
+  <text x="51" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">A typical split: different groups decide each row, and product marketing connects them.</text>
+
+  <!-- Card 1: Product -->
+  <rect x="51" y="140" width="302" height="400" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="79" y="190" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Product</text>
+  <line x1="79" y1="214" x2="325" y2="214" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="79" y="250" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">DECIDED BY</text>
+  <text x="79" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Product management</text>
+  <text x="79" y="316" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and engineering</text>
+  <line x1="79" y1="350" x2="325" y2="350" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="79" y="386" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">PMM ADDS</text>
+  <text x="79" y="420" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Segment and</text>
+  <text x="79" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">competitor input</text>
+
+  <!-- Card 2: Price -->
+  <rect x="383" y="140" width="302" height="400" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="411" y="190" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Price</text>
+  <line x1="411" y1="214" x2="657" y2="214" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="411" y="250" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">DECIDED BY</text>
+  <text x="411" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Finance and</text>
+  <text x="411" y="316" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">product leadership</text>
+  <line x1="411" y1="350" x2="657" y2="350" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="411" y="386" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">PMM ADDS</text>
+  <text x="411" y="420" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Packaging and</text>
+  <text x="411" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the price story</text>
+
+  <!-- Card 3: Place -->
+  <rect x="715" y="140" width="302" height="400" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="743" y="190" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Place</text>
+  <line x1="743" y1="214" x2="989" y2="214" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="743" y="250" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">DECIDED BY</text>
+  <text x="743" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Sales and</text>
+  <text x="743" y="316" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">partnerships</text>
+  <line x1="743" y1="350" x2="989" y2="350" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="743" y="386" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">PMM ADDS</text>
+  <text x="743" y="420" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A battlecard for</text>
+  <text x="743" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">each main</text>
+  <text x="743" y="484" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">competitor</text>
+
+  <!-- Card 4: Promotion -->
+  <rect x="1047" y="140" width="302" height="400" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1075" y="190" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Promotion</text>
+  <line x1="1075" y1="214" x2="1321" y2="214" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1075" y="250" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">DECIDED BY</text>
+  <text x="1075" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Brand and</text>
+  <text x="1075" y="316" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">demand generation</text>
+  <line x1="1075" y1="350" x2="1321" y2="350" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1075" y="386" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">PMM ADDS</text>
+  <text x="1075" y="420" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Positioning and</text>
+  <text x="1075" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">messaging every</text>
+  <text x="1075" y="484" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">campaign uses</text>
+
+  <!-- Connectors from each card into the shared band -->
+  <line x1="202" y1="540" x2="202" y2="590" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="534" y1="540" x2="534" y2="590" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="866" y1="540" x2="866" y2="590" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="1198" y1="540" x2="1198" y2="590" stroke="#15130f" stroke-width="2.5"/>
+
+  <!-- Accent band: product marketing -->
+  <rect x="51" y="590" width="1298" height="90" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="79" y="626" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#b53b15" letter-spacing="2">PRODUCT MARKETING</text>
+  <text x="79" y="662" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Keeps the four rows telling one story: one positioning, carried into every P.</text>
+</svg>

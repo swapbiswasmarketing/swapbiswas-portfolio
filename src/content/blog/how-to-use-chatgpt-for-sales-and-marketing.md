@@ -141,7 +141,7 @@ Include a 15-word subhead for each.
 
 ### 7. SEO Meta Descriptions at Scale
 
-If you have a spreadsheet of 50 URLs that need meta descriptions, ChatGPT can process them in one pass.
+If you have a spreadsheet of 50 URLs that need meta descriptions, ChatGPT can process them in one pass. If you run bulk jobs like this through Claude's API, compare [what a bulk rewrite job costs per Claude model](/blog/claude-sonnet-vs-opus/) before picking one.
 
 ```
 You are an SEO specialist. For each URL and H1 below, 
@@ -201,7 +201,7 @@ ChatGPT produces first drafts. Every output needs a human edit before it ships. 
 
 ### Mistake 2: Skipping the Context
 
-Half the bad output on the internet comes from prompts like "write a LinkedIn post." ChatGPT has no idea what your company does, who reads your content, or what your voice sounds like. If you do not give it that context, it will invent something generic.
+Half the bad output on the internet comes from prompts like "write a LinkedIn post." ChatGPT has no idea what your company does, who reads your content, or what your voice sounds like. If you do not give it that context, it will invent something generic. In Claude Code, the same context can live in [a persistent CLAUDE.md file](/blog/claude-code-memory/) that loads at the start of every session.
 
 ### Mistake 3: Not Challenging the Output
 

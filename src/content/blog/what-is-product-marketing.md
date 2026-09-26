@@ -107,7 +107,7 @@ Think of it this way: Product marketing writes the messaging brief. Content mark
 
 **Demand gen** fills the pipeline. It's about driving leads, running campaigns, and optimizing conversion funnels.
 
-**Product marketing** arms demand gen with the positioning, messaging, and audience insights that make those campaigns work.
+**Product marketing** arms demand gen with the positioning, messaging, and audience insights that make those campaigns work. The same split appears in a breakdown of [who owns each of the 4 Ps](/blog/4-ps-of-marketing-examples/) in a software company, where brand and demand gen run the Promotion campaigns and product marketing writes the positioning and messaging behind them.
 
 A demand gen campaign without PMM input might get clicks but miss the mark on messaging. PMM without demand gen has great messaging that nobody sees.
 

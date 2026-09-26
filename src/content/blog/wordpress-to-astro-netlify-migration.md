@@ -77,7 +77,7 @@ Compare that to the ₹10,000-15,000/year I was spending on WordPress - and I'm 
 
 ## How I Actually Did the Migration
 
-Here's where it gets interesting. **I'm not a developer.** I'm a marketer who understands technology, but I don't write code for a living. The entire migration was done with an AI coding assistant (Claude Code) in about two sessions.
+Here's where it gets interesting. **I'm not a developer.** I'm a marketer who understands technology, but I don't write code for a living. The entire migration was done with an AI coding assistant (Claude Code) in about two sessions. If you have only used Claude in the chat app, start with [how Claude Code differs from the Claude app](/blog/claude-vs-claude-code/).
 
 ### Step 1: Export Content from WordPress
 
@@ -85,7 +85,7 @@ I exported all my content from WordPress as an XML file. This gave me all my blo
 
 ### Step 2: Set Up the Astro Project
 
-Using Claude Code, I set up a new Astro project based on a portfolio template. The AI handled all the configuration - installing dependencies, setting up the project structure, and configuring the build process.
+Using Claude Code, I set up a new Astro project based on a portfolio template. The AI handled all the configuration - installing dependencies, setting up the project structure, and configuring the build process. If your build runs across several sessions like mine did, learn [how Claude Code memory carries a project between sessions](/blog/claude-code-memory/).
 
 ### Step 3: Migrate Content
 

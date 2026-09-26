@@ -58,7 +58,7 @@ The "why" before the "how." Includes mission, vision, values, audience, and posi
 
 ### 2. Logo
 
-Primary logo, monochrome variants, clear space, minimum size, what not to do (stretching, recoloring, adding effects). Include downloadable file formats - SVG, PNG at multiple sizes, EPS for print.
+Primary logo, monochrome variants, clear space, minimum size, what not to do (stretching, recoloring, adding effects). Include downloadable file formats - SVG, PNG at multiple sizes, EPS for print. If the logo includes a character, say how far it can change: in one of the recent [campaigns that reset a brand mascot](/blog/recent-innovative-marketing-examples/), KFC's revamped logo swapped the Colonel's usual grin for a scowl.
 
 ### 3. Color
 

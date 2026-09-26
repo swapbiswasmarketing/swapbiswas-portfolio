@@ -32,6 +32,8 @@ Content is the engine of affiliate marketing. These tools help you produce more 
 
 Claude produces the most natural-sounding long-form content among the major LLMs. For affiliate content specifically, it excels at nuanced product comparisons where you need balanced pros-and-cons analysis rather than generic sales copy.
 
+If every review follows the same structure, [a Claude skill for your review format](/blog/what-is-a-claude-skill/) lets Claude load those instructions when a request matches, instead of you pasting them into each chat. For ready-made ones, my list of [vetted Claude marketing skills](/blog/claude-marketing-skills/) covers copy, SEO and email, with each pick's license and install steps.
+
 **Pricing:** Free tier available. Pro plan at $20/month.
 
 ### 2. ChatGPT (Plus)

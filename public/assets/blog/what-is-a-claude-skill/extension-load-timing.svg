@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 764" width="1400" height="764">
+  <rect x="0" y="0" width="1400" height="764" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">When each Claude Code extension loads</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">From Anthropic's Claude Code docs, checked September 2026</text>
+
+  <rect x="60" y="140" width="1280" height="564" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <path d="M72,140 H1328 A12,12 0 0 1 1340,152 V200 H60 V152 A12,12 0 0 1 72,140 Z" fill="#eeebe4"/>
+  <text x="88" y="178" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">EXTENSION</text>
+  <text x="368" y="178" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#15130f">AT SESSION START</text>
+  <text x="698" y="178" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#15130f">ON DEMAND</text>
+  <text x="1028" y="178" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#15130f">ON AN EVENT</text>
+
+  <rect x="61" y="368" width="1278" height="84" fill="#f3dcd2"/>
+  <rect x="61" y="368" width="6" height="84" fill="#b53b15"/>
+
+  <line x1="60" y1="200" x2="1340" y2="200" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="60" y1="284" x2="1340" y2="284" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="60" y1="368" x2="1340" y2="368" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="60" y1="452" x2="1340" y2="452" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="60" y1="536" x2="1340" y2="536" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="60" y1="620" x2="1340" y2="620" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="340" y1="140" x2="340" y2="704" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="670" y1="140" x2="670" y2="704" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="1000" y1="140" x2="1000" y2="704" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="88" y="250" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">CLAUDE.md</text>
+  <text x="368" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Full file, every session</text>
+  <text x="698" y="236" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Subfolder files, when</text>
+  <text x="698" y="266" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Claude works there</text>
+  <text x="1028" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">-</text>
+
+  <text x="88" y="334" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Auto memory</text>
+  <text x="368" y="320" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">MEMORY.md index, first</text>
+  <text x="368" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">200 lines or 25KB</text>
+  <text x="698" y="320" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Topic files, read</text>
+  <text x="698" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">when relevant</text>
+  <text x="1028" y="334" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">-</text>
+
+  <text x="88" y="418" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Skill</text>
+  <text x="368" y="418" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Name + description only</text>
+  <text x="698" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Body when invoked;</text>
+  <text x="698" y="434" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">files when a step needs them</text>
+  <text x="1028" y="418" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">-</text>
+
+  <text x="88" y="502" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">MCP server</text>
+  <text x="368" y="488" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Tool names and</text>
+  <text x="368" y="518" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">server instructions</text>
+  <text x="698" y="488" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Full tool schema when</text>
+  <text x="698" y="518" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">a tool is used</text>
+  <text x="1028" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">-</text>
+
+  <text x="88" y="586" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Subagent</text>
+  <text x="368" y="586" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">-</text>
+  <text x="698" y="572" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Own context window,</text>
+  <text x="698" y="602" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">when spawned</text>
+  <text x="1028" y="586" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">-</text>
+
+  <text x="88" y="662" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Hook</text>
+  <text x="368" y="662" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">-</text>
+  <text x="698" y="662" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">-</text>
+  <text x="1028" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Runs outside the chat;</text>
+  <text x="1028" y="678" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">no context by default</text>
+</svg>

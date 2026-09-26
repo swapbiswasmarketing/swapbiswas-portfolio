@@ -92,7 +92,7 @@ The build order that actually works:
 
 1. **Learn the data layer** - SQL first, then how to read an API and make requests.
 2. **Master one CRM's data model** - HubSpot or Salesforce, deeply.
-3. **Pick up an automation stack** - Clay, n8n, and AI tooling, learned by building.
+3. **Pick up an automation stack** - Clay, n8n, and AI tooling, learned by building. If Claude is your AI layer, start by [deciding between Claude and Claude Code](/blog/claude-vs-claude-code/).
 4. **Ship real projects** - a lead-scoring workflow, an enrichment pipeline, a routing system. Then show the outcome.
 
 The last step is the whole game. A proof-of-work portfolio beats a stack of certifications, because the role is judged on systems that work. If you are weighing this against a more conventional path, my take on choosing a marketing career applies here too: I wrote it up in [is product marketing a good career](/blog/is-product-marketing-a-good-career/).

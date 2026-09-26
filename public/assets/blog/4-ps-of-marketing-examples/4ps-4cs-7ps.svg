@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 750" width="1400" height="750">
+  <rect x="0" y="0" width="1400" height="750" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.5">4 Ps, 4 Cs and 7 Ps on One Page</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The 4 Cs restate each P from the buyer's side. The 7 Ps add three rows for services.</text>
+
+  <text x="60" y="152" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">4 PS - SELLER'S VIEW (1960)</text>
+  <text x="860" y="152" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">4 CS - BUYER'S VIEW (1990)</text>
+
+  <!-- Row 1 -->
+  <rect x="60" y="172" width="500" height="86" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="208" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Product</text>
+  <text x="92" y="240" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">what the company sells</text>
+  <line x1="590" y1="215" x2="826" y2="215" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="826,208 840,215 826,222" fill="#15130f"/>
+  <rect x="860" y="172" width="480" height="86" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="892" y="208" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Consumer wants</text>
+  <text x="892" y="240" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">the problem the buyer wants solved</text>
+
+  <!-- Row 2 -->
+  <rect x="60" y="276" width="500" height="86" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="312" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Price</text>
+  <text x="92" y="344" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">what the company charges</text>
+  <line x1="590" y1="319" x2="826" y2="319" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="826,312 840,319 826,326" fill="#15130f"/>
+  <rect x="860" y="276" width="480" height="86" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="892" y="312" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Cost</text>
+  <text x="892" y="344" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">what the buyer pays in total</text>
+
+  <!-- Row 3 -->
+  <rect x="60" y="380" width="500" height="86" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="416" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Place</text>
+  <text x="92" y="448" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">where the company sells it</text>
+  <line x1="590" y1="423" x2="826" y2="423" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="826,416 840,423 826,430" fill="#15130f"/>
+  <rect x="860" y="380" width="480" height="86" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="892" y="416" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Convenience</text>
+  <text x="892" y="448" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">how easily the buyer can get it</text>
+
+  <!-- Row 4 -->
+  <rect x="60" y="484" width="500" height="86" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="520" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Promotion</text>
+  <text x="92" y="552" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">what the company says</text>
+  <line x1="590" y1="527" x2="826" y2="527" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="826,520 840,527 826,534" fill="#15130f"/>
+  <rect x="860" y="484" width="480" height="86" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="892" y="520" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Communication</text>
+  <text x="892" y="552" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">a two-way exchange with the buyer</text>
+
+  <!-- Accent band: 7 Ps -->
+  <rect x="60" y="610" width="1280" height="90" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="92" y="646" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#b53b15" letter-spacing="2">7 PS - FOR SERVICES (1981)</text>
+  <text x="92" y="682" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Keep all four Ps on the left, then add People, Process and Physical evidence.</text>
+</svg>

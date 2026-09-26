@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 580" width="1400" height="580">
+<rect width="1400" height="580" fill="#f6f4ef"/>
+<text x="50" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Did the spam update hit you? Four checks, in order</text>
+<text x="50" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Stop at the first check a change fails. Only a change that passes all four points at the update.</text>
+<rect x="50" y="150" width="287" height="370" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="74" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">CHECK 1</text>
+<text x="74" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">In the window</text>
+<text x="74" y="278" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Starts between 24 Sep</text>
+<text x="74" y="310" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and the completion</text>
+<text x="74" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">note, no other update</text>
+<text x="74" y="374" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">in or between weeks</text>
+<line x1="74" y1="416" x2="313" y2="416" stroke="#e4dfd6" stroke-width="1"/>
+<text x="74" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">If not: another</text>
+<text x="74" y="480" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">cause moved it</text>
+<line x1="345" y1="335" x2="365" y2="335" stroke="#15130f" stroke-width="2.5"/><polygon points="365,328 379,335 365,342" fill="#15130f"/>
+<rect x="387" y="150" width="287" height="370" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="411" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">CHECK 2</text>
+<text x="411" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Past the noise</text>
+<text x="411" y="278" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Outside the range of</text>
+<text x="411" y="310" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">past changes between</text>
+<text x="411" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">weeks the same gap</text>
+<text x="411" y="374" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">apart as yours</text>
+<line x1="411" y1="416" x2="650" y2="416" stroke="#e4dfd6" stroke-width="1"/>
+<text x="411" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">If not: can't tell it</text>
+<text x="411" y="480" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">from normal movement</text>
+<line x1="682" y1="335" x2="702" y2="335" stroke="#15130f" stroke-width="2.5"/><polygon points="702,328 716,335 702,342" fill="#15130f"/>
+<rect x="724" y="150" width="287" height="370" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="748" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">CHECK 3</text>
+<text x="748" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">No deploy nearby</text>
+<text x="748" y="278" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No new posts,</text>
+<text x="748" y="310" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">redesign, URL or</text>
+<text x="748" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">template change within</text>
+<text x="748" y="374" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">a week either side</text>
+<line x1="748" y1="416" x2="987" y2="416" stroke="#e4dfd6" stroke-width="1"/>
+<text x="748" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">If not: rule your</text>
+<text x="748" y="480" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">change out first</text>
+<line x1="1019" y1="335" x2="1039" y2="335" stroke="#15130f" stroke-width="2.5"/><polygon points="1039,328 1053,335 1039,342" fill="#15130f"/>
+<rect x="1061" y="150" width="287" height="370" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="1085" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">CHECK 4</text>
+<text x="1085" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Policy pattern</text>
+<text x="1085" y="278" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The pages that fell</text>
+<text x="1085" y="310" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">share a practice</text>
+<text x="1085" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">named in Google's</text>
+<text x="1085" y="374" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">spam policies</text>
+<line x1="1085" y1="416" x2="1324" y2="416" stroke="#e4dfd6" stroke-width="1"/>
+<text x="1085" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">If yes: fix it, then</text>
+<text x="1085" y="480" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">expect months</text>
+</svg>

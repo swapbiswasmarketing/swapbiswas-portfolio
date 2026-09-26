@@ -49,7 +49,7 @@ SEO often competes with paid channels for budget. Reports that tie organic traff
 
 ### Spotting Problems Early
 
-A well-structured SEO report surfaces problems before they become crises. Google launched **[four core updates and three spam updates in 2024 alone](https://searchengineland.com/google-algorithm-updates-2024-449417)**, any of which could shift your rankings overnight. A sudden drop in impressions, a spike in 404 errors, or declining Core Web Vitals scores all show up in the data before they hit your bottom line. For a deeper look at technical diagnostics, check out our guide on [how to conduct a technical SEO site audit](/blog/how-to-conduct-a-technical-seo-site-audit/).
+A well-structured SEO report surfaces problems before they become crises. Google launched **[four core updates and three spam updates in 2024 alone](https://searchengineland.com/google-algorithm-updates-2024-449417)**, any of which could shift your rankings overnight. Before you pin a drop on one of them, compare it with your site's normal week-to-week swing, the check I lay out for [Google's September 2026 spam update](/blog/google-september-2026-spam-update/). A sudden drop in impressions, a spike in 404 errors, or declining Core Web Vitals scores all show up in the data before they hit your bottom line. For a deeper look at technical diagnostics, check out our guide on [how to conduct a technical SEO site audit](/blog/how-to-conduct-a-technical-seo-site-audit/).
 
 ## Key Metrics Every SEO Report Should Include
 

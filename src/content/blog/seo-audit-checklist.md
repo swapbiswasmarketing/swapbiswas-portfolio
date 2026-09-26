@@ -111,7 +111,7 @@ Now we are at the layer most people think of as "SEO." Here I am checking whethe
 
 ### Title tags and headings
 
-Every indexable page needs a unique, descriptive title that leads with the primary keyword and reads like something a human would click. Run your crawler's filter for missing, duplicate, and over-length titles. Then confirm each page has a single, sensible H1 and a logical heading structure beneath it. I tested [whether the H1 should match the title tag](/blog/h1-tag-seo/) on 147 URLs where the two are byte-identical by construction. And there is [no ideal H2 count to hit](/blog/how-many-h2-tags-per-page/): the one-H2-per-250-words rule you see repeated traces back to a Yoast readability heuristic, and Google documents no ideal heading count.
+Every indexable page needs a unique, descriptive title that leads with the primary keyword and reads like something a human would click. Run your crawler's filter for missing, duplicate, and over-length titles. When it flags an over-length title, my [before-and-after SEO title examples](/blog/seo-title-examples/) show what to cut first while keeping the keyword at the front. Then confirm each page has a single, sensible H1 and a logical heading structure beneath it. I tested [whether the H1 should match the title tag](/blog/h1-tag-seo/) on 147 URLs where the two are byte-identical by construction. And there is [no ideal H2 count to hit](/blog/how-many-h2-tags-per-page/): the one-H2-per-250-words rule you see repeated traces back to a Yoast readability heuristic, and Google documents no ideal heading count.
 
 ### Search intent match
 

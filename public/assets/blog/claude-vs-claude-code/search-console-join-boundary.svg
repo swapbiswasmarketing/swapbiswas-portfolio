@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 710" width="1400" height="710">
+<rect width="1400" height="710" fill="#f6f4ef"/>
+<text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Joining a Search Console export to 159 post files</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">What each surface does at each step: the Claude app with no connected folder vs a local Claude Code session</text>
+<text x="80" y="170" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">STEP</text>
+<text x="500" y="170" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">CLAUDE APP, PLAIN CHAT</text>
+<text x="940" y="170" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">CLAUDE CODE, LOCAL SESSION</text>
+<line x1="60" y1="184" x2="1340" y2="184" stroke="#e4dfd6" stroke-width="1"/>
+<rect x="60" y="195" width="400" height="84" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+<text x="84" y="231" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">1. Read the export</text>
+<text x="84" y="261" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">157 URLs in one CSV</text>
+<rect x="480" y="195" width="420" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="504" y="231" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#3a3632">Parses the CSV once</text>
+<text x="504" y="259" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#3a3632">you upload it</text>
+<rect x="920" y="195" width="420" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="944" y="231" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Reads it from the exports</text>
+<text x="944" y="259" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">folder, in place</text>
+<rect x="60" y="289" width="400" height="84" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+<text x="84" y="325" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">2. Read the posts</text>
+<text x="84" y="355" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">159 markdown files</text>
+<rect x="480" y="289" width="420" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="504" y="325" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#3a3632">Up to 20 files per chat;</text>
+<text x="504" y="353" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#3a3632">a Project holds more if they fit</text>
+<rect x="920" y="289" width="420" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="944" y="325" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Reads every file and each</text>
+<text x="944" y="353" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">post's publishDate</text>
+<rect x="60" y="383" width="400" height="84" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+<text x="84" y="419" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">3. Join on the URL</text>
+<text x="84" y="449" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">slash and no-slash forms</text>
+<rect x="480" y="383" width="420" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="504" y="419" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#3a3632">Joins what you uploaded</text>
+<text x="504" y="447" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#3a3632">or pasted as a slug list</text>
+<rect x="920" y="383" width="420" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="944" y="419" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Normalises the slash,</text>
+<text x="944" y="447" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">then joins on the slug</text>
+<rect x="60" y="477" width="400" height="84" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+<text x="84" y="513" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">4. Flag mismatches</text>
+<text x="84" y="543" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">rows vs files on disk</text>
+<rect x="480" y="477" width="420" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="504" y="513" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#3a3632">Can only flag what</text>
+<text x="504" y="541" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#3a3632">the upload shows</text>
+<rect x="920" y="477" width="420" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="944" y="513" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">35 posts with no row,</text>
+<text x="944" y="541" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">8 rows with no post file</text>
+<rect x="60" y="571" width="400" height="84" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+<text x="84" y="607" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">5. Act in the repo</text>
+<text x="84" y="637" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">edit, build, commit</text>
+<rect x="480" y="571" width="420" height="84" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+<text x="504" y="607" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">Stops here: no access</text>
+<text x="504" y="635" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">to the project folder</text>
+<rect x="920" y="571" width="420" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="944" y="607" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Edits, rebuilds and</text>
+<text x="944" y="635" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">commits in the session</text>
+</svg>

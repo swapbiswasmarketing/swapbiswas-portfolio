@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 764" width="1400" height="764">
+  <rect x="0" y="0" width="1400" height="764" fill="#f6f4ef"/>
+
+  <text x="80" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What happens when you run a custom command</text>
+  <text x="80" y="112" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c">/kw-check research only claude code commands</text>
+
+  <rect x="80" y="140" width="1240" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="124" y="210" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600" fill="#15130f">1</text>
+  <text x="190" y="186" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Find the file</text>
+  <text x="190" y="224" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">/kw-check matches .claude/commands/kw-check.md. A skill with the same name would win.</text>
+
+  <line x1="700" y1="252" x2="700" y2="272" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,271 707,271 700,284" fill="#15130f"/>
+
+  <rect x="80" y="286" width="1240" height="110" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="124" y="356" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600" fill="#b53b15">2</text>
+  <text x="190" y="332" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Render the file</text>
+  <text x="190" y="370" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Substitute $ARGUMENTS and run each !`command` line. One failed command aborts the run.</text>
+
+  <line x1="700" y1="398" x2="700" y2="418" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,417 707,417 700,430" fill="#15130f"/>
+
+  <rect x="80" y="432" width="1240" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="124" y="502" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600" fill="#15130f">3</text>
+  <text x="190" y="478" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Send the rendered prompt</text>
+  <text x="190" y="516" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The finished text enters the conversation as one message and stays there for later turns.</text>
+
+  <line x1="700" y1="544" x2="700" y2="564" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,563 707,563 700,576" fill="#15130f"/>
+
+  <rect x="80" y="578" width="1240" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="124" y="648" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600" fill="#15130f">4</text>
+  <text x="190" y="624" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Run with pre-approved tools</text>
+  <text x="190" y="662" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Tools listed in allowed-tools skip the permission prompt for this turn only; others follow your settings.</text>
+</svg>

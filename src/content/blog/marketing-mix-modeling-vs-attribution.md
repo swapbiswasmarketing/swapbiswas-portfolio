@@ -60,7 +60,7 @@ What it structurally cannot do is tell you what would have happened if the campa
 
 ## What Marketing Mix Modeling Actually Measures
 
-A marketing mix model regresses an aggregate outcome, usually weekly revenue or conversions, on aggregate spend by channel plus control variables like seasonality, price and distribution. It adds adstock terms for carryover and saturation curves for diminishing returns, then reports a contribution and a return figure per channel.
+A marketing mix model regresses an aggregate outcome, usually weekly revenue or conversions, on aggregate spend by channel plus control variables like seasonality, price and distribution. It adds adstock terms for carryover and saturation curves for diminishing returns, then reports a contribution and a return figure per channel. Despite the shared name, a mix model is separate from the marketing mix as a plan, meaning the [product, price, place and promotion decisions](/blog/4-ps-of-marketing-examples/) a company makes to bring something to market.
 
 The tooling stopped being a six-figure consulting purchase. Google's [Meridian went open to everyone on 29 January 2025](https://blog.google/products/ads-commerce/meridian-marketing-mix-model-open-to-everyone/), described by Harikesh Nair as "the open-source marketing mix model (MMM) built by Google, available to all marketers and data scientists". Meta ships an alternative, Robyn, described in its own README as "an experimental, semi-automated and open-sourced Marketing Mix Modeling (MMM) package from Meta Marketing Science".
 

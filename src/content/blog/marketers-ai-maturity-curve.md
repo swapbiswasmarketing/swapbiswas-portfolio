@@ -64,7 +64,7 @@ I've adapted this framework from [Gartner's AI Maturity Model](https://www.gartn
 
 ### Stage 3: AI-Integrated (Systematic Adoption)
 
-**Where you are:** AI is baked into your workflows. It's not something you "use sometimes" - it's part of how your team operates. You have defined processes, templates, and guardrails.
+**Where you are:** AI is baked into your workflows. It's not something you "use sometimes" - it's part of how your team operates. You have defined processes, templates, and guardrails. In Claude, [turning a defined process into a Claude skill](/blog/what-is-a-claude-skill/) lets Claude load those instructions when a request matches.
 
 **What it looks like:**
 - AI drafts the first version of most content (blogs, emails, social posts)
@@ -78,7 +78,7 @@ I've adapted this framework from [Gartner's AI Maturity Model](https://www.gartn
 **How to level up:**
 - Build AI into your SOPs (Standard Operating Procedures), not just your toolstack
 - Create feedback loops - track which AI outputs need the most human editing and refine your prompts/processes
-- Start measuring AI ROI formally: time saved, cost per piece, output quality scores
+- Start measuring AI ROI formally: time saved, cost per piece, output quality scores. If your team runs on Claude, you can estimate the [cost per piece on each Claude model](/blog/claude-sonnet-vs-opus/) from Anthropic's list prices before you run a job.
 
 
 

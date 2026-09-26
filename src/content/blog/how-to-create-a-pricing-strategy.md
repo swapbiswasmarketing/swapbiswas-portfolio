@@ -171,6 +171,8 @@ Companies that talk about value-based pricing but cannot defend it to a customer
 
 The pattern: each company's pricing model maps cleanly to how it delivers value. The model is the strategy.
 
+HubSpot and Slack also appear in these [4 Ps of marketing examples](/blog/4-ps-of-marketing-examples/), where each company's Price row sits beside its product, channel and promotion decisions.
+
 ## Pricing Strategy for Product Launches
 
 If you are pricing a new product, the workflow shortens but does not disappear:

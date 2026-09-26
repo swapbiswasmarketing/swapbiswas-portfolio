@@ -1,0 +1,72 @@
+/* Paper & Signal tokens + the site's own subset fonts, for banner HTML.
+   Link as: <link rel="stylesheet" href="/design/social-banners/brand.css">
+   (render.cjs serves the repo root, so /public/... and /design/... both resolve). */
+@font-face {
+	font-family: 'Bricolage Grotesque';
+	font-style: normal;
+	font-weight: 400 800;
+	font-stretch: 100%;
+	src: url('/public/assets/fonts/bricolage-grotesque-latin-v9s1.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400 600;
+	src: url('/public/assets/fonts/inter-latin-v20s1.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Inter';
+	font-style: italic;
+	font-weight: 400;
+	src: url('/public/assets/fonts/inter-italic-latin-v20s1.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 400 500;
+	src: url('/public/assets/fonts/jetbrains-mono-latin-v24s1.woff2') format('woff2');
+}
+
+:root {
+	--paper: #f6f4ef;
+	--panel: #ffffff;
+	--cream: #eeebe4;
+	--hair: #e4dfd6;
+	--hair-strong: #cec8be;
+	--g600: #aca69c;
+	--g500: #8a847b;
+	--muted: #6a645c;
+	--g300: #55504a;
+	--lede: #3a3632;
+	--g100: #262320;
+	--ink: #15130f;
+	--accent: #b53b15;
+	--accent-dark: #8f2e0f;
+	--accent-tint: #f3dcd2;
+	--ok: #2a7347;
+
+	/* dark (warm charcoal) */
+	--d-ground: #151311;
+	--d-panel: #1d1a17;
+	--d-cream: #262220;
+	--d-hair: #2e2a26;
+	--d-muted: #998f82;
+	--d-lede: #cfc8bd;
+	--d-text: #f4f0e8;
+	--d-accent: #e85c33;
+	--d-accent-text: #ff7a50;
+
+	--font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+	--font-body: 'Inter', system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; }
+body {
+	font-family: var(--font-body);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: geometricPrecision;
+	font-synthesis: none;
+	overflow: hidden;
+}

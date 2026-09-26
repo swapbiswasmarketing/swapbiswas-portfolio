@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760">
+<rect width="1400" height="760" fill="#f6f4ef"/>
+<text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Which Claude surface a marketing job needs</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Route by where the job's files live and where its output has to land. As of September 2026.</text>
+<rect x="60" y="140" width="640" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="90" y="176" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">QUESTION 1</text>
+<text x="90" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Does the job need a folder of files</text>
+<text x="90" y="246" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">kept in place, not a few uploads?</text>
+<rect x="820" y="140" width="520" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="850" y="176" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">ROUTE</text>
+<text x="850" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claude app (chat)</text>
+<text x="850" y="248" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Drafts, uploads, research, decks</text>
+<line x1="700" y1="205" x2="806" y2="205" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="806,198 820,205 806,212" fill="#15130f"/>
+<text x="760" y="191" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">No</text>
+<line x1="380" y1="270" x2="380" y2="316" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="373,316 380,330 387,316" fill="#15130f"/>
+<text x="396" y="307" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Yes</text>
+<rect x="60" y="330" width="640" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="90" y="366" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">QUESTION 2</text>
+<text x="90" y="404" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Does it need your own shell:</text>
+<text x="90" y="436" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">scripts, git, installed tools?</text>
+<rect x="820" y="330" width="520" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="850" y="366" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">ROUTE</text>
+<text x="850" y="404" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Cowork, inside the Claude app</text>
+<text x="850" y="438" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Connected folders, cloud sandbox</text>
+<line x1="700" y1="395" x2="806" y2="395" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="806,388 820,395 806,402" fill="#15130f"/>
+<text x="760" y="381" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">No</text>
+<line x1="380" y1="460" x2="380" y2="506" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="373,506 380,520 387,506" fill="#15130f"/>
+<text x="396" y="497" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Yes</text>
+<rect x="60" y="520" width="1280" height="130" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+<text x="90" y="556" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#b53b15">ROUTE</text>
+<text x="90" y="594" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claude Code</text>
+<text x="90" y="628" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Works in the project folder on your machine: edits files, runs your scripts, commits with git</text>
+<text x="60" y="706" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">One subscription, one usage pool: Claude Code is on every paid plan, not on Free.</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.5">15 Recent Campaigns by Mechanic and Launch Date</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Each launch month is stated on a linked trade or news page, checked September 2026</text>
+  <text x="60" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">GROUP</text>
+  <text x="376" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">JAN-JUN 2025</text>
+  <text x="626" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">JUL-DEC 2025</text>
+  <text x="876" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">JAN-JUN 2026</text>
+  <text x="1126" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" fill="#6a645c" letter-spacing="1.9">JUL-SEP 2026</text>
+  <rect x="60" y="180" width="280" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="220" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Creator-led</text>
+  <text x="84" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">creators make the ad</text>
+  <rect x="356" y="180" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="376" y="234" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Dove<tspan fill="#6a645c" font-weight="400">, Jun</tspan></text>
+  <rect x="606" y="180" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="856" y="180" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="876" y="234" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Expedia<tspan fill="#6a645c" font-weight="400">, Apr</tspan></text>
+  <rect x="1106" y="180" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="60" y="284" width="280" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="324" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Product as the media</text>
+  <text x="84" y="354" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">using it is taking part</text>
+  <rect x="356" y="284" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="376" y="323" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Duolingo<tspan fill="#6a645c" font-weight="400">, Feb</tspan></text>
+  <text x="376" y="355" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Olipop<tspan fill="#6a645c" font-weight="400">, Jun</tspan></text>
+  <rect x="606" y="284" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="856" y="284" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="1106" y="284" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="60" y="388" width="280" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="428" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Mascot and heritage</text>
+  <text x="84" y="458" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">reset a brand asset</text>
+  <rect x="356" y="388" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="606" y="388" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="626" y="442" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">KFC<tspan fill="#6a645c" font-weight="400">, Jul</tspan></text>
+  <rect x="856" y="388" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="876" y="442" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Burger King<tspan fill="#6a645c" font-weight="400">, Mar</tspan></text>
+  <rect x="1106" y="388" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="60" y="492" width="280" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="532" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">New ad formats</text>
+  <text x="84" y="562" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">AI video, a microdrama</text>
+  <rect x="356" y="492" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="376" y="546" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Kalshi<tspan fill="#6a645c" font-weight="400">, Jun</tspan></text>
+  <rect x="606" y="492" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="856" y="492" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="876" y="546" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Dr Pepper<tspan fill="#6a645c" font-weight="400">, May</tspan></text>
+  <rect x="1106" y="492" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="60" y="596" width="280" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="636" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Real-world spectacle</text>
+  <text x="84" y="666" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">OOH, events, stations</text>
+  <rect x="356" y="596" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="606" y="596" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="626" y="635" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">American Eagle<tspan fill="#6a645c" font-weight="400">, Jul</tspan></text>
+  <text x="626" y="667" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">e.l.f.<tspan fill="#6a645c" font-weight="400">, Oct</tspan></text>
+  <rect x="856" y="596" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="1106" y="596" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1126" y="650" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Degree<tspan fill="#6a645c" font-weight="400">, Jul</tspan></text>
+  <rect x="60" y="700" width="280" height="92" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="740" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#b53b15">B2B plays</text>
+  <text x="84" y="770" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">sold to businesses</text>
+  <rect x="356" y="700" width="236" height="92" rx="12" fill="#eeebe4"/>
+  <rect x="606" y="700" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="626" y="754" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Astronomer<tspan fill="#6a645c" font-weight="400">, Jul</tspan></text>
+  <rect x="856" y="700" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="876" y="739" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Slack<tspan fill="#6a645c" font-weight="400">, Feb</tspan></text>
+  <text x="876" y="771" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Anthropic<tspan fill="#6a645c" font-weight="400">, Feb</tspan></text>
+  <rect x="1106" y="700" width="236" height="92" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1126" y="754" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Staples<tspan fill="#6a645c" font-weight="400">, Sep</tspan></text>
+</svg>

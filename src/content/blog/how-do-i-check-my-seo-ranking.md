@@ -279,7 +279,7 @@ Protect what you have. The [top 3 positions capture 68.7% of all clicks](https:/
 
 **Checking your own ranking in a regular browser.** Google personalizes results based on your search history, location, and browsing behavior. You might think you rank #2 when the rest of the world sees you at #8. Always use incognito mode or a dedicated rank tracker.
 
-**Obsessing over daily fluctuations.** Rankings move every day. The [Semrush Sensor](https://www.semrush.com/sensor/) regularly shows volatility scores of **2 - 5 on a normal day**, and scores above 8 during major algorithm updates. A drop from position 3 to position 5 on a Tuesday doesn't mean your SEO is failing. Look at **trends over 30, 60, and 90-day windows** instead.
+**Obsessing over daily fluctuations.** Rankings move every day. The [Semrush Sensor](https://www.semrush.com/sensor/) regularly shows volatility scores of **2 - 5 on a normal day**, and scores above 8 during major algorithm updates. A drop from position 3 to position 5 on a Tuesday doesn't mean your SEO is failing. Look at **trends over 30, 60, and 90-day windows** instead. The same rule holds when Google confirms an update: I measured how far [a normal week moves this site's impressions](/blog/google-september-2026-spam-update/) before reading anything into a spam update.
 
 **Tracking vanity keywords instead of revenue keywords.** Ranking #1 for a keyword nobody searches doesn't help your business. Focus on keywords with real search volume and commercial intent. Check if [Google reviews are improving your local visibility](/blog/do-google-reviews-help-seo/) if you're a local business - those rankings matter too.
 

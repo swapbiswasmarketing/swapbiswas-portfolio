@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" width="1400" height="700">
+  <rect x="0" y="0" width="1400" height="700" fill="#f6f4ef"/>
+
+  <text x="80" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">kw-check: a research-only keyword command</text>
+  <text x="80" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Illustrative command from this post. Each of the first two steps can stop the run.</text>
+
+  <rect x="80" y="150" width="272" height="236" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="104" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 1</text>
+  <text x="104" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Niche fit</text>
+  <text x="104" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Why is this site a</text>
+  <text x="104" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">credible voice on</text>
+  <text x="104" y="328" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the keyword?</text>
+  <text x="104" y="366" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#6a645c">stop if no fit</text>
+
+  <line x1="354" y1="268" x2="386" y2="268" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="386,261 400,268 386,275" fill="#15130f"/>
+
+  <rect x="402" y="150" width="272" height="236" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="426" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 2</text>
+  <text x="426" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Overlap check</text>
+  <text x="426" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">grep posts and tool</text>
+  <text x="426" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">pages, then read</text>
+  <text x="426" y="328" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">their H2s and FAQs</text>
+  <text x="426" y="366" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#6a645c">stop if covered</text>
+
+  <line x1="676" y1="268" x2="708" y2="268" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="708,261 722,268 708,275" fill="#15130f"/>
+
+  <rect x="724" y="150" width="272" height="236" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="748" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 3</text>
+  <text x="748" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Live SERP</text>
+  <text x="748" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">List page 1 by</text>
+  <text x="748" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">position, domain</text>
+  <text x="748" y="328" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and page type</text>
+
+  <line x1="998" y1="268" x2="1030" y2="268" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1030,261 1044,268 1030,275" fill="#15130f"/>
+
+  <rect x="1046" y="150" width="272" height="236" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1070" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 4</text>
+  <text x="1070" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Verdict</text>
+  <text x="1070" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">winnable, reframe</text>
+  <text x="1070" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">or drop, plus the</text>
+  <text x="1070" y="328" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">proof page</text>
+
+  <line x1="1182" y1="388" x2="1182" y2="426" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1175,425 1189,425 1182,438" fill="#15130f"/>
+
+  <rect x="80" y="440" width="1238" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="699" y1="464" x2="699" y2="606" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="112" y="484" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">RESEARCH ONLY MODE</text>
+  <text x="112" y="526" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">/kw-check research only &lt;keyword&gt;</text>
+  <text x="112" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Returns the report.</text>
+  <text x="112" y="596" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Changes no files.</text>
+
+  <text x="731" y="484" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">DEFAULT MODE</text>
+  <text x="731" y="526" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">/kw-check &lt;keyword&gt;</text>
+  <text x="731" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Returns the report, then appends one backlog row.</text>
+  <text x="731" y="596" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Asks first in the default permission mode.</text>
+</svg>

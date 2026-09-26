@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 680" width="1400" height="680">
+  <rect x="0" y="0" width="1400" height="680" fill="#f6f4ef"/>
+
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Which Claude model for this marketing job?</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">A routing rule built from Anthropic's model guidance and list prices, September 2026</text>
+
+  <!-- Row 1 -->
+  <rect x="60" y="150" width="680" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="195" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Bulk job with an output you can check?</text>
+  <text x="90" y="232" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Tagging reviews, extracting fields, sorting leads (not writing)</text>
+
+  <line x1="740" y1="205" x2="846" y2="205" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="846,198 860,205 846,212" fill="#15130f"/>
+  <text x="774" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">Yes</text>
+
+  <rect x="860" y="150" width="480" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="890" y="195" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Haiku 4.5</text>
+  <text x="890" y="232" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$1 / $5 per MTok, 200K context</text>
+
+  <!-- Q1 to Q2 -->
+  <line x1="400" y1="260" x2="400" y2="316" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="393,316 400,330 407,316" fill="#15130f"/>
+  <text x="416" y="300" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">No</text>
+
+  <!-- Row 2 -->
+  <rect x="60" y="330" width="680" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="375" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Many steps, or figures that must be right?</text>
+  <text x="90" y="412" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Research synthesis, agent runs, reports with figures</text>
+
+  <line x1="740" y1="385" x2="846" y2="385" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="846,378 860,385 846,392" fill="#15130f"/>
+  <text x="774" y="370" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">Yes</text>
+
+  <rect x="860" y="330" width="480" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="890" y="375" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Opus 5.5</text>
+  <text x="890" y="412" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$4 / $20 per MTok, 1M context</text>
+
+  <!-- Q2 to Sonnet -->
+  <line x1="400" y1="440" x2="400" y2="496" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="393,496 400,510 407,496" fill="#15130f"/>
+  <text x="416" y="480" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">No</text>
+
+  <!-- Opus to Fable -->
+  <line x1="1100" y1="440" x2="1100" y2="496" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1093,496 1100,510 1107,496" fill="#15130f"/>
+  <text x="1116" y="480" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">Falls short</text>
+
+  <!-- Row 3 -->
+  <rect x="60" y="510" width="680" height="110" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="90" y="555" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Sonnet 5</text>
+  <text x="90" y="592" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Single-pass drafts and rewrites, $2 / $10 per MTok</text>
+
+  <rect x="860" y="510" width="480" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="890" y="555" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Fable 5.1</text>
+  <text x="890" y="592" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Only when Opus at xhigh or max falls short</text>
+</svg>

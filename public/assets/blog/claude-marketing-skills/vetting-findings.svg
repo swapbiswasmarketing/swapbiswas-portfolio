@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <defs><clipPath id="c4"><rect x="50" y="460" width="420" height="290" rx="12"/></clipPath></defs>
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="50" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What the six checks found in these 14 picks</text>
+  <text x="50" y="114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Each repo and docs page checked on 26 September 2026. Pick numbers match the list.</text>
+
+  <rect x="50" y="150" width="420" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="80" y="198" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">CHECK 1</text>
+  <text x="80" y="240" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">License</text>
+  <text x="80" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pick 11: proprietary terms</text>
+  <text x="80" y="316" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">bar forks and redistribution.</text>
+  <text x="80" y="348" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pick 13: no license file</text>
+  <text x="80" y="380" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">in its folder.</text>
+
+  <rect x="490" y="150" width="420" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="520" y="198" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">CHECK 2</text>
+  <text x="520" y="240" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Maintainer</text>
+  <text x="520" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pick 5: a single maintainer,</text>
+  <text x="520" y="316" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">with early features in a</text>
+  <text x="520" y="348" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">members-only mirror.</text>
+  <text x="520" y="380" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pick 1: disclosed partners</text>
+  <text x="520" y="412" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">fund the work.</text>
+
+  <rect x="930" y="150" width="420" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="960" y="198" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">CHECK 3</text>
+  <text x="960" y="240" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Last commit</text>
+  <text x="960" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pick 3: no commit since</text>
+  <text x="960" y="316" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">14 May 2026. Pick 13: folder</text>
+  <text x="960" y="348" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">untouched since 4 Dec 2025.</text>
+  <text x="960" y="380" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pick 6: daily bot commits</text>
+  <text x="960" y="412" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">hide the last human one.</text>
+
+  <rect x="50" y="460" width="420" height="290" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="50" y="460" width="420" height="8" fill="#b53b15" clip-path="url(#c4)"/>
+  <text x="80" y="508" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">CHECK 4</text>
+  <text x="80" y="550" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">What it runs</text>
+  <text x="80" y="594" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pick 4 can send email</text>
+  <text x="80" y="626" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">through Resend and post</text>
+  <text x="80" y="658" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">to Discord. Picks 5 and 6</text>
+  <text x="80" y="690" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">set up their own Python</text>
+  <text x="80" y="722" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">environments.</text>
+
+  <rect x="490" y="460" width="420" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="520" y="508" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">CHECK 5</text>
+  <text x="520" y="550" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Install method</text>
+  <text x="520" y="594" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pick 6's headline install</text>
+  <text x="520" y="626" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">pipes curl into bash.</text>
+  <text x="520" y="658" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Picks 2 to 6 and 10 carry</text>
+  <text x="520" y="690" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">fields the Claude app</text>
+  <text x="520" y="722" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">upload rejects.</text>
+
+  <rect x="930" y="460" width="420" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="960" y="508" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">CHECK 6</text>
+  <text x="960" y="550" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Context cost</text>
+  <text x="960" y="594" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Picks 1, 3 and 4 hold 50,</text>
+  <text x="960" y="626" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">56 and 78 skills. Installed</text>
+  <text x="960" y="658" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">whole, every one joins a</text>
+  <text x="960" y="690" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">listing that costs context</text>
+  <text x="960" y="722" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">on every turn.</text>
+</svg>

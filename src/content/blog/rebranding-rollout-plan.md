@@ -142,7 +142,7 @@ Rebrand internal communication fails in one of two directions. Either it leaks t
 
 The revenue org is briefed before the all-hands on purpose. They are the group most likely to be asked a hard question first, and the group most likely to be mid-conversation with an account when the news breaks.
 
-Give every employee one sentence that explains the change and can be said out loud without notes. Building it is the same work as any other [brand messaging framework](/blog/brand-messaging-framework/) exercise: one claim, one reason to believe, no adjectives.
+Give every employee one sentence that explains the change and can be said out loud without notes. Building it is the same work as any other [brand messaging framework](/blog/brand-messaging-framework/) exercise: one claim, one reason to believe, no adjectives. When the reason is a problem customers can already see, name it: [Burger King's 2026 mascot retirement](/blog/recent-innovative-marketing-examples/) launched with an Oscars ad admitting that "fast food just fell off" before saying what the brand was doing to get back on track.
 
 ## B2B rebranding: reps mid-deal, the asset library and paper signed under the old name
 

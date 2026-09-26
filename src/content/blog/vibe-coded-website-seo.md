@@ -114,13 +114,13 @@ If rebuilding is still cheap, pick a framework that ships HTML out of the box.
 - **Remix** server-renders by default.
 - **SvelteKit** and **Nuxt** are the equivalent picks if you prefer Svelte or Vue.
 
-I moved my own site off WordPress and onto Astro specifically because it generates real HTML at build time, and I wrote up the whole [WordPress to Astro migration](/blog/wordpress-to-astro-netlify-migration/) if you want the practical side. The point is not Astro specifically, it is choosing a stack where "search engines see my content" is the default, not an afterthought.
+I moved my own site off WordPress and onto Astro specifically because it generates real HTML at build time, and I wrote up the whole [WordPress to Astro migration](/blog/wordpress-to-astro-netlify-migration/) if you want the practical side. The point is not Astro specifically, it is choosing a stack where "search engines see my content" is the default, not an afterthought. If you build with Claude Code, write that stack choice into [a project CLAUDE.md file](/blog/claude-code-memory/), which loads in full at the start of every session.
 
 ### Option 2: Add SSR, SSG, or Prerendering to the App You Have
 
 If you like the site you built, you usually do not need to scrap it. Most modern setups let you add server-side rendering, static generation, or prerendering to the existing app.
 
-And here is the part that fits the vibe-coding workflow perfectly: you can ask the AI tool that built the site to do this. A prompt as direct as "convert this app to use server-side rendering so the content is in the initial HTML" is often enough. You built it by describing what you wanted, and you can fix it the same way.
+And here is the part that fits the vibe-coding workflow perfectly: you can ask the AI tool that built the site to do this. A prompt as direct as "convert this app to use server-side rendering so the content is in the initial HTML" is often enough. You built it by describing what you wanted, and you can fix it the same way. If that tool is Claude Code, `/plan` and `/diff` are two of the [Claude Code commands worth learning first](/blog/claude-code-commands/) for this job: the first has Claude present a plan before it edits anything, and the second shows the changes in your working tree, Claude's edits included, before you ship.
 
 ### Option 3: Prerender Static Snapshots for the Crawler
 

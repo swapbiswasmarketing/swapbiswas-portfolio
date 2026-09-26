@@ -81,7 +81,7 @@ A one-time audit is a snapshot. SEO is a moving target, so the value comes from 
 
 - **Quarterly:** a lightweight technical health check - indexation, broken links, Core Web Vitals, new crawl errors.
 - **Annually:** a full technical plus content teardown, including content decay and competitive gaps.
-- **Event-triggered:** always audit after a site migration, a CMS change, a redesign, or a Google core update that moves your rankings.
+- **Event-triggered:** always audit after a site migration, a CMS change, a redesign, or a Google core update that moves your rankings. For a spam update, first confirm the move is outside your normal weekly range, using the test I lay out for the [September 2026 spam update](/blog/google-september-2026-spam-update/).
 
 The cadence matters because problems are cheap to fix when they are small and expensive when they have compounded for a year. If budget is the objection, an audit is one of the lowest-cost interventions in marketing relative to the traffic it protects - and you can read more on [what an SEO audit actually costs](/blog/how-much-does-an-seo-audit-cost/) to set realistic expectations.
 

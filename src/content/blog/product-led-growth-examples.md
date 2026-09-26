@@ -173,7 +173,7 @@ Products bought by engineers are the strictest version of this. A free tier that
 
 ### Step 3: Instrument Your Activation Path
 
-Identify the 3-5 actions that predict long-term retention and build your onboarding around driving users to complete them as fast as possible. Measure time to value in minutes, not days.
+Identify the 3-5 actions that predict long-term retention and build your onboarding around driving users to complete them as fast as possible. Measure time to value in minutes, not days. A marketing campaign can drive a core product action too: [Duolingo's death-of-Duo campaign](/blog/recent-innovative-marketing-examples/) asked users to take a language lesson to help bring its owl mascot back, so joining in meant using the app.
 
 ### Step 4: Build PQL Scoring
 

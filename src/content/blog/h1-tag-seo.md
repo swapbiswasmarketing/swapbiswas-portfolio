@@ -132,6 +132,6 @@ Make the main title visually obvious. This is the one H1 instruction Google publ
 
 That is a rendering instruction rather than a string-equality one.
 
-Keep the title inside 60 characters so the SERP snippet survives, and accept that the length correlation I found inside that window is weak enough to ignore when a longer title reads worse. The rest of the on-page work that moves positions on a small domain is in my [SEO audit checklist](/blog/seo-audit-checklist/), and almost none of it concerns headings.
+Keep the title inside 60 characters so the SERP snippet survives, and accept that the length correlation I found inside that window is weak enough to ignore when a longer title reads worse. When a draft runs over, [what my over-long title rewrites cut to fit](/blog/seo-title-examples/) sets the order, dropping the year before any filler word. The rest of the on-page work that moves positions on a small domain is in my [SEO audit checklist](/blog/seo-audit-checklist/), and almost none of it concerns headings.
 
 The H1 tag SEO debate is loud because it is cheap to argue about and expensive to test. My corpus answers a narrower question than the one people ask: a site with 147 perfectly matched H1s and title tags, at Domain Rating 13 with no links built, averages position 25.4. Go measure the attribute you can actually vary.
