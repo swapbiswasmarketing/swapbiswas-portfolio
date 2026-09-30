@@ -105,8 +105,9 @@ export default defineConfig({
 			//
 			// ORDER MATTERS. This must stay AFTER sitemap-lastmod in this array: Astro runs
 			// astro:build:done hooks in integration order, and this one reads the <lastmod>
-			// values that hook injects. Move it above and every URL parses as "no lastmod",
-			// so a deploy would announce nothing and still log success.
+			// values that hook injects. Move it above and every blog URL in the new sitemap
+			// has no lastmod while the live sitemap has one, so the diff flags all of them
+			// and every deploy resubmits every dated URL - while still logging success.
 			//
 			// This hook can fail the announcement but must never fail the build. The pages
 			// are already built and the sitemap still carries them; the worst case of a
