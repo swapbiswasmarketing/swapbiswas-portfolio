@@ -83,6 +83,8 @@ The diagram routes a job on whether it needs a folder of files kept in place, mo
 
 The two Cowork rows come from Anthropic's documentation, not from my own use. Moving from the top half of that table to the bottom half is the jump from using AI for single tasks to running workflows on it, which is roughly the move between the middle stages of [the AI maturity curve for marketers](/blog/marketers-ai-maturity-curve/).
 
+This site is the "Build or change a page on your own site" row in practice, and [my seven-step walkthrough from a written brief to a Vercel deploy](/blog/build-a-personal-website-with-claude-code/) covers that job for a personal site, along with the search setup this one added after launch.
+
 ## Claude Code vs Claude Desktop and Chat
 
 "Claude Code vs Claude Desktop" compares a product with the app that contains it. As of September 2026, Anthropic's desktop docs say "The Claude Desktop app has three tabs: Chat for conversations, Cowork for Dispatch and longer agentic work, and Code for software development" ([Claude Code desktop docs](https://code.claude.com/docs/en/desktop)). The merge is folding Chat and Cowork together, so that layout may differ on accounts that already have the new Claude. The Code tab is Claude Code, and per the overview, "The app includes Claude Code, so you don't need to install the CLI separately."
@@ -97,7 +99,7 @@ The same engine opens in several places, and the docs say "your repo's CLAUDE.md
 | Browser at claude.ai/code | Anthropic's cloud | Work on a repo you do not have locally |
 | Claude app on iOS or Android | Anthropic's cloud | Start or check a long task away from your desk |
 
-So "Claude Code vs Claude chat" in the desktop app is a choice between the conversation side of one window, which answers from what you give it, and the Code tab, which works on a folder you choose; both draw on the same subscription. Claude Design sits on the conversation side too: Anthropic's announcement says it "now works inside your conversations too", and it is in beta on paid plans ([Claude Cowork and chat are now one Claude](https://claude.com/blog/cowork-is-now-claude)).
+So "Claude Code vs Claude chat" in the desktop app is a choice between the conversation side of one window, which answers from what you give it, and the Code tab, which works on a folder you choose; both draw on the same subscription. Claude Design sits on the conversation side too: Anthropic's announcement says it "now works inside your conversations too", and it is in beta on paid plans ([Claude Cowork and chat are now one Claude](https://claude.com/blog/cowork-is-now-claude)). Its Export menu lists Handoff to Claude Code as the last option, and [my routing of marketing deliverables between the Claude Design canvas and a repo](/blog/claude-design-vs-claude-code/) shows when that handoff is worth planning.
 
 ## Claude Cowork vs Claude Code After the September 2026 Merge
 
@@ -122,6 +124,8 @@ On Pro and Max, that turns the three-way "Claude vs Claude Code vs Claude Cowork
 | Plans | Pro, Max, Team, Enterprise | Every paid plan, or API credits |
 
 My Search Console script reads its sign-in files from a folder inside the project and runs with packages installed on my laptop, so a job built on it goes to Claude Code. A folder of briefs and call notes that needs summarising, with no script involved, is closer to the work Anthropic describes for Cowork.
+
+The same script runs on Windows Node.js, so even within Claude Code, moving the session into WSL 2 would mean installing Node inside the Linux distribution first; [my comparison of native Windows and WSL 2](/blog/claude-code-wsl-vs-windows/) weighs that against the sandbox WSL 2 adds.
 
 ## Claude vs Claude Code Pricing
 
@@ -158,7 +162,7 @@ Each question below asks whether the job needs your own shell on top of a folder
 
 What you do need is the habit of reviewing. As of September 2026, current versions of Claude Code start terminal and VS Code sessions in auto mode by default. In auto mode, a second model reviews actions instead of you ([permission modes](https://code.claude.com/docs/en/permission-modes)). Manual mode asks before it edits a file or runs a shell command outside a built-in read-only set ([Claude Code permissions](https://code.claude.com/docs/en/permissions)), which makes every step visible while you learn what it does.
 
-The terminal is optional now: the desktop Code tab and the VS Code extension both run Claude Code without a terminal window, and the [install docs](https://code.claude.com/docs/en/overview) send first-timers to a guide: "If you haven't used a terminal before, the terminal guide shows how to open one and paste the command." Marketers who go further and build their own data and automation tooling are doing what [a GTM engineer](/blog/what-is-a-gtm-engineer/) does for a living.
+The terminal is optional now: the desktop Code tab and the VS Code extension both run Claude Code without a terminal window, and the [install docs](https://code.claude.com/docs/en/overview) send first-timers to a guide: "If you haven't used a terminal before, the terminal guide shows how to open one and paste the command." The VS Code extension, which I use, runs its own bundled copy of the CLI, so [what separates it from running Claude Code in a terminal](/blog/claude-code-in-vs-code-vs-terminal/) comes down mostly to the interface. Marketers who go further and build their own data and automation tooling are doing what [a GTM engineer](/blog/what-is-a-gtm-engineer/) does for a living.
 
 ## The Claude Code Setup Behind This Site
 
@@ -173,6 +177,8 @@ This is the setup behind every first-hand Claude Code statement above. Each piec
 | Research scripts: a Search Console CLI, a Semrush CLI, an IndexNow pusher | `scripts/` in the repo | They run with Node on my laptop against the repo, and the Search Console CLI also needs the Google API packages installed there |
 | 20 installed third-party design skills at project level, plus 3 general skills at user level | `.claude/skills/` and `~/.claude/skills/` | Project-level skills sit in the repo, next to the files they work on |
 | A permissions allowlist | `.claude/settings.json` | Pre-approved commands and fetch domains, so routine steps do not stop for a prompt |
+
+Each command or fetch rule in that allowlist approves one command pattern or one web domain, so a fetch to a site that is not on the list still stops for a prompt, which is why [I check the permission mode before adding another rule](/blog/claude-code-keeps-asking-for-permission/).
 
 Every row assumes commands running on my machine, inside the project folder. Cowork runs shell commands on Anthropic's servers, separate from my computer, while the scripts, their installed packages and the git history in this table live on my laptop, which is why this setup stays in Claude Code. Skills and connectors travel further: Anthropic says a plugin you add "works in chat and Claude Code as well as Cowork", and plugins with local MCP servers work through the Desktop app only ([Get started with Claude Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork)).
 

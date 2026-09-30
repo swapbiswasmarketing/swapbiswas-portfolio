@@ -45,7 +45,7 @@ The configuration that produced all of that is the entire contents of `vercel.js
 
 `trailingSlash: true` is the only routing instruction in the repo, and it accounts for row one. The http-to-https and www-to-apex rows are not in the file at all, so Vercel adds them on its own. Response headers on those 308s carry `Server: Vercel` and `Strict-Transport-Security: max-age=63072000`.
 
-The trailing-slash behaviour is documented rather than accidental. Vercel's project configuration reference states that when `trailingSlash: true`, a path that does not end with a forward slash ["will respond with a 308 status code"](https://vercel.com/docs/project-configuration/vercel-json) and redirect to the path with a trailing slash, and it documents the mirror-image behaviour when the setting is false.
+The trailing-slash behaviour is documented rather than accidental. Vercel's project configuration reference states that when `trailingSlash: true`, a path that does not end with a forward slash ["will respond with a 308 status code"](https://vercel.com/docs/project-configuration/vercel-json) and redirect to the path with a trailing slash, and it documents the mirror-image behaviour when the setting is false. The trailing-slash 308 is one of several Vercel defaults that shape indexing, alongside the noindex header on preview deployments and the production vercel.app alias, and [my curl checks for Vercel's indexing defaults](/blog/vercel-google-indexing/) cover each one.
 
 That table is evidence about what one edge platform emits for one static site. It is not a measurement of how long Google took to process anything; I did not run that experiment, and nothing below should be read as though I had.
 

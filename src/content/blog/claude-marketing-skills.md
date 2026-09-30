@@ -113,7 +113,7 @@ The OpenClaudia README counts 78 skills, covering SEO, content, email, ads, anal
 
 ## SEO and AI Search Skills
 
-Audit skills automate the technical-audit part of an [AI SEO strategy](/blog/ai-seo-strategy/), and a dedicated one earns its place when you run audits often. If you only need one now and then, pick 1 already carries `seo-audit`, `ai-seo`, `schema` and `programmatic-seo`, and pick 2 has an `seo-audit` skill too.
+Audit skills automate the technical-audit part of an [AI SEO strategy](/blog/ai-seo-strategy/), and a dedicated one earns its place when you run audits often. If you only need one now and then, pick 1 already carries `seo-audit`, `ai-seo`, `schema` and `programmatic-seo`, and pick 2 has an `seo-audit` skill too. If your site lives in a repo, you can skip the install: I [audited this site's repo with a plain Claude Code brief](/blog/claude-code-seo-audit/) of 17 checks and no SEO plugin, and it read the source files that an audit starting from a URL never sees.
 
 ### 5. Claude SEO by Agrici Daniel
 
@@ -127,14 +127,14 @@ Claude SEO runs 26 sub-skills and 19 specialist agents across technical SEO, E-E
 
 GEO-SEO Claude puts AI search first. `/geo audit` runs a full GEO and SEO audit with parallel subagents, `/geo citability` scores content for AI citation readiness, `/geo crawlers` checks robots.txt for AI crawlers, and `/geo report-pdf` builds a PDF report with charts.
 
-- Claude Code: `git clone https://github.com/zubair-trabzada/geo-seo-claude.git`, then `cd geo-seo-claude` and `./install.sh` (Python 3.8 or later; on Windows, Git Bash and `install-win.sh`).
+- Claude Code: `git clone https://github.com/zubair-trabzada/geo-seo-claude.git`, then `cd geo-seo-claude` and `./install.sh` (Python 3.8 or later; on Windows, Git Bash and `install-win.sh`). Claude Code on Windows no longer requires Git for Windows, so a PowerShell-only setup has no Git Bash for this installer until you add it, a choice covered in [my comparison of native Windows, Git Bash and WSL 2 setups](/blog/claude-code-wsl-vs-windows/).
 - Caveat: the headline one-command install pipes a remote script straight into bash. Use the manual clone route so you can read `install.sh` before it runs.
 
 If the citation side is new to you, my guide to [getting cited by ChatGPT, Perplexity and Gemini](/blog/llm-optimization/) explains what these AI-search audits are scoring.
 
 ## Brand and Design Skills for Landing Pages
 
-Picks 7, 8 and 11 through 14 all come from Anthropic's skills repo. In Claude Code, add it with `/plugin marketplace add anthropics/skills` and install `example-skills@anthropic-agent-skills`, which brings 12 skills, 7 of them outside this list. To add only the ones you want, run `npx skills add anthropics/skills --skill brand-guidelines --skill frontend-design -a claude-code`. In the Claude app, the [help center](https://support.claude.com/en/articles/12512180-use-skills-in-claude) lets Free, Pro, Max and Team users toggle example skills on under Customize > Skills, and Enterprise users once an owner enables skills.
+The design skills below suit a landing page you design and ship yourself in Claude Code, which is my route; when someone outside the repo has to sign off on the page first, [a Claude Design mockup handed off to Claude Code](/blog/claude-design-vs-claude-code/) fits better. Picks 7, 8 and 11 through 14 all come from Anthropic's skills repo. In Claude Code, add it with `/plugin marketplace add anthropics/skills` and install `example-skills@anthropic-agent-skills`, which brings 12 skills, 7 of them outside this list. To add only the ones you want, run `npx skills add anthropics/skills --skill brand-guidelines --skill frontend-design -a claude-code`. In the Claude app, the [help center](https://support.claude.com/en/articles/12512180-use-skills-in-claude) lets Free, Pro, Max and Team users toggle example skills on under Customize > Skills, and Enterprise users once an owner enables skills.
 
 ### 7. brand-guidelines (Anthropic)
 
@@ -191,7 +191,7 @@ It guides you through a three-stage workflow for proposals, technical specs and 
 
 ## Build Your Own Claude Marketing Skills
 
-Libraries cover the generic jobs. Your positioning, ICP, voice rules and approval steps are the part no public repo can know, and that is where writing your own skill pays off.
+Libraries cover the generic jobs. Your positioning, ICP, voice rules and approval steps are the part no public repo can know, and that is where writing your own skill pays off. In the Claude app, part of that belongs in a project instead: [how I sort marketing assets between projects and skills](/blog/claude-projects-vs-skills/) puts a one-paragraph positioning statement in project instructions, where every chat starts from it, and keeps the brand-voice review as a skill that loads only when a review is asked for.
 
 ### 14. skill-creator (Anthropic)
 

@@ -119,7 +119,7 @@ Holding the domain constant removes that confounder and leaves a smaller one beh
 The limits, stated plainly:
 
 - n = 71 on one domain at Domain Rating 13, with no link building ever done. Nobody should generalise from that.
-- Search Console "average position" is averaged across every query a URL appeared for, so it moves when the query mix moves and not only when the ranking moves.
+- Search Console "average position" is averaged across every query a URL appeared for, so it moves when the query mix moves and not only when the ranking moves. Each query also counts in proportion to its impressions, which [my average position breakdown](/blog/what-is-a-good-average-position-in-google-search-console/) works through with a made-up five-query site.
 - The measurement is observational. I have not changed the H2 count on any page and watched what happened, so there is no before and after here.
 - I counted headings and nothing else. I did not measure what the H2 text says, whether it matches a query, how long each heading is, or how H3 nesting is used.
 

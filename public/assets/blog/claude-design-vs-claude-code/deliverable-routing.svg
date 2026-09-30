@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 790" width="1400" height="790">
+<rect width="1400" height="790" fill="#f6f4ef"/>
+<text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where a marketing deliverable ends up picks the tool</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Claude Design vs Claude Code for common marketing deliverables, as of September 2026</text>
+
+<rect x="60" y="140" width="410" height="550" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="84" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">ENDS ON THE CANVAS</text>
+<text x="84" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claude Design</text>
+<text x="84" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Exported or shared, no repo</text>
+<line x1="84" y1="272" x2="446" y2="272" stroke="#e4dfd6" stroke-width="1"/>
+<circle cx="90" cy="305" r="5" fill="#15130f"/>
+<text x="106" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Product one-pager</text>
+<text x="106" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">PDF or share link</text>
+<circle cx="90" cy="383" r="5" fill="#15130f"/>
+<text x="106" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">On-brand campaign layouts</text>
+<text x="106" y="416" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sent to Canva, Adobe or HubSpot</text>
+<circle cx="90" cy="461" r="5" fill="#15130f"/>
+<text x="106" y="468" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Launch prototype</text>
+<text x="106" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">A link to view, comment or edit</text>
+<circle cx="90" cy="539" r="5" fill="#15130f"/>
+<text x="106" y="546" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Brand design system</text>
+<text x="106" y="572" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Built from brand files in chat</text>
+<circle cx="90" cy="617" r="5" fill="#ffffff" stroke="#15130f" stroke-width="2"/>
+<text x="106" y="624" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Pitch deck</text>
+<text x="106" y="650" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Goes to Claude Slides instead</text>
+
+<rect x="495" y="140" width="410" height="550" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="519" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">CROSSES THE HANDOFF</text>
+<text x="519" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Design, then Claude Code</text>
+<text x="519" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A repo page that needs sign-off</text>
+<line x1="519" y1="272" x2="881" y2="272" stroke="#e4dfd6" stroke-width="1"/>
+<rect x="519" y="292" width="362" height="52" rx="12" fill="#f6f4ef" stroke="#e4dfd6" stroke-width="1"/>
+<text x="700" y="325" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Mock up on the canvas</text>
+<line x1="700" y1="344" x2="700" y2="358" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="693,358 700,372 707,358" fill="#15130f"/>
+<rect x="519" y="372" width="362" height="52" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+<text x="700" y="405" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Export &gt; Handoff to Claude Code</text>
+<line x1="700" y1="424" x2="700" y2="438" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="693,438 700,452 707,438" fill="#15130f"/>
+<rect x="519" y="452" width="362" height="52" rx="12" fill="#f6f4ef" stroke="#e4dfd6" stroke-width="1"/>
+<text x="700" y="485" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Bundle: files, chat, README</text>
+<line x1="700" y1="504" x2="700" y2="518" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="693,518 700,532 707,518" fill="#15130f"/>
+<rect x="519" y="532" width="362" height="52" rx="12" fill="#f6f4ef" stroke="#e4dfd6" stroke-width="1"/>
+<text x="700" y="565" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Claude Code builds in the repo</text>
+<line x1="700" y1="584" x2="700" y2="598" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="693,598 700,612 707,598" fill="#15130f"/>
+<rect x="519" y="612" width="362" height="52" rx="12" fill="#f6f4ef" stroke="#e4dfd6" stroke-width="1"/>
+<text x="700" y="645" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Review, commit, deploy</text>
+
+<rect x="930" y="140" width="410" height="550" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="954" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STARTS IN THE REPO</text>
+<text x="954" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claude Code</text>
+<text x="954" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Source files that re-render</text>
+<line x1="954" y1="272" x2="1316" y2="272" stroke="#e4dfd6" stroke-width="1"/>
+<circle cx="960" cy="305" r="5" fill="#15130f"/>
+<text x="976" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">LinkedIn and X banners</text>
+<text x="976" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">HTML rendered to PNG at 2x</text>
+<circle cx="960" cy="383" r="5" fill="#15130f"/>
+<text x="976" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">OG image for every post</text>
+<text x="976" y="416" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Satori, resvg and sharp at build</text>
+<circle cx="960" cy="461" r="5" fill="#15130f"/>
+<text x="976" y="468" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Pages you design yourself</text>
+<text x="976" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Claude Code with design skills</text>
+<circle cx="960" cy="539" r="5" fill="#15130f"/>
+<text x="976" y="546" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">React design system</text>
+<text x="976" y="572" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Synced over with /design-sync</text>
+
+<text x="60" y="742" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Sources: Anthropic's help center and Claude Code docs. Banners, OG images and pages: how swapbiswas.com is built.</text>
+</svg>

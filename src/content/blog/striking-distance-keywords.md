@@ -48,7 +48,7 @@ This takes about ten minutes on any verified property.
 
 What comes back is your candidate list. Before you act on it, three properties of the data change how you should read it.
 
-**Average position is an average, not a rank.** Google's own definition is that the position value is "the topmost position occupied by a link to your property or page in search results, averaged across all queries in which your property appeared" ([Search Console Help](https://support.google.com/webmasters/answer/7042828)). A query showing 15.0 might sit at 15 consistently, or it might sit at 8 half the time and 22 the other half. Those two queries need completely different work, and the export cannot tell them apart.
+**Average position is an average, not a rank.** Google's own definition is that the position value is "the topmost position occupied by a link to your property or page in search results, averaged across all queries in which your property appeared" ([Search Console Help](https://support.google.com/webmasters/answer/7042828)). A query showing 15.0 might sit at 15 consistently, or it might sit at 8 half the time and 22 the other half. Those two queries need completely different work, and the export cannot tell them apart. The site-wide figure blends every query, page, country and device on top of that, which is why I [grade position per query instead of site-wide](/blog/what-is-a-good-average-position-in-google-search-console/).
 
 **An impression is a low bar.** The same page defines it this way: "In general, an impression is counted whenever an item appears in the current page of results, whether or not the item is scrolled into view, as long as the user need not click to see more results." Impressions accumulate from people who never looked.
 

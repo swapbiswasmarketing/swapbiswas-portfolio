@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1226" width="1400" height="1226">
+  <rect x="0" y="0" width="1400" height="1226" fill="#f6f4ef"/>
+
+  <text x="80" y="78" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What a Googlebot request passes through on Vercel</text>
+  <text x="80" y="118" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Five checkpoints in the order a request meets them, as documented in September 2026</text>
+
+  <rect x="80" y="150" width="1240" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="720" y1="174" x2="720" y2="302" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="120" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">01  HOSTNAME</text>
+  <text x="120" y="230" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Which hostname did Googlebot request?</text>
+  <text x="120" y="266" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Your custom domain, the project.vercel.app</text>
+  <text x="120" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">alias, a preview URL or a branch domain.</text>
+  <text x="760" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">GOOGLEBOT GETS</text>
+  <text x="760" y="234" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">The alias serves the same production pages</text>
+  <text x="760" y="266" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">until a host-scoped redirect sends it to</text>
+  <text x="760" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">your domain with a 308.</text>
+
+  <line x1="700" y1="326" x2="700" y2="344" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,344 707,344 700,358" fill="#15130f"/>
+
+  <rect x="80" y="362" width="1240" height="172" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5"/>
+  <line x1="720" y1="386" x2="720" y2="514" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="120" y="402" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">02  DEPLOYMENT PROTECTION</text>
+  <text x="120" y="442" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Is the URL behind a Vercel login?</text>
+  <text x="120" y="478" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">New projects start at Standard: previews and</text>
+  <text x="120" y="510" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">generated URLs locked, production domains open.</text>
+  <text x="760" y="402" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">GOOGLEBOT GETS</text>
+  <text x="760" y="446" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">All Deployments with Vercel Authentication:</text>
+  <text x="760" y="478" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">a login redirect on every URL, production</text>
+  <text x="760" y="510" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">included. Free on every plan since 9 Sep 2026.</text>
+
+  <line x1="700" y1="538" x2="700" y2="556" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,556 707,556 700,570" fill="#15130f"/>
+
+  <rect x="80" y="574" width="1240" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="720" y1="598" x2="720" y2="726" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="120" y="614" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">03  FIREWALL</text>
+  <text x="120" y="654" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Does a firewall rule challenge it?</text>
+  <text x="120" y="690" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Attack Mode and the bot protection ruleset</text>
+  <text x="120" y="722" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">pass verified bots such as Googlebot.</text>
+  <text x="760" y="614" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">GOOGLEBOT GETS</text>
+  <text x="760" y="658" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Your page, unless a custom challenge rule</text>
+  <text x="760" y="690" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">matches it: Vercel documents no bot pass</text>
+  <text x="760" y="722" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">for the rules you write yourself.</text>
+
+  <line x1="700" y1="750" x2="700" y2="768" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,768 707,768 700,782" fill="#15130f"/>
+
+  <rect x="80" y="786" width="1240" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="720" y1="810" x2="720" y2="938" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="120" y="826" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">04  RESPONSE HEADERS</text>
+  <text x="120" y="866" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Does Vercel add X-Robots-Tag: noindex?</text>
+  <text x="120" y="902" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Only on previews and on outdated</text>
+  <text x="120" y="934" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">production deployments.</text>
+  <text x="760" y="826" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">GOOGLEBOT GETS</text>
+  <text x="760" y="870" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Current production: no noindex header.</text>
+  <text x="760" y="902" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">A branch with its own custom domain:</text>
+  <text x="760" y="934" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">none either, unless you add one.</text>
+
+  <line x1="700" y1="962" x2="700" y2="980" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,980 707,980 700,994" fill="#15130f"/>
+
+  <rect x="80" y="998" width="1240" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="720" y1="1022" x2="720" y2="1150" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="120" y="1038" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">05  HTML</text>
+  <text x="120" y="1078" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">What does your framework print?</text>
+  <text x="120" y="1114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The robots meta tag and the canonical,</text>
+  <text x="120" y="1146" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">written into the HTML your build ships.</text>
+  <text x="760" y="1038" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">GOOGLEBOT GETS</text>
+  <text x="760" y="1082" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">A noindex here stops rendering and indexing.</text>
+  <text x="760" y="1114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Listing the page in a sitemap does not undo it.</text>
+</svg>

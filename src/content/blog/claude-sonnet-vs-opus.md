@@ -233,6 +233,8 @@ I built this site, its nine free tools and its research scripts (a Search Consol
 3. Permanently, set `"model": "sonnet"` in your settings file.
 4. Check what you are on with `/status`.
 
+In the VS Code extension, click the model name at the bottom of the prompt box instead; on models with effort levels it also shows an Effort row, and [my side-by-side of the VS Code extension and the terminal CLI](/blog/claude-code-in-vs-code-vs-terminal/) shows how any level except `max` is saved per model in the settings file both surfaces read.
+
 **Effort.** `/effort` sets how much the model reasons, starting from each model's default in the spec table above. The docs spell out the bill: "You are charged for all thinking tokens generated, even when collapsed or redacted". They also say the effort scale "is calibrated per model, so the same level name does not represent the same underlying value across models", which is one more reason to price a sample rather than compare settings by name.
 
 **Subagents.** A custom subagent's definition can set `model:` to `sonnet`, `opus`, `haiku`, `fable`, a full model ID or `inherit`. Anthropic's [subagent docs](https://code.claude.com/docs/en/sub-agents) list "routing tasks to faster, cheaper models like Haiku" as one way subagents control costs.

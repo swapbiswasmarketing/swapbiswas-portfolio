@@ -85,6 +85,7 @@ Check your sitemap at `yoursite.com/sitemap.xml`:
 - Are all important pages included?
 - Are there pages with `noindex` tags that are also in the sitemap? (This sends mixed signals)
 - Is it submitted in Google Search Console?
+- Does each `<lastmod>` match the page's last real edit? (Google uses lastmod when it is consistently accurate, and [IndexNow submissions never reach Google](/blog/does-google-support-indexnow/), so this date is the change signal it reads)
 - Are there any URLs returning 4xx or 5xx status codes?
 
 **Benchmark:** Your sitemap should include every page you want indexed and nothing else. If your sitemap has 5,000 URLs but only 500 are getting traffic, you have a crawl budget problem.
@@ -296,7 +297,7 @@ A redirect chain is when URL A redirects to B, which redirects to C. Each hop lo
 - **Acceptable:** 1 redirect (A to B)
 - **Problematic:** 2+ redirects (A to B to C to D)
 
-**How to check:** Screaming Frog > Reports > Redirect Chains. Fix by updating the original link to point directly to the final destination.
+**How to check:** Screaming Frog > Reports > Redirect Chains. Fix by updating the original link to point directly to the final destination. The same fix applies to single hops you create yourself: when I [audited this site's source files with Claude Code](/blog/claude-code-seo-audit/), 29 internal links were missing their trailing slash, so each click and crawl took a 308 hop that a find-and-replace across 6 posts removes.
 
 **8.2 Broken Links (404s)**
 

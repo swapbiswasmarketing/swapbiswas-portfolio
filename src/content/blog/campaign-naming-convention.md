@@ -137,6 +137,8 @@ The event row is deliberately imperfect and worth calling out. `event` matches n
 
 Notice that the paid search and paid social rows share a tier, a motion and a period. That is what makes the launch legible: two rows, one launch, and no reconciliation work to prove it.
 
+The organic social row tags the click from a LinkedIn post; the impressions before that click are reported in LinkedIn's own post analytics, and [LinkedIn impression benchmarks by follower count](/blog/what-is-a-good-number-of-impressions-on-linkedin/) show whether that reach was typical for the account.
+
 ### Ad naming convention: what belongs below the campaign
 
 The rule that keeps the hierarchy clean is inheritance. A child level never repeats a field its parent already carries.

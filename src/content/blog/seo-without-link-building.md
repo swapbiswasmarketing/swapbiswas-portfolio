@@ -38,7 +38,7 @@ All site numbers below were pulled from this property's Search Console export on
 | Pages indexed | 137 of 141 submitted |
 | Deliberately built links | none |
 
-Indexing was never the constraint. Google indexed 137 of the 141 URLs submitted, and 124 of the 147 posts earned at least one impression. Twenty-three posts earned none at all. Whatever links do, they were not the gate on crawling, indexing or eligibility here.
+Indexing was never the constraint. Google indexed 137 of the 141 URLs submitted, and 124 of the 147 posts earned at least one impression. Twenty-three posts earned none at all. Whatever links do, they were not the gate on crawling, indexing or eligibility here. If you are weighing IndexNow to get pages indexed faster in Google, it will not help there: [Google does not read IndexNow submissions](/blog/does-google-support-indexnow/), and the hook I later added to this site's build reaches Bing and the other participating engines instead.
 
 One caveat applies to every per-query table in this post. Search Console caps a query export at 1,000 rows, and it also withholds queries searched very few times. Google's [Search Console documentation](https://support.google.com/webmasters/answer/17011259) says anonymized queries are "included in chart totals, unless a query filter is applied", so the chart total and the sum of the rows do not match. My 1,000 exported rows carry 103,338 impressions and 49 clicks against the chart's 164,564 and 186. I cannot separate how much of that gap is the row cap and how much is anonymization, so I am not going to attribute it to either.
 
@@ -140,6 +140,7 @@ Take the numbers for what they are.
 - No control arm. I cannot compare against a version of this site that did build links.
 - The 1,000-row export cap and query anonymization both apply, so per-query totals are a subset of the chart totals and the two do not reconcile.
 - Search Console average position is an average, and Google says position numbers mean different things in different contexts.
+- Days from 13 May 2025 to 27 April 2026 in this export sit inside a Search Console logging error that Google says affected impressions, CTR and average position but not clicks, and I trace [what the end of that error did to this site's impressions](/blog/google-search-console-impressions-drop/).
 - The 5.014% top-three CTR rests on 20 query rows and one branded query. The 0.23% non-branded figure rests on one click.
 - The relationship between position band and CTR here is consistent with links mattering, and it tests nothing. Nothing in this dataset isolates a cause.
 

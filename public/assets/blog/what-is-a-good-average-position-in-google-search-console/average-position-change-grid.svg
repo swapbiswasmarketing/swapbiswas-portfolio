@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <rect x="0" y="0" width="1400" height="900" fill="#f6f4ef"/>
+
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">How to Read a Change in Average Position</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">Site-wide figures for the same dates. A lower position number is better.</text>
+
+  <text x="547" y="172" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">POSITION GOT WORSE</text>
+  <text x="1082" y="172" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">POSITION GOT BETTER</text>
+
+  <text x="60" y="331" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CLICKS UP</text>
+  <text x="60" y="611" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CLICKS DOWN</text>
+  <text x="60" y="809" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CLICKS FLAT</text>
+
+  <rect x="290" y="195" width="515" height="260" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="322" y="236" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.1em" fill="#b53b15">THIS SITE, JUNE TO AUGUST 2026</text>
+  <text x="322" y="285" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">Expansion</text>
+  <text x="322" y="327" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">More impressions, arriving deeper</text>
+  <text x="322" y="359" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">than the old average.</text>
+  <text x="322" y="415" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Check: new rows in the Queries tab</text>
+
+  <rect x="825" y="195" width="515" height="260" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="857" y="285" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">Real gains</text>
+  <text x="857" y="327" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Queries that already earned clicks</text>
+  <text x="857" y="359" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">moved up the page.</text>
+  <text x="857" y="415" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Check: the rows whose clicks rose</text>
+
+  <rect x="290" y="475" width="515" height="260" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="322" y="565" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">Real losses</text>
+  <text x="322" y="607" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Rankings slipped on queries</text>
+  <text x="322" y="639" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">that were earning clicks.</text>
+  <text x="322" y="695" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Check: lost-click rows vs update dates</text>
+
+  <rect x="825" y="475" width="515" height="260" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="857" y="565" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">Lost click-earning rows</text>
+  <text x="857" y="607" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Queries or pages that earned clicks</text>
+  <text x="857" y="639" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">dropped out of results.</text>
+  <text x="857" y="695" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Check: lost-click rows, Page indexing</text>
+
+  <rect x="290" y="755" width="515" height="96" rx="12" fill="#eeebe4"/>
+  <text x="322" y="795" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632"><tspan font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Expansion</tspan>, if impressions rose</text>
+  <text x="322" y="829" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Better-placed impressions faded, if they fell</text>
+
+  <rect x="825" y="755" width="515" height="96" rx="12" fill="#eeebe4"/>
+  <text x="857" y="795" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632"><tspan font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Lost deep impressions</tspan>, if impressions fell</text>
+  <text x="857" y="829" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Or the reporting changed. Check: Data anomalies</text>
+</svg>

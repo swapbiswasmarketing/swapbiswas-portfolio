@@ -30,6 +30,8 @@ Vibe coding is building software by describing what you want in plain language a
 
 The catch lives in a default almost nobody chooses on purpose. These tools overwhelmingly generate a React single-page application, because React dominates their training data and starter templates. It is the most-used front-end library in the world - [**39.5%** of developers reported using it in the 2024 Stack Overflow Developer Survey](https://survey.stackoverflow.co/2024/technology). So when you ask for "a website," what you get is a React app that renders everything in the browser, and that one decision is the root of the ranking problem.
 
+Lovable has since changed its default. Per [Lovable's SEO documentation](https://docs.lovable.dev/features/seo-aeo), "New Lovable apps created from May 13, 2026 use TanStack Start with server-side rendering (SSR)," and older React + Vite apps get on-request pre-rendering "served only to verified search and AI crawlers." If your site came from an older project or from another builder, the two-minute check below still tells you what the crawler receives.
+
 ### Why AI Tools Default to Client-Side React
 
 React, in its plain form, is a client-side rendering library. The server sends a near-empty HTML file with a single empty container, usually something like `<div id="root"></div>`, plus a large JavaScript bundle. The browser downloads that bundle, runs it, and only then builds the page you see.
@@ -91,6 +93,8 @@ A few faster, rougher checks you can run in seconds:
 - **Unique sentence search.** Copy a distinctive sentence from your page and search it in quotes. If Google cannot find your own exact text, it has not indexed that content.
 - **Disable JavaScript.** Turn off JavaScript in your browser and reload. What remains is close to what a crawler gets on the first pass. If the page goes blank, that is your answer.
 
+If the site deploys to Vercel, rule out the host defaults before any of these: `curl -sI` a production URL and expect a 200 with no `x-robots-tag` line, because [the headers, login walls and redirects Vercel adds ahead of your HTML](/blog/vercel-google-indexing/) can keep a page out of the index however well it renders.
+
 Server logs answer the other half of the question, which is whether Googlebot ever came back to render the page. On the hosts these projects deploy to, that file may not exist at all: Netlify keeps Log Drains on its Enterprise plan and Vercel holds runtime logs for about an hour on Hobby, so [log file analysis without raw server access](/blog/seo-log-file-analysis/) covers what to use instead.
 
 These checks are the difference between assuming you rank and knowing you do. To run them across a whole site, my [technical SEO site audit](/blog/how-to-conduct-a-technical-seo-site-audit/) walks through the process, and the shorter [SEO audit checklist](/blog/seo-audit-checklist/) is a good companion.
@@ -114,7 +118,7 @@ If rebuilding is still cheap, pick a framework that ships HTML out of the box.
 - **Remix** server-renders by default.
 - **SvelteKit** and **Nuxt** are the equivalent picks if you prefer Svelte or Vue.
 
-I moved my own site off WordPress and onto Astro specifically because it generates real HTML at build time, and I wrote up the whole [WordPress to Astro migration](/blog/wordpress-to-astro-netlify-migration/) if you want the practical side. The point is not Astro specifically, it is choosing a stack where "search engines see my content" is the default, not an afterthought. If you build with Claude Code, write that stack choice into [a project CLAUDE.md file](/blog/claude-code-memory/), which loads in full at the start of every session.
+I moved my own site off WordPress and onto Astro specifically because it generates real HTML at build time, and I wrote up the whole [WordPress to Astro migration](/blog/wordpress-to-astro-netlify-migration/) if you want the practical side. The point is not Astro specifically, it is choosing a stack where "search engines see my content" is the default, not an afterthought. If you build with Claude Code, write that stack choice into [a project CLAUDE.md file](/blog/claude-code-memory/), which loads in full at the start of every session. The full record of building this site in Claude Code, from the brief to a Vercel deploy and the search pieces added after launch, is in [my seven-step guide to a Claude Code website](/blog/build-a-personal-website-with-claude-code/).
 
 ### Option 2: Add SSR, SSG, or Prerendering to the App You Have
 

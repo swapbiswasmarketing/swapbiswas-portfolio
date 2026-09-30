@@ -133,7 +133,7 @@ Raw numbers mean nothing without context. For every metric, compare against:
 - **Same period last year** (to account for seasonality)
 - **Your target or benchmark** (are you on track?)
 
-Highlight what changed significantly and explain why. "Organic traffic dropped 8% month-over-month" raises alarm. "Organic traffic dropped 8% MoM due to a seasonal dip consistent with last year's pattern" provides clarity.
+Highlight what changed significantly and explain why. "Organic traffic dropped 8% month-over-month" raises alarm. "Organic traffic dropped 8% MoM due to a seasonal dip consistent with last year's pattern" provides clarity. For Search Console data, any day from 13 May 2026 to 27 April 2027 has a same-day-last-year inside a logging error that Google says affected impressions, CTR and average position but not clicks, so [flag year-over-year impressions in that stretch](/blog/google-search-console-impressions-drop/) and compare clicks as usual.
 
 ### Step 4: Highlight Wins and Losses
 

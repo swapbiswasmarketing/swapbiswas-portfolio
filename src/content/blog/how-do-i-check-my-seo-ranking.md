@@ -231,7 +231,7 @@ Search Console's Position column is not your rank on a given day. Google's docum
 - **It is an average over a date range.** A page that sat at 8 for three weeks and 30 for one week reports a figure in between, and holds neither position.
 - **Positions nobody scrolled to are missing from it.** Google's rule is that ["A link must get an impression for its position to be recorded"](https://support.google.com/webmasters/answer/7042828), illustrated with a result sitting on page 3 when the user only views page 1. Your deepest positions are the ones recorded least often.
 
-Use average position for direction across weeks. For "where do I rank today", use the incognito check in Method 2 or a rank tracker, both of which read the live results page instead of averaging your own impressions.
+Use average position for direction across weeks. For "where do I rank today", use the incognito check in Method 2 or a rank tracker, both of which read the live results page instead of averaging your own impressions. Whether a given figure is good depends on the query: from May to August 2026 this site's overall average got worse while its clicks tripled, so I [judge each query's position next to the clicks it earns](/blog/what-is-a-good-average-position-in-google-search-console/).
 
 ### Step 4: Set a Cadence and a Comparison Window
 

@@ -51,6 +51,8 @@ A quick note on tooling before we start. You do not need an expensive stack. The
 | On-page | Manual review plus a crawler | Do titles and content match intent |
 | Backlinks | Ahrefs or Semrush free views | Who links to me, and is anything broken |
 
+If your site's code lives in a repo, much of the crawl, indexation and on-page work can be counted from the files: [the repo audit I did in Claude Code](/blog/claude-code-seo-audit/) covered 17 checks across the source files, the build and live URLs, then ranked each finding by Search Console impressions.
+
 ## Step 1: Crawlability - can bots even reach your pages
 
 This is where I always start, because nothing downstream matters if crawlers get blocked. I have seen a single misplaced line in a robots file wipe out an entire section's visibility.
@@ -75,7 +77,7 @@ Crawlable does not mean indexed. This step is where I catch the quiet traffic ki
 
 ### Compare crawled, indexed, and intended
 
-Open the Pages report in Search Console and read the "not indexed" reasons closely. "Crawled - currently not indexed" and "Discovered - currently not indexed" usually point at quality or duplication problems, not bugs. "Excluded by noindex tag" is the one I check first, because that is the exact failure from my opening story. On modern JavaScript-heavy builds, this report is also where you catch [a site that renders entirely client-side and never gets indexed](/blog/vibe-coded-website-seo/), because Google sees an empty shell instead of your content.
+Open the Pages report in Search Console and read the "not indexed" reasons closely. "Crawled - currently not indexed" and "Discovered - currently not indexed" usually point at quality or duplication problems, not bugs. "Excluded by noindex tag" is the one I check first, because that is the exact failure from my opening story. On modern JavaScript-heavy builds, this report is also where you catch [a site that renders entirely client-side and never gets indexed](/blog/vibe-coded-website-seo/), because Google sees an empty shell instead of your content. On a Vercel site, also check [the platform settings that act before any rendering](/blog/vercel-google-indexing/): a noindex header on previews, a duplicate vercel.app hostname and a Deployment Protection login each change what Googlebot receives.
 
 - **Indexed count** - roughly matches your number of valuable pages
 - **Noindex** - applied only to pages you genuinely want hidden

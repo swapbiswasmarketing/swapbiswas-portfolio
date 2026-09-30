@@ -303,7 +303,7 @@ In each pair the title makes one promise and the description repeats the keyword
 
 ## How Long Should an SEO Title Be?
 
-60 characters or fewer is the cap I hold every title on this site to. Google sets no maximum length for a title element and truncates the title link to fit the device width, so 60 is a house rule rather than a Google number, and whether length tracks rankings here is measured in [my H1 and title tag analysis](/blog/h1-tag-seo/).
+60 characters or fewer is the cap I hold every title on this site to. Google sets no maximum length for a title element and truncates the title link to fit the device width, so 60 is a house rule rather than a Google number, and whether length tracks rankings here is measured in [my H1 and title tag analysis](/blog/h1-tag-seo/). The cap is also one of [the frontmatter checks in my Claude Code audit](/blog/claude-code-seo-audit/), which strips carriage returns before counting and found 0 of 170 titles over 60 characters, the longest at exactly 60.
 
 ## The Cut Order for Rewriting an SEO Title
 

@@ -22,7 +22,7 @@ The uncomfortable truth is that most product marketing metrics measure activity,
 
 ## The Problem With Most Product Marketing Metrics
 
-The core mistake is measuring what is easy instead of what matters. Impressions and downloads are easy to pull and satisfying to watch, so they fill the dashboard. But they are inputs, not outcomes, and leadership funds outcomes.
+The core mistake is measuring what is easy instead of what matters. Impressions and downloads are easy to pull and satisfying to watch, so they fill the dashboard. But they are inputs, not outcomes, and leadership funds outcomes. Even as an input, an impression count means little without a denominator: for a LinkedIn post, set it against [the 75th-percentile line for your follower band](/blog/what-is-a-good-number-of-impressions-on-linkedin/) and against your own last 90 days of posts.
 
 A useful test I apply to every metric before it earns a spot: **if this number doubled, would anyone outside marketing care?** If a metric can double while pipeline, adoption, and revenue stay flat, it is a vanity metric. Track it privately if it helps you optimize, but keep it off the dashboard you show the business.
 

@@ -85,6 +85,8 @@ These tables cover the rest of the built-in and bundled commands a non-developer
 | `/insights` | Generates an HTML report on your recent sessions: projects, how you use Claude Code, where things go wrong |
 | `/doctor` (skill) | Diagnoses installation and configuration issues and can fix them |
 
+`/permissions` lists every saved rule and the file it came from, but I treat a prompt that keeps coming back as a mode question before a rule question; [my checklist for repeat permission prompts](/blog/claude-code-keeps-asking-for-permission/) pairs each cause with a check and a fix.
+
 ### Review and Checks
 
 | Command | What it does |
@@ -145,6 +147,8 @@ The keyboard shortcuts below come from the [interactive mode reference](https://
 | `Ctrl+G` | Opens the prompt in your default text editor |
 | `?` on empty input | Toggles the shortcut help panel |
 
+The `!` shortcut works only in the CLI: the VS Code extension's chat panel pulls in a terminal's output with `@terminal:name` instead, and [the other gaps between the extension and the CLI](/blog/claude-code-in-vs-code-vs-terminal/) include tab completion and the `/config` menu.
+
 CLI commands run in your terminal before or instead of an interactive session, per the [CLI reference](https://code.claude.com/docs/en/cli-reference):
 
 | CLI command | What it does |
@@ -157,6 +161,8 @@ CLI commands run in your terminal before or instead of an interactive session, p
 | `claude update` | Updates to the latest version |
 | `claude doctor` | Prints installation and settings diagnostics without starting a session |
 | `claude mcp` | Configures MCP servers |
+
+On Windows, `claude doctor` is the check to run after an install, but it can show Search as OK while Claude Code in WSL, reading a repo on C: through `/mnt/c/`, returns fewer search matches than expected; [where to run Claude Code on a Windows machine](/blog/claude-code-wsl-vs-windows/) covers that case and the install steps.
 
 ## Claude Code Custom Commands After the Merge Into Skills
 

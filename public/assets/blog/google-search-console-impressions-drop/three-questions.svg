@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 890" width="1400" height="890">
+  <rect x="0" y="0" width="1400" height="890" fill="#f6f4ef"/>
+
+  <text x="60" y="64" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Three questions before you blame your rankings</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Compare the 14 days either side of the first day of the drop, in the Performance report</text>
+
+  <rect x="60" y="140" width="560" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="176" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">QUESTION 1</text>
+  <text x="88" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Did clicks fall with impressions,</text>
+  <text x="88" y="250" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">14 days either side?</text>
+
+  <rect x="740" y="140" width="600" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="768" y="182" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Treat it as a real loss</text>
+  <text x="768" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">if no Data anomalies entry covers the date.</text>
+  <text x="768" y="244" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Then check updates, deploys and Page indexing.</text>
+
+  <text x="672" y="193" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">YES</text>
+  <line x1="620" y1="205" x2="726" y2="205" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="726,198 740,205 726,212" fill="#15130f"/>
+
+  <line x1="340" y1="270" x2="340" y2="316" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="333,316 340,330 347,316" fill="#15130f"/>
+  <text x="356" y="306" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">NO</text>
+
+  <rect x="60" y="330" width="560" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="366" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">QUESTION 2</text>
+  <text x="88" y="408" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Did average position improve</text>
+  <text x="88" y="440" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">on the same day?</text>
+
+  <rect x="740" y="330" width="600" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="768" y="372" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Split the drop before deciding</text>
+  <text x="768" y="408" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Compare pages, queries and the</text>
+  <text x="768" y="434" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Search appearance tab.</text>
+
+  <text x="672" y="383" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">NO</text>
+  <line x1="620" y1="395" x2="726" y2="395" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="726,388 740,395 726,402" fill="#15130f"/>
+
+  <line x1="340" y1="460" x2="340" y2="506" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="333,506 340,520 347,506" fill="#15130f"/>
+  <text x="356" y="496" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">YES</text>
+
+  <rect x="60" y="520" width="560" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="556" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">QUESTION 3</text>
+  <text x="88" y="598" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Does the date match an entry on</text>
+  <text x="88" y="630" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google's Data anomalies page?</text>
+
+  <rect x="740" y="520" width="600" height="130" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="768" y="562" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A reporting change</text>
+  <text x="768" y="598" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Annotate the date and stop comparing</text>
+  <text x="768" y="624" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">impressions across it.</text>
+
+  <text x="672" y="573" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">YES</text>
+  <line x1="620" y1="585" x2="726" y2="585" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="726,578 740,585 726,592" fill="#15130f"/>
+
+  <line x1="340" y1="650" x2="340" y2="696" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="333,696 340,710 347,696" fill="#15130f"/>
+  <text x="356" y="686" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">NO</text>
+
+  <rect x="60" y="710" width="560" height="124" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="752" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Deep rankings lost, or num=100</text>
+  <text x="88" y="788" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Desktop step near 10 Sep 2025: num=100.</text>
+  <text x="88" y="815" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Otherwise compare Queries to the prior period.</text>
+</svg>

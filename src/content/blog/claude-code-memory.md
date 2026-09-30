@@ -67,7 +67,7 @@ To see what loaded in a session, run `/context` and look under **Memory files**.
 
 ## Where Claude Code Memory Is Stored: The MEMORY.md Location
 
-Auto memory lives outside the repo, at `~/.claude/projects/<project>/memory/`. The docs say the `<project>` part is derived from the git repository, so every worktree and subfolder of one repo shares a single memory folder. I run Claude Code inside VS Code on Windows 11, where this repo at `C:\Website\portfolio` maps to `%USERPROFILE%\.claude\projects\c--Website-portfolio\memory\`.
+Auto memory lives outside the repo, at `~/.claude/projects/<project>/memory/`. The docs say the `<project>` part is derived from the git repository, so every worktree and subfolder of one repo shares a single memory folder. I run Claude Code inside VS Code on Windows 11, where this repo at `C:\Website\portfolio` maps to `%USERPROFILE%\.claude\projects\c--Website-portfolio\memory\`. A Claude Code install inside WSL 2 keeps its own `~/.claude` in the Linux distribution, so its auto memory for the same repo sits in a separate folder there; [my guide to running Claude Code natively on Windows or in WSL 2](/blog/claude-code-wsl-vs-windows/) lists the other files that split the same way.
 
 Inside, the layout follows the documented design. Each file records its type in a `type` frontmatter field, and the filename prefixes below are a naming convention:
 
@@ -170,7 +170,7 @@ What I take from those three rows:
 
 This project runs without one, so the steps below come from the docs rather than from a file I maintain:
 
-1. Run `/init` in the repo. It scans the project and writes a starting CLAUDE.md with the build commands and conventions it finds; if a file exists, it suggests improvements instead of overwriting.
+1. Run `/init` in the repo. It scans the project and writes a starting CLAUDE.md with the build commands and conventions it finds; if a file exists, it suggests improvements instead of overwriting. On a new site, run it before the second session, after the plan and first build, which is where it sits in [my seven-step site build from brief to Vercel deploy](/blog/build-a-personal-website-with-claude-code/).
 2. Cut what Claude can read from the files on its own, such as folder listings and dependency lists. From v2.1.206, `/doctor` proposes these trims for a checked-in CLAUDE.md.
 3. Write rules concrete enough to check. The docs contrast "Use 2-space indentation" with "Format code properly"; for marketing, "Titles: 60 characters maximum" beats "keep titles short".
 4. Pull longer references in with `@` imports, knowing they still load at launch. Material that should load only when relevant belongs in a skill or a path-scoped rule.
@@ -227,6 +227,8 @@ The phrase "claude memory" covers several different features, and the files abov
 | Default | Auto memory on | On for Free, Pro and Max; off on Team and Enterprise until an owner turns it on | Used only when you add the tool to a request |
 | Scope | One memory folder per repository | Each project gets its own memory space and summary | Whatever store your handler serves |
 | How to edit it | `/memory` or any text editor | Settings, then Memory, then Topics | Your own code |
+
+The scope row describes current projects. In the redesigned projects Anthropic put into beta for select Pro and Max accounts on 17 September 2026, project memory is a set of files with a MEMORY.md index, which Anthropic's project docs say is "separate from the auto memory Claude Code keeps on your machine"; [what a Claude project loads compared with a skill](/blog/claude-projects-vs-skills/) walks through both versions.
 
 The app also lets paid plans (Pro, Max, Team and Enterprise) ask Claude to search past conversations, which is retrieval over chat history rather than stored memory.
 

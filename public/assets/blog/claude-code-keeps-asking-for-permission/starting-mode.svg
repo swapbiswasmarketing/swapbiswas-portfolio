@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="1400" height="860">
+  <rect x="0" y="0" width="1400" height="860" fill="#f6f4ef"/>
+
+  <text x="80" y="74" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Which permission mode a new session starts in</text>
+  <text x="80" y="116" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Claude Code v2.1.283 or later. The first source that sets a mode wins.</text>
+
+  <rect x="80" y="150" width="600" height="486" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="110" y="198" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Terminal session</text>
+  <line x1="80" y1="222" x2="680" y2="222" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="110" y="273" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">1</text>
+  <text x="150" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" font-weight="600" fill="#15130f">The --permission-mode flag</text>
+  <text x="150" y="300" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">or --dangerously-skip-permissions</text>
+  <line x1="80" y1="330" x2="680" y2="330" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="110" y="381" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">2</text>
+  <text x="150" y="376" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" font-weight="600" fill="#15130f">permissions.defaultMode in a settings file</text>
+  <text x="150" y="408" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">In .claude/settings.json or settings.local.json:</text>
+  <text x="150" y="436" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">auto skips to step 3, and</text>
+  <text x="150" y="464" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">bypassPermissions starts Manual</text>
+  <line x1="80" y1="494" x2="680" y2="494" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="110" y="545" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">3</text>
+  <text x="150" y="540" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" font-weight="600" fill="#15130f">The built-in default</text>
+  <text x="150" y="572" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Interactive, v2.1.283 or later: auto</text>
+  <text x="150" y="600" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Most claude -p runs: Manual</text>
+
+  <rect x="720" y="150" width="600" height="486" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="750" y="198" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">VS Code conversation</text>
+  <line x1="720" y1="222" x2="1320" y2="222" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="750" y="270" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">1</text>
+  <text x="790" y="265" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">claudeCode.initialPermissionMode</text>
+  <text x="790" y="297" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">VS Code user setting; it has no auto value</text>
+  <line x1="720" y1="325" x2="1320" y2="325" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="750" y="373" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">2</text>
+  <text x="790" y="368" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" font-weight="600" fill="#15130f">The mode you last picked</text>
+  <text x="790" y="400" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Manual, Edit automatically or Auto</text>
+  <line x1="720" y1="428" x2="1320" y2="428" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="750" y="476" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">3</text>
+  <text x="790" y="471" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" font-weight="600" fill="#15130f">defaultMode in ~/.claude/settings.json</text>
+  <text x="790" y="503" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">or managed settings; never the project files</text>
+  <line x1="720" y1="531" x2="1320" y2="531" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="750" y="579" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">4</text>
+  <text x="790" y="574" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" font-weight="600" fill="#15130f">The built-in default</text>
+  <text x="790" y="606" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">auto on v2.1.283 or later</text>
+
+  <line x1="380" y1="638" x2="380" y2="682" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="373,682 387,682 380,696" fill="#15130f"/>
+  <line x1="1020" y1="638" x2="1020" y2="682" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1013,682 1027,682 1020,696" fill="#15130f"/>
+
+  <rect x="80" y="696" width="1240" height="122" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="1.5"/>
+  <text x="110" y="733" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.92" fill="#b53b15">IF EITHER PATH LANDS ON AUTO BUT AUTO IS UNAVAILABLE</text>
+  <text x="110" y="771" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">The session starts in Manual mode instead.</text>
+  <text x="110" y="802" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Unavailable: a model without auto support such as Haiku, disableAutoMode set, or auto off server-side.</text>
+</svg>

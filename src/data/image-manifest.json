@@ -205,6 +205,22 @@
 		],
 		"hash": "c2233f1d4b2c1a1e"
 	},
+	"/assets/blog/build-a-personal-website-with-claude-code/build-deploy-loop.webp": {
+		"w": 1200,
+		"h": 737,
+		"v": [
+			660
+		],
+		"hash": "8ca610c3dce2795b"
+	},
+	"/assets/blog/build-a-personal-website-with-claude-code/commits-and-search-pieces.webp": {
+		"w": 1200,
+		"h": 729,
+		"v": [
+			660
+		],
+		"hash": "995cf90f28719ab7"
+	},
 	"/assets/blog/campaign-naming-convention/one-artifact.webp": {
 		"w": 1200,
 		"h": 780,
@@ -237,6 +253,30 @@
 		],
 		"hash": "1efeedeedaf85bb5"
 	},
+	"/assets/blog/claude-code-in-vs-code-vs-terminal/settings-layers.webp": {
+		"w": 1200,
+		"h": 866,
+		"v": [
+			660
+		],
+		"hash": "f809a8e9b2845a25"
+	},
+	"/assets/blog/claude-code-keeps-asking-for-permission/allow-rules-by-tool.webp": {
+		"w": 1200,
+		"h": 737,
+		"v": [
+			660
+		],
+		"hash": "eb2633d3ac724c90"
+	},
+	"/assets/blog/claude-code-keeps-asking-for-permission/starting-mode.webp": {
+		"w": 1200,
+		"h": 737,
+		"v": [
+			660
+		],
+		"hash": "c010790258400743"
+	},
 	"/assets/blog/claude-code-memory/memory-anatomy.webp": {
 		"w": 1200,
 		"h": 703,
@@ -253,6 +293,30 @@
 		],
 		"hash": "f9ac19085b53021e"
 	},
+	"/assets/blog/claude-code-seo-audit/audit-layers.webp": {
+		"w": 1200,
+		"h": 754,
+		"v": [
+			660
+		],
+		"hash": "328468f910f31c7f"
+	},
+	"/assets/blog/claude-code-wsl-vs-windows/repo-location-routing.webp": {
+		"w": 1200,
+		"h": 711,
+		"v": [
+			660
+		],
+		"hash": "7a8eff9c4d7c1163"
+	},
+	"/assets/blog/claude-design-vs-claude-code/deliverable-routing.webp": {
+		"w": 1200,
+		"h": 677,
+		"v": [
+			660
+		],
+		"hash": "7a598e8bf021476a"
+	},
 	"/assets/blog/claude-marketing-skills/vetting-findings.webp": {
 		"w": 1200,
 		"h": 686,
@@ -260,6 +324,14 @@
 			660
 		],
 		"hash": "130b9dde6f6bbd7b"
+	},
+	"/assets/blog/claude-projects-vs-skills/context-load-timing.webp": {
+		"w": 1200,
+		"h": 771,
+		"v": [
+			660
+		],
+		"hash": "b3797a21dbfb915a"
 	},
 	"/assets/blog/claude-sonnet-vs-opus/cost-per-job.webp": {
 		"w": 1200,
@@ -540,6 +612,14 @@
 		],
 		"hash": "75a2bf8db6b03888"
 	},
+	"/assets/blog/does-google-support-indexnow/indexnow-build-hook.webp": {
+		"w": 1200,
+		"h": 806,
+		"v": [
+			660
+		],
+		"hash": "d7c56acd1251142a"
+	},
 	"/assets/blog/ecommerce-marketing-automation/workflow-order.webp": {
 		"w": 1200,
 		"h": 549,
@@ -662,6 +742,22 @@
 			1320
 		],
 		"hash": "0f527f79c5dd310d"
+	},
+	"/assets/blog/google-search-console-impressions-drop/impressions-position-step.webp": {
+		"w": 1200,
+		"h": 823,
+		"v": [
+			660
+		],
+		"hash": "9d6f8b7b14687b7d"
+	},
+	"/assets/blog/google-search-console-impressions-drop/three-questions.webp": {
+		"w": 1200,
+		"h": 763,
+		"v": [
+			660
+		],
+		"hash": "59b62edc636739a0"
 	},
 	"/assets/blog/google-september-2026-spam-update/four-checks.webp": {
 		"w": 1200,
@@ -1495,6 +1591,14 @@
 		],
 		"hash": "7b48f77034468dde"
 	},
+	"/assets/blog/vercel-google-indexing/googlebot-request-path.webp": {
+		"w": 1200,
+		"h": 1051,
+		"v": [
+			660
+		],
+		"hash": "a252fcf17f31aae7"
+	},
 	"/assets/blog/vibe-coded-website-seo/crawler-view.webp": {
 		"w": 1200,
 		"h": 651,
@@ -1543,6 +1647,38 @@
 			660
 		],
 		"hash": "d5adffba13cc5d5e"
+	},
+	"/assets/blog/what-is-a-good-average-position-in-google-search-console/average-position-change-grid.webp": {
+		"w": 1200,
+		"h": 771,
+		"v": [
+			660
+		],
+		"hash": "43ca91cce51fb22b"
+	},
+	"/assets/blog/what-is-a-good-average-position-in-google-search-console/average-position-vs-clicks.webp": {
+		"w": 1200,
+		"h": 720,
+		"v": [
+			660
+		],
+		"hash": "438baf4802e5bd0e"
+	},
+	"/assets/blog/what-is-a-good-number-of-impressions-on-linkedin/benchmark-spread.webp": {
+		"w": 1200,
+		"h": 744,
+		"v": [
+			660
+		],
+		"hash": "d8768f3a7688ecf1"
+	},
+	"/assets/blog/what-is-a-good-number-of-impressions-on-linkedin/percentile-ladder.webp": {
+		"w": 1200,
+		"h": 665,
+		"v": [
+			660
+		],
+		"hash": "1693e80293a4d204"
 	},
 	"/assets/blog/what-is-a-gtm-engineer/gtm-engineer-roadmap.webp": {
 		"w": 1200,

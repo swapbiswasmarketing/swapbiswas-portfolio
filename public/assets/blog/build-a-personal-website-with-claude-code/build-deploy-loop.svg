@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="1400" height="860">
+<rect width="1400" height="860" fill="#f6f4ef"/>
+<text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">From a local edit to a search engine</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The loop runs in Claude Code on your machine. One push to main hands the result to Vercel.</text>
+
+<line x1="1202.5" y1="170" x2="1202.5" y2="146" stroke="#6a645c" stroke-width="2.5"/>
+<line x1="1202.5" y1="146" x2="532.5" y2="146" stroke="#6a645c" stroke-width="2.5"/>
+<line x1="532.5" y1="146" x2="532.5" y2="156" stroke="#6a645c" stroke-width="2.5"/>
+<polygon points="525.5,156 532.5,170 539.5,156" fill="#6a645c"/>
+<text x="867.5" y="136" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="500" fill="#6a645c">build fails: Claude reads the error, fixes it, rebuilds</text>
+
+<rect x="60" y="170" width="275" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="84" y="206" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">YOUR MACHINE</text>
+<text x="84" y="246" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Brief and plan</text>
+<text x="84" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">SPEC.md, plan mode,</text>
+<text x="84" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">you approve the files</text>
+
+<line x1="335" y1="255" x2="381" y2="255" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="381,248 395,255 381,262" fill="#15130f"/>
+
+<rect x="395" y="170" width="275" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="419" y="206" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">YOUR MACHINE</text>
+<text x="419" y="246" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claude edits</text>
+<text x="419" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">writes and changes</text>
+<text x="419" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">files in the project</text>
+
+<line x1="670" y1="255" x2="716" y2="255" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="716,248 730,255 716,262" fill="#15130f"/>
+
+<rect x="730" y="170" width="275" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="754" y="206" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">YOUR MACHINE</text>
+<text x="754" y="246" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Preview</text>
+<text x="754" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">npm run dev at</text>
+<text x="754" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">localhost:4321</text>
+
+<line x1="1005" y1="255" x2="1051" y2="255" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="1051,248 1065,255 1051,262" fill="#15130f"/>
+
+<rect x="1065" y="170" width="275" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="1089" y="206" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">YOUR MACHINE</text>
+<text x="1089" y="246" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Build check</text>
+<text x="1089" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">npm run build:</text>
+<text x="1089" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">pass, or an error</text>
+
+<line x1="1202.5" y1="340" x2="1202.5" y2="385" stroke="#15130f" stroke-width="2.5"/>
+<line x1="1202.5" y1="385" x2="197.5" y2="385" stroke="#15130f" stroke-width="2.5"/>
+<line x1="197.5" y1="385" x2="197.5" y2="416" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="190.5,416 197.5,430 204.5,416" fill="#15130f"/>
+
+<rect x="60" y="430" width="275" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="84" y="466" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">YOUR MACHINE</text>
+<text x="84" y="506" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Commit</text>
+<text x="84" y="540" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">git keeps a state</text>
+<text x="84" y="572" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">you can return to</text>
+
+<line x1="335" y1="515" x2="381" y2="515" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="381,508 395,515 381,522" fill="#15130f"/>
+
+<rect x="395" y="430" width="275" height="170" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+<text x="419" y="466" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#b53b15">YOU DECIDE</text>
+<text x="419" y="506" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Push to main</text>
+<text x="419" y="540" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">every push to main</text>
+<text x="419" y="572" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">is a production deploy</text>
+
+<line x1="670" y1="515" x2="716" y2="515" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="716,508 730,515 716,522" fill="#15130f"/>
+
+<rect x="730" y="430" width="275" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="754" y="466" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">VERCEL</text>
+<text x="754" y="506" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Build and hooks</text>
+<text x="754" y="540" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">HTML, sitemap dates,</text>
+<text x="754" y="572" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">IndexNow, Pagefind</text>
+
+<line x1="1005" y1="515" x2="1051" y2="515" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="1051,508 1065,515 1051,522" fill="#15130f"/>
+
+<rect x="1065" y="430" width="275" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="1089" y="466" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">VERCEL</text>
+<text x="1089" y="506" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Deploy</text>
+<text x="1089" y="540" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the new build goes</text>
+<text x="1089" y="572" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">live on your domain</text>
+
+<line x1="1202.5" y1="600" x2="1202.5" y2="656" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="1195.5,656 1202.5,670 1209.5,656" fill="#15130f"/>
+
+<rect x="60" y="670" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="90" y="706" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">SEARCH ENGINES</text>
+<text x="90" y="748" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Google</text>
+<text x="90" y="782" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">reads the sitemap and its per-post lastmod dates</text>
+<line x1="700" y1="726" x2="700" y2="790" stroke="#e4dfd6" stroke-width="1"/>
+<text x="730" y="748" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Bing and other IndexNow engines</text>
+<text x="730" y="782" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">get new and edited URLs from the build hook</text>
+</svg>

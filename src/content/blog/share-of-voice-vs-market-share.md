@@ -180,6 +180,8 @@ Five rules keep the pair reportable when neither denominator is audited.
 - **Quote the ESOV constant with its source and its scope.** If you use 0.5, say it comes from Nielsen's FMCG analysis; if you use 0.7, cite the LinkedIn page that publishes it and label it the B2B figure.
 - **Offset the comparison by your sales cycle.** Voice from the quarter that ended before your average cycle length, against share for the quarter just closed.
 
+I hit the same denominator problem inside a single channel: of the [LinkedIn impression benchmarks I compared](/blog/what-is-a-good-number-of-impressions-on-linkedin/), some key their bands to connections and some to followers, which is part of why their figures for a good post on one account run from 300 to 5,000.
+
 Freezing the competitor set is where most of this work lives, and it is a research task rather than a reporting one. The method for building and holding that set is in my walkthrough of [competitive intelligence analysis](/blog/competitive-intelligence-analysis/).
 
 ## The ESOV Rule Does Not Promise Growth

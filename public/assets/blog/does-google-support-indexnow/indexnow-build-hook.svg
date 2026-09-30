@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 940" width="1400" height="940">
+  <rect x="0" y="0" width="1400" height="940" fill="#f6f4ef"/>
+
+  <text x="60" y="68" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">One Astro build, two readers of the same lastmod</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">What a production deploy of swapbiswas.com submits, and where Google fits</text>
+
+  <rect x="350" y="150" width="700" height="172" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+  <text x="382" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#b53b15">HOOK 1 - SITEMAP-LASTMOD</text>
+  <text x="382" y="230" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Write each post's date into the sitemap</text>
+  <text x="382" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Adds &lt;lastmod&gt; to sitemap-0.xml from updatedDate,</text>
+  <text x="382" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">falling back to publishDate. Static pages get none.</text>
+
+  <rect x="60" y="150" width="260" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">FROM THE LIVE SITE</text>
+  <text x="84" y="230" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Live sitemap</text>
+  <text x="84" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Previous deploy,</text>
+  <text x="84" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">used for the diff</text>
+  <line x1="190" y1="323" x2="190" y2="372" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="183,372 197,372 190,386" fill="#15130f"/>
+
+  <line x1="700" y1="323" x2="700" y2="352" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="360" y1="352" x2="1040" y2="352" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="360" y1="351" x2="360" y2="372" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="353,372 367,372 360,386" fill="#15130f"/>
+  <line x1="1040" y1="351" x2="1040" y2="372" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1033,372 1047,372 1040,386" fill="#15130f"/>
+
+  <rect x="60" y="388" width="600" height="472" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="428" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">HOOK 2 - INDEXNOW-SUBMIT</text>
+  <text x="92" y="466" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Submit what changed</text>
+  <text x="92" y="508" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">1</text>
+  <text x="124" y="508" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Production deploys only; local and</text>
+  <text x="124" y="540" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">preview builds skip</text>
+  <text x="92" y="578" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">2</text>
+  <text x="124" y="578" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">URLs changed vs the live sitemap, plus</text>
+  <text x="124" y="610" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">any lastmod inside 7 days</text>
+  <text x="92" y="648" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">3</text>
+  <text x="124" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Skips if the live site is not serving</text>
+  <text x="124" y="680" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the key file yet</text>
+  <text x="92" y="718" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">4</text>
+  <text x="124" y="718" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">POST to api.indexnow.org, up to 10,000</text>
+  <text x="124" y="750" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">URLs a request; errors never fail the build</text>
+  <text x="92" y="788" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">5</text>
+  <text x="124" y="788" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Shared with Bing, Yandex, Seznam.cz, Naver,</text>
+  <text x="124" y="820" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Yep, Amazon and the Internet Archive</text>
+
+  <rect x="740" y="388" width="600" height="472" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="772" y="428" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">GOOGLE - NOT AN INDEXNOW PARTICIPANT</text>
+  <text x="772" y="466" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Nothing sent. It reads the sitemap.</text>
+  <text x="772" y="508" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">1</text>
+  <text x="804" y="508" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The same sitemap-0.xml ships with</text>
+  <text x="804" y="540" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the deploy</text>
+  <text x="772" y="578" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">2</text>
+  <text x="804" y="578" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Google reads the dates when it next</text>
+  <text x="804" y="610" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">fetches the sitemap</text>
+  <text x="772" y="648" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">3</text>
+  <text x="804" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">It uses lastmod if the dates are</text>
+  <text x="804" y="680" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">consistently and verifiably accurate</text>
+  <text x="772" y="718" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">4</text>
+  <text x="804" y="718" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Request indexing in Search Console</text>
+  <text x="804" y="750" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">covers a few URLs by hand</text>
+  <text x="772" y="788" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">5</text>
+  <text x="804" y="788" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The Sitemaps report shows when</text>
+  <text x="804" y="820" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Googlebot accessed the sitemap</text>
+
+  <text x="60" y="904" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">BY HAND: scripts/indexnow.mjs verify / status / submit / key</text>
+</svg>

@@ -71,7 +71,7 @@ Whichever you pick, open every cited link before a number goes into a deck. On t
 
 ### Images and Ad Creative
 
-This is the cleanest split. Claude answers a visual brief with a diagram, chart or interactive visual built in HTML and SVG, or with [Claude Design](https://www.anthropic.com/news/claude-design-anthropic-labs), which launched on 17 April 2026 as a research preview and makes designs, prototypes, slides, one-pagers and marketing collateral. As of September 2026, Anthropic's [Claude Design help article](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) says it "is available in beta on Pro, Max, Team, and Enterprise plans."
+This is the cleanest split. Claude answers a visual brief with a diagram, chart or interactive visual built in HTML and SVG, or with [Claude Design](https://www.anthropic.com/news/claude-design-anthropic-labs), which launched on 17 April 2026 as a research preview and makes designs, prototypes, slides, one-pagers and marketing collateral. As of September 2026, Anthropic's [Claude Design help article](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) says it "is available in beta on Pro, Max, Team, and Enterprise plans." When a Claude Design mockup has to become a page on your own site, its Export menu offers a Handoff to Claude Code, and [my routing of marketing deliverables between the Claude Design canvas and a repo](/blog/claude-design-vs-claude-code/) shows which ones need that step.
 
 ChatGPT's pricing page lists "Limited and slower image generation" on Free and "More complex and accurate image creation" on Plus. For ad variants, social visuals and product mockups, start in ChatGPT.
 
@@ -81,7 +81,7 @@ Claude's pricing table marks "Create and edit files with code execution" as avai
 
 ### Memory and Projects
 
-Both remember context across chats and both group work into projects, even on Free, where ChatGPT's memory is marked "Limited" and Claude caps you at 5 projects. The marketing use is the same in both: put your positioning doc, ICP, messaging house and brand voice rules in one project, so every chat starts from them. If you use ChatGPT this way, my guide to [using ChatGPT for sales and marketing](/blog/how-to-use-chatgpt-for-sales-and-marketing/) has workflows that plug straight into a project.
+Both remember context across chats and both group work into projects, even on Free, where ChatGPT's memory is marked "Limited" and Claude caps you at 5 projects. The marketing use is the same in both: put your positioning doc, ICP, messaging house and brand voice rules in one project, so every chat can draw on them. On Claude, only the project instructions are certain to reach every chat, because paid plans search project knowledge instead of loading all of it once it nears the context window. Keep the positioning statement and core tone rules in the instructions and turn the brand-voice review into a skill; [my asset-by-asset split of Claude project instructions, knowledge and skills](/blog/claude-projects-vs-skills/) sorts the rest of a marketing kit. If you use ChatGPT this way, my guide to [using ChatGPT for sales and marketing](/blog/how-to-use-chatgpt-for-sales-and-marketing/) has workflows that plug straight into a project.
 
 ### Connectors and MCP
 
@@ -131,7 +131,7 @@ Is Claude Pro worth it over ChatGPT Plus? Pay for Pro if you want Claude Code in
 
 ## Claude Code vs OpenAI Codex for Marketers Who Build
 
-This is the part of the comparison I can speak to first-hand, on the Claude side. I build with Claude Code inside VS Code on Windows 11. This Astro site, its nine free marketing tools and the scripts that pull Search Console and Semrush data were all built with it, and I wrote up the [WordPress to Astro migration](/blog/wordpress-to-astro-netlify-migration/) that started it. That also means my bias runs toward Claude: the Codex column below comes from OpenAI's documentation, and no side-by-side prompt test of mine appears on this page.
+This is the part of the comparison I can speak to first-hand, on the Claude side. I build with Claude Code inside VS Code on Windows 11, through the Claude Code extension, which I compared feature by feature with [running the claude CLI in VS Code's terminal](/blog/claude-code-in-vs-code-vs-terminal/). This Astro site, its nine free marketing tools and the scripts that pull Search Console and Semrush data were all built with it, and I wrote up the [WordPress to Astro migration](/blog/wordpress-to-astro-netlify-migration/) that started it. That also means my bias runs toward Claude: the Codex column below comes from OpenAI's documentation, and no side-by-side prompt test of mine appears on this page.
 
 | | Claude Code | OpenAI Codex |
 |---|---|---|

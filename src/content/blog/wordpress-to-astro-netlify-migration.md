@@ -114,14 +114,14 @@ This is where the AI assistant really shone. In two sessions, we built:
 - **Newsletter signup** integrated with Kit (ConvertKit)
 - **Contact form** with FormSubmit.co
 - **Dark/light mode toggle**
-- **Full SEO setup** - canonical URLs, Open Graph tags, Twitter Cards, sitemap, robots.txt
+- **Full SEO setup** - canonical URLs, Open Graph tags, Twitter Cards, sitemap, robots.txt. The build has since added [an IndexNow hook that reaches Bing but not Google](/blog/does-google-support-indexnow/) and a per-post `<lastmod>` in the sitemap, the date Google reads instead
 - **Analytics** - GA4, GTM, and Microsoft Clarity
 
 All of these would have required 8-10 WordPress plugins. Here, they're built into the site with zero external dependencies.
 
 ### Step 5: Deploy to Netlify
 
-I connected my GitHub repository to Netlify, pointed my domain's DNS records, and the site was live. Netlify automatically builds the site every time I push an update. SSL certificate? Automatic. CDN? Built in. Continuous deployment? Already done.
+I connected my GitHub repository to Netlify, pointed my domain's DNS records, and the site was live. Netlify automatically builds the site every time I push an update. SSL certificate? Automatic. CDN? Built in. Continuous deployment? Already done. The site has since moved from Netlify to Vercel, where every push to `main` is a production deploy, and [my commit-dated record of building this site with Claude Code](/blog/build-a-personal-website-with-claude-code/) covers that deploy and the search pieces added after launch.
 
 ### Step 6: Cancel WordPress
 

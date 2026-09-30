@@ -107,7 +107,7 @@ On my machine the project folder holds 20 installed third-party skills, nearly a
 
 ## Claude Skills vs Commands, MCP, Subagents and Memory
 
-Skills get confused with the other ways of extending Claude Code because several of them also hold instructions. The cleanest way to separate them is by when each one loads. This table follows Anthropic's [Extend Claude Code page](https://code.claude.com/docs/en/features-overview); the right-hand column is what each one looks like in the setup that runs this site.
+Skills get confused with the other ways of extending Claude Code because several of them also hold instructions. The cleanest way to separate them is by when each one loads. The same test separates a skill from a Claude project, whose instructions load in every chat in it; [my comparison of project instructions, project knowledge and skills](/blog/claude-projects-vs-skills/) applies it to a product marketing kit. This table follows Anthropic's [Extend Claude Code page](https://code.claude.com/docs/en/features-overview); the right-hand column is what each one looks like in the setup that runs this site.
 
 | Extension | What it is | When it loads | Use it when | In my setup |
 |---|---|---|---|---|
@@ -247,7 +247,7 @@ process.exit(hits ? 1 : 0);
 What each part does:
 
 - The description is 186 characters, inside the strictest limit, and names the requests that should fire it.
-- `${CLAUDE_SKILL_DIR}` is a Claude Code substitution that expands to the skill's own folder. Using the same path in `allowed-tools` lets the script run without a permission prompt, a pattern the Claude Code docs show with a chart-rendering skill.
+- `${CLAUDE_SKILL_DIR}` is a Claude Code substitution that expands to the skill's own folder. Using the same path in `allowed-tools` lets the script run without a permission prompt, a pattern the Claude Code docs show with a chart-rendering skill. Any other command still depends on the session's permission mode and the allow, ask and deny rules in your settings files, and [my fixes for Claude Code's repeat permission prompts](/blog/claude-code-keeps-asking-for-permission/) cover both layers.
 - The banned-phrase check lives in code because it has one right answer. Tone and reading level stay in `voice-rules.md` because they need judgment.
 - If you already have a [brand messaging framework](/blog/brand-messaging-framework/), its pillars and proof points belong in `voice-rules.md`.
 

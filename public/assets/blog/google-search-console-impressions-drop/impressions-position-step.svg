@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 960" width="1400" height="960">
+<rect x="0" y="0" width="1400" height="960" fill="#f6f4ef"/>
+<text x="60" y="64" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Impressions fell, clicks held, position jumped</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">swapbiswas.com, daily Search Console data, 29 March to 11 May 2026</text>
+<rect x="40" y="130" width="1320" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="64" y="166" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">DAILY IMPRESSIONS</text>
+<line x1="150" y1="400.0" x2="1330" y2="400.0" stroke="#e4dfd6" stroke-width="1"/>
+<text x="138" y="406.0" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">0</text>
+<line x1="150" y1="316.0" x2="1330" y2="316.0" stroke="#e4dfd6" stroke-width="1"/>
+<text x="138" y="322.0" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">1,000</text>
+<line x1="150" y1="232.0" x2="1330" y2="232.0" stroke="#e4dfd6" stroke-width="1"/>
+<text x="138" y="238.0" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">2,000</text>
+<rect x="155.4" y="390.1" width="16" height="9.9" fill="#aca69c"/>
+<rect x="182.2" y="390.9" width="16" height="9.1" fill="#aca69c"/>
+<rect x="209.0" y="390.4" width="16" height="9.6" fill="#aca69c"/>
+<rect x="235.9" y="389.7" width="16" height="10.3" fill="#aca69c"/>
+<rect x="262.7" y="387.8" width="16" height="12.2" fill="#aca69c"/>
+<rect x="289.5" y="387.1" width="16" height="12.9" fill="#aca69c"/>
+<rect x="316.3" y="386.1" width="16" height="13.9" fill="#aca69c"/>
+<rect x="343.1" y="392.6" width="16" height="7.4" fill="#aca69c"/>
+<rect x="370.0" y="389.8" width="16" height="10.2" fill="#aca69c"/>
+<rect x="396.8" y="386.6" width="16" height="13.4" fill="#aca69c"/>
+<rect x="423.6" y="390.4" width="16" height="9.6" fill="#aca69c"/>
+<rect x="450.4" y="383.5" width="16" height="16.5" fill="#aca69c"/>
+<rect x="477.2" y="390.7" width="16" height="9.3" fill="#aca69c"/>
+<rect x="504.0" y="378.7" width="16" height="21.3" fill="#aca69c"/>
+<rect x="530.9" y="320.4" width="16" height="79.6" fill="#aca69c"/>
+<rect x="557.7" y="304.2" width="16" height="95.8" fill="#aca69c"/>
+<rect x="584.5" y="313.2" width="16" height="86.8" fill="#aca69c"/>
+<rect x="611.3" y="301.2" width="16" height="98.8" fill="#aca69c"/>
+<rect x="638.1" y="305.2" width="16" height="94.8" fill="#aca69c"/>
+<rect x="665.0" y="298.3" width="16" height="101.7" fill="#aca69c"/>
+<rect x="691.8" y="296.6" width="16" height="103.4" fill="#aca69c"/>
+<rect x="718.6" y="292.6" width="16" height="107.4" fill="#aca69c"/>
+<rect x="745.4" y="258.0" width="16" height="142.0" fill="#aca69c"/>
+<rect x="772.2" y="248.1" width="16" height="151.9" fill="#aca69c"/>
+<rect x="799.0" y="246.4" width="16" height="153.6" fill="#aca69c"/>
+<rect x="825.9" y="248.5" width="16" height="151.5" fill="#aca69c"/>
+<rect x="852.7" y="233.3" width="16" height="166.7" fill="#aca69c"/>
+<rect x="879.5" y="218.5" width="16" height="181.5" fill="#aca69c"/>
+<rect x="906.3" y="236.0" width="16" height="164.0" fill="#aca69c"/>
+<rect x="933.1" y="249.8" width="16" height="150.2" fill="#aca69c"/>
+<rect x="960.0" y="272.7" width="16" height="127.3" fill="#aca69c"/>
+<rect x="986.8" y="279.8" width="16" height="120.2" fill="#aca69c"/>
+<rect x="1013.6" y="289.7" width="16" height="110.3" fill="#aca69c"/>
+<rect x="1040.4" y="271.9" width="16" height="128.1" fill="#aca69c"/>
+<rect x="1067.2" y="299.3" width="16" height="100.7" fill="#aca69c"/>
+<rect x="1094.0" y="303.7" width="16" height="96.3" fill="#aca69c"/>
+<rect x="1120.9" y="305.2" width="16" height="94.8" fill="#aca69c"/>
+<rect x="1147.7" y="337.3" width="16" height="62.7" fill="#aca69c"/>
+<rect x="1174.5" y="332.1" width="16" height="67.9" fill="#aca69c"/>
+<rect x="1201.3" y="332.9" width="16" height="67.1" fill="#aca69c"/>
+<rect x="1228.1" y="334.1" width="16" height="65.9" fill="#aca69c"/>
+<rect x="1255.0" y="348.8" width="16" height="51.2" fill="#aca69c"/>
+<rect x="1281.8" y="362.0" width="16" height="38.0" fill="#aca69c"/>
+<rect x="1308.6" y="356.9" width="16" height="43.1" fill="#aca69c"/>
+<line x1="153.0" y1="388.2" x2="522.5" y2="388.2" stroke="#15130f" stroke-width="3" stroke-dasharray="10 7"/>
+<rect x="205.7" y="334.2" width="210.4" height="32.0" rx="6" fill="#ffffff"/>
+<text x="310.9" y="358.2" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Average 141 a day</text>
+<line x1="555.3" y1="271.4" x2="924.7" y2="271.4" stroke="#15130f" stroke-width="3" stroke-dasharray="10 7"/>
+<rect x="529.7" y="217.4" width="232.8" height="32.0" rx="6" fill="#ffffff"/>
+<text x="646.1" y="241.4" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Average 1,531 a day</text>
+<line x1="957.5" y1="316.2" x2="1327.0" y2="316.2" stroke="#15130f" stroke-width="3" stroke-dasharray="10 7"/>
+<rect x="1130.9" y="266.2" width="210.4" height="32.0" rx="6" fill="#ffffff"/>
+<text x="1236.1" y="290.2" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Average 998 a day</text>
+<rect x="40" y="450" width="1320" height="270" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="64" y="486" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">DAILY AVERAGE POSITION (HIGHER ON THE CHART IS BETTER)</text>
+<line x1="150" y1="500.0" x2="1330" y2="500.0" stroke="#e4dfd6" stroke-width="1"/>
+<text x="138" y="506.0" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">10</text>
+<line x1="150" y1="544.4" x2="1330" y2="544.4" stroke="#e4dfd6" stroke-width="1"/>
+<text x="138" y="550.4" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">20</text>
+<line x1="150" y1="588.9" x2="1330" y2="588.9" stroke="#e4dfd6" stroke-width="1"/>
+<text x="138" y="594.9" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">30</text>
+<line x1="150" y1="633.3" x2="1330" y2="633.3" stroke="#e4dfd6" stroke-width="1"/>
+<text x="138" y="639.3" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">40</text>
+<line x1="150" y1="677.8" x2="1330" y2="677.8" stroke="#e4dfd6" stroke-width="1"/>
+<text x="138" y="683.8" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">50</text>
+<line x1="153.0" y1="571.6" x2="522.5" y2="571.6" stroke="#6a645c" stroke-width="2.5" stroke-dasharray="10 7"/>
+<rect x="260.5" y="601.6" width="154.4" height="32.0" rx="6" fill="#ffffff"/>
+<text x="337.7" y="625.6" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#3a3632">Average 26.1</text>
+<line x1="555.3" y1="625.3" x2="924.7" y2="625.3" stroke="#6a645c" stroke-width="2.5" stroke-dasharray="10 7"/>
+<rect x="582.3" y="587.3" width="154.4" height="32.0" rx="6" fill="#ffffff"/>
+<text x="659.5" y="611.3" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#3a3632">Average 38.2</text>
+<line x1="957.5" y1="517.8" x2="1327.0" y2="517.8" stroke="#6a645c" stroke-width="2.5" stroke-dasharray="10 7"/>
+<rect x="1091.9" y="545.8" width="154.4" height="32.0" rx="6" fill="#ffffff"/>
+<text x="1169.1" y="569.8" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#3a3632">Average 14.0</text>
+<polyline points="163.4,622.7 190.2,572.0 217.0,585.8 243.9,545.8 270.7,592.9 297.5,549.3 324.3,529.8 351.1,528.4 378.0,545.8 404.8,570.2 431.6,563.1 458.4,548.0 485.2,579.6 512.0,628.9 538.9,680.0 565.7,660.0 592.5,656.0 619.3,672.0 646.1,658.7 673.0,657.8 699.8,641.3 726.6,643.6 753.4,613.8 780.2,622.7 807.0,613.3 833.9,620.4 860.7,579.1 887.5,604.4 914.3,595.6 941.1,542.7 968.0,515.1 994.8,513.3 1021.6,516.4 1048.4,504.9 1075.2,513.3 1102.0,515.6 1128.9,516.9 1155.7,528.0 1182.5,526.2 1209.3,524.0 1236.1,515.1 1263.0,518.7 1289.8,541.3 1316.6,537.8" fill="none" stroke="#15130f" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="163.4" cy="622.7" r="4.5" fill="#15130f"/>
+<circle cx="190.2" cy="572.0" r="4.5" fill="#15130f"/>
+<circle cx="217.0" cy="585.8" r="4.5" fill="#15130f"/>
+<circle cx="243.9" cy="545.8" r="4.5" fill="#15130f"/>
+<circle cx="270.7" cy="592.9" r="4.5" fill="#15130f"/>
+<circle cx="297.5" cy="549.3" r="4.5" fill="#15130f"/>
+<circle cx="324.3" cy="529.8" r="4.5" fill="#15130f"/>
+<circle cx="351.1" cy="528.4" r="4.5" fill="#15130f"/>
+<circle cx="378.0" cy="545.8" r="4.5" fill="#15130f"/>
+<circle cx="404.8" cy="570.2" r="4.5" fill="#15130f"/>
+<circle cx="431.6" cy="563.1" r="4.5" fill="#15130f"/>
+<circle cx="458.4" cy="548.0" r="4.5" fill="#15130f"/>
+<circle cx="485.2" cy="579.6" r="4.5" fill="#15130f"/>
+<circle cx="512.0" cy="628.9" r="4.5" fill="#15130f"/>
+<circle cx="538.9" cy="680.0" r="4.5" fill="#15130f"/>
+<circle cx="565.7" cy="660.0" r="4.5" fill="#15130f"/>
+<circle cx="592.5" cy="656.0" r="4.5" fill="#15130f"/>
+<circle cx="619.3" cy="672.0" r="4.5" fill="#15130f"/>
+<circle cx="646.1" cy="658.7" r="4.5" fill="#15130f"/>
+<circle cx="673.0" cy="657.8" r="4.5" fill="#15130f"/>
+<circle cx="699.8" cy="641.3" r="4.5" fill="#15130f"/>
+<circle cx="726.6" cy="643.6" r="4.5" fill="#15130f"/>
+<circle cx="753.4" cy="613.8" r="4.5" fill="#15130f"/>
+<circle cx="780.2" cy="622.7" r="4.5" fill="#15130f"/>
+<circle cx="807.0" cy="613.3" r="4.5" fill="#15130f"/>
+<circle cx="833.9" cy="620.4" r="4.5" fill="#15130f"/>
+<circle cx="860.7" cy="579.1" r="4.5" fill="#15130f"/>
+<circle cx="887.5" cy="604.4" r="4.5" fill="#15130f"/>
+<circle cx="914.3" cy="595.6" r="4.5" fill="#15130f"/>
+<circle cx="941.1" cy="542.7" r="4.5" fill="#15130f"/>
+<circle cx="968.0" cy="515.1" r="4.5" fill="#15130f"/>
+<circle cx="994.8" cy="513.3" r="4.5" fill="#15130f"/>
+<circle cx="1021.6" cy="516.4" r="4.5" fill="#15130f"/>
+<circle cx="1048.4" cy="504.9" r="4.5" fill="#15130f"/>
+<circle cx="1075.2" cy="513.3" r="4.5" fill="#15130f"/>
+<circle cx="1102.0" cy="515.6" r="4.5" fill="#15130f"/>
+<circle cx="1128.9" cy="516.9" r="4.5" fill="#15130f"/>
+<circle cx="1155.7" cy="528.0" r="4.5" fill="#15130f"/>
+<circle cx="1182.5" cy="526.2" r="4.5" fill="#15130f"/>
+<circle cx="1209.3" cy="524.0" r="4.5" fill="#15130f"/>
+<circle cx="1236.1" cy="515.1" r="4.5" fill="#15130f"/>
+<circle cx="1263.0" cy="518.7" r="4.5" fill="#15130f"/>
+<circle cx="1289.8" cy="541.3" r="4.5" fill="#15130f"/>
+<circle cx="1316.6" cy="537.8" r="4.5" fill="#15130f"/>
+<text x="914.3" y="620" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" font-weight="600" fill="#15130f">31.5</text>
+<text x="931.1" y="534.7" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" font-weight="600" fill="#15130f">19.6</text>
+<text x="978.0" y="503.1" text-anchor="start" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" font-weight="600" fill="#15130f">13.4</text>
+<rect x="40" y="740" width="1320" height="70" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="64" y="782" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">CLICKS</text>
+<text x="163.4" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="190.2" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="217.0" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="243.9" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="270.7" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="297.5" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<text x="324.3" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="351.1" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<text x="378.0" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">3</text>
+<text x="404.8" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="431.6" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">2</text>
+<text x="458.4" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<text x="485.2" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<text x="512.0" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="538.9" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="565.7" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">2</text>
+<text x="592.5" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="619.3" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="646.1" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">2</text>
+<text x="673.0" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<text x="699.8" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="726.6" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<text x="753.4" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="780.2" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="807.0" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="833.9" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="860.7" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">3</text>
+<text x="887.5" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="914.3" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<text x="941.1" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">4</text>
+<text x="968.0" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="994.8" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<text x="1021.6" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">2</text>
+<text x="1048.4" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">2</text>
+<text x="1075.2" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="1102.0" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="1128.9" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<text x="1155.7" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="1182.5" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<text x="1209.3" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<text x="1236.1" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="1263.0" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="1289.8" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="400" fill="#6a645c">0</text>
+<text x="1316.6" y="783" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1</text>
+<line x1="190.2" y1="812" x2="190.2" y2="822" stroke="#6a645c" stroke-width="1.5"/>
+<text x="190.2" y="846" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">30 Mar</text>
+<line x1="378.0" y1="812" x2="378.0" y2="822" stroke="#6a645c" stroke-width="1.5"/>
+<text x="378.0" y="846" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">6 Apr</text>
+<line x1="565.7" y1="812" x2="565.7" y2="822" stroke="#6a645c" stroke-width="1.5"/>
+<text x="565.7" y="846" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">13 Apr</text>
+<line x1="753.4" y1="812" x2="753.4" y2="822" stroke="#6a645c" stroke-width="1.5"/>
+<text x="753.4" y="846" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">20 Apr</text>
+<line x1="941.1" y1="812" x2="941.1" y2="822" stroke="#6a645c" stroke-width="1.5"/>
+<text x="941.1" y="846" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">27 Apr</text>
+<line x1="1128.9" y1="812" x2="1128.9" y2="822" stroke="#6a645c" stroke-width="1.5"/>
+<text x="1128.9" y="846" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">4 May</text>
+<line x1="1316.6" y1="812" x2="1316.6" y2="822" stroke="#6a645c" stroke-width="1.5"/>
+<text x="1316.6" y="846" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">11 May</text>
+<line x1="525.5" y1="186" x2="525.5" y2="810" stroke="#15130f" stroke-width="2" stroke-dasharray="4 5"/>
+<text x="515.5" y="210" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" font-weight="600" fill="#15130f">12 April: impressions jump after a push</text>
+<line x1="954.5" y1="176" x2="954.5" y2="810" stroke="#b53b15" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="964.5" y="166" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" font-weight="600" fill="#b53b15">Google: last affected day was 27 April</text>
+<text x="60" y="884" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Dashed lines: 14-day averages, leaving out 12 and 27 April. Position is weighted by daily impressions.</text>
+<text x="60" y="912" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Source: this site's Search Console Performance export, downloaded 3 September 2026.</text>
+</svg>

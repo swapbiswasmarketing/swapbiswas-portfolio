@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Average Position vs Clicks, May to August 2026</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">swapbiswas.com: the average got 6.7 places worse while monthly clicks tripled</text>
+
+  <text x="60" y="172" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">AVERAGE POSITION, BETTER AT TOP</text>
+
+  <line x1="140" y1="200" x2="1340" y2="200" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="140" y1="295" x2="1340" y2="295" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="140" y1="390" x2="1340" y2="390" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="120" y="206" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">10</text>
+  <text x="120" y="301" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">20</text>
+  <text x="120" y="396" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">30</text>
+
+  <polyline points="323,263.9 608,321.5 893,340.5 1178,327.2" fill="none" stroke="#b53b15" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="323" cy="263.9" r="9" fill="#b53b15" stroke="#f6f4ef" stroke-width="3"/>
+  <circle cx="608" cy="321.5" r="9" fill="#b53b15" stroke="#f6f4ef" stroke-width="3"/>
+  <circle cx="893" cy="340.5" r="9" fill="#b53b15" stroke="#f6f4ef" stroke-width="3"/>
+  <circle cx="1178" cy="327.2" r="9" fill="#b53b15" stroke="#f6f4ef" stroke-width="3"/>
+  <text x="323" y="243" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">16.7</text>
+  <text x="608" y="300" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">22.8</text>
+  <text x="893" y="319" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">24.8</text>
+  <text x="1178" y="306" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">23.4</text>
+
+  <text x="60" y="452" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CLICKS PER MONTH</text>
+
+  <line x1="140" y1="480" x2="1340" y2="480" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="140" y1="550" x2="1340" y2="550" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="140" y1="620" x2="1340" y2="620" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="140" y1="690" x2="1340" y2="690" stroke="#e4dfd6" stroke-width="1.5"/>
+  <text x="120" y="486" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">60</text>
+  <text x="120" y="556" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">40</text>
+  <text x="120" y="626" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">20</text>
+  <text x="120" y="696" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">0</text>
+
+  <path d="M291,690 L291,629.5 Q291,623.5 297,623.5 L349,623.5 Q355,623.5 355,629.5 L355,690 Z" fill="#15130f"/>
+  <path d="M576,690 L576,577 Q576,571 582,571 L634,571 Q640,571 640,577 L640,690 Z" fill="#15130f"/>
+  <path d="M861,690 L861,577 Q861,571 867,571 L919,571 Q925,571 925,577 L925,690 Z" fill="#15130f"/>
+  <path d="M1146,690 L1146,489.5 Q1146,483.5 1152,483.5 L1204,483.5 Q1210,483.5 1210,489.5 L1210,690 Z" fill="#15130f"/>
+  <text x="323" y="610" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">19</text>
+  <text x="608" y="557" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">34</text>
+  <text x="893" y="557" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">34</text>
+  <text x="1178" y="470" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">59</text>
+
+  <text x="323" y="724" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#3a3632">May</text>
+  <text x="608" y="724" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#3a3632">June</text>
+  <text x="893" y="724" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#3a3632">July</text>
+  <text x="1178" y="724" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" font-weight="500" fill="#3a3632">August</text>
+  <text x="323" y="751" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">17,561 impressions</text>
+  <text x="608" y="751" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">14,190 impressions</text>
+  <text x="893" y="751" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">46,348 impressions</text>
+  <text x="1178" y="751" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">50,214 impressions</text>
+
+  <text x="60" y="796" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Source: this site's Search Console export, pulled 3 September 2026. Each month weights daily positions by daily impressions.</text>
+</svg>

@@ -130,7 +130,7 @@ The annual audit is the one most teams talk themselves out of, because the site 
 
 The three clocks handle normal life. Some events are not normal, and they demand an audit the moment they happen no matter what the calendar says. These are the ones that save you when waiting for the next scheduled check would be far too late.
 
-**A traffic cliff.** A sudden, sharp drop in organic traffic or rankings is a fire alarm. Do not wait for the monthly review. Audit immediately to isolate whether it is a technical break, a manual action, a lost set of backlinks, or an algorithmic shift.
+**A traffic cliff.** A sudden, sharp drop in organic traffic or rankings is a fire alarm. Do not wait for the monthly review. Audit immediately to isolate whether it is a technical break, a manual action, a lost set of backlinks, or an algorithmic shift. If the drop shows only in Search Console impressions while clicks hold, check the date against Google's Data anomalies page before you audit, since the step I measured on this site on 28 April 2026 lines up with [the end of a Search Console logging error](/blog/google-search-console-impressions-drop/).
 
 **A migration, redesign, or replatform.** Any time you change domains, restructure URLs, move CMS, or ship a major redesign, run a focused audit before and after launch. Migrations are the single most common way sites accidentally delete their own SEO, usually through botched redirects or newly blocked resources.
 

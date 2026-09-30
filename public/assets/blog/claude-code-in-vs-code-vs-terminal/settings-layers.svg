@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1010" width="1400" height="1010">
+  <rect x="0" y="0" width="1400" height="1010" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Which settings each Claude Code surface reads</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">VS Code extension vs CLI in a terminal, per Anthropic's docs, September 2026</text>
+
+  <rect x="60" y="140" width="560" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="182" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">VS Code extension</text>
+  <text x="90" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Chat panel on a bundled copy of the CLI</text>
+
+  <rect x="780" y="140" width="560" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="810" y="182" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">CLI in a terminal</text>
+  <text x="810" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Standalone install, started with claude</text>
+
+  <line x1="340" y1="240" x2="340" y2="286" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="333,286 347,286 340,300" fill="#15130f"/>
+
+  <line x1="620" y1="190" x2="700" y2="190" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="700" y1="190" x2="700" y2="526" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,526 707,526 700,540" fill="#15130f"/>
+
+  <line x1="980" y1="240" x2="980" y2="286" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="973,286 987,286 980,300" fill="#15130f"/>
+
+  <line x1="1260" y1="240" x2="1260" y2="526" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1253,526 1267,526 1260,540" fill="#15130f"/>
+
+  <rect x="60" y="300" width="560" height="196" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="336" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">LAYER 1: VS CODE SETTINGS</text>
+  <text x="90" y="374" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Extension settings (claudeCode.*)</text>
+  <text x="90" y="410" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">preferredLocation, useTerminal, autosave,</text>
+  <text x="90" y="442" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">initialPermissionMode and the rest</text>
+  <text x="90" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Stored in VS Code, not in Claude Code's files</text>
+
+  <rect x="780" y="300" width="400" height="196" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="810" y="336" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">CLI ONLY: LAUNCH FLAGS</text>
+  <text x="810" y="374" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">One-session flags</text>
+  <text x="810" y="410" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#3a3632">--model, --effort, --settings</text>
+  <text x="810" y="442" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Override your settings files</text>
+  <text x="810" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">For one session, never saved</text>
+
+  <rect x="60" y="540" width="1280" height="380" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="578" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">LAYER 2: CLAUDE CODE'S OWN FILES, READ BY BOTH</text>
+
+  <rect x="90" y="600" width="390" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="115" y="640" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">~/.claude/settings.json</text>
+  <text x="115" y="676" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">User: model, effort per model,</text>
+  <text x="115" y="708" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">permissions, env, hooks</text>
+
+  <rect x="505" y="600" width="390" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="530" y="640" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">.claude/settings.json</text>
+  <text x="530" y="676" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Project: team permissions,</text>
+  <text x="530" y="708" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">hooks, plugins; commit it</text>
+
+  <rect x="920" y="600" width="390" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="945" y="640" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">.claude/settings.local.json</text>
+  <text x="945" y="676" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Local: your overrides and</text>
+  <text x="945" y="708" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">don't-ask-again approvals</text>
+
+  <rect x="90" y="760" width="390" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="115" y="800" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">~/.claude.json</text>
+  <text x="115" y="836" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">MCP servers (user, local),</text>
+  <text x="115" y="868" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">sign-in, trust, IDE keys</text>
+
+  <rect x="505" y="760" width="390" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="530" y="800" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">.mcp.json</text>
+  <text x="530" y="836" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Project MCP servers,</text>
+  <text x="530" y="868" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">shared through git</text>
+
+  <rect x="920" y="760" width="390" height="140" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="945" y="800" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#b53b15">Read by neither</text>
+  <text x="945" y="836" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#15130f">mcpServers in settings.json</text>
+  <text x="945" y="868" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Servers there never load</text>
+
+  <text x="60" y="966" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Same key in several files: managed &gt; command line &gt; local &gt; project &gt; user. Lists merge, except four model keys.</text>
+</svg>

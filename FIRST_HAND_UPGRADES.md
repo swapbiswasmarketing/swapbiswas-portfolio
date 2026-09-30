@@ -202,3 +202,51 @@ Could you export page-level Search Console data for 2026-08-27 to 2026-09-26? I'
 ## google-september-2026-spam-update
 
 Already first-hand (it publishes this site's daily Search Console series against the 2026 update windows). The upgrade is the missing row: once Google posts the September completion note and one more week has passed, could you export daily Search Console data from 4 June to one week after completion? I'd run the post's own Check 2 on the September window (the band built from weeks the same distance apart) and list what shipped from 17 September onwards. The result, even "inside the band", becomes a fourth row in the tables under 'Three 2026 Spam Updates Run Through the Four Checks', and the H2 changes to four updates.
+
+## google-search-console-impressions-drop
+
+Did any other Search Console property you own and can name publicly show the same step across 27-28 April 2026 (daily average position before vs after, impressions per day, clicks per day)? If yes, one row per property would go in the 'One Site's Google Search Console Impressions Drop, Day by Day' table, turning a one-site natural experiment into a two- or three-site one.
+
+## what-is-a-good-average-position-in-google-search-console
+
+Can you export the Search Console Queries tab separately for June 2026 and for July 2026 (Performance > Search results, date range set to each calendar month > Export)? That would let the post show which query rows first appeared in those months and the average position each one entered at. The answer belongs in the 'Google Search Console Average Position, May to August 2026' section, replacing the sentence 'The query export covers all 16 months at once, so I cannot tie specific impressions to specific posts, and I read the timing as context rather than proof.' It would turn the 'new impressions arriving deeper' reading of the May-to-August slide from context into a measurement.
+
+## vercel-google-indexing
+
+What does `curl -sI` return today on this project's production vercel.app alias (the vercel.app hostname Vercel assigned to the swapbiswas.com project): a 308 to swapbiswas.com, or a 200 serving a duplicate copy? The answer becomes a new row in the 'How This Site Is Set Up on Vercel' live-results table and settles whether the site needs Vercel's host-scoped redirect.
+
+## does-google-support-indexnow
+
+For each post published since the IndexNow hook went live on 16 September 2026 (commit b363a96), how many days passed between its production deploy and (a) its first Bing crawl, from Bing Webmaster Tools URL Inspection or a Bingbot hit, versus (b) its first Google impression in Search Console (scripts/gsc.mjs)? The answer belongs as a small dated table under 'Is IndexNow Worth It If Google Doesn't Support It?'.
+
+## claude-code-seo-audit
+
+Once the fixes this audit found are applied (a trailing slash on the 29 links in b2c-marketing-automation, best-ai-tools-for-affiliate-marketing, competitive-product-analysis, go-to-market-strategy-for-startups, how-does-marketing-research-help-managers and saas-product-marketing-strategy; permanent redirects from /blog/five-winter-experiences-you-cannot-miss-in-gods-own-country/ to /blog/kerala-winter-experiences/ and from /privacy-policy/ to /privacy/; a slug tie-breaker in the blog index sort), what does a re-run of the same brief return? The answer would add an 'after' column to the intro findings table and close the 29-links and 404 sections.
+
+## build-a-personal-website-with-claude-code
+
+Which three prompts or briefs mattered most when you built swapbiswas.com with Claude Code, and what broke first after launch? The answer belongs in Step 1 (replacing the illustrative example brief with a real one, clearly dated) and as the first row of the "Two rows began as fixes" paragraph in the launch-to-indexed section.
+
+## claude-code-keeps-asking-for-permission
+
+Which permission mode do your VS Code conversations actually start in on this machine (is claudeCode.initialPermissionMode set in your VS Code user settings, and which mode did you last pick from the indicator), and did most of the 427 WebFetch rules pile up before or after auto mode became your default? One line with the answer belongs right after the per-file table in the '678 Allow Rules, 427 of Them Web Domains' section.
+
+## claude-code-wsl-vs-windows
+
+For the claude-code-wsl-vs-windows post: which install method did you use for Claude Code on your Windows 11 laptop (PowerShell installer, WinGet or npm), which Windows 11 edition is it, is the laptop managed by your employer, and is WSL 2 allowed or installed on it? The answer belongs in the intro's first-hand paragraph and the 'Claude Code WSL vs Windows on a Managed Work Laptop' section. It would turn the managed-laptop advice from documented to lived.
+
+## claude-code-in-vs-code-vs-terminal
+
+Which Claude Code extension settings (the claudeCode.* entries under Extensions > Claude Code in VS Code) have you changed from their defaults, and to what values (for example preferredLocation, useTerminal, initialPermissionMode, attachOpenFile)? The answers would add Layer 1 rows to the 'My Settings Map as of 30 September 2026' table, which today shows only Layer 2.
+
+## claude-projects-vs-skills
+
+Which marketing assets, if any, do you keep today in a Claude project versus a skill versus Instructions for Claude (for example the positioning doc, ICP, messaging house or brand voice rules), and has any of your projects switched to RAG search (the project knowledge search tool)? The answer belongs directly under the table in 'Claude Projects vs Skills for Marketing Assets'.
+
+## claude-design-vs-claude-code
+
+Have you run Claude Design (in chat, or /design inside Claude Code, which your v2.1.283 install supports) on one real deliverable, such as a version of the LinkedIn banner reading 'A marketer who builds.' or a product one-pager? How did its output, export options and time to a usable file compare with your HTML-rendered-to-PNG banner route? The answer belongs as a row or short paragraph in 'The Claude Code Route for Banners, OG Images and Pages'.
+
+## what-is-a-good-number-of-impressions-on-linkedin
+
+From your personal LinkedIn profile only (never the employer Page), for the last 90 days: how many original posts did you publish (excluding reposts and boosted posts), and what is the median impressions per post? What is your Total followers figure in Audience analytics? For your best and worst post, what were members reached and the Out of network percentage? This belongs as a worked example in 'How to Check Your LinkedIn Impressions in Native Analytics', replacing the illustrative 2,400-follower account, and as a plotted point on the benchmark-spread chart.

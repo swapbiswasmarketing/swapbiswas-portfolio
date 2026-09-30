@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" width="1400" height="850">
+<rect width="1400" height="850" fill="#f6f4ef"/>
+<text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Commits per month, and when each search piece landed</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">swapbiswas.com, 85 commits counted from git log, 12 March to 30 September 2026</text>
+
+<text x="60" y="150" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">MONTH</text>
+<text x="190" y="150" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">COMMITS</text>
+<text x="720" y="150" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">SEARCH PIECES THAT LANDED</text>
+<line x1="60" y1="162" x2="1340" y2="162" stroke="#e4dfd6" stroke-width="1"/>
+
+<line x1="190" y1="170" x2="190" y2="730" stroke="#e4dfd6" stroke-width="1"/>
+<line x1="340" y1="170" x2="340" y2="730" stroke="#e4dfd6" stroke-width="1"/>
+<line x1="490" y1="170" x2="490" y2="730" stroke="#e4dfd6" stroke-width="1"/>
+<line x1="640" y1="170" x2="640" y2="730" stroke="#e4dfd6" stroke-width="1"/>
+
+<text x="60" y="217" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">March</text>
+<path d="M190,190 H288 Q295,190 295,197 V223 Q295,230 288,230 H190 Z" fill="#15130f"/>
+<text x="307" y="217" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">7</text>
+<text x="720" y="204" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632"><tspan font-weight="600" fill="#15130f">12 Mar, first commit:</tspan> sitemap, robots.txt, share images</text>
+<text x="720" y="236" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632"><tspan font-weight="600" fill="#15130f">22 Mar:</tspan> per-post lastmod dates, Pagefind search</text>
+
+<text x="60" y="297" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">April</text>
+<path d="M190,270 H378 Q385,270 385,277 V303 Q385,310 378,310 H190 Z" fill="#15130f"/>
+<text x="397" y="297" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">13</text>
+<text x="720" y="297" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632"><tspan font-weight="600" fill="#15130f">20 Apr:</tspan> noindexed pages filtered out of the sitemap</text>
+
+<text x="60" y="377" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">May</text>
+<path d="M190,350 H213 Q220,350 220,357 V383 Q220,390 213,390 H190 Z" fill="#15130f"/>
+<text x="232" y="377" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">2</text>
+
+<text x="60" y="457" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">June</text>
+<path d="M190,430 H423 Q430,430 430,437 V463 Q430,470 423,470 H190 Z" fill="#15130f"/>
+<text x="442" y="457" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">16</text>
+
+<text x="60" y="537" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">July</text>
+<path d="M190,510 H288 Q295,510 295,517 V543 Q295,550 288,550 H190 Z" fill="#15130f"/>
+<text x="307" y="537" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">7</text>
+
+<text x="60" y="617" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">August</text>
+<path d="M190,590 H333 Q340,590 340,597 V623 Q340,630 333,630 H190 Z" fill="#15130f"/>
+<text x="352" y="617" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">10</text>
+<text x="720" y="617" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632"><tspan font-weight="600" fill="#15130f">26 Aug:</tspan> site-wide crawl audit passes 20 of 20</text>
+
+<text x="60" y="697" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">September</text>
+<path d="M190,670 H633 Q640,670 640,677 V703 Q640,710 633,710 H190 Z" fill="#15130f"/>
+<text x="652" y="697" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">30</text>
+<text x="720" y="684" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632"><tspan font-weight="600" fill="#15130f">3 Sep:</tspan> a 308 to the slashed URL, one URL per page</text>
+<text x="720" y="716" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632"><tspan font-weight="600" fill="#15130f">16 Sep:</tspan> IndexNow build hook on production deploys</text>
+
+<text x="190" y="758" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">0</text>
+<text x="340" y="758" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">10</text>
+<text x="490" y="758" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">20</text>
+<text x="640" y="758" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">30</text>
+
+<text x="60" y="806" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">78 of 85 commits landed after March 2026, the month of the first commit</text>
+</svg>

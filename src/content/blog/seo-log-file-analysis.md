@@ -68,6 +68,8 @@ Drains are the documented route to full static logs, and they are paid. Vercel s
 
 One Vercel log type does export cleanly, and it is the wrong one for SEO. "You can export up to 90 days of audit logs to a CSV file" ([Vercel Logs](https://vercel.com/docs/logs)), and the audit log records team activity, not requests.
 
+Without a usable log, I check what Vercel sends Googlebot with requests instead: [a Deployment Protection login wall, a firewall challenge rule or a preview noindex header](/blog/vercel-google-indexing/) each shows up in a `curl -sI` request or a URL Inspection live test.
+
 ### Netlify: Log Drains on Enterprise
 
 Netlify's Log Drains doc opens with the plan requirement: "This feature is available on Enterprise plans" ([Netlify Log Drains docs](https://docs.netlify.com/manage/monitoring/log-drains/)). That doc page was last updated 11 September 2026, so this is the current position rather than an old restriction.

@@ -199,6 +199,8 @@ A working brand guidelines program is not just a document - it is a workflow.
 
 The teams that compound brand strength run all five steps. The teams that ship guidelines and stop produce a document, not a brand.
 
+If your team designs in Claude Design, the guidelines hub doubles as an input: Claude Design can [build a brand design system from brand files in chat](/blog/claude-design-vs-claude-code/), and Anthropic's setup guide says a finished landing page tells Claude more about a brand's feel than a color palette alone, so upload real pages next to the guidelines.
+
 For the broader strategic frame, see [What Is Market Positioning](/blog/what-is-market-positioning/) and [Product Positioning](/blog/product-positioning/).
 
 ## The Bottom Line
