@@ -237,7 +237,7 @@ Set the rhythm by counting evidence, not ambition. Two evidenced claims a quarte
 
 ### Watch Citations, Not Views
 
-Track who quotes the claim, who links to it, which analysts repeat it, and whether it shows up in sales calls without being sent. Views tell you the distribution worked. Citations tell you the argument did. When that distribution runs through LinkedIn, I would read a post's impression count against [the percentile lines for your LinkedIn follower band](/blog/what-is-a-good-number-of-impressions-on-linkedin/) rather than a round number, since the published figures for a good post run from 300 to 5,000 for the same account.
+Track who quotes the claim, who links to it, which analysts repeat it, and whether it shows up in sales calls without being sent. Views tell you the distribution worked. Citations tell you the argument did. When that distribution runs through LinkedIn, I would read a post's impression count against [the percentile lines for your LinkedIn follower band](/blog/what-is-a-good-number-of-impressions-on-linkedin/) rather than a round number, since the published figures for a good post run from 300 to 5,000 for the same account. For the named author's own profile, I would [log search appearances and profile views every Wednesday](/blog/linkedin-search-appearances-vs-profile-views/) from the week before a piece goes out, as two separate numbers, and never divide one by the other.
 
 Review the inventory once a quarter against two questions. Did at least two new evidenced claims get added, or did the same claims come back wearing new headlines? And can anyone in the field name a piece they sent to a buyer without being asked to?
 

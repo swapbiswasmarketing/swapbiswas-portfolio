@@ -58,7 +58,7 @@ On 26 September 2026, the official reference table had **114 rows**: 16 marked a
 | `/mcp` | Manages MCP server connections and sign-in | Connecting or re-authorizing an SEO or analytics data source |
 | `/permissions` | Manages allow, ask and deny rules for tools | Pre-approving safe read-only commands so you are not asked every time |
 
-A command is recognized only at the start of a message, and any text after its name becomes its arguments. Type `/` on its own to see the list your setup has, custom commands included. How `/init` and `/memory` fit together is its own topic, covered in [how Claude Code memory works](/blog/claude-code-memory/). If you are still choosing a tool rather than learning one, start with [Claude vs ChatGPT for marketing work](/blog/claude-vs-chatgpt/), or [Claude vs Claude Code](/blog/claude-vs-claude-code/) if the open question is whether you need the terminal version at all.
+A command is recognized only at the start of a message, and any text after its name becomes its arguments. Type `/` on its own to see the list your setup has, custom commands included. How `/init` and `/memory` fit together is its own topic, covered in [how Claude Code memory works](/blog/claude-code-memory/). `/compact` re-injects your project-root CLAUDE.md, auto memory and the skills you invoked but leaves out the skill listing, which `/clear` loads again with the rest of the startup content; my [comparison of compacting and clearing](/blog/claude-code-compact-vs-clear/) shows what else each one keeps. If you are still choosing a tool rather than learning one, start with [Claude vs ChatGPT for marketing work](/blog/claude-vs-chatgpt/), or [Claude vs Claude Code](/blog/claude-vs-claude-code/) if the open question is whether you need the terminal version at all.
 
 ## Claude Code Commands List by Category
 
@@ -122,6 +122,8 @@ These tables cover the rest of the built-in and bundled commands a non-developer
 | `/hooks` | Shows hook configurations for tool events |
 | `/plugin` | Manages Claude Code plugins |
 | `/output-style [style]` | Lists output styles or switches to one |
+
+The output styles that `/output-style` switches between are a Claude Code feature that still ships, separate from the Claude app's styles, which Anthropic moved into skills in 2026; my post on [how the Claude app's styles became skills](/blog/claude-styles/) also lists the built-in output styles and how to set one.
 
 ### Commands That Have Been Removed
 

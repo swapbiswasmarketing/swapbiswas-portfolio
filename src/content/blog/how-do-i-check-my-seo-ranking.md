@@ -59,7 +59,7 @@ You'll see four metrics for each keyword:
 - **CTR** - click-through rate (clicks divided by impressions)
 - **Average Position** - your average ranking for that keyword
 
-**Pro tip:** Filter by page to see which keywords a specific URL ranks for. Click **+ New** > **Page** > enter your URL. This shows you every query driving impressions to that page.
+**Pro tip:** Filter by page to see which keywords a specific URL ranks for. Click **+ Add filter** > **Pages** > **URLs containing** and enter your URL. This shows you every query driving impressions to that page. To filter several pages or queries at once, pick **Pages** or **Queries** under **+ Add filter**, then **Custom (regex)**, and separate the values with a vertical bar and no spaces; I tested [what common Search Console regex patterns catch](/blog/search-console-regex/) on my own query export.
 
 **Limitations:** GSC shows average position over a date range, not real-time rankings. Data has a 2-3 day delay, and [Google retains only 16 months of performance data](https://developers.google.com/search/blog/2018/01/introducing-new-search-console) - anything older is permanently deleted. The query table is incomplete too: on my own export, [137 of the 186 clicks belonged to no listed query](/blog/seo-long-tail-keywords/), because Search Console caps the table at 1,000 rows and withholds queries searched very few times. It also doesn't show competitor rankings.
 

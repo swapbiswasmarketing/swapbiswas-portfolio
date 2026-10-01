@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 930" width="1400" height="930">
+  <rect x="0" y="0" width="1400" height="930" fill="#f6f4ef"/>
+
+  <text x="40" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where LinkedIn shows impressions per section</text>
+  <text x="40" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The click path in LinkedIn Help, checked 2 October 2026</text>
+
+  <text x="40" y="242" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">DESKTOP</text>
+  <text x="40" y="306" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">MOBILE</text>
+
+  <rect x="170" y="150" width="264" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="192" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 1</text>
+  <text x="192" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Click the Me icon</text>
+  <line x1="192" y1="268" x2="412" y2="268" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="192" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Tap profile photo</text>
+
+  <rect x="478" y="150" width="264" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="500" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 2</text>
+  <text x="500" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Click View profile</text>
+  <line x1="500" y1="268" x2="720" y2="268" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="500" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Tap the photo again</text>
+
+  <rect x="786" y="150" width="264" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="808" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 3</text>
+  <text x="808" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Scroll to Analytics</text>
+  <line x1="808" y1="268" x2="1028" y2="268" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="808" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Scroll to Analytics</text>
+
+  <rect x="1094" y="150" width="264" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1116" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 4</text>
+  <text x="1116" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Search Appearances</text>
+  <line x1="1116" y1="268" x2="1336" y2="268" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1116" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Search appearances</text>
+
+  <line x1="440" y1="268" x2="458" y2="268" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="458,261 472,268 458,275" fill="#15130f"/>
+  <line x1="748" y1="268" x2="766" y2="268" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="766,261 780,268 766,275" fill="#15130f"/>
+  <line x1="1056" y1="268" x2="1074" y2="268" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1074,261 1088,268 1074,275" fill="#15130f"/>
+
+  <line x1="1226" y1="336" x2="1226" y2="400" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1219,400 1233,400 1226,414" fill="#15130f"/>
+
+  <rect x="170" y="420" width="1188" height="356" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="196" y="458" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 5</text>
+  <text x="196" y="496" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Profile engagement</text>
+  <text x="196" y="528" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">LinkedIn's sample panel: Premium label, past 90 days</text>
+
+  <rect x="196" y="548" width="368" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="218" y="582" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Total impressions</text>
+  <text x="218" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sample label: Impressions</text>
+
+  <rect x="580" y="548" width="368" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="602" y="582" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Total clicks</text>
+  <text x="602" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sample label: Clicks</text>
+
+  <rect x="964" y="548" width="368" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="986" y="582" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Average viewing time</text>
+  <text x="986" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sample label: Avg view time</text>
+
+  <rect x="196" y="640" width="1136" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="218" y="677" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" font-weight="600" fill="#15130f">Impressions per section</text>
+  <text x="508" y="677" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">one percentage per section in the sample</text>
+
+  <rect x="218" y="694" width="92" height="40" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="238" y="721" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Intro</text>
+  <rect x="326" y="694" width="152" height="40" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2.5"/>
+  <text x="346" y="721" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Experience</text>
+  <rect x="494" y="694" width="140" height="40" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="514" y="721" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Education</text>
+  <rect x="650" y="694" width="124" height="40" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="670" y="721" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Activity</text>
+  <text x="794" y="721" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">then Show all</text>
+
+  <text x="40" y="826" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The same view also holds Profile appearances: All appearances and Search appearances.</text>
+  <text x="40" y="858" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Neither help article uses the phrase "impressions on your experience".</text>
+  <text x="40" y="890" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sources: LinkedIn Help a553050 (path and names) and a7105642 (sample panel), as of October 2026</text>
+</svg>

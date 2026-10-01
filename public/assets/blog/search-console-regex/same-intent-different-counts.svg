@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1020" width="1400" height="1020">
+  <rect x="0" y="0" width="1400" height="1020" fill="#f6f4ef"/>
+
+  <text x="60" y="78" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">A few characters change what a pattern catches</text>
+  <text x="60" y="120" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Rows caught in this site's top 1,000 Search Console queries, 1 May 2025 to 31 August 2026,</text>
+  <text x="60" y="150" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">each pattern run through Google's RE2 library with case-insensitive matching.</text>
+
+  <rect x="60" y="185" width="18" height="18" rx="3" fill="#6a645c"/>
+  <text x="88" y="200" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">As typed or as published</text>
+  <rect x="350" y="185" width="18" height="18" rx="3" fill="#2a7347"/>
+  <text x="378" y="200" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Fixed</text>
+
+  <rect x="60" y="230" width="1280" height="164" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="272" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">TEST 1</text>
+  <text x="92" y="310" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Spaces around the bar</text>
+  <text x="92" y="344" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Google's template puts a space</text>
+  <text x="92" y="372" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">on each side of every bar.</text>
+  <line x1="500" y1="254" x2="500" y2="370" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="530" y="274" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#3a3632">\b(examples? | templates? | checklists?)\b</text>
+  <rect x="530" y="284" width="104" height="24" rx="3" fill="#6a645c"/>
+  <text x="648" y="303" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">36 rows</text>
+  <text x="530" y="338" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#3a3632">\b(examples?|templates?|checklists?)\b</text>
+  <rect x="530" y="348" width="293" height="24" rx="3" fill="#2a7347"/>
+  <text x="837" y="367" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">101 rows</text>
+
+  <rect x="60" y="412" width="1280" height="164" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="454" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">TEST 2</text>
+  <text x="92" y="492" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Spaces after the bar</text>
+  <text x="92" y="526" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Sitechecker's summary table.</text>
+  <text x="92" y="554" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">At ^, only "who" can match.</text>
+  <line x1="500" y1="436" x2="500" y2="552" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="530" y="456" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#3a3632">^(who| what| where| when| why| how)\b</text>
+  <rect x="530" y="466" width="4" height="24" rx="1" fill="#6a645c"/>
+  <text x="548" y="485" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">1 row</text>
+  <text x="530" y="520" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#3a3632">^(who|what|where|when|why|how)\b</text>
+  <rect x="530" y="530" width="676" height="24" rx="3" fill="#2a7347"/>
+  <text x="1220" y="549" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">233 rows</text>
+
+  <rect x="60" y="594" width="1280" height="164" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="636" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">TEST 3</text>
+  <text x="92" y="674" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A dot stops at a line break</text>
+  <text x="92" y="708" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">14 queries contain one;</text>
+  <text x="92" y="736" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">(?s) lets the dot cross it.</text>
+  <line x1="500" y1="618" x2="500" y2="734" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="530" y="638" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#3a3632">^.{60,}$</text>
+  <rect x="530" y="648" width="81" height="24" rx="3" fill="#6a645c"/>
+  <text x="625" y="667" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">28 rows</text>
+  <text x="530" y="702" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#3a3632">(?s)^.{60,}$</text>
+  <rect x="530" y="712" width="122" height="24" rx="3" fill="#2a7347"/>
+  <text x="666" y="731" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">42 rows</text>
+
+  <rect x="60" y="776" width="1280" height="164" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="818" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">TEST 4</text>
+  <text x="92" y="856" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Partial match by default</text>
+  <text x="92" y="890" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Bare ai also matches inside</text>
+  <text x="92" y="918" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">email, paid and campaign.</text>
+  <line x1="500" y1="800" x2="500" y2="916" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="530" y="820" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#3a3632">ai</text>
+  <rect x="530" y="830" width="223" height="24" rx="3" fill="#6a645c"/>
+  <text x="767" y="849" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">77 rows, 19 only inside other words</text>
+  <text x="530" y="884" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#3a3632">\bai\b</text>
+  <rect x="530" y="894" width="168" height="24" rx="3" fill="#2a7347"/>
+  <text x="712" y="913" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">58 rows</text>
+
+  <text x="60" y="980" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Source: swapbiswas.com Search Console query export, top 1,000 rows, tested with re2-wasm. Counts from the export, not the live filter.</text>
+</svg>

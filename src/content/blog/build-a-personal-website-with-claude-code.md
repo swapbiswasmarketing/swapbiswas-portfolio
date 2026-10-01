@@ -101,6 +101,8 @@ My LinkedIn headline includes the line "I write the brief, then I build it", and
 | Look | Two or three reference sites or screenshots instead of adjectives |
 | Out of scope | What not to build yet |
 
+If your audience row says visitors find you on LinkedIn and you rewrite your headline to match the new site, [judge the new headline by search appearances and profile views](/blog/linkedin-search-appearances-vs-profile-views/), since LinkedIn shows it next to your name in every profile appearance.
+
 For the look row, the [homepage concepts in my personal website examples gallery](/personal-website-examples/) are each a complete build with a live preview, which gives Claude Code a layout to match instead of a mood to interpret.
 
 If the brief is thin, let Claude fill the gaps by asking. Anthropic's [Claude Code best-practices guide](https://code.claude.com/docs/en/best-practices) says "For larger features, have Claude interview you first", and its sample prompt tells Claude to keep going "until we've covered everything, then write a complete spec to SPEC.md". The guide then says to "start a fresh session to execute it", so the build begins with clean context and a written spec.

@@ -199,6 +199,8 @@ Export what you want to keep. Combined post analytics exports to an .XLSX file f
 
 For a reactions benchmark, [MagicPost measured](https://magicpost.in/blog/how-many-impressions-are-good-on-linkedin) the median like rate (likes divided by impressions) falling from 2.38% under 1,000 followers to 1.55% at 100,000+.
 
+Members counted under Profile viewers from this post are also part of your profile views, which include visits from any route and run on a different window from search appearances, so I would compare each of those two numbers with its own earlier weeks and [never divide profile views by search appearances](/blog/linkedin-search-appearances-vs-profile-views/). Your profile has separate impression numbers, which LinkedIn's help lists as [Total impressions and Impressions per section](/blog/linkedin-impressions-on-your-experience/) in the Profile engagement block under Search Appearances.
+
 Tag any link with a UTM from a [campaign naming convention](/blog/campaign-naming-convention/) so the visits land under a campaign you can read. I keep each LinkedIn post's draft, UTM and image prompt together in one markdown file, so a click can be traced back to the post that earned it.
 
 On a scorecard, impressions belong with the [product marketing metrics that count as inputs](/blog/product-marketing-metrics/), next to the outcomes leadership funds. If your posts are the distribution arm of a thought leadership program, the test from [publishing thought leadership content](/blog/thought-leadership-content/) applies: views show the distribution worked, and citations show the argument did. Track which posts get quoted, linked or forwarded into a sales thread.

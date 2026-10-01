@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 670" width="1400" height="670">
+  <rect x="0" y="0" width="1400" height="670" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Compact, Clear or Subagent</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">What to run when the Claude Code context window fills, built from Anthropic's docs, October 2026</text>
+
+  <rect x="60" y="140" width="700" height="128" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="196" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Is the next task unrelated, or have</text>
+  <text x="96" y="230" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">two corrections already failed?</text>
+
+  <line x1="772" y1="204" x2="862" y2="204" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="862,197 876,204 862,211" fill="#15130f"/>
+  <text x="800" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">yes</text>
+
+  <rect x="880" y="140" width="460" height="128" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="908" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="26" font-weight="500" fill="#15130f">/clear</text>
+  <text x="908" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Carry decisions in a handoff file</text>
+  <text x="908" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">/resume reopens the old one</text>
+
+  <line x1="410" y1="280" x2="410" y2="302" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="403,302 417,302 410,316" fill="#15130f"/>
+  <text x="428" y="302" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">no</text>
+
+  <rect x="60" y="318" width="700" height="128" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="391" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Is a large read coming next?</text>
+
+  <line x1="772" y1="382" x2="862" y2="382" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="862,375 876,382 862,389" fill="#15130f"/>
+  <text x="800" y="368" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">yes</text>
+
+  <rect x="880" y="318" width="460" height="128" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="908" y="362" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="26" font-weight="500" fill="#15130f">A subagent</text>
+  <text x="908" y="396" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Its file reads stay in its context</text>
+  <text x="908" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Only its summary comes back</text>
+
+  <line x1="410" y1="458" x2="410" y2="480" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="403,480 417,480 410,494" fill="#15130f"/>
+  <text x="428" y="480" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">no</text>
+
+  <rect x="60" y="496" width="700" height="128" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="96" y="540" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="26" font-weight="500" fill="#15130f">/compact &lt;focus&gt;</text>
+  <text x="96" y="574" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Same task: name the decisions the next step needs</text>
+  <text x="96" y="606" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">CLAUDE.md, auto memory and invoked skills come back</text>
+
+  <text x="880" y="546" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">THE DEFAULT</text>
+  <text x="880" y="580" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Auto-compaction runs the same pass,</text>
+  <text x="880" y="612" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">without your focus, if you do nothing</text>
+</svg>

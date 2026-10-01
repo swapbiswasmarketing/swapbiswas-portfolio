@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+
+  <text x="60" y="78" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Search appearances are one slice of all appearances</text>
+  <text x="60" y="116" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">LinkedIn's sample Profile appearances panel (Help article a1588796), next to profile views</text>
+
+  <text x="60" y="180" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">All appearances in LinkedIn's sample week: 244</text>
+
+  <rect x="60" y="198" width="616.9" height="56" fill="#6a645c"/>
+  <rect x="679.9" y="198" width="610.8" height="56" fill="#b53b15"/>
+  <rect x="1293.7" y="198" width="46.3" height="56" fill="#15130f"/>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif">
+    <text x="60" y="290" font-size="20" fill="#15130f">Network recommendations</text>
+    <text x="60" y="316" font-size="18" fill="#6a645c">48.4%, about 118</text>
+    <text x="679.9" y="290" font-size="20" font-weight="600" fill="#b53b15">Search: 48%, 117</text>
+    <text x="679.9" y="316" font-size="18" fill="#15130f">This slice is Search appearances</text>
+    <text x="1340" y="290" font-size="20" fill="#15130f" text-anchor="end">Comments</text>
+    <text x="1340" y="316" font-size="18" fill="#6a645c" text-anchor="end">3.7%, about 9</text>
+  </g>
+
+  <line x1="60" y1="350" x2="1340" y2="350" stroke="#e4dfd6" stroke-width="1"/>
+
+  <rect x="60" y="380" width="630" height="370" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="710" y="380" width="630" height="370" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="90" y="426" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">All appearances</text>
+  <text x="740" y="426" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Profile views</text>
+  <line x1="90" y1="446" x2="660" y2="446" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="740" y1="446" x2="1310" y2="446" stroke="#e4dfd6" stroke-width="1"/>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">
+    <text x="90" y="486">COUNTS</text>
+    <text x="90" y="526">WHERE</text>
+    <text x="90" y="622">WINDOW</text>
+    <text x="90" y="662">REFRESH</text>
+    <text x="90" y="702">NAMES</text>
+    <text x="740" y="486">COUNTS</text>
+    <text x="740" y="526">WHERE</text>
+    <text x="740" y="622">WINDOW</text>
+    <text x="740" y="662">REFRESH</text>
+    <text x="740" y="702">NAMES</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="230" y="486">Instances of your name and headline</text>
+    <text x="230" y="526">Such as search results (the Search</text>
+    <text x="230" y="554">appearances slice), your posts in feeds,</text>
+    <text x="230" y="582">comments and recommendations</text>
+    <text x="230" y="622">Not in the text; the sample is one week</text>
+    <text x="230" y="662">Weekly, on Wednesdays</text>
+    <text x="230" y="702">None: the data is aggregated</text>
+    <text x="880" y="486">People who visited your profile</text>
+    <text x="880" y="526">Anywhere, including selecting your</text>
+    <text x="880" y="554">name in a search suggestion</text>
+    <text x="880" y="622">Last 90 days free, up to 365 Premium</text>
+    <text x="880" y="662">Not stated in the Help pages cited</text>
+    <text x="880" y="702">Some, by plan and privacy settings</text>
+  </g>
+
+  <text x="700" y="800" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c" text-anchor="middle">Sources: LinkedIn Help a1588796, a553050, a7105642, a548046 and a568195, read 2 October 2026.</text>
+</svg>

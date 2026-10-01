@@ -81,6 +81,8 @@ Each of those is a full round trip to the edge before the HTML request even star
 
 Another rule does not fix this. Writing the canonical form into the link does, which means picking one convention, slash or no slash, and matching it to whatever your host's normalization setting already enforces. On this site the setting is `trailingSlash: true`, so an internal link without the slash is a self-inflicted hop, and the same logic applies to canonical tags, sitemap entries and anything a crawler treats as an address.
 
+In Search Console, a slashless URL that answers with that 308 belongs under "Page with redirect", and if you click Validate fix on that row, [a failed validation is the expected result while the redirect stays](/blog/page-with-redirect-validation-failed/).
+
 ## Chrome's 307 Internal Redirect Comes From HSTS
 
 Open DevTools on the http version of an HSTS-protected URL and you will see a `307 Internal Redirect` in the network panel. No server sent it.

@@ -126,7 +126,7 @@ Where a new project's cloud threads get skills, per the project docs as of Septe
 
 What does not reach a cloud thread: skills, MCP servers, plugins and tools "installed only on your machine," and plugins a repository declares in its own `.claude/settings.json`. A thread Claude runs on your computer through Remote Control uses what is installed there.
 
-So in the new version, a skill can belong to a project rather than only to your account, and the decision becomes which skills a project's threads should get. A skill committed to a project's repository stays with that work. A skill enabled on your claude.ai account reaches that account's chats, projects and cloud threads, but not Claude Code on your own machine or the API: the Agent Skills overview says "Custom Skills do not sync across surfaces," so a skill you want in both places has to be added to each. If you want ready-made ones, my review of [Claude marketing skills and how to vet them](/blog/claude-marketing-skills/) covers what to check before you install.
+So in the new version, a skill can belong to a project rather than only to your account, and the decision becomes which skills a project's threads should get. A skill committed to a project's repository stays with that work. A skill enabled on your claude.ai account reaches that account's chats, projects and cloud threads, and, per Anthropic's [Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude) article, Claude Code in your terminal from v2.1.273 when it signs in with the same account, but not the API. If you want ready-made ones, my review of [Claude marketing skills and how to vet them](/blog/claude-marketing-skills/) covers what to check before you install.
 
 ## Claude Projects vs Skills for Marketing Assets
 
@@ -146,7 +146,7 @@ For a product marketing kit, the timing test sorts assets like this:
 
 My [Claude vs ChatGPT comparison](/blog/claude-vs-chatgpt/) suggests putting the positioning doc, ICP, messaging house and brand voice rules in one project so every chat starts from them, which a paid plan guarantees only for the parts in project instructions. The brand voice rows split that advice: the core rules go in instructions, and the review that applies the full guide becomes a skill. The brand-voice check example near the end of my Claude skill breakdown follows this pattern, with its voice rules in a `references/` folder and its banned-phrase check in a script.
 
-Above both sits Instructions for Claude, the account-wide setting. Anthropic's [personalization article](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features) says what you add there "will be applied to all of your conversations with Claude," while project instructions "only apply to chats within that project."
+Above both sits Instructions for Claude, the account-wide setting. Anthropic's [personalization article](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features) says what you add there "will be applied to all of your conversations with Claude," while project instructions "only apply to chats within that project." Tone and format presets used to sit in a separate styles menu until Anthropic moved styles into skills in 2026; my post on [what replaced Claude's styles menu](/blog/claude-styles/) explains when a tone belongs in this setting and when it belongs in a skill.
 
 ## Claude Projects vs Chats and Artifacts
 

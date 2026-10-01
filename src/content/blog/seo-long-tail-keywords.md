@@ -108,7 +108,7 @@ Whatever the threshold is today, it is a volume threshold. Long tail keywords ar
 
 Ahrefs put a size on the general problem: its analysis of [anonymized queries in Search Console](https://ahrefs.com/blog/gsc-anonymized-queries/), covering 22 billion clicks across 887,534 GSC properties in April 2025, found 46.77% of Search Console traffic hidden behind anonymized queries.
 
-Every "filter Search Console to four-plus word queries and check the CTR" walkthrough, mine included, runs on the slice of the long tail that cleared a privacy cutoff. That slice is the highest-volume, least-long-tail part of the distribution by construction. The band table earlier in this post is that censored sample, which is why it sits three sections above this one rather than alone.
+Every "filter Search Console to four-plus word queries and check the CTR" walkthrough, mine included, runs on the slice of the long tail that cleared a privacy cutoff. That slice is the highest-volume, least-long-tail part of the distribution by construction. The band table earlier in this post is that censored sample, which is why it sits three sections above this one rather than alone. In the Performance report, the four-plus word cut takes one Custom (regex) filter, and of [the regex patterns I ran against this same export](/blog/search-console-regex/), `^\S+(\s+\S+){3,}$` reproduces this post's split exactly.
 
 ## The New Long Tail Is Prompt-Shaped
 

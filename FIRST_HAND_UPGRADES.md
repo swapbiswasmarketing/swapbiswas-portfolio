@@ -250,3 +250,27 @@ Have you run Claude Design (in chat, or /design inside Claude Code, which your v
 ## what-is-a-good-number-of-impressions-on-linkedin
 
 From your personal LinkedIn profile only (never the employer Page), for the last 90 days: how many original posts did you publish (excluding reposts and boosted posts), and what is the median impressions per post? What is your Total followers figure in Audience analytics? For your best and worst post, what were members reached and the Out of network percentage? This belongs as a worked example in 'How to Check Your LinkedIn Impressions in Native Analytics', replacing the illustrative 2,400-follower account, and as a plotted point on the benchmark-spread chart.
+
+## claude-styles
+
+When you open Customize > Skills > + > Browse skills on your claude.ai account today and search "Learning", is the Learning skill listed, and what description does it show? (The answer replaces the sentence "whether Learning is still offered can be confirmed only inside the app" in the section "How to Get the Learning Style Back as a Skill".)
+
+## claude-code-compact-vs-clear
+
+In the portfolio repo, run /context three times: at the start of a fresh session, right after a /compact, and right after a /clear. At each point, what are the token totals for the Skills, Memory files and Messages categories, and what window size does it show? Report category totals only, with no skill, MCP or connector names. The answer belongs in the 'How that maps onto the setup behind this site' bullets under 'What /compact Re-Injects, Re-Reads and Drops'.
+
+## page-with-redirect-validation-failed
+
+In the swapbiswas.com Search Console property's Page indexing report today, how many URLs sit under Page with redirect, which patterns do the examples show (slashless /blog/ URLs, http://, www., /redesign/ meta-refresh stubs, old WordPress paths), and has Validate fix ever been clicked on that row (date clicked, date it ended, and whether it ended Failed or stopped with the state unchanged)? The answer belongs in the 'This Site's 308s and Meta Refresh Stubs' H2, right after the commit 8b23ef5 paragraph.
+
+## linkedin-search-appearances-vs-profile-views
+
+For the weeks before and after the 2026-09-25 headline and banner rewrite, what were your weekly Search appearances, All appearances and Profile views (with the date range printed under Profile appearances each week), which titles showed under 'Job titles you were found for' on each side, and does your Profile engagement panel carry a Premium label? The answer belongs in the final H2 'Judging a Profile Edit With LinkedIn Search Appearances vs Profile Views', after its first paragraph.
+
+## linkedin-impressions-on-your-experience
+
+Open Me > View profile > Analytics > Search Appearances and describe your Profile engagement block, as close to a screenshot as you can: Total impressions, Total clicks, Average viewing time, and every Impressions per section line (is Experience one line, or one line per position?). Do this for a reading taken before and one taken after your 2026-09-25 headline and banner rewrite. Have you ever received the "impressions on your experience" notification? If so, what does it say word for word, and what screen opens when you tap it? (The answers belong in the "How to Read LinkedIn Impressions on Your Experience After a Profile Edit" section, replacing the illustrative table, and in the first H2.)
+
+## search-console-regex
+
+On the swapbiswas.com property (Performance > Search results > Queries, 1 May 2025 to 31 August 2026), paste these into + Add filter > Queries > Custom (regex) and report what Search Console shows for each: (1) (?-i)SEO, giving the row count; (2) the lookahead ^(?!.*free).*, giving the exact error message text or the result, ideally with a screenshot; (3) ^.{60,}$ and then (?s)^.{60,}$, giving both row counts. The export test gave 0 rows for (1), an RE2 compile error for (2), and 28 vs 42 for (3). The answers belong in the 'Syntax RE2 Rejects and What to Type Instead' table (an error-message column for Search Console) and in the last paragraph of 'The Line Break Inside 14 Queries'.

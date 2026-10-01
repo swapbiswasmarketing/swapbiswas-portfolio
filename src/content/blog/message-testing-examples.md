@@ -313,7 +313,7 @@ When the two sources agree, ship the winner and move on. When they disagree, rew
 - Ask comprehension before scales, on every study, without exception.
 - Publish the axis weights beside the composite so anyone can recompute the score from the raw means.
 - Enforce a floor on every axis so a good average cannot hide a broken one.
-- Store the exact stimulus text next to every score; a result without its stimulus cannot be reused six months later.
+- Store the exact stimulus text next to every score; a result without its stimulus cannot be reused six months later. The same rule holds for a LinkedIn profile rewrite: before you edit a section such as Experience, save its exact text next to [your Profile engagement readings](/blog/linkedin-impressions-on-your-experience/) from the same day.
 - Report the resolvable gap alongside the result, so the next reader knows what the number cannot say.
 - Keep the losing variant. A message that fails for one audience is often the right message for a surface the other audience never visits.
 

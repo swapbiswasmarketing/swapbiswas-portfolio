@@ -191,7 +191,7 @@ It guides you through a three-stage workflow for proposals, technical specs and 
 
 ## Build Your Own Claude Marketing Skills
 
-Libraries cover the generic jobs. Your positioning, ICP, voice rules and approval steps are the part no public repo can know, and that is where writing your own skill pays off. In the Claude app, part of that belongs in a project instead: [how I sort marketing assets between projects and skills](/blog/claude-projects-vs-skills/) puts a one-paragraph positioning statement in project instructions, where every chat starts from it, and keeps the brand-voice review as a skill that loads only when a review is asked for.
+Libraries cover the generic jobs. Your positioning, ICP, voice rules and approval steps are the part no public repo can know, and that is where writing your own skill pays off. In the Claude app, part of that belongs in a project instead: [how I sort marketing assets between projects and skills](/blog/claude-projects-vs-skills/) puts a one-paragraph positioning statement in project instructions, where every chat starts from it, and keeps the brand-voice review as a skill that loads only when a review is asked for. If you kept your voice rules in a custom style in the Claude app, the 2026 migration turned that style into a skill that arrives disabled in Customize > Skills, and my guide to [how Claude app styles became skills](/blog/claude-styles/) includes a write-like-me skill that drafts from your own writing samples.
 
 ### 14. skill-creator (Anthropic)
 

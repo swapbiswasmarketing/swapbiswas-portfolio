@@ -63,7 +63,7 @@ How loading works, per the same [memory docs page](https://code.claude.com/docs/
 - Files in `.claude/rules/` load at launch unless a `paths:` glob in their frontmatter scopes them to matching files.
 - A repo with an `AGENTS.md` and no CLAUDE.md, `.claude/CLAUDE.md` or CLAUDE.local.md at or above the launch folder gets its AGENTS.md read instead, from Claude Code v2.1.277 on.
 
-To see what loaded in a session, run `/context` and look under **Memory files**.
+To see what loaded in a session, run `/context` and look under **Memory files**. When Claude Code compacts a conversation, it re-injects the project-root CLAUDE.md and auto memory from disk, while a subfolder CLAUDE.md or a path-scoped rule returns only when Claude next reads a matching file; the full list is in my breakdown of [what compacting keeps compared with clearing](/blog/claude-code-compact-vs-clear/).
 
 ## Where Claude Code Memory Is Stored: The MEMORY.md Location
 

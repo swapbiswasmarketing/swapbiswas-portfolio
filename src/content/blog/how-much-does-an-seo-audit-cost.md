@@ -150,7 +150,7 @@ Use an agency when the audit will inform a multi-quarter SEO strategy, or when y
 
 Best for small sites and early-stage founders who need to understand their SEO problems without writing a check. You can cover most technical and on-page issues using:
 
-- **[Google Search Console](https://search.google.com/search-console/about)** - free, catches indexation, core web vitals, and basic performance issues
+- **[Google Search Console](https://search.google.com/search-console/about)** - free, catches indexation, core web vitals, and basic performance issues; its Custom (regex) filter can also isolate the cost and price queries your pages appear for in one pass, with [the cost-and-price regex I tested on my own export](/blog/search-console-regex/)
 - **[Google PageSpeed Insights](https://pagespeed.web.dev/)** - free, measures Core Web Vitals per page
 - **Screaming Frog SEO Spider (free tier)** - crawls up to 500 URLs at no cost
 

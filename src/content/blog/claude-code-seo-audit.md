@@ -168,7 +168,7 @@ A 308, [the code Vercel sends for this site's trailing-slash rule](/blog/301-red
 grep -oE "\]\(/blog/[a-z0-9-]+\)" src/content/blog/*.md
 ```
 
-On this repo it prints 29 lines today.
+On this repo it prints 29 lines today. Fixing the links leaves the trailing-slash 308 in place, so the slashless URLs still fit Google's definition of "Page with redirect", and [Validate fix cannot measure a link cleanup like this one](/blog/page-with-redirect-validation-failed/) because each of those URLs still redirects after the edit.
 
 ## 8 URLs With Impressions Now Return 404
 

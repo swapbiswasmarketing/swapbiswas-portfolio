@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 680" width="1400" height="680">
+  <rect x="0" y="0" width="1400" height="680" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">What Comes Back After /compact vs /clear</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Each part of context after each command, per Anthropic's Claude Code docs, October 2026</text>
+
+  <text x="60" y="158" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">IN CONTEXT BEFORE</text>
+  <text x="460" y="158" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">AFTER /COMPACT</text>
+  <text x="950" y="158" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">AFTER /CLEAR</text>
+
+  <rect x="60" y="176" width="380" height="64" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="215" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Project-root CLAUDE.md</text>
+  <rect x="460" y="176" width="470" height="64" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="484" y="215" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Re-injected from disk</text>
+  <rect x="950" y="176" width="390" height="64" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="974" y="215" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Loaded from disk</text>
+
+  <rect x="60" y="254" width="380" height="64" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="293" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Auto memory (MEMORY.md)</text>
+  <rect x="460" y="254" width="470" height="64" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="484" y="293" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Re-injected from disk</text>
+  <rect x="950" y="254" width="390" height="64" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="974" y="293" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Loaded from disk</text>
+
+  <rect x="60" y="332" width="380" height="64" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="371" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Skill listing (descriptions)</text>
+  <rect x="460" y="332" width="470" height="64" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="484" y="371" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Not re-injected</text>
+  <rect x="950" y="332" width="390" height="64" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="974" y="371" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#2a7347">Loads, as at session start</text>
+
+  <rect x="60" y="410" width="380" height="64" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="449" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Invoked skill bodies</text>
+  <rect x="460" y="410" width="470" height="64" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="484" y="449" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">First 5,000 tokens each, 25,000 total</text>
+  <rect x="950" y="410" width="390" height="64" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="974" y="449" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Gone until invoked again</text>
+
+  <rect x="60" y="488" width="380" height="64" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="527" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Files Claude read or edited</text>
+  <rect x="460" y="488" width="470" height="64" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="484" y="527" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Up to five re-read</text>
+  <rect x="950" y="488" width="390" height="64" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="974" y="527" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Gone from context</text>
+
+  <rect x="60" y="566" width="380" height="64" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="605" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">The conversation</text>
+  <rect x="460" y="566" width="470" height="64" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="484" y="605" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Summary plus most recent exchanges</text>
+  <rect x="950" y="566" width="390" height="64" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="974" y="605" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Empty; /resume brings it back</text>
+</svg>

@@ -79,6 +79,8 @@ Scroll maps show how far down the page users scroll. The color shifts from warm 
 - **Identify the average scroll depth.** Most tools show a percentage marker - for example, "50% of visitors reach this point." Benchmark data from **[Contentsquare's 2026 report shows the average scroll rate is just 50.5% on desktop and 45.2% on mobile](https://contentsquare.com/guides/digital-experience-benchmark/engagement/)**, so if your CTA sits in the bottom half of a long page, the majority of visitors will never see it
 - **Look for "false bottoms."** If users stop scrolling at a point where the page appears to end (large whitespace, a full-width banner), they might think they've seen everything. Redesign that section to signal that more content exists below
 
+Do not read [LinkedIn's per-section profile impressions](/blog/linkedin-impressions-on-your-experience/) as a scroll map: the four sections in LinkedIn's own sample panel add up to 95%, so 25% on the Experience line most likely means a quarter of all section impressions rather than a quarter of visitors, and LinkedIn's help pages give no rule for what one section impression is.
+
 ### Move/Hover Maps
 
 Move maps (also called hover maps or attention maps) track where users move their mouse cursor. Research suggests a moderate correlation between mouse position and eye gaze, making this a rough proxy for visual attention.

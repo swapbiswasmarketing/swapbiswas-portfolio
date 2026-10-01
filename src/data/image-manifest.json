@@ -253,6 +253,22 @@
 		],
 		"hash": "1efeedeedaf85bb5"
 	},
+	"/assets/blog/claude-code-compact-vs-clear/compact-or-clear-flow.webp": {
+		"w": 1200,
+		"h": 574,
+		"v": [
+			660
+		],
+		"hash": "1bf22fab8760c02f"
+	},
+	"/assets/blog/claude-code-compact-vs-clear/what-survives-compact.webp": {
+		"w": 1200,
+		"h": 583,
+		"v": [
+			660
+		],
+		"hash": "6eb4b77b0df3b646"
+	},
 	"/assets/blog/claude-code-in-vs-code-vs-terminal/settings-layers.webp": {
 		"w": 1200,
 		"h": 866,
@@ -348,6 +364,14 @@
 			660
 		],
 		"hash": "d1a4cc53fabb577f"
+	},
+	"/assets/blog/claude-styles/where-styles-went.webp": {
+		"w": 1200,
+		"h": 729,
+		"v": [
+			660
+		],
+		"hash": "4078e80188a518e9"
 	},
 	"/assets/blog/claude-vs-chatgpt/job-map.webp": {
 		"w": 1200,
@@ -1027,6 +1051,22 @@
 		],
 		"hash": "7dd5e62fc76a28cc"
 	},
+	"/assets/blog/linkedin-impressions-on-your-experience/profile-engagement-path.webp": {
+		"w": 1200,
+		"h": 797,
+		"v": [
+			660
+		],
+		"hash": "c38734283f8b7ac5"
+	},
+	"/assets/blog/linkedin-search-appearances-vs-profile-views/appearances-vs-views.webp": {
+		"w": 1200,
+		"h": 720,
+		"v": [
+			660
+		],
+		"hash": "e392f7d41c29b29e"
+	},
 	"/assets/blog/llm-optimization/llm-signal-layers.webp": {
 		"w": 1200,
 		"h": 617,
@@ -1151,6 +1191,22 @@
 			660
 		],
 		"hash": "347ade510a38a181"
+	},
+	"/assets/blog/page-with-redirect-validation-failed/stub-chain.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "00b47ec8e5b8fe0b"
+	},
+	"/assets/blog/page-with-redirect-validation-failed/validate-fix-outcomes.webp": {
+		"w": 1200,
+		"h": 746,
+		"v": [
+			660
+		],
+		"hash": "d2ede06f29a869ef"
 	},
 	"/assets/blog/positioning-vs-messaging/positioning-messaging-diagnostic.webp": {
 		"w": 1200,
@@ -1476,6 +1532,14 @@
 			660
 		],
 		"hash": "e3bbb632ad2104c8"
+	},
+	"/assets/blog/search-console-regex/same-intent-different-counts.webp": {
+		"w": 1200,
+		"h": 874,
+		"v": [
+			660
+		],
+		"hash": "03616389f87f2cd1"
 	},
 	"/assets/blog/seo-audit-checklist/audit-steps.webp": {
 		"w": 1200,

@@ -49,7 +49,7 @@ Checked on 30 September 2026 against the [extension vs CLI section of the VS Cod
 
 The extension also has an in-between option: turn on Use Terminal (`claudeCode.useTerminal`) or run Claude Code: Open in Terminal from the Command Palette, and it opens the CLI-style interface in place of the chat panel. Anthropic's guide does not say which of the CLI-only rows above that mode changes.
 
-Which permission mode each surface starts in, and how to cut repeat prompts, is covered in [why Claude Code keeps asking for permission](/blog/claude-code-keeps-asking-for-permission/). The commands from the CLI's full set that a marketer is most likely to reach for are in [my Claude Code commands cheat sheet](/blog/claude-code-commands/), which links Anthropic's complete table.
+Which permission mode each surface starts in, and how to cut repeat prompts, is covered in [why Claude Code keeps asking for permission](/blog/claude-code-keeps-asking-for-permission/). The commands from the CLI's full set that a marketer is most likely to reach for are in [my Claude Code commands cheat sheet](/blog/claude-code-commands/), which links Anthropic's complete table. In the chat panel, a context indicator in the prompt box shows how much of the context window you are using, and both `/compact` and `/clear` run there; my guide to [when to compact and when to clear](/blog/claude-code-compact-vs-clear/) covers what each one keeps.
 
 ## Two Settings Layers: VS Code's and Claude Code's
 

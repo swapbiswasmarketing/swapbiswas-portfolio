@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" width="1400" height="850">
+  <rect x="0" y="0" width="1400" height="850" fill="#f6f4ef"/>
+
+  <text x="80" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where each Claude style went</text>
+  <text x="80" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Per Anthropic's migration article (archived 10 July 2026) and its current help pages</text>
+
+  <text x="104" y="166" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">BEFORE</text>
+  <text x="474" y="166" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">WHAT THE MIGRATION DID</text>
+  <text x="844" y="166" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">WHAT TO DO NOW</text>
+
+  <rect x="80" y="186" width="330" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="104" y="220" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">WRITTEN BY YOU</text>
+  <text x="104" y="260" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Custom styles</text>
+  <line x1="412" y1="238" x2="434" y2="238" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="434,231 448,238 434,245" fill="#15130f"/>
+  <rect x="450" y="186" width="330" height="104" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5"/>
+  <text x="474" y="226" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">Migrated to skills,</text>
+  <text x="474" y="258" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">arrive disabled</text>
+  <line x1="782" y1="238" x2="804" y2="238" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="804,231 818,238 804,245" fill="#15130f"/>
+  <rect x="820" y="186" width="500" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="844" y="226" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Customize &gt; Skills, turn it on, then</text>
+  <text x="844" y="258" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">type /{style-name}-style in a chat</text>
+
+  <rect x="80" y="306" width="330" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="104" y="336" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">3 PRESETS</text>
+  <text x="104" y="368" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Concise, Formal,</text>
+  <text x="104" y="398" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Explanatory</text>
+  <line x1="412" y1="358" x2="434" y2="358" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="434,351 448,358 434,365" fill="#15130f"/>
+  <rect x="450" y="306" width="330" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="474" y="346" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Removed in the</text>
+  <text x="474" y="378" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">migration</text>
+  <line x1="782" y1="358" x2="804" y2="358" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="804,351 818,358 804,365" fill="#15130f"/>
+  <rect x="820" y="306" width="500" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="844" y="346" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Upload a ZIP of your own SKILL.md folder,</text>
+  <text x="844" y="378" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">or put the rule in Instructions for Claude</text>
+
+  <rect x="80" y="426" width="330" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="104" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">PRESET</text>
+  <text x="104" y="500" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Learning</text>
+  <line x1="412" y1="478" x2="434" y2="478" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="434,471 448,478 434,485" fill="#15130f"/>
+  <rect x="450" y="426" width="330" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="474" y="466" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Kept as a skill in</text>
+  <text x="474" y="498" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the skills directory</text>
+  <line x1="782" y1="478" x2="804" y2="478" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="804,471 818,478 804,485" fill="#15130f"/>
+  <rect x="820" y="426" width="500" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="844" y="466" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Customize &gt; Skills &gt; + &gt; Browse skills,</text>
+  <text x="844" y="498" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">search Learning (if listed), then click Add</text>
+
+  <rect x="80" y="546" width="330" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="104" y="580" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">INTERFACE</text>
+  <text x="104" y="620" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">The styles menu</text>
+  <line x1="412" y1="598" x2="434" y2="598" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="434,591 448,598 434,605" fill="#15130f"/>
+  <rect x="450" y="546" width="330" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="474" y="586" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Removed once the</text>
+  <text x="474" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">migration finished</text>
+  <line x1="782" y1="598" x2="804" y2="598" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="804,591 818,598 804,605" fill="#15130f"/>
+  <rect x="820" y="546" width="500" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="844" y="586" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nothing to restore: skills and</text>
+  <text x="844" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Instructions for Claude replace it</text>
+
+  <rect x="80" y="676" width="1240" height="124" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="104" y="710" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">A SEPARATE FEATURE IN CLAUDE CODE</text>
+  <text x="104" y="746" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claude Code output styles still ship</text>
+  <text x="104" y="780" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Default plus Proactive, Concise, Explanatory and Learning, switched with /output-style or /config</text>
+</svg>

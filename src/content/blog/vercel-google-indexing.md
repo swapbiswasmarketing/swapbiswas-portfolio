@@ -196,7 +196,7 @@ In the Page indexing report the result shows as "URL marked 'noindex'", and Goog
 
 - On 30 September 2026, `https://swapbiswas.com/blog` returned `308 Permanent Redirect` with `Location: /blog/`, the work of the `trailingSlash: true` line. Vercel's [vercel.json reference](https://vercel.com/docs/project-configuration/vercel-json) says a path without the slash "will respond with a 308 status code and redirect to the path with a trailing slash".
 - The rest of this site's redirects, and how Google reads a 308, are in [my curl-based 301 redirect SEO teardown](/blog/301-redirect-seo/).
-- The source URLs land in the Page indexing report as "Page with redirect", which Google describes as "a non-canonical URL that redirects to another page. As such, this URL will not be indexed." Expect those rows; linking the slashed form everywhere keeps them from growing.
+- The source URLs land in the Page indexing report as "Page with redirect", which Google describes as "a non-canonical URL that redirects to another page. As such, this URL will not be indexed." Expect those rows; linking the slashed form everywhere keeps them from growing. A Validate fix request on those rows cannot end in Passed while the 308s stay, so [a failed attempt there tells you the redirects still work](/blog/page-with-redirect-validation-failed/).
 
 ### Attack Mode, Bot Protection and Custom Rules
 
