@@ -66,7 +66,7 @@ At the top, the buyer may not even know they have a nameable problem. Content he
 
 ### Consideration: help them build a shortlist
 
-Now the buyer knows the problem and is comparing approaches. This stage rewards content that helps them think: comparison guides, decision frameworks, and honest breakdowns of the options, including yours. This is also where a defined [set of messaging pillars](/blog/messaging-pillars/) keeps every piece saying the same thing about why your approach is different.
+Now the buyer knows the problem and is comparing approaches. This stage rewards content that helps them think: comparison guides, decision frameworks, and honest breakdowns of the options, including yours. A [case study that leads with the customer's situation](/blog/white-paper-vs-case-study/) fits this stage, because it answers the buyer's question of whether a company like theirs has had this problem; the version that leads with the measured result stays in the Decision row. This is also where a defined [set of messaging pillars](/blog/messaging-pillars/) keeps every piece saying the same thing about why your approach is different.
 
 ### Decision: remove the last reasons to say no
 

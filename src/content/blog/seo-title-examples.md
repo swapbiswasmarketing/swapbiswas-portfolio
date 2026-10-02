@@ -69,6 +69,8 @@ All 95 rewrites landed in one commit, `b623785`, titled "SEO fixes" and dated 20
 
 The site's other pages, such as "About | Swapnil Biswas" at 22 characters, already fit. A month later, 94 of the 95 rewrites still ship word for word. The exception is the SEO report post, which was retitled again on 2026-09-10.
 
+Each rewritten blog title also changed the words on its post's share card without changing the card's URL, a gap [my audit of this site's OG images](/blog/og-image-size/) flags against Meta's rule to use a new URL for a replaced image.
+
 I have no click or ranking data that isolates these rewrites, so none of the pairs proves that a shorter title earned more traffic. They show what a hard 60-character cap forces out of a title, and what survives it.
 
 The audit that catches an over-long title is one line of awk. It reads markdown files whose YAML `title:` is bare or wrapped in single or double quotes, with Unix or Windows line endings, and prints every title over 60 characters, longest first. It prints nothing when every title fits. In an awk build without UTF-8 support, a title with non-ASCII characters counts a little long.

@@ -134,7 +134,7 @@ The named author has to be the person with the expertise, not the person with th
 
 ## Types of Thought Leadership Content
 
-Most published lists of types of thought leadership content are lists of formats. Formats are a distribution decision made after the claim exists. Picking the format first is how teams end up with a well-produced webinar about nothing.
+Most published lists of types of thought leadership content are lists of formats. Formats are a distribution decision made after the claim exists. Picking the format first is how teams end up with a well-produced webinar about nothing. Deciding the format last also settles the [white paper vs case study choice](/blog/white-paper-vs-case-study/) in B2B content: first name the question the buyer is asking, and the format follows from it.
 
 The useful version of the list maps each format to the kind of claim it can carry and the way it usually breaks.
 

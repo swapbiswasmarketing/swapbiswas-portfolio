@@ -96,7 +96,7 @@ Here is the completed worksheet for swapbiswas.com, taken from property `sc-doma
 
 Add the two middle rows and the striking distance band on this property is 383 queries and 35,900 impressions, which together produced 10 clicks across 16 months.
 
-The 1-3 row looks like the exception until you open it. One branded query, my own name, accounts for 289 of that band's 516 impressions and 35 of its 36 clicks. Strip it out and the remaining eleven top-three queries earned 1 click from 227 impressions, a CTR of 0.44%.
+The 1-3 row looks like the exception until you open it. One branded query, my own name, accounts for 289 of that band's 516 impressions and 35 of its 36 clicks. Strip it out and the remaining eleven top-three queries earned 1 click from 227 impressions, a CTR of 0.44%. On an eligible property, the Non-branded option in Search Console's Query filter can make that subtraction for you, and [the brand regex I tested on this export](/blog/search-console-branded-queries/) is the backup for the API, BigQuery, Data Studio and excluded properties.
 
 Individual rows make the pattern concrete:
 

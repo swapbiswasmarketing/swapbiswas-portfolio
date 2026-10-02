@@ -85,6 +85,8 @@ These tables cover the rest of the built-in and bundled commands a non-developer
 | `/insights` | Generates an HTML report on your recent sessions: projects, how you use Claude Code, where things go wrong |
 | `/doctor` (skill) | Diagnoses installation and configuration issues and can fix them |
 
+`/status` also shows which credential Claude Code is using, with a `Login method` row for your claude.ai plan or an `API key` row for a Claude Console organization; [my comparison of a subscription login and an API key](/blog/claude-code-api-key-vs-subscription/) lists the features an approved key switches off.
+
 `/permissions` lists every saved rule and the file it came from, but I treat a prompt that keeps coming back as a mode question before a rule question; [my checklist for repeat permission prompts](/blog/claude-code-keeps-asking-for-permission/) pairs each cause with a check and a fix.
 
 ### Review and Checks
@@ -151,6 +153,8 @@ The keyboard shortcuts below come from the [interactive mode reference](https://
 | `Ctrl+R` | Reverse-searches your command history |
 | `Ctrl+G` | Opens the prompt in your default text editor |
 | `?` on empty input | Toggles the shortcut help panel |
+
+The same reference lists image paste as `Ctrl+V`, or `Alt+V` on Windows and WSL, and [my guide to pasting screenshots into Claude Code](/blog/claude-code-paste-image/) adds the VS Code chat panel, which takes an ordinary paste, and SSH sessions, where the CLI cannot read an image from your local clipboard.
 
 The `!` shortcut works only in the CLI: the VS Code extension's chat panel pulls in a terminal's output with `@terminal:name` instead, and [the other gaps between the extension and the CLI](/blog/claude-code-in-vs-code-vs-terminal/) include tab completion and the `/config` menu.
 

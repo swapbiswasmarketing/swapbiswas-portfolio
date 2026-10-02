@@ -83,7 +83,7 @@ Check your sitemap at `yoursite.com/sitemap.xml`:
 
 - Does it exist and is it accessible?
 - Are all important pages included?
-- Are there pages with `noindex` tags that are also in the sitemap? (This sends mixed signals)
+- Are there pages with `noindex` tags that are also in the sitemap? (This sends mixed signals, and in Search Console they show up as [noindex exclusions under the All submitted pages filter](/blog/excluded-by-noindex-tag/), where the target count is zero)
 - Is it submitted in Google Search Console?
 - Does each `<lastmod>` match the page's last real edit? (Google uses lastmod when it is consistently accurate, and [IndexNow submissions never reach Google](/blog/does-google-support-indexnow/), so this date is the change signal it reads)
 - Are there any URLs returning 4xx or 5xx status codes?

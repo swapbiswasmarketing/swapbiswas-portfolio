@@ -47,6 +47,8 @@ Checked on 30 September 2026 against the [extension vs CLI section of the VS Cod
 | MCP servers | `/mcp` dialog; adds and removes servers from v2.1.261 | `claude mcp add`, or `/mcp` |
 | Where it comes from | Bundled in the extension; `claude` is not added to your PATH | The standalone install |
 
+Image paste differs between the two surfaces as well: the chat panel takes an ordinary paste into its prompt box, while the CLI in the integrated terminal on Windows needs `Alt+V`, and my guide to [the image paste route on each surface](/blog/claude-code-paste-image/) adds WSL and SSH.
+
 The extension also has an in-between option: turn on Use Terminal (`claudeCode.useTerminal`) or run Claude Code: Open in Terminal from the Command Palette, and it opens the CLI-style interface in place of the chat panel. Anthropic's guide does not say which of the CLI-only rows above that mode changes.
 
 Which permission mode each surface starts in, and how to cut repeat prompts, is covered in [why Claude Code keeps asking for permission](/blog/claude-code-keeps-asking-for-permission/). The commands from the CLI's full set that a marketer is most likely to reach for are in [my Claude Code commands cheat sheet](/blog/claude-code-commands/), which links Anthropic's complete table. In the chat panel, a context indicator in the prompt box shows how much of the context window you are using, and both `/compact` and `/clear` run there; my guide to [when to compact and when to clear](/blog/claude-code-compact-vs-clear/) covers what each one keeps.
@@ -113,6 +115,8 @@ This is layer 2 on my machine, with Claude Code v2.1.283 or later. The rest of m
 | `.mcp.json` | None | No file | No project-scope servers |
 | `~/.claude/settings.json`, `.claude/settings.json` and `.claude/settings.local.json` | `permissions` | Allow rules in all three files | Pre-approved commands, fetch domains and MCP tools, counted per file in the permissions guide linked above |
 | Any settings file | `hooks` | None | I do not use Claude Code hooks |
+
+Remote Control at startup works only with a claude.ai subscription login, which an approved `ANTHROPIC_API_KEY` outranks, so the key switches Remote Control off along with [the other features that need a claude.ai login](/blog/claude-code-api-key-vs-subscription/).
 
 My sessions run with Git Bash and PowerShell as shells; Windows install routes and shells are compared in [Claude Code on WSL vs native Windows](/blog/claude-code-wsl-vs-windows/).
 

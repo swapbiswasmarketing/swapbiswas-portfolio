@@ -217,6 +217,8 @@ Symptoms specific to Windows and WSL, with the cause and fix Anthropic documents
 
 Sources: the [install troubleshooting error index](https://code.claude.com/docs/en/troubleshoot-install#find-your-error), the [interactive mode shortcuts](https://code.claude.com/docs/en/interactive-mode) for image paste, the Windows encoding notes in the tools reference for the UTF-16LE fix, and the Desktop troubleshooting section for the Git prompt.
 
+Claude Code in WSL binds `Ctrl+V` as well, but Windows Terminal's default paste takes priority over that binding, so press `Alt+V` there too; [my surface-by-surface image paste guide](/blog/claude-code-paste-image/) adds the VS Code chat panel and SSH sessions.
+
 ## Start Native, Then Add WSL 2 When the Repo Needs It
 
 For the Claude Code WSL vs Windows decision on a marketer's work laptop, native Windows is the default: the PowerShell installer needs no admin rights, and the Windows-side managed settings, execution policy and endpoint rules IT already runs still apply to it. The main thing it gives up is the sandbox. Move to WSL 2 when the repo already lives in a distribution or needs the sandbox or a Linux toolchain, and plan to rebuild your settings and memory on that side. On a managed laptop, send IT the five questions in the managed-laptop section before you install, since the first one, allowlisting `claude.exe`, applies to native installs too.

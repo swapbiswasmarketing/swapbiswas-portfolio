@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 640" width="1400" height="640">
+<rect width="1400" height="640" fill="#f6f4ef"/>
+<text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What Google's image ratios keep of a 1200 x 630 card</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Each frame cut from the centre at full height; Google does not document where it crops</text>
+<text x="61" y="152" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">AS SHIPPED</text>
+<rect x="61" y="170" width="297" height="155.9" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<rect x="76.8" y="185.3" width="15.8" height="6.9" fill="#eeebe4" rx="1"/>
+<rect x="94.7" y="185.3" width="23.8" height="6.9" fill="#eeebe4" rx="1"/>
+<rect x="76.8" y="222.5" width="143.6" height="10.9" fill="#15130f" rx="1"/>
+<rect x="76.8" y="236.3" width="106.4" height="10.9" fill="#15130f" rx="1"/>
+<rect x="76.8" y="253.2" width="151" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="76.8" y="260.6" width="147.5" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="76.8" y="268" width="81.7" height="4" fill="#6a645c" rx="0.7"/>
+<circle cx="81.3" cy="307.6" r="4.5" fill="#6a645c"/>
+<rect x="88.7" y="305.6" width="37.1" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="243.2" y="185.3" width="99" height="126.7" fill="#eeebe4" rx="3" stroke="#e4dfd6" stroke-width="1"/>
+<polygon points="243.2,278.9 264,262.1 281.3,272.5 304.8,249.7 325.3,267 342.2,257.1 342.2,309.1 339.2,312.1 246.1,312.1 243.2,309.1" fill="#6a645c" fill-opacity="0.5"/>
+<circle cx="321.4" cy="212.1" r="8.9" fill="#6a645c" fill-opacity="0.5"/>
+<rect x="61" y="170" width="297" height="155.9" rx="12" fill="none" stroke="#15130f" stroke-width="2.5"/>
+<text x="61" y="371.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1200 x 630 (1.905:1)</text>
+<text x="61" y="403.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">meets Meta and LinkedIn specs</text>
+<text x="61" y="433.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">every word visible</text>
+<text x="388" y="152" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">16:9 FRAME</text>
+<rect x="388" y="170" width="297" height="155.9" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<rect x="403.8" y="185.3" width="15.8" height="6.9" fill="#eeebe4" rx="1"/>
+<rect x="421.7" y="185.3" width="23.8" height="6.9" fill="#eeebe4" rx="1"/>
+<rect x="403.8" y="222.5" width="143.6" height="10.9" fill="#15130f" rx="1"/>
+<rect x="403.8" y="236.3" width="106.4" height="10.9" fill="#15130f" rx="1"/>
+<rect x="403.8" y="253.2" width="151" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="403.8" y="260.6" width="147.5" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="403.8" y="268" width="81.7" height="4" fill="#6a645c" rx="0.7"/>
+<circle cx="408.3" cy="307.6" r="4.5" fill="#6a645c"/>
+<rect x="415.7" y="305.6" width="37.1" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="570.2" y="185.3" width="99" height="126.7" fill="#eeebe4" rx="3" stroke="#e4dfd6" stroke-width="1"/>
+<polygon points="570.2,278.9 591,262.1 608.3,272.5 631.8,249.7 652.3,267 669.2,257.1 669.2,309.1 666.2,312.1 573.1,312.1 570.2,309.1" fill="#6a645c" fill-opacity="0.5"/>
+<circle cx="648.4" cy="212.1" r="8.9" fill="#6a645c" fill-opacity="0.5"/>
+<rect x="388" y="170" width="9.9" height="155.9" fill="#f6f4ef" opacity="0.86"/>
+<rect x="675.1" y="170" width="9.9" height="155.9" fill="#f6f4ef" opacity="0.86"/>
+<rect x="397.9" y="170" width="277.2" height="155.9" fill="none" stroke="#15130f" stroke-width="2.5"/>
+<text x="388" y="371.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">1120 x 630</text>
+<text x="388" y="403.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">40 px off each side</text>
+<text x="388" y="433.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">keeps every word</text>
+<text x="715" y="152" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">4:3 FRAME</text>
+<rect x="715" y="170" width="297" height="155.9" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<rect x="730.8" y="185.3" width="15.8" height="6.9" fill="#eeebe4" rx="1"/>
+<rect x="748.7" y="185.3" width="23.8" height="6.9" fill="#eeebe4" rx="1"/>
+<rect x="730.8" y="222.5" width="143.6" height="10.9" fill="#15130f" rx="1"/>
+<rect x="730.8" y="236.3" width="106.4" height="10.9" fill="#15130f" rx="1"/>
+<rect x="730.8" y="253.2" width="151" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="730.8" y="260.6" width="147.5" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="730.8" y="268" width="81.7" height="4" fill="#6a645c" rx="0.7"/>
+<circle cx="735.3" cy="307.6" r="4.5" fill="#6a645c"/>
+<rect x="742.7" y="305.6" width="37.1" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="897.2" y="185.3" width="99" height="126.7" fill="#eeebe4" rx="3" stroke="#e4dfd6" stroke-width="1"/>
+<polygon points="897.2,278.9 918,262.1 935.3,272.5 958.8,249.7 979.3,267 996.2,257.1 996.2,309.1 993.2,312.1 900.1,312.1 897.2,309.1" fill="#6a645c" fill-opacity="0.5"/>
+<circle cx="975.4" cy="212.1" r="8.9" fill="#6a645c" fill-opacity="0.5"/>
+<rect x="715" y="170" width="44.6" height="155.9" fill="#f6f4ef" opacity="0.86"/>
+<rect x="967.5" y="170" width="44.6" height="155.9" fill="#f6f4ef" opacity="0.86"/>
+<rect x="759.6" y="170" width="207.9" height="155.9" fill="none" stroke="#15130f" stroke-width="2.5"/>
+<text x="715" y="371.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">840 x 630</text>
+<text x="715" y="403.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">180 px off each side</text>
+<text x="715" y="433.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">cuts the start of lines</text>
+<text x="1042" y="152" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#b53b15">1:1 FRAME</text>
+<rect x="1042" y="170" width="297" height="155.9" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<rect x="1057.8" y="185.3" width="15.8" height="6.9" fill="#eeebe4" rx="1"/>
+<rect x="1075.7" y="185.3" width="23.8" height="6.9" fill="#eeebe4" rx="1"/>
+<rect x="1057.8" y="222.5" width="143.6" height="10.9" fill="#15130f" rx="1"/>
+<rect x="1057.8" y="236.3" width="106.4" height="10.9" fill="#15130f" rx="1"/>
+<rect x="1057.8" y="253.2" width="151" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="1057.8" y="260.6" width="147.5" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="1057.8" y="268" width="81.7" height="4" fill="#6a645c" rx="0.7"/>
+<circle cx="1062.3" cy="307.6" r="4.5" fill="#6a645c"/>
+<rect x="1069.7" y="305.6" width="37.1" height="4" fill="#6a645c" rx="0.7"/>
+<rect x="1224.2" y="185.3" width="99" height="126.7" fill="#eeebe4" rx="3" stroke="#e4dfd6" stroke-width="1"/>
+<polygon points="1224.2,278.9 1245,262.1 1262.3,272.5 1285.8,249.7 1306.3,267 1323.2,257.1 1323.2,309.1 1320.2,312.1 1227.1,312.1 1224.2,309.1" fill="#6a645c" fill-opacity="0.5"/>
+<circle cx="1302.4" cy="212.1" r="8.9" fill="#6a645c" fill-opacity="0.5"/>
+<rect x="1042" y="170" width="70.5" height="155.9" fill="#f6f4ef" opacity="0.86"/>
+<rect x="1268.5" y="170" width="70.5" height="155.9" fill="#f6f4ef" opacity="0.86"/>
+<rect x="1112.5" y="170" width="155.9" height="155.9" fill="none" stroke="#b53b15" stroke-width="2.5"/>
+<text x="1042" y="371.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">630 x 630</text>
+<text x="1042" y="403.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">285 px off each side</text>
+<text x="1042" y="433.9" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">cuts a third off each line</text>
+<rect x="60" y="480" width="1280" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="88" y="524" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Google's Article doc recommends 16:9, 4:3 and 1:1 images; its Discover page recommends 16:9.</text>
+<text x="88" y="558" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">With 64 px side margins, this card keeps every word only in the 16:9 frame; 4:3 and 1:1 need their own images.</text>
+</svg>

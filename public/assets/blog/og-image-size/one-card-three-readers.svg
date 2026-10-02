@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+<rect width="1400" height="800" fill="#f6f4ef"/>
+<text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">One 1200 x 630 text card, three kinds of reader</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Where swapbiswas.com uses each post's card, and what each reader's own docs ask for</text>
+<text x="60" y="146" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">THE CARD, TO SCALE</text>
+<rect x="60" y="164" width="462" height="242.6" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<rect x="84.6" y="187.9" width="24.6" height="10.8" fill="#eeebe4" rx="1.5"/>
+<rect x="112.4" y="187.9" width="37" height="10.8" fill="#eeebe4" rx="1.5"/>
+<rect x="84.6" y="245.6" width="223.3" height="16.9" fill="#15130f" rx="1.5"/>
+<rect x="84.6" y="267.2" width="165.6" height="16.9" fill="#15130f" rx="1.5"/>
+<rect x="84.6" y="293.4" width="234.9" height="6.2" fill="#6a645c" rx="1.2"/>
+<rect x="84.6" y="304.9" width="229.5" height="6.2" fill="#6a645c" rx="1.2"/>
+<rect x="84.6" y="316.5" width="127.1" height="6.2" fill="#6a645c" rx="1.2"/>
+<circle cx="91.6" cy="378.1" r="6.9" fill="#6a645c"/>
+<rect x="103.1" y="375" width="57.8" height="6.2" fill="#6a645c" rx="1.2"/>
+<rect x="343.4" y="187.9" width="154" height="197.1" fill="#eeebe4" rx="4.6" stroke="#e4dfd6" stroke-width="1"/>
+<polygon points="343.4,333.4 375.7,307.2 402.7,323.4 439.2,288 471.2,314.9 497.4,299.5 497.4,380.4 492.7,385 348,385 343.4,380.4" fill="#6a645c" fill-opacity="0.5"/>
+<circle cx="465" cy="229.5" r="13.9" fill="#6a645c" fill-opacity="0.5"/>
+<text x="60" y="450.6" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">/og/&lt;slug&gt;.webp</text>
+<text x="60" y="484.6" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">One 1200 x 630 WebP per post</text>
+<text x="60" y="514.6" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">194 post cards on 2 Oct 2026, median 52.6 KiB</text>
+<rect x="60" y="566" width="462" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="84" y="604" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">MISSING ON EVERY POST</text>
+<text x="84" y="644" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">og:image:width, og:image:height</text>
+<text x="84" y="678" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">og:image:alt, twitter:image:alt</text>
+<text x="84" y="712" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">max-image-preview:large</text>
+<rect x="650" y="136" width="690" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="678" y="174" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">SOCIAL FEEDS</text>
+<text x="678" y="212" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">og:image and twitter:image</text>
+<text x="678" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn: 1200 x 627 minimum, 1.91:1, 5 MB</text>
+<text x="678" y="282" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Meta: at least 1200 x 630, near 1.91:1, 8 MB</text>
+<text x="678" y="314" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">X: no current spec page to check against</text>
+<rect x="650" y="356" width="690" height="200" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+<text x="678" y="394" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#b53b15">GOOGLE SEARCH</text>
+<text x="678" y="432" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">og:image, BlogPosting and HowTo image</text>
+<text x="678" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Image SEO page: avoid an image with text</text>
+<text x="678" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Discover: 16:9, at least 1200 px wide</text>
+<text x="678" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Article doc: 16:9, 4:3 and 1:1 images</text>
+<rect x="650" y="576" width="690" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="678" y="614" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">THIS SITE'S PAGES</text>
+<text x="678" y="652" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Article hero, related-post cards</text>
+<text x="678" y="690" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">srcset widths 400, 660 and 1200 px</text>
+<text x="678" y="722" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">hero alt: the painting; related-card alt: the title</text>
+<line x1="522" y1="285.3" x2="590" y2="285.3" stroke="#15130f" stroke-width="2.5"/>
+<line x1="590" y1="236" x2="590" y2="661" stroke="#15130f" stroke-width="2.5"/>
+<line x1="590" y1="236" x2="636" y2="236" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="636,229 650,236 636,243" fill="#15130f"/>
+<line x1="590" y1="456" x2="636" y2="456" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="636,449 650,456 636,463" fill="#15130f"/>
+<line x1="590" y1="661" x2="636" y2="661" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="636,654 650,661 636,668" fill="#15130f"/>
+</svg>

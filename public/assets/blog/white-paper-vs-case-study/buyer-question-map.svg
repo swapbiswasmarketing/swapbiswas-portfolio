@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+
+  <text x="60" y="74" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Match the Format to the Buyer's Question</text>
+  <text x="60" y="114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Each format has an early and a late version; the quotes show where each guide places it.</text>
+
+  <text x="320" y="170" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">EARLY IN THE DEAL</text>
+  <text x="850" y="170" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">LATE IN THE DEAL</text>
+  <line x1="320" y1="190" x2="1326" y2="190" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1326,183 1340,190 1326,197" fill="#15130f"/>
+
+  <text x="80" y="330" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">White paper</text>
+  <text x="80" y="362" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">argues for an approach</text>
+
+  <rect x="60" y="574" width="5" height="116" fill="#b53b15"/>
+  <text x="80" y="606" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Case study</text>
+  <text x="80" y="638" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">proves one result</text>
+  <text x="80" y="676" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#b53b15">GUIDES SPLIT HERE</text>
+
+  <rect x="320" y="214" width="490" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="350" y="258" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PROBLEM/SOLUTION WHITE PAPER</text>
+  <text x="350" y="306" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Is there a better way</text>
+  <text x="350" y="340" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">to solve this problem?</text>
+  <line x1="350" y1="370" x2="780" y2="370" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="350" y="406" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Venngage: "top of the sales funnel"</text>
+  <text x="350" y="438" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Graham: "start of the customer journey"</text>
+
+  <rect x="850" y="214" width="490" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="880" y="258" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PRODUCT BACKGROUNDER</text>
+  <text x="880" y="306" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">What exactly does this</text>
+  <text x="880" y="340" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">product do for us?</text>
+  <line x1="880" y1="370" x2="1310" y2="370" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="880" y="406" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Graham: "end of the customer journey"</text>
+  <text x="880" y="438" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">TREW: "bottom of the funnel"</text>
+
+  <rect x="320" y="494" width="490" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="350" y="538" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">LEADS WITH THE SITUATION</text>
+  <text x="350" y="586" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Has a company like mine</text>
+  <text x="350" y="620" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">had this problem?</text>
+  <line x1="350" y1="650" x2="780" y2="650" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="350" y="686" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">TREW: "top or middle of the funnel"</text>
+  <text x="350" y="718" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">TREW: "create awareness of a problem"</text>
+
+  <rect x="850" y="494" width="490" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="880" y="538" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">LEADS WITH THE RESULT</text>
+  <text x="880" y="586" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Did it pay back?</text>
+  <line x1="880" y1="650" x2="1310" y2="650" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="880" y="686" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Venngage: "later stages of the funnel"</text>
+  <text x="880" y="718" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Graham: "Later in sales cycle"</text>
+
+  <text x="60" y="798" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Quotes from Venngage (updated Feb 2026), TREW (Dec 2019) and Gordon Graham (comparison table 2022, white paper types 2025).</text>
+</svg>

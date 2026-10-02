@@ -147,7 +147,7 @@ Max 5x "includes five times the Pro plan's per-session usage allowance" and Max 
 
 - In Claude Code, `/upgrade` opens "the upgrade page in your browser to switch to a higher plan tier" ([commands reference](https://code.claude.com/docs/en/commands#all-commands)).
 - Anthropic's [Claude Code with Pro or Max article](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan) suggests Max 5x to Pro users who "consistently hit limits", and Max 20x to Max 5x users on the same test.
-- The same article lists a separate paid route "for intensive coding sprints": a Claude Console account with API credits. An `ANTHROPIC_API_KEY` environment variable on your machine sends Claude Code down that route, "resulting in API usage charges rather than using your subscription's included usage".
+- The same article lists a separate paid route "for intensive coding sprints": a Claude Console account with API credits. An `ANTHROPIC_API_KEY` environment variable on your machine sends Claude Code down that route, "resulting in API usage charges rather than using your subscription's included usage". Once you approve it, that key also turns off Remote Control and the other Claude Code features that need a claude.ai login, which [my comparison of an API key with a plan login](/blog/claude-code-api-key-vs-subscription/) lists row by row, along with the `/status` check that shows which credential a session is using.
 
 For a one-off deadline, usage credits under a monthly spend limit cap the extra bill without changing the plan.
 

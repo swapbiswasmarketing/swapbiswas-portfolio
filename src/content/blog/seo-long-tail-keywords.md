@@ -55,7 +55,7 @@ One row does most of the work in the top band. The query "swapnil biswas" is my 
 
 Take it out and the band has 26,882 impressions and 2 clicks, a CTR of 0.007%. That is the same figure as the 6+ word band at the bottom of the table. The monotonic decline is one branded query wearing a word-count costume.
 
-I have not classified every one of the 1,000 rows as branded or unbranded. This is the branded query I identified, and it is large enough relative to 49 total clicks to move any cut I make.
+I have not classified every one of the 1,000 rows as branded or unbranded. This is the branded query I identified, and it is large enough relative to 49 total clicks to move any cut I make. When I [compared brand filters on the same export](/blog/search-console-branded-queries/), a match on my first name alone missed one of the two spellings of my name, which would have left the misspelled row on the unbranded side.
 
 What survives is thinner than the table looked. The three non-branded bands sit at 0.021%, 0.014% and 0.007%, and those percentages rest on 7 clicks, 4 clicks and 1 click. Nobody should act on a ranking built from single-digit numerators, including me.
 

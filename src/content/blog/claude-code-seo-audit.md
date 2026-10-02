@@ -65,6 +65,8 @@ Alt text presence is the easy half: my cover images pass it and still describe a
 | JSON-LD that fails to parse | A broken block gives search engines nothing to read | `JSON.parse` on every ld+json block | **0**, with BlogPosting on 170 posts and FAQPage on all 153 that carry FAQs |
 | Sitemap lastmod against the post's date | Google uses lastmod when it is consistently and verifiably accurate ([XML sitemap notes](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap#additional-notes-about-xml-sitemaps)) | Each lastmod compared with the post's updatedDate or publishDate | **170** of 170 match |
 
+The sitemap row's count of 0 noindex pages is the one I expect in Search Console too: with the Page indexing report filtered to All submitted pages, [the Excluded by noindex tag row should stay empty](/blog/excluded-by-noindex-tag/), because any URL in it is one the sitemap lists while its page says noindex.
+
 ### Live Checks: Production and the Exported URLs
 
 | Check | Why it matters | How Claude Code ran it | Count |

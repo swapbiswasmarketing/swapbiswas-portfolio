@@ -146,7 +146,7 @@ Plans and prices as of September 2026:
 The usage terms behind those prices:
 
 - Limits reset on a rolling window. The pricing FAQ says "Every plan has usage limits that reset on a rolling five-hour session window, and paid plans add weekly limits on top."
-- API billing is the overflow route. The pricing page says heavy coding sessions can "switch to pay-as-you-go API credits through a Console account", and paid plans can turn on usage credits "to keep working at standard API rates".
+- API billing is the overflow route. The pricing page says heavy coding sessions can "switch to pay-as-you-go API credits through a Console account", and paid plans can turn on usage credits "to keep working at standard API rates". An approved `ANTHROPIC_API_KEY` from that Console account outranks your claude.ai login and switches off Remote Control, claude.ai connectors and `/usage-credits` in your local Claude Code, so I would go through [the Claude Code features that key costs you](/blog/claude-code-api-key-vs-subscription/) before switching.
 
 Before paying for either, check Settings > Usage on the web or in Claude Desktop for a free limit reset, which puts a five-hour or weekly limit back to full; [my breakdown of what each way back from a usage limit costs](/blog/claude-usage-limits/) compares it with prepaid usage credits, discounted usage bundles and an upgrade.
 

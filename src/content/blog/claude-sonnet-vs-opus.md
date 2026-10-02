@@ -231,7 +231,7 @@ I built this site, its nine free tools and its research scripts (a Search Consol
 1. In a session, run `/model sonnet` (or any alias). This also saves it as your default for new sessions; open the `/model` picker and press `s` on a row to switch for this session only.
 2. At launch, run `claude --model haiku` to set the model for that session.
 3. Permanently, set `"model": "sonnet"` in your settings file.
-4. Check what you are on with `/status`.
+4. Check what you are on with `/status`. The same screen shows [whether Claude Code bills your plan or a Console organization](/blog/claude-code-api-key-vs-subscription/): an `API key` row in use means per-token billing at the API prices above, and a `Login method` row means your plan's usage limits apply.
 
 In the VS Code extension, click the model name at the bottom of the prompt box instead; on models with effort levels it also shows an Effort row, and [my side-by-side of the VS Code extension and the terminal CLI](/blog/claude-code-in-vs-code-vs-terminal/) shows how any level except `max` is saved per model in the settings file both surfaces read.
 

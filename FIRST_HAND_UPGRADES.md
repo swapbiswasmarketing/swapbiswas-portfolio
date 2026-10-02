@@ -298,3 +298,27 @@ Can you open Semrush Domain Overview for swapbiswas.com, screenshot the Competit
 ## make-a-powerpoint-with-claude-code
 
 In your VS Code extension session on Claude Code v2.1.283, does /slides appear in the / menu on your account? If it does, run /slides and the pptx skill on the same launch brief from this repo, then open both exported .pptx files in PowerPoint. Which one kept your template's slide master and fonts, and which one has native editable charts? (The answer belongs after the 'My own CLI reports v2.1.283' line in 'Claude Code /slides Requirements as of October 2026', and as a note under the routes table.)
+
+## white-paper-vs-case-study
+
+Outside employer assets, have you written, commissioned or briefed a white paper? For one launch or deal you can describe without naming the employer or customer: at which deal stage did sales send the white paper and the case study, and which buyer question was each one answering? The answer belongs in 'When to Use a White Paper vs a Case Study', after the four-row table.
+
+## og-image-size
+
+Share https://swapbiswas.com/blog/alt-text-and-seo/ (its og:image is a 1200 x 630 WebP) through LinkedIn Post Inspector, Meta's Sharing Debugger, an X post composer, a Slack message and a WhatsApp chat (compose without sending): does each show the large card, a small thumbnail or no image? A screenshot per platform belongs in 'Can an OG Image Be WebP?', replacing the 'preview it yourself' advice with a result.
+
+## excluded-by-noindex-tag
+
+Export the Page indexing report's noindex row for swapbiswas.com twice, once filtered to All submitted pages and once to Unsubmitted pages only. Record the row count, the first-detected date and the example URL patterns for each. Is the submitted count 0? Do the unsubmitted examples fall only into the six families in the inventory (/blog/category/, /work/, the concept demos, /offline/, the /redesign/ stubs, /404.html), and do the /redesign/ stubs or /404.html sit under this reason or another one? If you also have any Search Console record from 12 March to 20 April 2026 (when /work/ was in the sitemap) or 25 to 28 June 2026 (when noindexed /redesign/ pages were listed), did Submitted URL marked 'noindex' appear? The answers replace the expectations in "This Site's Noindex Inventory, Mapped to Both Filters" with measured counts.
+
+## search-console-branded-queries
+
+On the swapbiswas.com Search Console property (is it a Domain property?), does the Performance report's Query filter offer Branded and Non-branded, and does the Insights card show? If it does, for the last 3 months what are the Branded and Non-branded clicks and impressions next to the unfiltered total, and does the 'sapnil biswas' row land in Branded? With the Branded filter applied, does Export download only branded rows, and does the file's Filters sheet name the filter? The classifier answer belongs in 'Testing a Brand Regex on a Personal Name' as a row beside the (?i)(swapnil|sapnil|biswas) pattern; the export answer belongs as a row in the 'Where Search Console Branded Queries Exist' table and a clause in FAQ 3.
+
+## claude-code-api-key-vs-subscription
+
+Without naming your plan: run one typical working session on this repo, read the 'Total cost' line in the Session block of /usage before running /clear (Anthropic's locally computed list-price figure), and say roughly how many days you used Claude Code in September 2026. With those two numbers the post could show a real break-even next to the $13 enterprise average. It would go in as the first bullet under 'Claude Code API vs Subscription Cost: The $13 Break-Even'.
+
+## claude-code-paste-image
+
+Ten-minute paste test on your Windows 11 machine (Claude Code v2.1.283). Copy one screenshot with Windows+Shift+S, then try: (a) a normal paste in the VS Code extension's prompt box; (b) Alt+V and Ctrl+V with `claude` running in VS Code's integrated terminal; (c) Alt+V and Ctrl+V with `claude` in PowerShell inside Windows Terminal; (d) Alt+V in the Git Bash (mintty) window; (e) Shift+drag of a saved PNG into the prompt box (does it attach as an image or as a file?); (f) typing the PNG's path. Which of these showed an [Image #N] chip? The answers would let 'Claude Code Paste Image Shortcuts by Surface' and 'Claude Code Paste Image in VS Code: Chat Panel vs Terminal' say 'checked on Windows 11, v2.1.283'.

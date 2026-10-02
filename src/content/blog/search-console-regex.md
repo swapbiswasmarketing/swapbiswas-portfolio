@@ -51,7 +51,7 @@ The question-word, word-count and brand patterns belong in the same library, and
 
 - `^(who|what|when|where|why|how|which|is|are|can|does|do|should|will)\b` finds questions: 268 rows, 266 of them also four words or longer, which puts them inside the band in my [breakdown of long-tail queries](/blog/seo-long-tail-keywords/).
 - `^\S+(\s+\S+){3,}$` finds queries of four or more words and reproduces that breakdown's split exactly. It counts on `\s` instead of a typed space, which matters for the line breaks covered below.
-- Doesn't match regex with `sw?apnil|biswas` removes my name and its one misspelling, 2 rows. SEOTesting's FAQ writes a brand exclusion as `-.*yourbrand.*`, but the leading hyphen is a character to match, so `-.*biswas.*` matched neither row and excludes nothing. What the row for my name does to this site's top-three click-through rate is in [16 months of SEO without link building](/blog/seo-without-link-building/).
+- Doesn't match regex with `sw?apnil|biswas` removes my name and its one misspelling, 2 rows. SEOTesting's FAQ writes a brand exclusion as `-.*yourbrand.*`, but the leading hyphen is a character to match, so `-.*biswas.*` matched neither row and excludes nothing. What the row for my name does to this site's top-three click-through rate is in [16 months of SEO without link building](/blog/seo-without-link-building/). BigQuery and Data Studio (formerly Looker Studio) match case-sensitively, so start the brand pattern with `(?i)` there, and on my export I simulated [how letter case and whole-value matching can drop both brand rows](/blog/search-console-branded-queries/).
 
 ## How Do You Use the Google Search Console Regex Filter?
 

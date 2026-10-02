@@ -188,7 +188,7 @@ curl -sI https://example.com/page/ | grep -i x-robots-tag
 curl -s https://example.com/page/ | grep -io '<meta[^>]*robots[^>]*>'
 ```
 
-In the Page indexing report the result shows as "URL marked 'noindex'", and Google's help tells you to search "the page source or response headers" for the word noindex.
+Google's Page indexing help files the result as "URL marked 'noindex'" and tells you to search "the page source or response headers" for the word noindex. Many guides call the same row Excluded by 'noindex' tag, and [whether it is a bug depends on the sitemap filter you read it under](/blog/excluded-by-noindex-tag/).
 
 ## Redirects, Firewall Rules and Log Retention
 

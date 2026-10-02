@@ -77,6 +77,8 @@ Each piece of the search layer has a landing date, and most of them live in a fi
 | One URL per page | `trailingSlash: true` in `vercel.json`, `trailingSlash: 'always'` in `astro.config.mjs` | 3 Sep 2026 | Slashless URLs get a 308 to the slashed form ([the 308 Vercel sends instead of a 301](/blog/301-redirect-seo/)) |
 | IndexNow hook | An `indexnow-submit` build hook that runs on production deploys only | 16 Sep 2026 | Announces new and edited URLs to Bing and the other IndexNow engines |
 
+For the build-time share images row, I later measured the OG route's cards against each platform's own published spec, and [my audit of those 1200 x 630 cards](/blog/og-image-size/) lists the og:image tags it found missing.
+
 The per-post lastmod row is the one I would copy first. Astro's sitemap integration sets `lastmod` only site-wide through its own option, because it "can't analyze a given page's source code", and it points to its `serialize` option for per-page values ([Astro sitemap integration docs](https://docs.astro.build/en/guides/integrations-guide/sitemap/)). This site takes a third route: a build hook that writes each post's frontmatter date into `sitemap-0.xml` once the build has finished. A prompt that asks Claude Code for the same hook:
 
 ```text

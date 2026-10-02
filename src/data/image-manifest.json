@@ -237,6 +237,14 @@
 		],
 		"hash": "7d43c912b97e5aa8"
 	},
+	"/assets/blog/claude-code-api-key-vs-subscription/credential-precedence.webp": {
+		"w": 1200,
+		"h": 823,
+		"v": [
+			660
+		],
+		"hash": "e7ad15d4af87eba2"
+	},
 	"/assets/blog/claude-code-commands/command-anatomy.webp": {
 		"w": 1200,
 		"h": 655,
@@ -308,6 +316,14 @@
 			660
 		],
 		"hash": "f9ac19085b53021e"
+	},
+	"/assets/blog/claude-code-paste-image/paste-checks.webp": {
+		"w": 1200,
+		"h": 849,
+		"v": [
+			660
+		],
+		"hash": "76ce4558448f254b"
 	},
 	"/assets/blog/claude-code-seo-audit/audit-layers.webp": {
 		"w": 1200,
@@ -755,6 +771,14 @@
 			660
 		],
 		"hash": "8ff3daf31adfd0c4"
+	},
+	"/assets/blog/excluded-by-noindex-tag/two-filter-triage.webp": {
+		"w": 1200,
+		"h": 669,
+		"v": [
+			660
+		],
+		"hash": "7f4c2b56c9becaef"
 	},
 	"/assets/blog/feature-adoption-rate/adopted-vs-retained.webp": {
 		"w": 1200,
@@ -1272,6 +1296,22 @@
 		],
 		"hash": "347ade510a38a181"
 	},
+	"/assets/blog/og-image-size/google-ratio-frames.webp": {
+		"w": 1200,
+		"h": 549,
+		"v": [
+			660
+		],
+		"hash": "f63b75e26202d84d"
+	},
+	"/assets/blog/og-image-size/one-card-three-readers.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "daebf3c6391bddc6"
+	},
 	"/assets/blog/page-with-redirect-validation-failed/stub-chain.webp": {
 		"w": 1200,
 		"h": 651,
@@ -1613,6 +1653,14 @@
 		],
 		"hash": "e3bbb632ad2104c8"
 	},
+	"/assets/blog/search-console-branded-queries/branded-filter-or-regex.webp": {
+		"w": 1200,
+		"h": 806,
+		"v": [
+			660
+		],
+		"hash": "60af9380a729215d"
+	},
 	"/assets/blog/search-console-regex/same-intent-different-counts.webp": {
 		"w": 1200,
 		"h": 874,
@@ -1937,6 +1985,14 @@
 			660
 		],
 		"hash": "0803db83298b96df"
+	},
+	"/assets/blog/white-paper-vs-case-study/buyer-question-map.webp": {
+		"w": 1200,
+		"h": 720,
+		"v": [
+			660
+		],
+		"hash": "1292bb69309b003c"
 	},
 	"/assets/blog/win-loss-analysis-dashboard/dashboard-anatomy.webp": {
 		"w": 1200,

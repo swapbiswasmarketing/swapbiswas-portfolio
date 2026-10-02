@@ -41,6 +41,8 @@ Side by side, from Anthropic's pages as checked on 30 September 2026:
 
 Sources: the [Claude Design help center guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design), the [Claude Design launch post](https://www.anthropic.com/news/claude-design-anthropic-labs) for audience and file inputs, and [Claude's pricing page](https://claude.com/pricing), which says "Claude Code is included in all paid plans."
 
+Claude Code reads screenshots too, pasted with `Ctrl+V` (`Alt+V` on Windows and WSL) or given as a file path, and [my guide to pasting screenshots into Claude Code](/blog/claude-code-paste-image/) lists the paste key by surface.
+
 Claude Design is also a different product from the Design plugin on Claude's plugin marketplace, an Anthropic-made plugin you install in Cowork for "design critique, UX writing, accessibility audits, research synthesis, and dev handoff" ([Design plugin page](https://claude.com/marketplace/plugins/design)).
 
 ## Claude Design vs Claude Code for Marketing Deliverables
@@ -62,6 +64,8 @@ Anthropic's Claude Code artifacts docs send mockups to `/design`: "To mock up a 
 If a one-pager's copy is not written yet, draft it in my [product one-pager template](/tools/product-one-pager-template/) before you open either tool.
 
 When a pitch or sales deck has to end up as a .pptx in your repo instead of a Claude Slides link, [my guide to PowerPoint routes in Claude Code](/blog/make-a-powerpoint-with-claude-code/) compares `/slides` with Anthropic's pptx skill and a script you commit.
+
+For the OG image row, this site's build renders every card at 1200 x 630, and [my platform-by-platform check of OG image size and tags](/blog/og-image-size/) shows that size meets the Meta, LinkedIn and WhatsApp specs.
 
 Sources: the [Claude Design product page](https://claude.com/product/design), the [Claude Design admin guide](https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans), the [launch post](https://www.anthropic.com/news/claude-design-anthropic-labs), the [help center guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) for sharing, [Set up your design system in Claude Design](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design), and the [Claude Code commands reference](https://code.claude.com/docs/en/commands) for `/slides`.
 

@@ -65,7 +65,7 @@ Fourteen of those twenty carry 12 impressions or more. This is all of them:
 | sales enablement tool selection criteria checklist | 2.5 | 13 | 0 |
 | best tool for competitive battlecard creation using conversation data? | 2.4 | 12 | 0 |
 
-Now the honest part. The top-three band recorded 718 impressions, 36 clicks and a 5.014% click-through rate. Thirty-five of those 36 clicks came from one branded query, my own name. Remove it and the band holds 429 impressions and 1 click, a non-branded top-three CTR of **0.23%**. Twenty query rows is a small sample and one of them is doing nearly all the work.
+Now the honest part. The top-three band recorded 718 impressions, 36 clicks and a 5.014% click-through rate. Thirty-five of those 36 clicks came from one branded query, my own name. Remove it and the band holds 429 impressions and 1 click, a non-branded top-three CTR of **0.23%**. Twenty query rows is a small sample and one of them is doing nearly all the work. Search Console can split branded from non-branded queries on eligible properties, and I mapped [where Google's brand filter exists, with a regex for everywhere else](/blog/search-console-branded-queries/).
 
 ## The Queries I Reached Were Long, Literal and Uncontested
 
