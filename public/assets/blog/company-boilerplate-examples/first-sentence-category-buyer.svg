@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="1400" height="860">
+<rect width="1400" height="860" fill="#f6f4ef"/>
+<text x="60" y="64" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What the first sentence names</text>
+<text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">95 company boilerplates, coded per sentence: a category, a buyer, both, or neither</text>
+<text x="358" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">NAMES A BUYER</text>
+<text x="878" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">NO BUYER NAMED</text>
+<text x="60" y="258" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Names a</text>
+<text x="60" y="288" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">category</text>
+<text x="60" y="528" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Names no</text>
+<text x="60" y="558" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">category</text>
+<rect x="330" y="180" width="500" height="250" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+<text x="358" y="262" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="60" font-weight="600" fill="#b53b15">22</text>
+<text x="440" y="262" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">of 95</text>
+<text x="358" y="320" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">"Datasite is the essential</text>
+<text x="358" y="352" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">infrastructure for M&amp;A."</text>
+<text x="358" y="402" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.5" fill="#6a645c">DATASITE, 29 SEP 2026</text>
+<rect x="850" y="180" width="500" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="878" y="262" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="60" font-weight="600" fill="#15130f">37</text>
+<text x="960" y="262" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">of 95</text>
+<text x="878" y="320" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">"ORION Security is the agentic</text>
+<text x="878" y="352" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">data loss prevention platform."</text>
+<text x="878" y="402" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.5" fill="#6a645c">ORION SECURITY, 30 SEP 2026</text>
+<rect x="330" y="450" width="500" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="358" y="532" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="60" font-weight="600" fill="#15130f">10</text>
+<text x="440" y="532" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">of 95</text>
+<text x="358" y="590" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">"Gong harnesses the power of AI</text>
+<text x="358" y="622" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">to transform how revenue teams win."</text>
+<text x="358" y="672" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.5" fill="#6a645c">GONG, 30 SEP 2026</text>
+<rect x="850" y="450" width="500" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="878" y="532" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="60" font-weight="600" fill="#15130f">26</text>
+<text x="960" y="532" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">of 95</text>
+<text x="878" y="590" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">"Powering the agentic revolution</text>
+<text x="878" y="622" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">in travel."</text>
+<text x="878" y="672" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.5" fill="#6a645c">SABRE, 1 OCT 2026</text>
+<text x="60" y="752" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Category: a product type tied to a job, or a field narrow enough to name the product.</text>
+<text x="60" y="782" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Buyer: a named customer group, team or department, or a "for [market]" phrase.</text>
+<text x="60" y="812" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Sector labels and generic words (organizations, customers) do not count. swapbiswas.com</text>
+</svg>

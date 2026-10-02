@@ -71,7 +71,7 @@ This is where most messaging goes wrong, so it is worth being precise. Messaging
 | Backed by | Proof points | Nothing, it is the proof | The pillars beneath it |
 | Example | "Ship faster without breaking things" | "One-click rollback button" | "Deploy with confidence" |
 
-The trap is treating a feature list as a pillar list. "Real-time collaboration," "SSO," and "API access" are features, not pillars. The pillar is the outcome those features add up to, and the features become proof points that live underneath it.
+The trap is treating a feature list as a pillar list. "Real-time collaboration," "SSO," and "API access" are features, not pillars. The pillar is the outcome those features add up to, and the features become proof points that live underneath it. When a candidate pillar keeps coming back as a feature name, [one-line tests for features, benefits and value](/blog/feature-vs-benefit-vs-value/) show which tier it has reached, and the fix is to write the tier above it: a benefit for a feature line, a value line for a benefit.
 
 A tagline is the opposite mistake in the other direction. It is a memorable line, but it is not working substance. You cannot brief a sales team on a tagline or write a landing page from it. The tagline is the tip of the iceberg; the pillars and proof are the mass beneath the water that hold it up. If you want the deeper distinction between the brand layer and the positioning layer, I unpack it in [branding vs positioning](/blog/branding-vs-positioning/).
 

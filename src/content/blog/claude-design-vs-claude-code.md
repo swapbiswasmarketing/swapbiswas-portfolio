@@ -61,6 +61,8 @@ Anthropic's Claude Code artifacts docs send mockups to `/design`: "To mock up a 
 
 If a one-pager's copy is not written yet, draft it in my [product one-pager template](/tools/product-one-pager-template/) before you open either tool.
 
+When a pitch or sales deck has to end up as a .pptx in your repo instead of a Claude Slides link, [my guide to PowerPoint routes in Claude Code](/blog/make-a-powerpoint-with-claude-code/) compares `/slides` with Anthropic's pptx skill and a script you commit.
+
 Sources: the [Claude Design product page](https://claude.com/product/design), the [Claude Design admin guide](https://support.claude.com/en/articles/14604406-claude-design-admin-guide-for-team-and-enterprise-plans), the [launch post](https://www.anthropic.com/news/claude-design-anthropic-labs), the [help center guide](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) for sharing, [Set up your design system in Claude Design](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design), and the [Claude Code commands reference](https://code.claude.com/docs/en/commands) for `/slides`.
 
 <img src="/assets/blog/claude-design-vs-claude-code/deliverable-routing.webp" alt="Three lanes for marketing deliverables: one-pagers, on-brand campaign layouts, launch prototypes and brand design systems end on the Claude Design canvas, while pitch decks go to Claude Slides; a repo page that needs sign-off goes from a canvas mockup through Export and Handoff to Claude Code into the repo; banners, OG images, pages you design yourself and React design systems start in the repo with Claude Code" title="Where a marketing deliverable ends up picks the tool" width="1200" height="677" loading="lazy" decoding="async" />
@@ -131,6 +133,8 @@ If your site runs on a platform from Claude Design's send-to list, such as Wix, 
 | What are the known limits? | No version history yet; two or more people editing at once "may not work reliably"; design-system import "is only as good as its source" |
 
 Sources: [Get started with Claude Design](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) and [What are artifacts](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them) in Anthropic's help center.
+
+If the shared pool runs out before your next reset, [my breakdown of usage credits, discounted bundles and free limit resets](/blog/claude-usage-limits/) covers what each one costs and how to use it.
 
 ## Claude Design vs Claude Code: Plan the Handoff for One Deliverable
 

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" width="1400" height="910">
+<rect width="1400" height="910" fill="#f6f4ef"/>
+<text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Rebuilt map: entry price vs planning features</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The same four tools, one source per dot. USD list prices billed annually, checked 2 October 2026.</text>
+<rect x="40" y="130" width="890" height="660" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<line x1="150" y1="620" x2="890" y2="620" stroke="#e4dfd6" stroke-width="1"/>
+<line x1="150" y1="480" x2="890" y2="480" stroke="#e4dfd6" stroke-width="1"/>
+<line x1="150" y1="340" x2="890" y2="340" stroke="#e4dfd6" stroke-width="1"/>
+<line x1="150" y1="200" x2="890" y2="200" stroke="#e4dfd6" stroke-width="1"/>
+<rect x="166" y="512" width="262" height="122" rx="12" fill="#ffffff" stroke="#6a645c" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="186" y="546" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.6" fill="#6a645c">ALSO EMPTY</text>
+<text x="186" y="580" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Under $8 with none of</text>
+<text x="186" y="612" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the three features</text>
+<rect x="548" y="152" width="364" height="200" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="570" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.6" fill="#b53b15">EMPTY CORNER</text>
+<text x="570" y="224" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">All three features on an</text>
+<text x="570" y="256" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">entry plan priced above $9.</text>
+<text x="570" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Not white space until buyers</text>
+<text x="570" y="330" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">say they would pay for it.</text>
+<line x1="150" y1="660" x2="150" y2="180" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="143,182 150,168 157,182" fill="#15130f"/>
+<line x1="150" y1="660" x2="900" y2="660" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="898,653 912,660 898,667" fill="#15130f"/>
+<text x="136" y="626" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" text-anchor="end" fill="#6a645c">0</text>
+<text x="136" y="486" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" text-anchor="end" fill="#6a645c">1</text>
+<text x="136" y="346" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" text-anchor="end" fill="#6a645c">2</text>
+<text x="136" y="206" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" text-anchor="end" fill="#6a645c">3</text>
+<line x1="170" y1="660" x2="170" y2="668" stroke="#15130f" stroke-width="2"/>
+<text x="170" y="692" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" text-anchor="middle" fill="#6a645c">$6</text>
+<line x1="290" y1="660" x2="290" y2="668" stroke="#15130f" stroke-width="2"/>
+<text x="290" y="692" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" text-anchor="middle" fill="#6a645c">$7</text>
+<line x1="410" y1="660" x2="410" y2="668" stroke="#15130f" stroke-width="2"/>
+<text x="410" y="692" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" text-anchor="middle" fill="#6a645c">$8</text>
+<line x1="530" y1="660" x2="530" y2="668" stroke="#15130f" stroke-width="2"/>
+<text x="530" y="692" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" text-anchor="middle" fill="#6a645c">$9</text>
+<line x1="650" y1="660" x2="650" y2="668" stroke="#15130f" stroke-width="2"/>
+<text x="650" y="692" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" text-anchor="middle" fill="#6a645c">$10</text>
+<line x1="770" y1="660" x2="770" y2="668" stroke="#15130f" stroke-width="2"/>
+<text x="770" y="692" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" text-anchor="middle" fill="#6a645c">$11</text>
+<line x1="890" y1="660" x2="890" y2="668" stroke="#15130f" stroke-width="2"/>
+<text x="890" y="692" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" text-anchor="middle" fill="#6a645c">$12</text>
+<text x="530" y="740" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.4" text-anchor="middle" fill="#6a645c">ENTRY PAID PLAN, USD PER SEAT PER MONTH, BILLED ANNUALLY</text>
+<text x="84" y="410" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.4" text-anchor="middle" fill="#6a645c" transform="rotate(-90 84 410)">PLANNING FEATURES ON THAT PLAN (OF 3)</text>
+<circle cx="290" cy="200" r="13" fill="#15130f"/>
+<text x="312" y="196" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" text-anchor="start" fill="#15130f">ClickUp [3]</text>
+<text x="312" y="223" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" text-anchor="start" fill="#3a3632">Unlimited, $7: all three</text>
+<circle cx="530" cy="620" r="13" fill="#15130f"/>
+<text x="552" y="614" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" text-anchor="start" fill="#15130f">monday.com [2]</text>
+<text x="552" y="641" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" text-anchor="start" fill="#3a3632">Basic, $9: none of the three</text>
+<circle cx="650" cy="480" r="13" fill="#15130f"/>
+<text x="628" y="474" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" text-anchor="end" fill="#15130f">Notion [4]</text>
+<text x="628" y="501" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" text-anchor="end" fill="#3a3632">Plus, $10: timeline view</text>
+<circle cx="768.8" cy="480" r="13" fill="#15130f"/>
+<text x="768.8" y="520" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" text-anchor="middle" fill="#15130f">Asana [1]</text>
+<text x="768.8" y="547" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" text-anchor="middle" fill="#3a3632">Starter, $10.99: timeline</text>
+<rect x="958" y="130" width="402" height="660" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="982" y="172" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.6" fill="#6a645c">SOURCES, CHECKED 2 OCT 2026</text>
+<circle cx="998" cy="207" r="16" fill="#15130f"/><text x="998" y="213" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" text-anchor="middle" fill="#ffffff">1</text>
+<text x="1026" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Asana</text>
+<text x="982" y="246" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">asana.com/pricing</text>
+<text x="982" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Starter $10.99: Timeline and Gantt.</text>
+<text x="982" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Time tracking, portfolios: Advanced.</text>
+<circle cx="998" cy="351" r="16" fill="#15130f"/><text x="998" y="357" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" text-anchor="middle" fill="#ffffff">2</text>
+<text x="1026" y="358" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">monday.com</text>
+<text x="982" y="390" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">monday.com/pricing</text>
+<text x="982" y="424" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Basic $9: none of the three.</text>
+<text x="982" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Gantt: Standard. Time tracking: Pro.</text>
+<text x="982" y="488" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Portfolios: Enterprise.</text>
+<circle cx="998" cy="527" r="16" fill="#15130f"/><text x="998" y="533" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" text-anchor="middle" fill="#ffffff">3</text>
+<text x="1026" y="534" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">ClickUp</text>
+<text x="982" y="566" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">clickup.com/pricing</text>
+<text x="982" y="600" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Unlimited $7: all three.</text>
+<circle cx="998" cy="639" r="16" fill="#15130f"/><text x="998" y="645" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" text-anchor="middle" fill="#ffffff">4</text>
+<text x="1026" y="646" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Notion</text>
+<text x="982" y="678" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">notion.com/pricing</text>
+<text x="982" y="706" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">notion.com/help/timelines</text>
+<text x="982" y="740" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Plus $10: timeline view only.</text>
+<text x="60" y="838" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">A judgmental map with sourced dots, no buyer data. Features counted: timeline or Gantt view, native time tracking, portfolios.</text>
+<text x="60" y="870" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Correlation check: r = -0.66 across four dots and +0.87 without ClickUp, too few dots to settle the axes.</text>
+</svg>

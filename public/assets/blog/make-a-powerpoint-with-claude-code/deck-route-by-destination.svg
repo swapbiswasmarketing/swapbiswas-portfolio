@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+<rect width="1400" height="820" fill="#f6f4ef"/>
+<text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Pick the PowerPoint route by where the deck ends up</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Three ways to make a PowerPoint with Claude Code, plus the add-in. As of October 2026.</text>
+<text x="60" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#b53b15">START HERE: WHERE THE DECK HAS TO LIVE</text>
+<text x="760" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">THE ROUTE</text>
+
+<rect x="60" y="180" width="580" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="88" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">A claude.ai link to share or present</text>
+<text x="88" y="262" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Teammates open it, or you present from it</text>
+<line x1="652" y1="235" x2="738" y2="235" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="738,228 752,235 738,242" fill="#15130f"/>
+<rect x="760" y="180" width="580" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="788" y="226" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="24" font-weight="500" fill="#15130f">/slides &lt;brief&gt;</text>
+<text x="788" y="262" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A Claude Slides deck; export to PowerPoint</text>
+
+<rect x="60" y="310" width="580" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="88" y="356" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">A .pptx in the repo, built once</text>
+<text x="88" y="392" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A launch deck kept next to its brief</text>
+<line x1="652" y1="365" x2="738" y2="365" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="738,358 752,365 738,372" fill="#15130f"/>
+<rect x="760" y="310" width="580" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="788" y="356" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Anthropic's pptx skill</text>
+<text x="788" y="392" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Writes the .pptx where you tell it to</text>
+
+<rect x="60" y="440" width="580" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="88" y="486" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">A .pptx rebuilt from new numbers</text>
+<text x="88" y="522" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Monthly report, QBR, pipeline review</text>
+<line x1="652" y1="495" x2="738" y2="495" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="738,488 752,495 738,502" fill="#15130f"/>
+<rect x="760" y="440" width="580" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="788" y="486" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">A script you commit</text>
+<text x="788" y="522" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">python-pptx or PptxGenJS, re-run when data changes</text>
+
+<rect x="60" y="570" width="580" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="88" y="616" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Your company template</text>
+<text x="88" y="652" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The slide master and layouts must stay</text>
+<line x1="652" y1="625" x2="738" y2="625" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="738,618 752,625 738,632" fill="#15130f"/>
+<rect x="760" y="570" width="580" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="788" y="616" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">pptx skill, or python-pptx</text>
+<text x="788" y="652" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Both build from the template's own layouts</text>
+
+<rect x="60" y="704" width="1280" height="72" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+<text x="88" y="747" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Editing a few slides of a deck already open in PowerPoint: the Claude for PowerPoint add-in, outside Claude Code.</text>
+</svg>

@@ -65,6 +65,8 @@ The most widely adopted modern positioning framework comes from [April Dunford's
 
 What would your customer do if your product did not exist? This is the real comparison set, and it is rarely "the other vendors in our category." Most often it is a spreadsheet, a manual process, an internal tool, or doing nothing. The alternative defines the standard you are measured against.
 
+Once you have named those alternatives, plot them on a [positioning map with one source per dot](/blog/competitive-positioning-map/) to see which combinations of attributes they leave open, then test each empty corner in customer interviews before you claim it.
+
 ### 2. Unique Attributes
 
 What does your product have that those alternatives do not? Not features for their own sake. The specific capabilities that exist in your product and not in the buyer's current alternative. List 3-5. Be ruthless about cutting the parity items.

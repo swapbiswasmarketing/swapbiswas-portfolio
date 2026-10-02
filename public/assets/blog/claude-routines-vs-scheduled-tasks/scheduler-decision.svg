@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" width="1400" height="950">
+  <rect x="0" y="0" width="1400" height="950" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Which Claude scheduler fits a recurring job</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Ask the questions in order. From Anthropic's docs and help center, 2 October 2026</text>
+
+  <rect x="60" y="150" width="600" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">QUESTION 1</text>
+  <text x="88" y="222" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Will you be in an open Claude Code session</text>
+  <text x="88" y="254" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">the whole time, checking every few minutes?</text>
+
+  <line x1="662" y1="215" x2="784" y2="215" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="784,208 798,215 784,222" fill="#15130f"/>
+  <text x="723" y="200" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">Yes</text>
+
+  <rect x="800" y="150" width="540" height="130" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="828" y="194" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">/loop</text>
+  <text x="828" y="228" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Inside one open session; 1-minute minimum;</text>
+  <text x="828" y="258" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">recurring loops expire after 7 days</text>
+
+  <line x1="360" y1="282" x2="360" y2="314" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="353,314 367,314 360,328" fill="#15130f"/>
+  <text x="378" y="311" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">No</text>
+
+  <rect x="60" y="330" width="600" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="364" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">QUESTION 2</text>
+  <text x="88" y="402" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Does it need scripts or files that</text>
+  <text x="88" y="434" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">exist only on your computer?</text>
+
+  <line x1="662" y1="395" x2="784" y2="395" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="784,388 798,395 784,402" fill="#15130f"/>
+  <text x="723" y="380" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">Yes</text>
+
+  <rect x="800" y="330" width="540" height="130" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="828" y="374" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Desktop local task</text>
+  <text x="828" y="408" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Your computer, only while the app is</text>
+  <text x="828" y="438" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">open and the machine is awake</text>
+
+  <line x1="360" y1="462" x2="360" y2="494" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="353,494 367,494 360,508" fill="#15130f"/>
+  <text x="378" y="491" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">No</text>
+
+  <rect x="60" y="510" width="600" height="130" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+  <text x="88" y="544" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#b53b15">QUESTION 3: ROUTINE OR COWORK</text>
+  <text x="88" y="582" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Does it need a GitHub repo, or start from</text>
+  <text x="88" y="614" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">an HTTP call or a GitHub event?</text>
+
+  <line x1="662" y1="575" x2="784" y2="575" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="784,568 798,575 784,582" fill="#15130f"/>
+  <text x="723" y="560" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">Yes</text>
+
+  <rect x="800" y="510" width="540" height="130" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="828" y="554" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Cloud routine</text>
+  <text x="828" y="588" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Anthropic's cloud; 1-hour minimum;</text>
+  <text x="828" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">hourly run caps with no overage</text>
+
+  <line x1="360" y1="642" x2="360" y2="674" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="353,674 367,674 360,688" fill="#15130f"/>
+  <text x="378" y="671" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">No</text>
+
+  <rect x="60" y="690" width="600" height="130" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="734" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Cowork scheduled task</text>
+  <text x="88" y="768" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Anthropic's cloud, working from connectors</text>
+  <text x="88" y="798" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and files saved to your Claude account</text>
+
+  <text x="60" y="870" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Cowork scheduled tasks already run remotely; from 6 October 2026 on Pro and Max, tasks using local files move to the cloud too.</text>
+  <text x="60" y="898" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sources: code.claude.com/docs (routines, desktop-scheduled-tasks, scheduled-tasks) and support.claude.com</text>
+</svg>

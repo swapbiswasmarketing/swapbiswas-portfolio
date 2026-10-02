@@ -83,6 +83,8 @@ The diagram routes a job on whether it needs a folder of files kept in place, mo
 
 The two Cowork rows come from Anthropic's documentation, not from my own use. Moving from the top half of that table to the bottom half is the jump from using AI for single tasks to running workflows on it, which is roughly the move between the middle stages of [the AI maturity curve for marketers](/blog/marketers-ai-maturity-curve/).
 
+When a deck has to be built from files kept in a repo, or saved into it as a .pptx, [my guide to building PowerPoint decks in Claude Code](/blog/make-a-powerpoint-with-claude-code/) compares `/slides`, Anthropic's pptx skill and a script you commit.
+
 This site is the "Build or change a page on your own site" row in practice, and [my seven-step walkthrough from a written brief to a Vercel deploy](/blog/build-a-personal-website-with-claude-code/) covers that job for a personal site, along with the search setup this one added after launch.
 
 ## Claude Code vs Claude Desktop and Chat
@@ -123,7 +125,7 @@ On Pro and Max, that turns the three-way "Claude vs Claude Code vs Claude Cowork
 | Usage | Your plan's shared pool; multi-step tasks use more of it, and auto mode "consumes more of your usage limit than the other modes" | Your plan's shared pool, the same one your chats use |
 | Plans | Pro, Max, Team, Enterprise | Every paid plan, or API credits |
 
-My Search Console script reads its sign-in files from a folder inside the project and runs with packages installed on my laptop, so a job built on it goes to Claude Code. A folder of briefs and call notes that needs summarising, with no script involved, is closer to the work Anthropic describes for Cowork.
+My Search Console script reads its sign-in files from a folder inside the project and runs with packages installed on my laptop, so a job built on it goes to Claude Code. A folder of briefs and call notes that needs summarising, with no script involved, is closer to the work Anthropic describes for Cowork. The help center's Cowork articles say new Cowork tasks on Pro and Max run in the cloud from 6 October 2026, scheduled tasks included, so for a recurring job I would pick between [Cowork scheduled tasks and Claude Code's cloud routines](/blog/claude-routines-vs-scheduled-tasks/) by what a run can reach and what can start it.
 
 The same script runs on Windows Node.js, so even within Claude Code, moving the session into WSL 2 would mean installing Node inside the Linux distribution first; [my comparison of native Windows and WSL 2](/blog/claude-code-wsl-vs-windows/) weighs that against the sandbox WSL 2 adds.
 
@@ -145,6 +147,8 @@ The usage terms behind those prices:
 
 - Limits reset on a rolling window. The pricing FAQ says "Every plan has usage limits that reset on a rolling five-hour session window, and paid plans add weekly limits on top."
 - API billing is the overflow route. The pricing page says heavy coding sessions can "switch to pay-as-you-go API credits through a Console account", and paid plans can turn on usage credits "to keep working at standard API rates".
+
+Before paying for either, check Settings > Usage on the web or in Claude Desktop for a free limit reset, which puts a five-hour or weekly limit back to full; [my breakdown of what each way back from a usage limit costs](/blog/claude-usage-limits/) compares it with prepaid usage credits, discounted usage bundles and an upgrade.
 
 If you are on the Free plan, the Claude app is all you have, and my roundup of [free AI tools for marketing](/blog/free-ai-tools-for-marketing/) covers what else fits a zero budget.
 

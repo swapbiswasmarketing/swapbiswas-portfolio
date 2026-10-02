@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 730" width="1400" height="730">
+  <rect x="0" y="0" width="1400" height="730" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Hit a Claude usage limit? Four ways back</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The free ones first. From Anthropic's help center and Claude Code docs, 2 October 2026</text>
+
+  <rect x="60" y="140" width="1280" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">FIRST, READ THE LIMIT MESSAGE</text>
+
+  <text x="96" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Session limit</text>
+  <text x="96" y="256" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Resets at the time shown,</text>
+  <text x="96" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">within five hours</text>
+
+  <text x="516" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Weekly limit</text>
+  <text x="516" y="256" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Resets at your account's fixed</text>
+  <text x="516" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">day and time, can be days away</text>
+
+  <text x="936" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Opus or Sonnet limit</text>
+  <text x="936" y="256" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Switch model family with</text>
+  <text x="936" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">/model and keep working</text>
+
+  <rect x="60" y="352" width="290" height="280" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="390" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">WAY BACK 1</text>
+  <text x="84" y="430" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Wait it out</text>
+  <text x="84" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Session: within 5 hours</text>
+  <text x="84" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Weekly: can be days</text>
+  <text x="84" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Claude Code 2.1.234+</text>
+  <text x="84" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">can continue the task</text>
+  <text x="84" y="598" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">on its own</text>
+
+  <rect x="390" y="352" width="290" height="280" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="414" y="390" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">WAY BACK 2</text>
+  <text x="414" y="430" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Free limit reset</text>
+  <text x="414" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Settings &gt; Usage &gt;</text>
+  <text x="414" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Reset for free</text>
+  <text x="414" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Web or Desktop only</text>
+  <text x="414" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Offers expire</text>
+  <text x="414" y="598" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A used reset is final</text>
+
+  <rect x="720" y="352" width="290" height="280" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="390" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">WAY BACK 3</text>
+  <text x="744" y="430" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Usage credits</text>
+  <text x="744" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro, Max 5x, Max 20x</text>
+  <text x="744" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Standard API rates</text>
+  <text x="744" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Prepaid: Add funds</text>
+  <text x="744" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$2,000 daily limit</text>
+  <text x="744" y="598" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Optional spend limit</text>
+
+  <rect x="1050" y="352" width="290" height="280" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1074" y="390" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">WAY BACK 4</text>
+  <text x="1074" y="430" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Upgrade</text>
+  <text x="1074" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Max 5x or Max 20x</text>
+  <text x="1074" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">If you consistently</text>
+  <text x="1074" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">hit limits</text>
+  <text x="1074" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">/upgrade opens the</text>
+  <text x="1074" y="598" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">upgrade page</text>
+
+  <line x1="60" y1="656" x2="680" y2="656" stroke="#6a645c" stroke-width="2"/>
+  <text x="370" y="688" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#15130f">COSTS NOTHING</text>
+
+  <line x1="720" y1="656" x2="1010" y2="656" stroke="#6a645c" stroke-width="2"/>
+  <text x="865" y="688" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#15130f">BILLED AT API RATES</text>
+
+  <line x1="1050" y1="656" x2="1340" y2="656" stroke="#6a645c" stroke-width="2"/>
+  <text x="1195" y="688" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#15130f">A BIGGER MONTHLY BILL</text>
+</svg>

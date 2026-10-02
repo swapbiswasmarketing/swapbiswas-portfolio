@@ -92,7 +92,7 @@ For **sales**, distill the grid into something usable mid-call. The full analysi
 
 For **product**, the weaknesses and white-space columns feed the roadmap conversation. This is where a structured [competitive product analysis](/blog/competitive-product-analysis/) goes deeper than the summary grid, comparing capabilities feature by feature so you can argue for what to build with evidence instead of opinion.
 
-For **marketing and positioning**, the positioning column tells you which messages are crowded and which lanes are open. Two competitors claiming "the easiest tool" means easy is taken; find the adjacent claim you can own.
+For **marketing and positioning**, the positioning column tells you which messages are crowded and which lanes are open. Two competitors claiming "the easiest tool" means easy is taken; find the adjacent claim you can own. To see those lanes at a glance, plot two of the grid's columns on a [two-axis competitive positioning map](/blog/competitive-positioning-map/) and check that the axes measure different things, because when one tracks the other, an empty corner says nothing about demand.
 
 If you want to see completed grids before you build your own, I keep a set of [competitive analysis examples](/blog/competitive-analysis-examples/) covering different business models and scoring approaches you can copy and adapt.
 

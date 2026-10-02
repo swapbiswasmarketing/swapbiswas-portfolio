@@ -128,7 +128,7 @@ Cluster the reasons from step one into three or four non-overlapping themes, eac
 
 ### 4. Stack proof points under every pillar
 
-For each pillar, list three to five pieces of evidence: features, customer results, benchmarks, certifications. A pillar with no proof is an opinion; a pillar with three proof points is an argument.
+For each pillar, list three to five pieces of evidence: features, customer results, benchmarks, certifications. A pillar with no proof is an opinion; a pillar with three proof points is an argument. To tell a proof point from the pillar it supports, apply [the pass or fail test for a feature line](/blog/feature-vs-benefit-vs-value/): a capability or spec you can point to in your docs, spec sheet, pricing page or changelog is proof, and the pillar names the outcome the buyer gets.
 
 ### 5. Build the messaging matrix
 

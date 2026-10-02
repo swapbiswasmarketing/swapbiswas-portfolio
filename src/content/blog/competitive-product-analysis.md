@@ -111,6 +111,8 @@ See our [competitive analysis examples](/blog/competitive-analysis-examples/) fo
 
 Compare this against your own [product positioning](/blog/product-positioning). Where do you make the same claims? Where do you differentiate? Where does a competitor's messaging expose a gap in your own narrative? This analysis feeds directly into your [go-to-market strategy](/blog/go-to-market-strategy-template/) and informs how you position against alternatives during launches.
 
+To turn the audit into a picture, score your product and each primary competitor on two attributes buyers decide on, then plot them in this [editable positioning map template](/blog/competitive-positioning-map/) with one dated source per dot.
+
 ### Step 5: Synthesize into Actionable Insights
 
 Raw data isn't useful until you translate it into decisions. For each competitor, summarize your findings into four outputs:

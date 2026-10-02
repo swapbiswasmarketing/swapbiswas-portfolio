@@ -73,7 +73,7 @@ Starting too early is the most common and most expensive mistake, because analys
 
 Three conditions should all be true before you book the first briefing:
 
-1. **A repeatable story.** You can describe the category, the buyer, and your differentiation the same way twice, without the founder in the room. If your [positioning is still moving](/blog/what-is-market-positioning/) quarter to quarter, wait.
+1. **A repeatable story.** You can describe the category, the buyer, and your differentiation the same way twice, without the founder in the room. If your [positioning is still moving](/blog/what-is-market-positioning/) quarter to quarter, wait. A quick test is the first sentence of your [press release boilerplate](/blog/company-boilerplate-examples/): it should name the category and the buyer, and only 22 of the 95 B2B software and AI boilerplates I measured did both.
 2. **Real customer proof.** Named customers in the segment you want to be evaluated in, who will take a reference call. Analysts weight customer evidence far above roadmap claims.
 3. **Sustained capacity.** Someone can hold a quarterly cadence for a year without it being an emergency. Analyst relations rewards consistency and punishes bursts.
 

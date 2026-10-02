@@ -102,9 +102,9 @@ Analyze competitor homepage headlines and value propositions:
 - **Differentiation gaps** - If all competitors emphasize "AI-powered" but none talk about security or compliance, there is an open positioning lane.
 - **Audience signals** - The language reveals who they are targeting. "Enterprise" words (governance, compliance, SSO) vs "startup" words (fast, free, no credit card) tell you their ICP.
 
-![2x2 positioning map example with Asana, Monday, ClickUp, Notion](/assets/blog/competitive-analysis-examples/positioning-map.webp "2x2 Positioning Map Example")
+<img src="/assets/blog/competitive-positioning-map/rebuilt-positioning-map.webp" alt="Positioning map of Asana, monday.com, ClickUp and Notion: entry paid plan price per seat on the x axis and planning features on that plan on the y axis, with ClickUp alone at top left and a numbered source list for every dot" title="Positioning Map: Entry Price vs Planning Features" width="1200" height="780" loading="lazy" decoding="async" />
 
-**How to use this:** Create a 2x2 positioning map with your two most important differentiation axes (e.g., ease-of-use vs power, broad vs specialized). Plot competitors and identify open space.
+**How to use this:** Plot competitors on two attributes buyers use to choose, with a dated public source behind every dot, and check that the two axes measure different things before you read any corner as open space. An earlier version of this example drew an unsourced ease-of-use vs feature-depth map with its "open space" box in the wrong corner; I took it apart and rebuilt it in my [competitive positioning map guide](/blog/competitive-positioning-map/), which also has an editable template.
 
 ## Competitive Analysis Example 4: SEO and Content Gap Analysis
 

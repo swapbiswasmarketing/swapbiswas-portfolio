@@ -107,6 +107,8 @@ Here's a simple template that works:
 
 > **For** SEO professionals and content marketers **who** need competitive intelligence and keyword data, **Ahrefs** is an SEO platform **that** provides the most accurate backlink and keyword data in the industry. **Unlike** SEMrush, **Ahrefs** crawls more pages per day than any other tool, giving you fresher and more complete data.
 
+Once the statement is written, carry its category and target audience into the first sentence of your press release boilerplate, which every release repeats: only 22 of the [95 B2B software and AI boilerplates](/blog/company-boilerplate-examples/) I measured named both in that sentence.
+
 ## Product Positioning Examples
 
 ### Apple (Premium Quality)
@@ -192,7 +194,7 @@ The winning strategy in 2026: **Use AI for research and iteration, but ground yo
 Here's a practical process to nail your positioning:
 
 1. **Interview 10-15 customers** - Ask why they chose you, what alternatives they considered, and how they'd describe your product to a colleague
-2. **Map the competitive landscape** - List every alternative (including "do nothing") and identify their positioning
+2. **Map the competitive landscape** - List every alternative (including "do nothing") and identify their positioning, then plot the strongest ones on a [positioning map built from public evidence](/blog/competitive-positioning-map/), where every dot carries a URL and a date
 3. **Identify your unique strengths** - What do customers consistently praise that competitors can't match?
 4. **Draft your positioning statement** - Use the template above
 5. **Test with your sales team** - If they can't use it in a conversation, it's too abstract

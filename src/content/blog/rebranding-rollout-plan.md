@@ -210,6 +210,8 @@ A rebrand is the one launch day that genuinely does run on a clock. Every surfac
 | 12:00 | First sweep: search the old name across every owned property | PMM |
 | 17:00 | Debrief: what broke, who is fixing it, by when | PMM |
 
+Swap the [company boilerplate at the end of the press release](/blog/company-boilerplate-examples/) in the same 09:00 slot, since every later release repeats it; if the rename follows an acquisition, put the parent in the About heading and the first clause, and keep the acquired brand's own category line after it.
+
 Before you build that run of show, be certain which name is actually changing. Three recent renames define the options. Square changed its corporate name to Block, "expected to be legally changed to 'Block, Inc.' on or about December 10, 2021", while "Square, Cash App, TIDAL, and TBD54566975 will continue to maintain their respective brands" and the NYSE ticker "SQ" was left unchanged ([Block](https://block.xyz/inside/press-release-block)). Zoom took the narrower route, dropping one word from the legal entity to become Zoom Communications on 25 November 2024, on the argument that the company "is now about so much more than video meetings" ([Zoom](https://www.zoom.com/en/blog/introducing-zoom-communications-inc/)). Sendinblue took the widest route: a full product rename onto a new domain.
 
 A parent-only rename is a fraction of the work, because the product surfaces, app listings, in-product strings and support macros never change. If that option is open to you, take it.

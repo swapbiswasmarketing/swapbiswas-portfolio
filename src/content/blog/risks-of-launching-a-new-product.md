@@ -94,7 +94,7 @@ The middle three risks are about the offer. The market may want the outcome, but
 
 **Why it kills launches:** Buyers do not purchase features. They purchase the outcome a feature unlocks and the pain it removes. Feature-led messaging asks the prospect to do the translation, and most will not bother.
 
-**How to de-risk it:** Lead with the outcome and let the feature be the proof. For every capability you announce, write the so-what: the job it gets done, the time or money it saves, the frustration it ends. The feature list belongs in the launch, just not at the front.
+**How to de-risk it:** Lead with the outcome and let the feature be the proof. For every capability you announce, write the so-what: the job it gets done, the time or money it saves, the frustration it ends. [A feature vs benefit vs value worksheet](/blog/feature-vs-benefit-vs-value/) turns each so-what into a pass or fail check: a benefit line passes when it names a task from the user's job, and a value line when it names the change to a goal or number the buyer already reports on. The feature list belongs in the launch, just not at the front.
 
 ## Go-to-Market Readiness: The Risks of Launching a New Product Into Silence
 

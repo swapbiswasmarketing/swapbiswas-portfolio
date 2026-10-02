@@ -176,6 +176,8 @@ These four are the skills behind Claude's file creation. They create, read and e
 - Claude app: built in. The help center says that with Code execution and file creation on, Claude uses the Excel, Word, PowerPoint and PDF skills automatically when a request needs them.
 - Caveat: the proprietary license bars derivative works and redistribution, so you cannot fork the pptx skill into a company deck skill. Put your deck rules in a separate skill of your own.
 
+For a deck in Claude Code, [my guide to picking a PowerPoint route by where the file ends up](/blog/make-a-powerpoint-with-claude-code/) matches the pptx skill to a .pptx built once, `/slides` to a deck people open at a claude.ai link, and a committed python-pptx script to a .pptx rebuilt from new numbers.
+
 ### 12. theme-factory (Anthropic)
 
 It offers 10 preset color and font themes, Ocean Depths and Arctic Frost among them, shown in a `theme-showcase.pdf`, and applies the chosen one to slides, docs, reports or HTML landing pages. It can also generate a new theme when none fit.

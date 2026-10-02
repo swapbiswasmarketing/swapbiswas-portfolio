@@ -81,7 +81,7 @@ This one sits between the two. It is close to the Moore structure but trims the 
 
 > **For** [customer] **who** [need], **[product]** delivers [benefit] so that [outcome they care about].
 
-The "so that" is the part I love. It pushes you past the feature and past the immediate benefit into the thing the buyer is actually buying. "Faster reports" is a benefit. "So that you walk into the board meeting already knowing the number" is an outcome. People buy the second one.
+The "so that" is the part I love. It pushes you past the feature and past the immediate benefit into the thing the buyer is actually buying. "Faster reports" is a benefit. "So that you walk into the board meeting already knowing the number" is an outcome. People buy the second one. If a draft blurs the benefit and the outcome together, [the feature benefit value ladder](/blog/feature-vs-benefit-vs-value/) gives each rung a pass or fail test, and the "so that" clause is where a passing value line goes.
 
 ## How to Fill In Any Template Without Sounding Generic
 

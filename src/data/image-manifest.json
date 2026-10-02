@@ -349,6 +349,14 @@
 		],
 		"hash": "b3797a21dbfb915a"
 	},
+	"/assets/blog/claude-routines-vs-scheduled-tasks/scheduler-decision.webp": {
+		"w": 1200,
+		"h": 814,
+		"v": [
+			660
+		],
+		"hash": "16b0650955fb0090"
+	},
 	"/assets/blog/claude-sonnet-vs-opus/cost-per-job.webp": {
 		"w": 1200,
 		"h": 651,
@@ -373,6 +381,14 @@
 		],
 		"hash": "4078e80188a518e9"
 	},
+	"/assets/blog/claude-usage-limits/four-ways-back.webp": {
+		"w": 1200,
+		"h": 626,
+		"v": [
+			660
+		],
+		"hash": "9a32dcd84d54610e"
+	},
 	"/assets/blog/claude-vs-chatgpt/job-map.webp": {
 		"w": 1200,
 		"h": 866,
@@ -396,6 +412,22 @@
 			660
 		],
 		"hash": "2edc2d149c9d516f"
+	},
+	"/assets/blog/company-boilerplate-examples/boilerplate-length-distribution.webp": {
+		"w": 1200,
+		"h": 737,
+		"v": [
+			660
+		],
+		"hash": "42325fb047b27d44"
+	},
+	"/assets/blog/company-boilerplate-examples/first-sentence-category-buyer.webp": {
+		"w": 1200,
+		"h": 737,
+		"v": [
+			660
+		],
+		"hash": "ae7789ea45894850"
 	},
 	"/assets/blog/competitive-analysis-examples/decision-tree.webp": {
 		"w": 1800,
@@ -458,6 +490,30 @@
 			1320
 		],
 		"hash": "893749f914607362"
+	},
+	"/assets/blog/competitive-positioning-map/competitive-positioning-map-template.webp": {
+		"w": 1200,
+		"h": 823,
+		"v": [
+			660
+		],
+		"hash": "d52008443aa12283"
+	},
+	"/assets/blog/competitive-positioning-map/march-2026-map-errors.webp": {
+		"w": 1200,
+		"h": 626,
+		"v": [
+			660
+		],
+		"hash": "91c6e0e059150f67"
+	},
+	"/assets/blog/competitive-positioning-map/rebuilt-positioning-map.webp": {
+		"w": 1200,
+		"h": 780,
+		"v": [
+			660
+		],
+		"hash": "89ec65740573e1cc"
 	},
 	"/assets/blog/competitive-product-analysis/analysis-framework.webp": {
 		"w": 1800,
@@ -715,6 +771,22 @@
 			660
 		],
 		"hash": "47ec713a39445878"
+	},
+	"/assets/blog/feature-vs-benefit-vs-value/fab-vs-value-ladder.webp": {
+		"w": 1200,
+		"h": 574,
+		"v": [
+			660
+		],
+		"hash": "6cf91b2f6f861a12"
+	},
+	"/assets/blog/feature-vs-benefit-vs-value/feature-benefit-value-ladder.webp": {
+		"w": 1200,
+		"h": 694,
+		"v": [
+			660
+		],
+		"hash": "54c303f26b7fec82"
 	},
 	"/assets/blog/go-to-market-startups/gtm-7-steps.webp": {
 		"w": 1800,
@@ -1082,6 +1154,14 @@
 			660
 		],
 		"hash": "0b0a083dffd7ea30"
+	},
+	"/assets/blog/make-a-powerpoint-with-claude-code/deck-route-by-destination.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "7f1fed87905dd697"
 	},
 	"/assets/blog/marketing-automation-strategy/customer-journey.webp": {
 		"w": 1800,

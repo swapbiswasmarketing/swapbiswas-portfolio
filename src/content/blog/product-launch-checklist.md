@@ -73,7 +73,7 @@ The cadence is the easy half. The harder half is the order in which each audienc
 - [ ] **[Customer-facing email](/blog/product-launch-email-sequence/)** to existing users or waitlist
 - [ ] **Social media assets** (LinkedIn, X, YouTube thumbnails)
 - [ ] **Paid ad creative** if running launch ads
-- [ ] **Press release** drafted (Tier 1 only)
+- [ ] **Press release** drafted (Tier 1 only), with the [first sentence of the company boilerplate](/blog/company-boilerplate-examples/) checked against the current category line, since a new product line can change which category is true
 - [ ] **Webinar or launch event** planned (Tier 1 and Tier 2)
 - [ ] **Customer case study** or reference customer secured (Tier 1)
 - [ ] **FAQ document** (internal and external versions)

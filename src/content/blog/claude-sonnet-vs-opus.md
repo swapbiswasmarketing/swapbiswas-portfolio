@@ -43,7 +43,7 @@ Anthropic's [models overview](https://platform.claude.com/docs/en/models/overvie
 
 The "best for" column is my routing, built from Anthropic's [model selection matrix](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model), which says "most workloads start with Claude Opus 5.5". The Sonnet vs Opus section below explains where I follow that default and where I peel off from it.
 
-In the Claude apps, the Free plan covers Sonnet and Haiku while Opus needs a paid plan and Fable access varies by plan, per Anthropic's [plans page](https://claude.com/pricing); the free tier is also on my list of [free AI tools for marketing](/blog/free-ai-tools-for-marketing/). Everything below uses API prices, because per-token prices are what let you price a job.
+In the Claude apps, the Free plan covers Sonnet and Haiku while Opus needs a paid plan and Fable access varies by plan, per Anthropic's [plans page](https://claude.com/pricing); the free tier is also on my list of [free AI tools for marketing](/blog/free-ai-tools-for-marketing/). On Pro, Fable bills to usage credits from the first request, while Max 5x and 20x can spend up to 50% of their weekly limits on Fable at no extra cost, per [my plan-by-plan table of Fable usage](/blog/claude-usage-limits/). Everything below uses API prices, because per-token prices are what let you price a job.
 
 The rest of the spec sheet, from the same overview page:
 

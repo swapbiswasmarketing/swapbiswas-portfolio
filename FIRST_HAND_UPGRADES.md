@@ -274,3 +274,27 @@ Open Me > View profile > Analytics > Search Appearances and describe your Profil
 ## search-console-regex
 
 On the swapbiswas.com property (Performance > Search results > Queries, 1 May 2025 to 31 August 2026), paste these into + Add filter > Queries > Custom (regex) and report what Search Console shows for each: (1) (?-i)SEO, giving the row count; (2) the lookahead ^(?!.*free).*, giving the exact error message text or the result, ideally with a screenshot; (3) ^.{60,}$ and then (?s)^.{60,}$, giving both row counts. The export test gave 0 rows for (1), an RE2 compile error for (2), and 28 vs 42 for (3). The answers belong in the 'Syntax RE2 Rejects and What to Type Instead' table (an error-message column for Search Console) and in the last paragraph of 'The Line Break Inside 14 Queries'.
+
+## company-boilerplate-examples
+
+Can you supply one boilerplate you are free to publish as your own (for swapbiswas.com, strictly.fyi, raisekind or a non-employer side project, never TestMu AI/LambdaTest), with its current first sentence and your rewrite in the '[Company] is a [category] for [buyer]' shape? It would sit under the one-line template in the final section as a worked before/after.
+
+## claude-usage-limits
+
+Without naming your plan: the last time a Claude usage limit stopped you, which exact message did you see (session, weekly, Opus/Sonnet or a spend limit), in which surface (the VS Code extension or claude.ai), which way back did you take, and has Settings > Usage ever shown you a 'Reset for free' offer? One line of the answer belongs at the end of 'Way Back 2: The Free Claude Usage Limit Reset' or under the message table.
+
+## claude-routines-vs-scheduled-tasks
+
+Have you scheduled any recurring job for this site with a Claude Code routine, a Cowork scheduled task or a Desktop local task (for example a weekly summary of the Search Console export), and if so, which scheduler and trigger did you use and what did the first run's transcript show? The answer would become a first-hand row in the 'Claude Scheduled Tasks Examples for Marketing Jobs' table.
+
+## feature-vs-benefit-vs-value
+
+Can you share one real B2B line you rewrote from feature tier to value tier, from outside any testing/QA product? I need the before line, the after line, and the report or number the buyer tracked it in. It would slot into the final section as a worked rewrite.
+
+## competitive-positioning-map
+
+Can you open Semrush Domain Overview for swapbiswas.com, screenshot the Competitive Positioning Map (Organic) with its date, and note which competitor domains it plots? The screenshot would replace the knowledge-base-only description in the section 'The Semrush Competitive Positioning Map Is a Search Chart' with this site's own chart.
+
+## make-a-powerpoint-with-claude-code
+
+In your VS Code extension session on Claude Code v2.1.283, does /slides appear in the / menu on your account? If it does, run /slides and the pptx skill on the same launch brief from this repo, then open both exported .pptx files in PowerPoint. Which one kept your template's slide master and fonts, and which one has native editable charts? (The answer belongs after the 'My own CLI reports v2.1.283' line in 'Claude Code /slides Requirements as of October 2026', and as a note under the routes table.)

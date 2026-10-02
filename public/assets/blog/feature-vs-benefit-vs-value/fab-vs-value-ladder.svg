@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 670" width="1400" height="670">
+  <rect x="0" y="0" width="1400" height="670" fill="#f6f4ef"/>
+
+  <text x="60" y="74" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">FAB vs the feature, benefit, value ladder</text>
+  <text x="60" y="114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">FAB adds a comparison step, and its benefit covers both the user's task and the buyer's number.</text>
+
+  <text x="60" y="178" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">FAB: A LIVE SALES CONVERSATION</text>
+  <text x="860" y="178" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">LADDER: COPY A BUYING GROUP READS</text>
+
+  <rect x="60" y="200" width="480" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="242" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">FEATURE</text>
+  <text x="88" y="284" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A specific attribute</text>
+
+  <rect x="60" y="350" width="480" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="392" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ADVANTAGE</text>
+  <text x="88" y="434" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">How it beats the alternative</text>
+
+  <rect x="60" y="500" width="480" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="542" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">BENEFIT</text>
+  <text x="88" y="584" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">The customer's payoff</text>
+
+  <rect x="860" y="200" width="480" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="888" y="242" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">FEATURE</text>
+  <text x="888" y="284" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">What it is or does</text>
+
+  <rect x="860" y="350" width="480" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="888" y="392" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">BENEFIT</text>
+  <text x="888" y="434" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A user's task, done or dropped</text>
+
+  <rect x="860" y="500" width="480" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="888" y="542" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">VALUE</text>
+  <text x="888" y="584" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Change to the buyer's number</text>
+
+  <text x="700" y="240" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">SAME TIER</text>
+  <line x1="548" y1="262" x2="839" y2="262" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="838,255 852,262 838,269" fill="#15130f"/>
+
+  <text x="680" y="398" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No tier of its own:</text>
+  <text x="680" y="430" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">it adds a comparison</text>
+
+  <text x="680" y="530" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">SPANS TWO TIERS</text>
+  <line x1="548" y1="555" x2="821" y2="555" stroke="#b53b15" stroke-width="2.5"/>
+  <line x1="820" y1="405" x2="820" y2="556" stroke="#b53b15" stroke-width="2.5"/>
+  <line x1="819" y1="405" x2="839" y2="405" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="838,398 852,405 838,412" fill="#b53b15"/>
+  <line x1="820" y1="555" x2="839" y2="555" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="838,548 852,555 838,562" fill="#b53b15"/>
+</svg>

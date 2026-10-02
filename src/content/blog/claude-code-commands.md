@@ -112,6 +112,8 @@ These tables cover the rest of the built-in and bundled commands a non-developer
 | `/schedule [description]` | Creates and manages routines that run in the cloud |
 | `/deep-research <question>` (workflow) | Fans out web searches, cross-checks sources and writes a cited report |
 
+`/loop` fires only while the session stays open, and a routine made with `/schedule` runs in the cloud under hourly run caps; [my comparison of Claude's four schedulers](/blog/claude-routines-vs-scheduled-tasks/) adds Desktop local tasks and Cowork scheduled tasks and picks between them by what a run can reach and what can start it.
+
 ### Extending Claude Code
 
 | Command | What it does |
@@ -121,6 +123,7 @@ These tables cover the rest of the built-in and bundled commands a non-developer
 | `/agents` | From v2.1.198, reminds you to ask Claude to create subagents or to edit `.claude/agents/` directly |
 | `/hooks` | Shows hook configurations for tool events |
 | `/plugin` | Manages Claude Code plugins |
+| `/slides [brief]` (skill) | Makes a Claude Slides deck from your brief as an artifact on claude.ai; what it needs and the two routes that write a .pptx into your repo are in [how to make a PowerPoint with Claude Code](/blog/make-a-powerpoint-with-claude-code/) |
 | `/output-style [style]` | Lists output styles or switches to one |
 
 The output styles that `/output-style` switches between are a Claude Code feature that still ships, separate from the Claude app's styles, which Anthropic moved into skills in 2026; my post on [how the Claude app's styles became skills](/blog/claude-styles/) also lists the built-in output styles and how to set one.
@@ -316,6 +319,8 @@ The limits worth knowing before you fan out, all from the same docs page:
 | Nesting | Up to three layers of subagents below the main conversation |
 | Context cost | Every result returns to your main conversation, so many detailed results fill it |
 | Usage | Each subagent sends its own requests, which count toward the same usage limits |
+
+If a fan-out uses up those usage limits mid-task, my guide to [Claude usage limits and their resets](/blog/claude-usage-limits/) covers `/usage`, `/usage-credits` and the automatic continue that lets an interactive Claude Code session pick a stopped task back up after the reset.
 
 The last line of that prompt comes from my own runs. When I fan keyword research out to parallel subagents, two limits bite: web search is capped per session and the cap is shared by every subagent, and a metered SEO API drains fast when several subagents re-check the same SERPs. Every research prompt I hand a subagent now names the tools it may not call.
 

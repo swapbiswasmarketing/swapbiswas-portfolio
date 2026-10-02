@@ -159,7 +159,7 @@ You can have the right value proposition and a poorly written statement. You can
 
 After auditing dozens of homepages, the same patterns show up.
 
-1. **Feature lists pretending to be value props.** "Built-in CRM, AI scoring, and automated workflows" is not a value prop. It is a feature shelf.
+1. **Feature lists pretending to be value props.** "Built-in CRM, AI scoring, and automated workflows" is not a value prop. It is a feature shelf. To fix one, [sort each line into feature, benefit or value](/blog/feature-vs-benefit-vs-value/), then write the prop's outcome as a value line, one that names the change to a goal or number the buyer already reports on.
 2. **Adjective inflation.** "The world's leading," "the most advanced," "the easiest." Every category claims these. Buyers ignore them.
 3. **Inside-out language.** "Our platform unifies" is company-led. "You see one profile" is customer-led.
 4. **Targeting everyone.** A value prop that fits five different ICPs fits none of them well. Pick the one that pays.
