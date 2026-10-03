@@ -4,7 +4,7 @@
  * manifest of their real intrinsic sizes for the rehype plugin to read.
  *
  * Why: every diagram under public/assets/blog/ is authored at 1200px or 1800px wide,
- * but .content-column caps the article body at 66ch (measured 658px), so a DPR-1
+ * but .content-column caps the article body at 41.5rem (664px), so a DPR-1
  * desktop downloads two to three times the pixels it paints. Measured on two of the
  * largest diagrams, a 660px WebP is about 65% smaller than the file served today
  * (durability-scorecard.webp: 57.9 KiB -> 20.3 KiB; segment-score.webp: 49.3 -> 17.4).
@@ -33,7 +33,7 @@ const PUBLIC_DIR = path.join(process.cwd(), 'public');
 const SRC_DIR = path.join(PUBLIC_DIR, 'assets', 'blog');
 const MANIFEST = path.join(process.cwd(), 'src', 'data', 'image-manifest.json');
 
-// 660 is the DPR-1 slot (66ch = 658px). 1320 is the DPR-2 slot. Quality 82 matches the
+// 660 is the DPR-1 slot (the 664px column, within 1%). 1320 is the DPR-2 slot. Quality 82 matches the
 // OG card encoder and keeps thin diagram type legible.
 // minSource is the smallest source a rung is worth emitting for: a 1320w copy of a
 // 1200w original is just a second full-size file on disk.

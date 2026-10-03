@@ -1,9 +1,17 @@
 ---
 import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
+
+interface Props {
+	/** Skip rendering until the band nears the viewport. Blog posts only; see the note
+	 *  above .author-bio in src/pages/blog/[...slug].astro for why it is opt-in. */
+	skipOffscreen?: boolean;
+}
+
+const { skipOffscreen = false } = Astro.props;
 ---
 
-<aside>
+<aside class:list={[skipOffscreen && 'skip-offscreen']}>
 	<h2>Interested in working together?</h2>
 	<CallToAction href="mailto:swapbiswas.marketing@gmail.com">
 		Send Me a Message
@@ -24,6 +32,21 @@ import Icon from './Icon.astro';
 		background-color: var(--gray-900);
 	}
 
+	/* The last block above the footer on a post, so it is skipped until it nears the
+	   viewport. Why, why the clip margin and the @supports gate, and why only on posts: the
+	   note above .author-bio in src/pages/blog/[...slug].astro. The placeholders are content
+	   boxes: 146px at 412px, 88px once the heading and button share a row. */
+	.skip-offscreen {
+		contain-intrinsic-block-size: auto 146px;
+	}
+
+	@supports (overflow-clip-margin: 8px) {
+		.skip-offscreen {
+			content-visibility: auto;
+			overflow-clip-margin: 8px;
+		}
+	}
+
 	h2 {
 		font-family: var(--font-display);
 		font-weight: 600;
@@ -41,6 +64,10 @@ import Icon from './Icon.astro';
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content: space-between;
+		}
+
+		.skip-offscreen {
+			contain-intrinsic-block-size: auto 88px;
 		}
 
 		h2 {

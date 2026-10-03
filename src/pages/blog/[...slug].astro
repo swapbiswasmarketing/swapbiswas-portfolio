@@ -149,13 +149,34 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		tags: entry.data.category,
 	}}
 >
-	<div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar"></div></div>
-	<script type="application/ld+json" is:inline set:html={JSON.stringify(blogPostSchema)} />
-	{faqSchema && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />}
-	{howToSchema && <script type="application/ld+json" is:inline set:html={JSON.stringify(howToSchema)} />}
-	<div class="stack gap-20">
-		<div class="stack gap-15">
-			<header>
+	{/* data-no-auto-ads keeps AdSense Auto ads from inserting an in-page unit anywhere between
+	   the top of the page and the hero image. On 2026-10-03 Auto ads put a 412x412 unit between
+	   .tags and .meta-line about 0.7s after load, pushing the date line and description
+	   ~430px down: CLS 0.136-0.161 on mobile PageSpeed, the largest single cost on the page.
+	   Nothing can reserve space for a unit we do not place, so the fix is not having one there.
+
+	   The attribute is read by Google's shipped Auto ads code (adsbygoogle.js and the
+	   show_ads_impl_with_ama build, unchanged since at least m202301120101) but is NOT in
+	   Google's documentation, so Excluded areas in the AdSense dashboard stays the supported
+	   control and this is the backstop. Its rules, from that code: "inside" or "all" blocks
+	   every position within the element; "before" blocks the slot directly in front of it
+	   (beforebegin, or afterbegin of its parent when it is the first child); "after" blocks the
+	   slot directly behind it; "all" is all three. The before/after checks only look at the
+	   direct element sibling, so the chain runs unbroken from the site nav (Nav.astro and
+	   BaseLayout.astro set it there on posts) through every element down to the hero image,
+	   the JSON-LD scripts included - any element added into that run needs the attribute too,
+	   or it reopens the slot beside it. The boundary between the hero image and the article
+	   body is left open on purpose: it is where the article starts (below the fold on phones),
+	   and in-content Auto ads and the manual units work as before from there down. It hides,
+	   moves or removes nothing, so it is not the ad-hiding AdSense forbids. If Google drops the
+	   attribute it silently does nothing. */}
+	<div class="reading-progress" aria-hidden="true" data-no-auto-ads="all"><div class="reading-progress-bar"></div></div>
+	<script type="application/ld+json" is:inline data-no-auto-ads="all" set:html={JSON.stringify(blogPostSchema)} />
+	{faqSchema && <script type="application/ld+json" is:inline data-no-auto-ads="all" set:html={JSON.stringify(faqSchema)} />}
+	{howToSchema && <script type="application/ld+json" is:inline data-no-auto-ads="all" set:html={JSON.stringify(howToSchema)} />}
+	<div class="stack gap-20" data-no-auto-ads="before">
+		<div class="stack gap-15" data-no-auto-ads="before">
+			<header data-no-auto-ads="all">
 				<div class="wrapper stack gap-2">
 					<Hero title={entry.data.title} align="start">
 						<div class="details">
@@ -190,17 +211,21 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 				</div>
 			</header>
 			<main class="wrapper">
-				<div class="blog-layout">
+				<div class="blog-layout" data-no-auto-ads="before">
 					{tocHeadings.length > 2 && (
-						<aside class="toc-sidebar">
+						<aside class="toc-sidebar" data-no-auto-ads="all">
 							<nav class="toc">
 								<button class="toc-toggle" aria-expanded="false">
 									<span class="toc-title">Table of Contents</span>
 									<span class="toc-toggle-icon">+</span>
 								</button>
 								<ol class="toc-list">
-									{tocHeadings.map((h) => (
-										<li class:list={[`toc-item`, `depth-${h.depth}`]}>
+									{/* The first entry ships active: it is the one the scroll pipeline
+									   picks at scroll 0. Adding the class from script on the first
+									   frame ran the 0.2s colour and border transition on every load,
+									   which PageSpeed lists as a non-composited animation. */}
+									{tocHeadings.map((h, i) => (
+										<li class:list={[`toc-item`, `depth-${h.depth}`, i === 0 && 'active']}>
 											<a href={`#${h.slug}`}>{h.text}</a>
 										</li>
 									))}
@@ -208,12 +233,12 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 							</nav>
 						</aside>
 					)}
-					<div class="stack gap-10 content-column" data-pagefind-body>
-						{/* sizes is derived, not guessed: .content-column is max-width min(66ch, 100%)
+					<div class="stack gap-10 content-column" data-pagefind-body data-no-auto-ads="before">
+						{/* sizes is derived, not guessed: .content-column is max-width min(41.5rem, 100%)
 						   inside .wrapper (max-width 83rem, padding-inline 1.5rem), and the >=72em grid
-						   still hands it min(66ch, calc(100% - 32rem)), so 66ch is the ceiling at every
-						   breakpoint. 66ch of Inter at 17px measures 658px, which is exactly what PSI
-						   reported. Below a 706px viewport the column is just the wrapper content box.
+						   still hands it min(41.5rem, calc(100% - 32rem)), so 41.5rem (664px) is the
+						   ceiling at every breakpoint; the 660px slot sits within 1% of it. Below a
+						   712px viewport the column is just the wrapper content box.
 						   Every condition is viewport-only, so the preload scanner can pick a candidate
 						   before layout and the LCP request is not delayed. The -400w and -660w files
 						   come from the width ladder in src/pages/og/[...slug].webp.ts - this markup and
@@ -227,6 +252,7 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 							width="1200"
 							height="630"
 							fetchpriority="high"
+							data-no-auto-ads="before"
 						/>
 						<div class="content">
 							<Content />
@@ -296,11 +322,11 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 								<div class="related-grid">
 									{relatedPosts.map((post) => (
 										<a href={`/blog/${post.id}/`} class="related-card">
-											{/* .related-grid is 3 columns from 50em inside the 658px content column with a
-											   1rem gap, so a card box is (658 - 32) / 3 = 209px wide by 10rem tall. The
-											   sizes value says 320px rather than 209px on purpose: object-fit: cover on a
-											   1.90 source in a 1.30 box scales to cover the height, so the source is drawn
-											   at about 305px wide even though the box is 209px. sizes ignores object-fit,
+											{/* .related-grid is 3 columns from 50em inside the 664px content column with a
+											   1rem gap, so a card box is (664 - 32) / 3 = 211px wide by 10rem tall. The
+											   sizes value says 320px rather than 211px on purpose: object-fit: cover on a
+											   1.90 source in a 1.32 box scales to cover the height, so the source is drawn
+											   at about 305px wide even though the box is 211px. sizes ignores object-fit,
 											   so the crop has to be built into the number or the cards go soft. */}
 											<img
 												src={`/og/${post.id}.webp`}
@@ -322,7 +348,7 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 				</div>
 			</main>
 		</div>
-		<ContactCTA />
+		<ContactCTA skipOffscreen />
 	</div>
 
 	<!-- Back to top button -->
@@ -434,7 +460,9 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		font-size: 1.125rem;
 		line-height: 1.6;
 		color: var(--gray-300);
-		max-width: 54ch;
+		/* 54ch of Inter at 18px, written in rem. A ch width follows whichever face is loaded,
+		   so in the fallback font this box was narrower and rewrapped when Inter landed. */
+		max-width: 38.1rem;
 	}
 
 	/* Blog Layout */
@@ -532,7 +560,10 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		color: var(--gray-0);
 	}
 
-	.toc-item.active > a {
+	/* The first entry ships with .active (see the TOC markup), so this is keyed on html[data-js]
+	   from MainHead.astro: without JS nothing moves the class, and no entry should look
+	   current. */
+	:global([data-js]) .toc-item.active > a {
 		color: var(--accent-text);
 		border-left-color: var(--accent-regular);
 	}
@@ -543,7 +574,11 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 	}
 
 	.content-column {
-		max-width: min(66ch, 100%);
+		/* 66ch of Inter at 16px, written in rem. A ch width follows whichever face is loaded,
+		   so in the fallback font the column was 620px (587px where Arial is missing, as on
+		   PageSpeed's Linux machines) and the whole centred article shifted sideways when
+		   Inter landed: Lighthouse's "Web font loaded" layout shift on desktop. */
+		max-width: min(41.5rem, 100%);
 		margin-inline: auto;
 		min-width: 0;
 	}
@@ -909,7 +944,7 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		   calc(100% - 32rem) reserves >=16rem per gutter so the TOC always has room. */
 		.blog-layout {
 			display: grid;
-			grid-template-columns: 1fr min(66ch, calc(100% - 32rem)) 1fr;
+			grid-template-columns: 1fr min(41.5rem, calc(100% - 32rem)) 1fr;
 			align-items: start;
 		}
 		.content-column {
@@ -1076,6 +1111,43 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 	}
 
 	/* Author Bio */
+	/* Below-the-fold blocks skip style, layout and paint until they near the viewport: the
+	   author bio and related posts here, plus ShareButtons, ContactCTA and the footer columns
+	   in their own components. A post's layout time is in its cold passes - the first layout
+	   in fallback fonts and the relayout when the web fonts land - where every font size and
+	   weight in use is built and every text node is shaped (a warm full relayout costs ~3ms,
+	   a cold one ~80ms). Skipping these blocks measured 62ms less Style + Layout per load on
+	   /blog/product-led-growth-examples/ at 412px (median of 36 paired loads, unthrottled),
+	   about 250ms at Lighthouse's 4x CPU.
+
+	   The sizes are placeholders for the skipped state only (content-box heights). `auto`
+	   swaps in the real height once a block has rendered, and a block renders before it
+	   scrolls into view, so a wrong guess never moves anything on screen. It does make
+	   document height approximate until then, which is why ContactCTA and the footer only
+	   opt in on posts (the skipOffscreen prop): the homepage sizes its strand SVG from
+	   scrollHeight once at load, and /blog/'s search can pull the CTA on screen without a
+	   scroll. Everything on a post that reads document height re-reads it on resize.
+
+	   content-visibility: auto always turns on paint containment, which clips everything
+	   inside to the box edge - including the 2px + 2px-offset focus ring of a link flush with
+	   that edge, which simply vanished in testing. overflow-clip-margin gives the ring room,
+	   and the @supports gate keeps browsers without it (Safari) on today's rendering rather
+	   than clipping their keyboard focus.
+
+	   Left out on purpose: .content (the in-content Auto ads and the manual units live there,
+	   and AdSense measures its slots), .faq-section (its height follows the FAQ count, so a
+	   placeholder would send numeric scroll restores and links below it off target), and
+	   tables (html has scroll-behavior: smooth, so a #fragment link animates past them, they
+	   render mid-scroll at their real height and the target lands short - 331px on
+	   #faq-heading of this post). */
+	@supports (overflow-clip-margin: 8px) {
+		.author-bio,
+		.related-posts {
+			content-visibility: auto;
+			overflow-clip-margin: 8px;
+		}
+	}
+
 	.author-bio {
 		display: flex;
 		gap: 1rem;
@@ -1086,6 +1158,7 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		background: var(--sg-panel);
 		text-decoration: none;
 		transition: border-color 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+		contain-intrinsic-block-size: auto 117px;
 	}
 
 	.author-bio:hover {
@@ -1128,6 +1201,8 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 	/* Related Posts */
 	.related-posts {
 		margin-top: 1rem;
+		/* Placeholder for content-visibility; see the note above .author-bio. */
+		contain-intrinsic-block-size: auto 774px;
 	}
 
 	.related-posts h2 {
@@ -1183,6 +1258,15 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 	@media (min-width: 50em) {
 		.related-grid {
 			grid-template-columns: repeat(3, 1fr);
+		}
+
+		/* One row of three cards instead of a stack of three, and a two-line bio. */
+		.related-posts {
+			contain-intrinsic-block-size: auto 296px;
+		}
+
+		.author-bio {
+			contain-intrinsic-block-size: auto 75px;
 		}
 	}
 

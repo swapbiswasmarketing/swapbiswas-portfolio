@@ -7,9 +7,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 // The card renders at 1200x630 because that is what og:image consumers want, but the
-// same file is also the article hero, and .content-column caps the body at 66ch
-// (measured 658px). A DPR-1 desktop was downloading 52.6 KiB to paint 658x345, about
-// 3.3x the pixels it needed. These extra widths exist only for the on-page
+// same file is also the article hero, and .content-column caps the body at 41.5rem
+// (664px; it was 66ch, measured at 658px). A DPR-1 desktop was downloading 52.6 KiB to
+// paint 658x345, about 3.3x the pixels it needed. These extra widths exist only for the on-page
 // <img srcset>; /og/{slug}.webp keeps its URL and stays the social card.
 const HERO_WIDTHS = [400, 660];
 

@@ -54,6 +54,17 @@ const encodedUrl = encodeURIComponent(url);
 		padding-top: 2rem;
 		margin-top: 2rem;
 		border-top: 1px solid var(--sg-hair);
+		contain-intrinsic-block-size: auto 40px;
+	}
+
+	/* Always below the article, so it is skipped until it nears the viewport. Why, what it
+	   measured, and why the clip margin and the @supports gate: the note above .author-bio in
+	   src/pages/blog/[...slug].astro. 40px is the content box at every width. */
+	@supports (overflow-clip-margin: 8px) {
+		.share-buttons {
+			content-visibility: auto;
+			overflow-clip-margin: 8px;
+		}
 	}
 
 	.share-label {

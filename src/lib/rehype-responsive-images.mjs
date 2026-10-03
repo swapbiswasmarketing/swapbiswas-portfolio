@@ -24,10 +24,10 @@ import path from 'node:path';
  * value; no post in the corpus has one.
  */
 
-// Derived from the layout, not guessed. .content-column is max-width min(66ch, 100%)
+// Derived from the layout, not guessed. .content-column is max-width min(41.5rem, 100%)
 // inside .wrapper (max-width 83rem, padding-inline 1.5rem), and the >=72em grid still
-// hands it min(66ch, calc(100% - 32rem)), so 66ch is the ceiling at every breakpoint.
-// 66ch of Inter at 17px measures 658px, which is what PSI reported for these images.
+// hands it min(41.5rem, calc(100% - 32rem)), so 41.5rem (664px) is the ceiling at every
+// breakpoint, and the 660px slot sits within 1% of it.
 // One knowing trade: @media print sets .content-column to max-width:100% !important, so
 // a printed diagram now comes from the 660w file. Accepted rather than engineered around.
 const CONTENT_SIZES = '(min-width: 45em) 660px, calc(100vw - 3rem)';

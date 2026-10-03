@@ -131,10 +131,10 @@ export const AD_SLOTS = {
 	// inline on the <ins>. min-height is only a floor, so nothing can cap a fluid unit
 	// and the whole reserved-height argument collapses: a 420px native creative landing
 	// in a 280px reserve is a 140px shift mid-viewport. auto has the same problem from
-	// the other end - inside a 658px measure it is free to serve anything from a 90px
+	// the other end - inside a 664px measure it is free to serve anything from a 90px
 	// strip to a 280px block, and no one number fits both.
 	//
-	// rectangle is bounded. In these containers (272px at a 320px viewport, 658px in the
+	// rectangle is bounded. In these containers (272px at a 320px viewport, 664px in the
 	// article column) the tallest rectangle it can serve is 280px, which is exactly the
 	// floor set in global.css. So a fill can never push the page down; the worst case is
 	// 30px of dead space under a 250px creative. That trade - a few percent of RPM for a

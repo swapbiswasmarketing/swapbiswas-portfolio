@@ -4,6 +4,14 @@ import SiteMark from './SiteMark.astro';
 import type { iconPaths } from './IconPaths';
 import ThemeToggle from './ThemeToggle.astro';
 
+interface Props {
+	/** Blog posts only: keep AdSense Auto ads out of the slots before and after this bar.
+	 *  See the data-no-auto-ads note at the top of src/pages/blog/[...slug].astro. */
+	noAutoAds?: boolean;
+}
+
+const { noAutoAds = false } = Astro.props;
+
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
 	{ label: 'Home', href: '/' },
@@ -31,7 +39,7 @@ const isCurrentPage = (href: string) => {
 };
 ---
 
-<nav>
+<nav data-no-auto-ads={noAutoAds ? 'all' : undefined}>
 	<div class="menu-header">
 		<a href="/" class="site-title">
 			<SiteMark size="24px" class="site-mark" />
@@ -222,6 +230,21 @@ const isCurrentPage = (href: string) => {
 		display: none;
 	}
 
+	/* The script below clones the button out of its <template>, and module scripts run only
+	   after the document has parsed, usually after the first paint. Without this the bar paints
+	   at 52px and grows to 64px when the button arrives, pushing the page down 12px (PageSpeed
+	   lists it as a layout shift on #main-content). The box is .menu-button's: a 1.375rem icon
+	   plus 0.375rem padding and a 1px border each side, so keep the two in step. min-* because
+	   an empty box with a plain width can flex-shrink where the button cannot.
+
+	   Keyed on html[data-js], set by the theme script in MainHead.astro, not on the
+	   (scripting) media query: with JS off or blocked by an extension the element never
+	   upgrades, the <noscript> links stand in for the menu, and the bar keeps its 52px. */
+	:global([data-js]) menu-button:not(:defined) {
+		min-width: calc(1.375rem + 2 * 0.375rem + 2px);
+		min-height: calc(1.375rem + 2 * 0.375rem + 2px);
+	}
+
 	/* Mobile dropdown: floating panel, hairline border, shadow allowed here. */
 	.menu-content {
 		position: absolute;
@@ -327,6 +350,23 @@ const isCurrentPage = (href: string) => {
 		}
 
 		.menu-content {
+			display: contents;
+		}
+
+		/* The script hides the button at this width, so there is no box to hold. Not
+		   display: none - the empty flex item and its gap have to stay, or the site title
+		   wraps differently between 800 and 959px before the script runs. */
+		:global([data-js]) menu-button:not(:defined) {
+			min-width: auto;
+			min-height: auto;
+		}
+
+		/* #menu-content keeps its `hidden` attribute until the script below removes it, so
+		   without this the desktop bar paints as the logo alone and grows by 14px or more when
+		   the links and theme toggle arrive. Keyed on html[data-js] for the same reason as the
+		   button box above: without JS, `hidden` has to keep winning or the links would show
+		   twice alongside the <noscript> copy. */
+		:global([data-js]) #menu-content {
 			display: contents;
 		}
 

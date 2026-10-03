@@ -24,12 +24,23 @@ const popular = featuredPosts.length >= 4 ? featuredPosts : fallbackPosts;
 
 const categories = ['SEO', 'AI', 'Marketing', 'Product Marketing', 'Tools'];
 import SiteMark from './SiteMark.astro';
+
+interface Props {
+	/** Skip rendering the off-screen footer blocks until they near the viewport. Blog posts
+	 *  only; see the note above .author-bio in src/pages/blog/[...slug].astro for why. */
+	skipOffscreen?: boolean;
+}
+
+const { skipOffscreen = false } = Astro.props;
+// No Auto ads unit inside a skipped block: AdSense widens a full-width-responsive unit past
+// its column with a negative margin, and the block's paint containment would crop it.
+const noAutoAdsInside = skipOffscreen ? 'inside' : undefined;
 ---
 
-<footer class="site-footer">
+<footer class:list={['site-footer', skipOffscreen && 'skip-offscreen']}>
 	<div class="footer-inner">
 		<div class="footer-grid">
-			<div class="col col-brand">
+			<div class="col col-brand" data-no-auto-ads={noAutoAdsInside}>
 				<a href="/" class="brand" aria-label="Swapnil Biswas home">
 					<SiteMark size="2.25rem" class="brand-mark" />
 					<span class="brand-name">Swapnil Biswas</span>
@@ -79,7 +90,7 @@ import SiteMark from './SiteMark.astro';
 				</ul>
 			</div>
 
-			<nav class="col col-nav" aria-label="Footer navigation">
+			<nav class="col col-nav" aria-label="Footer navigation" data-no-auto-ads={noAutoAdsInside}>
 				<h3 class="col-heading">Explore</h3>
 				<ul class="link-list">
 					<li><a href="/">Home</a></li>
@@ -93,7 +104,7 @@ import SiteMark from './SiteMark.astro';
 				</ul>
 			</nav>
 
-			<div class="col col-posts">
+			<div class="col col-posts" data-no-auto-ads={noAutoAdsInside}>
 				<h3 class="col-heading">Popular Reads</h3>
 				<ul class="post-list">
 					{popular.map((post) => (
@@ -136,14 +147,14 @@ import SiteMark from './SiteMark.astro';
 			</div>
 		</div>
 
-		<div class="footer-tags" aria-label="Blog categories">
+		<div class="footer-tags" aria-label="Blog categories" data-no-auto-ads={noAutoAdsInside}>
 			<span class="tags-label">Topics</span>
 			{categories.map((c) => (
 				<a class="tag-chip" href={`/blog/category/${c.toLowerCase().replace(/ /g, '-')}/`}>{c}</a>
 			))}
 		</div>
 
-		<div class="footer-bottom">
+		<div class="footer-bottom" data-no-auto-ads={noAutoAdsInside}>
 			<p class="copyright">
 				&copy; {currentYear} Swapnil Biswas &middot;
 				Made with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer">Astro</a>
@@ -247,6 +258,82 @@ import SiteMark from './SiteMark.astro';
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 2.25rem;
+	}
+
+	/* On posts (skipOffscreen), every footer block except the newsletter column is skipped
+	   until it nears the viewport; the reasoning, the measurements, the clip margin, the
+	   @supports gate and why it is posts-only are in the note above .author-bio in
+	   src/pages/blog/[...slug].astro. Not on .site-footer itself: Chrome scans forms at
+	   DOMContentLoaded and force-renders any skipped ancestor of a form field, which measured
+	   as a 19ms layout plus 5ms of style for the whole footer on every load. With the <form>
+	   outside the skipped blocks that pass never happens, so keep form fields out of these
+	   five. Placeholder heights are content boxes for the one-, two- and four-column grids. */
+	@supports (overflow-clip-margin: 8px) {
+		.skip-offscreen .col-brand,
+		.skip-offscreen .col-nav,
+		.skip-offscreen .col-posts,
+		.skip-offscreen .footer-tags,
+		.skip-offscreen .footer-bottom {
+			content-visibility: auto;
+			overflow-clip-margin: 8px;
+		}
+	}
+
+	.skip-offscreen .col-brand {
+		contain-intrinsic-block-size: auto 210px;
+	}
+
+	.skip-offscreen .col-nav {
+		contain-intrinsic-block-size: auto 284px;
+	}
+
+	.skip-offscreen .col-posts {
+		contain-intrinsic-block-size: auto 205px;
+	}
+
+	.skip-offscreen .footer-tags {
+		contain-intrinsic-block-size: auto 67px;
+	}
+
+	.skip-offscreen .footer-bottom {
+		contain-intrinsic-block-size: auto 51px;
+	}
+
+	@media (min-width: 40em) {
+		.skip-offscreen .col-brand,
+		.skip-offscreen .col-nav {
+			contain-intrinsic-block-size: auto 284px;
+		}
+
+		.skip-offscreen .col-posts {
+			contain-intrinsic-block-size: auto 258px;
+		}
+
+		.skip-offscreen .footer-tags {
+			contain-intrinsic-block-size: auto 31px;
+		}
+
+		.skip-offscreen .footer-bottom {
+			contain-intrinsic-block-size: auto 52px;
+		}
+	}
+
+	@media (min-width: 62em) {
+		.skip-offscreen .col-brand {
+			contain-intrinsic-block-size: auto 244px;
+		}
+
+		.skip-offscreen .col-nav {
+			contain-intrinsic-block-size: auto 306px;
+		}
+
+		.skip-offscreen .col-posts {
+			contain-intrinsic-block-size: auto 226px;
+		}
+
+		.skip-offscreen .footer-bottom {
+			contain-intrinsic-block-size: auto 22px;
+		}
 	}
 
 	/* Section heading: mono eyebrow, no underline rule */

@@ -90,7 +90,7 @@ Scale and weights:
 - h3: display 600, 1.5-1.75rem, line-height 1.15, letter-spacing -0.01em.
 - h4/h5 and card titles: body (Inter) 600, 1.125-1.25rem, line-height 1.3, letter-spacing -0.01em.
 - Two-tone heading trick allowed: first line `--gray-400`, second line ink.
-- Body: Inter 400, 1rem/1.6 site-wide; blog `.content` 1.0625rem (17px) / 1.65, max-width 66ch; lede 1.25rem `--gray-200`.
+- Body: Inter 400, 1rem/1.6 site-wide; blog `.content` 1.0625rem (17px) / 1.65, column max-width 41.5rem (66ch of Inter at 16px, in rem so it does not change when the web font swaps in); lede 1.25rem `--gray-200`.
 - UI (nav, buttons, chips, form): Inter 500, 0.9375rem (15px).
 - Eyebrow (`.section-eyebrow`): mono 500, 0.72rem, uppercase, letter-spacing 0.12em, `--accent-text`.
 - Meta (dates, reading time): mono 400, 0.8125rem, `--gray-400`.
