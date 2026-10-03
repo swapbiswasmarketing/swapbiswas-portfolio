@@ -44,7 +44,7 @@ On 26 September 2026, the official reference table had **114 rows**: 16 marked a
 | `/clear` | Starts a new conversation with empty context (aliases `/reset`, `/new`) | Moving from one campaign or keyword set to an unrelated task |
 | `/compact [instructions]` | Summarizes the conversation so far to free up context, focused on what you name | A long research session is filling up and you are mid-task |
 | `/context` | Shows what is filling the context window as a colored grid | Checking how much room is left before a long analysis |
-| `/rewind` | Rolls the conversation and/or code back to an earlier point (aliases `/checkpoint`, `/undo`) | Claude edited the wrong file or took a wrong turn |
+| `/rewind` | Rolls the conversation and/or code back to an earlier point (aliases `/checkpoint`, `/undo`); it misses files changed by shell commands, and [my rewind troubleshooting guide](/blog/claude-code-rewind/) gives the fix for each failure | Claude edited the wrong file or took a wrong turn |
 | `/resume [session]` | Reopens an earlier conversation by ID or name, or from a picker | Picking up yesterday's research where it stopped |
 | `/plan [description]` | Enters plan mode, where Claude researches and presents a plan before editing | Before Claude touches a live site, a CMS export or a shared sheet |
 | `/model [model]` | Switches the model and saves it as your default for new sessions | A lighter model for bulk tasks, a stronger one for analysis |

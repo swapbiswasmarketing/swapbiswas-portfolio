@@ -181,6 +181,8 @@ The CI tools market is projected to reach **$1.46 billion by 2030** at a 20% CAG
 
 For teams without budget for dedicated CI tools, you can build a solid program using Ahrefs (SEO), Google Alerts (news), LinkedIn (talent), and G2 (reviews). The framework matters more than the tools.
 
+If you use Claude for collection, [a mode-by-mode routing of CI jobs in Claude](/blog/claude-research-vs-web-search/) sends a check of one competitor's pricing page to web search, which works on every plan, and a positioning brief on four or five competitors to Research, which needs a paid plan.
+
 ## Building a CI Reporting Cadence
 
 ### Weekly: Competitor Alerts

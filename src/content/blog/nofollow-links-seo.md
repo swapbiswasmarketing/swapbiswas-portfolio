@@ -42,6 +42,8 @@ The Dev.to string comes from [the same piece on Dev.to](https://dev.to/nfrankel/
 
 Hashnode produced two different answers. On a [free subdomain blog](https://navinvarma.hashnode.dev/2026-05-09-architecture-tradeoffs-agentic-spectrum), outbound anchors carry four tokens, including the anchor back to the author's own separate domain. On a [blog mapped to a custom domain](https://blog.greenroots.info/top-10-qa-automation-tools-for-startups-in-2026), outbound anchors carry two.
 
+LinkedIn articles would not fit a sixth row: when I fetched 12 public /pulse/ pages on 3 October 2026, no anchor carried a rel attribute, and on the first request 8 of the 9 pages with body links had every link rewritten to a linkedin.com/redir URL that LinkedIn's robots.txt disallows for Googlebot, as I lay out in [where a link inside a LinkedIn article or newsletter edition points](/blog/linkedin-newsletter-vs-article/).
+
 ## What Google Documents About Nofollow, Sponsored and UGC
 
 The primary source is the Search Central post dated 10 September 2019, which introduced the sponsored and ugc values. Its wording: "All the link attributes, sponsored , ugc , and nofollow , now work today as hints for us to incorporate for ranking purposes. For crawling and indexing purposes, nofollow will become a hint as of March 1, 2020" ([Evolving nofollow](https://developers.google.com/search/blog/2019/09/evolving-nofollow-new-ways-to-identify)). The same post says the attributes "are treated as hints about which links to consider or exclude within Search".

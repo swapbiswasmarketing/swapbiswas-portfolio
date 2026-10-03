@@ -81,6 +81,8 @@ The diagram routes a job on whether it needs a folder of files kept in place, mo
 | Run a script you already own, such as an image converter or an IndexNow ping | Claude Code | The script and its installed packages are on your machine |
 | A job you will repeat weekly with the same steps | Claude Code command or a Claude skill | Both package the steps; Claude Code can also run them against local files |
 
+For the competitor research brief row, the Claude app still leaves a choice of mode, and [my side-by-side of web search, Research and extended thinking](/blog/claude-research-vs-web-search/) sends a single pricing-page check to web search and a positioning brief on four or five competitors to Research.
+
 The two Cowork rows come from Anthropic's documentation, not from my own use. Moving from the top half of that table to the bottom half is the jump from using AI for single tasks to running workflows on it, which is roughly the move between the middle stages of [the AI maturity curve for marketers](/blog/marketers-ai-maturity-curve/).
 
 When a deck has to be built from files kept in a repo, or saved into it as a .pptx, [my guide to building PowerPoint decks in Claude Code](/blog/make-a-powerpoint-with-claude-code/) compares `/slides`, Anthropic's pptx skill and a script you commit.

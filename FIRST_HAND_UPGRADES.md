@@ -322,3 +322,27 @@ Without naming your plan: run one typical working session on this repo, read the
 ## claude-code-paste-image
 
 Ten-minute paste test on your Windows 11 machine (Claude Code v2.1.283). Copy one screenshot with Windows+Shift+S, then try: (a) a normal paste in the VS Code extension's prompt box; (b) Alt+V and Ctrl+V with `claude` running in VS Code's integrated terminal; (c) Alt+V and Ctrl+V with `claude` in PowerShell inside Windows Terminal; (d) Alt+V in the Git Bash (mintty) window; (e) Shift+drag of a saved PNG into the prompt box (does it attach as an image or as a file?); (f) typing the PNG's path. Which of these showed an [Image #N] chip? The answers would let 'Claude Code Paste Image Shortcuts by Surface' and 'Claude Code Paste Image in VS Code: Chat Panel vs Terminal' say 'checked on Windows 11, v2.1.283'.
+
+## claude-code-rewind
+
+In the VS Code extension's chat panel, does typing /rewind show a matching command (and if so, does it open the CLI's six-action menu or the three hover options), or does it say no matching commands? The answer belongs in the 'You can't find rewind in the VS Code chat panel' row of 'Claude Code Rewind Not Working: Symptom, Cause and Fix' and in the bullet under the actions table in 'How to Rewind in Claude Code'.
+
+## claude-research-vs-web-search
+
+On one real PMM question (for example 'how do our three main competitors position [category] on their homepages and pricing pages'), run it once with web search and once with Research in the Claude app. How many searches and sources did each show, how many minutes did Research take, and on which app experience (previous or new)? Did either cite a page that did not support the claim? This belongs as a dated first-hand row in the timing table under 'How Long Does Claude Research Take?', plus one line under the jobs-to-modes table. Do not name your plan.
+
+## product-marketing-brief-template
+
+In launches you have run as a PMM (no employer or product named), has a launch claim ever been pulled or reworded late, by legal, sales or a customer? If so, give one anonymized row: the claim, why it came out, what line replaced it, and at what stage (draft, review, after launch). It would go as a one-line first-hand example under 'How to Fill the Claims We Will Not Make Section', after the claims table.
+
+## tagline-vs-slogan-vs-motto
+
+Where else do your two lines appear besides LinkedIn ("A marketer who builds." and "I write the brief, then I build it", for example the swapbiswas.com hero, your X bio or an email signature), and since what date each? With those dates the post's last two rows can carry a real record check instead of a few days on LinkedIn. The answer belongs in 'B2B and AI Lines, Classified and Dated', in the paragraph under the table.
+
+## product-marketing-portfolio
+
+When you have hired or interviewed product marketers, did the loop ask for a portfolio, a take-home, or both? What was one detail in a candidate's sample that told you they had done the work themselves? It belongs in 'Some PMM Interview Loops Use a Take-Home Instead', right after the three Sharebird quotes, and would move the post from synthesized to first-hand.
+
+## linkedin-newsletter-vs-article
+
+In GA4 for swapbiswas.com, over the last 90 days, how many sessions arrived with utm_source=linkedin, and how many arrived from linkedin.com or lnkd.in referrals with no UTM? This would ground the first row of the decision table in 'LinkedIn Newsletter vs Article for Marketers Who Own a Blog' with a real measurement, in the paragraph that starts 'I post on LinkedIn several times a week'.

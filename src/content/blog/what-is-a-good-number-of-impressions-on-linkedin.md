@@ -116,7 +116,7 @@ OutX adds two more figures for an account this size. Its conclusion sets 100-300
 
 The two columns use different denominators, so compare the order, not the values. ContentIn puts video first. In MagicPost's measured medians video sits fourth of six, below image, and a poll's median is 2.8 times a link post's.
 
-MagicPost's [separate link study](https://magicpost.in/blog/linkedin-external-links-reach) puts a post with an attached link preview at 414 median impressions against 795 for a post without one, and a post with the URL typed into its body at 858.
+MagicPost's [separate link study](https://magicpost.in/blog/linkedin-external-links-reach) puts a post with an attached link preview at 414 median impressions against 795 for a post without one, and a post with the URL typed into its body at 858. MagicPost files link-preview posts under its article format, so the "Link or article" row in the table above, at the same 414 median, describes link posts and says nothing about LinkedIn's long-form articles, which I compare with newsletter editions in [my check of how LinkedIn articles and newsletters are served](/blog/linkedin-newsletter-vs-article/).
 
 Stack a statistic choice on a format choice and the gaps can multiply. In MagicPost's 1,000-5,000 band a great post is 5.2 times the typical one, and 5.2 times the 2.8 poll-to-link gap is about 14, so one dataset read two ways could produce most of a 16-fold gap. None of OutX, ContentRadar or Bluecast ties its figure to a percentile or a format, so this arithmetic shows how a gap that size can arise without showing that it explains theirs.
 

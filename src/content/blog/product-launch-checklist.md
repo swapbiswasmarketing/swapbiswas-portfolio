@@ -42,7 +42,7 @@ The pre-launch phase is where the bulk of the launch outcome is decided. A launc
 
 ### Positioning and Messaging (Weeks -12 to -8)
 
-- [ ] **Launch brief** capturing the what, the why, the who, and the expected impact
+- [ ] **Launch brief** capturing the what, the why, the who, and the expected impact; I start from [a fill-in brief that also lists the claims the launch will not make](/blog/product-marketing-brief-template/)
 - [ ] **Target segment** named specifically (not "SMBs" but "10-50 person marketing teams at B2B SaaS companies")
 - [ ] **Problem statement** that a buyer would nod at, not a description of the feature
 - [ ] **Positioning statement** for the launch (who, what, against whom, why us)

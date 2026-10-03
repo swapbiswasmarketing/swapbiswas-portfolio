@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 690" width="1400" height="690">
+  <rect x="0" y="0" width="1400" height="690" fill="#f6f4ef"/>
+
+  <text x="60" y="76" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where a body link in a LinkedIn article goes</text>
+  <text x="60" y="116" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">What 51 of 54 logged-out requests to nine /pulse/ pages with body links returned, 3 October 2026</text>
+
+  <rect x="60" y="160" width="340" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="200" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">IN THE EDITOR</text>
+  <text x="90" y="244" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">You link to</text>
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">
+    <text x="90" y="280">yourblog.com/post/</text>
+    <text x="90" y="312">?utm_source=linkedin</text>
+  </g>
+
+  <line x1="400" y1="250" x2="466" y2="250" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="466,243 480,250 466,257" fill="#15130f"/>
+
+  <rect x="490" y="160" width="400" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="520" y="200" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">IN THE SERVED HTML</text>
+  <text x="520" y="244" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The href points at</text>
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">
+    <text x="520" y="280">linkedin.com/redir/</text>
+    <text x="520" y="312">redirect?url=... no rel</text>
+  </g>
+
+  <line x1="890" y1="250" x2="956" y2="250" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="956,243 970,250 956,257" fill="#15130f"/>
+
+  <rect x="980" y="160" width="360" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1010" y="200" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">REQUESTED LOGGED OUT</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="1010" y="244">An HTTP 200 page titled</text>
+    <text x="1010" y="276">External Redirection,</text>
+    <text x="1010" y="308">with a 3-second countdown</text>
+  </g>
+
+  <line x1="1160" y1="340" x2="1160" y2="396" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1153,396 1160,410 1167,396" fill="#15130f"/>
+
+  <rect x="980" y="420" width="360" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1010" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">YOUR PAGE</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="1010" y="504">The destination URL keeps</text>
+    <text x="1010" y="536">its full query string,</text>
+    <text x="1010" y="568">so a UTM should survive</text>
+  </g>
+
+  <line x1="690" y1="340" x2="690" y2="396" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="683,396 690,410 697,396" fill="#15130f"/>
+
+  <rect x="490" y="420" width="400" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="520" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">A SEARCH CRAWLER</text>
+  <text x="520" y="504" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn's robots.txt says</text>
+  <text x="520" y="544" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="24" font-weight="600" fill="#b53b15">Disallow: /redir*</text>
+  <text x="520" y="580" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">to Googlebot and Bingbot</text>
+
+  <rect x="60" y="420" width="340" height="180" rx="12" fill="#f6f4ef" stroke="#6a645c" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="90" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">THE EXCEPTION</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">
+    <text x="90" y="504">3 of 54 requests linked</text>
+    <text x="90" y="536">straight to each destination,</text>
+    <text x="90" y="568">with ?trk= appended</text>
+  </g>
+
+  <text x="60" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sources: served HTML of 12 linkedin.com/pulse/ pages, /redir URLs requested directly, and linkedin.com/robots.txt</text>
+</svg>

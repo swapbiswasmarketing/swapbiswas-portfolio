@@ -109,6 +109,8 @@ Here's a simple template that works:
 
 Once the statement is written, carry its category and target audience into the first sentence of your press release boilerplate, which every release repeats: only 22 of the [95 B2B software and AI boilerplates](/blog/company-boilerplate-examples/) I measured named both in that sentence.
 
+When the statement is for a launch, I paste the finished version into [section 4 of a product marketing brief](/blog/product-marketing-brief-template/), where its "Unlike" clause names the competitive alternative from section 3, so the one-pager and the first slide of the sales deck inherit the same wording.
+
 ## Product Positioning Examples
 
 ### Apple (Premium Quality)

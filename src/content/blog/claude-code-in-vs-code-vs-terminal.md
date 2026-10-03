@@ -47,6 +47,8 @@ Checked on 30 September 2026 against the [extension vs CLI section of the VS Cod
 | MCP servers | `/mcp` dialog; adds and removes servers from v2.1.261 | `claude mcp add`, or `/mcp` |
 | Where it comes from | Bundled in the extension; `claude` is not added to your PATH | The standalone install |
 
+The two surfaces label their rewind options differently, and [my table of both rewind menus](/blog/claude-code-rewind/) puts the extension's three hover options beside the CLI's six actions, matched by what each one restores.
+
 Image paste differs between the two surfaces as well: the chat panel takes an ordinary paste into its prompt box, while the CLI in the integrated terminal on Windows needs `Alt+V`, and my guide to [the image paste route on each surface](/blog/claude-code-paste-image/) adds WSL and SSH.
 
 The extension also has an in-between option: turn on Use Terminal (`claudeCode.useTerminal`) or run Claude Code: Open in Terminal from the Command Palette, and it opens the CLI-style interface in place of the chat panel. Anthropic's guide does not say which of the CLI-only rows above that mode changes.

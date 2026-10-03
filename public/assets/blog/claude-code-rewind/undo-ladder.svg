@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1038" width="1400" height="1038">
+  <rect x="0" y="0" width="1400" height="1038" fill="#f6f4ef"/>
+
+  <text x="60" y="68" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Which undo reaches which change</text>
+  <text x="60" y="106" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">A static site that deploys from main on Vercel, checked against the vendors' docs on 3 October 2026</text>
+
+  <rect x="60" y="140" width="1000" height="164" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">RUNG 1 - THIS SESSION</text>
+  <text x="92" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">/rewind, then Restore code</text>
+  <text x="92" y="252" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Reaches edits Claude made with its own file editing tools</text>
+  <text x="92" y="282" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Snapshots for the 100 most recent checkpoints, swept about 30 days after the last save</text>
+
+  <line x1="188" y1="310" x2="188" y2="350" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="181,350 195,350 188,364" fill="#b53b15"/>
+  <text x="214" y="342" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#b53b15">Made by a shell command, a subagent or you, or its snapshot was swept</text>
+
+  <rect x="140" y="368" width="1000" height="164" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="172" y="408" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">RUNG 2 - ON DISK, NOT COMMITTED</text>
+  <text x="172" y="446" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">git restore, or rebuild from the restored source</text>
+  <text x="172" y="480" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Reaches shell-command changes, subagent edits and your own edits</text>
+  <text x="172" y="510" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Here: the image-variant step in npm run build, and the cover script</text>
+
+  <line x1="268" y1="538" x2="268" y2="578" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="261,578 275,578 268,592" fill="#15130f"/>
+  <text x="294" y="570" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">Already committed</text>
+
+  <rect x="220" y="596" width="1000" height="164" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="252" y="636" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">RUNG 3 - COMMITTED</text>
+  <text x="252" y="674" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">git revert &lt;commit&gt;</text>
+  <text x="252" y="708" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Records a new commit that reverses the bad one</text>
+  <text x="252" y="738" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">The bad commit stays in history beside its reversal</text>
+
+  <line x1="348" y1="766" x2="348" y2="806" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="341,806 355,806 348,820" fill="#15130f"/>
+  <text x="374" y="798" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">Already pushed to main</text>
+
+  <rect x="300" y="824" width="1000" height="164" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="332" y="864" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">RUNG 4 - PUSHED TO MAIN, SO ALREADY LIVE</text>
+  <text x="332" y="902" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Push the revert, or use Vercel Instant Rollback</text>
+  <text x="332" y="936" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">On this site every push to main is a production deploy</text>
+  <text x="332" y="966" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">After a rollback, new pushes won't go live until you undo it</text>
+</svg>

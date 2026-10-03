@@ -56,7 +56,7 @@ A focused team can run a Tier 1 SaaS launch in 12 weeks of pre-launch work. Comp
 
 Lock the launch brief and the narrative before anything else.
 
-- **Launch brief** captures the why-now, the customer problem, the differentiated value, and the success metrics. One page. No exceptions.
+- **Launch brief** captures the why-now, the customer problem, the differentiated value, and the success metrics. One page. No exceptions. I get there by keeping the problem, the competitive alternative, the positioning statement and the primary message from [a filled-in eight-section launch brief](/blog/product-marketing-brief-template/), then adding a why-now line and the goals from the launch plan.
 - **Narrative** is the 200-word story that every asset will inherit from. Pricing pages, press, sales decks, in-product banners all flow from this.
 - **Tiering decision** is locked here. Tier 1, 2, or 3 with a one-paragraph rationale.
 

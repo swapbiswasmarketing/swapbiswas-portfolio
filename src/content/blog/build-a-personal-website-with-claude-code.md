@@ -176,7 +176,7 @@ The commands and the port come from [Astro's develop-and-build guide](https://do
 
 Search is a feature the dev server cannot show on this site. The build script is `astro build && npx pagefind --site dist`, and Pagefind indexes the built files: its docs say it "runs after your static generator", and that a dev server shows nothing yet "as Pagefind needs to index the output of your build" ([Pagefind docs](https://pagefind.app/docs/)). Check search in `npm run preview`.
 
-When an edit goes wrong, rewind it. Every prompt that starts a turn creates a checkpoint, and pressing `Esc` twice with an empty prompt, or running `/rewind`, opens a menu that restores the code, the conversation or both ([Claude Code checkpointing docs](https://code.claude.com/docs/en/checkpointing)). Checkpoints miss files changed by Bash commands, and the docs describe them as "quick, session-level recovery", so commit working states to git as you go.
+When an edit goes wrong, rewind it. Every prompt that starts a turn creates a checkpoint, and pressing `Esc` twice with an empty prompt, or running `/rewind`, opens a menu that restores the code, the conversation or both ([Claude Code checkpointing docs](https://code.claude.com/docs/en/checkpointing)). Checkpoints miss files changed by Bash commands, and the docs describe them as "quick, session-level recovery", so commit working states to git as you go. When a restore misses files, [the undo ladder I use on this site](/blog/claude-code-rewind/) matches each symptom to the undo that reaches it, with git and a redeploy below rewind.
 
 ## Step 5: Commit, Push and Let Vercel Deploy Main
 

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 960" width="1400" height="960">
+<rect width="1400" height="960" fill="#f6f4ef"/>
+<text x="70" y="68" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Can this piece of work go in your portfolio?</text>
+<text x="70" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Two questions for every artifact, asked before anything goes public</text>
+
+<rect x="70" y="140" width="630" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="102" y="187" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A piece of PMM work you want to show</text>
+
+<line x1="385" y1="216" x2="385" y2="266" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="378,266 392,266 385,280" fill="#15130f"/>
+
+<rect x="70" y="280" width="630" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="102" y="316" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="1.9" fill="#6a645c">QUESTION 1</text>
+<text x="102" y="352" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Is it already public?</text>
+<text x="102" y="388" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A live landing page, a published launch post,</text>
+<text x="102" y="420" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">an approved case study, a recorded webinar</text>
+
+<line x1="700" y1="360" x2="764" y2="360" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="764,353 778,360 764,367" fill="#15130f"/>
+<text x="740" y="344" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#3a3632">Yes</text>
+
+<rect x="780" y="280" width="550" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="812" y="316" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="1.9" fill="#2a7347">OUTCOME A</text>
+<text x="812" y="352" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Link the live page</text>
+<text x="812" y="388" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Explain the decisions behind it,</text>
+<text x="812" y="420" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and keep internal numbers out of it.</text>
+
+<line x1="385" y1="440" x2="385" y2="496" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="378,496 392,496 385,510" fill="#15130f"/>
+<text x="402" y="480" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#3a3632">No</text>
+
+<rect x="70" y="510" width="630" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="102" y="546" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="1.9" fill="#6a645c">QUESTION 2</text>
+<text x="102" y="582" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Do you have written approval</text>
+<text x="102" y="616" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">to show a scrubbed copy?</text>
+<text x="102" y="650" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">From the company that owns it, for this one artifact</text>
+
+<line x1="700" y1="590" x2="764" y2="590" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="764,583 778,590 764,597" fill="#15130f"/>
+<text x="740" y="574" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#3a3632">Yes</text>
+
+<rect x="780" y="510" width="550" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="812" y="546" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="1.9" fill="#2a7347">OUTCOME B</text>
+<text x="812" y="582" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Scrub it</text>
+<text x="812" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rename the product, drop customer names,</text>
+<text x="812" y="650" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">turn numbers into relative changes.</text>
+
+<line x1="385" y1="670" x2="385" y2="726" stroke="#15130f" stroke-width="2.5"/>
+<polygon points="378,726 392,726 385,740" fill="#15130f"/>
+<text x="402" y="710" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#3a3632">No</text>
+
+<rect x="70" y="740" width="630" height="162" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+<text x="102" y="776" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="1.9" fill="#8f2e0f">OUTCOME C</text>
+<text x="102" y="812" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Rebuild it as a substitute</text>
+<text x="102" y="848" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">On a public product, in a market you have</text>
+<text x="102" y="880" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">never worked in, with every source dated.</text>
+
+<text x="812" y="776" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="1.9" fill="#6a645c">WHAT DOES NOT CHANGE THE ANSWER</text>
+<line x1="812" y1="792" x2="1330" y2="792" stroke="#e4dfd6" stroke-width="1"/>
+<text x="812" y="828" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A password limits who opens the work.</text>
+<text x="812" y="860" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A blurred logo changes how it looks.</text>
+<text x="812" y="892" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Neither changes what the reader learns.</text>
+</svg>

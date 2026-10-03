@@ -112,14 +112,7 @@ My own route in included no PMM certification. I learned the craft by doing the 
 
 This is the step that separates candidates who get interviews from candidates who get filtered by a resume screen. There is no certification that gets you the job. There is a portfolio that does.
 
-Build these four artifacts. Each is one to two pages, and each maps to a core PMM responsibility.
-
-1. **A positioning teardown** of a real product - yours or a public one. Who it is for, why it wins, where its messaging is weak.
-2. **A competitive battlecard** for that product. Use the [competitive battlecard template](/blog/competitive-battlecard-template/) as your structure.
-3. **A launch plan** with audience, tiers, channels, and success metrics. The [product launch checklist](/blog/product-launch-checklist/) is the scaffold.
-4. **A customer interview write-up** - what you heard, and the one insight that would change the go-to-market.
-
-If you want to show sales enablement depth, add a one-pager built from the [sales enablement checklist](/blog/sales-enablement-checklist/). With these artifacts, you can interview for PMM roles regardless of background. Without them, you are competing on resume keywords against people who brought proof.
+Build four artifacts of one to two pages each: a positioning teardown of a real product, a battlecard for it built on the [competitive battlecard template](/blog/competitive-battlecard-template/), a launch plan scaffolded from the [product launch checklist](/blog/product-launch-checklist/), and a customer interview write-up with the one insight that would change the go-to-market. A one-pager from the [sales enablement checklist](/blog/sales-enablement-checklist/) shows enablement depth. If most of your real work sits under NDA, [my product marketing portfolio guide](/blog/product-marketing-portfolio/) covers the substitute for each artifact and what a hiring manager checks in it. With these artifacts, you can interview for PMM roles regardless of background. Without them, you are competing on resume keywords against people who brought proof.
 
 The point of the portfolio is not the documents themselves. It is that building them forces you to think like a PMM, which is the only thing the interview is really testing.
 

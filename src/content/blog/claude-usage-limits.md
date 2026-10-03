@@ -163,7 +163,7 @@ Anthropic's [usage and length limits article](https://support.claude.com/en/arti
 | Claude Code routines | "Routines draw down subscription usage the same way interactive sessions do" ([routines docs](https://code.claude.com/docs/en/routines#usage-and-limits)); [routines vs scheduled tasks](/blog/claude-routines-vs-scheduled-tasks/) compares the scheduling options |
 | Opus instead of Sonnet in Claude Code | Opus "uses meaningfully more of your quota", and `/model opusplan` plans with Opus and executes with Sonnet ([Claude Code models and usage](https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code)) |
 | A higher effort level | Responses "use more tokens, so you'll reach your usage limits faster" ([effort settings](https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings)) |
-| Research | "Research sessions may consume tokens more quickly due to multiple searches and comprehensive analysis", per the usage credits article |
+| Research | "Research sessions may consume tokens more quickly due to multiple searches and comprehensive analysis", per the usage credits article; [my map of marketing jobs to Claude modes](/blog/claude-research-vs-web-search/) shows which ones are worth a Research run instead of a single web search |
 | A long chat that triggers automatic context management | "Longer conversations that trigger automatic context management consume more of your usage limit" |
 | A long Claude Code session | Each request resends the conversation, and cache misses, subagents and scheduled tasks add to it, per the costs page linked above |
 

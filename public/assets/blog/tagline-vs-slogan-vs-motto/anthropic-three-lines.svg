@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="60" y="74" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Three Anthropic lines, three jobs</text>
+  <text x="60" y="114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Placed on one timeline by where each line runs and how long it has lasted</text>
+
+  <rect x="60" y="150" width="1280" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="60" y="320" width="1280" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="60" y="490" width="1280" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+
+  <text x="90" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">TAGLINE</text>
+  <text x="90" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Homepage hero</text>
+  <text x="90" y="266" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">anthropic.com</text>
+  <text x="420" y="204" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">"AI research and products that put safety at the frontier"</text>
+  <rect x="420" y="222" width="880" height="24" rx="4" fill="#15130f"/>
+  <circle cx="420" cy="234" r="9" fill="#ffffff" stroke="#15130f" stroke-width="3"/>
+  <circle cx="713" cy="234" r="9" fill="#ffffff" stroke="#15130f" stroke-width="3"/>
+  <circle cx="1007" cy="234" r="9" fill="#ffffff" stroke="#15130f" stroke-width="3"/>
+  <circle cx="1300" cy="234" r="9" fill="#ffffff" stroke="#15130f" stroke-width="3"/>
+  <text x="420" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Same hero line in the Oct 2023, Oct 2024 and Oct 2025 captures and live on 3 Oct 2026</text>
+
+  <text x="90" y="366" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">COMMITMENT</text>
+  <text x="90" y="404" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Policy post</text>
+  <text x="90" y="436" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">anthropic.com/news</text>
+  <text x="1300" y="374" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">"Claude will remain ad-free"</text>
+  <rect x="1104" y="392" width="196" height="24" rx="4" fill="#ffffff" stroke="#15130f" stroke-width="2.5"/>
+  <circle cx="1104" cy="404" r="9" fill="#15130f"/>
+  <text x="420" y="450" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Published 4 Feb 2026 and still live on 3 Oct 2026, with no end date</text>
+
+  <text x="90" y="536" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">SLOGAN</text>
+  <text x="90" y="574" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Super Bowl ads</text>
+  <text x="90" y="606" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Feb 2026</text>
+  <text x="1300" y="544" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">"Ads are coming to AI. But not to Claude."</text>
+  <rect x="1100" y="562" width="30" height="24" rx="4" fill="#b53b15"/>
+  <text x="420" y="620" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">One campaign; its spot won the 2026 Super Clio</text>
+
+  <line x1="420" y1="680" x2="1300" y2="680" stroke="#6a645c" stroke-width="2.5"/>
+  <line x1="420" y1="672" x2="420" y2="688" stroke="#6a645c" stroke-width="2.5"/>
+  <line x1="713" y1="672" x2="713" y2="688" stroke="#6a645c" stroke-width="2.5"/>
+  <line x1="1007" y1="672" x2="1007" y2="688" stroke="#6a645c" stroke-width="2.5"/>
+  <line x1="1300" y1="672" x2="1300" y2="688" stroke="#6a645c" stroke-width="2.5"/>
+  <text x="420" y="716" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">Oct 2023</text>
+  <text x="713" y="716" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">Oct 2024</text>
+  <text x="1007" y="716" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">Oct 2025</text>
+  <text x="1300" y="716" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">Oct 2026</text>
+
+  <text x="60" y="760" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sources: Wayback Machine captures of anthropic.com; anthropic.com on 3 Oct 2026; Anthropic, 4 Feb 2026; Marketing Dive; the Clios</text>
+</svg>

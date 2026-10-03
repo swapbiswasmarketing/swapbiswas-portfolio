@@ -50,7 +50,7 @@ Why the framework matters more than any single clever line: **85%** of customers
 
 A brand messaging framework is the single source of truth for what your company says and why it says it. It stacks audience insight, a value proposition, messaging pillars, proof points, and the activation layers that turn all of that into per-audience copy.
 
-The word doing the work is *framework*. A tagline is a line. A pillar is a theme. A framework is the whole apparatus that produces every line and theme consistently, so the story holds whether it is a homepage, a sales deck, or a support macro.
+The word doing the work is *framework*. A tagline is a line. A pillar is a theme. A framework is the whole apparatus that produces every line and theme consistently, so the story holds whether it is a homepage, a sales deck, or a support macro. A tagline also gets confused with a campaign slogan or a company motto, and [what separates a tagline from a slogan or a motto](/blog/tagline-vs-slogan-vs-motto/) is who the line is written for and how long it stays, which I check against dated B2B homepage lines.
 
 Here is the distinction most content blurs. A brand messaging framework is not the same as a **product messaging framework**, though they nest. The brand layer answers "who is this company and what does it stand for." The product layer answers "why should I buy this specific thing." On a small team they collapse into one document; at scale the product framework inherits the brand framework's voice and adds pillars per product.
 
@@ -128,7 +128,7 @@ Cluster the reasons from step one into three or four non-overlapping themes, eac
 
 ### 4. Stack proof points under every pillar
 
-For each pillar, list three to five pieces of evidence: features, customer results, benchmarks, certifications. A pillar with no proof is an opinion; a pillar with three proof points is an argument. To tell a proof point from the pillar it supports, apply [the pass or fail test for a feature line](/blog/feature-vs-benefit-vs-value/): a capability or spec you can point to in your docs, spec sheet, pricing page or changelog is proof, and the pillar names the outcome the buyer gets.
+For each pillar, list three to five pieces of evidence: features, customer results, benchmarks, certifications. A pillar with no proof is an opinion; a pillar with three proof points is an argument. To tell a proof point from the pillar it supports, apply [the pass or fail test for a feature line](/blog/feature-vs-benefit-vs-value/): a capability or spec you can point to in your docs, spec sheet, pricing page or changelog is proof, and the pillar names the outcome the buyer gets. For a launch, I carry the primary message and its proof into the messages-and-proof section of [the brief every launch asset is written from](/blog/product-marketing-brief-template/), and list any claim that has no proof yet under the claims the launch will not make, where it stays until the proof exists.
 
 ### 5. Build the messaging matrix
 

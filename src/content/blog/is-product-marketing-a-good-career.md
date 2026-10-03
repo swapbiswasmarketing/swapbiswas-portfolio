@@ -188,15 +188,7 @@ Strong analytical and writing skills, less in-house GTM context. The bridge: con
 
 ### The Portfolio That Works
 
-Regardless of path, the portfolio that wins interviews:
-
-- A positioning teardown of a real product (yours or a public one) - 1 page
-- A competitive battlecard for that product - 1 page
-- A launch plan with timeline, audience, channels, success metrics - 2 pages
-- A short customer interview write-up - what you learned, what you would change
-- A clear point of view on the category - what makes the product different and why now
-
-If you have those five artifacts, you can interview for PMM roles regardless of background. Without them, you are competing on resume keywords.
+Regardless of path, the portfolio that wins interviews holds five short artifacts: a positioning teardown of a real product, a competitive battlecard for it, a launch plan, a customer interview write-up, and a clear point of view on the category. If you have those five, you can interview for PMM roles regardless of background. Without them, you are competing on resume keywords. When your best work belongs to an employer, [build each artifact from NDA-safe substitutes](/blog/product-marketing-portfolio/) instead.
 
 For a deeper look at the deliverables that define PMM, see the [sales enablement checklist](/blog/sales-enablement-checklist/), [competitive battlecard template](/blog/competitive-battlecard-template/), and [product launch checklist](/blog/product-launch-checklist/).
 

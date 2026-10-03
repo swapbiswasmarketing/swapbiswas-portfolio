@@ -248,6 +248,8 @@ But AI doesn't replace the strategic thinking. It handles monitoring and formatt
 
 Don't try to build battlecards for every competitor at once. Start with one, get it right, then expand. For the full research methodology behind step 2, see our [competitive product analysis framework](/blog/competitive-product-analysis/).
 
+If you are building a battlecard for a job application rather than a sales team, set it on a fictional pair or two public products and link and date every claim, as I explain in [my guide to NDA-safe portfolio samples for product marketers](/blog/product-marketing-portfolio/).
+
 > **Build your first battlecard right now.** The [free Battlecard Generator](/tools/battlecard-generator/) walks you through every section, shows a live preview as you type, and exports a PNG you can drop into Google Slides, Notion, or your sales enablement platform.
 
 **Related reading:**

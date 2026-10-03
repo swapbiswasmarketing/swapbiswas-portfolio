@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 590" width="1400" height="590">
+  <rect x="0" y="0" width="1400" height="590" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">How a claim moves through the brief</text>
+  <text x="60" y="114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Proof on the ship date decides the section. The unlock condition moves it later.</text>
+
+  <rect x="60" y="170" width="360" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="204" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">START</text>
+  <text x="88" y="240" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">A claim for the launch</text>
+  <text x="88" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"SOC 2 Type II report available"</text>
+
+  <line x1="432" y1="235" x2="482" y2="235" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="482,228 496,235 482,242" fill="#15130f"/>
+
+  <rect x="510" y="170" width="360" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="538" y="204" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">CHECK</text>
+  <text x="538" y="240" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Does the proof exist</text>
+  <text x="538" y="274" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">on the ship date?</text>
+
+  <text x="914" y="222" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" fill="#2a7347">Yes</text>
+  <line x1="882" y1="235" x2="932" y2="235" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="932,228 946,235 932,242" fill="#15130f"/>
+
+  <rect x="960" y="170" width="360" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="988" y="204" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">SECTION 5</text>
+  <text x="988" y="240" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Message plus proof</text>
+  <text x="988" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The report is the proof</text>
+
+  <line x1="690" y1="312" x2="690" y2="362" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="683,362 690,376 697,362" fill="#15130f"/>
+  <text x="706" y="348" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="600" fill="#15130f">No</text>
+
+  <rect x="510" y="390" width="360" height="130" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="1.5"/>
+  <text x="538" y="424" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#b53b15">SECTION 6</text>
+  <text x="538" y="460" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Say instead, for now</text>
+  <text x="538" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"Audit in progress"</text>
+
+  <line x1="882" y1="455" x2="932" y2="455" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="932,448 946,455 932,462" fill="#15130f"/>
+
+  <rect x="960" y="390" width="360" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="988" y="424" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">UNLOCK</text>
+  <text x="988" y="460" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Condition met</text>
+  <text x="988" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The auditor issues the report</text>
+
+  <line x1="1140" y1="378" x2="1140" y2="326" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1133,326 1140,312 1147,326" fill="#15130f"/>
+</svg>

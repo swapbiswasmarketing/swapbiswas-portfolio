@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 890" width="1400" height="890">
+  <rect x="0" y="0" width="1400" height="890" fill="#f6f4ef"/>
+
+  <text x="60" y="76" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">A newsletter edition is an article with a subscriber layer</text>
+  <text x="60" y="116" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">What LinkedIn Help and the served HTML of 12 /pulse/ pages showed on 3 October 2026</text>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#15130f">
+    <text x="60" y="174">STANDALONE ARTICLE</text>
+    <text x="720" y="174">NEWSLETTER EDITION</text>
+  </g>
+
+  <rect x="60" y="192" width="620" height="300" rx="12" fill="#f6f4ef" stroke="#6a645c" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="370" y="314" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#6a645c">No subscriber layer</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c" text-anchor="middle">
+    <text x="370" y="356">An author card with a Follow button,</text>
+    <text x="370" y="388">no newsletter page, no subscriber list</text>
+  </g>
+
+  <rect x="720" y="192" width="620" height="300" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="750" y="232" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#b53b15">SUBSCRIBER LAYER, NEWSLETTER ONLY</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">
+    <text x="750" y="276">Newsletter page at /newsletters/name-id</text>
+    <text x="750" y="314">A Subscribe card on every edition</text>
+    <text x="750" y="352">Subscribe invitation to your connections and</text>
+    <text x="750" y="384">followers after the first edition</text>
+    <text x="750" y="422">Push, in-app and email alert per edition</text>
+    <text x="750" y="460">Analytics add email sends and open rate</text>
+  </g>
+
+  <rect x="60" y="520" width="1280" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="558" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">BOTH FORMATS: DISTRIBUTION</text>
+  <text x="90" y="598" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Shared to the feed when you publish, listed in your profile's Activity section, counted as article views</text>
+
+  <rect x="60" y="652" width="1280" height="164" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="690" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">BOTH FORMATS: THE SAME PAGE</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="90" y="730">A linkedin.com/pulse/ URL that is its own canonical, with no field to point it at your blog</text>
+    <text x="90" y="764">Robots meta max-image-preview:large, noarchive, and no noindex</text>
+    <text x="90" y="798">Body links usually rewritten to linkedin.com/redir/redirect, which robots.txt disallows for Googlebot</text>
+  </g>
+
+  <text x="60" y="856" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sources: LinkedIn Help a518936, a522525, a516971 and a517925; served HTML fetched logged out with curl</text>
+</svg>

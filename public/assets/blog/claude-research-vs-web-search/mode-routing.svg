@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Which Claude mode a marketing question needs</text>
+  <text x="60" y="106" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Count the tool calls the answer needs. Rules from Anthropic's help center, checked 3 October 2026.</text>
+
+  <rect x="60" y="140" width="600" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">QUESTION 1</text>
+  <text x="90" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Is everything Claude needs</text>
+  <text x="90" y="256" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">already in the chat?</text>
+  <text x="90" y="290" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">A pasted report, your notes, an uploaded file</text>
+
+  <line x1="660" y1="225" x2="726" y2="225" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="726,218 740,225 726,232" fill="#15130f"/>
+  <text x="674" y="210" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#15130f">YES</text>
+
+  <rect x="740" y="140" width="600" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="770" y="186" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Thinking, with a higher effort</text>
+  <text x="770" y="226" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No searching. Thinking cannot be turned off on</text>
+  <text x="770" y="258" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Sonnet 5.5, Opus 5.5, Fable 5.1 and Opus 5.</text>
+  <text x="770" y="292" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">e.g. test positioning against a pasted report</text>
+
+  <line x1="360" y1="310" x2="360" y2="356" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="353,356 360,370 367,356" fill="#15130f"/>
+  <text x="376" y="346" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#15130f">NO</text>
+
+  <rect x="60" y="370" width="600" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="410" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">QUESTION 2</text>
+  <text x="90" y="452" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Can one or two tool calls</text>
+  <text x="90" y="486" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">answer it?</text>
+  <text x="90" y="520" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">One page to read, one fact to confirm</text>
+
+  <line x1="660" y1="455" x2="726" y2="455" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="726,448 740,455 726,462" fill="#15130f"/>
+  <text x="674" y="440" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#15130f">YES</text>
+
+  <rect x="740" y="370" width="600" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="770" y="416" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Web search</text>
+  <text x="770" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Every plan, Free included. A cited reply in</text>
+  <text x="770" y="488" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the chat; no toggle in the new experience.</text>
+  <text x="770" y="522" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">e.g. check a competitor's pricing page today</text>
+
+  <line x1="360" y1="540" x2="360" y2="586" stroke="#b53b15" stroke-width="3"/>
+  <polygon points="352,586 360,600 368,586" fill="#b53b15"/>
+  <text x="376" y="576" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#15130f">NO</text>
+
+  <rect x="60" y="600" width="1280" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="646" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Research (paid plans)</text>
+  <text x="90" y="686" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Five or more tool calls over minutes, across the web and connected Gmail, Calendar and Docs,</text>
+  <text x="90" y="718" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">ending in a cited report. Start it with /deep-research or + then Research.</text>
+  <text x="90" y="754" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">e.g. a positioning brief on five competitors, or win/loss themes from connected Gmail and Docs</text>
+</svg>

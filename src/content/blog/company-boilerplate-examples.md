@@ -177,6 +177,8 @@ compose.ly's guide tells writers to "open with a distilled version of your missi
 | A buyer only | 10 | Add the category before the verb |
 | Neither | 26 | Rewrite it, and move the mission or the slogan to the second sentence |
 
+If you cannot tell whether the line you opened with is a slogan or a tagline, [a Wayback Machine check a year after launch](/blog/tagline-vs-slogan-vs-motto/) settles it: a line still beside the company name a year later is doing a tagline's job.
+
 If press coverage keeps putting you in a category you did not choose, run the check in [positioning vs messaging](/blog/positioning-vs-messaging/) that compares your category line against your last three briefings and your boilerplate. When the boilerplate is the odd one out, fix the boilerplate first, since every release repeats it.
 
 ## What Goes in a Press Release Boilerplate: 14 Elements Counted

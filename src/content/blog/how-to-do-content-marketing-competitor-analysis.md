@@ -148,7 +148,7 @@ Creating content is only half the equation. How competitors distribute and promo
 - **Social media** - Which platforms do they prioritize? What content gets the most engagement? What posting cadence do they maintain?
 - **Paid promotion** - Check Facebook Ad Library and Google Ads Transparency Center for promoted content. If competitors pay to boost specific posts, those topics are clearly high-value.
 - **Community presence** - Are they active on Reddit, Quora, industry forums, or Slack communities? Community distribution is hard to scale but builds authority.
-- **Syndication and guest posting** - Do they republish content on Medium, LinkedIn articles, or industry publications?
+- **Syndication and guest posting** - Do they republish content on Medium, LinkedIn articles, or industry publications? I count a competitor's LinkedIn articles as reach rather than backlinks, since any ranking they earn belongs to a linkedin.com URL and their body links usually route through [a LinkedIn /redir URL that Googlebot is asked not to request](/blog/linkedin-newsletter-vs-article/).
 
 Map out each competitor's distribution strategy. You will often find that competitors excel in content creation but underinvest in distribution - or vice versa. Both represent opportunities.
 

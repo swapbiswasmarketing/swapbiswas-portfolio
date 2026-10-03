@@ -325,6 +325,14 @@
 		],
 		"hash": "76ce4558448f254b"
 	},
+	"/assets/blog/claude-code-rewind/undo-ladder.webp": {
+		"w": 1200,
+		"h": 890,
+		"v": [
+			660
+		],
+		"hash": "c1e75a8248bc13f4"
+	},
 	"/assets/blog/claude-code-seo-audit/audit-layers.webp": {
 		"w": 1200,
 		"h": 754,
@@ -364,6 +372,22 @@
 			660
 		],
 		"hash": "b3797a21dbfb915a"
+	},
+	"/assets/blog/claude-research-vs-web-search/mode-routing.webp": {
+		"w": 1200,
+		"h": 720,
+		"v": [
+			660
+		],
+		"hash": "5e98f6d67a695994"
+	},
+	"/assets/blog/claude-research-vs-web-search/research-run-time.webp": {
+		"w": 1200,
+		"h": 591,
+		"v": [
+			660
+		],
+		"hash": "99413f33ce18607e"
 	},
 	"/assets/blog/claude-routines-vs-scheduled-tasks/scheduler-decision.webp": {
 		"w": 1200,
@@ -1155,6 +1179,22 @@
 		],
 		"hash": "c38734283f8b7ac5"
 	},
+	"/assets/blog/linkedin-newsletter-vs-article/same-page-plus-subscribers.webp": {
+		"w": 1200,
+		"h": 763,
+		"v": [
+			660
+		],
+		"hash": "28888fa02bb7380a"
+	},
+	"/assets/blog/linkedin-newsletter-vs-article/where-a-body-link-goes.webp": {
+		"w": 1200,
+		"h": 591,
+		"v": [
+			660
+		],
+		"hash": "677bbc802d65eb4c"
+	},
 	"/assets/blog/linkedin-search-appearances-vs-profile-views/appearances-vs-views.webp": {
 		"w": 1200,
 		"h": 720,
@@ -1418,6 +1458,22 @@
 		],
 		"hash": "623e916605112bf8"
 	},
+	"/assets/blog/product-marketing-brief-template/brief-field-to-asset-map.webp": {
+		"w": 1200,
+		"h": 754,
+		"v": [
+			660
+		],
+		"hash": "cd9364962a055134"
+	},
+	"/assets/blog/product-marketing-brief-template/claim-unlock-flow.webp": {
+		"w": 1200,
+		"h": 506,
+		"v": [
+			660
+		],
+		"hash": "c3cce8e6ff304a6f"
+	},
 	"/assets/blog/product-marketing-career-path/pmm-career-ladder.webp": {
 		"w": 1200,
 		"h": 377,
@@ -1457,6 +1513,14 @@
 			660
 		],
 		"hash": "cfefa16824a31d33"
+	},
+	"/assets/blog/product-marketing-portfolio/nda-decision-path.webp": {
+		"w": 1200,
+		"h": 823,
+		"v": [
+			660
+		],
+		"hash": "01a70ba4ea77f2b1"
 	},
 	"/assets/blog/product-marketing-team-structure/pmm-team-stages.webp": {
 		"w": 1200,
@@ -1717,6 +1781,14 @@
 			1320
 		],
 		"hash": "e6a9b84045eeac8a"
+	},
+	"/assets/blog/tagline-vs-slogan-vs-motto/anthropic-three-lines.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "856282422b35341e"
 	},
 	"/assets/blog/technical-seo-audit/checklist.webp": {
 		"w": 1800,
