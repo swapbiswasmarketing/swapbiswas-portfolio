@@ -2,6 +2,7 @@
 title: "OG Image Size: 1200 x 630, Plus What Google Says to Avoid"
 description: "OG image size: use 1200 x 630 px, which meets the Meta, LinkedIn and WhatsApp specs. Here are each platform's own pages, Google's og:image advice and my card audit."
 publishDate: 2026-10-02
+updatedDate: 2026-10-03
 category: [SEO, Design]
 img: /assets/stock-2.webp
 img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
@@ -142,7 +143,7 @@ The site generates one card per post at build time with Satori, resvg and sharp,
 
 The same file is the article hero. A comment in the route records that a desktop at 1x was downloading "about 3.3x the pixels it needed" for the article column, and says the two smaller versions in the table exist only for the page's srcset.
 
-<img src="/assets/blog/og-image-size/one-card-three-readers.webp" alt="Diagram of one 1200 x 630 text card feeding three readers: social feeds through og:image and twitter:image, Google Search through og:image and the BlogPosting and HowTo image, and this site's pages through the article hero and related-post cards, with the tags missing on every post listed below the card" title="One text card, three kinds of reader" width="1200" height="686" loading="lazy" decoding="async" />
+<img src="/assets/blog/og-image-size/one-card-three-readers.webp" alt="Diagram of one 1200 x 630 text card feeding three readers: social feeds through og:image and twitter:image, Google Search through og:image and the BlogPosting and HowTo image, and this site's pages through the article hero and related-post cards, with the tags missing on every post at the 2 October 2026 audit listed below the card" title="One text card, three kinds of reader" width="1200" height="686" loading="lazy" decoding="async" />
 
 Where the card goes, read from the source on 2 October 2026:
 
@@ -155,7 +156,7 @@ Where the card goes, read from the source on 2 October 2026:
 | Article hero `img` element | blog post template, line 222 | People reading the post |
 | Related-post cards | blog post template, line 305 | People browsing other posts |
 
-On the article page the hero carries the post's `img_alt` as its alt text, and that string describes the cover painting in the right third of the card and none of the card's words. The same string never reaches the OG tags: the head has no og:image:alt, and the card route never reads it. [My alt text audit](/blog/alt-text-and-seo/) covers why that field is hard to change.
+On the article page the hero carries the post's `img_alt` as its alt text, and that string describes the cover painting in the right third of the card and none of the card's words. The same string never reaches the OG tags: the card route never reads it, and at the audit the head sent no og:image:alt at all. [My alt text audit](/blog/alt-text-and-seo/) covers why that field is hard to change.
 
 The card URL has been `/og/<slug>.webp` since March 2026. It stayed the same through a full template redesign on 27 August 2026 and through the title rewrites in [my SEO title examples](/blog/seo-title-examples/), and each rewritten post title changed the words on that post's card. Meta [caches images by URL](https://developers.facebook.com/documentation/sharing/webmasters/images#updatingimages) and says that if you replace an image, "Use a new URL for the new image or the image won't be updated".
 
@@ -168,6 +169,8 @@ What the audit found missing or mismatched, with the fix for each:
 | No `twitter:image:alt` | No live page; X's card docs are no longer online | Optional; reuse the og:image:alt string |
 | Card URL stays the same when the card changes | Meta's rule to use a new URL for a replaced image | A version in the card path that changes with the title or template |
 | Tool pages and the other non-post pages on the shared head fall back to the homepage card; the personal website examples gallery, which has its own head, sets a 1200 x 630 JPG | Google's line against "a generic image" | A card per tool page |
+
+On 3 October 2026 I shipped the first three fixes. The shared head now sends `og:image:width` 1200, `og:image:height` 630 and `og:image:type` with every card, plus an `og:image:alt` that reads the card's words. On this page it reads: Text card reading "OG Image Size: 1200 x 630, Plus What Google Says to Avoid", by Swapnil Biswas on swapbiswas.com, beside a cropped Renaissance-style painting. `twitter:image:alt` repeats the same string, pages that share the homepage card share its alt text, and the gallery's own head got the same tags. The card URL and the per-tool cards are still open.
 | No `max-image-preview:large` on any post; the head writes a robots tag only on noindexed pages, and the one page that sets it is the personal website examples gallery | Google Discover, for large images | Add it if you take the Google-first path below |
 | The BlogPosting image is the text card | Google's line against "an image with text" | Pick a path in the next section |
 
@@ -194,4 +197,4 @@ Checking which path a template is on takes one view-source per template, and it 
 
 ## Pick the Reader, Then Set the OG Image Size
 
-For feeds, the OG image size has a one-line answer: 1200 x 630 in a file under the 600 KB WhatsApp asks for, and a Google-first image moves to 16:9, such as 1200 x 675. The decision that comes first is which reader the image serves, since the feeds and Google ask for different images in the same tag. A single text card picks the feeds by default, and mine still miss the two tags Meta names as one way to render the image on a first share. Add og:image:width and og:image:height before anything else.
+For feeds, the OG image size has a one-line answer: 1200 x 630 in a file under the 600 KB WhatsApp asks for, and a Google-first image moves to 16:9, such as 1200 x 675. The decision that comes first is which reader the image serves, since the feeds and Google ask for different images in the same tag. A single text card picks the feeds by default, and mine went without the two tags Meta names as one way to render the image on a first share until 3 October 2026. Add og:image:width and og:image:height before anything else.

@@ -20,6 +20,7 @@ interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
 	image?: string | undefined;
+	imageAlt?: string | undefined;
 	noindex?: boolean | undefined;
 	breadcrumbs?: BreadcrumbItem[];
 	article?: {
@@ -35,7 +36,7 @@ interface Props {
 	};
 }
 
-const { title, description, image, noindex, breadcrumbs, article, profile } = Astro.props;
+const { title, description, image, imageAlt, noindex, breadcrumbs, article, profile } = Astro.props;
 
 const navItems = [
 	{ name: "Home", url: "https://swapbiswas.com/" },
@@ -74,7 +75,7 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 
 <html lang="en">
 	<head>
-		<MainHead title={title} description={description} image={image} noindex={noindex} article={article} profile={profile} />
+		<MainHead title={title} description={description} image={image} imageAlt={imageAlt} noindex={noindex} article={article} profile={profile} />
 		{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 		<script type="application/ld+json" set:html={JSON.stringify(siteGraphSchema)} />
 		<ViewTransitions />

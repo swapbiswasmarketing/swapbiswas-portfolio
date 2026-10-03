@@ -140,6 +140,7 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 	title={entry.data.title}
 	description={entry.data.description}
 	image={`/og/${entry.id}.webp`}
+	imageAlt={`Text card reading "${entry.data.title}", by Swapnil Biswas on swapbiswas.com, beside a cropped Renaissance-style painting`}
 	breadcrumbs={[{ name: "Blog", url: "/blog/" }, { name: entry.data.title }]}
 	article={{
 		publishedTime: entry.data.publishDate.toISOString(),

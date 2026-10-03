@@ -20,7 +20,7 @@
 <text x="60" y="484.6" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">One 1200 x 630 WebP per post</text>
 <text x="60" y="514.6" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">194 post cards on 2 Oct 2026, median 52.6 KiB</text>
 <rect x="60" y="566" width="462" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
-<text x="84" y="604" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">MISSING ON EVERY POST</text>
+<text x="84" y="604" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">MISSING AT THE 2 OCT 2026 AUDIT</text>
 <text x="84" y="644" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">og:image:width, og:image:height</text>
 <text x="84" y="678" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">og:image:alt, twitter:image:alt</text>
 <text x="84" y="712" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">max-image-preview:large</text>

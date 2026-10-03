@@ -54,8 +54,8 @@ const concepts = [
   { n: '48', s: 'model',      t: 'Model Card', cat: 'tech',    d: 'Swapnil-1, a frontier model. A model card for the marketer - capabilities, eval benchmarks, a system prompt and a playground. The growth operator, specced like an LLM.', c: ['#0a0c11','#6ee7b7','#a5b4fc'] },
   { n: '49', s: 'brand',      t: 'Brand',      cat: 'type',    d: 'The person as a brand system. Positioning, a logo and monogram, color tokens, a type specimen and voice and tone - brand guidelines for one operator. Open the brand book.', c: ['#f4f2ee','#6d28d9','#ea580c'] },
 ];
-const catMeta = {
-  gl:      { l: 'WebGL & 3D',          tag: 'WebGL',       col: '#b9a7ff' },
+const catMeta: Record<string, { l: string; tag: string; col: string }> = {
+  gl:     { l: 'WebGL & 3D',          tag: 'WebGL',       col: '#b9a7ff' },
   type:    { l: 'Editorial & Type',    tag: 'Editorial',   col: '#e8c9a0' },
   mono:    { l: 'Monochrome',          tag: 'Monochrome',  col: '#b6bcc4' },
   tech:    { l: 'Tech & Instrument',   tag: 'Instrument',  col: '#5fe6ff' },
@@ -67,7 +67,7 @@ const tabs = [{ k: 'all', l: 'All', n: concepts.length }].concat(
   catOrder.map(k => ({ k, l: catMeta[k].l, n: concepts.filter(c => c.cat === k).length }))
 );
 // classify each concept light/dark by the luminance of its background swatch (c[0])
-const isLight = (hex) => {
+const isLight = (hex: string) => {
   const h = hex.replace('#', '');
   const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
   return (0.2126 * r + 0.7152 * g + 0.0587 * b) / 255 > 0.55;
@@ -79,6 +79,7 @@ const PAGE_URL = 'https://swapbiswas.com/personal-website-examples/';
 const PAGE_TITLE = `Personal Website Examples - ${concepts.length} Homepage Design Concepts`;
 const PAGE_DESC = `Browse ${concepts.length} homepage design concepts and personal website examples - editorial, 3D, monochrome, retro and interactive directions, each a complete build with a live preview.`;
 const OG_IMAGE = 'https://swapbiswas.com/assets/redesign/og-concepts.jpg';
+const OG_IMAGE_ALT = 'A grid of six homepage design concepts from the personal website examples gallery on swapbiswas.com';
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -127,11 +128,16 @@ const jsonLd = {
 <meta property="og:title" content={PAGE_TITLE} />
 <meta property="og:description" content={PAGE_DESC} />
 <meta property="og:image" content={OG_IMAGE} />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={OG_IMAGE_ALT} />
 <meta property="og:site_name" content="Swapnil Biswas" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={PAGE_TITLE} />
 <meta name="twitter:description" content={PAGE_DESC} />
 <meta name="twitter:image" content={OG_IMAGE} />
+<meta name="twitter:image:alt" content={OG_IMAGE_ALT} />
 <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -336,15 +342,15 @@ const jsonLd = {
 
 <script>
   const grid = document.getElementById('grid');
-  const tabs = Array.from(document.querySelectorAll('.tab'));
-  const themeBtns = Array.from(document.querySelectorAll('#theme button'));
-  const cards = Array.from(document.querySelectorAll('.card'));
+  const tabs = Array.from(document.querySelectorAll<HTMLElement>('.tab'));
+  const themeBtns = Array.from(document.querySelectorAll<HTMLElement>('#theme button'));
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.card'));
   const countEl = document.getElementById('count');
   const emptyEl = document.getElementById('empty');
-  const qEl = document.getElementById('q');
+  const qEl = document.getElementById('q') as HTMLInputElement | null;
   const clrEl = document.getElementById('clr');
   const searchWrap = qEl ? qEl.closest('.search') : null;
-  const sortEl = document.getElementById('sort');
+  const sortEl = document.getElementById('sort') as HTMLSelectElement | null;
   const resetEl = document.getElementById('reset');
 
   const state = { cat: 'all', theme: 'all', q: '', sort: 'num' };
@@ -366,26 +372,26 @@ const jsonLd = {
     const sorted = cards.slice().sort((a, b) =>
       state.sort === 'az'
         ? (a.dataset.title || '').localeCompare(b.dataset.title || '')
-        : (+a.dataset.i) - (+b.dataset.i));
-    sorted.forEach(c => grid.insertBefore(c, emptyEl));
+        : Number(a.dataset.i) - Number(b.dataset.i));
+    if (grid) sorted.forEach(c => grid.insertBefore(c, emptyEl));
     unmount();
   }
 
   tabs.forEach(t => t.addEventListener('click', () => {
     tabs.forEach(x => { x.classList.remove('on'); x.setAttribute('aria-selected', 'false'); });
     t.classList.add('on'); t.setAttribute('aria-selected', 'true');
-    state.cat = t.dataset.f; apply();
+    state.cat = t.dataset.f || 'all'; apply();
   }));
   themeBtns.forEach(t => t.addEventListener('click', () => {
     themeBtns.forEach(x => x.classList.remove('on'));
-    t.classList.add('on'); state.theme = t.dataset.th; apply();
+    t.classList.add('on'); state.theme = t.dataset.th || 'all'; apply();
   }));
   if (qEl) qEl.addEventListener('input', () => {
     state.q = qEl.value;
     if (searchWrap) searchWrap.classList.toggle('has', qEl.value.length > 0);
     apply();
   });
-  if (clrEl) clrEl.addEventListener('click', () => { qEl.value = ''; state.q = ''; if (searchWrap) searchWrap.classList.remove('has'); qEl.focus(); apply(); });
+  if (clrEl) clrEl.addEventListener('click', () => { if (qEl) qEl.value = ''; state.q = ''; if (searchWrap) searchWrap.classList.remove('has'); if (qEl) qEl.focus(); apply(); });
   if (sortEl) sortEl.addEventListener('change', () => { state.sort = sortEl.value; apply(); });
   if (resetEl) resetEl.addEventListener('click', () => {
     state.cat = 'all'; state.theme = 'all'; state.q = ''; state.sort = 'num';
@@ -399,7 +405,8 @@ const jsonLd = {
   // ---- live preview on hover (one iframe at a time) ----
   const fine = window.matchMedia('(pointer:fine)').matches;
   const rm = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-  let active = null, timer = null;
+  let active: HTMLElement | null = null;
+  let timer: ReturnType<typeof setTimeout> | undefined;
 
   function unmount(){
     if (!active) return;
@@ -408,7 +415,7 @@ const jsonLd = {
     active.classList.remove('living', 'lived');
     active = null;
   }
-  function mount(card){
+  function mount(card: HTMLElement){
     if (active === card) return;
     unmount();
     const thumb = card.querySelector('.thumb');
