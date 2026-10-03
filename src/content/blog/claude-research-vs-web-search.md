@@ -115,7 +115,7 @@ The effort levels, in Anthropic's words:
 
 Each step up has a price: "Higher effort means more thorough responses, but they take longer and use more tokens, so you'll reach your usage limits faster."
 
-On those four always-thinking models, Research vs extended thinking becomes Research vs a higher effort level. Pick Research when the answer needs sources Claude does not have yet, and raise effort when the sources are already in the chat. Anthropic also backs running both, since combining them "allows Claude to both plan its approach thoughtfully and execute comprehensive information gathering". To compare Sonnet 5 and Opus 5.5 by job and price, see [the Sonnet vs Opus price-per-job comparison](/blog/claude-sonnet-vs-opus/).
+On those four always-thinking models, Research vs extended thinking becomes Research vs a higher effort level. Pick Research when the answer needs sources Claude does not have yet, and raise effort when the sources are already in the chat. Anthropic also backs running both, since combining them "allows Claude to both plan its approach thoughtfully and execute comprehensive information gathering". To compare Sonnet 5.5 and Opus 5.5 by job and price, see [the Sonnet vs Opus price-per-job comparison](/blog/claude-sonnet-vs-opus/).
 
 ## Is Claude Research Free? Plans as of October 2026
 

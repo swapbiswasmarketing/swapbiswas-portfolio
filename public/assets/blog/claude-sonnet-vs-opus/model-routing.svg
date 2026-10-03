@@ -2,7 +2,7 @@
   <rect x="0" y="0" width="1400" height="680" fill="#f6f4ef"/>
 
   <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Which Claude model for this marketing job?</text>
-  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">A routing rule built from Anthropic's model guidance and list prices, September 2026</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">A routing rule built from Anthropic's model guidance and list prices, October 2026</text>
 
   <!-- Row 1 -->
   <rect x="60" y="150" width="680" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
@@ -47,7 +47,7 @@
 
   <!-- Row 3 -->
   <rect x="60" y="510" width="680" height="110" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
-  <text x="90" y="555" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Sonnet 5</text>
+  <text x="90" y="555" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Sonnet 5.5</text>
   <text x="90" y="592" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Single-pass drafts and rewrites, $2 / $10 per MTok</text>
 
   <rect x="860" y="510" width="480" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>

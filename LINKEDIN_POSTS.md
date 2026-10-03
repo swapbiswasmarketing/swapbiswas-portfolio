@@ -1581,19 +1581,19 @@ Which of these would you actually run for your next launch?
 **Image prompt (Nano Banana):**
 > Renaissance-style still life, warm paper background #f6f4ef, a merchant's brass balance scale on a wooden bench with four stacks of coins of rising height laid out in a row beside it, from a small stack to a tall one, a single vermilion red ribbon tied around the second stack, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
 
-$2.67 on Haiku 4.5. $36.00 on Fable 5.1. That is what tagging 10,000 customer reviews costs at Anthropic's September 2026 list prices, by my arithmetic.
+$2.66 on Haiku 4.5. $36.00 on Fable 5.1. That is what tagging 10,000 customer reviews costs at Anthropic's October 2026 list prices, by my arithmetic.
 
 I build with Claude Code, so I priced four marketing jobs on each Claude model instead of guessing. The figures are calculated from per-token prices, not measured runs, and they leave out thinking tokens, so read them as floors.
 
 What came out of it:
 
-- Opus 5.5 ($4 / $20 per million tokens) costs exactly twice Sonnet 5 ($2 / $10) on every job. A 2,000-word blog draft is about 6 cents on Sonnet and 12 on Opus.
+- Opus 5.5 ($4 / $20 per million tokens) costs exactly twice Sonnet 5.5 ($2 / $10) on every job. A 2,000-word blog draft is about 6 cents on Sonnet and 12 on Opus.
 - Haiku 4.5 lands at about 37% of Sonnet's cost, below its 50% sticker ratio, because its older tokenizer turns the same words into fewer tokens.
 - Per finished job the order can flip. In Anthropic's internal runs on a SWE-bench Pro subset, Opus 5.5 cost $0.22 per solved task against $0.84 for Sonnet 5.
-- The Batch API takes 50% off, so the review-tagging job on Sonnet 5 drops to $3.60.
+- The Batch API takes 50% off, so the review-tagging job on Sonnet 5.5 drops to $3.60.
 - Claude Code defaults to Opus 5.5 from v2.1.280. Switch with /model sonnet or /model haiku.
 
-My routing rule: checkable bulk jobs to Haiku 4.5, single-pass writing and jobs repeated at volume to Sonnet 5, multi-step or figure-heavy work to Opus 5.5. Fable 5.1 only when Opus at xhigh or max effort falls short.
+My routing rule: checkable bulk jobs to Haiku 4.5, single-pass writing and jobs repeated at volume to Sonnet 5.5, multi-step or figure-heavy work to Opus 5.5. Fable 5.1 only when Opus at xhigh or max effort falls short.
 
 Which model are your bulk jobs running on right now, and have you priced one?
 

@@ -2,7 +2,7 @@
   <rect x="0" y="0" width="1400" height="760" fill="#f6f4ef"/>
 
   <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What one marketing job costs on each Claude model</text>
-  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">API list prices as of September 2026, visible text only, thinking tokens excluded</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">API list prices as of October 2026, visible text only, thinking tokens excluded</text>
 
   <!-- Card 1: blog draft -->
   <rect x="60" y="140" width="620" height="520" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
@@ -14,7 +14,7 @@
   <rect x="250" y="282" width="22" height="36" rx="4" fill="#15130f"/>
   <text x="286" y="307" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$0.02</text>
 
-  <text x="90" y="387" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Sonnet 5</text>
+  <text x="90" y="387" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Sonnet 5.5</text>
   <rect x="250" y="362" width="60" height="36" rx="4" fill="#b53b15"/>
   <text x="324" y="387" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#b53b15">$0.06</text>
 
@@ -37,9 +37,9 @@
 
   <text x="750" y="307" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Haiku 4.5</text>
   <rect x="910" y="282" width="22" height="36" rx="4" fill="#15130f"/>
-  <text x="946" y="307" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$2.67</text>
+  <text x="946" y="307" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$2.66</text>
 
-  <text x="750" y="387" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Sonnet 5</text>
+  <text x="750" y="387" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Sonnet 5.5</text>
   <rect x="910" y="362" width="60" height="36" rx="4" fill="#b53b15"/>
   <text x="984" y="387" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#b53b15">$7.20</text>
 
