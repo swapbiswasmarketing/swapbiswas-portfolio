@@ -1811,24 +1811,342 @@ Which marketing job would you hand to a skill first?
 **Image prompt (Nano Banana):**
 > Renaissance-style still life, warm paper background #f6f4ef, a brass surveyor's level on a small wooden tripod beside an open field ledger with a hand-drawn wavy line, a half-run hourglass next to it, a single vermilion red thread marking one point on the ledger line, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
 
-On 24 March my site's Google impressions went from 28 to 99 in a day. Google started its March spam update that same day.
-Two days earlier I had pushed eight new posts, and I still can't tell you which one moved the number.
+On 24 March, my site's Google impressions jumped from 28 to 99 in a day.
 
-Google started the September 2026 spam update on 24 September, and this time the rollout "may take up to two weeks" (the March, June and August spam updates each said "a few days"). Before you read your Search Console this month, run four checks, in order:
+Google started its March spam update that same day. Two days earlier, I had pushed eight new posts. Three days later, a core update began. I still can't tell you which one moved the number.
 
-- Is the change inside Google's rollout window, with no other update overlapping?
-- Is it outside your noise band, built from past weeks the same distance apart? On my site the median week-over-week change in impressions was 26.5%, and 61.1% between weeks three apart.
-- Did you ship anything that week? I put new posts live 22 times between 12 March and 31 August.
-- Do the pages that fell share a practice Google's spam policies name?
+Worth remembering this week. Google started the September 2026 spam update on 24 September, and this rollout "may take up to two weeks". The March, June and August spam updates were each announced as taking "a few days".
 
-None of my three 2026 spam windows got past check 2. A two-week rollout also makes that check weaker: between weeks three apart, 10 of 14 ordinary comparisons still landed outside the band.
+Before you read anything into Search Console, run four checks, in order:
 
-The post has the Search Console steps, both tables and the chart.
+1. Is the change inside Google's rollout window, with no other update running?
+2. Is it bigger than your site's normal movement between weeks the same distance apart?
+3. Did you ship anything from a week before to a week after?
+4. Do the pages that fell share a practice Google's spam policies name?
+
+What my own data showed:
+- The median week-over-week change in my impressions was 26.5%. Between weeks three apart, 61.1%.
+- None of my three 2026 spam update windows got past check 2.
+- My two biggest one-day jumps of the year each came the day after I pushed new posts.
+
+A two-week rollout also makes check 2 weaker. The post shows why, with the Search Console steps, both tables and the chart.
 
 What do you check first when traffic moves during an update?
 
 🔗 https://swapbiswas.com/blog/google-september-2026-spam-update/?utm_source=linkedin&utm_medium=social&utm_campaign=google-september-2026-spam-update
 
-#SEO #GoogleSearch #SearchConsole #TechnicalSEO #ContentMarketing
+#SEO #GoogleSearch #SearchConsole #TechnicalSEO
+
+**X (single post, 273 chars with link):**
+
+Google's September 2026 spam update started 24 Sep and may take up to two weeks.
+
+Before you blame it for a drop: on my site the median week moved impressions 26.5%, and my two biggest jumps of 2026 came the day after I shipped new posts.
+
+4 checks: https://swapbiswas.com/blog/google-september-2026-spam-update/?utm_source=x&utm_medium=social&utm_campaign=google-september-2026-spam-update
+
+**X (4-post thread, each under 280):**
+
+1/ On 24 March my site's Google impressions went from 28 to 99 in a day.
+
+Google's March spam update started that same day. Two days earlier I'd pushed 8 new posts. I still can't say which one moved the number.
+
+The September 2026 spam update is rolling out now. A thread:
+
+2/ It started 24 Sep and "may take up to two weeks".
+
+The March, June and August 2026 spam updates were each announced as taking "a few days".
+
+A longer rollout means a longer stretch where your own changes can move traffic too.
+
+3/ 4 checks before you blame it, in order:
+
+1. Inside the rollout window, no other update running
+2. Bigger than your normal movement between weeks the same gap apart
+3. Nothing you shipped explains it
+4. The pages that fell share a practice Google's spam policies name
+
+4/ My own Search Console:
+
+- median week-over-week swing: 26.5%
+- between weeks three apart: 61.1%
+- my three 2026 spam windows: none got past check 2
+
+Search Console steps, tables and chart: https://swapbiswas.com/blog/google-september-2026-spam-update/?utm_source=x&utm_medium=social&utm_campaign=google-september-2026-spam-update
+
+---
+
+### Google Search Console Impressions Drop: Bug or Real Loss?
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a wooden abacus on a scholar's desk with its beads pushed into a sudden step halfway along the rows, an open ledger and a snuffed candle beside it, a single vermilion red bead on the row where the step begins, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+In the 14 days after 27 April 2026, my site's Search Console impressions ran 34.8% below the 14 days before. Clicks went from 10 to 9, and average position improved from 38.2 to 14.0.
+27 April is the last day of a logging error on Google's Data anomalies page, and on a chart with this shape the date of the drop tells you more than its size.
+
+- Google's entry reads: "A logging error prevented Search Console from accurately reporting impressions from May 13, 2025 until April 27, 2026." It now names impressions, CTR and average position as affected, and says clicks were not.
+- Daily average position went from 31.5 on 26 April to 13.4 on 28 April. That 18.1-place move is the biggest two-day change in average position on my site from 12 April to 31 August 2026.
+- Search Console averages position over every impression, so losing low-ranked impressions improves the figure with no page moving. On the simplest reading, the 7,455 impressions that disappeared averaged about position 83.5.
+- The fix does not reach back. Asked on 3 May 2026 whether past data would stay as it was, John Mueller replied "Yes", so a year-over-year impressions comparison sets a corrected day against an affected one until 27 April 2027.
+- My data fits a reporting change without proving it. Impressions kept falling after 11 May, and I leave that later slide unexplained.
+
+When your impressions last dropped, what did clicks do on the same day?
+
+https://swapbiswas.com/blog/google-search-console-impressions-drop/?utm_source=linkedin&utm_medium=social&utm_campaign=google-search-console-impressions-drop
+
+#SEO #SearchConsole #GoogleSearch #TechnicalSEO
+
+---
+
+### What Is a Good Average Position in Google Search Console?
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a long wooden measuring rod laid across a scholar's bench with a scatter of small river pebbles along it, most of them heaped toward the far end and only a few near the start, a brass balance weight resting at the rod's middle, a single vermilion red pebble sitting at the very start of the rod, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+From May to August 2026, my site's best monthly average position in Search Console came in the month with the fewest clicks: 16.7 in May, on 19 clicks.
+August read a worse 23.4 and brought 59 clicks, which is why I judge average position per query, next to the clicks each one earns.
+
+- The site-wide figure is weighted by impressions. Google's bulk export reference gives it as SUM(sum_top_position)/SUM(impressions) + 1, so a query with 800 impressions pulls on the average 16 times harder than a query with 50.
+- Across the 123 days from 1 May to 31 August, the correlation between my daily average position and daily clicks was 0.06.
+- In my export's top 1,000 query rows, the rows averaging worse than 20 add 28.7 of the 33.4 places, and between them they earned 3 of the export's 49 clicks.
+- Deleting rows moves the figure, and the size of the move follows impressions, not clicks. Remove the 215 rows averaging worse than 50, which earned 1 click, and the average improves from 33.4 to 22.9.
+- For one query, 1 to 3 is the good range, because that is where organic clicks concentrate. First Page Sage's CTR meta-analysis, updated September 22, 2026, reports: "The top 3 organic results now capture 77.1% of all remaining organic clicks, up from 68.7% in 2025."
+
+Which number goes in your SEO report: the site-wide average, or the positions of the queries that earn clicks?
+
+https://swapbiswas.com/blog/what-is-a-good-average-position-in-google-search-console/?utm_source=linkedin&utm_medium=social&utm_campaign=what-is-a-good-average-position-in-google-search-console
+
+#SEO #SearchConsole #GoogleSearch #MarketingAnalytics
+
+---
+
+### Vercel Google Indexing: Previews, vercel.app and Protection
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's oak cabinet of small drawers with every drawer shut except one pulled halfway open, a ring of iron keys lying on the desk before it, a folded letter resting on a brass tray at the cabinet's foot, a single vermilion red tassel hanging from the key in the open drawer's lock, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+"Vercel adds an X-Robots-Tag: noindex HTTP response header to every Preview Deployment automatically," says Vercel's knowledge base, so previews stay out of Google by default.
+The exception is a non-production branch with its own custom domain, which gets no noindex header unless you add one.
+
+- The production vercel.app alias serves the same pages as your domain. Vercel's redirects docs, updated 18 September 2026, say duplicate URLs "can split signals", and document a host-scoped 308 redirect in vercel.json as the fix.
+- Since 9 September 2026, Vercel Authentication can protect every deployment, production included, at no additional cost on every plan. It previously needed the $150-per-month Advanced Deployment Protection add-on, and a team default of All Deployments starts every new project behind a login.
+- A browser logged in to Vercel hides that login wall, because Vercel authenticates you automatically. Googlebot has no Vercel account, so it gets the login redirect.
+- Attack Mode and the bot protection ruleset both let Googlebot through. Vercel's docs give custom WAF challenge rules no such pass.
+- Vercel does not add a noindex meta tag, but your layout might. My blog category archives send noindex as a meta tag with no x-robots-tag header, so a header-only check would call them indexable.
+
+When did you last run curl -sI on your own homepage, instead of opening it in a browser that is logged in to Vercel?
+
+https://swapbiswas.com/blog/vercel-google-indexing/?utm_source=linkedin&utm_medium=social&utm_campaign=vercel-google-indexing
+
+#SEO #TechnicalSEO #Vercel #WebDevelopment #GoogleSearch
+
+---
+
+### Does Google Support IndexNow? No. What Google Uses Instead
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a courier's table with a bundle of identical folded letters tied in twine and ready to send, a brass date stamp and an ink pad beside them, a large folded map spread open behind the bundle, a single vermilion red ribbon laid across the map, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Google told Search Engine Journal in November 2021 that it would test IndexNow. As of September 2026, it has not joined.
+An IndexNow submission reaches Bing and the other participants, while Google learns about changes from your sitemap and links.
+
+- On 30 September 2026, indexnow.org named its participants in three places: its home page, its FAQ and searchengines.json. The three lists do not fully match, and none of them includes Google.
+- Google documents six routes instead: sitemap lastmod, a sitemap submitted in Search Console or named in robots.txt, Request indexing in URL Inspection, internal links, WebSub for RSS or Atom feeds, and the Indexing API, which is limited to pages with JobPosting or BroadcastEvent markup.
+- Google uses lastmod only when it is consistently and verifiably accurate. On my Astro site, a sitemap-lastmod build hook writes each post's updatedDate or publishDate into the sitemap, and my IndexNow hook reads the same dates, so a wrong date misleads both readers at once.
+- The IndexNow hook runs after the lastmod hook, on production deploys only. In the wrong order, every blog URL looks changed, each deploy resubmits all of them, and the log still reports success.
+- It submits URLs that differ from the live sitemap plus URLs whose lastmod falls inside 7 days, because each signal alone misses a real change.
+
+When did you last check one post's lastmod in your sitemap against its last real edit?
+
+https://swapbiswas.com/blog/does-google-support-indexnow/?utm_source=linkedin&utm_medium=social&utm_campaign=does-google-support-indexnow
+
+#SEO #TechnicalSEO #IndexNow #GoogleSearch #Astro
+
+---
+
+### Claude Code SEO Audit: 17 Checks on a 170-Post Repo
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a surveyor's table with a large architectural plan unrolled and held flat by small brass weights, a pair of brass dividers standing open on the plan, a plumb bob hanging over the table's edge, a stack of bound folios to one side, a single vermilion red pin pushed into one corner of the plan, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+I gave Claude Code a brief of 17 SEO checks for my site's repo, and it opens with "Audit this repo for SEO and change nothing."
+Thirteen checks found nothing to fix, and the biggest count among the other four turned out to be a false alarm.
+
+- 142 of 199 content images had no width and height in the source Markdown. In the build, 0 of 1,046 img tags on post pages lacked them, because a rehype plugin writes both in. Treat any source-level finding as a hypothesis until the build confirms it.
+- 29 internal links in 6 posts skip the trailing slash, so every click and crawl takes a 308 hop first. A find-and-replace across 6 files fixes it.
+- 8 URLs that earned impressions in Search Console now return 404, all from the WordPress version of the site. Two need a permanent redirect, and the six old archive URLs can stay 404.
+- 18 of 170 blog index positions differed between two builds, because the sort uses publish date alone and 138 of the 170 posts share a publish date with at least one other. The fix is a second sort key, the slug.
+- Joining each finding to a Search Console pages export ranks the fixes by impressions. The largest number in that join, 145,959 impressions, belonged to the one finding that turned out to be wrong.
+
+Which of your SEO checks would give a different count on the build than on the source files?
+
+https://swapbiswas.com/blog/claude-code-seo-audit/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-code-seo-audit
+
+#ClaudeCode #SEO #TechnicalSEO #AIForMarketing #MarketingOps
+
+---
+
+### Build a Personal Website With Claude Code, SEO Included
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a builder's workbench with a rolled parchment plan tied in twine, a mason's square and a small trowel beside it, and the first courses of a miniature stone wall laid along the bench, a single vermilion red cord tied around the rolled plan, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+My site's first commit went in on 12 March 2026. By 30 September it had 85 commits, and 6 of its 9 search pieces arrived after that first commit.
+I am a product marketer, not a developer, and my view after six months is that getting a site live is the smaller half of the job.
+
+- Write the brief before Claude Code writes a file. My LinkedIn headline includes the line "I write the brief, then I build it", and a vague brief returns a plausible site for nobody in particular.
+- Pick a framework that ships static HTML. This site runs Astro 5 with no server adapter, so every page reaches Google as finished HTML.
+- Give Claude Code a check it can run. On a static site, npm run build either passes or stops with an error Claude can read and fix.
+- The search layer came later: per-post lastmod on 22 March, a sitemap filter for noindexed pages in April, one URL per page with a 308 on 3 September and an IndexNow hook on 16 September. Until that 3 September commit, every route answered HTTP 200 both with and without the trailing slash.
+- Add the Search Console TXT record before the site exists. Google says a manually added record "can take up to two or three days" to be served.
+
+If you have built your own site, which part of the search layer did you add after launch?
+
+https://swapbiswas.com/blog/build-a-personal-website-with-claude-code/?utm_source=linkedin&utm_medium=social&utm_campaign=build-a-personal-website-with-claude-code
+
+#ClaudeCode #AIForMarketing #PersonalBranding #SEO #ProductMarketing
+
+---
+
+### Claude Code Keeps Asking for Permission? How to Stop It
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a clerk's writing desk covered with a tall, spilling stack of small signed and sealed passes, a brass ring crowded with dozens of small keys lying beside it, and one larger iron key set apart from the ring with a single vermilion red ribbon tied to its bow, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+I use Claude Code for research and to build this site, and on 30 September 2026 I counted its permission rules: 678 allow rules across three settings files.
+427 of them approve a single web domain each.
+
+- Anthropic's engineering blog says "Claude Code users approve 93% of permission prompts". If 93% of prompts end in yes anyway, approving them one domain or one command at a time is the slowest way to reach the same answer.
+- Read the mode before the rules. A mode sets the default for every action in a session, while a rule covers one domain, one command pattern or one path.
+- In VS Code, claudeCode.initialPermissionMode has no auto value, and the extension never reads a project's settings files for its starting mode. To start in Auto, leave that setting unset and pick Auto once from the mode indicator.
+- On Windows, a Bash rule does not match a command sent through the PowerShell tool. The project settings file behind this site holds 7 PowerShell rules next to 77 Bash rules.
+- None of my three files has a deny or ask rule yet, and that is the gap I would close first. Every push to main on this site is a production deploy, so the fix is an ask rule on git push, written for Bash and for PowerShell.
+
+Before you open /permissions, which mode does your status bar show right now?
+
+https://swapbiswas.com/blog/claude-code-keeps-asking-for-permission/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-code-keeps-asking-for-permission
+
+#ClaudeCode #Anthropic #AIForMarketing #MarketingOps
+
+---
+
+### Claude Code WSL vs Windows: Which Setup Fits Your Repo
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a cartographer's table with a parchment map of two walled towns separated by a river, a bound ledger and a brass compass set on the near town, a small wooden bridge model spanning the river left in shadow, a single vermilion red ribbon tied around the ledger, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Where does your repo live: on the C: drive, or inside a Linux distribution?
+That one answer settles most of the Claude Code WSL vs Windows choice.
+
+- Repo on C: or another Windows drive: run Claude Code natively. The PowerShell and CMD installers need no admin rights. This site's repo sits on C:, and the one thing I give up by staying native is the sandbox.
+- Repo in the Linux filesystem, a Linux toolchain or sandboxed commands: use WSL 2. Anthropic's sandbox docs say it "runs on macOS, Linux, and WSL2. Native Windows is not supported."
+- Keep Claude Code on the same side as the repo. Claude Code in WSL reaching a repo on C: through /mnt/c/ can return fewer search matches than expected, and claude doctor still shows Search as OK.
+- Git for Windows has been optional since v2.1.120, dated 28 April 2026 in Anthropic's changelog. Without it, Claude Code runs shell commands through its PowerShell tool.
+- On a managed laptop, ask IT before you install. wsl --install needs admin rights, and Claude Desktop turns off WSL sessions by default on devices it detects as organization-managed.
+
+If you run Claude Code on a work laptop, has IT said yes to WSL?
+
+https://swapbiswas.com/blog/claude-code-wsl-vs-windows/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-code-wsl-vs-windows
+
+#ClaudeCode #WSL #Windows #AIForMarketing #MarketingOps
+
+---
+
+### Claude Code in VS Code vs Terminal: Features and Settings
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a clerk's desk with a wooden letter rack of small pigeonholes, folded letters sorted neatly into most of them, one sealed letter slipped into the wrong pigeonhole and marked with a single vermilion red wax seal, a quill and a small writing slope in front, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+My Claude Code user settings file lists two MCP servers, and Claude Code reads neither from it.
+The Ahrefs tools in my sessions come from a separate entry in ~/.claude.json.
+
+- The VS Code extension and the CLI read the same settings files, so switching surface cannot rescue a setting that sits in the wrong file.
+- Anthropic's debug docs name the cause: "settings.json does not read an mcpServers key". Re-add each server with claude mcp add-json --scope user, or from the /mcp dialog, which saves to the same configuration from v2.1.261.
+- Only the extension's chat panel withholds text you select in a gitignored file, such as a .env file holding API keys. Only the CLI runs a shell command typed after !, such as ! npm test.
+- The extension runs its own bundled copy of the CLI, so the two can run different versions. On 30 September 2026, claude --version on my machine printed 2.1.283, while the newest extension build installed was 2.1.285.
+
+Have you searched your ~/.claude/settings.json for mcpServers yet?
+
+https://swapbiswas.com/blog/claude-code-in-vs-code-vs-terminal/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-code-in-vs-code-vs-terminal
+
+#ClaudeCode #VSCode #AIForMarketing #MarketingOps
+
+---
+
+### Claude Projects vs Skills: When to Use Each and What Loads
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's desk with an open letter of instructions lying flat in front, a shelf of bound reference volumes to one side, and behind them a wooden cabinet of small closed drawers with one drawer pulled open to reveal a rolled scroll tied with a single vermilion red ribbon, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Claude projects and skills differ most in when Claude reads them.
+Project instructions load in every chat in the project, and a skill's steps load only when a task matches.
+
+- Project knowledge loads in full until it nears the context window. Then paid plans switch to RAG and search it instead, and capacity grows by up to 10x. The Free plan has no RAG.
+- Name knowledge files clearly, and move checklists out of knowledge. A procedure there either fills every chat's context or, once RAG is on, has to be retrieved first.
+- On 17 September 2026, Anthropic redesigned projects for select Pro and Max accounts: one conversation in which a coordinator hands work to parallel threads, each usually a Claude Code cloud session.
+- In those new projects, a skill committed to the project's repository is available in every cloud thread, instructions can run to 16,000 characters, and the limit is 200 new threads per day.
+- For a product marketing kit: the positioning statement and core tone rules go in instructions, ICP and persona documents in knowledge, and the brand-voice review and launch checklist become skills.
+
+What is the document you paste into Claude most often, and does every chat need it?
+
+https://swapbiswas.com/blog/claude-projects-vs-skills/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-projects-vs-skills
+
+#ClaudeAI #AIForMarketing #ProductMarketing #MarketingOps
+
+---
+
+### Claude Design vs Claude Code: Which to Use for Marketing
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style painting of a workshop interior, warm paper background #f6f4ef, an easel on the left holding a finished design sketch, a craftsman's workbench on the right with hand tools and a half-built wooden model, a single rolled drawing tied with a vermilion red ribbon resting on the bench between them, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Claude Design vs Claude Code divides at one click: Export, then Handoff to Claude Code.
+Most marketing deliverables never need that click.
+
+- A one-pager or a launch prototype finishes on the Claude Design canvas as a PDF or a share link.
+- Pitch decks go to Claude Slides. The Claude Design admin guide says presentations "now have their own tool, Claude Slides".
+- Banners and OG images that have to re-render start in a repo and stay there. I design my LinkedIn and X banners as HTML rendered to PNG at 2x, so a new headline is a text edit and a re-render.
+- The handoff is for one job: a landing page someone outside the repo has to approve on a canvas before it ships from your site's repo.
+- From Claude Code v2.1.265, signed in with a claude.ai account, /design drafts mockups as artboards on one canvas. Canvas work and Claude Code sessions now draw on one usage pool.
+
+On your next launch asset list, which items are canvas, which are repo, and which need the handoff?
+
+https://swapbiswas.com/blog/claude-design-vs-claude-code/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-design-vs-claude-code
+
+#ClaudeAI #ClaudeCode #AIForMarketing #ProductMarketing #MarketingOps
+
+---
+
+### What Is a Good Number of Impressions on LinkedIn?
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's bench with eight brass measuring rods of visibly different lengths laid side by side, a small set of balance weights and a ledger beside them, one rod picked out with a single vermilion red ribbon tied near its end, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Look up a good number of LinkedIn impressions for an account of about 1,000 people, and the published benchmarks run from 300 per post to 5,000.
+Of the eight sources I checked, only MagicPost ties "good" to a stated percentile and publishes the sample behind it.
+
+- MagicPost's good line is the 75th percentile, from 566,957 posts with synced analytics: 528 impressions under 1,000 followers, 1,178 at 1,000-5,000, 2,008 at 5,000-10,000 and 4,693 at 10,000-50,000.
+- Connections and followers are different denominators. An account with 800 connections and 1,300 followers gets a good figure of 300-500 from OutX's tier list and 1,178 from MagicPost.
+- Format moves the median by almost 3x. In MagicPost's data, a poll's median is 2.8 times a link post's.
+- LinkedIn counts your own views towards your post analytics, so on a post with a few hundred impressions, your own views are part of the number you are judging.
+- The comparison no outside benchmark gives you: the median and the 75th percentile of your own last 90 days of posts.
+
+What is your median impressions per post over the last 90 days, and which follower band are you in?
+
+https://swapbiswas.com/blog/what-is-a-good-number-of-impressions-on-linkedin/?utm_source=linkedin&utm_medium=social&utm_campaign=what-is-a-good-number-of-impressions-on-linkedin
+
+#LinkedInMarketing #SocialMediaMarketing #B2BMarketing #ContentMarketing
 
 ---
