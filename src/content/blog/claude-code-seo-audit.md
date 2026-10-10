@@ -150,7 +150,7 @@ The source check flagged every image written in Markdown syntax, which has no pl
 | Local build in `dist/` | 0 of 1,046 img tags on post pages | 0 |
 | Live post pages | 0 of 1,046 img tags | 0 |
 
-A rehype plugin in the build reads each diagram's dimensions from an image manifest and writes them into the tag, so the pages in the build already follow web.dev's advice to "Always include width and height size attributes on your images and video elements" ([Optimize Cumulative Layout Shift](https://web.dev/articles/optimize-cls)).
+A rehype plugin in the build reads each diagram's dimensions from an image manifest and writes them into the tag, so the pages in the build already follow web.dev's advice to "Always include width and height size attributes on your images and video elements" ([Optimize Cumulative Layout Shift](https://web.dev/articles/optimize-cls)). Another rehype plugin in the same build inserts [in-article AdSense units by word-count and neighbour rules](/blog/astro-adsense/), and a global stylesheet reserves each unit's height before its ad arrives.
 
 The source check worth keeping asks whether every Markdown image has a manifest entry. All 142 do, and one added without an entry would ship with no dimensions. Treat any source-level finding as a hypothesis until the build confirms it.
 

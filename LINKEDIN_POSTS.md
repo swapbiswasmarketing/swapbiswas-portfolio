@@ -2288,3 +2288,72 @@ https://swapbiswas.com/blog/can-claude-code-generate-images/?utm_source=linkedin
 #ClaudeCode #Anthropic #AIForMarketing #ContentMarketing #MarketingOps
 
 ---
+
+### Lovable AI Price in India: Web Dollars vs iPhone Rupees
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's counting table with twelve small identical parcels wrapped in plain paper standing in a row on the left and a single larger parcel of the same paper on the right bound with one vermilion red ribbon, a brass hand balance between them with a few silver coins in one pan and a taller stack of copper coins in the other, a closed ledger behind, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Among the vendor and store pages I checked on 10 October 2026, Lovable's rupee prices appeared in one place: Apple's India App Store, which sells one Pro Plan month in the iPhone app for Rs 3,999.
+On lovable.dev, Pro starts at $25 a month in US dollars, about Rs 2,415 before any tax at RBI's reference rate for 9 October 2026, so my advice is to price Lovable from India on the web, in dollars.
+
+- The app's Rs 3,999 includes tax and is about 66% above the Rs 2,415 conversion, which leaves out any tax the web checkout adds. Lovable's pages do not state that tax for India.
+- A year of Pro costs $250 on annual web billing, about Rs 24,154. Apple's listings carry no annual item, so a year in the app is twelve one-month purchases: Rs 47,988, or 1.99 times the converted annual figure.
+- An app plan covers one month and does not renew automatically, and neither Apple's listings nor Lovable's docs say how many credits the Pro Plan includes. On the web, the $25 Pro month includes 100 credits.
+- The Free plan grants 5 build credits a day up to 30 a month, and in Lovable's own example all 30 arrive in the first 6 days. An India price page I read put the Free plan at "roughly 150 credits per month".
+- No Lovable page I checked offers anything to Airtel users, and its free year of Pro Lite goes to LinkedIn Premium subscribers in the US, UK, Canada and Australia. On Lovable's wording, Premium on an Indian LinkedIn account does not qualify today.
+
+If you pay for Lovable from India, what does the checkout show once you log in: dollars or rupees, and is there a tax line?
+
+https://swapbiswas.com/blog/lovable-ai-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=lovable-ai-price-in-india
+
+#Lovable #AITools #SaaSPricing #VibeCoding #India
+
+---
+
+### Replit Price in India: Core by Checkout and Break-Even Rate
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a money changer's table with a brass equal-arm balance resting exactly level, one pan holding a single foreign silver coin and the other a small stack of copper coins, a thin vermilion red thread tied at the pivot of the beam, a quill, an inkwell and a closed account book beside it, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Replit Core costs the same on Apple's India App Store (Rs 1,999) as on replit.com ($20 a month) when a US dollar costs Rs 99.95, or Rs 84.70 if the web checkout adds 18% tax.
+RBI's reference rate for 9 October 2026, Rs 96.6149, sits between the two, so the tax line on the web decides which checkout is cheaper.
+
+- At that rate, before any card fee, the web's $20 comes to Rs 1,932.30 with no tax added and Rs 2,280.11 with 18% added. Replit names no tax rate for India: its pricing page says "Prices are subject to tax depending on your location."
+- Replit's changelog of 10 April 2026 says builders in India can pay with UPI and cards through Razorpay, and Razorpay says Indian users pay in INR. If your checkout shows a rupee total, compare it with Rs 1,999 directly.
+- If it shows dollars, your cost is what your card statement posts, plus any foreign-currency markup fee your bank adds. With no tax added, the web's Rs 66.70 lead at RBI's rate is gone once your card's rate and fees add more than 3.45%.
+- Apple also lists a Rs 22,900 Core item, probably yearly. Read that way, it saves 4.5% on twelve monthly payments, against 10% for the web's $216 a year.
+- I read Replit's price as a floor: Core buys $20 of monthly credits and a Free Mode allowance, and Agent work past both is billed as you go. Set a usage limit under Settings > Account > Usage before your first paid Agent run.
+
+If you pay for Replit Core from India, what does replit.com's checkout show after you log in: a rupee total, a tax line, or both?
+
+https://swapbiswas.com/blog/replit-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=replit-price-in-india
+
+#Replit #AITools #SaaSPricing #UPI #India
+
+---
+
+### Astro AdSense Setup: Loader, Ad Units and View Transitions
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a library shelf of leather-bound volumes with plain unlettered spines, two gaps along the shelf each held open at full height by a pair of wooden bookends, one gap holding a small framed miniature landscape and the other left empty, a single vermilion red ribbon tied around one bookend, a brass candlestick and a folded letter on the ledge below, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Stack Overflow's "How to Add AdSense in Astro JS Sites?" was asked on 1 July 2024, and when I pulled it from the Stack Exchange API on 10 October 2026 it had 996 views and 0 answers.
+The post answers it with the AdSense setup on my site. Google's ad code assumes every page view loads a fresh document, while Astro 5.18.0's client router skips an inline script whose text has already run and its head swap deletes any script created at runtime.
+
+- Keep Google's loader tag as AdSense prints it, once in the head of the shared layout. Save ads.txt in public/ so it is served from the site root, and reserve each unit's height with a min-height in a global stylesheet: 280px for rectangles, 100px for banners.
+- Drop the push snippet Google prints beside each unit. Pasted inline, it does not run again on the second page of a visit, so one inline listener on astro:page-load pushes every unit instead.
+- A loader created by a script at runtime, as on my site, is removed with the old head, so the site re-appends it on astro:page-load. This router behaviour is read from Astro 5.18.0 and untested on Astro 6 and 7.
+- In-article units go in at build time from a rehype plugin, never directly under a list, table, image or code block. In a build of 209 posts made on 10 October 2026, 136 got one, 54 got two and 19 got none.
+- Pass those placement rules to the plugin as options. In Astro 5.18.0, a rule edited inside the plugin file does not reach the next build, because Astro reuses the cached HTML of every post whose Markdown did not change.
+
+If you run AdSense on an Astro site with the client router, have you opened a second page and checked in DevTools that every unit got its push?
+
+https://swapbiswas.com/blog/astro-adsense/?utm_source=linkedin&utm_medium=social&utm_campaign=astro-adsense
+
+#Astro #AdSense #WebDevelopment #JavaScript #SEO
+
+---

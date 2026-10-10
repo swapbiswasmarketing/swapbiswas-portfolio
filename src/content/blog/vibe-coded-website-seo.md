@@ -26,11 +26,13 @@ I run my own site on Astro for exactly this reason. Let me walk through what is 
 
 ## What "Vibe Coding" Actually Produces
 
-Vibe coding is building software by describing what you want in plain language and letting an AI tool write the code. You say "make me a landing page for a dog-walking app with a dark theme," and tools like Lovable, Bolt, v0, Cursor, or Replit hand you a working app in seconds. It feels like magic because it mostly works, with no need to understand the code underneath.
+Vibe coding is building software by describing what you want in plain language and letting an AI tool write the code. You say "make me a landing page for a dog-walking app with a dark theme," and tools like Lovable, Bolt, v0, Cursor, or Replit hand you a working app in seconds. It feels like magic because it mostly works, with no need to understand the code underneath. If you are paying for one of these builders from India, Replit sells its Core plan on Apple's India App Store and on replit.com, and [which Replit checkout comes out cheaper](/blog/replit-price-in-india/) depends on your dollar rate and on whether the web adds tax.
 
 The catch lives in a default almost nobody chooses on purpose. These tools overwhelmingly generate a React single-page application, because React dominates their training data and starter templates. It is the most-used front-end library in the world - [**39.5%** of developers reported using it in the 2024 Stack Overflow Developer Survey](https://survey.stackoverflow.co/2024/technology). So when you ask for "a website," what you get is a React app that renders everything in the browser, and that one decision is the root of the ranking problem.
 
 Lovable has since changed its default. Per [Lovable's SEO documentation](https://docs.lovable.dev/features/seo-aeo), "New Lovable apps created from May 13, 2026 use TanStack Start with server-side rendering (SSR)," and older React + Vite apps get on-request pre-rendering "served only to verified search and AI crawlers." If your site came from an older project or from another builder, the two-minute check below still tells you what the crawler receives.
+
+Lovable's Free plan publishes to lovable.app domains, and custom domains start on Pro; [Lovable Pro's price for buyers in India](/blog/lovable-ai-price-in-india/) differs between the web and the iPhone app.
 
 ### Why AI Tools Default to Client-Side React
 

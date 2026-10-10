@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 920" width="1400" height="920">
+  <rect x="0" y="0" width="1400" height="920" fill="#f6f4ef"/>
+  <text x="60" y="74" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.76">Replit Core in India: the break-even exchange rate</text>
+  <text x="60" y="114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="400" fill="#6a645c">Rupees per US dollar at which the two checkouts cost the same. Prices read 10 October 2026.</text>
+  <rect x="60" y="144" width="1280" height="310" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="190" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Smaller App Store item, probably monthly: Rs 1,999 vs $20 a month on replit.com</text>
+  <rect x="120" y="292" width="228.6" height="26" fill="#eeebe4"/>
+  <rect x="348.6" y="292" width="520.3" height="26" fill="#f3dcd2"/>
+  <rect x="868.9" y="292" width="411.1" height="26" fill="#eeebe4"/>
+  <rect x="120" y="292" width="1160" height="26" fill="none" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="348.6" y1="278" x2="348.6" y2="332" stroke="#15130f" stroke-width="2.5"/>
+  <text x="348.6" y="240" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="21" font-weight="500" fill="#15130f" text-anchor="middle">Rs 84.70</text>
+  <text x="348.6" y="266" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c" text-anchor="middle">18% tax added on web</text>
+  <line x1="868.9" y1="278" x2="868.9" y2="332" stroke="#15130f" stroke-width="2.5"/>
+  <text x="868.9" y="240" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="21" font-weight="500" fill="#15130f" text-anchor="middle">Rs 99.95</text>
+  <text x="868.9" y="266" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c" text-anchor="middle">no tax added on web</text>
+  <text x="120" y="348" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="400" fill="#6a645c">Rs 78</text>
+  <text x="1280" y="348" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="400" fill="#6a645c" text-anchor="end">Rs 112 per $</text>
+  <polygon points="747.1,274 763.1,274 755.1,288" fill="#b53b15"/>
+  <line x1="755.1" y1="288" x2="755.1" y2="330" stroke="#b53b15" stroke-width="3"/>
+  <text x="755.1" y="360" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15" text-anchor="middle">RBI reference rate, 9 Oct 2026: Rs 96.61</text>
+  <text x="234.3" y="402" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f" text-anchor="middle">Web cheaper</text>
+  <text x="234.3" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c" text-anchor="middle">even with 18% tax</text>
+  <text x="608.7" y="402" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f" text-anchor="middle">Tax line decides</text>
+  <text x="608.7" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c" text-anchor="middle">which is cheaper</text>
+  <text x="1074.4" y="402" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f" text-anchor="middle">App Store cheaper</text>
+  <text x="1074.4" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c" text-anchor="middle">even with no tax</text>
+  <rect x="60" y="484" width="1280" height="310" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="530" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Larger App Store item, probably yearly: Rs 22,900 vs $216 a year on replit.com</text>
+  <rect x="120" y="632" width="404.3" height="26" fill="#eeebe4"/>
+  <rect x="524.3" y="632" width="551.7" height="26" fill="#f3dcd2"/>
+  <rect x="1076" y="632" width="204" height="26" fill="#eeebe4"/>
+  <rect x="120" y="632" width="1160" height="26" fill="none" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="524.3" y1="618" x2="524.3" y2="672" stroke="#15130f" stroke-width="2.5"/>
+  <text x="524.3" y="580" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="21" font-weight="500" fill="#15130f" text-anchor="middle">Rs 89.85</text>
+  <text x="524.3" y="606" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c" text-anchor="middle">18% tax added on web</text>
+  <line x1="1076" y1="618" x2="1076" y2="672" stroke="#15130f" stroke-width="2.5"/>
+  <text x="1076" y="580" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="21" font-weight="500" fill="#15130f" text-anchor="middle">Rs 106.02</text>
+  <text x="1076" y="606" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c" text-anchor="middle">no tax added on web</text>
+  <text x="120" y="688" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="400" fill="#6a645c">Rs 78</text>
+  <text x="1280" y="688" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="400" fill="#6a645c" text-anchor="end">Rs 112 per $</text>
+  <polygon points="747.1,614 763.1,614 755.1,628" fill="#b53b15"/>
+  <line x1="755.1" y1="628" x2="755.1" y2="670" stroke="#b53b15" stroke-width="3"/>
+  <text x="755.1" y="700" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15" text-anchor="middle">RBI reference rate, 9 Oct 2026: Rs 96.61</text>
+  <text x="322.1" y="742" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f" text-anchor="middle">Web cheaper</text>
+  <text x="322.1" y="768" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c" text-anchor="middle">even with 18% tax</text>
+  <text x="800.1" y="742" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f" text-anchor="middle">Tax line decides</text>
+  <text x="800.1" y="768" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c" text-anchor="middle">which is cheaper</text>
+  <text x="1178" y="742" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f" text-anchor="middle">App Store cheaper</text>
+  <text x="1178" y="768" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c" text-anchor="middle">even with no tax</text>
+  <text x="60" y="846" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c">Break-even = App Store price / web price, or App Store price / (web price x 1.18) if 18% tax is added on the web.</text>
+  <text x="60" y="874" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" font-weight="400" fill="#6a645c">Sources: Apple App Store India listing, replit.com/pricing, RBI Reference Rate Archive. Arithmetic is mine.</text>
+</svg>

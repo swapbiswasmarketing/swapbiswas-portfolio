@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 740" width="1400" height="740">
+  <rect x="0" y="0" width="1400" height="740" fill="#f6f4ef"/>
+
+  <text x="70" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">A year of Lovable Pro from India, three ways</text>
+  <text x="70" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Read 10 October 2026. Dollars converted at RBI's 96.6149 rupees per dollar (9 October 2026)</text>
+
+  <rect x="60" y="140" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="188" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Web, annual billing</text>
+  <text x="90" y="222" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$250 once</text>
+  <text x="90" y="252" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">My conversion, before any tax</text>
+  <text x="500" y="192" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Rs 24,154</text>
+  <rect x="500" y="210" width="403" height="40" rx="6" fill="#6a645c"/>
+
+  <rect x="60" y="298" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="346" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Web, monthly billing</text>
+  <text x="90" y="380" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">12 x $25 = $300</text>
+  <text x="90" y="410" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">My conversion, before any tax</text>
+  <text x="500" y="350" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Rs 28,984</text>
+  <rect x="500" y="368" width="483" height="40" rx="6" fill="#6a645c"/>
+
+  <rect x="60" y="456" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="504" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">iPhone app, India</text>
+  <text x="90" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">12 Pro Plan purchases x Rs 3,999</text>
+  <text x="90" y="568" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Apple's price, tax included</text>
+  <text x="500" y="508" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Rs 47,988</text>
+  <text x="1300" y="508" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">1.99 x the web annual figure</text>
+  <rect x="500" y="526" width="800" height="40" rx="6" fill="#b53b15"/>
+
+  <text x="70" y="640" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Web rows: my conversion of Lovable's dollar prices, before any tax the web checkout adds.</text>
+  <text x="70" y="668" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">App row: Apple's India price for its Pro Plan item, which includes tax under Apple's pricing rule.</text>
+  <text x="70" y="696" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">App plan credits are not stated by Apple or Lovable, so the rows compare prices, not credits.</text>
+</svg>

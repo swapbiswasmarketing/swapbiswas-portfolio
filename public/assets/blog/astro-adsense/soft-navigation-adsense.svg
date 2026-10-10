@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="1400" height="880">
+  <rect x="0" y="0" width="1400" height="880" fill="#f6f4ef"/>
+
+  <text x="50" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">One soft navigation in Astro 5.18.0</text>
+  <text x="50" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The client router's steps in order, and what each one does to AdSense scripts</text>
+  <rect x="50" y="140" width="400" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="74" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="500"><tspan fill="#6a645c">1</tspan><tspan dx="14" fill="#15130f">deselectScripts</tspan></text>
+  <text x="74" y="220" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">marks scripts that already ran</text>
+
+  <rect x="50" y="278" width="400" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="74" y="322" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="500"><tspan fill="#6a645c">2</tspan><tspan dx="14" fill="#15130f">swapHeadElements</tspan></text>
+  <text x="74" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">replaces the old head</text>
+
+  <rect x="50" y="416" width="400" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="74" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="500"><tspan fill="#6a645c">3</tspan><tspan dx="14" fill="#15130f">swapBodyElement</tspan></text>
+  <text x="74" y="496" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">replaces the whole body</text>
+
+  <rect x="50" y="554" width="400" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="74" y="598" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="500"><tspan fill="#6a645c">4</tspan><tspan dx="14" fill="#15130f">runScripts</tspan></text>
+  <text x="74" y="634" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">runs only unmarked scripts</text>
+
+  <rect x="50" y="692" width="400" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="74" y="736" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="22" font-weight="500"><tspan fill="#6a645c">5</tspan><tspan dx="14" fill="#15130f">astro:page-load</tspan></text>
+  <text x="74" y="772" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">fires after every navigation</text>
+  <line x1="250" y1="246" x2="250" y2="262" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="243,262 257,262 250,276" fill="#15130f"/>
+  <line x1="250" y1="384" x2="250" y2="400" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="243,400 257,400 250,414" fill="#15130f"/>
+  <line x1="250" y1="522" x2="250" y2="538" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="243,538 257,538 250,552" fill="#15130f"/>
+  <line x1="250" y1="660" x2="250" y2="676" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="243,676 257,676 250,690" fill="#15130f"/>
+  <line x1="454" y1="192" x2="484" y2="192" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="484,185 498,192 484,199" fill="#15130f"/>
+  <line x1="454" y1="330" x2="484" y2="330" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="484,323 498,330 484,337" fill="#15130f"/>
+  <line x1="454" y1="468" x2="484" y2="468" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="484,461 498,468 484,475" fill="#15130f"/>
+  <line x1="454" y1="606" x2="484" y2="606" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="484,599 498,606 484,613" fill="#15130f"/>
+  <line x1="454" y1="744" x2="484" y2="744" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="484,737 498,744 484,751" fill="#15130f"/>
+  <rect x="500" y="140" width="850" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="184" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Static loader tag: its src already ran, so it is marked.</text>
+  <text x="528" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Google's inline push snippet: same text on every page, marked too.</text>
+
+  <rect x="500" y="278" width="850" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="322" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">A loader created at runtime is deleted with the old head.</text>
+  <text x="528" y="356" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Its creator script was marked in step 1, so nothing rebuilds it.</text>
+
+  <rect x="500" y="416" width="850" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="460" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">New &lt;ins&gt; units arrive with no push yet.</text>
+  <text x="528" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">window.adsbygoogle survives: Astro preserves the window object.</text>
+
+  <rect x="500" y="554" width="850" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="598" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Marked scripts are skipped unless they carry data-astro-rerun.</text>
+  <text x="528" y="632" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A bundled module script never runs a second time.</text>
+
+  <rect x="500" y="692" width="850" height="104" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="528" y="736" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Fix: one inline listener for this event pushes each new unit,</text>
+  <text x="528" y="770" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">and re-appends a loader that was created at runtime.</text>
+
+  <text x="50" y="842" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Read from the Astro 5.18.0 source: swap-functions and router. Untested on Astro 6 and 7.</text>
+</svg>

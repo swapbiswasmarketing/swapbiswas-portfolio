@@ -117,12 +117,14 @@ A Claude Design vs Claude Code comparison written at launch routes work differen
 
 Lovable and Replit are on Claude Design's send-to list, next to v0, Base44, Netlify and Vercel ([Get started with Claude Design](https://support.claude.com/en/articles/14604416-get-started-with-claude-design)), which puts them at the same step as Claude Code: after the canvas. Anthropic's product page quotes both companies on building and shipping apps from Claude Design output ([Claude Design product page](https://claude.com/product/design)).
 
-Lovable also builds without the canvas. Its docs say "You describe what you want to build, and Lovable generates a working application", and they name "Marketers building landing pages, campaign sites, and dashboards" among the people it is for ([Welcome to Lovable](https://docs.lovable.dev/introduction/welcome)). Publishing puts the app at a live URL, and "Lovable hosts the published app for you" ([Publish your Lovable project](https://docs.lovable.dev/features/publish)). For an app or a campaign site, that makes Lovable an alternative to Claude Design as well as a place to send a design.
+Lovable also builds without the canvas. Its docs say "You describe what you want to build, and Lovable generates a working application", and they name "Marketers building landing pages, campaign sites, and dashboards" among the people it is for ([Welcome to Lovable](https://docs.lovable.dev/introduction/welcome)). Publishing puts the app at a live URL, and "Lovable hosts the published app for you" ([Publish your Lovable project](https://docs.lovable.dev/features/publish)). For an app or a campaign site, that makes Lovable an alternative to Claude Design as well as a place to send a design. From India, Lovable's price lists are in dollars on lovable.dev and in rupees for the iPhone app, and after [comparing Lovable's two checkouts](/blog/lovable-ai-price-in-india/) my advice is to price it on the web.
 
 | If the output is | Send it to |
 |---|---|
 | A campaign page on a host from the send-to list, such as Vercel or Netlify | That host, from Claude Design's Export menu |
 | An app you want the builder to host and run | Lovable or Replit |
+
+If you pick Replit from that table and pay from India, [my guide to Replit Core's price at each checkout](/blog/replit-price-in-india/) shows when Apple's India App Store costs less than replit.com and when it costs more.
 
 If your site runs on a platform from Claude Design's send-to list, such as Wix, HubSpot or Adobe Experience Manager, check what its send-to delivers before you plan a Claude Code handoff. The same rendered-HTML check from step 6 applies whichever builder takes the handoff.
 

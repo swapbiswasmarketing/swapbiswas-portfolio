@@ -80,6 +80,8 @@ On Google Play, the About this app panel shows "In-app purchases" with a range o
 
 To subscribe in either app, Anthropic's articles on [signing up for Pro in the iOS app](https://support.claude.com/en/articles/9266495-how-do-i-sign-up-for-claude-pro-on-the-claude-app-for-ios) and [signing up for Pro on Android](https://support.claude.com/en/articles/9612892-how-do-i-sign-up-for-claude-pro-on-claude-for-android) give the same steps: open the app, select your initials, choose "Upgrade to Pro" and follow the payment instructions.
 
+Lovable, an AI app builder, also sells its plans in rupees on Apple's India App Store, and [my Lovable pricing guide for India](/blog/lovable-ai-price-in-india/) found no other vendor or store page with a rupee price for it on 10 October 2026.
+
 ## The Web Price: Dollars on Anthropic's Pages, Rupees in Press Reports
 
 Anthropic's own pages state the web price in dollars: $0 for the Free plan, $20 a month or $200 a year for Pro, and $100 or $200 a month for Max. The rupee figures for the web come from press reports dated 13 and 14 July 2026.
@@ -172,7 +174,7 @@ On Apple's India and US listings, Claude Pro is ₹1,999 a month and $20.00 a mo
 | Max 5x, monthly | ₹12,900 | $124.99 | 103.21 |
 | Max 20x, monthly | ₹24,900 | $249.99 | 99.60 |
 
-The last column is the India price divided by the US price. Where a dollar costs you fewer rupees than that figure, the US listing is the lower price for that row. The percentages above are my arithmetic at that reference rate, and the rate your card applies may differ.
+The last column is the India price divided by the US price. Where a dollar costs you fewer rupees than that figure, the US listing is the lower price for that row. The percentages above are my arithmetic at that reference rate, and the rate your card applies may differ. The same division gives a rupees-per-dollar rate for Replit Core's India App Store and replit.com prices, and [Replit's App Store versus web break-even](/blog/replit-price-in-india/) turns on whether replit.com adds tax.
 
 On the web, the endpoint that Anthropic's pricing page calls returned the same before-tax dollar amounts for India as for the United States on 10 October 2026. For the reported rupee prices, TechCrunch's July report converted ₹2,000 a month on annual billing to "about $21" and compared it with $17 a month in the US.
 

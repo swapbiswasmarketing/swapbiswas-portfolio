@@ -176,6 +176,8 @@ The commands and the port come from [Astro's develop-and-build guide](https://do
 
 Search is a feature the dev server cannot show on this site. The build script is `astro build && npx pagefind --site dist`, and Pagefind indexes the built files: its docs say it "runs after your static generator", and that a dev server shows nothing yet "as Pagefind needs to index the output of your build" ([Pagefind docs](https://pagefind.app/docs/)). Check search in `npm run preview`.
 
+The dev server cannot show ads either, and neither can `npm run preview`, because [this site's AdSense loader](/blog/astro-adsense/) runs only on the production hostname; in the dev server each unit shows as an empty reserved box, which is enough to check spacing.
+
 When an edit goes wrong, rewind it. Every prompt that starts a turn creates a checkpoint, and pressing `Esc` twice with an empty prompt, or running `/rewind`, opens a menu that restores the code, the conversation or both ([Claude Code checkpointing docs](https://code.claude.com/docs/en/checkpointing)). Checkpoints miss files changed by Bash commands, and the docs describe them as "quick, session-level recovery", so commit working states to git as you go. When a restore misses files, [the undo ladder I use on this site](/blog/claude-code-rewind/) matches each symptom to the undo that reaches it, with git and a redeploy below rewind.
 
 ## Step 5: Commit, Push and Let Vercel Deploy Main
@@ -216,7 +218,7 @@ Yes: you can build a website with Claude Code end to end. It writes, builds and 
 
 Anthropic's quickstart lists what it needs: a Claude subscription (Pro, Max, Team or Enterprise), a Claude Console account, or access through a supported cloud provider. As of September 2026, [Anthropic's pricing page](https://claude.com/pricing) lists Pro at $20 a month, or $17 a month billed annually. If you pay from India, the App Store, Google Play and the web do not show one price, and I list [the rupee prices by checkout](/blog/claude-pro-price-in-india/) in a separate guide. Hosting can cost nothing, since Vercel's Hobby plan is free and, per its own docs, restricted to "non-commercial, personal use only" ([Vercel Hobby plan](https://vercel.com/docs/plans/hobby)).
 
-For a single page there is another route. Anthropic's Claude Academy builds a portfolio page as an HTML artifact in the Claude app and deploys it through a Netlify connector ([Create a custom webpage](https://academy.claude.com/use-cases/create-a-custom-webpage)). A site you will keep adding posts, tools and fixes to belongs in a folder under git, and [my Claude vs Claude Code comparison](/blog/claude-vs-claude-code/) makes that case in full, plan prices included.
+For a single page there is another route. Anthropic's Claude Academy builds a portfolio page as an HTML artifact in the Claude app and deploys it through a Netlify connector ([Create a custom webpage](https://academy.claude.com/use-cases/create-a-custom-webpage)). A site you will keep adding posts, tools and fixes to belongs in a folder under git, and [my Claude vs Claude Code comparison](/blog/claude-vs-claude-code/) makes that case in full, plan prices included. If you would rather have an app builder host and run the site, publishing on Replit draws on your plan's credits, and my breakdown of [Replit Core's web and App Store prices from India](/blog/replit-price-in-india/) gives the break-even exchange rate between them.
 
 ## Build a Personal Website With Claude Code for the Months After Launch
 

@@ -370,3 +370,15 @@ On your Windows 11 + VS Code machine (CLI v2.1.283 or later), run three tests an
 ## can-claude-code-generate-images
 
 Two parts, one topic: (1) Who writes the diagram SVGs, in your words - may the post say that Claude Code writes each SVG from your spec and you review the rendered WebP? Right now the audit only says what the files are. Your answer goes in the first paragraph under "The 28-Line Script That Converts SVG to WebP". (2) Do you use any image skill, plugin or MCP server inside Claude Code (which one, for what), and did Claude Code run the Gemini cover script? That answer goes under "An Image Skill" / "An Image MCP Server", which are written from docs only.
+
+## lovable-ai-price-in-india
+
+On a date you note, logged in from India on a Free Lovable workspace, open Workspace settings > Plans & credit usage and start an upgrade to Pro (100 credits, monthly) without paying: what currency and amount does the screen show, is there a tax or GST line, and which payment methods does the Stripe checkout offer (card only, UPI, others)? The answer belongs as a dated row in 'What Lovable Does Not Publish for Buyers in India'.
+
+## replit-price-in-india
+
+Logged in to replit.com from India, open the Core upgrade screen and stop before paying. With today's date, what does it show: the currency and amount, any tax or GST line, and whether Razorpay with UPI or cards is offered? The same for Pro if visible. The answer belongs in the replit.com row of the by-checkout table and in the 'Replit Price in India: The Break-Even Exchange Rate' section. With a rupee total the post can state the actual cheaper checkout instead of a conditional one.
+
+## astro-adsense
+
+After the manual units with 280px and 100px reserved heights went live (10 September 2026) and the Auto ads fence was added (3 October 2026), what did your own Search Console Core Web Vitals report or a PageSpeed Insights run show for layout shift (CLS) on a blog post, with the date of each reading? It would go in the 'Unfilled AdSense Units and Reserved Height' section.

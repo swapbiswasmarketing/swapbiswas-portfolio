@@ -116,6 +116,8 @@ Search Console counts days [in Pacific time](https://developers.google.com/webma
 | 26 April | 3 tool pages and a tools index, a Tools link in the navigation and footer, trailing slashes on blog card links, tool links added to 4 posts | Raise them |
 | 10 May | 6 new posts, a blog template change and analytics scripts | Raise them, late in the window |
 
+The ad script in the 22 April row is the AdSense loader, which this site re-appends after every soft navigation because [Astro's client router removes a head script created at runtime](/blog/astro-adsense/).
+
 A new page that ranks deep adds impressions at worse-than-average positions, so any effect from the posts and tools would have worsened average position, the opposite of what happened on 28 April. The 20 April noindex waits on Google to recrawl each page, which the debugging guide says brings "a slower drop in traffic", not a one-day step.
 
 Impressions and clicks are weaker evidence than the position series, which is why the data is consistent with a reporting change without proving one:

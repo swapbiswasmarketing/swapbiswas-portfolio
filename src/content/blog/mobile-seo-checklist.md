@@ -82,7 +82,7 @@ INP replaced First Input Delay as a Core Web Vital on **March 12, 2024**, [as we
 
 ### 8. Fix CLS: reserve space so nothing jumps
 
-A CLS at or below 0.1 means content doesn't lurch as the page loads. Always set explicit width and height on images and embeds, reserve space for ads, and avoid injecting banners above existing content.
+A CLS at or below 0.1 means content doesn't lurch as the page loads. Always set explicit width and height on images and embeds, reserve space for ads, and avoid injecting banners above existing content. For ads, make the reserve a `min-height` rather than a fixed height, since Google's AdSense guidance says a responsive ad can be taller on some devices; [the height reserve for each AdSense unit on my Astro site](/blog/astro-adsense/) shows the CSS.
 
 ### 9. Test on a throttled mobile connection
 

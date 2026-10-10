@@ -117,7 +117,7 @@ This is where the AI assistant really shone. In two sessions, we built:
 - **Full SEO setup** - canonical URLs, Open Graph tags, Twitter Cards, sitemap, robots.txt. The build has since added [an IndexNow hook that reaches Bing but not Google](/blog/does-google-support-indexnow/) and a per-post `<lastmod>` in the sitemap, the date Google reads instead
 - **Analytics** - GA4, GTM, and Microsoft Clarity
 
-All of these would have required 8-10 WordPress plugins. Here, they're built into the site with zero external dependencies.
+All of these would have required 8-10 WordPress plugins. Here, they're built into the site with zero external dependencies. Ads came later, and [adding AdSense to this Astro site](/blog/astro-adsense/) took a loader in the page head, an `ads.txt` file in `public/` and in-article units that a rehype plugin places at build time.
 
 ### Step 5: Deploy to Netlify
 
