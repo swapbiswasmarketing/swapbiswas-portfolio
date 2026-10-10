@@ -130,6 +130,8 @@ These tables cover the rest of the built-in and bundled commands a non-developer
 | `/slides [brief]` (skill) | Makes a Claude Slides deck from your brief as an artifact on claude.ai; what it needs and the two routes that write a .pptx into your repo are in [how to make a PowerPoint with Claude Code](/blog/make-a-powerpoint-with-claude-code/) |
 | `/output-style [style]` | Lists output styles or switches to one |
 
+`/hooks` is also where you confirm that a hook is registered, including a Stop or Notification hook set up to tell you Claude has finished; [my guide to Claude Code's notification hooks, terminal bell and phone pushes](/blog/claude-code-notification-when-done/) matches each signal to the place it has to reach.
+
 The output styles that `/output-style` switches between are a Claude Code feature that still ships, separate from the Claude app's styles, which Anthropic moved into skills in 2026; my post on [how the Claude app's styles became skills](/blog/claude-styles/) also lists the built-in output styles and how to set one.
 
 ### Commands That Have Been Removed
@@ -360,6 +362,8 @@ Only `name` and `description` are required. The other route is to add `context: 
 | Claude runs the command without being asked | Its description matched your request | Add `disable-model-invocation: true` |
 
 For a check script that exits 1 when it finds problems, the docs section on [when an injected command fails](https://code.claude.com/docs/en/skills#when-an-injected-command-fails) suggests appending `|| true` to that command so the invocation does not abort.
+
+A missing skill has causes the table above leaves out, such as an account sync that has not run or a skill saved as a loose `name.md` file instead of a folder, and [my breakdown of what keeps a skill folder from loading](/blog/claude-skills-not-showing-up/) gives the minimum Claude Code version for each fix where the docs state one.
 
 ## Start With the Claude Code Command You Retype Most
 

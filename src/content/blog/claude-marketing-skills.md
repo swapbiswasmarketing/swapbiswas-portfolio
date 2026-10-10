@@ -152,7 +152,7 @@ Its own description promises guidance on aesthetic direction, typography and cho
 
 ### 9. Taste Skill by Leon Lin
 
-Taste Skill pushes AI-built interfaces toward stronger layout, typography, motion and spacing. It also includes image-generation skills for web, mobile and brand-kit reference boards, which you run with ChatGPT Images or a similar generator and then hand to Claude Code to build from.
+Taste Skill pushes AI-built interfaces toward stronger layout, typography, motion and spacing. It also includes image-generation skills for web, mobile and brand-kit reference boards, which you run with ChatGPT Images or a similar generator and then hand to Claude Code to build from. Those image skills add a procedure and no image model of their own; [my breakdown of the script, skill and MCP server routes from Claude Code to an image file](/blog/can-claude-code-generate-images/) names what produces the pixels on each one.
 
 - Maintainer: Leon Lin, with sponsors listed in the README.
 - Claude Code: `npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"`.
@@ -212,6 +212,8 @@ For a public example of a marketing skill worth building, Emily Kramer of MKT1 [
 4. Or copy the folder: clone the repo and copy one skill folder into either skills directory.
 5. In the Claude app, upload a ZIP. Turn on Code execution and file creation, go to Customize > Skills, click "+", then "Create skill" and "Upload a skill". Remove any frontmatter field outside the six listed above before you zip the folder.
 6. Keep them current: `npx skills update` updates everything the CLI installed, and `npx skills update -p` limits it to project skills.
+
+If a skill you installed never appears in the `/` menu, an install that landed only in `.agents/skills/` is one cause among several, and my guide to [what to check when an installed skill is missing](/blog/claude-skills-not-showing-up/) lists the rest with the Claude Code version each fix needs.
 
 ## How to Vet a Claude Skill Before You Install It
 

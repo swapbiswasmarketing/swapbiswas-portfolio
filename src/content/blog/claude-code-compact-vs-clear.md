@@ -74,7 +74,7 @@ The fix for each gap, from Anthropic's own pages:
 | A path-scoped rule disappeared | "drop the `paths:` frontmatter or move it to the project-root CLAUDE.md" |
 | An instruction from early in the conversation got lost | Move it into CLAUDE.md, or add a "Compact Instructions" section there, per [how Claude Code works](https://code.claude.com/docs/en/how-claude-code-works#when-context-fills-up) |
 
-If you installed a library of [Claude marketing skills](/blog/claude-marketing-skills/), the listing gap is the one to plan for. How the listing is budgeted and trimmed in the first place is covered in [what a Claude skill loads and when](/blog/what-is-a-claude-skill/).
+If you installed a library of [Claude marketing skills](/blog/claude-marketing-skills/), the listing gap is the one to plan for. How the listing is budgeted and trimmed in the first place is covered in [what a Claude skill loads and when](/blog/what-is-a-claude-skill/). A skill that never appeared in the listing is a separate problem, and [my guide to the name-only and user-only skill states](/blog/claude-skills-not-showing-up/) shows which settings hide a skill, or only its description, from that listing.
 
 Both commands also reload CLAUDE.md and auto memory from disk. Anthropic's [prompt caching page](https://code.claude.com/docs/en/prompt-caching#editing-claude-md-mid-session) says project-root and user-level CLAUDE.md files are read once at session start, and "The new content loads on the next `/clear`, `/compact`, or restart." Until one of those three happens, an edit to either file does not apply.
 

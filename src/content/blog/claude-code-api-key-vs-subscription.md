@@ -61,7 +61,7 @@ Anthropic's [admin setup page](https://code.claude.com/docs/en/admin-setup) name
 
 The artifacts row is also why `/design` needs a claude.ai login, a requirement my [Claude Design vs Claude Code routing guide](/blog/claude-design-vs-claude-code/) lists next to each command.
 
-Two of those rows would hit this site's setup. My user settings set `remoteControlAtStartup` to `true`, so every interactive session connects to Remote Control on its own, and my agent push notifications depend on that connection; [my settings map for Claude Code in VS Code](/blog/claude-code-in-vs-code-vs-terminal/) lists both settings. My Semrush keyword data reaches Claude Code as a claude.ai connector, listed in the setup table of [my Claude vs Claude Code comparison](/blog/claude-vs-claude-code/). With a key approved, Remote Control, those pushes and the Semrush tools would all stop.
+Two of those rows would hit this site's setup. My user settings set `remoteControlAtStartup` to `true`, so every interactive session connects to Remote Control on its own, and my agent push notifications depend on that connection; [my settings map for Claude Code in VS Code](/blog/claude-code-in-vs-code-vs-terminal/) lists both settings. My Semrush keyword data reaches Claude Code as a claude.ai connector, listed in the setup table of [my Claude vs Claude Code comparison](/blog/claude-vs-claude-code/). With a key approved, Remote Control, those pushes and the Semrush tools would all stop. For a session where Remote Control is unavailable, [my guide to Claude Code alerts at the desk and away from it](/blog/claude-code-notification-when-done/) lists the routes to a phone that Anthropic documents, next to the two push toggles.
 
 ### Other Differences Between a Key and a Login
 

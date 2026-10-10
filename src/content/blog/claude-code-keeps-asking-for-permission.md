@@ -133,6 +133,8 @@ Yes. These are the documented cases you are most likely to hit, from [when auto 
 - An `rm` or `rmdir` targets a critical path such as your home folder. The terminal shows a prompt with a two-minute countdown, and the VS Code chat panel denies the command.
 - The classifier keeps blocking: "if the classifier blocks an action 3 times in a row or 20 times total, auto mode pauses and Claude Code resumes prompting."
 
+When one of these prompts is left waiting while you are away from the machine, a phone push through Remote Control or a Notification hook can tell you about it once you set either one up, and [my guide to Claude Code phone pushes and notification hooks](/blog/claude-code-notification-when-done/) has the `/config` toggle and the matcher for a waiting permission prompt.
+
 ## Claude Code Keeps Asking for Permission in VS Code
 
 The extension keeps its own starting-mode list, one of the differences from the CLI covered in [Claude Code in VS Code vs the terminal](/blog/claude-code-in-vs-code-vs-terminal/). Per the [VS Code tab of the permission modes page](https://code.claude.com/docs/en/permission-modes#switch-permission-modes), a new conversation starts in the first of these that applies:

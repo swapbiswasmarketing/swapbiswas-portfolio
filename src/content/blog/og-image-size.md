@@ -128,7 +128,7 @@ For a text card, describe the card, words included. An alt string that describes
 
 ## OG Image Size Self-Audit: What swapbiswas.com Ships
 
-The site generates one card per post at build time with Satori, resvg and sharp, and [the build record of this site](/blog/build-a-personal-website-with-claude-code/) dates when each piece landed. The template is code, so a title edit re-renders that post's card at the next build with no design step, which is why [my Claude Design vs Claude Code routing table](/blog/claude-design-vs-claude-code/) puts OG images in the repo lane. I measured every card in the build output of 2 October 2026, which covers 194 posts plus the homepage.
+The site generates one card per post at build time with Satori, resvg and sharp, and [the build record of this site](/blog/build-a-personal-website-with-claude-code/) dates when each piece landed. The template is code, so a title edit re-renders that post's card at the next build with no design step, which is why [my Claude Design vs Claude Code routing table](/blog/claude-design-vs-claude-code/) puts OG images in the repo lane. A build-time card generator is also one of [the six image routes I compared for Claude Code](/blog/can-claude-code-generate-images/), where this card counts as a composite: code sets the type, and the painting comes from an image model. I measured every card in the build output of 2 October 2026, which covers 194 posts plus the homepage.
 
 | Check | Result |
 |---|---|

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720">
+  <rect x="0" y="0" width="1400" height="720" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">When each signal fires after Claude stops or asks</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Timing as Anthropic's hooks reference gives it, not drawn to scale. Read 10 October 2026.</text>
+
+  <rect x="60" y="136" width="360" height="236" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="170" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STOP HOOK</text>
+  <text x="88" y="206" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">As Claude finishes</text>
+  <text x="88" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Runs after every response,</text>
+  <text x="88" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">not only at task completion.</text>
+  <text x="88" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Does not run when you</text>
+  <text x="88" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">interrupt Claude.</text>
+
+  <rect x="520" y="136" width="360" height="236" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="548" y="170" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">PERMISSION_PROMPT</text>
+  <text x="548" y="206" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">A prompt is waiting</text>
+  <text x="548" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Terminal: about six seconds</text>
+  <text x="548" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">with no keystroke.</text>
+  <text x="548" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">VS Code and Desktop: about six</text>
+  <text x="548" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">seconds after Claude asks.</text>
+
+  <rect x="980" y="136" width="360" height="236" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1008" y="170" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">IDLE_PROMPT</text>
+  <text x="1008" y="206" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">You have gone quiet</text>
+  <text x="1008" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">About 60 seconds after the</text>
+  <text x="1008" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">response, if you have not</text>
+  <text x="1008" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">typed and no background</text>
+  <text x="1008" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">agent is still running.</text>
+
+  <line x1="240" y1="372" x2="240" y2="413" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="700" y1="372" x2="700" y2="413" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="1160" y1="372" x2="1160" y2="413" stroke="#15130f" stroke-width="2.5"/>
+
+  <line x1="100" y1="420" x2="1296" y2="420" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1296,413 1310,420 1296,427" fill="#15130f"/>
+  <circle cx="240" cy="420" r="8" fill="#15130f"/>
+  <circle cx="700" cy="420" r="8" fill="#15130f"/>
+  <circle cx="1160" cy="420" r="8" fill="#15130f"/>
+
+  <text x="240" y="458" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">when Claude finishes</text>
+  <text x="700" y="458" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">about 6 s after it asks</text>
+  <text x="1160" y="458" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">about 60 s after it finishes</text>
+
+  <line x1="520" y1="486" x2="1340" y2="486" stroke="#6a645c" stroke-width="2"/>
+  <line x1="520" y1="476" x2="520" y2="486" stroke="#6a645c" stroke-width="2"/>
+  <line x1="1340" y1="476" x2="1340" y2="486" stroke="#6a645c" stroke-width="2"/>
+  <text x="930" y="518" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The built-in desktop notification and the terminal bell share these two timings.</text>
+
+  <rect x="60" y="552" width="1280" height="92" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="88" y="586" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#8f2e0f">PHONE PUSH</text>
+  <text x="88" y="620" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">No documented delay: "Claude decides when to push." Skipped while you type in or focus the connected terminal.</text>
+
+  <text x="60" y="688" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sources: Claude Code hooks reference (Notification and Stop events), hooks guide and Remote Control page.</text>
+</svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1034" width="1400" height="1034">
+  <rect x="0" y="0" width="1400" height="1034" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Claude finished. Which signal reaches you?</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">It depends on where you are. Triggers as Anthropic documents them, read 10 October 2026.</text>
+
+  <rect x="490" y="136" width="420" height="60" rx="30" fill="#15130f"/>
+  <text x="700" y="174" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Claude finishes or asks</text>
+
+  <line x1="700" y1="196" x2="700" y2="228" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="260" y1="228" x2="1140" y2="228" stroke="#15130f" stroke-width="2.5"/>
+
+  <line x1="260" y1="228" x2="260" y2="256" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="253,256 267,256 260,270" fill="#15130f"/>
+  <line x1="700" y1="228" x2="700" y2="256" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,256 707,256 700,270" fill="#15130f"/>
+  <line x1="1140" y1="228" x2="1140" y2="256" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1133,256 1147,256 1140,270" fill="#15130f"/>
+
+  <rect x="60" y="276" width="400" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="323" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">At the terminal</text>
+
+  <rect x="500" y="276" width="400" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="323" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">In the VS Code chat panel</text>
+
+  <rect x="940" y="276" width="400" height="76" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="968" y="323" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Away, with a phone</text>
+
+  <rect x="60" y="368" width="400" height="188" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="402" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">BUILT IN</text>
+  <text x="88" y="436" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Desktop notification</text>
+  <text x="88" y="468" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Ghostty, Kitty, iTerm2 only</text>
+  <text x="88" y="500" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">About 60 s after Claude stops,</text>
+  <text x="88" y="532" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">if you have not typed since</text>
+
+  <rect x="60" y="572" width="400" height="188" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="606" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">ONE SETTING</text>
+  <text x="88" y="640" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Terminal bell</text>
+  <text x="88" y="672" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">preferredNotifChannel set to</text>
+  <text x="88" y="704" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">terminal_bell. VS Code's own</text>
+  <text x="88" y="736" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">settings decide icon and sound</text>
+
+  <rect x="60" y="776" width="400" height="188" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="810" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">HOOK</text>
+  <text x="88" y="844" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Stop or Notification hook</text>
+  <text x="88" y="876" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Stop: after every response.</text>
+  <text x="88" y="908" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">idle_prompt: about 60 s later,</text>
+  <text x="88" y="940" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">if you have not typed</text>
+
+  <rect x="500" y="368" width="400" height="188" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="402" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">BUILT IN</text>
+  <text x="528" y="436" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Dot on the spark icon</text>
+  <text x="528" y="468" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Orange: Claude finished while</text>
+  <text x="528" y="500" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the tab was hidden</text>
+  <text x="528" y="532" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Blue: permission request pending</text>
+
+  <rect x="500" y="572" width="400" height="188" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="606" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">BUILT IN</text>
+  <text x="528" y="640" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Sessions list filters</text>
+  <text x="528" y="672" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Filter by status: Needs input,</text>
+  <text x="528" y="704" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Working or Completed</text>
+  <text x="528" y="736" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">(v2.1.271 or later)</text>
+
+  <rect x="500" y="776" width="400" height="188" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="810" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">HOOK</text>
+  <text x="528" y="844" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Stop or Notification hook</text>
+  <text x="528" y="876" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Loads from the settings file</text>
+  <text x="528" y="908" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the CLI also reads; the panel</text>
+  <text x="528" y="940" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">edits hooks from v2.1.269</text>
+
+  <rect x="940" y="368" width="400" height="188" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="402" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">TOGGLE</text>
+  <text x="968" y="436" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Push when Claude decides</text>
+  <text x="968" y="468" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Typically when a long task</text>
+  <text x="968" y="500" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">finishes or Claude needs a</text>
+  <text x="968" y="532" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">decision; Claude chooses</text>
+
+  <rect x="940" y="572" width="400" height="188" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="606" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">TOGGLE</text>
+  <text x="968" y="640" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Push when actions required</text>
+  <text x="968" y="672" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A permission prompt or a</text>
+  <text x="968" y="704" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">question is waiting for you</text>
+  <text x="968" y="736" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Both toggles default to off</text>
+
+  <rect x="940" y="776" width="400" height="188" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="810" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">REQUIRED</text>
+  <text x="968" y="844" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Remote Control connected</text>
+  <text x="968" y="876" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pushes arrive only while it</text>
+  <text x="968" y="908" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">is connected and the Claude</text>
+  <text x="968" y="940" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">app is signed in</text>
+
+  <text x="60" y="1000" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sources: Claude Code docs (terminal configuration, hooks, VS Code guide, Remote Control, settings reference); VS Code 1.141.0 source.</text>
+</svg>

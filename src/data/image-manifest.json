@@ -237,6 +237,22 @@
 		],
 		"hash": "7d43c912b97e5aa8"
 	},
+	"/assets/blog/can-claude-code-generate-images/file-audit.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "16199dd875532037"
+	},
+	"/assets/blog/can-claude-code-generate-images/route-map.webp": {
+		"w": 1200,
+		"h": 711,
+		"v": [
+			660
+		],
+		"hash": "3f0db22537efc5ba"
+	},
 	"/assets/blog/claude-code-api-key-vs-subscription/credential-precedence.webp": {
 		"w": 1200,
 		"h": 823,
@@ -316,6 +332,22 @@
 			660
 		],
 		"hash": "f9ac19085b53021e"
+	},
+	"/assets/blog/claude-code-notification-when-done/signal-timing.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "22e2c9884971c13d"
+	},
+	"/assets/blog/claude-code-notification-when-done/signals-by-place.webp": {
+		"w": 1200,
+		"h": 886,
+		"v": [
+			660
+		],
+		"hash": "36b5425049355ee3"
 	},
 	"/assets/blog/claude-code-paste-image/paste-checks.webp": {
 		"w": 1200,
@@ -404,6 +436,14 @@
 			660
 		],
 		"hash": "16b0650955fb0090"
+	},
+	"/assets/blog/claude-skills-not-showing-up/skill-stores-by-surface.webp": {
+		"w": 1200,
+		"h": 514,
+		"v": [
+			660
+		],
+		"hash": "6fae651fb06fd228"
 	},
 	"/assets/blog/claude-sonnet-vs-opus/cost-per-job.webp": {
 		"w": 1200,

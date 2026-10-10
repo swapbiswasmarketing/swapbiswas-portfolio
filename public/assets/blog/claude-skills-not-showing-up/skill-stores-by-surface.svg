@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 600" width="1400" height="600">
+  <rect x="0" y="0" width="1400" height="600" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Which Skills Each Claude Surface Reads</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Three skill stores against three surfaces, per Anthropic's docs, 10 October 2026</text>
+
+  <text x="60" y="158" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">SKILL STORE</text>
+  <text x="436" y="158" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CLAUDE APP, COWORK</text>
+  <text x="740" y="158" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CLAUDE CODE, LOCAL</text>
+  <text x="1044" y="158" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CLOUD, ROUTINES</text>
+
+  <rect x="60" y="176" width="360" height="100" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Account skills</text>
+  <text x="84" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Customize &gt; Skills on claude.ai</text>
+
+  <rect x="436" y="176" width="288" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="460" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#2a7347">Listed</text>
+  <text x="460" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Runs once toggled on</text>
+
+  <rect x="740" y="176" width="288" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="764" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#2a7347">Synced down, one way</text>
+  <text x="764" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">From v2.1.273</text>
+
+  <rect x="1044" y="176" width="288" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1068" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#2a7347">Loaded</text>
+  <text x="1068" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">If enabled on claude.ai</text>
+
+  <rect x="60" y="290" width="360" height="100" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Personal skills</text>
+  <text x="84" y="364" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">~/.claude/skills/ on your machine</text>
+
+  <rect x="436" y="290" width="288" height="100" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="460" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Not read</text>
+  <text x="460" y="364" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Upload it as a ZIP</text>
+
+  <rect x="740" y="290" width="288" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="764" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#2a7347">Loaded</text>
+  <text x="764" y="364" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">In every project</text>
+
+  <rect x="1044" y="290" width="288" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1068" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#6a645c">Not read</text>
+  <text x="1068" y="364" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Lives on your machine</text>
+
+  <rect x="60" y="404" width="360" height="100" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="446" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Project skills</text>
+  <text x="84" y="478" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">.claude/skills/ in a repo</text>
+
+  <rect x="436" y="404" width="288" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="460" y="446" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#6a645c">Not read</text>
+  <text x="460" y="478" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Reads Customize only</text>
+
+  <rect x="740" y="404" width="288" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="764" y="446" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#2a7347">Loaded</text>
+  <text x="764" y="478" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">In that repository</text>
+
+  <rect x="1044" y="404" width="288" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1068" y="446" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#2a7347">Loaded</text>
+  <text x="1068" y="478" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">If committed</text>
+
+  <text x="60" y="548" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Sync runs one way: Claude Code downloads account skills and never changes the account.</text>
+</svg>

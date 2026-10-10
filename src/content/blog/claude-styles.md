@@ -74,7 +74,7 @@ If your Claude styles are missing, check the skills list before you rebuild anyt
 3. Turn on each style you want. They arrive disabled, and per the Use skills article, "Disabled skills won't be available to Claude."
 4. In a chat, type the style's command: `/{style-name}-style`.
 
-If a style you made is not in the list, the migration article gives no recovery step; rebuild it as a skill from the files below.
+When the Skills section is still missing after step 1, or the skills in it are greyed out, my guide to skills that do not show up lists [the cause and fix under each heading of Anthropic's skills troubleshooting](/blog/claude-skills-not-showing-up/). If a style you made is not in the list, the migration article gives no recovery step; rebuild it as a skill from the files below.
 
 Per the migration article, each command is built from the style's name by lowercasing the letters, replacing spaces with hyphens, removing punctuation, emoji and accent marks, and adding `-style` to the end. A command that runs past the length limit is trimmed, and when two styles would produce the same command, one of them gets a number. No live English help article documented this naming rule on 2 October 2026, so the migration article is the reference for it.
 

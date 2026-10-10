@@ -114,6 +114,8 @@ Shell details the setups table leaves out, as of September 2026:
 
 Claude Code looks for PowerShell 7 (`pwsh.exe`) and falls back to Windows PowerShell 5.1 (`powershell.exe`). Either way, the PowerShell tool does not load PowerShell profiles, and the [Desktop docs on local sessions](https://code.claude.com/docs/en/desktop#local-sessions) say Claude Desktop "does not read PowerShell profiles" either, so set any variables Claude needs as Windows environment variables or in the `env` block of `settings.json`.
 
+Hook commands get their shell by a separate rule from the commands Claude runs: Git Bash when it is installed and PowerShell otherwise, unless the handler sets `"shell": "powershell"`, and [the Windows section of my Claude Code notification guide](/blog/claude-code-notification-when-done/) has Anthropic's example hook.
+
 Reasons to install Git for Windows even though it is optional:
 
 - Anthropic's setup page recommends it "so Claude Code can use the Bash tool".

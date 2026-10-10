@@ -122,6 +122,8 @@ Switching model in the middle of a conversation makes the next response slower w
 
 Remote Control at startup works only with a claude.ai subscription login, which an approved `ANTHROPIC_API_KEY` outranks, so the key switches Remote Control off along with [the other features that need a claude.ai login](/blog/claude-code-api-key-vs-subscription/).
 
+The `agentPushNotifEnabled` setting turns on only the pushes Claude chooses to send; a permission prompt left waiting has a push toggle of its own, and [my guide to Claude Code notifications by place](/blog/claude-code-notification-when-done/) covers both toggles, the terminal bell, the chat panel's dot and hooks.
+
 My sessions run with Git Bash and PowerShell as shells; Windows install routes and shells are compared in [Claude Code on WSL vs native Windows](/blog/claude-code-wsl-vs-windows/).
 
 ## Where Claude Code Reads MCP Servers From

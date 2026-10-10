@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720">
+  <rect x="0" y="0" width="1400" height="720" fill="#f6f4ef"/>
+
+  <text x="60" y="68" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">812 files in one blog's image folder</text>
+  <text x="60" y="106" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Sorted by what turned each file into pixels. swapbiswas.com repo, 10 October 2026</text>
+
+  <text x="60" y="172" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">760 of 812 files trace back to SVG text</text>
+  <line x1="60" y1="188" x2="1258" y2="188" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="61" y1="188" x2="61" y2="198" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="1257" y1="188" x2="1257" y2="198" stroke="#15130f" stroke-width="2.5"/>
+
+  <text x="1340" y="172" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">52 other</text>
+  <line x1="1262" y1="188" x2="1340" y2="188" stroke="#6a645c" stroke-width="2.5"/>
+
+  <rect x="60" y="204" width="381.5" height="64" fill="#b53b15"/>
+  <rect x="441.5" y="204" width="381.5" height="64" fill="#15130f"/>
+  <rect x="823" y="204" width="435.1" height="64" fill="#6a645c"/>
+  <rect x="1258.1" y="204" width="50.4" height="64" fill="#eeebe4" stroke="#6a645c" stroke-width="1"/>
+  <rect x="1308.5" y="204" width="26.8" height="64" fill="#eeebe4" stroke="#6a645c" stroke-width="1"/>
+  <rect x="1335.3" y="204" width="4.7" height="64" fill="#eeebe4" stroke="#6a645c" stroke-width="1"/>
+  <line x1="441.5" y1="204" x2="441.5" y2="268" stroke="#f6f4ef" stroke-width="2"/>
+  <line x1="823" y1="204" x2="823" y2="268" stroke="#f6f4ef" stroke-width="2"/>
+
+  <text x="250.75" y="246" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#ffffff">242</text>
+  <text x="632.25" y="246" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#ffffff">242</text>
+  <text x="1040.5" y="246" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#ffffff">276</text>
+
+  <rect x="60" y="300" width="305" height="210" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="84" y="324" width="18" height="18" fill="#b53b15"/>
+  <text x="84" y="388" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">242</text>
+  <text x="84" y="424" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">SVG sources</text>
+  <text x="84" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Text files kept in git</text>
+  <text x="84" y="486" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Median 5.8 KiB each</text>
+
+  <rect x="385" y="300" width="305" height="210" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="409" y="324" width="18" height="18" fill="#15130f"/>
+  <text x="409" y="388" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">242</text>
+  <text x="409" y="424" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">WebP beside each</text>
+  <text x="409" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Median 53.7 KiB each</text>
+  <text x="409" y="486" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">208 are 1200 px wide</text>
+
+  <rect x="710" y="300" width="305" height="210" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="734" y="324" width="18" height="18" fill="#6a645c"/>
+  <text x="734" y="388" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">276</text>
+  <text x="734" y="424" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Resized copies</text>
+  <text x="734" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">660 or 1320 px wide</text>
+  <text x="734" y="486" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Written by a build script</text>
+
+  <rect x="1035" y="300" width="305" height="210" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="1059" y="324" width="18" height="18" fill="#eeebe4" stroke="#6a645c" stroke-width="1"/>
+  <text x="1059" y="388" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">52</text>
+  <text x="1059" y="424" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Other files</text>
+  <text x="1059" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">32 older rasters</text>
+  <text x="1059" y="486" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">17 copies of them, 3 CSV</text>
+
+  <rect x="60" y="534" width="1280" height="96" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="570" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">OUTSIDE THIS FOLDER</text>
+  <text x="92" y="606" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">8 cover paintings from an image model, shared by all 209 posts</text>
+
+  <text x="60" y="674" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">The repo does not record how the 32 older rasters were made. Counted with git ls-tree, before this post was added.</text>
+</svg>

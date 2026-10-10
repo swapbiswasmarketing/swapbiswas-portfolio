@@ -190,6 +190,8 @@ Read design/social-banners/primary/li-banner@2x.png, crop the headline
 area with ImageMagick, and tell me whether the headline reads at half size.
 ```
 
+Pasting and file paths cover images going into Claude Code; for images coming out, such as a diagram or that banner, [my guide to what Claude Code can produce as an image](/blog/can-claude-code-generate-images/) covers six routes.
+
 ## Check the Window Before the Key
 
 When a Claude Code paste image shortcut does nothing, I would check the window first, the key second and the version third. Windows Terminal and VS Code's integrated terminal each keep a paste key of their own, and the CLI over SSH cannot read an image from your local clipboard.

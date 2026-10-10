@@ -73,7 +73,7 @@ Whichever you pick, open every cited link before a number goes into a deck. On t
 
 This is the cleanest split. Claude answers a visual brief with a diagram, chart or interactive visual built in HTML and SVG, or with [Claude Design](https://www.anthropic.com/news/claude-design-anthropic-labs), which launched on 17 April 2026 as a research preview and makes designs, prototypes, slides, one-pagers and marketing collateral. As of September 2026, Anthropic's [Claude Design help article](https://support.claude.com/en/articles/14604416-get-started-with-claude-design) says it "is available in beta on Pro, Max, Team, and Enterprise plans." When a Claude Design mockup has to become a page on your own site, its Export menu offers a Handoff to Claude Code, and [my routing of marketing deliverables between the Claude Design canvas and a repo](/blog/claude-design-vs-claude-code/) shows which ones need that step.
 
-ChatGPT's pricing page lists "Limited and slower image generation" on Free and "More complex and accurate image creation" on Plus. For ad variants, social visuals and product mockups, start in ChatGPT.
+ChatGPT's pricing page lists "Limited and slower image generation" on Free and "More complex and accurate image creation" on Plus. For ad variants, social visuals and product mockups, start in ChatGPT. When the image is a diagram, a chart or a card whose text has to be exact, Claude Code can render it from code instead, and [my guide to getting an image file out of Claude Code](/blog/can-claude-code-generate-images/) separates those from the pictures that need an image model.
 
 ### Data Analysis and Files
 

@@ -45,7 +45,7 @@ The key idea is what Anthropic calls progressive disclosure. A skill loads in th
 
 <img src="/assets/blog/what-is-a-claude-skill/skill-loading-levels.webp" alt="Diagram of the three levels a Claude skill loads in: metadata at startup, SKILL.md instructions when triggered, and bundled scripts and reference files only when a step needs them, mapped to the skill-creator folder" title="How a Claude skill loads" width="1200" height="600" loading="lazy" decoding="async" />
 
-The description decides whether Claude picks a skill on its own. Anthropic's overview says the `description` "is what Claude matches your request against when determining whether to trigger the Skill," so a vague description means a skill Claude seldom reaches for.
+The description decides whether Claude picks a skill on its own. Anthropic's overview says the `description` "is what Claude matches your request against when determining whether to trigger the Skill," so a vague description means a skill Claude seldom reaches for. A skill missing from the `/` menu, `/skills` or the Claude app's Skills list has different causes from one Claude leaves unpicked, and [my fix list for a skill that does not show up](/blog/claude-skills-not-showing-up/) sorts them by where it is missing and gives the version each fix needs.
 
 The third level is where skills differ from a saved prompt. A skill can carry a script, and when Claude runs it, only the output lands in the conversation. Anthropic's overview frames the split as "instructions for flexible guidance, code for reliability, resources for factual lookup."
 
@@ -149,7 +149,7 @@ Both hold instructions, but CLAUDE.md loads in full every session while a skill'
 
 ### Claude Skills vs Hooks
 
-A hook always fires on its event; a skill is instructions Claude interprets. The Extend Claude Code page is blunt: "An instruction like 'never edit .env' in CLAUDE.md or a skill is a request, not a guarantee." I have no hooks configured, but my own must-run checks include Node scripts whose last line reports PASS or FAIL, rather than rules written only as sentences in a markdown file. A skill can carry that kind of script in its `scripts/` folder, which sits between a written rule and a hook: Claude still decides to run it, but the check itself behaves the same every time.
+A hook always fires on its event; a skill is instructions Claude interprets. Telling you that Claude Code has finished is one small job for a hook: a Stop hook runs after every response whether or not Claude would have told you, and [my guide to getting notified when Claude Code is done](/blog/claude-code-notification-when-done/) sets it beside the Notification event, the terminal bell and a phone push. The Extend Claude Code page is blunt: "An instruction like 'never edit .env' in CLAUDE.md or a skill is a request, not a guarantee." I have no hooks configured, but my own must-run checks include Node scripts whose last line reports PASS or FAIL, rather than rules written only as sentences in a markdown file. A skill can carry that kind of script in its `scripts/` folder, which sits between a written rule and a hook: Claude still decides to run it, but the check itself behaves the same every time.
 
 ## 23 Installed Claude Skills, Audited: How Their Descriptions Are Written
 

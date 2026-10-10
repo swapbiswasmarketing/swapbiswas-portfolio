@@ -2219,3 +2219,72 @@ https://swapbiswas.com/blog/why-is-claude-code-so-slow/?utm_source=linkedin&utm_
 #ClaudeCode #Anthropic #VSCode #AIForMarketing #MarketingOps
 
 ---
+
+### Claude Skills Not Showing Up? Fixes by Surface and Version
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an apothecary's wooden shelf holding a neat row of small stoppered clay jars with one empty gap in the row, the missing jar standing apart on the table below beside a closed leather-bound almanac and a brass key, a single vermilion red ribbon tied around the neck of that jar, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+A troubleshooting guide for Claude Code skills, dated 3 May 2026, still says "end your current session and start a new one" when a new skill will not load.
+Anthropic's changelog dates the no-restart behaviour to v2.1.0, released on 7 January 2026, so I read every fix for a missing skill as written for one version of Claude Code.
+
+- Find where the skill is missing before you try a fix: the Claude app's Skills list, the / menu, /skills, the listing Claude reads, or a cloud session. The post maps the documented causes and fixes for each.
+- On 10 October 2026, Anthropic's skills page alone carried 24 distinct Claude Code version numbers, from v2.1.196 to v2.1.290. Check the version your session runs first: claude --version in a terminal, /status in the VS Code panel or the desktop Code tab.
+- A restart is still the documented step after /login mid-session, and a skills folder created mid-session needs /reload-skills, from v2.1.152.
+- When a skill sits in the / menu and Claude never picks it, check the listing Claude reads before you rewrite the description. The frontmatter field disable-model-invocation: true, a user-only or name-only state, or an over-budget listing can each hide the skill or its description from Claude.
+- I ran the post's file checks against the 20 third-party skill folders committed in this site's repo: 2 of 20 set disable-model-invocation to true, which matches the 18 project skills in the listing, and every other file check passes.
+
+When a Claude skill goes missing, where do you look first: the / menu, /skills or the Skills list in the app?
+
+https://swapbiswas.com/blog/claude-skills-not-showing-up/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-skills-not-showing-up
+
+#ClaudeCode #ClaudeAI #Anthropic #AIForMarketing #MarketingOps
+
+---
+
+### Claude Code Notification When Done: Phone, Windows, VS Code
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a writing desk beside an open window, an hourglass whose sand has fully run into the lower bulb, a small brass hand bell resting next to it, and a folded letter tied with a single vermilion red ribbon waiting on a messenger's tray at the edge of the desk, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Whether a Claude Code notification reaches you depends on where you are when Claude stops.
+Each signal fails somewhere, so for a long build I would set two: one for the desk and one for everywhere else.
+
+- At the terminal, set preferredNotifChannel to terminal_bell and Claude Code rings the bell about 60 seconds after it stops, if you have not typed. A Stop hook is tied to the response instead, so it also runs after every one-line answer.
+- On Windows, Anthropic's hook example opens a PowerShell message box, and the docs warn that "the dialog can open behind your terminal window". For a sound with no hook, set terminal_bell; Windows Terminal's bellStyle defaults to "audible".
+- In VS Code, the extension shows an orange dot on the spark icon when Claude finishes in a hidden tab, and as of 10 October 2026 Anthropic's VS Code guide documents no sound for the chat panel. The integrated terminal's bell is silent under VS Code's default settings unless a screen reader is attached.
+- Away from the desk, a push to the Claude app on your phone needs Remote Control connected, and Remote Control needs a claude.ai login ("API keys are not supported"). Claude Code skips the push while you are typing in or focused on the connected terminal.
+- On 10 October 2026 I read my own ~/.claude/settings.json: it sets Remote Control to connect at startup and turns on one of the two push toggles, and it sets nothing for the desk.
+
+When a long Claude Code task finishes, where are you usually: at the terminal, in the VS Code panel or away from the desk?
+
+https://swapbiswas.com/blog/claude-code-notification-when-done/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-code-notification-when-done
+
+#ClaudeCode #Anthropic #VSCode #AIForMarketing #MarketingOps
+
+---
+
+### Can Claude Code Generate Images? 6 Routes to an Image File
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a draughtsman's table shared by two crafts, on the left a precise geometric line drawing pinned flat with a brass compass, a straightedge and a set square laid across it, on the right a small easel holding an unfinished landscape painting beside a palette and brushes, a single vermilion red ribbon tied around the brass compass, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Can Claude Code generate images? Not with a model of its own: none of the 46 built-in tools in Anthropic's tools reference generates one, as read on 10 October 2026.
+A Claude Code session can still lead to an image file by six routes, and four of them need no image model.
+
+- The test I apply: if one wrong character would make the image wrong, it goes to a code route (an SVG rendered by a script, HTML rendered to PNG, a build-time card generator or the /design export). If it is a picture of something, it needs an image model.
+- After counting this blog's image folder by format on 10 October 2026, my view is that most of what a content site calls an image is labels, numbers and layout that have to be exact: 760 of its 812 committed files trace back to SVG text.
+- The 242 SVG diagram sources in that folder hold 7,237 text elements, a median of 28 per diagram: the labels an image model would have to spell and place. OpenAI's image generation guide says its model "can still struggle with precise text placement and clarity".
+- An image model is for the pictures no code can draw, such as the eight Renaissance-style paintings that cover every post on this blog. They came from a Gemini image model through a Node script that sends each prompt to Google's API.
+- A script, a skill or an MCP server can each call an outside image model, and none of them adds a model to Claude Code itself. From Claude Code v2.1.283, an image returned by an MCP tool is also saved to a file that Claude can crop, convert or reuse.
+
+Of the images your next post or launch needs, which ones would one wrong character ruin?
+
+https://swapbiswas.com/blog/can-claude-code-generate-images/?utm_source=linkedin&utm_medium=social&utm_campaign=can-claude-code-generate-images
+
+#ClaudeCode #Anthropic #AIForMarketing #ContentMarketing #MarketingOps
+
+---
