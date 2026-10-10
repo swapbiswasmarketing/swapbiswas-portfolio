@@ -96,6 +96,8 @@ As of 2 October 2026, the eleven LinkedIn Help pages I read leave these question
 | Does a shared job change feed the notification? | Nothing; the Share profile updates page does not mention impressions |
 | Do your own profile visits count? | Nothing for profiles |
 
+LinkedIn does document a paid-plan rule for another part of the profile: the link that creator mode once let you add to your introduction is now a custom button for a select group of Premium Business, Sales Navigator and Recruiter Lite subscribers, as I show in [what happened to creator mode's profile link](/blog/linkedin-creator-mode-not-showing/).
+
 ## How to Read LinkedIn Impressions on Your Experience After a Profile Edit
 
 The profile search appearances article advises: "Monitor changes in your Search appearances data after profile updates to see if visibility improves." The same before-and-after reading works for Profile engagement:

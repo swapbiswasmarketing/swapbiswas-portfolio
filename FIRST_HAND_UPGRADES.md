@@ -382,3 +382,15 @@ Logged in to replit.com from India, open the Core upgrade screen and stop before
 ## astro-adsense
 
 After the manual units with 280px and 100px reserved heights went live (10 September 2026) and the Auto ads fence was added (3 October 2026), what did your own Search Console Core Web Vitals report or a PageSpeed Insights run show for layout shift (CLS) on a blog post, with the date of each reading? It would go in the 'Unfilled AdSense Units and Reserved Height' section.
+
+## linkedin-banner-safe-zone
+
+How and on what date did you get the desktop display values in design/social-banners/render.cjs (banner shown 804 px wide, profile photo 160 px at left 24 and top 89): DevTools on your live profile, and at what browser window width? And can you supply one phone screenshot of your LinkedIn profile header, with phone model, OS and LinkedIn app version, so the approximate phone window (x 228-1356, photo at x 274-552) can be confirmed or corrected? The answer replaces the sentence "The script's comments do not say how the values were taken" in the 'Convert What Your Screen Shows Into Upload Pixels' section and would let the post headline measured coordinates.
+
+## linkedin-creator-mode-not-showing
+
+Did you have LinkedIn creator mode switched on before LinkedIn removed the toggle in early 2024, and which primary button does your profile show today (Follow or Connect)? If it shows Follow, did you turn on Make follow primary yourself or was it carried over? (Answer belongs in 'How to Get a Follow Button Instead of Connect on LinkedIn', after the 'Reasons a Profile Shows Follow Instead of Connect' table.)
+
+## ga4-ai-assistant-channel
+
+In GA4 Traffic acquisition for swapbiswas.com, with Session source / medium as the dimension and the range April to October 2026: which sources carry the medium ai-assistant, what is the earliest date one appears, and do chatgpt.com sessions before 13 May 2026 still show as chatgpt.com / referral? (The answer belongs in 'How to Check ChatGPT Traffic in GA4' and would settle two items in 'Questions Google's AI Assistant Pages Leave Open', the history question and the source-value question, for one real property.)

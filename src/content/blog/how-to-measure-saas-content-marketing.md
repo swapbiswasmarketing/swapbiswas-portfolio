@@ -263,7 +263,7 @@ The reason to compute ROI at all, given how soft it is, is that every other func
 Assistants sit inside layer 4 by default, and they are the fastest-moving part of it. What is measurable today, without new tooling:
 
 - Citation presence on your defined query set. Run the same 40 to 120 queries through the assistants your buyers use, once a month, and log whether your domain is cited. It is a manual count at first and it trends.
-- Referral sessions from assistant domains, where the assistant passes a referrer at all. Treat this as a floor on the real number, never as the number.
+- Referral sessions from assistant domains, where the assistant passes a referrer at all. Treat this as a floor on the real number, never as the number. GA4 now groups clicks from the assistants Google recognizes into [a separate AI Assistant channel](/blog/ga4-ai-assistant-channel/), so count that row together with any assistant sources that arrive as Referral, and the sum is still a floor.
 - Branded search volume, tracked against your publishing cadence. If assistants are summarizing your work without sending clicks, branded search is where the effect surfaces.
 - Assistant names inside the self-reported attribution field. Bucket ChatGPT, Perplexity, Gemini, Copilot and Claude by name rather than dropping them into an "other" bucket.
 

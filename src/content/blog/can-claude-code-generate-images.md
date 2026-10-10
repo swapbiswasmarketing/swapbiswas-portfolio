@@ -165,6 +165,8 @@ const shot2x = await page.screenshot({ type: 'png', clip: { x: 0, y: 0, width: s
 
 `deviceScaleFactor: 2` is what makes the render 2x, and the comment above the launch line gives the reason for its flag: "Windows otherwise bakes ClearType subpixel fringes into small text." Between `goto` and the screenshot the script also waits for `document.fonts.ready`, so the web fonts have loaded before the capture. It then writes the screenshot buffer as the 2x PNG, and sharp resizes it to the 1x file.
 
+On a LinkedIn banner the text also has to stay clear of the profile photo, and [the photo and phone-window zones of a 1584 x 396 banner](/blog/linkedin-banner-safe-zone/) are mapped in upload pixels.
+
 ### Eight Cover Paintings From an Image Model
 
 The post covers are eight Renaissance-style oil paintings. They came from a Gemini image model through `scripts/generate-art.cjs`, a 79-line Node script that reads an API key from an environment variable, sends each prompt to Google's API and saves the image that comes back. A second script of 66 lines color-grades the paintings and exports the WebP files.

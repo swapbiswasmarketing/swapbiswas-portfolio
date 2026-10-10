@@ -53,7 +53,7 @@ LinkedIn's [newsletter access criteria](https://www.linkedin.com/help/linkedin/a
 - Activity: "Recent shares of original content (any type)"
 - Standing: "A history of abiding by our Professional Community Policies"
 
-The page does not mention Creator Mode. [BrandGhost's comparison of the two formats](https://www.brandghost.ai/blog/posts/linkedin-articles-vs-newsletters) still says "LinkedIn Newsletters require Creator Mode enabled on personal profiles", citing a LinkedIn Help page (a522537) that returned HTTP 404 when I requested it on 3 October 2026. The access criteria page read "Last updated: 2 years ago" that day.
+The page does not mention Creator Mode. LinkedIn removed the Creator Mode toggle in 2024, and in my map of [where each Creator Mode feature went](/blog/linkedin-creator-mode-not-showing/), the newsletter row points to this same access criteria page. [BrandGhost's comparison of the two formats](https://www.brandghost.ai/blog/posts/linkedin-articles-vs-newsletters) still says "LinkedIn Newsletters require Creator Mode enabled on personal profiles", citing a LinkedIn Help page (a522537) that returned HTTP 404 when I requested it on 3 October 2026. The access criteria page read "Last updated: 2 years ago" that day.
 
 The limits are in LinkedIn's help on managing a newsletter and on [creating a Page newsletter](https://www.linkedin.com/help/linkedin/answer/a596833), and the Page rule is on its [newsletter page help](https://www.linkedin.com/help/linkedin/answer/a518936):
 

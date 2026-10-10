@@ -900,6 +900,14 @@
 		],
 		"hash": "54c303f26b7fec82"
 	},
+	"/assets/blog/ga4-ai-assistant-channel/where-ai-traffic-lands.webp": {
+		"w": 1200,
+		"h": 797,
+		"v": [
+			660
+		],
+		"hash": "5d9bec2b59cfe796"
+	},
 	"/assets/blog/go-to-market-startups/gtm-7-steps.webp": {
 		"w": 1800,
 		"h": 1080,
@@ -1234,6 +1242,38 @@
 			660
 		],
 		"hash": "7dd5e62fc76a28cc"
+	},
+	"/assets/blog/linkedin-banner-safe-zone/every-published-number.webp": {
+		"w": 1200,
+		"h": 591,
+		"v": [
+			660
+		],
+		"hash": "42ecbf28ca2df993"
+	},
+	"/assets/blog/linkedin-banner-safe-zone/overlay-preview.webp": {
+		"w": 1200,
+		"h": 300,
+		"v": [
+			660
+		],
+		"hash": "ad8dd8b1f29eab96"
+	},
+	"/assets/blog/linkedin-banner-safe-zone/safe-zone-map.webp": {
+		"w": 1200,
+		"h": 579,
+		"v": [
+			660
+		],
+		"hash": "58c2863ecf83ea36"
+	},
+	"/assets/blog/linkedin-creator-mode-not-showing/where-creator-mode-went.webp": {
+		"w": 1200,
+		"h": 741,
+		"v": [
+			660
+		],
+		"hash": "30c9c673040f241f"
 	},
 	"/assets/blog/linkedin-impressions-on-your-experience/profile-engagement-path.webp": {
 		"w": 1200,

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 930" width="1400" height="930">
+  <rect width="1400" height="930" fill="#f6f4ef"/>
+
+  <text x="40" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where GA4 files AI assistant traffic</text>
+  <text x="40" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Session default channel group, per Google Analytics Help, read 10 October 2026</text>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.92" fill="#6a645c">
+    <text x="40" y="160">WHAT REACHES YOUR SITE</text>
+    <text x="872" y="160">CHANNEL IN YOUR REPORTS</text>
+  </g>
+
+  <g fill="#ffffff" stroke="#e4dfd6" stroke-width="1">
+    <rect x="40" y="180" width="740" height="78" rx="12"/>
+    <rect x="40" y="272" width="740" height="78" rx="12"/>
+    <rect x="40" y="364" width="740" height="78" rx="12"/>
+    <rect x="40" y="456" width="740" height="78" rx="12"/>
+    <rect x="40" y="548" width="740" height="78" rx="12"/>
+    <rect x="40" y="640" width="740" height="78" rx="12"/>
+    <rect x="40" y="732" width="740" height="78" rx="12"/>
+  </g>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">
+    <text x="68" y="214">Referrer matches Google's list of AI assistants</text>
+    <text x="68" y="306">Tagged link with utm_medium=ai-assistant</text>
+    <text x="68" y="398">Click from Google's AI Overviews or AI Mode</text>
+    <text x="68" y="490">Source on Google's search or social list</text>
+    <text x="68" y="582">Referrer on none of Google's lists</text>
+    <text x="68" y="674">No referrer and no UTM parameters</text>
+    <text x="68" y="766">UTM tags that match no channel rule</text>
+  </g>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">
+    <text x="68" y="242">GA4 sets medium ai-assistant and campaign (ai-assistant)</text>
+    <text x="68" y="334">The channel rule: medium exactly matches ai-assistant</text>
+    <text x="68" y="426">Google files these with organic search results</text>
+    <text x="68" y="518">The list files bing as search, t.co and whatsapp as social</text>
+    <text x="68" y="610">Includes assistants missing from Google's AI list</text>
+    <text x="68" y="702">Google processes it as direct traffic</text>
+    <text x="68" y="794">No definition on the channel page fits</text>
+  </g>
+
+  <g stroke="#b53b15" stroke-width="2.5" stroke-linecap="square">
+    <line x1="792" y1="219" x2="814" y2="219"/>
+    <line x1="792" y1="311" x2="814" y2="311"/>
+    <line x1="814" y1="219" x2="814" y2="311"/>
+    <line x1="814" y1="265" x2="852" y2="265"/>
+  </g>
+  <polygon points="852,258 866,265 852,272" fill="#b53b15"/>
+
+  <g stroke="#15130f" stroke-width="2.5">
+    <line x1="792" y1="403" x2="852" y2="403"/>
+    <line x1="792" y1="495" x2="852" y2="495"/>
+    <line x1="792" y1="587" x2="852" y2="587"/>
+    <line x1="792" y1="679" x2="852" y2="679"/>
+    <line x1="792" y1="771" x2="852" y2="771"/>
+  </g>
+  <g fill="#15130f">
+    <polygon points="852,396 866,403 852,410"/>
+    <polygon points="852,488 866,495 852,502"/>
+    <polygon points="852,580 866,587 852,594"/>
+    <polygon points="852,672 866,679 852,686"/>
+    <polygon points="852,764 866,771 852,778"/>
+  </g>
+
+  <rect x="872" y="180" width="488" height="170" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <g fill="#ffffff" stroke="#e4dfd6" stroke-width="1">
+    <rect x="872" y="364" width="488" height="78" rx="12"/>
+    <rect x="872" y="456" width="488" height="78" rx="12"/>
+    <rect x="872" y="548" width="488" height="78" rx="12"/>
+    <rect x="872" y="640" width="488" height="78" rx="12"/>
+    <rect x="872" y="732" width="488" height="78" rx="12"/>
+  </g>
+
+  <text x="900" y="257" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">AI Assistant</text>
+  <text x="900" y="291" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">medium ai-assistant</text>
+
+  <g font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">
+    <text x="900" y="411">Organic Search</text>
+    <text x="900" y="503">Organic Search or Organic Social</text>
+    <text x="900" y="595">Referral</text>
+    <text x="900" y="687">Direct</text>
+    <text x="900" y="779">Unassigned</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">
+    <text x="40" y="852">Rules: Google Analytics Help, default channel group page and campaigns and traffic sources page.</text>
+    <text x="40" y="884">Neither page publishes the list of AI assistants that the first rule checks.</text>
+  </g>
+</svg>

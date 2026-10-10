@@ -2357,3 +2357,72 @@ https://swapbiswas.com/blog/astro-adsense/?utm_source=linkedin&utm_medium=social
 #Astro #AdSense #WebDevelopment #JavaScript #SEO
 
 ---
+
+### LinkedIn Banner Safe Zone: 9 Guides and a Free Overlay PNG
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a long narrow linen banner unrolled flat across an oak table, a round convex mirror in a turned wooden frame resting over its lower left corner, a brass folding rule and a pair of dividers laid along its top edge, a small slate and a stub of chalk beside it, a single vermilion red pin standing upright in the cloth a little right of centre, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+LinkedIn's Help page for the profile cover image recommends 1584 x 396 pixels and gives no safe zone.
+I checked what nine banner guides print instead: obey every safe-zone number at once and you are left with a 46 x 168 pixel box, 1.2% of the banner.
+
+- Five of the nine guides print a safe box, none says how its numbers were measured, and their figures for the phone crop differ more than sixfold.
+- My view is that a safe zone belongs to your screens, so the post gives the conversion: on a desktop that shows the whole banner, scale = 1584 / its displayed width.
+- Mapped onto the upload, the working values in the script that renders my own banner put the desktop photo at x 47-363 from y 175 down, and the phone window at about x 228-1356.
+- The free overlay is a transparent 1584 x 396 PNG that marks both photos and the phone window, with two rulers numbered every 100 px. Hide the layer before you export.
+- Company Page covers have their own spec: LinkedIn lists 1512 x 256 pixels, and six of the nine guides print 1128 x 191, a figure that is not on LinkedIn's page.
+
+When you open your own profile in the LinkedIn phone app, is any of your banner text cut off or covered by your photo?
+
+https://swapbiswas.com/blog/linkedin-banner-safe-zone/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-banner-safe-zone
+
+#LinkedInMarketing #PersonalBranding #GraphicDesign #SocialMediaMarketing
+
+---
+
+### LinkedIn Creator Mode Not Showing? It Was Removed in 2024
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a small walnut cabinet of drawers on a table with one drawer pulled out and set down empty beside it, the objects that drawer held now spread across the table in separate places (a brass hand bell, a quill and inkwell, a folded letter tied with twine, a small magnifying lens), a single vermilion red ribbon tied to the brass pull of the empty drawer, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Three of the eleven creator mode guides I checked on 10 October 2026 still give the steps for turning on a toggle that LinkedIn's Help notice scheduled for removal in March 2024.
+The notice itself is out of date on two rows: the profile link and Audio Events.
+
+- The Follow or Connect choice is now a setting: Settings & Privacy, Visibility, Followers, then the Make follow primary toggle. LinkedIn says changes can take up to 24 hours.
+- Newsletters and creator analytics are open to all members, and LinkedIn Live has access criteria, including "more than 150 followers and/or connections".
+- The profile link is now a custom button that LinkedIn's newest page on it limits to "a select group" of Premium Business, Sales Navigator and Recruiter Lite subscribers. Any other account can show up to three website links in Contact info.
+- Native Audio Events creation ended on 2 December 2024, yet four of the seven guides that call creator mode gone still list Audio Events as something you can use.
+- LinkedIn's own Help search for creator mode still puts the 2024 notice at the top of its results, so before you plan around a feature, open the feature's Help page and read the Last updated stamp.
+
+Who lands on your LinkedIn profile more often: people who know you from your posts, or people you work with, hire or sell to?
+
+https://swapbiswas.com/blog/linkedin-creator-mode-not-showing/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-creator-mode-not-showing
+
+#LinkedInMarketing #PersonalBranding #SocialMediaMarketing #ContentMarketing
+
+---
+
+### GA4 AI Assistant Channel: Which Assistants Google Names
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a clerk's desk with a wooden sorting rack of pigeonholes holding plain folded letters, the last compartment in the row newer and lighter in colour than the rest, two folded letters left lying on the desk outside the rack, an open register with blank ruled columns and a quill beside it, a single vermilion red wax seal on one of the two stray letters, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+GA4 files a visit from an AI chat assistant on Google's list under the channel AI Assistant, the medium ai-assistant and the campaign (ai-assistant).
+Google names assistants in four places across three Help pages, and when I read them on 10 October 2026, no two of the lists matched.
+
+- Only ChatGPT is named in all four places. Google's 13 May 2026 What's new entry named ChatGPT, Gemini and Claude, while the channel page names ChatGPT, Gemini, DeepSeek, Copilot and Grok.
+- The source list the channel page links is a 27-page PDF of 819 sources with no AI category, and its Last-Modified header reads 9 February 2023, more than three years before Google announced the channel.
+- I ran the example regex from Google's custom channel groups article both ways, and it matches neither DeepSeek nor Grok. As a full match, GA4's default, it counts www.gov.ai, the Government of Anguilla's website; as a partial match, the way BigQuery's REGEXP_CONTAINS reads it, it catches 18 of the 819 sources on Google's list.
+- Clicks from Google's AI Overviews and AI Mode land in Organic Search, and an answer that names your brand without a link never becomes an AI Assistant session, so read the AI Assistant row as a floor on what assistants send you.
+- Google does not say whether the channel reaches sessions from before 13 May 2026, but custom channel groups "can be applied to your reports retroactively", so a custom channel that matches assistant sources can group the older sessions too.
+
+If you open Traffic acquisition by Session source / medium and search ai-assistant, which sources does your property list?
+
+https://swapbiswas.com/blog/ga4-ai-assistant-channel/?utm_source=linkedin&utm_medium=social&utm_campaign=ga4-ai-assistant-channel
+
+#GA4 #GoogleAnalytics #MarketingAnalytics #AISearch #SEO
+
+---

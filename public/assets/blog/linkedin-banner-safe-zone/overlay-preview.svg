@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396">
+  <defs>
+  <clipPath id="banner"><rect x="0" y="0" width="1584" height="396"/></clipPath>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <rect width="12" height="12" fill="#15130f" fill-opacity="0.18"/>
+  <rect width="4" height="12" fill="#ffffff" fill-opacity="0.4"/>
+  </pattern>
+  </defs>
+  <rect width="1584" height="396" fill="#f6f4ef"/>
+  <g clip-path="url(#banner)">
+  <path d="M0 0 H1584 V396 H0 Z M228 10 V386 H1356 V10 Z" fill="url(#hatch)" fill-rule="evenodd"/>
+  <rect x="228" y="10" width="1128" height="376" fill="none" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85"/>
+  <rect x="228" y="10" width="1128" height="376" fill="none" stroke="#15130f" stroke-width="3" stroke-dasharray="14 8"/>
+  <circle cx="204.9" cy="333" r="157.6" fill="#b53b15" fill-opacity="0.2" stroke="#ffffff" stroke-width="8" stroke-opacity="0.85"/>
+  <circle cx="204.9" cy="333" r="157.6" fill="none" stroke="#b53b15" stroke-width="4"/>
+  <circle cx="413.1" cy="339.7" r="138.8" fill="none" stroke="#ffffff" stroke-width="8" stroke-opacity="0.85"/>
+  <circle cx="413.1" cy="339.7" r="138.8" fill="none" stroke="#b53b15" stroke-width="4" stroke-dasharray="16 10"/>
+  <line x1="100" y1="10" x2="100" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="100" y1="10" x2="100" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="100" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">100</text>
+  <line x1="200" y1="10" x2="200" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="200" y1="10" x2="200" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="200" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">200</text>
+  <line x1="300" y1="10" x2="300" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="300" y1="10" x2="300" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="300" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">300</text>
+  <line x1="400" y1="10" x2="400" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="400" y1="10" x2="400" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="400" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">400</text>
+  <line x1="500" y1="10" x2="500" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="500" y1="10" x2="500" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="500" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">500</text>
+  <line x1="600" y1="10" x2="600" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="600" y1="10" x2="600" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="600" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">600</text>
+  <line x1="700" y1="10" x2="700" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="700" y1="10" x2="700" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="700" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">700</text>
+  <line x1="800" y1="10" x2="800" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="800" y1="10" x2="800" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="800" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">800</text>
+  <line x1="900" y1="10" x2="900" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="900" y1="10" x2="900" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="900" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">900</text>
+  <line x1="1000" y1="10" x2="1000" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="1000" y1="10" x2="1000" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="1000" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">1000</text>
+  <line x1="1100" y1="10" x2="1100" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="1100" y1="10" x2="1100" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="1100" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">1100</text>
+  <line x1="1200" y1="10" x2="1200" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="1200" y1="10" x2="1200" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="1200" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">1200</text>
+  <line x1="1300" y1="10" x2="1300" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="1300" y1="10" x2="1300" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="1300" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">1300</text>
+  <line x1="1400" y1="10" x2="1400" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="1400" y1="10" x2="1400" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="1400" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">1400</text>
+  <line x1="1500" y1="10" x2="1500" y2="34" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="1500" y1="10" x2="1500" y2="34" stroke="#15130f" stroke-width="3"/>
+  <text x="1500" y="68" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">1500</text>
+  <line x1="100" y1="182" x2="100" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="100" y1="182" x2="100" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="100" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">100</text>
+  <line x1="200" y1="182" x2="200" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="200" y1="182" x2="200" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="200" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">200</text>
+  <line x1="300" y1="182" x2="300" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="300" y1="182" x2="300" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="300" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">300</text>
+  <line x1="400" y1="182" x2="400" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="400" y1="182" x2="400" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="400" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">400</text>
+  <line x1="500" y1="182" x2="500" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="500" y1="182" x2="500" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="500" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">500</text>
+  <line x1="600" y1="182" x2="600" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="600" y1="182" x2="600" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="600" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">600</text>
+  <line x1="700" y1="182" x2="700" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="700" y1="182" x2="700" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="700" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">700</text>
+  <line x1="800" y1="182" x2="800" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="800" y1="182" x2="800" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="800" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">800</text>
+  <line x1="900" y1="182" x2="900" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="900" y1="182" x2="900" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="900" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">900</text>
+  <line x1="1000" y1="182" x2="1000" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="1000" y1="182" x2="1000" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="1000" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">1000</text>
+  <line x1="1100" y1="182" x2="1100" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="1100" y1="182" x2="1100" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="1100" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">1100</text>
+  <line x1="1200" y1="182" x2="1200" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="1200" y1="182" x2="1200" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="1200" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">1200</text>
+  <line x1="1300" y1="182" x2="1300" y2="206" stroke="#ffffff" stroke-width="7" stroke-opacity="0.85"/>
+  <line x1="1300" y1="182" x2="1300" y2="206" stroke="#15130f" stroke-width="3"/>
+  <text x="1300" y="170" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="32" fill="#15130f" stroke="#ffffff" stroke-width="6" stroke-opacity="0.85" paint-order="stroke">1300</text>
+  <rect x="1364" y="84" width="214" height="300" rx="8" fill="#ffffff" fill-opacity="0.94"/>
+  <text x="1376" y="112" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="23" letter-spacing="1.5" fill="#6a645c">KEY</text>
+  <circle cx="1385" cy="138" r="10" fill="#b53b15" fill-opacity="0.2" stroke="#b53b15" stroke-width="3"/>
+  <text x="1402" y="146" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#15130f">Desktop photo</text>
+  <circle cx="1385" cy="172" r="10" fill="none" stroke="#b53b15" stroke-width="3" stroke-dasharray="5 3"/>
+  <text x="1402" y="180" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#15130f">Phone photo</text>
+  <rect x="1374" y="198" width="22" height="16" fill="none" stroke="#15130f" stroke-width="2.5" stroke-dasharray="5 3"/>
+  <text x="1402" y="214" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#15130f">Phone window</text>
+  <rect x="1374" y="232" width="22" height="16" fill="url(#hatch)" stroke="#15130f" stroke-width="1"/>
+  <text x="1402" y="248" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#15130f">Hatched: cut</text>
+  <text x="1402" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#15130f">off on phones</text>
+  <text x="1376" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">Phone values are</text>
+  <text x="1376" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">approximate</text>
+  <text x="1376" y="372" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="23" fill="#6a645c">swapbiswas.com</text>
+  </g>
+</svg>

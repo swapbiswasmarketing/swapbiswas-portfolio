@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 864" width="1400" height="864">
+  <rect x="0" y="0" width="1400" height="864" fill="#f6f4ef"/>
+
+  <text x="60" y="76" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where creator mode's features went</text>
+  <text x="60" y="116" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Status on LinkedIn's Help pages, read on 10 October 2026</text>
+
+  <rect x="60" y="150" width="620" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">REMOVED</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="90" y="234">Creator mode toggle in Resources: March 2024</text>
+    <text x="90" y="268">Profile hashtags (topics): February 2024</text>
+    <text x="90" y="302">Old creator mode Help article: HTTP 404</text>
+  </g>
+
+  <rect x="720" y="150" width="620" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="750" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">NOW A SETTING YOU CONTROL</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="750" y="234">Follow as primary button: Settings &amp; Privacy,</text>
+    <text x="750" y="268">Visibility, Followers, Make follow primary</text>
+  </g>
+
+  <rect x="60" y="354" width="620" height="214" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="394" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">OPEN TO ALL MEMBERS</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="90" y="438">Creator analytics, on the Analytics &amp; tools page</text>
+    <text x="90" y="472">Newsletters: any member can create one</text>
+  </g>
+
+  <rect x="720" y="354" width="620" height="214" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="750" y="394" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">BEHIND ACCESS CRITERIA</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="750" y="438">LinkedIn Live: more than 150 followers and/or</text>
+    <text x="750" y="472">connections, account 30+ days old</text>
+    <text x="750" y="506">Follow link: good standing, outside mainland China,</text>
+    <text x="750" y="540">once Follow is your primary button</text>
+  </g>
+
+  <rect x="60" y="592" width="1280" height="180" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="90" y="632" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#b53b15">THE 2024 NOTICE STILL CALLS THESE AVAILABLE</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">
+    <text x="90" y="676">Profile link: now the custom button, for a select group of Premium Business,</text>
+    <text x="90" y="710">Sales Navigator and Recruiter Lite subscribers</text>
+    <text x="90" y="744">Audio Events: native creation ended 2 December 2024; audio-only events move to LinkedIn Live</text>
+  </g>
+
+  <text x="60" y="820" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sources: LinkedIn Help a5999182, a528011, a762822, a704175, a1432051, a591266, a568503, a1484520, a7144422</text>
+</svg>

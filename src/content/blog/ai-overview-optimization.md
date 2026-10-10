@@ -118,6 +118,8 @@ Measurement here is still maturing. A workable stack:
 - **Manual SERP checks** on 20-30 key queries per month. Screenshot and log whether your page is cited.
 - **Traffic change on high-AI-Overview queries** - look at CTR movement on informational queries even if rankings hold.
 
+In GA4, clicks from AI Overviews and AI Mode count as Organic Search, so look for that traffic inside your organic numbers rather than in [the AI Assistant channel GA4 uses for chat assistants such as ChatGPT](/blog/ga4-ai-assistant-channel/).
+
 The honest answer is that most teams do not yet have clean attribution from AI Overviews to revenue. Treat this as a leading indicator program: improve the structural and content layer, watch citation counts grow, and expect the revenue attribution picture to improve as Google's reporting catches up.
 
 For how to track SEO movement more broadly, see our guide on [how do I check my SEO ranking](/blog/how-do-i-check-my-seo-ranking/) and [what is an SEO report](/blog/what-is-seo-report/).

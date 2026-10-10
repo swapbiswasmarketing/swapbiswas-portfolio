@@ -92,6 +92,8 @@ The critical difference: Paid Search, Display, and Paid Video each represent a s
 
 This is what makes Cross Network both useful and frustrating. It accurately reflects how Performance Max works (budget flows across networks dynamically), but it removes the channel-level granularity marketers are used to.
 
+Since May 13, 2026, GA4's default channel group has also held an AI Assistant channel for sessions whose referrer matches Google's list of AI assistants, and I compared [the assistant lists Google's Help pages give for that channel](/blog/ga4-ai-assistant-channel/).
+
 ## How to Analyze Cross Network Traffic in GA4
 
 Here is how to find and evaluate your Cross Network data step by step.

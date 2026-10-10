@@ -113,6 +113,8 @@ A product marketing manager portfolio needs one link you can paste anywhere and 
 
 A workable rule: keep one master copy on a website or a Notion page, and for each application export a PDF of the two samples that job description stresses most.
 
+If your LinkedIn banner points visitors to the portfolio, keep that line clear of the profile photo and inside [the area of the banner that desktop and the phone app both show](/blog/linkedin-banner-safe-zone/).
+
 ## Some PMM Interview Loops Use a Take-Home Instead
 
 Not every interview loop asks for a PMM portfolio. Three Sharebird answers from PMM leaders, labelled 3y and 4y old on the site in October 2026, show how loops vary:

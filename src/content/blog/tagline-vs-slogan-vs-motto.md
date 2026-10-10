@@ -134,6 +134,8 @@ Each line below comes with where it runs, its source or the date I checked it, a
 
 The last two rows are mine. The banner line sits beside my name and photo with no end date, on [a LinkedIn banner I render from HTML](/blog/claude-design-vs-claude-code/), so it is a personal tagline that has had eight days and has not passed a record check. The headline line does two jobs: on the profile it sits next to my name, and in [the brief-first steps behind building this site](/blog/build-a-personal-website-with-claude-code/) it is the working order I follow. Brand Vision's fourth rule would split it into two lines; on a one-person profile, the headline carries both.
 
+If your own tagline is going on a LinkedIn banner, check [where a banner line can sit clear of the profile photo](/blog/linkedin-banner-safe-zone/) on both desktop and the phone app.
+
 ## Tagline vs Motto: Lines Written for the People Inside
 
 A motto can be public and still be a motto, as long as it is written for the people inside.

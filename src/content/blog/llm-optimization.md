@@ -15,7 +15,7 @@ faqs:
   - q: "What is llms.txt?"
     a: "llms.txt is a proposed standard that lets sites publish a markdown index of their highest-value content for LLMs to ingest. It is not yet adopted by every model, but adding one is low-cost and signals you are an LLM-aware publisher. swapbiswas.com publishes llms.txt and llms-full.txt at the root."
   - q: "How do I know if my content is being cited by LLMs?"
-    a: "There is no Google Search Console for LLMs yet. The practical signal is referral traffic from chatgpt.com, perplexity.ai, and gemini.google.com in your analytics. A handful of tools (Ahrefs Brand Radar, Profound, Otterly) attempt to track AI citations directly. For now, treat LLM traffic as an emerging channel - measure it where you can and assume the signal is partial."
+    a: "There is no Google Search Console for LLMs yet. The practical signal is GA4's AI Assistant channel (medium ai-assistant), plus Referral rows for assistants Google's list does not cover. A handful of tools (Ahrefs Brand Radar, Profound, Otterly) attempt to track AI citations directly. For now, treat LLM traffic as an emerging channel - measure it where you can and assume the signal is partial."
 ---
 
 Sam Altman announced at OpenAI's October 2025 Dev Day that [ChatGPT had crossed 800 million weekly active users](https://techcrunch.com/2025/10/06/sam-altman-says-chatgpt-has-hit-800m-weekly-active-users/). A growing share of those users now research, compare, and shortlist products inside the chat - and when they ask ChatGPT, Perplexity, Claude, or Gemini for a recommendation, the answer cites a handful of sources, not ten blue links. **LLM optimization** is the practice of being one of those citations.
@@ -201,7 +201,7 @@ If any check fails, fix it before publishing the next page. The compound effect 
 
 There is no Google Search Console for LLMs yet. Three approximations:
 
-1. **Referral traffic** in GA4 from `chatgpt.com`, `perplexity.ai`, `gemini.google.com`, `claude.ai`, `copilot.microsoft.com`. Filter by source and watch the trendline.
+1. **The AI Assistant channel** in GA4 (medium `ai-assistant`), announced by Google on 13 May 2026, plus any assistant sources still arriving as Referral. Google's pages each name a different set of assistants for that channel, which [my read of Google's AI Assistant channel pages](/blog/ga4-ai-assistant-channel/) sets side by side. Filter by Session source and watch the trendline.
 2. **Direct LLM testing.** Run your top 20 target queries through ChatGPT, Perplexity, and Gemini once a month. Track whether your URL is cited. A simple spreadsheet works.
 3. **AI citation tools.** Ahrefs Brand Radar, Profound, Otterly, and a small but growing list of others claim to track citations across major LLMs. Coverage is partial; treat the data as directional.
 

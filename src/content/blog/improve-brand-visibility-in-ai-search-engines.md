@@ -110,7 +110,7 @@ Run a technical pass regularly so nothing silently breaks. A recurring [SEO audi
 
 You cannot improve what you do not track. AI visibility needs its own measurement loop, separate from rankings.
 
-Run your top buyer questions through ChatGPT, Perplexity, Gemini, and Google AI Overviews on a fixed schedule and log whether you are mentioned, cited, or absent. Tools like Ahrefs Brand Radar, Semrush, and Profound automate this across hundreds of prompts.
+Run your top buyer questions through ChatGPT, Perplexity, Gemini, and Google AI Overviews on a fixed schedule and log whether you are mentioned, cited, or absent. Tools like Ahrefs Brand Radar, Semrush, and Profound automate this across hundreds of prompts. For the clicks that do arrive, [the AI Assistant row in GA4](/blog/ga4-ai-assistant-channel/) counts sessions from the chat assistants Google recognizes, while clicks from Google AI Overviews count as Organic Search.
 
 The payoff is real. The average AI search visitor is **4.4x more valuable** than the average traditional organic visitor by conversion rate, [per MarTech, citing Semrush data](https://martech.org/average-llm-visitor-worth-4-4x-organic-search-visitors/), because they arrive better informed and closer to a decision.
 
