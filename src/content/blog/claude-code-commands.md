@@ -85,6 +85,8 @@ These tables cover the rest of the built-in and bundled commands a non-developer
 | `/insights` | Generates an HTML report on your recent sessions: projects, how you use Claude Code, where things go wrong |
 | `/doctor` (skill) | Diagnoses installation and configuration issues and can fix them |
 
+`/fast`, `/model` and `/effort` each change how long a turn takes, and a `/model` switch mid-session makes the next response slower while the prompt cache rebuilds; [my triage for a slow Claude Code session](/blog/why-is-claude-code-so-slow/) starts by sorting the slowdown into one slow turn, slow on every turn or a slow machine.
+
 `/status` also shows which credential Claude Code is using, with a `Login method` row for your claude.ai plan or an `API key` row for a Claude Console organization; [my comparison of a subscription login and an API key](/blog/claude-code-api-key-vs-subscription/) lists the features an approved key switches off.
 
 `/permissions` lists every saved rule and the file it came from, but I treat a prompt that keeps coming back as a mode question before a rule question; [my checklist for repeat permission prompts](/blog/claude-code-keeps-asking-for-permission/) pairs each cause with a check and a fix.

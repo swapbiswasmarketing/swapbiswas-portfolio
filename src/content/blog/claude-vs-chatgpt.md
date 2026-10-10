@@ -125,9 +125,13 @@ At $20 a month both plans cost the same, but they bill and meter differently. As
 
 The annual math: twelve months of Plus is 12 x $20 = $240, and a year of Claude Pro billed annually is $200, so Claude costs **$40 less** if you commit. Paid monthly, both come to $240 a year.
 
+For a buyer in India, the Claude Pro price depends on whether you check out on the App Store, Google Play or the web, and [my checkout-by-checkout breakdown of Claude Pro pricing](/blog/claude-pro-price-in-india/) also sets Pro against ChatGPT Go.
+
 On Claude, the shared pool means a long Claude Code session eats into your chat allowance. When that pool runs out, you can wait for the session or weekly limit to reset, or [keep working on usage credits billed at standard API rates](/blog/claude-usage-limits/). On ChatGPT's desktop app, Codex CLI and IDE extension, built-in image generation "counts toward your general Codex usage limits", per OpenAI's [image generation docs](https://learn.chatgpt.com/docs/image-generation).
 
 Is Claude Pro worth it over ChatGPT Plus? Pay for Pro if you want Claude Code in the same subscription, rewrite a lot of launch copy, or will commit for a year. Pay for Plus if images are part of your weekly output or you want expanded Codex and deep research.
+
+Students get no separate rate on Claude Pro, and [my dated check for a Claude student discount in India](/blog/claude-student-discount-india/) lists the routes a student does have.
 
 ## Claude Code vs OpenAI Codex for Marketers Who Build
 

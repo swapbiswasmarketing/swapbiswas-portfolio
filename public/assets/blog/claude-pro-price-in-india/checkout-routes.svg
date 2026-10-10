@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 940" width="1400" height="940">
+  <rect x="0" y="0" width="1400" height="940" fill="#f6f4ef"/>
+
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Claude in India: what each checkout shows</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Public pages read logged out from an Indian connection on 10 October 2026</text>
+
+  <rect x="60" y="140" width="410" height="640" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">WEB CHECKOUT</text>
+  <text x="88" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">claude.ai</text>
+  <line x1="88" y1="240" x2="442" y2="240" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="274" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PRICE ON A PUBLIC PAGE</text>
+  <text x="88" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Pro: $20 a month</text>
+  <text x="88" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro annual: $200 a year</text>
+  <text x="88" y="370" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Max: $100 or $200 a month</text>
+  <text x="88" y="402" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rupees: none on the public page</text>
+  <line x1="88" y1="426" x2="442" y2="426" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">TAX WORDING ON THE PAGE</text>
+  <text x="88" y="492" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"Prices shown don't include</text>
+  <text x="88" y="524" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">applicable tax."</text>
+  <line x1="88" y1="548" x2="442" y2="548" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="582" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PAY WITH</text>
+  <text x="88" y="614" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Credit or debit card only</text>
+  <line x1="88" y1="670" x2="442" y2="670" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="704" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">BILLED BY</text>
+  <text x="88" y="736" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Anthropic</text>
+
+  <rect x="495" y="140" width="410" height="640" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+  <text x="523" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#b53b15">IPHONE AND IPAD</text>
+  <text x="523" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">App Store, India</text>
+  <line x1="523" y1="240" x2="877" y2="240" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="523" y="274" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PRICE ON A PUBLIC PAGE</text>
+  <text x="523" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Pro: Rs 1,999 a month</text>
+  <text x="523" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro annual: Rs 19,900 a year</text>
+  <text x="523" y="370" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Max 5x: Rs 12,900 a month</text>
+  <text x="523" y="402" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Max 20x: Rs 24,900 a month</text>
+  <line x1="523" y1="426" x2="877" y2="426" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="523" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">TAX WORDING ON THE PAGE</text>
+  <text x="523" y="492" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No tax wording on the listing</text>
+  <line x1="523" y1="548" x2="877" y2="548" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="523" y="582" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PAY WITH</text>
+  <text x="523" y="614" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">UPI, Visa, Mastercard,</text>
+  <text x="523" y="646" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Apple Account balance</text>
+  <line x1="523" y1="670" x2="877" y2="670" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="523" y="704" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">BILLED BY</text>
+  <text x="523" y="736" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Apple</text>
+
+  <rect x="930" y="140" width="410" height="640" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="958" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">ANDROID</text>
+  <text x="958" y="218" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google Play, India</text>
+  <line x1="958" y1="240" x2="1312" y2="240" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="958" y="274" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PRICE ON A PUBLIC PAGE</text>
+  <text x="958" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">One range for every item:</text>
+  <text x="958" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rs 1,999.00 to Rs 24,987.50</text>
+  <text x="958" y="370" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">per item, not per plan</text>
+  <line x1="958" y1="426" x2="1312" y2="426" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="958" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">TAX WORDING ON THE PAGE</text>
+  <text x="958" y="492" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"All prices include GST."</text>
+  <line x1="958" y1="548" x2="1312" y2="548" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="958" y="582" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PAY WITH</text>
+  <text x="958" y="614" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">UPI, Visa, Mastercard,</text>
+  <text x="958" y="646" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Google Play balance</text>
+  <line x1="958" y1="670" x2="1312" y2="670" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="958" y="704" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">BILLED BY</text>
+  <text x="958" y="736" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Google</text>
+
+  <rect x="60" y="806" width="1280" height="90" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="842" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Highlighted: the one listing that shows a rupee price per plan without a login.</text>
+  <text x="92" y="874" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The web price for an account sits behind a login; press reported Rs 2,399 a month for Pro in July 2026.</text>
+</svg>

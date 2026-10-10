@@ -62,7 +62,7 @@ Let's get into it.
 
 **Best for:** Long-form blog posts, detailed analysis, editing for tone and clarity, and complex writing tasks. For work on a folder of files, such as a website repo, my guide to [Claude vs Claude Code](/blog/claude-vs-claude-code/) explains when a non-developer needs Claude Code instead of the chat app.
 
-**Honest take:** Claude consistently produces the most natural-sounding marketing copy of the three major LLMs. If you're writing thought leadership or in-depth guides, this is your best free option. When you outgrow the free tier, my [Claude vs ChatGPT comparison](/blog/claude-vs-chatgpt/) maps each tool to marketing jobs and sets Claude Pro against ChatGPT Plus.
+**Honest take:** Claude consistently produces the most natural-sounding marketing copy of the three major LLMs. If you're writing thought leadership or in-depth guides, this is your best free option. When you outgrow the free tier, my [Claude vs ChatGPT comparison](/blog/claude-vs-chatgpt/) maps each tool to marketing jobs and sets Claude Pro against ChatGPT Plus. If you're a student hoping for a cheaper way into Pro, Anthropic lists no student price for it, and [my guide to which Claude routes a student in India can use](/blog/claude-student-discount-india/) shows who has to act on each.
 
 ### 4. Canva Magic Write
 

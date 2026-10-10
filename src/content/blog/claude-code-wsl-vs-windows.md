@@ -59,7 +59,7 @@ Run Claude Code natively on Windows unless the repo already lives in the Linux f
 
 The dashed crossing paths in the diagram are the ones Microsoft and Anthropic warn about. Microsoft's WSL guidance says "We recommend against working across operating systems with your files" and, for work in PowerShell or Command Prompt, to "store your files in the Windows file system" ([Microsoft Learn on WSL file systems](https://learn.microsoft.com/en-us/windows/wsl/filesystems)).
 
-For Claude Code in WSL reaching a repo on C: through `/mnt/c/`, Anthropic's [WSL search troubleshooting](https://code.claude.com/docs/en/troubleshooting#slow-or-incomplete-search-results-on-wsl) says disk read penalties "may result in fewer-than-expected matches", notes that `claude doctor` still shows Search as OK in that state, and lists running Claude Code natively on Windows among its fixes.
+For Claude Code in WSL reaching a repo on C: through `/mnt/c/`, Anthropic's [WSL search troubleshooting](https://code.claude.com/docs/en/troubleshooting#slow-or-incomplete-search-results-on-wsl) says disk read penalties "may result in fewer-than-expected matches", notes that `claude doctor` still shows Search as OK in that state, and lists running Claude Code natively on Windows among its fixes. Slow search across `/mnt/c/` is one kind of slowness among several, and the others apply on native Windows too: [my rundown of what else slows Claude Code](/blog/why-is-claude-code-so-slow/) covers prompt cache rebuilds, effort level, model choice and conversation length.
 
 This site sits on the native side of that diagram: the repo is on the C: drive, and every push to main deploys it on Vercel.
 

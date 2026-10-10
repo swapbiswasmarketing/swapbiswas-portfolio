@@ -242,6 +242,8 @@ In the VS Code extension, click the model name at the bottom of the prompt box i
 
 **Effort.** `/effort` sets how much the model reasons. Claude Code starts Opus 5.5 and Sonnet 5.5 at `medium` and Fable 5.1 at `high`, so Sonnet 5.5 begins one level below its API default in the spec table above. The docs spell out the bill: "You are charged for all thinking tokens generated, even when collapsed or redacted". They also say the effort scale "is calibrated per model, so the same level name does not represent the same underlying value across models", which is one more reason to price a sample rather than compare settings by name.
 
+A higher effort level or a larger model also makes every turn take longer; [my guide to slow Claude Code responses](/blog/why-is-claude-code-so-slow/) covers when to change each one, since switching to a smaller model mid-session costs one uncached turn before it saves any time.
+
 **Subagents.** A custom subagent's definition can set `model:` to `sonnet`, `opus`, `haiku`, `fable`, a full model ID or `inherit`. Anthropic's [subagent docs](https://code.claude.com/docs/en/sub-agents) list "routing tasks to faster, cheaper models like Haiku" as one way subagents control costs.
 
 A `/model` switch reaches subagents that inherit the main model. Since v2.1.198 the built-in Explore subagent inherits your main model too (capped at Opus on the Claude API), so to keep codebase exploration on Haiku you define your own subagent named `Explore` with `model: haiku`.

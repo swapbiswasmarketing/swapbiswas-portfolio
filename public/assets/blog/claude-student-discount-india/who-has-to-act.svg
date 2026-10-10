@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Claude for a student in India: who has to act</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Seven routes, as read on Anthropic's and GitHub's pages on 10 October 2026</text>
+
+  <rect x="60" y="140" width="1280" height="180" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="96" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#15130f">YOU CAN ACT TODAY</text>
+
+  <text x="96" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Free plan</text>
+  <text x="96" y="256" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$0. Open in India at 18 or older.</text>
+  <text x="96" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No Claude Code, Research or Opus.</text>
+
+  <text x="516" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claude Pro</text>
+  <text x="516" y="256" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">US list: $20 a month, $200 a year.</text>
+  <text x="516" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Students pay the standard price.</text>
+
+  <text x="936" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">GitHub Copilot Student</text>
+  <text x="936" y="256" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Free for verified students.</text>
+  <text x="936" y="288" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Auto picks the model, not you.</text>
+
+  <text x="60" y="368" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">SOMEONE ELSE HAS TO ACT</text>
+
+  <rect x="60" y="388" width="410" height="246" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="428" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">YOUR INSTITUTION BUYS</text>
+  <text x="88" y="468" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claude for Education</text>
+  <text x="88" y="506" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">University-wide plan</text>
+  <text x="88" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">at discounted rates</text>
+  <text x="88" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No public price</text>
+  <text x="88" y="602" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nine logos shown, none Indian</text>
+
+  <rect x="495" y="388" width="410" height="246" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="523" y="428" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">YOUR PI APPLIES</text>
+  <text x="523" y="468" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Team plan for scientists</text>
+  <text x="523" y="506" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Standard seats $0</text>
+  <text x="523" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">for 12 months</text>
+  <text x="523" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A verified PI adds</text>
+  <text x="523" y="602" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">graduate students</text>
+
+  <rect x="930" y="388" width="410" height="246" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="958" y="428" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">YOU APPLY, ANTHROPIC SELECTS</text>
+  <text x="958" y="468" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claude Campus</text>
+  <text x="958" y="506" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">USD 3,600 stipend</text>
+  <text x="958" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">for student leaders</text>
+  <text x="958" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No plan discount listed</text>
+  <text x="958" y="602" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Closed for Fall 2026</text>
+
+  <rect x="60" y="664" width="1280" height="86" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="700" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">NOT OPEN FROM INDIA</text>
+  <text x="96" y="730" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Claude for Teachers: free for verified US K-12 educators. Student accounts are not part of it.</text>
+</svg>

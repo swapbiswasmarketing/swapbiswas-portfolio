@@ -2150,3 +2150,72 @@ https://swapbiswas.com/blog/what-is-a-good-number-of-impressions-on-linkedin/?ut
 #LinkedInMarketing #SocialMediaMarketing #B2BMarketing #ContentMarketing
 
 ---
+
+### Claude Pro Price in India: App Store, Google Play and Web
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a money changer's table with three shallow wooden trays set side by side, each holding a different stack of silver, gold or bronze coins, three identical small parcels placed one in front of each tray, the outer two tied in plain twine and the middle one tied with a single vermilion red ribbon, a closed ledger and a brass hand balance behind them, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Apple's India App Store listed Claude Pro at Rs 1,999 a month on 10 October 2026. Anthropic's own pricing page, opened logged out from an Indian connection the same day, showed $20 a month before tax.
+The price you pay depends on where you check out, so I would pick the checkout first and read the price on its own screen.
+
+- Among the two stores and the Anthropic pages I read, only Apple's listing shows a rupee price per plan without a login. Its annual Pro plan is Rs 19,900, which is Rs 4,088 less than twelve monthly payments of Rs 1,999.
+- Google Play's India listing shows one range for the whole app, Rs 1,999.00 to Rs 24,987.50 per item, and its footer says all prices include GST.
+- The rupee prices for the web come from press reports: Indian press reported Rs 2,399 a month for Pro in July 2026. No Anthropic page I read on 10 October 2026 states a rupee price.
+- Going by Apple's listing and those press reports, the App Store is Rs 400 a month cheaper for Pro and the web is Rs 901 a month cheaper for Max. The two sides are dated nearly three months apart, so I treat the gap as provisional.
+- UPI is available when you subscribe inside the iOS or Android app, where Apple or Google takes the payment. On the web, Anthropic's billing FAQ says "we only accept credit or debit cards."
+
+If you subscribe to Claude from India, which shows you the lower price today: the web upgrade page after you log in, or the upgrade screen in your app?
+
+https://swapbiswas.com/blog/claude-pro-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-pro-price-in-india
+
+#ClaudeAI #Anthropic #AITools #SaaSPricing #India
+
+---
+
+### Claude Student Discount India: What Exists and What Doesn't
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a college library lectern with a large bound volume fastened to it by a short iron chain, a student's worn leather satchel and a wax writing tablet on the bench below, a brass signet ring resting on a folded letter beside them, a single vermilion red ribbon tied to the last link of the chain, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+"We do not offer standard discounted pricing for any of our paid plans, including Pro plans," says Anthropic's Pro plan help article.
+For a student in India, no individual plan carries a student price, so my advice is to stop hunting for a promo code and ask the person who can sign.
+
+- The post lists seven routes to Claude for a student in India, each checked on 10 October 2026 against the page that defines it, and names who has to act on each. Annual billing is the only price reduction on a paid Claude plan that you can turn on yourself.
+- Claude for Education is a plan your institution buys. Anthropic's education page shows nine institutions by logo, none of them Indian.
+- The Team plan for scientists runs through your principal investigator: a verified PI gets free Standard seats for 12 months and can add graduate students. A lab at an Indian institution finds out at verification.
+- Claude Campus pays selected student leaders a USD 3,600 cash stipend and lists no plan discount. On 10 October 2026 its page said "The program is closed for Fall 2026".
+- GitHub's Copilot Student plan is free for verified students, but it offers auto model selection only, so you cannot pick a Claude model.
+
+If you study in India, which of the post's two emails would you send first: the one to the office that buys software for your institution, or the one to your principal investigator?
+
+https://swapbiswas.com/blog/claude-student-discount-india/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-student-discount-india
+
+#ClaudeAI #Anthropic #AIInEducation #Students #India
+
+---
+
+### Why Is Claude Code So Slow? Find Which Kind of Slow First
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a clockmaker's bench with a brass table clock opened at the back to show its gear train, three small wooden trays in a row beside it each holding one removed part (a coiled spring, a toothed brass wheel, a small lead weight), a loupe and fine tweezers in front, a single vermilion red ribbon tied around the first tray, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+In a slow Claude Code session, the tempting move is to switch to a smaller model on the spot.
+Switching models is the first item on Anthropic's list of actions that invalidate the prompt cache and make the next response slower, so I name the kind of slow before I touch a setting.
+
+- One slow turn is a prompt cache rebuild: it follows a model switch, turning on fast mode or a break, and the turn after it is quick again. The cache lasts one hour on a Claude subscription within plan usage and five minutes on usage credits, an API key or a cloud provider.
+- Slow on every turn comes from effort level, model or conversation length. Pick the model when a session starts. Effort can come down mid-session without a rebuild on Opus 5.5, Sonnet 5.5, Haiku 5.5 and Fable 5.1 with a subscription or an API key.
+- A slow machine is a separate problem that shows up as fan noise, typing lag or a memory warning. Anthropic's troubleshooting steps use claude --safe-mode to check whether a plugin, MCP server or hook is the source.
+- If the slowdown started today, check Anthropic's status page, then your release. The 13 releases after mine, v2.1.284 to v2.1.296, hold 46 changelog entries that mention something slow, hung, frozen, stalled or stuck, some of them outside the terminal. 41 of the 46 are fixes.
+- My own user settings file starts Opus 5.5 at xhigh, two levels above the model's medium default. Nothing in that file is tuned for speed.
+
+Before you change a setting in a slow session, what does your cache state read: the Prompt cache (main) line in /usage, or the prompt cache clock in VS Code?
+
+https://swapbiswas.com/blog/why-is-claude-code-so-slow/?utm_source=linkedin&utm_medium=social&utm_campaign=why-is-claude-code-so-slow
+
+#ClaudeCode #Anthropic #VSCode #AIForMarketing #MarketingOps
+
+---

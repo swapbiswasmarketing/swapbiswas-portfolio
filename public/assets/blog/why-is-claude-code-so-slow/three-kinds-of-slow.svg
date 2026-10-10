@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 902" width="1400" height="902">
+  <rect x="0" y="0" width="1400" height="902" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Claude Code is slow: which kind of slow?</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Sort the symptom before you change a setting. Anthropic's Claude Code docs, read 10 October 2026</text>
+
+  <rect x="60" y="140" width="400" height="572" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="88" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">KIND 1</text>
+  <text x="88" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">One slow turn</text>
+  <line x1="88" y1="244" x2="432" y2="244" stroke="#b53b15" stroke-width="1"/>
+  <text x="88" y="280" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">WHEN</text>
+  <text x="88" y="310" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Right after /model, /fast</text>
+  <text x="88" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">or a break in the session</text>
+  <text x="88" y="384" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CAUSE</text>
+  <text x="88" y="414" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The prompt cache rebuilds</text>
+  <text x="88" y="446" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">on one uncached request</text>
+  <text x="88" y="488" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CHECK</text>
+  <text x="88" y="518" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">/usage: Prompt cache (main)</text>
+  <text x="88" y="550" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">VS Code clock, after a break</text>
+  <text x="88" y="592" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">FIX</text>
+  <text x="88" y="622" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">None. The next turn reads</text>
+  <text x="88" y="654" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the cache again</text>
+
+  <rect x="500" y="140" width="400" height="572" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">KIND 2</text>
+  <text x="528" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Slow on every turn</text>
+  <line x1="528" y1="244" x2="872" y2="244" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="280" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">WHEN</text>
+  <text x="528" y="310" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Every turn, from the first</text>
+  <text x="528" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">prompt or as a session grows</text>
+  <text x="528" y="384" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CAUSE</text>
+  <text x="528" y="414" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Effort level, model and</text>
+  <text x="528" y="446" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">conversation length</text>
+  <text x="528" y="488" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CHECK</text>
+  <text x="528" y="518" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">/effort status, /status,</text>
+  <text x="528" y="550" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">/context</text>
+  <text x="528" y="592" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">FIX</text>
+  <text x="528" y="622" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Effort: a lower level</text>
+  <text x="528" y="654" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Length: /clear or /compact</text>
+  <text x="528" y="686" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Model: pick at session start</text>
+
+  <rect x="940" y="140" width="400" height="572" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">KIND 3</text>
+  <text x="968" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">A slow machine</text>
+  <line x1="968" y1="244" x2="1312" y2="244" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="280" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">WHEN</text>
+  <text x="968" y="310" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Fan noise, typing lag or</text>
+  <text x="968" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">a memory warning</text>
+  <text x="968" y="384" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CAUSE</text>
+  <text x="968" y="414" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">CPU, memory or the</text>
+  <text x="968" y="446" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">file system</text>
+  <text x="968" y="488" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CHECK</text>
+  <text x="968" y="518" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">claude --safe-mode, and</text>
+  <text x="968" y="550" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">where the repo lives</text>
+  <text x="968" y="592" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">FIX</text>
+  <text x="968" y="622" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Restart, then run</text>
+  <text x="968" y="654" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">claude --continue</text>
+
+  <rect x="60" y="744" width="1280" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="782" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">NOT ONE OF THE THREE?</text>
+  <text x="88" y="820" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Service: status.claude.com</text>
+  <text x="470" y="820" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Release: claude --version, claude update</text>
+  <text x="960" y="820" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Frozen: Ctrl+C, claude --resume</text>
+</svg>

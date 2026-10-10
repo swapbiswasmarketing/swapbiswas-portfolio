@@ -118,6 +118,8 @@ This is layer 2 on my machine, with Claude Code v2.1.283 or later. The rest of m
 | `~/.claude/settings.json`, `.claude/settings.json` and `.claude/settings.local.json` | `permissions` | Allow rules in all three files | Pre-approved commands, fetch domains and MCP tools, counted per file in the permissions guide linked above |
 | Any settings file | `hooks` | None | I do not use Claude Code hooks |
 
+Switching model in the middle of a conversation makes the next response slower while the prompt cache rebuilds, so I treat the `model` row as a choice to make before a session starts; [my breakdown of the three kinds of slow in Claude Code](/blog/why-is-claude-code-so-slow/) lists the other actions that do the same.
+
 Remote Control at startup works only with a claude.ai subscription login, which an approved `ANTHROPIC_API_KEY` outranks, so the key switches Remote Control off along with [the other features that need a claude.ai login](/blog/claude-code-api-key-vs-subscription/).
 
 My sessions run with Git Bash and PowerShell as shells; Windows install routes and shells are compared in [Claude Code on WSL vs native Windows](/blog/claude-code-wsl-vs-windows/).

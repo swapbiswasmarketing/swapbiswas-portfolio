@@ -145,6 +145,8 @@ Plans and prices as of September 2026:
 | Team | Standard seat $20 a month billed annually or $25 monthly; Premium seat $100 or $125 | Yes | Yes | Premium seats get "5x more usage than standard seats" |
 | Enterprise | $20 per seat a month billed annually, plus usage at API rates | Yes | Yes | Usage cost "scales with model and task" |
 
+Those are Anthropic's list prices in US dollars; [my India price table by checkout](/blog/claude-pro-price-in-india/) sets the App Store, Google Play and the web side by side for Pro and Max. None of the rows has a student rate, and [the routes a student in India can take instead](/blog/claude-student-discount-india/) are in a separate guide.
+
 The usage terms behind those prices:
 
 - Limits reset on a rolling window. The pricing FAQ says "Every plan has usage limits that reset on a rolling five-hour session window, and paid plans add weekly limits on top."

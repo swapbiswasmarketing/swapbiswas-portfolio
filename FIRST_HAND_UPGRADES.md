@@ -346,3 +346,15 @@ When you have hired or interviewed product marketers, did the loop ask for a por
 ## linkedin-newsletter-vs-article
 
 In GA4 for swapbiswas.com, over the last 90 days, how many sessions arrived with utm_source=linkedin, and how many arrived from linkedin.com or lnkd.in referrals with no UTM? This would ground the first row of the decision table in 'LinkedIn Newsletter vs Article for Marketers Who Own a Blog' with a real measurement, in the paragraph that starts 'I post on LinkedIn several times a week'.
+
+## claude-pro-price-in-india
+
+Logged in at claude.ai/upgrade from India, on a dated day: what currency and prices does the upgrade page show you for Pro monthly, Pro annual, Max 5x and Max 20x, and does it say tax is included or added at checkout? A cropped screenshot with the current-plan label removed would turn the web column from 'as reported by Indian press on 14 July 2026' into 'observed', and belongs in the opening table's web column and in 'Is Claude Cheaper in India Through the App or the Website?'.
+
+## claude-student-discount-india
+
+Did either of your institutions (IIM Visakhapatnam during the May 2025 - May 2026 PG, or Amity) give students Claude through an institution-bought plan (a "university-sponsored" Claude for Education account or a Claude Enterprise agreement, signed in with the institute email or SSO), and did you ever apply to a Claude campus program (Builder Club, Campus Ambassador or the older Student Builder sign-up)? If yes to either: what the sign-in or application looked like and the month it happened. It would go in the H3 "Claude for Education: Your Institution Buys It" (or the Campus H3) as the one first-hand example; the post is complete without it and currently makes no statement about any institute of yours.
+
+## why-is-claude-code-so-slow
+
+Will you run the timed test on the Windows 11 machine and allow the medians to be published as a single-machine, single-day reading: one fixed prompt in claude -p, one warm-up run and then five or more timed runs per cell, for effort low, medium, high and xhigh on Opus 5.5 and for Opus 5.5 against Sonnet 5.5 at one effort level, recording wall time plus cache_read and cache_creation tokens from --output-format json (no fast mode cell, no mention of plan or cache TTL)? And is the xhigh level now saved for claude-opus-5-5 intentional? The answer belongs under "Slow on Every Turn: Effort, Model and Fast Mode", replacing the cited third-party measurement and extending "My Settings File on 10 October 2026".

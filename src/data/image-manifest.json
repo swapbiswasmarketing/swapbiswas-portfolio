@@ -365,6 +365,14 @@
 		],
 		"hash": "130b9dde6f6bbd7b"
 	},
+	"/assets/blog/claude-pro-price-in-india/checkout-routes.webp": {
+		"w": 1200,
+		"h": 806,
+		"v": [
+			660
+		],
+		"hash": "be48051f549cc9dc"
+	},
 	"/assets/blog/claude-projects-vs-skills/context-load-timing.webp": {
 		"w": 1200,
 		"h": 771,
@@ -412,6 +420,14 @@
 			660
 		],
 		"hash": "3f9d0071a6063214"
+	},
+	"/assets/blog/claude-student-discount-india/who-has-to-act.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "1601108e004a6390"
 	},
 	"/assets/blog/claude-styles/where-styles-went.webp": {
 		"w": 1200,
@@ -2065,6 +2081,22 @@
 			660
 		],
 		"hash": "1292bb69309b003c"
+	},
+	"/assets/blog/why-is-claude-code-so-slow/prompt-cache-actions.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "90c76095c2ea3c86"
+	},
+	"/assets/blog/why-is-claude-code-so-slow/three-kinds-of-slow.webp": {
+		"w": 1200,
+		"h": 773,
+		"v": [
+			660
+		],
+		"hash": "b40f6d160cfc501f"
 	},
 	"/assets/blog/win-loss-analysis-dashboard/dashboard-anatomy.webp": {
 		"w": 1200,

@@ -137,6 +137,8 @@ The controls, from the [env vars reference](https://code.claude.com/docs/en/env-
 
 On timing, Anthropic's [prompt caching guide](https://code.claude.com/docs/en/prompt-caching#compacting-the-conversation) advises running `/compact` "at a natural break in your work, such as between tasks, instead of waiting for auto-compaction to trigger mid-task." That fits the rule above when the next task builds on this one; when it does not, `/clear` is the cheaper break.
 
+A single response that drags right after a model switch, or after a break longer than the cache lifetime, points to the prompt cache rebuilding, and the turn after it is quick again; I list [what breaks Claude Code's prompt cache and what keeps it](/blog/why-is-claude-code-so-slow/) in a separate guide.
+
 ## Compact or Clear in a Keyword Research or Site Audit Session
 
 Anthropic's examples come from coding, such as `/compact focus on the auth bug fix`; the same rules apply to keyword research and site audits run through Claude Code.

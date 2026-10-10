@@ -63,6 +63,8 @@ The dates below come from the Wayback Machine's [capture index for article 10181
 | 8 Sep 2026 | The Wayback Machine logs a 404 at an older address of the article |
 | 2 Oct 2026 | The article's current and former addresses all return 404 |
 
+Claude for Education, named in the 14 Aug 2025 row, is a plan an institution buys for its students, faculty and staff, and I cover [what that leaves an individual student in India](/blog/claude-student-discount-india/) separately.
+
 ## How to Find and Turn On Your Migrated Claude Styles
 
 If your Claude styles are missing, check the skills list before you rebuild anything. These steps combine the migration article with two current Anthropic articles, [Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude) and [Browse skills, connectors, and plugins in one directory](https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory), as of October 2026:
