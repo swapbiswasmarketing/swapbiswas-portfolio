@@ -406,3 +406,15 @@ Signed in from India, what does linkedin.com/premium/products show you for Premi
 ## can-chatgpt-transcribe-audio
 
 Which ChatGPT plan are you on, and does it accept an audio upload? If you attach one, what file type, size and length was it, on which client (web, Windows app, phone), what came back (a full transcript, a refusal, speaker labels or not), and on what date? A one-row answer would fill the Go cell of the routes table with a dated first-hand result and could go under 'Can ChatGPT Go Transcribe Audio? What OpenAI's Pages Say From India'.
+
+## chatgpt-go-vs-plus
+
+Which ChatGPT plan do you pay for, if any? On a stated date, what does your model picker list, and does your Settings show Ad Controls (which would mean ads are being tested on your account in India)? If you are on Go, does choosing Think and asking for an image offer image generation with Thinking? Screenshots of the picker and Settings > Ad Controls would let the 'OpenAI's Own Pages Disagree on Six Go Questions' table replace three of its rows with an observed result.
+
+## jio-gemini-pro-offer
+
+If you are a Jio user: on a stated date, does the MyJio home screen show the Google Gemini offer banner on your number, and, if you have claimed it, what activation date and plan name does your Google One account show, and which models does the Gemini app offer you (Gemini 3 or Gemini 4 Argon)? The answer would go in 'Offer Validity: When Do the 18 Free Months End?' and 'Jio's Benefit List vs Google's AI Pro Card'. Separately, re-read Jio's terms after 29 October 2026 (the offer period's end date as of 16 October) and update the post's last-date lines.
+
+## how-to-update-claude-code
+
+On a stated date, what does `claude doctor` print on your Windows machine for the Auto-updates line and the last update attempt? What does `where.exe claude` return (the path shows the install method)? Then what do `claude update` (or `npm install -g @anthropic-ai/claude-code@latest` for an npm install) and `claude --version` print before and after? And may the post name which install method your CLI uses? The answer would become a worked example under 'Which Claude Code Copy Are You Running?', showing a real update in place of the documented commands.

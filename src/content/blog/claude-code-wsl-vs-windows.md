@@ -152,6 +152,8 @@ Switching between native Windows and WSL 2 means a second install with its own f
 | Folder trust in Claude Desktop | Granted per folder | Granted per distribution and folder, and not shared with the same path on Windows |
 | Updates | The PowerShell and CMD installers update in the background; WinGet installs do not auto-update by default (run `winget upgrade Anthropic.ClaudeCode`, or set `CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE=1`) | The Linux installer (`install.sh`) updates in the background |
 
+If the install on either side stops updating, [my guide to Claude Code updates on Windows](/blog/how-to-update-claude-code/) gives the update command for each install method and treats a WSL install as a separate copy that you update from inside the distribution.
+
 Auto memory splits the same way, because it lives under `~/.claude/projects/` on whichever side wrote it. [My guide to Claude Code memory](/blog/claude-code-memory/) shows how a repo on C: maps to its memory folder under `%USERPROFILE%`, and where an organization CLAUDE.md sits on Windows and in WSL. Plan to recreate user-level settings and memory if you move a repo from one side to the other.
 
 ## How to Install Claude Code on Windows

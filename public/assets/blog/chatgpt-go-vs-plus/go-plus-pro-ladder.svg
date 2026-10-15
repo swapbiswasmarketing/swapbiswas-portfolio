@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 890" width="1400" height="890">
+  <rect x="0" y="0" width="1400" height="890" fill="#f6f4ef"/>
+
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Go, Plus or Pro: what moves you up a plan</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">US prices and rows from OpenAI's pricing table and help pages, read 16 October 2026</text>
+
+  <rect x="60" y="140" width="1280" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">GO</text>
+  <text x="96" y="232" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="36" font-weight="600" fill="#15130f">$8 a month</text>
+  <text x="96" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">billed monthly</text>
+  <line x1="400" y1="164" x2="400" y2="276" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="440" y="186" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Enough when ChatGPT is where you write</text>
+  <circle cx="448" cy="225" r="4" fill="#15130f"/>
+  <text x="462" y="232" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Chats on GPT-6 Luna (Plus: GPT-6 Sol)</text>
+  <circle cx="448" cy="263" r="4" fill="#15130f"/>
+  <text x="462" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Same context windows: 54K and 256K</text>
+  <circle cx="908" cy="225" r="4" fill="#15130f"/>
+  <text x="922" y="232" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Unlimited* everyday text chats</text>
+  <circle cx="908" cy="263" r="4" fill="#15130f"/>
+  <text x="922" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Ads may appear under a response</text>
+
+  <line x1="230" y1="308" x2="230" y2="368" stroke="#b53b15" stroke-width="3"/>
+  <polygon points="223,368 237,368 230,382" fill="#b53b15"/>
+  <text x="262" y="352" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#b53b15">Move up to Plus when your week needs a row Plus has and Go lacks or limits</text>
+
+  <rect x="60" y="390" width="1280" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="434" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">PLUS</text>
+  <text x="96" y="482" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="36" font-weight="600" fill="#15130f">$20 a month</text>
+  <text x="96" y="520" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">2.5x the Go price</text>
+  <line x1="400" y1="414" x2="400" y2="526" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="440" y="436" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Adds what Go lacks or limits</text>
+  <circle cx="448" cy="475" r="4" fill="#15130f"/>
+  <text x="462" y="482" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">GPT-6.1 Sol, GPT-6 Astra, GPT-6 Sol</text>
+  <circle cx="448" cy="513" r="4" fill="#15130f"/>
+  <text x="462" y="520" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Deep research, Office and Sheets extensions</text>
+  <circle cx="908" cy="475" r="4" fill="#15130f"/>
+  <text x="922" y="482" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Sites and images with Thinking</text>
+  <circle cx="908" cy="513" r="4" fill="#15130f"/>
+  <text x="922" y="520" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Fast responses and no ads</text>
+
+  <line x1="230" y1="558" x2="230" y2="618" stroke="#15130f" stroke-width="3"/>
+  <polygon points="223,618 237,618 230,632" fill="#15130f"/>
+  <text x="262" y="602" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="500" fill="#15130f">Move up to Pro when Codex limits or an input over about 320 pages stop the work</text>
+
+  <rect x="60" y="640" width="1280" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="684" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">PRO 100 / 200 / 500</text>
+  <text x="96" y="732" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="36" font-weight="600" fill="#15130f">$100 to $500</text>
+  <text x="96" y="770" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">a month, three tiers</text>
+  <line x1="400" y1="664" x2="400" y2="776" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="440" y="686" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">What the Pro column adds over Plus</text>
+  <circle cx="448" cy="725" r="4" fill="#15130f"/>
+  <text x="462" y="732" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No five-hour Codex limit</text>
+  <circle cx="448" cy="763" r="4" fill="#15130f"/>
+  <text x="462" y="770" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">128K and 400K context windows</text>
+  <circle cx="908" cy="725" r="4" fill="#15130f"/>
+  <text x="922" y="732" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">GPT-5.6 Sol Pro and Dots</text>
+  <circle cx="908" cy="763" r="4" fill="#15130f"/>
+  <text x="922" y="770" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Ultrafast on Pro 500 only</text>
+
+  <text x="60" y="846" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">* OpenAI's footnote: usage must be reasonable and comply with its policies. Prices are US list prices.</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 740" width="1400" height="740">
+  <rect x="0" y="0" width="1400" height="740" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Three copies of Claude Code on one Windows machine</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Each has its own updater and its own version check. Anthropic and VS Code docs, read 16 October 2026</text>
+
+  <rect x="142" y="136" width="220" height="50" rx="10" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="252" y="168" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#b53b15">claude update</text>
+  <line x1="252" y1="188" x2="252" y2="220" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="245,220 259,220 252,234" fill="#b53b15"/>
+
+  <rect x="545" y="136" width="310" height="50" rx="10" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="700" y="168" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Extensions view &gt; Update</text>
+  <line x1="700" y1="188" x2="700" y2="220" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,220 707,220 700,234" fill="#15130f"/>
+
+  <rect x="993" y="136" width="310" height="50" rx="10" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1148" y="168" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Help &gt; Check for Updates</text>
+  <line x1="1148" y1="188" x2="1148" y2="220" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1141,220 1155,220 1148,234" fill="#15130f"/>
+
+  <rect x="40" y="236" width="424" height="376" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="68" y="274" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">ANY TERMINAL, VS CODE'S TOO</text>
+  <text x="68" y="312" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Standalone CLI</text>
+  <line x1="68" y1="334" x2="436" y2="334" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="68" y="370" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">UPDATES ON ITS OWN</text>
+  <text x="68" y="400" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Native, npm: in the background</text>
+  <text x="68" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">WinGet: no, run winget upgrade</text>
+  <text x="68" y="474" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">READ ITS VERSION</text>
+  <text x="68" y="504" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#3a3632">claude --version</text>
+  <text x="68" y="548" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">NEW VERSION RUNS</text>
+  <text x="68" y="578" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">At the next start</text>
+
+  <rect x="488" y="236" width="424" height="376" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="516" y="274" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">VS CODE CHAT PANEL</text>
+  <text x="516" y="312" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Extension's bundled CLI</text>
+  <line x1="516" y1="334" x2="884" y2="334" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="516" y="370" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">UPDATES ON ITS OWN</text>
+  <text x="516" y="400" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">With VS Code extension updates,</text>
+  <text x="516" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">after a 12-hour default delay</text>
+  <text x="516" y="474" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">READ ITS VERSION</text>
+  <text x="516" y="504" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Extensions view, or /status</text>
+  <text x="516" y="548" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">NEW VERSION RUNS</text>
+  <text x="516" y="578" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">After Restart Extensions</text>
+
+  <rect x="936" y="236" width="424" height="376" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="964" y="274" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">DESKTOP APP, CODE TAB</text>
+  <text x="964" y="312" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Desktop app's copy</text>
+  <line x1="964" y1="334" x2="1332" y2="334" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="964" y="370" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">UPDATES ON ITS OWN</text>
+  <text x="964" y="400" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The app updates it, and the</text>
+  <text x="964" y="432" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">app auto-updates on launch</text>
+  <text x="964" y="474" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">READ ITS VERSION</text>
+  <text x="964" y="504" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">/status, the Claude Code row</text>
+  <text x="964" y="548" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="0.12em" fill="#6a645c">NEW VERSION RUNS</text>
+  <text x="964" y="578" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">In a new session</text>
+
+  <text x="60" y="664" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="500" fill="#15130f">Updating one copy does not update the others. A WSL install is a fourth copy with its own updater.</text>
+  <text x="60" y="698" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sources: code.claude.com/docs (setup, VS Code, desktop) and code.visualstudio.com extension auto-update docs</text>
+</svg>

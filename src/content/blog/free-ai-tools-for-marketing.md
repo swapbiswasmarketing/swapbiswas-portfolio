@@ -36,23 +36,23 @@ Let's get into it.
 
 **What it does:** General-purpose AI for drafting, brainstorming, editing, and research.
 
-**Free tier includes:** As of September 2026, unlimited text chats with GPT-5.6 Luna (subject to OpenAI's abuse guardrails), plus limited file uploads, image generation, voice chats, and deep research.
+**Free tier includes:** As of October 2026, unlimited text chats with GPT-6 Luna (subject to OpenAI's abuse guardrails), plus limited file uploads, image generation, voice chats, and deep research. If you got ChatGPT Go free for a year through OpenAI's India offer, my [renewal guide for that offer](/blog/chatgpt-go-free-india/) weighs keeping Go against dropping back to this Free tier.
 
 **Best for:** First drafts, content outlines, repurposing existing content, brainstorming headlines, and quick research synthesis.
 
 **Honest take:** The free tier is surprisingly capable for [marketing tasks](/blog/how-to-use-chatgpt-for-sales-and-marketing/). You'll hit usage limits during heavy workdays, but for 80% of tasks, it's enough. I use it daily for content briefs and outline generation.
 
-**Limitation:** Uploads, image generation, deep research, and memory are all capped on the free plan, and the advanced GPT-6 reasoning models start at the Plus plan. Heavy usage days may require waiting.
+**Limitation:** Uploads, image generation, deep research, and memory are all capped on the free plan, and the advanced GPT-6 reasoning models start at the Plus plan. Heavy usage days may require waiting. If those caps get in the way, I compare Go, Plus and Pro row by row in my guide to [which paid ChatGPT plan adds which features](/blog/chatgpt-go-vs-plus/).
 
 ### 2. Google Gemini
 
 **What it does:** Google's AI assistant with access to real-time search, Google Workspace integration, and multimodal capabilities.
 
-**Free tier includes:** As of September 2026, Gemini 3.6 Flash, varying access to Gemini 3.1 Pro, image generation and editing, Deep Research, Canvas, and Gems. Gemini inside Gmail and other Google apps comes with the paid Google AI plans.
+**Free tier includes:** Google's [plan page](https://gemini.google/subscriptions/), read logged out from India on 16 October 2026, lists access to its Flash-Lite model, image generation and editing, Deep Research, Canvas, and Gems. With auto model selection on, prompts that need more reasoning may use Flash or Pro, according to Google's [model help page](https://support.google.com/gemini/answer/18648722). Gemini inside Gmail and other Google apps comes with the paid Google AI plans.
 
 **Best for:** Research-heavy content where you need current data, analyzing competitor content, and generating content that needs factual grounding.
 
-**Honest take:** Gemini's real-time search integration makes it better than ChatGPT for research tasks. The Google Workspace integration is a huge plus if your team lives in Google Docs, though Gemini in Docs is listed only from the Google AI Pro plan up.
+**Honest take:** Gemini's real-time search integration makes it better than ChatGPT for research tasks. The Google Workspace integration is a huge plus if your team lives in Google Docs, though Gemini in Docs is listed only from the Google AI Pro plan up. As of October 2026, eligible Jio customers in India can claim that plan free for 18 months, and my [breakdown of Jio's Google AI Pro offer](/blog/jio-gemini-pro-offer/) covers who qualifies, the claim deadline and the price once the free months end.
 
 ### 3. Claude (Free Tier)
 

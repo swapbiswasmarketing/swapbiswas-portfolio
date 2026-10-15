@@ -240,6 +240,10 @@ Where each ChatGPT cell comes from:
 
 On features, [OpenAI's pricing page](https://chatgpt.com/pricing/) marks Codex and deep research as "Limited" on Go and says the plan "may include ads", while Anthropic's pricing table marks Claude Code and Research as "Yes" on Pro and "No" on Free. ChatGPT Plus is ₹1,999 on the same App Store listing, the same figure as Claude Pro, and [my Claude vs ChatGPT comparison](/blog/claude-vs-chatgpt/) sets those two plans side by side.
 
+Over Go, Plus lifts the limits on Codex and deep research and has no ads, and [my job-by-job map of the Go and Plus differences](/blog/chatgpt-go-vs-plus/) shows which marketing jobs need the upgrade.
+
+If your Go plan is the free year from OpenAI's India promotion, check [the renewal date and cancel steps for your sign-up route](/blog/chatgpt-go-free-india/) before it renews as a paid plan. One of Google's paid Gemini plans comes free through a phone carrier in India: [Google AI Pro on an eligible Jio plan](/blog/jio-gemini-pro-offer/) runs for 18 months, and nothing renews on its own when those months end.
+
 ## Claude Pro Price in India: Read It at Your Own Checkout
 
 As of 10 October 2026, the public pages do not agree on one figure for Claude Pro in India. Apple lists ₹1,999 a month, Google lists a range that includes GST, and Anthropic's pricing page shows a logged-out visitor in India $20 before tax. The price that counts is the one on the checkout you use, so settle the checkout first.

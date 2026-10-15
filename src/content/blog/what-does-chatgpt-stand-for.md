@@ -109,8 +109,8 @@ ChatGPT is not the only AI model built on the Transformer architecture. Here is 
 
 | Feature | ChatGPT (OpenAI) | Claude (Anthropic) | Gemini (Google) | Grok (xAI) |
 |---------|-------------------|---------------------|-----------------|-------------|
-| **Architecture** | Transformer (GPT-6 Astra / GPT-5.6) | Transformer | Transformer (MoE variant) | Transformer |
-| **Free tier** | Yes (GPT-5.6 Luna, unlimited text chats, tools limited) | Yes (Sonnet and Haiku, usage limits apply) | Yes (Gemini 3.6 Flash) | Yes (X or email sign-in) |
+| **Architecture** | Transformer ([GPT-6 Sol / GPT-6 Luna / GPT-6 Astra](https://help.openai.com/en/articles/6825453-chatgpt-release-notes), as of October 2026) | Transformer | Transformer (MoE variant) | Transformer |
+| **Free tier** | Yes ([GPT-6 Luna](https://chatgpt.com/pricing/), unlimited text chats, tools limited, as of October 2026) | Yes (Sonnet and Haiku, usage limits apply) | Yes ([Gemini Flash-Lite](https://gemini.google/subscriptions/), as of October 2026) | Yes (X or email sign-in) |
 | **Max context window (API)** | 1.05M tokens (GPT-6) | 1M tokens (200K on Haiku 4.5) | 1M tokens | Up to 1M tokens (500K on Grok 4.7) |
 | **Multimodal** | Text, image, audio, video | Text, image | Text, image, audio, video | Text, image, audio |
 | **Web browsing** | Yes | Yes | Yes (grounded in Search) | Yes (real-time X data) |
@@ -119,7 +119,7 @@ ChatGPT is not the only AI model built on the Transformer architecture. Here is 
 
 All of these models share the same core architecture - the Transformer - but they differ in training data, fine-tuning approach, safety philosophy, and product features. The "GPT" in ChatGPT refers specifically to OpenAI's family of models, but the underlying Transformer concept is industry-wide. The commercial stakes are enormous: OpenAI hit **$10 billion in annualized recurring revenue** by mid-2025 ([TechCrunch](https://techcrunch.com/2025/06/09/openai-claims-to-have-hit-10b-in-annual-revenue/)), a figure that includes revenue from its consumer products, ChatGPT business products, and API.
 
-If you are weighing Claude against ChatGPT for your own work, my breakdown of [the difference between Claude and ChatGPT](/blog/claude-vs-chatgpt/) compares their plans and maps each one to marketing jobs. Like GPT, Claude comes in several model tiers, and [how Claude Sonnet, Opus and Haiku compare](/blog/claude-sonnet-vs-opus/) shows what the same marketing job costs on each.
+If you are weighing Claude against ChatGPT for your own work, my breakdown of [the difference between Claude and ChatGPT](/blog/claude-vs-chatgpt/) compares their plans and maps each one to marketing jobs. Like GPT, Claude comes in several model tiers, and [how Claude Sonnet, Opus and Haiku compare](/blog/claude-sonnet-vs-opus/) shows what the same marketing job costs on each. If ChatGPT is already your pick, I sort drafting, research briefs, decks and ad visuals by plan in my guide to [which marketing jobs need ChatGPT Plus rather than Go](/blog/chatgpt-go-vs-plus/).
 
 For a broader look at how AI tools fit into professional work, see our comparison of [free AI tools for marketing](/blog/free-ai-tools-for-marketing/).
 

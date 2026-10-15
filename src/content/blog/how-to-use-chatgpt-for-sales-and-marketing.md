@@ -101,7 +101,7 @@ The key word is "avoid generic statements." Without that constraint, ChatGPT wil
 
 ### 4. Customer Interview Synthesis
 
-One of the highest-leverage uses. Paste a win/loss interview transcript and ask ChatGPT to pull out themes, quotes, and insights.
+One of the highest-leverage uses. Paste a win/loss interview transcript and ask ChatGPT to pull out themes, quotes, and insights. If you only have the interview recording, paid ChatGPT plans now take the audio file as an upload, and [the plan-by-plan rules for uploading a recording to ChatGPT](/blog/can-chatgpt-transcribe-audio/) list the accepted audio formats and the file-size cap.
 
 ```
 You are a customer insights analyst. Below is a transcript 
@@ -233,6 +233,8 @@ The tasks where it hurts more than it helps:
 - Making judgment calls on positioning, messaging, or pricing
 - Anything requiring up-to-date market data without verification
 - Deeply original content where the voice matters more than the structure
+
+Each of the ten workflows earlier in this guide is a chat with pasted or uploaded context, which ChatGPT Go includes, and [my job-by-job comparison of ChatGPT Go and Plus for marketing work](/blog/chatgpt-go-vs-plus/) shows when deep research, Sites or the Office and Sheets extensions make Plus worth paying for.
 
 For a broader view on how AI is reshaping the marketing function, see our [AI future of SEO](/blog/ai-future-of-seo/) post, the [marketers' AI maturity curve](/blog/marketers-ai-maturity-curve/), and our take on [whether marketing will be replaced by AI](/blog/will-marketing-be-replaced-by-ai/).
 

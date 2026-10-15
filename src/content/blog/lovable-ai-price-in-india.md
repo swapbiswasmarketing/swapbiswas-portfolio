@@ -188,9 +188,11 @@ The offer that comes closest is on [Lovable's LinkedIn Premium offer page](https
 | Who does not | "Existing paid Lovable subscribers" |
 | Codes | "Single-use code, non-transferable." |
 
-The Hindi version of the page names the same four countries. Airtel's own tie to LinkedIn Premium is a separate perk: [Analytics Insight reported on 24 June 2026](https://www.analyticsinsight.net/news/airtel-insider-rewards-program-offers-free-linkedin-premium-and-more-heres-how-to-claim-the-benefits) that through Airtel Insider, "select Airtel users in India will receive free LinkedIn Premium for 3 months". [Airtel's Insider page](https://www.airtel.in/insider), which I opened logged out from India on 10 October 2026, listed Super Duolingo and PocketFM Premium under "this Month's Perks", and its text did not mention LinkedIn.
+The Hindi version of the page names the same four countries. Airtel's own tie to LinkedIn Premium is a separate perk: [Analytics Insight reported on 24 June 2026](https://www.analyticsinsight.net/news/airtel-insider-rewards-program-offers-free-linkedin-premium-and-more-heres-how-to-claim-the-benefits) that through Airtel Insider, "select Airtel users in India will receive free LinkedIn Premium for 3 months". [Airtel's Insider page](https://www.airtel.in/insider), which I opened logged out from India on 10 October 2026, listed Super Duolingo and PocketFM Premium under "this Month's Perks", and its text did not mention LinkedIn. Jio, a different carrier, gives eligible users [18 months of Google AI Pro at no charge](/blog/jio-gemini-pro-offer/), though that is a Google plan rather than a Lovable one.
 
 On Lovable's wording, LinkedIn Premium on an Indian account does not qualify for the Lovable perk today, wherever the Premium came from. Recheck the offer page's country list before you rely on it.
+
+If you are weighing Premium for its own sake, [the rupee prices I found for LinkedIn Premium](/blog/linkedin-premium-cost-in-india/) all come from the app stores or other people's reports, since LinkedIn's own pages show none until you sign in.
 
 ## Lovable Price Claims to Check Against Lovable's Own Pages
 

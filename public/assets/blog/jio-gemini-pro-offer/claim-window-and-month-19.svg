@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Jio Gemini Pro offer: when to claim and when it ends</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Dates from Jio's terms, read 16 October 2026. End dates add 18 months to the activation date (my arithmetic).</text>
+
+  <line x1="768" y1="136" x2="768" y2="448" stroke="#b53b15" stroke-width="3"/>
+  <text x="782" y="150" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">Last day to claim: 29 Oct 2026</text>
+  <text x="782" y="174" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">unless Jio extends it</text>
+
+  <text x="60" y="200" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Offer period</text>
+  <text x="60" y="224" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">30 Oct 2025 to 29 Oct 2026</text>
+  <rect x="390" y="182" width="378" height="48" rx="8" fill="#15130f"/>
+  <text x="406" y="213" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#ffffff">claim window</text>
+
+  <text x="60" y="290" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Claimed 30 Oct 2025</text>
+  <text x="60" y="314" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">launch day</text>
+  <rect x="390" y="272" width="569" height="48" rx="8" fill="#6a645c"/>
+  <text x="406" y="303" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#ffffff">18 free months</text>
+  <text x="975" y="303" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">free until about 30 Apr 2027</text>
+
+  <text x="60" y="380" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Claimed 29 Oct 2026</text>
+  <text x="60" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">last day of the window</text>
+  <rect x="768" y="362" width="570" height="48" rx="8" fill="#6a645c"/>
+  <text x="784" y="393" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#ffffff">18 free months</text>
+  <text x="1322" y="393" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#ffffff">free until about 29 Apr 2028</text>
+
+  <line x1="360" y1="448" x2="1340" y2="448" stroke="#15130f" stroke-width="2"/>
+  <line x1="455" y1="448" x2="455" y2="458" stroke="#15130f" stroke-width="2"/>
+  <line x1="644" y1="448" x2="644" y2="458" stroke="#15130f" stroke-width="2"/>
+  <line x1="834" y1="448" x2="834" y2="458" stroke="#15130f" stroke-width="2"/>
+  <line x1="1024" y1="448" x2="1024" y2="458" stroke="#15130f" stroke-width="2"/>
+  <line x1="1213" y1="448" x2="1213" y2="458" stroke="#15130f" stroke-width="2"/>
+  <text x="455" y="484" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Jan 2026</text>
+  <text x="644" y="484" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Jul 2026</text>
+  <text x="834" y="484" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Jan 2027</text>
+  <text x="1024" y="484" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Jul 2027</text>
+  <text x="1213" y="484" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Jan 2028</text>
+
+  <text x="60" y="548" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Month 19: nothing renews. Google's India prices on 16 Oct 2026</text>
+
+  <rect x="60" y="572" width="240" height="136" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="80" y="610" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Free</text>
+  <text x="80" y="654" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="32" font-weight="600" fill="#15130f">Rs 0</text>
+  <text x="80" y="688" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">15 GB, no charge</text>
+
+  <rect x="320" y="572" width="240" height="136" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="340" y="610" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Google One Lite</text>
+  <text x="340" y="654" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="32" font-weight="600" fill="#15130f">Rs 59</text>
+  <text x="340" y="688" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">a month, 30 GB</text>
+
+  <rect x="580" y="572" width="240" height="136" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="600" y="610" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Google One Basic</text>
+  <text x="600" y="654" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="32" font-weight="600" fill="#15130f">Rs 130</text>
+  <text x="600" y="688" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">a month, 100 GB</text>
+
+  <rect x="840" y="572" width="240" height="136" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="860" y="610" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Google AI Plus</text>
+  <text x="860" y="654" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="32" font-weight="600" fill="#15130f">Rs 399</text>
+  <text x="860" y="688" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">a month, 400 GB</text>
+
+  <rect x="1100" y="572" width="240" height="136" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1120" y="610" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Google AI Pro</text>
+  <text x="1120" y="654" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="32" font-weight="600" fill="#15130f">Rs 1,950</text>
+  <text x="1120" y="688" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">a month, 5 TB</text>
+
+  <text x="60" y="752" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Prices from gemini.google/subscriptions and one.google.com/about/plans, logged out from India. Yearly: AI Pro Rs 19,500.</text>
+</svg>

@@ -175,6 +175,8 @@ CLI commands run in your terminal before or instead of an interactive session, p
 | `claude doctor` | Prints installation and settings diagnostics without starting a session |
 | `claude mcp` | Configures MCP servers |
 
+`claude update` moves only the standalone CLI, and [my guide to each copy's update route](/blog/how-to-update-claude-code/) covers the copies it does not reach: the one bundled in the VS Code extension, which updates with the extension, and the one the desktop app runs in its Code tab.
+
 On Windows, `claude doctor` is the check to run after an install, but it can show Search as OK while Claude Code in WSL, reading a repo on C: through `/mnt/c/`, returns fewer search matches than expected; [where to run Claude Code on a Windows machine](/blog/claude-code-wsl-vs-windows/) covers that case and the install steps.
 
 ## Claude Code Custom Commands After the Merge Into Skills

@@ -198,7 +198,7 @@ The chat panel needs only the extension: install Claude Code from the Extensions
 6. To carry on a panel conversation, run `claude --resume` and pick it from the list. The same guide says "The extension and CLI share the same conversation history."
 7. Check both version numbers, because they come from separate copies: `claude --version` in the terminal, and `/status` in the panel for the build a conversation runs.
 
-On 30 September 2026, `claude --version` on my machine printed 2.1.283, while the newest extension build installed was 2.1.285. A feature with a version floor can reach one surface first: Sonnet 5.5 needs Claude Code v2.1.284 or later, so a 2.1.283 CLI cannot run it.
+On 30 September 2026, `claude --version` on my machine printed 2.1.283, while the newest extension build installed was 2.1.285. A feature with a version floor can reach one surface first: Sonnet 5.5 needs Claude Code v2.1.284 or later, so a 2.1.283 CLI cannot run it. When your two numbers differ, update whichever copy is behind: the panel's copy moves only when the extension updates, and [my guide to which command updates which copy](/blog/how-to-update-claude-code/) gives the CLI's update command for each install method.
 
 Running `claude` inside a VS Code terminal also reinstalls the extension if you removed it. To stop that, turn off Auto-install IDE extension in `/config` (the `autoInstallIdeExtension` key).
 

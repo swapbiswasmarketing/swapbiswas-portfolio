@@ -2495,3 +2495,72 @@ https://swapbiswas.com/blog/can-chatgpt-transcribe-audio/?utm_source=linkedin&ut
 #ChatGPT #OpenAI #AITools #CustomerResearch #ProductMarketing
 
 ---
+
+### ChatGPT Go vs Plus vs Pro: Which Plan to Buy (Oct 2026)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, three lidded wooden caskets of increasing size standing in a row on an oak table, an open ledger with blank ruled rows lying in front of them, a quill and a small brass balance beside the ledger, a single vermilion red thread laid across one row of the ledger, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+ChatGPT Plus costs 2.5 times as much as ChatGPT Go in the US, $20 a month against $8, and the two differ on 23 of the 86 rows in OpenAI's pricing table.
+I would choose between them by the rows a normal marketing week hits, since both list unlimited everyday text chats and the same context windows.
+
+- Go chats run on GPT-6 Luna and Plus chats on GPT-6 Sol, per OpenAI's 7 October 2026 release note, so Go covers briefs, emails, posts and rewrites when Luna's drafts need only light edits.
+- Plus earns the extra $12 in a week that needs deep research, the Office and Sheets extensions, Sites, image generation with Thinking or a screen with no ads.
+- OpenAI's own pages disagree on six Go questions, including ads, voice limits and which model Go uses. Seven of the ten OpenAI help articles I cite had been edited in the four days before I read them.
+- Pro is three monthly plans at $100, $200 and $500, and it makes sense only when Codex's five-hour estimates or an input of more than about 320 pages stop the work.
+- In India the ratio doubles: on 16 October 2026, the per-country price file that the pricing page's script requests (undocumented, and it can change) returned Rs 399 for Go and Rs 1,999 for Plus with GST included.
+
+Of the rows where Go says No or Limited, which one does your marketing week hit?
+
+https://swapbiswas.com/blog/chatgpt-go-vs-plus/?utm_source=linkedin&utm_medium=social&utm_campaign=chatgpt-go-vs-plus
+
+#ChatGPT #OpenAI #AITools #AIForMarketing #SaaSPricing
+
+---
+
+### Jio Gemini Pro Offer: Last Date and After 18 Months
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a large open wooden chest packed with rolled scrolls and bound letters beside a much smaller empty casket, a brass pocket sundial and a folded parchment charter on the table in front of them, a single vermilion red ribbon tied around the charter, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Jio's terms end the Jio Gemini Pro offer period on 29 October 2026, unless Jio extends it, and the offer page itself shows no date.
+Waiting for an extension is the bet I would not make: if you qualify and want the plan, claim before 29 October 2026 and set a reminder for a month before your 18 months end.
+
+- It is free for Jio SIM users aged 18 and above on an Unlimited 5G plan of Rs 349 or more, prepaid or postpaid. Jio's FAQ adds plans of Rs 299 or more (1.5 GB a day on prepaid) for a limited time, and each mobile number can claim it once.
+- The Rs 35,100 on Jio's offer page is 18 months of Google AI Pro at Rs 1,950 a month, the price Google's India plan page listed on 16 October 2026.
+- The free months do not renew. A claim on launch day stays free until about 30 April 2027 and a claim on 29 October 2026 until about 29 April 2028, and a lapsed recharge can suspend access without moving that end date.
+- In month 19 your Google account returns to the free 15 GB, and Jio's FAQ says that over it you can't add new files or send or receive Gmail messages. Google lists AI Pro at Rs 1,950 a month or Rs 19,500 a year, and Google One Lite holds 30 GB for Rs 59 a month.
+- Jio's offer page lists Gemini 3, while Google's AI Pro card listed Gemini 4 Argon, so check which models the Gemini app offers on the Google account you activated.
+
+If you claimed the Jio Gemini offer, do you know the date your 18 free months end?
+
+https://swapbiswas.com/blog/jio-gemini-pro-offer/?utm_source=linkedin&utm_medium=social&utm_campaign=jio-gemini-pro-offer
+
+#Jio #Gemini #GoogleAIPro #AITools #India
+
+---
+
+### How to Update Claude Code (and Fix It Not Updating)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a reading desk with three identical leather-bound copies of the same volume, two standing closed side by side and the third lying open with a freshly written loose leaf tucked between its pages, a quill, an inkwell and a small penknife beside it, a single vermilion red ribbon bookmark hanging from the open copy, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+A Windows machine can run at least three copies of Claude Code at once: the standalone CLI, the copy the VS Code extension bundles for its chat panel, and the copy the desktop app downloads for its Code tab.
+Each copy updates by its own route and claude update moves the standalone CLI alone, so name the copy before you update it.
+
+- I build this site with the Claude Code extension in VS Code on Windows 11, with a standalone CLI installed beside it. A claude --version typed into VS Code's terminal reports that CLI while the chat panel runs the extension's bundled copy, so a check against the wrong copy makes a finished update look like a failed one.
+- VS Code waits 12 hours by default before it installs a published extension update. To update the chat panel now, select Update on Claude Code in the Extensions view, then Restart Extensions.
+- Native and npm installs update in the background and switch at the next start. WinGet installs do not by default: run winget upgrade Anthropic.ClaudeCode with Claude Code closed, since Windows locks the running executable.
+- The stable channel serves a version "typically about one week old". On 16 October 2026, npm's stable tag pointed to 2.1.292, which the changelog dates to 6 October, and latest pointed to 2.1.301.
+- To roll back, run claude install with the version you need, then set DISABLE_AUTOUPDATER to 1 while you wait for a fix. It stops only the background check, so claude update still works when you are ready to move forward.
+
+When you run where.exe claude on your machine, how many folders does it list?
+
+https://swapbiswas.com/blog/how-to-update-claude-code/?utm_source=linkedin&utm_medium=social&utm_campaign=how-to-update-claude-code
+
+#ClaudeCode #Anthropic #VSCode #Windows #MarketingOps
+
+---

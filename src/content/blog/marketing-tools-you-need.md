@@ -145,7 +145,7 @@ This is the biggest change since 2023. A single AI assistant now handles what us
 | Claude | Long documents, analysis | Free / $20/mo (Pro) |
 | Gemini | Google Workspace integration | Free / $20/mo |
 
-If you are choosing between Claude's and ChatGPT's paid plans, my [Claude Pro vs ChatGPT Plus comparison](/blog/claude-vs-chatgpt/) covers how they differ on billing, usage limits and image generation.
+If you are choosing between Claude's and ChatGPT's paid plans, my [Claude Pro vs ChatGPT Plus comparison](/blog/claude-vs-chatgpt/) covers how they differ on billing, usage limits and image generation. ChatGPT also sells Go, a paid plan priced below Plus, and [when Go is enough for marketing and when Plus is worth the upgrade](/blog/chatgpt-go-vs-plus/) comes down to features such as deep research, Sites and image generation with Thinking.
 
 Want to get more from your AI tool? Our [ChatGPT prompts for marketing](/blog/chatgpt-prompts-for-marketing/) guide has templates that work.
 

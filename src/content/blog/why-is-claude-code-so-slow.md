@@ -243,6 +243,8 @@ Before changing a setting on a slow day, run `claude --version`, compare it with
 - A WinGet install does not auto-update by default; it upgrades with `winget upgrade Anthropic.ClaudeCode`.
 - The VS Code panel runs its own bundled copy of the CLI, so read its version with `/status`.
 
+The panel's copy updates with the extension, and [my guide to updating each Claude Code install](/blog/how-to-update-claude-code/) lists the update route and the version check for each copy, including the one the desktop app runs in its Code tab.
+
 Inside a session, the `/doctor` checkup reports whether a newer version is available on your release channel.
 
 ## Claude Code Slow in VS Code: What the Extension Attaches
