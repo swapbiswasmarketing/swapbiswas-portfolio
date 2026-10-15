@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 990" width="1400" height="990">
+  <rect x="0" y="0" width="1400" height="990" fill="#f6f4ef"/>
+
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">ChatGPT Go free in India, date by date</text>
+  <text x="60" y="106" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">OpenAI's pages, Internet Archive copies and a logged-out check from India on 16 October 2026</text>
+
+  <text x="370" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">THE OFFER AND ITS PAGES</text>
+  <text x="370" y="760" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">THE RENEWAL WINDOW</text>
+
+  <line x1="330" y1="214" x2="330" y2="906" stroke="#6a645c" stroke-width="2.5"/>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif">
+    <rect x="370" y="176" width="970" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <circle cx="330" cy="214" r="9" fill="#15130f"/>
+    <text x="300" y="222" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">4 Nov 2025</text>
+    <text x="396" y="208" font-size="22" font-weight="500" fill="#15130f">Offer opens on the ChatGPT website and Google Play</text>
+    <text x="396" y="237" font-size="18" fill="#6a645c">India promotion article, Internet Archive copy of 4 Nov 2025</text>
+
+    <rect x="370" y="268" width="970" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <circle cx="330" cy="306" r="9" fill="#15130f"/>
+    <text x="300" y="314" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">5 Nov 2025</text>
+    <text x="396" y="300" font-size="22" font-weight="500" fill="#15130f">iPhone users can upgrade in the iOS app, billed by Apple</text>
+    <text x="396" y="329" font-size="18" fill="#6a645c">India promotion article, Internet Archive copy of 5 Nov 2025</text>
+
+    <rect x="370" y="360" width="970" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <circle cx="330" cy="398" r="9" fill="#15130f"/>
+    <text x="300" y="406" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">11 Jan 2026</text>
+    <text x="396" y="392" font-size="22" font-weight="500" fill="#15130f">Last archived copy of the India promotion article</text>
+    <text x="396" y="421" font-size="18" fill="#6a645c">Internet Archive capture, HTTP 200</text>
+
+    <rect x="370" y="452" width="970" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <circle cx="330" cy="490" r="9" fill="#15130f"/>
+    <text x="300" y="498" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">21 Jan 2026</text>
+    <text x="396" y="484" font-size="22" font-weight="500" fill="#15130f">OpenAI: "as of January 21, 2026, the promo has ended"</text>
+    <text x="396" y="513" font-size="18" fill="#6a645c">OpenAI release notes, update to the entry dated 3 Nov 2025</text>
+
+    <rect x="370" y="544" width="970" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <circle cx="330" cy="582" r="9" fill="#15130f"/>
+    <text x="300" y="590" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">3 Feb 2026</text>
+    <text x="396" y="576" font-size="22" font-weight="500" fill="#15130f">The article URL now redirects to the main ChatGPT Go article</text>
+    <text x="396" y="605" font-size="18" fill="#6a645c">Internet Archive capture, HTTP 302</text>
+
+    <rect x="370" y="636" width="970" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <circle cx="330" cy="674" r="9" fill="#15130f"/>
+    <text x="300" y="682" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">16 Oct 2026</text>
+    <text x="396" y="668" font-size="22" font-weight="500" fill="#15130f">Still redirects; no free year on OpenAI's plan or pricing pages</text>
+    <text x="396" y="697" font-size="18" fill="#6a645c">Checked logged out from an Indian connection</text>
+
+    <rect x="370" y="776" width="970" height="76" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+    <circle cx="330" cy="814" r="11" fill="#b53b15"/>
+    <text x="300" y="822" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#b53b15">4 Nov 2026</text>
+    <text x="396" y="808" font-size="22" font-weight="500" fill="#15130f">Earliest end of a free year: the Go fee renews unless you cancel</text>
+    <text x="396" y="837" font-size="18" fill="#3a3632">12 months after sign-ups opened, per the India promotion article</text>
+
+    <rect x="370" y="868" width="970" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <circle cx="330" cy="906" r="9" fill="#15130f"/>
+    <text x="300" y="914" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">By 21 Jan 2027</text>
+    <text x="396" y="900" font-size="22" font-weight="500" fill="#15130f">The last free years have run out</text>
+    <text x="396" y="929" font-size="18" fill="#6a645c">12 months after 21 Jan 2026, when OpenAI says the promo had ended</text>
+  </g>
+</svg>

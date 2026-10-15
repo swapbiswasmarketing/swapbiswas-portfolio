@@ -39,6 +39,8 @@ LinkedIn's comparison page adds a threshold in a note placed after its Premium a
 
 Sources: LinkedIn Help on profile appearances vs profile views, profile search appearances, viewing your Search Appearances, [Analytics for LinkedIn members](https://www.linkedin.com/help/linkedin/answer/a711358), [Who's viewed your profile on basic and Premium accounts](https://www.linkedin.com/help/linkedin/answer/a548046) and [Who's viewed your profile visibility settings](https://www.linkedin.com/help/linkedin/answer/a568195), read on 2 October 2026. The engagement block gets [its own breakdown of the impressions on your experience number](/blog/linkedin-impressions-on-your-experience/).
 
+If the full viewer list is why you are weighing an upgrade, LinkedIn's own plan pages show no rupee price to a visitor in India who is not signed in, so I collected [the rupee figures that app stores and reports give for Premium](/blog/linkedin-premium-cost-in-india/).
+
 ## All Appearances vs Search Appearances
 
 All appearances is the total of what LinkedIn's comparison page calls profile appearances, and Search appearances is one slice of it. The comparison page gives these examples of where an appearance can happen:

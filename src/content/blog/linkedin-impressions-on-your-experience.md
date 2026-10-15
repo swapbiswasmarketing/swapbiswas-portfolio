@@ -96,7 +96,7 @@ As of 2 October 2026, the eleven LinkedIn Help pages I read leave these question
 | Does a shared job change feed the notification? | Nothing; the Share profile updates page does not mention impressions |
 | Do your own profile visits count? | Nothing for profiles |
 
-LinkedIn does document a paid-plan rule for another part of the profile: the link that creator mode once let you add to your introduction is now a custom button for a select group of Premium Business, Sales Navigator and Recruiter Lite subscribers, as I show in [what happened to creator mode's profile link](/blog/linkedin-creator-mode-not-showing/).
+LinkedIn does document a paid-plan rule for another part of the profile: the link that creator mode once let you add to your introduction is now a custom button for a select group of Premium Business, Sales Navigator and Recruiter Lite subscribers, as I show in [what happened to creator mode's profile link](/blog/linkedin-creator-mode-not-showing/). Premium Business, which is also the plan named in the box above LinkedIn's sample panel, has no rupee price on LinkedIn's own plan pages for a visitor in India who is not signed in; I set out the rupee figures reported for it in [my check of what LinkedIn Premium costs from India](/blog/linkedin-premium-cost-in-india/).
 
 ## How to Read LinkedIn Impressions on Your Experience After a Profile Edit
 

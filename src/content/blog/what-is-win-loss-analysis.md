@@ -71,7 +71,7 @@ The two non-negotiable parts: short call, no sales follow-up. The combination - 
 
 ### Stage 3: The Interview
 
-Run the interview as a 25-30 minute structured conversation. Record (with permission) and transcribe. Use the 12-question script below. Follow up on anything the buyer dwells on.
+Run the interview as a 25-30 minute structured conversation. Record (with permission) and transcribe. On a paid ChatGPT plan you can upload the recording for a transcript, but OpenAI warns that speaker identification on uploads may be unreliable, so check [which ChatGPT transcription route suits a buyer interview](/blog/can-chatgpt-transcribe-audio/) and confirm each quote against the audio. Use the 12-question script below. Follow up on anything the buyer dwells on.
 
 The single rule: interviewers do not defend, sell, or correct. They listen.
 

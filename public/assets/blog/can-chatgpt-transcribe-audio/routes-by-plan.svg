@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+
+  <text x="60" y="74" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">ChatGPT transcription routes by plan</text>
+  <text x="60" y="114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Sources: OpenAI's help pages and pricing table, read 16 October 2026</text>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">
+    <text x="60" y="184">ROUTE</text>
+    <text x="553" y="184" text-anchor="middle">FREE</text>
+    <text x="727" y="184" text-anchor="middle">GO</text>
+    <text x="901" y="184" text-anchor="middle">PLUS</text>
+    <text x="1075" y="184" text-anchor="middle">PRO</text>
+    <text x="1249" y="184" text-anchor="middle">BUSINESS</text>
+  </g>
+  <line x1="60" y1="198" x2="1332" y2="198" stroke="#e4dfd6" stroke-width="1"/>
+
+  <g fill="#ffffff" stroke="#e4dfd6" stroke-width="1">
+    <rect x="60" y="210" width="390" height="100" rx="12"/>
+    <rect x="60" y="322" width="390" height="100" rx="12"/>
+    <rect x="60" y="434" width="390" height="100" rx="12"/>
+    <rect x="60" y="546" width="390" height="100" rx="12"/>
+
+    <rect x="470" y="210" width="166" height="100" rx="12"/>
+    <rect x="818" y="210" width="166" height="100" rx="12"/>
+    <rect x="992" y="210" width="166" height="100" rx="12"/>
+    <rect x="1166" y="210" width="166" height="100" rx="12"/>
+
+    <rect x="470" y="322" width="166" height="100" rx="12"/>
+    <rect x="644" y="322" width="166" height="100" rx="12"/>
+    <rect x="818" y="322" width="166" height="100" rx="12"/>
+    <rect x="992" y="322" width="166" height="100" rx="12"/>
+    <rect x="1166" y="322" width="166" height="100" rx="12"/>
+
+    <rect x="470" y="434" width="166" height="100" rx="12"/>
+    <rect x="644" y="434" width="166" height="100" rx="12"/>
+    <rect x="818" y="434" width="166" height="100" rx="12"/>
+    <rect x="992" y="434" width="166" height="100" rx="12"/>
+    <rect x="1166" y="434" width="166" height="100" rx="12"/>
+
+    <rect x="470" y="546" width="166" height="100" rx="12"/>
+    <rect x="644" y="546" width="166" height="100" rx="12"/>
+    <rect x="818" y="546" width="166" height="100" rx="12"/>
+    <rect x="992" y="546" width="166" height="100" rx="12"/>
+    <rect x="1166" y="546" width="166" height="100" rx="12"/>
+  </g>
+
+  <rect x="644" y="210" width="166" height="100" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2.5"/>
+
+  <g font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">
+    <text x="84" y="252">Upload an audio file</text>
+    <text x="84" y="364">Record mode</text>
+    <text x="84" y="476">Meetings plugin</text>
+    <text x="84" y="588">Dictation</text>
+  </g>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">
+    <text x="84" y="286">Attach to a chat, up to 512 MB</text>
+    <text x="84" y="398">macOS app, 240 min a session</text>
+    <text x="84" y="510">macOS app, in beta</text>
+    <text x="84" y="622">Mic icon, your own speech</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" text-anchor="middle">
+    <text x="553" y="268" fill="#6a645c">No</text>
+    <text x="727" y="268" fill="#b53b15">Not named</text>
+    <text x="901" y="268" fill="#2a7347">Yes</text>
+    <text x="1075" y="268" fill="#2a7347">Yes</text>
+    <text x="1249" y="268" fill="#2a7347">Yes</text>
+
+    <text x="553" y="380" fill="#6a645c">No</text>
+    <text x="727" y="380" fill="#6a645c">No</text>
+    <text x="901" y="380" fill="#2a7347">Yes</text>
+    <text x="1075" y="380" fill="#2a7347">Yes</text>
+    <text x="1249" y="380" fill="#2a7347">Yes</text>
+
+    <text x="553" y="492" fill="#6a645c">Not listed</text>
+    <text x="727" y="492" fill="#6a645c">Not listed</text>
+    <text x="901" y="492" fill="#6a645c">Not listed</text>
+    <text x="1075" y="492" fill="#2a7347">Beta</text>
+    <text x="1249" y="492" fill="#2a7347">Beta</text>
+
+    <text x="553" y="604" fill="#2a7347">Yes</text>
+    <text x="727" y="604" fill="#2a7347">Yes</text>
+    <text x="901" y="604" fill="#2a7347">Yes</text>
+    <text x="1075" y="604" fill="#2a7347">Yes</text>
+    <text x="1249" y="604" fill="#2a7347">Yes</text>
+  </g>
+
+  <rect x="60" y="666" width="1272" height="64" rx="12" fill="#eeebe4"/>
+  <text x="84" y="706" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Speech-to-text API: billed on a separate OpenAI API account, with a 25 MB limit per file</text>
+
+  <text x="60" y="772" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Upload Yes: my reading of OpenAI's rule, "paid ChatGPT subscriptions and workspaces, including Enterprise".</text>
+  <text x="60" y="806" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Not named: OpenAI calls Go a paid plan, but no OpenAI page I read names Go for audio uploads.</text>
+</svg>

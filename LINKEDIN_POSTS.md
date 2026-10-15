@@ -2426,3 +2426,72 @@ https://swapbiswas.com/blog/ga4-ai-assistant-channel/?utm_source=linkedin&utm_me
 #GA4 #GoogleAnalytics #MarketingAnalytics #AISearch #SEO
 
 ---
+
+### ChatGPT Go Free in India: What Happens After 12 Months
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scribe's desk with an open almanac whose pages are almost all turned to the back, a tall candle burned down to a short stub in a pewter holder beside it, a small closed leather purse and a folded letter at the edge of the desk, a single vermilion red ribbon marking the last page of the almanac, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+If you got ChatGPT Go free in India, the earliest your free year can run out is 4 November 2026, and on that date the default is an automatic charge.
+Free is a closer substitute than it was when you signed up: since August 2026, OpenAI has given Free users the same unlimited everyday text chats as Go.
+
+- New sign-ups are closed. OpenAI's release notes say the India promotion had ended as of 21 January 2026, and when I checked logged out from an Indian connection on 16 October 2026, its India promotion article redirected to the main Go article.
+- Your free year ends 12 months after your own redemption, so the last ones run out by 21 January 2027. Web sign-ups renew at the current Go fee (Rs 399 a month with GST included on 16 October 2026); Google Play and App Store sign-ups renew at the store's own price.
+- Cancel where you paid, at least 24 hours before your billing date. Uninstalling the app does not cancel, and if you paid by UPI, revoke the AutoPay mandate in the app that holds it too.
+- OpenAI's ads FAQ, updated 14 October 2026, says ads may appear on Free and Go. Go has no Ads-Free option, and Plus, at Rs 1,999 a month, has no ads.
+- Drop to Free if your week is mostly text chat, keep Go if you hit Free's limits on uploads, images or data analysis, and upgrade if ads or deep research are the problem.
+
+When your free ChatGPT Go year comes up for renewal, which plan are you keeping: Free, Go or Plus?
+
+https://swapbiswas.com/blog/chatgpt-go-free-india/?utm_source=linkedin&utm_medium=social&utm_campaign=chatgpt-go-free-india
+
+#ChatGPT #OpenAI #AITools #SaaSPricing #India
+
+---
+
+### LinkedIn Premium Cost in India: Rupee Prices by Source
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's counter with a closed walnut strongbox and its iron key lying in front of it, ten small brass weights of slightly different sizes standing in a row beside the box, an empty hand balance and a folded letter behind them, a single vermilion red ribbon tied around the key, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+LinkedIn's own plan pages showed no rupee price to a logged-out visitor in India on 16 October 2026: the compare pages show features, the product pages quote US dollars, and the pricing buttons lead to sign-in.
+Every rupee figure I found without signing in came from an app store or from someone's report, so I compare them only as totals after GST.
+
+- Apple's India App Store listed ten in-app purchases, every one named Premium Career, from Rs 999 to Rs 1,899, and none labelled with a billing period.
+- Google Play's India listing gives one range for all of LinkedIn's in-app purchases, Rs 299.00 to Rs 70,799.88, names no plan, and prints "All prices include GST."
+- A February 2026 member post reported Premium Career at Rs 1,850 a month on Google Play against Rs 1,015.93 on desktop and called it an 82% markup. If that desktop figure was before 18% GST, the gap is 54%.
+- LinkedIn's dollar list price for a month of Premium Career is US$39.99, or Rs 3,802 at RBI's reference rate for 15 October 2026: about twice the top price on Apple's India listing. I would not estimate an India price from a US guide.
+- Before you subscribe in the app, sign in on a laptop, note the total after GST, and set it against the app's upgrade screen.
+
+If you have reached LinkedIn's Premium checkout from India after signing in, did the total show GST as a separate line?
+
+https://swapbiswas.com/blog/linkedin-premium-cost-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-premium-cost-in-india
+
+#LinkedInPremium #LinkedIn #JobSearch #SaaSPricing #India
+
+---
+
+### Can ChatGPT Transcribe Audio? Yes, on Paid Plans (Oct 2026)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scribe's table with a lute lying on its side, a brass ear trumpet beside it, and an open notebook of blank ruled pages with a quill and an inkwell, a single vermilion red ribbon tied around the neck of the lute, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Can ChatGPT transcribe audio? On a paid plan, yes: since 6 October 2026 you can upload an audio file of up to 512 MB and ask for a transcript.
+Free cannot upload audio, and for ChatGPT Go, which OpenAI calls a paid plan, OpenAI's pages leave it unstated.
+
+- Uploading is one of five OpenAI routes, with Record mode, the Meetings plugin, dictation and the speech-to-text API. A recording you already hold goes to an upload or the API; for a call still to come, OpenAI documents Record mode and the Meetings plugin, both on a Mac.
+- If a guide quotes a 25 MB limit, that figure belongs to the API. ChatGPT's own audio cap is 512 MB per file, and OpenAI warns that "very long recordings may time out".
+- Record mode, marked No on Free and Go, runs only in the ChatGPT macOS desktop app, is capped at 240 minutes per session and "can distinguish multiple speakers". For uploaded files, OpenAI warns that "speaker identification may be unreliable".
+- OpenAI refuses files "identified as video". Save the audio track as an M4A with one FFmpeg command and upload that on a paid plan.
+- Anthropic's Upload files to Claude article listed no audio format on 16 October 2026. For live speech, Anthropic documents dictation, quick entry on Claude Desktop for Mac and voice mode.
+
+Is your next customer interview already a recording, or a call you have not held yet?
+
+https://swapbiswas.com/blog/can-chatgpt-transcribe-audio/?utm_source=linkedin&utm_medium=social&utm_campaign=can-chatgpt-transcribe-audio
+
+#ChatGPT #OpenAI #AITools #CustomerResearch #ProductMarketing
+
+---

@@ -71,7 +71,7 @@ Creator mode let you "add a link to the introduction section of your profile". T
 | [Adding website link to profile available through Premium Business plan](https://www.linkedin.com/help/linkedin/answer/a727760) | 1 year ago | "We have removed the option to add a hyperlink to your profile, which was previously supported through Creator Mode and is no longer available today." The custom button "is available to Premium Business subscribers, and Sales Navigator and Recruiter customers." |
 | Add or remove a custom button from your profile | 9 months ago | "This feature is available only to a select group of LinkedIn Premium Business, Sales Navigator, and Recruiter Lite subscribers. This feature may be gradually available to more LinkedIn users in the future." |
 
-The two later pages word eligibility differently: one names Recruiter customers, the other Recruiter Lite subscribers, and only the newer one says "a select group". I would plan around the narrower, newer wording, which means a paid subscription may still not show you the button. Where your link can go, by account:
+The two later pages word eligibility differently: one names Recruiter customers, the other Recruiter Lite subscribers, and only the newer one says "a select group". I would plan around the narrower, newer wording, which means a paid subscription may still not show you the button. If you are weighing one anyway, I list [what Premium Business, Sales Navigator and Recruiter Lite are reported to cost in rupees](/blog/linkedin-premium-cost-in-india/), since LinkedIn's own plan pages show no rupee price for any of them to a visitor in India who is not signed in. Where your link can go, by account:
 
 | Your account | Where the link goes | LinkedIn's terms |
 |---|---|---|

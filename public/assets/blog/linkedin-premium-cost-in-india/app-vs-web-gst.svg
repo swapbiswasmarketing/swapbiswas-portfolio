@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" width="1400" height="700">
+  <rect x="0" y="0" width="1400" height="700" fill="#f6f4ef"/>
+
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Premium Career, app vs web: the gap depends on GST</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">One member's report of monthly prices, 6 February 2026, read two ways</text>
+
+  <text x="60" y="176" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Google Play, as reported</text>
+  <text x="60" y="204" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">GST included, per Google Play</text>
+  <rect x="560" y="158" width="640" height="56" fill="#b53b15"/>
+  <text x="1216" y="196" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Rs 1,850</text>
+
+  <text x="60" y="276" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Desktop, as reported</text>
+  <text x="60" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">The post does not mention GST</text>
+  <rect x="560" y="258" width="351" height="56" fill="#6a645c"/>
+  <text x="927" y="296" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Rs 1,015.93</text>
+
+  <text x="60" y="376" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Desktop plus 18% GST</text>
+  <text x="60" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">My arithmetic, if Rs 1,015.93 was before tax</text>
+  <rect x="560" y="358" width="415" height="56" fill="#9a938a"/>
+  <text x="991" y="396" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Rs 1,198.80</text>
+
+  <line x1="560" y1="140" x2="560" y2="432" stroke="#15130f" stroke-width="2"/>
+
+  <rect x="60" y="470" width="625" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="516" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">App costs 82% more</text>
+  <text x="92" y="554" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rs 834.07 a month, Rs 10,008.84 a year,</text>
+  <text x="92" y="586" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">if Rs 1,015.93 is the whole desktop</text>
+  <text x="92" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">charge (the post's arithmetic)</text>
+
+  <rect x="715" y="470" width="625" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="747" y="516" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">App costs 54% more</text>
+  <text x="747" y="554" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rs 651.20 a month, Rs 7,814.40 a year,</text>
+  <text x="747" y="586" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">if 18% GST is added to Rs 1,015.93,</text>
+  <text x="747" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the rate in LinkedIn's GST FAQ</text>
+</svg>

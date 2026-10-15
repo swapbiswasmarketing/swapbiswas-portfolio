@@ -394,3 +394,15 @@ Did you have LinkedIn creator mode switched on before LinkedIn removed the toggl
 ## ga4-ai-assistant-channel
 
 In GA4 Traffic acquisition for swapbiswas.com, with Session source / medium as the dimension and the range April to October 2026: which sources carry the medium ai-assistant, what is the earliest date one appears, and do chatgpt.com sessions before 13 May 2026 still show as chatgpt.com / referral? (The answer belongs in 'How to Check ChatGPT Traffic in GA4' and would settle two items in 'Questions Google's AI Assistant Pages Leave Open', the history question and the source-value question, for one real property.)
+
+## chatgpt-go-free-india
+
+Did you redeem OpenAI's free ChatGPT Go year in India? If so, what does your own account show on a stated date: the renewal date in ChatGPT Settings (Billing or Account) or in your App Store / Google Play subscriptions page, and which payment route you used (web card, web UPI, Google Play or App Store)? One dated line would go under the table in 'Renewal Dates for ChatGPT Go Free in India, by Sign-Up Route'. If you never redeemed it, the post stays as written.
+
+## linkedin-premium-cost-in-india
+
+Signed in from India, what does linkedin.com/premium/products show you for Premium Career and Premium Business: the rupee amount, the billing periods offered (monthly, annual, quarterly if any), whether GST is a separate line or included, and the payment options (UPI, RuPay, cards)? And on the same day, what does the LinkedIn app's upgrade screen show for the same plan and period? With dates, this belongs in 'LinkedIn Premium App vs Web Price: Compare Totals After GST' and would replace its two-reading GST table with a measured gap.
+
+## can-chatgpt-transcribe-audio
+
+Which ChatGPT plan are you on, and does it accept an audio upload? If you attach one, what file type, size and length was it, on which client (web, Windows app, phone), what came back (a full transcript, a refusal, speaker labels or not), and on what date? A one-row answer would fill the Go cell of the routes table with a dated first-hand result and could go under 'Can ChatGPT Go Transcribe Audio? What OpenAI's Pages Say From India'.

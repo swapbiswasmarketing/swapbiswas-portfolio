@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" width="1400" height="850">
+  <rect x="0" y="0" width="1400" height="850" fill="#f6f4ef"/>
+
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Where a LinkedIn Premium price is visible from India</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Public pages read logged out from an Indian connection on 16 October 2026</text>
+
+  <rect x="60" y="140" width="625" height="330" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+  <text x="92" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#b53b15">LINKEDIN'S OWN PAGES</text>
+  <text x="92" y="232" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="32" font-weight="600" fill="#15130f">No rupee price</text>
+  <line x1="92" y1="256" x2="653" y2="256" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="292" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Compare pages: features, no price</text>
+  <text x="92" y="324" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Product pages: from US$39.99 a month</text>
+  <text x="92" y="356" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">for Premium Career, in an FAQ</text>
+  <text x="92" y="388" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">INR is not among the five currencies</text>
+  <text x="92" y="420" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pricing buttons: a sign-in page</text>
+
+  <rect x="715" y="140" width="625" height="330" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="747" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">APPLE APP STORE, INDIA</text>
+  <text x="747" y="232" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="32" font-weight="600" fill="#15130f">Rs 999 to Rs 1,899</text>
+  <line x1="747" y1="256" x2="1308" y2="256" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="747" y="292" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">10 items shown, all named Premium Career</text>
+  <text x="747" y="324" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rs 1,850 on 4 of the 10 items</text>
+  <text x="747" y="356" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No billing period on any item</text>
+  <text x="747" y="388" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No tax wording on the listing</text>
+  <text x="747" y="420" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Apple's rule: prices in India include tax</text>
+
+  <rect x="60" y="500" width="625" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="544" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">GOOGLE PLAY, INDIA</text>
+  <text x="92" y="592" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="32" font-weight="600" fill="#15130f">Rs 299.00 to Rs 70,799.88</text>
+  <line x1="92" y1="616" x2="653" y2="616" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="652" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Per item, one range for all purchases</text>
+  <text x="92" y="684" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No plan named at either end</text>
+  <text x="92" y="716" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Google Play's own page line:</text>
+  <text x="92" y="748" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"All prices include GST."</text>
+
+  <rect x="715" y="500" width="625" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="747" y="544" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="0.12em" fill="#6a645c">REPORTS, NOT PRICE PAGES</text>
+  <text x="747" y="592" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="32" font-weight="600" fill="#15130f">Rs 1,015.93 web, Rs 1,850 app</text>
+  <line x1="747" y1="616" x2="1308" y2="616" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="747" y="652" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Premium Career, member post, 6 Feb 2026</text>
+  <text x="747" y="684" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The post does not mention GST</text>
+  <text x="747" y="716" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Company Page: about Rs 8k a month,</text>
+  <text x="747" y="748" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Reddit thread, 21 June 2026</text>
+</svg>

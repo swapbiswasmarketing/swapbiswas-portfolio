@@ -245,6 +245,14 @@
 		],
 		"hash": "7d43c912b97e5aa8"
 	},
+	"/assets/blog/can-chatgpt-transcribe-audio/routes-by-plan.webp": {
+		"w": 1200,
+		"h": 720,
+		"v": [
+			660
+		],
+		"hash": "07f932faf30d5059"
+	},
 	"/assets/blog/can-claude-code-generate-images/file-audit.webp": {
 		"w": 1200,
 		"h": 617,
@@ -260,6 +268,14 @@
 			660
 		],
 		"hash": "3f0db22537efc5ba"
+	},
+	"/assets/blog/chatgpt-go-free-india/offer-timeline.webp": {
+		"w": 1200,
+		"h": 849,
+		"v": [
+			660
+		],
+		"hash": "9c81c71a5bf48c70"
 	},
 	"/assets/blog/claude-code-api-key-vs-subscription/credential-precedence.webp": {
 		"w": 1200,
@@ -1298,6 +1314,22 @@
 			660
 		],
 		"hash": "677bbc802d65eb4c"
+	},
+	"/assets/blog/linkedin-premium-cost-in-india/app-vs-web-gst.webp": {
+		"w": 1200,
+		"h": 600,
+		"v": [
+			660
+		],
+		"hash": "7d87f9e578aa3300"
+	},
+	"/assets/blog/linkedin-premium-cost-in-india/where-the-rupee-price-shows.webp": {
+		"w": 1200,
+		"h": 729,
+		"v": [
+			660
+		],
+		"hash": "f9be37d19e6704d8"
 	},
 	"/assets/blog/linkedin-search-appearances-vs-profile-views/appearances-vs-views.webp": {
 		"w": 1200,
