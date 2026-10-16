@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 730" width="1400" height="730">
+  <rect x="0" y="0" width="1400" height="730" fill="#f6f4ef"/>
+
+  <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">From Revenue Goal to Marketing Budget</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Acme Payables, a fictional B2B SaaS company. Every rate is a labelled assumption.</text>
+
+  <rect x="60" y="150" width="290" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">NEW-LOGO ARR</text>
+  <text x="88" y="244" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#15130f">$2.4M</text>
+  <text x="88" y="286" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$2.8M gross new ARR</text>
+  <text x="88" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">less $0.4M expansion</text>
+
+  <line x1="354" y1="250" x2="372" y2="250" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="372,243 386,250 372,257" fill="#15130f"/>
+
+  <rect x="390" y="150" width="290" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="418" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CUSTOMERS</text>
+  <text x="418" y="244" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#15130f">80</text>
+  <text x="418" y="286" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$2.4M / $30k average</text>
+  <text x="418" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">first-year contract</text>
+
+  <line x1="684" y1="250" x2="702" y2="250" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="702,243 716,250 702,257" fill="#15130f"/>
+
+  <rect x="720" y="150" width="290" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="748" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">OPPORTUNITIES</text>
+  <text x="748" y="244" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#15130f">320</text>
+  <text x="748" y="286" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">80 / 25% win rate</text>
+  <text x="748" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$9.6M of pipeline</text>
+
+  <line x1="1014" y1="250" x2="1032" y2="250" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1032,243 1046,250 1032,257" fill="#15130f"/>
+
+  <rect x="1050" y="150" width="290" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1078" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">MARKETING-SOURCED</text>
+  <text x="1078" y="244" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#15130f">192</text>
+  <text x="1078" y="286" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">320 x 60% sourced</text>
+  <text x="1078" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">by marketing</text>
+
+  <line x1="1195" y1="350" x2="1195" y2="375" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="1195" y1="375" x2="190" y2="375" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="190" y1="375" x2="190" y2="386" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="183,386 190,400 197,386" fill="#15130f"/>
+
+  <rect x="60" y="400" width="260" height="230" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="442" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">SQLS</text>
+  <text x="88" y="496" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#15130f">240</text>
+  <text x="88" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">192 / 80%</text>
+  <text x="88" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">SQL-to-opportunity</text>
+  <text x="88" y="602" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">rate</text>
+
+  <line x1="324" y1="515" x2="342" y2="515" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="342,508 356,515 342,522" fill="#15130f"/>
+
+  <rect x="360" y="400" width="260" height="230" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="388" y="442" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">MQLS</text>
+  <text x="388" y="496" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#15130f">1,200</text>
+  <text x="388" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">240 / 20%</text>
+  <text x="388" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">MQL-to-SQL rate</text>
+
+  <line x1="624" y1="515" x2="642" y2="515" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="642,508 656,515 642,522" fill="#15130f"/>
+
+  <rect x="660" y="400" width="260" height="230" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5"/>
+  <text x="688" y="442" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PROGRAM SPEND</text>
+  <text x="688" y="496" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#b53b15">$360k</text>
+  <text x="688" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">1,200 MQLs x $300</text>
+  <text x="688" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">blended cost</text>
+  <text x="688" y="602" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">per MQL</text>
+
+  <line x1="924" y1="515" x2="942" y2="515" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="942,508 956,515 942,522" fill="#15130f"/>
+
+  <rect x="960" y="400" width="380" height="230" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="988" y="442" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">TOP-DOWN CHECK</text>
+  <text x="988" y="496" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#15130f">$72k gap</text>
+  <text x="988" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">8% of $8.0M ARR = $640k</text>
+  <text x="988" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">minus $352k people and tools</text>
+  <text x="988" y="602" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">= $288k vs $360k program spend</text>
+
+  <text x="60" y="680" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Anchor: SaaS Capital's 2026 all-company median for marketing, 8% of ARR. Swap in your own trailing rates.</text>
+</svg>

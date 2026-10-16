@@ -181,6 +181,6 @@ The upstream targeting question sits in the same place. Sharper [demand generati
 
 The realistic use of external data here is narrow. First Page Sage's funnel report gives you a defensible shape by channel, drawn from a disclosed client base; the ChartMogul study gives you a self-serve conversion anchor with a stated window; everything else on page one is an agency's own book of business, carrying a sample size at best and a denominator never.
 
-Build the internal version instead. Rebuild the last eight quarters under one definition, publish the denominator in the chart title, split worked from untouched, and set the target as a movement off your own median with a named lever attached. An MQL to SQL conversion rate benchmark borrowed from a page that will not say what it divided by cannot survive its first serious question.
+Build the internal version instead. Rebuild the last eight quarters under one definition, publish the denominator in the chart title, split worked from untouched, and set the target as a movement off your own median with a named lever attached. An MQL to SQL conversion rate benchmark borrowed from a page that will not say what it divided by cannot survive its first serious question. Your internal rate is also the input a [SaaS marketing plan's pipeline math](/blog/saas-marketing-plan-template/) needs before it can size an MQL target, because the plan divides its SQL count by that rate.
 
 The denominator is the first thing to write down and the last thing anyone thinks to ask about.

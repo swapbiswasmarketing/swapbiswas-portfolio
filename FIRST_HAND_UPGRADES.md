@@ -430,3 +430,15 @@ Do you know a college student in India who redeemed Google AI Plus through Inter
 ## seo-interview-questions
 
 Have you ever interviewed or hired anyone for an SEO role? If yes: which single question best separated strong candidates from weak ones, and what did the strongest answer contain (the check or evidence the candidate pointed to)? The answer would become a first-hand row in 'Strong and Weak SEO Interview Answers for Hiring Managers'. If not, the post stands as written.
+
+## claude-certifications
+
+Have you completed any Claude Academy course (which one, and on what date)? One dated line, with no claim about any exam or any employer's partner status, would let 'Claude Academy Courses: The Free Route Mapped to Each Exam' carry a first-hand note. Separately, the post goes stale on known dates: re-read the four exam pages and guides on 17-18 November 2026 (new guides), 7-8 December 2026 (new exam content) and 2 January 2027 (the Global Premier discount ends 31 December 2026).
+
+## linkedin-post-size
+
+Can you post one test image each at 1.91:1, 1:1, 4:5, 9:16 and 1:1.91 (1200 x 627, 1080 x 1080, 1080 x 1350, 1080 x 1920, 627 x 1200) from your profile, and from a Page if you admin one, then screenshot each on desktop and in the phone app with the date? That would settle which end of the 3:1 to 4:5 range LinkedIn's "centered and cropped" rule applies to, in 'What Is the Best LinkedIn Post Image Size?'.
+
+## saas-marketing-plan-template
+
+Which parts of your own annual marketing planning does this eight-section template leave out (for example a hiring plan, a martech or tooling line, launch dates or a board-reporting cadence), and where in the eight sections would you add them? Answer without employer names or numbers; it would add one first-hand line to 'What Goes in a SaaS Marketing Plan Template?'.

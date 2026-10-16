@@ -114,7 +114,7 @@ Content is the hardest line to defend on that basis, because it influences deals
 
 Attribution debates waste quarters. The practical answer is to track both. **Sourced pipeline** is the first-touch credit for opportunities a channel originated. **Influenced pipeline** is every opportunity a channel touched on the way to a deal.
 
-Report sourced pipeline to defend channel budgets and influenced pipeline to value the creation work that has no clean last-touch. Demand creation almost always looks underfunded on a sourced-only view, because its job is to make later capture cheaper.
+Report sourced pipeline to defend channel budgets and influenced pipeline to value the creation work that has no clean last-touch. Demand creation almost always looks underfunded on a sourced-only view, because its job is to make later capture cheaper. To size those channel budgets before the year starts, I work a new-logo ARR target back to opportunities and MQLs in a [bottom-up SaaS marketing budget example](/blog/saas-marketing-plan-template/).
 
 ## Sequencing the First 90 Days
 

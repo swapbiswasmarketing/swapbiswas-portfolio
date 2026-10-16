@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="1400" height="880">
+  <rect x="0" y="0" width="1400" height="880" fill="#f6f4ef"/>
+
+  <text x="40" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Which door leads to a Claude certification?</text>
+  <text x="40" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Who can register for the four exams, as read on 16 October 2026</text>
+
+  <rect x="330" y="130" width="740" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="700" y="162" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">THE GATE</text>
+  <text x="700" y="198" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Does your organization belong to the</text>
+  <text x="700" y="230" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claude Partner Network?</text>
+
+  <line x1="700" y1="250" x2="700" y2="272" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="240" y1="272" x2="1160" y2="272" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="240" y1="272" x2="240" y2="296" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="700" y1="272" x2="700" y2="296" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="1160" y1="272" x2="1160" y2="296" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="233,296 247,296 240,310" fill="#15130f"/>
+  <polygon points="693,296 707,296 700,310" fill="#15130f"/>
+  <polygon points="1153,296 1167,296 1160,310" fill="#15130f"/>
+
+  <rect x="40" y="310" width="400" height="470" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="346" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">DOOR 1 - YES</text>
+  <text x="64" y="384" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Your organization</text>
+  <text x="64" y="416" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">is a partner</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="64" y="460">Register with a company</tspan>
+    <tspan x="64" y="492">email on the partner record</tspan>
+    <tspan x="64" y="536">Pay $99 to $175 by card,</tspan>
+    <tspan x="64" y="568">less your tier's discount</tspan>
+    <tspan x="64" y="612">Book Pearson VUE online</tspan>
+    <tspan x="64" y="644">or at a test center</tspan>
+  </text>
+  <rect x="64" y="668" width="352" height="88" rx="8" fill="#eeebe4"/>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">
+    <tspan x="84" y="704">Certification and a Credly</tspan>
+    <tspan x="84" y="736">badge, valid 12 months</tspan>
+  </text>
+
+  <rect x="500" y="310" width="400" height="470" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="524" y="346" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">DOOR 2 - NO, SELLS SERVICES</text>
+  <text x="524" y="384" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Not a partner, but</text>
+  <text x="524" y="416" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">it serves clients</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="524" y="460">Apply at claude.com/partners;</tspan>
+    <tspan x="524" y="492">membership is free</tspan>
+    <tspan x="524" y="536">Criteria: 10+ employees</tspan>
+    <tspan x="524" y="568">and a supported region</tspan>
+    <tspan x="524" y="612">Consulting, implementation</tspan>
+    <tspan x="524" y="644">or managed services</tspan>
+  </text>
+  <rect x="524" y="668" width="352" height="88" rx="8" fill="#eeebe4"/>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">
+    <tspan x="544" y="704">Accepted? Then use door 1</tspan>
+    <tspan x="544" y="736">with your company email</tspan>
+  </text>
+
+  <line x1="498" y1="712" x2="456" y2="712" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="442,712 456,705 456,719" fill="#15130f"/>
+
+  <rect x="960" y="310" width="400" height="470" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="984" y="346" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">DOOR 3 - NO, ANYONE ELSE</text>
+  <text x="984" y="384" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Everyone else,</text>
+  <text x="984" y="416" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">freelancers included</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="984" y="460">You cannot register</tspan>
+    <tspan x="984" y="492">for any of the four exams</tspan>
+    <tspan x="984" y="536">Claude Academy: 27 free</tspan>
+    <tspan x="984" y="568">courses, 15 with a badge</tspan>
+    <tspan x="984" y="612">Exam guides are public</tspan>
+    <tspan x="984" y="644">PDFs with sample questions</tspan>
+  </text>
+  <rect x="984" y="668" width="352" height="88" rx="8" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">
+    <tspan x="1004" y="704">Certificate of completion,</tspan>
+    <tspan x="1004" y="736">not a certification</tspan>
+  </text>
+
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">
+    <tspan x="40" y="824">Sources: Anthropic's July 2026 announcement, Anthropic Partner Academy eligibility page and FAQ,</tspan>
+    <tspan x="40" y="850">Claude Partner Network application page, Claude Academy catalog</tspan>
+  </text>
+</svg>

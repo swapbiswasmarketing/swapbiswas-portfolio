@@ -27,7 +27,7 @@ Work the arithmetic once. A team carrying **$12M in new ARR at a $60,000 average
 | 30% | 667 | 12 |
 | 22% | 909 | 16 |
 
-An eight-point error in that one input is **242 extra opportunities, 36% more pipeline than anyone budgeted**, and four reps nobody hired. The forecast breaks in month two and the quota model gets rebuilt in month four.
+An eight-point error in that one input is **242 extra opportunities, 36% more pipeline than anyone budgeted**, and four reps nobody hired. The forecast breaks in month two and the quota model gets rebuilt in month four. The error reaches marketing spend too: in a [worked marketing plan for a fictional B2B SaaS company](/blog/saas-marketing-plan-template/), I carry the same division two stages further, to SQLs and MQLs, and price those MQLs as a channel budget.
 
 The 30% almost always comes from a blog post. I checked the pages ranking for this term, and the pattern is consistent: a confident single figure or a tidy table, with no report named, no date, no sample size, and no statement of what sat in the denominator. That is worse than no number, because a sourceless benchmark still gets typed into a board deck.
 

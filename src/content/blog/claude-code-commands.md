@@ -187,7 +187,7 @@ The docs prefer a skill for new work, because a skill folder can also hold suppo
 
 ## How to Create a Claude Code Custom Command
 
-1. **Pick the level.** Use the project's `.claude/commands/` for a workflow tied to one repository; commit it and your team gets it. Use `~/.claude/commands/` for a personal command you want everywhere.
+1. **Pick the level.** Use the project's `.claude/commands/` for a workflow tied to one repository; commit it and your team gets it. Use `~/.claude/commands/` for a personal command you want everywhere. The project folder, `.claude/commands/`, is also on the list of Claude Code features that the Claude Certified Architect - Foundations exam guide says might appear on the exam, and my post on [that exam and the three other Claude certifications](/blog/claude-certifications/) covers who can register for each.
 2. **Create a Markdown file named after the command.** `kw-check.md` becomes `/kw-check`. A file in a subfolder gets a namespaced name: `.claude/commands/research/kw-check.md` becomes `/research:kw-check`.
 3. **Add frontmatter between `---` markers on the very first line.** Every field is optional and only `description` is recommended. If the opening `---` is not the first line, Claude Code treats the whole file as prompt text.
 4. **Write the instructions in plain Markdown**, with `$ARGUMENTS` where your input should land.

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720">
+  <rect width="1400" height="720" fill="#f6f4ef"/>
+
+  <text x="70" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">The margins in LinkedIn's full-screen video illustration</text>
+  <text x="70" y="106" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">LinkedIn Help, Full-screen vertical video on LinkedIn: its example for a viewer on an iPhone 13 or 14</text>
+
+  <rect x="150" y="150" width="270" height="480" fill="#eeebe4" stroke="#15130f" stroke-width="2"/>
+  <rect x="178" y="215" width="189.5" height="275" fill="#ffffff" stroke="#b53b15" stroke-width="3"/>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">
+    <text x="285" y="190" text-anchor="middle">260</text>
+    <text x="285" y="567" text-anchor="middle">560</text>
+    <text x="134" y="359" text-anchor="end">112</text>
+    <text x="436" y="359" text-anchor="start">210</text>
+  </g>
+  <g stroke="#15130f" stroke-width="2">
+    <line x1="150" y1="352" x2="178" y2="352"/>
+    <line x1="367.5" y1="352" x2="420" y2="352"/>
+  </g>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632" text-anchor="middle">
+    <text x="272.75" y="345">safe zone</text>
+    <text x="272.75" y="373">758 x 1100</text>
+  </g>
+  <text x="285" y="664" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">1080 x 1920 frame, 1:4 scale</text>
+
+  <rect x="500" y="150" width="830" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="540" y="200" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">What the four margins leave</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="540" y="244">Frame: 1080 x 1920 px, a 9:16 vertical video</text>
+    <text x="540" y="280">Top 260 px, bottom 560 px</text>
+    <text x="540" y="316">Left 112 px, right 210 px</text>
+  </g>
+  <line x1="540" y1="344" x2="1290" y2="344" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="540" y="392" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Safe zone: 758 x 1100 px</text>
+  <text x="540" y="428" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">x 112 to 870, y 260 to 1360</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">
+    <text x="540" y="478">The margin figures appear only in LinkedIn's illustration,</text>
+    <text x="540" y="508">which the page gives as an example for one phone.</text>
+    <text x="540" y="538">The safe-zone size is my arithmetic. Read 16 Oct 2026.</text>
+  </g>
+</svg>

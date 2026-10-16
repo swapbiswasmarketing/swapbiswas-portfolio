@@ -293,6 +293,14 @@
 		],
 		"hash": "87d3e4b622ffec15"
 	},
+	"/assets/blog/claude-certifications/three-doors.webp": {
+		"w": 1200,
+		"h": 754,
+		"v": [
+			660
+		],
+		"hash": "b2683918f720b19e"
+	},
 	"/assets/blog/claude-code-api-key-vs-subscription/credential-precedence.webp": {
 		"w": 1200,
 		"h": 823,
@@ -1355,6 +1363,22 @@
 		],
 		"hash": "677bbc802d65eb4c"
 	},
+	"/assets/blog/linkedin-post-size/photo-ratio-range.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "3f867c86d2ced697"
+	},
+	"/assets/blog/linkedin-post-size/vertical-video-margins.webp": {
+		"w": 1200,
+		"h": 617,
+		"v": [
+			660
+		],
+		"hash": "77fb62b956c4721e"
+	},
 	"/assets/blog/linkedin-premium-cost-in-india/app-vs-web-gst.webp": {
 		"w": 1200,
 		"h": 600,
@@ -1843,6 +1867,14 @@
 			1320
 		],
 		"hash": "bed21a50d54e1b9b"
+	},
+	"/assets/blog/saas-marketing-plan-template/revenue-goal-to-budget.webp": {
+		"w": 1200,
+		"h": 626,
+		"v": [
+			660
+		],
+		"hash": "16f5719ae7f655cd"
 	},
 	"/assets/blog/saas-pricing-models/pricing-models-map.webp": {
 		"w": 1200,

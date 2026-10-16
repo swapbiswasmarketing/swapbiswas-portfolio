@@ -2633,3 +2633,72 @@ https://swapbiswas.com/blog/seo-interview-questions/?utm_source=linkedin&utm_med
 #SEO #TechnicalSEO #SearchConsole #InterviewTips #DigitalMarketing
 
 ---
+
+### Claude Certifications: Architect, Associate and Developer
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's oak table with a tall stack of open, well-thumbed study books on one side and a single rolled certificate tied shut on the other, a small brass padlock and a guild medallion on a cord lying between them, a quill and an inkwell, a single vermilion red wax seal on the rolled certificate, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+As of 16 October 2026, only staff at Claude Partner Network organizations can register for Anthropic's four Claude certification exams.
+Everyone else can take Claude Academy's free courses, where a passed quiz earns a certificate of completion, and Anthropic's eligibility page calls that certificate and a certification "two different things."
+
+- The exams are proctored by Pearson, online or at a test center: Associate (CCAO-F, $99), Developer (CCDV-F, $125), Architect - Foundations (CCAR-F, $125) and Architect - Professional (CCAR-P, $175). The Associate guide names marketing among the roles it is written for.
+- Of eleven claims checked against the official pages, four hold up as written. Anthropic's own pages disagree on the cancellation window: 24 hours in the exam guides, at least 48 at Pearson and in the FAQ.
+- A company can apply to join the network if it is a registered business with 10 or more employees, operates in a supported region and offers consulting, implementation or managed services. Anthropic's July announcement says membership is free.
+- Claude Academy listed 27 courses on 16 October 2026, and 15 of them carried a completion badge. The 11 distinct courses that Anthropic's prep pages list for the four exams add up to 42 hours in the catalog's own estimates.
+- There is no official rupee price. At RBI's reference rate for 15 October 2026, the fees come to Rs 9,412 to Rs 16,637 before tax and card charges.
+
+Which describes you: staff at a partner organization, at a services firm that could apply, or neither?
+
+https://swapbiswas.com/blog/claude-certifications/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-certifications
+
+#Claude #Anthropic #AICertification #CareerDevelopment #AITools
+
+---
+
+### LinkedIn Post Size: Image and Video Specs, Sourced (2026)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a painter's workbench with four blank primed canvases of different proportions leaning against the wall in a row, from a long low panel through a square to a tall upright one, a brass proportional compass and a knotted measuring cord lying in front of them, a single vermilion red ribbon tied around the tall upright canvas, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+LinkedIn's photo Help page allows any ratio from 3:1 to 4:5 (width:height) and recommends a 1080 px width, which makes the popular 1080 x 1350 portrait the tall end of the range.
+Seven of the eight LinkedIn size guides I read on 16 October 2026 link no LinkedIn Help page, and LinkedIn's own Help pages do not always agree with each other.
+
+- Photos: at least 552 x 276, up to 5 MB each and up to 20 in one post. Two of the eight guides stop at 9.
+- Video: 3 seconds (2 in the mobile app) to 15 minutes and up to 5 GB on the member video pages. The Pages video page gives 10 minutes, and where two pages that cover your post disagree, design to the stricter figure.
+- When you post as a company Page, I would send a PNG or JPEG of 3 MB or less and an MP4 of 10 minutes or less, because no LinkedIn page I read says whether the Pages limits cover posts.
+- Document posts, the format that guides call carousels, get no slide size from LinkedIn, only limits of 100 MB, 300 pages and one file. The 1080 x 1080 slide that guides print is LinkedIn's recommended card for paid Carousel Ads.
+- LinkedIn's full-screen video page illustrates margins on a 1080 x 1920 frame for a viewer on an iPhone 13 or 14: 260 px at the top, 560 px at the bottom, 112 px on the left and 210 px on the right, which leaves a 758 x 1100 px safe zone.
+
+Could you name the LinkedIn Help page behind the image size you export for your posts?
+
+https://swapbiswas.com/blog/linkedin-post-size/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-post-size
+
+#LinkedInMarketing #SocialMediaMarketing #ContentMarketing #VideoMarketing
+
+---
+
+### SaaS Marketing Plan Template: B2B Example With Budget Math
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a steward's oak table with a wide copper funnel resting in the neck of a narrow glass flask, a heap of grain beside it measured out into four small wooden bowls in a row, an open ledger with blank ruled columns, a quill and a brass hand balance, a single vermilion red ribbon tied around the neck of the flask, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+SaaS Capital's 2026 survey of more than 1,000 private B2B SaaS companies puts median marketing spend at 8% of ARR.
+I think a marketing plan is ready for finance when it sets that anchor against the bottom-up cost of its MQL target and names who closes the gap.
+
+- The template's eight sections, each with an owner and a due date, run in this order: revenue goal, ICP and segments, positioning, pipeline math, channel plan, budget, quarterly calendar and KPIs.
+- The worked example, Acme Payables, is invented: it enters 2027 at $8.0M of ARR and needs $2.4M of new-logo ARR, which works back to 80 customers, 320 opportunities (192 of them marketing-sourced), 240 SQLs and 1,200 MQLs.
+- At a blended $300 per MQL, the 1,200 MQLs cost $360,000. The 8% anchor on $8.0M is $640,000, and with people and tools at 55% of it, programs get $288,000, which leaves a $72,000 gap.
+- Acme is venture-backed, so it funds the gap: marketing goes to 8.9% of starting ARR, which is still below the 10% median SaaS Capital charts for equity-backed companies. The alternatives are a 25% MQL-to-SQL rate or a $240 blended cost per MQL.
+- None of the eight other template pages I read on 16 October 2026 puts a percent-of-ARR anchor or a four-quarter calendar on the page. Mine downloads as a CSV and needs no form or email address.
+
+If your bottom-up budget came in above its percent-of-ARR anchor, which would you change first: the budget, the MQL-to-SQL rate or the cost per MQL?
+
+https://swapbiswas.com/blog/saas-marketing-plan-template/?utm_source=linkedin&utm_medium=social&utm_campaign=saas-marketing-plan-template
+
+#SaaSMarketing #B2BMarketing #MarketingPlanning #DemandGeneration #ProductMarketing
+
+---

@@ -166,6 +166,8 @@ The Pages page also gives the placement advice the profile page leaves out: "You
 
 Six of the nine guides above print 1128 x 191 for a Page cover: Capsule, Zeliq, LinkedGrow, ScreenSnap, Postbeam and PostFast. That figure appears nowhere on LinkedIn's Pages page, and Magic Studio, RightBlogger and Taplio print LinkedIn's 1512 x 256.
 
+Photos, videos and documents a Page shares in the feed fall under the same LinkedIn Help pages as a member's posts, and [my comparison of LinkedIn post specs for members and company Pages](/blog/linkedin-post-size/) maps those pages and treats the 3 MB rule above as a precaution for Page posts.
+
 ## Measure Your Own LinkedIn Banner Safe Zone
 
 The published figures differ more than sixfold on the phone crop and more than threefold on the width of the photo zone. My script's values describe one desktop window width and a phone layout the script itself calls approximate, so the LinkedIn banner safe zone worth designing to is the one you measure on your own profile.

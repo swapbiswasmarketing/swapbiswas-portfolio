@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="70" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">LinkedIn's photo range at the recommended 1080 px width</text>
+  <text x="70" y="106" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Share photos on LinkedIn: ratio 3:1 to 4:5 (width:height), 1080 px wide recommended</text>
+
+  <line x1="60" y1="570" x2="1340" y2="570" stroke="#e4dfd6" stroke-width="1"/>
+
+  <rect x="70" y="498" width="216" height="72" fill="#ffffff" stroke="#15130f" stroke-width="2"/>
+  <rect x="331" y="457" width="216" height="113" fill="#ffffff" stroke="#15130f" stroke-width="2"/>
+  <rect x="592" y="354" width="216" height="216" fill="#ffffff" stroke="#15130f" stroke-width="2"/>
+  <rect x="853" y="300" width="216" height="270" fill="#f3dcd2" stroke="#b53b15" stroke-width="3"/>
+  <rect x="1114" y="186" width="216" height="384" fill="#eeebe4" stroke="#6a645c" stroke-width="2" stroke-dasharray="8 6"/>
+
+  <g font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f" text-anchor="middle">
+    <text x="178" y="612">1080 x 360</text>
+    <text x="439" y="612">1080 x 565</text>
+    <text x="700" y="612">1080 x 1080</text>
+    <text x="961" y="612">1080 x 1350</text>
+    <text x="1222" y="612">1080 x 1920</text>
+  </g>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632" text-anchor="middle">
+    <text x="178" y="646">3:1</text>
+    <text x="439" y="646">1.91:1</text>
+    <text x="700" y="646">1:1</text>
+    <text x="961" y="646">4:5</text>
+    <text x="1222" y="646">9:16</text>
+  </g>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c" text-anchor="middle">
+    <text x="178" y="676">the wide end</text>
+    <text x="439" y="676">link-image ratio</text>
+    <text x="700" y="676">square</text>
+    <text x="961" y="676">the tall end</text>
+    <text x="1222" y="676">outside the range</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">
+    <text x="70" y="728">Drawn to scale at 1:5. LinkedIn prints the 3:1 to 4:5 range and the 1080 px width; each size here is my</text>
+    <text x="70" y="756">arithmetic for one ratio at 1080 px wide. Read logged out from India on 16 Oct 2026.</text>
+  </g>
+</svg>

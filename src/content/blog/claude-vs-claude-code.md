@@ -190,6 +190,8 @@ Each command or fetch rule in that allowlist approves one command pattern or one
 
 Every row assumes commands running on my machine, inside the project folder. Cowork runs shell commands on Anthropic's servers, separate from my computer, while the scripts, their installed packages and the git history in this table live on my laptop, which is why this setup stays in Claude Code. Skills and connectors travel further: Anthropic says a plugin you add "works in chat and Claude Code as well as Cowork", and plugins with local MCP servers work through the Desktop app only ([Get started with Claude Cowork](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork)).
 
+Two folders from the setup table, `.claude/commands/` and `.claude/skills/`, appear in the appendix of Anthropic's guide to the Claude Certified Architect - Foundations exam, among the Claude Code features it says might come up, and I compare [the four Claude certification exams and who can register for them](/blog/claude-certifications/) in a separate post.
+
 ## Claude vs Claude Code: Route by Where the Job's Files Live
 
 The whole Claude vs Claude Code decision comes down to where the job's files live and where its output has to land. Words you will paste somewhere belong in the Claude app. Changes to files you maintain, built or committed with your own scripts and git, belong in Claude Code, whose local sessions work where those files already are. A folder of documents with no script involved sits in between, where Anthropic's docs place Cowork, and on Pro and Max that route now lives inside the Claude app.

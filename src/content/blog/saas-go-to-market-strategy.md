@@ -20,7 +20,7 @@ faqs:
 
 The fastest way to waste a quarter at a SaaS company is to build a great product and then guess how to sell it. I have watched teams ship a genuinely good feature, fire off a launch email, run a few ads, and then stare at a flat dashboard wondering what went wrong. The product was never the problem. The SaaS go-to-market strategy was missing.
 
-A go-to-market strategy is not a launch plan and it is not a marketing calendar. It is the system that decides who you are selling to, why they should care, how they will buy, and how your teams cooperate to make that happen. This post is the framework I use to build one, written for 2026, where buyers are more skeptical, budgets are tighter, and a free trial alone no longer does the selling for you.
+A go-to-market strategy is not a launch plan and it is not a marketing calendar. It is the system that decides who you are selling to, why they should care, how they will buy, and how your teams cooperate to make that happen. This post is the framework I use to build one, written for 2026, where buyers are more skeptical, budgets are tighter, and a free trial alone no longer does the selling for you. The marketing calendar and the budget belong one level below the strategy, and my [eight-section SaaS marketing plan template](/blog/saas-marketing-plan-template/) builds both from a revenue goal worked back to MQLs.
 
 The context that makes this urgent: [B2B customers now dedicate only **17%** of their buying journey to meeting with potential suppliers](https://hbr.org/2022/01/sensemaking-for-sales), according to Gartner's Brent Adamson. Most of the decision gets made while no one from your company is in the room, so your go-to-market strategy has to sell for you in your absence.
 

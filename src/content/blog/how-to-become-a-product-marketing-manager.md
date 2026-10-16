@@ -106,6 +106,8 @@ It is a poor investment when you are buying it as a signal, hoping the certifica
 - **Coursera and LinkedIn Learning** - cheap, broad marketing coverage; fine for filling foundational gaps
 - **Free primary reading** - [what is product marketing](/blog/what-is-product-marketing/) and the deliverable guides linked below will teach you more per hour than most paid intros, at no cost
 
+If an AI credential from Anthropic is on your list, I would check [who can sit each Claude certification](/blog/claude-certifications/) first: only staff at Claude Partner Network organizations can register for the exams, and a passed quiz on a free Claude Academy course earns a certificate of completion rather than a certification.
+
 My own route in included no PMM certification. I learned the craft by doing the work - running launches, writing positioning, sitting in on sales calls - which is also exactly what a portfolio captures. Treat any course as a faster way to learn the reps, never as a substitute for having done them.
 
 ## Step 4: Build a Portfolio of Real PMM Work

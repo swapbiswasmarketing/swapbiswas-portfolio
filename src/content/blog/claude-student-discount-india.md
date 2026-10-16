@@ -82,7 +82,7 @@ None of the four returned an article with a student price for an individual plan
 
 A school student under 18 cannot hold a Claude account at all, so the discount question starts at 18. A student who is 18 or older and on an eligible Jio plan can also look at [Jio's Google AI Pro offer](/blog/jio-gemini-pro-offer/), which gives a different vendor's paid plan free for 18 months.
 
-When Free runs out in the middle of an assignment, my guide to [the four ways back from a Claude usage limit](/blog/claude-usage-limits/) says which of them a Free account has, and [my roundup of free AI tools for marketing work](/blog/free-ai-tools-for-marketing/) shows where Claude's free tier fits next to other free assistants. Anthropic Academy also lists a course, [AI Fluency for students](https://anthropic.skilljar.com/ai-fluency-for-students), as "Register | FREE" with a certificate of completion; its page offers no Claude access or credits.
+When Free runs out in the middle of an assignment, my guide to [the four ways back from a Claude usage limit](/blog/claude-usage-limits/) says which of them a Free account has, and [my roundup of free AI tools for marketing work](/blog/free-ai-tools-for-marketing/) shows where Claude's free tier fits next to other free assistants. Anthropic Academy also lists a course, [AI Fluency for students](https://anthropic.skilljar.com/ai-fluency-for-students), as "Register | FREE" with a certificate of completion; its page offers no Claude access or credits. Nor is that certificate of completion a Claude certification: [Anthropic's proctored certification exams](/blog/claude-certifications/) are open only to staff at Claude Partner Network organizations.
 
 ### Claude Pro Student Discount in India: Standard Price, Annual Billing Only
 

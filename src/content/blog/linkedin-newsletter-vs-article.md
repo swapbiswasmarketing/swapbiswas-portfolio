@@ -45,6 +45,8 @@ Sources: LinkedIn Help on the [difference between posts, articles, reposts and n
 
 A newsletter also gets a subscribe invitation at launch. LinkedIn's help on [managing a newsletter](https://www.linkedin.com/help/linkedin/answer/a517925) says that by default your connections and followers "will be invited by notification to subscribe to your newsletter once the first article of your newsletter has been successfully published". The newsletters overview adds that when someone starts following you later, "a notification inviting them to subscribe to the newsletter is automatically sent".
 
+On images, LinkedIn's Help pages give an edition the same 1920 x 1080 cover size as an article and the newsletter a 300 x 300 logo, and [my list of LinkedIn post and article image sizes](/blog/linkedin-post-size/) names the page each figure comes from.
+
 ## Who Can Create a LinkedIn Newsletter
 
 LinkedIn's [newsletter access criteria](https://www.linkedin.com/help/linkedin/answer/a591266) open with one line for members: "All LinkedIn members have access to create a newsletter on LinkedIn." The conditions on that page apply only to LinkedIn Pages, which LinkedIn evaluates on:
