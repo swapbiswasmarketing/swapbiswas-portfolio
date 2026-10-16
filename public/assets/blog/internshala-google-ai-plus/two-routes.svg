@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 948" width="1400" height="948">
+  <rect x="0" y="0" width="1400" height="948" fill="#f6f4ef"/>
+
+  <text x="70" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Two free routes to Google AI Plus in India</text>
+  <text x="70" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">As read on 16 October 2026. Starred lines come from third-party pages, not from Internshala.</text>
+
+  <rect x="70" y="150" width="600" height="390" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="102" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">INTERNSHALA ROUTE</text>
+  <text x="102" y="238" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Through your Internshala profile</text>
+  <text x="102" y="286" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Proof: college and graduation details</text>
+  <text x="102" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">on your Internshala profile *</text>
+  <text x="102" y="366" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Last day to claim: none published</text>
+  <text x="102" y="414" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Terms: none public; offer page behind login</text>
+  <text x="102" y="462" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Payment: an India payment method *</text>
+
+  <rect x="730" y="150" width="600" height="390" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="762" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">GOOGLE'S STUDENT PLAN</text>
+  <text x="762" y="238" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Through SheerID verification</text>
+  <text x="762" y="286" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Proof: SheerID, using a valid school</text>
+  <text x="762" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">email address; age 18 or over</text>
+  <text x="762" y="366" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Last day to claim: 31 December 2026</text>
+  <text x="762" y="414" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Terms: public, last updated 19 Aug 2026</text>
+  <text x="762" y="462" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Payment: a qualifying form of payment</text>
+  <text x="762" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">at sign-up</text>
+
+  <line x1="370" y1="540" x2="370" y2="575" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="368.75" y1="575" x2="701.25" y2="575" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="1030" y1="540" x2="1030" y2="575" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="698.75" y1="575" x2="1031.25" y2="575" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="700" y1="575" x2="700" y2="597" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,596 707,596 700,610" fill="#15130f"/>
+
+  <rect x="400" y="610" width="600" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="700" y="652" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google AI Plus, 12 months at Rs 0</text>
+  <text x="700" y="690" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">2x the free usage limits, 400 GB of storage</text>
+  <text x="700" y="722" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Google's terms: limits can differ during the offer</text>
+
+  <line x1="700" y1="750" x2="700" y2="773" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,772 707,772 700,786" fill="#15130f"/>
+
+  <rect x="330" y="786" width="740" height="76" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="1.5"/>
+  <text x="700" y="833" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#b53b15">Month 13: Rs 399 a month unless you cancel</text>
+
+  <text x="70" y="906" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">* Reported by studentoffers.co and coursejoiner.com. Right card: Google's India student page, offer terms and Google One Help.</text>
+</svg>

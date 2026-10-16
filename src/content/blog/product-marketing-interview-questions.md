@@ -161,7 +161,7 @@ The questions vary, but the technique that wins is constant. A few rules I coach
 - **Quantify when you can.** A number you moved beats an adjective every time.
 - **Match the round.** If you cannot tell which of the five abilities a question is testing, ask a clarifying question. That itself is a strong signal.
 
-If you are earlier in the journey and weighing the role at all, the honest map is in the [product marketing career path](/blog/product-marketing-career-path/) guide.
+If you are earlier in the journey and weighing the role at all, the honest map is in the [product marketing career path](/blog/product-marketing-career-path/) guide. For a role in search rather than product marketing, checkable answers still beat textbook definitions, and each of my [SEO interview questions from fresher to manager level](/blog/seo-interview-questions/) comes with a model answer you can back with a page you changed or a dated Search Console export.
 
 ## The Takeaway on Product Marketing Interview Questions
 

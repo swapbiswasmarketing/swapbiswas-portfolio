@@ -166,6 +166,7 @@ As of 16 October 2026:
 - App store subscriptions: per the Pro tiers article, cancel "through the platform where you purchased your subscription: ChatGPT, Apple or Google Play".
 - Credits past a limit: OpenAI's [credits article](https://help.openai.com/en/articles/12642688-using-credits-for-flexible-usage-in-chatgpt-personal-plans) says Plus and Pro users who hit a Codex limit see an option to add credits, while buying credits is open to "a limited group of Free and Go users".
 - India: the ratio doubles. On 16 October 2026 the per-country price file that the pricing page's script requests, `chatgpt.com/backend-api/checkout_pricing_config/configs/IN` (undocumented, and it can change), returned ₹399 for Go and ₹1,999 for Plus with GST included, so Plus costs five times Go there. [My Claude Pro price in India breakdown](/blog/claude-pro-price-in-india/) has the rupee prices by checkout and sets Go against Claude Pro. If your Go plan came from OpenAI's free year in India, [what renews when those 12 months end](/blog/chatgpt-go-free-india/) depends on where you signed up.
+  Beyond Go and Plus, I set out the India prices of the three Pro tiers and Business, with GST and UPI noted for each plan, in [a plan-by-plan guide to ChatGPT in rupees](/blog/chatgpt-subscription-price-in-india/).
 
 If you are still deciding whether to pay at all, [my roundup of free AI tools for marketing](/blog/free-ai-tools-for-marketing/) covers what ChatGPT's Free plan and its rivals give you before a subscription.
 

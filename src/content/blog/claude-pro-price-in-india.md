@@ -238,6 +238,8 @@ Where each ChatGPT cell comes from:
 - [OpenAI's multi-currency billing article](https://help.openai.com/en/articles/10421635-multicurrency-billing) lists INR for India and says UPI is available for Go and Plus plans and is not offered for Pro or Business.
 - [OpenAI's ChatGPT Go article](https://help.openai.com/en/articles/11989085-what-is-chatgpt-go) says "we do not support annual billing" for ChatGPT Go.
 
+In a separate guide I list [what each ChatGPT plan costs in rupees](/blog/chatgpt-subscription-price-in-india/), from Go to the three Pro tiers and Business, with GST and web UPI marked plan by plan.
+
 On features, [OpenAI's pricing page](https://chatgpt.com/pricing/) marks Codex and deep research as "Limited" on Go and says the plan "may include ads", while Anthropic's pricing table marks Claude Code and Research as "Yes" on Pro and "No" on Free. ChatGPT Plus is ₹1,999 on the same App Store listing, the same figure as Claude Pro, and [my Claude vs ChatGPT comparison](/blog/claude-vs-chatgpt/) sets those two plans side by side.
 
 Over Go, Plus lifts the limits on Codex and deep research and has no ads, and [my job-by-job map of the Go and Plus differences](/blog/chatgpt-go-vs-plus/) shows which marketing jobs need the upgrade.

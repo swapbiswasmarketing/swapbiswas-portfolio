@@ -2564,3 +2564,72 @@ https://swapbiswas.com/blog/how-to-update-claude-code/?utm_source=linkedin&utm_m
 #ClaudeCode #Anthropic #VSCode #Windows #MarketingOps
 
 ---
+
+### ChatGPT Subscription Price in India: Every Plan in Rupees
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a counting-house desk with six stacks of copper coins standing in a row, five of them close to the same height and one only half as tall, an open ledger with blank ruled columns and a brass hand balance behind them, a quill resting in an inkwell, a single vermilion red ribbon tied around the short stack, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+ChatGPT in India costs Rs 399 a month for Go and up to Rs 52,900 for Pro 500, GST included, as I read OpenAI's prices on 16 October 2026.
+Take out the 18% GST and set each plan against its pre-tax US price, and Go works out to Rs 42.27 per dollar, while every other plan sits between Rs 84.32 and Rs 90.67.
+
+- At RBI's reference rate for 9 October 2026, Rs 96.6149 per dollar, Go's India price before GST is about 44% of its US price, and every other plan's is 87% to 94%.
+- OpenAI bills Go, Plus and Pro monthly only, so a year of Plus on the web is 12 payments of Rs 1,999, or Rs 23,988. Apple's India listing also shows a second Plus item at Rs 19,900 without saying what period it covers.
+- UPI on chatgpt.com covers Go and Plus only. In the iOS or Android app, Apple or Google bills you, and both list UPI among their payment methods in India.
+- Pro 100, 200 and 500 cost Rs 10,699, Rs 19,900 and Rs 52,900 a month with GST. New Pro 200 subscriptions get a lower usage allowance at the same price, and grandfathered ones move to it after 29 October 2026.
+- Business is quoted before GST: Rs 1,800 per user a month billed annually or Rs 2,250 billed monthly, which come to Rs 2,124 and Rs 2,655 once 18% is added.
+
+When you log in from India, does your own upgrade screen show the same rupee price as the logged-out pricing page?
+
+https://swapbiswas.com/blog/chatgpt-subscription-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=chatgpt-subscription-price-in-india
+
+#ChatGPT #OpenAI #AITools #SaaSPricing #India
+
+---
+
+### Internshala Google AI Plus: Two Free Routes Compared
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a student's oak writing desk with a small locked casket at its centre and two different keys laid in front of it, one an ornate brass key and the other a plain iron key, an hourglass with most of its sand already in the lower bulb, a quill, an inkwell and a folded letter beside them, a single vermilion red ribbon tied to the brass key, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+A college student in India has two free routes to Google AI Plus: Internshala's offer and Google's own one-year student plan.
+SheerID verification decides between them, and either way the plan renews at Rs 399 a month from month 13 unless you cancel.
+
+- If SheerID can verify you, I would take Google's plan and redeem it before 31 December 2026, because its terms are public: you can read the renewal and cancellation rules before you add a payment method.
+- Internshala's offer URL returned a 302 redirect to its student login when I requested it logged out from India on 16 October 2026, and no public Internshala page I found has terms or a last date for the offer.
+- Google AI Plus is the plan below Google AI Pro, with half of AI Pro's Gemini usage limits and 400 GB instead of 5 TB. Google's pages disagree on whether it reaches the Pro model, so check the model menu in your own account.
+- Signing up for a student offer while on another Google One extended trial revokes your current offer, per Google One Help. No public Google or Internshala page I read says whether Internshala's free year counts as one, so claim one route per Google account.
+- To cancel, Google One Help says to go to Google One on a computer, click Settings, then Cancel membership, and confirm. Set a reminder for month 12 on the day you redeem.
+
+If you study in India, which route would you try first: Google's SheerID check or your Internshala profile?
+
+https://swapbiswas.com/blog/internshala-google-ai-plus/?utm_source=linkedin&utm_medium=social&utm_campaign=internshala-google-ai-plus
+
+#Internshala #Gemini #AIInEducation #Students #India
+
+---
+
+### SEO Interview Questions and Answers (2026): 62 by Level
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an assayer's table with a dark touchstone slab marked by a few fine streaks of metal, a small gold ring and a silver coin resting beside it, a brass hand lens and an open notebook of blank ruled pages, a folded letter of introduction closed with a single vermilion red wax seal, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+An interviewer can check a candidate's SEO experience in two minutes: open the live site they name, ask them to explain one number in its Search Console export, and run curl on a redirect they say they set up.
+I think checkable answers are what separate candidates in 2026, because several published question banks still teach answers that Google's own documentation contradicts.
+
+- Answers still live on question banks on 16 October 2026 include LSI keywords and an "ideal" keyword density of 1%-1.5%. Google's SEO Starter Guide gives no density percentage, and under "Thinking E-E-A-T is a ranking factor" it answers: "No, it's not."
+- On my own Search Console export, the Pages table adds up to 1,008 more impressions than the chart total, because the chart counts two of your URLs on one results page as one impression.
+- If impressions fell on one date while clicks held, check Search Console's Data anomalies page before touching the site. The logging error from 13 May 2025 to 27 April 2026 affected impressions, CTR and average position, and left clicks alone.
+- 301 and 308 are both permanent redirects, and a 308 also keeps the request method and body. In a curl check from India on 16 October 2026, my site's http homepage, its www host and a slashless post URL all answered 308.
+- For Google Search you do not need an llms.txt file. Google's AI features guide says: "You don't need to create new machine readable files, AI text files, or markup to appear in these features."
+
+If you have an SEO interview coming up, which number in your own Search Console export could you explain today?
+
+https://swapbiswas.com/blog/seo-interview-questions/?utm_source=linkedin&utm_medium=social&utm_campaign=seo-interview-questions
+
+#SEO #TechnicalSEO #SearchConsole #InterviewTips #DigitalMarketing
+
+---

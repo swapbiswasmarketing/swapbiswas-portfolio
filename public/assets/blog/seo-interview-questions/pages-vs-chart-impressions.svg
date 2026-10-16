@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
+  <rect x="0" y="0" width="1400" height="780" fill="#f6f4ef"/>
+
+  <text x="60" y="78" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Why the Pages table shows more impressions than the chart</text>
+  <text x="60" y="120" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">swapbiswas.com Search Console export: 1 May 2025 to 31 Aug 2026, exported 3 Sep 2026</text>
+
+  <rect x="60" y="160" width="580" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="200" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ONE SEARCH, TWO URLS FROM ONE SITE</text>
+
+  <rect x="90" y="222" width="520" height="48" rx="24" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="116" y="253" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">one query, one results page</text>
+
+  <rect x="90" y="286" width="520" height="44" rx="8" fill="#eeebe4"/>
+  <text x="112" y="315" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">example.org/guide/</text>
+
+  <rect x="90" y="338" width="520" height="44" rx="8" fill="#ffffff" stroke="#15130f" stroke-width="1.5"/>
+  <text x="112" y="367" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">example.com/page-a/</text>
+
+  <rect x="90" y="390" width="520" height="44" rx="8" fill="#ffffff" stroke="#15130f" stroke-width="1.5"/>
+  <text x="112" y="419" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">example.com/page-b/</text>
+
+  <rect x="90" y="442" width="520" height="44" rx="8" fill="#eeebe4"/>
+  <text x="112" y="471" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">example.net/answer/</text>
+
+  <line x1="90" y1="508" x2="610" y2="508" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="542" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Chart, by property: <tspan font-weight="600" fill="#15130f">1 impression</tspan></text>
+  <text x="90" y="578" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Pages table, by page: <tspan font-weight="600" fill="#15130f">2 impressions</tspan></text>
+
+  <line x1="650" y1="380" x2="690" y2="380" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="690,373 703,380 690,387" fill="#15130f"/>
+  <polyline points="716,166 704,166 704,594 716,594" fill="none" stroke="#15130f" stroke-width="2.5"/>
+
+  <rect x="720" y="160" width="620" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="750" y="198" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">CHART TOTAL, BY PROPERTY</text>
+  <text x="750" y="262" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="52" font-weight="600" fill="#15130f">164,564</text>
+  <text x="980" y="262" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#6a645c">impressions</text>
+
+  <rect x="720" y="310" width="620" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="750" y="348" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">PAGES TABLE, 157 ROWS, BY PAGE</text>
+  <text x="750" y="412" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="52" font-weight="600" fill="#15130f">165,572</text>
+  <text x="980" y="412" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#6a645c">impressions, summed</text>
+
+  <rect x="720" y="460" width="620" height="140" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="750" y="540" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="52" font-weight="600" fill="#b53b15">+1,008</text>
+  <text x="940" y="520" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">more impressions in the Pages</text>
+  <text x="940" y="552" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">table than in the chart (0.6%)</text>
+
+  <text x="60" y="660" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Google's Performance report help: chart and table totals can differ, usually because of property vs page aggregation.</text>
+  <text x="60" y="696" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Google's Data anomalies page: a logging error affected impression reporting from 13 May 2025 to 27 April 2026.</text>
+  <text x="60" y="732" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Clicks were not affected. Both totals above come from the same export file.</text>
+</svg>

@@ -52,7 +52,7 @@ Let's get into it.
 
 **Best for:** Research-heavy content where you need current data, analyzing competitor content, and generating content that needs factual grounding.
 
-**Honest take:** Gemini's real-time search integration makes it better than ChatGPT for research tasks. The Google Workspace integration is a huge plus if your team lives in Google Docs, though Gemini in Docs is listed only from the Google AI Pro plan up. As of October 2026, eligible Jio customers in India can claim that plan free for 18 months, and my [breakdown of Jio's Google AI Pro offer](/blog/jio-gemini-pro-offer/) covers who qualifies, the claim deadline and the price once the free months end.
+**Honest take:** Gemini's real-time search integration makes it better than ChatGPT for research tasks. The Google Workspace integration is a huge plus if your team lives in Google Docs, though Gemini in Docs is listed only from the Google AI Pro plan up. As of October 2026, eligible Jio customers in India can claim that plan free for 18 months, and my [breakdown of Jio's Google AI Pro offer](/blog/jio-gemini-pro-offer/) covers who qualifies, the claim deadline and the price once the free months end. Eligible college students in India can also get Google AI Plus, the plan below AI Pro, free for 12 months through Internshala or Google's own student plan, and [my comparison of the two AI Plus student offers](/blog/internshala-google-ai-plus/) says which to try first.
 
 ### 3. Claude (Free Tier)
 

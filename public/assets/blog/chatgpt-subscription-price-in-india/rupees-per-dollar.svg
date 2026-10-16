@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 810" width="1400" height="810">
+  <rect x="0" y="0" width="1400" height="810" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">ChatGPT in India: before-GST rupees per pre-tax dollar</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Each plan's India price before 18% GST divided by its pre-tax US price, read 16 October 2026</text>
+
+  <rect x="40" y="140" width="1320" height="540" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="72" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">PLAN, BEFORE-GST RS / PRE-TAX $</text>
+  <text x="1320" y="184" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">RS PER $1</text>
+  <line x1="72" y1="200" x2="1320" y2="200" stroke="#e4dfd6" stroke-width="1"/>
+
+  <line x1="470" y1="212" x2="470" y2="600" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="470" y="634" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">0</text>
+  <line x1="1108" y1="212" x2="1108" y2="600" stroke="#15130f" stroke-width="2"/>
+  <text x="1108" y="634" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#15130f">96.61: RBI reference rate, 9 Oct 2026</text>
+
+  <text x="72" y="245" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Go</text>
+  <text x="200" y="245" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 338.14 / $8</text>
+  <rect x="470" y="222" width="279" height="28" rx="4" fill="#b53b15"/>
+  <text x="1320" y="245" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="24" font-weight="700" fill="#15130f">42.27</text>
+
+  <text x="72" y="311" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Plus</text>
+  <text x="200" y="311" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 1,694.07 / $20</text>
+  <rect x="470" y="288" width="559" height="28" rx="4" fill="#6a645c"/>
+  <text x="1320" y="311" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="24" fill="#15130f">84.70</text>
+
+  <text x="72" y="377" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Pro 100</text>
+  <text x="200" y="377" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 9,066.95 / $100</text>
+  <rect x="470" y="354" width="599" height="28" rx="4" fill="#6a645c"/>
+  <text x="1320" y="377" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="24" fill="#15130f">90.67</text>
+
+  <text x="72" y="443" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Pro 200</text>
+  <text x="200" y="443" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 16,864.41 / $200</text>
+  <rect x="470" y="420" width="557" height="28" rx="4" fill="#6a645c"/>
+  <text x="1320" y="443" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="24" fill="#15130f">84.32</text>
+
+  <text x="72" y="509" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Pro 500</text>
+  <text x="200" y="509" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 44,830.51 / $500</text>
+  <rect x="470" y="486" width="592" height="28" rx="4" fill="#6a645c"/>
+  <text x="1320" y="509" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="24" fill="#15130f">89.66</text>
+
+  <text x="72" y="575" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Business</text>
+  <text x="200" y="575" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 2,250 / $25</text>
+  <rect x="470" y="552" width="594" height="28" rx="4" fill="#6a645c"/>
+  <text x="1320" y="575" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="24" fill="#15130f">90.00</text>
+
+  <text x="60" y="722" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Before-GST rupees: Plus, Pro 100 and Pro 200 from the India price file the pricing page loads (undocumented);</text>
+  <text x="60" y="750" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Go and Pro 500 are the GST-inclusive price divided by 1.18. Business is quoted before GST, per user, billed monthly.</text>
+  <text x="60" y="778" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Pre-tax US prices: OpenAI's Work and Codex pricing page. Reference line: RBI reference rate for 9 October 2026.</text>
+</svg>

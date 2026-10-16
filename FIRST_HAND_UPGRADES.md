@@ -418,3 +418,15 @@ If you are a Jio user: on a stated date, does the MyJio home screen show the Goo
 ## how-to-update-claude-code
 
 On a stated date, what does `claude doctor` print on your Windows machine for the Auto-updates line and the last update attempt? What does `where.exe claude` return (the path shows the install method)? Then what do `claude update` (or `npm install -g @anthropic-ai/claude-code@latest` for an npm install) and `claude --version` print before and after? And may the post name which install method your CLI uses? The answer would become a worked example under 'Which Claude Code Copy Are You Running?', showing a real update in place of the documented commands.
+
+## chatgpt-subscription-price-in-india
+
+On a stated date, from India and logged in, what does the ChatGPT upgrade screen show for Go, Plus, each Pro tier and Business: the rupee amount, the tax line (does Business add 18% GST, and is there a Tax ID or GSTIN field), and does it match the public figures in the master table? The answer belongs in 'Sources Behind Each Price, Read 16 October 2026', after the logged-out render.
+
+## internshala-google-ai-plus
+
+Do you know a college student in India who redeemed Google AI Plus through Internshala, or through Google's own SheerID student plan, and could share dated screenshots of the Internshala offer or eligibility screen, the Google checkout lines for the 12-month offer and the Rs 2 check, and the renewal date shown in Google One? They would replace the attributed steps in 'Internshala Google AI Plus: What the Public Pages Say' and settle whether Internshala's year shows in Google One as a trial.
+
+## seo-interview-questions
+
+Have you ever interviewed or hired anyone for an SEO role? If yes: which single question best separated strong candidates from weak ones, and what did the strongest answer contain (the check or evidence the candidate pointed to)? The answer would become a first-hand row in 'Strong and Weak SEO Interview Answers for Hiring Managers'. If not, the post stands as written.

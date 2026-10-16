@@ -81,7 +81,7 @@ Prices in this table come from the India pricing file and include GST, and the m
 
 \*The comparison table's footnote reads "Usage must be reasonable and comply with our policies." The Free and Go cards add "Unlimited text chats subject to abuse guardrails", and the Plus card says "Limits apply".
 
-Plus adds GPT-6 Sol in chat: OpenAI's 7 October release notes say "Plus, Pro, Business, and Enterprise use GPT-6 Sol; Free and Go use GPT-6 Luna", and the pricing page agrees. OpenAI's Go article disagrees on the model: it still says "Think uses GPT-5.6 Luna", a model the pricing page marks "No" for Go. Every row where Go and Plus differ, and the other places OpenAI's pages disagree, are set out in [my ChatGPT Go vs Plus comparison](/blog/chatgpt-go-vs-plus/).
+Plus adds GPT-6 Sol in chat: OpenAI's 7 October release notes say "Plus, Pro, Business, and Enterprise use GPT-6 Sol; Free and Go use GPT-6 Luna", and the pricing page agrees. OpenAI's Go article disagrees on the model: it still says "Think uses GPT-5.6 Luna", a model the pricing page marks "No" for Go. Every row where Go and Plus differ, and the other places OpenAI's pages disagree, are set out in [my ChatGPT Go vs Plus comparison](/blog/chatgpt-go-vs-plus/). If your work needs more than Plus, I list [the rupee cost of each Pro tier and a Business seat](/blog/chatgpt-subscription-price-in-india/) in a separate guide.
 
 How I would read it:
 

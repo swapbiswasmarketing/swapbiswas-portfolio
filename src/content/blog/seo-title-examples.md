@@ -307,6 +307,8 @@ In each pair the title makes one promise and the description repeats the keyword
 
 60 characters or fewer is the cap I hold every title on this site to. Google sets no maximum length for a title element and truncates the title link to fit the device width, so 60 is a house rule rather than a Google number, and whether length tracks rankings here is measured in [my H1 and title tag analysis](/blog/h1-tag-seo/). The cap is also one of [the frontmatter checks in my Claude Code audit](/blog/claude-code-seo-audit/), which strips carriage returns before counting and found 0 of 170 titles over 60 characters, the longest at exactly 60.
 
+The same title-length question sits in the fresher section of my [model answers to SEO interview questions](/blog/seo-interview-questions/), where the answer quotes Google's title link documentation on truncation.
+
 ## The Cut Order for Rewriting an SEO Title
 
 <img src="/assets/blog/seo-title-examples/title-cut-order.webp" alt="Six-step cut order for an over-long SEO title: keep the keyword, drop the year, delete filler words, unwrap the brackets, swap vague words for a count, rewrite the promise" title="The cut order for an over-long SEO title" width="1200" height="634" loading="lazy" decoding="async" />

@@ -91,6 +91,8 @@ He repeated the denial on January 2, 2023: "Both have no effect. Anyone who tell
 
 The product category outlived both statements. LSIGraph still [sells itself](https://lsigraph.com/) as a semantic and LSI keywords generator, with the pitch "Write SEO Content with Confidence And 10X Your Site's Traffic." The terms it returns may be perfectly reasonable related terms. The name on the box describes a decomposition that does not generate them.
 
+LSI keywords also appear in hiring material: a published question bank still defines them as related keywords that help search engines understand context, and that answer heads my table of [SEO interview answers that should cost a candidate points](/blog/seo-interview-questions/).
+
 ## What Google Documents Instead of Latent Semantic Indexing
 
 Google's [ranking systems guide](https://developers.google.com/search/docs/appearance/ranking-systems-guide), last updated December 10, 2025, names the systems it credits for meaning. Neural matching is "an AI system that Google uses to understand representations of concepts in queries and pages and match them to one another." RankBrain "helps us understand how words are related to concepts" and "means we can better return relevant content even if it doesn't contain all the exact words used in a search." BERT "allows us to understand how combinations of words express different meanings and intent." MUM is "an AI system capable of both understanding and generating language."

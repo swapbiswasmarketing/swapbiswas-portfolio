@@ -11,7 +11,7 @@ faqs:
   - q: "What counts as a long tail keyword?"
     a: "The term has two common meanings: a query with low search volume, or a query with many words. Search Console shows the words but not the volume, so any word-count analysis of your own export is measuring query length and calling it the long tail."
   - q: "Why do my Search Console query rows not add up to my total clicks?"
-    a: "Two reasons stack. The query table is capped at 1,000 rows in the UI export, and Google separately omits anonymized queries from the table while keeping them in the chart totals. On my export the gap was 137 of 186 clicks."
+    a: "The query table is capped at 1,000 rows in the UI export, Google omits anonymized queries from the table while keeping them in the chart totals, and Search Console stores only what Google calls the most important data rows. On my export the gap was 137 of 186 clicks."
   - q: "Are long tail keywords easier to rank for?"
     a: "On my site the longest queries did reach good average positions, including one ten-word query at position 1.2. Those positions returned zero clicks, so ranking easily and earning traffic came apart."
   - q: "How many words is a long tail keyword?"
@@ -90,9 +90,9 @@ Google adds a second caution about reading position numbers at all. Its Search C
 
 The chart totals for the window are 186 clicks and 164,564 impressions. The 1,000 exported query rows sum to 49 clicks and 103,338 impressions. The difference is **137 clicks (73.7%) and 61,226 impressions (37.2%) that cannot be attributed to any listed query.**
 
-That gap mixes two separate causes and is not a clean measure of either. The export is capped at 1,000 rows, so some of the missing clicks belong to real queries that simply fell below the cutoff. The rest sit behind Search Console's query anonymization. I have not separated the two, and no export from the UI lets me.
+That gap mixes several causes and is not a clean measure of any one of them. The export is capped at 1,000 rows, so some of the missing clicks belong to real queries that simply fell below the cutoff. The rest sit behind Search Console's query anonymization. I have not separated them, and no export from the UI lets me.
 
-Google documents the anonymization half directly. Its help page on [Performance report dimensions and data groupings](https://support.google.com/webmasters/answer/17011259) states: "Some queries are omitted from the report to protect user privacy. These are called anonymized queries. They're included in chart totals, unless a query filter is applied."
+Google documents the anonymization half directly. Its help page on [Performance report dimensions and data groupings](https://support.google.com/webmasters/answer/17011259) states: "Some queries are omitted from the report to protect user privacy. These are called anonymized queries. They're included in chart totals, unless a query filter is applied." The same page adds that Search Console "stores and shows only the most important data rows", so some rows are cut for that reason too.
 
 The arithmetic consequence is spelled out in Google's own [performance data deep dive](https://developers.google.com/search/blog/2022/10/performance-data-deep-dive) from October 2022: "There is no row for anonymized queries in the report table or API ... so if you sum up clicks for all the rows, you'll not find the same number of clicks as the chart totals."
 

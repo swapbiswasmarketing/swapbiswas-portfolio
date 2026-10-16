@@ -143,7 +143,7 @@ Arithmetic on those prices, mine rather than Google's or Jio's:
 - At the yearly rate of ₹19,500, Jio's 18 months would come to ₹29,250 pro rata, not the ₹35,100 Jio quotes at the monthly price. Google One's plans page lists AI Pro only by the month or the year, though, so paying for 18 months at these prices costs at least ₹31,200: a year at ₹19,500 plus six months at ₹1,950.
 - A year of AI Pro after the offer costs ₹23,400 on monthly billing (12 x ₹1,950) or ₹19,500 on yearly billing, which matches the "Save up to ₹3,900" Google One prints under the yearly price.
 
-If you want Gemini inside Google Docs, keep AI Pro: Google's India plan page lists Gemini in Docs on AI Pro and Ultra, while AI Plus lists Gemini in Gmail and Vids.
+If you want Gemini inside Google Docs, keep AI Pro: Google's India plan page lists Gemini in Docs on AI Pro and Ultra, while AI Plus lists Gemini in Gmail and Vids. An eligible college student without a Jio plan can get AI Plus free for 12 months through [Internshala's offer or Google's own student plan](/blog/internshala-google-ai-plus/), and the two differ in how you prove you are a student and in the last day to claim.
 
 Google lists its India prices in rupees on these public pages, which is not the case for every AI tool sold in India: [Claude Pro's price in India](/blog/claude-pro-price-in-india/) depends on the checkout you use, [Replit's price in India](/blog/replit-price-in-india/) is in dollars on replit.com, and [Lovable shows rupees only in its iPhone app](/blog/lovable-ai-price-in-india/). If you drop to the free tier instead, [my list of free AI tools for marketing](/blog/free-ai-tools-for-marketing/) covers free alternatives to a paid Gemini plan.
 
