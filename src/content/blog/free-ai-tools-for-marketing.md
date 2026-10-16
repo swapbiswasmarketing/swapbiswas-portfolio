@@ -138,11 +138,13 @@ Let's get into it.
 
 **What it does:** Design platform with AI-powered features including Magic Design, background removal, and text-to-image.
 
-**Free tier includes:** Free templates, Canva AI 1.0 features, and a limited monthly AI allowance that covers tools like Magic Write, Background Remover, and AI image generation.
+**Free tier includes:** Free templates, Canva AI 1.0 features, and a limited monthly AI allowance that covers tools like Magic Write and AI image generation.
 
 **Best for:** Social media graphics, presentations, infographics, and quick visual content. The AI features help non-designers create professional-looking assets.
 
-**Honest take:** Canva's free tier is one of the most generous in all of marketing tech. You can run a solid visual content operation without paying a cent. The AI features (Magic Write, Background Remover) are bonuses on top of an already excellent free product. What none of these tools write for you is the alt text on what they generate, and [alt text for charts and diagrams](/blog/alt-text-and-seo/) is where volume does the most damage: an audit of the 147 posts on this site found their hero images sharing 15 alt strings between them.
+**Honest take:** Canva's free tier is one of the most generous in all of marketing tech. You can run a solid visual content operation without paying a cent. The AI features (Magic Write and AI image generation) are bonuses on top of an already excellent free product. What none of these tools write for you is the alt text on what they generate, and [alt text for charts and diagrams](/blog/alt-text-and-seo/) is where volume does the most damage: an audit of the 147 posts on this site found their hero images sharing 15 alt strings between them.
+
+**Limitation:** Premium templates and a larger AI allowance need a paid plan, and my [breakdown of what Canva charges in India](/blog/canva-pro-price-in-india/) shows when a one-day or one-week Pro pass costs less than the monthly plan and when Pro Lite is enough.
 
 ### 12. Microsoft Designer (Free)
 
@@ -160,7 +162,7 @@ Let's get into it.
 
 **Best for:** Product photos, headshots for team pages, and cleaning up images for social media.
 
-**Limitation:** As of September 2026, remove.bg says its background removal is moving to Canva and the standalone website will no longer be available from 1 December 2026. After that, Canva's Background Remover (limited monthly uses on Canva Free) is the place to go.
+**Limitation:** As of September 2026, remove.bg says its background removal is moving to Canva and the standalone website will no longer be available from 1 December 2026. After that, Canva's Background Remover, which [Canva's help page](https://www.canva.com/en_in/help/background-remover/) says is included with paid plans, is the place to go.
 
 ## Analytics & Data
 

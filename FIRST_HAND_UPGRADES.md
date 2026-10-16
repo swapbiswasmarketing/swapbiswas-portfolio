@@ -454,3 +454,15 @@ On a stated date, did you open the Skills tab (Plugins > Skills) in ChatGPT on y
 ## best-b2b-marketing-campaigns
 
 Which B2B campaign have you worked on (outside your current employer if that is a problem) that has one shareable result and a date, for example a launch, a LinkedIn campaign or an event? One first-hand line on what you would copy from these campaigns would go in 'Before One of the Best B2B Marketing Campaigns Goes in Your Deck'.
+
+## how-to-get-linkedin-premium-free
+
+On a date you note, sign in to LinkedIn on desktop and open Settings & Privacy > Account preferences > Subscriptions & payments. Does Upgrade for Free offer you a free trial, for which plans and for how many days, or no trial at all? Separately, have you ever had LinkedIn Premium, a free trial, the Airtel offer or the Adobe offer (yes or no for each, with the year)? The answer belongs in the 'LinkedIn Premium Free Trial: Start, Length and Cancel Rules' H2, in the no-fixed-length bullet.
+
+## canva-pro-price-in-india
+
+Logged in to Canva from India, does the checkout for the Rs 69 one-day Pro pass offer UPI, and what total does it show (with any GST line)? Please give the date you checked. This answer belongs in the 'Canva Pro Day and Week Passes' H2, right after the paragraph on the two payment lists, because that is the post's biggest open gap.
+
+## google-analytics-alternatives
+
+BaseLayout.astro renders Vercel's <Analytics /> component beside GA4, and its script returned 200 on the live site on 16 October 2026: would you share 30 days of its visitors and page views next to GA4's for the same dates and pages (or, if Web Analytics turns out to be off in the Vercel project, run Umami Cloud's free Hobby plan beside GA4 for 30 days and share that side-by-side)? The answer belongs in a new table right after 'Tracker Script Weight, Measured One Way', and it is the one change most likely to move this post into the top 3, because the #1 result wins as a hands-on switch story.

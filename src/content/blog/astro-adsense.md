@@ -30,7 +30,7 @@ The AdSense setup itself is five short steps, and Astro changes how Google's cod
 4. Push every unit from one inline script that listens for `astro:page-load`, which `<ClientRouter />` fires; without the router, run the push loop once at the end of the body.
 5. Give every unit a reserved `min-height` in a global stylesheet.
 
-The snippets use placeholder IDs: `ca-pub-XXXXXXXXXXXXXXXX` for the publisher and `1234567890` for the slot. If your visitors include people in the EEA, the UK or Switzerland, Google's [consent management requirements](https://support.google.com/adsense/answer/13554116?hl=en) say AdSense publishers "are required to use a consent management platform (CMP) that has been certified by Google" when serving them personalized ads; that setup is outside this post.
+The snippets use placeholder IDs: `ca-pub-XXXXXXXXXXXXXXXX` for the publisher and `1234567890` for the slot. If your visitors include people in the EEA, the UK or Switzerland, Google's [consent management requirements](https://support.google.com/adsense/answer/13554116?hl=en) say AdSense publishers "are required to use a consent management platform (CMP) that has been certified by Google" when serving them personalized ads; that setup is outside this post. Changing analytics tools leaves that requirement in place, as I found when [checking GA4 alternatives against AdSense's consent rules](/blog/google-analytics-alternatives/).
 
 ### 1. Put the Loader Once in the Shared Head
 

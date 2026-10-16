@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 758" width="1400" height="758">
+  <rect x="0" y="0" width="1400" height="758" fill="#f6f4ef"/>
+
+  <text x="30" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What earlier LinkedIn Premium does to each free route</text>
+  <text x="30" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Bars quoted from each offer's terms, as read on 16 October 2026</text>
+
+  <rect x="30" y="130" width="280" height="104" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="50" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="1.8" fill="#6a645c">YOUR HISTORY</text>
+
+  <rect x="322" y="130" width="253" height="104" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="448.5" y="170" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">LinkedIn trial</text>
+  <text x="448.5" y="198" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">length varies</text>
+
+  <rect x="587" y="130" width="253" height="104" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="713.5" y="170" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Adobe offer</text>
+  <text x="713.5" y="198" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">3 months, Career</text>
+
+  <rect x="852" y="130" width="253" height="104" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="978.5" y="170" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Airtel offer</text>
+  <text x="978.5" y="198" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">3 months, Career</text>
+  <text x="978.5" y="222" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">not listed 16 Oct</text>
+
+  <rect x="1117" y="130" width="253" height="104" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1243.5" y="170" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Headway offer</text>
+  <text x="1243.5" y="198" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">3 months, Career</text>
+
+  <rect x="30" y="248" width="280" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="46" y="270" width="6" height="68" rx="3" fill="#b53b15"/>
+  <text x="68" y="296" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Used LinkedIn's</text>
+  <text x="68" y="324" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">free trial</text>
+
+  <rect x="322" y="248" width="253" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="448.5" y="284" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No new trial for at</text>
+  <text x="448.5" y="312" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">least 12 months</text>
+  <text x="448.5" y="340" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">after cancelling one</text>
+
+  <rect x="587" y="248" width="253" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="713.5" y="298" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Barred:</text>
+  <text x="713.5" y="326" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">any tier, any time</text>
+
+  <rect x="852" y="248" width="253" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="978.5" y="284" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Barred if it was</text>
+  <text x="978.5" y="312" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">in the past</text>
+  <text x="978.5" y="340" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">12 months</text>
+
+  <rect x="1117" y="248" width="253" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1243.5" y="284" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Not named; may count</text>
+  <text x="1243.5" y="312" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">as a Premium</text>
+  <text x="1243.5" y="340" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">subscription</text>
+
+  <rect x="30" y="374" width="280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="68" y="436" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Paid for</text>
+  <text x="68" y="464" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">LinkedIn Premium</text>
+
+  <rect x="322" y="374" width="253" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="448.5" y="451" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Not stated</text>
+
+  <rect x="587" y="374" width="253" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="713.5" y="410" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Barred if within</text>
+  <text x="713.5" y="438" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the last 12 months;</text>
+  <text x="713.5" y="466" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn's page may</text>
+  <text x="713.5" y="494" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">reach further back</text>
+
+  <rect x="852" y="374" width="253" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="978.5" y="438" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Barred if within</text>
+  <text x="978.5" y="466" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the past 7 years</text>
+
+  <rect x="1117" y="374" width="253" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1243.5" y="438" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Barred if within</text>
+  <text x="1243.5" y="466" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the past 20 years</text>
+
+  <rect x="30" y="528" width="280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="68" y="590" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Had a free</text>
+  <text x="68" y="618" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">partner offer</text>
+
+  <rect x="322" y="528" width="253" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="448.5" y="592" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Not named; may count</text>
+  <text x="448.5" y="620" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">as a free trial</text>
+
+  <rect x="587" y="528" width="253" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="713.5" y="564" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Possibly barred:</text>
+  <text x="713.5" y="592" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn's page asks</text>
+  <text x="713.5" y="620" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">for members who have</text>
+  <text x="713.5" y="648" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">not previously tried it</text>
+
+  <rect x="852" y="528" width="253" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="978.5" y="592" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Not named; may count</text>
+  <text x="978.5" y="620" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">as a free trial</text>
+
+  <rect x="1117" y="528" width="253" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1243.5" y="564" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Barred on its words:</text>
+  <text x="1243.5" y="592" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">any Premium</text>
+  <text x="1243.5" y="620" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">subscription in the</text>
+  <text x="1243.5" y="648" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">past 20 years</text>
+
+  <text x="30" y="712" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Not stated or not named: that offer's terms do not mention it. Each vendor also runs its own eligibility checks.</text>
+</svg>

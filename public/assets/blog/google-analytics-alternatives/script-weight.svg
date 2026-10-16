@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 850" width="1400" height="850">
+  <rect x="0" y="0" width="1400" height="850" fill="#f6f4ef"/>
+
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Tracker script weight on the wire, in bytes</text>
+  <text x="60" y="106" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">gzip, desktop Chrome user agent, fetched logged out from India on 16 Oct 2026</text>
+
+  <line x1="400" y1="140" x2="400" y2="696" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="600" y1="140" x2="600" y2="696" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="800" y1="140" x2="800" y2="696" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="1000" y1="140" x2="1000" y2="696" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="1200" y1="140" x2="1200" y2="696" stroke="#e4dfd6" stroke-width="1"/>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="60" y="184" fill="#15130f" font-weight="600">GA4 tag, this site (via GTM)</text>
+    <text x="60" y="234">PostHog (default SDK)</text>
+    <text x="60" y="284">Matomo (core 5.14.1)</text>
+    <text x="60" y="334">Rybbit</text>
+    <text x="60" y="384">Cloudflare Web Analytics</text>
+    <text x="60" y="434">Simple Analytics</text>
+    <text x="60" y="484">Pirsch</text>
+    <text x="60" y="534">GoatCounter</text>
+    <text x="60" y="584">Plausible (per-site script)</text>
+    <text x="60" y="634">Umami Cloud</text>
+    <text x="60" y="684">Fathom</text>
+  </g>
+
+  <rect x="400" y="164" width="719.6" height="28" fill="#b53b15"/>
+  <rect x="400" y="214" width="422.2" height="28" fill="#15130f"/>
+  <rect x="400" y="264" width="88.7" height="28" fill="#15130f"/>
+  <rect x="400" y="314" width="45.4" height="28" fill="#15130f"/>
+  <rect x="400" y="364" width="41.1" height="28" fill="#15130f"/>
+  <rect x="400" y="414" width="15.4" height="28" fill="#15130f"/>
+  <rect x="400" y="464" width="14.3" height="28" fill="#15130f"/>
+  <rect x="400" y="514" width="13.4" height="28" fill="#15130f"/>
+  <rect x="400" y="564" width="10.0" height="28" fill="#15130f"/>
+  <rect x="400" y="614" width="9.3" height="28" fill="#15130f"/>
+  <rect x="400" y="664" width="8.4" height="28" fill="#15130f"/>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">
+    <text x="1134" y="185">179,904</text>
+    <text x="836" y="235">105,562</text>
+    <text x="503" y="285">22,178</text>
+    <text x="460" y="335">11,346</text>
+    <text x="456" y="385">10,264</text>
+    <text x="430" y="435">3,854</text>
+    <text x="429" y="485">3,565</text>
+    <text x="428" y="535">3,358</text>
+    <text x="425" y="585">2,489</text>
+    <text x="424" y="635">2,333</text>
+    <text x="423" y="685">2,090</text>
+  </g>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">
+    <text x="400" y="728" text-anchor="middle">0</text>
+    <text x="600" y="728" text-anchor="middle">50,000</text>
+    <text x="800" y="728" text-anchor="middle">100,000</text>
+    <text x="1000" y="728" text-anchor="middle">150,000</text>
+    <text x="1200" y="728" text-anchor="middle">200,000</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">
+    <text x="60" y="776">Median of three runs. Matomo: matomo.js from release 5.14.1. Plausible: the pa-*.js file plausible.io serves.</text>
+    <text x="60" y="806">GA4: the library Tag Manager requests for this site; the Tag Manager container itself is not counted.</text>
+  </g>
+</svg>

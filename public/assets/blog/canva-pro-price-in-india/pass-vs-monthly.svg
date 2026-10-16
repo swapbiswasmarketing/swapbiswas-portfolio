@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <rect x="0" y="0" width="1400" height="900" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Canva Pro passes vs the monthly plan, by days in a row</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Lowest-cost pass mix for each need, priced from canva.com/en_in/pricing/ on 16 October 2026</text>
+
+  <rect x="40" y="140" width="1320" height="630" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <!-- scale: x = 440 + 1.4 * rupees -->
+  <line x1="440" y1="186" x2="440" y2="722" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="720" y1="186" x2="720" y2="722" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="1000" y1="186" x2="1000" y2="722" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="1280" y1="186" x2="1280" y2="722" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="440" y="750" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Rs 0</text>
+  <text x="720" y="750" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Rs 200</text>
+  <text x="1000" y="750" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Rs 400</text>
+  <text x="1280" y="750" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Rs 600</text>
+
+  <!-- row 1: 1 day, Rs 69 -->
+  <text x="72" y="214" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">1 day</text>
+  <text x="72" y="238" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">1 day pass</text>
+  <rect x="440" y="196" width="96.6" height="40" fill="#6a645c"/>
+  <text x="524" y="223" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#ffffff">Rs 69</text>
+
+  <!-- row 2: 2 days, Rs 138 -->
+  <text x="72" y="280" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">2 days</text>
+  <text x="72" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">2 day passes</text>
+  <rect x="440" y="262" width="193.2" height="40" fill="#6a645c"/>
+  <text x="621" y="289" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#ffffff">Rs 138</text>
+
+  <!-- row 3: 3 to 7 days, Rs 199 -->
+  <text x="72" y="346" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">3 to 7 days</text>
+  <text x="72" y="370" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">1 week pass</text>
+  <rect x="440" y="328" width="278.6" height="40" fill="#6a645c"/>
+  <text x="706" y="355" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#ffffff">Rs 199</text>
+
+  <!-- row 4: 8 days, Rs 268 -->
+  <text x="72" y="412" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">8 days</text>
+  <text x="72" y="436" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">1 week pass + 1 day pass</text>
+  <rect x="440" y="394" width="375.2" height="40" fill="#6a645c"/>
+  <text x="803" y="421" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#ffffff">Rs 268</text>
+
+  <!-- row 5: 9 days, Rs 337 -->
+  <text x="72" y="478" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">9 days</text>
+  <text x="72" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">1 week pass + 2 day passes</text>
+  <rect x="440" y="460" width="471.8" height="40" fill="#6a645c"/>
+  <text x="900" y="487" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#ffffff">Rs 337</text>
+
+  <!-- row 6: 10 to 14 days, Rs 398 -->
+  <text x="72" y="544" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">10 to 14 days</text>
+  <text x="72" y="568" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">2 week passes</text>
+  <rect x="440" y="526" width="557.2" height="40" fill="#6a645c"/>
+  <text x="985" y="553" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#ffffff">Rs 398</text>
+
+  <!-- row 7: 15 days, Rs 467 -->
+  <text x="72" y="610" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">15 days</text>
+  <text x="72" y="634" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">2 week passes + 1 day pass</text>
+  <rect x="440" y="592" width="653.8" height="40" fill="#6a645c"/>
+  <text x="1082" y="619" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#ffffff">Rs 467</text>
+
+  <!-- row 8: 16 days, Rs 536 (accent: passes now cost more than the monthly plan) -->
+  <text x="72" y="676" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">16 days</text>
+  <text x="72" y="700" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">2 week passes + 2 day passes</text>
+  <rect x="440" y="658" width="750.4" height="40" fill="#b53b15"/>
+  <text x="1120" y="685" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#ffffff">Rs 536</text>
+
+  <!-- monthly plan line at Rs 500 -->
+  <line x1="1140" y1="186" x2="1140" y2="722" stroke="#15130f" stroke-width="2.5" stroke-dasharray="10 7"/>
+  <text x="1140" y="176" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Pro monthly plan: Rs 500</text>
+
+  <text x="60" y="820" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">Up to 15 days in a row, passes cost less than the Rs 500 monthly plan. At 16 days they cost Rs 536.</text>
+  <text x="60" y="854" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Days spread over a month: seven 1-day passes cost Rs 483, eight cost Rs 552. Day pass Rs 69, week pass Rs 199, prepaid; my arithmetic.</text>
+</svg>

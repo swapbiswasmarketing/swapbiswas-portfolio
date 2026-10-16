@@ -29,7 +29,7 @@ The technical rule has two branches, and most explanations only give you one of 
 
 For Google Ads traffic, GA4 assigns a session to Cross Network when the source platform is `Google Ads` and the ad network type is either `Cross-network` or `Google owned channels`, or when the Google Ads campaign type is one of Performance Max, App, Smart, Demand Gen or Local. This happens automatically through auto-tagging.
 
-For manual traffic, there is a second rule that catches people out: GA4 also assigns a session to Cross Network when the campaign name contains `cross-network`. That branch has nothing to do with Google Ads, which is why Cross Network can show up in accounts that have never run a Google Ads campaign.
+For manual traffic, there is a second rule that catches people out: GA4 also assigns a session to Cross Network when the campaign name contains `cross-network`. That branch has nothing to do with Google Ads, which is why Cross Network can show up in accounts that have never run a Google Ads campaign. Plausible, one of the [ten Google Analytics alternatives I compared](/blog/google-analytics-alternatives/), assigns a session to its own Cross-network channel when the medium is `cross-network`, so check each tool's rule before you compare their channel reports.
 
 **Cross Network is not a campaign you create.** It is a classification that GA4 applies based on the type of Google Ads campaign sending the traffic.
 

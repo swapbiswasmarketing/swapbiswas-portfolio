@@ -114,8 +114,10 @@ If you want to understand how to read the data these tools produce, our [heatmap
 | Platform | Best For | Monthly Cost |
 |----------|----------|-------------|
 | GA4 + Search Console + Clarity | Everyone | Free |
-| Plausible / Fathom | Privacy-focused sites | $9-14/mo |
-| Mixpanel | Product analytics | Free up to 20M events |
+| Plausible / Fathom | Privacy-focused sites | [$9](https://plausible.io/#pricing)-[$15/mo](https://usefathom.com/pricing) (as of October 2026) |
+| Mixpanel | Product analytics | [Free up to 1M events/month](https://mixpanel.com/pricing/) (as of October 2026) |
+
+Plausible and Fathom are two of the [cookieless Google Analytics alternatives I weighed against GA4](/blog/google-analytics-alternatives/): each ships a lighter script than the GA4 tag on this site, though neither has a free hosted plan.
 
 ### Tool 4: Social Media Scheduling
 
@@ -176,7 +178,7 @@ You only need a paid SEO suite ($129+/mo) when you're managing 50+ keyword targe
 
 ### "I need design tools"
 
-Canva's free tier handles 90% of social graphics, presentations, and simple brand assets. AI image generators handle the rest. You need Adobe Creative Suite only if design is a core part of your product or service.
+Canva's free tier handles 90% of social graphics, presentations, and simple brand assets. AI image generators handle the rest. You need Adobe Creative Suite only if design is a core part of your product or service. If a Canva job does need Pro, [my Canva Pro price check for India](/blog/canva-pro-price-in-india/) found one-day and one-week passes that cost less than the monthly plan for up to 15 days in a row.
 
 ### "I need marketing automation"
 

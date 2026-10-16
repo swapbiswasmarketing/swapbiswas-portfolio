@@ -2771,3 +2771,72 @@ https://swapbiswas.com/blog/best-b2b-marketing-campaigns/?utm_source=linkedin&ut
 #B2BMarketing #ProductMarketing #CannesLions #Advertising
 
 ---
+
+### How to Get LinkedIn Premium for Free in India (Oct 2026)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a writing desk with four folded letters of invitation laid out in a careful row from left to right, the first one unfolded flat with a small brass key resting on it, the other three still closed with plain brown wax seals, an hourglass and a quill in an inkwell behind them, a single vermilion red ribbon tied around the brass key, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+If you have ever started LinkedIn's own free Premium trial, Adobe's offer of three free months of Premium Career is closed to you for good, going by Adobe's offer FAQ as I read it on 16 October 2026.
+The order you claim the free routes in decides how many you get: any partner offer you qualify for first, LinkedIn's own trial last.
+
+- Adobe, Headway and Airtel each give 3 months of Premium Career: Adobe to Creative Cloud or Express Premium members at adobe.com/benefits, Headway to paid Headway subscribers from October 2026, and Airtel only while the offer is active on Airtel.
+- On 16 October 2026, Airtel's Insider page listed Super Duolingo and PocketFM Premium and no LinkedIn perk, and LinkedIn's Airtel page says members who already hold a code are "currently not eligible to redeem".
+- Paid Premium closes Adobe's offer for at least 12 months, Airtel's for 7 years and Headway's for 20 years. Headway's bar counts any Premium subscription, so if you pay for Headway, claim its 3 months first.
+- LinkedIn's own trial needs a valid credit card, and cancelling ends Premium "right away", so cancel near the end of the trial, at least one day before the billing date.
+- The Microsoft 365 student bundle that included Premium Career has ended. LinkedIn Help says "new codes are no longer being issued".
+
+Which free route does your account still qualify for: Headway, Adobe, Airtel or LinkedIn's own trial?
+
+https://swapbiswas.com/blog/how-to-get-linkedin-premium-free/?utm_source=linkedin&utm_medium=social&utm_campaign=how-to-get-linkedin-premium-free
+
+#LinkedIn #LinkedInPremium #JobSearch #CareerGrowth #India
+
+---
+
+### Canva Pro Price in India: Pro Lite, Pro and Passes (2026)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a painter's oak worktable with a brass tray holding a row of seven short candles, the first three burnt down to stubs, beside a wooden palette and three bundles of paintbrushes laid out in a row, from a single brush to a thick bundle tied with twine, a small stack of copper coins in front of each bundle, a single vermilion red ribbon tied around the single brush, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Rs 69 buys one day of Canva Pro in India, on a prepaid pass that Canva's own pricing page listed on 16 October 2026, beside Pro at Rs 500 a month or Rs 4,000 a year.
+Plan names are a poor guide to the cheapest purchase: two week passes cost Rs 398, less than one Rs 500 month, and a week of Pro costs the same Rs 199 as a month of Pro Lite.
+
+- Passes cost less than the monthly plan for up to 15 days of Pro in a row, where two week passes and a day pass come to Rs 467. At 16 days they cost Rs 536.
+- Pro Lite, at Rs 199 a month or Rs 1,590 a year, keeps Free's AI allowance of up to 20 Standard or Premium AI uses a month and has no Social Content Planner. Pro's allowance is 10x Free's, by Canva's own estimates.
+- On yearly billing, Business for three marketers costs Rs 20,400 against Rs 12,000 for three Pro accounts. I would pay the extra Rs 8,400 only when approvals or brand controls matter.
+- Canva's pages differ on paying for a pass with UPI: its UPI help article covers "short-duration plans", but the pricing page's FAQ on the one-time option lists five payment methods and UPI is not one of them, so keep a card ready.
+- One India price guide dated 26 April 2025 prints Pro at Rs 799 a month and says 18% GST "will be added at checkout". Canva's tax help says that outside the US and Canada, its advertised price includes sales tax.
+
+How many days in a row did your last Canva job need Pro?
+
+https://swapbiswas.com/blog/canva-pro-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=canva-pro-price-in-india
+
+#Canva #GraphicDesign #MarketingTools #SaaSPricing #India
+
+---
+
+### Google Analytics Alternatives: 10 Trackers Weighed (2026)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak counter with one large cast-iron weight standing at the left beside a row of ten small brass weights that shrink from one about half its size down to tiny ones no bigger than a coin, an open ledger with blank ruled columns, a magnifying glass and a quill in an inkwell, a single vermilion red ribbon tied around the large iron weight, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+My site's GA4 tag, as Google Tag Manager requests it, came down the wire at 179,904 bytes on 16 October 2026. Fathom's script, the lightest of the ten alternatives I measured the same way, came in at 2,090 bytes.
+Every alternative weighed less in its default setup, so the choice between them turns on the cookie banner, AI assistant visits and what you would have to rebuild.
+
+- PostHog's default bundle came to 105,562 bytes, 172,716 with the session replay recorder (96% of my GA4 tag) and 205,865 with replays and surveys, which passes it.
+- Plausible, Fathom, Umami, Simple Analytics, Pirsch and Rybbit each say on their own pages that their analytics needs no cookie banner. Matomo's consent FAQ puts GDPR, PECR and TDDDG in a group where "Consent is mandatory for client-side analytics tracking, even if no personal data is processed".
+- A banner you run for anything else stays: AdSense needs a Google-certified CMP to serve personalized ads in the EEA, the UK and Switzerland, and Microsoft Clarity has enforced consent signals for visits from those regions since 31 October 2025.
+- Six of the ten document a label for visits from AI assistants. Pirsch's documented list names openai.com but not chatgpt.com, and Umami has an "LLM" channel in its code that its docs do not describe.
+- On my site a switch involves six pieces, among them nine custom event names, such as cta_click and blog_read_progress, each to be rewritten as the new tool's own call. Run your pick beside GA4 for 30 days before you remove the tag.
+
+What would rule out a GA4 alternative for your site before script weight does?
+
+https://swapbiswas.com/blog/google-analytics-alternatives/?utm_source=linkedin&utm_medium=social&utm_campaign=google-analytics-alternatives
+
+#GoogleAnalytics #GA4 #WebAnalytics #DataPrivacy #MarketingAnalytics
+
+---

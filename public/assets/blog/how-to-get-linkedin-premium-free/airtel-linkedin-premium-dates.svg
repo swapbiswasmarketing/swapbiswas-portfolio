@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" width="1400" height="700">
+  <rect x="0" y="0" width="1400" height="700" fill="#f6f4ef"/>
+
+  <text x="30" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Airtel and LinkedIn Premium: the dated trail</text>
+  <text x="30" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Vendor pages and dated reports, as read on 16 October 2026</text>
+
+  <rect x="226" y="556" width="1144" height="104" rx="12" fill="#f3dcd2"/>
+  <line x1="250" y1="150" x2="250" y2="590" stroke="#6a645c" stroke-width="2"/>
+
+  <text x="30" y="166" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">29 Jan 2026</text>
+  <circle cx="250" cy="159" r="8" fill="#15130f"/>
+  <text x="280" y="166" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Airtel announces a free year of Adobe Express Premium for its customers</text>
+  <text x="280" y="194" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Airtel press release</text>
+
+  <text x="30" y="236" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">15 May 2026</text>
+  <circle cx="250" cy="229" r="8" fill="#15130f"/>
+  <text x="280" y="236" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Adobe posts its FAQ: 3 free months of Premium Career for Creative Cloud and Express Premium</text>
+  <text x="280" y="264" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Adobe Community</text>
+
+  <text x="30" y="306" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">29 May 2026</text>
+  <circle cx="250" cy="299" r="8" fill="#15130f"/>
+  <text x="280" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Adobe says it is investigating whether users who came through Airtel are eligible</text>
+  <text x="280" y="334" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Adobe Community</text>
+
+  <text x="30" y="376" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">24 Jun 2026</text>
+  <circle cx="250" cy="369" r="8" fill="#15130f"/>
+  <text x="280" y="376" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">News sites report an Airtel Insider perk: 3 months of LinkedIn Premium Career</text>
+  <text x="280" y="404" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">The Tech Outlook, DesiDime (reports)</text>
+
+  <text x="30" y="446" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">23 Aug 2026</text>
+  <circle cx="250" cy="439" r="8" fill="#15130f"/>
+  <text x="280" y="446" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">End of the claim window one deal site gives for that perk</text>
+  <text x="280" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">DesiDime (report)</text>
+
+  <text x="30" y="516" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">27 Aug 2026</text>
+  <circle cx="250" cy="509" r="8" fill="#15130f"/>
+  <text x="280" y="516" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">A Reddit comment says the perk was removed from Airtel's rewards page</text>
+  <text x="280" y="544" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">r/IndiaCareers (report)</text>
+
+  <text x="30" y="586" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">16 Oct 2026</text>
+  <circle cx="250" cy="579" r="11" fill="#b53b15"/>
+  <text x="280" y="586" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Airtel Insider lists Super Duolingo and PocketFM Premium, and no LinkedIn perk</text>
+  <text x="280" y="614" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">LinkedIn's Airtel page: code holders are "currently not eligible to redeem"</text>
+  <text x="280" y="642" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">airtel.in/insider and LinkedIn Help, checked from India</text>
+</svg>

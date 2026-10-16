@@ -146,7 +146,7 @@ Choosing the right [tool](/blog/marketing-tools-you-need/) depends on your budge
 | **Crazy Egg** | [From $29/mo](https://www.crazyegg.com/pricing) | Yes | Yes | Yes | Yes (limited) | A/B testing built in, confetti report |
 | **Lucky Orange** | [Free tier + paid from $32/mo](https://www.luckyorange.com/pricing) | Yes | Yes | Yes | Yes | Live visitor view, dynamic heatmaps |
 
-**For most teams, Microsoft Clarity is the best starting point.** It's completely free with no traffic caps, includes session recordings alongside heatmaps, and automatically flags rage clicks and dead clicks. If you need move maps, form analytics, or built-in surveys, Hotjar or Mouseflow are strong paid upgrades.
+**For most teams, Microsoft Clarity is the best starting point.** It's completely free with no traffic caps, includes session recordings alongside heatmaps, and automatically flags rage clicks and dead clicks. Treat it as a complement to GA4 rather than a replacement: as I found when I [weighed Clarity against Google Analytics](/blog/google-analytics-alternatives/), a year-on-year traffic report needs history that Clarity does not keep. If you need move maps, form analytics, or built-in surveys, Hotjar or Mouseflow are strong paid upgrades.
 
 Heatmap data pairs well with automation workflows. Once you identify which page elements drive the most engagement, you can use those insights to refine [marketing automation strategy](/blog/marketing-automation-strategy/) - for example, personalizing landing pages based on the content sections that generate the most clicks.
 

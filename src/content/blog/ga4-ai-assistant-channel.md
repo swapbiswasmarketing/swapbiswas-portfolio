@@ -56,7 +56,7 @@ Like every channel on that page, AI Assistant is fixed: "Default channel groups 
 
 ## Which AI Assistants Google Names, and Where
 
-Only **ChatGPT** appears in all four places in the table above. Copy the list from the 13 May entry and you get three assistants; copy it from the channel page and you get five, with two in common. Perplexity, which the Source Group entry names, is on neither of those two lists.
+Only **ChatGPT** appears in all four places in the table above. Copy the list from the 13 May entry and you get three assistants; copy it from the channel page and you get five, with two in common. Perplexity, which the Source Group entry names, is on neither of those two lists. Outside Google, I checked [which Google Analytics alternatives label AI-assistant visits](/blog/google-analytics-alternatives/): six of the ten I compared document such a label, and the list Pirsch publishes for its AI channel leaves out chatgpt.com.
 
 ### Google's Linked Source List Predates the Channel
 
