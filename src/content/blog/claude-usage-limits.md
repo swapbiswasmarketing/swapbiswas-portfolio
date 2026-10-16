@@ -200,6 +200,7 @@ Read those screens with these caveats:
 - `/status` shows "version, model, account, and connectivity", per the commands reference. Anthropic's Claude Code with Pro or Max article, last updated 19 August 2026, still says "Monitor your remaining allocation using the /status command"; use `/usage`.
 - The `/usage` breakdown is local. Its figures "are approximate and computed from local session history on this machine, so usage from other devices or claude.ai is not included."
 - On Pro and Max, the dollar figure in the `/usage` Session block "isn't relevant for billing purposes."
+- A status line's `rate_limits` fields fill in only after the first API response, and each window can be absent; the PowerShell script in [my status line setup guide](/blog/claude-code-statusline/) prints each window that is present as a percentage with its local reset time.
 
 The `/usage` row sits with the other session commands in [my Claude Code commands reference](/blog/claude-code-commands/), and [the VS Code extension vs the terminal](/blog/claude-code-in-vs-code-vs-terminal/) covers where the extension's dialogs differ from the CLI.
 

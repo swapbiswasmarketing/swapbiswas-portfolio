@@ -262,7 +262,7 @@ You're on page 1 but below the fold. According to [First Page Sage](https://firs
 **Actions to take:**
 
 - **Optimize your title tag and meta description** for higher click-through rates
-- **Add structured data** (FAQ schema, how-to schema) to earn rich snippets
+- **Add structured data** that can still make a page eligible for a rich result, such as product, review snippet or video markup, all listed in [Google's Search Gallery](https://developers.google.com/search/docs/appearance/structured-data/search-gallery) as of October 2026. FAQ and How-to markup no longer do: Google stopped showing [How-to rich results in September 2023](https://developers.google.com/search/blog/2023/08/howto-faq-changes) and [FAQ rich results on 7 May 2026](https://developers.google.com/search/updates#deprecating-the-faq-rich-result-feature), though [FAQ markup you already have can stay](/blog/faq-schema/) if its questions are visible on the page
 - **Update the content** with newer data, examples, or a more comprehensive answer
 
 ### Keywords Ranking in Positions 1-3

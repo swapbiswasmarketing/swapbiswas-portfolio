@@ -67,6 +67,8 @@ Alt text presence is the easy half: my cover images pass it and still describe a
 
 The sitemap row's count of 0 noindex pages is the one I expect in Search Console too: with the Page indexing report filtered to All submitted pages, [the Excluded by noindex tag row should stay empty](/blog/excluded-by-noindex-tag/), because any URL in it is one the sitemap lists while its page says noindex.
 
+The JSON-LD row's 0 means every block is well-formed, but a parse cannot tell me whether Google still shows anything for a block's type, and for FAQPage, [my dated check of where FAQ stands in Google's tools](/blog/faq-schema/) puts the end of FAQ rich results at 7 May 2026.
+
 ### Live Checks: Production and the Exported URLs
 
 | Check | Why it matters | How Claude Code ran it | Count |

@@ -23,7 +23,7 @@ howTo:
     - name: "Verify HTTPS and Security"
       text: "Confirm your SSL certificate is valid, fix any mixed content warnings, and use 301 redirects rather than 302 for permanent URL changes."
     - name: "Validate Structured Data"
-      text: "Add JSON-LD schema markup for articles, products, and FAQs where relevant, then validate every type using Google's Rich Results Test."
+      text: "Add JSON-LD schema markup for articles, products, and FAQs where relevant, then validate FAQ markup with the Schema Markup Validator (validator.schema.org) and every other type with Google's Rich Results Test."
     - name: "Fix Redirect Chains and Broken Links"
       text: "Crawl your site with Screaming Frog to find 404 errors and redirect chains, then consolidate redirects so every link points directly to the final destination."
 ---
@@ -249,7 +249,7 @@ Run your key pages through [Lighthouse](https://developer.chrome.com/docs/lighth
 
 **What you're checking:** Are you giving search engines structured information about your content?
 
-Structured data (schema markup) helps Google understand your content and can earn you rich results -review stars, FAQ dropdowns, recipe cards, etc.
+Structured data (schema markup) helps Google understand your content and can earn you rich results -review stars, recipe cards, etc.
 
 **7.1 Current Implementation**
 
@@ -258,11 +258,13 @@ Structured data (schema markup) helps Google understand your content and can ear
   - `Article` / `BlogPosting` for blog content
   - `Organization` for your company/brand
   - `Person` for author pages
-  - `FAQPage` for FAQ sections
+  - `FAQPage` for FAQ sections (Google stopped showing FAQ rich results in May 2026 and the Rich Results Test no longer supports FAQ, so validate this markup in the [Schema Markup Validator](https://validator.schema.org/))
   - `HowTo` for tutorial/guide content
   - `BreadcrumbList` for navigation
 
-**The impact:** Pages with structured data can earn rich results (review stars, FAQ dropdowns, etc.) which significantly improve click-through rates compared to standard blue links.
+When the audit turns up `FAQPage` markup, confirm that every question in it is visible on the page, as Google's and Bing's guidelines require, and use [my keep, fix or remove table for FAQ markup](/blog/faq-schema/) to decide whether it stays.
+
+**The impact:** Pages with structured data can earn rich results such as review stars, which Google describes as search results "that are more engaging to users and might encourage them to interact more with your website" ([Google Search Central](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data)).
 
 **7.2 Implementation**
 

@@ -175,6 +175,8 @@ LinkedIn's Help Center defines all three formats on the one page linked in the s
 | Article | Long-form content on its own /pulse/ page (defined in the first table) | Whoever the feed shows the article's share to | A one-off long piece meant to be read on LinkedIn |
 | Newsletter | Lets members "subscribe to your newsletter to be notified about new articles you publish" | Subscribers by push, in-app and email, plus the feed | A series on a cadence you can keep |
 
+LinkedIn's Help page for posts says they can contain up to 3,000 characters and points longer pieces to an article, and [my dated table of LinkedIn's own character limits](/blog/linkedin-headline-character-limit/) quotes that page beside the ones for invitation notes, InMail and ads.
+
 A feed post with a link is the direct route to your own domain, and how you attach the link matters: MagicPost's link study, covered in [my guide to what counts as a good number of LinkedIn impressions](/blog/what-is-a-good-number-of-impressions-on-linkedin/), found fewer impressions on posts with a link preview card than on posts without one, while posts with the URL typed into the text did not trail. MagicPost files link-preview posts under its article format, so its article figures describe link posts, not LinkedIn articles. The same guide lists how long LinkedIn keeps article and newsletter analytics.
 
 All three formats report "Profile viewers from this post" in their analytics, a separate count from [how often you appear in LinkedIn search](/blog/linkedin-search-appearances-vs-profile-views/).

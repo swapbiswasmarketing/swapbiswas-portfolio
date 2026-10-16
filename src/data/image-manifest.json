@@ -453,6 +453,14 @@
 		],
 		"hash": "328468f910f31c7f"
 	},
+	"/assets/blog/claude-code-statusline/status-line-2026-timeline.webp": {
+		"w": 1200,
+		"h": 720,
+		"v": [
+			660
+		],
+		"hash": "16310279387866d6"
+	},
 	"/assets/blog/claude-code-wsl-vs-windows/repo-location-routing.webp": {
 		"w": 1200,
 		"h": 711,
@@ -940,6 +948,14 @@
 		],
 		"hash": "7f4c2b56c9becaef"
 	},
+	"/assets/blog/faq-schema/faq-rich-results-timeline.webp": {
+		"w": 1200,
+		"h": 669,
+		"v": [
+			660
+		],
+		"hash": "86c9e113a4c3580b"
+	},
 	"/assets/blog/feature-adoption-rate/adopted-vs-retained.webp": {
 		"w": 1200,
 		"h": 566,
@@ -1394,6 +1410,22 @@
 			660
 		],
 		"hash": "30c9c673040f241f"
+	},
+	"/assets/blog/linkedin-headline-character-limit/cut-points.webp": {
+		"w": 1200,
+		"h": 437,
+		"v": [
+			660
+		],
+		"hash": "c030ce3438eb7ceb"
+	},
+	"/assets/blog/linkedin-headline-character-limit/headline-numbers.webp": {
+		"w": 1200,
+		"h": 814,
+		"v": [
+			660
+		],
+		"hash": "9bf873463f7c3346"
 	},
 	"/assets/blog/linkedin-impressions-on-your-experience/profile-engagement-path.webp": {
 		"w": 1200,

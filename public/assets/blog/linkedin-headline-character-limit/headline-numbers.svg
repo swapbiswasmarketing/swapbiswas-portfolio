@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" width="1400" height="950">
+<rect x="0" y="0" width="1400" height="950" fill="#f6f4ef"/>
+<text x="110" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">LinkedIn headline numbers, and who prints them</text>
+<text x="110" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Characters on one scale, from pages read on 16 October 2026</text>
+<text x="110" y="158" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">PROFILE HEADLINE</text>
+<text x="110" y="196"><tspan font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">220</tspan><tspan dx="12" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Profile headline: LinkedIn's Talent Blog (Feb 2025) and six current guides</tspan></text>
+<rect x="110" y="210" width="1100" height="22" rx="3" fill="#b53b15"/>
+<text x="110" y="268"><tspan font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">240</tspan><tspan dx="12" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Derrick's figure for mobile (Oct 2026); five other current guides give no separate mobile limit</tspan></text>
+<rect x="110" y="282" width="1200" height="22" rx="3" fill="#6a645c"/>
+<text x="110" y="340"><tspan font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">120</tspan><tspan dx="12" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Older figure: 2017 and 2018 pages, Copper (Sep 2025), Databox (Feb 2026)</tspan></text>
+<rect x="110" y="354" width="600" height="22" rx="3" fill="#6a645c"/>
+<text x="110" y="412"><tspan font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">60-80</tspan><tspan dx="12" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Shown before the cut, per four guides; no LinkedIn page I read prints one</tspan></text>
+<rect x="410" y="426" width="100" height="22" rx="3" fill="#eeebe4" stroke="#6a645c" stroke-width="2"/>
+<text x="110" y="484"><tspan font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">75</tspan><tspan dx="12" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The opening of my headline; its role keyword ends at character 23</tspan></text>
+<rect x="110" y="498" width="375" height="22" rx="3" fill="#ffffff" stroke="#15130f" stroke-width="2"/>
+<line x1="225" y1="492" x2="225" y2="526" stroke="#15130f" stroke-width="3"/>
+<text x="233" y="516" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">23</text>
+<line x1="110" y1="548" x2="1310" y2="548" stroke="#e4dfd6" stroke-width="1"/>
+<text x="110" y="590" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">AD HEADLINES, ON LINKEDIN HELP PAGES</text>
+<text x="110" y="628"><tspan font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">200</tspan><tspan dx="12" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Single image ad headline maximum</tspan></text>
+<rect x="110" y="642" width="1000" height="22" rx="3" fill="#15130f"/>
+<text x="110" y="700"><tspan font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">70</tspan><tspan dx="12" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Single image ad headline, to avoid truncation</tspan></text>
+<rect x="110" y="714" width="350" height="22" rx="3" fill="#15130f"/>
+<text x="110" y="772"><tspan font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">25</tspan><tspan dx="12" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Text ad headline</tspan></text>
+<rect x="110" y="786" width="125" height="22" rx="3" fill="#15130f"/>
+<line x1="110" y1="828" x2="1310" y2="828" stroke="#6a645c" stroke-width="1.5"/>
+<line x1="110" y1="828" x2="110" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="110" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">0</text>
+<line x1="210" y1="828" x2="210" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="210" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">20</text>
+<line x1="310" y1="828" x2="310" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="310" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">40</text>
+<line x1="410" y1="828" x2="410" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="410" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">60</text>
+<line x1="510" y1="828" x2="510" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="510" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">80</text>
+<line x1="610" y1="828" x2="610" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="610" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">100</text>
+<line x1="710" y1="828" x2="710" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="710" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">120</text>
+<line x1="810" y1="828" x2="810" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="810" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">140</text>
+<line x1="910" y1="828" x2="910" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="910" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">160</text>
+<line x1="1010" y1="828" x2="1010" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="1010" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">180</text>
+<line x1="1110" y1="828" x2="1110" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="1110" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">200</text>
+<line x1="1210" y1="828" x2="1210" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="1210" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">220</text>
+<line x1="1310" y1="828" x2="1310" y2="836" stroke="#6a645c" stroke-width="1.5"/>
+<text x="1310" y="860" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">240</text>
+<rect x="110" y="888" width="24" height="16" rx="3" fill="#b53b15"/>
+<text x="144" y="903" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#3a3632">LinkedIn's blog and guides</text>
+<rect x="430" y="888" width="24" height="16" rx="3" fill="#6a645c"/>
+<text x="464" y="903" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#3a3632">Guides only</text>
+<rect x="620" y="888" width="24" height="16" rx="3" fill="#15130f"/>
+<text x="654" y="903" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#3a3632">A LinkedIn Help page</text>
+<rect x="880" y="888" width="24" height="16" rx="3" fill="#eeebe4" stroke="#6a645c" stroke-width="2"/>
+<text x="914" y="903" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#3a3632">Range in guides</text>
+<rect x="1090" y="888" width="24" height="16" rx="3" fill="#ffffff" stroke="#15130f" stroke-width="2"/>
+<text x="1124" y="903" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#3a3632">My headline</text>
+</svg>

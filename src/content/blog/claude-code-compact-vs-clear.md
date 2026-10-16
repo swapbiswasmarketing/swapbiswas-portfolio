@@ -111,7 +111,7 @@ When the context window is full and a request no longer fits, the API's `Prompt 
 | `Prompt is too long · automatic compaction failed: <the underlying error>` | Auto-compaction ran and failed on another error, such as an unavailable model or an authentication failure | Resolve the named error first; `/compact` fails on the same error until you do |
 | `Not enough messages to compact.` after `/compact`, or a `Prompt is too long ·` line about a single exchange | The conversation is a single exchange, so nothing earlier can be summarized; that prompt plus what Claude Code sends with every request (system prompt, tool definitions, memory files) fills the window | `/clear`, then resend with less pasted text or smaller attachments, or cut tool definitions with `/mcp disable <name>` |
 
-The errors page also says auto-compact is on by default and "normally prevents this error". If you hit it anyway, `/context` shows what is filling the window: system prompt, tools, memory files and messages.
+The errors page also says auto-compact is on by default and "normally prevents this error". If you hit it anyway, `/context` shows what is filling the window: system prompt, tools, memory files and messages. In the terminal, a status line script can print `context_window.used_percentage` after each new assistant message, and [my guide to putting that percentage in a status bar](/blog/claude-code-statusline/) explains why it can read lower than `/context`.
 
 ## Claude Code Auto Compact: Defaults and the Settings That Change Them
 

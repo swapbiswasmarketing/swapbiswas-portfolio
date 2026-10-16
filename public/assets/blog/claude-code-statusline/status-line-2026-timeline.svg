@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Claude Code status line changes in 2026, by release</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Selected changes for status line scripts and the footer row, from Anthropic's changelog, read 16 October 2026</text>
+
+  <rect x="60" y="144" width="1280" height="628" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="100" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">DATE</text>
+  <text x="200" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">RELEASE</text>
+  <text x="372" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">WHAT ARRIVED</text>
+  <line x1="90" y1="204" x2="1310" y2="204" stroke="#e4dfd6" stroke-width="1"/>
+
+  <line x1="340" y1="226" x2="340" y2="740" stroke="#6a645c" stroke-width="2"/>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">
+    <text x="100" y="240">13 Jan</text>
+    <text x="100" y="290">19 Mar</text>
+    <text x="100" y="340">8 Apr</text>
+    <text x="100" y="390">23 Apr</text>
+    <text x="100" y="440">28 May</text>
+    <text x="100" y="490">12 Jun</text>
+    <text x="100" y="540">15 Jul</text>
+    <text x="100" y="590">28 Aug</text>
+    <text x="100" y="640">3 Sep</text>
+    <text x="100" y="690">28 Sep</text>
+    <text x="100" y="740">7 Oct</text>
+  </g>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">
+    <text x="200" y="240">v2.1.6</text>
+    <text x="200" y="290" fill="#b53b15">v2.1.80</text>
+    <text x="200" y="340">v2.1.97</text>
+    <text x="200" y="390">v2.1.119</text>
+    <text x="200" y="440">v2.1.153</text>
+    <text x="200" y="490">v2.1.176</text>
+    <text x="200" y="540">v2.1.211</text>
+    <text x="200" y="590">v2.1.251</text>
+    <text x="200" y="640">v2.1.260</text>
+    <text x="200" y="690">v2.1.284</text>
+    <text x="200" y="740">v2.1.293</text>
+  </g>
+
+  <g fill="#15130f">
+    <circle cx="340" cy="233" r="6"/>
+    <circle cx="340" cy="333" r="6"/>
+    <circle cx="340" cy="383" r="6"/>
+    <circle cx="340" cy="433" r="6"/>
+    <circle cx="340" cy="483" r="6"/>
+    <circle cx="340" cy="533" r="6"/>
+    <circle cx="340" cy="583" r="6"/>
+    <circle cx="340" cy="633" r="6"/>
+    <circle cx="340" cy="683" r="6"/>
+    <circle cx="340" cy="733" r="6"/>
+  </g>
+  <circle cx="340" cy="283" r="9" fill="#b53b15"/>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">
+    <text x="372" y="240">context_window used and remaining percentages</text>
+    <text x="372" y="290" fill="#15130f" font-weight="600">rate_limits: 5-hour and 7-day plan usage, with reset times</text>
+    <text x="372" y="340">refreshInterval: re-run the script every N seconds</text>
+    <text x="372" y="390">effort.level and thinking.enabled</text>
+    <text x="372" y="440">COLUMNS and LINES: the terminal size, passed to your script</text>
+    <text x="372" y="490">footerLinksRegexes: footer link badges without a script</text>
+    <text x="372" y="540">Session cost resets to $0 when /clear runs</text>
+    <text x="372" y="590">prompt_cache stats, and spend_limit behind a Claude apps gateway</text>
+    <text x="372" y="640">Likely cause of each prompt cache miss</text>
+    <text x="372" y="690">Gateway spend limit in dollars: used_usd, limit_usd, period</text>
+    <text x="372" y="740">agentType in subagent status line rows</text>
+  </g>
+
+  <text x="60" y="814" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">11 of the 17 releases in the table below; the /clear change is a fix the docs tag by version. Source: code.claude.com/docs/en/changelog</text>
+</svg>

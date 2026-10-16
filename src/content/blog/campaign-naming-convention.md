@@ -84,6 +84,8 @@ This is the failure mode that actually breaks conventions in production. The lim
 | Meta | Not published in the [Marketing API reference](https://developers.facebook.com/docs/marketing-api/reference/ad-campaign-group/) | The campaign name field is documented only as "Name for this campaign", with emoji explicitly supported |
 | Campaign Manager 360 | [255 characters](https://support.google.com/campaignmanager/answer/6010167) | Placement names up to 512, ad names up to 255 |
 
+LinkedIn does publish limits for the ad copy itself: its single image ad specifications cap the headline at 200 characters and the introductory text at 3,000, and [my page-by-page list of the limits LinkedIn states](/blog/linkedin-headline-character-limit/) gives the shorter lengths it suggests to avoid truncation.
+
 Two things fall out of that table. First, the binding constraint is never the ad platform. Google Analytics 4 publishes a [100-character limit on event parameter values](https://support.google.com/analytics/answer/9267744), with named exceptions only for page title, page referrer and page location. Your ad platform will happily accept 256 characters that your analytics layer was never designed to carry, so budget against the tightest published cap in the chain rather than the loosest.
 
 Second, the Microsoft uniqueness rule quietly kills a common workaround. When a name collides, people retype it in a different case. Microsoft compares case-insensitively, so that fails, and the person then appends `_v2` to get past the error. That is the origin story of the version suffixes sitting in your account right now.

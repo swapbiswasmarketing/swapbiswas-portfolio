@@ -48,7 +48,7 @@ Schema markup translates your content into a format machines parse without guess
 
 Prioritize **Organization**, **Product**, **FAQPage**, **Article**, and **BreadcrumbList** schema. Organization schema with `sameAs` links ties your site to your verified social and directory profiles, reinforcing the entity.
 
-Clean structured data also feeds rich results and answer engines at the same time. For the full breakdown of how answer formatting drives citations, see [AEO vs SEO](/blog/aeo-vs-seo/).
+Clean structured data also feeds rich results and answer engines at the same time, although [Google stopped showing FAQ rich results](https://developers.google.com/search/updates#deprecating-the-faq-rich-result-feature) on 7 May 2026. Of the search engines and AI crawlers in [my table of FAQ schema readers](/blog/faq-schema/), only Bing's guidelines, which also cover Copilot, say accurate structured data may support clearer grounding. For the full breakdown of how answer formatting drives citations, see [AEO vs SEO](/blog/aeo-vs-seo/).
 
 ## 3. Earn Citations From Sources AI Engines Already Trust
 

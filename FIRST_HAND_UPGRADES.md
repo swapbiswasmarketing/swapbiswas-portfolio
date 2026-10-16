@@ -466,3 +466,15 @@ Logged in to Canva from India, does the checkout for the Rs 69 one-day Pro pass 
 ## google-analytics-alternatives
 
 BaseLayout.astro renders Vercel's <Analytics /> component beside GA4, and its script returned 200 on the live site on 16 October 2026: would you share 30 days of its visitors and page views next to GA4's for the same dates and pages (or, if Web Analytics turns out to be off in the Vercel project, run Umami Cloud's free Hobby plan beside GA4 for 30 days and share that side-by-side)? The answer belongs in a new table right after 'Tracker Script Weight, Measured One Way', and it is the one change most likely to move this post into the top 3, because the #1 result wins as a hands-on switch story.
+
+## claude-code-statusline
+
+If you add a Claude Code status line, which fields did you choose to show (for example context percentage, 5-hour and 7-day usage, effort, prompt cache warm or cold), which route did you use (/statusline, the PowerShell script in this post, or ccstatusline), and can you share a dated screenshot of it in the terminal with the claude --version it ran on? It belongs in 'Claude Code Statusline Examples for Windows', after the piped-test output.
+
+## linkedin-headline-character-limit
+
+Can you send a dated desktop screenshot and a dated phone screenshot of your own headline as it shows in LinkedIn search results (and, if you can, in a comment and in a connection invitation), showing exactly where it is cut? Please also confirm the live headline's full character count. This would replace the guides' 60-80 claims with a measured cut point in 'How Much of a LinkedIn Headline Shows Before the Cut'.
+
+## faq-schema
+
+Now that Google shows neither result, do you want to keep or remove the FAQPage markup across the site (222 posts, all 9 tool pages and the contact page) and the HowTo markup on the 10 howTo posts, and why? The answer belongs in 'The Template That Emits FAQPage on 222 Posts', after the counts table. Recount that table whenever the post is next edited.

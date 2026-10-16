@@ -153,6 +153,8 @@ In September 2026 I rewrote my LinkedIn headline, and one line in it reads: "I w
 - Benefit: a team stops waiting on a handoff between the person who writes the brief and the person who builds the page.
 - Value: the reader's to write. A head of marketing might count launch dates hit, and a founder might count weeks from brief to live page.
 
+In the headline itself, that line comes after my role and market, and of the figures [third-party guides give for the visible part of a headline](/blog/linkedin-headline-character-limit/), which run from 60 to 80 characters, only the 80 shows it whole.
+
 ## Running the Test on This Site's Nine Tool Taglines
 
 I ran the three tests on the hero tagline at the top of each of the nine live [free tool pages on this site](/tools/), as published on 2 October 2026, and **none of the nine reaches the value tier**. I scored each tagline by the highest tier any of its sentences reaches. A tagline that only lists what goes in and what comes out describes the product, so it scores as a feature.

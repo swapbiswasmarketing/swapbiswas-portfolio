@@ -2840,3 +2840,72 @@ https://swapbiswas.com/blog/google-analytics-alternatives/?utm_source=linkedin&u
 #GoogleAnalytics #GA4 #WebAnalytics #DataPrivacy #MarketingAnalytics
 
 ---
+
+### Claude Code Statusline: Setup, Fields and 2026 Changes
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scribe's oak desk with a large open ledger of blank ruled pages, and along the front edge of the desk just below the ledger a long narrow brass tray holding a row of small instruments: a pocket sundial, a little hourglass, a glass vial half filled with water, a brass compass and a pair of dividers, a quill resting in an inkwell beside the ledger, a single vermilion red ribbon tied around the hourglass, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+A Claude Code statusline is a bar below the prompt that shows whatever your script prints from the session's JSON, and since v2.1.80 (19 March 2026) that JSON has carried how much of your five-hour and seven-day plan limits you have used on Pro and Max.
+Before you write the script, check where you run Claude Code, because Anthropic documents a statusLine script only for the terminal, and which release you run, because the context percentage, plan usage, effort and prompt cache fields all arrived in 2026.
+
+- I build this site in the Claude Code extension for VS Code, and Anthropic's VS Code guide documents no statusLine for the extension's chat panel. Its advice for CLI-only features is to run claude in VS Code's integrated terminal, and from extension 2.1.299 a plugin that contains a mod can draw a status line above the panel's prompt box, in sessions that fetch feature flags.
+- On Windows, write the command path with forward slashes, because Git Bash consumes unquoted backslashes and, per Anthropic's docs, "the command fails without a visible error". A .ps1 script on a machine still set to Restricted, Microsoft's default for Windows clients, also needs -ExecutionPolicy Bypass.
+- The docs' one-line test JSON has no cwd field, yet both of their Windows scripts read it: fed the sample as printed, each showed an empty folder name. Add a cwd field before you test with it.
+- The five-hour and seven-day windows fill in only for claude.ai Pro and Max subscribers, after the first API response, and the session cost field, per Anthropic, "May differ from your actual bill."
+- Of three 2026 guides checked against Anthropic's changelog, one came out six days before v2.1.80 added rate_limits, and none of the three mentions refreshInterval, effort, prompt_cache or mods.
+
+If you run Claude Code in VS Code, do you work in the chat panel or in the integrated terminal?
+
+https://swapbiswas.com/blog/claude-code-statusline/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-code-statusline
+
+#ClaudeCode #Anthropic #VSCode #Windows #AITools
+
+---
+
+### LinkedIn Headline Character Limit: 220, and Who Says So
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scribe's oak desk with a long narrow strip of blank parchment laid along a brass measuring rule marked only with plain ticks, four small brass pins pushed into the rule at slightly different points near the left end of the strip, a pair of iron shears resting open beside the pins, a quill and an inkwell behind the rule, a single vermilion red wax seal pressed onto the far right end of the strip, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+LinkedIn's own figure for the profile headline is 220 characters, from a February 2025 Talent Blog post that tells recruiters "You get 220 characters", yet none of the 42 LinkedIn Help pages I read on 16 October 2026 prints it.
+No LinkedIn page I read gives a figure for how much of a headline shows before the cut, so write to 220 and keep the role keyword inside the first 60 characters, the strictest guide's figure.
+
+- On the Help pages I read, 200 belongs to other fields, including the single image ad headline (70 to avoid truncation, 200 maximum), the invitation note and the InMail subject line.
+- 120 is the older figure, from 2017 and 2018 pages, and a guide dated September 2025 and one updated in February 2026 still print it.
+- Four guides put the visible part at 60 (Resume Geni), about 60-70 (AuthoredUp), about 70 (Derrick) and 80 (Jobscan) characters, and none of the four links a LinkedIn Help page for its figure.
+- The opening of the headline I rewrote on 25 September 2026, "Senior Product Marketer, B2B SaaS & AI | I write the brief, then I build it", runs to 75 characters. The role keyword ends at character 23, inside all four figures, and the line after the separator fits whole only under Jobscan's 80.
+- A connection note drafted to the guides' 300 characters runs 100 over the 200 that LinkedIn's invitations page states.
+
+At which character does the role keyword end in your own LinkedIn headline?
+
+https://swapbiswas.com/blog/linkedin-headline-character-limit/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-headline-character-limit
+
+#LinkedIn #PersonalBranding #LinkedInMarketing #CareerGrowth
+
+---
+
+### FAQ Schema in 2026: What Google Dropped, What Still Works
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's oak desk with an open book of blank pages and small folded cards tucked between its leaves, a matching stack of the same folded cards tied in plain twine beside it, an empty gilded picture frame with nothing inside it leaning against the wall behind the desk, a quill and an inkwell, a single vermilion red ribbon tied around the stack of cards, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+222 of the 239 posts on my site carry FAQ schema, and Google stopped showing FAQ rich results, for any site, on 7 May 2026.
+The markup still validates as schema.org FAQPage, and my view is that it now has to be judged as a plain description of the questions a page visibly answers, by whether that description is accurate and whether anything you care about reads it.
+
+- Google deprecated the FAQ rich result in a changelog entry dated 8 May 2026 and removed its FAQ documentation on 15 June 2026. When I requested the old documentation URL on 16 October 2026, it returned a 301 to the June entry.
+- Of the ten pages in Semrush's US top 10 for "faq schema" (queried 15 October 2026), four still describe FAQ rich results as something Google shows and one says they are gone. Five carry a date after 7 May 2026, and one of those five mentions the change.
+- Google says no special schema.org structured data is needed for AI Overviews or AI Mode. Bing says structured data "may support clearer grounding but does not guarantee visibility", and the crawler pages OpenAI and Anthropic publish do not mention structured data.
+- You do not have to remove the markup: Google wrote in 2023 that there is "no need to proactively remove it". Take out any question in the markup that a reader cannot see on the page, which Google's and Bing's guidelines both rule out.
+- On my site, the markup and the visible questions come from one frontmatter list, so one check covers every post the template builds. Put one page per template through the Schema Markup Validator, since the help page for Google's Rich Results Test no longer lists FAQ.
+
+If your pages carry FAQPage markup, does every question in it also show on the page?
+
+https://swapbiswas.com/blog/faq-schema/?utm_source=linkedin&utm_medium=social&utm_campaign=faq-schema
+
+#SEO #TechnicalSEO #StructuredData #SchemaMarkup #GoogleSearch
+
+---

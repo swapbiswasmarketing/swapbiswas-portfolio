@@ -108,7 +108,7 @@ CLAUDE.md edits are on that list, and with tool search on, the page says an MCP 
 | CLI | The `likely cause` text on that line, for example `likely cause: tool definitions changed` | What Claude Code identified as the cause of the last miss | v2.1.260 or later |
 | VS Code panel | The prompt cache clock, a clock icon next to the context indicator | Minutes left before the cache expires; when the icon turns red, "expect a slower, more expensive response to your next message while the cache rebuilds" | v2.1.296 fixed the clock reading warm after the panel caught up on messages late, for example after the display was off |
 
-The `/usage` line is documented under [prompt cache statistics](https://code.claude.com/docs/en/costs#prompt-cache-statistics) and covers the main conversation only.
+The `/usage` line is documented under [prompt cache statistics](https://code.claude.com/docs/en/costs#prompt-cache-statistics) and covers the main conversation only. From v2.1.251, a status line script can keep the prompt cache state on screen: [my statusline field reference](/blog/claude-code-statusline/) lists the `prompt_cache` fields, which mirror that line, and Claude Code re-runs the script when a warm cache reaches its `expires_at` time.
 
 In the VS Code panel the clock is the check: the [VS Code guide](https://code.claude.com/docs/en/vs-code#use-the-prompt-box) describes `/usage` there as an Account & usage dialog and mentions no prompt cache line. The clock is a timer for the cache lifetime, and the guide states its limit: "Apart from compaction, the actions that invalidate the cache don't reset the clock, so it can still show minutes left after you switch models."
 

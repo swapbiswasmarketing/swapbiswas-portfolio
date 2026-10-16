@@ -186,7 +186,7 @@ Run this on any page where citation share matters.
 | Page indexed in Google and Bing | `site:domain.com/path` returns the URL |
 | H2s match real questions | Pull H2s; they read like queries a buyer would type |
 | First-sentence answers under each H2 | The answer lives in the first sentence, not paragraph four |
-| FAQ schema present | View source; `FAQPage` JSON-LD validates in Google's tool |
+| FAQ schema present | View source; `FAQPage` JSON-LD validates in the [Schema Markup Validator](https://validator.schema.org/) (as of October 2026, [Google's Rich Results Test](https://support.google.com/webmasters/answer/7445569?hl=en) no longer lists FAQ among its supported types) |
 | Article schema with author | `Article` schema includes a real `author` block |
 | Outbound primary-source links | At least 3 links to non-affiliate primary sources |
 | Internal links to siblings | At least 3 links to related pages on the same domain |
@@ -194,6 +194,8 @@ Run this on any page where citation share matters.
 | Last updated within 12 months | Visible `updatedDate` if anything has changed |
 | llms.txt published at root | `domain.com/llms.txt` returns 200 |
 | Robots allow GPTBot, PerplexityBot, ClaudeBot, Google-Extended | Or blocked deliberately, with a reason |
+
+For the FAQ schema row, also confirm that the markup's questions match the visible text on the page: Google's AI features page and Bing's guidelines both ask for that, and [my October 2026 check of what reads FAQPage markup](/blog/faq-schema/) quotes their wording.
 
 If any check fails, fix it before publishing the next page. The compound effect of fixing them across an entire site is bigger than any single tactic. [GEO audit skills for Claude Code](/blog/claude-marketing-skills/) can run parts of this audit, such as the robots.txt check for AI crawlers, and also score content for AI citation readiness.
 

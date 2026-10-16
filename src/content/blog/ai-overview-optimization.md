@@ -13,7 +13,7 @@ faqs:
   - q: "How do I know if my content was cited in an AI Overview?"
     a: "Google Search Console has been adding AI-related surfaces to the Performance report, and third-party tools like Ahrefs and Semrush now track AI Overview presence for keywords. The cleanest way remains manual - search your target queries regularly and see whether your domain is listed in the source citations below the AI summary."
   - q: "Does schema markup help for AI Overviews?"
-    a: "Google's own guidance is that no special schema is required to appear in AI Overviews. Standard structured data - Article, FAQ, Product, Organization - still helps general Search eligibility and visibility, which indirectly improves the chance of being picked up as an AI source. There is no AI-specific schema to add."
+    a: "Google's own guidance is that no special schema is required to appear in AI Overviews. Standard structured data - Article, Product, Organization - still helps general Search eligibility and visibility, which indirectly improves the chance of being picked up as an AI source; FAQ markup no longer does, because Google stopped showing FAQ rich results on 7 May 2026. There is no AI-specific schema to add."
 ---
 
 **AI overview optimization** has become one of the most overcomplicated phrases in SEO. Every agency has a 15-step methodology, half the blog posts invent ranking factors that do not exist, and marketing leaders are being sold new services for what is mostly a structural layer on top of work they should already be doing. The reality, based on [Google's own documentation](https://developers.google.com/search/docs/appearance/ai-features), is narrower and more useful: "There are no additional requirements to appear in AI Overviews or AI Mode, nor other special optimizations necessary."
@@ -101,7 +101,7 @@ Google's guidance on AI Search repeatedly emphasizes creating helpful, reliable,
 
 There is a lot of noise. Based on Google's actual documentation and common-sense mechanics, these are not worth your time:
 
-- **"AI-specific schema"** - Google explicitly says no special schema is needed
+- **"AI-specific schema"** - Google explicitly says no special schema is needed, and FAQ markup no longer changes how a page looks in Google Search, since FAQ rich results stopped appearing on 7 May 2026 ([what FAQPage markup still does without the rich result](/blog/faq-schema/))
 - **Hidden prompts or instructions in pages** - against spam policies and easily ignored by the model
 - **llms.txt as a ranking signal** - useful as a navigational summary for crawlers, but Google has not said it influences AI Overview selection
 - **Stuffing Q&A blocks at the bottom of every page** - can look manipulative and rarely outperforms a well-structured article

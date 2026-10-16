@@ -43,7 +43,7 @@ Match what your Performance report shows to a row, then confirm the cause where 
 | A dip in the same weeks last year | Repeats every year | Seasonality or changing interest | Search Console's Last 16 months view, which the debugging guide recommends, then Google Trends |
 | Impressions steady, clicks down | Any | A weaker title or snippet, or a richer result above yours | The debugging guide's section on drop patterns |
 
-The FAQ row matters mainly to government and health sites. Since [Google's August 2023 change](https://developers.google.com/search/blog/2023/08/howto-faq-changes), FAQ rich results have been shown regularly only for "well-known, authoritative government and health websites", so a site outside those two groups had little FAQ appearance data left to lose on 7 May 2026.
+The FAQ row matters mainly to government and health sites. Since [Google's August 2023 change](https://developers.google.com/search/blog/2023/08/howto-faq-changes), FAQ rich results have been shown regularly only for "well-known, authoritative government and health websites", so a site outside those two groups had little FAQ appearance data left to lose on 7 May 2026. Whether to keep the FAQPage markup itself is a separate call from reading the drop: Google's 2023 post also says there is "no need to proactively remove it", and [my keep, remove or fix table for FAQ markup](/blog/faq-schema/) covers markup that lists questions a reader cannot see.
 
 ### The September 2025 num=100 Drop Left the Same Pattern
 
