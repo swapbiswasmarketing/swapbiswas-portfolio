@@ -122,7 +122,7 @@ Every query this site reached the top three on was long, specific, or so low in 
 
 The limit of this finding matters as much as the finding. I never built links, so there is no control group and no counterfactual. I have not measured what 50 referring domains would have done to those positions, and nothing in this dataset can tell you. What it does show is that content volume on its own moved the site into a position band with a measured click-through rate of 0.008%.
 
-The practical read: SEO without link building is a query selection constraint rather than a strategy. If the top three for your query are held by domains with authority you cannot match, publishing a better page gets you impressions in the band that pays nothing.
+The practical read: SEO without link building is a query selection constraint rather than a strategy. If the top three for your query are held by domains with authority you cannot match, publishing a better page gets you impressions in the band that pays nothing. If that pushes you toward buying links from an agency, [the price pages of Indian SEO agencies I checked](/blog/seo-cost-in-india/) show many plans selling submissions by the count and some adding a set number of backlinks, so ask which directories and sites each of those lines uses before you sign.
 
 ## How a Domain Rating 13 Site Compares to Published CTR Benchmarks
 

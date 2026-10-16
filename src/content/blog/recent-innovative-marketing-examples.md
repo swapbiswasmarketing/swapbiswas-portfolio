@@ -191,7 +191,7 @@ Launched in July 2026 in New York City subway stations, per [Marketing Dive](htt
 
 ## Innovative B2B Marketing Campaign Examples From 2025-2026
 
-Four of the 15 come from companies that sell to businesses. Astronomer, Slack and Anthropic borrowed a consumer-sized moment, a viral scandal once and the Super Bowl twice, while Staples aimed its campaign straight at business decision-makers and frontline workers. None is an account-based play. For those, the [ABM campaign examples](/blog/abm-campaign-examples/) cover one-to-one through one-to-many plays.
+Four of the 15 come from companies that sell to businesses. Astronomer, Slack and Anthropic borrowed a consumer-sized moment, a viral scandal once and the Super Bowl twice, while Staples aimed its campaign straight at business decision-makers and frontline workers. None is an account-based play. For those, the [ABM campaign examples](/blog/abm-campaign-examples/) cover one-to-one through one-to-many plays. For B2B campaigns with a Cannes Lions or Webby award, back to Volvo Trucks' The Epic Split, see [my award check on the top-ranking B2B campaign lists](/blog/best-b2b-marketing-campaigns/).
 
 ### 12. Astronomer: The Temporary Spokesperson (July 2025)
 

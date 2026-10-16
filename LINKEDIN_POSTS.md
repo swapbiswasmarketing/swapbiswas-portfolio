@@ -2702,3 +2702,72 @@ https://swapbiswas.com/blog/saas-marketing-plan-template/?utm_source=linkedin&ut
 #SaaSMarketing #B2BMarketing #MarketingPlanning #DemandGeneration #ProductMarketing
 
 ---
+
+### SEO Cost in India: Agency Prices Checked October 2026
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak counter with three identical small wooden crates standing side by side with their lids lifted, the first packed with a tall stack of folded blank letters, the second holding a few bound pamphlets and a coil of twine, the third holding a single brass magnifying lens on a folded cloth, a row of matching brass balance weights in front of them, a quill resting in an inkwell, a single vermilion red cord tied around the lid of the first crate, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+I checked 24 Indian SEO agency pages on 16 October 2026, and the 10 that print rupee prices start their cheapest plan at a median of Rs 16,250 a month.
+At about Rs 15,000 a month, one plan adds 200 manual directory submissions, another adds 5 blog posts and 50 backlinks, and a third adds a one-time site audit, so I would compare the line items before the price.
+
+- 12 of the 24 agencies publish no price list of their own: 5 show plans with an enquiry button in place of a price, and 7 have no plan or price page I could find.
+- Only 3 of the 10 rupee price lists say how tax applies, and all 3 add it on top of the price. With 18% GST, Expert Web World's Rs 45,000 Platinum plan comes to Rs 53,100 a month.
+- The cheapest published plan I found, Expert Web World's Bronze, is a Rs 5,000 offer price for new clients until 31 December 2026 (regular Rs 5,999). It covers up to 5 keywords and 80 directory, bookmarking, classified and article submissions.
+- Google's Do you need an SEO? page says to avoid SEOs that talk about "submitting your site to thousands of search engines", and 9 of the 17 plan pages list submissions as line items.
+- Before you accept a 3-month or 6-month contract, put Google's timeframe question to the agency: "What kind of results do you expect to see, and in what timeframe?"
+
+When you compare SEO quotes, which do you read first: the line items or the price?
+
+https://swapbiswas.com/blog/seo-cost-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=seo-cost-in-india
+
+#SEO #DigitalMarketing #SmallBusiness #India
+
+---
+
+### ChatGPT Skills: What They Are and Which Plans Get Them
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an apothecary's oak counter with a small cabinet of blank-fronted drawers, one drawer pulled open to show a neatly folded sheet of paper tied with string, two open ledgers lying side by side in front of the cabinet with blank ruled pages whose lines do not meet at the spine, a small brass key resting between them, a quill and an inkwell, a single vermilion red ribbon tied around the folded sheet, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+On 16 October 2026, OpenAI's pricing page marked "Skills beta" as included on Free, Go, Plus and Pro, while its Skills help article named only Business, Enterprise, Healthcare and Edu users.
+My reading is that the pricing page's beta row is a promise the help articles do not back, so before you upgrade for skills, check the Skills tab on the account you already have.
+
+- A ChatGPT skill is a folder with a SKILL.md file whose name and description are required, plus optional scripts. Claude skills use the same open agent skills standard.
+- ChatGPT can apply a skill when your request matches its description, or you pick it with @. OpenAI's Build skills doc says to "front-load the key use case and trigger words".
+- Skills became generally available on 9 July 2026, per OpenAI's release notes, yet the pricing page still labels the row beta.
+- The ChatGPT desktop app imports skills from Claude Code and Claude Cowork, and Codex CLI imports from Claude Code with /import. Neither OpenAI's Build skills doc nor its import guide mentions disable-model-invocation, so test an imported manual-only skill before you rely on it.
+- Custom GPTs are scheduled to retire on 11 December 2026. OpenAI's planned migration turns a GPT's instructions into a skill inside a plugin, and custom actions do not move.
+
+If you are on Free, Go, Plus or Pro, does the Skills tab show up under Plugins on your account?
+
+https://swapbiswas.com/blog/chatgpt-skills/?utm_source=linkedin&utm_medium=social&utm_campaign=chatgpt-skills
+
+#ChatGPT #OpenAI #Claude #AITools #MarketingOps
+
+---
+
+### Best B2B Marketing Campaigns: 13 With Awards or Results
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a long oak table with a loose heap of blank scrolls tied in plain twine spilling across one end, a brass hand balance at the centre, and at the other end a bronze laurel wreath resting on a closed leather ledger beside a single bronze medal on a cord, a quill and an inkwell, a single vermilion red ribbon tied around the laurel wreath, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+The seven ranking lists at the top of the US results for "best b2b marketing campaigns" name 48 different campaigns, and no campaign appears on more than two of them.
+None of the nine Cannes Lions and Webby B2B award winners from 2022 to 2026 that I checked appears on any of those lists, so each of my 13 picks has a jury award or a result that the brand, its agency or the award body states.
+
+- My all-time pick is Volvo Trucks' The Epic Split from November 2013: Webby Winner in two categories in 2014, on two of the seven lists, and named by three of the nine creatives The Drum asked in November 2025, more than any other ad in that piece.
+- Only two of the 13 put a figure on a business outcome. Razorfish reports 6,900+ sales-qualified leads and $8.6M in pipeline margin for PayPal Open, and Cannes says JCDecaux's Meet Marina Prieto "helped drive double the media investment to the advertiser".
+- Five of the 13, The Epic Split among them, hold a jury award and have no stated result, so an award and a published result are separate tests.
+- Archive.com measured big brands' holiday campaigns live in Times Square, in front of their own billboards, and says the stunt turned into meetings and deals within a day. A SaaS team can run its product on a target account's public data and send the output to that account.
+- Reach figures need care: YouTube includes ad views in the public view count, per Google Ads Help, so part of a big view number can be paid for.
+
+Which B2B campaign would you put in your next brief, and what result does its brand or agency state for it?
+
+https://swapbiswas.com/blog/best-b2b-marketing-campaigns/?utm_source=linkedin&utm_medium=social&utm_campaign=best-b2b-marketing-campaigns
+
+#B2BMarketing #ProductMarketing #CannesLions #Advertising
+
+---

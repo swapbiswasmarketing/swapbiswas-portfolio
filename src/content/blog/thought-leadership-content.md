@@ -153,7 +153,7 @@ The pattern across the failure column: each one is a format that lost its claim 
 
 ## Thought Leadership Examples Checked Against the Test
 
-Four public examples where the tests are checkable from the outside. Three of them required no research budget at all.
+Four public examples where the tests are checkable from the outside. Three of them required no research budget at all. The first test also works on a campaign: GfK's filmed debate between its CMO and ChatGPT, one of the [award-winning B2B campaigns I checked](/blog/best-b2b-marketing-campaigns/), passes it by taking a position someone could argue with.
 
 | Example | The disputable claim | The owned evidence | The byline |
 |---|---|---|---|

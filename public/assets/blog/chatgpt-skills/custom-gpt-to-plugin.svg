@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="1400" height="880">
+  <rect x="0" y="0" width="1400" height="880" fill="#f6f4ef"/>
+
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What a custom GPT becomes in a plugin</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">OpenAI's planned migration, per its custom GPT retirement FAQ, read 16 October 2026</text>
+
+  <text x="60" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">IN THE CUSTOM GPT</text>
+  <text x="740" y="160" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">WHAT HAPPENS IN THE MIGRATION</text>
+
+  <rect x="60" y="180" width="460" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="227" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Instructions</text>
+  <line x1="540" y1="218" x2="712" y2="218" stroke="#b53b15" stroke-width="3"/>
+  <polygon points="712,211 726,218 712,225" fill="#b53b15"/>
+  <rect x="740" y="180" width="600" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="772" y="226" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">A skill inside the new plugin</text>
+
+  <rect x="60" y="272" width="460" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="319" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Knowledge files</text>
+  <line x1="540" y1="310" x2="712" y2="310" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="712,303 726,310 712,317" fill="#15130f"/>
+  <rect x="740" y="272" width="600" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="772" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Copied into the plugin's reference files</text>
+
+  <rect x="60" y="364" width="460" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="411" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Connected apps</text>
+  <line x1="540" y1="402" x2="712" y2="402" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="712,395 726,402 712,409" fill="#15130f"/>
+  <rect x="740" y="364" width="600" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="772" y="410" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Added to the plugin as apps</text>
+
+  <rect x="60" y="456" width="460" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="503" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Custom actions</text>
+  <text x="630" y="500" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.6" fill="#6a645c">NOT MOVED</text>
+  <rect x="740" y="456" width="600" height="76" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="772" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">Rebuild them; may need a custom MCP server</text>
+
+  <rect x="60" y="548" width="460" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="595" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Selected model</text>
+  <text x="630" y="592" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.6" fill="#6a645c">NOT MOVED</text>
+  <rect x="740" y="548" width="600" height="76" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="772" y="594" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">Does not carry over to the plugin</text>
+
+  <rect x="60" y="640" width="460" height="76" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="687" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Sharing settings</text>
+  <text x="630" y="684" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.6" fill="#6a645c">NOT MOVED</text>
+  <rect x="740" y="640" width="600" height="76" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="772" y="686" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">The plugin starts private; share it again</text>
+
+  <rect x="60" y="748" width="1280" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="784" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Custom GPTs are scheduled to retire on 11 December 2026.</text>
+  <text x="96" y="814" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Enterprise workspaces with an approved deferral have until 11 February 2027.</text>
+</svg>

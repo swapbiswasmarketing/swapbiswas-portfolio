@@ -146,7 +146,7 @@ Not every step carries equal weight. If your time is limited, this table shows w
 
 ## Conclusion: Work the Checklist, Then Repeat It
 
-Local SEO is not a one-time project. The businesses that own the map pack treat this **local seo checklist** as a recurring routine: profile fresh, reviews flowing, citations consistent, pages optimized, and rankings tracked.
+Local SEO is not a one-time project. The businesses that own the map pack treat this **local seo checklist** as a recurring routine: profile fresh, reviews flowing, citations consistent, pages optimized, and rankings tracked. If you are in India and weighing an agency to run that routine for you, I went through [the cheapest SEO packages Indian agencies publish](/blog/seo-cost-in-india/), and the Google Business Profile setup, local citations and business listings they name as line items are steps you can work through yourself in Sections 1 and 2 above.
 
 Start with your Google Business Profile and reviews, since those move the needle fastest, then work down through citations, on-page signals, and local links. Revisit the list every quarter. Consistency, not a single big push, is what keeps you in the top three where the clicks live.
 

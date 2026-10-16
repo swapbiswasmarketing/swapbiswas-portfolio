@@ -50,7 +50,7 @@ Here are the five working stages, top to bottom, with what happens at each and w
 
 At the top, the buyer does not know you exist, and often does not yet know they have the problem you solve. Your job is to make a market aware that the problem is real, that a category solves it, and that you are a credible name in that category.
 
-This is the widest and most patient stage, the one that reaches the 95%. Most of the people you touch here will never fill out a form while they are paying attention to you, and that is fine. You are planting recognition that pays off months later.
+This is the widest and most patient stage, the one that reaches the 95%. Most of the people you touch here will never fill out a form while they are paying attention to you, and that is fine. You are planting recognition that pays off months later. For awareness campaigns backed by a jury award or a stated result, see [the B2B campaigns I sorted by what each source states](/blog/best-b2b-marketing-campaigns/).
 
 ### Stage 2: Interest and Engagement
 

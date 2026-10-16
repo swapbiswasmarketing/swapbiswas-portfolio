@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="1400" height="860">
+  <rect x="0" y="0" width="1400" height="860" fill="#f6f4ef"/>
+
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">One skill folder, two sets of extras</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">From OpenAI's Build skills doc and Anthropic's Claude Code skills docs, read 16 October 2026</text>
+
+  <rect x="60" y="140" width="1280" height="220" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#b53b15">SHARED: THE OPEN AGENT SKILLS STANDARD</text>
+  <text x="96" y="226" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">my-skill/</text>
+  <text x="140" y="260" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">SKILL.md</text>
+  <text x="340" y="260" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">name and description, then the instructions</text>
+  <text x="140" y="294" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">scripts/</text>
+  <text x="340" y="294" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">optional code the skill can run</text>
+  <text x="140" y="328" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">references/</text>
+  <text x="340" y="328" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">optional documents, plus assets/ for templates</text>
+
+  <rect x="60" y="390" width="620" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="432" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">OPENAI ADDS: CHATGPT AND CODEX</text>
+  <text x="96" y="476" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">An optional agents/openai.yaml file</text>
+  <circle cx="104" cy="515" r="4" fill="#15130f"/>
+  <text x="120" y="522" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">interface: display name, icons, brand color</text>
+  <circle cx="104" cy="557" r="4" fill="#15130f"/>
+  <text x="120" y="564" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">policy: allow_implicit_invocation</text>
+  <circle cx="104" cy="599" r="4" fill="#15130f"/>
+  <text x="120" y="606" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">dependencies: tools, such as an MCP server</text>
+  <circle cx="104" cy="641" r="4" fill="#15130f"/>
+  <text x="120" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Codex reads skills from .agents/skills folders</text>
+
+  <rect x="720" y="390" width="620" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="756" y="432" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">ANTHROPIC ADDS: CLAUDE CODE</text>
+  <text x="756" y="476" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Extra fields in the SKILL.md frontmatter</text>
+  <circle cx="764" cy="515" r="4" fill="#15130f"/>
+  <text x="780" y="522" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">disable-model-invocation, user-invocable</text>
+  <circle cx="764" cy="557" r="4" fill="#15130f"/>
+  <text x="780" y="564" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">when_to_use, context, paths</text>
+  <circle cx="764" cy="599" r="4" fill="#15130f"/>
+  <text x="780" y="606" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">model, effort, hooks</text>
+  <circle cx="764" cy="641" r="4" fill="#15130f"/>
+  <text x="780" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Claude Code reads skills from .claude/skills folders</text>
+
+  <rect x="60" y="710" width="1280" height="100" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="752" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">The manual-only switch lives in a different place in each product:</text>
+  <text x="96" y="786" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">allow_implicit_invocation: false in agents/openai.yaml (Codex)  |  disable-model-invocation: true in SKILL.md (Claude Code)</text>
+</svg>

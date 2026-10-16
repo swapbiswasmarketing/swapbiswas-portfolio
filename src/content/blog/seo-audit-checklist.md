@@ -157,7 +157,7 @@ Scan your backlink profile for broken inbound links pointing at dead URLs, then 
 
 ## When to bring in a specialist
 
-You can run this entire SEO audit checklist yourself, and for most sites you should. The exception is when your diagnosis lands somewhere ambiguous - a penalty you cannot confirm, an indexation pattern that defies explanation, or a migration gone wrong. At that point, the cost of guessing exceeds the cost of an expert. If you are weighing that call, I broke down [what an SEO audit actually costs](/blog/how-much-does-an-seo-audit-cost/) and what changes the price.
+You can run this entire SEO audit checklist yourself, and for most sites you should. The exception is when your diagnosis lands somewhere ambiguous - a penalty you cannot confirm, an indexation pattern that defies explanation, or a migration gone wrong. At that point, the cost of guessing exceeds the cost of an expert. If you are weighing that call, I broke down [what an SEO audit actually costs](/blog/how-much-does-an-seo-audit-cost/) and what changes the price. If the expert you bring in is an Indian agency selling a monthly plan rather than a one-off audit, [my October 2026 check of published SEO prices in India](/blog/seo-cost-in-india/) shows what such plans include, so you can read the line items before you compare quotes.
 
 ## The takeaway: work the SEO audit checklist in order
 

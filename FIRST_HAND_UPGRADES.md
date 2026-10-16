@@ -442,3 +442,15 @@ Can you post one test image each at 1.91:1, 1:1, 4:5, 9:16 and 1:1.91 (1200 x 62
 ## saas-marketing-plan-template
 
 Which parts of your own annual marketing planning does this eight-section template leave out (for example a hiring plan, a martech or tooling line, launch dates or a board-reporting cadence), and where in the eight sections would you add them? Answer without employer names or numbers; it would add one first-hand line to 'What Goes in a SaaS Marketing Plan Template?'.
+
+## seo-cost-in-india
+
+Have you ever bought, been quoted for, or priced SEO services in India (agency or freelancer)? If yes: the rupee figures, what the scope listed (keywords, line items, term), whether GST was included, and the dates. One dated example would go under 'How Much Does SEO Cost per Month in India?'. Re-run the agency price check every six months, and in January 2027 after Expert Web World's offer price (valid till 31 December 2026) ends.
+
+## chatgpt-skills
+
+On a stated date, did you open the Skills tab (Plugins > Skills) in ChatGPT on your own account, and on which plan? If you uploaded one SKILL.md from your Claude Code setup (Create > Upload from your computer), did it pass the scan or get marked Needs Review or Blocked? The answer belongs in 'Which ChatGPT Plans Have Skills?' and would settle where OpenAI's pricing page and help article disagree for one real account.
+
+## best-b2b-marketing-campaigns
+
+Which B2B campaign have you worked on (outside your current employer if that is a problem) that has one shareable result and a date, for example a launch, a LinkedIn campaign or an event? One first-hand line on what you would copy from these campaigns would go in 'Before One of the Best B2B Marketing Campaigns Goes in Your Deck'.

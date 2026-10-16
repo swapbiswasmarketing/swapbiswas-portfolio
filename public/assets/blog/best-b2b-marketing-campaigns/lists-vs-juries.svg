@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 830" width="1400" height="830">
+  <rect x="0" y="0" width="1400" height="830" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What seven best-B2B-campaign lists agree on</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Campaigns named on the top-ranking lists I checked on 16 October 2026, and where nine award winners sit</text>
+
+  <rect x="60" y="150" width="760" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="205" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">48 campaigns named across 7 lists</text>
+
+  <g fill="#15130f">
+    <circle cx="120" cy="265" r="17"/>
+    <circle cx="174" cy="265" r="17"/>
+    <circle cx="228" cy="265" r="17"/>
+    <circle cx="282" cy="265" r="17"/>
+    <circle cx="336" cy="265" r="17"/>
+    <circle cx="390" cy="265" r="17"/>
+  </g>
+  <g fill="#c8bfb1">
+    <circle cx="444" cy="265" r="17"/>
+    <circle cx="498" cy="265" r="17"/>
+    <circle cx="120" cy="319" r="17"/>
+    <circle cx="174" cy="319" r="17"/>
+    <circle cx="228" cy="319" r="17"/>
+    <circle cx="282" cy="319" r="17"/>
+    <circle cx="336" cy="319" r="17"/>
+    <circle cx="390" cy="319" r="17"/>
+    <circle cx="444" cy="319" r="17"/>
+    <circle cx="498" cy="319" r="17"/>
+    <circle cx="120" cy="373" r="17"/>
+    <circle cx="174" cy="373" r="17"/>
+    <circle cx="228" cy="373" r="17"/>
+    <circle cx="282" cy="373" r="17"/>
+    <circle cx="336" cy="373" r="17"/>
+    <circle cx="390" cy="373" r="17"/>
+    <circle cx="444" cy="373" r="17"/>
+    <circle cx="498" cy="373" r="17"/>
+    <circle cx="120" cy="427" r="17"/>
+    <circle cx="174" cy="427" r="17"/>
+    <circle cx="228" cy="427" r="17"/>
+    <circle cx="282" cy="427" r="17"/>
+    <circle cx="336" cy="427" r="17"/>
+    <circle cx="390" cy="427" r="17"/>
+    <circle cx="444" cy="427" r="17"/>
+    <circle cx="498" cy="427" r="17"/>
+    <circle cx="120" cy="481" r="17"/>
+    <circle cx="174" cy="481" r="17"/>
+    <circle cx="228" cy="481" r="17"/>
+    <circle cx="282" cy="481" r="17"/>
+    <circle cx="336" cy="481" r="17"/>
+    <circle cx="390" cy="481" r="17"/>
+    <circle cx="444" cy="481" r="17"/>
+    <circle cx="498" cy="481" r="17"/>
+    <circle cx="120" cy="535" r="17"/>
+    <circle cx="174" cy="535" r="17"/>
+    <circle cx="228" cy="535" r="17"/>
+    <circle cx="282" cy="535" r="17"/>
+    <circle cx="336" cy="535" r="17"/>
+    <circle cx="390" cy="535" r="17"/>
+    <circle cx="444" cy="535" r="17"/>
+    <circle cx="498" cy="535" r="17"/>
+  </g>
+
+  <circle cx="557" cy="300" r="12" fill="#15130f"/>
+  <text x="580" y="308" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">6 on two lists</text>
+  <circle cx="557" cy="360" r="12" fill="#c8bfb1"/>
+  <text x="580" y="368" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">42 on one list</text>
+  <circle cx="557" cy="420" r="11" fill="none" stroke="#6a645c" stroke-width="2.5"/>
+  <text x="580" y="428" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">0 on three or more</text>
+
+  <rect x="860" y="150" width="480" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="890" y="205" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Award winners, 2022 to 2026</text>
+  <text x="890" y="304" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="72" font-weight="600" fill="#15130f">9</text>
+  <text x="950" y="250" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">5 Cannes Creative B2B Grand Prix</text>
+  <text x="950" y="278" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">4 on the Webby Best B2B Campaign page:</text>
+  <text x="950" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">3 Webby Winners, 1 People's Voice</text>
+  <line x1="890" y1="330" x2="1310" y2="330" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="890" y="378" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">Named on any of the seven lists</text>
+  <text x="890" y="470" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="72" font-weight="600" fill="#b53b15">0</text>
+  <text x="945" y="468" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="32" font-weight="600" fill="#15130f">of 9</text>
+  <text x="890" y="530" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Searched by campaign and brand name</text>
+  <text x="890" y="560" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">in each list's text</text>
+
+  <rect x="60" y="620" width="1280" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="664" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">List campaigns with a jury-picked Webby: 3 of 48</text>
+  <text x="90" y="704" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Volvo Trucks' The Epic Split (won 2014), Squarespace's Malkovich spot (won 2018), Adobe's I Love You, Acrobat (won 2024)</text>
+
+  <text x="60" y="764" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Lists fetched logged out on 16 Oct 2026; The Drum read from its Internet Archive copy of 21 Feb 2026.</text>
+  <text x="60" y="790" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Award records: Webby Awards winners gallery (2014 to 2026) and Cannes Lions press releases (2022 to 2026).</text>
+</svg>

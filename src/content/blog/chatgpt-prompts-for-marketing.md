@@ -566,7 +566,7 @@ Don't just bookmark these ChatGPT prompts for marketing. Build a living prompt l
 4. **Iterate on your best prompts** -small changes compound over time
 5. **Share with your team** -a shared prompt library is a multiplier
 
-If your team works in Claude, the prompts you reuse most can be packaged as skills, and [this list of installable Claude skills for marketing](/blog/claude-marketing-skills/) shows ready-made ones for copy, SEO and email.
+If your team works in Claude, the prompts you reuse most can be packaged as skills, and [this list of installable Claude skills for marketing](/blog/claude-marketing-skills/) shows ready-made ones for copy, SEO and email. In ChatGPT, a prompt you reuse every week can become a skill too, and my guide on [how to make a ChatGPT skill](/blog/chatgpt-skills/) covers the routes OpenAI documents and which plans its pages list for skills.
 
 The marketers who are getting the most out of AI aren't the ones with the fanciest tools. They're the ones with the best prompts -refined through iteration, grounded in strategy, and specific to their business.
 
