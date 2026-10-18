@@ -638,7 +638,7 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 		font-size: var(--text-sm);
 	}
 
-	/* Wrap tables in a scrollable container via JS */
+	/* Tables are wrapped at build time by src/lib/rehype-table-wrap.mjs; enhanceContent() keeps a runtime fallback */
 	.content :global(.table-wrap) {
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
@@ -1516,7 +1516,7 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 	// Cached geometry. metricsDirty is set on bind, on resize, and by a ResizeObserver
 	// on the article - which covers everything that actually moves a heading: the font
 	// swap, a lazily loaded image that did not reserve space, enhanceContent() wrapping
-	// tables, and an FAQ <details> being opened. Nothing the write phase touches
+	// a raw-HTML table (markdown tables arrive pre-wrapped), and an FAQ <details> being opened. Nothing the write phase touches
 	// changes the article's height, so the observer cannot feed back on itself.
 	let metricsDirty = true;
 	let headingTops: number[] = [];
@@ -1819,8 +1819,10 @@ const howToSchema = entry.data.howTo && entry.data.howTo.steps.length > 0 ? {
 			heading.prepend(anchor);
 		});
 
-		// Wrap tables in a scrollable container. Skip any table already wrapped,
-		// otherwise a second navigation nests wrappers inside wrappers.
+		// Fallback only: markdown tables are wrapped at build time by
+		// src/lib/rehype-table-wrap.mjs, which saves a relayout of every table after
+		// DOMContentLoaded. This still catches raw-HTML tables. Skip any table already
+		// wrapped, otherwise a second navigation nests wrappers inside wrappers.
 		document.querySelectorAll('.content table').forEach((table) => {
 			if ((table.parentElement as HTMLElement | null)?.classList.contains('table-wrap')) return;
 			const tableWrap = document.createElement('div');

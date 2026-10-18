@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import rehypeExternalLinks from 'rehype-external-links';
 import rehypeResponsiveImages from './src/lib/rehype-responsive-images.mjs';
 import rehypeAdSlots from './src/lib/rehype-ad-slots.mjs';
+import rehypeTableWrap from './src/lib/rehype-table-wrap.mjs';
 // Imported here, not inside the plugin, on purpose: passing these as plugin OPTIONS is
 // what puts them inside config.markdown.rehypePlugins, which is part of the hashed
 // Astro config. Editing a slot id then changes astroConfigDigest and clears
@@ -185,6 +186,51 @@ export default defineConfig({
 				},
 			},
 		},
+		{
+			// Astro ships `<script is:inline>` bodies and `<!-- -->` markup comments verbatim.
+			// On a post that was ~6.7 KB of the ~46 KB brotli document, enough to cost a
+			// simulated slow-start round trip. See src/lib/minify-inline-html.mjs.
+			name: 'minify-inline-html',
+			hooks: {
+				'astro:build:done': async ({ dir, logger }) => {
+					const fs = await import('node:fs');
+					const path = await import('node:path');
+					const zlib = await import('node:zlib');
+					const { fileURLToPath } = await import('node:url');
+					const { minifyInlineHtml, stats } = await import('./src/lib/minify-inline-html.mjs');
+					const root = fileURLToPath(dir);
+					const files = [];
+					(function walk(d) {
+						for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+							const p = path.join(d, e.name);
+							if (e.isDirectory()) walk(p);
+							else if (e.name.endsWith('.html')) files.push(p);
+						}
+					})(root);
+					// Vercel serves HTML at about brotli quality 3. Posts still above the
+					// two-window line keep the byte saving but not the round trip.
+					const LINE = 43800;
+					let before = 0, after = 0;
+					const overLine = [];
+					for (const file of files) {
+						const html = fs.readFileSync(file, 'utf8');
+						const out = minifyInlineHtml(html);
+						before += Buffer.byteLength(html);
+						after += Buffer.byteLength(out);
+						if (out !== html) fs.writeFileSync(file, out);
+						const rel = path.relative(root, file).replace(/\\/g, '/');
+						if (rel.startsWith('blog/')) {
+							const br = zlib.brotliCompressSync(Buffer.from(out), {
+								params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 3 },
+							}).length;
+							if (br + 500 > LINE) overLine.push(`${rel} (${br} B)`);
+						}
+					}
+					logger.info(`${files.length} pages, ${before} -> ${after} bytes, ${stats.unminified} inline script(s) shipped as authored`);
+					if (overLine.length) logger.info(`${overLine.length} blog page(s) still above the 43.8 KB two-window line: ${overLine.join(', ')}`);
+				},
+			},
+		},
 	],
 	markdown: {
 		shikiConfig: {
@@ -203,6 +249,11 @@ export default defineConfig({
 			// passed as OPTIONS rather than imported inside the plugin so that changing a
 			// slot id changes this config's digest and invalidates the content-layer cache.
 			[rehypeAdSlots, { plan: IN_ARTICLE_PLAN, slots: AD_SLOTS, unsafeBefore: UNSAFE_BEFORE_TAGS }],
+			// Wraps tables in .table-wrap at build time instead of in enhanceContent() after
+			// first layout. LAST on purpose: rehype-ad-slots must still see bare <table>
+			// siblings. `rev` is only there to change the config digest: bump it whenever
+			// the plugin body changes, or the content-layer cache serves stale posts.
+			[rehypeTableWrap, { rev: 1 }],
 		],
 	},
 });
