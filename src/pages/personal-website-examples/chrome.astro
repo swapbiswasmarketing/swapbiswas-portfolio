@@ -883,8 +883,10 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
       })(t0);
     }
 
-    // dispose on unload to avoid leaks
-    addEventListener('beforeunload', ()=>{
+    // dispose only when the page is really going away. beforeunload also fired on the
+    // way into the back/forward cache (and on the mailto CTA), so Back restored a dead hero.
+    addEventListener('pagehide', (e)=>{
+      if (e.persisted) return;
       if(rafId) cancelAnimationFrame(rafId);
       geo.dispose(); mat.dispose(); envTex.dispose(); envRT.dispose(); pmrem.dispose(); renderer.dispose();
     });

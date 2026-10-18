@@ -886,8 +886,10 @@ const brands = ['LambdaTest', 'TestMu AI', 'Samsung', 'Medilife', 'Lido Learning
       })();
     }
 
-    // dispose on unload
-    window.addEventListener('beforeunload', ()=>{
+    // dispose only when the page is really going away. beforeunload also fired on the
+    // way into the back/forward cache (and on the mailto CTA), so Back restored a matte knot.
+    window.addEventListener('pagehide', (e)=>{
+      if (e.persisted) return;
       geo.dispose(); mat.dispose(); pGeo.dispose(); pMat.dispose();
       glowTex.dispose(); if(glow.material) glow.material.dispose();
       envRT.dispose(); pmrem.dispose(); renderer.dispose();
