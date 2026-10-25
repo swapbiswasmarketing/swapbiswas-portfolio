@@ -17,7 +17,7 @@ Blogs to post:
 [URL 3]
 ```
 
-## Blogs Already Posted on Medium (as of 2026-10-03)
+## Blogs Already Posted on Medium (as of 2026-10-25)
 
 | Blog | Medium Publish Date |
 |------|-------------------|
@@ -117,13 +117,6 @@ Blogs to post:
 | how-often-should-you-do-an-seo-audit | 2026-07-15 |
 | win-loss-analysis-dashboard | 2026-07-15 |
 | kerala-winter-experiences | 2026-07-15 |
-| product-marketing-vs-growth-marketing | 2026-07-19 |
-| product-marketing-team-structure | 2026-07-19 |
-| growth-marketing-vs-performance-marketing | 2026-07-19 |
-| what-is-a-gtm-engineer | 2026-07-19 |
-| product-marketing-metrics | 2026-07-19 |
-| product-marketing-career-path | 2026-07-19 |
-| win-loss-analysis-questions | 2026-07-19 |
 | brand-messaging-framework | 2026-09-03 |
 | content-marketing-framework | 2026-09-03 |
 | customer-enablement | 2026-09-03 |
@@ -154,6 +147,83 @@ Blogs to post:
 | how-to-measure-saas-content-marketing | 2026-10-03 |
 | land-and-expand | 2026-10-03 |
 | thought-leadership-content | 2026-10-03 |
+| van-westendorp-price-sensitivity-meter | 2026-10-18 |
+| marketing-mix-modeling-vs-attribution | 2026-10-18 |
+| saas-win-rate-benchmark | 2026-10-18 |
+| how-to-differentiate-your-product-when-competitors-copy-your-features | 2026-10-18 |
+| design-partner-vs-beta-customer | 2026-10-18 |
+| developer-community-strategy | 2026-10-18 |
+| pricing-tier-names | 2026-10-18 |
+| striking-distance-keywords | 2026-10-18 |
+| developer-experience-survey | 2026-10-18 |
+| feature-adoption-rate | 2026-10-18 |
+| win-loss-analysis-questions | 2026-10-19 |
+| product-marketing-career-path | 2026-10-19 |
+| product-marketing-metrics | 2026-10-19 |
+| what-is-a-gtm-engineer | 2026-10-19 |
+| growth-marketing-vs-performance-marketing | 2026-10-19 |
+| product-marketing-team-structure | 2026-10-19 |
+| product-marketing-vs-growth-marketing | 2026-10-19 |
+| positioning-vs-messaging | 2026-10-23 |
+| message-testing-examples | 2026-10-23 |
+| mql-to-sql-conversion-rate-benchmark | 2026-10-23 |
+| share-of-voice-vs-market-share | 2026-10-23 |
+| how-many-h2-tags-per-page | 2026-10-23 |
+| seo-without-link-building | 2026-10-23 |
+| word-count-for-seo | 2026-10-23 |
+| latent-semantic-indexing-seo | 2026-10-23 |
+| seo-log-file-analysis | 2026-10-23 |
+| seo-long-tail-keywords | 2026-10-23 |
+| 301-redirect-seo | 2026-10-23 |
+| alt-text-and-seo | 2026-10-23 |
+| nofollow-links-seo | 2026-10-23 |
+| h1-tag-seo | 2026-10-23 |
+| international-seo-keyword-research | 2026-10-23 |
+| seo-keyword-map | 2026-10-23 |
+| 4-ps-of-marketing-examples | 2026-10-23 |
+| claude-code-commands | 2026-10-23 |
+| claude-code-memory | 2026-10-23 |
+| claude-marketing-skills | 2026-10-23 |
+| claude-sonnet-vs-opus | 2026-10-24 |
+| claude-vs-chatgpt | 2026-10-24 |
+| claude-vs-claude-code | 2026-10-24 |
+| google-september-2026-spam-update | 2026-10-24 |
+| recent-innovative-marketing-examples | 2026-10-24 |
+| seo-title-examples | 2026-10-24 |
+| what-is-a-claude-skill | 2026-10-24 |
+| build-a-personal-website-with-claude-code | 2026-10-24 |
+| claude-code-in-vs-code-vs-terminal | 2026-10-24 |
+| claude-code-keeps-asking-for-permission | 2026-10-24 |
+| claude-code-seo-audit | 2026-10-25 |
+| claude-code-wsl-vs-windows | 2026-10-25 |
+| claude-design-vs-claude-code | 2026-10-25 |
+| claude-projects-vs-skills | 2026-10-25 |
+| does-google-support-indexnow | 2026-10-25 |
+
+## Imported, canonical verified, NOT yet published
+
+Publish these from the Drafts tab; never re-import. Remove a row once it is published and add it to the table above.
+
+| Blog | Imported | Why unpublished |
+|------|----------|-----------------|
+| google-search-console-impressions-drop | 2026-10-25 | 24-hour cap hit |
+| vercel-google-indexing | 2026-10-25 | 24-hour cap hit |
+| what-is-a-good-average-position-in-google-search-console | 2026-10-25 | 24-hour cap hit |
+| what-is-a-good-number-of-impressions-on-linkedin | 2026-10-25 | 24-hour cap hit |
+| claude-code-api-key-vs-subscription | 2026-10-25 | 24-hour cap hit |
+
+## Duplicate drafts on Medium (leave alone)
+
+These 4 stories are published, and each also has a duplicate draft from an earlier double import (Medium cannot delete it). Never publish or re-import them. They were the only 4 drafts on Medium from 2026-10-19 to 2026-10-24.
+
+| Blog | Published | Draft title on Medium |
+|------|-----------|-----------------------|
+| product-led-marketing | 2026-07-15 | Product-Led Marketing: How to Market a Product That Sells Itself (2026) |
+| competitive-analysis-template | 2026-07-15 | Competitive Analysis Template: A Free Framework PMMs Actually Use (2026) |
+| ecommerce-marketing-automation | 2026-07-15 | Ecommerce Marketing Automation: Workflows That Actually Drive Revenue (2026) |
+| increase-interactivity-in-your-emails | 2026-07-15 | 7 Most Productive Ways to Increase Interactivity in Your Emails |
+
+- Resolved 2026-10-19: the 11 drafts found on 2026-10-18 were 7 never-published stories (published 2026-10-19, canonical already correct on all 7) plus these 4 duplicates. That closes the old 7-story gap.
 
 ## Rate limit + pending publishes
 - Medium enforces a publish/schedule rate limit: "The author of this story has published or scheduled the maximum of two stories in the past 24 hours." **Scheduling is covered by the same limit**, so blocked stories cannot be queued either.
@@ -162,11 +232,20 @@ Blogs to post:
 - **Workflow that works:** import all 10 as drafts and verify canonical on each (importing is NOT rate-limited), then publish until blocked. The unpublished drafts stay one click from live.
 - 2026-10-03: 15 published in one session (5 old drafts + 10 new) with NO block. Still treat ~15 as the burst ceiling and leave 24h+ before the next batch.
 - **Check Drafts before importing.** Re-importing a URL that already sits in Drafts creates a duplicate Medium cannot delete. On 2026-10-03, 7 of 10 "not yet imported" posts were already drafts from 2026-09-11 that this tracker never recorded. The prompt should tell the agent to check Drafts and Published for each URL first.
+- 2026-10-18: 10 imported as drafts, all 10 published, no cap message at any point. A pause after #4 came from the Claude in Chrome permission check blocking the Publish click, not from Medium.
+- 2026-10-19: 7 old drafts published, no cap message (17 in two days).
+- **Match by title, not URL.** Medium's Drafts and Published lists show titles only, and Published is not sorted by publish time. The prompt must have the agent fetch each URL's page title first and search the whole Published list.
+- **Claude in Chrome glitch:** the first navigation away from a Medium editor page often fails with an extension error. Retrying the same step works, and the failed attempt changes nothing.
+- **Editor "..." menu may not open for the agent (2026-10-23).** Workaround: open the draft's Story settings page by URL; Advanced Settings (canonical) is there.
+- 2026-10-20 to 10-23: a run the user did not report here imported the 10-URL batch, published 6 and left 4 as drafts (Medium went 143 -> 149). On 2026-10-23 a second run found them, checked canonical on the 4 drafts and published them (149 -> 153). The 6 were not canonical-checked by that run; Medium's Import a story sets the canonical itself. Their rows carry 2026-10-23, the date they were confirmed, not the true publish date. **Always reconcile the Medium Published count against this table before a batch.**
+- 2026-10-23 (second run): 10 imported fresh and published, canonical checked on Story settings for all 10, no cap message. That made 14 published in one day with no block. Extension errors hit roughly every other "leave the editor" step; when a single retry also failed, dismissing the import overlay first or navigating to the import page as its own step worked. One publish (claude-code-memory) went live without the confirmation pop-up; the Published list confirmed it.
+- 2026-10-24: 10 imported fresh and published (163 -> 173), canonical checked on Story settings, no cap message. The extension error on leaving the editor cleared reliably by dismissing the import overlay (clicking "See your story") and waiting a few seconds before navigating.
+- **2026-10-25: CAP HIT on the 16th story in a rolling 24 hours** (10 published 2026-10-24 + 5 on 2026-10-25, blocked on the 6th of the run). Message: "The author of this story has published or scheduled the maximum number of stories allowed in the past 24 hours." Same ~15 ceiling as 2026-06-28 and 2026-09-03. **The window is rolling, not per calendar day: count every publish in the 24 hours before a run starts and keep the total at 13 or less.**
 
-### Status as of 2026-10-03
-- **Tracker has 133 rows; Medium's Stories page shows 126 published + 11 drafts.** The ~7-story gap from September persists.
-- **67 live posts pending** (82 before this batch, excluding uncommitted posts). Next up, oldest first: van-westendorp-price-sensitivity-meter, marketing-mix-modeling-vs-attribution, saas-win-rate-benchmark, how-to-differentiate-your-product-when-competitors-copy-your-features, then the 2026-09-07 onward posts. Recompute the pending list from `src/content/blog` against this table rather than trusting a stored list.
-- **OPEN DISCREPANCY:** the 11 leftover Medium drafts were not named by the agent. They may account for the 7-story gap (rows recorded as published that are still drafts) or be pending posts imported 2026-09-11. Next batch: have the agent list every draft title and match it against this table before publishing anything.
+### Status as of 2026-10-25
+- **Published table: 178 rows = Medium's 178 published.**
+- **62 live posts never imported** (56 older + 6 new posts from 0680aca and bd051c7). Next up, oldest first, from the pending list recomputed on 2026-10-25. Recompute from `src/content/blog` on origin/main against the published table rather than trusting a stored list.
+- **Drafts: 9** = 5 waiting to publish (table above) + 4 duplicates. Next run no earlier than 24 hours after the 2026-10-25 run ended: publish the 5 drafts plus about 8 new imports.
 
 See [[Cross-posting tracker]] for Dev.to / HackerNoon / Hashnode syndication.
 
