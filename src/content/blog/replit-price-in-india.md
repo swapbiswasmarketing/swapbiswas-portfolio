@@ -92,7 +92,7 @@ Both app stores put tax inside their rupee prices, by Google Play's India listin
 
 ## Paying for Replit From India: UPI, Razorpay and App Stores
 
-Replit's changelog announced UPI payments on 10 April 2026, more than three years after a Replit blog post said it planned to. Razorpay, its payments partner, had already described UPI and card payments for Replit as live in beta in February 2026.
+Replit's changelog announced UPI payments on 10 April 2026, more than three years after a Replit blog post said it planned to. Razorpay, its payments partner, had already described UPI and card payments for Replit as live in beta in February 2026. The same dollar-list, rupee-at-checkout pattern shows up in voice tools: ElevenLabs' help center says customers located in India see an INR option at checkout and can pay by UPI, as my [ElevenLabs rupee and UPI check](/blog/elevenlabs-price-in-india/) quotes.
 
 | Date | Source | What it says |
 |---|---|---|

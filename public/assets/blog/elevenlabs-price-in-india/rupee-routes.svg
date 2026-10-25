@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where an ElevenLabs price shows up in rupees</text>
+  <text x="60" y="114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Four places an Indian buyer can look, as read on 25 October 2026</text>
+
+  <rect x="60" y="150" width="620" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">1  WEB PRICING PAGE</text>
+  <text x="92" y="244" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Dollars only: $6 to $990 a month</text>
+  <text x="92" y="296" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Starter to Business, plus a $0 Free plan</text>
+  <text x="92" y="336" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">"Prices exclude all taxes, levies and duties."</text>
+  <text x="92" y="376" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">No rupee figure in the page served to India</text>
+  <text x="92" y="416" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Fetched logged out from an Indian connection</text>
+
+  <rect x="720" y="150" width="620" height="300" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="752" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">2  WEB CHECKOUT</text>
+  <text x="752" y="244" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">INR appears automatically in India</text>
+  <text x="752" y="296" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">UPI accepted, India only, per the help center</text>
+  <text x="752" y="336" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Same plans as the USD list, per the help center</text>
+  <text x="752" y="376" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Web plan rupee total shown only here</text>
+  <text x="752" y="416" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Not visited for this check</text>
+
+  <rect x="60" y="490" width="620" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="536" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">3  APPLE APP STORE, INDIA</text>
+  <text x="92" y="584" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Creator Monthly Rs 2,299</text>
+  <text x="92" y="636" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Creator Annual Rs 22,900</text>
+  <text x="92" y="676" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Also Go Monthly Rs 1,100, Go Annual Rs 11,000</text>
+  <text x="92" y="716" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Billed and managed by Apple, no Pay As You Go</text>
+  <text x="92" y="756" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Credit packs: 30k Rs 599, 60k Rs 999</text>
+
+  <rect x="720" y="490" width="620" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="752" y="536" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">4  GOOGLE PLAY, INDIA</text>
+  <text x="752" y="584" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Rs 690 to Rs 22,800 per item</text>
+  <text x="752" y="636" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">One range, no plan names</text>
+  <text x="752" y="676" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Footer: "All prices include GST"</text>
+  <text x="752" y="716" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Billed and managed by Google, no Pay As You Go</text>
+  <text x="752" y="756" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Read the plan price on the in-app screen</text>
+</svg>

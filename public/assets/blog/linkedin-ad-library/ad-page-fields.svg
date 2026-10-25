@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <rect x="0" y="0" width="1400" height="900" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">One advertiser, two LinkedIn ad pages</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Two Shopify ads opened logged out from India on 25 October 2026</text>
+
+  <rect x="60" y="140" width="620" height="680" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">AD 1658388696 - TARGETED THE EU</text>
+  <text x="90" y="224" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Brand Growth Stories ad</text>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20">
+    <text x="90" y="272" fill="#6a645c">Format</text><text x="270" y="272" fill="#3a3632">Single Image Ad</text>
+    <text x="90" y="312" fill="#6a645c">Advertiser</text><text x="270" y="312" fill="#3a3632">Shopify</text>
+    <text x="90" y="352" fill="#6a645c">Paid for by</text><text x="270" y="352" fill="#3a3632">Shopify Inc.</text>
+  </g>
+
+  <rect x="76" y="378" width="588" height="426" rx="10" fill="#f3dcd2"/>
+  <text x="96" y="414" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#b53b15">EU-ONLY FIELDS</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20">
+    <text x="96" y="456" fill="#6a645c">Ran from</text><text x="270" y="456" fill="#15130f">Oct 23 to Oct 25, 2026</text>
+    <text x="96" y="496" fill="#6a645c">Impressions</text><text x="270" y="496" fill="#15130f">5k-10k (a range)</text>
+    <text x="96" y="536" fill="#6a645c">Countries</text><text x="270" y="536" fill="#15130f">Egypt 51%, United Kingdom 19%,</text>
+    <text x="270" y="566" fill="#15130f">then 16 more countries</text>
+    <text x="96" y="606" fill="#6a645c">Language</text><text x="270" y="606" fill="#15130f">Targeting includes English</text>
+    <text x="96" y="646" fill="#6a645c">Location</text><text x="270" y="646" fill="#15130f">Targeting includes EMEA</text>
+    <text x="96" y="686" fill="#6a645c">Targeted</text><text x="270" y="686" fill="#15130f">Audience, Job</text>
+    <text x="96" y="726" fill="#6a645c">Excluded</text><text x="270" y="726" fill="#15130f">Audience, Company</text>
+    <text x="96" y="766" fill="#6a645c">Minus in both</text><text x="270" y="766" fill="#15130f">Demographic, Education,</text>
+    <text x="270" y="794" fill="#15130f">Member Interests and Traits</text>
+  </g>
+
+  <rect x="720" y="140" width="620" height="680" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="750" y="184" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">AD 1658369296 - NO EU TARGETING</text>
+  <text x="750" y="224" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Turn peak traffic into profit</text>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20">
+    <text x="750" y="272" fill="#6a645c">Format</text><text x="930" y="272" fill="#3a3632">Single Image Ad</text>
+    <text x="750" y="312" fill="#6a645c">Advertiser</text><text x="930" y="312" fill="#3a3632">Shopify</text>
+    <text x="750" y="352" fill="#6a645c">Paid for by</text><text x="930" y="352" fill="#3a3632">Shopify Inc.</text>
+  </g>
+
+  <rect x="736" y="378" width="588" height="426" rx="10" fill="#eeebe4"/>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20">
+    <text x="756" y="420" fill="#15130f">The page ends after the payer line.</text>
+    <text x="756" y="470" fill="#6a645c">No run dates</text>
+    <text x="756" y="510" fill="#6a645c">No impression range</text>
+    <text x="756" y="550" fill="#6a645c">No country split</text>
+    <text x="756" y="590" fill="#6a645c">No targeting rows</text>
+    <text x="756" y="660" fill="#3a3632">LinkedIn's Help page: impressions,</text>
+    <text x="756" y="692" fill="#3a3632">targeting and run dates are shown</text>
+    <text x="756" y="724" fill="#3a3632">for ads targeted to the European</text>
+    <text x="756" y="756" fill="#3a3632">Union, "to comply with the law".</text>
+  </g>
+
+  <text x="60" y="864" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#6a645c">Sources: linkedin.com/ad-library/detail/1658388696 and /1658369296; LinkedIn Help a1517918</text>
+</svg>

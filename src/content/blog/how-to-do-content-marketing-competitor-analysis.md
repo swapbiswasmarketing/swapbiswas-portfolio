@@ -146,7 +146,7 @@ Creating content is only half the equation. How competitors distribute and promo
 
 - **Email marketing** - Subscribe to their newsletter. Note frequency, content format, and how they drive traffic back to blog posts. For a deeper teardown, see [how to check a competitor's email marketing](/blog/how-to-check-competitor-email-marketing/).
 - **Social media** - Which platforms do they prioritize? What content gets the most engagement? What posting cadence do they maintain?
-- **Paid promotion** - Check Facebook Ad Library and Google Ads Transparency Center for promoted content. If competitors pay to boost specific posts, those topics are clearly high-value.
+- **Paid promotion** - Check Facebook Ad Library and Google Ads Transparency Center for promoted content. If competitors pay to boost specific posts, those topics are clearly high-value. For B2B rivals, the [public LinkedIn ad archive](/blog/linkedin-ad-library/) is worth a search too, since ads targeted to the EU also show an impression band and the main targeting parameters.
 - **Community presence** - Are they active on Reddit, Quora, industry forums, or Slack communities? Community distribution is hard to scale but builds authority.
 - **Syndication and guest posting** - Do they republish content on Medium, LinkedIn articles, or industry publications? I count a competitor's LinkedIn articles as reach rather than backlinks, since any ranking they earn belongs to a linkedin.com URL and their body links usually route through [a LinkedIn /redir URL that Googlebot is asked not to request](/blog/linkedin-newsletter-vs-article/).
 

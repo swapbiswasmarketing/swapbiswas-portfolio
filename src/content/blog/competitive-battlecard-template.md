@@ -60,7 +60,7 @@ Start with the basics. Who is this competitor and how do they position themselve
 - Company name, logo, one-line positioning statement
 - Founded year, funding/revenue (if known), employee count
 - Target market and ideal customer
-- Their own messaging (pulled directly from their website)
+- Their own messaging (pulled directly from their website, and from [the ads they run on LinkedIn](/blog/linkedin-ad-library/), worth checking before you write a counter-message)
 
 Keep this section short. Its purpose is context, not analysis.
 

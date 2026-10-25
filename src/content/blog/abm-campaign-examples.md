@@ -84,7 +84,7 @@ This is the tier most teams under-invest in, and it is usually the highest-lever
 
 **The trigger:** A competitor's renewal window, a review-site complaint, or intent data showing the account researching alternatives.
 
-**The channels:** A "switching from [competitor]" landing page, a migration-focused case study, comparison content, and SDR outreach armed with the exact objections that competitor's users raise. This is where a sharp [competitive battlecard](/blog/competitive-battlecard-template/) does most of the heavy lifting, since the sales team needs the displacement talk track ready.
+**The channels:** A "switching from [competitor]" landing page, a migration-focused case study, comparison content, and SDR outreach armed with the exact objections that competitor's users raise. This is where a sharp [competitive battlecard](/blog/competitive-battlecard-template/) does most of the heavy lifting, since the sales team needs the displacement talk track ready. Before writing the switching page, [look up the competitor's recent LinkedIn ads](/blog/linkedin-ad-library/) to see the headlines, offers and formats they are running.
 
 **What good looks like:** Accounts self-identifying by clicking the comparison assets, then converting to a "tell me more" conversation. The signal you want is the buying committee questioning their status quo, not just your champion nodding along.
 

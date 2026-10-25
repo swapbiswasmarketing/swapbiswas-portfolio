@@ -91,7 +91,7 @@ How I would read it:
 
 Paying for Go or Plus does not change the training setting: the pricing page marks content as used to train OpenAI's models, with "Opt-out available", on Free, Go and Plus alike, so check that setting whichever plan you keep. [My guide to using ChatGPT for sales and marketing](/blog/how-to-use-chatgpt-for-sales-and-marketing/) lists what never to paste into a personal account.
 
-If the alternative you are weighing is Claude, [my Claude Pro price breakdown for India](/blog/claude-pro-price-in-india/) sets Go against Claude Pro at each Indian checkout, including the App Store and Google Play figures for Go. [My comparison of Claude and ChatGPT by marketing job](/blog/claude-vs-chatgpt/) sets Claude Pro against ChatGPT Plus if you are weighing the upgrade instead.
+If the alternative you are weighing is Claude, [my Claude Pro price breakdown for India](/blog/claude-pro-price-in-india/) sets Go against Claude Pro at each Indian checkout, including the App Store and Google Play figures for Go. [My comparison of Claude and ChatGPT by marketing job](/blog/claude-vs-chatgpt/) sets Claude Pro against ChatGPT Plus if you are weighing the upgrade instead. Google AI Plus costs the same each month as Go, and [my ChatGPT Go and Google AI Plus side-by-side](/blog/chatgpt-go-vs-gemini/) compares models, storage and ads at that price.
 
 ## Does ChatGPT Go Show Ads in India?
 

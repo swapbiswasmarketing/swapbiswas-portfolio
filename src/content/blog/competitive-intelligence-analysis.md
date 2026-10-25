@@ -131,7 +131,7 @@ Track what competitors are building and where they are investing:
 
 Understand how competitors position themselves and where they invest marketing dollars:
 
-- **Messaging and positioning** - Homepage copy changes, ad creative, email campaigns
+- **Messaging and positioning** - Homepage copy changes, ad creative, email campaigns. For LinkedIn creative, [a rival's LinkedIn ads can be searched without logging in](/blog/linkedin-ad-library/), and each ad page shows its format, advertiser and payer
 - **Content strategy** - Blog topics, keyword rankings, content volume and velocity
 - **Ad spend and channels** - Paid search and social advertising tracked through SEMrush or Similarweb
 - **Event strategy** - Conference sponsorships, webinar topics, community engagement

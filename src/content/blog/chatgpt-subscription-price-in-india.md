@@ -70,6 +70,7 @@ Go is ₹399 a month and Plus ₹1,999 on the web and on Apple's India listing, 
 
 - Go launched in India at that price. OpenAI's [release notes of 18 August 2025](https://help.openai.com/en/articles/6825453-chatgpt-release-notes#:~:text=geo%2Drestricted%20to%20India) introduced it "For ₹399/month (GST included)", for users in India only at first, payable "by credit card or UPI".
 - Go is not free for new sign-ups: OpenAI's release notes say India's 12-month offer had ended as of 21 January 2026. If you redeemed it, [what happens when the free Go year ends](/blog/chatgpt-go-free-india/) covers the renewal charge and how to cancel.
+- Google AI Plus costs the same each month as Go, and the bundles differ more than the prices do: [Go set against Google AI Plus row by row](/blog/chatgpt-go-vs-gemini/) covers models, storage, ads and Gmail.
 - Plus costs ₹1,600 a month more than Go. What that buys, row by row from OpenAI's pricing table, is in [my ChatGPT Go vs Plus vs Pro comparison](/blog/chatgpt-go-vs-plus/), which works in US dollars.
 - If the alternative is Claude, [ChatGPT Plus set against Claude Pro](/blog/claude-vs-chatgpt/) is its own comparison, and [Claude's rupee prices by checkout](/blog/claude-pro-price-in-india/) include a section on how ChatGPT Go compares.
 

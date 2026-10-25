@@ -293,6 +293,14 @@
 		],
 		"hash": "9c81c71a5bf48c70"
 	},
+	"/assets/blog/chatgpt-go-vs-gemini/same-price-pairs.webp": {
+		"w": 1200,
+		"h": 746,
+		"v": [
+			660
+		],
+		"hash": "9b3ad2daa1509423"
+	},
 	"/assets/blog/chatgpt-go-vs-plus/go-plus-pro-ladder.webp": {
 		"w": 1200,
 		"h": 763,
@@ -908,6 +916,22 @@
 		],
 		"hash": "3d3c183cd8260909"
 	},
+	"/assets/blog/elevenlabs-price-in-india/cost-per-minute.webp": {
+		"w": 1200,
+		"h": 771,
+		"v": [
+			660
+		],
+		"hash": "f22b810e8bb56681"
+	},
+	"/assets/blog/elevenlabs-price-in-india/rupee-routes.webp": {
+		"w": 1200,
+		"h": 720,
+		"v": [
+			660
+		],
+		"hash": "15c997ab3309fc04"
+	},
 	"/assets/blog/email/image1.webp": {
 		"w": 665,
 		"h": 641,
@@ -1394,6 +1418,14 @@
 			660
 		],
 		"hash": "7dd5e62fc76a28cc"
+	},
+	"/assets/blog/linkedin-ad-library/ad-page-fields.webp": {
+		"w": 1200,
+		"h": 771,
+		"v": [
+			660
+		],
+		"hash": "86c3683ba0079ae9"
 	},
 	"/assets/blog/linkedin-banner-safe-zone/every-published-number.webp": {
 		"w": 1200,

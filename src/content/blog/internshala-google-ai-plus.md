@@ -177,6 +177,8 @@ Without a published date, there is nothing to plan around on Internshala's side:
 
 On Google's route, the terms say your payment method "will be automatically charged the standard monthly subscription price for the applicable plan included in your Offer for your country, until you cancel your subscription". The India student page puts that at ₹399 a month, and Google One Help's student offer article says "You will be notified ahead of the upcoming change." For Internshala's route, coursejoiner.com says Google sends a reminder 7 days before the trial ends.
 
+Before you let it renew, I would set it against ChatGPT Go, which costs the same each month; [my Go and AI Plus comparison for India](/blog/chatgpt-go-vs-gemini/) lists what each plan adds over its free tier.
+
 To cancel, [Google One Help's cancel article](https://support.google.com/googleone/answer/9056360?hl=en-IN) gives these steps:
 
 1. On a computer, go to Google One.

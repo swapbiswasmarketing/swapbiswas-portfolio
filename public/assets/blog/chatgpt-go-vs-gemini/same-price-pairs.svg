@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 870" width="1400" height="870">
+  <rect x="0" y="0" width="1400" height="870" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Same price, different bundles: ChatGPT vs Google AI in India</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Monthly prices read logged out from an Indian connection, 25 October 2026</text>
+
+  <text x="60" y="168" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">CHATGPT (OPENAI)</text>
+  <text x="700" y="168" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">GAP</text>
+  <text x="840" y="168" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">GOOGLE AI</text>
+
+  <rect x="60" y="190" width="500" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">ChatGPT Go</text>
+  <text x="530" y="236" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Rs 399</text>
+  <text x="90" y="278" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">More uploads, images, memory than Free</text>
+  <text x="90" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">No storage row; "may include ads"</text>
+  <text x="700" y="278" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="34" font-weight="600" fill="#b53b15">Rs 0</text>
+  <rect x="840" y="190" width="500" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="870" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google AI Plus</text>
+  <text x="1310" y="236" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Rs 399</text>
+  <text x="870" y="278" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Flash model, 2x free usage, Gmail</text>
+  <text x="870" y="312" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">400 GB storage, video generation</text>
+
+  <rect x="60" y="370" width="500" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="416" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">ChatGPT Plus</text>
+  <text x="530" y="416" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Rs 1,999</text>
+  <text x="90" y="458" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">GPT-6 Sol, Codex, Sites</text>
+  <text x="90" y="492" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Monthly billing only</text>
+  <text x="700" y="458" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="34" font-weight="600" fill="#15130f">Rs 49</text>
+  <rect x="840" y="370" width="500" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="870" y="416" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google AI Pro</text>
+  <text x="1310" y="416" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Rs 1,950</text>
+  <text x="870" y="458" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Gemini 4 Argon, 4x free usage, Docs</text>
+  <text x="870" y="492" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">5 TB storage; Rs 19,500/yr</text>
+
+  <rect x="60" y="550" width="500" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="596" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">ChatGPT Pro 200</text>
+  <text x="530" y="596" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Rs 19,900</text>
+  <text x="90" y="638" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">One of 3 Pro usage tiers</text>
+  <text x="90" y="672" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Pro reasoning with GPT-6 Astra</text>
+  <text x="700" y="638" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="34" font-weight="600" fill="#15130f">Rs 400</text>
+  <rect x="840" y="550" width="500" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="870" y="596" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google AI Ultra 20x</text>
+  <text x="1310" y="596" text-anchor="end" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Rs 19,500<tspan font-size="20" font-weight="500" fill="#6a645c">/mo</tspan></text>
+  <text x="870" y="638" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">20x AI Pro usage limits</text>
+  <text x="870" y="672" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Storage from 20 TB</text>
+
+  <line x1="60" y1="732" x2="1340" y2="732" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="60" y="768" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">ChatGPT: OpenAI's India price file (GST included) and pricing page.</text>
+  <text x="60" y="798" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Google: Google's India plan page (no tax line) and Google One's plans page for the yearly price.</text>
+  <text x="60" y="828" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Prices change; recheck before paying.</text>
+</svg>

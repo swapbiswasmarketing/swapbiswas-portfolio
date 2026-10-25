@@ -78,6 +78,8 @@ Anthropic's usage credits article says app subscribers enable and buy credits on
 
 On Google Play, the About this app panel shows "In-app purchases" with a range of ₹1,999.00 to ₹24,987.50 per item, and the page footer says all prices include GST. The range does not name the item at either end. Its low end equals Apple's Pro monthly price and its high end is ₹87.50 above Apple's Max 20x price, so on Android the plan prices are best read on the upgrade screen inside the app.
 
+ElevenLabs shows the same split, with dollars on its web pricing page and rupee plan prices on Apple's India App Store, and I set the two against each other in [my ElevenLabs cost breakdown for India](/blog/elevenlabs-price-in-india/).
+
 To subscribe in either app, Anthropic's articles on [signing up for Pro in the iOS app](https://support.claude.com/en/articles/9266495-how-do-i-sign-up-for-claude-pro-on-the-claude-app-for-ios) and [signing up for Pro on Android](https://support.claude.com/en/articles/9612892-how-do-i-sign-up-for-claude-pro-on-claude-for-android) give the same steps: open the app, select your initials, choose "Upgrade to Pro" and follow the payment instructions.
 
 Lovable, an AI app builder, also sells its plans in rupees on Apple's India App Store, and [my Lovable pricing guide for India](/blog/lovable-ai-price-in-india/) found no other vendor or store page with a rupee price for it on 10 October 2026.

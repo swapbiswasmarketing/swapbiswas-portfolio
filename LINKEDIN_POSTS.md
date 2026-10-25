@@ -2978,3 +2978,72 @@ https://swapbiswas.com/blog/what-are-gemini-gems/?utm_source=linkedin&utm_medium
 #Gemini #GoogleGemini #AITools #GenerativeAI #Productivity
 
 ---
+
+### ElevenLabs Price in India: INR, UPI and Cost per Minute
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's oak desk with a brass ear trumpet and a small wooden music box with its lid open, an hourglass with fine sand running through it, a short row of coins of two different sizes laid out in a line beside the hourglass, a quill and an inkwell, a single vermilion red ribbon tied around the neck of the hourglass, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Creator, the ElevenLabs plan its pricing page tags "Popular", works out to about 18 cents a minute of voiceover: $22 a month for ~121 minutes of text to speech.
+In India that price is a dollar list that turns into rupees at checkout, so I compared every plan per minute from the pricing page as I read it on 25 October 2026.
+
+- ElevenLabs' help center says customers in India see an INR option automatically at checkout and can pay by UPI. The FAQ on the pricing page lists only credit card, Apple Pay and Google Pay.
+- Fetched logged out from an Indian connection, the pricing page served dollars only, $6 to $990 a month, with "Prices exclude all taxes, levies and duties."
+- Apple's India App Store lists Creator Monthly at Rs 2,299, which is Rs 210 (10.1%) above $22 converted at the Rs 94.9432 to the dollar that RBI's website showed for 23 October 2026, before tax.
+- The cost per included minute falls from 20 cents on Starter to 16.5 on Pro and then stops falling: Scale and Business add seats and voice clones instead. Annual billing charges 10 months' price for a year, which cuts every per-minute figure by a sixth.
+- The Free plan gives 10,000 credits a month, about 10 minutes, for non-commercial use with attribution. A voiceover for a client or an ad needs Starter's commercial licence.
+
+How many minutes of finished voiceover do you produce in a month, retakes included?
+
+https://swapbiswas.com/blog/elevenlabs-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=elevenlabs-price-in-india
+
+#ElevenLabs #AITools #TextToSpeech #Voiceover #India
+
+---
+
+### ChatGPT Go vs Gemini: What Rs 399 Buys in India
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak table with a brass balance scale whose two pans hang perfectly level, each pan holding one identical small stack of coins, a carved wooden chest standing open beside the left pan, a sealed letter beside the right pan, an abacus and a quill with an inkwell behind the scale, a single vermilion red wax seal on the letter, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+ChatGPT Go and Google AI Plus both cost Rs 399 a month, read logged out from an Indian connection on 25 October 2026.
+With the prices tied, the bundle decides it, and the first difference is storage: Google AI Plus includes 400 GB, and OpenAI's pricing table has no storage row.
+
+- ChatGPT Go keeps ChatGPT Free's GPT-6 Luna model and unlimited everyday text chats, and raises the limits on uploads, images and memory. Its pricing card says the plan "may include ads."
+- Google AI Plus moves you from the free plan's Flash-Lite model to Flash, with 2x the free plan's usage limits and Gemini in Gmail. Gemini in Docs starts one tier up, at AI Pro.
+- One tier up, ChatGPT Plus is Rs 1,999 a month and Google AI Pro Rs 1,950. Plus has no yearly plan, and AI Pro is Rs 19,500 a year, Rs 4,488 less than twelve Plus payments of Rs 23,988.
+- OpenAI's free Go offer for India ended on 21 January 2026. Google offers eligible university students aged 18 and above a year of AI Plus at no cost if they redeem by 31 December 2026, then Rs 399 a month unless cancelled.
+- ETV Bharat's launch report of 10 December 2025 listed 200 GB and Gemini 3 Pro for AI Plus. Google's India plan page now lists 400 GB and the Flash model, so launch-era comparisons are out of date.
+
+At Rs 399 a month, would the storage or the higher ChatGPT limits decide it for you?
+
+https://swapbiswas.com/blog/chatgpt-go-vs-gemini/?utm_source=linkedin&utm_medium=social&utm_campaign=chatgpt-go-vs-gemini
+
+#ChatGPT #Gemini #GoogleAI #AITools #India
+
+---
+
+### LinkedIn Ad Library: What Each Ad Page Shows and Hides
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an archivist's oak cabinet with several small drawers, one drawer pulled open showing a row of illustrated cards standing on end, most cards plain on the back and one card with a folded parchment slip pinned behind it, a magnifying glass and a brass key lying on the cabinet top, a quill and an inkwell, a single vermilion red thread tied around the pinned slip, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Anyone can search the LinkedIn Ad Library without logging in, but impressions, targeting and run dates show only on ads aimed at the European Union.
+I opened the search page and two Shopify ad pages logged out from India on 25 October 2026 and wrote down every field each page showed.
+
+- The EU-targeted Shopify ad showed run dates, a 5k-10k impression band and a split across 18 countries, led by Egypt at 51% and the United Kingdom at 19%. The other Shopify ad stopped after its "Paid for by" line.
+- The targeting grid marks only whether a parameter was used to target or exclude. It showed that company targeting was used to exclude, and named no company.
+- The search date picker read "We only allow search for ads created on or after October 25, 2025", although the library's own FAQ says June 1, 2023. An ad stays for one year after its last impression.
+- No spend, clicks, CTR or exact impression count appears in the fields LinkedIn lists or on either ad page.
+- The same KARL LAGERFELD creative appeared under at least four ad IDs, so count creatives and IDs separately or one campaign will look like four.
+
+When you review a rival's LinkedIn ads, do you count creatives or ad IDs?
+
+https://swapbiswas.com/blog/linkedin-ad-library/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-ad-library
+
+#LinkedInAds #CompetitiveIntelligence #ProductMarketing #B2BMarketing #LinkedInMarketing
+
+---

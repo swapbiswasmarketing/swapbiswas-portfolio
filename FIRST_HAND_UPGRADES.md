@@ -490,3 +490,15 @@ Have you ever priced Framer (or another visual builder) for a landing page or fo
 ## what-are-gemini-gems
 
 Have you ever built a Gemini Gem (for example one that writes the Nano Banana image prompts for your LinkedIn posts in the house style), and if so, what did its instructions say and did it have knowledge files attached? It would replace the 'Image-prompt writer' illustration row in 'What Are Gemini Gems Used For? Premade Gems and Examples' with the real instructions, before personal-account Gems become read-only on 17 November 2026.
+
+## elevenlabs-price-in-india
+
+Have you ever produced a voiceover (for a launch video, an ad or a LinkedIn post) with any tool, and if so, which tool and roughly how many minutes of finished audio did it take? Only if true; it would go right after the table in 'ElevenLabs Price in India per Minute, by Plan' as the one real-world minutes figure.
+
+## chatgpt-go-vs-gemini
+
+For a non-employer drafting task (a LinkedIn post or a blog brief), which assistant do you open first, ChatGPT or Gemini, and why? Only if true; the answer belongs in 'ChatGPT vs Gemini: Which Is Better?'.
+
+## linkedin-ad-library
+
+Have you ever used the LinkedIn Ad Library for a competitive review (no employer names)? If so, what one thing did you look for first: the offer, the format or the EU targeting rows? The answer belongs as one line at the top of 'How to See Competitors' LinkedIn Ads in 5 Steps'.
