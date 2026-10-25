@@ -122,3 +122,81 @@ Run quarterly. Next due: **2026-12-03**.
 3. Re-check the position distribution - the goal is impressions moving from the 21+ band into 4-20
 4. Confirm whether the CTR anomaly has resolved
 5. Append a new dated section here; do not overwrite this one
+
+---
+
+## Re-measure: 2026-10-25
+
+**Windows:** last 28 days (2026-09-26 to 2026-10-23) against the previous 28 days, plus the last
+16 months (2025-06-24 to 2026-10-23). Search type: Web. Exports in `.gsc/exports/*-2026-10-25.csv`.
+
+### Headline
+
+| Metric | Previous 28 days | Last 28 days |
+| --- | ---: | ---: |
+| Clicks | 76 | 555 |
+| Impressions | 61,168 | 96,139 |
+| CTR | 0.12% | 0.58% |
+
+16 months: 812 clicks and 315,687 impressions.
+
+| Month | Clicks | Impressions |
+| --- | ---: | ---: |
+| 2026-08 | 59 | 50,214 |
+| 2026-09 | 99 | 62,519 |
+| 2026-10 (to the 23rd) | 527 | 88,788 |
+
+Daily clicks ran 44-63 from 19 to 23 October, against 59 for all of August.
+
+### Where the clicks come from
+
+| Cluster (page level, last 28 days) | Clicks | Impressions |
+| --- | ---: | ---: |
+| India pricing (14 pages) | 255 | 27,978 |
+| Claude and Claude Code (30) | 115 | 19,670 |
+| PMM and other (162) | 82 | 24,293 |
+| LinkedIn (9) | 49 | 3,255 |
+| SEO and analytics (50) | 23 | 13,415 |
+| AI tools (15) | 19 | 20,747 |
+
+Top page: `/blog/claude-student-discount-india/`, 92 clicks at position 5.7. The SEO and
+analytics pages that held most impressions on 2026-09-03 are shrinking:
+`how-much-does-an-seo-audit-cost` 14,337 to 6,141 impressions, `what-is-seo-report` 10,235 to
+2,978 (position 21.9 to 29.1), `what-is-cross-network-in-google-analytics` 3,708 to 1,748.
+
+| Country (last 28 days) | Clicks | Impressions | CTR | Position |
+| --- | ---: | ---: | ---: | ---: |
+| India | 302 | 33,130 | 0.91% | 6.7 |
+| United States | 93 | 42,223 | 0.22% | 14.9 |
+| United Kingdom | 17 | 2,649 | 0.64% | 14.8 |
+
+Devices, last 28 days: desktop 344 clicks on 67,406 impressions (0.51%), mobile 205 on 28,290 (0.72%).
+
+### CTR by average position (top 1,000 queries, last 28 days)
+
+| Position | India-intent queries | Other non-branded |
+| --- | ---: | ---: |
+| 1-3.5 | 2.58% | 0.48% |
+| 3.5-5.5 | 0.93% | 0.57% |
+| 5.5-10.5 | 0.51% | 0.29% |
+| 10.5-20.5 | 0% | 0.14% |
+
+The 2026-09-03 anomaly (0 non-branded clicks at positions 1.5-5.5) has partly resolved, but
+top positions still earn well under 1% outside India. Live SERP checks on 2026-10-25 found the
+site cited inside AI Overviews rather than ranked in the blue links for several of these
+queries, and GSC reports every AI Overview link at the AI Overview's position. The top 1,000
+queries carry 138 of the 555 clicks; the rest are long-tail or anonymised.
+
+### Indexing
+
+99 of the 102 posts published between 2026-09-04 and 2026-10-24 drew impressions in the last 28
+days. The three without any: `alt-text-and-seo`, `seo-keyword-map`, `saas-marketing-plan-template`.
+224 of 251 posts drew impressions.
+
+### Bing
+
+Bing Webmaster Tools export (`.gsc/exports/bing-performance-2026-10-25.csv`): September 6 clicks
+on 498 impressions, October to the 23rd 15 clicks on 2,101.
+
+Next re-measure due: **2026-11-22** (four weeks, because the September and October changes are
+still settling).
