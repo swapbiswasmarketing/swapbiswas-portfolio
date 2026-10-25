@@ -91,7 +91,7 @@
 - GA4: `G-32PVYX6VRH`
 - Microsoft Clarity: `myl5bf3yc1`
 - Custom dataLayer events: `cta_click`, `share_click`, `social_click`, `newsletter_signup`, `blog_read_progress` (25/50/75/100%), `theme_toggle`
-- **Published GTM container (v3, checked 2026-10-18) holds ONE tag: the GA4 Google tag.** None of the custom dataLayer events above has a tag, so they do not reach GA4 unless the user publishes event tags (the old "Option A: one tag per event" plan was never published)
+- **Published GTM container v4 (2026-10-25) holds the Google tag plus 6 GA4 Event tags** (blog_read_progress, cta_click, newsletter_signup, share_click, social_click, theme_toggle) with 11 dlv parameters, so the custom dataLayer events now reach GA4. tool_copy has no tag (tool pages get almost no traffic). Verify by fetching gtm.js?id=GTM-WGNTLP2R and counting __gaawe
 - GA4 custom dimensions needed for: cta_type, share_platform, signup_location, read_percent, blog_title, theme
 
 ## Performance Optimizations
