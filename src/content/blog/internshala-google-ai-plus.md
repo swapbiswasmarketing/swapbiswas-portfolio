@@ -120,7 +120,7 @@ What Google lists for the two plans, read on 16 October 2026:
 | Storage, India plan page | 400 GB | 5 TB |
 | Google apps, India plan page | "Gemini in Gmail, Vids and more" | "Gemini in Gmail, Docs, Vids and more" |
 
-If Pro is unlocked on your account, the help article adds that "More advanced models and higher thinking levels require more of your usage", and on paid plans AI Plus gets half of AI Pro's usage (2x the standard limits against 4x), so save Pro for the prompts that need it.
+If Pro is unlocked on your account, the help article adds that "More advanced models and higher thinking levels require more of your usage", and on paid plans AI Plus gets half of AI Pro's usage (2x the standard limits against 4x), so save Pro for the prompts that need it. Notebook caps differ too: on AI Plus, Gemini Notebook (the tool formerly called NotebookLM) allows 200 notebooks and 100 sources per notebook, against 500 and 300 on AI Pro, per [the Gemini Notebook caps by plan](/blog/notebooklm-pricing/).
 
 Pro wording turns up on pages about the Internshala offer:
 

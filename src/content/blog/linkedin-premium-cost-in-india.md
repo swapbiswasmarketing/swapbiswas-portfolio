@@ -200,6 +200,8 @@ LinkedIn's two compare pages and its product pages list what each plan adds, as 
 | Job search | Job posts and Easy Apply where enabled | Top applicant jobs, top choice jobs, AI-powered insights on job posts and advanced search filters |
 | Writing help | Not included | Profile writing assistance and a message proofreader |
 
+The anonymous browsing in that table is LinkedIn's private mode, and two LinkedIn Help pages give different answers on whether a Premium member browsing that way keeps the viewer list and insights, as I set out in [my side-by-side of those two Help pages](/blog/linkedin-private-mode/).
+
 The small-business plans against a free account, from the Small Business compare page, with the monthly InMail counts from each product page:
 
 | Feature | Free | Premium Business | All-in-One | Company Page |

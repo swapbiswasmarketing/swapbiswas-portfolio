@@ -42,7 +42,7 @@ There is no official Open Graph image size, because the protocol sets none. Ever
 
 ### Notes on the Table: Ratio, Thumbnails, X, Slack and WhatsApp
 
-- **Ratio:** 1200 x 630 works out to 1.905:1 and LinkedIn's 1200 x 627 minimum to 1.914:1, either side of the 1.91:1 that Meta and LinkedIn name.
+- **Ratio:** 1200 x 630 works out to 1.905:1 and LinkedIn's 1200 x 627 minimum to 1.914:1, either side of the 1.91:1 that Meta and LinkedIn name. A 1K image from Google's Nano Banana 2.1, 2 or Pro model comes out at 1376 x 768 at 16:9, which covers a 1200 x 630 card after a resize and crop, and [each Nano Banana model's sizes and per-image prices](/blog/nano-banana-2-vs-pro/) are listed in a separate guide.
 - **Thumbnails:** under an "Important to know" note that follows its ad specs, LinkedIn's page says "Images less than 401 pixels wide display as a thumbnail image."
 - **LinkedIn's developer link:** the page sends developers to a developer.linkedin.com page on setting display tags for shares, and that link returned a 404 when I followed it on 2 October 2026.
 - **LinkedIn profile banner:** the cover image behind your profile photo is a separate spec from the link-preview card in this table, and its Help page asks for 1584 x 396 with no safe zone; [where a banner's text stays visible on desktop and in the phone app](/blog/linkedin-banner-safe-zone/) is mapped in another post.

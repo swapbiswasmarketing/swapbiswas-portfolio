@@ -3047,3 +3047,72 @@ https://swapbiswas.com/blog/linkedin-ad-library/?utm_source=linkedin&utm_medium=
 #LinkedInAds #CompetitiveIntelligence #ProductMarketing #B2BMarketing #LinkedInMarketing
 
 ---
+
+### NotebookLM Pricing (Now Gemini Notebook): Plans and Limits
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's oak reading desk with an open notebook bound in worn leather, a tall stack of loose manuscript leaves beside it held down by a smooth river stone, a smaller stack of leaves tucked between the notebook's pages, a brass orrery and a quill with an inkwell behind the desk, a single vermilion red ribbon marking a page in the notebook, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+NotebookLM is free, and it has been called Gemini Notebook since Google announced the rename on 16 July 2026.
+Money buys a bigger source cap, so I read Google's plan pages on 25 October 2026 and lined up what each tier gets.
+
+- The free tier allows 100 notebooks and 50 sources per notebook. Google AI Plus ($4.99 or Rs 399 a month) raises that to 100 sources, and AI Pro ($19.99 or Rs 1,950) to 300.
+- Google's pages sold no standalone NotebookLM Plus subscription on 25 October 2026. The higher tiers come with Google AI plans.
+- Since 2 September 2026 usage is a compute budget: the quota refreshes every five hours until you reach a weekly limit, and Google publishes no per-day count.
+- In India, a paid plan does not remove the visible watermark on generated images and videos, per Google's plans help page.
+- For teams, Gemini Notebook for Enterprise is $9 per license with a 15-license minimum, which comes to $135 a month.
+
+How many sources sit in your largest notebook today?
+
+https://swapbiswas.com/blog/notebooklm-pricing/?utm_source=linkedin&utm_medium=social&utm_campaign=notebooklm-pricing
+
+#NotebookLM #GeminiNotebook #GoogleAI #AITools #India
+
+---
+
+### LinkedIn Private Mode: What Others See, Free vs Premium
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a dim corner of a study with a tall oak door left slightly ajar, a hooded traveller's cloak hanging on a peg beside it, a small bronze hand mirror lying face down on a side table, a closed visitors' ledger with a brass clasp next to the mirror, a quill and an inkwell, a single vermilion red cord tied around the ledger's clasp, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Browse LinkedIn in private mode and the people you view see only "LinkedIn Member".
+On a free account that costs you your own viewer list, and on Premium two LinkedIn Help pages give different answers about what you keep.
+
+- LinkedIn has three viewing modes: Your name and headline, Private profile characteristics, and Private mode. The mode belongs to the viewer.
+- A Basic member must choose Your name and headline to see the viewer history on their own Who's Viewed Your Profile page. The middle setting costs a free account the same list.
+- Even with Premium, you can't see the names of members who viewed your profile in private mode.
+- One Help page says a Premium member in private mode still sees viewers from the last 90 days. Another tells you to set your viewing options to "public" to access viewer insights.
+- Selecting a member's name in search suggestions counts as a profile view, so set the mode before you search.
+
+If you are on Premium, does your viewer list still load after you switch to private mode?
+
+https://swapbiswas.com/blog/linkedin-private-mode/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-private-mode
+
+#LinkedIn #LinkedInTips #LinkedInPremium #Privacy #PersonalBranding
+
+---
+
+### Nano Banana 2 vs Pro (and 2.1): Prices and Limits
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a painter's oak workbench with three small canvases of different sizes leaning against a wall, a wooden palette with dabs of ochre, umber and olive paint, a brass balance scale holding a few coins in one pan, brushes standing in a clay jar, a single vermilion red dab of paint on the palette, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+At 1K, Google's Gemini API pricing page lists Nano Banana Pro at $0.134 per image, exactly twice Nano Banana 2's $0.067.
+Google then made Nano Banana 2.1 generally available on 6 October 2026 at $0.0336, so for new work I read the choice as 2.1 vs Pro.
+
+- Only Pro takes style reference images, up to 3. Pro takes 5 character references against 4, but 6 object references against 10 on Nano Banana 2.
+- Nano Banana 2 is the only Nano Banana model with a 512px size, at $0.045 per image. Google deprecated it in the API the day 2.1 went GA.
+- The API has no free tier for image output, and thinking tokens are billed on the Gemini 3 image models.
+- 100 LinkedIn images at 1K come to $3.36 on 2.1 and $13.40 on Pro, image output only.
+- In the Gemini app, Pro is a "Redo with Pro" button on Google AI Plus, Pro and Ultra.
+
+For your image work, which decides it: style references or the price per image?
+
+https://swapbiswas.com/blog/nano-banana-2-vs-pro/?utm_source=linkedin&utm_medium=social&utm_campaign=nano-banana-2-vs-pro
+
+#NanoBanana #GoogleGemini #GeminiAPI #AIImageGeneration #AITools
+
+---

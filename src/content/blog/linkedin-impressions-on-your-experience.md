@@ -63,7 +63,7 @@ That sample is captioned "How viewers are engaging with your profile over the pa
 
 The four sections in the sample add up to 95%, with Show all for the rest, so I read each percentage as that section's share of all section impressions, not the share of visitors who reached it. On that reading, and unlike a [scroll map](/blog/how-to-read-a-heatmap/), where a percentage is the share of visitors who scrolled that far, 25% for Experience does not mean a quarter of visitors reached Experience. The figures are LinkedIn's illustration, not a benchmark.
 
-The same view holds a second block, Profile appearances, with All appearances and Search appearances. I compare those with profile views in [LinkedIn search appearances vs profile views](/blog/linkedin-search-appearances-vs-profile-views/).
+The same view holds a second block, Profile appearances, with All appearances and Search appearances. I compare those with profile views in [LinkedIn search appearances vs profile views](/blog/linkedin-search-appearances-vs-profile-views/). Names in the viewer list depend on each viewer's own setting: someone browsing in private mode shows only as LinkedIn Member, which is why [the viewing mode each visitor picks](/blog/linkedin-private-mode/) matters when you read who is behind your profile numbers.
 
 ## Which LinkedIn Impression Number Are You Looking At?
 

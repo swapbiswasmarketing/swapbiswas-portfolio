@@ -55,7 +55,7 @@ The ChatGPT column comes from the plan cards and comparison table on OpenAI's pr
 The rows I would weigh first at this price:
 
 - Storage has no ChatGPT counterpart. If your Google account is near its free 15 GB, AI Plus is a storage upgrade with Gemini attached, and ChatGPT Go cannot do that job.
-- Gemini inside Gmail starts at AI Plus, while Gemini inside Docs starts one tier up, at AI Pro. Google's AI Plus card names "Gmail, Vids and more", and its AI Pro card names "Gmail, Docs, Vids and more".
+- Gemini inside Gmail starts at AI Plus, while Gemini inside Docs starts one tier up, at AI Pro. Google's AI Plus card names "Gmail, Vids and more", and its AI Pro card names "Gmail, Docs, Vids and more". Gemini Notebook (formerly NotebookLM) limits also rise with each Google AI plan, and [the notebook and source caps per plan](/blog/notebooklm-pricing/) show how far AI Plus takes them.
 - Ads are a ChatGPT-side question only. [OpenAI's ads FAQ](https://help.openai.com/en/articles/20001047-ads-in-chatgpt) says "Ads may appear for users on the Free and Go plans", and Google's plan cards have no ads line for the Gemini app. OpenAI's own pages disagree on whether Go shows ads today: the Go article says OpenAI "may start testing ads in ChatGPT Go in the future", while the pricing card already says it may include them. My [ChatGPT Go vs Plus comparison](/blog/chatgpt-go-vs-plus/) sets out that disagreement and which page to trust.
 
 ## ChatGPT Plus vs Google AI Pro at About ₹2,000

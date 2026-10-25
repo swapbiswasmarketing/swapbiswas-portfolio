@@ -98,6 +98,8 @@ Plenty of profile views with almost no search appearances does not mean the pane
 | Viewers listed as LinkedIn Member | "You can't view the names of members who've chosen to view your profile in private mode, even if you have a Premium account" | The visibility settings page |
 | A blocked member still counted | "If a member viewed your profile prior to any blocking, they'll still appear in your profile viewer count" | The visibility settings page |
 
+What a private-mode viewer gives up in return, and what each of the three viewing modes shows the person being viewed, is in [my breakdown of LinkedIn's three profile viewing modes](/blog/linkedin-private-mode/).
+
 ## Where to Find Search Appearances and Profile Views
 
 | To open | Desktop | Mobile |

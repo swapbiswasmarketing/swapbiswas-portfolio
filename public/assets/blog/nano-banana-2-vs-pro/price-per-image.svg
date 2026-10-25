@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 980" width="1400" height="980">
+<rect width="1400" height="980" fill="#f6f4ef"/>
+<text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Nano Banana price per image, by resolution</text>
+<text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Gemini API standard paid-tier prices in USD, read 25 October 2026</text>
+<rect x="60" y="130" width="1280" height="262" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="96" y="172" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">1K</text>
+<text x="150" y="172" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c">1024 x 1024 at 1:1</text>
+<text x="1304" y="172" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">2 Lite is 1K only</text>
+<text x="96" y="217" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nano Banana 2.1</text>
+<rect x="380" y="194" width="106.4" height="30" rx="4" fill="#b53b15"/>
+<text x="502.4" y="217" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$0.0336</text>
+<text x="96" y="263" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nano Banana 2 Lite</text>
+<rect x="380" y="240" width="106.4" height="30" rx="4" fill="#aca69c"/>
+<text x="502.4" y="263" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$0.0336</text>
+<text x="96" y="309" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nano Banana 2</text>
+<rect x="380" y="286" width="212.2" height="30" rx="4" fill="#6a645c"/>
+<text x="608.2" y="309" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$0.067</text>
+<text x="96" y="355" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nano Banana Pro</text>
+<rect x="380" y="332" width="424.3" height="30" rx="4" fill="#15130f"/>
+<text x="820.3" y="355" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$0.134</text>
+<rect x="60" y="412" width="1280" height="216" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="96" y="454" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">2K</text>
+<text x="150" y="454" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c">2048 x 2048 at 1:1</text>
+<text x="1304" y="454" text-anchor="end" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Pro charges its 1K price</text>
+<text x="96" y="499" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nano Banana 2.1</text>
+<rect x="380" y="476" width="159.6" height="30" rx="4" fill="#b53b15"/>
+<text x="555.6" y="499" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$0.0504</text>
+<text x="96" y="545" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nano Banana 2</text>
+<rect x="380" y="522" width="319.8" height="30" rx="4" fill="#6a645c"/>
+<text x="715.8" y="545" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$0.101</text>
+<text x="96" y="591" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nano Banana Pro</text>
+<rect x="380" y="568" width="424.3" height="30" rx="4" fill="#15130f"/>
+<text x="820.3" y="591" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$0.134</text>
+<rect x="60" y="648" width="1280" height="216" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="96" y="690" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">4K</text>
+<text x="150" y="690" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c">4096 x 4096 at 1:1</text>
+<text x="96" y="735" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nano Banana 2.1</text>
+<rect x="380" y="712" width="357.8" height="30" rx="4" fill="#b53b15"/>
+<text x="753.8" y="735" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$0.113</text>
+<text x="96" y="781" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nano Banana 2</text>
+<rect x="380" y="758" width="478.2" height="30" rx="4" fill="#6a645c"/>
+<text x="874.2" y="781" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$0.151</text>
+<text x="96" y="827" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nano Banana Pro</text>
+<rect x="380" y="804" width="760.0" height="30" rx="4" fill="#15130f"/>
+<text x="1156.0" y="827" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">$0.24</text>
+<text x="60" y="906" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Source: ai.google.dev/gemini-api/docs/pricing. Batch API prices are about half of these.</text>
+<text x="60" y="938" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">The 0.5K size exists only on Nano Banana 2, at $0.045 per image.</text>
+</svg>

@@ -502,3 +502,15 @@ For a non-employer drafting task (a LinkedIn post or a blog brief), which assist
 ## linkedin-ad-library
 
 Have you ever used the LinkedIn Ad Library for a competitive review (no employer names)? If so, what one thing did you look for first: the offer, the format or the EU targeting rows? The answer belongs as one line at the top of 'How to See Competitors' LinkedIn Ads in 5 Steps'.
+
+## notebooklm-pricing
+
+Have you ever evaluated Gemini Notebook (NotebookLM) for a research or content workflow, and if so, what was the largest number of sources you put in one notebook? Only if true; it would go in 'NotebookLM Pricing Comes Down to Sources per Notebook' as the one real notebook size.
+
+## linkedin-private-mode
+
+Optional, only if you want to share it: which profile viewing mode do you use on LinkedIn, and (only if you are on Premium) did your viewer list and insights stay visible after switching to private mode? A dated check would settle the a567226 vs a548046 contradiction in 'LinkedIn Private Mode on Premium: Two Help Pages Disagree'.
+
+## nano-banana-2-vs-pro
+
+When you generate the image for a LinkedIn post from your Nano Banana prompt, which model does the Gemini app (or the API) actually run it on (Nano Banana 2, 2.1, or a Redo with Pro), and at what download size? This would go in 'Worked Cost: 100 LinkedIn Images on Each Model'.

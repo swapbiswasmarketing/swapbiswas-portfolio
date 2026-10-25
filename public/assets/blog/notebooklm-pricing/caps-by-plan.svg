@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+  <text x="48" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Gemini Notebook (formerly NotebookLM): caps by plan</text>
+  <text x="48" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Sources per notebook and notebooks per user, from Google's plans help page, read 25 October 2026</text>
+
+  <text x="64" y="146" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1.2" fill="#6a645c">PLAN AND MONTHLY PRICE</text>
+  <text x="430" y="146" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1.2" fill="#6a645c">SOURCES PER NOTEBOOK</text>
+  <text x="1180" y="146" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1.2" fill="#6a645c">NOTEBOOKS</text>
+
+  <rect x="40" y="160" width="1320" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="204" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Free (no plan)</text>
+  <text x="64" y="236" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">$0 / Rs 0</text>
+  <rect x="430" y="196" width="48" height="28" rx="4" fill="#6a645c"/>
+  <text x="492" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">50</text>
+  <text x="1180" y="218" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">100</text>
+
+  <rect x="40" y="274" width="1320" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="318" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google AI Plus</text>
+  <text x="64" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">$4.99 / Rs 399</text>
+  <rect x="430" y="310" width="97" height="28" rx="4" fill="#6a645c"/>
+  <text x="541" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">100</text>
+  <text x="1180" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">200</text>
+
+  <rect x="40" y="388" width="1320" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="432" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google AI Pro</text>
+  <text x="64" y="464" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">$19.99 / Rs 1,950</text>
+  <rect x="430" y="424" width="290" height="28" rx="4" fill="#b53b15"/>
+  <text x="734" y="446" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">300 (6x Free)</text>
+  <text x="1180" y="446" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">500</text>
+
+  <rect x="40" y="502" width="1320" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="546" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google AI Ultra, 20 TB</text>
+  <text x="64" y="578" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">price tier not stated</text>
+  <rect x="430" y="538" width="483" height="28" rx="4" fill="#6a645c"/>
+  <text x="927" y="560" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">500</text>
+  <text x="1180" y="560" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">500</text>
+
+  <rect x="40" y="616" width="1320" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="660" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google AI Ultra, 30 TB</text>
+  <text x="64" y="692" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">price tier not stated</text>
+  <rect x="430" y="652" width="580" height="28" rx="4" fill="#6a645c"/>
+  <text x="1024" y="674" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">600</text>
+  <text x="1180" y="674" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">500</text>
+
+  <text x="48" y="762" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Prices: gemini.google US and India plan pages, read logged out on 25 October 2026. Ultra costs $99.99 or $199.99</text>
+  <text x="48" y="792" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">(Rs 6,500 or Rs 19,500); the plan pages say storage starts at 20 TB and do not say which price carries 30 TB.</text>
+</svg>

@@ -211,6 +211,7 @@ This is route 5, the one this site's covers took. Google's [Gemini API image gen
 - The REST examples on each page read the key from an environment variable, `$GEMINI_API_KEY` and `$OPENAI_API_KEY`. Keep yours there too, out of the repo and out of the prompt.
 - Google states that "All generated images include a SynthID watermark".
 - For words inside a picture, Google's limitations list says Gemini "works best if you first generate the text and then ask for an image with the text".
+- Google's per-image prices and reference-image limits differ by model, and [a side-by-side of the Nano Banana models' API rates](/blog/nano-banana-2-vs-pro/) sets them out at each resolution.
 
 ### An Image Skill
 

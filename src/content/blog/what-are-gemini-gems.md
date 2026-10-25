@@ -150,7 +150,7 @@ The steps from Google's Gems help page, for as long as your account can still cr
 
 1. Go to gemini.google.com and click Open Sidebar, then Gems. If you have never made a Gem, first click Settings and help, then Gems.
 2. Click New Gem and enter a name and instructions. "Use Gemini to re-write instructions" can expand a short brief.
-3. Optionally, under "Knowledge", click Add files to upload files, add from Drive, or add a notebook.
+3. Optionally, under "Knowledge", click Add files to upload files, add from Drive, or add a notebook. That notebook lives in Gemini Notebook (formerly NotebookLM), which is free up to 100 notebooks of 50 sources each, and [the source caps on each Google AI plan](/blog/notebooklm-pricing/) rise with AI Plus and AI Pro.
 4. Test it in the preview pane on the right, then click Save; Google's guide warns that previewing does not save the Gem.
 
 On a personal account for someone 18 or over, this stops working on 17 November 2026, so for anything you plan to keep, use Customize, then Skills, then Create instead.

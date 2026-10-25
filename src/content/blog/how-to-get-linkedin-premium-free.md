@@ -134,7 +134,7 @@ The rules that decide whether the trial stays free:
 - Cancelling ends the trial at once. [LinkedIn's cancellation page](https://www.linkedin.com/help/linkedin/answer/a545578) says "If you cancel a Premium free trial, the trial will end immediately, and Premium access will stop right away", and asks you to cancel "at least one day before your next scheduled billing date", so cancel near the end of the trial.
 - If it converts before you cancel, the [Premium subscription FAQ](https://www.linkedin.com/help/linkedin/answer/a570070) says a subscription "may be refundable within seven days from the date the subscription is charged without Premium usage".
 
-To judge the trial, compare it with what a free account shows: a viewer count and the three most recent viewers over 90 days, per [my breakdown of LinkedIn's profile view counts](/blog/linkedin-search-appearances-vs-profile-views/).
+To judge the trial, compare it with what a free account shows: a viewer count and the three most recent viewers over 90 days, per [my breakdown of LinkedIn's profile view counts](/blog/linkedin-search-appearances-vs-profile-views/). If private browsing is the reason you want the trial, read [how LinkedIn private mode works on Premium](/blog/linkedin-private-mode/) before the trial clock starts, since two LinkedIn Help pages disagree on whether a Premium member browsing privately keeps viewer insights.
 
 ## Can You Get LinkedIn Premium Free as a Student?
 

@@ -83,7 +83,7 @@ The figure draws each ratio at 1080 px wide, which puts 1.91:1 at 1080 x 565.
 
 <img src="/assets/blog/linkedin-post-size/photo-ratio-range.webp" alt="Five frames drawn to scale at 1080 px wide: 1080 x 360 at 3:1, 1080 x 565 at 1.91:1, a 1080 x 1080 square, 1080 x 1350 at 4:5 highlighted as the tall end of LinkedIn's range, and a dashed 1080 x 1920 frame at 9:16 outside the range" title="LinkedIn's photo range at the recommended 1080 px width" width="1200" height="686" loading="lazy" decoding="async" />
 
-I write one image prompt for each LinkedIn post, and my current prompts share one house style, a Renaissance still life with no text in the image, at **1200x628**. That is the horizontal size on LinkedIn's single image ads page, one pixel taller than the 1200 x 627 a Page uses for its own link-post image, and inside the photo range.
+I write one image prompt for each LinkedIn post, and my current prompts share one house style, a Renaissance still life with no text in the image, at **1200x628**. That is the horizontal size on LinkedIn's single image ads page, one pixel taller than the 1200 x 627 a Page uses for its own link-post image, and inside the photo range. If you generate those images through Google's API, [what 100 images at 1200 x 628 cost on each Nano Banana model](/blog/nano-banana-2-vs-pro/) is worked out from Google's list prices.
 
 ## How Many Images Can a LinkedIn Post Have?
 
