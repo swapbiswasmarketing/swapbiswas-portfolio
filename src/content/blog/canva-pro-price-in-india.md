@@ -1,6 +1,6 @@
 ---
-title: "Canva Pro Price in India: Pro Lite, Pro and Passes (2026)"
-description: "Canva Pro price in India on 16 October 2026: Rs 500 a month or Rs 4,000 a year, Rs 69 for a day, plus Pro Lite, Business, UPI, GST and the cheapest route by job."
+title: "Canva Pro Price in India: Rs 500, or Pro Lite at Rs 199"
+description: "Canva Pro costs Rs 500 a month or Rs 4,000 a year in India, Pro Lite Rs 199 and a one-day pass Rs 69, per Canva pricing on 16 October 2026."
 publishDate: 2026-10-16
 category: [Design, Tools]
 img: /assets/stock-2.webp

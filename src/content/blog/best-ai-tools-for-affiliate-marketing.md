@@ -40,7 +40,7 @@ If every review follows the same structure, [a Claude skill for your review form
 
 **Best for:** Product descriptions, content outlines, and brainstorming affiliate angles.
 
-ChatGPT's web browsing feature makes it useful for pulling current product specs and pricing. If you want a broader playbook, see how to [use ChatGPT for sales and marketing](/blog/how-to-use-chatgpt-for-sales-and-marketing/). The custom GPT feature lets you build specialized assistants for specific affiliate niches. Check out [our guide to ChatGPT prompts for marketing](/blog/chatgpt-prompts-for-marketing) for templates you can adapt to affiliate workflows.
+ChatGPT's web browsing feature makes it useful for pulling current product specs and pricing. If you want a broader playbook, see how to [use ChatGPT for sales and marketing](/blog/how-to-use-chatgpt-for-sales-and-marketing/). The custom GPT feature lets you build specialized assistants for specific affiliate niches. Check out [our guide to ChatGPT prompts for marketing](/blog/chatgpt-prompts-for-marketing/) for templates you can adapt to affiliate workflows.
 
 **Pricing:** Free tier with caps. Plus at $20/month.
 
@@ -84,7 +84,7 @@ Ahrefs added AI-powered features including content grading, keyword clustering, 
 
 **Best for:** AI-driven SEO recommendations and competitive intelligence.
 
-SEMrush Copilot monitors your site and proactively suggests SEO improvements. For affiliate marketers managing multiple sites, this kind of automated oversight saves hours of manual auditing. Read our [AI SEO strategy guide](/blog/ai-seo-strategy) for frameworks on combining these tools effectively.
+SEMrush Copilot monitors your site and proactively suggests SEO improvements. For affiliate marketers managing multiple sites, this kind of automated oversight saves hours of manual auditing. Read our [AI SEO strategy guide](/blog/ai-seo-strategy/) for frameworks on combining these tools effectively.
 
 **Pricing:** Pro plan at $139.95/month. Guru plan at $249.95/month.
 
@@ -217,7 +217,7 @@ For established affiliate businesses doing five figures or more monthly:
 - **Email:** ActiveCampaign ($49/mo)
 - **Automation:** Zapier Professional ($29.99/mo)
 
-The key principle is to **invest in the bottleneck**. If content production is holding you back, spend on content tools first. If you have traffic but poor conversions, invest in analytics and testing. For more on [free AI tools for marketing](/blog/free-ai-tools-for-marketing) that work alongside these, check our dedicated guide.
+The key principle is to **invest in the bottleneck**. If content production is holding you back, spend on content tools first. If you have traffic but poor conversions, invest in analytics and testing. For more on [free AI tools for marketing](/blog/free-ai-tools-for-marketing/) that work alongside these, check our dedicated guide.
 
 ### What AI Won't Replace
 
@@ -225,7 +225,7 @@ AI tools accelerate affiliate marketing. They don't replace the core skills that
 
 You still need genuine product knowledge. Readers can tell when a review is written by someone who never used the product. AI can structure your review and polish the writing, but the hands-on insights have to come from you.
 
-You still need strategic thinking. Choosing the right niche, building the right partnerships, and deciding which content to prioritize are human decisions. AI can inform those decisions with data, but the judgment call is yours. For a deeper look at where the line sits between AI and human marketing work, see our analysis on [whether marketing will be replaced by AI](/blog/will-marketing-be-replaced-by-ai).
+You still need strategic thinking. Choosing the right niche, building the right partnerships, and deciding which content to prioritize are human decisions. AI can inform those decisions with data, but the judgment call is yours. For a deeper look at where the line sits between AI and human marketing work, see our analysis on [whether marketing will be replaced by AI](/blog/will-marketing-be-replaced-by-ai/).
 
 ## Best AI Tools for Affiliate Marketing: The Bottom Line
 

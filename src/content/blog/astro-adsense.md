@@ -2,6 +2,7 @@
 title: "Astro AdSense Setup: Loader, Ad Units and View Transitions"
 description: "An Astro AdSense setup from a live site: the loader, ads.txt, in-article units placed by a rehype plugin, and what Astro's client router does to ad scripts."
 publishDate: 2026-10-10
+updatedDate: 2026-10-25
 category: [SEO, Tools]
 img: /assets/stock-8.webp
 img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
@@ -167,12 +168,12 @@ export default defineConfig({
 
 | Rule | First unit | Second unit |
 |---|---|---|
-| Prose words above the h2 | 600 or more | 1,800 or more |
+| Prose words above the heading (an h2 or h3) | 600 or more | 1,800 or more |
 | Prose words below it | 500 or more | 500 or more |
-| Distance from the first unit | Not applicable | At least 4 h2s further down |
-| Block directly above the unit | Not a code block, image, figure, list, table, blockquote or raw HTML | Same |
+| Distance from the first unit | Not applicable | At least 800 words of prose further down |
+| Block directly above the unit | Not a code block, image, figure, list, table, blockquote, heading or raw HTML | Same |
 
-The word counts, the h2 gap and the list of blocked tags come from `src/config/ads.mjs`; the raw-HTML check and the check for a block that holds an image live in the plugin itself.
+The word counts, the word gap, the heading levels and the list of blocked tags come from `src/config/ads.mjs`; the raw-HTML check and the check for a block that holds an image live in the plugin itself.
 
 Words inside code blocks count as zero, so a long code sample cannot carry a post past the gate. In Astro 5.18.0's Markdown pipeline (`@astrojs/markdown-remark/dist/index.js`), user rehype plugins run after syntax highlighting and before `rehype-raw`. Code is already a `<pre>` the neighbour rule can see, and the unit goes in as a raw HTML string that becomes real elements further down the pipeline. The units therefore ship inside the static HTML, the same build-time output that separates an Astro page from [a client-rendered vibe-coded site in search](/blog/vibe-coded-website-seo/).
 
@@ -190,6 +191,8 @@ That is 244 in-article units, and all 209 posts also carry the end-of-post unit.
 
 - **11 fail the word rules.** Six have fewer than 1,100 words of prose in total, the minimum the first unit needs. Five are longer but have no h2 inside the window, like a post of about 2,600 words whose middle 1,800 sit under one h2 and its h3s.
 - **8 fail the neighbour rule.** Each has h2s that pass the word rules, but every one sits directly under a list, a table, an image or a code block.
+
+Those counts are for the first version of the rules, which matched h2s only and spaced the second unit four h2s after the first. On 25 October 2026 they changed to the table above: h3s became candidate positions and the gap became 800 words of prose, because a long h2 section built from h3 steps offered no slot at all. Rebuilt on that day's 251 posts, the split went from 20 posts with no in-article unit, 164 with one and 67 with two to 7, 131 and 113, which is 357 in-article units in place of 298.
 
 In the same build, 278 of the 1,091 top-level lists in post bodies contain a link, and every image inside a post opens a lightbox on click. Google's [ad placement policies](https://support.google.com/adsense/answer/1346295?hl=en) say "Be careful when placing links" and buttons near ads, because they "might lead to accidental clicks". The rule goes beyond links: it blocks a unit under any list, including the 813 without a link, and under any code block, table or blockquote, because an ad directly under one of those reads as part of it. The cost is 8 posts with no in-article unit.
 

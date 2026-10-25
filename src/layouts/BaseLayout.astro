@@ -390,9 +390,9 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				if (closeBtn) closeBtn.addEventListener('click', dismiss);
 
 				// Slide the popup away while the footer is on screen so it never covers the footer links.
-				var dockFooter = false, dockAd = false;
+				var dockFooter = false, dockBand = false;
 				function applyDock() {
-					popup.classList.toggle('nl-popup--docked', dockFooter || dockAd);
+					popup.classList.toggle('nl-popup--docked', dockFooter || dockBand);
 				}
 				var footerEl = document.querySelector('footer');
 				if (footerEl && 'IntersectionObserver' in window) {
@@ -414,19 +414,23 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				// popup gets at either breakpoint, so an ad docks the popup only when it is
 				// genuinely in the popup's band rather than any time one is on screen. That
 				// distinction is what keeps the popup alive on the rest of the page.
-				var adSlots = document.querySelectorAll('.ad-slot');
-				if (adSlots.length && 'IntersectionObserver' in window) {
-					var adObs = new IntersectionObserver(function(entries) {
+				//
+				// The related posts and the next-read line after a post get the same band:
+				// at <= 480px the sheet covered about 290px of the related posts, which are
+				// the links a reader who finished the post is most likely to want.
+				var bandEls = document.querySelectorAll('.ad-slot, .related-posts, .next-read');
+				if (bandEls.length && 'IntersectionObserver' in window) {
+					var bandObs = new IntersectionObserver(function(entries) {
 						for (var i = 0; i < entries.length; i++) {
 							entries[i].target._inPopupBand = entries[i].isIntersecting;
 						}
-						dockAd = false;
-						for (var j = 0; j < adSlots.length; j++) {
-							if (adSlots[j]._inPopupBand) { dockAd = true; break; }
+						dockBand = false;
+						for (var j = 0; j < bandEls.length; j++) {
+							if (bandEls[j]._inPopupBand) { dockBand = true; break; }
 						}
 						applyDock();
 					}, { rootMargin: '-' + Math.max(0, window.innerHeight - 280) + 'px 0px 0px 0px' });
-					for (var k = 0; k < adSlots.length; k++) adObs.observe(adSlots[k]);
+					for (var k = 0; k < bandEls.length; k++) bandObs.observe(bandEls[k]);
 				}
 
 				if (form) {
@@ -471,15 +475,19 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 				var collapseObserver = null;
 				var statusObserver = null;
 
+				// MainHead sets __tagBoot only when it booted the tags: production host, not
+				// an automated browser, not opted out with ?noads=1. Reading its decision
+				// instead of re-testing the host means a skipped first load stays skipped.
 				function isProd() {
-					return location.hostname === 'swapbiswas.com' || location.hostname === 'www.swapbiswas.com';
+					return window.__tagBoot === 1;
 				}
 
 				// Astro's head swap deletes the loader element MainHead created, and MainHead's
 				// inline creator is deduped by textContent so it cannot rebuild it. Without this
-				// Auto ads places nothing on pages 2..N of a session.
+				// Auto ads places nothing on pages 2..N of a session. The x-ads meta is read
+				// from the swapped-in head, so it limits this to content pages too.
 				function ensureLoader() {
-					if (!isProd()) return;
+					if (!isProd() || !document.querySelector('meta[name="x-ads"]')) return;
 					if (document.querySelector('script[src*="adsbygoogle.js"]')) return;
 					var s = document.createElement('script');
 					s.async = true;
@@ -627,7 +635,8 @@ const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0 ? {
 		<script is:inline>
 			(function () {
 				if (window._consentInit) return;
-				if (location.hostname !== 'swapbiswas.com' && location.hostname !== 'www.swapbiswas.com') return;
+				// MainHead's tag gate: no tags booted, nothing to bridge.
+				if (window.__tagBoot !== 1) return;
 				window._consentInit = true;
 
 				// null until the TCF API says. Fail-closed: nothing is revealed and nothing

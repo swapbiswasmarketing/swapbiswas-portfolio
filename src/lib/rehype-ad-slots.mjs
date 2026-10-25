@@ -40,13 +40,17 @@ import { adUnitHtml } from '../config/ads.mjs';
  *      a {type:'raw'} node emitted here is parsed into real elements downstream. That is
  *      why the unit is inserted as a raw HTML string: one markup builder in ads.mjs
  *      serves both this plugin and AdUnit.astro, with no hast property-name guessing.
- *   2. rehypeHeadingIds also runs after this plugin, so the h2 nodes here have no id
- *      yet. Matching is on tagName only, and the ids the TOC links to are unaffected.
+ *   2. rehypeHeadingIds also runs after this plugin, so the heading nodes here have no
+ *      id yet. Matching is on tagName only, and the ids the TOC links to are unaffected.
  *
  * getHeadings() sees no new heading, so the table of contents is unchanged.
  *
+ * Which heading tags count as slot positions (h2 and h3 today) comes from each plan
+ * step's slotTags, for the same cache reason as everything else. A step without one
+ * falls back to h2 only, the original behaviour.
+ *
  * One known limitation, stated rather than engineered around: only top-level element
- * h2 nodes are counted. A post that wrote a literal <h2> in HTML would still be a raw
+ * headings are counted. A post that wrote a literal <h2> in HTML would still be a raw
  * string at this stage and would not be counted. Checked across all 144 posts: none do.
  * (21 posts DO contain other top-level raw HTML blocks, and rehype-responsive-images
  * already documents 23 raw <img> tags, but none of those blocks is a heading, and a raw
@@ -63,6 +67,8 @@ import { adUnitHtml } from '../config/ads.mjs';
 // goes belongs in ads.mjs. A change to the ALGORITHM below still needs .astro/ deleted.
 // Used only if the option is missing, which should not happen.
 const DEFAULT_UNSAFE_BEFORE_TAGS = ['pre', 'figure', 'img'];
+// Used only for a plan step with no slotTags.
+const DEFAULT_SLOT_TAGS = ['h2'];
 
 /**
  * Words of prose in a subtree. <pre> subtrees count as zero, so a 300-line code sample
@@ -130,6 +136,8 @@ function isSafeBefore(node, unsafe) {
 }
 
 /**
+ * Each plan step: { name, slotTags?, minWordsBefore, minWordsAfter, minWordGap? }.
+ *
  * @param {{ plan?: any[], slots?: Record<string, any>, unsafeBefore?: string[] }} [options]
  */
 export default function rehypeAdSlots(options = {}) {
@@ -138,6 +146,11 @@ export default function rehypeAdSlots(options = {}) {
 	const unsafe = new Set(
 		Array.isArray(options.unsafeBefore) ? options.unsafeBefore : DEFAULT_UNSAFE_BEFORE_TAGS,
 	);
+	const stepTags = plan.map(
+		(step) => new Set(Array.isArray(step.slotTags) ? step.slotTags : DEFAULT_SLOT_TAGS),
+	);
+	// The union, so the tree is walked once whatever mix of tags the steps ask for.
+	const anyTag = new Set(stepTags.flatMap((tags) => [...tags]));
 
 	return (tree, file) => {
 		if (!plan.length) return;
@@ -152,15 +165,16 @@ export default function rehypeAdSlots(options = {}) {
 		const filePath = String(file?.path || file?.history?.[0] || '').replace(/\\/g, '/');
 		if (!filePath.includes('/src/content/blog/')) return;
 
-		// One pass: record every top-level h2, the prose above it, and whether the block
-		// immediately above it is a safe neighbour.
+		// One pass: record every top-level candidate heading, the prose above it, and
+		// whether the block immediately above it is a safe neighbour.
 		const candidates = [];
 		let running = 0;
 		for (let i = 0; i < tree.children.length; i++) {
 			const node = tree.children[i];
-			if (node.type === 'element' && node.tagName === 'h2') {
+			if (node.type === 'element' && anyTag.has(node.tagName)) {
 				candidates.push({
 					index: i,
+					tagName: node.tagName,
 					wordsBefore: running,
 					prevOk: isSafeBefore(previousBlock(tree.children, i), unsafe),
 				});
@@ -171,25 +185,30 @@ export default function rehypeAdSlots(options = {}) {
 		const totalWords = running;
 
 		const inserts = [];
-		// Position within `candidates` of the h2 the previous step claimed. -1 means none.
+		// Position within `candidates` of the heading the previous step claimed, and the
+		// prose above it. -1 means no unit placed yet.
 		let lastPick = -1;
-		for (const step of plan) {
+		let lastWords = 0;
+		for (let s = 0; s < plan.length; s++) {
+			const step = plan[s];
 			// Empty while the slot id is still a placeholder, which is what keeps an
 			// unconfigured unit from adding a blank block to 144 posts. Throws on a name
 			// that is not in the slots table.
 			const html = adUnitHtml(step.name, slots);
 			if (!html) continue;
 
-			const gap = step.minH2Gap || 0;
-			for (let k = 0; k < candidates.length; k++) {
-				if (lastPick >= 0 && k - lastPick < gap) continue;
-				if (k <= lastPick) continue;
+			// Words, not heading positions: see IN_ARTICLE_PLAN in ads.mjs for why.
+			const gap = step.minWordGap || 0;
+			for (let k = lastPick + 1; k < candidates.length; k++) {
 				const c = candidates[k];
+				if (!stepTags[s].has(c.tagName)) continue;
+				if (lastPick >= 0 && c.wordsBefore - lastWords < gap) continue;
 				if (!c.prevOk) continue;
 				if (c.wordsBefore < step.minWordsBefore) continue;
 				if (totalWords - c.wordsBefore < step.minWordsAfter) continue;
 				inserts.push({ at: c.index, html });
 				lastPick = k;
+				lastWords = c.wordsBefore;
 				break;
 			}
 		}

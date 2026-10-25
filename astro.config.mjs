@@ -50,12 +50,27 @@ export default defineConfig({
 		'/redesign': '/personal-website-examples/',
 		'/homepage-design-concepts': '/personal-website-examples/',
 		...demoRedirects,
+		// Archive URLs from the site's previous platform. They 404 today but Search
+		// Console still shows them earning impressions (exports of 2026-09-03 and
+		// 2026-10-23), so each one points at the closest live listing. Static stubs:
+		// meta refresh + noindex + canonical to the destination, like /redesign above.
+		'/category/seo': '/blog/category/seo/',
+		'/category/marketing': '/blog/category/marketing/',
+		'/category/travel': '/blog/category/travel/',
+		'/blog/tag/ai': '/blog/category/ai/',
+		// No marketing-research category; its posts sit under Marketing.
+		'/blog/tag/marketing-research': '/blog/category/marketing/',
+		// No content-writing category or close match, so the blog index.
+		'/blog/tag/content-writing': '/blog/',
 	},
 	integrations: [
 		sitemap({
-			// Exclude noindexed routes so they don't bloat the sitemap
+			// Exclude noindexed routes so they don't bloat the sitemap. The legacy-archive
+			// redirect stubs (/category/*, /blog/tag/*) are noindex too; '/category/' also
+			// covers /blog/category/.
 			filter: (page) =>
-				!page.includes('/blog/category/') &&
+				!page.includes('/category/') &&
+				!page.includes('/blog/tag/') &&
 				!page.includes('/work/') &&
 				!page.match(/\/work\/?$/) && !page.includes('/redesign') && !page.match(/\/personal-website-examples\/[^/]+\/?$/),
 		}),
@@ -110,6 +125,10 @@ export default defineConfig({
 			// has no lastmod while the live sitemap has one, so the diff flags all of them
 			// and every deploy resubmits every dated URL - while still logging success.
 			//
+			// TIMING. This runs before Vercel promotes the build, so the live site is the
+			// PREVIOUS deployment: a URL this build adds is still a 404 there. Such URLs are
+			// held in dist/indexnow-pending.json and announced by the next production build.
+			//
 			// This hook can fail the announcement but must never fail the build. The pages
 			// are already built and the sitemap still carries them; the worst case of a
 			// failure here is that Bing finds the change on its own schedule.
@@ -119,12 +138,14 @@ export default defineConfig({
 					const fs = await import('node:fs');
 					const path = await import('node:path');
 					const { fileURLToPath } = await import('node:url');
-					const { FRESH_WINDOW_DAYS, SITEMAP_FILE } = await import('./src/config/indexnow.mjs');
+					const { FRESH_WINDOW_DAYS, PENDING_FILE, SITEMAP_FILE } = await import('./src/config/indexnow.mjs');
 					const {
+						fetchPublishedPending,
 						fetchPublishedSitemap,
 						parseSitemapEntries,
 						resolveDeployContext,
 						selectUrlsToAnnounce,
+						splitByPublished,
 						submitUrls,
 						verifyKeyFile,
 					} = await import('./src/lib/indexnow.mjs');
@@ -146,38 +167,68 @@ export default defineConfig({
 
 						const entries = parseSitemapEntries(fs.readFileSync(sitemapPath, 'utf8'));
 
+						// Hands URLs this build cannot announce to the next production build, which
+						// reads the file back from the live site (see splitByPublished in the lib).
+						// Written on every submitting build, [] included, so a list never outlives
+						// the deploy that announced it. Its own try: a failed write costs only the
+						// held URLs, never the build.
+						const writePending = (list) => {
+							try {
+								fs.writeFileSync(path.join(fileURLToPath(dir), PENDING_FILE), JSON.stringify(list));
+							} catch (error) {
+								say(`could not write ${PENDING_FILE}: ${error?.message || error}`);
+							}
+						};
+
 						// The live site is still serving the PREVIOUS deployment at this point, so its
 						// sitemap is a free record of what was published last time. Diffing against it
 						// catches an edit whose lastmod has already aged out of the window. If it cannot
-						// be read we pass null, which falls back to the window alone - passing [] would
-						// mean "nothing was ever published" and announce all 159 URLs.
-						const published = await fetchPublishedSitemap({ fetchImpl: fetch });
+						// be read we pass null: selection falls back to the window alone (passing []
+						// would mean "nothing was ever published" and select all 159 URLs), and the
+						// live check below holds every candidate, since none can be confirmed served.
+						// The pending list is what the previous build held back for this one.
+						const [published, pendingList] = await Promise.all([
+							fetchPublishedSitemap({ fetchImpl: fetch }),
+							fetchPublishedPending({ fetchImpl: fetch }),
+						]);
 						if (!published.ok) {
-							say(`could not read the published sitemap (${published.message}); using the ${FRESH_WINDOW_DAYS}-day window alone`);
+							say(`could not read the published sitemap (${published.message}); holding every candidate for the next deploy`);
 						}
+						if (!pendingList.ok) say(`could not read the pending list (${pendingList.message})`);
 
 						const selection = selectUrlsToAnnounce({
 							currentEntries: entries,
 							previousEntries: published.ok ? published.entries : null,
 							now: new Date(),
 							windowDays: FRESH_WINDOW_DAYS,
+							pendingUrls: pendingList.urls,
 						});
-						const urls = selection.urls;
+
+						// Same timing fact, other side: a URL this build ADDS is a 404 on the live
+						// site until Vercel promotes it, and announcing a 404 gets the page treated as
+						// dead. Only URLs the published sitemap already lists go out now; the rest are
+						// held in PENDING_FILE for the next production build.
+						const { live: urls, held } = splitByPublished(selection.urls, published.ok ? published.entries : null);
+						if (held.length) say(`${held.length} URL(s) not live yet, held for the next deploy: ${held.join(', ')}`);
 						if (urls.length === 0) {
-							say(`nothing to announce - no URL changed against the published sitemap or has a lastmod inside ${FRESH_WINDOW_DAYS} days`);
+							writePending(held);
+							say(`nothing to announce - no live URL changed against the published sitemap, has a lastmod inside ${FRESH_WINDOW_DAYS} days or was pending`);
 							return;
 						}
-						say(`${urls.length} URL(s) to announce (${selection.changed.length} changed vs published, ${selection.fresh.length} inside the ${FRESH_WINDOW_DAYS}-day window)`);
+						say(`${urls.length} URL(s) to announce (${selection.changed.length} changed vs published, ${selection.fresh.length} inside the ${FRESH_WINDOW_DAYS}-day window, ${selection.pending.length} pending from the last deploy)`);
 
 						// The key has to be live at the origin BEFORE anything can be announced, and
 						// on the deploy that first adds it the production domain is still serving the
 						// previous deployment. That first build logs this and skips; the next submits.
+						// Everything is held on a skip, so the next deploy still announces it.
 						const keyCheck = await verifyKeyFile({ fetchImpl: fetch });
 						if (!keyCheck.ok) {
+							writePending([...urls, ...held]);
 							say(`skipped - ${keyCheck.message}`);
 							return;
 						}
 
+						writePending(held);
 						const result = await submitUrls({ urls, fetchImpl: fetch });
 						say(result.ok ? result.message : `announcement failed - ${result.message}`);
 					} catch (error) {

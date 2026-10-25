@@ -45,6 +45,18 @@ const resolvedImageAlt = imageAlt ?? (image === '/og/home.webp' ? HOME_CARD_ALT 
 const imageExt = image.split('?')[0].split('.').pop()?.toLowerCase();
 const imageType = imageExt === 'webp' ? 'image/webp' : imageExt === 'png' ? 'image/png' : imageExt === 'jpg' || imageExt === 'jpeg' ? 'image/jpeg' : undefined;
 const ogType = article ? 'article' : profile ? 'profile' : 'website';
+// Pages allowed to load AdSense: a post, the blog index and a tool page, which are the
+// only places a manual unit exists. Everything else (home, about, contact, privacy, 404,
+// category lists, the /tools/ index...) would only ever carry an Auto ad, and Google's
+// publisher policy keeps ads off error, dead-end and navigation-only screens. This is a
+// <meta> rather than a value in the analytics script because that script must stay
+// byte-identical on every page (see CONSENT.md, invariant 1); both AdSense loaders read
+// the meta from the live document, and the router's head swap keeps it current.
+const adsPath = Astro.url.pathname;
+const adsAllowed =
+	adsPath === '/blog/' ||
+	(/^\/blog\/[^/]+\/?$/.test(adsPath) && !adsPath.startsWith('/blog/category/')) ||
+	/^\/tools\/[^/]+\/?$/.test(adsPath);
 ---
 
 <meta charset="UTF-8" />
@@ -53,7 +65,14 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 <meta name="google-adsense-account" content="ca-pub-3086200953871328" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="color-scheme" content="light dark" />
-{noindex && <meta name="robots" content="noindex, follow" />}
+{/* Indexable pages opt in to the large image preview, which Google Discover needs before it
+   will show a full-width card; the snippet and video limits are lifted with it. */}
+{noindex ? (
+	<meta name="robots" content="noindex, follow" />
+) : (
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+)}
+{adsAllowed && <meta name="x-ads" content="1" />}
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 
@@ -106,7 +125,8 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 <link rel="manifest" href="/manifest.webmanifest" />
 <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#151311" media="(prefers-color-scheme: dark)" />
-<link rel="dns-prefetch" href="https://api.kit.com" />
+<!-- The newsletter forms post to app.kit.com; nothing on the site calls api.kit.com. -->
+<link rel="dns-prefetch" href="https://app.kit.com" />
 <!-- Fonts are self-hosted from /public/assets/fonts and declared in global.css, so there
      is nothing to preconnect to and no third-party stylesheet to wait on. See the
      comment at the top of src/styles/global.css. -->
@@ -116,7 +136,22 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 	// it already runs once per session, but any future edit that interpolates a value
 	// into it breaks that key and would re-emit the consent default AFTER the CMP
 	// granted. Whether a late default downgrades a granted state is undocumented.
-	if (!window.__tagBoot && (location.hostname === 'swapbiswas.com' || location.hostname === 'www.swapbiswas.com')) {
+	// Automated browsers (navigator.webdriver: headless Chrome, Lighthouse, cloud grids)
+	// and the owner are kept out of every tag, because their ad impressions and clicks
+	// are invalid traffic on a small AdSense account. ?noads=1 opts this browser out
+	// and remembers it, ?noads=0 forgets it. BaseLayout reads __tagBoot as its
+	// production test, so a skipped first load also skips every later navigation.
+	if (!window.__tagBoot && (location.hostname === 'swapbiswas.com' || location.hostname === 'www.swapbiswas.com') && navigator.webdriver !== true && !(function () {
+		var m = /[?&]noads=([01])(?:&|$)/.exec(location.search);
+		var off = !!m && m[1] === '1';
+		try {
+			if (off) localStorage.setItem('noads', '1');
+			else if (m) localStorage.removeItem('noads');
+			return off || localStorage.getItem('noads') === '1';
+		} catch (e) {
+			return off;
+		}
+	})()) {
 		window.__tagBoot = 1;
 
 		// Consent Mode v2 default. Must run before gtm.js is requested below: the
@@ -161,9 +196,13 @@ const ogType = article ? 'article' : profile ? 'profile' : 'website';
 		// <link rel=preconnect> appended by JS one statement before the script that used
 		// it, in the same tick, so the script's own request opened the connection just as
 		// fast and PageSpeed reported it as an unused preconnect.
-		var ad=document.createElement('script');ad.async=true;ad.crossOrigin='anonymous';
-		ad.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3086200953871328';
-		document.head.appendChild(ad);
+		// Only where MainHead wrote the x-ads meta (content pages). The meta sits above
+		// this script, so it is already parsed when this runs.
+		if (document.querySelector('meta[name="x-ads"]')) {
+			var ad=document.createElement('script');ad.async=true;ad.crossOrigin='anonymous';
+			ad.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3086200953871328';
+			document.head.appendChild(ad);
+		}
 	}
 </script>
 

@@ -18,7 +18,7 @@ Market size, market trends, competitors, and customer preference are some of the
 
 A manager at Coca-Cola Company can use market research to see an [increased market share in sports drinks](https://www.kingsresearch.com/sports-drink-market). This will allow his/her company to market a new sports drink in the segment.
 
-The trend in AI has led to marketer questioning their career. Check out if [will marketing be replaced by AI](/blog/will-marketing-be-replaced-by-ai).
+The trend in AI has led to marketer questioning their career. Check out if [will marketing be replaced by AI](/blog/will-marketing-be-replaced-by-ai/).
 
 ## 2. Identifying Target Audience
 

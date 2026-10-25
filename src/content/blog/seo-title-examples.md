@@ -2,6 +2,7 @@
 title: "SEO Title Examples: 95 Real Rewrites and What They Cut"
 description: "See 95 real SEO title examples from one site: each original title, its rewrite under a 60-character cap, and what was cut to fit, sorted by page type."
 publishDate: 2026-09-26
+updatedDate: 2026-10-25
 category: [SEO]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
@@ -133,7 +134,7 @@ Pattern: `How to [task]: The [N]-Step Guide` or `How to [task] in [N] Steps`. Th
 
 ### Definition Titles
 
-Pattern: `What Is [term]? [two or three things the page delivers]`. The usual cut was the list after the question mark, either trimmed or replaced with a single promise. The SEO report post was retitled again on 2026-09-10 and now reads "SEO Report Example, Metrics, and Reporting Template", with the question form gone.
+Pattern: `What Is [term]? [two or three things the page delivers]`. The usual cut was the list after the question mark, either trimmed or replaced with a single promise. The SEO report post was retitled again on 2026-09-10 to "SEO Report Example, Metrics, and Reporting Template", dropping the question form. Its definition queries slid afterwards: "what is an seo report" averaged position 29 in the 28 days to 23 October, against 21 over the 16 months before the change. Other SEO posts lost impressions in the same weeks, so the title is one suspect rather than a proven cause, and on 2026-10-25 the post went back to a question: "What Is an SEO Report? Example, Metrics and Template".
 
 | Before | After | Chars | What changed |
 |---|---|---|---|

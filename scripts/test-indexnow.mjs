@@ -28,6 +28,8 @@ import {
   KEY_LOCATION,
   KEY_PATTERN,
   MAX_URLS_PER_REQUEST,
+  PENDING_FILE,
+  PUBLISHED_PENDING_URL,
   PUBLISHED_SITEMAP_URL,
   REQUEST_TIMEOUT_MS,
   SITE_ORIGIN,
@@ -40,15 +42,18 @@ import {
   classifyResponse,
   daysBetween,
   diffSitemaps,
+  fetchPublishedPending,
   fetchPublishedSitemap,
   filterUrlsForOrigin,
   isValidKey,
   keyFilePath,
+  parsePendingList,
   parseSitemapEntries,
   probeUrl,
   resolveDeployContext,
   selectFreshUrls,
   selectUrlsToAnnounce,
+  splitByPublished,
   submitBatch,
   submitUrls,
   validatePayload,
@@ -684,6 +689,113 @@ await testAsync('an empty but served sitemap gives [], which is different from n
   const r = await fetchPublishedSitemap({ fetchImpl: stubFetch({ status: 200, body: '<urlset></urlset>' }) });
   assert.equal(r.ok, true);
   assert.deepEqual(r.entries, []);
+});
+
+// ============================================================ live check + pending handoff
+
+console.log('\n--- splitByPublished / pending handoff ---');
+
+test('a URL absent from the published sitemap is held, not announced', () => {
+  // The hook runs before Vercel promotes the build: a brand-new post is a 404 on the
+  // live site at that moment, and announcing it gets the page treated as dead.
+  const published = [{ loc: 'https://swapbiswas.com/blog/old/', lastmod: '2026-09-01' }];
+  const r = splitByPublished(['https://swapbiswas.com/blog/old/', 'https://swapbiswas.com/blog/new/'], published);
+  assert.deepEqual(r.live, ['https://swapbiswas.com/blog/old/']);
+  assert.deepEqual(r.held, ['https://swapbiswas.com/blog/new/']);
+});
+
+test('end to end: a new post selected by the window is held while an edit goes out', () => {
+  const previous = [{ loc: 'https://swapbiswas.com/blog/edited/', lastmod: '2026-01-01' }];
+  const current = [
+    { loc: 'https://swapbiswas.com/blog/edited/', lastmod: '2026-09-16' },
+    { loc: 'https://swapbiswas.com/blog/new/', lastmod: '2026-09-16' },
+  ];
+  const sel = selectUrlsToAnnounce({ currentEntries: current, previousEntries: previous, now: NOW, windowDays: 7 });
+  assert.equal(sel.urls.length, 2);
+  const r = splitByPublished(sel.urls, previous);
+  assert.deepEqual(r.live, ['https://swapbiswas.com/blog/edited/']);
+  assert.deepEqual(r.held, ['https://swapbiswas.com/blog/new/']);
+});
+
+test('an unreadable published sitemap holds every candidate', () => {
+  // null means nothing can be confirmed live, so nothing goes out this deploy.
+  const r = splitByPublished(['https://swapbiswas.com/a/', 'https://swapbiswas.com/b/'], null);
+  assert.deepEqual(r.live, []);
+  assert.deepEqual(r.held, ['https://swapbiswas.com/a/', 'https://swapbiswas.com/b/']);
+});
+
+test('the next deploy announces a held URL that has no lastmod', () => {
+  // THE CASE THE HANDOFF EXISTS FOR. A new /tools/ page has no lastmod. On the deploy
+  // after it was held, it is in the published sitemap with the same null lastmod, so
+  // neither the diff nor the window selects it. Only the pending list brings it back.
+  const tool = 'https://swapbiswas.com/tools/new-tool/';
+  const both = [{ loc: tool, lastmod: null }];
+  const without = selectUrlsToAnnounce({ currentEntries: both, previousEntries: both, now: NOW, windowDays: 7 });
+  assert.deepEqual(without.urls, [], 'diff and window alone should miss it');
+  const sel = selectUrlsToAnnounce({ currentEntries: both, previousEntries: both, now: NOW, windowDays: 7, pendingUrls: [tool] });
+  assert.deepEqual(sel.urls, [tool]);
+  assert.deepEqual(sel.pending, [tool]);
+  assert.deepEqual(splitByPublished(sel.urls, both).live, [tool]);
+});
+
+test('a pending URL removed from the sitemap since is not announced', () => {
+  const current = [{ loc: 'https://swapbiswas.com/blog/a/', lastmod: '2026-01-01' }];
+  const sel = selectUrlsToAnnounce({
+    currentEntries: current,
+    previousEntries: current,
+    now: NOW,
+    windowDays: 7,
+    pendingUrls: ['https://swapbiswas.com/blog/deleted/'],
+  });
+  assert.deepEqual(sel.urls, []);
+  assert.deepEqual(sel.pending, []);
+});
+
+test('selectUrlsToAnnounce without pendingUrls behaves as before', () => {
+  const current = [{ loc: 'https://swapbiswas.com/blog/a/', lastmod: '2026-09-16' }];
+  const r = selectUrlsToAnnounce({ currentEntries: current, previousEntries: current, now: NOW, windowDays: 7 });
+  assert.deepEqual(r.urls, ['https://swapbiswas.com/blog/a/']);
+  assert.deepEqual(r.pending, []);
+});
+
+test('parsePendingList reads the array the hook writes', () => {
+  const urls = ['https://swapbiswas.com/a/', 'https://swapbiswas.com/b/'];
+  assert.deepEqual(parsePendingList(JSON.stringify(urls)), urls);
+});
+
+test('parsePendingList reads bad JSON, a non-array and non-strings as empty', () => {
+  assert.deepEqual(parsePendingList('<html>404</html>'), []);
+  assert.deepEqual(parsePendingList('{"a":1}'), []);
+  assert.deepEqual(parsePendingList('[1, null, "", "https://swapbiswas.com/a/"]'), ['https://swapbiswas.com/a/']);
+});
+
+test('PENDING_FILE sits at the origin root next to the sitemap', () => {
+  assert.equal(PUBLISHED_PENDING_URL, `${SITE_ORIGIN}/${PENDING_FILE}`);
+  assert.match(PENDING_FILE, /^[a-z0-9-]+\.json$/);
+});
+
+await testAsync('fetchPublishedPending reads a served list, cache-busted', async () => {
+  const f = stubFetch({ status: 200, body: '["https://swapbiswas.com/a/"]' });
+  const r = await fetchPublishedPending({ fetchImpl: f, cacheBuster: 'x1' });
+  assert.equal(r.ok, true);
+  assert.deepEqual(r.urls, ['https://swapbiswas.com/a/']);
+  assert.ok(f.calls[0].url.startsWith(PUBLISHED_PENDING_URL));
+  assert.match(f.calls[0].url, /indexnow-diff=x1/);
+});
+
+await testAsync('fetchPublishedPending treats a 404 as an empty list, not an error', async () => {
+  const r = await fetchPublishedPending({ fetchImpl: stubFetch({ status: 404, body: '' }) });
+  assert.equal(r.ok, true);
+  assert.deepEqual(r.urls, []);
+});
+
+await testAsync('fetchPublishedPending never throws (network error, mid-body drop)', async () => {
+  const a = await fetchPublishedPending({ fetchImpl: stubFetch(new Error('ENOTFOUND')) });
+  assert.equal(a.ok, false);
+  assert.deepEqual(a.urls, []);
+  const b = await fetchPublishedPending({ fetchImpl: bodyFailsFetch() });
+  assert.equal(b.ok, false);
+  assert.deepEqual(b.urls, []);
 });
 
 // ============================================================ probeUrl

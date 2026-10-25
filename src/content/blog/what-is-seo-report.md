@@ -1,6 +1,6 @@
 ---
-title: "SEO Report Example, Metrics, and Reporting Template"
-description: "An SEO report example with real Search Console numbers, plus the metrics to track, a nine-section reporting template, and the free tools that build it."
+title: "What Is an SEO Report? Example, Metrics and Template"
+description: "What an SEO report is, the metrics it should track, and a filled-in monthly example built from real Search Console numbers, plus a nine-section template."
 publishDate: 2026-04-01
 updatedDate: 2026-09-10
 category: [SEO, Marketing]

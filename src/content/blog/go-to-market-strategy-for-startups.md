@@ -24,7 +24,7 @@ Without one, you get scattered efforts. The founder posts on LinkedIn. An engine
 
 ### What Makes Startup GTM Different
 
-Enterprise GTM and startup GTM share the same vocabulary but almost nothing else. If you need a broader framework first, start with our [go-to-market strategy template](/blog/go-to-market-strategy-template).
+Enterprise GTM and startup GTM share the same vocabulary but almost nothing else. If you need a broader framework first, start with our [go-to-market strategy template](/blog/go-to-market-strategy-template/).
 
 | | Startup GTM | Enterprise GTM |
 |---|---|---|
@@ -49,7 +49,7 @@ Your Ideal Customer Profile is the foundation of every GTM decision. Get it wron
 
 Start narrow. The biggest ICP mistake startups make is going too broad. "SMBs who need better project management" is not an ICP. "Series A B2B SaaS companies with 20-50 employees who lost deals because their onboarding process takes longer than 30 days" - that is an ICP.
 
-For a deep breakdown of how to build one, read our guide on [ICP vs buyer persona](/blog/icp-vs-buyer-persona). The short version:
+For a deep breakdown of how to build one, read our guide on [ICP vs buyer persona](/blog/icp-vs-buyer-persona/). The short version:
 
 - **Talk to 15-20 potential customers** before writing a single line of marketing copy
 - **Identify the trigger event** that makes someone actively look for a solution like yours
@@ -64,7 +64,7 @@ Do not invest in scalable channels until you have at least 10 paying customers a
 
 ## Step 2: Define Your Positioning and Messaging
 
-Positioning is not your tagline. It is the strategic decision about how your product fits into the market relative to alternatives. [Strong product positioning](/blog/product-positioning) answers three questions:
+Positioning is not your tagline. It is the strategic decision about how your product fits into the market relative to alternatives. [Strong product positioning](/blog/product-positioning/) answers three questions:
 
 1. **What category do you compete in?** (This sets buyer expectations)
 2. **What do you do differently?** (Your actual differentiation, not aspirational)
@@ -78,7 +78,7 @@ Keep it simple. You need three things:
 - **Three value props:** The top three reasons your ICP should choose you over the status quo
 - **Proof points:** Customer quotes, metrics, or case studies that back up each value prop
 
-If you cannot explain your product in one sentence that makes your ICP say "tell me more," your positioning needs work. This is a core [product marketing](/blog/what-is-product-marketing) function - even if your startup does not have a dedicated PMM yet.
+If you cannot explain your product in one sentence that makes your ICP say "tell me more," your positioning needs work. This is a core [product marketing](/blog/what-is-product-marketing/) function - even if your startup does not have a dedicated PMM yet.
 
 ## Step 3: Choose Your GTM Motion
 
@@ -120,7 +120,7 @@ Choose based on where your ICP already spends time and what you can execute with
 - **Community participation** - Answer questions where your ICP hangs out (Reddit, Slack groups, Discord, Stack Overflow). Not scalable, but great for early learning.
 - **Paid ads (small budget)** - $500-2,000/month on Google or LinkedIn to test messaging. Only after you have validated your ICP and positioning.
 
-For a full breakdown of channel strategy in context, see our guide on [marketing strategy for new product](/blog/marketing-strategy-for-new-product).
+For a full breakdown of channel strategy in context, see our guide on [marketing strategy for new product](/blog/marketing-strategy-for-new-product/).
 
 ## Step 5: Set Pricing That Drives Adoption
 

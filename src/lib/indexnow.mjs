@@ -9,11 +9,13 @@
  * Order of operations for a production deploy:
  *   1. resolveDeployContext() - is this a production deploy at all?
  *   2. parseSitemapEntries()  - read dist/sitemap-0.xml
- *   3. selectFreshUrls()      - keep URLs whose lastmod is inside the window
- *   4. verifyKeyFile()        - is the origin already serving the key?
- *   5. submitUrls()           - chunk, POST, classify
+ *   3. selectUrlsToAnnounce() - window + diff vs the live sitemap + last deploy's pending list
+ *   4. splitByPublished()     - hold back URLs the live site does not serve yet
+ *   5. verifyKeyFile()        - is the origin already serving the key?
+ *   6. submitUrls()           - chunk, POST, classify
  *
- * Step 4 is the one that looks redundant and is not. See verifyKeyFile().
+ * Steps 4 and 5 are the ones that look redundant and are not. Both exist because the
+ * hook runs before Vercel promotes this build. See splitByPublished() and verifyKeyFile().
  */
 
 import {
@@ -23,6 +25,7 @@ import {
 	KEY_LOCATION,
 	KEY_PATTERN,
 	MAX_URLS_PER_REQUEST,
+	PUBLISHED_PENDING_URL,
 	PUBLISHED_SITEMAP_URL,
 	REQUEST_TIMEOUT_MS,
 	SITE_ORIGIN,
@@ -224,16 +227,73 @@ export function diffSitemaps(previousEntries, currentEntries) {
  *   previousEntries: Array<{ loc: string, lastmod: string | null }> | null,
  *   now: Date,
  *   windowDays: number,
+ *   pendingUrls?: string[],
  * }} input
- * @returns {{ urls: string[], fresh: string[], changed: string[] }}
+ * @returns {{ urls: string[], fresh: string[], changed: string[], pending: string[] }}
  */
-export function selectUrlsToAnnounce({ currentEntries, previousEntries, now, windowDays }) {
+export function selectUrlsToAnnounce({ currentEntries, previousEntries, now, windowDays, pendingUrls = [] }) {
 	const fresh = selectFreshUrls(currentEntries, now, windowDays);
 	const changed = previousEntries === null ? [] : diffSitemaps(previousEntries, currentEntries);
-	const wanted = new Set([...fresh, ...changed]);
+	// Held back by the previous deploy (see splitByPublished). Only those still in this
+	// build's sitemap come back: a URL removed since then must not be announced.
+	const current = new Set((currentEntries || []).map((e) => e?.loc).filter(Boolean));
+	const pending = (Array.isArray(pendingUrls) ? pendingUrls : []).filter((u) => current.has(u));
+	const wanted = new Set([...fresh, ...changed, ...pending]);
 	// Emitted in current-sitemap order so the payload reads the way the sitemap does.
 	const urls = (currentEntries || []).map((e) => e?.loc).filter((loc) => loc && wanted.has(loc));
-	return { urls: [...new Set(urls)], fresh, changed };
+	return { urls: [...new Set(urls)], fresh, changed, pending };
+}
+
+/**
+ * Split candidate URLs into those the live site already serves and those it cannot.
+ *
+ * The build hook runs while production still serves the PREVIOUS deployment, so a URL
+ * this build adds is a 404 at the moment it would be announced - the engine fetches it,
+ * finds nothing, and may treat the page as dead. The published sitemap is the record of
+ * what that deployment serves, so membership in it is the test.
+ *
+ * Held URLs are not lost. The hook writes them to PENDING_FILE in this build's output;
+ * once this deployment is live, the next production build reads that file back from the
+ * site and announces them. That handoff matters for a URL with no lastmod (a new page
+ * under /tools/): by the next deploy it is in the published sitemap with the same null
+ * lastmod, so neither the diff nor the window would ever pick it up again.
+ *
+ * `publishedEntries` of null means the live sitemap could not be read. Nothing can be
+ * confirmed live then, so EVERY URL is held rather than any announced: the cost is one
+ * deploy of delay, while the alternative risks announcing 404s.
+ *
+ * @param {string[]} urls
+ * @param {Array<{ loc: string, lastmod: string | null }> | null} publishedEntries
+ * @returns {{ live: string[], held: string[] }} both in input order
+ */
+export function splitByPublished(urls, publishedEntries) {
+	const list = Array.isArray(urls) ? urls : [];
+	if (publishedEntries === null || !Array.isArray(publishedEntries)) {
+		return { live: [], held: [...list] };
+	}
+	const published = new Set(publishedEntries.map((e) => e?.loc).filter(Boolean));
+	const live = [];
+	const held = [];
+	for (const url of list) (published.has(url) ? live : held).push(url);
+	return { live, held };
+}
+
+/**
+ * Read a pending list as written by the build hook: a JSON array of URL strings.
+ * Anything else - bad JSON, a non-array, non-string items - reads as empty, because a
+ * corrupt handoff should cost the held URLs, not the build.
+ *
+ * @param {string} text
+ * @returns {string[]}
+ */
+export function parsePendingList(text) {
+	try {
+		const data = JSON.parse(text);
+		if (!Array.isArray(data)) return [];
+		return [...new Set(data.filter((u) => typeof u === 'string' && u.length > 0))];
+	} catch {
+		return [];
+	}
 }
 
 // ---------------------------------------------------------------- payload
@@ -463,6 +523,47 @@ export async function fetchPublishedSitemap({
 	}
 	const entries = parseSitemapEntries(xml);
 	return { ok: true, entries, status: response.status, message: `read ${entries.length} published URL(s)` };
+}
+
+/**
+ * Fetch the pending list the live deployment's build held back (see splitByPublished).
+ *
+ * Always resolves, and always with an array. A 404 is the normal answer for a deploy
+ * that held nothing, or for the first deploy after this file was introduced; any other
+ * failure loses only the held URLs, which the window still covers if they are dated.
+ * Cache-busted for the same reason as fetchPublishedSitemap().
+ *
+ * @param {{ url?: string, fetchImpl: Function, timeoutMs?: number, cacheBuster?: string }} input
+ * @returns {Promise<{ ok: boolean, urls: string[], status: number | null, message: string }>}
+ */
+export async function fetchPublishedPending({
+	url = PUBLISHED_PENDING_URL,
+	fetchImpl,
+	timeoutMs = REQUEST_TIMEOUT_MS,
+	cacheBuster,
+}) {
+	const bust = cacheBuster ?? String(Date.now());
+	const target = `${url}${url.includes('?') ? '&' : '?'}indexnow-diff=${encodeURIComponent(bust)}`;
+	let response;
+	try {
+		response = await fetchWithTimeout(fetchImpl, target, { method: 'GET' }, timeoutMs);
+	} catch (error) {
+		return { ok: false, urls: [], status: null, message: `could not fetch ${url}: ${error?.message || error}` };
+	}
+	if (response.status === 404) {
+		return { ok: true, urls: [], status: 404, message: 'no pending list published' };
+	}
+	if (!response.ok) {
+		return { ok: false, urls: [], status: response.status, message: `HTTP ${response.status} fetching ${url}` };
+	}
+	let text;
+	try {
+		text = await response.text();
+	} catch (error) {
+		return { ok: false, urls: [], status: response.status, message: `could not read ${url}: ${error?.message || error}` };
+	}
+	const urls = parsePendingList(text);
+	return { ok: true, urls, status: response.status, message: `read ${urls.length} pending URL(s)` };
 }
 
 /**

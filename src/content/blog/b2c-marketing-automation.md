@@ -44,7 +44,7 @@ Three forces are making automation non-negotiable for B2C brands right now:
 
 ### AI Has Made Personalization Accessible
 
-You no longer need a data science team to deliver 1:1 personalization. Modern B2C marketing automation platforms use AI to generate product recommendations, optimize send times, and predict churn - all out of the box. If you're exploring how AI fits into your marketing stack, check out these [free AI tools for marketing](/blog/free-ai-tools-for-marketing) that pair well with automation platforms.
+You no longer need a data science team to deliver 1:1 personalization. Modern B2C marketing automation platforms use AI to generate product recommendations, optimize send times, and predict churn - all out of the box. If you're exploring how AI fits into your marketing stack, check out these [free AI tools for marketing](/blog/free-ai-tools-for-marketing/) that pair well with automation platforms.
 
 ### The Revenue Impact Is Measurable
 
@@ -96,7 +96,7 @@ When a customer views products but doesn't add to cart, browse abandonment email
 
 SMS messages have a 98% open rate ([EZ Texting](https://www.eztexting.com/resources/sms-resources/unbelievable-text-message-marketing-statistics)), making it a powerful complement to email. Use SMS for time-sensitive messages - flash sales, back-in-stock alerts, delivery notifications, and abandoned cart follow-ups.
 
-For ideas on making these messages more engaging, see our guide on [email interactivity](/blog/increase-interactivity-in-your-emails) - many of the same principles apply to SMS and push.
+For ideas on making these messages more engaging, see our guide on [email interactivity](/blog/increase-interactivity-in-your-emails/) - many of the same principles apply to SMS and push.
 
 ## Best B2C Marketing Automation Tools
 
@@ -155,7 +155,7 @@ Don't try to automate everything at once. Follow this phased approach:
 2. Abandoned cart recovery (3 emails)
 3. Post-purchase follow-up (2 emails)
 
-These three workflows alone will capture the majority of your automation revenue. If you're launching a new product alongside this, our [marketing strategy for new product](/blog/marketing-strategy-for-new-product) guide covers how automation fits into a broader launch plan.
+These three workflows alone will capture the majority of your automation revenue. If you're launching a new product alongside this, our [marketing strategy for new product](/blog/marketing-strategy-for-new-product/) guide covers how automation fits into a broader launch plan.
 
 ### Phase 2: Optimization (Week 3-6)
 
@@ -171,7 +171,7 @@ Key segments to build:
 
 **Layer in additional channels and advanced flows.** Add SMS automation for high-intent triggers. Build browse abandonment flows. Create a win-back series for lapsed customers.
 
-This is also when you should explore AI-powered features - predictive product recommendations, send time optimization, and churn prediction. You can use [ChatGPT prompts for marketing](/blog/chatgpt-prompts-for-marketing) to draft automation copy faster.
+This is also when you should explore AI-powered features - predictive product recommendations, send time optimization, and churn prediction. You can use [ChatGPT prompts for marketing](/blog/chatgpt-prompts-for-marketing/) to draft automation copy faster.
 
 ## B2C Marketing Automation Best Practices
 

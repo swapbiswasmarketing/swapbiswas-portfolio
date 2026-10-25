@@ -98,3 +98,17 @@ export const SITEMAP_FILE = 'sitemap-0.xml';
  * file is not live yet either.)
  */
 export const PUBLISHED_SITEMAP_URL = `${SITE_ORIGIN}/${SITEMAP_FILE}`;
+
+/**
+ * URLs a build held back because the live site did not serve them yet (new pages),
+ * written to the build output root as a JSON array of strings.
+ *
+ * This is the one piece of state the feature keeps, and it lives where the rest does:
+ * on the live site. Build N writes it into dist/; once Vercel promotes build N, build
+ * N+1 fetches it from PUBLISHED_PENDING_URL and announces whatever is now published.
+ * It is a build-output file only - no page links to or loads it.
+ */
+export const PENDING_FILE = 'indexnow-pending.json';
+
+/** The pending list as served by the live site (during a build: the previous deployment's). */
+export const PUBLISHED_PENDING_URL = `${SITE_ORIGIN}/${PENDING_FILE}`;

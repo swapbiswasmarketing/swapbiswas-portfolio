@@ -1,5 +1,5 @@
 ---
-title: "Claude Pro Price in India: App Store, Google Play and Web"
+title: "Claude Pro Price in India: Rs 1,999 in Apps, $20 on the Web"
 description: "The Claude Pro price in India depends on the checkout: Rs 1,999 a month on Apple's App Store and $20 on Anthropic's pricing page, as read on 10 October 2026."
 publishDate: 2026-10-10
 category: [AI, Tools]

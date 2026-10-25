@@ -120,7 +120,7 @@ const SLOT_ID_PATTERN = /^[0-9]{8,12}$/;
  * @property {string} style    the inline style that ships on the <ins>
  * @property {string} [format] data-ad-format
  * @property {string} [fullWidthResponsive] data-full-width-responsive
- * @property {string} [label]  set to '' to drop the "Advertisement" caption
+ * @property {string} [label]  set to '' to drop the "Advertisements" caption
  */
 
 /** @type {Record<string, AdUnitConfig>} */
@@ -210,16 +210,59 @@ export const AD_SLOTS = {
  *     display ad" is the accidental-click shape placement policy is written against.
  *
  * So each step names the minimum prose above and below the slot, and the plugin rejects
- * a candidate whose preceding block is an image, a figure, a <pre> or an unparsed raw
- * node. Measured outcome with these numbers: 82 posts get one unit, 57 get two, and 5
- * get none, which is the right answer for the thin and code-heavy end of the corpus.
+ * a candidate whose preceding block is in UNSAFE_BEFORE_TAGS below or is an unparsed raw
+ * node. The unit is always spliced in immediately BEFORE a candidate heading, so the
+ * block under it is that heading and never a table, a list or a code sample.
  *
- * minH2Gap is counted in qualifying h2 positions, not word distance, so the two units
- * are never adjacent sections.
+ * WHY h3 IS A CANDIDATE AND THE SPACING IS IN WORDS (growth audit 2026-10-25, ADS-01).
+ * The first version matched h2 only and spaced the two units with minH2Gap: 4, counted
+ * in h2 positions. Measured on the 251-post build, both choices left most of the long
+ * tail empty. 20 posts had no in-article unit, the median post had 1,286 words after its
+ * last one, and 84 posts had 1,500 or more:
+ *   - A long h2 section made of h3 steps offers no slot at all. The checklist in
+ *     how-to-conduct-a-technical-seo-site-audit runs from word 351 to 2,251 with only
+ *     h3s inside, so that post, one of the best-ranking on the site, carried no unit.
+ *   - Four h2s is a word distance only when sections are long. On a post with short
+ *     sections every h2 four positions on sat under a list or inside the last 500 words,
+ *     so the second unit never placed.
+ * minWordGap is prose words since the previous in-article unit, which is the distance a
+ * reader actually scrolls. Every unsafe-before rule still applies to h3 candidates, and
+ * the heading tags are in that list too, so a unit never splits a heading from the
+ * heading under it (the common "## Checklist" then "### Step 1" shape).
+ *
+ * Measured outcome, simulated on the 251-post build by running this plugin on the
+ * article trees: posts with 0/1/2 in-article units go from 20/164/67 to 7/131/113, no
+ * post loses a unit, and the median first unit moves from word 843 to word 734. All 357
+ * placements sit under a paragraph and above an h2 or h3. The 7 posts left with none
+ * are under 1,100 words, or (product-marketing-interview-questions) have every candidate
+ * under a list.
+ *
+ * Two steps, so at most two in-article units per post. The end-of-post unit is placed
+ * by the template, not here, and is unaffected. A third step waits for per-unit Active
+ * View data on blogInArticleLong: units past word 2,600 are requested by the 2000px push
+ * margin whether or not the reader gets there, and low viewability drags account bids.
  */
+// The heading tags a unit may be placed in front of. Top-level only: a heading nested in
+// a raw HTML block or a list is never a candidate. Carried on each step rather than as
+// a separate plugin option so it rides in the hashed config through IN_ARTICLE_PLAN,
+// which astro.config.mjs already passes.
+const IN_ARTICLE_SLOT_TAGS = ['h2', 'h3'];
+
 export const IN_ARTICLE_PLAN = [
-	{ name: 'blogInArticle', minWordsBefore: 600, minWordsAfter: 500, minH2Gap: 0 },
-	{ name: 'blogInArticleLong', minWordsBefore: 1800, minWordsAfter: 500, minH2Gap: 4 },
+	{
+		name: 'blogInArticle',
+		slotTags: IN_ARTICLE_SLOT_TAGS,
+		minWordsBefore: 600,
+		minWordsAfter: 500,
+		minWordGap: 0,
+	},
+	{
+		name: 'blogInArticleLong',
+		slotTags: IN_ARTICLE_SLOT_TAGS,
+		minWordsBefore: 1800,
+		minWordsAfter: 500,
+		minWordGap: 800,
+	},
 ];
 
 /**
@@ -232,6 +275,10 @@ export const IN_ARTICLE_PLAN = [
  *   ul / ol    - list items in this corpus frequently contain outbound links
  *   table      - a bordered data block; an ad flush under one reads as a table footer
  *   blockquote - a pull quote reads as editorial voice, and an ad under it inherits it
+ *   h1 to h6   - a heading belongs to the block under it. An ad right below one reads
+ *                as that section's content, the misleading-header case in the AdSense
+ *                placement policy. Needed since h3 became a slot position: an h3 that
+ *                directly follows its h2 is the usual shape in this corpus
  *
  * THIS LIVES HERE, NOT IN THE PLUGIN, FOR THE SAME REASON THE SLOT TABLE DOES.
  * Astro hashes the plugin OPTIONS but serialises the plugin FUNCTION to null, so
@@ -243,7 +290,21 @@ export const IN_ARTICLE_PLAN = [
  * If you change the plugin's algorithm rather than its data, delete .astro/ to force
  * a re-render.
  */
-export const UNSAFE_BEFORE_TAGS = ['pre', 'figure', 'img', 'ul', 'ol', 'table', 'blockquote'];
+export const UNSAFE_BEFORE_TAGS = [
+	'pre',
+	'figure',
+	'img',
+	'ul',
+	'ol',
+	'table',
+	'blockquote',
+	'h1',
+	'h2',
+	'h3',
+	'h4',
+	'h5',
+	'h6',
+];
 
 /**
  * Throws on a unit name that is not in the table.
@@ -286,7 +347,7 @@ function attr(name, value) {
  *
  * data-pagefind-ignore is not optional. On a blog post this markup lands inside
  * .content-column, which carries data-pagefind-body, so without it the word
- * "Advertisement" is indexed into the site's own search results.
+ * "Advertisements" is indexed into the site's own search results.
  *
  * There is deliberately no inline push() script beside the <ins>, even though that is
  * how Google prints the snippet. Astro's ClientRouter de-duplicates inline scripts by
@@ -306,9 +367,12 @@ function attr(name, value) {
 export function adUnitHtml(name, slots = AD_SLOTS) {
 	if (!isAdEnabled(name, slots)) return '';
 	const unit = slots[name];
-	// "Advertisement" is one of the two labels AdSense permits. Anything else, or an
-	// unlabelled unit under a heading, is what the misleading-header clause covers.
-	const label = unit.label === '' ? '' : '<span class="ad-label">Advertisement</span>';
+	// Google's ad placement policies (support.google.com/adsense/answer/1346295) say
+	// publishers "may only label Google ads with either "Advertisements" or "Sponsored
+	// Links"". Plural: the singular "Advertisement" this used to render is not on that
+	// list. Any other wording, or an unlabelled unit under a heading, is what the
+	// misleading-header clause covers.
+	const label = unit.label === '' ? '' : '<span class="ad-label">Advertisements</span>';
 	return (
 		`<div class="ad-slot ad-slot--${unit.variant}" data-pagefind-ignore>` +
 		label +

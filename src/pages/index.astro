@@ -70,6 +70,23 @@ const showSelectedWork = false;
 				pl.setAttribute('imagesizes', '(min-width: 1552px) 900px, (min-width: 50em) 58vw, 100vw');
 				document.head.appendChild(pl);
 			} catch (e) {}
+			// The window flag only survives ClientRouter navigations, so a reload or a new
+			// tab replayed the 2.5 s intro. The sessionStorage flag caps it at once per tab
+			// session: reloads and full loads in the same tab skip it (a brand-new tab gets
+			// a fresh sessionStorage and still plays it). Read here, before first paint, so
+			// a repeat visit never adds
+			// .signal-js: the loader and the hidden hero start states never paint.
+			// __signalReleased sends the GSAP code down the failsafe branch (settle the
+			// strand, do not re-hide the hero), the same state a ClientRouter return is in
+			// once the 6s failsafe below has fired. Without it that code would re-hide the
+			// hero and wait 3.2s for a loader cue that never comes. Storage can throw
+			// (blocked site data), so a failure here only means the intro plays again.
+			try {
+				if (!window.__signalLoaderShown && sessionStorage.getItem('signalLoaderShown')) {
+					window.__signalLoaderShown = true;
+					window.__signalReleased = true;
+				}
+			} catch (e) {}
 			try {
 				var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 				if (!reduce && !window.__signalLoaderShown) {
@@ -163,6 +180,10 @@ const showSelectedWork = false;
 					return;
 				}
 				window.__signalLoaderShown = true;
+				// Marks the session as soon as the intro starts, so a reload mid-count skips it.
+				try {
+					sessionStorage.setItem('signalLoaderShown', '1');
+				} catch (e) {}
 
 				// gsap eases, verbatim from node_modules/gsap/gsap-core.js.
 				// power2 is Cubic, power3 is Quart; Expo is gsap's blended variant, not

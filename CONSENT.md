@@ -35,8 +35,17 @@ wrong here:
 
 1. `adsbygoogle.js` is what renders the consent message. Gating the AdSense loader on
    consent means the message never loads, consent can never be collected, and no ads
-   serve in the EEA at all. The loader stays unconditional, and `ensureLoader()` in
-   BaseLayout must keep re-asserting it after every head swap.
+   serve in the EEA at all. The loader stays unconditional with respect to consent, and
+   `ensureLoader()` in BaseLayout must keep re-asserting it after every head swap.
+   Since 2026-10-25 it is gated on page type and visitor instead: it loads only where
+   MainHead writes `<meta name="x-ads">` (posts, `/blog/`, tool pages, the only pages
+   with manual units; Google's publisher policy keeps ads off error and navigation-only
+   screens), and only when MainHead booted the tags (`__tagBoot`: production host, not
+   `navigator.webdriver`, not opted out with `?noads=1`). Consequence for the EEA, the UK
+   and Switzerland: home, about, contact, privacy, the 404 page, category lists and the
+   `/tools/` index show no consent message, so a visitor landing there stays in the
+   region default (denied, cookieless pings) until a content page loads the message.
+   US and India visitors are unaffected apart from not getting Auto ads on those pages.
 2. There is no server-side geo signal on this static site, so basic mode would have to
    withhold tags from everyone, which changes US and India behaviour. Out of scope by
    definition.

@@ -12,11 +12,11 @@ img_alt: "Renaissance-style still life of sealed letters, a quill and an open le
 
 A structured competitive product analysis closes that gap. It gives product marketers a systematic way to evaluate competitor offerings, identify positioning opportunities, and arm sales teams with intelligence that actually wins deals.
 
-This guide walks through a complete framework for running competitive product analysis - from choosing what to evaluate to turning findings into [battlecards](/blog/competitive-battlecard-template), positioning shifts, and product roadmap recommendations.
+This guide walks through a complete framework for running competitive product analysis - from choosing what to evaluate to turning findings into [battlecards](/blog/competitive-battlecard-template/), positioning shifts, and product roadmap recommendations.
 
 ## Why Competitive Product Analysis Matters
 
-Competitive product analysis is the foundation of every other competitive deliverable your team produces. Without it, your [battlecards](/blog/competitive-battlecard-template) are guesswork, your [positioning](/blog/product-positioning) is reactive, and your sales team is improvising against competitors who came prepared. The analysis also tells you which of your own advantages are temporary, which matters most [once a competitor copies the feature you led with](/blog/how-to-differentiate-your-product-when-competitors-copy-your-features/).
+Competitive product analysis is the foundation of every other competitive deliverable your team produces. Without it, your [battlecards](/blog/competitive-battlecard-template/) are guesswork, your [positioning](/blog/product-positioning/) is reactive, and your sales team is improvising against competitors who came prepared. The analysis also tells you which of your own advantages are temporary, which matters most [once a competitor copies the feature you led with](/blog/how-to-differentiate-your-product-when-competitors-copy-your-features/).
 
 **61% of businesses report direct revenue impact from their competitive intelligence investments** ([Crayon](https://www.crayon.co/blog/new-data-competitive-intelligence-increases-revenue)). And companies using conversational intelligence tools for competitive insights report **82% higher sales effectiveness** ([Crayon State of CI 2025](https://www.crayon.co/state-of-competitive-intelligence)).
 
@@ -26,7 +26,7 @@ But the quality of those insights depends entirely on the rigor of your underlyi
 
 General competitive intelligence covers everything - funding rounds, leadership changes, marketing campaigns, pricing shifts. Competitive product analysis narrows the focus to the product itself: features, capabilities, architecture, user experience, and the problems each product solves.
 
-This distinction matters because [product marketing](/blog/what-is-product-marketing) teams need to translate product-level differences into positioning narratives and sales enablement content. You can't do that with high-level market intelligence alone.
+This distinction matters because [product marketing](/blog/what-is-product-marketing/) teams need to translate product-level differences into positioning narratives and sales enablement content. You can't do that with high-level market intelligence alone.
 
 ## What to Include in a Competitive Product Analysis
 
@@ -50,7 +50,7 @@ You don't need deep analysis on every company in your space. Segment competitors
 - **Tier 2 - Secondary:** Appear occasionally or target adjacent segments. Moderate analysis, updated semi-annually.
 - **Tier 3 - Emerging:** New entrants or niche players. Light monitoring, revisit when they show up in pipeline.
 
-Understanding who your [ideal customer](/blog/icp-vs-buyer-persona) is makes this prioritization much easier. If you know exactly who you sell to, you can identify which competitors are fighting for the same buyers.
+Understanding who your [ideal customer](/blog/icp-vs-buyer-persona/) is makes this prioritization much easier. If you know exactly who you sell to, you can identify which competitors are fighting for the same buyers.
 
 ## Step-by-Step Competitive Product Analysis Framework
 
@@ -67,7 +67,7 @@ Before you open a single competitor's website, establish what you're measuring a
 - Win/loss interview themes (what capabilities come up repeatedly?)
 - Sales call recordings (what features do prospects compare?)
 - Support ticket patterns (where do customers hit limitations?)
-- Your [ICP](/blog/icp-vs-buyer-persona) and their top jobs-to-be-done
+- Your [ICP](/blog/icp-vs-buyer-persona/) and their top jobs-to-be-done
 
 Build a weighted scoring rubric. A capability that influences 40% of deal outcomes deserves more weight than a nice-to-have feature.
 
@@ -109,7 +109,7 @@ See our [competitive analysis examples](/blog/competitive-analysis-examples/) fo
 - **Proof points:** Customer logos, case studies, specific metrics they cite
 - **Category framing:** How they define the market category (and where they place themselves in it)
 
-Compare this against your own [product positioning](/blog/product-positioning). Where do you make the same claims? Where do you differentiate? Where does a competitor's messaging expose a gap in your own narrative? This analysis feeds directly into your [go-to-market strategy](/blog/go-to-market-strategy-template/) and informs how you position against alternatives during launches.
+Compare this against your own [product positioning](/blog/product-positioning/). Where do you make the same claims? Where do you differentiate? Where does a competitor's messaging expose a gap in your own narrative? This analysis feeds directly into your [go-to-market strategy](/blog/go-to-market-strategy-template/) and informs how you position against alternatives during launches.
 
 To turn the audit into a picture, score your product and each primary competitor on two attributes buyers decide on, then plot them in this [editable positioning map template](/blog/competitive-positioning-map/) with one dated source per dot.
 
@@ -130,7 +130,7 @@ A competitive product analysis that lives in a Google Doc nobody reads is worthl
 
 **Distribution channels:**
 
-- **Sales:** Turn key findings into [competitive battlecards](/blog/competitive-battlecard-template) embedded in your CRM.
+- **Sales:** Turn key findings into [competitive battlecards](/blog/competitive-battlecard-template/) embedded in your CRM.
 - **Product:** Present gap analysis in product review meetings with specific recommendations.
 - **Marketing:** Feed positioning insights into campaign messaging and content strategy.
 - **Leadership:** Quarterly competitive landscape briefings with trend analysis.

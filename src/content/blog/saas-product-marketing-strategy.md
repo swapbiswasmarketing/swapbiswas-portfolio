@@ -14,7 +14,7 @@ In traditional product marketing, the job is largely done after the sale. In Saa
 
 ## What Makes SaaS Product Marketing Strategy Different
 
-If you understand [what product marketing is](/blog/what-is-product-marketing) at a foundational level, SaaS product marketing builds on every one of those principles - then adds layers of complexity.
+If you understand [what product marketing is](/blog/what-is-product-marketing/) at a foundational level, SaaS product marketing builds on every one of those principles - then adds layers of complexity.
 
 Three structural differences set SaaS apart:
 
@@ -30,7 +30,7 @@ When the product is bought by engineers, that channel extends into the documenta
 
 ### Buyers and Users Are Often Different People
 
-The VP who signs the contract is rarely the person using the product daily. SaaS product marketers need messaging for both the economic buyer (ROI, security, compliance) and the end user (ease of use, time saved, workflow fit). Your [ICP and buyer personas](/blog/icp-vs-buyer-persona) must account for this split.
+The VP who signs the contract is rarely the person using the product daily. SaaS product marketers need messaging for both the economic buyer (ROI, security, compliance) and the end user (ease of use, time saved, workflow fit). Your [ICP and buyer personas](/blog/icp-vs-buyer-persona/) must account for this split.
 
 ## The SaaS Product Marketing Strategy Framework
 
@@ -51,14 +51,14 @@ Most PMMs spend the majority of their time on the first three pillars and neglec
 
 ## Positioning and Messaging for SaaS
 
-[Product positioning](/blog/product-positioning) in SaaS requires you to answer a question that shifts over time: as your product evolves, so does your competitive landscape.
+[Product positioning](/blog/product-positioning/) in SaaS requires you to answer a question that shifts over time: as your product evolves, so does your competitive landscape.
 
 ### The SaaS Positioning Stack
 
 Build your positioning in layers:
 
 1. **Category positioning** - What market do you compete in? Pick a category buyers already understand.
-2. **Competitive positioning** - Why you over alternatives? Build a [competitive battlecard](/blog/competitive-battlecard-template) for every major rival.
+2. **Competitive positioning** - Why you over alternatives? Build a [competitive battlecard](/blog/competitive-battlecard-template/) for every major rival.
 3. **Use-case positioning** - Different personas use the product differently. A project management tool positions itself as "collaboration software" for teams but "resource planning" for managers.
 
 ### Messaging Architecture
@@ -101,7 +101,7 @@ Tiering prevents launch fatigue. If everything is a "major launch," nothing is.
 
 ### Coordinating with Your Go-to-Market Plan
 
-Every significant launch needs a [go-to-market strategy](/blog/go-to-market-strategy-template) that coordinates timing, channels, messaging, and enablement. The GTM plan ensures marketing, sales, product, and customer success are aligned before launch day. That alignment is easier to hold when the plan is built in order, since the segment and positioning you commit to constrain the motion and channels that follow - the sequence behind [the five layers of a SaaS GTM plan](/blog/saas-go-to-market-strategy/).
+Every significant launch needs a [go-to-market strategy](/blog/go-to-market-strategy-template/) that coordinates timing, channels, messaging, and enablement. The GTM plan ensures marketing, sales, product, and customer success are aligned before launch day. That alignment is easier to hold when the plan is built in order, since the segment and positioning you commit to constrain the motion and channels that follow - the sequence behind [the five layers of a SaaS GTM plan](/blog/saas-go-to-market-strategy/).
 
 ## Driving Product Adoption and Retention
 
@@ -162,8 +162,8 @@ If you're starting from scratch or rebuilding your approach, here's the sequence
 ### Phase 1: Foundation (Months 1-2)
 
 - **Nail your positioning.** Interview 15-20 customers and 5-10 churned customers. Understand why people buy, stay, and leave.
-- **Build your ICP.** Define your [ideal customer profile](/blog/icp-vs-buyer-persona) based on data, not assumptions. Look at your highest-NRR accounts for patterns.
-- **Audit your competitive landscape.** Create [battlecards](/blog/competitive-battlecard-template) for your top three competitors using insights from your [competitive intelligence analysis](/blog/competitive-intelligence-analysis/). Update them quarterly.
+- **Build your ICP.** Define your [ideal customer profile](/blog/icp-vs-buyer-persona/) based on data, not assumptions. Look at your highest-NRR accounts for patterns.
+- **Audit your competitive landscape.** Create [battlecards](/blog/competitive-battlecard-template/) for your top three competitors using insights from your [competitive intelligence analysis](/blog/competitive-intelligence-analysis/). Update them quarterly.
 
 ### Phase 2: Enablement (Months 2-3)
 

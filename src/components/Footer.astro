@@ -7,12 +7,16 @@ const currentYear = new Date().getFullYear();
 const posts = (await getCollection('blog'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
+// Popular Reads = the posts that actually earn clicks, from Search Console (28 days to
+// 2026-10-23), so every page links to them sitewide. Evergreen only: jio-gemini-pro-offer
+// had more clicks than three of these but its offer window closes on 29 Oct 2026.
+// Re-pull GSC and revise this list when the ranking moves; a missing slug falls back to
+// the four newest posts below.
 const featuredSlugs = [
-	'ai-seo-strategy',
-	'aeo-vs-seo',
-	'competitive-battlecard-template',
-	'marketers-ai-maturity-curve',
-	'go-to-market-strategy-for-startups',
+	'claude-student-discount-india',
+	'chatgpt-go-free-india',
+	'claude-pro-price-in-india',
+	'how-to-get-linkedin-premium-free',
 ];
 const featuredPosts = featuredSlugs
 	.map((slug) => posts.find((p) => p.id === slug))

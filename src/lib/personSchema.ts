@@ -84,6 +84,9 @@ export const personSchema = {
 		'https://github.com/swapbiswasmarketing/',
 		'https://www.instagram.com/swapbiswas/',
 		'https://medium.com/@swapbiswas',
+		// Confirmed 2026-10-25: the Dev.to API lists 5 articles for this username, each
+		// with its canonical_url on swapbiswas.com.
+		'https://dev.to/swapbiswas',
 		'https://www.testmuai.com/learning-hub/author/swapnil-biswas/',
 		'https://swapnil-biswas.kit.com/profile',
 	],
