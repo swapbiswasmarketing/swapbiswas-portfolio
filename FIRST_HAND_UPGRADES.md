@@ -478,3 +478,15 @@ Can you send a dated desktop screenshot and a dated phone screenshot of your own
 ## faq-schema
 
 Now that Google shows neither result, do you want to keep or remove the FAQPage markup across the site (222 posts, all 9 tool pages and the contact page) and the HowTo markup on the 10 howTo posts, and why? The answer belongs in 'The Template That Emits FAQPage on 222 Posts', after the counts table. Recount that table whenever the post is next edited.
+
+## copilot-vs-chatgpt
+
+In your own non-employer work (this site, LinkedIn drafts, side builds), do you reach for Microsoft Copilot or ChatGPT for any task, and if so which edition and which task? The answer belongs after the decision table in 'Copilot vs ChatGPT: Which to Pick by Reader'. Never include employer details.
+
+## framer-pricing
+
+Have you ever priced Framer (or another visual builder) for a landing page or for your own site, and if so, what made you build swapbiswas.com as a static Astro site instead? Only if true; the answer belongs in the final section, 'Price the Bill, Not the Plan'.
+
+## what-are-gemini-gems
+
+Have you ever built a Gemini Gem (for example one that writes the Nano Banana image prompts for your LinkedIn posts in the house style), and if so, what did its instructions say and did it have knowledge files attached? It would replace the 'Image-prompt writer' illustration row in 'What Are Gemini Gems Used For? Premade Gems and Examples' with the real instructions, before personal-account Gems become read-only on 17 November 2026.

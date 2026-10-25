@@ -42,6 +42,8 @@ Each cell records what Google wrote in the place named at the top of its column 
 | DeepSeek | Not named | Yes, spelled "Deepseek" | Not named | Not named | 1 |
 | Grok | Not named | Yes | Not named | Not named | 1 |
 
+Copilot in that table means Microsoft's assistant, a separate product from ChatGPT even though both offer OpenAI models, and my [breakdown of which Copilot is which](/blog/copilot-vs-chatgpt/) sorts out the editions.
+
 The three values have separate triggers in Google's rule:
 
 | Field in your reports | Value GA4 writes | When, per Google's rule |

@@ -71,7 +71,7 @@ Here's the stack that covers 90% of what most marketing teams need - not 27 tool
 
 **What it replaces:** Separate landing page builder, form builder, blog platform, portfolio site
 
-Your website is your marketing foundation. Pick a platform that handles your site, blog, landing pages, and forms in one place. Don't pay for a separate landing page tool when your CMS already does it. If the recurring hosting bill is what bothers you most, the static-site option in the table below can genuinely cost nothing - our walkthrough of [how a paid WordPress plan got replaced by a zero-cost Astro and Netlify setup](/blog/wordpress-to-astro-netlify-migration/) shows what you trade away (a visual editor) and what you get back (no plugin updates and about 25 Lighthouse points).
+Your website is your marketing foundation. Pick a platform that handles your site, blog, landing pages, and forms in one place. Don't pay for a separate landing page tool when your CMS already does it. If the recurring hosting bill is what bothers you most, the static-site option in the table below can genuinely cost nothing - our walkthrough of [how a paid WordPress plan got replaced by a zero-cost Astro and Netlify setup](/blog/wordpress-to-astro-netlify-migration/) shows what you trade away (a visual editor) and what you get back (no plugin updates and about 25 Lighthouse points). If you are weighing a visual builder instead, I added up [what a Framer team really pays each month](/blog/framer-pricing/), where editor seats and extra languages push the bill past three times the plan price.
 
 **Options by budget:**
 

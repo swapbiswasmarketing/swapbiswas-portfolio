@@ -136,7 +136,7 @@ These are the plans on Google's India plan page and Google One's plans page, rea
 | Up to 5 TB | Google AI Pro | ₹1,950 | ₹19,500 | "4x higher usage access than Free-of-charge", Gemini in Docs, YouTube Premium Lite |
 | Over 5 TB | Google AI Ultra | From ₹6,500, or ₹19,500 for "20x higher usage limits vs AI Pro" | Not shown | "Cloud storage starting at 20 TB" |
 
-The monthly prices for Free, AI Plus, AI Pro and Ultra come from Google's India plan page. Lite, Basic and every yearly price come from [Google One's plans page](https://one.google.com/about/plans), whose annual toggle reads "Save up to 16%". Neither page shows a tax line, and Google's India plan page adds "Cancel at any time. No refunds for partial billing periods, except as required by applicable law."
+The monthly prices for Free, AI Plus, AI Pro and Ultra come from Google's India plan page. Lite, Basic and every yearly price come from [Google One's plans page](https://one.google.com/about/plans), whose annual toggle reads "Save up to 16%". Neither page shows a tax line, and Google's India plan page adds "Cancel at any time. No refunds for partial billing periods, except as required by applicable law." The Gems in the Free row are on their way out on personal accounts: they turn into skills and go read-only on 17 November 2026, then leave the Gemini app on 17 December 2026, and [my guide to what happens to your Gems](/blog/what-are-gemini-gems/) covers both dates.
 
 Arithmetic on those prices, mine rather than Google's or Jio's:
 

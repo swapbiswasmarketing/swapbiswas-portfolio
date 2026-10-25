@@ -48,7 +48,7 @@ Let's get into it.
 
 **What it does:** Google's AI assistant with access to real-time search, Google Workspace integration, and multimodal capabilities.
 
-**Free tier includes:** Google's [plan page](https://gemini.google/subscriptions/), read logged out from India on 16 October 2026, lists access to its Flash-Lite model, image generation and editing, Deep Research, Canvas, and Gems. With auto model selection on, prompts that need more reasoning may use Flash or Pro, according to Google's [model help page](https://support.google.com/gemini/answer/18648722). Gemini inside Gmail and other Google apps comes with the paid Google AI plans.
+**Free tier includes:** Google's [plan page](https://gemini.google/subscriptions/), read logged out from India on 16 October 2026, lists access to its Flash-Lite model, image generation and editing, Deep Research, Canvas, and Gems. With auto model selection on, prompts that need more reasoning may use Flash or Pro, according to Google's [model help page](https://support.google.com/gemini/answer/18648722). Gemini inside Gmail and other Google apps comes with the paid Google AI plans. Gems are the item on that list with a deadline: on personal accounts for people 18 and over they turn into skills and go read-only on 17 November 2026, and [my explainer on the Gems-to-skills switch](/blog/what-are-gemini-gems/) has the dates and a checklist for saving your knowledge files.
 
 **Best for:** Research-heavy content where you need current data, analyzing competitor content, and generating content that needs factual grounding.
 

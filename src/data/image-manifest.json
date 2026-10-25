@@ -716,6 +716,14 @@
 		],
 		"hash": "eadef0102f157a8c"
 	},
+	"/assets/blog/copilot-vs-chatgpt/which-copilot-map.webp": {
+		"w": 1200,
+		"h": 780,
+		"v": [
+			660
+		],
+		"hash": "c3e5b611000cec9a"
+	},
 	"/assets/blog/customer-advisory-board/cab-scorecard.webp": {
 		"w": 1200,
 		"h": 934,
@@ -987,6 +995,14 @@
 			660
 		],
 		"hash": "54c303f26b7fec82"
+	},
+	"/assets/blog/framer-pricing/framer-bills.webp": {
+		"w": 1200,
+		"h": 660,
+		"v": [
+			660
+		],
+		"hash": "d34483848221b266"
 	},
 	"/assets/blog/ga4-ai-assistant-channel/where-ai-traffic-lands.webp": {
 		"w": 1200,
@@ -2230,6 +2246,14 @@
 			660
 		],
 		"hash": "4a55aa23cfab3c34"
+	},
+	"/assets/blog/what-are-gemini-gems/gems-to-skills-timeline.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "f9724ca665ec39cf"
 	},
 	"/assets/blog/what-does-a-product-marketing-manager-do/pmm-responsibilities.webp": {
 		"w": 1200,

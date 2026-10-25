@@ -47,6 +47,8 @@ I requested [Lovable's pricing page](https://lovable.dev/pricing) logged out fro
 - Neither view had a rupee sign or a tax line.
 - The Hindi version of the page, lovable.dev/hi/pricing, rendered the same $0, $25 and $50.
 
+Not every builder prices India this way. When I loaded Framer's pricing page from an Indian connection on 25 October 2026, it showed its paid plans in rupees, at about 38% of the dollar price converted at market rates, which I broke down in [how Framer prices its plans for India](/blog/framer-pricing/).
+
 The plan docs carry the full tier list in US dollars. Pro and Business each come in eleven credit tiers, from 100 to 10,000 credits a month, and the docs say "Annual billing gives you two months free compared with paying monthly":
 
 | Monthly credits | Pro, billed monthly | Pro, billed annually | Business, billed monthly | Business, billed annually |

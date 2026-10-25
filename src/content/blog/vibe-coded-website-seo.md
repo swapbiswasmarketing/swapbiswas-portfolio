@@ -64,7 +64,7 @@ The pattern is clear. SSR and SSG put your content in the initial HTML, while CS
 
 This trips up almost everyone, because it is invisible during normal use. When you visit your own site, your browser does all the work: it fetches the shell, runs the JavaScript, and paints the finished page.
 
-Googlebot does not work in one pass like that. It fetches the raw HTML first, and for a client-side React app that raw HTML is the empty shell, with nothing to index except a script tag and an empty container.
+Googlebot does not work in one pass like that. It fetches the raw HTML first, and for a client-side React app that raw HTML is the empty shell, with nothing to index except a script tag and an empty container. I found a small version of this gap on Framer's pricing page: its raw HTML carries dollar prices and a script swaps in rupees for visitors from India, so a crawler reading only the raw HTML reports dollars while [the rendered page shows Indian visitors rupee prices](/blog/framer-pricing/).
 
 ### The Two-Wave Problem
 

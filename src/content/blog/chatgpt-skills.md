@@ -170,7 +170,7 @@ The same FAQ adds:
 - The original GPT stays usable until retirement but becomes read-only once migrated.
 - In affected Enterprise workspaces, creating new custom GPTs is planned to end on 26 October 2026.
 
-If you built a GPT for a marketing workflow, test the migrated plugin against a few prompts you already know the answers to before the retirement date.
+If you built a GPT for a marketing workflow, test the migrated plugin against a few prompts you already know the answers to before the retirement date. Google is making a parallel move in its Gemini app, where Gems on personal accounts turn into skills on 17 November 2026, and I list [which parts of a Gem survive the switch](/blog/what-are-gemini-gems/) for anyone who keeps custom instructions in both assistants.
 
 ## Check the Skills Tab Before You Pay for a Plan
 

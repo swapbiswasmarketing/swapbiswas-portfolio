@@ -2909,3 +2909,72 @@ https://swapbiswas.com/blog/faq-schema/?utm_source=linkedin&utm_medium=social&ut
 #SEO #TechnicalSEO #StructuredData #SchemaMarkup #GoogleSearch
 
 ---
+
+### Copilot vs ChatGPT: Which Copilot You Mean and What It Costs
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's oak desk with a plain wooden key rack on which seven brass keys of different sizes and shapes hang in a row, a small closed iron strongbox below them, a leather coin purse spilling a few coins beside the box, a quill and an inkwell at the edge of the desk, a single vermilion red tag tied to one of the seven keys, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Asking whether Copilot beats ChatGPT has no single answer, in my view, until you name which Copilot: the free app, a Microsoft 365 home plan, the chat your employer's license includes, or a paid add-on.
+I put seven Copilot rows side by side from Microsoft's and OpenAI's own pages on 25 October 2026, each paired with the nearest ChatGPT plan and its price.
+
+- Microsoft Learn says Copilot Chat includes "models (like GPT-5)", and Microsoft's Copilot blog of 30 September 2026 says licensed users can pick GPT-6 Sol, GPT-6.1 Sol and Claude models. OpenAI's release notes move ChatGPT's paid plans to GPT-6 Sol from 7 October 2026.
+- Copilot Chat (Basic) is included with eligible Microsoft 365 work licenses, but without a Copilot license it "doesn't provide the broad Microsoft 365 organizational grounding", except inside supported Outlook experiences.
+- Fetched logged out from an Indian connection, Microsoft 365 Personal was Rs 689 a month and Premium Rs 1,999, the same monthly figure as ChatGPT Plus in India. Premium's yearly price of Rs 19,999 is Rs 3,989 less than twelve monthly payments, and OpenAI does not offer annual billing on Go, Plus or Pro.
+- For a team of up to 300 on Microsoft 365 Business, the Copilot Business add-on was $18 per user a month on promotion (list $21) on top of the Business plan, against $20 per user a month for ChatGPT Business billed annually.
+- Microsoft 365 Family's AI is "only available to the subscription owner", so budget the AI per person.
+
+Which Copilot label shows in your own Word or Outlook today?
+
+https://swapbiswas.com/blog/copilot-vs-chatgpt/?utm_source=linkedin&utm_medium=social&utm_campaign=copilot-vs-chatgpt
+
+#MicrosoftCopilot #ChatGPT #Microsoft365 #AITools #GenerativeAI
+
+---
+
+### Framer Pricing in 2026: What a Site Actually Costs
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak counting table with a brass balance scale, one pan holding a single small wooden printing block, the other pan weighed down by several small stacks of coins and loose wooden type blocks, an abacus and a folded blank invoice beside the scale, a quill and an inkwell behind it, a single vermilion red wax seal pressed onto the folded invoice, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+A four-person marketing team on Framer Pro, with two extra editors, one content editor and one translation locale, pays $100 a month at yearly billing, 3.3 times the $30 headline price of Pro.
+The plan is under a third of that bill, so I priced three common Framer setups line by line from framer.com/pricing as I read it on 25 October 2026.
+
+- Each additional editor is $20 a month and each content editor $10 at yearly billing, translation locales are $20 each, and the workspace owner and viewers are free.
+- Basic's limits are fixed at 30 pages, and site redirects are on Pro only, so moving an existing site to Framer or growing past 30 pages means Pro.
+- Fetched logged out from an Indian connection, the page showed Basic at Rs 361 and Pro at Rs 1,084 a month on yearly billing, about 38% of the dollar price at 94.94 rupees per dollar. Tax is added at checkout, which I did not reach.
+- Each extra 1,000 AI credits added Rs 957 a month on both plans, so Pro with its included 3,000 credits (Rs 1,084) costs less than Basic at 3,000 (Rs 2,275).
+- Framer reworked its plans on 16 June 2026: Scale was retired and the editor seat fell from $40 to $20. Any guide that still lists a Scale plan or $40 editors predates June 2026.
+
+When you last priced a website builder, which line on the bill outgrew the plan itself?
+
+https://swapbiswas.com/blog/framer-pricing/?utm_source=linkedin&utm_medium=social&utm_campaign=framer-pricing
+
+#Framer #WebDesign #NoCode #SaaSPricing #MarketingOps
+
+---
+
+### What Are Gemini Gems? What Carries Over Into Skills
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's oak desk with a small open wooden casket lined with worn velvet, a few rough uncut stones in muted ochre and green lying beside it, a row of small folded parchment cards tied in plain twine being moved from the casket into a slim leather case, a few loose cards left behind on the desk, a quill and an inkwell, a single vermilion red wax seal on the clasp of the leather case, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+On personal Google accounts for people 18 and over, Gemini Gems turn into skills and become read-only on 17 November 2026, and are removed from Gemini Apps on 17 December 2026.
+The instructions carry over. Some of the knowledge files do not, according to Google's transition help page.
+
+- Left behind in the conversion: GitHub files, audio, video, legacy .doc, .xls and .ppt files, archives such as .zip and .rar, and the largest files first in any Gem over 100 MB in total.
+- Google's skills help page also lists .docx and .xlsx as "Not supported", while the transition page names only the legacy formats. Download any .docx or .xlsx style guide and convert it to .txt, .md or PDF.
+- Workspace business and enterprise accounts follow no sooner than 1 March 2027, education accounts no sooner than 1 June 2027, and under-18 personal accounts at a date Google has not announced.
+- A skill works inside any chat: you call it with /, stack several in one chat, keep up to 100 active, and download it as a .zip with a SKILL.md file. It needs you to be 18 or over with Keep Activity on.
+- Gems are free: Google's plan page, read logged out from India on 25 October 2026, listed them on the "Free of charge" plan at Rs 0 a month, and its skills page says "Skills are available without a Google AI subscription".
+
+If you rely on a Gem today, which of its knowledge files would you download first?
+
+https://swapbiswas.com/blog/what-are-gemini-gems/?utm_source=linkedin&utm_medium=social&utm_campaign=what-are-gemini-gems
+
+#Gemini #GoogleGemini #AITools #GenerativeAI #Productivity
+
+---

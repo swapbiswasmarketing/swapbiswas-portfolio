@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" width="1400" height="910">
+  <rect x="0" y="0" width="1400" height="910" fill="#f6f4ef"/>
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Which Copilot are you comparing with ChatGPT?</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">US list prices on Microsoft and OpenAI pages, read 25 Oct 2026. The pairings are mine.</text>
+  <text x="60" y="142" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1" fill="#6a645c">MICROSOFT COPILOT</text>
+  <text x="780" y="142" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1" fill="#6a645c">NEAREST CHATGPT PLAN</text>
+
+  <rect x="60" y="158" width="580" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="192" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Free Copilot</text>
+  <text x="84" y="225" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$0 with a free Microsoft account, limited use</text>
+  <line x1="652" y1="200" x2="752" y2="200" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="752,193 766,200 752,207" fill="#15130f"/>
+  <rect x="780" y="158" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="804" y="192" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">ChatGPT Free</text>
+  <text x="804" y="225" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$0, GPT-6 Luna</text>
+
+  <rect x="60" y="256" width="580" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="290" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Microsoft 365 Personal or Family</text>
+  <text x="84" y="323" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$9.99 or $12.99 a month, Copilot in Office apps</text>
+  <line x1="652" y1="298" x2="752" y2="298" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="752,291 766,298 752,305" fill="#15130f"/>
+  <rect x="780" y="256" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="804" y="290" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">ChatGPT Go</text>
+  <text x="804" y="323" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$8 a month, GPT-6 Luna</text>
+
+  <rect x="60" y="354" width="580" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="388" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Microsoft 365 Premium</text>
+  <text x="84" y="421" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$19.99 a month, extensive Copilot use</text>
+  <line x1="652" y1="396" x2="752" y2="396" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="752,389 766,396 752,403" fill="#15130f"/>
+  <rect x="780" y="354" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="804" y="388" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">ChatGPT Plus</text>
+  <text x="804" y="421" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$20 a month, GPT-6 Sol</text>
+
+  <rect x="60" y="452" width="580" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="486" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Microsoft 365 Pro</text>
+  <text x="84" y="519" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$99.99 a month, monthly billing only</text>
+  <line x1="652" y1="494" x2="752" y2="494" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="752,487 766,494 752,501" fill="#15130f"/>
+  <rect x="780" y="452" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="804" y="486" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">ChatGPT Pro</text>
+  <text x="804" y="519" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$100, $200 or $500 a month</text>
+
+  <rect x="60" y="550" width="580" height="84" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="84" y="584" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Copilot Chat at work</text>
+  <text x="84" y="617" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Included with eligible Microsoft 365 licenses</text>
+  <line x1="652" y1="592" x2="752" y2="592" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="752,585 766,592 752,599" fill="#15130f"/>
+  <rect x="780" y="550" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="804" y="584" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">ChatGPT Business</text>
+  <text x="804" y="617" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$20 per user a month, billed yearly</text>
+
+  <rect x="60" y="648" width="580" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="682" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Copilot Business add-on</text>
+  <text x="84" y="715" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$18 promo (list $21) per user, up to 300 users</text>
+  <line x1="652" y1="690" x2="752" y2="690" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="752,683 766,690 752,697" fill="#15130f"/>
+  <rect x="780" y="648" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="804" y="682" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">ChatGPT Business</text>
+  <text x="804" y="715" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$20 per user a month, billed yearly</text>
+
+  <rect x="60" y="746" width="580" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="780" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Copilot add-on (enterprise)</text>
+  <text x="84" y="813" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$30 per user a month paid yearly, reads work data</text>
+  <line x1="652" y1="788" x2="752" y2="788" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="752,781 766,788 752,795" fill="#15130f"/>
+  <rect x="780" y="746" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="804" y="780" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">ChatGPT Enterprise</text>
+  <text x="804" y="813" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Contact sales</text>
+
+  <text x="60" y="874" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">GitHub Copilot is a separate coding product and is not on this map. Prices change; recheck before buying.</text>
+</svg>

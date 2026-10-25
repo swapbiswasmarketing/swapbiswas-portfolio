@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 770" width="1400" height="770">
+  <rect x="0" y="0" width="1400" height="770" fill="#f6f4ef"/>
+
+  <text x="90" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Three Framer bills, per month at yearly billing</text>
+  <text x="90" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">framer.com/pricing, read 25 Oct 2026. Rs = the rupee price the page shows from India.</text>
+
+  <text x="90" y="168" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1.5" fill="#6a645c">SOLO PORTFOLIO ON BASIC</text>
+  <rect x="90" y="184" width="200" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="190" y="220" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Basic plan</text>
+  <text x="190" y="254" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">$10</text>
+  <text x="190" y="282" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 361</text>
+  <text x="1065" y="250" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="30" fill="#15130f">=</text>
+  <rect x="1090" y="184" width="220" height="110" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1200" y="220" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Total</text>
+  <text x="1200" y="254" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">$10</text>
+  <text x="1200" y="282" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 361</text>
+
+  <text x="90" y="344" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1.5" fill="#6a645c">MARKETING TEAM ON PRO, 4 PEOPLE, 2 LANGUAGES</text>
+  <rect x="90" y="360" width="200" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="190" y="396" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro plan</text>
+  <text x="190" y="430" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">$30</text>
+  <text x="190" y="458" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 1,084</text>
+  <text x="315" y="426" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="30" fill="#15130f">+</text>
+  <rect x="340" y="360" width="200" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="440" y="396" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">2 editors</text>
+  <text x="440" y="430" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">$40</text>
+  <text x="440" y="458" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 1,444</text>
+  <text x="565" y="426" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="30" fill="#15130f">+</text>
+  <rect x="590" y="360" width="200" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="690" y="396" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Content editor</text>
+  <text x="690" y="430" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">$10</text>
+  <text x="690" y="458" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 361</text>
+  <text x="815" y="426" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="30" fill="#15130f">+</text>
+  <rect x="840" y="360" width="200" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="940" y="396" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">1 locale</text>
+  <text x="940" y="430" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">$20</text>
+  <text x="940" y="458" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 722</text>
+  <text x="1065" y="426" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="30" fill="#15130f">=</text>
+  <rect x="1090" y="360" width="220" height="110" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="1200" y="396" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Total</text>
+  <text x="1200" y="430" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">$100</text>
+  <text x="1200" y="458" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rs 3,611</text>
+
+  <text x="90" y="520" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1.5" fill="#6a645c">CONTENT-HEAVY BLOG ON PRO</text>
+  <rect x="90" y="536" width="200" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="190" y="572" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro plan</text>
+  <text x="190" y="606" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">$30</text>
+  <text x="190" y="634" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 1,084</text>
+  <text x="315" y="602" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="30" fill="#15130f">+</text>
+  <rect x="340" y="536" width="200" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="440" y="572" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">200 extra pages</text>
+  <text x="440" y="606" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">$40</text>
+  <text x="440" y="634" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 1,444</text>
+  <text x="565" y="602" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="30" fill="#15130f">+</text>
+  <rect x="590" y="536" width="200" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="690" y="572" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">10k extra CMS items</text>
+  <text x="690" y="606" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">$20</text>
+  <text x="690" y="634" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 722</text>
+  <text x="1065" y="602" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="30" fill="#15130f">=</text>
+  <rect x="1090" y="536" width="220" height="110" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1200" y="572" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Total</text>
+  <text x="1200" y="606" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">$90</text>
+  <text x="1200" y="634" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Rs 3,250</text>
+
+  <line x1="90" y1="676" x2="1310" y2="676" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="708" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Workspace owner and viewers are free. Page and CMS-item blocks are Pro only; Basic limits are fixed.</text>
+  <text x="90" y="740" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Any applicable tax added at checkout.</text>
+</svg>
