@@ -57,7 +57,7 @@ This is the same logic behind [lifecycle marketing](/blog/what-is-lifecycle-mark
 
 At the top, your content and SEO do the heavy lifting of attracting strangers. Email's job is to keep those new contacts from going cold the moment they leave your site.
 
-A **welcome series** is the highest-leverage asset here. It greets new subscribers, sets expectations, and delivers your best educational content while interest is fresh. Pair it with a recurring newsletter that recirculates your strongest blog posts.
+A **welcome series** is the highest-leverage asset here. It greets new subscribers, sets expectations, and delivers your best educational content while interest is fresh. Pair it with a recurring newsletter that recirculates your strongest blog posts. A free email tool is enough to start capturing contacts: Kit, for example, is free up to 10,000 subscribers, though the automated welcome series needs one of its paid tiers, as my [breakdown of Kit's free and paid plans](/blog/kit-pricing/) shows.
 
 This is where email starts compounding your content investment. Instead of publishing an article and hoping it ranks, you put it in front of a warm audience the day it goes live.
 

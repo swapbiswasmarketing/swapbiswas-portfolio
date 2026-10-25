@@ -133,7 +133,7 @@ The same script runs on Windows Node.js, so even within Claude Code, moving the 
 
 ## Claude vs Claude Code Pricing
 
-Claude Code does not need a plan of its own. Anthropic's pricing FAQ says "Claude Code is included in all paid plans. It shares the same usage limits as the rest of your plan, so your work in the terminal and your chats draw from one pool" ([Claude pricing](https://claude.com/pricing)). The help center repeats it: "all activity in both tools counts against the same usage limits" ([Use Claude Code with your Pro or Max plan](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan)), so a long Claude Code session eats into the same allowance as your drafting in chat.
+Claude Code does not need a plan of its own. Anthropic's pricing FAQ says "Claude Code is included in all paid plans. It shares the same usage limits as the rest of your plan, so your work in the terminal and your chats draw from one pool" ([Claude pricing](https://claude.com/pricing)). The help center repeats it: "all activity in both tools counts against the same usage limits" ([Use Claude Code with your Pro or Max plan](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan)), so a long Claude Code session eats into the same allowance as your drafting in chat. If you are weighing an open-source harness instead, [the payments OpenCode and Claude Code each accept](/blog/opencode-vs-claude-code/) are mapped row by row, and a Claude Pro or Max plan signs in to Claude Code but not to OpenCode.
 
 Plans and prices as of September 2026:
 

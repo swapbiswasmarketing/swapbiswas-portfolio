@@ -56,7 +56,7 @@ I read the ten as the items Apple's page displays rather than every item LinkedI
 
 The same split, rupees on the app stores and dollars from the vendor, shows in [my check of Claude Pro's price in India by checkout](/blog/claude-pro-price-in-india/).
 
-LinkedIn's [Premium subscription FAQ](https://www.linkedin.com/help/linkedin/answer/a570070) ties an App Store subscription to an Apple device: Premium bought through the Apple Store "can be cancelled using the LinkedIn mobile app on an Apple device", while Premium bought through Google Play can be cancelled on LinkedIn's desktop site, in the LinkedIn app, or on Google Play's desktop site or mobile app.
+LinkedIn's [Premium subscription FAQ](https://www.linkedin.com/help/linkedin/answer/a570070) ties an App Store subscription to an Apple device: Premium bought through the Apple Store "can be cancelled using the LinkedIn mobile app on an Apple device", while Premium bought through Google Play can be cancelled on LinkedIn's desktop site, in the LinkedIn app, or on Google Play's desktop site or mobile app. The full route for each billing channel, and when access ends, is in [my cancel steps sorted by who charged you](/blog/cancel-linkedin-premium/).
 
 ## Why LinkedIn Premium Shows No Rupee Price Until You Sign In
 

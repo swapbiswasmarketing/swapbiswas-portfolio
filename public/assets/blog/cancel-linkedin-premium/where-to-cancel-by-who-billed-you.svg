@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
+  <rect x="0" y="0" width="1400" height="780" fill="#f6f4ef"/>
+
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where to cancel LinkedIn Premium, by who charged you</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">From LinkedIn Help answers a545578, a551618, a563180, a569644 and a570070, read 25 October 2026</text>
+
+  <rect x="500" y="134" width="400" height="62" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="700" y="174" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Who charged you?</text>
+
+  <line x1="700" y1="196" x2="700" y2="222" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="250" y1="222" x2="1150" y2="222" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="250" y1="222" x2="250" y2="246" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="700" y1="222" x2="700" y2="246" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="1150" y1="222" x2="1150" y2="246" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="243,246 257,246 250,260" fill="#15130f"/>
+  <polygon points="693,246 707,246 700,260" fill="#15130f"/>
+  <polygon points="1143,246 1157,246 1150,260" fill="#15130f"/>
+
+  <rect x="40" y="262" width="420" height="410" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="68" y="302" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">DESKTOP OR MOBILE WEB</text>
+  <text x="68" y="344" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">LinkedIn billed you</text>
+  <text x="68" y="390" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">CANCEL ON</text>
+  <text x="68" y="422" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn desktop site, or the</text>
+  <text x="68" y="454" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn app on Android</text>
+  <text x="68" y="486" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">Not in the iOS app</text>
+  <text x="68" y="534" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">ACCESS ENDS</text>
+  <text x="68" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">End of the current billing cycle</text>
+  <text x="68" y="614" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">NOTE</text>
+  <text x="68" y="646" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Due date: Manage Premium account</text>
+
+  <rect x="490" y="262" width="420" height="410" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="518" y="302" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">BOUGHT IN THE IOS APP</text>
+  <text x="518" y="344" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Apple billed you</text>
+  <text x="518" y="390" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">CANCEL ON</text>
+  <text x="518" y="422" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn app on an Apple device,</text>
+  <text x="518" y="454" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">or iPhone Settings, your name,</text>
+  <text x="518" y="486" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Subscriptions (Apple's page)</text>
+  <text x="518" y="534" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">ACCESS ENDS</text>
+  <text x="518" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">End of the current billing cycle</text>
+  <text x="518" y="614" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">NOTE</text>
+  <text x="518" y="646" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Refunds come from Apple</text>
+
+  <rect x="940" y="262" width="420" height="410" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="302" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">BOUGHT ON ANDROID</text>
+  <text x="968" y="344" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google Play billed you</text>
+  <text x="968" y="390" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">CANCEL ON</text>
+  <text x="968" y="422" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn desktop site, LinkedIn</text>
+  <text x="968" y="454" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">app, or Google Play on desktop</text>
+  <text x="968" y="486" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">or in the Google Play app</text>
+  <text x="968" y="534" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">ACCESS ENDS</text>
+  <text x="968" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">End of the billing cycle</text>
+  <text x="968" y="614" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.6" fill="#6a645c">NOTE</text>
+  <text x="968" y="646" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Purchase history is on Google</text>
+
+  <rect x="40" y="696" width="1320" height="54" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="68" y="730" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Every route: LinkedIn says to cancel at least one day before your next scheduled billing date.</text>
+</svg>

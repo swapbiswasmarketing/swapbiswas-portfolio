@@ -129,7 +129,7 @@ To stop Claude Code offering API credits when you reach a plan limit, the same P
 
 ### How to Log In to Claude Code With an API Key
 
-- A Claude plan doesn't come with API access. Anthropic's help center says a paid subscription ["doesn't include access to the Claude API or Console"](https://support.claude.com/en/articles/9876003-i-have-a-paid-claude-subscription-pro-max-team-or-enterprise-plans-why-do-i-have-to-pay-separately-to-use-the-claude-api-and-console), so a key means a separate Console account.
+- A Claude plan doesn't come with API access. Anthropic's help center says a paid subscription ["doesn't include access to the Claude API or Console"](https://support.claude.com/en/articles/9876003-i-have-a-paid-claude-subscription-pro-max-team-or-enterprise-plans-why-do-i-have-to-pay-separately-to-use-the-claude-api-and-console), so a key means a separate Console account. That key also works in other harnesses such as OpenCode, while Anthropic's terms reserve Claude plan sign-in for Claude Code and its own apps, as [my OpenCode comparison quotes from both vendors' docs](/blog/opencode-vs-claude-code/).
 - For one session, set the key in that shell only and close it afterwards: `$env:ANTHROPIC_API_KEY="your-api-key-here"` in PowerShell, or `export ANTHROPIC_API_KEY='your-api-key-here'` in bash.
 - To pay through the Console without storing a key, use the keyless sign-in: at the `/login` prompt, pick the Anthropic Console account, then "Sign in with your Console account".
 - `claude auth login --console` also signs in from a terminal "for API usage billing instead of a Claude subscription". The CLI reference doesn't say whether that stores a key or a profile, so check `/status` afterwards for an `API key` or `Profile` row.

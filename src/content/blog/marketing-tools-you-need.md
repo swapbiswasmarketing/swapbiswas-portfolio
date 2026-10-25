@@ -97,7 +97,7 @@ Email is the one channel you fully own - no algorithm changes, no platform risk.
 | Brevo (Sendinblue) | Budget-conscious teams | Free up to 300 emails/day |
 | ActiveCampaign | Teams needing automation | $15/mo |
 
-For a deeper look at email strategy, check out our guide on [increasing email interactivity](/blog/increase-interactivity-in-your-emails/).
+Kit's free row stops covering you once you want automated sequences, which Kit keeps for its paid Creator and Pro plans, so check [what Kit charges at each subscriber count](/blog/kit-pricing/) before the list outgrows Free. For a deeper look at email strategy, check out our guide on [increasing email interactivity](/blog/increase-interactivity-in-your-emails/).
 
 ### Tool 3: Analytics
 

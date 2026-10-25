@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 910" width="1400" height="910">
+  <rect x="0" y="0" width="1400" height="910" fill="#f6f4ef"/>
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Kit yearly cost by list size: Creator vs Pro</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Annual billing, read from kit.com/pricing on 25 October 2026. The Pro offer ends 7 November 2026.</text>
+
+  <rect x="30" y="130" width="1340" height="750" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <rect x="250" y="160" width="22" height="22" fill="#15130f"/>
+  <text x="282" y="178" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Creator, per year</text>
+  <rect x="520" y="160" width="22" height="22" fill="#6a645c"/>
+  <text x="552" y="178" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro, first year with the offer</text>
+  <rect x="880" y="160" width="22" height="22" fill="#eeebe4" stroke="#6a645c" stroke-width="1.5"/>
+  <text x="912" y="178" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro, year two at the standard rate</text>
+
+  <line x1="60" y1="205" x2="1340" y2="205" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="60" y="262" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">1,000 subs</text>
+  <rect x="250" y="222" width="66" height="26" fill="#15130f"/>
+  <text x="328" y="242" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$390</text>
+  <rect x="250" y="256" width="101" height="26" fill="#6a645c"/>
+  <text x="363" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$593</text>
+  <rect x="250" y="290" width="134" height="26" fill="#eeebe4" stroke="#6a645c" stroke-width="1.5"/>
+  <text x="396" y="310" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$790</text>
+
+  <text x="60" y="392" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">5,000 subs</text>
+  <rect x="250" y="352" width="151" height="26" fill="#15130f"/>
+  <text x="413" y="372" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$890</text>
+  <rect x="250" y="386" width="177" height="26" fill="#6a645c"/>
+  <text x="439" y="406" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$1,043</text>
+  <rect x="250" y="420" width="236" height="26" fill="#eeebe4" stroke="#6a645c" stroke-width="1.5"/>
+  <text x="498" y="440" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$1,390</text>
+
+  <text x="60" y="522" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">10,000 subs</text>
+  <rect x="250" y="482" width="236" height="26" fill="#15130f"/>
+  <text x="498" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$1,390</text>
+  <rect x="250" y="516" width="241" height="26" fill="#6a645c"/>
+  <text x="503" y="536" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$1,418</text>
+  <text x="640" y="536" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">Year one: Pro costs $28 more than Creator</text>
+  <rect x="250" y="550" width="321" height="26" fill="#eeebe4" stroke="#6a645c" stroke-width="1.5"/>
+  <text x="583" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$1,890 (year two: $500 more than Creator)</text>
+
+  <text x="60" y="652" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">25,000 subs</text>
+  <rect x="250" y="612" width="338" height="26" fill="#15130f"/>
+  <text x="600" y="632" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$1,990</text>
+  <rect x="250" y="646" width="356" height="26" fill="#6a645c"/>
+  <text x="618" y="666" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$2,093</text>
+  <rect x="250" y="680" width="474" height="26" fill="#eeebe4" stroke="#6a645c" stroke-width="1.5"/>
+  <text x="736" y="700" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$2,790</text>
+
+  <text x="60" y="782" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">55,000 subs</text>
+  <rect x="250" y="742" width="644" height="26" fill="#15130f"/>
+  <text x="906" y="762" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$3,790</text>
+  <rect x="250" y="776" width="662" height="26" fill="#6a645c"/>
+  <text x="924" y="796" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$3,893</text>
+  <rect x="250" y="810" width="882" height="26" fill="#eeebe4" stroke="#6a645c" stroke-width="1.5"/>
+  <text x="1144" y="830" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$5,190</text>
+</svg>

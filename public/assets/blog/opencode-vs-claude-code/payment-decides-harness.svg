@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 940" width="1400" height="940">
+  <rect x="0" y="0" width="1400" height="940" fill="#f6f4ef"/>
+  <text x="50" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What you already pay for decides the harness</text>
+  <text x="50" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Which payment each one accepts, read from Anthropic's and OpenCode's docs on 25 October 2026</text>
+
+  <text x="50" y="172" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">YOU ALREADY HAVE</text>
+  <text x="630" y="172" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">CLAUDE CODE</text>
+  <text x="1000" y="172" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">OPENCODE</text>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif">
+    <rect x="50" y="192" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="630" y="192" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="1000" y="192" width="350" height="84" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+    <text x="74" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">Claude Pro or Max plan</text>
+    <text x="74" y="258" font-size="20" fill="#6a645c">claude.ai subscription login</text>
+    <text x="654" y="228" font-size="22" font-weight="600" fill="#2a7347">Yes</text>
+    <text x="654" y="258" font-size="20" fill="#3a3632">Sign in with /login</text>
+    <text x="1024" y="228" font-size="22" font-weight="600" fill="#b53b15">No</text>
+    <text x="1024" y="258" font-size="20" fill="#15130f">Anthropic prohibits it</text>
+
+    <rect x="50" y="288" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="630" y="288" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="1000" y="288" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="74" y="324" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">Anthropic API key</text>
+    <text x="74" y="354" font-size="20" fill="#6a645c">Billed per token through Anthropic Console</text>
+    <text x="654" y="324" font-size="22" font-weight="600" fill="#2a7347">Yes</text>
+    <text x="654" y="354" font-size="20" fill="#3a3632">Console key or sign-in</text>
+    <text x="1024" y="324" font-size="22" font-weight="600" fill="#2a7347">Yes</text>
+    <text x="1024" y="354" font-size="20" fill="#3a3632">/connect, then Anthropic</text>
+
+    <rect x="50" y="384" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="630" y="384" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="1000" y="384" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="74" y="420" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">Amazon Bedrock or Google Cloud</text>
+    <text x="74" y="450" font-size="20" fill="#6a645c">Your cloud account, per token</text>
+    <text x="654" y="420" font-size="22" font-weight="600" fill="#2a7347">Yes</text>
+    <text x="654" y="450" font-size="20" fill="#3a3632">Bedrock or Agent Platform</text>
+    <text x="1024" y="420" font-size="22" font-weight="600" fill="#2a7347">Yes</text>
+    <text x="1024" y="450" font-size="20" fill="#3a3632">Both in its provider list</text>
+
+    <rect x="50" y="480" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="630" y="480" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="1000" y="480" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="74" y="516" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">ChatGPT Plus or Pro</text>
+    <text x="74" y="546" font-size="20" fill="#6a645c">OpenAI plan sign-in</text>
+    <text x="654" y="516" font-size="22" font-weight="600" fill="#15130f">No</text>
+    <text x="654" y="546" font-size="20" fill="#3a3632">Not a listed provider</text>
+    <text x="1024" y="516" font-size="22" font-weight="600" fill="#2a7347">Yes</text>
+    <text x="1024" y="546" font-size="20" fill="#3a3632">Sign in with ChatGPT</text>
+
+    <rect x="50" y="576" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="630" y="576" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="1000" y="576" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="74" y="612" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">GitHub Copilot</text>
+    <text x="74" y="642" font-size="20" fill="#6a645c">Needs Copilot Chat access</text>
+    <text x="654" y="612" font-size="22" font-weight="600" fill="#15130f">No</text>
+    <text x="654" y="642" font-size="20" fill="#3a3632">Not a listed provider</text>
+    <text x="1024" y="612" font-size="22" font-weight="600" fill="#2a7347">Yes</text>
+    <text x="1024" y="642" font-size="20" fill="#3a3632">GitHub device sign-in</text>
+
+    <rect x="50" y="672" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="630" y="672" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="1000" y="672" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="74" y="708" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">OpenCode Go, $10 a month</text>
+    <text x="74" y="738" font-size="20" fill="#6a645c">Or Go Plus at $40 a month</text>
+    <text x="654" y="708" font-size="22" font-weight="600" fill="#15130f">Partly</text>
+    <text x="654" y="738" font-size="20" fill="#3a3632">Base URL, some models</text>
+    <text x="1024" y="708" font-size="22" font-weight="600" fill="#2a7347">Yes</text>
+    <text x="1024" y="738" font-size="20" fill="#3a3632">/connect, then OpenCode Go</text>
+
+    <rect x="50" y="768" width="560" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="630" y="768" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <rect x="1000" y="768" width="350" height="84" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="74" y="804" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">No paid plan or key yet</text>
+    <text x="74" y="834" font-size="20" fill="#6a645c">Nothing to bring</text>
+    <text x="654" y="804" font-size="22" font-weight="600" fill="#15130f">No</text>
+    <text x="654" y="834" font-size="20" fill="#3a3632">Free plan excludes it</text>
+    <text x="1024" y="804" font-size="22" font-weight="600" fill="#2a7347">Yes</text>
+    <text x="1024" y="834" font-size="20" fill="#3a3632">Free models, limited time</text>
+  </g>
+
+  <text x="50" y="896" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">Sources: code.claude.com/docs (setup, legal), opencode.ai/docs (providers, Go, models)</text>
+</svg>

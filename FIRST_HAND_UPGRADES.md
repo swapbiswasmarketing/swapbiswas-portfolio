@@ -514,3 +514,15 @@ Optional, only if you want to share it: which profile viewing mode do you use on
 ## nano-banana-2-vs-pro
 
 When you generate the image for a LinkedIn post from your Nano Banana prompt, which model does the Gemini app (or the API) actually run it on (Nano Banana 2, 2.1, or a Redo with Pro), and at what download size? This would go in 'Worked Cost: 100 LinkedIn Images on Each Model'.
+
+## opencode-vs-claude-code
+
+Have you tried OpenCode on this repo (with an API key, Zen or Go), and if so, what made you stay on Claude Code? Only if true; one sentence would go at the end of the intro, beside the line about building the site with the Claude Code extension in VS Code on Windows 11.
+
+## cancel-linkedin-premium
+
+Optional, only if true: have you ever held paid LinkedIn Premium, and if so, which way was it billed (LinkedIn web, Apple or Google Play)? One line in 'Can You Cancel LinkedIn Premium on iPhone?' could then say which route you used.
+
+## kit-pricing
+
+Would you share which Kit plan the swapbiswas.com newsletter runs on (Free, Creator or Pro) and why? It would add one "what I chose" line to 'Which Kit Plan at Which List Size'.

@@ -255,6 +255,8 @@ Nurtured leads produce a **20% increase in sales opportunities** compared to non
 
 **Pricing sources:** [ActiveCampaign](https://www.activecampaign.com/pricing), [HubSpot](https://blog.hubspot.com/marketing/hubspot-marketing-hub-pricing), [Brevo](https://www.brevo.com/pricing/)
 
+If you send from Kit, note that its Free plan cannot run these workflows: email sequences and visual automations start on its paid Creator plan, and [Kit's prices by subscriber count](/blog/kit-pricing/) show what each tier costs as the list grows.
+
 For a deeper comparison of [B2B marketing automation](/blog/b2b-marketing-automation/) and [B2C marketing automation](/blog/b2c-marketing-automation/) platforms, check our dedicated guides. And for tips on making your [email workflows more interactive](/blog/increase-interactivity-in-your-emails/), see our email interactivity guide.
 
 ## Start With Three Workflows

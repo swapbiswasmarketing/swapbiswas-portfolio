@@ -163,7 +163,7 @@ P.S. Resend this to non-openers tomorrow with the
 subject "Did you see this?"
 ```
 
-These frameworks plug directly into the workflow tools you already use. If you want the launch sequence to fire automatically off a signup or a date, the patterns in [marketing automation workflows](/blog/marketing-automation-workflows/) show how to wire the triggers.
+These frameworks plug directly into the workflow tools you already use. If you want the launch sequence to fire automatically off a signup or a date, the patterns in [marketing automation workflows](/blog/marketing-automation-workflows/) show how to wire the triggers. If you send from Kit, a timed launch flow like this one needs an automated sequence, which starts on the paid Creator plan, and [Kit's plan prices by list size](/blog/kit-pricing/) list each tier; on Free you would schedule each email as a broadcast instead.
 
 ## Best Practices That Lift Launch Email Performance
 

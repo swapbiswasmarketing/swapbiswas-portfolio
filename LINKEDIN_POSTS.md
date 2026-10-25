@@ -3116,3 +3116,72 @@ https://swapbiswas.com/blog/nano-banana-2-vs-pro/?utm_source=linkedin&utm_medium
 #NanoBanana #GoogleGemini #GeminiAPI #AIImageGeneration #AITools
 
 ---
+
+### OpenCode vs Claude Code: What You Already Pay For Decides
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an oak workbench with two iron-bound wooden chests side by side, one chest open showing carpenter's tools, the other closed with a heavy brass lock, a ring of old brass keys lying between them, a ledger and a quill with an inkwell behind, a single vermilion red ribbon tied to one of the keys, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+A Claude Pro or Max plan works in Claude Code and not in OpenCode. A ChatGPT Plus or Copilot plan works in OpenCode and not in Claude Code.
+So between these two harnesses, the plan you already pay for decides before any feature does. I read both sets of docs on 25 October 2026 to map it.
+
+- OpenCode removed its Anthropic OAuth plugin in version 1.3.0, released on 22 March 2026 (UTC). Anthropic's legal page reserves Claude plan sign-in for Claude Code and its own apps.
+- OpenCode's docs list 75+ providers. An Anthropic API key, Amazon Bedrock or Google Cloud account works in both tools.
+- OpenCode Go costs $10 a month and Go Plus $40. Each model allows 20% of its monthly limit in any five hours and 50% in any week.
+- Pay-as-you-go top-ups carry a 4.6% + $0.31 fee, so a $20 top-up charges $21.23 to the card.
+- OpenCode is MIT-licensed. Claude Code's licence file reads "All rights reserved".
+
+Which plan is on your last card statement: Claude, ChatGPT or Copilot?
+
+https://swapbiswas.com/blog/opencode-vs-claude-code/?utm_source=linkedin&utm_medium=social&utm_campaign=opencode-vs-claude-code
+
+#ClaudeCode #OpenCode #AICoding #DeveloperTools #AITools
+
+---
+
+### Cancel LinkedIn Premium: Steps by How You Paid (2026)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak desk with three folded parchment receipts laid side by side, a closed account ledger with a brass clasp, a small silver letter knife resting across a broken wax seal, a few old coins in a shallow pewter dish, a quill and an inkwell, the broken wax seal in vermilion red, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+To cancel LinkedIn Premium, first find out who charged you: LinkedIn, Apple or Google Play.
+A plan LinkedIn billed cannot be cancelled in the iPhone app, even if you bought it on an iPhone.
+
+- LinkedIn billed you: seven desktop steps, from the Me icon to Confirm cancel in LinkedIn Admin Center.
+- Whoever billed you, LinkedIn says to cancel at least one day before your next scheduled billing date.
+- A paid plan stays active until the end of the current billing cycle. A free trial ends the moment you cancel it.
+- LinkedIn's refund policy says Premium may be refundable within 7 days of the charge without Premium usage, and all iOS refunds must be issued by Apple.
+- Bought on your phone? LinkedIn sends no email reminder before the auto-renewal.
+
+Do you know whether LinkedIn, Apple or Google Play billed your last Premium renewal?
+
+https://swapbiswas.com/blog/cancel-linkedin-premium/?utm_source=linkedin&utm_medium=social&utm_campaign=cancel-linkedin-premium
+
+#LinkedIn #LinkedInPremium #LinkedInTips #Subscriptions #CareerTips
+
+---
+
+### Kit Pricing: Free, Creator and Pro by List Size (2026)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scribe's oak table by a window with several stacks of sealed letters rising in height from left to right, an open ledger with ruled columns, a brass balance scale and a quill in an inkwell, a ribbon-tied bundle of envelopes at the tallest stack, a single vermilion red wax seal on the top letter of the tallest stack, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Kit's Free plan covers up to 10,000 subscribers, but email sequences and visual automations need a paid plan.
+On 25 October 2026 I stepped Kit's pricing slider through every stop up to 105,000 to see what each plan costs.
+
+- At 1,000 subscribers, Creator is $39 a month and Pro $79. At 10,000, they are $139 and $189.
+- Until 7 November 2026, a first-year Pro offer means Pro costs $28 more than Creator at 10,000 subscribers. In year two the gap is $500.
+- Yearly billing gives 12 months for the price of 10.
+- Every plan pays 3.5% + 30c on digital products and subscriptions: $2.05 on a $50 sale.
+- The slider has no 50,000 stop, so a list of 50,000 pays the 55,000-stop price.
+
+If you moved to a paid email plan, which sequence would you build first?
+
+https://swapbiswas.com/blog/kit-pricing/?utm_source=linkedin&utm_medium=social&utm_campaign=kit-pricing
+
+#EmailMarketing #Kit #ConvertKit #Newsletter #CreatorEconomy
+
+---
