@@ -106,8 +106,8 @@ The Pro 100 description is from the [9 April 2026 release note](https://help.ope
 What the rupee prices and the article add up to for a buyer in India:
 
 - The steps differ from the dollar steps because each tier sits at its own rate per dollar before GST: ₹90.67 for Pro 100, ₹84.32 for Pro 200 and ₹89.66 for Pro 500. Moving up from Pro 100 to Pro 200 costs relatively less in India than in the US, and moving from Pro 200 to Pro 500 relatively more.
-- Pro 200 now comes with less usage for new subscribers. The Pro tiers article says new subscriptions "that aren't eligible for grandfathering include a lower usage allowance", while the monthly price stays the same.
-- Grandfathering covers anyone with an active Pro 200 subscription at any point from 22 September 2026 through 10 a.m. Pacific Time on 29 September 2026. They keep the previous allowance "through October 29, 2026", and after that date the subscription "will move to the lower included usage allowance".
+- Pro 200's usage cut for new subscribers has been canceled. On 16 October 2026 the Pro tiers article said new subscriptions "that aren't eligible for grandfathering include a lower usage allowance", with grandfathering for anyone with an active Pro 200 subscription at any point from 22 September 2026 through 10 a.m. Pacific Time on 29 September 2026, who kept the previous allowance "through October 29, 2026". OpenAI's [29 October 2026 release note](https://help.openai.com/en/articles/6825453-chatgpt-release-notes#:~:text=canceled%20the%20Pro%20200%20reduction) then "canceled the Pro 200 reduction announced in our September 29 email", and on 31 October 2026 the article says "All Pro 200 subscriptions now include the same Work and Codex allowance." The price did not change.
+- The same release note says "Pro 100 and Pro 500 plans now include twice their previous Work and Codex allowance", at the same prices.
 - Ultrafast is a Pro 500 feature: "Among Pro plans, Ultrafast is available only on Pro 500", and "At launch, buying credits on Pro 100 or Pro 200 does not unlock Ultrafast." It uses the included allowance at 8 times the Standard rate.
 - No tier takes UPI on the web or bills yearly. The article says "Pro is billed monthly. Annual billing and payment for multiple months in advance are not available."
 - Refunds follow the checkout. For App Store purchases the article says to "request a refund directly from Apple", and for chatgpt.com or Google Play purchases to contact OpenAI Support.
@@ -137,7 +137,7 @@ OpenAI's pricing page, as served in India on 16 October 2026, has no student pri
 
 - ChatGPT Edu is bought by universities. The pricing page's FAQ calls it "an affordable plan that lets universities deploy AI across their campus communities", and the [ChatGPT Edu page](https://chatgpt.com/business/education/) offers a "Contact sales" button in place of a price, so a student's route to Edu runs through their university.
 - OpenAI's India education program also runs through institutions. Its [Learning Accelerator announcement](https://openai.com/global-affairs/learning-accelerator/) of 25 August 2025 planned to distribute "approximately half a million ChatGPT licenses and training to educators and students across India" over the following six months. Of the three partnerships it lists for that distribution, AICTE's was to give "ChatGPT access to technical institutes nationwide", and the other two were for school teachers. The page offers no way for a student to apply alone, so ask your institute whether it took part.
-- OpenAI's student offer is for the US. Its [2026 student page](https://chatgpt.com/students/2026/) gives four free months of ChatGPT Plus, "An $80 value for eligible U.S. college students", to students "enrolled at eligible U.S. degree-granting institutions", and says "Claim by October 31."
+- OpenAI's student offer is for the US. Its [2026 student page](https://chatgpt.com/students/2026/) gives four free months of ChatGPT Plus, "An $80 value for eligible U.S. college students", to students "enrolled at eligible U.S. degree-granting institutions", and says "Claim by October 31." Whether any free month of Plus is open to users in India is a separate question, answered in [my check of the ChatGPT Plus free trial in India](/blog/chatgpt-plus-free-trial-india/).
 - The pricing page also shows a pop-up banner reading "For life sciences research, explore the Rosalind Academic Plan". It links to [OpenAI's post of 15 October 2026](https://openai.com/index/introducing-the-rosalind-academic-plan/), which describes a plan for research labs: principal investigators and lab leads apply on behalf of a lab, and the plan "is currently available to academic labs at U.S. universities".
 - The "Students" link in the pricing page's menu, served in India, opens [a page of example chats](https://chatgpt.com/use-cases/students-india/) by "More than 25 college students across India", with no price or offer on it.
 
@@ -158,13 +158,13 @@ The Internet Archive returned no copies of the India file when I checked, but it
 | 10 September 2026 | OpenAI pauses new sign-ups and upgrades to the $200 Pro plan | [Pro tiers article, archived 19 September 2026](https://web.archive.org/web/20260919102801/https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers) |
 | 29 September 2026 | Pro 500 launches at $500, on the web at launch, and Pro 200 reopens to new subscriptions | [Release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes#:~:text=A%20new%20Pro%20plan%20with%20Astra%20Ultrafast) |
 | 30 September 2026 | Apple's listing shows ChatGPT Pro 500 at ₹52,900, and the $100 item, "Pro 5x" in the 29 September copy, appears as "Pro 100" | [30 September copy](https://web.archive.org/web/20260930075707/https://apps.apple.com/in/app/chatgpt/id6448311069), [29 September copy](https://web.archive.org/web/20260929103101/https://apps.apple.com/in/app/chatgpt/id6448311069) |
-| After 29 October 2026, scheduled | Grandfathered Pro 200 subscriptions move to the lower allowance; the previous allowance applies through 29 October | [Pro tiers article](https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers#:~:text=through%20October%2029%2C%202026) |
+| 29 October 2026 | OpenAI cancels the Pro 200 reduction announced on 29 September, so the scheduled move of grandfathered subscriptions to the lower allowance does not happen; subscribers on the lower allowance get twice it, the same limit as the higher one, and Pro 100 and Pro 500 get twice their previous Work and Codex allowance, at unchanged prices | [Release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes#:~:text=canceled%20the%20Pro%20200%20reduction), [Pro tiers article](https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers) |
 
 ### Has the ChatGPT Price in India Gone Up?
 
 Not on the two plans Apple's India listing carried in January 2025. In all 28 archived copies and on the live listing, Plus was ₹1,999 and a Pro item sat at ₹19,900, listed as ChatGPT Pro up to the 22 February 2026 copy, Pro 20x from the 29 March to the 28 September 2026 copies, and Pro 200 from the 29 September 2026 copy. OpenAI's archived Pro tiers article calls that plan "the ChatGPT Pro $200 plan (Pro 20X)".
 
-Since January 2025, OpenAI has added plans (Go, Pro 100 and Pro 500) and given new Pro 200 subscriptions a lower allowance at the same price.
+Since January 2025, OpenAI has added plans (Go, Pro 100 and Pro 500) and in September 2026 gave new Pro 200 subscriptions a lower allowance at the same price, a reduction it canceled on 29 October 2026.
 
 One of OpenAI's own pages lags behind these changes. On 16 October 2026 the multi-currency article still described "the pause on new ChatGPT Pro $200 (Pro 20X) subscriptions", which the 29 September release note had ended.
 
@@ -175,7 +175,7 @@ The ChatGPT subscription price in India had one outlier on 16 October 2026: Go, 
 1. chatgpt.com/pricing, logged out, on both tabs, for Go, Plus, the Pro starting price and Business.
 2. The India file at the address in the sources table, for the Pro 200 and Pro 500 web prices and the tax flags.
 3. Apple's India listing, for the in-app prices and the second Plus item.
-4. OpenAI's Pro tiers article after 29 October 2026, when grandfathered Pro 200 subscriptions move to the lower allowance.
+4. OpenAI's Pro tiers article, for each tier's included usage; on 31 October 2026 it said every Pro 200 subscription gets the same Work and Codex allowance.
 5. The multi-currency billing article, for UPI by plan.
 
 Last, log in and read the amount on your own upgrade screen, which shows the price for your account.

@@ -116,7 +116,7 @@ One file serves both views, and LinkedIn's page lists a single recommended size 
 | Photo diameter in upload pixels | 315 | 278 |
 | Part of the photo that overlaps the banner | 112 of its 160 px, 70% | 64 of its 96 px, 67% |
 
-In my script, the phone hides the left 228 px, where most of the desktop photo sits, and draws its own photo further right. A line of text at x 370 and y 300 clears the desktop photo and sits under the phone photo, which is why the clear block starts at x 552 rather than x 363. LinkedIn's caveat about browser window size also means 804 px is one desktop width among many.
+In my script, the phone hides the left 228 px, where most of the desktop photo sits, and draws its own photo further right. A line of text at x 370 and y 300 clears the desktop photo and sits under the phone photo, which is why the clear block starts at x 552 rather than x 363. LinkedIn's caveat about browser window size also means 804 px is one desktop width among many. If you are making the photo that sits in those circles, [my headshot prompt written to keep your own face](/blog/prompt-for-linkedin-profile-picture/) asks for a square 1:1 head-and-shoulders frame, because the profile shows the photo in a round frame.
 
 On the phone, the guides disagree on:
 

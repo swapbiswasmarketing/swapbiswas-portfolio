@@ -132,7 +132,7 @@ On 2.1, Nano Banana 2 and Pro, a 1K image at 16:9 is 1376 x 768. Scaled to 1200 
 
 The arithmetic is 100 times the per-image price. Pro costs $10.04 more than 2.1 per 100 standard images. Batch roughly halves every line on the pricing page, and the guide's batch section says batch jobs have a turnaround "of up to 24 hours". These totals cover the image output only: prompt tokens, thinking tokens and any image you regenerate are billed on top. The same 1376 x 768 frame also covers a 1200 x 630 link-preview card, and [the OG image size guide](/blog/og-image-size/) lists the size each platform asks for on its own page.
 
-In the Gemini app there is no per-image fee. The same 100 images draw down your plan's usage limit instead, and Google publishes no image count for any plan.
+In the Gemini app there is no per-image fee. The same 100 images draw down your plan's usage limit instead, and Google publishes no image count for any plan. For a LinkedIn profile photo rather than a post image, [the guide to headshot prompts and Gemini model settings](/blog/prompt-for-linkedin-profile-picture/) recommends Flash or Pro over Flash-Lite, since a headshot often takes a second or third edit.
 
 ## Nano Banana 2 vs Pro Is Now a 2.1 vs Pro Decision
 

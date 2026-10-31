@@ -162,6 +162,8 @@ Canva's own free routes for students run only through a school or university: it
 - Other students get the standard plans. In the FAQ's words: "If you're a student at a Canva Campus institution, you can simply log-in with your university email, however if not you can still access Canva Free or Pro at log-in."
 - The Education tab lists three offers, Teachers, Schools and Districts, and Campus, and none of them is a discounted plan a student buys alone.
 
+A college student comparing design tools has one route Canva lacks: Adobe sells a student plan in India that you can buy on your own, with a lower first-year price that rises at renewal, and [the two-year cost of Adobe's India student plan](/blog/adobe-student-plan-india/) is the figure to set against Canva Pro.
+
 ## Can You Pay for Canva With UPI?
 
 Yes: Canva's help centre lists UPI for one-time payments in India and UPI Autopay for recurring Pro and Pro Lite subscriptions.

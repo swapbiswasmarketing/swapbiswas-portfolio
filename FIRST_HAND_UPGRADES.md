@@ -538,3 +538,11 @@ Do you want to say, in a later update, which Claude plan you use to build this s
 ## cfbr-meaning-linkedin
 
 Have you ever had CFBR comments on your own LinkedIn posts (for example a hiring or job-related post), and if so, how did you respond to them? Answer only if true, with no reach or impression numbers. It would go as one sentence at the start of 'What to Write Instead of CFBR'.
+
+## adobe-student-plan-india
+
+Optional, only if you ever reach Adobe India's student checkout yourself: does it offer UPI for the student plan, or only a credit card? The students page asks for a credit card while the plans page shows a UPI logo, and one dated line from a real checkout would settle it in the eligibility section.
+
+## prompt-for-linkedin-profile-picture
+
+Do you want to add a profile-picture prompt you have actually used yourself (and say which tool and model setting you ran it in), or a one-line note on how your current LinkedIn photo was made? It would sit under the base prompt.

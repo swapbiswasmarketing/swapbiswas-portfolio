@@ -124,11 +124,11 @@ ChatGPT Pro is three monthly plans, Pro 100 at $100, Pro 200 at $200 and Pro 500
 | Price as a multiple of Plus | 1x | 5x | 10x | 25x | My arithmetic |
 | Ultrafast | No ("Fast" response times) | Not included | Not included | Included | Pro tiers article; pricing table for Plus |
 | Live voice per rolling 24 hours | 3 hours, GPT-Live-1.1 | 15 hours | Unlimited, subject to abuse guardrails | Not listed | Voice article |
-| Included usage against Plus | 1x | "5X standard usage allowance" for Codex, raised to "up to 10x" for a limited time in April | 10x for Work and Codex on a new subscription; grandfathered subscribers keep 20x through 29 October 2026, then 10x | 25x | Pro 100: OpenAI's 9 April 2026 release note. Pro 200 and Pro 500: [The New Stack, 29 September 2026](https://thenewstack.io/openai-halves-200-plan/), a news report; the Pro tiers article says only that new Pro 200 subscriptions get "a lower usage allowance" |
+| Included usage against Plus | 1x | "5X standard usage allowance" for Codex, raised to "up to 10x" for a limited time in April; doubled for Work and Codex on 29 October 2026 | Reported on 29 September 2026 as 10x for Work and Codex on a new subscription and 20x for grandfathered subscribers; since 29 October 2026, every Pro 200 subscription gets the same, higher allowance | 25x as reported on 29 September 2026; doubled for Work and Codex on 29 October 2026 | Pro 100: OpenAI's 9 April 2026 release note. Pro 200 and Pro 500: [The New Stack, 29 September 2026](https://thenewstack.io/openai-halves-200-plan/), a news report. The 29 October changes: OpenAI's [29 October 2026 release note](https://help.openai.com/en/articles/6825453-chatgpt-release-notes#:~:text=canceled%20the%20Pro%20200%20reduction), which states no multiple of Plus |
 
-The Pro tiers article ranks the tiers without numbers: "Pro 200 includes more usage than Pro 100. Pro 500 offers the highest included usage of the three plans." Neither it nor the pricing page states a multiple of Plus as of 16 October 2026, and The New Stack's own report adds that "it's unclear what exactly the included allowance in the $500 plan will be".
+The Pro tiers article ranks the tiers without numbers: "Pro 200 includes more usage than Pro 100. Pro 500 offers the highest included usage of the three plans." Neither it nor the pricing page states a multiple of Plus as of 16 October 2026, and The New Stack's own report adds that "it's unclear what exactly the included allowance in the $500 plan will be". On 31 October 2026 the article still gave no multiple of Plus.
 
-One line of arithmetic per tier:
+One line of arithmetic per tier, on the figures reported before 29 October 2026:
 
 - Pro 100 costs $80 a month more than Plus, for a standard 5x of Plus's Codex allowance.
 - Pro 200 costs $180 more, for a reported 10x of Plus on a new subscription.
@@ -136,7 +136,9 @@ One line of arithmetic per tier:
 
 The 9 April release note gives no end date for Pro 100's "limited time" 10x, and no later entry says it has ended. If it has, and the press figures hold, a new subscriber's usage rises in step with price: 5x, 10x and 25x of Plus for 5, 10 and 25 times the money. On those numbers Pro buys headroom, plus Ultrafast on Pro 500, rather than a lower price per unit of work.
 
-One dated rule, from the Pro tiers article: if you had an active Pro 200 subscription at any point from 22 September through 10 a.m. Pacific Time on 29 September 2026, you keep the previous allowance through 29 October 2026, and every other Pro 200 subscription gets "a lower usage allowance" at the same $200.
+Those numbers changed on 29 October 2026. OpenAI's release note of that date says "Pro 100 and Pro 500 plans now include twice their previous Work and Codex allowance", and the Pro tiers article adds that "Plus usage is unchanged". If the reported figures were the previous allowances, Pro 100, Pro 200 and Pro 500 now get 10x, 20x and 50x of Plus for 5, 10 and 25 times the price (my arithmetic on a press report, not an OpenAI figure).
+
+Pro 200 had one dated rule, from the Pro tiers article as I read it on 16 October 2026: if you had an active Pro 200 subscription at any point from 22 September through 10 a.m. Pacific Time on 29 September 2026, you kept the previous allowance through 29 October 2026, and every other Pro 200 subscription got "a lower usage allowance" at the same $200. That rule has ended. The 29 October release note says OpenAI "canceled the Pro 200 reduction announced in our September 29 email", and Pro 200 subscribers on the lower allowance "get twice their previous Work and Codex allowance, bringing them up to the same limit". On 31 October 2026 the Pro tiers article no longer mentions grandfathering and says "All Pro 200 subscriptions now include the same Work and Codex allowance."
 
 ### Rows the Pricing Table's Pro Column Adds Over Plus
 
@@ -168,7 +170,7 @@ As of 16 October 2026:
 - India: the ratio doubles. On 16 October 2026 the per-country price file that the pricing page's script requests, `chatgpt.com/backend-api/checkout_pricing_config/configs/IN` (undocumented, and it can change), returned ₹399 for Go and ₹1,999 for Plus with GST included, so Plus costs five times Go there. [My Claude Pro price in India breakdown](/blog/claude-pro-price-in-india/) has the rupee prices by checkout and sets Go against Claude Pro. If your Go plan came from OpenAI's free year in India, [what renews when those 12 months end](/blog/chatgpt-go-free-india/) depends on where you signed up.
   Beyond Go and Plus, I set out the India prices of the three Pro tiers and Business, with GST and UPI noted for each plan, in [a plan-by-plan guide to ChatGPT in rupees](/blog/chatgpt-subscription-price-in-india/).
 
-If you are still deciding whether to pay at all, [my roundup of free AI tools for marketing](/blog/free-ai-tools-for-marketing/) covers what ChatGPT's Free plan and its rivals give you before a subscription.
+If you are still deciding whether to pay at all, [my roundup of free AI tools for marketing](/blog/free-ai-tools-for-marketing/) covers what ChatGPT's Free plan and its rivals give you before a subscription. To try Plus before paying in India, [my check of the ChatGPT Plus free trial in India](/blog/chatgpt-plus-free-trial-india/) separates what OpenAI documents from what the press has reported.
 
 ## ChatGPT Go vs Plus: Pay for the Rows Your Week Hits
 

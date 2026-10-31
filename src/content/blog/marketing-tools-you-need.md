@@ -178,7 +178,7 @@ You only need a paid SEO suite ($129+/mo) when you're managing 50+ keyword targe
 
 ### "I need design tools"
 
-Canva's free tier handles 90% of social graphics, presentations, and simple brand assets. AI image generators handle the rest. You need Adobe Creative Suite only if design is a core part of your product or service. If a Canva job does need Pro, [my Canva Pro price check for India](/blog/canva-pro-price-in-india/) found one-day and one-week passes that cost less than the monthly plan for up to 15 days in a row.
+Canva's free tier handles 90% of social graphics, presentations, and simple brand assets. AI image generators handle the rest. You need Adobe Creative Suite only if design is a core part of your product or service, and if you are still enrolled, [Adobe's student pricing in India](/blog/adobe-student-plan-india/) starts lower in year one than at renewal. If a Canva job does need Pro, [my Canva Pro price check for India](/blog/canva-pro-price-in-india/) found one-day and one-week passes that cost less than the monthly plan for up to 15 days in a row.
 
 ### "I need marketing automation"
 

@@ -3254,3 +3254,72 @@ https://swapbiswas.com/blog/cfbr-meaning-linkedin/?utm_source=linkedin&utm_mediu
 #LinkedIn #LinkedInTips #JobSearch #Layoffs #CareerTips
 
 ---
+
+### Adobe Student Plan India: Rs 398.99, Then Rs 699.01
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a student's oak desk with a wooden painter's palette and a jar of brushes, a leather-bound sketchbook lying open beside a stack of textbooks, two stacks of old coins in front of the books with the right stack clearly taller than the left, a brass hourglass and a quill in an inkwell, a single vermilion red ribbon tied around the taller stack of coins, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+The Adobe student plan in India costs Rs 398.99 a month in year one, then Rs 699.01 a month, as adobe.com/in listed it on 31 October 2026.
+Over two years on monthly billing that is Rs 13,176.00, and the second year is the bigger bill.
+
+- Year two on monthly billing is Rs 8,388.12 against Rs 4,787.88 in year one. Prepaying (Rs 3,999 now, Rs 7,005.96 at renewal) saves Rs 2,171.04 over two years.
+- Photoshop alone, billed monthly, costs Rs 2,819.52 more over two years than the whole student bundle.
+- Adobe's India offer terms say 18 or older. Adobe's help-centre Education FAQ says 13. The pages do not reconcile it.
+- Graduates get a grace year at the education price, then a higher non-education price, with an email 30 days before renewal.
+- Adobe offers Creative Cloud Pro free to Indian higher-education institutions that verify with Adobe. The institution claims it, not the student.
+
+Before you start the 7-day trial, have you asked your college office whether it has joined Adobe's free higher-education offer?
+
+https://swapbiswas.com/blog/adobe-student-plan-india/?utm_source=linkedin&utm_medium=social&utm_campaign=adobe-student-plan-india
+
+#Adobe #CreativeCloud #Students #India #DesignTools
+
+---
+
+### ChatGPT Plus Free Trial in India: What OpenAI Says
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak table with a folded letter of invitation lying unopened, an empty pewter coin dish beside a small stack of old coins, a brass hourglass with the sand half run through, a closed ledger with a brass clasp and a quill in an inkwell, the letter of invitation sealed with a single vermilion red wax seal, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+As of 31 October 2026, no OpenAI page publishes a ChatGPT Plus free trial for India.
+The free month shows up only as an account-specific offer the press reported, so your own upgrade screen is the place to check.
+
+- Gizbot and Digit reported a one-month Plus offer on some Indian accounts on 20 January 2026. Gizbot reported a second wave on 6 October 2026, with a "Claim free offer" button and Plus at Rs 0.
+- In that October report, an account that had subscribed to ChatGPT Go before saw the full Rs 1,999 price.
+- OpenAI's trial FAQ says a trial renews as a paid subscription on the payment method on file unless you cancel before it ends. Plus is Rs 1,999 a month on the web in India.
+- OpenAI's cancel article says to cancel at least 24 hours before your next billing date.
+- The four free months of Plus in OpenAI's Back to School offer are for students at eligible U.S. institutions only, with a claim deadline of 31 October 2026.
+
+When you open the Plus upgrade screen on your account, do you see Rs 0 or the full Rs 1,999?
+
+https://swapbiswas.com/blog/chatgpt-plus-free-trial-india/?utm_source=linkedin&utm_medium=social&utm_campaign=chatgpt-plus-free-trial-india
+
+#ChatGPT #OpenAI #ChatGPTPlus #AITools #India
+
+---
+
+### Prompt for LinkedIn Profile Picture: Keep Your Real Face
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a painter's studio table with an empty oval gilt portrait frame propped against the wall, a round hand mirror lying face down, a folded navy wool jacket and a plain white linen shirt, a wooden palette with a few brushes and a small brass oil lamp, a single vermilion red silk ribbon tied to the handle of the hand mirror, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+A prompt for a LinkedIn profile picture needs five parts: an identity lock, framing, attire, background and lighting.
+Of the three prompt guides I read on 31 October 2026, two print prompts with no line asking the model to keep the face in your photo.
+
+- LinkedIn's Professional Community Policies: "Do not use an image of someone else, or any other image that is not your likeness, for your profile photo."
+- Ask for a square 1:1 image. A 9:16 image keeps only 56% of its height when you crop it to a square, so the crop can cut off the top of the head or the chin.
+- In Gemini, Flash-Lite uses Nano Banana 2 Lite, which Google says "isn't designed for multiple image references or for multiple edits". Set Flash or Pro if your plan offers them.
+- With Gemini's Keep Activity on, activity is auto-deleted after 18 months by default, and chats seen by reviewers are kept for up to 3 years. With it off, future chats are kept for 72 hours.
+- The post has a copy-paste base prompt, variants by look and tool, and a fix table for drafts that do not look like you.
+
+When an AI headshot drifts away from your face, what changes first: the jawline, the eyes or the skin?
+
+https://swapbiswas.com/blog/prompt-for-linkedin-profile-picture/?utm_source=linkedin&utm_medium=social&utm_campaign=prompt-for-linkedin-profile-picture
+
+#LinkedIn #PersonalBranding #AIHeadshot #Gemini #ChatGPT
+
+---

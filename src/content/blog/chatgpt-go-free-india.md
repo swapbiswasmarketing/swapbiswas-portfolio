@@ -154,7 +154,7 @@ None of the OpenAI pages I read offers a free Go year to a user in India today. 
 | Partner promo codes | The promotions-and-referrals article says to obtain a code "from the partner (for example, by SMS or through their portal)" and names no partner | Only if a partner issues you one |
 | [Revolut](https://www.revolut.com/news/revolut_partners_with_openai_to_bring_chatgpt_go_to_millions_of_customers/) | 30 July 2026: Go "Free for up to 12 months, depending on their plan" for Revolut retail customers; the announcement names no countries | Not confirmed: the same announcement address on Revolut's India site returned a 404 |
 
-The Back to School row is for US students, so a university student in India aged 18 or over has a closer match in [Google's free year of AI Plus for verified students](/blog/gemini-student-offer/), which must be redeemed by 31 December 2026. For the same question about Claude, [my dated check of Claude routes for a student in India](/blog/claude-student-discount-india/) lists who has to act on each one.
+The Back to School row is for US students, so a university student in India aged 18 or over has a closer match in [Google's free year of AI Plus for verified students](/blog/gemini-student-offer/), which must be redeemed by 31 December 2026. For the same question about Claude, [my dated check of Claude routes for a student in India](/blog/claude-student-discount-india/) lists who has to act on each one. If it is Plus you want rather than Go, [the free month of Plus reported on some Indian accounts](/blog/chatgpt-plus-free-trial-india/) sorts what OpenAI documents from what only the press reported, and who can claim it.
 
 ## ChatGPT Go Free in India: Decide Before the Renewal Date
 

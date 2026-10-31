@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 870" width="1400" height="870">
+  <rect x="0" y="0" width="1400" height="870" fill="#f6f4ef"/>
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">ChatGPT Plus free in India: what OpenAI publishes vs what press reported</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Dates in 2026, read 31 October 2026. OPENAI = an OpenAI page says it. PRESS = only a news report says it.</text>
+  <line x1="290" y1="150" x2="290" y2="774" stroke="#15130f" stroke-width="2.5"/>
+  <text x="262" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f" text-anchor="end">19 Jan</text>
+  <circle cx="290" cy="180" r="9" fill="#15130f"/>
+  <rect x="330" y="140" width="1010" height="80" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="354" y="173" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">Tibor Blaho posts on X that OpenAI "seems to be running" a free month of Plus</text>
+  <text x="354" y="204" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">PRESS - as quoted in Gizbot, 20 Jan</text>
+  <text x="262" y="280" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f" text-anchor="end">20 Jan</text>
+  <circle cx="290" cy="274" r="9" fill="#15130f"/>
+  <rect x="330" y="234" width="1010" height="80" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="354" y="267" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">Gizbot and Digit report a one-month Plus trial in India: payment details needed, auto-renews</text>
+  <text x="354" y="298" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">PRESS - Gizbot (Kabir Jain), Digit (Bhaskar Sharma)</text>
+  <text x="262" y="374" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f" text-anchor="end">21 Jan</text>
+  <circle cx="290" cy="368" r="9" fill="#15130f"/>
+  <rect x="330" y="328" width="1010" height="80" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="354" y="361" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">India's 12-month ChatGPT Go promo has ended. It covered Go, not Plus</text>
+  <text x="354" y="392" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">OPENAI - ChatGPT release notes</text>
+  <text x="262" y="468" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f" text-anchor="end">6 Oct</text>
+  <circle cx="290" cy="462" r="9" fill="#15130f"/>
+  <rect x="330" y="422" width="1010" height="80" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="354" y="455" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">Second wave: a "Claim free offer" button at Rs 0 on select Indian accounts</text>
+  <text x="354" y="486" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">PRESS - Gizbot (Carlsen Martin)</text>
+  <text x="262" y="562" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f" text-anchor="end">31 Oct</text>
+  <circle cx="290" cy="556" r="9" fill="#15130f"/>
+  <rect x="330" y="516" width="1010" height="80" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="354" y="549" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">Claim deadline for the Back to School offer: four free months of Plus, U.S. students only</text>
+  <text x="354" y="580" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">OPENAI - Back to School help article</text>
+  <text x="262" y="656" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#b53b15" text-anchor="end">31 Oct</text>
+  <circle cx="290" cy="650" r="11" fill="#b53b15"/>
+  <rect x="330" y="610" width="1010" height="80" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5"/>
+  <text x="354" y="643" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">No OpenAI page I read publishes a Plus trial for India. Plus is Rs 1,999 a month</text>
+  <text x="354" y="674" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#b53b15">MY CHECK - help center, release notes, India price list</text>
+  <text x="262" y="750" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f" text-anchor="end">4 Nov</text>
+  <circle cx="290" cy="744" r="9" fill="#15130f"/>
+  <rect x="330" y="704" width="1010" height="80" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="354" y="737" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">Earliest end of a free ChatGPT Go year in India; it renews at the Go fee unless cancelled</text>
+  <text x="354" y="768" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">PER MY GO RENEWAL GUIDE (OpenAI India promo article, archived)</text>
+  <text x="60" y="836" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">OpenAI's trial FAQ: a free trial renews as a paid plan on the payment method on file unless you cancel before it ends.</text>
+</svg>

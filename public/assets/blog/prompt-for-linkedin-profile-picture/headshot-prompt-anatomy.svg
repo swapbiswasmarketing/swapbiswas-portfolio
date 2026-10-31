@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="1400" height="880">
+  <rect x="0" y="0" width="1400" height="880" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.76">Five parts of a headshot prompt, plus one negative line</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Each part settles one thing the image model would otherwise decide for you</text>
+
+  <rect x="60" y="140" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="60" y="152" width="6" height="76" fill="#b53b15"/>
+  <text x="96" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#b53b15" letter-spacing="1.5">PART 1</text>
+  <text x="96" y="216" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Identity lock</text>
+  <text x="420" y="182" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Controls: whether the face in the output is the face in your photo</text>
+  <text x="420" y="216" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Without it: nothing asks the model to keep your face</text>
+
+  <rect x="60" y="256" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="296" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c" letter-spacing="1.5">PART 2</text>
+  <text x="96" y="332" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Framing</text>
+  <text x="420" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Controls: a 1:1 square, head and shoulders, camera at eye level</text>
+  <text x="420" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Without it: a tall or wide image you have to crop into the round frame</text>
+
+  <rect x="60" y="372" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="412" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c" letter-spacing="1.5">PART 3</text>
+  <text x="96" y="448" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Attire</text>
+  <text x="420" y="414" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Controls: what you wear, in plain colours with no logos</text>
+  <text x="420" y="448" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Without it: the model picks clothes that may not match your work</text>
+
+  <rect x="60" y="488" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="528" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c" letter-spacing="1.5">PART 4</text>
+  <text x="96" y="564" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Background</text>
+  <text x="420" y="530" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Controls: a plain or softly blurred backdrop behind your head</text>
+  <text x="420" y="564" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Without it: clutter that competes with your face at thumbnail size</text>
+
+  <rect x="60" y="604" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="644" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c" letter-spacing="1.5">PART 5</text>
+  <text x="96" y="680" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Lighting</text>
+  <text x="420" y="646" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Controls: soft front light, natural skin texture, true colour</text>
+  <text x="420" y="680" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Without it: hard shadows or skin smoothed until it looks plastic</text>
+
+  <rect x="60" y="732" width="1280" height="124" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="770" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f" letter-spacing="1.5">NEGATIVE LINE</text>
+  <text x="96" y="804" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Do not: change my face, slim or age me, smooth my skin, whiten my teeth, change my eye colour,</text>
+  <text x="96" y="836" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">or add jewellery, text, a logo or a watermark</text>
+</svg>

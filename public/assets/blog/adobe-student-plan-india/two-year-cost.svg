@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect x="0" y="0" width="1400" height="820" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Two years of Adobe in India: what each plan costs</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Year 1 price plus the renewal rate Adobe lists now, incl. GST, adobe.com/in, 31 Oct 2026</text>
+  <rect x="60" y="140" width="22" height="22" rx="3" fill="#15130f"/>
+  <text x="94" y="158" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Year 1</text>
+  <rect x="190" y="140" width="22" height="22" rx="3" fill="#aca69c"/>
+  <text x="224" y="158" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Year 2 at the current renewal rate</text>
+
+  <rect x="40" y="190" width="1320" height="560" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="70" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Student plan (CC Pro)</text>
+  <text x="70" y="262" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Annual, billed monthly</text>
+  <rect x="440" y="222" width="75.5" height="38" fill="#15130f"/>
+  <rect x="515.5" y="222" width="132.2" height="38" fill="#aca69c"/>
+  <text x="662" y="249" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#b53b15">Rs 13,176.00</text>
+
+  <text x="70" y="324" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Student plan (CC Pro)</text>
+  <text x="70" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Annual, prepaid</text>
+  <rect x="440" y="310" width="63.0" height="38" fill="#15130f"/>
+  <rect x="503" y="310" width="110.4" height="38" fill="#aca69c"/>
+  <text x="628" y="337" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Rs 11,004.96</text>
+
+  <line x1="70" y1="378" x2="1330" y2="378" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="70" y="412" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Photoshop single app</text>
+  <text x="70" y="438" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Annual, billed monthly</text>
+  <rect x="440" y="398" width="113.3" height="38" fill="#15130f"/>
+  <rect x="553.3" y="398" width="138.8" height="38" fill="#aca69c"/>
+  <text x="707" y="425" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Rs 15,995.52</text>
+
+  <text x="70" y="500" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Photoshop single app</text>
+  <text x="70" y="526" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Annual, prepaid</text>
+  <rect x="440" y="486" width="108.7" height="38" fill="#15130f"/>
+  <rect x="548.7" y="486" width="132.8" height="38" fill="#aca69c"/>
+  <text x="696" y="513" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Rs 15,324.20</text>
+
+  <line x1="70" y1="554" x2="1330" y2="554" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="70" y="588" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">CC Pro for Individuals</text>
+  <text x="70" y="614" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Annual, billed monthly</text>
+  <rect x="440" y="574" width="226.7" height="38" fill="#15130f"/>
+  <rect x="666.7" y="574" width="513.3" height="38" fill="#aca69c"/>
+  <text x="1194" y="601" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Rs 46,956.00</text>
+
+  <text x="70" y="676" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">CC Pro for Individuals</text>
+  <text x="70" y="702" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Annual, prepaid</text>
+  <rect x="440" y="662" width="204.9" height="38" fill="#15130f"/>
+  <rect x="644.9" y="662" width="483.1" height="38" fill="#aca69c"/>
+  <text x="1142" y="689" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Rs 43,655.40</text>
+
+  <text x="60" y="790" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Bars to scale. Adobe renews at "the then-current rate", so year 2 can change before you reach it.</text>
+</svg>

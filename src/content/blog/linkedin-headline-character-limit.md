@@ -113,7 +113,7 @@ None of the four links a LinkedIn Help page for its figure. Set against them, my
 
 That is arithmetic on the guides' numbers, not a screenshot of where LinkedIn cuts my headline. The role keyword ends at character 23 and the market, "B2B SaaS & AI", at 38, inside all four figures. The line after the separator, which I ran through [a feature, benefit and value test](/blog/feature-vs-benefit-vs-value/), fits whole only under Jobscan's 80.
 
-LinkedIn's [page on profile appearances](https://www.linkedin.com/help/linkedin/answer/a7105642) counts an appearance wherever your name and headline show up across LinkedIn, which [my explainer on LinkedIn search appearances vs profile views](/blog/linkedin-search-appearances-vs-profile-views/) breaks down by place.
+LinkedIn's [page on profile appearances](https://www.linkedin.com/help/linkedin/answer/a7105642) counts an appearance wherever your name and headline show up across LinkedIn, which [my explainer on LinkedIn search appearances vs profile views](/blog/linkedin-search-appearances-vs-profile-views/) breaks down by place. If you are updating the profile photo at the same time, [a Gemini or ChatGPT prompt for an edited headshot that keeps your face](/blog/prompt-for-linkedin-profile-picture/) is in a separate guide.
 
 <img src="/assets/blog/linkedin-headline-character-limit/cut-points.webp" alt="The 75-character headline opening set out one character per cell on a numbered ruler, with the role keyword Senior Product Marketer marked as ending at character 23 and cut lines at 60, 70 and 80, with the guide behind each figure named in the key" title="A 75-character headline opening against four guides' figures for the cut" width="1200" height="437" loading="lazy" decoding="async" />
 
