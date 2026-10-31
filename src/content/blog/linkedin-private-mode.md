@@ -111,6 +111,7 @@ Some gaps are documented, and some are only missing from the pages:
 - Search suggestions count as views. The visibility settings page says that selecting a member's name in search suggestions opens their mini profile, and "This is treated as a profile view that may result in a notification being sent to the member whose profile you viewed, depending on your settings." Set the mode before you search.
 - Earlier views. None of the five Help pages above says whether switching to private mode changes how a view you already made is shown, so do not assume it hides one retroactively.
 - Other reasons a list looks empty. Private mode is one reason a viewer's name is missing; my breakdown of [why profile views show zero or no names](/blog/linkedin-search-appearances-vs-profile-views/) covers the rest, such as no views in 90 days or a blocked member.
+- Who you are. Private mode hides you as a viewer and confirms nothing about your identity; for a profile located in India, LinkedIn's identity route is the [DigiLocker identity check with a live selfie](/blog/linkedin-verification-digilocker/).
 - Third-party tools that claim to reveal anonymous profile viewers are outside LinkedIn's settings. [LinkedIn's User Agreement](https://www.linkedin.com/legal/user-agreement), effective 3 November 2025, says members agree not to use software, scripts or "browser plugins and add-ons or any other technology" to "scrape or copy the Services", so a tool that promises more than these three modes may break those terms.
 
 ## Which Viewing Mode to Choose

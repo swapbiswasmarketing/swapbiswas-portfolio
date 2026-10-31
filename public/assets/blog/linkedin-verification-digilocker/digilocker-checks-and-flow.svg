@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 750" width="1400" height="750">
+  <rect x="0" y="0" width="1400" height="750" fill="#f6f4ef"/>
+
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">LinkedIn verification with DigiLocker: checks, then the flow</text>
+  <text x="60" y="106" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">From LinkedIn Help (a1638573, a1631612), read logged out from India on 31 October 2026</text>
+
+  <text x="60" y="158" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1" fill="#6a645c">CHECK BEFORE YOU START</text>
+
+  <rect x="60" y="176" width="290" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="82" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Location</text>
+  <text x="82" y="248" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Profile location: India</text>
+  <text x="82" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Indian IP address</text>
+
+  <rect x="390" y="176" width="290" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="412" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Device</text>
+  <text x="412" y="248" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn app, or Chrome,</text>
+  <text x="412" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Firefox, Edge on Android</text>
+
+  <rect x="720" y="176" width="290" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="742" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">DigiLocker</text>
+  <text x="742" y="248" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Account linked to</text>
+  <text x="742" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">your Aadhaar</text>
+
+  <rect x="1050" y="176" width="290" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1072" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Name</text>
+  <text x="1072" y="248" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">DigiLocker name matches</text>
+  <text x="1072" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">your LinkedIn name</text>
+
+  <text x="60" y="336" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Also: you must be 18 or older, and one DigiLocker account can verify only one LinkedIn profile.</text>
+
+  <text x="60" y="398" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1" fill="#6a645c">THEN THE FLOW, ON YOUR PHONE</text>
+
+  <rect x="60" y="416" width="290" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="82" y="446" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1" fill="#6a645c">1  ON LINKEDIN</text>
+  <text x="82" y="480" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Verify now</text>
+  <text x="82" y="514" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">More &gt; About this</text>
+  <text x="82" y="542" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">profile &gt; Verify now &gt;</text>
+  <text x="82" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Verify with DigiLocker</text>
+
+  <line x1="353" y1="501" x2="372" y2="501" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="372,494 386,501 372,508" fill="#15130f"/>
+
+  <rect x="390" y="416" width="290" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="412" y="446" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1" fill="#6a645c">2  IN DIGILOCKER</text>
+  <text x="412" y="480" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Log in, then OTP</text>
+  <text x="412" y="514" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Log in or create an</text>
+  <text x="412" y="542" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">account, link Aadhaar</text>
+  <text x="412" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">if needed, enter OTP</text>
+
+  <line x1="683" y1="501" x2="702" y2="501" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="702,494 716,501 702,508" fill="#15130f"/>
+
+  <rect x="720" y="416" width="290" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="742" y="446" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1" fill="#6a645c">3  CONSENT</text>
+  <text x="742" y="480" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Click Allow</text>
+  <text x="742" y="514" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Name, date of birth,</text>
+  <text x="742" y="542" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">photo, phone, unique ID,</text>
+  <text x="742" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Aadhaar-link flag</text>
+
+  <line x1="1013" y1="501" x2="1032" y2="501" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1032,494 1046,501 1032,508" fill="#15130f"/>
+
+  <rect x="1050" y="416" width="290" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1072" y="446" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1" fill="#6a645c">4  BACK ON LINKEDIN</text>
+  <text x="1072" y="480" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Live selfie</text>
+  <text x="1072" y="514" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Compared against the</text>
+  <text x="1072" y="542" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">photo DigiLocker holds</text>
+  <text x="1072" y="570" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">for your Aadhaar</text>
+
+  <line x1="1195" y1="589" x2="1195" y2="612" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1188,612 1195,626 1202,612" fill="#15130f"/>
+
+  <rect x="60" y="630" width="1280" height="72" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5"/>
+  <text x="84" y="674" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#15130f">Verification added when the selfie matches that photo and the names match (or you display your ID name)</text>
+</svg>

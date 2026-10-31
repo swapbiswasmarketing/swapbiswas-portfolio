@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect x="0" y="0" width="1400" height="820" fill="#f6f4ef"/>
+  <text x="60" y="64" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Claude Team plan: seat fees vs the API credit pool</text>
+  <text x="60" y="102" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Monthly US dollars, annual billing. Anthropic pricing page and help center, 31 Oct 2026</text>
+
+  <rect x="60" y="126" width="18" height="18" fill="#15130f"/>
+  <text x="88" y="141" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Seat fees per month</text>
+  <rect x="330" y="126" width="18" height="18" fill="#aca69c"/>
+  <text x="358" y="141" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pooled monthly API credit</text>
+
+  <line x1="500" y1="168" x2="500" y2="712" stroke="#e4dfd6" stroke-width="1"/>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif">
+    <text x="60" y="204" font-size="22" fill="#15130f">2 Standard</text>
+    <text x="60" y="232" font-size="20" fill="#6a645c">2 seats</text>
+    <rect x="500" y="180" width="21.7" height="26" fill="#15130f"/>
+    <text x="534" y="200" font-size="20" fill="#15130f">$40</text>
+    <rect x="500" y="214" width="21.7" height="26" fill="#aca69c"/>
+    <text x="534" y="234" font-size="20" fill="#3a3632">$40</text>
+
+    <text x="60" y="296" font-size="22" fill="#15130f">4 Standard + 1 Premium</text>
+    <text x="60" y="324" font-size="20" fill="#6a645c">5 seats</text>
+    <rect x="500" y="272" width="97.7" height="26" fill="#15130f"/>
+    <text x="610" y="292" font-size="20" fill="#15130f">$180</text>
+    <rect x="500" y="306" width="97.7" height="26" fill="#aca69c"/>
+    <text x="610" y="326" font-size="20" fill="#3a3632">$180</text>
+
+    <text x="60" y="388" font-size="22" fill="#15130f">8 Standard + 2 Premium</text>
+    <text x="60" y="416" font-size="20" fill="#6a645c">10 seats</text>
+    <rect x="500" y="364" width="195.4" height="26" fill="#15130f"/>
+    <text x="708" y="384" font-size="20" fill="#15130f">$360</text>
+    <rect x="500" y="398" width="195.4" height="26" fill="#aca69c"/>
+    <text x="708" y="418" font-size="20" fill="#3a3632">$360</text>
+
+    <text x="60" y="480" font-size="22" fill="#15130f">25 Standard</text>
+    <text x="60" y="508" font-size="20" fill="#6a645c">25 seats: pool reaches the cap</text>
+    <rect x="500" y="456" width="271.4" height="26" fill="#15130f"/>
+    <text x="786" y="476" font-size="20" fill="#15130f">$500</text>
+    <rect x="500" y="490" width="271.4" height="26" fill="#aca69c"/>
+    <text x="786" y="510" font-size="20" fill="#3a3632">$500</text>
+
+    <text x="60" y="572" font-size="22" fill="#15130f">20 Standard + 5 Premium</text>
+    <text x="60" y="600" font-size="20" fill="#6a645c">25 seats</text>
+    <rect x="500" y="548" width="488.6" height="26" fill="#15130f"/>
+    <text x="1002" y="568" font-size="20" fill="#15130f">$900</text>
+    <rect x="500" y="582" width="271.4" height="26" fill="#aca69c"/>
+    <text x="786" y="602" font-size="20" fill="#3a3632">$500 (uncapped $900)</text>
+
+    <text x="60" y="664" font-size="22" fill="#15130f">45 Standard + 5 Premium</text>
+    <text x="60" y="692" font-size="20" fill="#6a645c">50 seats</text>
+    <rect x="500" y="640" width="760" height="26" fill="#15130f"/>
+    <text x="1272" y="660" font-size="20" fill="#15130f">$1,400</text>
+    <rect x="500" y="674" width="271.4" height="26" fill="#aca69c"/>
+    <text x="786" y="694" font-size="20" fill="#3a3632">$500 (uncapped $1,400)</text>
+  </g>
+
+  <line x1="771.4" y1="168" x2="771.4" y2="712" stroke="#b53b15" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <text x="771.4" y="744" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#b53b15">$500 POOL CAP</text>
+
+  <text x="60" y="786" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Credit = $20 per Standard + $100 per Premium seat, capped at $500. Not for interactive Claude Code.</text>
+</svg>

@@ -169,6 +169,6 @@ If you are working out how to get LinkedIn Premium for free from more than one r
 3. Check the Airtel app's Rewards & OTTs page, in case the LinkedIn offer is shown to your number.
 4. Take LinkedIn's own trial last, from a desktop browser, and cancel at least one day before the billing date.
 
-If none of these fits and you are weighing a paid plan, [LinkedIn Premium's rupee prices, by source](/blog/linkedin-premium-cost-in-india/) are in a separate check.
+If none of these fits and you are weighing a paid plan, [LinkedIn Premium's rupee prices, by source](/blog/linkedin-premium-cost-in-india/) are in a separate check. If the badge next to your name is what you are after, you need none of these routes: LinkedIn says identity verification comes "with no additional cost", and in India it runs through [a DigiLocker check on your phone](/blog/linkedin-verification-digilocker/).
 
 Check your partner offers before you click Upgrade for Free.

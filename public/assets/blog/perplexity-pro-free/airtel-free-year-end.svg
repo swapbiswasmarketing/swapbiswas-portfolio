@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="1400" height="880">
+  <rect x="0" y="0" width="1400" height="880" fill="#f6f4ef"/>
+  <text x="40" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">When an Airtel free year of Perplexity Pro ends</text>
+  <text x="40" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Claims ran 17 July 2025 to 16 January 2026. Per Perplexity's Help Center and TelecomTalk, read 31 Oct 2026.</text>
+
+  <text x="40" y="150" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1.6" fill="#6a645c">WHEN YOU CLAIMED</text>
+  <text x="420" y="150" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1.6" fill="#6a645c">THE 12 FREE MONTHS</text>
+  <text x="890" y="150" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="1.6" fill="#6a645c">SO THE FREE YEAR</text>
+
+  <rect x="40" y="170" width="330" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="66" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">No Pro plan</text>
+  <text x="66" y="270" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">at the time</text>
+  <line x1="372" y1="255" x2="398" y2="255" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="396,248 410,255 396,262" fill="#15130f"/>
+  <rect x="410" y="170" width="440" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="436" y="230" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Pro activates once you claim</text>
+  <text x="436" y="264" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">the offer in the Airtel</text>
+  <text x="436" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Thanks app</text>
+  <line x1="852" y1="255" x2="868" y2="255" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="866,248 880,255 866,262" fill="#15130f"/>
+  <rect x="880" y="170" width="480" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="906" y="230" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Ends 12 months after your</text>
+  <text x="906" y="264" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">claim: between about mid-July</text>
+  <text x="906" y="298" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">2026 and mid-January 2027</text>
+
+  <rect x="40" y="370" width="330" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="66" y="436" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Paying for Pro on</text>
+  <text x="66" y="470" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">the web (Stripe)</text>
+  <line x1="372" y1="455" x2="398" y2="455" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="396,448 410,455 396,462" fill="#15130f"/>
+  <rect x="410" y="370" width="440" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="436" y="430" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Start automatically after</text>
+  <text x="436" y="464" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">your current subscription</text>
+  <text x="436" y="498" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">ends</text>
+  <line x1="852" y1="455" x2="868" y2="455" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="866,448 880,455 866,462" fill="#15130f"/>
+  <rect x="880" y="370" width="480" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="906" y="430" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Ends 12 months after that paid</text>
+  <text x="906" y="464" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">period ran out, which can be</text>
+  <text x="906" y="498" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">later than January 2027</text>
+
+  <rect x="40" y="570" width="330" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="66" y="636" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Paying through</text>
+  <text x="66" y="670" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Apple or Google</text>
+  <line x1="372" y1="655" x2="398" y2="655" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="396,648 410,655 396,662" fill="#15130f"/>
+  <rect x="410" y="570" width="440" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="436" y="630" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Begin only after the paid</text>
+  <text x="436" y="664" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">period ends, and only if you</text>
+  <text x="436" y="698" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">turned off store auto-renewal</text>
+  <line x1="852" y1="655" x2="868" y2="655" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="866,648 880,655 866,662" fill="#15130f"/>
+  <rect x="880" y="570" width="480" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="906" y="630" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Ends 12 months after the paid</text>
+  <text x="906" y="664" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">period ended; if auto-renewal</text>
+  <text x="906" y="698" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">stayed on, the promo did not apply</text>
+
+  <rect x="40" y="770" width="1320" height="76" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5"/>
+  <text x="66" y="801" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">Every route, at the end: Pro auto-renews at the standard rate for the plan you selected</text>
+  <text x="66" y="830" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">(monthly or annual) unless you cancel first. A card on file is required for every promotional redemption.</text>
+</svg>

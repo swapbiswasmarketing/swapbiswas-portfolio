@@ -145,7 +145,7 @@ What cancelling does:
 
 On re-verification, Google's pages differ. The India student page says "Eligibility must be verified each year to maintain access", and the terms make eligibility a condition "to retain access for the whole Offer Period". Google One Help's question "Do I need to reverify with SheerID?" answers yes "if you have claimed a Google AI Pro student offer", "usually every 12 months, for up to four consecutive years", and does not name the AI Plus trial. The offer terms contain no re-verification date. Keep your student email working for the whole year.
 
-If you would rather pay for something else in month 13, [my ChatGPT Go and Google AI Plus comparison by rupee tier](/blog/chatgpt-go-vs-gemini/) sets the two side by side.
+If you would rather pay for something else in month 13, [my ChatGPT Go and Google AI Plus comparison by rupee tier](/blog/chatgpt-go-vs-gemini/) sets the two side by side. Perplexity has no free student plan in India: its Education Pro is a discount for verified students and educators, as [my breakdown of Perplexity's offers for Indian users](/blog/perplexity-pro-free/) shows.
 
 ## Which Student Route Is Yours?
 

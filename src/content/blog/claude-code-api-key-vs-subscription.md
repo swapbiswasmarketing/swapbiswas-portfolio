@@ -139,7 +139,7 @@ To stop Claude Code offering API credits when you reach a plan limit, the same P
 
 ## Claude Code Data Terms: Consumer Plans vs Commercial Accounts
 
-Anthropic's [data training policy](https://code.claude.com/docs/en/data-usage#data-training-policy) splits accounts into consumer and commercial, and the line doesn't fall between a subscription and a key: a Team seat signed in with `/login` sits on the commercial side with the API.
+Anthropic's [data training policy](https://code.claude.com/docs/en/data-usage#data-training-policy) splits accounts into consumer and commercial, and the line doesn't fall between a subscription and a key: a Team seat signed in with `/login` sits on the commercial side with the API. The seat types and the two-member minimum for that plan are in [my breakdown of Team seats and billing](/blog/claude-team-plan/).
 
 | Account | Training on Claude Code prompts and code | Retention |
 |---|---|---|

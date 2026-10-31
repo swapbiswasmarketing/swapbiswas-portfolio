@@ -3323,3 +3323,72 @@ https://swapbiswas.com/blog/prompt-for-linkedin-profile-picture/?utm_source=link
 #LinkedIn #PersonalBranding #AIHeadshot #Gemini #ChatGPT
 
 ---
+
+### Perplexity Pro Free in India: Every Route Checked
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's oak desk with a brass hourglass whose sand has fully run through, a folded letter of invitation lying open beside an empty pewter coin dish, a small stack of foreign silver coins next to a closed leather ledger with a brass clasp, a quill resting in an inkwell, a single vermilion red ribbon tied around the stack of silver coins, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Perplexity Pro is not free for new users in India as of 31 October 2026: Airtel's 12-month offer closed to new claims on 16 January 2026.
+If you claimed it, your free year ends 12 months after your own start, and Pro then auto-renews at the standard rate unless you cancel.
+
+- Claims ran from 17 July 2025 to 16 January 2026, so for people with no Pro plan at the time, free years end between about mid-July 2026 and mid-January 2027. Claimed between July and October 2025? Yours has already ended.
+- Students get a discount, not free Pro: Education Pro is listed at $10 a month with SheerID verification.
+- The "Give a month, Get a month" referrals ended on 6 October 2025, and the Comet Referral Program concluded on 6 November 2025.
+- Perplexity says users in India can only subscribe in USD on its website, and UPI is not on its payment list.
+- If a renewal charge has gone through, the refunds page gives 24 hours to request one on a monthly plan and 72 hours for a full refund on an annual plan.
+
+If you claimed the Airtel offer, have you opened Manage Subscription on perplexity.ai to see when your free year ends?
+
+https://swapbiswas.com/blog/perplexity-pro-free/?utm_source=linkedin&utm_medium=social&utm_campaign=perplexity-pro-free
+
+#Perplexity #AITools #Airtel #India #Students
+
+---
+
+### Claude Team Plan: Seat Prices, Premium Seats and the Math
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a counting-house table with two wooden chairs pushed in side by side, a row of small identical brass seat tokens laid out in a line with one larger brass token at the end, an open ledger with a quill in an inkwell, a covered pewter coin box with its lid closed, a brass balance scale holding two equal stacks of old coins, a single vermilion red wax seal on the lid of the coin box, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+The smallest Claude Team plan, two Standard seats on annual billing, costs $40 a month ($480 for the year) as of 31 October 2026.
+Anthropic announced on 7 October 2026 that each seat also brings a monthly API credit: $20 per Standard seat and $100 per Premium seat, pooled and capped at $500.
+
+- A Standard seat is $25 a month billed monthly or $20 billed annually. A Premium seat is $125 or $100. US prices, tax excluded.
+- On annual billing the pooled credit equals the seat bill until it reaches $500: at 25 Standard seats, or at 5 Premium seats.
+- The credit covers the Claude API, the Console Playground, Managed Agents and the Agent SDK. It does not cover interactive Claude Code in the terminal, IDE, desktop or web.
+- For two people, one Premium and one Standard seat on annual billing cost $1,440 a year, against $1,400 for Max plus an annual Pro plan.
+- On an annual plan, cutting seats waits for the renewal date, with no prorated refund.
+
+How many people on your team would you bet on holding a seat for the full twelve months?
+
+https://swapbiswas.com/blog/claude-team-plan/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-team-plan
+
+#Claude #Anthropic #AITools #SaaSPricing #ClaudeCode
+
+---
+
+### LinkedIn Verification With DigiLocker: Steps and Fixes
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a clerk's oak desk with a small round hand mirror propped upright, a folded identity document beside an open leather register, a brass key resting on top of a closed wooden document box, a quill in an inkwell and a small brass oil lamp casting soft light, a single vermilion red wax seal pressed on the folded identity document, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+LinkedIn verification with DigiLocker needs five things: age 18 or older, India as your profile location plus an Indian IP, the LinkedIn app or an Android browser, an Aadhaar-linked DigiLocker account, and a matching name.
+Six of the eight failure causes on LinkedIn's troubleshooting page can be checked before you tap Verify now.
+
+- It does not run in a laptop browser. LinkedIn shows a QR code, and your phone finishes the flow.
+- Name mismatch? LinkedIn can show your legal name in parenthesis after your LinkedIn name. That ID name is view-only, and deleting it removes the verification too.
+- After a successful check, LinkedIn says it stores only your name and a unique identifier, and deletes your photo, date of birth, gender and biometric data.
+- A verification on a duplicate account you closed or merged means a wait of at least 365 days before you can verify the same way.
+- Guides that tell you to tap "Verify with Aadhaar" or name HyperVerge follow the June 2023 launch coverage. Today's help pages have neither.
+
+Before you start, does the name on your LinkedIn profile match the name DigiLocker holds?
+
+https://swapbiswas.com/blog/linkedin-verification-digilocker/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-verification-digilocker
+
+#LinkedIn #LinkedInTips #DigiLocker #Aadhaar #India
+
+---

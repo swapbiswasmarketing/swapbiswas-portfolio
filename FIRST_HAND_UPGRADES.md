@@ -546,3 +546,7 @@ Optional, only if you ever reach Adobe India's student checkout yourself: does i
 ## prompt-for-linkedin-profile-picture
 
 Do you want to add a profile-picture prompt you have actually used yourself (and say which tool and model setting you ran it in), or a one-line note on how your current LinkedIn photo was made? It would sit under the base prompt.
+
+## linkedin-verification-digilocker
+
+Have you verified your own LinkedIn profile, and if so, by which route (DigiLocker identity, work email or another workplace or education method) and roughly when? Only if true: one sentence on whether the name-match or the selfie step needed a retry would go in the cause-to-fix section.

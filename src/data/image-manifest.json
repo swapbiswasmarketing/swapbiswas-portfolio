@@ -613,6 +613,14 @@
 		],
 		"hash": "4078e80188a518e9"
 	},
+	"/assets/blog/claude-team-plan/seat-fees-vs-credit-pool.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "e35c96edf8120fa6"
+	},
 	"/assets/blog/claude-usage-limits/four-ways-back.webp": {
 		"w": 1200,
 		"h": 626,
@@ -1603,6 +1611,14 @@
 		],
 		"hash": "e392f7d41c29b29e"
 	},
+	"/assets/blog/linkedin-verification-digilocker/digilocker-checks-and-flow.webp": {
+		"w": 1200,
+		"h": 643,
+		"v": [
+			660
+		],
+		"hash": "6302357198685baa"
+	},
 	"/assets/blog/llm-optimization/llm-signal-layers.webp": {
 		"w": 1200,
 		"h": 617,
@@ -1807,6 +1823,14 @@
 			660
 		],
 		"hash": "d2ede06f29a869ef"
+	},
+	"/assets/blog/perplexity-pro-free/airtel-free-year-end.webp": {
+		"w": 1200,
+		"h": 754,
+		"v": [
+			660
+		],
+		"hash": "e0cf75eefe7ec180"
 	},
 	"/assets/blog/positioning-vs-messaging/positioning-messaging-diagnostic.webp": {
 		"w": 1200,

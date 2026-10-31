@@ -129,7 +129,7 @@ On Anthropic's [Education contact page](https://claude.com/contact-sales/educati
 | How long, and for how many? | "Promotional pricing for 12 months" on the program page; the [offer terms](https://www.anthropic.com/legal/team-plan-for-scientists-terms), effective 27 August 2026, limit it to "an initial group of 10,000 Scientists" |
 | Does it reach India? | The terms require you to "be located in a region where the Plan is available" and say "Anthropic determines eligibility in its sole discretion"; none of the three pages cited in this table lists accepted institutions |
 
-A lab at an Indian institution finds out at verification, which the program page says takes "5-7 business days" for most applications. The help article also tells a PI to "Check with your institution first", because the plan "is for small research groups whose institutions don't have an enterprise agreement in place."
+A lab at an Indian institution finds out at verification, which the program page says takes "5-7 business days" for most applications. The help article also tells a PI to "Check with your institution first", because the plan "is for small research groups whose institutions don't have an enterprise agreement in place." For what a regular Team seat costs outside the program, and how monthly and annual billing compare, see [my guide to standard Team seat pricing](/blog/claude-team-plan/).
 
 ### Claude for Teachers: US K-12 Educators Only
 

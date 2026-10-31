@@ -54,7 +54,7 @@ The Fable and Team cells carry conditions:
 
 - Fable on Pro and on Team Standard seats "run on pay-as-you-go usage credits from the start", per Anthropic's [Fable models on your plan](https://support.claude.com/en/articles/15424964-claude-fable-models-on-your-plan) article. On Max and Ultra, the half-the-week share sits inside the weekly limit: "you can never use more than your weekly limit."
 - Max and Ultra each carry a separate weekly limit for Fable alongside the general weekly limit, per the [Max plan article](https://support.claude.com/en/articles/11049741-what-is-the-max-plan) and the [Ultra plan article](https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan).
-- Team gets one row because Standard and Premium seats can be mixed on one plan.
+- Team gets one row because Standard and Premium seats can be mixed on one plan. For the seat types, worked bills by seat mix and where the pooled credit stops growing, see [my seat-by-seat math for Claude Team](/blog/claude-team-plan/).
 
 The per-token prices behind Enterprise usage and usage credits are model by model, and I keep [Sonnet, Opus, Haiku and Fable token prices](/blog/claude-sonnet-vs-opus/) in a separate comparison.
 
