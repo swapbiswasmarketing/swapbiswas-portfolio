@@ -11,7 +11,7 @@ faqs:
   - q: "Which is cheaper in India, ChatGPT Go or Google AI Plus?"
     a: "They cost the same: ₹399 a month each, read logged out from India on 25 October 2026. OpenAI's India price file marks the ₹399 as GST included; Google's India plan page prints no tax line. Neither page offers a yearly price for these two plans."
   - q: "Is Gemini Pro free in India?"
-    a: "Google AI Pro costs ₹1,950 a month on Google's India plan page as of 25 October 2026. Jio's terms give eligible Jio users 18 free months if they claim by 29 October 2026, unless Jio extends that date, and college students can get the lower AI Plus tier free for a year from Google if they redeem by 31 December 2026."
+    a: "Google AI Pro costs ₹1,950 a month on Google's India plan page as of 25 October 2026. Jio's 18-month offer for eligible Jio users closed to new claims when its offer period ended on 29 October 2026, and college students can get the lower AI Plus tier free for a year from Google if they redeem by 31 December 2026."
   - q: "Does Google AI Plus include storage?"
     a: "Yes. Google's India plan page lists 400 GB of cloud storage across Gmail, Drive and Photos on Google AI Plus, against 15 GB on the free plan, as of 25 October 2026. OpenAI's pricing table for ChatGPT has no cloud storage row."
   - q: "Which is better for students, ChatGPT or Gemini?"
@@ -74,7 +74,7 @@ ChatGPT Plus costs ₹1,999 a month and Google AI Pro ₹1,950, so Google is ₹
 | Extras | Sites: "Yes" (Go: "No"); interactive tables and charts: "Yes" (Go: "No") | YouTube Premium Lite plan |
 | Ads | No ads line on the Plus card | The YouTube Premium Lite line is the card's only ad-related line |
 | Yearly billing | None: the pricing page's FAQ offers annual plans "for Business and Enterprise" only | ₹19,500 a year on [Google One's plans page](https://one.google.com/about/plans), shown as "save ₹3,900" |
-| Free route open in India | None on OpenAI's India pricing page | Jio's 18-month offer for eligible Jio users |
+| Free route in India | None on OpenAI's India pricing page | Jio's 18-month offer for eligible Jio users, closed to new claims on 29 October 2026 |
 
 The yearly row is where the prices separate. Twelve monthly Plus payments come to ₹23,988, and a year of AI Pro bought on Google's yearly plan is ₹19,500 (the same figure as Google AI Ultra 20x's monthly price, by coincidence), which is **₹4,488 less** (my arithmetic on the two vendors' prices). Google's India plan page also says "Cancel at any time. No refunds for partial billing periods, except as required by applicable law", so a yearly plan is a year's commitment in practice.
 
@@ -93,15 +93,15 @@ The top tiers pair less cleanly. On 25 October 2026:
 
 On published features and prices, neither is better across the board: at the same ₹399, Google AI Plus lists 400 GB of storage, the Flash model and Gemini inside Gmail, while ChatGPT Go lists higher limits than Free on images, uploads and memory (GPT-6 Luna and unlimited everyday text chats are already on Free). Which is better for you depends on which of those rows you will use each week; this comparison is from the two plan pages only and runs no same-prompt test.
 
-If the model name is what you are buying, the matched pair is ChatGPT Plus and Google AI Pro: [Google's India plan page](https://gemini.google/in/subscriptions/?hl=en-IN) puts Gemini 4 Argon on AI Pro and Ultra under the label "Includes Gemini 4 Argon", and [OpenAI's pricing table](https://chatgpt.com/pricing/) starts GPT-6 Sol at Plus. Whether AI Plus also unlocks Google's Pro model is a point Google's own pages disagree on; [my Google AI Plus student guide](/blog/internshala-google-ai-plus/) quotes both sides.
+If the model name is what you are buying, the matched pair is ChatGPT Plus and Google AI Pro: [Google's India plan page](https://gemini.google/in/subscriptions/?hl=en-IN) puts Gemini 4 Argon on AI Pro and Ultra under the label "Includes Gemini 4 Argon", and [OpenAI's pricing table](https://chatgpt.com/pricing/) starts GPT-6 Sol at Plus. Whether AI Plus also unlocks Google's Pro model is a point Google's own pages disagree on; [my Internshala and Google AI Plus comparison](/blog/internshala-google-ai-plus/) quotes both sides.
 
 ## Free Routes Still Open in India
 
 Before paying ₹399, check the free routes, as of 25 October 2026:
 
 - ChatGPT Go free: closed to new sign-ups. [OpenAI's release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes) say of the India offer, "as of January 21, 2026, the promo has ended". If you redeemed it, [what happens when the free Go year ends](/blog/chatgpt-go-free-india/) covers the renewal charge from 4 November 2026.
-- Google AI Plus for students: [Google's India student page](https://gemini.google/in/students/?hl=en-IN) offers a one-year AI Plus student plan at no cost to eligible university students aged 18 and above, "Redeem until 31 December 2026", after which it charges ₹399 a month unless cancelled.
-- Google AI Pro through Jio: Jio's terms close the claim window on 29 October 2026 unless Jio extends it; [the Jio Gemini Pro offer guide](/blog/jio-gemini-pro-offer/) has who qualifies and what month 19 costs.
+- Google AI Plus for students: [Google's India student page](https://gemini.google/in/students/?hl=en-IN) offers a one-year AI Plus student plan at no cost to eligible university students aged 18 and above, "Redeem until 31 December 2026", after which it charges ₹399 a month unless cancelled. [My guide to Google's Gemini student offer](/blog/gemini-student-offer/) covers who qualifies, the SheerID check and the claim steps.
+- Google AI Pro through Jio: closed to new claims. Jio's offer period ended on 29 October 2026, and on 31 October 2026 [Jio's terms page](https://www.jio.com/jcms/en-in/jio-google-gemini-terms-and-conditions/) read "The Google Gemini Offer Is No Longer Available"; [the Jio Gemini Pro offer guide](/blog/jio-gemini-pro-offer/) covers when claimed plans end and what month 19 costs.
 
 The free plans compare like this on the two pricing pages:
 

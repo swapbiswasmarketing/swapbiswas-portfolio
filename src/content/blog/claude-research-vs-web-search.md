@@ -7,7 +7,7 @@ img: /assets/stock-7.webp
 img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "Is Claude Research free?"
-    a: "No. As of 3 October 2026, Claude's pricing page marks Research as No on the Free plan and Yes on Pro, Max 5x and Max 20x, and Anthropic's Research article lists Pro, Max, Team and Enterprise. Web search is on every plan, Free included."
+    a: "No. As of 31 October 2026, Claude's pricing page marks Research as No on the Free plan and Yes on Pro, Max and Ultra (the plan formerly called Max 20x), and Anthropic's Research article lists Pro, Max, Ultra, Team and Enterprise. Web search is on every plan, Free included."
   - q: "Why is Claude Research not working?"
     a: "On the Free plan there is no Research option at all. Anthropic's Research article says you must have web search turned on for Research to function: in the previous experience, switch it on under the + button, and on Team and Enterprise an Owner or Primary Owner has to enable web search in Organization settings > Capabilities. If Research is on and Claude still does not research, prompt it with 'Claude, please use the research tool to...', or in the new experience start the run with /deep-research."
   - q: "What is the difference between Claude Research and extended thinking?"
@@ -128,6 +128,8 @@ No. Here is [the pricing page's comparison grid](https://claude.com/pricing), ch
 | Max 5x and Max 20x | Yes | Yes |
 | Team | Yes, once an Owner enables it | Yes |
 | Enterprise (self-serve or sales-assisted) | Yes, once an Owner enables it | Yes |
+
+Re-checked on 31 October 2026, the grid's individual columns read Free, Pro, Max and Ultra, after Anthropic's [Ultra plan article](https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan) renamed Max 20x to Ultra, and the rows, now labelled "Web search" and "Research", show Yes on Pro, Max and Ultra and No for Research on Free. Prices and usage for each tier are in [my dated Claude plan lineup](/blog/claude-plans/).
 
 The Team and Enterprise caveat comes from the web search article: "An Owner or Primary Owner must first enable web search for the entire workspace in Organization settings > Capabilities." Research itself runs on the web, Claude Desktop and Claude Mobile.
 

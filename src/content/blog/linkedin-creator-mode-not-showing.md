@@ -99,7 +99,7 @@ Make follow primary is the setting that carries creator mode's Follow button tod
 
 On mobile, tap your profile picture, tap Settings & Privacy, tap the Visibility tab, then tap Followers in the Visibility of your LinkedIn activity section. LinkedIn notes that "Changes can take up to 24 hours to take effect."
 
-The same screen holds Who can follow you. Choose Everyone on LinkedIn if you want followers beyond your connections: LinkedIn warns that if you limit followers to your connections, "followers outside your network will be removed and your follower number will be the same as your total connections."
+The same screen holds Who can follow you. Choose Everyone on LinkedIn if you want followers beyond your connections: LinkedIn warns that if you limit followers to your connections, "followers outside your network will be removed and your follower number will be the same as your total connections." The choice comes up on layoff and job-search posts, where strangers turn up in the comments; [how to write a layoff post commenters can act on](/blog/cfbr-meaning-linkedin/) covers what to ask them for in place of CFBR.
 
 ### Reasons a Profile Shows Follow Instead of Connect
 

@@ -119,7 +119,7 @@ Total impressions rose by **60%** and the implied Experience count by **20%**, w
 
 Before you judge the edit:
 
-- Note what you posted between the two readings, because a post that sends people to your profile changes who is looking at it.
+- Note what you posted between the two readings, because a post that sends people to your profile changes who is looking at it. Note any comments you left in that window as well; for a bare CFBR under someone else's post, [LinkedIn's help pages give no figure for what such a comment does to reach](/blog/cfbr-meaning-linkedin/).
 - On a profile with a few dozen impressions per reading, a handful of impressions moves the share by several points, so treat a small move as noise until a later reading shows the same direction.
 
 ## The Experience Share in a Section Rewrite

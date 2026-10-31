@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+
+  <text x="60" y="68" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What to comment instead of CFBR</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Four comments that give a layoff or job post something a reader can act on</text>
+
+  <rect x="60" y="140" width="620" height="300" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5"/>
+  <text x="100" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#b53b15">01 / REFERRAL</text>
+  <text x="100" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Offer a referral</text>
+  <text x="100" y="286" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"I work at [company] and can refer you</text>
+  <text x="100" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">for the [role] opening. Messaging you now."</text>
+  <line x1="100" y1="360" x2="640" y2="360" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="400" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">It is the thing the post asked for</text>
+
+  <rect x="720" y="140" width="620" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="760" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">02 / @MENTION</text>
+  <text x="760" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Mention someone who is hiring</text>
+  <text x="760" y="286" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"@[Recruiter name] is hiring [role] in</text>
+  <text x="760" y="318" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">[city] at [company], worth a message."</text>
+  <line x1="760" y1="360" x2="1300" y2="360" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="760" y="400" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">LinkedIn notifies the people you mention</text>
+
+  <rect x="60" y="470" width="620" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="522" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">03 / REPOST</text>
+  <text x="100" y="566" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Repost with your thoughts</text>
+  <text x="100" y="616" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">One line on who they are, the role</text>
+  <text x="100" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">they want and the city.</text>
+  <line x1="100" y1="690" x2="640" y2="690" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="730" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">LinkedIn: "add your own ideas or questions"</text>
+
+  <rect x="720" y="470" width="620" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="760" y="522" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">04 / SUPPORT</text>
+  <text x="760" y="566" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Support without filler</text>
+  <text x="760" y="616" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Name a real project or skill from the</text>
+  <text x="760" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">post, or just leave a reaction.</text>
+  <line x1="760" y1="690" x2="1300" y2="690" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="760" y="730" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Matches nothing on LinkedIn's Spam page</text>
+</svg>

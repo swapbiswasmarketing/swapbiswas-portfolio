@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720">
+  <rect x="0" y="0" width="1400" height="720" fill="#f6f4ef"/>
+
+  <text x="50" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Gemini student offer in India: from claim to month 13</text>
+  <text x="50" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Google's India student page, offer terms and Google One Help, read logged out on 31 October 2026</text>
+
+  <rect x="50" y="138" width="330" height="44" rx="22" fill="#b53b15"/>
+  <text x="215" y="167" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.5" fill="#ffffff">REDEEM BY 31 DEC 2026</text>
+
+  <rect x="50" y="210" width="295" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="74" y="250" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 1</text>
+  <text x="74" y="290" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Start, signed in</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="74" y="334">Go to one.google.com/</tspan>
+    <tspan x="74" y="366">ai-student on your</tspan>
+    <tspan x="74" y="398">personal account,</tspan>
+    <tspan x="74" y="430">not a school</tspan>
+    <tspan x="74" y="462">Workspace one</tspan>
+  </text>
+
+  <line x1="351" y1="355" x2="365" y2="355" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="365,348 379,355 365,362" fill="#15130f"/>
+
+  <rect x="385" y="210" width="295" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="409" y="250" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 2</text>
+  <text x="409" y="290" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Verify with SheerID</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="409" y="326">Use a valid school</tspan>
+    <tspan x="409" y="356">email. SheerID may</tspan>
+    <tspan x="409" y="386">ask for an ID card,</tspan>
+    <tspan x="409" y="416">class schedule or</tspan>
+    <tspan x="409" y="446">tuition receipt. Finish</tspan>
+    <tspan x="409" y="476">on the same account</tspan>
+  </text>
+
+  <line x1="686" y1="355" x2="700" y2="355" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="700,348 714,355 700,362" fill="#15130f"/>
+
+  <rect x="720" y="210" width="295" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="250" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">MONTHS 1-12</text>
+  <text x="744" y="290" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">AI Plus at Rs 0</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="744" y="334">400 GB of storage,</tspan>
+    <tspan x="744" y="366">2x usage limits and</tspan>
+    <tspan x="744" y="398">Gemini Omni. A form</tspan>
+    <tspan x="744" y="430">of payment is needed</tspan>
+    <tspan x="744" y="462">at sign-up</tspan>
+  </text>
+
+  <line x1="1021" y1="355" x2="1035" y2="355" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1035,348 1049,355 1035,362" fill="#15130f"/>
+
+  <rect x="1055" y="210" width="295" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1079" y="250" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">MONTH 13</text>
+  <text x="1079" y="290" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Rs 399 a month</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="1079" y="334">Charged automatically</tspan>
+    <tspan x="1079" y="366">to the payment you</tspan>
+    <tspan x="1079" y="398">added, unless you</tspan>
+    <tspan x="1079" y="430">cancel before the</tspan>
+    <tspan x="1079" y="462">Offer Period ends</tspan>
+  </text>
+
+  <rect x="50" y="540" width="1300" height="130" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="74" y="580" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">If you cancel during the free year</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="74" y="616">The membership may stay active until the Offer Period ends. Storage then falls back to the free 15 GB,</tspan>
+    <tspan x="74" y="648">and above that you cannot store anything new until you delete files or buy a plan.</tspan>
+  </text>
+</svg>

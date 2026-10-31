@@ -67,40 +67,7 @@ I have not seen the logged-in flow, so these steps come from the descriptions of
 
 ## Google's Own Student Plan: One Year of AI Plus, Redeem by 31 December 2026
 
-Google announced this plan on 19 August 2026 in its [Back to School 2026 post](https://blog.google/products-and-platforms/products/education/back-to-school-2026/): "Eligible college students outside the U.S. can access Google AI Plus, free of charge, featuring increased usage limits, 400GB of storage, alongside bundled discounts on Google AI Pro and YouTube Premium." The India student page says the plan covers "eligible university students aged 18+". None of Google's plan, help, terms or blog pages cited in this post mentions Internshala.
-
-The rules, from Google's offer terms and Google One Help:
-
-| Rule | Google's wording |
-|---|---|
-| Length | "the promoted 12 month period from the day you redeem the Offer" |
-| Which plan | "depends on the country or region of your eligible higher education institution"; for India, the student page names Google AI Plus |
-| Age | "Be 18 years of age or older" |
-| Proof of study | "Verify your student status through SheerID using a valid school email address." |
-| Account | "Have a personal Google Account"; the offer "is not available on your school-issued Workspace for Education account" |
-| Payment | "Have a Google Payments account with a qualifying form of payment at sign-up" |
-| Usage limits | "you may experience different usage limits than Google One members on a paid plan" |
-| Stacking | The offer "cannot be combined with other Google One offers", except as the terms outline |
-
-### How to Claim Google's Student Plan
-
-Google One Help gives the steps:
-
-1. Go to one.google.com/ai-student. The "Claim a student plan at no cost" button on the India student page links there, and logged out it sent me to a Google sign-in page.
-2. Sign in to the Google Account you want the plan on.
-3. Select a student offer.
-4. Verify your student status through SheerID when asked. [SheerID's student FAQ](https://verify.sheerid.com/student-faq-b/) lists a "School or personal email address" among the details it asks for, and says it may also ask you to upload a school-issued document, such as a "School ID card with expiration date", a "Class schedule" or a "Tuition receipt".
-5. Complete the subscription flow, adding a form of payment if you have not already.
-
-### Before You Claim: Running Trials and Paid Upgrades
-
-Google One Help sets rules that can cost you a free year:
-
-- "Signing up for a student offer while on another Google One extended trial revokes your current offer and switches you to the new one."
-- "If you upgrade to a paid membership from the 12-month trial, you will not be eligible for the trial offer again."
-- No public Google or Internshala page I read says whether Internshala's free year counts as "another Google One extended trial". Until one does, claim one route per Google account.
-
-The first rule matters most if you took Google's earlier AI Pro student trial. The same help article says Google One offered that 12-month trial "In 2025 and early 2026", and the India student page lists students "whose 2025 AI Pro trial has expired" among those who qualify for AI Plus. If your AI Pro trial ends before 31 December 2026, let it run out, then claim AI Plus before that deadline. If it ends later, you are choosing between the rest of your AI Pro year and a new AI Plus year, and the help article says students coming off the AI Pro trial "may be eligible for a limited-time discount on regular Google AI plans when your 12-month trial ends".
+Google's India student page offers university students aged 18+ a "one-year Google AI Plus student plan" at no cost, with student status verified through SheerID. The 12 months run from the day you redeem, the offer terms say it "must be redeemed by 31 December 2026", and from month 13 it charges ₹399 a month unless you cancel. Who qualifies, the claim steps and the rules on switching from another trial are in [my guide to Google's Gemini student offer](/blog/gemini-student-offer/).
 
 ## Is Google AI Plus the Same as Gemini Pro?
 
@@ -131,20 +98,13 @@ Pro wording turns up on pages about the Internshala offer:
 
 The first three fit the help article's list of AI Plus chat models. The fourth describes AI Pro: 5 TB is the AI Pro storage figure, and AI Plus lists 400 GB.
 
-If you need the AI Pro plan itself as a student, Google One Help lists a separate offer: "a Google AI Pro plan at a discounted rate while they remain a student, for up to four consecutive years", verified through SheerID the same way. The public India pages I read do not print its price. Jio customers on eligible plans have their own route to AI Pro, and [my guide to Jio's Gemini Pro offer](/blog/jio-gemini-pro-offer/) also lists Google's India prices from Free to Ultra. If you are weighing Gemini against Claude as a student, [my map of Claude's routes for students in India](/blog/claude-student-discount-india/) sorts them by who has to act.
+If you need the AI Pro plan itself as a student, Google One Help lists a separate offer: "a Google AI Pro plan at a discounted rate while they remain a student, for up to four consecutive years", verified through SheerID the same way. The public India pages I read do not print its price. Jio's route to AI Pro for customers on eligible plans closed to new claims when its offer period ended on 29 October 2026, and [my guide to Jio's Gemini Pro offer](/blog/jio-gemini-pro-offer/) covers that offer and lists Google's India prices from Free to Ultra. If you are weighing Gemini against Claude as a student, [my map of Claude's routes for students in India](/blog/claude-student-discount-india/) sorts them by who has to act.
 
 ## Not Eligible or Not Working: A Checklist for Both Routes
 
 ### Google's Own Rules for the Student Plan
 
-Beyond the age, SheerID and personal-account rules in the rules table above, these lines in Google's offer terms and Google One Help can block a claim:
-
-- Supervised accounts: "You also do not qualify if you have a supervised Google Account."
-- Family groups: "Family group members, unless they leave their shared plan first."
-- Google One through someone else: you do not qualify "if you currently have a Google One subscription through a third party or affiliate such as Google Fi".
-- Other exclusions: "an enterprise purchaser, a discounted Pixel bundle subscriber".
-- An error after verifying: "you may be signed in with a different Google Account to the one that you were using before you verified your student status."
-- Discretion: "Google reserves the right to determine eligibility in its sole discretion."
+Google's blocks on a claim (supervised accounts, family groups, Google One bought through a third party, and an error from signing in to a different Google Account) are listed in Google's own words in the Gemini student offer guide linked in the section on Google's plan above.
 
 ### Internshala Route: What Third-Party Pages Report
 
@@ -175,7 +135,7 @@ Without a published date, there is nothing to plan around on Internshala's side:
 
 ## Google AI Plus After 12 Months: Renewal and How to Cancel
 
-On Google's route, the terms say your payment method "will be automatically charged the standard monthly subscription price for the applicable plan included in your Offer for your country, until you cancel your subscription". The India student page puts that at ₹399 a month, and Google One Help's student offer article says "You will be notified ahead of the upcoming change." For Internshala's route, coursejoiner.com says Google sends a reminder 7 days before the trial ends.
+On Google's route, the offer terms say your payment method is charged the standard monthly price for your country until you cancel, which the India student page puts at ₹399 a month, and Google One Help says you are notified before the change. For Internshala's route, coursejoiner.com says Google sends a reminder 7 days before the trial ends.
 
 Before you let it renew, I would set it against ChatGPT Go, which costs the same each month; [my Go and AI Plus comparison for India](/blog/chatgpt-go-vs-gemini/) lists what each plan adds over its free tier.
 

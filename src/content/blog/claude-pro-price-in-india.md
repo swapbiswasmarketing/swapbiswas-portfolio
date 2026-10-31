@@ -13,7 +13,7 @@ faqs:
   - q: "Can I pay for Claude Pro with UPI in India?"
     a: "Not on the web: Anthropic's billing FAQ says web subscriptions accept only credit or debit cards. If you subscribe in the iOS or Android app, Apple or Google takes the payment, and both list UPI among their payment methods for India."
   - q: "What is the Claude Max price in India?"
-    a: "Apple's India App Store lists Max 5x at ₹12,900 a month and Max 20x at ₹24,900 as of 10 October 2026. Anthropic's Max plan article gives $100 and $200 a month for web subscriptions, says mobile pricing may vary, and offers Max as a monthly plan only."
+    a: "As of 31 October 2026, Apple's India App Store lists Claude Max at ₹12,900 a month and Claude Ultra, the plan Anthropic says Max 20x is now called, at ₹24,900, the same two prices it showed for Max 5x and Max 20x on 10 October 2026. Anthropic's Max plan article gives $100 a month and its Ultra plan article $200, each for web subscriptions only, with mobile pricing that may vary, and both plans are monthly only."
   - q: "Do students pay less for Claude Pro in India?"
     a: "Not on an individual plan: Anthropic's Pro plan article says it does not offer standard discounted pricing for any paid plan, though it occasionally runs limited-time promotions. Its pricing page lists an Education plan that an institution buys, with access for university members at discounted rates."
 ---
@@ -30,6 +30,8 @@ Claude Pro in India costs ₹1,999 a month or ₹19,900 a year on Apple's App St
 | Max 20x, monthly | ₹24,900 | Not listed per plan | ₹23,999 | $200 |
 
 The two store columns come from the listings themselves on 10 October 2026: Apple's In-App Purchases list, and the range in the About this app panel of [Google Play's India listing](https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_IN&gl=IN). The web column takes its figures from reports by the [Deccan Chronicle](https://www.deccanchronicle.com/technology/anthropic-launches-india-pricing-for-claude-ai-plans-1970784) and the [Free Press Journal](https://www.freepressjournal.in/tech/anthropic-introduces-indian-prices-for-claude-ai-subscriptions-heres-how-much-it-costs), which disagree on one cell, and the last column is Anthropic's pricing page for Pro and its Max plan article for the two Max prices. Any of these prices can change.
+
+Update, 31 October 2026: Anthropic's [Ultra plan article](https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan) now says "The Max 20x plan is now called the Ultra plan", Max is a single $100 tier, and the $200 price sits in the Ultra article. Apple's India listing, fetched logged out from an Indian connection that day, shows "Claude Max - Monthly" at ₹12,900 and "Claude Ultra - Monthly" at ₹24,900, so the two Max rows above carry over at the same App Store prices under the new names. The web rupee figures are July press reports that predate the rename. Every tier's dollar price and usage multiple is in [my dated lineup of the Claude plans](/blog/claude-plans/).
 
 I would not quote one Claude price for India. I would pick the checkout first and read the price on that checkout's own screen.
 
@@ -50,7 +52,7 @@ Going by Apple's listing on 10 October 2026 and the web prices Indian press repo
 
 Both columns are tax-inclusive by their sources. The Deccan Chronicle and Free Press Journal reports describe the web rupee prices as including GST, and Apple's pricing rule for developers, from [its 2023 tech talk on App Store pricing](https://developer.apple.com/videos/play/tech-talks/110364/), is that prices shown to customers outside the US and Canada include tax.
 
-Anthropic's [Max plan article](https://support.claude.com/en/articles/11049741-what-is-the-max-plan) lists $100 and $200 a month and adds: "These prices are for web subscriptions only. Mobile pricing may vary depending on your app platform." The [Pro plan article](https://support.claude.com/en/articles/8325606-what-is-the-pro-plan) points to both places: "Visit claude.ai/upgrade or check your mobile app store for current pricing in your region."
+As of 31 October 2026, Anthropic's [Max plan article](https://support.claude.com/en/articles/11049741-what-is-the-max-plan) lists $100 a month and its Ultra plan article $200, and each adds: "This price is for web subscriptions only. Mobile pricing may vary depending on your app platform." The [Pro plan article](https://support.claude.com/en/articles/8325606-what-is-the-pro-plan) points to both places: "Visit claude.ai/upgrade or check your mobile app store for current pricing in your region."
 
 If claude.ai/upgrade shows you dollars instead of rupees, take the checkout total with any tax added, convert it at your card's rate and set that number against the App Store price.
 
@@ -76,7 +78,7 @@ Apple's In-App Purchases list sits in the listing's Information section, under t
 
 Anthropic's usage credits article says app subscribers enable and buy credits on the web, so I would confirm in the app before counting on those three. What usage credits are, and what each plan's limits allow before you need them, is in [my guide to Claude usage limits](/blog/claude-usage-limits/).
 
-On Google Play, the About this app panel shows "In-app purchases" with a range of ₹1,999.00 to ₹24,987.50 per item, and the page footer says all prices include GST. The range does not name the item at either end. Its low end equals Apple's Pro monthly price and its high end is ₹87.50 above Apple's Max 20x price, so on Android the plan prices are best read on the upgrade screen inside the app.
+On Google Play, the About this app panel shows "In-app purchases" with a range of ₹1,999.00 to ₹24,987.50 per item, and the page footer says all prices include GST. The range does not name the item at either end. Its low end equals Apple's Pro monthly price and its high end is ₹87.50 above Apple's Max 20x price (the ₹24,900 Apple lists for Ultra on 31 October 2026), so on Android the plan prices are best read on the upgrade screen inside the app.
 
 ElevenLabs shows the same split, with dollars on its web pricing page and rupee plan prices on Apple's India App Store, and I set the two against each other in [my ElevenLabs cost breakdown for India](/blog/elevenlabs-price-in-india/).
 
@@ -86,7 +88,7 @@ Lovable, an AI app builder, also sells its plans in rupees on Apple's India App 
 
 ## The Web Price: Dollars on Anthropic's Pages, Rupees in Press Reports
 
-Anthropic's own pages state the web price in dollars: $0 for the Free plan, $20 a month or $200 a year for Pro, and $100 or $200 a month for Max. The rupee figures for the web come from press reports dated 13 and 14 July 2026.
+Anthropic's own pages state the web price in dollars: $0 for the Free plan, $20 a month or $200 a year for Pro, $100 a month for Max and, as of 31 October 2026, $200 a month for Ultra, the former Max 20x. The rupee figures for the web come from press reports dated 13 and 14 July 2026.
 
 [TechCrunch's report of 13 July 2026](https://techcrunch.com/2026/07/13/anthropic-starts-localizing-claude-pricing-for-india-its-biggest-market-after-the-us/), by Jagmeet Singh, said "Local pricing has begun to appear for some users in India on Claude's website and mobile apps." It gave Claude Pro as ₹2,000 a month when billed annually and Claude Max as starting at ₹11,999, said the India prices include local taxes, and ended with: "Anthropic did not respond to a request for comment on the Indian rupee pricing rollout."
 
@@ -130,7 +132,7 @@ That endpoint is undocumented and can change without notice. Requested from the 
 | Currency | USD |
 | Pro, monthly | 2000 minor units, which is $20 |
 | Pro, annual | 20000 minor units, which is $200 |
-| Max 5x and Max 20x, monthly | 10000 and 20000 minor units, which is $100 and $200 |
+| Max 5x and Max 20x (Max and Ultra since the rename), monthly | 10000 and 20000 minor units, which is $100 and $200 |
 | Tax shown as included | false |
 
 Asked for the United States, it returned the same amounts. Asked for Germany, through the `?country=DE` test override described in the script's header, it returned euros. So the endpoint carries local-currency prices for at least one other country, and on this date it answered India in dollars.
@@ -153,17 +155,17 @@ The US row comes from [Apple's US listing for Claude](https://apps.apple.com/us/
 - On the App Store, ten monthly payments come to ₹19,990, so the annual plan is ahead from the tenth month. On the July web figures, ten payments come to ₹23,990 against ₹24,000, so it is ahead from the eleventh.
 - Annual billing is a prepayment. The FAQ on Anthropic's pricing page says "you're billed once up front for the year" and that payments are "generally non-refundable", with exceptions in its consumer terms and in local law.
 - Switching later is allowed from Settings > Billing. Anthropic's [annual billing article](https://support.claude.com/en/articles/10185996-how-to-change-your-pro-plan-from-monthly-to-annual-billing) says unused monthly time "will be automatically credited to your first annual invoice", so the lower-risk order is monthly first, then annual once you know you will keep the plan for most of a year.
-- Max has no annual option. The Max plan article says the plan is "currently available as a monthly subscription only".
+- Max and Ultra have no annual option. The Max plan article says the plan is "currently available as a monthly subscription only", and the Ultra plan article says the same of Ultra.
 
 Student pricing is a separate question, covered in [the routes open to a student in India](/blog/claude-student-discount-india/).
 
 ## Claude Max Price in India
 
-On Apple's India listing, Claude Max is ₹12,900 a month for Max 5x and ₹24,900 for Max 20x as of 10 October 2026, against reported web prices of ₹11,999 and ₹23,999 and Anthropic's list prices of $100 and $200.
+On Apple's India listing, Claude Max is ₹12,900 a month for Max 5x and ₹24,900 for Max 20x as of 10 October 2026, against reported web prices of ₹11,999 and ₹23,999 and Anthropic's list prices of $100 and $200. On 31 October 2026 the listing shows the same two prices as "Claude Max - Monthly" and "Claude Ultra - Monthly", after Anthropic renamed Max 20x to Ultra.
 
-- The App Store prices sit 7.5% and 3.8% above the reported web prices. On Apple's US listing the same two plans are $124.99 and $249.99, which is 25% above Anthropic's $100 and $200 web list prices.
+- The App Store prices sit 7.5% and 3.8% above the reported web prices. On Apple's US listing the same two plans are $124.99 and $249.99 (Max and Ultra on 31 October 2026), which is 25% above Anthropic's $100 and $200 web list prices.
 - Google Play treats upgrades differently. Per the Max plan article, "If you subscribed through Google Play, you're charged the full price of your new plan when you upgrade", and the unused value of the old plan becomes extra days on the new one.
-- Anthropic's [monthly API credits article](https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans) gives Max monthly API credits in dollars: $100 on Max 5x and $200 on Max 20x. You claim them on claude.ai in a web browser whichever checkout you used, after seven days on the plan, and they do not cover interactive Claude Code.
+- Anthropic's [monthly API credits article](https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-ultra-and-team-plans) gives monthly API credits in dollars: $100 on Max and $200 on Ultra, as of 31 October 2026. You claim them on claude.ai in a web browser whichever checkout you used, after seven days on the plan, and they do not cover interactive Claude Code.
 
 ## Claude Price in India vs USA
 
@@ -173,8 +175,8 @@ On Apple's India and US listings, Claude Pro is ₹1,999 a month and $20.00 a mo
 |---|---|---|---|
 | Pro, monthly | ₹1,999 | $20.00 | 99.95 |
 | Pro, annual | ₹19,900 | $214.99 | 92.56 |
-| Max 5x, monthly | ₹12,900 | $124.99 | 103.21 |
-| Max 20x, monthly | ₹24,900 | $249.99 | 99.60 |
+| Max 5x (Max since the rename), monthly | ₹12,900 | $124.99 | 103.21 |
+| Max 20x (Ultra since the rename), monthly | ₹24,900 | $249.99 | 99.60 |
 
 The last column is the India price divided by the US price. Where a dollar costs you fewer rupees than that figure, the US listing is the lower price for that row. The percentages above are my arithmetic at that reference rate, and the rate your card applies may differ. The same division gives a rupees-per-dollar rate for Replit Core's India App Store and replit.com prices, and [Replit's App Store versus web break-even](/blog/replit-price-in-india/) turns on whether replit.com adds tax.
 
@@ -217,7 +219,7 @@ On the web, Anthropic's billing FAQ says "we only accept credit or debit cards."
 
 ## Claude Code and API Pricing in India
 
-Claude Code has no separate price in India. The FAQ on Anthropic's pricing page says it "is included in all paid plans" and shares the plan's usage limits, so its cost is the Pro or Max price at your checkout, and the Free plan does not include it. [Which plans include Claude Code, and when a non-developer needs it](/blog/claude-vs-claude-code/), is a separate guide.
+Claude Code has no separate price in India. The FAQ on Anthropic's pricing page says it "is included in all paid plans" and shares the plan's usage limits, so its cost is the Pro, Max or Ultra price at your checkout, and the Free plan does not include it. [Which plans include Claude Code, and when a non-developer needs it](/blog/claude-vs-claude-code/), is a separate guide.
 
 The API is billed separately and in dollars. Anthropic's [API pricing page](https://platform.claude.com/docs/en/about-claude/pricing) says "All prices are in USD" and quotes rates per million tokens, and the Pro plan article says the plan "does not include API usage through the Claude Console". I keep [per-token prices by model](/blog/claude-sonnet-vs-opus/) and [what changes when Claude Code runs on an API key](/blog/claude-code-api-key-vs-subscription/) in their own guides.
 
@@ -246,7 +248,7 @@ On features, [OpenAI's pricing page](https://chatgpt.com/pricing/) marks Codex a
 
 Over Go, Plus lifts the limits on Codex and deep research and has no ads, and [my job-by-job map of the Go and Plus differences](/blog/chatgpt-go-vs-plus/) shows which marketing jobs need the upgrade.
 
-If your Go plan is the free year from OpenAI's India promotion, check [the renewal date and cancel steps for your sign-up route](/blog/chatgpt-go-free-india/) before it renews as a paid plan. One of Google's paid Gemini plans comes free through a phone carrier in India: [Google AI Pro on an eligible Jio plan](/blog/jio-gemini-pro-offer/) runs for 18 months, and nothing renews on its own when those months end.
+If your Go plan is the free year from OpenAI's India promotion, check [the renewal date and cancel steps for your sign-up route](/blog/chatgpt-go-free-india/) before it renews as a paid plan. One of Google's paid Gemini plans came free through a phone carrier in India until Jio's offer closed to new claims on 29 October 2026: for anyone who claimed in time, [Google AI Pro on an eligible Jio plan](/blog/jio-gemini-pro-offer/) runs for 18 months, and nothing renews on its own when those months end.
 
 ## Claude Pro Price in India: Read It at Your Own Checkout
 

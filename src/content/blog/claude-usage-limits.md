@@ -11,7 +11,7 @@ faqs:
   - q: "What is a Claude limit reset?"
     a: "An occasional offer to eligible plans that sets your five-hour session limit or your weekly limit back to full. You use it with the 'Reset for free' button in Settings > Usage on the web or in Claude Desktop. The button is not available on Claude Mobile or in Claude Code in a terminal or IDE, though a reset used on the web or in Desktop restores your limits there too; offers expire, and a used reset cannot be undone."
   - q: "How much do Claude usage credits cost?"
-    a: "Usage credits bill at standard API rates, separately from your subscription. You prepay with 'Add funds', can set a monthly spend limit and auto-reload, and can redeem up to $2,000 a day. Discounted bundles of $50, $250 and $1,000 cost $45, $200 and $700."
+    a: "Usage credits bill at standard API rates, separately from your subscription. You prepay with 'Add funds' and can set a monthly spend limit and auto-reload. Discounted bundles of $50, $250 and $1,000 cost $45, $200 and $700."
   - q: "How do I check my Claude usage?"
     a: "In the Claude app, open Settings > Usage for your current session, weekly limits and reset times. In Claude Code, run /usage, which also answers to /cost and /stats. The /status command shows version, model, account and connectivity instead."
   - q: "Are Claude Code usage limits separate from Claude's?"
@@ -20,7 +20,7 @@ faqs:
 
 1. **Wait for the reset.** A session limit clears within five hours (Claude Code's message names the time), a weekly limit at a fixed day and time on your account, and from v2.1.234 an interactive Claude Code session can wait and continue the task on its own.
 2. **Use a free limit reset if one is on offer.** "Reset for free" in Settings > Usage, on the web or in Claude Desktop, puts your five-hour or weekly limit back to full.
-3. **Turn on usage credits.** Pro, Max 5x and Max 20x subscribers prepay and keep working at standard API rates, up to a daily redemption limit of **$2,000**.
+3. **Turn on usage credits.** Pro, Max and Ultra subscribers prepay and keep working at standard API rates, up to a **monthly spend limit** they set themselves.
 4. **Upgrade the plan.** Anthropic suggests the next tier up if you "consistently hit limits", and `/upgrade` in Claude Code opens the upgrade page.
 
 ## How Do Claude Usage Limits Work?
@@ -31,7 +31,7 @@ I would read which limit the message names before changing anything, because tha
 
 Every rule, price and setting here comes from Anthropic's help center, news page, [pricing page](https://claude.com/pricing) and Claude Code docs as of 2 October 2026, and each section links its source. I build this site with Claude Code in VS Code, as [my brief-to-deploy build log](/blog/build-a-personal-website-with-claude-code/) shows.
 
-<img src="/assets/blog/claude-usage-limits/four-ways-back.webp" alt="Diagram of the four ways back from a Claude usage limit: first read whether the message names a session, weekly, or Opus or Sonnet limit, then wait for the reset, use a free limit reset from Settings > Usage, turn on usage credits at standard API rates with a $2,000 daily redemption limit, or upgrade to Max 5x or Max 20x" title="Four ways back from a Claude usage limit, the free ones first" width="1200" height="626" loading="lazy" decoding="async" />
+<img src="/assets/blog/claude-usage-limits/four-ways-back.webp" alt="Diagram of the four ways back from a Claude usage limit: first read whether the message names a session, weekly, or Opus or Sonnet limit, then wait for the reset, use a free limit reset from Settings > Usage, turn on usage credits at standard API rates with optional auto-reload and a spend limit, or upgrade to Max or Ultra" title="Four ways back from a Claude usage limit, the free ones first" width="1200" height="626" loading="lazy" decoding="async" />
 
 ## Claude Usage Limit Reached? Read Which Limit the Message Names
 
@@ -97,7 +97,7 @@ The Claude Code extension in VS Code, where I work, falls under "IDE" there, so 
 
 ## Way Back 3: Claude Usage Credits and What They Cost
 
-Usage credits let Pro, Max 5x and Max 20x subscribers keep working past their included limits at standard API rates, billed separately from the subscription, per [Manage usage credits for paid Claude plans](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans), updated 24 September 2026. To turn them on:
+Usage credits let Pro, Max 5x and Max 20x subscribers keep working past their included limits at standard API rates, billed separately from the subscription, per [Manage usage credits for paid Claude plans](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans), updated 24 September 2026. As of 31 October 2026 the same article names the plans Pro, Max and Ultra, after Max 20x was renamed Ultra. To turn them on:
 
 1. In Settings > Usage, find the Usage credits section and click "Enable".
 2. Add a payment method if none is set up. If you subscribed in the iOS or Android app, do this on the web.
@@ -110,7 +110,7 @@ The rules that set the bill, as of 2 October 2026:
 | Rule | What the article says |
 |---|---|
 | Price | Standard API rates for the model you use; [per-job costs for each Claude model](/blog/claude-sonnet-vs-opus/) show what those rates add up to |
-| Daily redemption limit | "There is a daily redemption limit of $2000." |
+| Daily redemption limit | On 2 October 2026: "There is a daily redemption limit of $2000." The article as read on 31 October 2026 no longer states one |
 | Expiry | Usually none; "in certain jurisdictions such as Japan, usage credits expire six months after purchase starting September 10, 2026", with an email seven days before |
 | Your five-hour reset | Unchanged: "Usage credits don't affect this reset timing." |
 | Claude Code | Credits "apply to both Claude conversations and Claude Code terminal usage" |
@@ -129,10 +129,10 @@ Credits can also be bought ahead in bundles "available on Pro, Max, and Team pla
 | $1,000 | 30% | $700 |
 
 - Turn usage credits on first, then go to Settings > Usage, click "Buy usage" and pick a size.
-- Individual Pro and Max subscribers can buy up to $2,000 of discounted bundles a month, and Team Owners and Primary Owners up to $3,000; usage past that bills at standard rates.
+- Individual Pro, Max and Ultra subscribers can buy up to $2,000 of discounted bundles a month, and Team Owners and Primary Owners up to $3,000; usage past that bills at standard rates.
 - Bundle credits apply only after you pass your plan's included limits, and the balance works across Claude, Claude Code, Cowork and third-party products that use your Claude account.
 
-The two $2,000 figures are different rules: a daily redemption limit on usage credits, and a monthly purchase cap on discounted bundles.
+An earlier version of Anthropic's usage credits article also set a $2,000 daily redemption limit; the article as read on 31 October 2026 no longer mentions one, so the $2,000 figure left on Anthropic's pages is this monthly purchase cap on discounted bundles.
 
 ### Usage Credits Inside Claude Code
 
@@ -143,12 +143,12 @@ The two $2,000 figures are different rules: a daily redemption limit on usage cr
 
 ## Way Back 4: Upgrade the Plan
 
-Max 5x "includes five times the Pro plan's per-session usage allowance" and Max 20x includes 20 times, per Anthropic's [Max plan article](https://support.claude.com/en/articles/11049741-what-is-the-max-plan); [Claude Pro and Max next to ChatGPT's plans](/blog/claude-vs-chatgpt/) lists the prices. On Free, usage credits are not offered (Anthropic's usage and length limits article lists them for Pro, Max, Team and seat-based Enterprise), so the ways back are the wait, a limit reset if one is shown, or moving to Pro.
+When I read Anthropic's [Max plan article](https://support.claude.com/en/articles/11049741-what-is-the-max-plan) on 2 October 2026, Max 5x "includes five times the Pro plan's per-session usage allowance" and Max 20x included 20 times. As of 31 October 2026, Max is one $100 tier with "five times the Pro plan's usage every five hours and every week", and the [Ultra plan article](https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan) says "The Max 20x plan is now called the Ultra plan", at $200 a month with 10 times Pro's weekly usage and no five-hour limit for verified accounts. [Every Claude plan with its dated price and usage multiple](/blog/claude-plans/) sets the tiers side by side, and [Claude Pro and Max next to ChatGPT's plans](/blog/claude-vs-chatgpt/) compares them with OpenAI's. On Free, usage credits are not offered (Anthropic's usage and length limits article lists them for Pro, Max, Team and seat-based Enterprise), so the ways back are the wait, a limit reset if one is shown, or moving to Pro.
 
-If you are upgrading from India, the Pro and Max prices depend on where you check out, and I set [the App Store, Google Play and web checkouts for both plans](/blog/claude-pro-price-in-india/) side by side in a separate guide. Anthropic lists no student price on either plan, and [my route-by-route check for students in India](/blog/claude-student-discount-india/) covers what a student can use instead. If you plan to use a Pro or Max plan in a third-party coding harness such as OpenCode, [what each vendor's docs say about Claude plan sign-in there](/blog/opencode-vs-claude-code/) is worth reading before you upgrade.
+If you are upgrading from India, the Pro, Max and Ultra prices depend on where you check out, and I set [the App Store, Google Play and web checkouts for each plan](/blog/claude-pro-price-in-india/) side by side in a separate guide. Anthropic's Max plan article says "We don't offer standard discounted pricing for individual plans (Pro, Max, and Ultra)", and [my route-by-route check for students in India](/blog/claude-student-discount-india/) covers what a student can use instead. If you plan to use a Pro or Max plan in a third-party coding harness such as OpenCode, [what each vendor's docs say about Claude plan sign-in there](/blog/opencode-vs-claude-code/) is worth reading before you upgrade.
 
 - In Claude Code, `/upgrade` opens "the upgrade page in your browser to switch to a higher plan tier" ([commands reference](https://code.claude.com/docs/en/commands#all-commands)).
-- Anthropic's [Claude Code with Pro or Max article](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan) suggests Max 5x to Pro users who "consistently hit limits", and Max 20x to Max 5x users on the same test.
+- Anthropic's [Claude Code with Pro, Max, or Ultra article](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-max-or-ultra-plan) suggests Max to Pro users who "consistently hit limits", and Ultra to Max users on the same test, as of 31 October 2026.
 - The same article lists a separate paid route "for intensive coding sprints": a Claude Console account with API credits. An `ANTHROPIC_API_KEY` environment variable on your machine sends Claude Code down that route, "resulting in API usage charges rather than using your subscription's included usage". Once you approve it, that key also turns off Remote Control and the other Claude Code features that need a claude.ai login, which [my comparison of an API key with a plan login](/blog/claude-code-api-key-vs-subscription/) lists row by row, along with the `/status` check that shows which credential a session is using.
 
 For a one-off deadline, usage credits under a monthly spend limit cap the extra bill without changing the plan.
@@ -178,8 +178,8 @@ Fable 5 and Fable 5.1 count differently by plan and seat, per [Claude Fable mode
 | Plan or seat | Fable 5 and 5.1 | Your options |
 |---|---|---|
 | Free | Not available | Not applicable |
-| Pro, Team standard seats, seat-based Enterprise standard seats | Usage credits from the first request; Enterprise standard seats need credits enabled by the organization | Keep paying credits, switch models, or (on Pro) upgrade to Max |
-| Max 5x and 20x, Team premium seats, seat-based Enterprise premium seats | "up to 50% of your weekly usage limits on Fable models at no extra cost" | Continue on credits, or switch to another model |
+| Pro, Team standard seats, seat-based Enterprise standard seats | Usage credits from the first request; Enterprise standard seats need credits enabled by the organization | Keep paying credits, switch models, or (on Pro) upgrade to Max or Ultra |
+| Max and Ultra (formerly Max 5x and 20x), Team premium seats, seat-based Enterprise premium seats | "up to 50% of your weekly usage limits on Fable models at no extra cost" | Continue on credits, or switch to another model |
 | Usage-based Enterprise and the Claude API | Standard API rates | Not applicable |
 
 The 50% sits inside the weekly limit: the article says "you can never use more than your weekly limit", and Fable uses that limit "faster than other Claude models". On Pro and Team standard seats, Fable 5 moved to usage credits when an earlier promotion ended on 19 July 2026, and Fable 5.1 was never part of it.

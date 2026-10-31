@@ -3185,3 +3185,72 @@ https://swapbiswas.com/blog/kit-pricing/?utm_source=linkedin&utm_medium=social&u
 #EmailMarketing #Kit #ConvertKit #Newsletter #CreatorEconomy
 
 ---
+
+### Gemini Student Offer: 1 Year of AI Plus Free, Last Date
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's oak desk with a stack of leather-bound textbooks, a black scholar's cap resting on top of the books, a brass hourglass with the sand half run through, a small iron key and a few old coins in a shallow pewter dish, a quill and an inkwell, a single vermilion red ribbon bookmark hanging from the top book, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+Google's India student page offers university students aged 18+ one year of Google AI Plus at no cost, if they redeem it by 31 December 2026.
+The fine print at the foot of the page: from month 13 it charges Rs 399 a month unless you cancel.
+
+- In India the plan is AI Plus: 400 GB of storage, 2x usage limits and Gemini Omni. The free AI Pro year in the July 2025 headlines was an earlier trial whose India registration closed on 15 September 2025.
+- You verify through SheerID on a personal Google Account. A school-issued Workspace for Education account does not qualify.
+- A valid form of payment is required at sign-up.
+- The 12 months run from the day you redeem, so a claim on 31 October 2026 needs a cancel reminder around 24 October 2027.
+- Cancel and your storage falls back to the free 15 GB.
+
+If you claim it, will you cancel before month 13 or keep paying Rs 399 a month?
+
+https://swapbiswas.com/blog/gemini-student-offer/?utm_source=linkedin&utm_medium=social&utm_campaign=gemini-student-offer
+
+#GoogleGemini #GoogleAI #Students #AITools #India
+
+---
+
+### Claude Plans: Free, Pro, Max vs Ultra, Team Compared
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak counter with four lidded clay storage jars in a row rising in size from left to right, a brass balance scale with a few coins in one pan, a small brass hourglass beside the smallest jar, an open ledger with ruled columns and a quill in an inkwell, a single vermilion red wax seal on the lid of the largest jar, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+As of 31 October 2026, Claude Pro costs $20 a month, Max $100 and Ultra $200.
+On monthly billing, all three charge the same $20 a month for each Pro-sized week of allowance, so above Pro, pick by the limit that stops you first.
+
+- Ultra replaced Max 20x. Existing Max 20x subscribers move to Ultra automatically, with no price change.
+- Max gives 5x Pro's usage every 5 hours and every week. Ultra gives 10x Pro every week, with no 5-hour limit once Anthropic has verified the account.
+- Max carries $100 a month in API credits and Ultra $200. They expire at the end of each billing cycle and do not cover interactive Claude Code.
+- Pro billed annually is $200 up front, or $16.67 a month per Pro-sized week, the lowest figure in the yearly table.
+- The Free plan leaves out Claude Code, Opus and Research, and caps Projects at 5.
+
+In Settings > Usage, which bar fills first for you: the five-hour session or the week?
+
+https://swapbiswas.com/blog/claude-plans/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-plans
+
+#Claude #ClaudeCode #Anthropic #AITools #AIPricing
+
+---
+
+### CFBR Meaning on LinkedIn: What It Is and Does It Work
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a writing desk by a window covered with a loose pile of small identical folded notes, one longer letter of introduction lying open in front of the pile, a quill resting in an inkwell, a brass candlestick and a closed leather address book with a brass clasp, the letter of introduction sealed with a single vermilion red wax seal, muted earth tones, one red accent only, no text. 1200x628 aspect ratio.
+
+CFBR means Commenting For Better Reach: the four letters people type under layoff announcements, job-search posts and referral requests.
+None of LinkedIn's help and policy pages I checked says a CFBR comment raises a post's reach.
+
+- LinkedIn's feed page lists "How often a post is viewed or engaged with" as a signal, and "How constructive or professional the conversation is" as a separate one. It publishes no weight for any signal.
+- Its Spam page lists "Excessive, irrelevant, or repetitive comments or messages" as an example of spam.
+- Its commenting page says excessive comment creation or use of an automation tool can get those comments' visibility limited.
+- The two CFBR guides I read in full both say the comment helps reach, and neither links a LinkedIn page for that claim.
+- What to write instead: offer a referral, @mention a recruiter who is hiring (LinkedIn notifies the people you mention), or repost with one line on who the person is and the role they want.
+
+Next time a former colleague posts that they were laid off, whose name could you type instead of CFBR?
+
+https://swapbiswas.com/blog/cfbr-meaning-linkedin/?utm_source=linkedin&utm_medium=social&utm_campaign=cfbr-meaning-linkedin
+
+#LinkedIn #LinkedInTips #JobSearch #Layoffs #CareerTips
+
+---

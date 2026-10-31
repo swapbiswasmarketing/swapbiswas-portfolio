@@ -133,23 +133,15 @@ The same script runs on Windows Node.js, so even within Claude Code, moving the 
 
 ## Claude vs Claude Code Pricing
 
-Claude Code does not need a plan of its own. Anthropic's pricing FAQ says "Claude Code is included in all paid plans. It shares the same usage limits as the rest of your plan, so your work in the terminal and your chats draw from one pool" ([Claude pricing](https://claude.com/pricing)). The help center repeats it: "all activity in both tools counts against the same usage limits" ([Use Claude Code with your Pro or Max plan](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan)), so a long Claude Code session eats into the same allowance as your drafting in chat. If you are weighing an open-source harness instead, [the payments OpenCode and Claude Code each accept](/blog/opencode-vs-claude-code/) are mapped row by row, and a Claude Pro or Max plan signs in to Claude Code but not to OpenCode.
+Claude Code does not need a plan of its own. Anthropic's pricing FAQ says "Claude Code is included in all paid plans. It shares the same usage limits as the rest of your plan, so your work in the terminal and your chats draw from one pool" ([Claude pricing](https://claude.com/pricing)). The help center repeats it: "all activity in both tools counts against the same limits" ([Use Claude Code with your Pro, Max, or Ultra plan](https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-max-or-ultra-plan)), so a long Claude Code session eats into the same allowance as your drafting in chat. If you are weighing an open-source harness instead, [the payments OpenCode and Claude Code each accept](/blog/opencode-vs-claude-code/) are mapped row by row, and a Claude Pro or Max plan signs in to Claude Code but not to OpenCode.
 
-Plans and prices as of September 2026:
+Claude Code is included in every paid plan (Pro, Max, Ultra, Team and Enterprise), and it draws on the same usage pool as chat on each of them. The prices, usage multiples and API credits of each tier, including the Ultra plan that took over from Max 20x, are in [my dated lineup of every Claude plan](/blog/claude-plans/).
 
-| Plan | Price | Claude app | Claude Code | Usage, per Anthropic |
-|---|---|---|---|---|
-| Free | $0 | Yes, Projects capped at 5 | No | "Free covers everyday questions" |
-| Pro | $20 a month, or $17 a month billed annually ($200 up front) | Yes | Yes | "at least 5x more usage per 5-hour session than Free" |
-| Max | From $100 a month, billed monthly | Yes | Yes | 5x or 20x the usage of Pro per 5-hour session |
-| Team | Standard seat $20 a month billed annually or $25 monthly; Premium seat $100 or $125 | Yes | Yes | Premium seats get "5x more usage than standard seats" |
-| Enterprise | $20 per seat a month billed annually, plus usage at API rates | Yes | Yes | Usage cost "scales with model and task" |
-
-Those are Anthropic's list prices in US dollars; [my India price table by checkout](/blog/claude-pro-price-in-india/) sets the App Store, Google Play and the web side by side for Pro and Max. None of the rows has a student rate, and [the routes a student in India can take instead](/blog/claude-student-discount-india/) are in a separate guide.
+Anthropic lists those prices in US dollars; [my India price table by checkout](/blog/claude-pro-price-in-india/) sets the App Store, Google Play and the web side by side for Pro, Max and Ultra. None of the plans has a student rate, and [the routes a student in India can take instead](/blog/claude-student-discount-india/) are in a separate guide.
 
 The usage terms behind those prices:
 
-- Limits reset on a rolling window. The pricing FAQ says "Every plan has usage limits that reset on a rolling five-hour session window, and paid plans add weekly limits on top."
+- Limits reset on a rolling window. The pricing FAQ says "Every plan has usage limits. Most accounts have a limit that resets on a rolling five-hour session window, and paid plans add weekly limits on top." Verified Ultra accounts are the exception, with no five-hour limit, per Anthropic's [Ultra plan article](https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan).
 - API billing is the overflow route. The pricing page says heavy coding sessions can "switch to pay-as-you-go API credits through a Console account", and paid plans can turn on usage credits "to keep working at standard API rates". An approved `ANTHROPIC_API_KEY` from that Console account outranks your claude.ai login and switches off Remote Control, claude.ai connectors and `/usage-credits` in your local Claude Code, so I would go through [the Claude Code features that key costs you](/blog/claude-code-api-key-vs-subscription/) before switching.
 
 Before paying for either, check Settings > Usage on the web or in Claude Desktop for a free limit reset, which puts a five-hour or weekly limit back to full; [my breakdown of what each way back from a usage limit costs](/blog/claude-usage-limits/) compares it with prepaid usage credits, discounted usage bundles and an upgrade.

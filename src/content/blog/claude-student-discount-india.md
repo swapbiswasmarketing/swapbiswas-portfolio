@@ -80,7 +80,7 @@ None of the four returned an article with a student price for an individual plan
 | Who can sign up? | Creating an account needs "a phone number from a supported location" ([sign-up article](https://support.claude.com/en/articles/8325609-how-do-i-sign-up-for-the-pro-plan)), and India is on the list |
 | How old must you be? | "Claude, our consumer product, is only available to people over 18 years." ([age assurance article](https://support.claude.com/en/articles/15171100-age-assurance-on-claude)) |
 
-A school student under 18 cannot hold a Claude account at all, so the discount question starts at 18. A student who is 18 or older and on an eligible Jio plan can also look at [Jio's Google AI Pro offer](/blog/jio-gemini-pro-offer/), which gives a different vendor's paid plan free for 18 months.
+A school student under 18 cannot hold a Claude account at all, so the discount question starts at 18. A student who was 18 or older and on an eligible Jio plan could also claim [Jio's Google AI Pro offer](/blog/jio-gemini-pro-offer/), a different vendor's paid plan free for 18 months, until it closed to new claims on 29 October 2026.
 
 When Free runs out in the middle of an assignment, my guide to [the four ways back from a Claude usage limit](/blog/claude-usage-limits/) says which of them a Free account has, and [my roundup of free AI tools for marketing work](/blog/free-ai-tools-for-marketing/) shows where Claude's free tier fits next to other free assistants. Anthropic Academy also lists a course, [AI Fluency for students](https://anthropic.skilljar.com/ai-fluency-for-students), as "Register | FREE" with a certificate of completion; its page offers no Claude access or credits. Nor is that certificate of completion a Claude certification: [Anthropic's proctored certification exams](/blog/claude-certifications/) are open only to staff at Claude Partner Network organizations.
 
@@ -153,7 +153,7 @@ What that leaves a student who wants Claude:
 - Eligibility is broad. GitHub's [student application page](https://docs.github.com/en/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student) asks that you are "enrolled in a degree- or diploma-granting program", can prove current student status and are "at least 13 years old".
 - Activation can lag approval. The [student setup page](https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students) warns: "If only paid options appear, do not complete a purchase. Wait a few days and try again."
 
-Copilot Student is worth claiming if you write code. If Gemini would do instead of Claude, my guide to the [free Google AI Plus routes for college students in India](/blog/internshala-google-ai-plus/) compares Internshala's offer with Google's own one-year student plan.
+Copilot Student is worth claiming if you write code. If Gemini would do instead of Claude, my guide to the [free Google AI Plus routes for college students in India](/blog/internshala-google-ai-plus/) compares Internshala's offer with Google's own one-year student plan. That Google plan is free for 12 months once SheerID verifies you as a student, and it has to be redeemed by 31 December 2026; my [guide to claiming the Gemini student year](/blog/gemini-student-offer/) covers the steps and what changes in month 13.
 
 ## Five Claude Student Discount Claims, Checked Against Primary Pages
 

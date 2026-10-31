@@ -526,3 +526,15 @@ Optional, only if true: have you ever held paid LinkedIn Premium, and if so, whi
 ## kit-pricing
 
 Would you share which Kit plan the swapbiswas.com newsletter runs on (Free, Creator or Pro) and why? It would add one "what I chose" line to 'Which Kit Plan at Which List Size'.
+
+## gemini-student-offer
+
+Do you know a student in India (no names) whose SheerID verification for Google's student plan failed or who hit an error claiming it, and what was the cause (for example a school email SheerID did not recognise, or a different Google Account)? If yes, that would add one real case to 'Gemini Student Offer Not Working or Not Eligible: Google's Causes'.
+
+## claude-plans
+
+Do you want to say, in a later update, which Claude plan you use to build this site with Claude Code (and whether you have hit the five-hour or the weekly limit on it)? If yes, it would go in the intro after the dated-check paragraph, and in the "Daily Claude Code builder" row of 'Is Claude Pro Worth It? A Decision Table by Reader Type'.
+
+## cfbr-meaning-linkedin
+
+Have you ever had CFBR comments on your own LinkedIn posts (for example a hiring or job-related post), and if so, how did you respond to them? Answer only if true, with no reach or impression numbers. It would go as one sentence at the start of 'What to Write Instead of CFBR'.

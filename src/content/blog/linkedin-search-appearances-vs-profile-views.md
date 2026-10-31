@@ -126,6 +126,8 @@ To keep one week comparable with the next:
 - Record the printed date range with each number. LinkedIn's sample panel shows a dated range and a change against the past 7 days, so the range is what makes two weeks comparable.
 - Watch the Search share inside All appearances. If All appearances rises while Search appearances stays flat, the growth came from places other than search, such as feeds, comments or recommendations.
 
+Your visible comments are one of the places LinkedIn counts toward All appearances, and LinkedIn's commenting help says it may limit the visibility of comments when it detects excessive comment creation or an automation tool, which is the risk with [CFBR comments pasted across many posts](/blog/cfbr-meaning-linkedin/).
+
 ## How to Increase Search Appearances on LinkedIn
 
 Every step below is LinkedIn's own advice, as of October 2026, and none of it comes with a promised number:

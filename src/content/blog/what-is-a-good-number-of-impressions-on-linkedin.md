@@ -199,7 +199,7 @@ Export what you want to keep. Combined post analytics exports to an .XLSX file f
 | Profile viewers from this post, Followers gained from this post | Whether the post grew the account |
 | Visits to links in this post | Whether it sent traffic |
 
-For a reactions benchmark, [MagicPost measured](https://magicpost.in/blog/how-many-impressions-are-good-on-linkedin) the median like rate (likes divided by impressions) falling from 2.38% under 1,000 followers to 1.55% at 100,000+.
+For a reactions benchmark, [MagicPost measured](https://magicpost.in/blog/how-many-impressions-are-good-on-linkedin) the median like rate (likes divided by impressions) falling from 2.38% under 1,000 followers to 1.55% at 100,000+. Comments count as a response, but a comment left only to lift a post, such as CFBR, comes with no reach figure from LinkedIn: none of [the LinkedIn help and policy pages I checked on CFBR comments](/blog/cfbr-meaning-linkedin/) says one raises a post's reach.
 
 Members counted under Profile viewers from this post are also part of your profile views, which include visits from any route and run on a different window from search appearances, so I would compare each of those two numbers with its own earlier weeks and [never divide profile views by search appearances](/blog/linkedin-search-appearances-vs-profile-views/). Your profile has separate impression numbers, which LinkedIn's help lists as [Total impressions and Impressions per section](/blog/linkedin-impressions-on-your-experience/) in the Profile engagement block under Search Appearances.
 

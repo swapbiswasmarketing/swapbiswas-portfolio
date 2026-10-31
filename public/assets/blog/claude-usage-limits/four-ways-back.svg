@@ -2,7 +2,7 @@
   <rect x="0" y="0" width="1400" height="730" fill="#f6f4ef"/>
 
   <text x="60" y="62" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Hit a Claude usage limit? Four ways back</text>
-  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The free ones first. From Anthropic's help center and Claude Code docs, 2 October 2026</text>
+  <text x="60" y="100" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The free ones first. From Anthropic's help center and Claude Code docs, 2 October 2026; plans updated 31 October</text>
 
   <rect x="60" y="140" width="1280" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
   <text x="96" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">FIRST, READ THE LIMIT MESSAGE</text>
@@ -40,16 +40,16 @@
   <rect x="720" y="352" width="290" height="280" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
   <text x="744" y="390" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">WAY BACK 3</text>
   <text x="744" y="430" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Usage credits</text>
-  <text x="744" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro, Max 5x, Max 20x</text>
+  <text x="744" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro, Max, Ultra</text>
   <text x="744" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Standard API rates</text>
   <text x="744" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Prepaid: Add funds</text>
-  <text x="744" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">$2,000 daily limit</text>
+  <text x="744" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Optional auto-reload</text>
   <text x="744" y="598" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Optional spend limit</text>
 
   <rect x="1050" y="352" width="290" height="280" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
   <text x="1074" y="390" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">WAY BACK 4</text>
   <text x="1074" y="430" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Upgrade</text>
-  <text x="1074" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Max 5x or Max 20x</text>
+  <text x="1074" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Max or Ultra</text>
   <text x="1074" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">If you consistently</text>
   <text x="1074" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">hit limits</text>
   <text x="1074" y="566" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">/upgrade opens the</text>

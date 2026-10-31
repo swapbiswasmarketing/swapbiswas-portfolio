@@ -171,6 +171,8 @@ Anthropic's [costs page](https://code.claude.com/docs/en/costs) gives one benchm
 | Put client material through Claude Code on Pro or Max | Your privacy setting first, or a key for that work | API use runs under commercial terms |
 | Hold a work Console account and a personal plan | A separate `CLAUDE_CONFIG_DIR` with a work API key, not the keyless sign-in | A key exported in your shell profile would sit above the personal login everywhere |
 
+If the table points you to a subscription, every paid Claude plan includes Claude Code and draws your terminal and chat work from one pool, so [pick the tier by the limit that stops you](/blog/claude-plans/).
+
 ## Claude Code API Key vs Subscription: Rule Out Features First
 
 If you use any feature an API key turns off, keep the subscription login; the $13 break-even check only matters for the rest.

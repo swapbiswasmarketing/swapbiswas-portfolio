@@ -44,7 +44,7 @@ Anthropic's [models overview](https://platform.claude.com/docs/en/models/overvie
 
 The "best for" column is my routing, built from Anthropic's [model selection matrix](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model), which says "most workloads start with Claude Opus 5.5". The Sonnet vs Opus section below explains where I follow that default and where I peel off from it.
 
-In the Claude apps, the Free plan covers Sonnet and Haiku while Opus needs a paid plan and Fable access varies by plan, per Anthropic's [plans page](https://claude.com/pricing); the free tier is also on my list of [free AI tools for marketing](/blog/free-ai-tools-for-marketing/). On Pro, Fable bills to usage credits from the first request, while Max 5x and 20x can spend up to 50% of their weekly limits on Fable at no extra cost, per [my plan-by-plan table of Fable usage](/blog/claude-usage-limits/). Everything below uses API prices, because per-token prices are what let you price a job.
+In the Claude apps, the Free plan covers Sonnet and Haiku while Opus needs a paid plan and Fable access varies by plan, per Anthropic's [plans page](https://claude.com/pricing); the free tier is also on my list of [free AI tools for marketing](/blog/free-ai-tools-for-marketing/). On Pro, Fable bills to usage credits from the first request, while Max and Ultra (the plan that replaced Max 20x) can spend up to 50% of their weekly limits on Fable at no extra cost, per [my plan-by-plan table of Fable usage](/blog/claude-usage-limits/). Everything below uses API prices, because per-token prices are what let you price a job.
 
 The rest of the spec sheet, from the same overview page:
 
@@ -195,6 +195,8 @@ Against Opus 5.5, the measured numbers argue for restraint. On the SWE-bench Pro
 Against Sonnet 5, the result flips: Fable 5.1 at low effort solved 88.6% for $0.54 per solved task, which the guide sums up as "11 more points for 35% less per solved task". On research, the guide concludes that "Fable 5.1 earns its price only at `low`" effort.
 
 Claude Mythos 5.1 shares Fable 5.1's capabilities and prices but is open only to Project Glasswing participants, so for everyone else Fable 5.1 is the top of the ladder.
+
+In the Claude apps, Free leaves Fable out, Pro reaches it only through pay-as-you-go usage credits, and Max is the cheapest individual plan with Fable inside the plan's own limits, per [my breakdown of what each Claude plan includes](/blog/claude-plans/).
 
 ## Which Claude Model Should You Use for Marketing Work?
 
