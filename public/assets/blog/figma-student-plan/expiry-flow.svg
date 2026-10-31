@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <rect x="0" y="0" width="1400" height="900" fill="#f6f4ef"/>
+
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">When Figma education status expires</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">From Figma's help article "Figma for Education", read 31 October 2026</text>
+
+  <rect x="430" y="140" width="540" height="96" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="700" y="176" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">STATUS EXPIRES</text>
+  <text x="700" y="214" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="21" fill="#3a3632">Not reverified by the end of your term</text>
+
+  <line x1="700" y1="236" x2="700" y2="262" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="280" y1="262" x2="1050" y2="262" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="280" y1="262" x2="280" y2="282" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="273,282 287,282 280,296" fill="#15130f"/>
+  <line x1="1050" y1="262" x2="1050" y2="282" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1043,282 1057,282 1050,296" fill="#15130f"/>
+
+  <rect x="60" y="296" width="440" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="332" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">TEAM MEMBER</text>
+  <text x="90" y="372" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">View-only access</text>
+  <text x="90" y="410" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">You can still see files and</text>
+  <text x="90" y="442" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">move them to other teams,</text>
+  <text x="90" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">but cannot edit until reverified.</text>
+
+  <rect x="60" y="522" width="440" height="128" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="560" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Reverified, but the owner did not?</text>
+  <text x="90" y="596" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">The whole team still drops to</text>
+  <text x="90" y="626" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">the Starter plan.</text>
+
+  <rect x="760" y="296" width="580" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="790" y="332" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">TEAM OWNER</text>
+  <text x="790" y="374" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Team becomes free Starter</text>
+
+  <line x1="1050" y1="406" x2="1050" y2="430" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="790" y1="430" x2="1170" y2="430" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="790" y1="430" x2="790" y2="448" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="783,448 797,448 790,462" fill="#15130f"/>
+  <line x1="1170" y1="430" x2="1170" y2="448" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1163,448 1177,448 1170,462" fill="#15130f"/>
+
+  <rect x="610" y="462" width="350" height="160" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="635" y="498" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">3 OR FEWER FILES</text>
+  <text x="635" y="538" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Still editable</text>
+  <text x="635" y="574" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Professional features</text>
+  <text x="635" y="604" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">are no longer available.</text>
+
+  <rect x="990" y="462" width="350" height="160" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="1015" y="498" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">4 OR MORE FILES</text>
+  <text x="1015" y="538" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Team is locked</text>
+  <text x="1015" y="574" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">You can download files or</text>
+  <text x="1015" y="604" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">move them, not edit them.</text>
+
+  <line x1="1170" y1="622" x2="1170" y2="660" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1163,660 1177,660 1170,674" fill="#15130f"/>
+
+  <rect x="60" y="674" width="1280" height="176" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="710" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">THREE WAYS TO UNLOCK A LOCKED TEAM</text>
+  <line x1="480" y1="730" x2="480" y2="830" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="900" y1="730" x2="900" y2="830" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="90" y="756" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Cut the file count</text>
+  <text x="90" y="792" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Move or delete files until 3 or</text>
+  <text x="90" y="822" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">fewer remain; stay on Starter.</text>
+
+  <text x="510" y="756" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Reverify</text>
+  <text x="510" y="792" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Reverify education status to</text>
+  <text x="510" y="822" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">get paid features back at no cost.</text>
+
+  <text x="930" y="756" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Upgrade</text>
+  <text x="930" y="792" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Move the team to a paid plan,</text>
+  <text x="930" y="822" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">such as Professional.</text>
+</svg>

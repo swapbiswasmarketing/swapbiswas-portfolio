@@ -116,7 +116,7 @@ The plan details come from [Figma's pricing page](https://www.figma.com/pricing/
 | **Place** | Self-serve in the browser for Starter, Professional and Organization, each with a "Select plan" button that leads to signup or checkout, and "Contact sales" for Enterprise |
 | **Promotion** | Config, Figma's conference for people who build products (June 23-25, 2026, with recordings online), and its first-ever Config India on October 15, 2026, free to join virtually |
 
-**What this teaches:** the unit you charge for is a Price decision and a Product decision at once. A team's Figma bill depends on who designs, who builds and who only works in FigJam, Figma Slides or Figma Buzz, while people who just view and comment need no paid seat. That structure is picked apart in [B2B SaaS pricing psychology](/blog/b2b-saas-pricing-psychology/).
+**What this teaches:** the unit you charge for is a Price decision and a Product decision at once. A team's Figma bill depends on who designs, who builds and who only works in FigJam, Figma Slides or Figma Buzz, while people who just view and comment need no paid seat. That structure is picked apart in [B2B SaaS pricing psychology](/blog/b2b-saas-pricing-psychology/). One more Price lever sits outside the seat grid: verified students and educators get the Professional tier free, and [who qualifies for Figma's free education access](/blog/figma-student-plan/) depends on your school email or bootcamp.
 
 ### HubSpot: Seats, Contacts, Credits and an Onboarding Fee
 

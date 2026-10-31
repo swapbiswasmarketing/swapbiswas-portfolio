@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect x="0" y="0" width="1400" height="820" fill="#f6f4ef"/>
+  <text x="40" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Three ways to get Claude, as of 31 October 2026</text>
+  <text x="40" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Who pays, who switches Claude on, what it can see, and which agent you get</text>
+
+  <rect x="40" y="140" width="420" height="590" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="490" y="140" width="420" height="590" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="940" y="140" width="420" height="590" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <rect x="491" y="368" width="418" height="104" fill="#f3dcd2"/>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">
+    <text x="64" y="182">ANTHROPIC</text>
+    <text x="514" y="182">MICROSOFT</text>
+    <text x="964" y="182">GITHUB</text>
+  </g>
+  <g font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">
+    <text x="64" y="218">Claude app + Claude Code</text>
+    <text x="514" y="218">Claude in Microsoft Copilot</text>
+    <text x="964" y="218">Claude in GitHub Copilot</text>
+  </g>
+
+  <g stroke="#e4dfd6" stroke-width="1">
+    <line x1="64" y1="245" x2="436" y2="245"/>
+    <line x1="514" y1="245" x2="886" y2="245"/>
+    <line x1="964" y1="245" x2="1336" y2="245"/>
+    <line x1="64" y1="360" x2="436" y2="360"/>
+    <line x1="964" y1="360" x2="1336" y2="360"/>
+    <line x1="514" y1="360" x2="886" y2="360"/>
+    <line x1="64" y1="480" x2="436" y2="480"/>
+    <line x1="964" y1="480" x2="1336" y2="480"/>
+    <line x1="514" y1="480" x2="886" y2="480"/>
+    <line x1="64" y1="595" x2="436" y2="595"/>
+    <line x1="514" y1="595" x2="886" y2="595"/>
+    <line x1="964" y1="595" x2="1336" y2="595"/>
+  </g>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">
+    <text x="64" y="278">PAY</text>
+    <text x="514" y="278">PAY</text>
+    <text x="964" y="278">PAY</text>
+    <text x="64" y="395">SWITCH ON</text>
+    <text x="964" y="395">SWITCH ON</text>
+    <text x="64" y="513">CAN SEE</text>
+    <text x="514" y="513">CAN SEE</text>
+    <text x="964" y="513">CAN SEE</text>
+    <text x="64" y="628">AGENT</text>
+    <text x="514" y="628">AGENT</text>
+    <text x="964" y="628">AGENT</text>
+  </g>
+  <text x="514" y="395" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#b53b15">SWITCH ON</text>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="64" y="310">Free $0; Pro $20 a month</text>
+    <text x="64" y="340">($17 a month billed annually)</text>
+    <text x="514" y="310">A Copilot license, e.g. $18 promo,</text>
+    <text x="514" y="340">$21 list, per user a month</text>
+    <text x="964" y="310">Pro $10: Sonnet and Haiku</text>
+    <text x="964" y="340">Pro+ $39: adds Opus and Fable</text>
+
+    <text x="64" y="427">You, when you sign up</text>
+    <text x="514" y="427" fill="#15130f">Your Microsoft 365 admin; off by</text>
+    <text x="514" y="457" fill="#15130f">default in the EU, EFTA and UK</text>
+    <text x="964" y="427">Your plan tier; an owner sets</text>
+    <text x="964" y="457">models on Business, Enterprise</text>
+
+    <text x="64" y="545">Connectors; on paid plans, Excel,</text>
+    <text x="64" y="575">Word, PowerPoint; project folder</text>
+    <text x="514" y="545">Work IQ: files, meetings, chats,</text>
+    <text x="514" y="575">within your existing permissions</text>
+    <text x="964" y="545">Your repository, its issues</text>
+    <text x="964" y="575">and pull requests</text>
+
+    <text x="64" y="660">Claude Code, in a terminal,</text>
+    <text x="64" y="690">IDE, desktop app or browser</text>
+    <text x="514" y="660">Researcher, Copilot Cowork,</text>
+    <text x="514" y="690">Copilot Studio agents</text>
+    <text x="964" y="660">Copilot agent mode, plus the</text>
+    <text x="964" y="690">Claude coding agent (preview)</text>
+  </g>
+
+  <text x="40" y="778" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Sources: claude.com/pricing, Microsoft Learn and pricing, GitHub plans and docs. Prices change.</text>
+</svg>

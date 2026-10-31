@@ -3461,3 +3461,72 @@ https://swapbiswas.com/blog/linkedin-open-to-work/?utm_source=linkedin&utm_mediu
 #LinkedIn #JobSearch #OpenToWork #LinkedInTips #India
 
 ---
+
+### Figma Student Plan: Free, How Long, and What Happens After
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an oak drafting table with a brass compass, a wooden set square and loose sheets of geometric sketches, a small hourglass with its sand nearly run through, a closed wooden portfolio fastened with an iron clasp, a rolled scroll tied with twine beside a quill in an inkwell, a single vermilion red wax seal on the rolled scroll, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+The Figma student plan is Figma's Professional plan, $20 a month for a paid Full seat billed monthly, at $0 for a verified student.
+The sign-up gets the attention. The date your status lapses decides what happens to your work.
+
+- Length of access: one year for high school and college students, two years for educators, six months for bootcamp or online-course students.
+- Higher education and bootcamp users get 3,000 AI credits per person a month, with no rollover. K-12 and high school users get no AI tools, Figma Make or Figma Sites.
+- At expiry, team members drop to view-only. A team owner with 4 or more files gets a free Starter team that is also locked until it is cut to 3 files, reverified or upgraded.
+- If the team owner has not reverified, the entire team downgrades to Starter, even when your own status is current.
+- The April 2026 headline about Figma dropping free student plans came from one removed note on the pricing page. On 31 October 2026 the education page, the help article and the pricing FAQ still offered the plan.
+
+Who owns the Figma team your coursework lives in, and when does their status lapse?
+
+https://swapbiswas.com/blog/figma-student-plan/?utm_source=linkedin&utm_medium=social&utm_campaign=figma-student-plan
+
+#Figma #UXDesign #Students #DesignTools
+
+---
+
+### Claude vs Copilot: Claude Now Runs Inside Both Copilots
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, three small carved wooden caskets standing side by side on a linen-covered table, a different key lying in front of each one in brass, iron and pewter, a folded parchment map and a quill resting in an inkwell, a brass candlestick with a half-burnt candle, a single vermilion red tassel tied to the brass key, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Claude models now run inside both Microsoft Copilot and GitHub Copilot.
+So Claude vs Copilot comes down to three routes to Claude: Anthropic's own app and Claude Code, Microsoft Copilot at work, or GitHub Copilot.
+
+- Microsoft Copilot: Anthropic models are on by default for most commercial cloud customers, and off by default in the EU, EFTA and UK, where an AI Administrator or Global Administrator has to opt in.
+- GitHub Copilot Pro at $10 a month lists Claude Sonnet and Haiku models. Opus and Fable start at Pro+, $39 a month.
+- Copilot Free and Copilot Student get auto model selection only, so you cannot pick a Claude model on either.
+- GitHub's plans page and GitHub Docs disagree in three places, including who gets the Claude coding agent.
+- Claude Pro at $20 a month includes Claude Code and Claude for Excel, with no Microsoft 365 admin involved.
+
+Before you buy a second subscription, have you checked whether the Copilot you already pay for lists Claude in its model picker?
+
+https://swapbiswas.com/blog/claude-vs-copilot/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-vs-copilot
+
+#Claude #GitHubCopilot #MicrosoftCopilot #Anthropic #AITools
+
+---
+
+### Antigravity Pricing in India: Every Google Plan in Rupees
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak table with a brass balance scale holding a few old coins in one pan and none in the other, a small brass sandglass beside a weekly almanac lying open, a carved wooden model ship with furled sails, a quill in an inkwell and a pewter candlestick, a single vermilion red sail raised on the model ship, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Antigravity has no price of its own. For an individual in India, the choice is between Rs 0 and Rs 1,950 a month.
+Google's docs give the five-hour quota refresh only to Google AI Pro and Ultra, and AI Pro is the Rs 1,950 plan on Google's India plan page (31 October 2026).
+
+- The free tier gets unlimited Tab completions and a quota refreshed weekly.
+- Google AI Plus at Rs 399 stays in the weekly group, and Google One Help says AI credits are not available for purchase on it.
+- Google AI Ultra costs Rs 6,500 for 5x AI Pro's rate limit on Gemini models, or Rs 19,500 for 20x. That works out to Rs 1,300 and Rs 975 per AI Pro's worth.
+- Jio's Google Gemini offer closed to new claims when its offer period ended on 29 October 2026. Two forum threads report Jio-provided AI Pro accounts not being recognised by Antigravity.
+- Out of quota on Pro or Ultra? The AI Credit Overages setting decides: Never waits for the refresh, Always spends purchased AI credits.
+
+On the free tier, which day of the week does your Antigravity quota run out?
+
+https://swapbiswas.com/blog/antigravity-pricing-india/?utm_source=linkedin&utm_medium=social&utm_campaign=antigravity-pricing-india
+
+#GoogleAntigravity #Gemini #AICoding #India #DevTools
+
+---

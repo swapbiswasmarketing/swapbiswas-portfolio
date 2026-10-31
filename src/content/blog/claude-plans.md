@@ -157,6 +157,7 @@ Is Claude Max worth it over Pro? Only if a limit is what stops you, or you want 
 - Students: the Max and Pro articles say "We don't offer standard discounted pricing for individual plans (Pro, Max, and Ultra)", and [the routes a student in India can actually take](/blog/claude-student-discount-india/) are mapped one by one.
 - Claude Pro next to ChatGPT Plus at the same $20: [the plan-by-plan comparison of Claude and ChatGPT](/blog/claude-vs-chatgpt/).
 - Claude in chat or Claude Code: every paid plan includes both, and [which jobs need Claude Code rather than the Claude app](/blog/claude-vs-claude-code/) is the hub for that question.
+- Claude through Microsoft or GitHub instead of a Claude plan: Claude models now run inside both Microsoft Copilot and GitHub Copilot, and [which Copilot license reaches which Claude model](/blog/claude-vs-copilot/) shows who switches it on in each.
 - Cancelling: the pricing FAQ says Pro, Max and Ultra accounts move to the Free plan when the period ends, and your chats, projects and files stay.
 
 ## Claude Plans: Pick by the Limit That Stops You

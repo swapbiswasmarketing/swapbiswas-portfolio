@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700" width="1400" height="700">
+  <rect x="0" y="0" width="1400" height="700" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Antigravity quota refresh by Google plan in India</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Rupee prices a month, read logged out from India on 31 October 2026</text>
+
+  <rect x="60" y="140" width="296" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">FREE TIER</text>
+  <text x="84" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">No Google plan</text>
+  <text x="84" y="290" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600" fill="#15130f">Rs 0</text>
+  <text x="84" y="322" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">no subscription</text>
+  <line x1="84" y1="350" x2="332" y2="350" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="388" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">QUOTA REFRESH</text>
+  <text x="84" y="428" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Weekly</text>
+  <text x="84" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A weekly rate limit</text>
+  <text x="84" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Unlimited Tab</text>
+  <text x="84" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">completions</text>
+
+  <rect x="386" y="140" width="296" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="410" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">CHEAPER AI PLAN</text>
+  <text x="410" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google AI Plus</text>
+  <text x="410" y="290" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600" fill="#15130f">Rs 399</text>
+  <text x="410" y="322" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">a month</text>
+  <line x1="410" y1="350" x2="658" y2="350" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="410" y="388" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">QUOTA REFRESH</text>
+  <text x="410" y="428" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Weekly</text>
+  <text x="410" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Not Pro or Ultra,</text>
+  <text x="410" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">so the weekly group</text>
+  <text x="410" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No AI credits sold</text>
+
+  <rect x="712" y="140" width="296" height="440" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="3"/>
+  <text x="736" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">FIVE-HOUR REFRESH</text>
+  <text x="736" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google AI Pro</text>
+  <text x="736" y="290" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600" fill="#15130f">Rs 1,950</text>
+  <text x="736" y="322" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">a month</text>
+  <line x1="736" y1="350" x2="984" y2="350" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="736" y="388" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">QUOTA REFRESH</text>
+  <text x="736" y="428" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Every 5 hours</text>
+  <text x="736" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">until the weekly</text>
+  <text x="736" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">limit is reached</text>
+  <text x="736" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">AI credits for overage</text>
+
+  <rect x="1038" y="140" width="302" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1062" y="182" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">DAILY DRIVER</text>
+  <text x="1062" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google AI Ultra</text>
+  <text x="1062" y="290" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="40" font-weight="600" fill="#15130f">Rs 6,500</text>
+  <text x="1062" y="322" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">5x; 20x is Rs 19,500</text>
+  <line x1="1062" y1="350" x2="1316" y2="350" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1062" y="388" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">QUOTA REFRESH</text>
+  <text x="1062" y="428" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">Every 5 hours</text>
+  <text x="1062" y="470" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">5x or 20x AI Pro's</text>
+  <text x="1062" y="502" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Gemini rate limit</text>
+  <text x="1062" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">AI credits for overage</text>
+
+  <text x="60" y="622" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Free and AI Plus wait for a weekly refresh. AI Pro and Ultra refresh every five hours and can buy AI credits.</text>
+  <text x="60" y="656" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Prices: gemini.google/in plan page. Quota and credits: antigravity.google/docs/plans and Google One Help.</text>
+</svg>

@@ -138,6 +138,8 @@ So a comparison written at launch understates the storage, and its model line no
 | Someone who does not want ads at ₹399 | Google AI Plus, or ChatGPT Plus at ₹1,999 to stay on ChatGPT | Go's pricing card says it may include ads; neither the AI Plus card nor the Plus card has an ads line |
 | Someone who builds with code | Compare ChatGPT Plus and Google AI Pro | Plus lists Codex and Sites; AI Pro lists entry limits in Google Antigravity |
 
+If Google Antigravity is the reason you are weighing a Google AI plan, [my rupee breakdown of Antigravity on each Google plan](/blog/antigravity-pricing-india/) shows which plan gets which quota.
+
 ## ChatGPT Go vs Gemini: Decide on the Bundle
 
 ChatGPT Go vs Gemini at ₹399 is a tie on price, so the bundle decides it: pick Google AI Plus if your Google account is near 15 GB, and ChatGPT Go if you hit ChatGPT Free's limits on uploads, images or memory and can accept a plan OpenAI says may include ads.

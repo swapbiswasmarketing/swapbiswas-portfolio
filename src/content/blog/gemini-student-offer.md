@@ -95,7 +95,7 @@ Two more points from the 2026 pages:
 - The age is 18. An [Entrepreneur India article of 21 August 2026](https://www.entrepreneurindia.com/blog/en/news/google-gemini-student-offer-students-in-india-get-1-year-of-free-ai-plus-plan-study-notebooks-features.60848) says students "must be at least 16 years old", but Google's offer terms say "Be 18 years of age or older".
 - Holders of the 2025 trial are not shut out. The India student page says "students whose 2025 AI Pro trial has expired can qualify".
 
-AI Plus is the tier below AI Pro, and Google's own pages disagree on whether it reaches the Pro model. The model-by-model table is in my Internshala post, linked in the route table below.
+AI Plus is the tier below AI Pro, and Google's own pages disagree on whether it reaches the Pro model. The model-by-model table is in my Internshala post, linked in the route table below. If you plan to code in Google Antigravity, AI Plus keeps the free tier's weekly quota refresh there, and [my look at Antigravity quotas by Google plan](/blog/antigravity-pricing-india/) shows which plans refresh every five hours.
 
 ## Gemini Student Offer Not Working or Not Eligible: Google's Causes
 

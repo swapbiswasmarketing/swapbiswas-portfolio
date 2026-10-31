@@ -175,7 +175,7 @@ Framer's [student page](https://www.framer.com/education/students/) offers "A fr
 - Credits: the page advertises 1,000 free AI credits a month.
 - Use: the terms limit the code to your personal student website, portfolio, class projects and resume.
 
-There is no educator discount yet; the page says Framer is working on one. If your coursework also needs Photoshop or Illustrator, Adobe's student route in India is a paid plan with a 7-day free trial, and [what Adobe charges students in India](/blog/adobe-student-plan-india/) covers its renewal price and the free higher-education offer a college can claim.
+There is no educator discount yet; the page says Framer is working on one. Figma's free education route does cover teachers: its help article gives educators two years and high school or college students one year, and [Figma's student and educator terms](/blog/figma-student-plan/) set out the reapply rules. If your coursework also needs Photoshop or Illustrator, Adobe's student route in India is a paid plan with a 7-day free trial, and [what Adobe charges students in India](/blog/adobe-student-plan-india/) covers its renewal price and the free higher-education offer a college can claim.
 
 ## What Changed in Framer's Pricing in 2026
 
