@@ -1370,6 +1370,14 @@
 		],
 		"hash": "5c017be87f22a304"
 	},
+	"/assets/blog/how-to-tag-someone-on-linkedin/where-a-tag-works.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "82e47e57268fe1da"
+	},
 	"/assets/blog/how-to-update-claude-code/three-copies-update-routes.webp": {
 		"w": 1200,
 		"h": 634,
@@ -1666,6 +1674,14 @@
 			660
 		],
 		"hash": "4bf8d4c257a8dbea"
+	},
+	"/assets/blog/linkedin-saved-posts/saved-posts-map.webp": {
+		"w": 1200,
+		"h": 634,
+		"v": [
+			660
+		],
+		"hash": "251f384c5adfd73b"
 	},
 	"/assets/blog/linkedin-search-appearances-vs-profile-views/appearances-vs-views.webp": {
 		"w": 1200,

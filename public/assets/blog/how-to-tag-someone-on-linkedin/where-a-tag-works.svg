@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect x="0" y="0" width="1400" height="820" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where a LinkedIn tag works, per LinkedIn Help</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Help pages read logged out on 31 October 2026. Answer IDs at the foot of each card.</text>
+
+  <rect x="60" y="140" width="625" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" letter-spacing="2" fill="#6a645c">MENTION IN A POST OR COMMENT</text>
+  <text x="92" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Type @, then the name</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="92" y="272">Pick the person from the type-ahead list</tspan>
+    <tspan x="92" y="306">They get email and app notifications</tspan>
+    <tspan x="92" y="340">Forgot? Edit the post or comment to add it</tspan>
+  </text>
+  <text x="92" y="406" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c">Help a525082</text>
+
+  <rect x="715" y="140" width="625" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="747" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" letter-spacing="2" fill="#6a645c">PHOTO TAG</text>
+  <text x="747" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Tag, then click the photo</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="747" y="272">Added in the Edit your photo window</tspan>
+    <tspan x="747" y="306">Up to 30 people per photo</tspan>
+    <tspan x="747" y="340">Author or tagged member can remove it</tspan>
+  </text>
+  <text x="747" y="406" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c">Help a522896</text>
+
+  <rect x="60" y="470" width="625" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="516" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" letter-spacing="2" fill="#6a645c">COMPANY PAGE POST</text>
+  <text x="92" y="558" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Admins tag members or Pages</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="92" y="602">Super or content admins post as the Page</tspan>
+    <tspan x="92" y="636">Keep a Page post to 40 or fewer mentions</tspan>
+    <tspan x="92" y="670">Edits allow text, URLs, mentions, hashtags</tspan>
+  </text>
+  <text x="92" y="736" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c">Help a1660869, a732049, a567075</text>
+
+  <rect x="715" y="470" width="625" height="300" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5"/>
+  <text x="747" y="516" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" letter-spacing="2" fill="#b53b15">WHEN A TAG IS BLOCKED</text>
+  <text x="747" y="558" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">The member turned mentions off</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="747" y="602">Toggle: Allow mentions, tags, and</tspan>
+    <tspan x="747" y="636">collaborations (Settings &amp; Privacy, Visibility)</tspan>
+    <tspan x="747" y="670">Existing mentions and tags stay in place</tspan>
+  </text>
+  <text x="747" y="736" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#6a645c">Help a525082, a522861</text>
+</svg>

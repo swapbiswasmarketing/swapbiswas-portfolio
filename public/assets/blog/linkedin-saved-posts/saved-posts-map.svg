@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 740" width="1400" height="740">
+  <rect x="0" y="0" width="1400" height="740" fill="#f6f4ef"/>
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">LinkedIn saved posts: where they open, what the data download returns</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">From LinkedIn Help (Save content in your feed, Download your data), read 31 October 2026</text>
+
+  <text x="60" y="158" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">WHERE TO OPEN THEM</text>
+
+  <rect x="60" y="176" width="380" height="196" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="214" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1" fill="#6a645c">DESKTOP</text>
+  <text x="90" y="252" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Saved Items</text>
+  <text x="90" y="290" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Left pane of the homepage,</text>
+  <text x="90" y="322" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">then Saved posts and articles</text>
+
+  <rect x="510" y="176" width="380" height="196" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="540" y="214" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1" fill="#6a645c">MOBILE APP</text>
+  <text x="540" y="252" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Profile picture</text>
+  <text x="540" y="290" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Tap your profile picture,</text>
+  <text x="540" y="322" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">then tap Saved posts</text>
+
+  <rect x="960" y="176" width="380" height="196" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="990" y="214" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1" fill="#6a645c">DIRECT LINK</text>
+  <text x="990" y="252" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Not on the Help page</text>
+  <text x="990" y="290" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#3a3632">linkedin.com/my-items/</text>
+  <text x="990" y="320" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#3a3632">saved-posts/</text>
+  <text x="990" y="352" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Logged out: sends you to sign-in</text>
+
+  <text x="60" y="418" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">WHAT THE DATA DOWNLOAD RETURNS (DESKTOP ONLY)</text>
+
+  <rect x="60" y="436" width="380" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="474" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1" fill="#6a645c">STEP 1</text>
+  <text x="90" y="512" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Me icon</text>
+  <text x="90" y="550" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Settings &amp; Privacy,</text>
+  <text x="90" y="582" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">then Data Privacy</text>
+
+  <line x1="446" y1="521" x2="490" y2="521" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="490,514 504,521 490,528" fill="#15130f"/>
+
+  <rect x="510" y="436" width="380" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="540" y="474" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1" fill="#6a645c">STEP 2</text>
+  <text x="540" y="512" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Download your data</text>
+  <text x="540" y="550" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Select the data you want,</text>
+  <text x="540" y="582" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">then Request archive</text>
+
+  <line x1="896" y1="521" x2="940" y2="521" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="940,514 954,521 940,528" fill="#15130f"/>
+
+  <rect x="960" y="436" width="380" height="170" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5"/>
+  <text x="990" y="474" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1" fill="#b53b15">STEP 3: THE FILE</text>
+  <text x="990" y="512" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Saved Items</text>
+  <text x="990" y="550" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The saved date and URL</text>
+  <text x="990" y="582" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">of each saved item</text>
+
+  <text x="60" y="652" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Saved Items is listed under "Available within 48 hours". The data stays available for download for 72 hours.</text>
+  <text x="60" y="686" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">LinkedIn says the data download is not available on mobile.</text>
+</svg>

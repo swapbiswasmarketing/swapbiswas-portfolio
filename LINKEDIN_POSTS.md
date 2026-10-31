@@ -3599,3 +3599,49 @@ https://swapbiswas.com/blog/is-notion-ai-free/?utm_source=linkedin&utm_medium=so
 #NotionAI #Notion #Productivity #AITools #SaaSPricing
 
 ---
+
+### LinkedIn Saved Posts: Where to Find Them and What Exports
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a reader's oak desk with a tall stack of folded letters bound with twine, a slim index ledger lying open with short ruled entries, a brass letter clip holding a few loose pages, a quill resting in an inkwell beside a small brass sandglass, a single vermilion red ribbon bookmark trailing from the ledger, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+LinkedIn's data download hands back your saved posts as a list of dates and URLs.
+Its Help page says the Saved Items file "Contains the saved date and URL of a post, article, or other content", and neither Help page says it includes the post's words.
+
+- Desktop: Saved Items on the left pane of your homepage, then Saved posts and articles. In the app: tap your profile picture, then tap Saved posts.
+- The export runs from a desktop browser only. Saved Items is listed under "Available within 48 hours", and the archive stays downloadable for 72 hours.
+- The save page describes unsaving one item at a time and mentions no bulk option and no search for the list.
+- Authors see a Saves count in post analytics. No Help page I read describes a per-person view of who saved.
+- linkedin.com/my-items/saved-posts/ is not on LinkedIn Help. Requested logged out on 31 October 2026, it returned a 302 redirect to sign-in.
+
+When you save a post you want to keep, do you copy its text somewhere, or rely on the saved list?
+
+https://swapbiswas.com/blog/linkedin-saved-posts/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-saved-posts
+
+#LinkedIn #LinkedInTips #Productivity #PersonalBranding
+
+---
+
+### How to Tag Someone on LinkedIn (and Why a Tag Fails)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scribe's walnut table with a row of small folded calling cards standing upright, a brass seal stamp beside a stick of sealing wax, an open letter with a blank margin, a quill in an inkwell and a coil of linen thread, a single vermilion red wax seal pressed onto one calling card, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Retyping a name does not change the rule that blocked a LinkedIn tag.
+The symptom on screen tells you which rule it was, and each one has a cause on a LinkedIn Help page.
+
+- A notice that the member "can't be mentioned" means they turned mentions off. Help offers no way around it from your side.
+- For people outside your network, LinkedIn says it "may limit your ability to mention members you're not connected with", and publishes no rule for when.
+- Photo tags cap at 30 people per photo. A Company Page post needs 40 or fewer mentions.
+- Forgot the tag? Edit the post and add a text @mention; the post then shows Edited. A forgotten photo tag has no documented after-posting route.
+- To stop tags: Settings & Privacy, Visibility, Mentions, tags, and collaborations. Existing mentions and tags aren't affected.
+
+Which failed tag have you run into most often on LinkedIn?
+
+https://swapbiswas.com/blog/how-to-tag-someone-on-linkedin/?utm_source=linkedin&utm_medium=social&utm_campaign=how-to-tag-someone-on-linkedin
+
+#LinkedIn #LinkedInTips #SocialMedia #PersonalBranding
+
+---
