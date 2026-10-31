@@ -3392,3 +3392,72 @@ https://swapbiswas.com/blog/linkedin-verification-digilocker/?utm_source=linkedi
 #LinkedIn #LinkedInTips #DigiLocker #Aadhaar #India
 
 ---
+
+### Cursor Student Plan in India: Ended, and What Replaces It
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's oak desk with a closed leather ledger fastened by a brass padlock, a folded university letter lying beside a small brass key, a stack of worn study books with a quill resting in an inkwell, a pewter candlestick with a burnt-down candle, a single vermilion red ribbon tied around the brass padlock, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Cursor stopped new sign-ups for its student discount on 25 June 2026, for everyone.
+Before that, a September 2025 post on Cursor's forum said only students with US .edu email addresses were being onboarded.
+
+- A January 2026 forum reply said Indian universities with .ac.in domains were "not yet supported".
+- If you redeemed the discount earlier, you keep your rate until the plan expires. After that it renews at the regular rate, $20 a month on legacy Pro, unless you cancel.
+- The 649-rupee Start plan is now a legacy plan, per Cursor's help page. New customers start on The X Subscription.
+- Logged out from India on 31 October 2026, cursor.com/pricing listed Free at $0 a month and Plus at $8 a month.
+- Master's students, PhD candidates and researchers can request credits through a form. Undergraduates are pointed to on-campus and online events.
+
+If you are a student in India, which route fits you: the free tier, a campus event or the credits form?
+
+https://swapbiswas.com/blog/cursor-student-plan/?utm_source=linkedin&utm_medium=social&utm_campaign=cursor-student-plan
+
+#Cursor #AICoding #Students #India #DevTools
+
+---
+
+### ChatGPT Usage Limits by Plan: What OpenAI Publishes
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak table with two brass hourglasses side by side, one large and one small, a pewter measuring jug beside a closed leather account book, a quill in an inkwell and a small brass bell, a few old coins scattered near the books, a single vermilion red ribbon tied around the neck of the smaller hourglass, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+As of 31 October 2026, OpenAI prints allowance numbers for two ChatGPT usage limits: live voice hours and the Work and Codex five-hour estimates.
+Text chats, Thinking messages, image generation and deep research have no published count.
+
+- Live voice per rolling 24 hours: 3 hours on Plus, 15 hours on Pro 100.
+- On Plus, Work and Codex estimates run from 5-45 local messages per five hours on GPT-6 Astra to 350-3,000 on GPT-6 Luna. OpenAI calls them estimates, "not fixed message limits". Pro has no five-hour limit.
+- Chat and Work/Codex are metered separately. A Codex message in the CLI and a ChatGPT Work task draw on one shared allowance.
+- For Work and Codex, the reset time is on the usage dashboard, and /status shows your remaining limits during a Codex CLI session.
+- OpenAI's Pro tiers article: "Support cannot reset ChatGPT or Codex limits."
+
+When you hit a ChatGPT limit in the middle of a task, do you wait for the reset or switch to something else?
+
+https://swapbiswas.com/blog/chatgpt-usage-limits/?utm_source=linkedin&utm_medium=social&utm_campaign=chatgpt-usage-limits
+
+#ChatGPT #OpenAI #Codex #AITools
+
+---
+
+### LinkedIn Open to Work: Who Sees It and How to Hide It
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a writing desk with an empty round gilt portrait frame propped against a folded linen cloth, a sealed letter beside a small brass hand bell, a half-drawn velvet curtain at the edge of the table, a quill in an inkwell and a brass oil lamp casting soft light, a single vermilion red wax seal on the letter, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+LinkedIn Open to Work has three audiences: All LinkedIn Members, Recruiters only, and Visible only to you.
+For Recruiters only, LinkedIn says it takes steps to hide your status from your own company's recruiters, "but we can't guarantee complete privacy."
+
+- All LinkedIn Members also includes people at your current company, and adds the #OpenToWork photo frame.
+- The hiding is a Company ID match. LinkedIn says there is "a small chance" a recruiter at your current employer or an affiliated company sees your preferences anyway.
+- In India, notice period and expected annual salary are visible to recruiters only, "regardless of your Open To Work visibility setting."
+- Click Delete and your previous preferences won't be saved when you turn it back on.
+- Under Frames, "Share 'Open to Work' with recruiter only" removes the public frame and keeps your status for recruiters.
+
+If your employer saw your Open to Work status tomorrow, what would it cost you?
+
+https://swapbiswas.com/blog/linkedin-open-to-work/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-open-to-work
+
+#LinkedIn #JobSearch #OpenToWork #LinkedInTips #India
+
+---

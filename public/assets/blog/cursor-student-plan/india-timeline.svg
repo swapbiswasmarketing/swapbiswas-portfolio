@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+  <text x="70" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Cursor's student plan and India, May 2025 to October 2026</text>
+  <text x="70" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Each row is a dated Cursor page, forum post or press report linked in the post</text>
+
+  <line x1="290" y1="171" x2="290" y2="717" stroke="#15130f" stroke-width="2.5"/>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#15130f">
+    <text x="70" y="178">7 May 2025</text>
+    <text x="70" y="256">8 May 2025</text>
+    <text x="70" y="334">17 Sep 2025</text>
+    <text x="70" y="412">19 Jan 2026</text>
+    <text x="70" y="490">25 Jun 2026</text>
+    <text x="70" y="568">29 Jul 2026</text>
+    <text x="70" y="646">14 Aug 2026</text>
+    <text x="70" y="724">19 Oct 2026</text>
+  </g>
+
+  <g fill="#ffffff" stroke="#e4dfd6" stroke-width="1">
+    <rect x="330" y="140" width="900" height="62" rx="12"/>
+    <rect x="330" y="218" width="900" height="62" rx="12"/>
+    <rect x="330" y="296" width="900" height="62" rx="12"/>
+    <rect x="330" y="374" width="900" height="62" rx="12"/>
+    <rect x="330" y="530" width="900" height="62" rx="12"/>
+    <rect x="330" y="608" width="900" height="62" rx="12"/>
+    <rect x="330" y="686" width="900" height="62" rx="12"/>
+  </g>
+  <rect x="330" y="452" width="900" height="62" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+
+  <g fill="#15130f">
+    <circle cx="290" cy="171" r="9"/>
+    <circle cx="290" cy="249" r="9"/>
+    <circle cx="290" cy="327" r="9"/>
+    <circle cx="290" cy="405" r="9"/>
+    <circle cx="290" cy="561" r="9"/>
+    <circle cx="290" cy="639" r="9"/>
+    <circle cx="290" cy="717" r="9"/>
+  </g>
+  <circle cx="290" cy="483" r="12" fill="#b53b15"/>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="360" y="178">Press reports a free year of Cursor Pro for verified students</text>
+    <text x="360" y="256">Forum: Indian students say India is missing from the country dropdown</text>
+    <text x="360" y="334">Forum (Community Developer): onboarding only US .edu students</text>
+    <text x="360" y="412">Forum (Cursor Ambassador): .ac.in domains "not yet supported"</text>
+    <text x="360" y="490" fill="#15130f" font-weight="600">Help page: new sign-ups for the student discount end</text>
+    <text x="360" y="568">Staff: Cursor Start, initially India only, sits between Free and Pro</text>
+    <text x="360" y="646">Cursor blog: Cursor is now a part of SpaceX</text>
+    <text x="360" y="724">Staff: Start is now a legacy plan; new buyers go to The X Subscription</text>
+  </g>
+
+  <g stroke="#6a645c" stroke-width="2.5" fill="none">
+    <polyline points="1244,302 1258,302 1258,430 1244,430"/>
+    <polyline points="1244,536 1258,536 1258,742 1244,742"/>
+  </g>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">
+    <text x="1272" y="348">.ac.in</text>
+    <text x="1272" y="374">not</text>
+    <text x="1272" y="400">supported</text>
+    <text x="1272" y="613">Start:</text>
+    <text x="1272" y="639">India only,</text>
+    <text x="1272" y="665">now legacy</text>
+  </g>
+
+  <text x="70" y="800" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Sources linked in the post. Plans and offers change.</text>
+</svg>

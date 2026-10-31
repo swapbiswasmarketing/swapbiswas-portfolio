@@ -171,6 +171,8 @@ For a student in India, what the pages add up to:
 - The discount is a web checkout. Apple's India listing has no student item.
 - Nonprofits get a separate deal: "a 20% discount to verified nonprofit organizations for one year", applied for by email with proof of status, per the same page's FAQ.
 
+For comparison, Cursor's student offer is gone: [new sign-ups for Cursor's student discount ended in June 2026](/blog/cursor-student-plan/), and students who claimed it earlier keep their rate only until the plan expires.
+
 Claude, by comparison, has no student price on an individual plan, and [the Claude routes open to a student in India](/blog/claude-student-discount-india/) are sorted by who has to act on each.
 
 ## Is Lovable Free for Airtel Users?

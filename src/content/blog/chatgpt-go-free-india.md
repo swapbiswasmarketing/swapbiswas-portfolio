@@ -86,7 +86,7 @@ Plus adds GPT-6 Sol in chat: OpenAI's 7 October release notes say "Plus, Pro, Bu
 How I would read it:
 
 - Drop to Free when your week is mostly text chat. The Go article says "Free and Go users both have unlimited everyday text chats", and OpenAI's pricing page puts Go's extras in uploads, images, data analysis, voice, memory and context (the Go article itself says voice limits match Free).
-- Keep Go when you hit Free's tool limits. The release notes that gave Free and Go unlimited text chats in August 2026 also said "Limits will still apply for file uploads, images and other tools."
+- Keep Go when you hit Free's tool limits. The release notes that gave Free and Go unlimited text chats in August 2026 also said "Limits will still apply for file uploads, images and other tools." Few of those tool limits carry a number, and [which Free and Go limits OpenAI does put a figure on](/blog/chatgpt-usage-limits/) is set out plan by plan.
 - Upgrade when ads or deep research are the problem. Go has no Ads-Free option, and the pricing page lists deep research as "Limited" on Free and Go. None of the OpenAI pages I read says whether upgrading before your renewal date ends the remaining free months, so upgrade in the last few days of your free year, when little is at stake.
 
 Paying for Go or Plus does not change the training setting: the pricing page marks content as used to train OpenAI's models, with "Opt-out available", on Free, Go and Plus alike, so check that setting whichever plan you keep. [My guide to using ChatGPT for sales and marketing](/blog/how-to-use-chatgpt-for-sales-and-marketing/) lists what never to paste into a personal account.

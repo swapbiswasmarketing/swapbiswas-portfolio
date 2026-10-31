@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <rect x="0" y="0" width="1400" height="900" fill="#f6f4ef"/>
+  <text x="60" y="76" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">One ChatGPT account, two usage meters</text>
+  <text x="60" y="114" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">What each meter counts, what OpenAI publishes and where the reset shows (31 October 2026)</text>
+
+  <rect x="60" y="146" width="620" height="694" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="198" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Chat (several separate allowances)</text>
+  <text x="96" y="244" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.9" fill="#6a645c">WHAT COUNTS</text>
+  <text x="96" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Text chats, Thinking levels, GPT-6 Pro,</text>
+  <text x="96" y="308" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">voice in Chat, image generation,</text>
+  <text x="96" y="340" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">deep research, uploads</text>
+  <line x1="96" y1="370" x2="644" y2="370" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="404" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.9" fill="#6a645c">NUMBERS OPENAI PUBLISHES</text>
+  <text x="96" y="436" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Live voice hours per rolling 24 hours</text>
+  <text x="96" y="468" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No count for chats, Thinking, GPT-6 Pro,</text>
+  <text x="96" y="500" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">images or deep research tasks</text>
+  <line x1="96" y1="562" x2="644" y2="562" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="596" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.9" fill="#6a645c">WHERE THE RESET SHOWS</text>
+  <text x="96" y="628" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">In ChatGPT, "when that information</text>
+  <text x="96" y="660" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">is available"; a counter for deep research</text>
+  <line x1="96" y1="690" x2="644" y2="690" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="724" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.9" fill="#6a645c">AT THE LIMIT</text>
+  <text x="96" y="756" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Another available model, or wait</text>
+  <text x="96" y="788" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">for the reset time</text>
+
+  <rect x="720" y="146" width="620" height="694" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="756" y="198" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Work and Codex (one shared allowance)</text>
+  <text x="756" y="244" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.9" fill="#6a645c">WHAT COUNTS</text>
+  <text x="756" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Codex app, CLI, IDE and cloud; ChatGPT</text>
+  <text x="756" y="308" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Work; Voice in the desktop app; on Plus</text>
+  <text x="756" y="340" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and Pro, Excel and PowerPoint</text>
+  <line x1="756" y1="370" x2="1304" y2="370" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="756" y="404" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.9" fill="#6a645c">NUMBERS OPENAI PUBLISHES</text>
+  <text x="756" y="436" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Plus: estimated local messages per five</text>
+  <text x="756" y="468" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">hours, such as 15-160 on GPT-6.1 Sol</text>
+  <text x="756" y="500" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro: no five-hour limit</text>
+  <text x="756" y="532" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Weekly limits "may also apply", no number</text>
+  <line x1="756" y1="562" x2="1304" y2="562" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="756" y="596" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.9" fill="#6a645c">WHERE THE RESET SHOWS</text>
+  <text x="756" y="628" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">Usage dashboard:</text>
+  <text x="756" y="660" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" fill="#b53b15">chatgpt.com/codex/settings/usage</text>
+  <line x1="756" y1="690" x2="1304" y2="690" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="756" y="724" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="1.9" fill="#6a645c">AT THE LIMIT</text>
+  <text x="756" y="756" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The running turn can finish; then credits</text>
+  <text x="756" y="788" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">(Plus, Pro) or an API key at API rates</text>
+
+  <text x="60" y="878" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Sources: OpenAI help center and learn.chatgpt.com/docs/pricing, read 31 October 2026. Limits change often.</text>
+</svg>

@@ -365,6 +365,14 @@
 		],
 		"hash": "87d3e4b622ffec15"
 	},
+	"/assets/blog/chatgpt-usage-limits/two-usage-meters.webp": {
+		"w": 1200,
+		"h": 771,
+		"v": [
+			660
+		],
+		"hash": "7790395503d90889"
+	},
 	"/assets/blog/claude-certifications/three-doors.webp": {
 		"w": 1200,
 		"h": 754,
@@ -779,6 +787,14 @@
 			660
 		],
 		"hash": "c3e5b611000cec9a"
+	},
+	"/assets/blog/cursor-student-plan/india-timeline.webp": {
+		"w": 1200,
+		"h": 720,
+		"v": [
+			660
+		],
+		"hash": "f8582de9599e999c"
 	},
 	"/assets/blog/customer-advisory-board/cab-scorecard.webp": {
 		"w": 1200,
@@ -1562,6 +1578,14 @@
 			660
 		],
 		"hash": "677bbc802d65eb4c"
+	},
+	"/assets/blog/linkedin-open-to-work/open-to-work-visibility.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "d9bf67d1a3a8e22d"
 	},
 	"/assets/blog/linkedin-post-size/photo-ratio-range.webp": {
 		"w": 1200,

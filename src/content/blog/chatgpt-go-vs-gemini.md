@@ -50,7 +50,7 @@ At ₹399, Google AI Plus moves you from the free plan's Flash-Lite model to Fla
 | Yearly billing | None: OpenAI's Go article says it does not support annual billing for Go | No yearly price on Google's India plan page |
 | Free route open in India | None for new sign-ups | Google's student plan, redeem by 31 December 2026 |
 
-The ChatGPT column comes from the plan cards and comparison table on OpenAI's pricing page and from [OpenAI's ChatGPT Go article](https://help.openai.com/en/articles/11989085-what-is-chatgpt-go), which says "Free and Go users both have unlimited everyday text chats" and that Go raises limits on "image generation, file uploads, and data analysis". The Google column is from the AI Plus card and footnotes on the India plan page.
+The ChatGPT column comes from the plan cards and comparison table on OpenAI's pricing page and from [OpenAI's ChatGPT Go article](https://help.openai.com/en/articles/11989085-what-is-chatgpt-go), which says "Free and Go users both have unlimited everyday text chats" and that Go raises limits on "image generation, file uploads, and data analysis". The Google column is from the AI Plus card and footnotes on the India plan page. The pricing page leaves out when ChatGPT limits reset, so [how ChatGPT's limits and reset times work on each plan](/blog/chatgpt-usage-limits/) fills in the ChatGPT side of that row from OpenAI's other pages.
 
 The rows I would weigh first at this price:
 

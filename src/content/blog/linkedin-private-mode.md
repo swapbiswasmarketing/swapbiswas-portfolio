@@ -126,4 +126,6 @@ The costs below come only from the Help pages quoted above:
 | Premium, you want privacy and your list | Private mode, then check your list and insights | Possibly viewer insights, if a548046's tip applies to your account |
 | Job seeking, you want a recruiter to notice the visit | Your name and headline | Privacy on that visit |
 
+Telling recruiters you want a new job is a separate setting, Open to Work, and [its three visibility options, from every member down to only you](/blog/linkedin-open-to-work/) decide who sees that status.
+
 LinkedIn private mode is the right setting when the visit matters more than your own viewer list, and on a free account it always costs that list. If you are on Premium, switch, then open Who's Viewed Your Profile and confirm the list and insights are still there.

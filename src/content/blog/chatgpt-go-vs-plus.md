@@ -146,7 +146,7 @@ Read on 16 October 2026, alongside the Pro column in the first table:
 
 - GPT-5.6 Sol Pro, marked No on Free, Go and Plus, and on the Pro card "Pro reasoning powered by GPT-6 Astra"; the 7 October release note says the Pro reasoning option "continues to use GPT-6 Astra".
 - GPT Instant context of 128K, about 250 pages of input, and GPT Reasoning context of 400K, about 680 pages, against 54K and 256K on Plus.
-- Codex marked "Expanded". The Work and Codex pricing page says "Pro plans currently have no five-hour limit", while Plus works to OpenAI's estimates of 15 to 160 local messages per five hours on GPT-6.1 Sol and 5 to 45 on GPT-6 Astra, which it says "are not fixed message limits".
+- Codex marked "Expanded", with no five-hour limit on Pro as of 31 October 2026; Plus's per-model message estimates and reset rules are in [my guide to ChatGPT usage limits by plan](/blog/chatgpt-usage-limits/).
 - Dots, OpenAI's "always-on agents", rolling out to eligible Pro users aged 18 and older; the 29 September 2026 release note excludes the European Economic Area, Switzerland and the UK at launch.
 - Voice marked "Unlimited\*" (split by tier in the table above), GPT-6 Luna marked "Expanded" and "Share Plugins with your workspace" marked "Yes", against "Expanded", "Yes" and "No" on Plus.
 

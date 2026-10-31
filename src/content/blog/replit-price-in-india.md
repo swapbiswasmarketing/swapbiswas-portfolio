@@ -168,6 +168,7 @@ Starter is free for students as for anyone, and the student offer is a Core disc
 - The page names a .edu address and does not mention Indian college domains such as .ac.in, so confirm your email qualifies before you plan around $10.
 - It states no end date. [Replit's changelog of 19 September 2025](https://docs.replit.com/updates/2025/09/19/changelog) announced a different offer: "$15 off per month for the first six months" of Core with a student email.
 - Replit's help page still sends students to replit.com/education, which returned a 404 on 10 October 2026. The live page is replit.com/edu.
+- For comparison, Cursor has no student discount left to verify against: [Cursor ended new sign-ups for its student plan in June 2026](/blog/cursor-student-plan/), and before that its forum said only US .edu addresses qualified.
 
 ## Stale Replit Prices Still Online
 
