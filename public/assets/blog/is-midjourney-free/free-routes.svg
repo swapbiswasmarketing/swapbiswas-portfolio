@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 740" width="1400" height="740">
+  <rect x="0" y="0" width="1400" height="740" fill="#f6f4ef"/>
+  <text x="40" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Every way to use Midjourney free</text>
+  <text x="40" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Status per Midjourney's help centre and App Store India, read 31 October 2026</text>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif">
+    <rect x="40" y="140" width="420" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="68" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">WEBSITE</text>
+    <text x="68" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">No trial</text>
+    <text x="68" y="260" font-size="20" fill="#3a3632">No free trial on the</text>
+    <text x="68" y="290" font-size="20" fill="#3a3632">midjourney.com website</text>
+    <text x="68" y="322" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">Free Trials, 10 Dec 2025</text>
+
+    <rect x="490" y="140" width="420" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="518" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">DISCORD</text>
+    <text x="518" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">No trial</text>
+    <text x="518" y="260" font-size="20" fill="#3a3632">No trial in Discord; Discord</text>
+    <text x="518" y="290" font-size="20" fill="#3a3632">Nitro does not give access</text>
+    <text x="518" y="322" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">Trials; Nitro, 10 Dec 2025</text>
+
+    <rect x="940" y="140" width="420" height="200" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2.5"/>
+    <text x="968" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">NIJI JOURNEY APP</text>
+    <text x="968" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#b53b15">Limited trial</text>
+    <text x="968" y="260" font-size="20" fill="#3a3632">iOS and Android; App Store</text>
+    <text x="968" y="290" font-size="20" fill="#3a3632">listing says 20 free generations</text>
+    <text x="968" y="322" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">Free Trials; App Store India</text>
+
+    <rect x="40" y="370" width="420" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="68" y="410" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">RATING IMAGES, SURVEYS</text>
+    <text x="68" y="452" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">Subscribers only</text>
+    <text x="68" y="490" font-size="20" fill="#3a3632">Top 2,000 raters a day get 1 hr</text>
+    <text x="68" y="520" font-size="20" fill="#3a3632">Fast time; needs a subscription</text>
+    <text x="68" y="552" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">Free Fast Time, 26 Feb 2026</text>
+
+    <rect x="490" y="370" width="420" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="518" y="410" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">STUDENTS</text>
+    <text x="518" y="452" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">Paid, own plan</text>
+    <text x="518" y="490" font-size="20" fill="#3a3632">Each student pays for their</text>
+    <text x="518" y="520" font-size="20" fill="#3a3632">own plan; schools may reimburse</text>
+    <text x="518" y="552" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">Student Billing, 5 Jan 2026</text>
+
+    <rect x="940" y="370" width="420" height="200" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="968" y="410" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">SCHOOLS, NON-PROFITS</text>
+    <text x="968" y="452" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">No discount</text>
+    <text x="968" y="490" font-size="20" fill="#3a3632">No discounts or free plans</text>
+    <text x="968" y="520" font-size="20" fill="#3a3632">for organizations</text>
+    <text x="968" y="552" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#6a645c">Group Plans, 1 Sep 2026</text>
+
+    <rect x="40" y="600" width="1320" height="110" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="68" y="640" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" font-weight="500" letter-spacing="2" fill="#6a645c">CHEAPEST WEB PLAN WITH UNLIMITED IMAGES (RELAX MODE)</text>
+    <text x="68" y="682" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Standard: $30 a month, or $288 a year ($24 a month). Basic ($10) has no Relax time.</text>
+  </g>
+</svg>

@@ -202,7 +202,7 @@ A native image feature would change the first sentence of this post. The help ar
 
 ## Claude Code Image Generation With an Outside Model: Script, Skill or MCP Server
 
-A photo, a painting or an illustration needs a model outside Claude to produce the pixels, and Claude Code's part is to call that model and save what comes back. This section is written from Anthropic's and the image vendors' documentation as read on 10 October 2026. Model names and per-image prices change often, so it names no model as a pick and quotes no price.
+A photo, a painting or an illustration needs a model outside Claude to produce the pixels, and Claude Code's part is to call that model and save what comes back. This section is written from Anthropic's and the image vendors' documentation as read on 10 October 2026. Model names and per-image prices change often, so it names no model as a pick and quotes no price. Not every image vendor offers a free route to test with first: Midjourney is subscription-only apart from a limited trial in its niji journey app, per [my rundown of Midjourney's trial and plans](/blog/is-midjourney-free/).
 
 ### A Script You Commit
 

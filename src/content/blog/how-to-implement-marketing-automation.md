@@ -128,7 +128,7 @@ Six pitfalls account for most failed implementations. Knowing them in advance is
 
 ## Choosing the Right Platform
 
-Tooling matters less than people assume. Most platforms in the same tier converge on capability; the real delta is in what your team will actually adopt and admin. Pick based on team capacity and CRM stack first, features second.
+Tooling matters less than people assume. Most platforms in the same tier converge on capability; the real delta is in what your team will actually adopt and admin. Pick based on team capacity and CRM stack first, features second. If your CRM is Zoho, check [which Zoho CRM edition first includes Blueprint process automation](/blog/zoho-crm-pricing-india/) before you plan workflows around it.
 
 | Tier | Tools | Best for |
 |---|---|---|

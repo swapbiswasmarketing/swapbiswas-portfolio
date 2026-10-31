@@ -137,7 +137,7 @@ Apple's column is the In-App Purchases list on [Canva's India App Store listing]
 - Canva's pricing FAQ offers AI Pass and AI top-ups to users "who subscribe online".
 - Apple's tax rule is from its [2023 tech talk on App Store pricing](https://developer.apple.com/videos/play/tech-talks/110364/): "Prices advertised to customers in all countries except the U.S. and Canada include taxes".
 
-Canva prints rupees on its own pricing page; for Claude and Lovable, the vendors' own pages showed dollars and the rupee prices sat on app store listings, as my [Claude Pro price check by checkout](/blog/claude-pro-price-in-india/) and [Lovable price check for India](/blog/lovable-ai-price-in-india/) record. ElevenLabs takes the same route, with dollars on its pricing page and rupees appearing at checkout and in the app stores, as [my check of ElevenLabs plans for Indian buyers](/blog/elevenlabs-price-in-india/) found.
+Canva prints rupees on its own pricing page; for Claude and Lovable, the vendors' own pages showed dollars and the rupee prices sat on app store listings, as my [Claude Pro price check by checkout](/blog/claude-pro-price-in-india/) and [Lovable price check for India](/blog/lovable-ai-price-in-india/) record. ElevenLabs takes the same route, with dollars on its pricing page and rupees appearing at checkout and in the app stores, as [my check of ElevenLabs plans for Indian buyers](/blog/elevenlabs-price-in-india/) found. Midjourney's help centre says it accepts payment in US dollars only and it shows no rupee price on its website, which [my look at whether Midjourney costs anything](/blog/is-midjourney-free/) covers along with the bank conversion.
 
 ## What Happened to Canva Teams?
 

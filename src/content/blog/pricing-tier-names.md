@@ -103,7 +103,7 @@ Companies marked "unordered" have the order caveat above. Companies marked "usag
 
 Four labels in that table I would re-check before quoting them verbatim anywhere important. ClickUp's names came back entirely lowercase, which is more likely a CSS text transform on the cards than the true label casing. Dropbox's "Basic Free" may render as a plan called Basic with a price of Free. Loom's third rung was captured as "Business + AI" with a note that the card also reads "Loom AI". Zapier's second rung came back as "Professional (Pro)", so the on-page label is one of those two. Everything else in the table is as the page returned it.
 
-Where the row is the whole product line, the capture took the table the URL defaults to: Freshdesk for Freshworks, Marketing Hub for HubSpot, Work Management for monday.com, Atlas for MongoDB, Infrastructure for Datadog, Live for BrowserStack. Add-ons priced separately (Zendesk's Copilot add-on, Ahrefs' Brand Radar prompt packages, Intercom's Proactive Support Plus) are excluded from the tier lists.
+Where the row is the whole product line, the capture took the table the URL defaults to: Freshdesk for Freshworks, Marketing Hub for HubSpot, Work Management for monday.com, Atlas for MongoDB, Infrastructure for Datadog, Live for BrowserStack. Add-ons priced separately (Zendesk's Copilot add-on, Ahrefs' Brand Radar prompt packages, Intercom's Proactive Support Plus) are excluded from the tier lists. A tier name also says nothing about what the rung gates: Notion's Free / Plus / Business / Enterprise ladder reads like any other, yet only Business and Enterprise include Notion AI, per [my breakdown of what each Notion plan gets for AI](/blog/is-notion-ai-free/).
 
 ## The Free Rung: Only 21 of 32 Are Called Free
 

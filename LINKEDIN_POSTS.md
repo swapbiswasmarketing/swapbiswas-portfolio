@@ -3530,3 +3530,72 @@ https://swapbiswas.com/blog/antigravity-pricing-india/?utm_source=linkedin&utm_m
 #GoogleAntigravity #Gemini #AICoding #India #DevTools
 
 ---
+
+### Zoho CRM Pricing in India: Every Edition in Rupees
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak counting table with four stacks of old coins rising in height from left to right, an open account ledger with ruled columns, a brass balance scale and a small brass sandglass, a quill resting in an inkwell beside a folded bill of sale, a single vermilion red ribbon marking a page in the ledger, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Zoho's pricing page says "save up to 34%" on yearly billing. In rupees, no edition saves 34%.
+On Zoho's India prices of 31 October 2026, yearly billing takes 38.5% off Standard but only 18.75% off Ultimate.
+
+- Billed annually, per user per month: Rs 800 Standard, Rs 1,400 Professional, Rs 2,400 Enterprise, Rs 2,600 Ultimate. Billed monthly: Rs 1,300, Rs 2,100, Rs 3,000 and Rs 3,200. GST is charged on top.
+- The 34% matches Professional's saving in dollars (34.3%), not any rupee saving.
+- The Free Edition covers up to 3 users and 5,000 records across all modules, with no mass email.
+- A year on Standard equals 7.4 months of monthly billing; on Enterprise, 9.6 months. Staying monthly for the first quarter on Enterprise or Ultimate costs Rs 1,800 extra per user.
+- A 10-person team on Professional saves Rs 84,000 a year by billing annually.
+
+Do you choose monthly or annual billing edition by edition, or take the banner's number?
+
+https://swapbiswas.com/blog/zoho-crm-pricing-india/?utm_source=linkedin&utm_medium=social&utm_campaign=zoho-crm-pricing-india
+
+#ZohoCRM #CRM #SaaSPricing #SalesTools #India
+
+---
+
+### Is Midjourney Free? The One Trial Left and the Plans
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a painter's oak table with a wooden palette of earth pigments, a bundle of brushes in a clay jar and a small blank canvas propped on a miniature easel, a brass hourglass with sand running through, a closed carved wooden box with an iron lock beside a quill in an inkwell, a single vermilion red cloth draped over the corner of the canvas, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Is Midjourney free? Not on midjourney.com or in Discord, per its Free Trials article, last updated 10 December 2025.
+The one trial its help centre lists is a limited trial in the niji journey app for iOS and Android.
+
+- Midjourney's docs give no size for that trial. The app's App Store India listing, read on 31 October 2026, says 20 free generations.
+- Basic is $10 a month with 3.3 hours (200 minutes) of Fast GPU time and no Relax mode. Standard, at $30 a month or $24 billed yearly, is the cheapest plan with unlimited image generation.
+- Free Fast time from rating images and surveys can only be spent with an active subscription, and it expires 30 days after it's given.
+- The refund rule: you are eligible only if you've used less than 20 GPU minutes over your account's lifetime. That is about 25 SD prompts.
+- Midjourney charges in US dollars only. At about Rs 94.96 per dollar (ECB rates, 30 October 2026), Basic works out to about Rs 950 a month before tax and card fees.
+
+How many images a month would you make before Basic's 200 Fast minutes run out?
+
+https://swapbiswas.com/blog/is-midjourney-free/?utm_source=linkedin&utm_medium=social&utm_campaign=is-midjourney-free
+
+#Midjourney #AIImages #GenerativeAI #DesignTools
+
+---
+
+### Is Notion AI Free? What Each Notion Plan Includes
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's writing desk with a bound notebook lying open on blank pages, a small stack of index cards tied with twine, a brass key resting on a folded letter, a pewter candlestick with a half-burnt candle and a quill in an inkwell, a small brass sandglass nearly run through, a single vermilion red wax seal on the folded letter, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Is Notion AI free? Only as a trial. Notion's help center says Notion AI "is available on Business and Enterprise Plans."
+Free and Plus get "a limited number of complimentary AI responses", and none of the pricing or help pages read on 31 October 2026 says how many.
+
+- Every Try again click counts as another AI response, and upgrading from Free to Plus does not renew the allowance.
+- The 30-day Business trial includes Notion AI, but teams on an educational or personal email domain are not eligible.
+- The free Education Plan is the Plus Plan with a 1-member limit, so AI stays at trial level. Upgrading that workspace permanently ends its Education eligibility.
+- Business costs $20 per member per month billed yearly or $24 billed monthly. Under the new credit system, each member gets 1,500 Standard and 500 Select AI credits a month, with no rollover.
+- The banner says "Save up to 20% with yearly". The yearly saving on Plus and Business works out to 16.7%.
+
+Which email is set as the main address on your Notion account?
+
+https://swapbiswas.com/blog/is-notion-ai-free/?utm_source=linkedin&utm_medium=social&utm_campaign=is-notion-ai-free
+
+#NotionAI #Notion #Productivity #AITools #SaaSPricing
+
+---

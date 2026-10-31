@@ -234,6 +234,7 @@ Let me be honest about the gaps:
 - **No white-labeling** - Client-facing agencies will need paid tools
 - **Limited scale** - Free tiers work for small operations; once you're sending 10K+ emails or managing 20+ social accounts, you'll need to pay
 - **Monthly credit caps** - As of October 2026, Lovable's Free plan grants 5 build credits a day up to 30 a month, so the grants stop after the first six days of each month, and [what Lovable's paid plans cost from India](/blog/lovable-ai-price-in-india/) depends on whether you pay on the web or in the iPhone app
+- **Trials sold as free tiers** - Some AI features come only as a trial: Notion gives Free and Plus users a limited number of complimentary AI responses and does not publish how many, so read [how far the Notion AI trial goes](/blog/is-notion-ai-free/) before you plan around it
 
 ## The Bottom Line
 

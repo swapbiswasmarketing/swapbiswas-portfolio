@@ -1420,6 +1420,22 @@
 		],
 		"hash": "630f060b8d9c54cd"
 	},
+	"/assets/blog/is-midjourney-free/free-routes.webp": {
+		"w": 1200,
+		"h": 634,
+		"v": [
+			660
+		],
+		"hash": "cb68669b77eb862c"
+	},
+	"/assets/blog/is-notion-ai-free/notion-ai-free-routes.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "18d2845488c6ffce"
+	},
 	"/assets/blog/is-product-marketing-a-good-career/pmm-career-path.webp": {
 		"w": 1200,
 		"h": 566,
@@ -2673,5 +2689,13 @@
 			660
 		],
 		"hash": "b72c95ada979addf"
+	},
+	"/assets/blog/zoho-crm-pricing-india/annual-discount-by-edition.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "6d02e04d91eca526"
 	}
 }

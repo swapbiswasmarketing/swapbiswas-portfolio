@@ -168,7 +168,7 @@ Compare that to the average company spending **[$4,830 per employee per year on 
 
 ### "I need a CRM"
 
-If you have fewer than 100 active deals, a spreadsheet or your email tool's built-in contact management works fine. HubSpot offers a [free CRM](https://www.hubspot.com/products/crm) if you need something more structured. Don't buy Salesforce because you might need it someday.
+If you have fewer than 100 active deals, a spreadsheet or your email tool's built-in contact management works fine. HubSpot offers a [free CRM](https://www.hubspot.com/products/crm) if you need something more structured. Don't buy Salesforce because you might need it someday. If you outgrow the spreadsheet and want a CRM billed in rupees, [my edition-by-edition breakdown of Zoho CRM's India prices](/blog/zoho-crm-pricing-india/) shows where the free edition stops and what each paid tier adds.
 
 ### "I need SEO tools"
 

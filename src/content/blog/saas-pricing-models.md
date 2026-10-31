@@ -95,7 +95,7 @@ The three-tier version carries enough design rules of its own, from feature allo
 Charge by the number of users. Add a teammate, add a seat. Clean to forecast, easy to sell, and the model buyers understand fastest.
 
 - **Value metric:** number of users
-- **Example:** Zoom and Salesforce bill per user; it maps neatly to tools where each added person gets real value
+- **Example:** Zoom and Salesforce bill per user; it maps neatly to tools where each added person gets real value. Zoho CRM also bills per user, and [the rupee math on Zoho CRM's editions](/blog/zoho-crm-pricing-india/) shows a per-seat product whose annual discount is not the same across tiers
 - **Use it when:** value scales with the number of people in the product and seat expansion is a natural growth path
 - **The trap:** covered below - per-seat pricing can quietly cap your expansion once a team is fully seated
 

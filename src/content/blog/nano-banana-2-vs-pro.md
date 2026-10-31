@@ -92,7 +92,7 @@ Not in the Gemini app chat. In the app, Pro is a "Redo with Pro" button for paid
 | Google AI Pro | Nano Banana 2.1 plus Redo with Pro; downloads at 2K; "4x higher than standard limits" |
 | Google AI Ultra | Nano Banana 2.1 plus Redo with Pro; downloads at 2K; "5x or 20x higher than AI Pro limits depending on your subscription" |
 
-The overview page says "Google AI Pro, Plus, Ultra users have access to our best image model, Nano Banana 2.1". The limits page still lists "Image generation with Nano Banana 2" under all four plans, and the help article never names 2.1, so Google's pages disagree on which model a paid plan's images use by default. None of the four pages gives an image count per day for any plan.
+The overview page says "Google AI Pro, Plus, Ultra users have access to our best image model, Nano Banana 2.1". The limits page still lists "Image generation with Nano Banana 2" under all four plans, and the help article never names 2.1, so Google's pages disagree on which model a paid plan's images use by default. None of the four pages gives an image count per day for any plan. Midjourney, by contrast, has no free plan on its website or in Discord, and its only trial sits in the niji journey mobile app, as [my check of Midjourney's free routes](/blog/is-midjourney-free/) records.
 
 Rules from the help article that change how Pro behaves in the app:
 
