@@ -70,13 +70,16 @@ Those rows come from Anthropic's articles on [Pro and Max invoices](https://supp
 
 Apple's India App Store lists a price for each plan, with Claude Pro at ₹1,999 a month or ₹19,900 a year as of 10 October 2026, while Google Play's India listing shows one range for the whole app.
 
-Apple's In-App Purchases list sits in the listing's Information section, under the provider name Anthropic PBC, and the listing's text has no mention of GST or tax. Besides the Pro and Max plan prices, the list carries three more purchases, labelled on the listing as follows:
+Apple's In-App Purchases list sits in the listing's Information section, under the provider name Anthropic PBC, and the listing's text has no mention of GST or tax. Besides the Pro, Max and Ultra plan prices, the list carried three more purchases on 10 October 2026 and six on 31 October 2026, labelled on the listing as follows:
 
 - Usage Credits (20): ₹1,999
 - Usage Credits (50): ₹4,999
+- Usage Credits (100): ₹9,900
 - Usage Credits (250): ₹19,900
+- Usage Credits (500): ₹34,900
+- Usage Credits (1000): ₹69,900
 
-Anthropic's usage credits article says app subscribers enable and buy credits on the web, so I would confirm in the app before counting on those three. What usage credits are, and what each plan's limits allow before you need them, is in [my guide to Claude usage limits](/blog/claude-usage-limits/).
+Divided by the number in each label, the 20, 50 and 100 packs come to about ₹99 to ₹100 each, the 250 pack to ₹79.60 and the 500 and 1000 packs to about ₹70. Anthropic's usage credits article says app subscribers enable and buy credits on the web, so I would confirm in the app before counting on any of these packs. What usage credits are, and what each plan's limits allow before you need them, is in [my guide to Claude usage limits](/blog/claude-usage-limits/).
 
 On Google Play, the About this app panel shows "In-app purchases" with a range of ₹1,999.00 to ₹24,987.50 per item, and the page footer says all prices include GST. The range does not name the item at either end. Its low end equals Apple's Pro monthly price and its high end is ₹87.50 above Apple's Max 20x price (the ₹24,900 Apple lists for Ultra on 31 October 2026), so on Android the plan prices are best read on the upgrade screen inside the app.
 
