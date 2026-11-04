@@ -77,7 +77,7 @@ What users actually do. Events, sessions, paths, feature adoption.
 - Time-in-state and recency
 - Session recordings for qualitative drill-down
 
-Tools: Amplitude, Mixpanel, Heap, PostHog for product analytics. FullStory, LogRocket, Hotjar for session recording.
+Tools: Amplitude, Mixpanel, Heap, PostHog for product analytics. FullStory, LogRocket, Hotjar for session recording. Microsoft Clarity is a free option for session recordings, and [the checks for a Clarity install that records nothing](/blog/microsoft-clarity-not-recording/) cover the usual setup faults.
 
 This is the layer most teams have already. The mistake is treating it as the whole picture. Behavior shows what people did - it does not tell you why.
 

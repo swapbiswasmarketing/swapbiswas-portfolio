@@ -122,7 +122,7 @@ One caveat on my own sourcing: the Change of Address help page carries no visibl
 
 ## Case Sensitivity Is the Redirect Nobody Writes
 
-`https://swapbiswas.com/Blog/aeo-vs-seo/` returns 404. One capital letter, same path, dead. `trailingSlash: true` normalizes the slash and nothing in the repo normalizes case, so a mis-cased inbound link gets exactly the treatment `/blog/does-not-exist/` gets, which is also a 404.
+`https://swapbiswas.com/Blog/aeo-vs-seo/` returns 404. One capital letter, same path, dead. `trailingSlash: true` normalizes the slash and nothing in the repo normalizes case, so a mis-cased inbound link gets exactly the treatment `/blog/does-not-exist/` gets, which is also a 404. Both answer a real 404 status rather than a 200 error page, so in Search Console they belong under Not found (404), not the [Soft 404 reason](/blog/soft-404/).
 
 I have not measured whether any external link to this site uses the wrong case, and I have no data on how often it happens anywhere. What I can state is the shape of the exposure: there is no rule in this repository that would catch one, and the 404 is indistinguishable from a link to a page that never existed. That is the kind of finding a crawl surfaces in minutes and a keyword tool never will, which is why status-code checks belong in [a technical SEO site audit](/blog/how-to-conduct-a-technical-seo-site-audit/) rather than in a content review.
 

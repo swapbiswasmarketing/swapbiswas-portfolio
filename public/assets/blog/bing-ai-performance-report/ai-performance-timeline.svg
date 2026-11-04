@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="1400" height="880">
+  <rect x="0" y="0" width="1400" height="880" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Bing AI Performance report: four dated milestones in 2026</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">From Microsoft's announcement posts, read 4 November 2026</text>
+
+  <rect x="60" y="140" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="188" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">10 FEB 2026</text>
+  <text x="90" y="226" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Public preview</text>
+  <line x1="320" y1="166" x2="320" y2="254" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="350" y="186" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">AI Performance launches</text>
+  <text x="350" y="222" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Total Citations, Average Cited Pages, grounding queries (a sample), page-level</text>
+  <text x="350" y="254" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">citations and trends, across Copilot, Bing AI summaries and select partners</text>
+
+  <line x1="190" y1="280" x2="190" y2="310" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="183,308 197,308 190,322" fill="#15130f"/>
+
+  <rect x="60" y="324" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="372" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">23 MAR 2026</text>
+  <text x="90" y="410" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">New capability</text>
+  <line x1="320" y1="350" x2="320" y2="438" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="350" y="370" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Grounding query - page mapping</text>
+  <text x="350" y="406" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Select a grounding query to see its cited pages, or a page to see its</text>
+  <text x="350" y="438" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">grounding queries (announced on the Microsoft Advertising blog)</text>
+
+  <line x1="190" y1="464" x2="190" y2="494" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="183,492 197,492 190,506" fill="#15130f"/>
+
+  <rect x="60" y="508" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="556" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">16 JUN 2026</text>
+  <text x="90" y="594" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Preview, global</text>
+  <line x1="320" y1="534" x2="320" y2="622" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="350" y="554" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Intents, Topics, Citation Share, Compare</text>
+  <text x="350" y="590" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Intent and topic labels on grounding queries, your share of all citations</text>
+  <text x="350" y="622" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">for a query, and an earlier period laid over the current one</text>
+
+  <line x1="190" y1="648" x2="190" y2="678" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="183,676 197,676 190,690" fill="#15130f"/>
+
+  <rect x="60" y="692" width="1280" height="140" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+  <text x="90" y="740" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#b53b15">13 OCT 2026</text>
+  <text x="90" y="778" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Beta</text>
+  <line x1="320" y1="718" x2="320" y2="806" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="350" y="738" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Topics Portfolio tab</text>
+  <text x="350" y="774" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Topic Size, Sites Cited, Queries and Opportunity Queries (volumes as ranges),</text>
+  <text x="350" y="806" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">shown only if there is sufficient data for your site</text>
+</svg>
