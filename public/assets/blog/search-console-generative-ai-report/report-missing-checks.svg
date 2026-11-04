@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 860" width="1400" height="860">
+  <rect x="0" y="0" width="1400" height="860" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Generative AI report missing? Check in this order</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">From Google's Search Console help pages, read 4 November 2026</text>
+
+  <rect x="60" y="150" width="760" height="130" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+  <text x="90" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#b53b15">CHECK 1 - SETTINGS</text>
+  <text x="90" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Search generative AI control set to Exclude?</text>
+  <text x="90" y="262" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Settings &gt; Search generative AI, on this property</text>
+
+  <line x1="820" y1="215" x2="884" y2="215" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="882,208 896,215 882,222" fill="#b53b15"/>
+  <text x="838" y="202" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#b53b15">YES</text>
+  <rect x="900" y="150" width="440" height="130" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="925" y="196" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">No AI impressions or traffic.</text>
+  <text x="925" y="228" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Switch this property to Include</text>
+  <text x="925" y="260" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">if you want to appear again</text>
+
+  <line x1="190" y1="280" x2="190" y2="314" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="183,312 197,312 190,326" fill="#15130f"/>
+  <text x="208" y="308" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">NO</text>
+
+  <rect x="60" y="328" width="760" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="368" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">CHECK 2 - INHERITANCE</text>
+  <text x="90" y="406" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Set to Inherit, and a parent excludes?</text>
+  <text x="90" y="440" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Closest configured parent, else the top-level domain</text>
+
+  <line x1="820" y1="393" x2="884" y2="393" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="882,386 896,393 882,400" fill="#15130f"/>
+  <text x="838" y="380" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">YES</text>
+  <rect x="900" y="328" width="440" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="925" y="374" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Set Include on this property,</text>
+  <text x="925" y="406" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">or ask the parent property's</text>
+  <text x="925" y="438" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">owner to change theirs</text>
+
+  <line x1="190" y1="458" x2="190" y2="492" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="183,490 197,490 190,504" fill="#15130f"/>
+  <text x="208" y="486" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">NO</text>
+
+  <rect x="60" y="506" width="760" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="546" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">CHECK 3 - WHICH REPORT</text>
+  <text x="90" y="584" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Is it the Discover version of the report?</text>
+  <text x="90" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Search and Discover have separate help pages</text>
+
+  <line x1="820" y1="571" x2="884" y2="571" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="882,564 896,571 882,578" fill="#15130f"/>
+  <text x="838" y="558" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">YES</text>
+  <rect x="900" y="506" width="440" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="925" y="552" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Its help page still says not</text>
+  <text x="925" y="584" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">all properties have access,</text>
+  <text x="925" y="616" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">as it rolls out over time</text>
+
+  <line x1="190" y1="636" x2="190" y2="670" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="183,668 197,668 190,682" fill="#15130f"/>
+  <text x="208" y="664" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">NO</text>
+
+  <rect x="60" y="684" width="760" height="130" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="724" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">CHECK 4 - VOLUME</text>
+  <text x="90" y="762" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Few links shown in AI Overviews or AI Mode</text>
+  <text x="90" y="796" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The usual cause, per Google's Search help page</text>
+
+  <line x1="820" y1="749" x2="884" y2="749" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="882,742 896,749 882,756" fill="#15130f"/>
+  <rect x="900" y="684" width="440" height="130" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="925" y="730" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No setting to change: Google</text>
+  <text x="925" y="762" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">ties a missing report to too</text>
+  <text x="925" y="794" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">few AI-feature impressions</text>
+</svg>

@@ -78,7 +78,7 @@ None of the four places publishes the list of assistants the rule checks. The ch
 
 <img src="/assets/blog/ga4-ai-assistant-channel/where-ai-traffic-lands.webp" alt="Routing diagram per Google Analytics Help, read 10 October 2026: a referrer on Google's AI list or a utm_medium of ai-assistant goes to AI Assistant, AI Overviews and AI Mode to Organic Search, a source on Google's search or social list to Organic Search or Organic Social, any other referrer to Referral, no referrer to Direct and unmatched tags to Unassigned" title="Where GA4 files AI assistant traffic" width="1200" height="797" loading="lazy" decoding="async" />
 
-The channel counts clicks: the 13 May entry says the feature works "by tracking user clicks". An answer that names your brand without a link never becomes an AI Assistant session, and a reader who types your URL afterwards arrives with no referrer, which Google processes as direct traffic. Read the AI Assistant row as [a floor on what assistants send you](/blog/how-to-measure-saas-content-marketing/). Mentions without clicks need [their own visibility checks](/blog/improve-brand-visibility-in-ai-search-engines/), and [getting cited by ChatGPT, Perplexity and Gemini](/blog/llm-optimization/) is the work that produces the clicks in the first place.
+The channel counts clicks: the 13 May entry says the feature works "by tracking user clicks". An answer that names your brand without a link never becomes an AI Assistant session, and a reader who types your URL afterwards arrives with no referrer, which Google processes as direct traffic. Read the AI Assistant row as [a floor on what assistants send you](/blog/how-to-measure-saas-content-marketing/). Mentions without clicks need [their own visibility checks](/blog/improve-brand-visibility-in-ai-search-engines/), and [getting cited by ChatGPT, Perplexity and Gemini](/blog/llm-optimization/) is the work that produces the clicks in the first place. Search Console counts how often AI Overviews and AI Mode showed your pages, impressions only, in [the Generative AI performance report](/blog/search-console-generative-ai-report/).
 
 ## Google's Example Regex for AI Assistants, Tested
 
@@ -193,7 +193,7 @@ No Google page I read on 10 October 2026 answers these, so the right column is a
 
 The UTM question matters because the AI rule keys on the referrer, while Google's [campaigns and traffic sources page](https://support.google.com/analytics/answer/11242841?hl=en) says the document referrer "may set dimensions when no other campaign or traffic source fields have been set".
 
-The channel page itself says its definitions "may evolve as the market changes". I would recheck the four places once a quarter and keep the read date on any table built from them, including the ones on this page.
+The channel page itself says its definitions "may evolve as the market changes". I would recheck the four places once a quarter and keep the read date on any table built from them, including the ones on this page. If you chart the channel in Data Studio and a chart shows a data set configuration error, [the fixes for that error](/blog/looker-studio-data-set-configuration-error/) start with the line under the banner.
 
 ## Keep a Dated Assistant List of Your Own
 

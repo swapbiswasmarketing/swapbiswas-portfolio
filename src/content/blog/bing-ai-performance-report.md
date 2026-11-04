@@ -183,7 +183,7 @@ Bing states a data threshold only for Topics Portfolio, so on a small site start
 
 Practical Ecommerce also reports that the whole report can be exported to a spreadsheet. Bing's three posts do not mention an export.
 
-Google's counterpart is a different report: Search Console's Generative AI performance report has no queries tab, as [my guide to Search Console's branded queries filter](/blog/search-console-branded-queries/) notes with a link to Google's help page. Grounding queries are the column Bing offers that Google's AI report does not.
+Google's counterpart is a different report: Search Console's Generative AI performance report has no queries tab, as [my guide to Search Console's branded queries filter](/blog/search-console-branded-queries/) notes with a link to Google's help page, and [my read of Google's generative AI report](/blog/search-console-generative-ai-report/) sets out what it does count. Grounding queries are the column Bing offers that Google's AI report does not.
 
 ## Acting on Each Number With Bing's Own Advice
 

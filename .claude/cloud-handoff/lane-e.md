@@ -107,6 +107,77 @@ The post has a symptom, cause, check and fix table, each check linked to its Mic
 
 **Nano Banana image prompt (1200x628):** Renaissance-style still life, warm paper background #f6f4ef, a brass hourglass and an empty glass jar on a stone ledge with four small stones lined up in a row, one stone painted vermilion red, muted earth tones, one red accent only, no text.
 
+## Batch 2 (publishDate 2026-11-04)
+
+Ahrefs re-tried before this batch (free `ahrefs` test keyword): still `{"error":"Insufficient plan"}`. Volumes remain unmeasured.
+
+### search-console-generative-ai-report
+- Primary keyword: search console generative ai report (variants: google search console generative ai performance report, search console ai mode impressions, search console ai overview data, generative ai report not showing)
+- Verdict: TOP5 (weak: top 3 soft but no confirmed sub-DR-40 proof page)
+- Traffic: realistic 0-5 visits/month at #5-9 (US/global, volume unmeasured, assumed 100-400 US + 30-150 IN); top-3 upside 5-30/month
+- Proof page: none valid in the top 5. Nearest: https://www.relevantaudience.com/seo/search-console-generative-ai-report-live-all-properties/ (estimated DR 40-60, out of date on rollout status)
+- Refresh: 2026-12-04 (monthly while new). Google says it will add metrics; clicks or queries would change the whole post. Re-check help 16984139, control help 16908024 and the Search Central blog.
+- Footprint: `| search-console-generative-ai-report | what-is / how-to-read + AI-traffic question -> report table + missing-report checks diagram | question-led open | list | synthesized |`
+- Review ledger: `search-console-generative-ai-report | status=new, review_due=2026-11-25`
+- First-hand question: In swapbiswas.com's own Search Console (Domain property), is the Generative AI performance report visible, and if so, what does the Search generative AI control show (Include / Inherit), and for 1-30 October 2026 does the Countries-tab total match the chart total while the Pages-tab sum exceeds it? Belongs in "Why Do the Chart and Table Totals Differ?".
+- Hosts edited: search-console-branded-queries (hub; Generative AI report bullet), ga4-ai-assistant-channel ("The channel counts clicks" paragraph), bing-ai-performance-report (batch-1 post; Google counterpart paragraph)
+- Optimize note: ai-overview-optimization's "Measuring AI Overview Performance" bullet still says Search Console "surfaces AI-related impressions and clicks as the feature matures". The report has impressions only. Fix that bullet and link the new post (not done here: it is a content change, not a link sentence). seo-interview-questions Q62 is also stale on the Search generative AI control.
+
+### looker-studio-data-set-configuration-error
+- Primary keyword: looker studio data set configuration error (variants: looker studio dataset configuration error, data studio data set configuration error, looker studio configuration error, looker studio credential settings error)
+- Verdict: TOP5 (low traffic; top 6 are discuss.google.dev forum threads on Google's domain)
+- Traffic: realistic 0-3 visits/month at #5-8 (US/global, volume unmeasured, assumed 100-300); top-3 upside 4-30/month
+- Proof page: none valid in the top 5. Nearest article: https://www.databloo.com/blog/looker-studio-cannot-connect-to-your-dataset/ at #7 (estimated DR 40-55, 2023, old name)
+- Refresh: 2027-02-04. Watch for Google moving or renaming the Data Studio troubleshooting pages (docs.cloud.google.com/data-studio) and for the sub-messages under the banner changing. The sub-messages are quoted from two forum threads (2024-08-15, 2025-04-01), not from Google's docs; the cause column is labelled "my reading".
+- Footprint: `| looker-studio-data-set-configuration-error | how-to error troubleshooter + message -> cause table + credentials decision table | comparison-led open | prose | synthesized |`
+- Review ledger: `looker-studio-data-set-configuration-error | status=new, review_due=2026-11-25`
+- First-hand question: Has the author ever built or maintained a Data Studio (Looker Studio) report on this site's Search Console or GA4 data and seen "Data set configuration error" on it? If yes: which connector, the exact line shown under the banner, the credential type, and which fix cleared it.
+- Hosts edited: what-is-seo-report (hub; the one host from outside the lane pool), search-console-branded-queries (Data Studio references paragraph), ga4-ai-assistant-channel (definitions-may-evolve paragraph)
+
+### LinkedIn drafts (batch 2)
+
+#### search-console-generative-ai-report
+
+Search Console's generative AI report has no clicks and no queries.
+
+It counts one thing: impressions in AI Overviews and AI Mode.
+
+From Google's own pages, read 4 November 2026:
+
+- Launched 3 June 2026 for a subset of sites, rolled out to all sites as of 31 August 2026
+- Tabs for pages, countries, dates and devices, and no query dimension
+- A multimodal search type (Lens, Circle to Search, image uploads), announced 24 September 2026
+- A missing report usually means too few impressions in generative AI features, or a property excluded through the Search generative AI control
+
+The post maps each AI-traffic question to the Google report that answers it.
+
+🔗 https://swapbiswas.com/blog/search-console-generative-ai-report/?utm_source=linkedin&utm_medium=social&utm_campaign=search-console-generative-ai-report
+
+#SEO #GoogleSearchConsole #AIOverviews #AISearch #ContentMarketing
+
+**Nano Banana image prompt (1200x628):** Renaissance-style still life, warm paper background #f6f4ef, an astronomer's brass telescope pointed at a framed window with a small counting abacus on the sill, its beads all pushed to one side, a single vermilion red bead set apart, muted earth tones, one red accent only, no text.
+
+#### looker-studio-data-set-configuration-error
+
+"Looker Studio data set configuration error" and "Data Studio data set configuration error" are the same banner.
+
+Google renamed the product back to Data Studio in April 2026. The fix did not change.
+
+What Google's docs say, read 4 November 2026:
+
+- lookerstudio.google.com now redirects to datastudio.google.com
+- The troubleshooting guide lists this banner with six other data source errors
+- If you can edit the data source and have your own access to the data, Data credentials > Make me the owner reconnects it
+- Owner's credentials suit reports whose viewers have no access to the underlying data
+
+The post has a message, likely cause and fix table, and a credentials decision table.
+
+🔗 https://swapbiswas.com/blog/looker-studio-data-set-configuration-error/?utm_source=linkedin&utm_medium=social&utm_campaign=looker-studio-data-set-configuration-error
+
+#DataStudio #LookerStudio #Analytics #MarketingAnalytics #Reporting
+
+**Nano Banana image prompt (1200x628):** Renaissance-style still life, warm paper background #f6f4ef, an old iron key ring on a writing desk beside a locked wooden document box and a ledger, one key wrapped with a single vermilion red cord, muted earth tones, one red accent only, no text.
+
 ## Rejected (lane E, 2026-11-04)
 - blocked due to access forbidden (403): LONGTAIL_ONLY, 0-3/mo. aioseo, seotesting and onely hold the top 3; the small article in the top 5 (contextbolt, Sep/Oct 2026) already publishes the CDN/firewall angle. Brief notes Google's HTTP status doc moved to developers.google.com/crawling/docs/troubleshooting/http-status-codes.
 - tag assistant not connected / gtm preview mode not working: LONGTAIL_ONLY, 1-8/mo, below the 10/mo bar. analyticsmania (26 fixes, updated 12 Oct 2026) and Google's help likely hold the top.
@@ -114,4 +185,4 @@ The post has a symptom, cause, check and fix table, each check linked to its Mic
 - robots.txt AI training control / google-extended (Google post of 30 Oct 2026): DROP. Draft-stage IETF proposal; Google says it plans to support it; angle already published by relevantaudience and rightblogger. OPTIMIZE instead: add a dated 3-5 line update to llm-optimization's robots.txt section (lines ~135-178) on the shared `__usage` policy token.
 - indexed, though blocked by robots.txt: DROP. Every angle already on page 1 (DR 40+ through the top 8); the core fix is published at seo-interview-questions Q39, excluded-by-noindex-tag fix step 4 and vercel-google-indexing:99. OPTIMIZE instead: add an FAQ "What does Indexed, though blocked by robots.txt mean?" to excluded-by-noindex-tag.
 - Cut at discovery (not gated): discovered currently not indexed (sibling of the rejected "crawled" status; SEO-tool SERP), search console multimodal (narrow; fold into a Generative AI report post), ga4 unassigned (MEDIUM cannibal with ga4-ai-assistant-channel:77 and campaign-naming-convention:126-138), microsoft clarity vs google analytics (HIGH: google-analytics-alternatives:140), consent mode v2 (CMP vendors; google-analytics-alternatives owns the site's consent setup), server error 5xx (lower fit).
-- Gated TOP5, queued for batch 2: search-console-generative-ai-report (0-5/mo), looker-studio-data-set-configuration-error (0-3/mo).
+- Batch 2 written: search-console-generative-ai-report, looker-studio-data-set-configuration-error. No further qualifying candidates in this lane run.

@@ -162,7 +162,7 @@ Place a brief summary at the top - three to five bullet points covering the most
 | [Screaming Frog](https://www.screamingfrog.co.uk/) | Free (500 URLs) / $259/yr | Technical crawl data | Crawl errors, redirects, duplicate content, structured data validation |
 | [SE Ranking](https://seranking.com/) | From $65/mo | Budget-friendly reporting | Rank tracking, site audit, white-label reports |
 
-**For most teams, the free stack of GSC + GA4 + Looker Studio covers 80% of what you need.** Add Ahrefs or Semrush when you need keyword tracking, backlink monitoring, or competitor data at scale.
+**For most teams, the free stack of GSC + GA4 + Looker Studio covers 80% of what you need.** Add Ahrefs or Semrush when you need keyword tracking, backlink monitoring, or competitor data at scale. If a Looker Studio chart in that stack shows a data set configuration error, [my troubleshooter for the error under its new Data Studio name](/blog/looker-studio-data-set-configuration-error/) maps each message to its likely cause.
 
 ## SEO Report Template: What Sections to Include
 
