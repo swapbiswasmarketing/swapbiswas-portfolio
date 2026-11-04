@@ -129,3 +129,42 @@ Facts re-verified today with curl on each cited page. No live rank was measured 
 | antigravity-pricing-india | New H3 "Is Gemini CLI Still Free?": geminicli.com banner (replaced by Antigravity CLI on 18 June 2026 for unpaid and Google One users) and the Models page note that Claude Sonnet 4.6 / Opus 4.6 "Will be removed on November 18, 2026" | bumped to 2026-11-04 (new section with new sourced facts) | PASS, 0 NEW FAIL, 0 NEW WARN |
 - Review ledger: why-is-claude-code-so-slow status=optimized, last_checked=2026-11-04; claude-vs-copilot status=optimized, last_checked=2026-11-04; antigravity-pricing-india status=optimized, last_checked=2026-11-04, re-check after 2026-11-18 (Claude 4.6 removal date).
 - Not applied: chatgpt memory full H2 in chatgpt-usage-limits (help.openai.com returns 403 here; needs a session that can read it); trimming claude-vs-chatgpt's Codex table to a link (the gate marked it "later"; removing content from a ranking post is better judged after codex-vs-claude-code is indexed).
+
+## Batch 2 (publishDate 2026-11-04): Claude Code troubleshooting, user-approved extra round
+Three new candidates were gated (C01-C03); only one cleared the user's 10 visits/month bar.
+
+### claude-command-not-found
+- Primary keyword: claude command not found (US 720 KD 19; "claude code command not found" 70; the "zsh: command not found: claude" phrasing averages ~3,600 but runs at ~0.2 of its peak)
+- Verdict: TOP5 (downgraded from TOP3_PLAUSIBLE: Anthropic's troubleshooting page holds #1; no sub-DR-40 article in the top 5; the rest of the top 3 is a stale 2025 Reddit thread and GitHub issues)
+- Traffic: realistic 2-20 visits/month (US #6-10 on a ~3,000-3,500 current-run-rate cluster); top-3 upside ~60-200. Demand is falling because the installer now prints the PATH fix itself.
+- Proof page: none valid in the top 5; best on-intent article https://mac.install.guide/claude-code/command-not-found (#3, est. DR 40-70, Mac only)
+- Refresh: 2026-11-25, and on any change to code.claude.com/docs/en/setup or /troubleshoot-install (install paths, npm placeholder behaviour, Homebrew cask names). The dnf/rpm install path is not stated (no vendor page gives it).
+- Footprint: `| claude-command-not-found | how-to troubleshooter: error string -> install route -> proving command -> PATH fix, howTo schema | scenario-led open | table | synthesized |`
+- Review ledger: `claude-command-not-found | status=new, review_due=2026-11-25`
+- First-hand question: On your Windows 11 machine, open Git Bash, run `which -a claude` and `echo $PATH | tr ':' '\n' | grep -i "local/bin"`, and paste the output (paths only). It would replace the synthesized line in "The VS Code Extension Bundles Its Own Copy" with a real view of where the standalone CLI sits next to the extension's private copy.
+- Hosts edited: how-to-update-claude-code (hub, end of the "Which copy" section paragraph), claude-code-wsl-vs-windows (after the Windows errors table sources line), claude-code-in-vs-code-vs-terminal (step 1 of running the CLI in VS Code)
+
+### LinkedIn draft
+### Claude Command Not Found: Find Where Your claude Lives
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's desk with an open wooden card catalogue drawer, one index card pulled halfway out, a brass key lying beside an old iron lock, a folded map with a blank route, a quill in an inkwell, a single vermilion red thread tied to the pulled card, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+`zsh: command not found: claude` is almost never a failed install.
+It is a lookup problem: the binary exists, your shell is just not looking there.
+
+- Native installer on macOS or Linux: `claude` lands in `~/.local/bin`. Run `ls -la ~/.local/bin/claude` before you reinstall anything.
+- The installer prints `Native installation exists but ~/.local/bin is not in your PATH.` when it did not edit PATH for you. Read the setup notes before clearing the screen.
+- Installed only the VS Code extension? Its copy of the CLI is private and never goes on PATH. Run the standalone installer.
+- `which -a claude` lists every copy. If it shows two, keep one.
+
+Which install route put yours off PATH?
+
+https://swapbiswas.com/blog/claude-command-not-found/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-command-not-found
+
+#ClaudeCode #DeveloperTools #AIForMarketers #BuildInPublic
+
+### Rejected in batch 2
+- claude internal server error / claude code 500 error (C02): TOP5 but realistic 3-15/mo (midpoint under 10), outage-driven (near zero most months); Anthropic's error reference and rapidevelopers.com (est. DR 40-55, #4) hold the intent. Better as a short H3 in why-is-claude-code-so-slow beside the 529 section if ever needed. Brief: /tmp/kit/briefs/C02.md (cloud VM only).
+- claude code api error 400 (C03): LONGTAIL_ONLY, realistic 2-6/mo, spiky demand, Anthropic's two error pages own the facts; "Prompt is too long" and disabled-org 400s already live in claude-code-compact-vs-clear and claude-code-api-key-vs-subscription.

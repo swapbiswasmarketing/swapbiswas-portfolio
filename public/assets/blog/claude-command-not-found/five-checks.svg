@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 940" width="1400" height="940">
+  <rect x="0" y="0" width="1400" height="940" fill="#f6f4ef"/>
+  <text x="80" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">claude: command not found - five checks before a reinstall</text>
+  <text x="80" y="106" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">macOS, Linux and WSL shells. Commands from Anthropic's install troubleshooting page, November 2026.</text>
+
+  <rect x="80" y="140" width="1240" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="112" y="180" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">STEP 1</text>
+  <text x="112" y="222" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Read the exact error string</text>
+  <text x="660" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">zsh: command not found: claude</text>
+  <text x="660" y="222" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">bash: claude: command not found</text>
+
+  <line x1="200" y1="258" x2="200" y2="280" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="193,280 207,280 200,292" fill="#15130f"/>
+
+  <rect x="80" y="298" width="1240" height="112" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="112" y="338" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">STEP 2</text>
+  <text x="112" y="380" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Ask the shell what it finds</text>
+  <text x="660" y="344" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">which -a claude</text>
+  <text x="660" y="380" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Nothing listed: no claude on your PATH</text>
+
+  <line x1="200" y1="416" x2="200" y2="438" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="193,438 207,438 200,450" fill="#15130f"/>
+
+  <rect x="80" y="456" width="1240" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="112" y="496" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">STEP 3</text>
+  <text x="112" y="538" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Find which install put it there</text>
+  <text x="660" y="502" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">ls -la ~/.local/bin/claude</text>
+  <text x="660" y="538" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">or the check for Homebrew, npm or apt</text>
+
+  <line x1="200" y1="574" x2="200" y2="596" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="193,596 207,596 200,608" fill="#15130f"/>
+
+  <rect x="80" y="614" width="1240" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="112" y="654" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">STEP 4</text>
+  <text x="112" y="696" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Add that folder to PATH</text>
+  <text x="660" y="660" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">~/.zshrc  or  ~/.bashrc</text>
+  <text x="660" y="696" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Bash on macOS: ~/.bash_profile</text>
+
+  <line x1="200" y1="732" x2="200" y2="754" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="193,754 207,754 200,766" fill="#15130f"/>
+
+  <rect x="80" y="772" width="1240" height="112" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="112" y="812" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">STEP 5</text>
+  <text x="112" y="854" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Open a new terminal, then confirm</text>
+  <text x="660" y="818" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="20" fill="#15130f">claude --version</text>
+  <text x="660" y="854" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Editor terminal? Quit and reopen the editor</text>
+</svg>
