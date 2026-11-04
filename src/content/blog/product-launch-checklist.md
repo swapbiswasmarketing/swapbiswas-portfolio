@@ -71,7 +71,7 @@ The cadence is the easy half. The harder half is the order in which each audienc
 - [ ] **Product screenshots** and GIFs for marketing and docs
 - [ ] **Announcement blog post** written, designed, and SEO-optimized
 - [ ] **[Customer-facing email](/blog/product-launch-email-sequence/)** to existing users or waitlist
-- [ ] **Social media assets** (LinkedIn, X, YouTube thumbnails)
+- [ ] **Social media assets** (LinkedIn, X, YouTube thumbnails, and a square image for any [YouTube Post, sized to YouTube's own limits](/blog/youtube-post-image-size/))
 - [ ] **Paid ad creative** if running launch ads
 - [ ] **Press release** drafted (Tier 1 only), with the [first sentence of the company boilerplate](/blog/company-boilerplate-examples/) checked against the current category line, since a new product line can change which category is true
 - [ ] **Webinar or launch event** planned (Tier 1 and Tier 2)

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 810" width="1400" height="810">
+  <rect x="0" y="0" width="1400" height="810" fill="#f6f4ef"/>
+
+  <text x="60" y="76" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Four Shorts view numbers from 1 February 2027</text>
+  <text x="60" y="116" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Qualified Shorts views in the past 90 days, as YouTube Help states them</text>
+
+  <rect x="60" y="150" width="460" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">3 MILLION</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="90" y="232">With 500 subscribers: fan funding,</text>
+    <text x="90" y="266">Creator Partnerships and Shopping</text>
+    <text x="90" y="300">Unchanged in 2027</text>
+  </g>
+
+  <rect x="560" y="150" width="520" height="190" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+  <text x="590" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#b53b15">10 MILLION</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="590" y="232">Until 31 Jan 2027: joins YPP (1,000 subs)</text>
+    <text x="590" y="266">From 1 Feb 2027: needed every month</text>
+    <text x="590" y="300">to earn from the Shorts Creator Pool</text>
+  </g>
+
+  <line x1="280" y1="340" x2="280" y2="416" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="273,416 287,416 280,430" fill="#15130f"/>
+  <line x1="700" y1="340" x2="700" y2="416" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="693,416 707,416 700,430" fill="#b53b15"/>
+
+  <line x1="100" y1="440" x2="1300" y2="440" stroke="#15130f" stroke-width="2.5"/>
+  <circle cx="100" cy="440" r="6" fill="#15130f"/>
+  <circle cx="160" cy="440" r="9" fill="#15130f"/>
+  <circle cx="280" cy="440" r="9" fill="#15130f"/>
+  <circle cx="700" cy="440" r="11" fill="#b53b15"/>
+  <circle cx="1300" cy="440" r="9" fill="#15130f"/>
+  <text x="100" y="480" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">0</text>
+  <text x="700" y="486" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Drawn to scale, 0 to 20 million views</text>
+
+  <line x1="160" y1="450" x2="160" y2="516" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="153,516 167,516 160,530" fill="#15130f"/>
+  <line x1="1300" y1="450" x2="1300" y2="516" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1293,516 1307,516 1300,530" fill="#15130f"/>
+
+  <rect x="60" y="530" width="500" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="570" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">1 MILLION</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="90" y="612">From 1 Feb 2027: one way to count</text>
+    <text x="90" y="646">as active in YPP (or 1,000 watch</text>
+    <text x="90" y="680">hours a year, or regular uploads)</text>
+  </g>
+
+  <rect x="840" y="530" width="500" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="870" y="570" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2.04" fill="#6a645c">20 MILLION</text>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="870" y="612">From 1 Feb 2027: new creators need</text>
+    <text x="870" y="646">this plus 1,000 subscribers to join</text>
+    <text x="870" y="680">YPP through Shorts</text>
+  </g>
+
+  <text x="60" y="768" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Source: YouTube Help answers 12843009 and 72851 (en-IN editions), read 4 November 2026</text>
+</svg>

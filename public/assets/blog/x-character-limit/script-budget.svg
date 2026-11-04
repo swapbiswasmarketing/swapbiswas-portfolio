@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect width="1400" height="800" fill="#f6f4ef"/>
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What 280 buys you on X, by script</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Most characters per post, from the weights in X's twitter-text v3 config</text>
+
+  <rect x="60" y="134" width="1280" height="430" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="100" y="186" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">English, French, Spanish</text>
+  <text x="100" y="214" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">weight 1 per code point</text>
+  <rect x="480" y="174" width="700" height="40" rx="6" fill="#15130f"/>
+  <text x="1196" y="203" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">280</text>
+
+  <text x="100" y="266" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#b53b15">Hindi, Bengali, Tamil</text>
+  <text x="100" y="294" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">weight 1 per code point</text>
+  <rect x="480" y="254" width="700" height="40" rx="6" fill="#b53b15"/>
+  <text x="1196" y="283" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#b53b15">280</text>
+
+  <text x="100" y="346" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Arabic, Cyrillic, Greek</text>
+  <text x="100" y="374" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">weight 1 per code point</text>
+  <rect x="480" y="334" width="700" height="40" rx="6" fill="#15130f"/>
+  <text x="1196" y="363" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">280</text>
+
+  <text x="100" y="426" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Chinese, Japanese, Korean</text>
+  <text x="100" y="454" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">weight 2 per character</text>
+  <rect x="480" y="414" width="350" height="40" rx="6" fill="#6a645c"/>
+  <text x="846" y="443" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">140</text>
+
+  <text x="100" y="506" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Emoji, any sequence</text>
+  <text x="100" y="534" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">weight 2 per emoji</text>
+  <rect x="480" y="494" width="350" height="40" rx="6" fill="#6a645c"/>
+  <text x="846" y="523" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">140</text>
+
+  <rect x="60" y="592" width="1280" height="140" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="640" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">EVERY LINK</text>
+  <text x="100" y="680" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">Any URL costs 23. A 116-character UTM link costs 23, and so does x.com.</text>
+  <text x="100" y="712" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Counts from twitter-text 3.1.0, run on 4 November 2026</text>
+</svg>

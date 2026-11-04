@@ -79,6 +79,8 @@ LinkedIn names no single size: export 1080 px wide at any ratio from 3:1 to 4:5,
 
 For a single photo, the photo page has one crop rule: "If the ratio is larger, the image will be centered and cropped to fit the max ratio." It does not say which end of the range it means. Written as width over height, 3:1 is the larger number, while the same page's multi-photo rules call 4:5 the max ratio ("Images will render a max ratio of 4:5"). A photo inside 3:1 to 4:5 is clear under either reading. I read the text and ran no upload test.
 
+YouTube's Posts help page goes further the other way: it prints a file size and a suggested 1:1 ratio but no pixel size at all, and [my YouTube post image size check](/blog/youtube-post-image-size/) matches five guides' figures against it.
+
 The figure draws each ratio at 1080 px wide, which puts 1.91:1 at 1080 x 565.
 
 <img src="/assets/blog/linkedin-post-size/photo-ratio-range.webp" alt="Five frames drawn to scale at 1080 px wide: 1080 x 360 at 3:1, 1080 x 565 at 1.91:1, a 1080 x 1080 square, 1080 x 1350 at 4:5 highlighted as the tall end of LinkedIn's range, and a dashed 1080 x 1920 frame at 9:16 outside the range" title="LinkedIn's photo range at the recommended 1080 px width" width="1200" height="686" loading="lazy" decoding="async" />
@@ -196,4 +198,4 @@ Beyond a slide size for document posts and the crop rule's direction, these ques
 
 ## Match the File to the Page That Covers It
 
-Trace any LinkedIn post size you use to the page that covers your kind of post: the photo, video and document pages for anything in the feed, plus, as a precaution, the two Pages spec pages when you post as a company. Where two pages that cover your post disagree, as LinkedIn's video pages do on length, design to the stricter figure. Recheck the stamps in the Help-page table each quarter.
+Trace any LinkedIn post size you use to the page that covers your kind of post: the photo, video and document pages for anything in the feed, plus, as a precaution, the two Pages spec pages when you post as a company. Where two pages that cover your post disagree, as LinkedIn's video pages do on length, design to the stricter figure. Recheck the stamps in the Help-page table each quarter. The text that goes out with the file is counted differently on each network: on X, a link costs 23 characters however long it is, as [the X character limit breakdown](/blog/x-character-limit/) shows.

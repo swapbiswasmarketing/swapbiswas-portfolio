@@ -59,6 +59,8 @@ Analytics & tools is where creator analytics landed, next to profile insights "s
 
 Creator Marketplace is a separate program and does not bring creator mode back. Its [LinkedIn Help page](https://www.linkedin.com/help/linkedin/answer/a12580208), last updated 2 months ago, says it is "currently only available to a select group of members in the US and Canada" and lists eligibility factors of 12 posts in the last 90 days, 5,000 followers, 45,000 impressions in the last 90 days and an invitation to join.
 
+YouTube is changing its own creator programme on 1 February 2027, and [what an Indian Shorts channel needs to earn before and after that date](/blog/youtube-shorts-monetization-india/) is set out from YouTube's Help pages in a separate post.
+
 ## Two Rows Where LinkedIn's 2024 Notice Is Out of Date
 
 ### The Profile Link Became a Premium Custom Button
