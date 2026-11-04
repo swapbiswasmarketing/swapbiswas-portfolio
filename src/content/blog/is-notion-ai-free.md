@@ -1,24 +1,25 @@
 ---
 title: "Is Notion AI Free? What Each Notion Plan Includes"
-description: "Is Notion AI free? Only as a trial on Free, Plus and the student plan; Notion includes AI on Business and Enterprise. Plan prices and India check, 31 Oct 2026."
+description: "Is Notion AI free? Only as a trial on Free, Plus and the student plan; Notion includes AI on Business and Enterprise. Plan prices and App Store rupees, Nov 2026."
 publishDate: 2026-10-31
+updatedDate: 2026-11-04
 category: [AI, Tools]
 img: /assets/stock-6.webp
 img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "Is Notion AI free?"
-    a: "Only as a trial. On 31 October 2026 Notion's help center said Notion AI is available on the Business and Enterprise plans, while Free and Plus users get a limited number of complimentary AI responses to try it. Notion does not publish how many."
+    a: "Only as a trial. As of November 2026 Notion's help center says Notion AI is available on the Business and Enterprise plans, while Free and Plus users get a limited number of complimentary AI responses to try it. Notion does not publish how many."
   - q: "Is Notion AI free for students?"
     a: "Not beyond the trial. Students and educators at accredited colleges and universities get Notion's Education Plan free, which Notion's pricing FAQ describes as the Plus Plan with a 1-member limit, and Plus carries only a trial of Notion AI. K-12 students and personal email addresses are not eligible for the Education Plan."
   - q: "What is the Notion AI free limit?"
     a: "Notion does not publish a number. Its trial page counts every AI action that returns a response, and every Try again click, as one response, and its plan help page says moving from the Free Plan to the Plus Plan does not renew the allowance."
   - q: "Which Notion plan includes AI?"
-    a: "Business, at $20 per member per month billed yearly or $24 billed monthly, and Enterprise, which the pricing page lists as \"Custom pricing\" (Notion's plan help page says organisations under 100 employees can upgrade to it from their settings). Under Notion's credit system (new workspaces from 19 October 2026, existing ones from 2 November 2026), each member gets 1,500 Standard and 500 Select AI credits a month as standard, and Notion says the amount can vary by plan and purchase arrangement."
+    a: "Business, at $20 per member per month billed yearly or $24 billed monthly, and Enterprise, which the pricing page lists as \"Custom pricing\" (Notion's plan help page says organisations under 100 employees can upgrade to it from their settings). Under Notion's credit system, which existing customers were due to join on 2 November 2026, each member gets 1,500 Standard and 500 Select AI credits a month as standard, and Notion says the amount can vary by plan and purchase arrangement."
   - q: "How much is Notion in India?"
-    a: "Notion's website shows prices in USD only when opened from India: Plus at $10 and Business at $20 per member per month, billed yearly. Apple's India App Store lists Notion in-app purchases in rupees, including Plus Monthly at ₹1,199 and Plus Yearly at ₹11,900, as of 31 October 2026."
+    a: "Apple's India App Store lists Notion in-app purchases in rupees, including Plus Monthly at ₹1,199 and Plus Yearly at ₹11,900, as of November 2026. Notion's own pricing page lists Plus at $10 and Business at $20 per member per month billed yearly, labelled \"Price in USD\", and does not mention India, GST or local currencies."
 ---
 
-Notion gives Free and Plus users "a limited number of complimentary AI responses so they can try Notion AI features out", and none of the Notion pricing or help pages I read on 31 October 2026 says how many. Notion AI itself, in the [help center's words](https://www.notion.com/help/notion-ai-faqs), "is available on Business and Enterprise Plans", so Notion AI is free only as a trial.
+Notion gives Free and Plus users "a limited number of complimentary AI responses so they can try Notion AI features out", and as of November 2026 none of Notion's pricing or help pages says how many. Notion AI itself, in the [help center's words](https://www.notion.com/help/notion-ai-faqs), "is available on Business and Enterprise Plans", so Notion AI is free only as a trial.
 
 The trial allowance matters less than which of Notion's other free routes you qualify for. A team on a work email domain can get 30 days of Business with AI included, a university student gets a free plan whose AI stays at trial level, and a startup can apply for up to six months. For two of those three routes, the email on your account is the test: Notion's Business trial excludes educational and personal domains, and the Education Plan needs a school email as the account's main address.
 
@@ -26,7 +27,7 @@ The trial allowance matters less than which of Notion's other free routes you qu
 
 Not for ongoing use. Notion includes AI on its Business and Enterprise plans. The Free Plan, the Plus Plan and the free student plan get a trial allowance of complimentary AI responses whose size Notion does not publish, and moving from Free to Plus does not renew it. Teams on a work domain can trial Business free for 30 days.
 
-Here is what [Notion's pricing page](https://www.notion.com/pricing) showed on 31 October 2026. Notion changes prices and limits often, so check the linked page before you pay. The page opens on yearly billing, so its cards show $10 and $20; the monthly-billed prices come from the price data embedded in the same page's HTML.
+Here is what [Notion's pricing page](https://www.notion.com/pricing) showed as of November 2026 (rechecked on 4 November). Notion changes prices and limits often, so check the linked page before you pay. The page opens on yearly billing, so its cards show $10 and $20; the monthly-billed prices come from the price data embedded in the same page's HTML.
 
 | Plan | Billed monthly (per member) | Billed yearly (per member) | Notion AI, in Notion's words | Students |
 |---|---|---|---|---|
@@ -47,9 +48,9 @@ The four plan names follow a common SaaS ladder, which I broke down in [how SaaS
 
 ## Notion AI Pricing in India: USD on the Web, Rupees in the App Store
 
-I opened notion.com/pricing logged out on 31 October 2026 from a connection that Cloudflare's trace reported as `loc=IN`. The page labelled its prices "Price in USD", and the data embedded in the page read `"countryCode":"IN"` with `"currencies":["USD"]`. No rupee price appeared on the page, and it says nothing about tax or GST. The pricing page's FAQ says Notion accepts "all major credit and debit card brands", and its plan help page adds Apple Pay and Google Pay, with payments processed by Stripe.
+Notion's pricing page labels its prices "Price in USD". As of November 2026, neither that page nor Notion's plan help page mentions India, local currencies, tax or GST, so the dollar figures above are Notion's USD list, not a confirmed India price. The pricing page's FAQ says Notion accepts "all major credit and debit card brands", and its plan help page adds Apple Pay and Google Pay, with payments processed by Stripe.
 
-Rupee prices exist in one place I could check: [Apple's India App Store listing for Notion](https://apps.apple.com/in/app/notion-notes-tasks-ai/id1232780281), read the same day.
+Rupee prices appear on [Apple's India App Store listing for Notion](https://apps.apple.com/in/app/notion-notes-tasks-ai/id1232780281), which showed these four in-app purchases as of November 2026 (unchanged from 31 October).
 
 | In-app purchase, as Apple lists it | Price |
 |---|---|
@@ -113,7 +114,7 @@ So for a student on a school email, neither free route includes AI beyond the tr
 
 ## How Much AI the Business Plan Includes
 
-Notion's credit pages give Business and Enterprise members a monthly AI allowance. New Business and Enterprise workspaces move to this credit system from **19 October 2026**, and existing workspaces from **2 November 2026**.
+Notion's credit pages give Business and Enterprise members a monthly AI allowance. Notion's [19 October 2026 announcement](https://www.notion.com/blog/notion-ai-more-for-less) put new customers on this credit system that day and said "Existing customers move over on November 2". As of November 2026, the credit help pages give no start date and describe the allowance below as what Business and Enterprise plans include.
 
 | Credit type | What it covers | Included per member each month |
 |---|---|---|
