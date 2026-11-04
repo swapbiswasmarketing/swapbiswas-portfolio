@@ -91,6 +91,8 @@ If you see a message that the verification "couldn't be added yet", the page's s
 
 My advice is to keep the name field to your name. Credentials and taglines belong in the headline, which has [a 220-character limit of its own](/blog/linkedin-headline-character-limit/), and a name field reading "Priya Sharma, MBA" would not match the name DigiLocker holds.
 
+The same goes for certifications: they have their own Licenses & certifications section, and [my guide to adding a certificate on LinkedIn](/blog/how-to-add-certificate-in-linkedin/) maps which profile section fits each one.
+
 ## Is LinkedIn DigiLocker Verification Safe? What Is Shared, Used and Kept
 
 LinkedIn says it keeps only your name and a unique identifier after a successful check, and deletes your photo, date of birth, gender and biometric data; whether that is safe enough is your call. Here is the DigiLocker page field by field:

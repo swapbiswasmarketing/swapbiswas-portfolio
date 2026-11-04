@@ -167,6 +167,48 @@ https://swapbiswas.com/blog/linkedin-top-voice/?utm_source=linkedin&utm_medium=s
 
 ---
 
+## Batch 3 (publishDate 2026-11-04; user approved 3 extra gate slots)
+
+Seeds gated: C14 how to add certification to linkedin (written below), C16 linkedin learning certificate (LONGTAIL_ONLY, 1-4 visits/month: folded into C14 as one H2). The third seed, linkedin about section character limit (US 480), was not gated: HIGH cannibal with linkedin-headline-character-limit.md:83 and :92, which already give the guides' 2,600 and say no Help page states a number. It went to the optimize fix instead (below).
+
+### how-to-add-certificate-in-linkedin
+- Primary keyword: how to add certificate in linkedin (Semrush IN 2,900 KD 44); variants: how to add a certification on linkedin (US 1,300 KD 40), how to add certificate to linkedin (US 260 / IN 480), how to add certification to linkedin (US 210)
+- Verdict: LONGTAIL_ONLY (no article from a site under DR 40 in the top 5 in either market; page 1 is university blogs, vendor how-tos and a Substack post). Written because the realistic range's midpoint narrowly clears 10/month on the India cluster. India's 2,900 is Indian phrasing of a global how-to, not India-price intent.
+- Traffic: realistic 2-20 visits/month (India cluster ~3,400 at #8-12; US cluster ~1,770 at #10-15); top-3 upside ~150/month (unlikely against universities and LinkedIn Help)
+- Proof page: none valid. Closest: virtualbadge.io/blog-articles/how-to-add-certificates-to-linkedin-profile (est. DR 40-55, credential vendor, 2022)
+- Refresh: 2027-02-04. LinkedIn's own Licenses & certifications Help page (a567169) returned 404 on 2026-11-04, so the form-field names are attributed to LinkedIn's Marketing Academy FAQ. Re-check for a live Help page, a529062 (Share profile updates) and the LinkedIn Learning pages.
+- Employer conflict: LinkedIn's Professional Certificates FAQ lists the author's employer among certificate providers. The post names no provider from that page, and a grep for the employer and testing vendors is clean. Keep it that way on any refresh.
+- Footprint: `| how-to-add-certificate-in-linkedin | how-to + "where does this certificate go" section-mapping table + LinkedIn Learning H2 | question-led open | prose | synthesized |`
+- Review ledger: `how-to-add-certificate-in-linkedin | status=new, review_due=2026-11-25`
+- First-hand question: Which certificate have you added to LinkedIn (for example your IIM Visakhapatnam PG programme, or a LinkedIn Marketing Academy or Google certification), which section did you put it in, and did your network get an update when you saved it? (Belongs in "How to Add Certificate in LinkedIn Without Posting", after the a529062 table. Usable only if the author confirms the certificate, section and outcome.)
+- Hosts edited (one sentence each): how-to-add-resume-to-linkedin (hub), linkedin-verification-digilocker, linkedin-premium-cost-in-india
+
+LinkedIn draft:
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's desk with a rolled parchment certificate tied with cord beside an open leather-bound register, a brass seal press, a small wooden box of index cards with one card drawn halfway out, a quill in an inkwell, a single vermilion wax seal on the rolled certificate, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Adding a certificate to LinkedIn can announce it to your network.
+Whether it does is a setting, and you can switch it off before you save.
+
+- Exam-based and issuer-verified certificates go in Licenses & certifications, which LinkedIn describes as "Certifications, licenses, or clearances you've attained."
+- Before you save, switch off the toggle in the Share with network section, or turn Share profile updates Off under Settings & Privacy, Visibility.
+- The certificate file itself, as a PDF or image, belongs in Featured, not in the certifications entry.
+- LinkedIn Learning certificates are added from Learning History, and LinkedIn says LinkedIn Learning "is not accredited".
+
+Which section is your newest certificate sitting in?
+
+https://swapbiswas.com/blog/how-to-add-certificate-in-linkedin/?utm_source=linkedin&utm_medium=social&utm_campaign=how-to-add-certificate-in-linkedin
+
+#LinkedIn #LinkedInTips #Careers #PersonalBranding
+
+---
+
+## Optimize fixes to existing posts (user approved, commit e6f20b9)
+- linkedin-premium-cost-in-india: the small-business InMail row said credits "roll over for 3 months". That wording is on LinkedIn's Small Business compare page, but LinkedIn Help a541643 gives balance caps, not a rollover period. The row now gives Business 15 a month capped at 45 and All-in-One 30 a month with no Help cap, and a note names both sources. Added H3 "How Do LinkedIn InMail Credits Work?" (as of November 2026): caps by plan (Career 5/15, Business 15/45, Sales Navigator Core 50/150, Recruiter Lite 30/120), renewal date, the 90-day credit-back, one InMail until a reply, no transfer on upgrade, zero on cancel, no purchase outside the allotment, free messages to Open Profile members, where the balance shows. updatedDate 2026-11-04 set; publishDate unchanged. Facts review: 28 of 28 rows confirmed.
+- linkedin-headline-character-limit: LinkedIn Help (a547248, a553140) still states no About section limit, so the body is unchanged. Added FAQ "What is the LinkedIn About section character limit?" (guides give 2,600; Help states none, checked 4 November 2026). No updatedDate (FAQ-only change).
+- Refresh both with the InMail credits page (a541643, "Last updated: 3 months ago" on 2026-11-04).
+
 ## Rejected
 - how to change linkedin url: DROP. Google US top 5 is LinkedIn Help (#1, #2, #4), YouTube (#3) and Quora (#5); replug.io (updated 22 Oct 2026) already covers the old-URL rules. 1-5 visits/month. Could be an FAQ in a future profile post.
 - linkedin inmail credits: DROP, MEDIUM cannibal. OPTIMIZE linkedin-premium-cost-in-india instead: its :209 row says credits "roll over for 3 months"; replace with LinkedIn Help a541643's caps and add a short "How do InMail credits work?" H3 or FAQ (90-day credit-back, caps, renewal date).
@@ -175,6 +217,7 @@ https://swapbiswas.com/blog/linkedin-top-voice/?utm_source=linkedin&utm_medium=s
 - how to write a linkedin recommendation: LONGTAIL_ONLY at 1-5 visits/month. Coursera and recruiter brands hold US #1-5.
 - follow vs connect on linkedin: not gated. MEDIUM cannibal with linkedin-creator-mode-not-showing's "How to Get a Follow Button Instead of Connect" H2; 260 US.
 - linkedin post / about section / comment character limit: not gated. HIGH cannibal: linkedin-headline-character-limit already tables the post limit (3,000) and other Help-page limits. Optional: OPTIMIZE that post with the About section limit (480 US searches) if LinkedIn Help states it.
-- how to add certification to linkedin: not gated (US 210, IN 20; lower priority than the 10 gated).
+- linkedin learning certificate (C16, extra gate): LONGTAIL_ONLY at 1-4 visits/month; head term is navigational (.edu and LinkedIn pages); folded into how-to-add-certificate-in-linkedin as one H2.
+- linkedin about section character limit (extra seed): not gated, HIGH cannibal with linkedin-headline-character-limit; handled as an FAQ optimize instead.
 - repost vs share linkedin: not gated (0 US volume).
 - how to withdraw a linkedin invitation: folded into the invitation-limit candidate (20 US).

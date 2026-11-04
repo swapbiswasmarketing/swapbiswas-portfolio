@@ -110,6 +110,8 @@ LinkedIn's [Featured section FAQs](https://www.linkedin.com/help/linkedin/answer
 
 The logged-in rule and a506429's "may be visible off LinkedIn" warning read like a conflict. My reading of the two pages together: the FAQ governs who can view the section, while a510363 lets every viewer download the file, and a downloaded copy is no longer under LinkedIn's settings. The Featured section also holds portfolio samples, and [my product marketing portfolio guide](/blog/product-marketing-portfolio/) covers what to show if a resume alone undersells your work.
 
+A certificate PDF can sit in Featured the same way, while its details belong in Licenses & certifications, as [my guide to adding a certificate on LinkedIn](/blog/how-to-add-certificate-in-linkedin/) sets out.
+
 ## Sharing Your Resume in a LinkedIn Post
 
 A post reaches anyone who opens it: a506429 says the file "will be visible to anyone viewing your profile or that post". LinkedIn's [document posts page](https://www.linkedin.com/help/linkedin/answer/a518909) adds two rules that matter for a resume:

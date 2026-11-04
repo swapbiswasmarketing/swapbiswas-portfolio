@@ -205,6 +205,8 @@ The anonymous browsing in that table is LinkedIn's private mode, and two LinkedI
 
 Easy Apply, which the table lists on both free and Premium Career, can reuse the four most recently uploaded resumes LinkedIn stores for you, and [my guide to adding a resume to LinkedIn](/blog/how-to-add-resume-to-linkedin/) shows where to upload them.
 
+LinkedIn says its Learning Certificates of Completion are not accredited, and [adding one to your profile](/blog/how-to-add-certificate-in-linkedin/) runs through Learning History rather than the Licenses & certifications form.
+
 The small-business plans against a free account, from the Small Business compare page, with the monthly InMail counts from each product page:
 
 | Feature | Free | Premium Business | All-in-One | Company Page |
