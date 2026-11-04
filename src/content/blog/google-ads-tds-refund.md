@@ -28,7 +28,7 @@ This is not tax advice. Google's page says Google Ads "can't advise on tax matte
 
 The steps below follow Google's India TDS section and its [withholding certificate page](https://support.google.com/google-ads/answer/18429227?hl=en-IN), as of November 2026:
 
-1. **Find your payment setting.** Google's withholding page says some steps vary by the account's payment setting: prepay, postpay or monthly invoicing.
+1. **Find your payment setting.** Google's withholding page says some steps vary by the account's payment setting: prepay, postpay or monthly invoicing. If you are not sure which setting the account is on, [how postpay and prepay differ for India accounts](/blog/google-ads-payment-methods-india/) explains both.
 2. **Get the quarter's certificate in Form 131.** Google says certificates "are required every quarter" and should be issued within 15 days from the due date for filing the TDS return.
 3. **Check Google's details on it.** PAN AACCG0527D, and the registered address of Google India Pvt. Ltd. in Bangalore (full text in the table below).
 4. **Monthly invoicing:** send a digital copy, electronically signed or a PDF scan of the signed certificate, through the [Google Tax Operations form](https://support.google.com/paymentscenter/contact/ar_wht_orca_contact_us_form), under "Submit a withholding certificate related to an open invoice".

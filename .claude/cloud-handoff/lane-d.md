@@ -104,7 +104,99 @@ https://swapbiswas.com/blog/google-ads-tds-refund/?utm_source=linkedin&utm_mediu
 - google trends india / how to use google trends (D10): DROP. Navigational head term; the informational tails are held by vendors (Ahrefs, Glimpse, Exploding Topics, WordStream). Optimize instead: marketing-strategy-for-new-product.md:46 says Trends "measures search volume", which Google's Trends help (answer 4365533) contradicts.
 - google business profile suspended (D08): LONGTAIL_ONLY, 1-8/mo, global intent; BrightLocal, SocialPilot and Synup hold #2-5.
 
-## Gated, held for batch 2 (pending "continue")
-- google-ads-payment-methods-india (D03): TOP5 India, 2-12/mo, top-3 upside 8-40.
-- google-business-profile-verification-without-video (D07): TOP5 global, 3-20/mo, top-3 upside 60-200.
-- google-keyword-planner-without-campaign (D06): TOP5 global, 2-12/mo, top-3 upside 20-60 (US intent, only top 3 pays).
+## Batch 2 (publishDate 2026-11-04)
+
+Ahrefs re-checked before batch 2: still `Insufficient plan`. Volumes unmeasured.
+
+### google-ads-payment-methods-india
+- Primary keyword: google ads payment methods india (secondary: google ads upi payment, google ads upi not showing, google ads automatic payments india)
+- Verdict: TOP5 (India-intent exception). Realistic 2-12 visits/month at #4-7; top-3 upside 8-40.
+- Proof page: none sub-DR-40 in the top 5; #1 digitaldeepak.com/google-adwords-payments-in-india/ (est. DR 40-60) is a 2015 AdWords-era post with no UPI, RuPay or e-mandate; #2-4 are 2008 news items.
+- Refresh: 2027-02-04 (quarterly) and whenever Google widens UPI beyond "currently available" in the Android app. Google's RBI e-mandate page (answer 10557975) still frames the Rs 15,000 postpay limit with 2021 dates; publish no newer RBI limit unless Google's page states it.
+- Footprint: `| google-ads-payment-methods-india | reference explainer: method x payment-setting table + "why yours is missing" | comparison-led open (UPI on prepay, not on postpay) | table | synthesized |`
+- Review ledger: status=new, review_due=2026-11-25
+- First-hand question: If you have ever paid for a Google Ads account with an India billing address (yours or a client's), which payment setting and method did it use, and did "Pay with UPI" appear under Billing in the Google Ads Android app? (One line under "Google Ads UPI Payment: Prepay, the Android App and Four Conditions".)
+- Hosts edited: google-ads-cost-in-india (pool, hub; new "How you pay" bullet), google-ads-promotional-code-india (pool), google-ads-tds-refund (pool). Inbound = 3.
+- QA removed: a PayPal note from a non-India block of Google's page, and a "200" unlock figure whose currency follows the page language rather than the country.
+
+LinkedIn draft:
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a counting-house table divided by a thin brass rule, on one side a leather purse and a small stack of coins, on the other a sealed promissory note and a wax stamp, an ink pot and quill between them, a single vermilion red cord tied around the purse, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Can you pay for Google Ads with UPI in India? Yes, but only on one of the two payment settings.
+The setting, not the method, decides what Google lets an India account use.
+
+- Google's India section lists UPI, NetBanking and RuPay cards for prepay, where you pay before ads run.
+- Postpay runs on a card, and Google's RBI page says postpay in India "will be limited to Rs 15,000" with an e-mandate on the card.
+- NetBanking and UPI prepayments start at 500 INR; UPI is capped at 100,000 INR a day.
+- Google says UPI is currently available in the Google Ads mobile app on Android.
+- A Rs 2.00 amount during card verification is a temporary authorisation, not a charge, per Google.
+
+Which payment setting is your Google Ads account on?
+
+https://swapbiswas.com/blog/google-ads-payment-methods-india/?utm_source=linkedin&utm_medium=social&utm_campaign=google-ads-payment-methods-india
+
+#GoogleAds #UPI #DigitalMarketing #PPC
+
+### google-business-profile-verification-without-video
+- Primary keyword: google business profile verification without video (secondary: video verification, verification video call, verification time, video verification not working)
+- Verdict: TOP5 (global intent, not India). Realistic 3-20 visits/month at #6-10; top-3 upside 60-200.
+- Proof page: wiremo.co/blog/google-business-profile-video-verification/ (#5 on the head term, bylined, updated 2026-09-30, est. DR 25-40). SEJ's video guide (Sept 2024) never mentions Search Console, so the instant-verification route stays the differentiator.
+- Refresh: 2027-02-04 (quarterly). Google changes the method mix and video rules without notice; re-check that the Search Console instant-verification line survives.
+- Footprint: `| google-business-profile-verification-without-video | how-to: route map + guides-vs-Google table + troubleshooter | scenario-led open (a home-based bike mechanic offered only a video) | list | synthesized |`
+- Review ledger: status=new, review_due=2026-11-25
+- First-hand question: Have you ever verified, or helped someone verify, a Google Business Profile? If yes: which business type (shopfront, Service Area or hybrid), which methods the Get verified screen listed, which one you used, and the month. (One dated observation in "Can You Choose Your Verification Method?".)
+- Hosts edited: local-seo-checklist (pool, hub; this also replaced its out-of-date "usually by video or postcard" line), do-google-reviews-help-seo (pool), rebranding-rollout-plan (outside pool). Inbound = 3.
+
+LinkedIn draft:
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a shopkeeper's wooden counter with an iron key on a ring, a folded letter with a broken wax seal, a small brass bell and a hand mirror lying face down, a quill beside an inkwell, a single vermilion red ribbon threaded through the key ring, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Google Business Profile asking for a video you can't record? Google picks your verification method.
+But its own Help pages list ways to change what it offers.
+
+- Google lists phone or text, email, live video call and postcard alongside video recording, and says the methods "can't be changed".
+- In some cases Google verifies a profile instantly, such as when you verify your website with Google Search Console.
+- A live video call is offered only within your listed opening hours, so set accurate hours first.
+- Postcard codes: Google says most arrive within 14 days and they expire after 30 days.
+- Google says verification reviews take up to five working days, and on rare occasions longer.
+
+What method did Google offer when you verified your business?
+
+https://swapbiswas.com/blog/google-business-profile-verification-without-video/?utm_source=linkedin&utm_medium=social&utm_campaign=google-business-profile-verification-without-video
+
+#LocalSEO #GoogleBusinessProfile #SmallBusiness #SEO
+
+### google-keyword-planner-without-campaign
+- Primary keyword: google keyword planner without campaign (secondary: is keyword planner free, keyword planner without billing, are keyword planner volumes exact)
+- Verdict: TOP5 (US/global intent; only the top 3 pays). Realistic 2-12 visits/month at #5-9; top-3 upside about 20-60.
+- Proof page: none valid; #1 bkacontent.com (Feb 2026, est. DR 40-55). Rank Math's KB article read: no Google quotes.
+- Angle as published: you can skip the campaign but not the billing form, and Google's own pages disagree on the campaign step (Help answer 6366720 offers "the option to create an account without a campaign"; the business.google.com Keyword Planner FAQ says to "create a campaign").
+- QA cut: every 2016-sourced claim about volume ranges and spend thresholds (quoted via Search Engine Roundtable), because no current Google page states it. The ranges section now rests only on Google's current "Your search volume statistics are rounded" (answer 3022575).
+- Refresh: 2027-02-04 (quarterly). Re-check answers 6366720 and 7337243 and the product-page FAQ; sign-up labels change often.
+- Footprint: `| google-keyword-planner-without-campaign | how-to + Google-vs-Google and guides-vs-Google tables | question-led open (campaign yes, billing no) | prose | synthesized |`
+- Review ledger: status=new, review_due=2026-11-25
+- First-hand question: Have you ever created a personal (non-employer) Google Ads account with the no-campaign option? If so: on what date, which billing country, did sign-up show an authorization amount or ask for a verification prepayment, and did Keyword Planner show exact average monthly searches or ranges for a keyword of your choice? ("The Billing Form Is the Half You Cannot Skip".)
+- Hosts edited: international-seo-keyword-research (pool, hub), seo-keyword-map (pool), seo-long-tail-keywords (pool). Inbound = 3.
+
+LinkedIn draft:
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's desk with an open atlas, a brass magnifying glass resting on a ledger of handwritten word lists, two small keys of different sizes, one gate-shaped brass bookend, a quill in an inkwell, a single vermilion red bookmark ribbon in the atlas, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Can you use Google Keyword Planner without running a campaign? Half yes, half no.
+You can skip the campaign. You cannot skip the billing form.
+
+- Google's sign-up Help page offers "the option to create an account without a campaign".
+- Google's own Keyword Planner product FAQ still tells you to "create a campaign". Google's pages disagree.
+- The Keyword Planner Help page says you must enter billing information to reach basic features such as keyword ideas.
+- Billing details do not mean a bill: Google says "you won't be charged until your ad starts being shown and gets its first click."
+- The volumes are estimates: Google says "Your search volume statistics are rounded."
+
+Do you still use Keyword Planner for search volume?
+
+https://swapbiswas.com/blog/google-keyword-planner-without-campaign/?utm_source=linkedin&utm_medium=social&utm_campaign=google-keyword-planner-without-campaign
+
+#KeywordResearch #SEO #GoogleAds #ContentMarketing

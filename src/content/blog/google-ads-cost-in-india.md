@@ -145,6 +145,7 @@ These cost lines sit outside the budget rules:
 
 - **Tax.** Agency guides add tax on top of ad spend (Mega Digital's says 18%), so check the tax line on your invoice separately from the budget rules here.
 - **TDS.** If your business deducts TDS on payments to Google, the [Google Ads TDS refund guide](/blog/google-ads-tds-refund/) covers how Google's India page handles it.
+- **How you pay.** Whether that spend is charged to a card after ads run or paid ahead by UPI or NetBanking depends on the payment setting, and [Google Ads payment methods in India](/blog/google-ads-payment-methods-india/) maps each method to postpay and prepay.
 - **Promotional credit.** New-advertiser offers run on their own spend-and-time conditions; the [Google Ads promotional code guide](/blog/google-ads-promotional-code-india/) has them.
 
 After the money is spent, Performance Max and other multi-network campaign types do not report under Paid Search in GA4; they get [their own Cross Network channel](/blog/what-is-cross-network-in-google-analytics/), which matters when you compare spend against results.

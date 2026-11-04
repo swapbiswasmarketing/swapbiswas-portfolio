@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720">
+  <rect width="1400" height="720" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Keyword Planner without a campaign: the two gates</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">What Google's own pages say, as checked on 4 November 2026</text>
+
+  <rect x="60" y="150" width="280" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">STEP 1</text>
+  <text x="84" y="230" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Sign up</text>
+  <text x="84" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Google Ads asks for</text>
+  <text x="84" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">your business name</text>
+  <text x="84" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and URL.</text>
+  <text x="84" y="410" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">Required</text>
+
+  <line x1="344" y1="295" x2="378" y2="295" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="376,288 390,295 376,302" fill="#15130f"/>
+
+  <rect x="394" y="150" width="280" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="418" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">STEP 2</text>
+  <text x="418" y="230" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">The campaign</text>
+  <text x="418" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Google's sign-up guide</text>
+  <text x="418" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">offers an account</text>
+  <text x="418" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">without a campaign.</text>
+  <text x="418" y="410" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#15130f">Skippable</text>
+
+  <line x1="678" y1="295" x2="712" y2="295" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="710,288 724,295 710,302" fill="#15130f"/>
+
+  <rect x="728" y="150" width="280" height="290" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="752" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">STEP 3</text>
+  <text x="752" y="230" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Billing form</text>
+  <text x="752" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Billing country, time</text>
+  <text x="752" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">zone and a payment</text>
+  <text x="752" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">method.</text>
+  <text x="752" y="410" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#b53b15">Not skippable</text>
+
+  <line x1="1012" y1="295" x2="1046" y2="295" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1044,288 1058,295 1044,302" fill="#15130f"/>
+
+  <rect x="1062" y="150" width="280" height="290" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1086" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">STEP 4</text>
+  <text x="1086" y="230" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Keyword Planner</text>
+  <text x="1086" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Tools, then Planning.</text>
+  <text x="1086" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Smart Mode accounts</text>
+  <text x="1086" y="338" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">switch to Expert Mode.</text>
+  <text x="1086" y="410" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">Open</text>
+
+  <rect x="60" y="480" width="630" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="520" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">WHEN YOU ARE CHARGED</text>
+  <text x="84" y="560" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Google: not until your ad starts being shown</text>
+  <text x="84" y="592" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">and gets its first click. A card may see a</text>
+  <text x="84" y="624" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">temporary authorization at sign-up.</text>
+
+  <rect x="712" y="480" width="630" height="180" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="736" y="520" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">WHAT VOLUMES LOOK LIKE</text>
+  <text x="736" y="560" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Google: search volume statistics are rounded.</text>
+  <text x="736" y="592" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Avg. monthly searches: exact match only,</text>
+  <text x="736" y="624" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">averaged over 12 months by default.</text>
+</svg>

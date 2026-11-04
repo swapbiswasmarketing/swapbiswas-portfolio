@@ -38,7 +38,7 @@ Your Google Business Profile (GBP) is the foundation of every local SEO checklis
 
 ### 1. Claim and verify your profile
 
-Search your business name on Google and claim the listing if it exists, or create one at google.com/business. Complete the verification step, usually by video or postcard. An unverified profile cannot rank.
+Search your business name on Google and claim the listing if it exists, or create one at google.com/business. Complete the verification step with whichever method Google offers your profile; if the screen offers only a video, check [the verification routes Google lists besides recording one](/blog/google-business-profile-verification-without-video/) first. An unverified profile cannot rank.
 
 ### 2. Choose the most accurate primary category
 
