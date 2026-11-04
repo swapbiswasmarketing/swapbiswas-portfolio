@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 920" width="1400" height="920">
+  <rect x="0" y="0" width="1400" height="920" fill="#f6f4ef"/>
+
+  <text x="35" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where a certificate goes on LinkedIn</text>
+  <text x="35" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Five profile sections, each with a line quoted from LinkedIn Help</text>
+
+  <rect x="35" y="150" width="430" height="340" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+  <text x="63" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#b53b15">RECOMMENDED</text>
+  <text x="63" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Licenses &amp; certifications</text>
+  <text x="63" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"Certifications, licenses, or</text>
+  <text x="63" y="308" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">clearances you've attained."</text>
+  <line x1="63" y1="362" x2="437" y2="362" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="63" y="394" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">USE IT FOR</text>
+  <text x="63" y="424" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Vendor exams, professional</text>
+  <text x="63" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">licences, online course certificates</text>
+
+  <rect x="485" y="150" width="430" height="340" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="513" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">RECOMMENDED</text>
+  <text x="513" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Courses</text>
+  <text x="513" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"Adding your body of coursework</text>
+  <text x="513" y="308" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">can help your education to</text>
+  <text x="513" y="340" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">stand out."</text>
+  <line x1="513" y1="362" x2="887" y2="362" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="513" y="394" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">USE IT FOR</text>
+  <text x="513" y="424" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Classes you took as part of a</text>
+  <text x="513" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">degree or diploma</text>
+
+  <rect x="935" y="150" width="430" height="340" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="963" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">ADDITIONAL</text>
+  <text x="963" y="234" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Honors &amp; awards</text>
+  <text x="963" y="276" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"Show off your hard-earned</text>
+  <text x="963" y="308" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">awards."</text>
+  <line x1="963" y1="362" x2="1337" y2="362" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="963" y="394" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">USE IT FOR</text>
+  <text x="963" y="424" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Prizes, scholarships and</text>
+  <text x="963" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">merit certificates</text>
+
+  <rect x="35" y="520" width="655" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="63" y="562" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">ADDITIONAL</text>
+  <text x="63" y="604" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Test scores</text>
+  <text x="63" y="646" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"List your scores on tests to highlight</text>
+  <text x="63" y="678" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">high achievement."</text>
+  <line x1="63" y1="710" x2="662" y2="710" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="63" y="744" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">USE IT FOR</text>
+  <text x="63" y="776" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Entrance exam and language test results</text>
+
+  <rect x="710" y="520" width="655" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="738" y="562" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">RECOMMENDED</text>
+  <text x="738" y="604" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Featured</text>
+  <text x="738" y="646" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"Media that you can upload, for example your</text>
+  <text x="738" y="678" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">images, documents, presentations, and videos."</text>
+  <line x1="738" y1="710" x2="1337" y2="710" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="738" y="744" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">USE IT FOR</text>
+  <text x="738" y="776" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The certificate file itself, as a PDF or image</text>
+
+  <text x="35" y="866" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Quotes and groups from LinkedIn Help pages a564064, a550399 and a540837, read 4 November 2026.</text>
+  <text x="35" y="894" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Which certificate goes in which section is my advice, not LinkedIn's.</text>
+</svg>

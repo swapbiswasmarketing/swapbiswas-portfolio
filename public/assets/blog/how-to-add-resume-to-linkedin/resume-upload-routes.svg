@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+
+  <text x="40" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Four places to add a resume on LinkedIn</text>
+  <text x="40" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Who sees the file, and whether Easy Apply can use it, per LinkedIn Help (4 November 2026)</text>
+
+  <rect x="40" y="150" width="314" height="560" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ROUTE 1</text>
+  <text x="64" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Saved in your</text>
+  <text x="64" y="260" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">application settings</text>
+  <line x1="64" y1="290" x2="330" y2="290" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="324" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Who sees the file</text>
+  <text x="64" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The hirer of each job</text>
+  <text x="64" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">you apply to</text>
+  <text x="64" y="440" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Recruiter search</text>
+  <text x="64" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Matches on resume data</text>
+  <text x="64" y="506" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">if sharing is on</text>
+  <line x1="64" y1="560" x2="330" y2="560" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="594" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Usable at Easy Apply?</text>
+  <text x="64" y="632" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Yes</text>
+  <text x="64" y="668" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Four most recent kept</text>
+
+  <rect x="375" y="150" width="314" height="560" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="399" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ROUTE 2</text>
+  <text x="399" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Uploaded during</text>
+  <text x="399" y="260" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">an Easy Apply</text>
+  <line x1="399" y1="290" x2="665" y2="290" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="399" y="324" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Who sees the file</text>
+  <text x="399" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The hirer of that</text>
+  <text x="399" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">one job</text>
+  <text x="399" y="440" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">After you submit</text>
+  <text x="399" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No reopening to</text>
+  <text x="399" y="506" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">attach a missed file</text>
+  <line x1="399" y1="560" x2="665" y2="560" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="399" y="594" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Usable at Easy Apply?</text>
+  <text x="399" y="632" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Yes</text>
+  <text x="399" y="668" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Not on company sites</text>
+
+  <rect x="710" y="150" width="314" height="560" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="734" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ROUTE 3</text>
+  <text x="734" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Featured on</text>
+  <text x="734" y="260" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">your profile</text>
+  <line x1="734" y1="290" x2="1000" y2="290" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="734" y="324" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Who sees the file</text>
+  <text x="734" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Anyone viewing your</text>
+  <text x="734" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">profile; downloadable</text>
+  <text x="734" y="440" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Beyond LinkedIn</text>
+  <text x="734" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"May be visible</text>
+  <text x="734" y="506" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">off LinkedIn"</text>
+  <line x1="734" y1="560" x2="1000" y2="560" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="734" y="594" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Usable at Easy Apply?</text>
+  <text x="734" y="632" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#b53b15">No</text>
+  <text x="734" y="668" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">LinkedIn says so outright</text>
+
+  <rect x="1045" y="150" width="314" height="560" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1069" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ROUTE 4</text>
+  <text x="1069" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Attached to</text>
+  <text x="1069" y="260" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">a post</text>
+  <line x1="1069" y1="290" x2="1335" y2="290" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1069" y="324" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Who sees the file</text>
+  <text x="1069" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Anyone viewing</text>
+  <text x="1069" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">that post</text>
+  <text x="1069" y="440" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Beyond LinkedIn</text>
+  <text x="1069" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"May be visible</text>
+  <text x="1069" y="506" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">off LinkedIn"</text>
+  <line x1="1069" y1="560" x2="1335" y2="560" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1069" y="594" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Usable at Easy Apply?</text>
+  <text x="1069" y="632" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Not listed</text>
+  <text x="1069" y="668" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Not on the apply list</text>
+
+  <rect x="40" y="734" width="1319" height="60" rx="12" fill="#eeebe4"/>
+  <text x="64" y="772" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">File rule on LinkedIn's upload page: Word or PDF, with a recommended size under 2MB.</text>
+</svg>

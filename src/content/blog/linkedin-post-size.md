@@ -129,6 +129,8 @@ No LinkedIn page I read gives a slide size for a document post, which is the for
 - Members who can view the post "will be able to download your document as a PDF".
 - The upload takes one file: "Select the file that you want to upload (choose one)."
 
+For a resume shared as a document post, that means anyone who can view the post can keep a copy; [the other places to add a resume on LinkedIn](/blog/how-to-add-resume-to-linkedin/) reach narrower audiences.
+
 The 1080 x 1080 slides in several guides, and Sendible's "10MB per slide", match LinkedIn's Carousel Ads specifications, a paid format of two to ten cards with "Max file size: 10 MB" and a "Recommended individual image spec: 1080 x 1080px". A document post is a different upload. If you need a starting size, the guides' 1080 x 1350 and 1080 x 1080 match the tall end and the square of LinkedIn's photo-post range; pick one and use it on every page, as the document page asks. How carousels compare with other formats on impressions, in MagicPost's medians, is in [my guide to what counts as a good number of LinkedIn impressions](/blog/what-is-a-good-number-of-impressions-on-linkedin/).
 
 ## LinkedIn Article Cover Image Size and Newsletter Covers

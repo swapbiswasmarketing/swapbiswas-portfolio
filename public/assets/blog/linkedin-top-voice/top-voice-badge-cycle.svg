@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="1400" height="880">
+  <rect x="0" y="0" width="1400" height="880" fill="#f6f4ef"/>
+
+  <text x="60" y="66" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">How a blue LinkedIn Top Voice badge is awarded and lost</text>
+  <text x="60" y="104" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">From LinkedIn Help pages a776208 and a1368392, read 4 November 2026</text>
+
+  <rect x="60" y="140" width="400" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="176" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ROUTE 1</text>
+  <text x="88" y="212" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Editorial review</text>
+  <text x="88" y="246" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn reviews content</text>
+  <text x="88" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">shared on the platform</text>
+
+  <rect x="500" y="140" width="400" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="528" y="176" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ROUTE 2</text>
+  <text x="528" y="212" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Nomination form</text>
+  <text x="528" y="246" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Yourself or another member,</text>
+  <text x="528" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">reviewed quarterly</text>
+
+  <rect x="940" y="140" width="400" height="150" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="176" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ROUTE 3</text>
+  <text x="968" y="212" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Prominence</text>
+  <text x="968" y="246" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Editors grant badges for</text>
+  <text x="968" y="274" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">outsized local influence</text>
+
+  <line x1="260" y1="294" x2="260" y2="334" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="253,332 267,332 260,346" fill="#15130f"/>
+  <line x1="700" y1="294" x2="700" y2="334" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,332 707,332 700,346" fill="#15130f"/>
+  <line x1="1140" y1="294" x2="1140" y2="334" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1133,332 1147,332 1140,346" fill="#15130f"/>
+
+  <rect x="60" y="350" width="1280" height="124" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="396" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Blue Top Voice badge, held for at least six months</text>
+  <text x="88" y="438" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn sends a notification to add the badge, plus a complimentary Premium Business subscription</text>
+
+  <line x1="700" y1="478" x2="700" y2="514" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,512 707,512 700,526" fill="#15130f"/>
+
+  <rect x="300" y="530" width="800" height="110" rx="12" fill="#ffffff" stroke="#b53b15" stroke-width="2"/>
+  <text x="328" y="566" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">THE RENEWAL CHECK</text>
+  <text x="328" y="600" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Assessed and renewed twice per year</text>
+  <text x="328" y="628" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">LinkedIn may also add or remove members between periods</text>
+
+  <line x1="700" y1="644" x2="700" y2="668" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="360" y1="668" x2="1040" y2="668" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="360" y1="667" x2="360" y2="690" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="353,688 367,688 360,702" fill="#15130f"/>
+  <line x1="1040" y1="667" x2="1040" y2="690" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1033,688 1047,688 1040,702" fill="#15130f"/>
+
+  <rect x="60" y="706" width="600" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="88" y="748" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Renewed</text>
+  <text x="88" y="784" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The member still meets the core</text>
+  <text x="88" y="810" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">program requirements</text>
+
+  <rect x="740" y="706" width="600" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="768" y="748" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Removed</text>
+  <text x="768" y="784" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Not renewed, a Professional Community</text>
+  <text x="768" y="810" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Policies breach, or LinkedIn's discretion</text>
+</svg>

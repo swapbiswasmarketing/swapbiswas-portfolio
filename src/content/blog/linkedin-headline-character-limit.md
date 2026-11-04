@@ -14,6 +14,8 @@ faqs:
     a: "No LinkedIn page I read on 16 October 2026 gives a figure. Guides say 60 characters (Resume Geni), about 60-70 (AuthoredUp), about 70 (Derrick) and 80 (Jobscan), so a role keyword that ends inside the first 60 characters clears all four claims."
   - q: "Is the LinkedIn headline limit different on mobile?"
     a: "No LinkedIn page I read gives a separate mobile limit. Derrick's guide says 220 on desktop and 240 on mobile, five other current guides give 220 alone, and a 2018 newsletter's split of 120 on the website and 220 in the app predates them."
+  - q: "What is the LinkedIn About section character limit?"
+    a: "Guides such as Linked Helper and AuthoredUp give 2,600 characters. LinkedIn's Edit the About section and Edit the Introduction section Help pages state no number, checked again on 4 November 2026."
   - q: "What is the LinkedIn post character limit?"
     a: "3,000 characters. LinkedIn's Post and share updates Help page says posts can contain up to 3,000 characters and points longer pieces to an article on LinkedIn's publishing platform."
 ---
@@ -53,6 +55,7 @@ These limits are stated on LinkedIn's Help pages, quoted as I read them on 16 Oc
 Notes on the table:
 
 - The two InMail pages cover different products: Premium InMail sent from LinkedIn.com allows a 2,000-character body, and Sales Navigator InMail allows 1,900, where "Signatures are limited to 150 characters, which are counted in the total number of message characters."
+- Whether you send an invitation note or an InMail depends on the person's connection degree; [what 1st, 2nd and 3rd mean next to a LinkedIn name](/blog/what-does-3rd-mean-on-linkedin/) sets out the route at each one.
 - The post page suggests writing an article on LinkedIn's publishing platform once a post would run past 3,000 characters.
 - The ad name field is where a [campaign naming convention for paid channels](/blog/campaign-naming-convention/) has to fit.
 - Image and video sizes from the same Help pages are in [my LinkedIn post size reference](/blog/linkedin-post-size/).

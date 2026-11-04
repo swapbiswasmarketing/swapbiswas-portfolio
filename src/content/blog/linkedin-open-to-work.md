@@ -119,7 +119,7 @@ LinkedIn's privacy page lists what it shares with Recruiter users "if you've pro
 - "If you're open to full-time or contract opportunities"
 - "Date you flagged yourself as open to new opportunities"
 
-The last item means a recruiter can see how long your status has been on. The Recruiter side of the feature is on [Recruiter Help a419131](https://www.linkedin.com/help/recruiter/answer/a419131):
+The last item means a recruiter can see how long your status has been on. Resume files you save on LinkedIn have their own recruiter setting, Share resume data with recruiters, which [my guide to adding a resume to LinkedIn and who sees each copy](/blog/how-to-add-resume-to-linkedin/) covers. The Recruiter side of the feature is on [Recruiter Help a419131](https://www.linkedin.com/help/recruiter/answer/a419131):
 
 | Where a Recruiter user sees it | What LinkedIn says |
 |---|---|
@@ -130,6 +130,8 @@ The last item means a recruiter can see how long your status has been on. The Re
 | Search filter | The Open to work option on a filter term is "available in Recruiter only", per the [Recruiter and Recruiter Lite filter page](https://www.linkedin.com/help/recruiter/answer/a414281) |
 
 LinkedIn says that sharing your interests and preferred location helps "your profile show up in search results when recruiters look for suitable job candidates" (a507508). Your own profile analytics count search appearances, and [my breakdown of search appearances vs profile views](/blog/linkedin-search-appearances-vs-profile-views/) covers what that number does and does not count.
+
+When you apply rather than wait to be found, [LinkedIn's Easy Apply rules](/blog/linkedin-easy-apply/) add a daily limit that resets at the end of the UTC day, and an application cannot be withdrawn once it is sent.
 
 LinkedIn's Open to Work page links to its [safe job search page](https://www.linkedin.com/help/linkedin/answer/a9551007) under Related tasks. That page tells you to look for "A verification badge" on a recruiter's profile and to be cautious of "Requests for payment". For a profile located in India, the identity route to that badge is [LinkedIn's DigiLocker check](/blog/linkedin-verification-digilocker/); workplace routes such as a work email also exist.
 

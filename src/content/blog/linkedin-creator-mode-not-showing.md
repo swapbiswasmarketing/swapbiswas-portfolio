@@ -59,6 +59,8 @@ Analytics & tools is where creator analytics landed, next to profile insights "s
 
 Creator Marketplace is a separate program and does not bring creator mode back. Its [LinkedIn Help page](https://www.linkedin.com/help/linkedin/answer/a12580208), last updated 2 months ago, says it is "currently only available to a select group of members in the US and Canada" and lists eligibility factors of 12 posts in the last 90 days, 5,000 followers, 45,000 impressions in the last 90 days and an invitation to join.
 
+Top Voices is another invite-only program that sits apart from creator mode, and [how the blue Top Voice badge is awarded, renewed and removed](/blog/linkedin-top-voice/) covers its nomination form and six-month term.
+
 ## Two Rows Where LinkedIn's 2024 Notice Is Out of Date
 
 ### The Profile Link Became a Premium Custom Button

@@ -128,6 +128,8 @@ The cancel FAQ answers this directly. After you cancel, "you'll return to a Basi
 
 On a Basic account, LinkedIn shows a viewer count and the three most recent viewers over 90 days, as set out in [my comparison of profile views and search appearances](/blog/linkedin-search-appearances-vs-profile-views/). If you browse in private mode, a Basic account also loses your own viewer history while that setting is on, which [my notes on LinkedIn private mode on free and Premium accounts](/blog/linkedin-private-mode/) cover with the Help pages quoted.
 
+If you want to leave LinkedIn entirely rather than only drop Premium, [closing and hibernating the account](/blog/how-to-delete-linkedin-account/) treat Premium differently: LinkedIn makes you resolve a Premium membership before you can close, while hibernating cancels it immediately.
+
 The same FAQ covers price, payment details and the alternative to cancelling:
 
 - If you cancel a promotion or a discontinued plan, the discount does not come back: "If you cancel a promotion or a plan that is no longer offered, you will lose your discounted price. You won't be able to re-purchase it again."

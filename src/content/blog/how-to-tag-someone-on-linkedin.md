@@ -68,6 +68,8 @@ Most rows quote the cause as LinkedIn Help stated it when I read the pages logge
 
 Two rows rest on wording LinkedIn hedges. "May limit" in row two means LinkedIn does not promise a non-connection mention will fail or work, and the Help page publishes no rule for when the limit applies. Row five is my reading of two pages together: the photo page's steps run through the Edit your photo window at upload, and the only after-posting actions it lists are removals: "As an author, you can remove tags after you post", and a tagged member can remove their own tag.
 
+To check whether someone counts as a connection for row two, look at the degree beside their name: 1st means you are connected, and [what 2nd, 3rd and out of network mean on LinkedIn](/blog/what-does-3rd-mean-on-linkedin/) covers everyone else.
+
 ## How to Tag a Company on LinkedIn
 
 LinkedIn's mentions page for member posts talks only about people, so the company case comes from other Help pages. Each one documents Page mentions in a different place:
