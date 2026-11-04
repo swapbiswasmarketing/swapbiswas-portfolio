@@ -3,8 +3,8 @@ title: "Bing AI Performance Report: What Each Metric Measures"
 description: "The Bing AI Performance report counts citations and grounding queries, not clicks. Every metric, Bing's own caveats and the 2026 changes, as of November 2026."
 publishDate: 2026-11-04
 category: [SEO, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "Does Bing's AI Performance report show clicks?"
     a: "Bing's announcement posts for the report, from February, June and October 2026, describe no click metric. It counts citations, cited pages and grounding queries. Clicks from Bing search results are in the separate Search Performance report."

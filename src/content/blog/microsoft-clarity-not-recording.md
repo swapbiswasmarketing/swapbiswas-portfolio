@@ -4,7 +4,7 @@ description: "Microsoft Clarity not recording? Match the symptom to its cause an
 publishDate: 2026-11-04
 category: [Tools, SEO]
 img: /assets/stock-4.webp
-img_alt: "placeholder"
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "Why is Clarity not recording sessions?"
     a: "The causes Microsoft documents are a tracking code that is missing from the page or belongs to another project, a Content Security Policy that blocks Clarity, an IP block on your own address, and a missing consent signal for visitors from the EEA, the UK and Switzerland. Microsoft's setup guide says to confirm the install by looking for POST requests to https://www.clarity.ms/collect in the browser's Network tab."

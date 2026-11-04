@@ -3,8 +3,8 @@ title: "Codex vs Claude Code: What Each Price Tier Buys"
 description: "Codex vs Claude Code, tier by tier from both pricing pages on 4 November 2026: what $0, $8, $20, $100, $200 and $500 buy, plus API keys and team seats."
 publishDate: 2026-11-04
 category: [AI, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "Can you use Codex for free?"
     a: "Yes. As of 4 November 2026, OpenAI's Codex pricing page lists ChatGPT Free at $0 with GPT-6 Luna at Standard speed in the desktop app, subject to rollout. Claude Code is not on Claude's Free plan; Anthropic's plan table marks it No on Free and Yes from Pro up."

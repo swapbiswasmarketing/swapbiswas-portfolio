@@ -3,8 +3,8 @@ title: "How to Add Resume to LinkedIn and Who Gets to See It"
 description: "How to add resume to LinkedIn by route: saved for Easy Apply, Featured on your profile or in a post, who can see each file, the 2MB rule and how to delete it."
 publishDate: 2026-11-04
 category: [Career, Marketing]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "Can recruiters see my resume on LinkedIn?"
     a: "Only in part, unless you send it. With the Share resume data with recruiters setting on, LinkedIn says your profile can appear in recruiter searches that match data in resumes you saved over the past 2 years, but recruiters will not have access to your full resume unless you provide it, for example by applying to their job."

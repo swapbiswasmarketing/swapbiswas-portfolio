@@ -3,8 +3,8 @@ title: "Google Ads Payment Methods India: UPI, Cards and Prepay"
 description: "Google Ads payment methods in India depend on the payment setting: UPI, RuPay and NetBanking are listed for prepay, and postpay runs on a card with an RBI e-mandate."
 publishDate: 2026-11-04
 category: [Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "Can I pay for Google Ads with UPI in India?"
     a: "Yes, on prepay only. Google's India section says UPI is a prepayment method, currently available on the Google Ads mobile app on Android, for accounts with an India billing address and bank account, INR as the currency and a UPI-registered bank account. The minimum is 500 INR and the maximum is 100,000 INR per day."

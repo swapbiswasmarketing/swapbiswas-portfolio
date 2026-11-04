@@ -3,8 +3,8 @@ title: "Google Ads TDS Refund: Form 131, Email and Deadlines"
 description: "How to claim a Google Ads TDS refund in India from Google's own help page: Form 131, eps-tds@google.com or the Tax Operations form, and four quarterly deadlines."
 publishDate: 2026-11-04
 category: [Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "How do I claim a Google Ads TDS refund?"
     a: "Google's India tax section says to send a digital copy of the TDS certificate, either electronically signed or a PDF scan of the signed certificate: through the Google Tax Operations form if the account uses monthly invoicing, or by email to eps-tds@google.com if it uses prepay or postpay. For prepay and postpay, Google says the credit is added to your account once approved."

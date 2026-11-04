@@ -3,8 +3,8 @@ title: "LinkedIn Easy Apply: What It Is and the Limits LinkedIn Sets"
 description: "LinkedIn Easy Apply by LinkedIn's own rules: what it sends, when to use the company site instead, a daily limit with no published number, and why you can't undo it."
 publishDate: 2026-11-04
 category: [Career, Marketing]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "What is Easy Apply on LinkedIn?"
     a: "Easy Apply is a button on some LinkedIn job posts that lets you submit an application without leaving LinkedIn.com. Whether a job shows Easy Apply or Apply depends on the employer's settings, and Apply sends you to the company's website or job board."

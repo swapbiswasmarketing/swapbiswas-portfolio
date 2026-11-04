@@ -3,8 +3,8 @@ title: "Cursor vs Claude Code: Which Bill Gets You Claude Models"
 description: "Cursor vs Claude Code as of 4 November 2026: Claude in Cursor now bills at API list price on a $30 plan, and Claude Code's extension installs in Cursor instead."
 publishDate: 2026-11-04
 category: [AI, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "Can you use Claude in Cursor?"
     a: "Yes, two ways. On Cursor Premium ($30 a month) and above, Claude models are available in Cursor at API list price, paid from prepaid credit or through your own Anthropic API key. Or install Anthropic's Claude Code extension in Cursor and sign in with a paid Claude plan. Cursor's Free and Plus plans include no Claude models."

@@ -3,8 +3,8 @@ title: "X Character Limit (Twitter): How the 280 Is Weighted"
 description: "The X character limit is a weighted 280: links cost 23, emoji and CJK cost 2, Hindi and Arabic cost 1. I ran X's twitter-text library on sample posts to show it."
 publishDate: 2026-11-04
 category: [Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "Does a link count toward the character limit on X?"
     a: "Yes. X's developer docs say every URL counts as 23 characters, whatever its length. In X's twitter-text library, a 116-character UTM-tagged link and the bare domain x.com each counted as 23."

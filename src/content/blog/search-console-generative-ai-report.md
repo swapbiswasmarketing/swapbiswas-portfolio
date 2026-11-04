@@ -3,8 +3,8 @@ title: "Search Console Generative AI Report: What It Counts"
 description: "The Search Console generative AI report counts AI Overviews and AI Mode impressions, not clicks or queries. Tabs, filters and missing-report causes, Nov 2026."
 publishDate: 2026-11-04
 category: [SEO, AI]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "Does the Search Console generative AI report show clicks?"
     a: "No. Google's help page for the report describes one metric, impressions, grouped by page, country, date and device. Clicks from links in AI Overviews and AI Mode are counted in the Performance report's Web search type, and Google documents no filter that separates them there."

@@ -3,8 +3,8 @@ title: "Filmora Price in India: Rupee Prices by Where You Buy"
 description: "Filmora price in India on 4 November 2026: Rs 4,999 a year on Apple's India Mac App Store, Rs 854 Flipkart keys, reseller prices plus GST, and what lifetime covers."
 publishDate: 2026-11-04
 category: [Tools, Design]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "What is the Filmora price in India?"
     a: "It depends on where you buy. On 4 November 2026, Apple's India Mac App Store listed Filmora's Basic Annual Plan at ₹4,999 and a Lifetime License at ₹7,900, the iPhone app listed Filmora Pro (1 Year) at ₹4,999, reseller Techjockey listed a Windows Perpetual Plan at ₹3,800 before tax, and a Flipkart seller listed a one-year Filmora 15 Windows key at ₹854."

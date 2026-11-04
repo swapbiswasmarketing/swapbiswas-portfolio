@@ -4,7 +4,7 @@ description: "Getting zsh: command not found: claude after installing Claude Cod
 publishDate: 2026-11-04
 category: [AI, Tools]
 img: /assets/stock-4.webp
-img_alt: "placeholder"
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "Why does it say claude command not found after installing Claude Code?"
     a: "Usually the install worked but its folder is not on your PATH. Anthropic's native installer puts claude at ~/.local/bin/claude on macOS and Linux and prints a setup note with the fix, but it does not change PATH itself. Add ~/.local/bin to PATH in your shell file and open a new terminal."

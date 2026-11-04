@@ -3,8 +3,8 @@ title: "LinkedIn Top Voice Badge: Nomination, Renewal and Removal"
 description: "LinkedIn Top Voice is an invite-only blue badge held for six months or more and renewed twice a year. See the nomination form, five factors and the gold badge's end."
 publishDate: 2026-11-04
 category: [Marketing, Career]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "How do you get the LinkedIn Top Voice badge?"
     a: "LinkedIn invites members to Top Voices after reviewing content shared on the platform, and its Help page also links a form to nominate yourself or another member, which LinkedIn reviews quarterly. Editors can grant the badge to members with outsized influence in their local market, and members who primarily or exclusively promote paid services are not considered."

@@ -3,8 +3,8 @@ title: "How to Delete LinkedIn Account: Close vs Hibernate"
 description: "How to delete LinkedIn account on desktop, iPhone or Android, what LinkedIn keeps, the 14-day reopen window, and when hibernating or dropping Premium fits better."
 publishDate: 2026-11-04
 category: [Career, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "Can I reopen my LinkedIn account after deleting it?"
     a: "In most cases, if it has been closed less than 14 days. LinkedIn Help says to log in or use the link in the account closure email, click Reactivate and confirm by email. You get your connections back, but not endorsements, recommendations, group memberships, followings, or ignored and pending invitations."

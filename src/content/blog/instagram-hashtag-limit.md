@@ -3,8 +3,8 @@ title: "Instagram Hashtag Limit: 5, Not 3 or 30, and Who Says So"
 description: "The Instagram hashtag limit is 5 per reel or post, set on 18 December 2025. Here is where the 3 and the 30 come from, with each source and the date it gives."
 publishDate: 2026-11-04
 category: [Marketing]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "What is the Instagram hashtag limit in 2026?"
     a: "5 hashtags in the caption of a reel or post. Instagram's @creators account announced it on 18 December 2025, and the wording Social Media Today quotes from Instagram says the change rolls out gradually."

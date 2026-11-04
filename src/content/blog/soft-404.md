@@ -3,8 +3,8 @@ title: "Soft 404: What It Means and How to Fix It in Search Console"
 description: "A soft 404 is a page that answers 200 but reads as an error or empty page. What it means, soft 404 vs 404, the fix by URL type, and where Google's guide went."
 publishDate: 2026-11-04
 category: [SEO]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "What does soft 404 mean in Google Search Console?"
     a: "It means the URL returned a 200 (success) status code, but Google's algorithms read its content as an error page, an empty page or a not-found message. Search Console lists it under the Soft 404 reason in the Page indexing report, and Google excludes such pages from Search."

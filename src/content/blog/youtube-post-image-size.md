@@ -3,8 +3,8 @@ title: "YouTube Post Image Size: What YouTube Publishes vs Guides"
 description: "YouTube post image size from YouTube Help: up to 10 images, 16 MB each, JPG, PNG, GIF or WEBP, 1:1 suggested, and no pixel size. Five guides checked against it."
 publishDate: 2026-11-04
 category: [Marketing, Design]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "What is the YouTube community post image size?"
     a: "YouTube publishes no pixel size for it. Its Create a post Help page, as of November 2026, allows up to 10 images per post, up to 16 MB each, in JPG, PNG, GIF or WEBP, and suggests a 1:1 ratio because that is how the feed shows images."

@@ -3,8 +3,8 @@ title: "Looker Studio Data Set Configuration Error (Now Data Studio)"
 description: "Fix the Looker Studio data set configuration error, now shown in Data Studio: what each line under the banner means, which credentials to pick and the first fix."
 publishDate: 2026-11-04
 category: [SEO, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "Is Looker Studio now called Data Studio?"
     a: "Yes. In April 2026 Google returned the product to its original name, Data Studio. The product URL is datastudio.google.com, lookerstudio.google.com redirects there, and Google says existing reports need no update."

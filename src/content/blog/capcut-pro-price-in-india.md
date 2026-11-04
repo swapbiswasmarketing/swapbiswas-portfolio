@@ -3,8 +3,8 @@ title: "CapCut Pro Price in India: Why No Indian Store Sells It"
 description: "There is no CapCut Pro price in India: its India App Store and Google Play pages returned not found on 4 Nov 2026. See the US price and rupee-billed options."
 publishDate: 2026-11-04
 category: [Tools, Design]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What is the CapCut Pro price in India per month?"
     a: "Neither India app store gives an official monthly or yearly price for CapCut Pro. On 4 November 2026 the India App Store page for CapCut returned not found, and Google Play's India listing for the app returned \"Not found\", so neither store showed a rupee price for CapCut Pro."

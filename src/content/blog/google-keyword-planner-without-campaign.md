@@ -3,8 +3,8 @@ title: "Google Keyword Planner Without Campaign: What Google Says"
 description: "Yes, you can use Google Keyword Planner without a campaign, but not without billing details, and Google's own pages disagree on the campaign step. What each says."
 publishDate: 2026-11-04
 category: [SEO, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "Can you use Google Keyword Planner without a campaign?"
     a: "Google's Ads Help Center says yes: its sign-up guide says you can skip all recommendations to create a campaign and create an account without one. Google's Keyword Planner product page still says you need to create a campaign first, so the two Google pages disagree."

@@ -3,8 +3,8 @@ title: "What Does 3rd Mean on LinkedIn? 3rd, 3rd+ and Out of Network"
 description: "What does 3rd mean on LinkedIn? Someone linked to one of your 2nd-degree connections. Here is what 3rd+ covers and what each label lets you do, per LinkedIn Help."
 publishDate: 2026-11-04
 category: [Marketing, Career]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "What does 3rd+ mean on LinkedIn?"
     a: "3rd+ is the option on LinkedIn's Connections search filter, next to 1st and 2nd. LinkedIn's search help says filtering by 3rd+ will include everyone that falls in your search criteria. My reading is 3rd-degree members plus anyone further out, but LinkedIn does not spell that out, and its degrees of connection page does not use the term."

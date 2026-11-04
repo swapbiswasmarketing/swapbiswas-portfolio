@@ -3,8 +3,8 @@ title: "How to Add Certificate in LinkedIn and Which Section to Use"
 description: "How to add certificate in LinkedIn: LinkedIn Help's desktop and app steps, which section fits each certificate, what to enter, and how to skip the network update."
 publishDate: 2026-11-04
 category: [Career, Marketing]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-2.webp
+img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
 faqs:
   - q: "How do I add a certification on LinkedIn without posting?"
     a: "Switch off the toggle in the Share with network section while you edit your profile on a computer, or go to Settings & Privacy, Visibility, Share profile updates and switch it Off before you save. LinkedIn notes that anyone who views your profile still sees the edit as soon as you save it."

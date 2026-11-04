@@ -3,8 +3,8 @@ title: "Google Ads Promotional Code India: The 3 Sign-Up Offers"
 description: "There is usually no Google Ads promotional code to type in India. Pick one of three sign-up offers, spend the target in 60 days, then watch the 35-day credit clock."
 publishDate: 2026-11-04
 category: [Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "Is there a Google Ads promotional code for India in 2026?"
     a: "Usually there is no code to type. New advertisers with a billing address in India choose one of three offers on Google's India Google Ads page, and Google says the offer is applied automatically to the new account at sign-up. A typed code only applies when Google or a partner sends you one."

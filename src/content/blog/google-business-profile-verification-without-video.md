@@ -3,8 +3,8 @@ title: "Google Business Profile Verification Without Video: Options"
 description: "Google picks your verification method, but you can change what it offers. Every non-video route on Google's Help pages, with conditions and timings, November 2026."
 publishDate: 2026-11-04
 category: [SEO, Marketing]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "Can I verify my Google Business Profile without a video?"
     a: "Only if Google offers you another method. Google's Help Center lists phone or text, email, live video call and postcard alongside video recording, says the methods are determined automatically and can't be changed, and also says that in some cases it verifies a profile instantly, such as when you verify your website with Google Search Console."

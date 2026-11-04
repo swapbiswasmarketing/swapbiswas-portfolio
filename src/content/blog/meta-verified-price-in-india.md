@@ -3,8 +3,8 @@ title: "Meta Verified Price in India: Rs 639 and What Changed"
 description: "Meta Verified price in India on 4 November 2026: the India App Store lists Meta Verified Standard at Rs 639, and Meta's 2024 business rates went up to Rs 30,000."
 publishDate: 2026-11-04
 category: [Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "How much is Meta Verified in India per month?"
     a: "On 4 November 2026, Apple's India App Store listings for Instagram and Facebook showed items named Meta Verified Standard at ₹639 each, with no billing period on the listing. Meta's July 2024 India announcement gave ₹639 a month as the starting price for a business on a single app."

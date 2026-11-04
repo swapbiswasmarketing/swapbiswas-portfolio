@@ -3,8 +3,8 @@ title: "Is Suno AI Free? What the Free Plan Lets You Do"
 description: "Is Suno AI free? Yes, 50 credits a day, but free songs are non-commercial, Suno keeps ownership, and new accounts get no set downloads. Checked 4 November 2026."
 publishDate: 2026-11-04
 category: [AI, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "Is Suno AI free?"
     a: "Yes, to make songs. On 4 November 2026 Suno's Free plan cost $0 and gave 50 credits a day, which Suno's help center says is enough for 10 songs. Free songs are for personal, non-commercial use only, Suno keeps ownership of them, and the pricing page lists no monthly song downloads on Free."

@@ -3,8 +3,8 @@ title: "Google Ads Cost in India: Minimum Budget and Spend Limits"
 description: "Google Ads cost in India starts at whatever budget you set. Google caps a day at 2x your daily budget and a month at 30.4x: rupee tables, mid-month rules, CPC facts."
 publishDate: 2026-11-04
 category: [Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "Is there a minimum budget for Google Ads in India?"
     a: "Google's Help pages set no floor: they say the amount of your budget is entirely up to you, and Google's India bidding page says bidding amounts are ultimately up to you. The ₹10,000 and ₹15,000 a month figures in agency guides are their advice on a realistic starting spend, not a Google rule."

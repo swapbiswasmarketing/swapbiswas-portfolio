@@ -4,7 +4,7 @@ description: "Lovable vs Bolt on billing as of November 2026: both Pro plans sta
 publishDate: 2026-11-04
 category: [AI, Tools]
 img: /assets/stock-4.webp
-img_alt: "placeholder"
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "Is Bolt cheaper than Lovable?"
     a: "For one person, the two cost the same on monthly billing: Pro is $25 a month on both, as of November 2026. On annual billing, Bolt's billing help prices its 10M-token Pro plan at $216 a year, against $250 for Lovable Pro. For a team, Bolt Teams charges $30 per member, while a Lovable plan has no seat fee, so for three people Lovable's 100- or 200-credit plan ($25 or $50) costs less than three Bolt seats ($90), and its 400-credit plan ($100) costs more."

@@ -4,7 +4,7 @@ description: "Grammarly price in India on 4 Nov 2026: Rs 999 a month or Rs 4,699
 publishDate: 2026-11-04
 category: [AI, Tools]
 img: /assets/stock-4.webp
-img_alt: "placeholder"
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "How much is Grammarly Premium in India?"
     a: "Apple's India App Store lists Grammarly's in-app plans at ₹999 a month, ₹1,999 a quarter and ₹4,699 a year as of 4 November 2026. Grammarly's help centre says Grammarly Premium is available through the App Store and Google Play."

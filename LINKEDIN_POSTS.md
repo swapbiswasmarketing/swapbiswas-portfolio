@@ -3645,3 +3645,683 @@ https://swapbiswas.com/blog/how-to-tag-someone-on-linkedin/?utm_source=linkedin&
 #LinkedIn #LinkedInTips #SocialMedia #PersonalBranding
 
 ---
+
+### Is Suno AI Free? What the Free Plan Lets You Do
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a music stand holding blank sheet music, a lute resting against a walnut table, a small brass padlock and key beside a rolled parchment, a quill in an inkwell, a single vermilion ribbon tied around the parchment, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Suno's free plan lets you make songs. It does not let you use them the way most people assume.
+Suno's own help center draws the line by plan, and the date you signed up now matters too.
+
+- Free gives 50 credits a day, which Suno says is enough for 10 songs.
+- Free-plan songs are for personal, non-commercial use, and Suno keeps ownership of them.
+- Upgrading later does not, by default, give commercial rights to songs you made on Free.
+- Free accounts that joined before 3 September 2026 have up to 7 trial downloads; newer ones get no set allowance.
+- Pro is $10 a month on suno.com. Apple's India App Store lists Pro at Rs 999 without naming the billing period.
+
+Did you know free-plan songs stay non-commercial after you upgrade?
+
+https://swapbiswas.com/blog/is-suno-ai-free/?utm_source=linkedin&utm_medium=social&utm_campaign=is-suno-ai-free
+
+#AITools #AIMusic #ContentCreation #CreatorEconomy
+
+---
+
+### CapCut Pro Price in India: Why No Indian Store Sells It
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an empty wooden price-tag holder on a merchant's counter, a closed ledger with a brass clasp, a strip of film coiled beside an unlit candle, a set of brass scales with empty pans, a single vermilion wax seal on the closed ledger, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+People search for the CapCut Pro price in India. Neither India app store gives one.
+On 4 November 2026, CapCut's India App Store and Google Play pages both returned not found.
+
+- CapCut is not on the government's 29 June 2020 list of 59 apps.
+- Inc42 reported on 5 August 2020 that it was among 47 more apps blocked in July 2020.
+- The US App Store lists CapCut Pro Monthly at $19.99. That is a US price, not an India price.
+- The post leaves out VPN and APK routes and lists legal alternatives on India's stores instead.
+
+Which video editor replaced CapCut on your phone?
+
+https://swapbiswas.com/blog/capcut-pro-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=capcut-pro-price-in-india
+
+#VideoEditing #ContentCreation #CreatorEconomy #India
+
+---
+
+### Filmora Price in India: Rupee Prices by Where You Buy
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, four small wooden boxes of different sizes lined up on a walnut table, a strip of film draped across them, brass coins stacked in uneven piles in front of each box, a quill and an inkwell, a single vermilion wax seal on the smallest box, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+The Filmora price in India depends on where you buy it.
+On 4 November 2026, four shops gave four different rupee figures for the same editor.
+
+- Apple's India Mac App Store: Basic Annual Plan Rs 4,999, Lifetime License Rs 7,900.
+- Techjockey, a reseller: Windows Perpetual Plan Rs 3,800 before tax, Rs 4,484 with GST.
+- Flipkart, a third-party seller: a one-year Filmora 15 Windows key at Rs 854, no refunds.
+- Wondershare's own shop page showed US dollars, so the post prints no Wondershare rupee price.
+
+Where do you usually buy software licences: the vendor, the App Store or a marketplace?
+
+https://swapbiswas.com/blog/filmora-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=filmora-price-in-india
+
+#VideoEditing #ContentCreation #Software #India
+
+---
+
+### Meta Verified Price in India: Rs 639 and What Changed
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an open leather ledger with two columns of blank entries, a brass seal stamp resting on a folded letter, a small stack of old coins beside a newer stack, a quill in an inkwell, a single vermilion wax seal pressed onto the folded letter, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+The Meta Verified price most Indian articles quote is from 2023.
+Meta's own India announcements and Apple's India listings give a newer set of numbers, each with a date.
+
+- June 2023: Meta's India launch post put Meta Verified at Rs 699 a month on iOS and Android, with a Rs 599 web option it said would come "in the coming months".
+- July 2024: business plans ran up to Rs 21,000 a month under a 12-month introductory offer, and up to Rs 30,000 a month at the standard rate.
+- 4 November 2026: Apple's India listings for Instagram and Facebook show Meta Verified Standard items at Rs 639.
+- September 2026: Meta launched Meta One, a subscription it priced in US dollars.
+- July 2026: Meta announced Facebook Verified, a free badge for people on Facebook, rolling out by market.
+
+Which of these numbers have you seen quoted most often?
+
+https://swapbiswas.com/blog/meta-verified-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=meta-verified-price-in-india
+
+#Instagram #SocialMediaMarketing #CreatorEconomy #India
+
+---
+
+### Grammarly Price in India: Rupee Plans vs Student Discount
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an open grammar book with a ribbon marker on a walnut writing desk, a pair of brass reading spectacles, two folded paper vouchers side by side that do not overlap, a quill in an inkwell, a single vermilion wax seal on one voucher, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Grammarly's rupee price and its student discount sit on different checkouts.
+Grammarly's own help center says the two do not combine.
+
+- Apple's India App Store lists Grammarly Premium at Rs 999 a month, Rs 1,999 a quarter and Rs 4,699 a year (4 November 2026).
+- Grammarly's India page offers Plus for Rs 392 INR and states no billing period.
+- The SheerID student offer gives up to 50% off Pro for one subscription period, then renews at the standard rate.
+- That offer cannot be applied to App Store or Google Play purchases, and Plus does not take it.
+- Premium is the app-store plan, Pro is the web plan, Plus is a plan for select countries.
+
+Which checkout did you use for your writing tool: the app store or the web?
+
+https://swapbiswas.com/blog/grammarly-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=grammarly-price-in-india
+
+#Grammarly #WritingTools #AITools #India
+
+---
+
+### Codex vs Claude Code: What Each Price Tier Buys
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak counter with a graduated row of six brass weights from smallest to largest, a folded ledger open to a blank page, a set of balance scales at rest, a quill beside an inkwell, a single vermilion red ribbon tied around the largest weight, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Codex vs Claude Code is a plan question before it is a code question.
+Both vendors publish what each price tier includes, and the tiers do not line up.
+
+- At $0 and $8, only Codex is on offer: ChatGPT Free and Go include it in the desktop app (subject to rollout), and Claude Code starts at Claude Pro.
+- At $20, each agent comes with the chat plan you would pay for anyway: ChatGPT Plus or Claude Pro.
+- At $100, the rule differs: Codex Pro has no five-hour limit, while Claude Max keeps one at five times Pro.
+- At $200, both drop the five-hour window: OpenAI's Pro plan, and Anthropic's Ultra once the account is verified, with $200 in API credits.
+- At $500, OpenAI's Pro adds Ultrafast mode; Anthropic has no individual plan there.
+
+Which tier are you on today, and which agent came with it?
+
+https://swapbiswas.com/blog/codex-vs-claude-code/?utm_source=linkedin&utm_medium=social&utm_campaign=codex-vs-claude-code
+
+#ClaudeCode #OpenAI #AIForMarketers #BuildInPublic
+
+---
+
+### Cursor vs Claude Code: Which Bill Gets You Claude Models
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a writing desk with two sealed envelopes side by side, a brass coin purse spilling a few coins, a small hourglass, a quill resting across an open account book with blank columns, a single vermilion red wax seal on one envelope, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+If you want Claude models while you code, the question is which company bills you.
+Since Cursor moved to The X Subscription on 12 October 2026, the answer changed.
+
+- Cursor Plus ($8) has no Claude models. Claude in Cursor starts on Premium, $30 a month.
+- On Premium and above, Claude bills at API list price, from prepaid credit or your own Anthropic key.
+- Claude Pro is $20 a month billed monthly and includes Claude Code.
+- Anthropic's docs carry an "Install for Cursor" link, so Claude Code's extension runs inside the Cursor editor.
+
+Pay Cursor for Cursor's own agent. Pay Anthropic if Claude is the point.
+
+https://swapbiswas.com/blog/cursor-vs-claude-code/?utm_source=linkedin&utm_medium=social&utm_campaign=cursor-vs-claude-code
+
+#ClaudeCode #Cursor #AIForMarketers #DeveloperTools
+
+---
+
+### Lovable vs Bolt: Same $25 Price, Different Billing Models
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a carpenter's bench with two identical small wooden boxes, one holding a single shared stack of tokens and the other three separate small piles, a folding rule and a brass compass beside them, a rolled blueprint tied with string, a single vermilion red token on top of the shared stack, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Lovable Pro and Bolt Pro both cost $25 a month.
+That is where the billing similarity ends.
+
+- Lovable bills per workspace: unlimited members share one credit pool.
+- Bolt Teams bills $30 per member, and tokens aren't shared between members.
+- For three people who all prompt, Bolt Teams is 3 x $30 = $90. Lovable is $25, $50 or $100 for one pool of 100, 200 or 400 credits.
+- On Bolt, the $100 Pro tier buys 37.5% more tokens per dollar than the $25 tier. Lovable's first four Pro tiers all cost $0.25 a credit.
+
+Pick the billing model your team's usage fits, then compare output.
+
+https://swapbiswas.com/blog/lovable-vs-bolt/?utm_source=linkedin&utm_medium=social&utm_campaign=lovable-vs-bolt
+
+#NoCode #VibeCoding #AIForMarketers #Lovable
+
+---
+
+### Claude Command Not Found: Find Your Install, Then Fix PATH
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's desk with an open wooden card catalogue drawer, one index card pulled halfway out, a brass key lying beside an old iron lock, a folded map with a blank route, a quill in an inkwell, a single vermilion red thread tied to the pulled card, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+`zsh: command not found: claude` is almost never a failed install.
+It is a lookup problem: the binary exists, your shell is just not looking there.
+
+- Native installer on macOS or Linux: `claude` lands in `~/.local/bin`. Run `ls -la ~/.local/bin/claude` before you reinstall anything.
+- The installer prints `Native installation exists but ~/.local/bin is not in your PATH.` when it did not edit PATH for you. Read the setup notes before clearing the screen.
+- Installed only the VS Code extension? Its copy of the CLI is private and never goes on PATH. Run the standalone installer.
+- `which -a claude` lists every copy. If it shows two, keep one.
+
+Which install route put yours off PATH?
+
+https://swapbiswas.com/blog/claude-command-not-found/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-command-not-found
+
+#ClaudeCode #DeveloperTools #AIForMarketers #BuildInPublic
+
+---
+
+### How to Add Resume to LinkedIn and Who Gets to See It
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a clerk's oak desk with three neat stacks of folded parchment pages, one stack tied with twine, one laid open beside a brass letter tray, one tucked inside a leather portfolio, a quill resting on a blotter, a single vermilion ribbon marking one stack, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+The resume on your LinkedIn profile is not the one Easy Apply sends.
+LinkedIn Help says so in one line: "You won't be able to use the resume uploaded to your profile for job applications."
+
+- For applications, upload it under Jobs, Preferences, Resumes and application data. LinkedIn stores your four most recently uploaded resumes for reuse.
+- A resume in Featured or in a post is a different copy: viewers can download it, and LinkedIn says it may be visible off LinkedIn.
+- File rule from LinkedIn: Microsoft Word or PDF, and "We recommend a file size less than 2MB".
+- Apply on a company website instead of Easy Apply and you cannot use a resume previously uploaded on LinkedIn.
+
+Which copy of your resume is on LinkedIn right now?
+
+https://swapbiswas.com/blog/how-to-add-resume-to-linkedin/?utm_source=linkedin&utm_medium=social&utm_campaign=how-to-add-resume-to-linkedin
+
+#LinkedIn #LinkedInTips #JobSearch #Careers
+
+---
+
+### How to Delete LinkedIn Account: Close vs Hibernate
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a dark wooden writing desk with an iron key ring beside a closed ledger, a snuffed candle with a thin curl of smoke, an hourglass half run through, a folded letter sealed shut, a single vermilion wax seal on the ledger's clasp, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+LinkedIn gives you three ways out, and they are not equal.
+Closing is the one that costs your profile parts you cannot get back.
+
+- Close: LinkedIn says you can reopen "in most cases" if the account was closed less than 14 days ago, but endorsements, recommendations, group memberships and followings do not come back.
+- Hibernate: your profile is hidden, even from connections and Recruiter searches, and you can reactivate 24 hours after you hibernate.
+- Hibernating cancels Premium "immediately", and promotional pricing may no longer be honored.
+- Cancel Premium only: the plan runs to the end of the billing cycle and your free account stays as it is.
+
+Which one did you actually need: a break, a cheaper account, or a clean exit?
+
+https://swapbiswas.com/blog/how-to-delete-linkedin-account/?utm_source=linkedin&utm_medium=social&utm_campaign=how-to-delete-linkedin-account
+
+#LinkedIn #LinkedInTips #Privacy #SocialMedia
+
+---
+
+### What Does 3rd Mean on LinkedIn? 3rd, 3rd+ and Out of Network
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's table with three brass rings of increasing size laid one inside another on a linen cloth, a pair of dividers resting across them, a small rolled map tied with cord, an inkwell and quill, a single vermilion thread running from the smallest ring to the largest, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+"3rd" next to a LinkedIn name means two people sit between you.
+"3rd+" is something else, and LinkedIn's degrees page never defines it.
+
+- 3rd-degree: "People who are connected to your 2nd-degree connections", per LinkedIn Help. LinkedIn shows "a 3rd degree icon next to their name".
+- 3rd+ is an option on the Connections search filter, next to 1st and 2nd. LinkedIn does not spell out what it covers.
+- Only 1st-degree connections can get a regular message. For everyone else the paid route is InMail, unless the person has Open Profile turned on.
+- The ceiling: up to 30,000 1st-degree connections; followers are unlimited.
+
+Which label do you see most often in your search results?
+
+https://swapbiswas.com/blog/what-does-3rd-mean-on-linkedin/?utm_source=linkedin&utm_medium=social&utm_campaign=what-does-3rd-mean-on-linkedin
+
+#LinkedIn #LinkedInTips #Networking #PersonalBranding
+
+---
+
+### LinkedIn Easy Apply: What It Is and the Limits LinkedIn Sets
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's counting table with a single sealed envelope resting on a brass tray, a small sand-glass beside it with the sand fully run through, a stack of blank cards held by a stone weight, a quill laid down across an inkwell, a single vermilion wax seal on the envelope, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+LinkedIn Easy Apply saves you a trip to a company website.
+It also takes away the undo button.
+
+- LinkedIn Help: "You cannot edit or withdraw an application" once it is submitted through LinkedIn. Its fix is an InMail to the job poster.
+- There is a daily Easy Apply limit, and it resets "at the end of the day (UTC)". LinkedIn publishes no number; the 50, 60 and 100 a day figures come from auto-apply tool vendors.
+- Apply too fast and LinkedIn can trigger "a temporary pause".
+- When a recruiting agency posts the job, LinkedIn says your application may be shared with other clients of that agency.
+
+Do you still use Easy Apply, or apply on the company site?
+
+https://swapbiswas.com/blog/linkedin-easy-apply/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-easy-apply
+
+#LinkedIn #JobSearch #LinkedInTips #Careers
+
+---
+
+### LinkedIn Top Voice Badge: Nomination, Renewal and Removal
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a lectern holding an open bound register beside a small wax-sealed nomination letter, a brass hand bell and a folded scholar's ribbon, a calendar wheel carved in wood turned halfway, a single vermilion ribbon marking a page of the register, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+The blue LinkedIn Top Voice badge is invite-only.
+LinkedIn's own Help page also links a form to nominate yourself.
+
+- LinkedIn says it "reviews nominations quarterly".
+- Badges are "assessed and renewed twice per year", and an invited member stays a Top Voice "for at least six months".
+- The gold Community Top Voice badge from collaborative articles was retired "starting October 8, 2024".
+- LinkedIn's benefits page says Top Voices get complimentary access to a Premium Business subscription.
+- None of the four LinkedIn Help pages on Top Voices names a follower threshold.
+
+Did you know the nomination form existed?
+
+https://swapbiswas.com/blog/linkedin-top-voice/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-top-voice
+
+#LinkedIn #LinkedInTips #PersonalBranding #ThoughtLeadership
+
+---
+
+### How to Add Certificate in LinkedIn and Which Section to Use
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's desk with a rolled parchment certificate tied with cord beside an open leather-bound register, a brass seal press, a small wooden box of index cards with one card drawn halfway out, a quill in an inkwell, a single vermilion wax seal on the rolled certificate, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Adding a certificate to LinkedIn can announce it to your network.
+Whether it does is a setting, and you can switch it off before you save.
+
+- Exam-based and issuer-verified certificates go in Licenses & certifications, which LinkedIn describes as "Certifications, licenses, or clearances you've attained."
+- Before you save, switch off the toggle in the Share with network section, or turn Share profile updates Off under Settings & Privacy, Visibility.
+- The certificate file itself, as a PDF or image, belongs in Featured, not in the certifications entry.
+- LinkedIn Learning certificates are added from Learning History, and LinkedIn says LinkedIn Learning "is not accredited".
+
+Which section is your newest certificate sitting in?
+
+https://swapbiswas.com/blog/how-to-add-certificate-in-linkedin/?utm_source=linkedin&utm_medium=social&utm_campaign=how-to-add-certificate-in-linkedin
+
+#LinkedIn #LinkedInTips #Careers #PersonalBranding
+
+---
+
+### Google Ads Cost in India: Minimum Budget and Spend Limits
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak counting table with a brass balance scale holding two small stacks of copper coins, one stack visibly twice the height of the other, a leather ledger open to blank ruled pages, an hourglass and a folded calendar sheet, a single vermilion red ribbon tied around one coin stack, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Agency guides say Google Ads in India needs Rs 10,000 or Rs 15,000 a month to start.
+Google's own Help pages set no minimum. What they set is the most Google can bill you.
+
+- Google's budget page: "The amount of your budget is entirely up to you."
+- For most campaigns, one day can bill up to 2x your average daily budget.
+- A calendar month is capped at 30.4x the daily budget, per campaign. Spend served above that comes back as an overdelivery credit.
+- A Rs 500 daily budget therefore tops out at Rs 1,000 in a day and Rs 15,200 in a full month (my arithmetic on Google's multipliers).
+- Every rupee-per-click table online is an agency estimate. Keyword Planner's own estimate sits behind the billing step.
+
+What budget did you start your first Google Ads campaign with?
+
+https://swapbiswas.com/blog/google-ads-cost-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=google-ads-cost-in-india
+
+#GoogleAds #PPC #DigitalMarketing #MarketingBudget
+
+---
+
+### Google Ads Promotional Code India: The 3 Sign-Up Offers
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a notary's desk with three sealed envelopes of different sizes laid in a row, a small brass hourglass with sand half run through, a wax-stamped calendar page and a quill resting on an inkwell, a single vermilion red seal on the smallest envelope, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Searching for a Google Ads promo code for India? There is usually no code to type.
+Google's India page offers new advertisers sign-up credit, and the credit is decided by a clock.
+
+- Pick one of three offers at sign-up. Google's FAQ says the offer "will automatically be applied to your new Google Ads account upon sign-up."
+- Offer A on 4 November 2026: spend Rs 20,000 in 60 days, get Rs 20,000 in ad credit. The larger offers' credit amounts changed between page loads that day.
+- Apply the offer within 14 days of your first ad impression.
+- Google takes up to 35 days to check the spend. The credit then expires 60 days after it lands.
+- Unspent credit at expiry can't be refunded, per Google's Help page.
+
+Did your first Google Ads credit arrive on time?
+
+https://swapbiswas.com/blog/google-ads-promotional-code-india/?utm_source=linkedin&utm_medium=social&utm_campaign=google-ads-promotional-code-india
+
+#GoogleAds #PPC #DigitalMarketing #StartupIndia
+
+---
+
+### Google Ads TDS Refund: Form 131, Email and Deadlines
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a clerk's desk with four folded parchment forms fanned in a quarter-circle, a brass letter opener, a small stack of coins beside a wax-sealed envelope, a quill and inkwell, a single vermilion red ribbon binding the four forms, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Most Google Ads TDS refund guides tell you to email Form 16A by 30 July.
+Google's own India help page now names a different form, a different address and different dates.
+
+- Rate, in Google's words: "2% excluding GST", subject to change by government regulation.
+- Google's page asks for Form 131.
+- Prepay and postpay accounts email eps-tds@google.com. Monthly-invoicing accounts use Google's Tax Operations form.
+- Quarterly deadlines: 15 August, 15 November, 15 February and 15 June.
+- For prepay and postpay, the approved amount is added to your Google Ads account as credit, not paid to a bank.
+
+Google also says it can't advise on tax matters, so check with your tax consultant before you file.
+
+https://swapbiswas.com/blog/google-ads-tds-refund/?utm_source=linkedin&utm_medium=social&utm_campaign=google-ads-tds-refund
+
+#GoogleAds #TDS #IndiaBusiness #DigitalMarketing
+
+---
+
+### Google Ads Payment Methods India: UPI, Cards and Prepay
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a counting-house table divided by a thin brass rule, on one side a leather purse and a small stack of coins, on the other a sealed promissory note and a wax stamp, an ink pot and quill between them, a single vermilion red cord tied around the purse, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Can you pay for Google Ads with UPI in India? Yes, but only on one of the two payment settings.
+The setting, not the method, decides what Google lets an India account use.
+
+- Google's India section lists UPI, NetBanking and RuPay cards for prepay, where you pay before ads run.
+- Postpay runs on a card, and Google's RBI page says postpay in India "will be limited to Rs 15,000" with an e-mandate on the card.
+- NetBanking and UPI prepayments start at 500 INR; UPI is capped at 100,000 INR a day.
+- Google says UPI is currently available in the Google Ads mobile app on Android.
+- A Rs 2.00 amount during card verification is a temporary authorisation, not a charge, per Google.
+
+Which payment setting is your Google Ads account on?
+
+https://swapbiswas.com/blog/google-ads-payment-methods-india/?utm_source=linkedin&utm_medium=social&utm_campaign=google-ads-payment-methods-india
+
+#GoogleAds #UPI #DigitalMarketing #PPC
+
+---
+
+### Google Business Profile Verification Without Video: Options
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a shopkeeper's wooden counter with an iron key on a ring, a folded letter with a broken wax seal, a small brass bell and a hand mirror lying face down, a quill beside an inkwell, a single vermilion red ribbon threaded through the key ring, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Google Business Profile asking for a video you can't record? Google picks your verification method.
+But its own Help pages list ways to change what it offers.
+
+- Google lists phone or text, email, live video call and postcard alongside video recording, and says the methods "can't be changed".
+- In some cases Google verifies a profile instantly, such as when you verify your website with Google Search Console.
+- A live video call is offered only within your listed opening hours, so set accurate hours first.
+- Postcard codes: Google says most arrive within 14 days and they expire after 30 days.
+- Google says verification reviews take up to five working days, and on rare occasions longer.
+
+What method did Google offer when you verified your business?
+
+https://swapbiswas.com/blog/google-business-profile-verification-without-video/?utm_source=linkedin&utm_medium=social&utm_campaign=google-business-profile-verification-without-video
+
+#LocalSEO #GoogleBusinessProfile #SmallBusiness #SEO
+
+---
+
+### Google Keyword Planner Without Campaign: What Google Says
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's desk with an open atlas, a brass magnifying glass resting on a ledger of handwritten word lists, two small keys of different sizes, one gate-shaped brass bookend, a quill in an inkwell, a single vermilion red bookmark ribbon in the atlas, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Can you use Google Keyword Planner without running a campaign? Half yes, half no.
+You can skip the campaign. You cannot skip the billing form.
+
+- Google's sign-up Help page offers "the option to create an account without a campaign".
+- Google's own Keyword Planner product FAQ still tells you to "create a campaign". Google's pages disagree.
+- The Keyword Planner Help page says you must enter billing information to reach basic features such as keyword ideas.
+- Billing details do not mean a bill: Google says "you won't be charged until your ad starts being shown and gets its first click."
+- The volumes are estimates: Google says "Your search volume statistics are rounded."
+
+Do you still use Keyword Planner for search volume?
+
+https://swapbiswas.com/blog/google-keyword-planner-without-campaign/?utm_source=linkedin&utm_medium=social&utm_campaign=google-keyword-planner-without-campaign
+
+#KeywordResearch #SEO #GoogleAds #ContentMarketing
+
+---
+
+### Soft 404: What It Means and How to Fix It in Search Console
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's desk with an old brass signpost whose two arms point to each other in a loop, a folded map beneath it, a single vermilion red thread tied around the one arm that points off the desk, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Google's "Learn how to fix a soft 404" link no longer goes to the fix.
+It redirects twice and lands on a page that gives soft 404s one sentence.
+
+Traced on 4 November 2026:
+- support.google.com/webmasters/answer/181708 returns a 301, then a second 301, to Google's HTTP status codes page
+- The full fix section still exists, at "Troubleshoot Google Search Crawling Errors", last updated 18 December 2025
+- Google's crawling changelog for that date lists the status-code page among those migrated to the new crawling site
+- A soft 404 is a URL that returns 200 while its content reads as an error, an empty page or "not found"; a real 404 sits under the Not found (404) row instead
+
+The post has a table by URL type: what each one should answer, with Google's line behind it, plus a curl check you can run on your own 404 page.
+
+https://swapbiswas.com/blog/soft-404/?utm_source=linkedin&utm_medium=social&utm_campaign=soft-404
+
+#SEO #TechnicalSEO #GoogleSearchConsole #WebDevelopment
+
+---
+
+### Bing AI Performance Report: What Each Metric Measures
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an open ledger on a wooden table with tally marks in ink and a quill, a stack of sealed letters beside it, a single vermilion red wax seal on one letter, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Bing's AI Performance report does not show clicks.
+Some guides list Clicks and CTR among its metrics. None of Bing's own announcement posts describes either one.
+
+What it does count, from Bing's posts (February, June and October 2026):
+- Total citations and average cited pages across Copilot, AI summaries in Bing and select partners
+- Grounding queries: the phrases the AI used to retrieve your content, not what a person typed
+- Citation Share (preview, 16 June 2026): your percentage of all citations for one grounding query
+- Topics Portfolio (beta, 13 October 2026), which Bing says smaller sites may not see at all
+
+The post sets every metric beside Bing's own caveat, with a dated changelog.
+
+https://swapbiswas.com/blog/bing-ai-performance-report/?utm_source=linkedin&utm_medium=social&utm_campaign=bing-ai-performance-report
+
+#SEO #AISearch #BingWebmasterTools #GenerativeEngineOptimization #ContentMarketing
+
+---
+
+### Microsoft Clarity Not Recording? Causes, Checks and Fixes
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a brass hourglass and an empty glass jar on a stone ledge with four small stones lined up in a row, one stone painted vermilion red, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+An empty Microsoft Clarity dashboard has more than one possible cause.
+The data can stop at one of four stages, and Microsoft documents a check for each.
+
+From Microsoft's Clarity docs, read 4 November 2026:
+- Script loading: look for POST requests to clarity.ms/collect in DevTools
+- EEA, UK and Swiss visits: consent signals have been enforced since 31 October 2025
+- Fewer recordings than sessions: the cap is 100,000 sessions per project per day
+- Heatmap with low page views or no clicks: under 30 minutes since install, or a filter
+
+The post has a symptom, cause, check and fix table, each check linked to its Microsoft page.
+
+https://swapbiswas.com/blog/microsoft-clarity-not-recording/?utm_source=linkedin&utm_medium=social&utm_campaign=microsoft-clarity-not-recording
+
+#Analytics #MicrosoftClarity #CRO #UXResearch #WebAnalytics
+
+---
+
+### Search Console Generative AI Report: What It Counts
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an astronomer's brass telescope pointed at a framed window with a small counting abacus on the sill, its beads all pushed to one side, a single vermilion red bead set apart, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Search Console's generative AI report has no clicks and no queries.
+It counts one thing: impressions in AI Overviews and AI Mode.
+
+From Google's own pages, read 4 November 2026:
+- Launched 3 June 2026 for a subset of sites, rolled out to all sites as of 31 August 2026
+- Tabs for pages, countries, dates and devices, and no query dimension
+- A multimodal search type (Lens, Circle to Search, image uploads), announced 24 September 2026
+- A missing report usually means too few impressions in generative AI features, or a property excluded through the Search generative AI control
+
+The post maps each AI-traffic question to the Google report that answers it.
+
+https://swapbiswas.com/blog/search-console-generative-ai-report/?utm_source=linkedin&utm_medium=social&utm_campaign=search-console-generative-ai-report
+
+#SEO #GoogleSearchConsole #AIOverviews #AISearch #ContentMarketing
+
+---
+
+### Looker Studio Data Set Configuration Error (Now Data Studio)
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an old iron key ring on a writing desk beside a locked wooden document box and a ledger, one key wrapped with a single vermilion red cord, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+"Looker Studio data set configuration error" and "Data Studio data set configuration error" are the same banner.
+Google renamed the product back to Data Studio in April 2026. The fix did not change.
+
+What Google's docs say, read 4 November 2026:
+- lookerstudio.google.com now redirects to datastudio.google.com
+- The troubleshooting guide lists this banner with six other data source errors
+- If you can edit the data source and have your own access to the data, Data credentials > Make me the owner reconnects it
+- Owner's credentials suit reports whose viewers have no access to the underlying data
+
+The post has a message, likely cause and fix table, and a credentials decision table.
+
+https://swapbiswas.com/blog/looker-studio-data-set-configuration-error/?utm_source=linkedin&utm_medium=social&utm_campaign=looker-studio-data-set-configuration-error
+
+#DataStudio #LookerStudio #Analytics #MarketingAnalytics #Reporting
+
+---
+
+### YouTube Shorts Monetization Requirements in India for 2027
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's oak table with a tall brass hourglass, two neat stacks of coins of unequal height, an open ledger with ruled blank columns, a wax tablet and a stylus, a small folded letter tied with twine, a single vermilion red ribbon marking a page in the ledger, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+YouTube's Shorts entry bar doubles on 1 February 2027.
+The rule that matters more for an Indian channel is the new monthly one.
+
+- Until 31 January 2027: 1,000 subscribers and 10M qualified Shorts views in 90 days to join YPP through Shorts.
+- From 1 February 2027, new creators need 20M. The long-form route moves from 4,000 to 8,000 watch hours.
+- Every partner will also need 10M qualified Shorts views in the past 90 days to be paid from the Shorts Creator Pool that month.
+- The 500-subscriber tier for fan funding, Creator Partnerships and Shopping does not change.
+- YouTube's own India tax example: on $1,000 with $100 from US viewers, $15 is withheld with the treaty claim, $30 without it, $240 with no tax info.
+
+Which of these thresholds would change your Shorts plan for 2027?
+
+https://swapbiswas.com/blog/youtube-shorts-monetization-india/?utm_source=linkedin&utm_medium=social&utm_campaign=youtube-shorts-monetization-india
+
+#YouTube #YouTubeShorts #CreatorEconomy #India
+
+---
+
+### YouTube Post Image Size: What YouTube Publishes vs Guides
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a painter's walnut table with several square wooden panels of slightly different sizes leaning against a folio, a carpenter's brass square and a folding wooden rule, a small pot of gesso and a soft brush, one panel edged with a single vermilion red cord, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+YouTube publishes no pixel size for Posts images.
+The five guides I read print one anyway, and their figures disagree.
+
+- YouTube's Create a post page: up to 10 images per post, up to 16 MB each.
+- File types: JPG, PNG, GIF or WEBP.
+- Suggested ratio 1:1, "because that's how images are shown in the feed".
+- No pixel size, no minimum resolution, no ratio range on the Help pages read on 4 November 2026.
+- Guides print 1080 x 1080, 1080 x 1350, 1920 x 1080 and a 2:5 to 5:2 range: none of them is on YouTube's page.
+
+Which image spec do you design to when the platform does not publish one?
+
+https://swapbiswas.com/blog/youtube-post-image-size/?utm_source=linkedin&utm_medium=social&utm_campaign=youtube-post-image-size
+
+#YouTube #SocialMedia #ContentMarketing #Design
+
+---
+
+### X Character Limit (Twitter): How the 280 Is Weighted
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scribe's desk with a brass balance scale holding small lead type blocks on one pan and a single larger block on the other, a tray of loose metal type, a quill in an inkwell and a strip of blank parchment, one type block painted vermilion red, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+X's 280 is a weighted count, not a letter count.
+A link costs 23 however long its UTM string runs.
+
+- X's docs weigh Latin letters, punctuation and common symbols at 1.
+- Each emoji and each Chinese, Japanese or Korean character costs 2.
+- Every link costs a flat 23. Attached media costs 0.
+- X's twitter-text config weighs U+0000 to U+10FF at 1, which includes Devanagari and the other Indic scripts.
+- X counts code points, not visible letters: the Hindi word kshatriya shows as 3 clusters and costs 8.
+
+Have you had an X post rejected that looked well under 280?
+
+https://swapbiswas.com/blog/x-character-limit/?utm_source=linkedin&utm_medium=social&utm_campaign=x-character-limit
+
+#X #SocialMedia #ContentMarketing #Marketing
+
+---
+
+### Instagram Hashtag Limit: 5, Not 3 or 30, and Who Says So
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a counting-house table with five small brass weights lined up in a row beside an abacus, a folded ledger, a pair of iron dividers and a sand shaker, a single vermilion red thread tied around the fifth weight, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+The Instagram hashtag limit is 5 per reel or post.
+The 3 and the 30 you still see belong to a test and to an API quota.
+
+- 18 December 2025: Instagram's @creators account said it "will allow up to 5 hashtags in a reel or post".
+- 3 was a cap some accounts hit during a test in November and early December 2025, per press reports.
+- 30 is the number of unique hashtags an app can look up through Meta's Hashtag Search API per rolling 7 days.
+- Meta's IG User Media reference still lists 30 hashtags per caption for posts published through the API.
+- Whether the 5 applies to comments or Stories: Instagram has not said.
+
+Which of the three numbers is still in your team's caption checklist?
+
+https://swapbiswas.com/blog/instagram-hashtag-limit/?utm_source=linkedin&utm_medium=social&utm_campaign=instagram-hashtag-limit
+
+#Instagram #SocialMedia #ContentMarketing #Marketing
+
+---

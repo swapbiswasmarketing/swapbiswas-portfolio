@@ -3,8 +3,8 @@ title: "YouTube Shorts Monetization Requirements in India for 2027"
 description: "YouTube Shorts monetization requirements in India now and from 1 February 2027: 10M vs 20M Shorts views, the new monthly floor and YouTube's own US tax example."
 publishDate: 2026-11-04
 category: [Marketing]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "What are the YouTube Shorts monetization requirements in India?"
     a: "Until 31 January 2027, a channel joins the YouTube Partner Programme through Shorts with 1,000 subscribers and 10 million qualified Shorts views in the past 90 days. From 1 February 2027, new creators need 1,000 subscribers and 20 million qualified Shorts views in 90 days. India is on YouTube's list of YPP countries, and you also need two-step verification, no active Community Guidelines strikes and one AdSense for YouTube account."
