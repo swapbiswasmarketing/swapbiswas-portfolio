@@ -61,6 +61,8 @@ Creator Marketplace is a separate program and does not bring creator mode back. 
 
 Top Voices is another invite-only program that sits apart from creator mode, and [how the blue Top Voice badge is awarded, renewed and removed](/blog/linkedin-top-voice/) covers its nomination form and six-month term.
 
+YouTube is changing its own creator programme on 1 February 2027, and [what an Indian Shorts channel needs to earn before and after that date](/blog/youtube-shorts-monetization-india/) is set out from YouTube's Help pages in a separate post.
+
 ## Two Rows Where LinkedIn's 2024 Notice Is Out of Date
 
 ### The Profile Link Became a Premium Custom Button

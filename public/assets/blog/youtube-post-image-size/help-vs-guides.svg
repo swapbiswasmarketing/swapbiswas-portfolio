@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect width="1400" height="820" fill="#f6f4ef"/>
+
+  <text x="70" y="68" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">YouTube Posts images: what Help states vs what guides add</text>
+  <text x="70" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Create a post page, Computer, Android and iPhone versions, and five guides, all read 4 Nov 2026</text>
+
+  <rect x="70" y="140" width="610" height="560" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="720" y="140" width="610" height="560" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">
+    <text x="100" y="182">YOUTUBE HELP STATES</text>
+    <text x="750" y="182">ONLY IN THIRD-PARTY GUIDES</text>
+  </g>
+  <line x1="100" y1="200" x2="650" y2="200" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="750" y1="200" x2="1300" y2="200" stroke="#e4dfd6" stroke-width="1"/>
+
+  <rect x="86" y="520" width="578" height="74" rx="8" fill="#f3dcd2"/>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">
+    <text x="100" y="234">Images per post</text>
+    <text x="100" y="314">File size</text>
+    <text x="100" y="394">File types</text>
+    <text x="100" y="474">Suggested aspect ratio</text>
+    <text x="100" y="638">Aspect ratio range</text>
+  </g>
+  <text x="100" y="548" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#8f2e0f">Pixel size</text>
+  <g font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">
+    <text x="100" y="268">Up to 10</text>
+    <text x="100" y="348">Up to 16 MB</text>
+    <text x="100" y="428">JPG, PNG, GIF or WEBP</text>
+    <text x="100" y="508">1:1, the shape the feed shows</text>
+    <text x="100" y="672">Not stated</text>
+  </g>
+  <text x="100" y="580" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#b53b15">Not stated on any of the three versions</text>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">
+    <text x="750" y="234">imresizer, Postiz, CollabPals</text>
+    <text x="750" y="314">Viraly</text>
+    <text x="750" y="394">CollabPals</text>
+    <text x="750" y="474">Postiz</text>
+    <text x="750" y="554">CollabPals</text>
+    <text x="750" y="634">Gadgets To Use</text>
+  </g>
+  <g font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">
+    <text x="750" y="268">1080 x 1080 as the size</text>
+    <text x="750" y="348">1000 x 1000 or 1080 x 1350, 4:5</text>
+    <text x="750" y="428">1920 x 1080 at 16:9</text>
+    <text x="750" y="508">1600 x 900 landscape</text>
+    <text x="750" y="588">Up to 20 images a post</text>
+    <text x="750" y="668">A 2:5 to 5:2 ratio range</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">
+    <text x="70" y="744">Left: YouTube's wording on support.google.com/youtube/answer/7124474. Right: figures each guide prints</text>
+    <text x="70" y="772">for Posts images that appear on no YouTube Help page I read. Four guides also list fewer file types.</text>
+  </g>
+</svg>

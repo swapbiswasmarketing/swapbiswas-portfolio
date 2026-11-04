@@ -235,7 +235,7 @@ Even teams that run content competitor analysis regularly make mistakes that und
 
 **Treating it as a one-time project.** Content markets are dynamic. A gap you identified three months ago may already be filled. The competitors who won last quarter may have gone stale. Build the analysis into your regular workflow, not a once-a-year exercise.
 
-**Focusing only on organic search.** Content performance happens across channels. A competitor might get minimal organic traffic but dominate LinkedIn or YouTube. Analyzing only SEO data gives you an incomplete picture.
+**Focusing only on organic search.** Content performance happens across channels. A competitor might get minimal organic traffic but dominate LinkedIn or YouTube. Analyzing only SEO data gives you an incomplete picture. Each of those channels runs on its own rules: YouTube, for one, changes what a Shorts channel needs to earn on 1 February 2027, as [the YouTube Shorts monetization requirements for India](/blog/youtube-shorts-monetization-india/) show.
 
 ## Start Your Content Marketing Competitor Analysis Today
 

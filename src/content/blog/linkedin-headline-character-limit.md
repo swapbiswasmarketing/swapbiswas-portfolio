@@ -59,6 +59,8 @@ Notes on the table:
 - The post page suggests writing an article on LinkedIn's publishing platform once a post would run past 3,000 characters.
 - The ad name field is where a [campaign naming convention for paid channels](/blog/campaign-naming-convention/) has to fit.
 - Image and video sizes from the same Help pages are in [my LinkedIn post size reference](/blog/linkedin-post-size/).
+- X counts its 280 differently, with links at 23 and emoji at 2, and [how X weighs each character by script](/blog/x-character-limit/) is set out in a separate post.
+- Instagram caps hashtags by count, not characters: [5 per reel or post, and where the 3 and the 30 came from](/blog/instagram-hashtag-limit/).
 
 ## LinkedIn Profile Headline vs Ad Headline Limits
 
