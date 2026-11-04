@@ -97,7 +97,7 @@ Politely ask satisfied customers to leave a review. Provide easy access via dire
 
 ### 2. Optimize Your Google Business Profile
 
-Ensure your Google Business Profile is complete, accurate, and regularly updated with fresh content and photos. An optimized profile makes it easy for customers to review your business.
+Ensure your Google Business Profile is complete, accurate, and regularly updated with fresh content and photos. An optimized profile makes it easy for customers to review your business. You can only manage the profile once it is verified, and if Google's verification screen offers only a video, [these are the other verification routes Google lists](/blog/google-business-profile-verification-without-video/).
 
 ### 3. Highlight Reviews Across Your Digital Presence
 

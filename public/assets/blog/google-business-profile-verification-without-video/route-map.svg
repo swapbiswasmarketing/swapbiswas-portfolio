@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Verification routes besides a recorded video</text>
+  <text x="60" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Google decides which ones your profile sees. Conditions from Google's Help pages, November 2026.</text>
+
+  <rect x="60" y="140" width="410" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">UNDER GET VERIFIED</text>
+  <text x="90" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Phone or text</text>
+  <text x="90" y="272" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Code by call or SMS to the</text>
+  <text x="90" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">business number</text>
+  <text x="90" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">IVR phone menus won't get the code</text>
+
+  <rect x="495" y="140" width="410" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="525" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">UNDER GET VERIFIED</text>
+  <text x="525" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Email</text>
+  <text x="525" y="272" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Follow the steps sent to the</text>
+  <text x="525" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">address on the screen</text>
+  <text x="525" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">You must be able to use that address</text>
+
+  <rect x="930" y="140" width="410" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="960" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">UNDER GET VERIFIED</text>
+  <text x="960" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Live video call</text>
+  <text x="960" y="272" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Show the business on camera</text>
+  <text x="960" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">to a support representative</text>
+  <text x="960" y="350" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Only within your opening hours</text>
+
+  <rect x="60" y="420" width="410" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="466" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">UNDER GET VERIFIED</text>
+  <text x="90" y="508" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Postcard</text>
+  <text x="90" y="552" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Five-digit code by mail;</text>
+  <text x="90" y="584" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">most arrive within 14 days</text>
+  <text x="90" y="630" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Expires after 30 days</text>
+
+  <rect x="495" y="420" width="410" height="250" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="525" y="466" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#b53b15">NOT IN GET VERIFIED</text>
+  <text x="525" y="508" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Search Console</text>
+  <text x="525" y="552" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Instant verification can happen</text>
+  <text x="525" y="584" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">when your website is verified</text>
+  <text x="525" y="630" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">"In some cases", not promised</text>
+
+  <rect x="930" y="420" width="410" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="960" y="466" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">NOT IN GET VERIFIED</text>
+  <text x="960" y="508" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Bulk verification</text>
+  <text x="960" y="552" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">10 or more profiles of the</text>
+  <text x="960" y="584" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">same business</text>
+  <text x="960" y="630" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Not for Service Area Businesses</text>
+
+  <line x1="60" y1="710" x2="1340" y2="710" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="60" y="752" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">After any method, Google says reviews take up to five working days.</text>
+  <text x="60" y="788" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#6a645c">Sources: support.google.com/business/answer/7107242 and /4490296 (hl=en-IN)</text>
+</svg>

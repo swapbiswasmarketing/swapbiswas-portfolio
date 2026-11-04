@@ -28,7 +28,7 @@ For outside scale, Ahrefs publishes a median whole-site CTR of 0.56% for sites i
 
 ## What Counts as a Long Tail Keyword in This Data
 
-A long tail keyword usually means one of two things: a query with low search volume, or a query with a lot of words. Search Console shows me the words and not the volume, so word count is the only cut I can actually make on my own data.
+A long tail keyword usually means one of two things: a query with low search volume, or a query with a lot of words. Search Console shows me the words and not the volume, so word count is the only cut I can actually make on my own data. Google's Keyword Planner does report volume, though Google says those statistics are rounded, as [the guide to Keyword Planner without a campaign](/blog/google-keyword-planner-without-campaign/) sets out.
 
 I used four or more words as the threshold because it splits the 1,000 exported rows near the middle, at 624 rows. That is an arbitrary line. Anyone reporting band totals has picked one too, and the totals move when the line moves.
 

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 750" width="1400" height="750">
+  <rect x="0" y="0" width="1400" height="750" fill="#f6f4ef"/>
+
+  <text x="40" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Google Ads payment methods by payment setting</text>
+  <text x="40" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">India billing address, INR currency. Google Ads Help (en-IN), read 4 November 2026</text>
+
+  <rect x="40" y="150" width="640" height="500" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="72" y="194" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">POSTPAY</text>
+  <text x="72" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Charged after your ads run</text>
+  <line x1="72" y1="262" x2="648" y2="262" stroke="#e4dfd6" stroke-width="1"/>
+
+  <rect x="72" y="292" width="10" height="10" fill="#2a7347"/>
+  <text x="96" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Visa or Mastercard credit card</text>
+
+  <rect x="72" y="352" width="10" height="10" fill="#15130f"/>
+  <text x="96" y="364" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">RBI e-mandate on the card; postpay</text>
+  <text x="96" y="396" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"limited to Rs 15,000" per Google's page</text>
+
+  <rect x="72" y="444" width="10" height="10" fill="#6a645c"/>
+  <text x="96" y="456" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Debit card: the India section says</text>
+  <text x="96" y="488" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">both yes and no</text>
+
+  <rect x="72" y="536" width="10" height="10" fill="#6a645c"/>
+  <text x="96" y="548" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No prepaid cards</text>
+
+  <rect x="72" y="596" width="10" height="10" fill="#6a645c"/>
+  <text x="96" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">UPI, NetBanking, RuPay: listed for prepay</text>
+
+  <rect x="720" y="150" width="640" height="500" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="752" y="194" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">PREPAY</text>
+  <text x="752" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Pay before your ads run</text>
+  <line x1="752" y1="262" x2="1328" y2="262" stroke="#e4dfd6" stroke-width="1"/>
+
+  <rect x="752" y="292" width="10" height="10" fill="#2a7347"/>
+  <text x="776" y="304" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Visa or Mastercard debit card</text>
+
+  <rect x="752" y="352" width="10" height="10" fill="#2a7347"/>
+  <text x="776" y="364" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">RuPay credit or debit, added after sign-up</text>
+
+  <rect x="752" y="412" width="10" height="10" fill="#2a7347"/>
+  <text x="776" y="424" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">NetBanking via TimesofMoney, min 500 INR</text>
+
+  <rect x="744" y="458" width="592" height="104" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="764" y="484" width="10" height="10" fill="#b53b15"/>
+  <text x="788" y="496" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">UPI: in the Google Ads Android app</text>
+  <text x="788" y="530" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">500 INR minimum, 100,000 INR a day maximum</text>
+
+  <rect x="752" y="596" width="10" height="10" fill="#2a7347"/>
+  <text x="776" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Money transfer with a reference number</text>
+
+  <text x="40" y="704" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Switch settings in Billing, Settings, How you pay. Limits change: re-check Google's India section.</text>
+</svg>

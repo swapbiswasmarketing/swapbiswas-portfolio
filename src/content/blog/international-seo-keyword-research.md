@@ -126,7 +126,7 @@ Between them they hold 5,604 impressions against India's 7,850, and they return 
 
 That combination is the argument against translating first. A translated page does not inherit a ranking from an English page that was never ranking in the market, so it starts from nothing on a domain rated 13, against local-language competitors I have not looked at. The German row does not report German demand for my topics. It reports that Google occasionally shows an English page to somebody in Germany, somewhere past position 31.
 
-The questions I would need answered before spending anything: whether a local-language head term for the concept exists, and who holds the top three results for it today. Search Console can answer neither, because I have no page in that language for it to report on. That is where a keyword tool with a country dropdown finally earns its place, once a row has already survived everything above.
+The questions I would need answered before spending anything: whether a local-language head term for the concept exists, and who holds the top three results for it today. Search Console can answer neither, because I have no page in that language for it to report on. That is where a keyword tool with a country dropdown finally earns its place, once a row has already survived everything above. Google's own option, Keyword Planner, sits inside Google Ads, and [opening Keyword Planner without a campaign](/blog/google-keyword-planner-without-campaign/) still means filling in the billing form first.
 
 ## What Search Console Country Data Cannot Tell You
 
