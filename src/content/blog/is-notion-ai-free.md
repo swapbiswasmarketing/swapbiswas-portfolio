@@ -58,7 +58,7 @@ Rupee prices exist in one place I could check: [Apple's India App Store listing 
 | Notion Business | ₹2,499 |
 | Notion Business | ₹24,900 |
 
-The listing does not name the billing period for the two Business rows. Notion's plan help page describes mobile upgrades only from Free to Plus, limited to one-member workspaces and managed through the Apple App Store or Google Play. Plus has only the AI trial, so a Plus upgrade on an iPhone at ₹1,199 a month does not unlock Notion AI.
+The listing does not name the billing period for the two Business rows. Grammarly names its App Store plan differently from its web plans, Premium in the app against Pro or Plus on the web, which the [Grammarly price check for India](/blog/grammarly-price-in-india/) maps checkout by checkout. Notion's plan help page describes mobile upgrades only from Free to Plus, limited to one-member workspaces and managed through the Apple App Store or Google Play. Plus has only the AI trial, so a Plus upgrade on an iPhone at ₹1,199 a month does not unlock Notion AI.
 
 ## Notion AI Free Limit: What the Trial Allowance Covers
 

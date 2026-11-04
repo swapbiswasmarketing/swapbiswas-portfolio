@@ -95,9 +95,73 @@ https://swapbiswas.com/blog/filmora-price-in-india/?utm_source=linkedin&utm_medi
 
 #VideoEditing #ContentCreation #Software #India
 
-## Batch 2 (pending)
-- meta-verified-price-in-india (A02, LONGTAIL_ONLY, 5-12/mo, top-3 upside 25-40)
-- grammarly-price-in-india (A01, TOP5 India exception, 2-6/mo, top-3 upside 10-25)
+## Batch 2 (publishDate 2026-11-04)
+
+### meta-verified-price-in-india
+- Primary keyword: meta verified price in india
+- Verdict: LONGTAIL_ONLY
+- Realistic visits/month: 5-12 (India, #6-8 on the head, #3-5 on tails; ~900-1,500 price-intent searches/mo after removing spikes and navigational share; "meta verified india" 1,000 and "meta verified price" 320, db=in). Top-3 upside: ~25-40/mo (Meta-owned pages hold the India top 5).
+- Proof page: none valid. Top 5 are all Meta properties (meta.com, help.instagram.com, facebook.com/business, about.fb.com, faq.whatsapp.com); #6-10 are 2023-2024 news, a Facebook video and Hootsuite.
+- Refresh: 2026-12-04 (monthly). Re-check the three App Store /in/ listings (Instagram, Facebook, WhatsApp Business), Meta's India newsroom and the Meta One post; a Meta One India change would likely rename the store rows. Semrush shows a recent demand spike for "meta verified india" with no identified cause.
+- Unverified (post states none of it): rupee prices for Plus/Premium/Max and the current creator plan; which plan and billing period each ₹639 / ₹1,399 store row is; whether the 2024 introductory offer is still open; whether Meta One replaces Meta Verified in India; whether Facebook Verified is live in India. The post is short (~880 words) because only these facts are sourceable; craft QA judged it complete without padding.
+- Footprint: `| meta-verified-price-in-india | dated rupee pricing explainer + source-and-date table + reader-type decision table | stat-led open | table | synthesized |`
+- Review ledger: `status=new, review_due=2026-11-25`
+- First-hand question: Have you ever opened the Meta Verified (or Meta One) subscription screen in the Instagram, Facebook or WhatsApp Business app on your own account, without subscribing? If so, which app, on what date, and what plan name, rupee price and billing period did the checkout screen show? (Belongs in "Meta Verified Price for Creators in India" or the decision table; the post reads complete without it.)
+- Hosts edited (one sentence each): capcut-pro-price-in-india, price-increase-announcement, linkedin-premium-cost-in-india (hub down-link; the one host outside the lane pool)
+- LinkedIn draft:
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an open leather ledger with two columns of blank entries, a brass seal stamp resting on a folded letter, a small stack of old coins beside a newer stack, a quill in an inkwell, a single vermilion wax seal pressed onto the folded letter, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+The Meta Verified price most Indian articles quote is from 2023.
+Meta's own India announcements and Apple's India listings give a newer set of numbers, each with a date.
+
+- June 2023: Meta's India launch post put Meta Verified at ₹699 a month on iOS and Android, with a ₹599 web option it said would come "in the coming months".
+- July 2024: business plans ran up to ₹21,000 a month under a 12-month introductory offer, and up to ₹30,000 a month at the standard rate.
+- 4 November 2026: Apple's India listings for Instagram and Facebook show Meta Verified Standard items at ₹639.
+- September 2026: Meta launched Meta One, a subscription it priced in US dollars.
+- July 2026: Meta announced Facebook Verified, a free badge for people on Facebook, rolling out by market.
+
+Which of these numbers have you seen quoted most often?
+
+https://swapbiswas.com/blog/meta-verified-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=meta-verified-price-in-india
+
+#Instagram #SocialMediaMarketing #CreatorEconomy #India
+
+### grammarly-price-in-india
+- Primary keyword: grammarly price in india
+- Verdict: TOP5 (India-intent exception; India #4-10 are displaceable: checkthat.ai programmatic silo, a 2024 The Hindu review, two shared-account resellers, eesel.ai USD-only)
+- Realistic visits/month: 2-6 (India, #5-8 on a ~240/mo cluster, db=in). Top-3 upside: ~10-25/mo, mostly from "grammarly student discount" (720/mo), whose SERP is coupon and deal pages.
+- Proof page: none valid in the India top 5 (checkthat.ai at #4 is a template repeated across brands, USD only).
+- Refresh: 2026-12-04 (monthly; plan names have moved from Premium to Pro to Plus and Grammarly now sits under Superhuman). Re-check grammarly.com/a/india, the App Store India listing and the plan-name help article.
+- Unverified (post implies none of it): the billing period behind "₹392 INR" on grammarly.com/a/india; web-checkout rupee prices for Plus or Pro (the plans page showed USD to this VM); whether SheerID accepts Indian colleges; Google Play India per-plan prices.
+- Footprint: `| grammarly-price-in-india | dated rupee pricing explainer + discount-rules table + decision table | question-led open | prose | synthesized |`
+- Review ledger: `status=new, review_due=2026-11-25`
+- First-hand question: With an Indian connection and Indian billing country, what does grammarly.com/upgrade/plus (or the plans page) show for Grammarly Plus monthly, quarterly and annual in rupees, and is GST shown separately or included? The answer belongs in the "Grammarly Plus Price in India" H2, replacing the "period not stated" caveat with the checkout's own figures and date (logged-out page check only; no purchase).
+- Hosts edited (one sentence each): pricing-tier-names, figma-student-plan, is-notion-ai-free, claude-pro-price-in-india (hub down-link; the one host outside the lane pool)
+- LinkedIn draft:
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an open grammar book with a ribbon marker on a walnut writing desk, a pair of brass reading spectacles, two folded paper vouchers side by side that do not overlap, a quill in an inkwell, a single vermilion wax seal on one voucher, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Grammarly's rupee price and its student discount sit on different checkouts.
+Grammarly's own help center says the two do not combine.
+
+- Apple's India App Store lists Grammarly Premium at ₹999 a month, ₹1,999 a quarter and ₹4,699 a year (4 November 2026).
+- Grammarly's India page offers Plus for "₹392 INR" and states no billing period.
+- The SheerID student offer gives up to 50% off Pro for one subscription period, then renews at the standard rate.
+- That offer cannot be applied to App Store or Google Play purchases, and Plus does not take it.
+- Premium is the app-store plan, Pro is the web plan, Plus is a plan for select countries.
+
+Which checkout did you use for your writing tool: the app store or the web?
+
+https://swapbiswas.com/blog/grammarly-price-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=grammarly-price-in-india
+
+#Grammarly #WritingTools #AITools #India
+
+## Pre-existing issues seen in host posts (not fixed: outside the one-sentence host rule)
+- price-increase-announcement.md fails the trope gate at HEAD: 2 FAIL (L36 "the rest of this post", L98 "load-bearing"), 5 WARN.
+- pricing-tier-names.md links /blog/product-naming/ twice (also at HEAD).
 
 ## Rejected
 - microsoft 365 free for students india (A03): the gate's TOP5 was conditional on reading Microsoft's India consumer pages; college-student-pricing and the students page returned 403/503 to this VM, so DROP for this run (10-20/mo if verifiable later). Low cannibal with how-to-get-linkedin-premium-free:140-152 and copilot-vs-chatgpt:78-102 (Copilot is lane B).

@@ -263,7 +263,7 @@ Most churn that follows a price change is a surprise problem rather than a price
 - **Never let a customer learn it from a third party.** That includes your own pricing page, your changelog, and a competitor's sales team. Public pages update on announcement day, not before.
 - **Size the increase against what actually shipped.** Growth Unhinged's review of 2024 pricing moves flagged that [Docker raised the price of its Pro and Team plans by 80% and 67% respectively](https://www.growthunhinged.com/p/saas-pricing-changes-2025), which drew a visible wave of disgruntled customers to the Docker subreddit. A jump that size needs a value story of the same size, delivered to each account individually, and it is not something an email can carry alone.
 
-The through-line is that customers accept price changes they can predict and explain to their own boss. They churn over ones that arrive unannounced, unexplained, or inconsistently applied across their peer group.
+The through-line is that customers accept price changes they can predict and explain to their own boss. They churn over ones that arrive unannounced, unexplained, or inconsistently applied across their peer group. Meta's July 2024 India announcement for Meta Verified business plans printed both numbers in one place, an introductory range topping out at ₹21,000 a month and standard rates of up to ₹30,000 a month after 12 months, as the [Meta Verified price timeline for India](/blog/meta-verified-price-in-india/) lays out.
 
 ## The 30/60/90 Price Increase Announcement Scorecard
 

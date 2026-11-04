@@ -110,6 +110,8 @@ Two rules from those listings:
 - If you only post to Instagram, start with Edits: it is free, and its listing promises 4K export with no watermark.
 - If you need a paid tier, compare InShot Pro's ₹1,499 a year with Premiere mobile's ₹6,900 a year; Premiere's listing ties payment to Firefly AI credits, while InShot's ties it to the watermark, ads and paid packs.
 
+If the next thing you pay Instagram for is a verified badge rather than an editor, [the dated rupee prices for Meta Verified](/blog/meta-verified-price-in-india/) set Apple's India listings against what Meta itself has published.
+
 ## CapCut Pro Price in India: Check the Store, Then Pick an Editor
 
 A CapCut Pro price in India would have to appear on an India store listing, and on 4 November 2026 both India listings returned not found. Until one comes back, pick from the table above and pay in rupees for an editor India's stores list.
