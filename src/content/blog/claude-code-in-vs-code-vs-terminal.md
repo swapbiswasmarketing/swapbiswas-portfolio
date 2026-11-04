@@ -47,6 +47,8 @@ Checked on 30 September 2026 against the [extension vs CLI section of the VS Cod
 | MCP servers | `/mcp` dialog; adds and removes servers from v2.1.261 | `claude mcp add`, or `/mcp` |
 | Where it comes from | Bundled in the extension; `claude` is not added to your PATH | The standalone install |
 
+The same extension also installs in Cursor through an "Install for Cursor" link in Anthropic's docs, and [Cursor vs Claude Code](/blog/cursor-vs-claude-code/) covers what that route does to the bill.
+
 The two surfaces label their rewind options differently, and [my table of both rewind menus](/blog/claude-code-rewind/) puts the extension's three hover options beside the CLI's six actions, matched by what each one restores.
 
 Image paste differs between the two surfaces as well: the chat panel takes an ordinary paste into its prompt box, while the CLI in the integrated terminal on Windows needs `Alt+V`, and my guide to [the image paste route on each surface](/blog/claude-code-paste-image/) adds WSL and SSH.

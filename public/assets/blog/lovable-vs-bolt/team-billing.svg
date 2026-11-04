@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="700" y="70" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Lovable vs Bolt vs v0: who pays for a team of three</text>
+  <text x="700" y="112" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Lovable bills one shared pool; Bolt and v0 bill each person who prompts</text>
+
+  <rect x="60" y="150" width="400" height="530" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">LOVABLE</text>
+  <text x="100" y="238" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">One pool per workspace</text>
+  <circle cx="170" cy="296" r="26" fill="#ffffff" stroke="#15130f" stroke-width="2.5"/>
+  <circle cx="260" cy="296" r="26" fill="#ffffff" stroke="#15130f" stroke-width="2.5"/>
+  <circle cx="350" cy="296" r="26" fill="#ffffff" stroke="#15130f" stroke-width="2.5"/>
+  <text x="170" y="303" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">A</text>
+  <text x="260" y="303" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">B</text>
+  <text x="350" y="303" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">C</text>
+  <line x1="170" y1="324" x2="170" y2="346" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="163,346 177,346 170,360" fill="#b53b15"/>
+  <line x1="260" y1="324" x2="260" y2="346" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="253,346 267,346 260,360" fill="#b53b15"/>
+  <line x1="350" y1="324" x2="350" y2="346" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="343,346 357,346 350,360" fill="#b53b15"/>
+  <rect x="100" y="362" width="320" height="170" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2.5"/>
+  <text x="260" y="408" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Shared credits</text>
+  <text x="260" y="446" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">100, 200 or 400 a month</text>
+  <text x="260" y="480" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">unlimited members</text>
+  <text x="260" y="512" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">no seat fee</text>
+  <line x1="100" y1="566" x2="420" y2="566" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Team of three: $25, $50 or $100</text>
+  <text x="100" y="646" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Bill set by total usage</text>
+
+  <rect x="500" y="150" width="400" height="530" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="540" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">BOLT TEAMS</text>
+  <text x="540" y="238" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">One allowance per seat</text>
+  <circle cx="610" cy="296" r="26" fill="#ffffff" stroke="#15130f" stroke-width="2.5"/>
+  <circle cx="700" cy="296" r="26" fill="#ffffff" stroke="#15130f" stroke-width="2.5"/>
+  <circle cx="790" cy="296" r="26" fill="#ffffff" stroke="#15130f" stroke-width="2.5"/>
+  <text x="610" y="303" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">A</text>
+  <text x="700" y="303" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">B</text>
+  <text x="790" y="303" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">C</text>
+  <line x1="610" y1="324" x2="610" y2="346" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="603,346 617,346 610,360" fill="#15130f"/>
+  <line x1="700" y1="324" x2="700" y2="346" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,346 707,346 700,360" fill="#15130f"/>
+  <line x1="790" y1="324" x2="790" y2="346" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="783,346 797,346 790,360" fill="#15130f"/>
+  <rect x="566" y="362" width="88" height="120" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="656" y="362" width="88" height="120" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="746" y="362" width="88" height="120" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="610" y="408" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">$30</text>
+  <text x="700" y="408" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">$30</text>
+  <text x="790" y="408" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">$30</text>
+  <text x="610" y="442" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">own</text>
+  <text x="700" y="442" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">own</text>
+  <text x="790" y="442" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">own</text>
+  <text x="610" y="468" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">tokens</text>
+  <text x="700" y="468" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">tokens</text>
+  <text x="790" y="468" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">tokens</text>
+  <text x="700" y="520" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Tokens are not shared</text>
+  <line x1="540" y1="566" x2="860" y2="566" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="540" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Team of three: 3 x $30 = $90</text>
+  <text x="540" y="646" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Bill set by headcount</text>
+
+  <rect x="940" y="150" width="400" height="530" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="980" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">V0 PLUS</text>
+  <text x="980" y="238" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Credits per user</text>
+  <circle cx="1050" cy="296" r="26" fill="#ffffff" stroke="#15130f" stroke-width="2.5"/>
+  <circle cx="1140" cy="296" r="26" fill="#ffffff" stroke="#15130f" stroke-width="2.5"/>
+  <circle cx="1230" cy="296" r="26" fill="#ffffff" stroke="#15130f" stroke-width="2.5"/>
+  <text x="1050" y="303" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">A</text>
+  <text x="1140" y="303" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">B</text>
+  <text x="1230" y="303" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">C</text>
+  <line x1="1050" y1="324" x2="1050" y2="346" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1043,346 1057,346 1050,360" fill="#15130f"/>
+  <line x1="1140" y1="324" x2="1140" y2="346" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1133,346 1147,346 1140,360" fill="#15130f"/>
+  <line x1="1230" y1="324" x2="1230" y2="346" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1223,346 1237,346 1230,360" fill="#15130f"/>
+  <rect x="1006" y="362" width="88" height="100" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="1096" y="362" width="88" height="100" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="1186" y="362" width="88" height="100" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1050" y="404" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">$30</text>
+  <text x="1140" y="404" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">$30</text>
+  <text x="1230" y="404" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">$30</text>
+  <text x="1050" y="440" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">credits</text>
+  <text x="1140" y="440" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">credits</text>
+  <text x="1230" y="440" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">credits</text>
+  <rect x="1006" y="476" width="268" height="56" rx="12" fill="#ffffff" stroke="#15130f" stroke-width="1.5"/>
+  <text x="1140" y="511" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Bought credits: shared</text>
+  <line x1="980" y1="566" x2="1300" y2="566" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="980" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">Team of three: 3 x $30 = $90</text>
+  <text x="980" y="646" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Bill set by headcount</text>
+
+  <text x="700" y="740" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">List prices in US dollars, monthly billing. Vendor pages read 4 November 2026.</text>
+</svg>
