@@ -2,6 +2,7 @@
 title: "LinkedIn Premium Cost in India: Rupee Prices by Source"
 description: "LinkedIn Premium cost in India on 16 October 2026: LinkedIn shows no rupee price logged out, and Apple shows ten Premium Career items from Rs 999 to Rs 1,899."
 publishDate: 2026-10-16
+updatedDate: 2026-11-04
 category: [Career, Tools]
 img: /assets/stock-2.webp
 img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
@@ -208,7 +209,7 @@ The small-business plans against a free account, from the Small Business compare
 
 | Feature | Free | Premium Business | All-in-One | Company Page |
 |---|---|---|---|---|
-| InMail | No | 15 a month, credits roll over for 3 months | 30 a month, credits roll over for 3 months | No |
+| InMail | No | 15 a month, with a balance capped at 45 per LinkedIn Help | 30 a month; LinkedIn Help's credits page gives no All-in-One cap | No |
 | Who's viewed your profile or Page | Limited view | Previous 365 days | Previous 365 days | Previous 365 days |
 | Unlimited search | Basic search filters | Yes | Yes | No |
 | Custom call-to-action button, credibility highlights, dynamic cover images | No | Yes | Yes | Yes |
@@ -218,6 +219,30 @@ The small-business plans against a free account, from the Small Business compare
 
 - All-in-One's trial button on the compare page carries an asterisk, and the line beneath the table reads "Currently available to a limited group."
 - The compare page ticks the custom call-to-action button for Business, All-in-One and Company Page. [LinkedIn's Help page on the custom button](https://www.linkedin.com/help/linkedin/answer/a1484520) limits it to "a select group" of Premium Business, Sales Navigator and Recruiter Lite subscribers, as I set out in [my post on where creator mode's profile link went](/blog/linkedin-creator-mode-not-showing/).
+- The compare page labels both InMail counts "with credits rolling over for 3 months". LinkedIn Help's credits page gives no rollover period, only a cap on the balance, and for Business that cap, 45, is three months of 15.
+
+### How Do LinkedIn InMail Credits Work?
+
+LinkedIn Help's [InMail credits and renewal page](https://www.linkedin.com/help/linkedin/answer/a541643), which read "Last updated: 3 months ago" on 4 November 2026, gives these allotments and caps, as of November 2026:
+
+| Plan | Credits each month | Most credits you can hold |
+|---|---|---|
+| Premium Career | 5 | 15 |
+| Premium Business | 15 | 45 |
+| Sales Navigator Core | 50 | 150 (listed for Sales Navigator) |
+| Recruiter Lite | 30 | 120 |
+
+For All-in-One, the figure comes from its product page, which gives "30 InMail credits monthly" and no cap. The rules on LinkedIn Help's credits page, plus two from LinkedIn's [Send an InMail Message page](https://www.linkedin.com/help/linkedin/answer/a546814):
+
+- **Renewal:** new credits arrive "on the first day of your billing cycle", counted from the date you first signed up. Sales Navigator credits renew on the first day of every month, "regardless of your billing cycle".
+- **Credit back:** "Every InMail message that is accepted/declined or responded to directly within 90 days of it being sent is credited back." A Quick Reply counts as a response, and a pending message counts as neither accepted nor declined.
+- **One at a time:** you cannot send a member a second InMail until they respond to the first.
+- **Upgrades and cancels:** credits "are not transferrable when upgrading your account", Premium credits cannot be used in Sales Navigator or LinkedIn Recruiter, and the balance becomes zero when Premium is cancelled.
+- **No top-ups:** LinkedIn offers no plan with unlimited credits, and the InMail page says it is "not possible to purchase additional InMail message credits outside of the monthly allotment".
+- **Open Profile:** if a member has the Open Profile Premium feature enabled, "you can message them for free", per the InMail page; [my guide to 1st, 2nd and 3rd-degree connections](/blog/what-does-3rd-mean-on-linkedin/) covers which members each messaging route reaches.
+- **Your balance:** the compose window shows the credits left, and LinkedIn's [page on viewing InMail credits](https://www.linkedin.com/help/linkedin/answer/a545593) puts the count on My Premium: Me, then Premium features, then See all features and the InMail dropdown.
+
+LinkedIn changes these rules, so check the page's "Last updated" line before you plan around a cap.
 
 ## Is LinkedIn Premium Worth It in India?
 

@@ -14,6 +14,8 @@ faqs:
     a: "No LinkedIn page I read on 16 October 2026 gives a figure. Guides say 60 characters (Resume Geni), about 60-70 (AuthoredUp), about 70 (Derrick) and 80 (Jobscan), so a role keyword that ends inside the first 60 characters clears all four claims."
   - q: "Is the LinkedIn headline limit different on mobile?"
     a: "No LinkedIn page I read gives a separate mobile limit. Derrick's guide says 220 on desktop and 240 on mobile, five other current guides give 220 alone, and a 2018 newsletter's split of 120 on the website and 220 in the app predates them."
+  - q: "What is the LinkedIn About section character limit?"
+    a: "Guides such as Linked Helper and AuthoredUp give 2,600 characters. LinkedIn's Edit the About section and Edit the Introduction section Help pages state no number, checked again on 4 November 2026."
   - q: "What is the LinkedIn post character limit?"
     a: "3,000 characters. LinkedIn's Post and share updates Help page says posts can contain up to 3,000 characters and points longer pieces to an article on LinkedIn's publishing platform."
 ---
