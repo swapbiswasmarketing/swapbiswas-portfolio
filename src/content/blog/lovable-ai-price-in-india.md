@@ -105,9 +105,9 @@ Every in-app item on the two listings, read on 10 October 2026:
 - The 25-credit packs have no web equivalent, since the web's smallest top-up is 50 credits.
 - Inside the iPhone app Apple takes the payment, and [Apple's payment methods page for India](https://support.apple.com/en-in/111741) lists Apple Account balance, Mastercard, Net Banking for adding funds only, UPI and Visa.
 
-Android works differently. Lovable's docs say "On Android, in-app purchases aren't available yet", so an Android user checks out on lovable.dev with Stripe, and [Google Play's India listing](https://play.google.com/store/apps/details?id=dev.lovable.build&hl=en_IN&gl=IN) showed no Lovable price on 10 October 2026.
+Android works differently. Lovable's docs say "On Android, in-app purchases aren't available yet", so an Android user checks out on lovable.dev with Stripe, and [Google Play's India listing](https://play.google.com/store/apps/details?id=dev.lovable.build&hl=en_IN&gl=IN) showed no Lovable price on 10 October 2026. An app can also be missing from India's stores entirely, which is why [the CapCut Pro price in India](/blog/capcut-pro-price-in-india/) has no rupee figure on either store.
 
-Claude's public pricing page also showed dollars to a logged-out visitor in India that day, beside rupee prices on Apple's India listing, and [Claude Pro's price in India by checkout](/blog/claude-pro-price-in-india/) has those figures. For Replit, the same app-versus-web question comes down to [the exchange rate at which Replit's App Store and web prices cost the same](/blog/replit-price-in-india/).
+Claude's public pricing page also showed dollars to a logged-out visitor in India that day, beside rupee prices on Apple's India listing, and [Claude Pro's price in India by checkout](/blog/claude-pro-price-in-india/) has those figures. For Replit, the same app-versus-web question comes down to [the exchange rate at which Replit's App Store and web prices cost the same](/blog/replit-price-in-india/). Wondershare's Filmora shows a similar split, with no rupee figure on its own shop page and named rupee plans on Apple's India store, as [the Filmora rupee price sheet](/blog/filmora-price-in-india/) records.
 
 ## What a Year of Lovable Pro Costs From India
 

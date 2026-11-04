@@ -115,7 +115,7 @@ Canva's pages differ on paying for a pass with UPI. The pricing page's FAQ on wh
 
 ## Canva Pro Price in India on the App Store and Google Play
 
-Apple's India App Store lists Canva Pro at the web's ₹500 a month and ₹4,000 a year, beside items with the same names at ₹499 and ₹3,999, while Google Play India shows one price range for all of Canva's in-app items.
+Apple's India App Store lists Canva Pro at the web's ₹500 a month and ₹4,000 a year, beside items with the same names at ₹499 and ₹3,999, while Google Play India shows one price range for all of Canva's in-app items. Not every creator app has an India listing to compare: CapCut's India App Store and Google Play pages returned not found on 4 November 2026, so there is [no official CapCut Pro price in India](/blog/capcut-pro-price-in-india/) to set beside Canva's.
 
 | What you buy | canva.com, logged out from India | Apple App Store, India | Google Play, India |
 |---|---|---|---|
@@ -137,7 +137,7 @@ Apple's column is the In-App Purchases list on [Canva's India App Store listing]
 - Canva's pricing FAQ offers AI Pass and AI top-ups to users "who subscribe online".
 - Apple's tax rule is from its [2023 tech talk on App Store pricing](https://developer.apple.com/videos/play/tech-talks/110364/): "Prices advertised to customers in all countries except the U.S. and Canada include taxes".
 
-Canva prints rupees on its own pricing page; for Claude and Lovable, the vendors' own pages showed dollars and the rupee prices sat on app store listings, as my [Claude Pro price check by checkout](/blog/claude-pro-price-in-india/) and [Lovable price check for India](/blog/lovable-ai-price-in-india/) record. ElevenLabs takes the same route, with dollars on its pricing page and rupees appearing at checkout and in the app stores, as [my check of ElevenLabs plans for Indian buyers](/blog/elevenlabs-price-in-india/) found. Midjourney's help centre says it accepts payment in US dollars only and it shows no rupee price on its website, which [my look at whether Midjourney costs anything](/blog/is-midjourney-free/) covers along with the bank conversion.
+Canva prints rupees on its own pricing page; for Claude and Lovable, the vendors' own pages showed dollars and the rupee prices sat on app store listings, as my [Claude Pro price check by checkout](/blog/claude-pro-price-in-india/) and [Lovable price check for India](/blog/lovable-ai-price-in-india/) record. ElevenLabs takes the same route, with dollars on its pricing page and rupees appearing at checkout and in the app stores, as [my check of ElevenLabs plans for Indian buyers](/blog/elevenlabs-price-in-india/) found. Midjourney's help centre says it accepts payment in US dollars only and it shows no rupee price on its website, which [my look at whether Midjourney costs anything](/blog/is-midjourney-free/) covers along with the bank conversion. Wondershare's Filmora shop page showed dollars as well, with named rupee plans on Apple's India listings, which the [Filmora price comparison by store](/blog/filmora-price-in-india/) sets out.
 
 ## What Happened to Canva Teams?
 

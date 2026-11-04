@@ -106,7 +106,7 @@ What those figures mean next to the web prices:
 - Creator Annual at ₹22,900 is ₹90 less than ten months at ₹2,299 (₹22,990), close to the web's rule of 10 months' price for a year.
 - The listing names a Go plan at ₹1,100 a month. The web pricing page lists no plan called Go, and the listing does not say what Go includes, so read its credits on the in-app screen before buying.
 
-An app subscription has its own rules. ElevenLabs' [article on mobile vs website subscriptions](https://elevenlabs.io/docs/help-center/product/mobile-apps/elevenlabs-for-ios-and-android/managing-your-elevenlabs-subscription-mobile-app-vs-website) says a plan bought in the app "is handled entirely by the app store", that it rules out Pay As You Go, and that moving to a website plan means cancelling in the store and waiting for the period to end. Its [credits article for the apps](https://elevenlabs.io/docs/help-center/product/mobile-apps/elevenlabs-for-ios-and-android/how-do-credits-work-on-the-elevenlabs-ios-or-android-app) says "You can use your subscription across our website, iOS and Android apps."
+An app subscription has its own rules. ElevenLabs' [article on mobile vs website subscriptions](https://elevenlabs.io/docs/help-center/product/mobile-apps/elevenlabs-for-ios-and-android/managing-your-elevenlabs-subscription-mobile-app-vs-website) says a plan bought in the app "is handled entirely by the app store", that it rules out Pay As You Go, and that moving to a website plan means cancelling in the store and waiting for the period to end. Its [credits article for the apps](https://elevenlabs.io/docs/help-center/product/mobile-apps/elevenlabs-for-ios-and-android/how-do-credits-work-on-the-elevenlabs-ios-or-android-app) says "You can use your subscription across our website, iOS and Android apps." Some creator apps have no India listing at all: CapCut's India App Store and Google Play pages returned not found on 4 November 2026, as the post on [why CapCut Pro has no India price](/blog/capcut-pro-price-in-india/) records.
 
 ## ElevenLabs Price in India per Minute, by Plan
 
@@ -161,7 +161,7 @@ Yes: the Free plan costs $0 and gives **10,000 credits a month**, about 10 minut
 - No rollover: the [credit rollover article](https://elevenlabs.io/docs/help-center/account/general/how-does-credit-rollover-work) says "credit rollover does not apply to accounts on the free tier".
 - Top-ups: Pay As You Go is open to the Free plan, but the PAYG page says plan limits such as voice slots "come from your subscription plan, not your PAYG balance".
 
-A free account suits a test of voices and pacing. A voiceover for a client, an ad or a monetised channel needs Starter or above for the commercial licence.
+A free account suits a test of voices and pacing. A voiceover for a client, an ad or a monetised channel needs Starter or above for the commercial licence. Suno draws a similar line for music: songs made on its free plan are for non-commercial use only, as the [Suno free plan breakdown](/blog/is-suno-ai-free/) sets out.
 
 ## Annual Billing, Rollover and Downgrade Rules
 

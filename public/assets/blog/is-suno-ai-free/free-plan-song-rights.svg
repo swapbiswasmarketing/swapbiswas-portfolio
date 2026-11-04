@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect x="0" y="0" width="1400" height="820" fill="#f6f4ef"/>
+
+  <text x="70" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What a Suno song can do, by plan and sign-up date</text>
+  <text x="70" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">From Suno's pricing page and help center, read 4 November 2026</text>
+
+  <rect x="70" y="150" width="400" height="480" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">FREE, JOINED BEFORE</text>
+  <text x="100" y="220" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">3 SEP 2026</text>
+  <text x="100" y="264" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Free, older account</text>
+  <line x1="100" y1="286" x2="440" y2="286" stroke="#e4dfd6" stroke-width="1"/>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <circle cx="106" cy="323" r="4" fill="#15130f"/><text x="122" y="330">Up to 7 trial downloads</text>
+    <circle cx="106" cy="367" r="4" fill="#15130f"/><text x="122" y="374">Can buy more downloads</text>
+    <circle cx="106" cy="411" r="4" fill="#15130f"/><text x="122" y="418">MP3 only, no WAV</text>
+    <circle cx="106" cy="455" r="4" fill="#15130f"/><text x="122" y="462">Trial downloads: not</text>
+    <text x="122" y="490">for commercial use</text>
+    <circle cx="106" cy="527" r="4" fill="#15130f"/><text x="122" y="534">Personal, non-commercial use</text>
+    <circle cx="106" cy="571" r="4" fill="#15130f"/><text x="122" y="578" font-weight="600" fill="#15130f">Suno owns the song</text>
+  </g>
+
+  <rect x="500" y="150" width="400" height="480" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="530" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">FREE, JOINED ON OR AFTER</text>
+  <text x="530" y="220" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">3 SEP 2026</text>
+  <text x="530" y="264" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Free, new account</text>
+  <line x1="530" y1="286" x2="870" y2="286" stroke="#e4dfd6" stroke-width="1"/>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <circle cx="536" cy="323" r="4" fill="#15130f"/><text x="552" y="330">Occasional trial downloads</text>
+    <circle cx="536" cy="367" r="4" fill="#15130f"/><text x="552" y="374">Can buy downloads</text>
+    <circle cx="536" cy="411" r="4" fill="#15130f"/><text x="552" y="418">MP3 only, no WAV</text>
+    <circle cx="536" cy="455" r="4" fill="#15130f"/><text x="552" y="462">Trial downloads: not</text>
+    <text x="552" y="490">for commercial use</text>
+    <circle cx="536" cy="527" r="4" fill="#15130f"/><text x="552" y="534">Personal, non-commercial use</text>
+    <circle cx="536" cy="571" r="4" fill="#15130f"/><text x="552" y="578" font-weight="600" fill="#15130f">Suno owns the song</text>
+  </g>
+
+  <rect x="930" y="150" width="400" height="480" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="960" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">PRO $10 OR PREMIER $30</text>
+  <text x="960" y="220" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">A MONTH, BILLED MONTHLY</text>
+  <text x="960" y="264" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Subscribed</text>
+  <line x1="960" y1="286" x2="1300" y2="286" stroke="#e4dfd6" stroke-width="1"/>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <circle cx="966" cy="323" r="4" fill="#2a7347"/><text x="982" y="330">20 (Pro) or 60 (Premier)</text>
+    <text x="982" y="358">downloads a month</text>
+    <circle cx="966" cy="395" r="4" fill="#2a7347"/><text x="982" y="402">WAV files on suno.com</text>
+    <circle cx="966" cy="439" r="4" fill="#2a7347"/><text x="982" y="446">Commercial use rights</text>
+    <circle cx="966" cy="483" r="4" fill="#2a7347"/><text x="982" y="490">Distribute to Spotify</text>
+    <circle cx="966" cy="527" r="4" fill="#2a7347"/><text x="982" y="534" font-weight="600" fill="#15130f">You own songs made</text>
+    <text x="982" y="562" font-weight="600" fill="#15130f">while subscribed</text>
+    <circle cx="966" cy="599" r="4" fill="#2a7347"/><text x="982" y="606">Rights kept after you cancel</text>
+  </g>
+
+  <rect x="70" y="660" width="1260" height="110" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="702" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">SUBSCRIBE LATER</text>
+  <text x="100" y="742" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">A song made on Free stays non-commercial: no retroactive rights by default.</text>
+</svg>
