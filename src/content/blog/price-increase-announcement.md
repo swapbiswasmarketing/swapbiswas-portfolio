@@ -33,7 +33,7 @@ howTo:
 
 Among the top 500 players in SaaS and AI with transparent pricing, [there were more than 1,800 pricing changes in 2025 alone, or 3.6 per company](https://www.growthunhinged.com/p/2025-state-of-saas-pricing-changes), according to the PricingSaaS index published in Growth Unhinged. Price movement is now routine. The **price increase announcement** is the part almost nobody runs well.
 
-Here is the point of view I will defend for the rest of this post: a price increase gets treated as a copywriting problem, and that is exactly why the templates keep failing. It is a GTM operations problem. The announcement is not the project, it is the artifact the project produces. Get the segmentation, the concession ceiling, and the internal enablement right and a plain email works. Get them wrong and no amount of empathetic phrasing saves the renewal.
+A price increase gets treated as a copywriting problem, and that is exactly why the templates keep failing. It is a GTM operations problem, and the announcement is the artifact that project produces. Get the segmentation, the concession ceiling, and the internal enablement right and a plain email works. Get them wrong and no amount of empathetic phrasing saves the renewal.
 
 So the templates are at the bottom of this post, where they belong, with one variant per segment tier. Everything above them is the work that decides whether they land.
 
@@ -95,7 +95,7 @@ The arithmetic is simple enough to settle in one meeting. Take a $2M renewal boo
 
 None of those are catastrophic on their own. The reason to set the ceiling anyway is compounding: next year's increase is calculated off the lower base, so a concession granted once is a permanent haircut on every future increase for that account. That is a finance decision, and it should be made once, at a tier level, rather than improvised account by account under renewal pressure.
 
-The harder half of the ceiling is knowing when to let an account churn. If an account demands a concession deeper than its tier ceiling and is not strategically load-bearing - no reference value, no expansion path, no logo weight - the correct answer is to let the renewal lapse. Writing that down before the announcement goes out is what stops a save desk from quietly buying revenue at a loss.
+The harder half of the ceiling is knowing when to let an account churn. If an account demands a concession deeper than its tier ceiling and is not strategically important - no reference value, no expansion path, no logo weight - the correct answer is to let the renewal lapse. Writing that down before the announcement goes out is what stops a save desk from buying revenue at a loss.
 
 ## Price Increase Justification: Lead With What Shipped
 
