@@ -119,6 +119,8 @@ The same overview page says the badge is an icon next to your name, visible to m
 
 The same page claims "verified members naturally see 60% more profile views and 50% more engagement on average". That is LinkedIn's own figure, and the page gives no method or date for it. Profile views also count something different from search appearances, a split covered in [search appearances vs profile views on LinkedIn](/blog/linkedin-search-appearances-vs-profile-views/).
 
+Verification also comes up for job seekers: LinkedIn's Easy Apply limits page says a member who thinks their account was flagged for inauthentic activity by mistake can verify it to increase the limit, which [my Easy Apply guide](/blog/linkedin-easy-apply/) covers.
+
 ## The 2023 Aadhaar Flow vs the DigiLocker Flow Today
 
 Much of the coverage still online dates from the June 2023 launch (Business Standard, Inc42, Business Today). [Business Today's 7 June 2023 report](https://www.businesstoday.in/technology/story/linkedin-now-allows-indian-users-to-verify-their-identity-on-the-platform-here-is-how-384627-2023-06-07), which quotes LinkedIn India's blog post, set out the steps of that time. Here they are against the help page read on 31 October 2026:

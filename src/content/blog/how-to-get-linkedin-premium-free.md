@@ -159,6 +159,8 @@ For a student in India, that leaves the routes open to anyone: LinkedIn's trial,
 | Journalists | "working journalists, including freelancers, who regularly report, write, edit, or contribute to reputable news organizations"; approval "is not automatic or guaranteed" | Premium Career for "12 months from code activation; renewal is not automatic" | [LinkedIn for Journalists](https://news.linkedin.com/media-resources/linkedin-for-journalists) |
 | Premium Company Page trial | "a Super Admin of a small to mid-sized business with an existing free LinkedIn Company Page" | "a free trial of LinkedIn Premium Company Page Essentials", for the Page rather than your profile | [LinkedIn's Company Page product page](https://premium.linkedin.com/business/company-page/essentials) |
 
+LinkedIn's Top Voices benefits page names one more route: members of its invite-only Top Voices program get complimentary access to a Premium Business subscription, as covered in [how the LinkedIn Top Voice badge works](/blog/linkedin-top-voice/).
+
 [Skylead's guide to free Premium](https://skylead.io/blog/how-to-get-linkedin-premium-free/) also lists Visual Studio Dev Essentials as a route, but on 16 October 2026 Microsoft's [Dev Essentials page](https://visualstudio.microsoft.com/dev-essentials/) listed no LinkedIn benefit among its tools and training.
 
 ## How to Get LinkedIn Premium for Free: Claim in This Order

@@ -181,6 +181,8 @@ A feed post with a link is the direct route to your own domain, and how you atta
 
 All three formats report "Profile viewers from this post" in their analytics, a separate count from [how often you appear in LinkedIn search](/blog/linkedin-search-appearances-vs-profile-views/).
 
+LinkedIn's Top Voices page also names newsletters among the formats to vary, one of the best practices listed in [how the Top Voice badge is awarded](/blog/linkedin-top-voice/).
+
 ## LinkedIn Newsletter vs Article for Marketers Who Own a Blog
 
 Match the LinkedIn article vs newsletter decision to the goal:

@@ -100,9 +100,72 @@ https://swapbiswas.com/blog/what-does-3rd-mean-on-linkedin/?utm_source=linkedin&
 
 ---
 
-## Gated, not yet written (batch 2 candidates)
-- linkedin-easy-apply: TOP5, realistic ~3-10 visits/month, top-3 upside 35-75. Brief: /tmp/kit/briefs/C13.md (VM-local). Angle: Easy Apply by LinkedIn's own rules (daily cap resets at end of day UTC, no published number, submitted applications cannot be edited or withdrawn). Must link how-to-add-resume-to-linkedin for resume upload, not re-explain it.
-- linkedin-top-voice: TOP5, realistic 1-4 visits/month, top-3 upside 10-20. Angle: Help page a776208 links a self-nomination form reviewed quarterly; gold Community Top Voice ended 8 Oct 2024 (a6245087).
+## Batch 2 (publishDate 2026-11-04)
+
+### linkedin-easy-apply
+- Primary keyword: linkedin easy apply (Semrush US 590 KD 42; IN 260 KD 41); variant what is easy apply on linkedin (US 110 KD 30)
+- Verdict: TOP5, low value (expected US #4-10; top 5 is soft: The Muse 2020, The Forage 2023, spam mirrors)
+- Traffic: realistic ~3-10 visits/month (central ~5); top-3 upside ~35-75/month
+- Proof page: https://www.mogulmillennial.com/linkedin-easy-apply/ (est. DR 30-45; hand-written, staff byline, 2020; about #3 once spam is removed but #11 raw, so not validated as top 5)
+- Refresh: 2027-02-04. The Easy Apply limits page (a8068422) may publish a number or change the UTC reset; re-check it and a512388 / a512353 every 3 months.
+- Footprint: `| linkedin-easy-apply | what-is + Easy Apply vs company-site decision table + limits section | exception-first open (a submitted application cannot be edited or withdrawn) | table | synthesized |`
+- Review ledger: `linkedin-easy-apply | status=new, review_due=2026-11-25`
+- First-hand question: From your own signed-in LinkedIn on desktop, without submitting any application: does Jobs search show the Easy Apply filter, and what are the exact labels on your Job application settings page (saved answers and resume sections)? (Belongs in "How to Use LinkedIn Easy Apply, Step by Step".)
+- Hosts edited (one sentence each): linkedin-open-to-work (hub), how-to-add-resume-to-linkedin (batch 1 post), linkedin-verification-digilocker
+
+LinkedIn draft:
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's counting table with a single sealed envelope resting on a brass tray, a small sand-glass beside it with the sand fully run through, a stack of blank cards held by a stone weight, a quill laid down across an inkwell, a single vermilion wax seal on the envelope, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+LinkedIn Easy Apply saves you a trip to a company website.
+It also takes away the undo button.
+
+- LinkedIn Help: "You cannot edit or withdraw an application" once it is submitted through LinkedIn. Its fix is an InMail to the job poster.
+- There is a daily Easy Apply limit, and it resets "at the end of the day (UTC)". LinkedIn publishes no number; the 50, 60 and 100 a day figures come from auto-apply tool vendors.
+- Apply too fast and LinkedIn can trigger "a temporary pause".
+- When a recruiting agency posts the job, LinkedIn says your application may be shared with other clients of that agency.
+
+Do you still use Easy Apply, or apply on the company site?
+
+https://swapbiswas.com/blog/linkedin-easy-apply/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-easy-apply
+
+#LinkedIn #JobSearch #LinkedInTips #Careers
+
+---
+
+### linkedin-top-voice
+- Primary keyword: linkedin top voice (Semrush US 110 KD 41; IN 260 KD 42); variant linkedin top voice badge (US 20)
+- Verdict: TOP5, low value (a small vendor glossary entry sits at #1 in the WebSearch snapshot; downgraded because the SERP was not Google's and the proof page's DR was not measured)
+- Traffic: realistic 1-4 visits/month; top-3 upside ~10-20/month (less if an AI Overview answers it)
+- Proof page: https://contentin.io/glossary/top-voice-badge/ (est. DR under 40; byline, dated 22 July 2026; says "You don't apply" and does not mention the nomination form)
+- Refresh: 2027-02-04. The nomination form is the whole angle and LinkedIn may change or remove it; re-fetch a776208, a6245087 and a1368392 every 3 months.
+- Footprint: `| linkedin-top-voice | what-is + dated status explainer (blue vs retired gold vs verification badge) + nomination how-to | stat-led open (renewed twice per year, at least six months) | list | synthesized |`
+- Review ledger: `linkedin-top-voice | status=new, review_due=2026-11-25`
+- First-hand question: Have you ever submitted LinkedIn's Top Voice nomination form (for yourself or a colleague)? If so, which questions did it ask and did LinkedIn reply? (Belongs in the nomination-form H2, after the paragraph beginning "The form's questions load by script". Until answered, no first-person nomination claim.)
+- Hosts edited (one sentence each): linkedin-creator-mode-not-showing (hub), how-to-get-linkedin-premium-free, linkedin-newsletter-vs-article
+
+LinkedIn draft:
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a lectern holding an open bound register beside a small wax-sealed nomination letter, a brass hand bell and a folded scholar's ribbon, a calendar wheel carved in wood turned halfway, a single vermilion ribbon marking a page of the register, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+The blue LinkedIn Top Voice badge is invite-only.
+LinkedIn's own Help page also links a form to nominate yourself.
+
+- LinkedIn says it "reviews nominations quarterly".
+- Badges are "assessed and renewed twice per year", and an invited member stays a Top Voice "for at least six months".
+- The gold Community Top Voice badge from collaborative articles was retired "starting October 8, 2024".
+- LinkedIn's benefits page says Top Voices get complimentary access to a Premium Business subscription.
+- None of the four LinkedIn Help pages on Top Voices names a follower threshold.
+
+Did you know the nomination form existed?
+
+https://swapbiswas.com/blog/linkedin-top-voice/?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-top-voice
+
+#LinkedIn #LinkedInTips #PersonalBranding #ThoughtLeadership
+
+---
 
 ## Rejected
 - how to change linkedin url: DROP. Google US top 5 is LinkedIn Help (#1, #2, #4), YouTube (#3) and Quora (#5); replug.io (updated 22 Oct 2026) already covers the old-URL rules. 1-5 visits/month. Could be an FAQ in a future profile post.

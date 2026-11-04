@@ -79,6 +79,8 @@ Read these rules before step 6, because one of them cannot be undone:
 - If the file won't attach, LinkedIn's advice is to try a different browser.
 - To reuse a stored resume, the same Resume section lets you "select a recent resume or upload one" (a512405), on LinkedIn.com and the mobile app.
 
+Easy Apply has rules of its own beyond the resume, including a daily limit LinkedIn gives no number for, and [my guide to LinkedIn Easy Apply](/blog/linkedin-easy-apply/) sets them out.
+
 What LinkedIn Premium adds to job search, and what each plan costs in India, is in [my LinkedIn Premium price breakdown](/blog/linkedin-premium-cost-in-india/).
 
 ## How to Add Resume to LinkedIn Profile Through the Featured Section
