@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760">
+  <rect x="0" y="0" width="1400" height="760" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Instagram's hashtag numbers, and which one limits a caption</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Top: the caption limit by date. Bottom: a separate quota on Meta's developer API.</text>
+
+  <text x="60" y="164" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">CAPTION LIMIT, BY DATE</text>
+
+  <rect x="60" y="182" width="290" height="230" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="222" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">BEFORE THE CHANGE</text>
+  <text x="84" y="300" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="68" font-weight="600" fill="#15130f">30</text>
+  <text x="84" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">per caption</text>
+  <text x="84" y="384" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Business Today</text>
+
+  <line x1="352" y1="297" x2="374" y2="297" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="374,290 388,297 374,304" fill="#15130f"/>
+
+  <rect x="390" y="182" width="290" height="230" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="414" y="222" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">FEB 2024</text>
+  <text x="414" y="300" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="68" font-weight="600" fill="#15130f">5</text>
+  <text x="414" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">glitch, per IG</text>
+  <text x="414" y="384" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Social Media Today</text>
+
+  <line x1="682" y1="297" x2="704" y2="297" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="704,290 718,297 704,304" fill="#15130f"/>
+
+  <rect x="720" y="182" width="290" height="230" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="222" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">NOV 2025</text>
+  <text x="744" y="300" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="68" font-weight="600" fill="#15130f">3</text>
+  <text x="744" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">reported test</text>
+  <text x="744" y="384" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">PiunikaWeb, Planoly</text>
+
+  <line x1="1012" y1="297" x2="1034" y2="297" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1034,290 1048,297 1034,304" fill="#15130f"/>
+
+  <rect x="1050" y="182" width="290" height="230" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1074" y="222" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#15130f">18 DEC 2025</text>
+  <text x="1074" y="300" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="68" font-weight="600" fill="#b53b15">5</text>
+  <text x="1074" y="342" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">per reel or post</text>
+  <text x="1074" y="384" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#3a3632">@creators on Threads</text>
+
+  <line x1="60" y1="456" x2="1340" y2="456" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="60" y="500" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">SEPARATE TRACK: META'S HASHTAG SEARCH API</text>
+
+  <rect x="60" y="518" width="1280" height="172" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="96" y="630" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="68" font-weight="600" fill="#15130f">30</text>
+  <line x1="220" y1="546" x2="220" y2="662" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="252" y="568" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#15130f">unique hashtags an app can query per rolling 7 days</text>
+  <text x="252" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">for one Business or Creator account (Hashtag Search guide, updated 17 Aug 2026)</text>
+  <text x="252" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">It limits hashtag lookups by tools, not what you type in a caption.</text>
+</svg>

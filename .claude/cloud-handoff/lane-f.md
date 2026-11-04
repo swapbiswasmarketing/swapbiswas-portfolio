@@ -117,6 +117,45 @@ https://swapbiswas.com/blog/x-character-limit/?utm_source=linkedin&utm_medium=so
 
 ---
 
+## Batch 2 (committed 2026-11-04)
+
+### instagram-hashtag-limit
+- Primary keyword: instagram hashtag limit (variants: instagram hashtag limit 2026, five, 3, change)
+- Verdict: LONGTAIL_ONLY
+- Realistic: 3-30 visits/month (US/global, #6-10, volume unmeasured; Ahrefs re-checked before this batch, still "Insufficient plan"). Top-3 upside: 40-400/month (an AI Overview answering "5" pushes it to the low end).
+- Proof page: none valid in the top 5 (Planoly #1 vendor, Curator/Emplifi help pages, Social Samosa and Business Today news, all est. DR 50-70+). Nearest small site: digitalapplied.com (est. DR 20-40), below #5, no author, no Meta source.
+- Refresh: high. Each quarter (next 2027-02-04) re-check the @creators Threads post, Meta's Hashtag Search guide (updated 17 Aug 2026), the IG User Media reference (caption line "Maximum 2200 characters, 30 hashtags, and 20 @ tags.", updated 28 Sep 2026) and the Instagram Help Center article (unreadable from the cloud VM; the post quotes nothing from it). Watch for the 5 extending to comments or Stories.
+- Facts QA changes worth knowing: the Feb 2024 five-tag cap is described as a "glitch" per Instagram's statement in Social Media Today's update, not a test; a May 2024 Mosseri reel quote was removed because the reel could not be re-read (login wall / HTTP 429).
+- Footprint: `| instagram-hashtag-limit | limits explainer: three numbers and who says so | stat-led open (the 5, dated) | table | synthesized |`
+- Review ledger: `instagram-hashtag-limit | status=new, review_due=2026-11-25`
+- First-hand question: Does Swapnil post on Instagram for himself or for work, and if so, did the caption composer stop him at a 6th hashtag (app or desktop, and on what date)? One dated observation would go at the end of the "What Is the Instagram Hashtag Limit in 2026?" H2.
+- Hosts edited (one sentence each): linkedin-post-size (pool), youtube-post-image-size (pool, batch-1 post), linkedin-headline-character-limit (outside pool, hub down-link).
+
+### LinkedIn draft (batch 2)
+
+### Instagram Hashtag Limit: 5, Not 3 or 30, and Who Says So
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a counting-house table with five small brass weights lined up in a row beside an abacus, a folded ledger, a pair of iron dividers and a sand shaker, a single vermilion red thread tied around the fifth weight, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+The Instagram hashtag limit is 5 per reel or post.
+The 3 and the 30 you still see belong to a test and to an API quota.
+
+- 18 December 2025: Instagram's @creators account said it "will allow up to 5 hashtags in a reel or post".
+- 3 was a cap some accounts hit during a test in November and early December 2025, per press reports.
+- 30 is the number of unique hashtags an app can look up through Meta's Hashtag Search API per rolling 7 days.
+- Meta's IG User Media reference still lists 30 hashtags per caption for posts published through the API.
+- Whether the 5 applies to comments or Stories: Instagram has not said.
+
+Which of the three numbers is still in your team's caption checklist?
+
+https://swapbiswas.com/blog/instagram-hashtag-limit/?utm_source=linkedin&utm_medium=social&utm_campaign=instagram-hashtag-limit
+
+#Instagram #SocialMedia #ContentMarketing #Marketing
+
+---
+
 ## Rejected
 | candidate | verdict | why |
 |---|---|---|
@@ -127,4 +166,3 @@ https://swapbiswas.com/blog/x-character-limit/?utm_source=linkedin&utm_medium=so
 | meta ads library (how to use) | LONGTAIL_ONLY / borderline DROP, not picked | facebook.com/ads/library returns 403; no readable Meta page gives the website's search steps (only the API reference); 1-15/month against ~20 ad-tool vendor pages. |
 | youtube shorts length limit | LONGTAIL_ONLY, not picked | 2-15/month (below the >=10 bar); zero-click "3 minutes" answer; DR 50-90 competitors. Note for a refresh: a third party says the claim block on Shorts over one minute ended 24 Sep 2026, but YouTube Help answer/15424877 still said "blocked globally" on 4 Nov 2026. |
 | how to schedule instagram posts | dropped before gating | Depends on Instagram Help, which is unreadable here; head term owned by Later/Buffer/Hootsuite (DR 80+). Replaced by youtube-post-image-size. |
-| instagram hashtag limit | LONGTAIL_ONLY, queued for batch 2 | 3-30/month; angle is the dated 5 / 3 / 30 table from the @creators Threads post (18 Dec 2025) and the Graph API hashtag-search cap. |
