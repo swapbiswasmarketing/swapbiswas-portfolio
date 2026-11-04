@@ -2,6 +2,7 @@
 title: "Antigravity Pricing in India: Every Google Plan in Rupees"
 description: "Antigravity pricing in India, 31 Oct 2026: free with a weekly quota, and Google AI Pro at Rs 1,950 a month, the lower-priced of two plans with a 5-hour refresh."
 publishDate: 2026-10-31
+updatedDate: 2026-11-04
 category: [AI, Tools]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
@@ -59,6 +60,10 @@ Not for new claims. On 31 October 2026, [Jio's terms page](https://www.jio.com/j
 If you claimed in time, Jio's terms, as I read them on 16 October 2026 for my Jio guide, defined your subscription as Google's plan, "named Google AI Pro or such other name as determined by Google", and Antigravity's docs assign quota by Google AI plan, so a claimed Jio plan should count as AI Pro in Antigravity until your 18 months end. Neither Google nor Jio says so in those words.
 
 On Google's AI Developers forum, two users have reported problems in practice. A [thread of 28 September 2026](https://discuss.ai.google.dev/t/subject-jio-google-ai-pro-entitlement-not-recognized-by-antigravity/185392) says an account whose Google One settings showed AI Pro offered through Jio stopped being accepted by Antigravity on 25 September 2026, and a [thread of 1 October 2026](https://discuss.ai.google.dev/t/google-ai-pro-provided-by-jio-entitlement-not-provisioned-for-antigravity-403-subscription-required-3501-while-code-assist-standard-tier-is-granted/186257) says "Antigravity treats the account as free tier"; that poster's Google account was registered in Germany, and a reply in the thread put the problem down to the plan's Indian region not matching the account's. These are user reports, not a statement from Google. The [Jio Gemini Pro offer guide](/blog/jio-gemini-pro-offer/) covers when your free months end and what month 19 costs.
+
+### Is Gemini CLI Still Free?
+
+Not for individual accounts. As of 4 November 2026, the banner on [Gemini CLI's site](https://geminicli.com/) reads "Unpaid tier and Google One users: Gemini CLI was replaced by Antigravity CLI on June 18th, 2026", so a free Google account or a Google AI plan now reaches Google's terminal agent through the Antigravity CLI and the quotas on this page. On [Antigravity's Models page](https://antigravity.google/docs/models/), Claude Sonnet 4.6 and Claude Opus 4.6 (thinking) carry a note that they "Will be removed on November 18, 2026".
 
 ## Antigravity Pricing by Google Plan: Rupees, Dollars and Google's Wording
 

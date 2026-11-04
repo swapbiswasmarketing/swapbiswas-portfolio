@@ -63,7 +63,7 @@ How credits are bought and kept, from the credits and usage docs:
 
 - Top-ups cost $15 per 50 credits on Pro ($0.30 a credit) and $30 per 50 on Business ($0.60 a credit). They are "billed as one-time payments through Stripe", last 12 months, and the smallest one-time top-up is 50 credits.
 - Unused monthly plan credits roll over while the subscription is active. They expire 2 months after issue on monthly billing, or 1 month after the annual period ends on annual billing.
-- Seats cost nothing extra. The pricing page FAQ says "plans are priced by the credits they include, not by seats", and every plan allows unlimited workspace members.
+- Seats cost nothing extra. The pricing page FAQ says "plans are priced by the credits they include, not by seats", and every plan allows unlimited workspace members. Bolt prices its Teams plan per member instead, and [Lovable vs Bolt](/blog/lovable-vs-bolt/) works through what that means for a three-person team.
 
 ## Lovable Pricing Plans in India: What Each Plan Includes
 

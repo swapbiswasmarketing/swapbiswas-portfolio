@@ -533,6 +533,14 @@
 		],
 		"hash": "7a8eff9c4d7c1163"
 	},
+	"/assets/blog/claude-command-not-found/five-checks.webp": {
+		"w": 1200,
+		"h": 806,
+		"v": [
+			660
+		],
+		"hash": "4158585c63a3a61f"
+	},
 	"/assets/blog/claude-design-vs-claude-code/deliverable-routing.webp": {
 		"w": 1200,
 		"h": 677,
@@ -685,6 +693,14 @@
 		],
 		"hash": "7c48c52511426c94"
 	},
+	"/assets/blog/codex-vs-claude-code/tier-map.webp": {
+		"w": 1200,
+		"h": 857,
+		"v": [
+			660
+		],
+		"hash": "5e1d870614e1d8f8"
+	},
 	"/assets/blog/company-boilerplate-examples/boilerplate-length-distribution.webp": {
 		"w": 1200,
 		"h": 737,
@@ -819,6 +835,14 @@
 			660
 		],
 		"hash": "f8582de9599e999c"
+	},
+	"/assets/blog/cursor-vs-claude-code/claude-in-cursor-routes.webp": {
+		"w": 1200,
+		"h": 669,
+		"v": [
+			660
+		],
+		"hash": "675188a6aa39159c"
 	},
 	"/assets/blog/customer-advisory-board/cab-scorecard.webp": {
 		"w": 1200,
@@ -1762,6 +1786,14 @@
 			660
 		],
 		"hash": "182a00a9fa1ff4d7"
+	},
+	"/assets/blog/lovable-vs-bolt/team-billing.webp": {
+		"w": 1200,
+		"h": 686,
+		"v": [
+			660
+		],
+		"hash": "3cee7db7889c075b"
 	},
 	"/assets/blog/make-a-powerpoint-with-claude-code/deck-route-by-destination.webp": {
 		"w": 1200,

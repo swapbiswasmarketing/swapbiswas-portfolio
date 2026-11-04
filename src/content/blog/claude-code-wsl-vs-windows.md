@@ -221,6 +221,8 @@ Symptoms specific to Windows and WSL, with the cause and fix Anthropic documents
 
 Sources: the [install troubleshooting error index](https://code.claude.com/docs/en/troubleshoot-install#find-your-error), the [interactive mode shortcuts](https://code.claude.com/docs/en/interactive-mode) for image paste, the Windows encoding notes in the tools reference for the UTF-16LE fix, and the Desktop troubleshooting section for the Git prompt.
 
+Inside WSL the shell is Linux's, so a missing `claude` reads as `command not found` rather than not recognized, and [the command-not-found checks for zsh and bash](/blog/claude-command-not-found/) match it to the install route.
+
 Claude Code in WSL binds `Ctrl+V` as well, but Windows Terminal's default paste takes priority over that binding, so press `Alt+V` there too; [my surface-by-surface image paste guide](/blog/claude-code-paste-image/) adds the VS Code chat panel and SSH sessions.
 
 ## Start Native, Then Add WSL 2 When the Repo Needs It

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
+  <rect x="0" y="0" width="1400" height="1000" fill="#f6f4ef"/>
+  <text x="40" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Codex vs Claude Code: what each price tier buys</text>
+  <text x="40" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Individual plans, US list prices per month, from both pricing pages on 4 November 2026</text>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c" letter-spacing="2">
+    <text x="40" y="168">PRICE</text>
+    <text x="236" y="168">CODEX (CHATGPT PLAN)</text>
+    <text x="804" y="168">CLAUDE CODE (CLAUDE PLAN)</text>
+  </g>
+
+  <g fill="#ffffff" stroke="#e4dfd6" stroke-width="1">
+    <rect x="40" y="190" width="180" height="106" rx="12"/>
+    <rect x="236" y="190" width="552" height="106" rx="12"/>
+    <rect x="804" y="190" width="556" height="106" rx="12"/>
+
+    <rect x="40" y="306" width="180" height="106" rx="12"/>
+    <rect x="236" y="306" width="552" height="106" rx="12"/>
+    <rect x="804" y="306" width="556" height="106" rx="12"/>
+
+    <rect x="40" y="422" width="180" height="106" rx="12"/>
+    <rect x="236" y="422" width="552" height="106" rx="12"/>
+    <rect x="804" y="422" width="556" height="106" rx="12"/>
+
+    <rect x="40" y="538" width="180" height="106" rx="12"/>
+    <rect x="236" y="538" width="552" height="106" rx="12"/>
+    <rect x="804" y="538" width="556" height="106" rx="12"/>
+
+    <rect x="40" y="654" width="180" height="106" rx="12"/>
+    <rect x="236" y="654" width="552" height="106" rx="12"/>
+    <rect x="804" y="654" width="556" height="106" rx="12"/>
+
+    <rect x="40" y="770" width="180" height="106" rx="12"/>
+    <rect x="236" y="770" width="552" height="106" rx="12"/>
+    <rect x="804" y="770" width="556" height="106" rx="12"/>
+  </g>
+
+  <g font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="34" font-weight="600" fill="#15130f">
+    <text x="64" y="255">$0</text>
+    <text x="64" y="371">$8</text>
+    <text x="64" y="487">$20</text>
+    <text x="64" y="603">$100</text>
+    <text x="64" y="719" fill="#b53b15">$200</text>
+    <text x="64" y="835">$500</text>
+  </g>
+
+  <g font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">
+    <text x="260" y="228">ChatGPT Free</text>
+    <text x="828" y="228">Claude Free</text>
+    <text x="260" y="344">ChatGPT Go</text>
+    <text x="828" y="344">No Claude plan at $8</text>
+    <text x="260" y="460">ChatGPT Plus</text>
+    <text x="828" y="460">Claude Pro ($17 a month billed yearly)</text>
+    <text x="260" y="576">ChatGPT Pro 100</text>
+    <text x="828" y="576">Claude Max</text>
+    <text x="260" y="692">ChatGPT Pro 200</text>
+    <text x="828" y="692">Claude Ultra</text>
+    <text x="260" y="808">ChatGPT Pro 500</text>
+    <text x="828" y="808">No individual Claude plan at $500</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="260" y="258">In the desktop app, GPT-6 Luna at Standard</text>
+    <text x="260" y="284">speed, subject to rollout</text>
+    <text x="828" y="258">Claude Code not included</text>
+    <text x="828" y="284">(Claude Code row reads No)</text>
+
+    <text x="260" y="374">In the desktop app, GPT-6 Luna at Standard</text>
+    <text x="260" y="400">speed, subject to rollout</text>
+    <text x="828" y="374">The next step up is Pro</text>
+
+    <text x="260" y="490">Web, CLI, IDE extension and iOS;</text>
+    <text x="260" y="516">five-hour estimates, plus credits</text>
+    <text x="828" y="490">Terminal, IDE, desktop app and web;</text>
+    <text x="828" y="516">a 5-hour limit plus a weekly limit</text>
+
+    <text x="260" y="606">Everything in Plus;</text>
+    <text x="260" y="632">no five-hour limit on Pro plans</text>
+    <text x="828" y="606">5x Pro every 5 hours and every week;</text>
+    <text x="828" y="632">$100 a month in API credits</text>
+
+    <text x="260" y="722">Everything in Plus;</text>
+    <text x="260" y="748">no five-hour limit on Pro plans</text>
+    <text x="828" y="722">10x Pro every week, no 5-hour limit*;</text>
+    <text x="828" y="748">$200 a month in API credits</text>
+
+    <text x="260" y="838">No five-hour limit on Pro plans;</text>
+    <text x="260" y="864">Ultrafast mode access</text>
+    <text x="828" y="838">The top individual plan is Ultra</text>
+    <text x="828" y="864">at $200 a month</text>
+  </g>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">
+    <text x="40" y="918">* For verified accounts. Claude's monthly API credits do not cover interactive Claude Code.</text>
+    <text x="40" y="948">Sources: claude.com/pricing, support.claude.com, learn.chatgpt.com/docs/pricing</text>
+  </g>
+</svg>

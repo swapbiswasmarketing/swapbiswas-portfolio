@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780">
+  <rect x="0" y="0" width="1400" height="780" fill="#f6f4ef"/>
+
+  <text x="40" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Three ways to get Claude models in the Cursor editor</text>
+  <text x="40" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">One worked month: 20M input + 1M output tokens on Claude Sonnet 5.5, list prices as of 4 Nov 2026</text>
+
+  <!-- Card 1 -->
+  <rect x="40" y="140" width="420" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="68" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ROUTE 1</text>
+  <text x="68" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Cursor's model picker</text>
+  <text x="68" y="272" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Cursor Premium, $30 a month</text>
+  <text x="68" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">+ Claude at API list price</text>
+  <text x="68" y="340" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">paid from prepaid credit</text>
+  <line x1="68" y1="380" x2="432" y2="380" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="68" y="460" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="60" font-weight="600" fill="#15130f">$80</text>
+  <text x="68" y="504" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">$30 plan + $50 of tokens,</text>
+  <text x="68" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">all on the Cursor bill</text>
+
+  <!-- Card 2 -->
+  <rect x="490" y="140" width="420" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="518" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ROUTE 2</text>
+  <text x="518" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Your own Anthropic key</text>
+  <text x="518" y="272" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Cursor Premium, $30 a month</text>
+  <text x="518" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">+ key in Settings &gt; Models</text>
+  <text x="518" y="340" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Anthropic bills the tokens</text>
+  <line x1="518" y1="380" x2="882" y2="380" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="518" y="460" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="60" font-weight="600" fill="#15130f">$80</text>
+  <text x="518" y="504" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">$30 to Cursor,</text>
+  <text x="518" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">$50 to Anthropic</text>
+
+  <!-- Card 3 -->
+  <rect x="940" y="140" width="420" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">ROUTE 3</text>
+  <text x="968" y="226" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Claude Code extension</text>
+  <text x="968" y="272" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Claude Pro, $20 billed monthly</text>
+  <text x="968" y="306" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">+ "Install for Cursor" link</text>
+  <text x="968" y="340" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">sign in with the Claude plan</text>
+  <line x1="968" y1="380" x2="1332" y2="380" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="968" y="460" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="60" font-weight="600" fill="#b53b15">$20</text>
+  <text x="968" y="504" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">a usage allowance on the plan,</text>
+  <text x="968" y="534" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">stated as limits, not tokens</text>
+
+  <!-- Footer -->
+  <rect x="40" y="610" width="1320" height="120" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="68" y="656" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Cursor's Free and Plus ($8) plans include no Claude models: Plus runs only its included model pool, with no own API keys.</text>
+  <text x="68" y="694" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Token cost assumes no cache hits, at $2 input and $10 output per million tokens. All prices exclude tax.</text>
+</svg>

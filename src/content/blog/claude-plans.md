@@ -85,6 +85,8 @@ Side by side today, from the two plan articles, the [Claude Code with Pro, Max o
 | Priority access at high traffic times | Yes | Yes |
 | Moving between them | Max to Ultra is charged "on a prorated basis for the remainder of your billing cycle", and if you have already claimed monthly API credits, prorated credits arrive right away | Moving down takes effect at the end of the billing period, per the pricing FAQ |
 
+If your other option is a $200 ChatGPT Pro plan for coding, [the Codex vs Claude Code comparison](/blog/codex-vs-claude-code/) sets Ultra beside it.
+
 ### Does Claude Ultra Have a Five-Hour Limit?
 
 Not once your account is verified. The Ultra article says "we automatically verify Ultra accounts using factors like your account and payment history", and until that happens "a temporary limit applies".

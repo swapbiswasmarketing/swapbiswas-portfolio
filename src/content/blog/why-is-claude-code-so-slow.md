@@ -2,12 +2,15 @@
 title: "Why Is Claude Code So Slow? Find Which Kind of Slow First"
 description: "Why is Claude Code so slow? One slow turn is a prompt cache rebuild, every turn is effort, model or conversation length, and a slow machine is CPU or memory."
 publishDate: 2026-10-10
+updatedDate: 2026-11-04
 category: [AI, Tools]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "Why is Claude Code slow today?"
     a: "Check status.claude.com first: when the API is at capacity, Claude Code retries and then shows a 529 Overloaded error that names that page. If the service is fine, compare claude --version (or /status in the VS Code panel) with Anthropic's changelog and update: its 13 releases from v2.1.284 to v2.1.296 (28 September to 9 October 2026) hold 46 entries that mention something slow, hung, frozen, stalled or stuck, some of them outside the terminal."
+  - q: "What does the Claude Code 529 overloaded error mean?"
+    a: "Anthropic's API is temporarily at capacity across all users, and Claude Code has already retried before showing it. A 529 is not your usage limit. Check status.claude.com, try again in a few minutes, or run /model to switch model, since capacity is tracked per model."
   - q: "Why is Claude Code slow in VS Code?"
     a: "The extension's chat panel runs its own bundled copy of the CLI, so the same three kinds of slow apply to it. As of October 2026, Anthropic's VS Code guide says the extension adds your selection and the file open in the editor to your messages, and a prompt cache clock beside the context indicator turns red once the cache has likely expired."
   - q: "Why is Claude Code slow on Windows?"
@@ -218,6 +221,26 @@ Anthropic's status page is [status.claude.com](https://status.claude.com/), and 
 | A `Waiting for API response` line that ends with `check your network` | No data has arrived for 20 seconds; "The request hasn't failed yet" | If it shows on every attempt, treat it as a network issue |
 
 These messages are documented under [automatic retries](https://code.claude.com/docs/en/errors#automatic-retries) and the [529 entry](https://code.claude.com/docs/en/errors#api-error-repeated-529-overloaded-errors). The model switch in the 529 row is still a model switch, so the caching rule applies and the next request re-reads the conversation with no cache hits. I would take that single slower turn on a model with capacity over waiting on one without.
+
+### Claude Code Overloaded Error (529): What It Means
+
+A 529 is Anthropic's API reporting that it is out of capacity, and by the time it appears, Claude Code "has already retried several times". As of 4 November 2026, the [529 entry](https://code.claude.com/docs/en/errors#api-error-repeated-529-overloaded-errors) adds:
+
+- The overload is shared: "The API is temporarily at capacity across all users".
+- It is not a plan limit: a 529 "is not your usage limit", so waiting it out costs nothing from your quota.
+- Capacity is tracked per model, which is why `/model` keeps you working. In a session the Claude Desktop app runs, such as the Code tab, the prompt reads "Opus is experiencing high load. Switch to Sonnet." and you switch with the app's model picker; on Fable models the message names Fable.
+
+How long Claude Code keeps retrying before it shows the error is set by environment variables listed under [tune retry behavior](https://code.claude.com/docs/en/errors#tune-retry-behavior) in the same reference:
+
+| Variable | Default | What it changes | Needs |
+|---|---|---|---|
+| `CLAUDE_CODE_MAX_RETRIES` | 10 | Retry attempts before the error shows; the docs suggest lowering it "to surface failures faster in scripts" | Any version |
+| `CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS` | 500 | Starting delay, in milliseconds, between retries of a 529; raise it up to 32000 to spread retries over a longer window | v2.1.292 or later |
+| `CLAUDE_CODE_OVERLOADED_RETRY_MAX_DELAY_MS` | 32000 | Ceiling on that delay; raise it up to 64000 so later retries keep spreading apart | v2.1.296 or later |
+| `CLAUDE_CODE_RETRY_WATCHDOG` | Unset | Set to 1 "in unattended sessions such as CI jobs to retry 429 and 529 capacity errors indefinitely" | Any version |
+| `CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS` | Unset (no limit) | Caps how long each request waits out 429 and 529 errors while the watchdog is on | v2.1.295 or later |
+
+The two delay settings have no effect when `CLAUDE_CODE_RETRY_WATCHDOG` is set to 1, or when the rejected request was sent in fast mode. In a session you are watching, the defaults and a `/model` switch get you moving sooner; the watchdog fits a job nobody is watching, where a run that waits out an overload beats one that fails.
 
 ### 13 Releases, 46 Entries That Mention Slowness
 

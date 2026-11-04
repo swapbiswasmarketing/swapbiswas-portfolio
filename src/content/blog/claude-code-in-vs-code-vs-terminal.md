@@ -47,6 +47,8 @@ Checked on 30 September 2026 against the [extension vs CLI section of the VS Cod
 | MCP servers | `/mcp` dialog; adds and removes servers from v2.1.261 | `claude mcp add`, or `/mcp` |
 | Where it comes from | Bundled in the extension; `claude` is not added to your PATH | The standalone install |
 
+The same extension also installs in Cursor through an "Install for Cursor" link in Anthropic's docs, and [Cursor vs Claude Code](/blog/cursor-vs-claude-code/) covers what that route does to the bill.
+
 The two surfaces label their rewind options differently, and [my table of both rewind menus](/blog/claude-code-rewind/) puts the extension's three hover options beside the CLI's six actions, matched by what each one restores.
 
 Image paste differs between the two surfaces as well: the chat panel takes an ordinary paste into its prompt box, while the CLI in the integrated terminal on Windows needs `Alt+V`, and my guide to [the image paste route on each surface](/blog/claude-code-paste-image/) adds WSL and SSH.
@@ -190,7 +192,7 @@ Which model to run for which job, and what each costs per job, is in [Claude Son
 
 The chat panel needs only the extension: install Claude Code from the Extensions view (`Ctrl+Shift+X`, or `Cmd+Shift+X` on Mac), open a file and click the Spark icon in the editor toolbar, per the install section of Anthropic's VS Code guide. The terminal route takes more steps:
 
-1. Install the standalone CLI from [Anthropic's setup page](https://code.claude.com/docs/en/setup). The extension bundles a private copy of the CLI for its chat panel, and installing it "does not put `claude` on your shell PATH."
+1. Install the standalone CLI from [Anthropic's setup page](https://code.claude.com/docs/en/setup). The extension bundles a private copy of the CLI for its chat panel, and installing it "does not put `claude` on your shell PATH." If the integrated terminal then answers `command not found`, [these PATH checks by shell file](/blog/claude-command-not-found/) show which file to edit.
 2. Open the integrated terminal with `` Ctrl+` `` (`` Cmd+` `` on Mac) and run `claude`. Per the guide's [run CLI in VS Code section](https://code.claude.com/docs/en/vs-code#run-cli-in-vs-code), the CLI "automatically integrates with your IDE for features like diff viewing and diagnostic sharing." It connects through a local MCP server named `ide` that the extension runs and `/mcp` hides.
 3. Run `/terminal-setup` once so that Shift+Enter adds a new line instead of sending. The [terminal configuration docs](https://code.claude.com/docs/en/terminal-config) say that in VS Code it also turns off the integrated terminal's GPU acceleration to prevent garbled text.
 4. From a terminal outside VS Code, run `/ide` to connect to the editor, or turn on Auto-connect to IDE (external terminal) in `/config`, which saves [`autoConnectIde`](https://code.claude.com/docs/en/settings-reference#autoconnectide) to `~/.claude.json`.

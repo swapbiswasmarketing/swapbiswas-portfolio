@@ -103,6 +103,8 @@ The same engine opens in several places, and the docs say "your repo's CLAUDE.md
 | Browser at claude.ai/code | Anthropic's cloud | Work on a repo you do not have locally |
 | Claude app on iOS or Android | Anthropic's cloud | Start or check a long task away from your desk |
 
+If that editor is Cursor, [Cursor vs Claude Code](/blog/cursor-vs-claude-code/) works out what Claude models cost on Cursor's own plans against a Claude plan.
+
 So "Claude Code vs Claude chat" in the desktop app is a choice between the conversation side of one window, which answers from what you give it, and the Code tab, which works on a folder you choose; both draw on the same subscription. Claude Design sits on the conversation side too: Anthropic's announcement says it "now works inside your conversations too", and it is in beta on paid plans ([Claude Cowork and chat are now one Claude](https://claude.com/blog/cowork-is-now-claude)). Its Export menu lists Handoff to Claude Code as the last option, and [my routing of marketing deliverables between the Claude Design canvas and a repo](/blog/claude-design-vs-claude-code/) shows when that handoff is worth planning.
 
 ## Claude Cowork vs Claude Code After the September 2026 Merge

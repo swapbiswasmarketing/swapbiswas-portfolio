@@ -86,6 +86,8 @@ The /start page still sells the ₹649 Start plan, but Cursor's own help pages s
 
 Cursor's page that explains The X Subscription, [What is The X Subscription?](https://cursor.com/help/the-x-subscription/overview), describes it as "one subscription that brings Grok, Cursor, and X together", with a shared weekly usage pool. It mentions no student price.
 
+If you mainly want Claude models while coding, [how Cursor's new plans bill Claude compared with Claude Code](/blog/cursor-vs-claude-code/) sets the two bills side by side.
+
 ## Cursor Student Plan Not Working? Three Causes From Cursor's Pages
 
 If a student verification or a cheaper India plan is failing for you, one of these is the likely reason, each from a page linked above:
