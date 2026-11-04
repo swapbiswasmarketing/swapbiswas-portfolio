@@ -113,6 +113,7 @@ Some gaps are documented, and some are only missing from the pages:
 - Other reasons a list looks empty. Private mode is one reason a viewer's name is missing; my breakdown of [why profile views show zero or no names](/blog/linkedin-search-appearances-vs-profile-views/) covers the rest, such as no views in 90 days or a blocked member.
 - Saving a post. Private mode governs profile views only. LinkedIn Help does not say an author can see who saved a post, and its post analytics page describes Saves as a count, as set out in [what LinkedIn documents about saving someone's post](/blog/linkedin-saved-posts/).
 - Who you are. Private mode hides you as a viewer and confirms nothing about your identity; for a profile located in India, LinkedIn's identity route is the [DigiLocker identity check with a live selfie](/blog/linkedin-verification-digilocker/).
+- Disappearing entirely. Private mode hides you only as a viewer; hibernating takes your profile out of LinkedIn searches, Recruiter included, as set out in [my guide to closing or hibernating a LinkedIn account](/blog/how-to-delete-linkedin-account/).
 - Third-party tools that claim to reveal anonymous profile viewers are outside LinkedIn's settings. [LinkedIn's User Agreement](https://www.linkedin.com/legal/user-agreement), effective 3 November 2025, says members agree not to use software, scripts or "browser plugins and add-ons or any other technology" to "scrape or copy the Services", so a tool that promises more than these three modes may break those terms.
 
 ## Which Viewing Mode to Choose

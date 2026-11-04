@@ -53,6 +53,7 @@ These limits are stated on LinkedIn's Help pages, quoted as I read them on 16 Oc
 Notes on the table:
 
 - The two InMail pages cover different products: Premium InMail sent from LinkedIn.com allows a 2,000-character body, and Sales Navigator InMail allows 1,900, where "Signatures are limited to 150 characters, which are counted in the total number of message characters."
+- Whether you send an invitation note or an InMail depends on the person's connection degree; [what 1st, 2nd and 3rd mean next to a LinkedIn name](/blog/what-does-3rd-mean-on-linkedin/) sets out the route at each one.
 - The post page suggests writing an article on LinkedIn's publishing platform once a post would run past 3,000 characters.
 - The ad name field is where a [campaign naming convention for paid channels](/blog/campaign-naming-convention/) has to fit.
 - Image and video sizes from the same Help pages are in [my LinkedIn post size reference](/blog/linkedin-post-size/).

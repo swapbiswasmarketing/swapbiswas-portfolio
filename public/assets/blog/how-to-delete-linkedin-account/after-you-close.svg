@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 870" width="1400" height="870">
+<rect x="0" y="0" width="1400" height="870" fill="#f6f4ef"/>
+<text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What happens after you close a LinkedIn account</text>
+<text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">From LinkedIn Help and the LinkedIn Privacy Policy, read 4 November 2026</text>
+<rect x="60" y="140" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="92" y="198" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.16" fill="#15130f">RIGHT AWAY</text>
+<text x="390" y="184" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">The account is closed immediately.</text>
+<text x="390" y="216" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Help: Profile displays incorrectly in search tool results</text>
+<rect x="60" y="256" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="92" y="314" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.16" fill="#15130f">WITHIN 24 HOURS</text>
+<text x="390" y="300" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Your data generally stops being visible to others on LinkedIn.</text>
+<text x="390" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Privacy Policy, section 4.3</text>
+<rect x="60" y="372" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="92" y="430" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.16" fill="#15130f">UP TO 72 HOURS</text>
+<text x="390" y="416" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Your public profile is removed from LinkedIn.</text>
+<text x="390" y="448" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Help: Profile displays incorrectly in search tool results</text>
+<rect x="60" y="488" width="1280" height="100" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+<text x="92" y="546" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.16" fill="#b53b15">UNDER 14 DAYS</text>
+<text x="390" y="532" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">In most cases you can reopen: log in, click Reactivate, confirm.</text>
+<text x="390" y="564" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Not restored: endorsements, recommendations, groups, followings, invitations</text>
+<rect x="60" y="604" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="92" y="662" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.16" fill="#15130f">WITHIN 30 DAYS</text>
+<text x="390" y="648" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">LinkedIn generally deletes closed account information.</text>
+<text x="390" y="680" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Except what it keeps for legal, security and fraud reasons (Privacy Policy 4.3)</text>
+<rect x="60" y="720" width="1280" height="100" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+<text x="92" y="778" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.16" fill="#15130f">UNTIL THEY REFRESH</text>
+<text x="390" y="764" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Search engines may still show your profile from their cache.</text>
+<text x="390" y="796" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Help: Close and delete your account; Privacy Policy 4.3</text>
+</svg>

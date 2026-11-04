@@ -202,6 +202,8 @@ LinkedIn's two compare pages and its product pages list what each plan adds, as 
 
 The anonymous browsing in that table is LinkedIn's private mode, and two LinkedIn Help pages give different answers on whether a Premium member browsing that way keeps the viewer list and insights, as I set out in [my side-by-side of those two Help pages](/blog/linkedin-private-mode/).
 
+Easy Apply, which the table lists on both free and Premium Career, can reuse the four most recently uploaded resumes LinkedIn stores for you, and [my guide to adding a resume to LinkedIn](/blog/how-to-add-resume-to-linkedin/) shows where to upload them.
+
 The small-business plans against a free account, from the Small Business compare page, with the monthly InMail counts from each product page:
 
 | Feature | Free | Premium Business | All-in-One | Company Page |

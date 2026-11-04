@@ -119,7 +119,7 @@ LinkedIn's privacy page lists what it shares with Recruiter users "if you've pro
 - "If you're open to full-time or contract opportunities"
 - "Date you flagged yourself as open to new opportunities"
 
-The last item means a recruiter can see how long your status has been on. The Recruiter side of the feature is on [Recruiter Help a419131](https://www.linkedin.com/help/recruiter/answer/a419131):
+The last item means a recruiter can see how long your status has been on. Resume files you save on LinkedIn have their own recruiter setting, Share resume data with recruiters, which [my guide to adding a resume to LinkedIn and who sees each copy](/blog/how-to-add-resume-to-linkedin/) covers. The Recruiter side of the feature is on [Recruiter Help a419131](https://www.linkedin.com/help/recruiter/answer/a419131):
 
 | Where a Recruiter user sees it | What LinkedIn says |
 |---|---|
