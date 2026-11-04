@@ -119,3 +119,13 @@ https://swapbiswas.com/blog/lovable-vs-bolt/?utm_source=linkedin&utm_medium=soci
 ## Notes for the merge session
 - A facts reviewer published lovable-vs-bolt's markdown by mistake as a private claude.ai artifact (https://claude.ai/artifact/Be6JweCN2qeg3h1VaXTeT3). The repo file is the source of truth; delete the artifact if it is not wanted.
 - OpenAI help-center pages return 403 from the cloud VM; any OpenAI claim sourced only there was removed rather than kept on trust.
+
+## Optimize pass (2026-11-04, after batch 1; the user approved editing existing posts for this)
+Facts re-verified today with curl on each cited page. No live rank was measured (no GSC or Ahrefs in the cloud VM), so no position is logged.
+| post | gap fixed | updatedDate | trope gate vs baseline |
+|---|---|---|---|
+| why-is-claude-code-so-slow | Thin 529 coverage: new H3 "Claude Code Overloaded Error (529): What It Means" (what the 529 entry says, the Desktop-app wording, a 5-row retry-variable table with defaults and minimum versions from code.claude.com/docs/en/errors#tune-retry-behavior) + FAQ "What does the Claude Code 529 overloaded error mean?" | bumped to 2026-11-04 (new section with new sourced facts) | PASS, 0 NEW FAIL, 0 NEW WARN |
+| claude-vs-copilot | Missing FAQ for "is github copilot free" (IN 4,400 / US 1,300): Copilot Free and Student, AI-credit allowance, auto model selection only, the 2,000-completions cap (docs.github.com/en/copilot/get-started/plans) | not bumped (FAQ-only change) | PASS, 0 NEW FAIL, 0 NEW WARN |
+| antigravity-pricing-india | New H3 "Is Gemini CLI Still Free?": geminicli.com banner (replaced by Antigravity CLI on 18 June 2026 for unpaid and Google One users) and the Models page note that Claude Sonnet 4.6 / Opus 4.6 "Will be removed on November 18, 2026" | bumped to 2026-11-04 (new section with new sourced facts) | PASS, 0 NEW FAIL, 0 NEW WARN |
+- Review ledger: why-is-claude-code-so-slow status=optimized, last_checked=2026-11-04; claude-vs-copilot status=optimized, last_checked=2026-11-04; antigravity-pricing-india status=optimized, last_checked=2026-11-04, re-check after 2026-11-18 (Claude 4.6 removal date).
+- Not applied: chatgpt memory full H2 in chatgpt-usage-limits (help.openai.com returns 403 here; needs a session that can read it); trimming claude-vs-chatgpt's Codex table to a link (the gate marked it "later"; removing content from a ranking post is better judged after codex-vs-claude-code is indexed).
