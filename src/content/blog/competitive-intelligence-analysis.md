@@ -2,7 +2,7 @@
 title: "Competitive Intelligence Analysis: How to Track Competitors"
 description: "Learn how to build a competitive intelligence analysis system that tracks competitor moves in real time. Includes tools, frameworks, and a CI reporting template."
 publishDate: 2026-03-17
-updatedDate: 2026-03-17
+updatedDate: 2026-11-04
 category: [Product Marketing, Marketing]
 img: /assets/stock-2.webp
 img_alt: "Renaissance-style still life of a craftsman's bench with a finished astrolabe, sketches and a red ribbon"
@@ -172,7 +172,7 @@ The CI tools market is projected to reach **$1.46 billion by 2030** at a 20% CAG
 | **Klue** | Battlecards + CI platform | Sales enablement + CI | ~$20,000-$40,000/year |
 | **Kompyte** | Competitor monitoring | Mid-market teams | Custom pricing |
 | **Ahrefs** | SEO competitive intelligence | Content + SEO teams | $129/mo |
-| **SEMrush** | All-in-one marketing intelligence | Marketing teams | $139.95/mo |
+| **SEMrush** | All-in-one marketing intelligence | Marketing teams | [$139/mo](https://www.semrush.com/pricing/) (SEO plan, as of November 2026) |
 | **Similarweb** | Traffic and market analysis | Strategy teams | Custom pricing |
 | **G2** | Review monitoring | Product marketing | Free (basic alerts) |
 | **LinkedIn** | Talent intelligence | HR + strategy | Free-$60/mo |

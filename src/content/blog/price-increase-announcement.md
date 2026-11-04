@@ -33,7 +33,7 @@ howTo:
 
 Among the top 500 players in SaaS and AI with transparent pricing, [there were more than 1,800 pricing changes in 2025 alone, or 3.6 per company](https://www.growthunhinged.com/p/2025-state-of-saas-pricing-changes), according to the PricingSaaS index published in Growth Unhinged. Price movement is now routine. The **price increase announcement** is the part almost nobody runs well.
 
-Here is the point of view I will defend for the rest of this post: a price increase gets treated as a copywriting problem, and that is exactly why the templates keep failing. It is a GTM operations problem. The announcement is not the project, it is the artifact the project produces. Get the segmentation, the concession ceiling, and the internal enablement right and a plain email works. Get them wrong and no amount of empathetic phrasing saves the renewal.
+A price increase gets treated as a copywriting problem, and that is exactly why the templates keep failing. It is a GTM operations problem, and the announcement is the artifact that project produces. Get the segmentation, the concession ceiling, and the internal enablement right and a plain email works. Get them wrong and no amount of empathetic phrasing saves the renewal.
 
 So the templates are at the bottom of this post, where they belong, with one variant per segment tier. Everything above them is the work that decides whether they land.
 
@@ -95,7 +95,7 @@ The arithmetic is simple enough to settle in one meeting. Take a $2M renewal boo
 
 None of those are catastrophic on their own. The reason to set the ceiling anyway is compounding: next year's increase is calculated off the lower base, so a concession granted once is a permanent haircut on every future increase for that account. That is a finance decision, and it should be made once, at a tier level, rather than improvised account by account under renewal pressure.
 
-The harder half of the ceiling is knowing when to let an account churn. If an account demands a concession deeper than its tier ceiling and is not strategically load-bearing - no reference value, no expansion path, no logo weight - the correct answer is to let the renewal lapse. Writing that down before the announcement goes out is what stops a save desk from quietly buying revenue at a loss.
+The harder half of the ceiling is knowing when to let an account churn. If an account demands a concession deeper than its tier ceiling and is not strategically important - no reference value, no expansion path, no logo weight - the correct answer is to let the renewal lapse. Writing that down before the announcement goes out is what stops a save desk from buying revenue at a loss.
 
 ## Price Increase Justification: Lead With What Shipped
 
@@ -263,7 +263,7 @@ Most churn that follows a price change is a surprise problem rather than a price
 - **Never let a customer learn it from a third party.** That includes your own pricing page, your changelog, and a competitor's sales team. Public pages update on announcement day, not before.
 - **Size the increase against what actually shipped.** Growth Unhinged's review of 2024 pricing moves flagged that [Docker raised the price of its Pro and Team plans by 80% and 67% respectively](https://www.growthunhinged.com/p/saas-pricing-changes-2025), which drew a visible wave of disgruntled customers to the Docker subreddit. A jump that size needs a value story of the same size, delivered to each account individually, and it is not something an email can carry alone.
 
-The through-line is that customers accept price changes they can predict and explain to their own boss. They churn over ones that arrive unannounced, unexplained, or inconsistently applied across their peer group.
+The through-line is that customers accept price changes they can predict and explain to their own boss. They churn over ones that arrive unannounced, unexplained, or inconsistently applied across their peer group. Meta's July 2024 India announcement for Meta Verified business plans printed both numbers in one place, an introductory range topping out at ₹21,000 a month and standard rates of up to ₹30,000 a month after 12 months, as the [Meta Verified price timeline for India](/blog/meta-verified-price-in-india/) lays out.
 
 ## The 30/60/90 Price Increase Announcement Scorecard
 

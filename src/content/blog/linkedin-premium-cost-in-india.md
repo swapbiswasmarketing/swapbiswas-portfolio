@@ -54,7 +54,7 @@ I read the ten as the items Apple's page displays rather than every item LinkedI
 - No Apple item names a billing period, a trial or a plan other than Career. The listing's description mentions Premium once, "Upgrade to a Premium subscription for exclusive tools.", with no price or tax wording.
 - ₹1,850 is the price on four of the ten items, and it is the Google Play figure a February 2026 member post gave for a month of Premium Career (see the claims table below).
 
-The same split, rupees on the app stores and dollars from the vendor, shows in [my check of Claude Pro's price in India by checkout](/blog/claude-pro-price-in-india/).
+The same split, rupees on the app stores and dollars from the vendor, shows in [my check of Claude Pro's price in India by checkout](/blog/claude-pro-price-in-india/). Meta Verified has its own version: Apple's India listings for Instagram and Facebook show Meta Verified Standard items at ₹639, set against the rupee prices Meta announced in 2023 and 2024, in the [Meta Verified price in India by source and date](/blog/meta-verified-price-in-india/).
 
 LinkedIn's [Premium subscription FAQ](https://www.linkedin.com/help/linkedin/answer/a570070) ties an App Store subscription to an Apple device: Premium bought through the Apple Store "can be cancelled using the LinkedIn mobile app on an Apple device", while Premium bought through Google Play can be cancelled on LinkedIn's desktop site, in the LinkedIn app, or on Google Play's desktop site or mobile app. The full route for each billing channel, and when access ends, is in [my cancel steps sorted by who charged you](/blog/cancel-linkedin-premium/).
 

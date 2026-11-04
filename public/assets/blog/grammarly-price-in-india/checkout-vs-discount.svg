@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect x="0" y="0" width="1400" height="820" fill="#f6f4ef"/>
+
+  <text x="40" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Grammarly in India: the rupee price or the student discount</text>
+  <text x="40" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Four checkouts as listed on 4 November 2026. Only one takes the SheerID offer.</text>
+
+  <rect x="40" y="140" width="1320" height="50" rx="12" fill="#eeebe4"/>
+  <text x="64" y="172" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">CHECKOUT</text>
+  <text x="384" y="172" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">PLAN NAME</text>
+  <text x="544" y="172" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">RUPEE PRICE SHOWN</text>
+  <text x="990" y="172" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">STUDENT DISCOUNT</text>
+
+  <rect x="40" y="204" width="1320" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="252" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Apple App Store, India</text>
+  <text x="64" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">in-app purchase</text>
+  <text x="384" y="268" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">Premium</text>
+  <text x="544" y="252" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Rs 999 a month, Rs 1,999 a quarter</text>
+  <text x="544" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Rs 4,699 a year</text>
+  <text x="990" y="252" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">No: promo offers do not</text>
+  <text x="990" y="284" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">apply to App Store buys</text>
+
+  <rect x="40" y="326" width="1320" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="374" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Google Play, India</text>
+  <text x="64" y="406" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">in-app purchase</text>
+  <text x="384" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">Premium</text>
+  <text x="544" y="374" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">No per-plan price in the</text>
+  <text x="544" y="406" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">listing text</text>
+  <text x="990" y="374" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">No: promo offers do not</text>
+  <text x="990" y="406" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">apply to Play buys</text>
+
+  <rect x="40" y="448" width="1320" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="496" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Grammarly India page</text>
+  <text x="64" y="528" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">grammarly.com/a/india</text>
+  <text x="384" y="512" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">Plus</text>
+  <text x="544" y="496" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Rs 392 INR</text>
+  <text x="544" y="528" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">billing period not stated</text>
+  <text x="990" y="496" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">No: Plus takes no special</text>
+  <text x="990" y="528" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">offers or discounts</text>
+
+  <rect x="40" y="570" width="1320" height="110" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="64" y="618" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Grammarly website</text>
+  <text x="64" y="650" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">grammarly.com/upgrade/pro</text>
+  <text x="384" y="634" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">Pro</text>
+  <text x="544" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">Rate and currency shown</text>
+  <text x="544" y="650" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#3a3632">during checkout</text>
+  <text x="990" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" font-weight="600" fill="#b53b15">Yes: up to 50% off</text>
+  <text x="990" y="650" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">first period only</text>
+
+  <text x="40" y="728" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">A school with a Grammarly for Education licence is a fifth route: students join it through the school.</text>
+  <text x="40" y="762" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Sources: Apple and Google Play India listings; Grammarly help articles on Pro, Plus, Premium and SheerID offers.</text>
+</svg>

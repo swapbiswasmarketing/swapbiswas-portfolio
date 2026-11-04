@@ -118,6 +118,8 @@ The help article's troubleshooting list for SheerID covers the failures it expec
 3. The wrong document. "For document uploads, do not send course syllabuses. Your documents must prove your enrollment in the school."
 4. Repeated resubmissions. After a rejection, the article says to work with SheerID's support team instead of resubmitting; after a "Verification Limit Exceeded" error, SheerID's support team can reset the limit.
 
+Grammarly's student discount also verifies through SheerID, where Grammarly says the process can take up to seven business days, as the [Grammarly price guide for India](/blog/grammarly-price-in-india/) records.
+
 ## What Happens When Your Figma Student Plan Expires
 
 Figma's help article splits the outcome by your role on the education team and by the team's file count.

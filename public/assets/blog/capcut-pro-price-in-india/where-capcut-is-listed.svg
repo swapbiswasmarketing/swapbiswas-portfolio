@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760">
+  <rect x="0" y="0" width="1400" height="760" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where CapCut is listed, 4 November 2026</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The same app (App Store ID 1500855883, Play ID com.lemon.lvoverseas)</text>
+
+  <rect x="60" y="150" width="620" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#b53b15">INDIA EDITIONS</text>
+  <text x="100" y="240" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Not listed</text>
+  <line x1="100" y1="262" x2="640" y2="262" stroke="#e4dfd6" stroke-width="1"/>
+
+  <rect x="100" y="288" width="12" height="12" fill="#15130f"/>
+  <text x="128" y="300" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">App Store /in/ page</text>
+  <text x="128" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">HTTP 404, not found</text>
+
+  <rect x="100" y="378" width="12" height="12" fill="#15130f"/>
+  <text x="128" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Google Play, India store (gl=IN)</text>
+  <text x="128" y="422" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"Not found"</text>
+
+  <rect x="100" y="468" width="12" height="12" fill="#15130f"/>
+  <text x="128" y="480" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">App Store India search: "capcut"</text>
+  <text x="128" y="512" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">No ByteDance app in the results</text>
+
+  <rect x="720" y="150" width="620" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="760" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2.2" fill="#6a645c">US EDITIONS</text>
+  <text x="760" y="240" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Listed, priced in dollars</text>
+  <line x1="760" y1="262" x2="1300" y2="262" stroke="#e4dfd6" stroke-width="1"/>
+
+  <rect x="760" y="288" width="12" height="12" fill="#2a7347"/>
+  <text x="788" y="300" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">App Store /us/ page</text>
+  <text x="788" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro Monthly Subscription $19.99</text>
+
+  <rect x="760" y="378" width="12" height="12" fill="#2a7347"/>
+  <text x="788" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Google Play, US store (gl=US)</text>
+  <text x="788" y="422" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Listed</text>
+
+  <rect x="760" y="468" width="12" height="12" fill="#2a7347"/>
+  <text x="788" y="480" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">capcut.com/pricing</text>
+  <text x="788" y="512" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Pro USD 19.99 a month,</text>
+  <text x="788" y="544" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"for reference only"</text>
+
+  <rect x="60" y="626" width="1280" height="76" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="700" y="672" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#15130f">Neither India store lists CapCut, so neither shows a rupee price for CapCut Pro.</text>
+</svg>

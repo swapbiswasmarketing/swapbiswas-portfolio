@@ -125,7 +125,7 @@ What that means at checkout, from Perplexity's own pages:
 | Payment methods | Visa, Master Card and AMEX cards, Cash App, Google and Apple Pay, and ACH transfer. UPI is not on the list |
 | Switching currency later | You would have to cancel and resubscribe |
 
-Perplexity's website shows no rupee price for India, so I have not converted the dollar price. Apple's App Store India listing, read on 31 October 2026, lists Perplexity Pro in-app purchases at ₹1,999 and ₹19,900 without naming the billing period; those are Apple's charges, not the web price. On the web, your bank's exchange rate and any foreign-transaction charge on your card decide the rupee amount, and prices change, so check the Pro page at checkout.
+Perplexity's website shows no rupee price for India, so I have not converted the dollar price. Apple's App Store India listing, read on 31 October 2026, lists Perplexity Pro in-app purchases at ₹1,999 and ₹19,900 without naming the billing period; those are Apple's charges, not the web price. On the web, your bank's exchange rate and any foreign-transaction charge on your card decide the rupee amount, and prices change, so check the Pro page at checkout. Suno's App Store India listing follows the same pattern, rupee in-app prices with no billing period named next to dollar prices on its website, as listed in [Suno's plans and rupee prices](/blog/is-suno-ai-free/).
 
 ## Other Free AI Plans in India Right Now
 

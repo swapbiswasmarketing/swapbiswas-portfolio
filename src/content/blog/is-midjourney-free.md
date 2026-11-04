@@ -142,7 +142,7 @@ Midjourney's [Terms of Service](https://docs.midjourney.com/hc/en-us/articles/32
 | You used the niji journey trial and never subscribed | The Terms' ownership line carries no subscription condition, but a company over $1,000,000 a year must be on Pro or Mega to own its images; no article cited here addresses niji trial images separately |
 | Copyright questions | Midjourney "cannot offer guidance on copyright matters" and suggests a lawyer |
 
-The Terms also grant Midjourney a licence to reproduce and publicly display your prompts and images, and say content is "publicly viewable and remixable" by default. Stealth Mode (Pro and Mega only) is a promise to make "best efforts not to publish" your images; the licence grant applies on every plan.
+The Terms also grant Midjourney a licence to reproduce and publicly display your prompts and images, and say content is "publicly viewable and remixable" by default. Stealth Mode (Pro and Mega only) is a promise to make "best efforts not to publish" your images; the licence grant applies on every plan. AI music has its own version of this line: Suno's help center says free-plan songs stay non-commercial even if you subscribe later, covered in [what Suno's free plan lets you do with a song](/blog/is-suno-ai-free/).
 
 ## Try a Paid Plan With the 20-Minute Refund Rule
 

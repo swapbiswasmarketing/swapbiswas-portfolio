@@ -140,7 +140,7 @@ That endpoint is undocumented and can change without notice. Requested from the 
 
 Asked for the United States, it returned the same amounts. Asked for Germany, through the `?country=DE` test override described in the script's header, it returned euros. So the endpoint carries local-currency prices for at least one other country, and on this date it answered India in dollars.
 
-Some vendors do geo-serve rupees on a public pricing page. In my 7 September 2026 capture of SaaS pricing pages for [a tier-name audit](/blog/pricing-tier-names/), four pages came back in Indian rupees: Slack, Mailchimp, Stripe and Grammarly.
+Some vendors do geo-serve rupees on a public pricing page. In my 7 September 2026 capture of SaaS pricing pages for [a tier-name audit](/blog/pricing-tier-names/), four pages came back in Indian rupees: Slack, Mailchimp, Stripe and Grammarly. Grammarly's own India page now names a rupee figure for its Plus plan, which the [Grammarly price breakdown](/blog/grammarly-price-in-india/) sets beside Apple's India listing.
 
 ## Claude Pro Price in India Yearly: The Annual Plan Arithmetic
 
