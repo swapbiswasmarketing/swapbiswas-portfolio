@@ -265,6 +265,6 @@ You do not need Crayon or Klue to start a competitive intelligence analysis prog
 
 **Week 4:** Distribute your first competitive brief to sales, product, and marketing. Get feedback on what is useful and what is missing.
 
-Then build from there. For turning your intelligence into sales-ready materials, see our [competitive battlecard template](/blog/competitive-battlecard-template/). For practical frameworks on analyzing specific competitors, check our [competitive analysis examples](/blog/competitive-analysis-examples/). And for connecting CI to your broader strategy, see our guide on [product marketing](/blog/what-is-product-marketing/).
+Then build from there. For turning your intelligence into sales-ready materials, see the competitive battlecard template linked above. For practical frameworks on analyzing specific competitors, check our [competitive analysis examples](/blog/competitive-analysis-examples/). And for connecting CI to your broader strategy, see our guide on [product marketing](/blog/what-is-product-marketing/).
 
 The companies that systematically track and act on competitive intelligence do not just react to competitors. They anticipate moves, exploit gaps, and win more deals. Start the system, and the compounding returns will follow.
