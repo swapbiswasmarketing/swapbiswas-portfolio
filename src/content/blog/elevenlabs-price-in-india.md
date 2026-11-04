@@ -1,13 +1,14 @@
 ---
 title: "ElevenLabs Price in India: INR, UPI and Cost per Minute"
-description: "ElevenLabs price in India, checked 25 October 2026: $6 to $990 a month, INR and UPI at checkout, Rs 2,299 for Creator on the App Store, and the cost per minute."
+description: "ElevenLabs price in India, checked 4 November 2026: $6 to $990 a month, INR and UPI at checkout, Rs 2,299 for Creator on the App Store, and the cost per minute."
 publishDate: 2026-10-25
+updatedDate: 2026-11-04
 category: [AI, Tools]
 img: /assets/stock-6.webp
 img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "How much does ElevenLabs cost in India?"
-    a: "On 25 October 2026 ElevenLabs' pricing page listed Starter at $6, Creator at $22, Pro at $99, Scale at $299 and Business at $990 a month, excluding taxes, plus a Free plan with 10,000 credits. At the ₹94.9432 to the dollar that RBI's website showed for 23 October 2026, Creator converts to about ₹2,089 before tax, and Apple's India App Store lists Creator Monthly at ₹2,299."
+    a: "As of November 2026 ElevenLabs' pricing page lists Starter at $6, Creator at $22, Pro at $99, Scale at $299 and Business at $990 a month, excluding taxes, plus a Free plan with 10,000 credits. At the ₹94.8416 to the dollar that RBI's website showed for 4 November 2026, Creator converts to about ₹2,087 before tax, and Apple's India App Store lists Creator Monthly at ₹2,299."
   - q: "Can I pay for ElevenLabs with UPI?"
     a: "Yes. ElevenLabs' help center lists UPI as a payment method for customers located in India and says the INR option appears automatically at checkout. The FAQ on the pricing page itself lists only credit card, Apple Pay and Google Pay, so confirm the methods on the checkout screen."
   - q: "Is ElevenLabs free?"
@@ -18,21 +19,21 @@ faqs:
     a: "Yes. ElevenLabs charges 10 months' price for a year, so Creator costs $220 a year, or $18.33 a month, against $264 for twelve monthly payments. Apple's India App Store follows a similar pattern: Creator Annual is ₹22,900, ₹90 less than ten months at ₹2,299."
 ---
 
-Creator, the ElevenLabs plan its pricing page tags "Popular", works out to about **18 cents a minute** of voiceover: $22 a month divided by the ~121 minutes of text to speech that [elevenlabs.io/pricing](https://elevenlabs.io/pricing) listed on 25 October 2026 is $0.182, in line with the ~$0.18 the page prints as Creator's price for an extra minute. A rupee amount for that plan appears at checkout: ElevenLabs' [help article on paying in INR](https://elevenlabs.io/docs/help-center/account/payment-billing/can-i-pay-for-my-eleven-labs-subscription-in-inr) says that if you are located in India, "the INR option will automatically appear during checkout".
+Creator, the ElevenLabs plan its pricing page tags "Popular", works out to about **18 cents a minute** of voiceover: $22 a month divided by the ~121 minutes of text to speech that [elevenlabs.io/pricing](https://elevenlabs.io/pricing) still listed as of November 2026 is $0.182, in line with the ~$0.18 the page prints as Creator's price for an extra minute. A rupee amount for that plan appears at checkout: ElevenLabs' [help article on paying in INR](https://elevenlabs.io/docs/help-center/account/payment-billing/can-i-pay-for-my-eleven-labs-subscription-in-inr) says that if you are located in India, "the INR option will automatically appear during checkout".
 
 So the ElevenLabs price in India is a dollar list price that becomes rupees at the payment step, and the only rupee plan prices I could find published under ElevenLabs' name sit in Apple's App Store. I compare its plans per minute of audio, and I treat any rupee plan price printed outside a checkout or an app store as somebody's exchange-rate guess.
 
 | Plan | Monthly price (USD, before tax) | Per month on annual billing | Credits a month | Approx text-to-speech minutes |
 |---|---|---|---|---|
 | Free | $0 | $0 | 10,000 | ~10 |
-| Starter | $6 ($1 first month, offer labelled "Until Nov 1") | $5 | 30,000 | ~30 |
+| Starter | $6 ($1 first month, still shown as of November 2026 with no end date) | $5 | 30,000 | ~30 |
 | Creator | $22 ($11 first month) | $18.33 | 121,000 | ~121 |
 | Pro | $99 | $82.50 | 600,000 | ~600 |
 | Scale | $299, 3 seats | $249.17 | 1,800,000 | ~1,800 |
 | Business | $990, 10 seats | $825 | 6,000,000 | ~6,000 |
 | Enterprise | Custom | Custom | Custom | Custom |
 
-Prices, credits and minutes as read on [ElevenLabs' pricing page](https://elevenlabs.io/pricing), logged out from an Indian connection, on 25 October 2026. The page says "Prices exclude all taxes, levies and duties." ElevenLabs' help center says a first-month discount is given once: "if you've already received the discount in the past, you won't receive it again" ([first-month discount article](https://elevenlabs.io/docs/help-center/account/payment-billing/why-did-i-not-get-the-first-month-off-coupon)). The Agents and API tabs on the same page carry separate pricing, which this post does not cover. Prices and credits change, so read the page again on the day you pay.
+Prices, credits and minutes as read logged out on [ElevenLabs' pricing page](https://elevenlabs.io/pricing) on 25 October 2026 and again on 4 November 2026. The 25 October read labelled the $1 Starter month "Until Nov 1"; the 4 November read still showed "$1 first month" and "Then $6 per month" on the Starter card, with no end date printed. The page says "Prices exclude all taxes, levies and duties." ElevenLabs' help center says a first-month discount is given once: "if you've already received the discount in the past, you won't receive it again" ([first-month discount article](https://elevenlabs.io/docs/help-center/account/payment-billing/why-did-i-not-get-the-first-month-off-coupon)). The Agents and API tabs on the same page carry separate pricing, which this post does not cover. Prices and credits change, so read the page again on the day you pay.
 
 ## Can You Pay for ElevenLabs in Rupees or UPI?
 
@@ -45,7 +46,7 @@ Yes: ElevenLabs' help center says customers in India can pay in Indian rupees an
 
 ElevenLabs' [accepted payments article](https://elevenlabs.io/docs/help-center/account/payment-billing/what-kind-of-payment-is-accepted) lists four methods: credit card, Apple Pay, Google Pay and "UPI (India only)". It also says a prepaid card "is not something we directly support". The FAQ on the pricing page gives a shorter list, "We accept Credit Card, Apple Pay, and Google Pay", with no UPI, so the two ElevenLabs pages disagree and the checkout screen is the one to believe.
 
-Some India guides still say the opposite. [Zoutons' May 2026 guide to ElevenLabs pricing in India](https://www.zoutons.com/news/elevenlabs-pricing-india-may-2026) says "UPI is not currently supported" and converts the dollar prices at ₹84 to the dollar. ElevenLabs' own help center said otherwise on 25 October 2026.
+Some India guides still say the opposite. [Zoutons' May 2026 guide to ElevenLabs pricing in India](https://www.zoutons.com/news/elevenlabs-pricing-india-may-2026) says "UPI is not currently supported" and converts the dollar prices at ₹84 to the dollar. ElevenLabs' own help center said otherwise on 25 October 2026 and still did as of November 2026.
 
 The only rupee figures I found on an ElevenLabs page are Pay As You Go amounts (top-up limits and Auto Top Up defaults) for the prepaid balance that runs after your plan's credits are used. ElevenLabs' [Pay As You Go documentation](https://elevenlabs.io/docs/overview/administration/pay-as-you-go) lists USD and INR as the supported currencies:
 
@@ -78,21 +79,21 @@ The selector's labels show that the page knows about rupees, but the HTML it ser
 
 ### My Rupee Conversion of the Dollar Prices
 
-The [Reserve Bank of India's home page](https://www.rbi.org.in/) gave **₹94.9432 to the US dollar** "As at 1.00pm of October 23, 2026", with FBIL as the source; that was the rate the page displayed on the day of this check, a Sunday. The rupee columns below are my arithmetic at that rate, not ElevenLabs' checkout prices.
+The [Reserve Bank of India's home page](https://www.rbi.org.in/) gave **₹94.8416 to the US dollar** "As at 1.00pm of November 04, 2026", with FBIL as the source (the 25 October version of this table used ₹94.9432, the rate for 23 October 2026). The rupee columns below are my arithmetic at that rate, not ElevenLabs' checkout prices.
 
 | Plan | Monthly (USD) | Monthly, converted | Yearly (USD, 10 x monthly) | Yearly, converted |
 |---|---|---|---|---|
-| Starter | $6 | ₹570 | $60 | ₹5,697 |
-| Creator | $22 | ₹2,089 | $220 | ₹20,888 |
-| Pro | $99 | ₹9,399 | $990 | ₹93,994 |
-| Scale | $299 | ₹28,388 | $2,990 | ₹283,880 |
-| Business | $990 | ₹93,994 | $9,900 | ₹939,938 |
+| Starter | $6 | ₹569 | $60 | ₹5,690 |
+| Creator | $22 | ₹2,087 | $220 | ₹20,865 |
+| Pro | $99 | ₹9,389 | $990 | ₹93,893 |
+| Scale | $299 | ₹28,358 | $2,990 | ₹283,576 |
+| Business | $990 | ₹93,893 | $9,900 | ₹938,932 |
 
 These are before tax, and the INR checkout may use a rate of its own, which ElevenLabs does not publish.
 
 ## ElevenLabs Price in India on the App Store and Google Play
 
-Apple's India App Store prints ElevenLabs plan prices in rupees, and Google Play India prints a rupee range without plan names. Both read on 25 October 2026:
+Apple's India App Store prints ElevenLabs plan prices in rupees, and Google Play India prints a rupee range without plan names. Both read on 25 October 2026 and unchanged on 4 November 2026:
 
 | Store listing | What it shows |
 |---|---|
@@ -102,7 +103,7 @@ Apple's India App Store prints ElevenLabs plan prices in rupees, and Google Play
 What those figures mean next to the web prices:
 
 - Apple's prices outside the US and Canada include tax, a rule quoted from Apple's developer talk in [my Claude Pro price guide for India](/blog/claude-pro-price-in-india/), while the web's $22 excludes it.
-- Assuming the App Store's Creator is the same 121,000-credit plan (the listing does not say), Creator Monthly at ₹2,299 is ₹210 (10.1%) above my pre-tax conversion of $22 (₹2,088.75). If the INR checkout prices Creator near that conversion, the route turns on the tax line the web checkout adds; I worked through that App Store vs web comparison, with the GST rate from the government chart, in [my Replit price check for India](/blog/replit-price-in-india/).
+- Assuming the App Store's Creator is the same 121,000-credit plan (the listing does not say), Creator Monthly at ₹2,299 is ₹212 (10.2%) above my pre-tax conversion of $22 (₹2,086.52). If the INR checkout prices Creator near that conversion, the route turns on the tax line the web checkout adds; I worked through that App Store vs web comparison, with the GST rate from the government chart, in [my Replit price check for India](/blog/replit-price-in-india/).
 - Creator Annual at ₹22,900 is ₹90 less than ten months at ₹2,299 (₹22,990), close to the web's rule of 10 months' price for a year.
 - The listing names a Go plan at ₹1,100 a month. The web pricing page lists no plan called Go, and the listing does not say what Go includes, so read its credits on the in-app screen before buying.
 
@@ -115,15 +116,15 @@ Dividing each plan's price by the minutes the pricing page lists gives its cost 
 | Plan | Price | Approx minutes | Per minute, monthly | Per minute, annual | Page's extra-minute price | Per minute in rupees, my conversion |
 |---|---|---|---|---|---|---|
 | Free | $0 | ~10 | n/a | n/a | ~$0.36 | n/a |
-| Starter | $6 | ~30 | $0.200 | $0.167 | ~$0.20 | ₹18.99 |
-| Creator | $22 | ~121 | $0.182 | $0.152 | ~$0.18 | ₹17.26 |
-| Pro | $99 | ~600 | $0.165 | $0.138 | ~$0.17 | ₹15.67 |
-| Scale | $299 | ~1,800 | $0.166 | $0.138 | ~$0.17 | ₹15.77 |
-| Business | $990 | ~6,000 | $0.165 | $0.138 | ~$0.17 | ₹15.67 |
+| Starter | $6 | ~30 | $0.200 | $0.167 | ~$0.20 | ₹18.97 |
+| Creator | $22 | ~121 | $0.182 | $0.152 | ~$0.18 | ₹17.24 |
+| Pro | $99 | ~600 | $0.165 | $0.138 | ~$0.17 | ₹15.65 |
+| Scale | $299 | ~1,800 | $0.166 | $0.138 | ~$0.17 | ₹15.75 |
+| Business | $990 | ~6,000 | $0.165 | $0.138 | ~$0.17 | ₹15.65 |
 
 The page lists ~$0.36 under "Extra minute" for Free, about double Starter's ~$0.20; the Pay As You Go page says top-ups are available on the free tier too.
 
-Worked line for Creator: $22 / 121 minutes = $0.182 a minute; on annual billing, $220 / 12 months / 121 minutes = $0.152; at ₹94.9432, $22 / 121 = $0.1818 is ₹17.26.
+Worked line for Creator: $22 / 121 minutes = $0.182 a minute; on annual billing, $220 / 12 months / 121 minutes = $0.152; at ₹94.8416, $22 / 121 = $0.1818 is ₹17.24.
 
 <img src="/assets/blog/elevenlabs-price-in-india/cost-per-minute.webp" alt="Bar chart of the cost per included text-to-speech minute on each ElevenLabs plan, in US cents, from the pricing page read on 25 October 2026: Starter 20.0 monthly and 16.7 annual, Creator 18.2 monthly and 15.2 annual, Pro 16.5 and 13.8, Scale 16.6 and 13.8, Business 16.5 and 13.8. A worked line shows Creator's $22 divided by about 121 minutes is $0.182" title="ElevenLabs cost per text-to-speech minute, by plan" width="1200" height="771" loading="lazy" decoding="async" />
 
@@ -136,7 +137,7 @@ What the table says about choosing a plan:
 
 ### Minutes by Product on Each Plan
 
-All products draw on one monthly credit pool, at the per-product rates in the pricing page's FAQ. Minutes below are my division of each plan's credits by those rates, rounded down.
+All products draw on one monthly credit pool, at the per-product rates in the pricing page's FAQ (rates as of November 2026). Minutes below are my division of each plan's credits by those rates, rounded down.
 
 | Product | Credits used | Starter (30,000) | Creator (121,000) | Pro (600,000) |
 |---|---|---|---|---|
@@ -146,6 +147,7 @@ All products draw on one monthly credit pool, at the per-product rates in the pr
 | Eleven Music | 900 a minute | 33 min | 134 min | 666 min |
 | Automatic dubbing, with watermark | 2,000 a minute | 15 min | 60 min | 300 min |
 | Automatic dubbing, without watermark | 3,000 a minute | 10 min | 40 min | 200 min |
+| Dubbing Studio, with watermark | 5,000 a minute | 6 min | 24 min | 120 min |
 | Dubbing Studio, without watermark | 10,000 a minute | 3 min | 12 min | 60 min |
 | Sound Effects | 200 a generation | 150 generations | 605 generations | 3,000 generations |
 
@@ -196,6 +198,6 @@ Every row comes from the plan limits above; the monthly volumes are examples to 
 
 ## Compare the ElevenLabs Price in India per Minute, Then at Checkout
 
-The figure you can verify before paying is the dollar list on elevenlabs.io/pricing, plus Apple's and Google's rupee listings for the app. Compare plans on the per-minute table, convert at a dated official rate if you need a rupee estimate, and let the INR checkout give you the real rupee total with its tax line. Re-check the plan list after 1 November 2026, when the Starter offer is labelled to end.
+The figure you can verify before paying is the dollar list on elevenlabs.io/pricing, plus Apple's and Google's rupee listings for the app. Compare plans on the per-minute table, convert at a dated official rate if you need a rupee estimate, and let the INR checkout give you the real rupee total with its tax line. The Starter offer was labelled to end on 1 November 2026, yet the page still showed the $1 first month as of November 2026 with no end date, so read the Starter card again on the day you pay.
 
 Before you subscribe, divide the plan's price by the minutes you will actually finish in a month, retakes included.
