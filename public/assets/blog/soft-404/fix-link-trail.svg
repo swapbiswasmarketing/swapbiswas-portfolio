@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+
+  <text x="60" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Where the "Learn how to fix a soft 404" link lands</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Followed with a curl GET request on 4 November 2026</text>
+
+  <!-- Row 1: card A -->
+  <rect x="60" y="150" width="380" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">START</text>
+  <text x="84" y="232" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Page indexing help</text>
+  <text x="84" y="270" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Soft 404 reason, link:</text>
+  <text x="84" y="302" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"Learn how to fix a soft 404"</text>
+
+  <line x1="444" y1="245" x2="490" y2="245" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="490,238 504,245 490,252" fill="#15130f"/>
+
+  <!-- Row 1: card B -->
+  <rect x="510" y="150" width="380" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="534" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">HOP 1: 301</text>
+  <text x="534" y="232" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Old help article</text>
+  <text x="534" y="270" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#3a3632">support.google.com/</text>
+  <text x="534" y="302" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#3a3632">webmasters/answer/181708</text>
+
+  <line x1="894" y1="245" x2="940" y2="245" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="940,238 954,245 940,252" fill="#15130f"/>
+
+  <!-- Row 1: card C -->
+  <rect x="960" y="150" width="380" height="190" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="984" y="190" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">HOP 2: 301</text>
+  <text x="984" y="232" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Old Search Central path</text>
+  <text x="984" y="270" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#3a3632">/search/docs/advanced/</text>
+  <text x="984" y="302" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#3a3632">crawling/soft-404-errors</text>
+
+  <line x1="1150" y1="344" x2="1150" y2="402" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1143,402 1150,416 1157,402" fill="#15130f"/>
+
+  <!-- Row 2: card D -->
+  <rect x="960" y="420" width="380" height="250" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="984" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">LANDS: 200</text>
+  <text x="984" y="502" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">HTTP status codes page</text>
+  <text x="984" y="540" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#3a3632">/crawling/docs/</text>
+  <text x="984" y="568" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#3a3632">troubleshooting/</text>
+  <text x="984" y="596" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#3a3632">http-status-codes</text>
+  <text x="984" y="638" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">One soft 404 sentence, no fix steps</text>
+
+  <!-- Row 2: card E (accent) -->
+  <rect x="60" y="420" width="830" height="250" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="84" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#b53b15">WHERE THE FIX STEPS ARE</text>
+  <text x="84" y="502" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Troubleshoot Google Search Crawling Errors</text>
+  <text x="84" y="542" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#3a3632">/search/docs/crawling-indexing/</text>
+  <text x="84" y="570" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" fill="#3a3632">troubleshoot-crawling-errors#soft-404-errors</text>
+  <text x="84" y="610" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Three fixes by page state. Last updated 18 December 2025.</text>
+  <text x="84" y="642" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Linked from Google's crawl budget guide, not from this trail.</text>
+
+  <text x="60" y="730" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">A HEAD request (curl -sI) to answer/181708 returned 404 the same day, while a GET request followed both 301s.</text>
+</svg>

@@ -201,11 +201,12 @@ If any check fails, fix it before publishing the next page. The compound effect 
 
 ## How to Measure LLM Citations
 
-There is no Google Search Console for LLMs yet. Three approximations:
+There is no Google Search Console for LLMs yet. Four approximations:
 
 1. **The AI Assistant channel** in GA4 (medium `ai-assistant`), announced by Google on 13 May 2026, plus any assistant sources still arriving as Referral. Google's pages each name a different set of assistants for that channel, which [my read of Google's AI Assistant channel pages](/blog/ga4-ai-assistant-channel/) sets side by side. Filter by Session source and watch the trendline.
 2. **Direct LLM testing.** Run your top 20 target queries through ChatGPT, Perplexity, and Gemini once a month. Track whether your URL is cited. A simple spreadsheet works.
 3. **AI citation tools.** Ahrefs Brand Radar, Profound, Otterly, and a small but growing list of others claim to track citations across major LLMs. Coverage is partial; treat the data as directional.
+4. **Bing's AI Performance report.** Bing Webmaster Tools counts how often Microsoft Copilot, AI-generated summaries in Bing and select partner integrations cite your pages, and [what each metric in Bing's AI Performance report measures](/blog/bing-ai-performance-report/) comes with Bing's own caveats.
 
 The honest answer in 2026 is that measurement lags behind the channel. Track what you can, ship structural improvements anyway, and the traffic shows up before the dashboards do.
 

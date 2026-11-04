@@ -121,6 +121,7 @@ swapbiswas.com is a static Astro 5 site deployed on Vercel, and I wrote up [how 
 | Missing URLs, served by the 404 template | Any | noindex, follow | The same layout prop | 13 Mar 2026 | No | Unsubmitted pages only, under Not found (404) rather than this row |
 
 - Missing URLs never reach this row through their noindex. They answer with a 404 status, and Google's [HTTP status code guide](https://developers.google.com/crawling/docs/troubleshooting/http-status-codes) says "Any content Google receives from URLs that return a 4xx status code is ignored", so they belong under Not found (404). The built file is the exception: `/404.html` itself answered 200 with the same noindex, so if Google finds `/404.html`, it belongs in this row under Unsubmitted pages only.
+- A not-found page that answered 200 instead of 404 could be flagged under the Soft 404 reason, and [my soft 404 guide](/blog/soft-404/) sets out what each URL type should answer.
 - The `/redesign/` stubs answer 200 with a noindex, a canonical and a meta refresh all at once; [the curl trace of those stubs](/blog/page-with-redirect-validation-failed/) is in my write-up on redirect validation.
 
 What the report should show for this site:

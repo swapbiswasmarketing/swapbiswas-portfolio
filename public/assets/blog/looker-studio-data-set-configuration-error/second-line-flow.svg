@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+
+  <text x="700" y="70" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Data set configuration error: read the second line</text>
+  <text x="700" y="110" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">The first fix to try, by the line under the banner (my reading of Google's docs, Nov 2026)</text>
+
+  <rect x="430" y="140" width="540" height="90" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="700" y="172" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">THE BANNER</text>
+  <text x="700" y="210" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Data set configuration error</text>
+
+  <line x1="700" y1="230" x2="700" y2="256" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="190" y1="256" x2="1210" y2="256" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="190" y1="256" x2="190" y2="285" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="183,284 197,284 190,298" fill="#b53b15"/>
+  <line x1="530" y1="256" x2="530" y2="285" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="523,284 537,284 530,298" fill="#15130f"/>
+  <line x1="870" y1="256" x2="870" y2="285" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="863,284 877,284 870,298" fill="#15130f"/>
+  <line x1="1210" y1="256" x2="1210" y2="285" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1203,284 1217,284 1210,298" fill="#15130f"/>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif">
+    <rect x="30" y="300" width="320" height="380" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="54" y="336" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">IF THE LINE SAYS</text>
+    <text x="54" y="374" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">No longer has access</text>
+    <text x="54" y="404" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">to the data set</text>
+    <line x1="54" y1="428" x2="326" y2="428" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="54" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">LIKELY CAUSE</text>
+    <text x="54" y="494" font-size="20" fill="#3a3632">Credential owner lost</text>
+    <text x="54" y="526" font-size="20" fill="#3a3632">access or left</text>
+    <text x="54" y="566" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">FIRST FIX</text>
+    <text x="54" y="600" font-size="20" fill="#3a3632">Data credentials, then</text>
+    <text x="54" y="632" font-size="20" fill="#3a3632">Make me the owner</text>
+
+    <rect x="370" y="300" width="320" height="380" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="394" y="336" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">IF THE LINE SAYS</text>
+    <text x="394" y="374" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">Failed to fetch data</text>
+    <text x="394" y="404" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">from the data set</text>
+    <line x1="394" y1="428" x2="666" y2="428" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="394" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">LIKELY CAUSE</text>
+    <text x="394" y="494" font-size="20" fill="#3a3632">Google account</text>
+    <text x="394" y="526" font-size="20" fill="#3a3632">authorization broke</text>
+    <text x="394" y="566" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">FIRST FIX</text>
+    <text x="394" y="600" font-size="20" fill="#3a3632">Edit connection and</text>
+    <text x="394" y="632" font-size="20" fill="#3a3632">Reconnect; then reset</text>
+    <text x="394" y="664" font-size="20" fill="#3a3632">account access</text>
+
+    <rect x="710" y="300" width="320" height="380" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="734" y="336" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">IF THE CHART SAYS</text>
+    <text x="734" y="374" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">Configuration error</text>
+    <text x="734" y="404" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">after fields changed</text>
+    <line x1="734" y1="428" x2="1006" y2="428" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="734" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">LIKELY CAUSE</text>
+    <text x="734" y="494" font-size="20" fill="#3a3632">Data source and</text>
+    <text x="734" y="526" font-size="20" fill="#3a3632">dataset out of sync</text>
+    <text x="734" y="566" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">FIRST FIX</text>
+    <text x="734" y="600" font-size="20" fill="#3a3632">Refresh fields; a type</text>
+    <text x="734" y="632" font-size="20" fill="#3a3632">change needs Reconnect</text>
+
+    <rect x="1050" y="300" width="320" height="380" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="1074" y="336" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">ON A WORK ACCOUNT</text>
+    <text x="1074" y="374" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">Credential settings</text>
+    <text x="1074" y="404" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="23" font-weight="600" fill="#15130f">are incorrect</text>
+    <line x1="1074" y1="428" x2="1346" y2="428" stroke="#e4dfd6" stroke-width="1"/>
+    <text x="1074" y="460" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">LIKELY CAUSE</text>
+    <text x="1074" y="494" font-size="20" fill="#3a3632">Workspace policy:</text>
+    <text x="1074" y="526" font-size="20" fill="#3a3632">Context-Aware Access</text>
+    <text x="1074" y="566" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">FIRST FIX</text>
+    <text x="1074" y="600" font-size="20" fill="#3a3632">Admin exempts</text>
+    <text x="1074" y="632" font-size="20" fill="#3a3632">Data Studio in</text>
+    <text x="1074" y="664" font-size="20" fill="#3a3632">API controls</text>
+  </g>
+
+  <rect x="30" y="710" width="1340" height="80" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="700" y="758" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Only an Error ID? Put the 8-character ID in your report to Google: a new ID is created each time the error occurs.</text>
+</svg>

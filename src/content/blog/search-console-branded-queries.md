@@ -48,7 +48,7 @@ I checked each row against Google's own page on 2 October 2026. For the API, the
 The Insights card and the Generative AI report count a narrower set of searches than the Performance filter:
 
 - The Insights card is built on web search results, so put it next to the Performance report on a Web search type. Google's [Performance report overview](https://support.google.com/webmasters/answer/7576553) now lists Web: text-based and Web: multimodal separately, and of the two, only text-based carries query data. With Image or Video selected, the Performance report is counting a different set of searches.
-- The Generative AI report counts AI Overviews and AI Mode impressions, listed by page, country, date and device, so it cannot show which of them came from brand searches.
+- The Generative AI report counts AI Overviews and AI Mode impressions, listed by page, country, date and device, so it cannot show which of them came from brand searches. What each of its tabs and filters counts, and why it can be missing, is in [my guide to the Search Console generative AI report](/blog/search-console-generative-ai-report/).
 
 ### When the Branded Data Starts
 
@@ -130,7 +130,7 @@ The rules I take from the test, each checked on the export or on strings I typed
 
 ## Branded Queries in the API, BigQuery and Data Studio
 
-I read the Search Analytics API, BigQuery and Data Studio (formerly Looker Studio) references below on 2 October 2026, and have not run the request, the SQL or the formula against live data.
+I read the Search Analytics API, BigQuery and Data Studio (formerly Looker Studio) references below on 2 October 2026, and have not run the request, the SQL or the formula against live data. If the Search Console data source itself stops loading in Data Studio, [the data set configuration error guide](/blog/looker-studio-data-set-configuration-error/) covers the data credential fixes.
 
 | Where | Apply the pattern with | Case by default | Watch for |
 |---|---|---|---|

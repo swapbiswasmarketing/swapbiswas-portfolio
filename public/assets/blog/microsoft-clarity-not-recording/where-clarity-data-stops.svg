@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 840" width="1400" height="840">
+  <rect x="0" y="0" width="1400" height="840" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Four places a Clarity session can drop out</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Checks from Microsoft's Clarity pages on Microsoft Learn, read on 4 November 2026</text>
+
+  <rect x="60" y="140" width="600" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="92" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">1  THE SCRIPT LOADS</text>
+  <text x="92" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">The right code on every page</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="92" y="272">Check: POST requests to clarity.ms/collect</tspan>
+    <tspan x="92" y="306">in the browser's Network tab</tspan>
+    <tspan x="92" y="340">Breaks on: missing code, wrong project, CSP</tspan>
+  </text>
+  <text x="92" y="406" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#6a645c">Learn: Setup, Troubleshooting Installation</text>
+
+  <line x1="660" y1="290" x2="724" y2="290" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="726,283 740,290 726,297" fill="#15130f"/>
+
+  <rect x="740" y="140" width="600" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="772" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">2  THE VISIT IS COUNTED</text>
+  <text x="772" y="228" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Not excluded by the project</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="772" y="272">Check: a console message on blocked IPs</tspan>
+    <tspan x="772" y="306">and the excluded bot count on the dashboard</tspan>
+    <tspan x="772" y="340">Breaks on: your own IP, bot detection</tspan>
+  </text>
+  <text x="772" y="406" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#6a645c">Learn: Block IP addresses, Setup</text>
+
+  <line x1="1040" y1="440" x2="1040" y2="465" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="1040" y1="465" x2="360" y2="465" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="360" y1="465" x2="360" y2="486" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="353,486 367,486 360,500" fill="#15130f"/>
+
+  <rect x="60" y="500" width="600" height="300" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="2"/>
+  <text x="92" y="546" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#b53b15">3  CONSENT IS PASSED</text>
+  <text x="92" y="588" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">EEA, UK and Swiss visits</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="92" y="632">Check: clarity('metadata') in the console</tspan>
+    <tspan x="92" y="666">Without consent: one session per page view</tspan>
+    <tspan x="92" y="700">Enforced since 31 October 2025</tspan>
+  </text>
+  <text x="92" y="766" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#6a645c">Learn: Consent Mode, Consent API v2</text>
+
+  <line x1="660" y1="650" x2="724" y2="650" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="726,643 740,650 726,657" fill="#15130f"/>
+
+  <rect x="740" y="500" width="600" height="300" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="772" y="546" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="2" fill="#6a645c">4  THE REPLAY RENDERS</text>
+  <text x="772" y="588" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Styles Clarity can fetch</text>
+  <text font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <tspan x="772" y="632">Check: CSS reachable without a login</tspan>
+    <tspan x="772" y="666">Breaks on: private CSS, a blocked Clarity-Bot</tspan>
+    <tspan x="772" y="700">Never shown: third-party iframes, canvas</tspan>
+  </text>
+  <text x="772" y="766" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#6a645c">Learn: Troubleshooting Recordings, FAQ</text>
+</svg>

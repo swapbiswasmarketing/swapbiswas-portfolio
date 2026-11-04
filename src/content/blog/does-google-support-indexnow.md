@@ -221,7 +221,7 @@ The hook covers the normal deploy. A small CLI, `scripts/indexnow.mjs`, covers t
 
 It reads URLs from the live sitemap by default rather than from `dist/`, so a page that was built locally but never deployed is never submitted. The CLI is a plain Node script in the repo's `scripts/` folder, next to the Search Console and Semrush CLIs listed in [the Claude Code setup behind this site](/blog/claude-vs-claude-code/).
 
-To confirm the engines received a submission, Bing's [IndexNow get-started page](https://www.bing.com/indexnow/getstarted) says to "use Bing Webmaster Tools to verify if your URLs are received by search engines". The endpoint's status code is not that confirmation: the protocol documentation defines a 200 as "URL submitted successfully" and a 202 as "URL received. IndexNow key validation pending".
+To confirm the engines received a submission, Bing's [IndexNow get-started page](https://www.bing.com/indexnow/getstarted) says to "use Bing Webmaster Tools to verify if your URLs are received by search engines". The endpoint's status code is not that confirmation: the protocol documentation defines a 200 as "URL submitted successfully" and a 202 as "URL received. IndexNow key validation pending". The same Bing Webmaster Tools account also holds a separate report on AI answers, and [my guide to Bing's AI Performance report](/blog/bing-ai-performance-report/) covers what it counts.
 
 ## Does Google Support IndexNow Through a Plugin or CDN?
 

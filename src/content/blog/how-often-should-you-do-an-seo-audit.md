@@ -74,7 +74,7 @@ The point of doing this monthly is speed. If you [check your SEO ranking](/blog/
 
 ### Search Console errors and coverage
 
-Open Google Search Console and read the coverage and indexing reports. New not-indexed pages, a spike in crawl errors, a jump in soft 404s, or a mobile usability warning are all the kind of thing that appears quietly and grows loudly. Monthly is the right frequency because these reports reflect what Google is actually doing with your site right now.
+Open Google Search Console and read the coverage and indexing reports. New not-indexed pages, a spike in crawl errors, a jump in soft 404s, or a mobile usability warning are all the kind of thing that appears quietly and grows loudly. Monthly is the right frequency because these reports reflect what Google is actually doing with your site right now. When the jump is in soft 404s, [the soft 404 table by URL type](/blog/soft-404/) shows what each URL should answer instead.
 
 ### Broken links and Core Web Vitals
 
