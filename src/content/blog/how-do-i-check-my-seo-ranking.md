@@ -2,7 +2,7 @@
 title: "How Do I Check My SEO Ranking? 7 Free and Paid Methods"
 description: "Learn how to check your SEO ranking with 7 free and paid methods, then track rankings over time using Search Console, incognito search and rank trackers."
 publishDate: 2026-04-01
-updatedDate: 2026-09-10
+updatedDate: 2026-11-04
 category: [SEO, Tools]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
@@ -124,7 +124,7 @@ This method works for a quick spot-check on a few keywords. It does not scale fo
 4. Choose your target device (mobile or desktop) and location
 5. Set a tracking frequency (daily is standard)
 
-**Pricing:** [Semrush Pro starts at $139/month](https://www.semrush.com/pricing/) and includes 500 tracked keywords across 5 projects. The Guru plan ($249/month) raises that to 1,500 keywords and adds historical data.
+**Pricing:** Semrush has renamed its plans. As of November 2026, [Semrush's pricing page](https://www.semrush.com/pricing/) lists **SEO at $139/month** (5 websites, 500 keywords tracked daily, Position Tracking included), **Starter SEO + AI Search at $199/month** (the same 5 websites and 500 keywords plus AI visibility prompt tracking), and **Pro+ SEO + AI Search at $299/month**, which raises tracking to 15 websites and 1,500 keywords and adds historical SEO data and keyword cannibalization analysis. Annual billing lowers each monthly figure, and prices change, so check the page before you buy.
 
 **Best for:** Agencies managing multiple client sites and teams that value the cannibalization detection and competitive intelligence features.
 
@@ -192,7 +192,7 @@ If you need ranking data at scale - hundreds of thousands of keywords across mul
 | Google Search Console | Free | High (direct from Google) | No (2-3 day delay) | Yes (16 months) | No | Every website owner |
 | Manual Google Search | Free | Low (personalized) | Yes | No | No | Quick spot-checks |
 | Ahrefs Rank Tracker | From $129/mo | High | Daily updates | Yes | Yes | SEO professionals |
-| Semrush Position Tracking | From $139/mo | High | Daily updates | Yes (Guru+) | Yes | Agencies, large teams |
+| Semrush Position Tracking | From $139/mo | High | Daily updates | Yes (Pro+ SEO + AI Search) | Yes | Agencies, large teams |
 | GA4 + GSC Integration | Free | High | No (2-3 day delay) | Yes | No | Business-focused analysis |
 | Free Rank Checkers | Free | Medium | Snapshot only | No | Limited | Occasional checks |
 | SERP APIs | [From $50/mo](https://trajectdata.com/serp/value-serp-api/) | High | On-demand | Build your own | Yes | Developers, agencies at scale |

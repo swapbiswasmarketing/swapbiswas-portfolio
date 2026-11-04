@@ -2,6 +2,7 @@
 title: "LLM Optimization: Get Cited by ChatGPT, Perplexity, Gemini"
 description: "LLM optimization is how you earn citations in ChatGPT, Perplexity, Claude, and Gemini answers. Signals that matter, structure they reward, 2026 checklist."
 publishDate: 2026-05-09
+updatedDate: 2026-11-04
 category: [SEO, AI, Marketing]
 img: /assets/stock-3.webp
 img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
@@ -15,7 +16,7 @@ faqs:
   - q: "What is llms.txt?"
     a: "llms.txt is a proposed standard that lets sites publish a markdown index of their highest-value content for LLMs to ingest. It is not yet adopted by every model, but adding one is low-cost and signals you are an LLM-aware publisher. swapbiswas.com publishes llms.txt and llms-full.txt at the root."
   - q: "How do I know if my content is being cited by LLMs?"
-    a: "There is no Google Search Console for LLMs yet. The practical signal is GA4's AI Assistant channel (medium ai-assistant), plus Referral rows for assistants Google's list does not cover. A handful of tools (Ahrefs Brand Radar, Profound, Otterly) attempt to track AI citations directly. For now, treat LLM traffic as an emerging channel - measure it where you can and assume the signal is partial."
+    a: "Google has no Search Console report for LLMs, but Bing Webmaster Tools now has an AI Performance report (public preview since 10 February 2026) that counts citations of your pages in Microsoft Copilot and Bing's AI summaries. For other assistants, use GA4's AI Assistant channel (medium ai-assistant), plus Referral rows for assistants Google's list does not cover. A handful of tools (Ahrefs Brand Radar, Profound, Otterly) attempt to track AI citations directly. For now, treat LLM traffic as an emerging channel - measure it where you can and assume the signal is partial."
 ---
 
 Sam Altman announced at OpenAI's October 2025 Dev Day that [ChatGPT had crossed 800 million weekly active users](https://techcrunch.com/2025/10/06/sam-altman-says-chatgpt-has-hit-800m-weekly-active-users/). A growing share of those users now research, compare, and shortlist products inside the chat - and when they ask ChatGPT, Perplexity, Claude, or Gemini for a recommendation, the answer cites a handful of sources, not ten blue links. **LLM optimization** is the practice of being one of those citations.
@@ -32,7 +33,7 @@ LLM optimization is the practice of structuring web content so that large langua
 - **Claude** (claude.ai with web search)
 - **Microsoft Copilot** (Bing-grounded)
 
-Each model has its own retrieval pipeline. Some use partner search indexes (Bing, Google). Some use proprietary crawls. Most use a hybrid. The shared output is the same - a generated answer with inline citations. LLM optimization is how your URL becomes one of those citations. It is worth being precise about the word generated here: these systems compose the answer token by token rather than returning a stored snippet, which is exactly [what the ChatGPT name itself spells out](/blog/what-does-chatgpt-stand-for/), and it is why the same prompt can produce a different set of citations twice in a row.
+Each model has its own retrieval pipeline. Some use partner search indexes (Bing, Google). Some use proprietary crawls. Most use a hybrid. The shared output is the same - a generated answer with inline citations. LLM optimization is how your URL becomes one of those citations. The word generated matters here: these systems compose the answer token by token rather than returning a stored snippet, which is exactly [what the ChatGPT name itself spells out](/blog/what-does-chatgpt-stand-for/), and it is why the same prompt can produce a different set of citations twice in a row.
 
 It is the technical evolution of [AEO vs SEO](/blog/aeo-vs-seo/). Where AEO focused on featured snippets and voice answers, LLM optimization adds the layer of being chunkable, attributable, and topically deep enough to be the source the model trusts.
 
@@ -128,7 +129,7 @@ A modern site treats LLMs as a first-class crawler population. Two files matter.
 
 ### llms.txt
 
-A [proposed standard](/blog/do-you-need-llms-txt/) (see [llmstxt.org](https://llmstxt.org/)) that publishes a markdown index of your highest-value content for LLMs to ingest. The format is simple - a markdown file with sections of links and one-line descriptions. swapbiswas.com publishes one at the root, plus a `llms-full.txt` with full content.
+A [proposed standard](/blog/do-you-need-llms-txt/) (see [llmstxt.org](https://llmstxt.org/)) that publishes a markdown index of the pages you most want LLMs to read. The format is simple - a markdown file with sections of links and one-line descriptions. swapbiswas.com publishes one at the root, plus a `llms-full.txt` with full content.
 
 Adoption across models is partial. The cost of adding one is near-zero, so the asymmetric bet says ship it.
 
@@ -190,7 +191,7 @@ Run this on any page where citation share matters.
 | Article schema with author | `Article` schema includes a real `author` block |
 | Outbound primary-source links | At least 3 links to non-affiliate primary sources |
 | Internal links to siblings | At least 3 links to related pages on the same domain |
-| Page renders in <2s on 4G | Lighthouse mobile performance ≥85 |
+| Page renders in <2s on 4G | Lighthouse mobile performance 85 or above |
 | Last updated within 12 months | Visible `updatedDate` if anything has changed |
 | llms.txt published at root | `domain.com/llms.txt` returns 200 |
 | Robots allow GPTBot, PerplexityBot, ClaudeBot, Google-Extended | Or blocked deliberately, with a reason |
@@ -201,12 +202,11 @@ If any check fails, fix it before publishing the next page. The compound effect 
 
 ## How to Measure LLM Citations
 
-There is no Google Search Console for LLMs yet. Four approximations:
+Google still has no Search Console report for LLM answers, but Microsoft now has the closest thing. [AI Performance in Bing Webmaster Tools](https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/), a public preview since 10 February 2026, shows how often your pages are cited in Microsoft Copilot, AI-generated summaries in Bing and select partner integrations: total citations, average cited pages, grounding queries and citation counts per URL. On 13 October 2026 Microsoft added a [Topics Portfolio beta](https://blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance/) that groups those grounding queries into themes, and [what each metric in Bing's AI Performance report measures](/blog/bing-ai-performance-report/) comes with Bing's own caveats. The report covers Microsoft's surfaces only, so for everything else there are three approximations:
 
 1. **The AI Assistant channel** in GA4 (medium `ai-assistant`), announced by Google on 13 May 2026, plus any assistant sources still arriving as Referral. Google's pages each name a different set of assistants for that channel, which [my read of Google's AI Assistant channel pages](/blog/ga4-ai-assistant-channel/) sets side by side. Filter by Session source and watch the trendline.
 2. **Direct LLM testing.** Run your top 20 target queries through ChatGPT, Perplexity, and Gemini once a month. Track whether your URL is cited. A simple spreadsheet works.
 3. **AI citation tools.** Ahrefs Brand Radar, Profound, Otterly, and a small but growing list of others claim to track citations across major LLMs. Coverage is partial; treat the data as directional.
-4. **Bing's AI Performance report.** Bing Webmaster Tools counts how often Microsoft Copilot, AI-generated summaries in Bing and select partner integrations cite your pages, and [what each metric in Bing's AI Performance report measures](/blog/bing-ai-performance-report/) comes with Bing's own caveats.
 
 The honest answer in 2026 is that measurement lags behind the channel. Track what you can, ship structural improvements anyway, and the traffic shows up before the dashboards do.
 
