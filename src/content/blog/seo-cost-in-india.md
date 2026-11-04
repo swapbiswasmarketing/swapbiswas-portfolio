@@ -18,7 +18,7 @@ faqs:
 
 Expert Web World's Gold plan, BeTopSEO's Growth plan and the bottom of Digital Braino's Starter band each list about ₹15,000 a month on the pages I read on 16 October 2026, and each names keywords, on-page work and something different on top: 200 manual directory submissions at Expert Web World (up to 20 keywords, plus 18% GST); 5 blog posts and 50 backlinks at BeTopSEO (5 to 10 keywords, ₹14,999); and a one-time site audit and Google Business Profile setup at Digital Braino. Across the 10 agencies in my check that printed rupee prices for their own plans, SEO cost in India came to a median of **₹16,250 a month** for the cheapest plan and **₹47,500** for the dearest.
 
-Because the same list price can stand for such different work, I think SEO packages should be compared by their line items first and their price second, and checked against [Google's Do you need an SEO? page](https://developers.google.com/search/docs/fundamentals/do-i-need-seo). This page covers monthly retainers; for a one-off audit, [my breakdown of what an SEO audit costs](/blog/how-much-does-an-seo-audit-cost/) has the numbers.
+Because the same list price can stand for such different work, I think SEO packages should be compared by their line items first and their price second, and checked against [Google's Do you need an SEO? page](https://developers.google.com/search/docs/fundamentals/do-i-need-seo). This page covers monthly retainers; for a one-off audit, [my breakdown of what an SEO audit costs](/blog/how-much-does-an-seo-audit-cost/) has the numbers. Paid search is priced on a different basis: [Google Ads cost in India](/blog/google-ads-cost-in-india/) starts from whatever daily budget you set, within the spending limits Google's Help pages describe.
 
 SEO charges in India started at ₹5,000 to ₹70,000 a month on the 10 agency pages in my check with rupee prices on 16 October 2026, with medians of ₹16,250 for the cheapest plan and ₹47,500 for the dearest. Only 3 of them say how tax applies, and 12 of the 24 agencies publish no price list of their own.
 
@@ -134,7 +134,7 @@ Not on the pages that say: every price or plan page in the check that states how
 | Brainguru (AI marketing plans) | "quotes are exclusive of applicable taxes" |
 | The other seven rupee price lists | nothing about tax |
 
-One ranking article in the check, [SocioLabs' cost guide](https://sociolabs.in/seo-cost-in-india/), tells buyers to clarify whether a quotation includes taxes, along with minimum contract terms and cancellation conditions. Compare quotes after GST. At Expert Web World the 18% turns the ₹45,000 Platinum plan into ₹53,100 a month. A list that is silent on tax could be quoting either way.
+One ranking article in the check, [SocioLabs' cost guide](https://sociolabs.in/seo-cost-in-india/), tells buyers to clarify whether a quotation includes taxes, along with minimum contract terms and cancellation conditions. Compare quotes after GST. At Expert Web World the 18% turns the ₹45,000 Platinum plan into ₹53,100 a month. A list that is silent on tax could be quoting either way. Ad spend with Google India adds a second tax step: Google's India help page sets out a quarterly TDS certificate process for Google Ads, covered in [how to claim a Google Ads TDS refund](/blog/google-ads-tds-refund/).
 
 ## Checking the Plans Against Google's Hiring Page
 

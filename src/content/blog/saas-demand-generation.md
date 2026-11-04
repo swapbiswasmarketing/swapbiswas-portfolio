@@ -60,6 +60,8 @@ Here is how the core channels map to the two engines.
 | Community and review sites | Demand capture | G2, Reddit, and Slack groups intercept buyers in evaluation |
 | Lifecycle email | Activation | Nudge trial users to the "aha" moment that creates a PQL |
 
+If you are opening a first Google Ads account in India for the paid search line, read [Google's current sign-up credit offers and their 60-day spend windows](/blog/google-ads-promotional-code-india/) before you enter billing details.
+
 ### Content That Routes to the Product
 
 In SaaS, the best content does not end with "download our ebook." It ends with "try this yourself." A how-to article that solves a narrow problem and links to a free trial converts intent into product usage in one step.

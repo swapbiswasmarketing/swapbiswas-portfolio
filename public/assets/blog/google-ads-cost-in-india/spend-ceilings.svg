@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720">
+  <rect x="0" y="0" width="1400" height="720" fill="#f6f4ef"/>
+
+  <text x="40" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">What Google can bill on a Rs 500 average daily budget</text>
+  <text x="40" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Google's spending limits for most campaigns, per campaign, as stated on its Help pages in November 2026</text>
+  <rect x="40" y="160" width="290" height="360" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="64" y="200" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">YOU SET</text>
+  <text x="64" y="244" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Average daily</text>
+  <text x="64" y="276" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">budget</text>
+  <text x="64" y="350" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#15130f">Rs 500</text>
+  <text x="64" y="410" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">The amount is</text>
+  <text x="64" y="442" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">"entirely up to you"</text>
+  <text x="64" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">per Google Help</text>
+
+  <line x1="336" y1="340" x2="362" y2="340" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="360,333 374,340 360,347" fill="#15130f"/>
+  <rect x="380" y="160" width="290" height="360" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="404" y="200" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">ANY ONE DAY</text>
+  <text x="404" y="244" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Daily spending</text>
+  <text x="404" y="276" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">limit</text>
+  <text x="404" y="350" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#15130f">Rs 1,000</text>
+  <text x="404" y="410" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">2 x the average</text>
+  <text x="404" y="442" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">daily budget, on</text>
+  <text x="404" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">busy-traffic days</text>
+
+  <line x1="676" y1="340" x2="702" y2="340" stroke="#b53b15" stroke-width="2.5"/>
+  <polygon points="700,333 714,340 700,347" fill="#b53b15"/>
+  <rect x="720" y="160" width="290" height="360" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="200" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">A FULL MONTH</text>
+  <text x="744" y="244" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Monthly spending</text>
+  <text x="744" y="276" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">limit</text>
+  <text x="744" y="350" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#8f2e0f">Rs 15,200</text>
+  <text x="744" y="410" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">30.4 x the average</text>
+  <text x="744" y="442" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">daily budget</text>
+  <text x="744" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">(365 / 12 days)</text>
+
+  <line x1="1016" y1="340" x2="1042" y2="340" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1040,333 1054,340 1040,347" fill="#15130f"/>
+  <rect x="1060" y="160" width="290" height="360" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1084" y="200" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">IF SERVED COST</text>
+  <text x="1084" y="244" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">goes over a</text>
+  <text x="1084" y="276" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">limit</text>
+  <text x="1084" y="350" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="44" font-weight="600" fill="#15130f">Capped</text>
+  <text x="1084" y="410" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Billed cost stops at</text>
+  <text x="1084" y="442" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the limit; Google</text>
+  <text x="1084" y="474" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">covers the rest</text>
+  <rect x="40" y="556" width="1310" height="110" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="68" y="600" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rupee figures are arithmetic on Google's multipliers. Google's en-IN Help examples use</text>
+  <text x="68" y="634" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">GBP 10 a day, GBP 20 a day at most and GBP 304 a month. Limits apply to each campaign.</text>
+</svg>

@@ -30,7 +30,7 @@ The map pack is the top three local listings Google shows for searches with loca
 
 Ranking here is different from ranking a blog post. Google weighs a separate set of signals: your Google Business Profile, your reviews, your citations, and proximity to the searcher. Whitespark's annual survey of [what drives local search rankings](https://whitespark.ca/local-search-ranking-factors/) consistently puts your Google Business Profile and reviews near the top of that list.
 
-Get those signals right and you compete for the map pack even from a low-authority site. Ignore them and no amount of generic SEO will get you there.
+Get those signals right and you compete for the map pack even from a low-authority site. Ignore them and no amount of generic SEO will get you there. Paid search ads are the other way onto a Google results page; if you open a first Google Ads account in India, check [Google's sign-up credit offers and their deadlines](/blog/google-ads-promotional-code-india/) before you enter billing details.
 
 ## Section 1: Google Business Profile (Steps 1-6)
 

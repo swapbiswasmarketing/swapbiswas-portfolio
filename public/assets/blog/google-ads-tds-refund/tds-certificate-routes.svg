@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect x="0" y="0" width="1400" height="820" fill="#f6f4ef"/>
+
+  <text x="700" y="72" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.02em" fill="#15130f">Where a Google Ads TDS certificate goes</text>
+  <text x="700" y="110" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Per Google's India help pages, read 4 November 2026</text>
+
+  <rect x="350" y="140" width="700" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="700" y="176" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">STEP 1 - EVERY QUARTER</text>
+  <text x="700" y="212" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Certificate issued in Form 131</text>
+  <text x="700" y="242" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Google's PAN on it: AACCG0527D</text>
+
+  <line x1="700" y1="260" x2="700" y2="292" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="693,292 707,292 700,306" fill="#15130f"/>
+
+  <rect x="400" y="308" width="600" height="100" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="1.5"/>
+  <text x="700" y="342" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#b53b15">STEP 2 - THE FORK</text>
+  <text x="700" y="384" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Check how the account pays</text>
+
+  <line x1="700" y1="408" x2="700" y2="432" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="380" y1="432" x2="1020" y2="432" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="380" y1="431" x2="380" y2="462" stroke="#15130f" stroke-width="2.5"/>
+  <line x1="1020" y1="431" x2="1020" y2="462" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="373,462 387,462 380,476" fill="#15130f"/>
+  <polygon points="1013,462 1027,462 1020,476" fill="#15130f"/>
+
+  <rect x="100" y="478" width="560" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="380" y="514" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">MONTHLY INVOICING</text>
+  <text x="380" y="552" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google Tax Operations form</text>
+  <text x="380" y="588" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Section: Submit a withholding</text>
+  <text x="380" y="620" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">certificate related to an open invoice</text>
+
+  <rect x="740" y="478" width="560" height="170" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1020" y="514" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="0.12em" fill="#6a645c">PREPAY OR POSTPAY</text>
+  <text x="1020" y="552" text-anchor="middle" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Email eps-tds@google.com</text>
+  <text x="1020" y="588" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Once approved, the credit is</text>
+  <text x="1020" y="620" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">added to the Google Ads account</text>
+
+  <rect x="100" y="680" width="1200" height="96" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="700" y="718" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Deadlines: 15 Aug, 15 Nov, 15 Feb, 15 Jun. Previous year: not accepted after 15 June.</text>
+  <text x="700" y="752" text-anchor="middle" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Typical processing: 10-14 days. Google can't advise on tax: ask a tax consultant.</text>
+</svg>

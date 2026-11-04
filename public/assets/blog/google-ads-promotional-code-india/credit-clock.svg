@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 740" width="1400" height="740">
+  <rect x="0" y="0" width="1400" height="740" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Google Ads sign-up credit in India: the four clocks</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">What has to happen, and by when, under Google's India offer terms (read 4 November 2026)</text>
+
+  <rect x="60" y="150" width="290" height="340" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 1 - APPLY</text>
+  <text x="84" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Apply the offer</text>
+  <text x="84" y="306" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="48" font-weight="600" fill="#15130f">14 days</text>
+  <text x="84" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">from your first ad</text>
+  <text x="84" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">impression; add a</text>
+  <text x="84" y="422" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">payment method</text>
+  <text x="84" y="454" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">at sign-up</text>
+
+  <line x1="352" y1="320" x2="374" y2="320" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="374,313 388,320 374,327" fill="#15130f"/>
+
+  <rect x="390" y="150" width="290" height="340" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="414" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 2 - SPEND</text>
+  <text x="414" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Spend the target</text>
+  <text x="414" y="306" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="48" font-weight="600" fill="#b53b15">60 days</text>
+  <text x="414" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">in ad costs accrued;</text>
+  <text x="414" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">taxes, fees and a</text>
+  <text x="414" y="422" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">payment on its own</text>
+  <text x="414" y="454" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">do not count</text>
+
+  <line x1="682" y1="320" x2="704" y2="320" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="704,313 718,320 704,327" fill="#15130f"/>
+
+  <rect x="720" y="150" width="290" height="340" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="744" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 3 - CHECK</text>
+  <text x="744" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Google verifies</text>
+  <text x="744" y="306" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="48" font-weight="600" fill="#15130f">35 days</text>
+  <text x="744" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">is the usual limit</text>
+  <text x="744" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">on processing once</text>
+  <text x="744" y="422" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">the spend is met</text>
+
+  <line x1="1012" y1="320" x2="1034" y2="320" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="1034,313 1048,320 1034,327" fill="#15130f"/>
+
+  <rect x="1050" y="150" width="290" height="340" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="1074" y="192" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="16" font-weight="500" letter-spacing="1.9" fill="#6a645c">STEP 4 - USE</text>
+  <text x="1074" y="236" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Credit is live</text>
+  <text x="1074" y="306" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="48" font-weight="600" fill="#15130f">60 days</text>
+  <text x="1074" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">then it expires;</text>
+  <text x="1074" y="390" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">unspent credit</text>
+  <text x="1074" y="422" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">is not refunded</text>
+
+  <rect x="60" y="530" width="1280" height="120" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="578" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="24" font-weight="600" fill="#15130f">Offer applied to credit expiry: 60 + 35 + 60 = about 155 days with a full 35-day wait</text>
+  <text x="90" y="618" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Arithmetic on Google's "typically within 35 days", so treat it as a planning figure, not a guarantee</text>
+
+  <text x="60" y="698" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Source: google.com/intl/en_in/ads/coupons/terms/cyoi/ and Google Ads Help (hl=en-IN), 4 November 2026</text>
+</svg>
