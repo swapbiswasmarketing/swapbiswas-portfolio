@@ -74,7 +74,7 @@ The [IG Hashtag Search reference](https://developers.facebook.com/documentation/
 
 That quota applies to software that looks up hashtags, such as a tool that pulls public posts tagged with a campaign hashtag onto a website wall. It does not touch how many hashtags you type. If a tool shows a weekly cap of 30 hashtags, that cap matches this API quota: it limits how many hashtags the tool can query for your account in 7 days.
 
-A second Meta page still prints 30 for captions. The [IG User Media reference](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media), updated 28 September 2026, describes the caption field for posts published through the API as "Maximum 2200 characters, 30 hashtags, and 20 @ tags." I have not tested which number the API enforces today. If you schedule posts through a tool built on it, keep the caption to 5 anyway: that is the number Instagram announced for reels and posts.
+A second Meta page still prints 30 for captions. The [IG User Media reference](https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media), updated 28 September 2026, describes the caption field for posts published through the API as "Maximum 2200 characters, 30 hashtags, and 20 @ tags." I have not tested which number the API enforces today. If you schedule posts through a tool built on it, keep the caption to 5 anyway: that is the number Instagram announced for reels and posts. Meta's WhatsApp docs set their own caption cap, 1,024 characters for an image or video message sent through the API, listed with [the other WhatsApp character limits by field](/blog/whatsapp-character-limit/).
 
 | Limit | Applies to | Number | Meta or Instagram page |
 |---|---|---|---|
@@ -112,7 +112,7 @@ With five slots, the choice of tags matters more than the count. A rule I would 
 | 4 | A campaign or event tag you own or join | Your launch or event hashtag |
 | 5 | Optional: a brand tag, or leave it empty | #yourbrand |
 
-The example tags are illustrations, not tags I have tracked. Skip broad tags such as #explore or #reels, the examples Business Today's report gives of the broad terms Instagram discourages. When organic reach is not enough, a boost is the paid route, and [what an Instagram ad costs in India](/blog/instagram-ad-cost-india/) comes down to a budget you choose, not a fixed rate.
+The example tags are illustrations, not tags I have tracked. Skip broad tags such as #explore or #reels, the examples Business Today's report gives of the broad terms Instagram discourages. Other platforms draw the line elsewhere: YouTube's Help page ignores every hashtag on a video that carries more than 60, as set out in [the YouTube hashtag and tag limits](/blog/youtube-character-limit/). When organic reach is not enough, a boost is the paid route, and [what an Instagram ad costs in India](/blog/instagram-ad-cost-india/) comes down to a budget you choose, not a fixed rate.
 
 ## Pages That Still Print an Old Number
 

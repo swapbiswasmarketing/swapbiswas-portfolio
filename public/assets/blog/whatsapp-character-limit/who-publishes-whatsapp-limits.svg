@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820">
+  <rect x="0" y="0" width="1400" height="820" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Who publishes each WhatsApp character limit</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Checked 5 November 2026. Meta's figures are WhatsApp Business Platform (Cloud API) limits.</text>
+
+  <rect x="60" y="150" width="620" height="575" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#15130f">META'S DEVELOPER DOCS STATE</text>
+  <line x1="90" y1="215" x2="650" y2="215" stroke="#e4dfd6" stroke-width="1"/>
+
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif">
+    <text x="90" y="257" font-size="20" fill="#15130f">About (business profile)</text>
+    <text x="90" y="283" font-size="17" fill="#6a645c">Business profiles page, updated 16 Jun 2026</text>
+    <text x="650" y="268" font-size="26" font-weight="600" text-anchor="end" fill="#15130f">139</text>
+    <line x1="90" y1="305" x2="650" y2="305" stroke="#e4dfd6" stroke-width="1"/>
+
+    <text x="90" y="337" font-size="20" fill="#15130f">Business description</text>
+    <text x="90" y="363" font-size="17" fill="#6a645c">Business profiles page, updated 16 Jun 2026</text>
+    <text x="650" y="348" font-size="26" font-weight="600" text-anchor="end" fill="#15130f">512</text>
+    <line x1="90" y1="385" x2="650" y2="385" stroke="#e4dfd6" stroke-width="1"/>
+
+    <text x="90" y="417" font-size="20" fill="#15130f">Text message body (API)</text>
+    <text x="90" y="443" font-size="17" fill="#6a645c">Text messages page, updated 2 Jul 2026</text>
+    <text x="650" y="428" font-size="26" font-weight="600" text-anchor="end" fill="#15130f">4,096</text>
+    <line x1="90" y1="465" x2="650" y2="465" stroke="#e4dfd6" stroke-width="1"/>
+
+    <text x="90" y="497" font-size="20" fill="#15130f">Image or video caption (API)</text>
+    <text x="90" y="523" font-size="17" fill="#6a645c">Image and video message pages</text>
+    <text x="650" y="508" font-size="26" font-weight="600" text-anchor="end" fill="#15130f">1,024</text>
+    <line x1="90" y1="545" x2="650" y2="545" stroke="#e4dfd6" stroke-width="1"/>
+
+    <text x="90" y="577" font-size="20" fill="#15130f">Group subject (Groups API)</text>
+    <text x="90" y="603" font-size="17" fill="#6a645c">Group management page, updated 21 May 2026</text>
+    <text x="650" y="588" font-size="26" font-weight="600" text-anchor="end" fill="#15130f">128</text>
+    <line x1="90" y1="625" x2="650" y2="625" stroke="#e4dfd6" stroke-width="1"/>
+
+    <text x="90" y="657" font-size="20" fill="#15130f">Group description (Groups API)</text>
+    <text x="90" y="683" font-size="17" fill="#6a645c">Group management page, updated 21 May 2026</text>
+    <text x="650" y="668" font-size="26" font-weight="600" text-anchor="end" fill="#15130f">2,048</text>
+  </g>
+
+  <rect x="720" y="150" width="620" height="575" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="750" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#15130f">ONLY GUIDES PRINT (CONSUMER APP)</text>
+  <line x1="750" y1="215" x2="1310" y2="215" stroke="#e4dfd6" stroke-width="1"/>
+
+  <rect x="735" y="222" width="590" height="80" rx="8" fill="#f3dcd2"/>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif">
+    <text x="750" y="257" font-size="20" fill="#15130f">Text status</text>
+    <text x="750" y="283" font-size="17" fill="#6a645c">typecount, lettercounter (timelines.ai: 139)</text>
+    <text x="1310" y="268" font-size="26" font-weight="600" text-anchor="end" fill="#b53b15">700</text>
+    <line x1="750" y1="305" x2="1310" y2="305" stroke="#e4dfd6" stroke-width="1"/>
+
+    <text x="750" y="337" font-size="20" fill="#15130f">Message (app)</text>
+    <text x="750" y="363" font-size="17" fill="#6a645c">typecount, lettercounter</text>
+    <text x="1310" y="348" font-size="26" font-weight="600" text-anchor="end" fill="#15130f">65,536</text>
+    <line x1="750" y1="385" x2="1310" y2="385" stroke="#e4dfd6" stroke-width="1"/>
+
+    <text x="750" y="417" font-size="20" fill="#15130f">Display name</text>
+    <text x="750" y="443" font-size="17" fill="#6a645c">typecount, lettercounter</text>
+    <text x="1310" y="428" font-size="26" font-weight="600" text-anchor="end" fill="#15130f">25</text>
+    <line x1="750" y1="465" x2="1310" y2="465" stroke="#e4dfd6" stroke-width="1"/>
+
+    <text x="750" y="497" font-size="20" fill="#15130f">Group name</text>
+    <text x="750" y="523" font-size="17" fill="#6a645c">typecount, lettercounter</text>
+    <text x="1310" y="508" font-size="26" font-weight="600" text-anchor="end" fill="#15130f">100</text>
+    <line x1="750" y1="545" x2="1310" y2="545" stroke="#e4dfd6" stroke-width="1"/>
+
+    <text x="750" y="577" font-size="20" fill="#15130f">Group description</text>
+    <text x="750" y="603" font-size="17" fill="#6a645c">lettercounter 500, typecount 2,048</text>
+    <text x="1310" y="588" font-size="26" font-weight="600" text-anchor="end" fill="#15130f">500 / 2,048</text>
+    <line x1="750" y1="625" x2="1310" y2="625" stroke="#e4dfd6" stroke-width="1"/>
+
+    <text x="750" y="657" font-size="20" fill="#15130f">Channel name or description</text>
+    <text x="750" y="683" font-size="17" fill="#6a645c">No figure on any page read</text>
+    <text x="1310" y="668" font-size="26" font-weight="600" text-anchor="end" fill="#15130f">None</text>
+  </g>
+
+  <text x="60" y="775" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Limits change with app and API updates. Recheck each field before you rely on it.</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="1400" height="760">
+  <rect x="0" y="0" width="1400" height="760" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Threads limits, split by who states them</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Meta's Threads API docs and newsroom vs figures printed only by guides, checked 5 November 2026</text>
+
+  <rect x="60" y="140" width="620" height="540" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#b53b15">STATED ON META'S PAGES</text>
+  <line x1="100" y1="206" x2="640" y2="206" stroke="#e4dfd6" stroke-width="1"/>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22">
+    <text x="100" y="250" fill="#3a3632">Post</text><text x="640" y="250" text-anchor="end" fill="#15130f" font-weight="600">500</text>
+    <text x="100" y="304" fill="#3a3632">Text attachment</text><text x="640" y="304" text-anchor="end" fill="#15130f" font-weight="600">10,000</text>
+    <text x="100" y="358" fill="#3a3632">Unique links per post</text><text x="640" y="358" text-anchor="end" fill="#15130f" font-weight="600">5</text>
+    <text x="100" y="412" fill="#3a3632">Topic tag (one per post)</text><text x="640" y="412" text-anchor="end" fill="#15130f" font-weight="600">1 to 50</text>
+    <text x="100" y="466" fill="#3a3632">Poll option (2 to 4 options)</text><text x="640" y="466" text-anchor="end" fill="#15130f" font-weight="600">1 to 25</text>
+    <text x="100" y="520" fill="#3a3632">Image or video alt text</text><text x="640" y="520" text-anchor="end" fill="#15130f" font-weight="600">1,000</text>
+    <text x="100" y="574" fill="#3a3632">Carousel items</text><text x="640" y="574" text-anchor="end" fill="#15130f" font-weight="600">2 to 20</text>
+    <text x="100" y="628" fill="#3a3632">Video length</text><text x="640" y="628" text-anchor="end" fill="#15130f" font-weight="600">5 minutes</text>
+  </g>
+
+  <rect x="720" y="140" width="620" height="540" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="760" y="186" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">PRINTED BY GUIDES ONLY</text>
+  <line x1="760" y1="206" x2="1300" y2="206" stroke="#e4dfd6" stroke-width="1"/>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22">
+    <text x="760" y="250" fill="#3a3632">Bio</text><text x="1300" y="250" text-anchor="end" fill="#15130f" font-weight="600">150</text>
+    <text x="760" y="304" fill="#3a3632">Display name</text><text x="1300" y="304" text-anchor="end" fill="#15130f" font-weight="600">30</text>
+    <text x="760" y="358" fill="#3a3632">Username</text><text x="1300" y="358" text-anchor="end" fill="#15130f" font-weight="600">30</text>
+    <text x="760" y="412" fill="#3a3632">Bio link title</text><text x="1300" y="412" text-anchor="end" fill="#15130f" font-weight="600">30</text>
+    <text x="760" y="466" fill="#3a3632">Direct message</text><text x="1300" y="466" text-anchor="end" fill="#15130f" font-weight="600">1,000</text>
+    <text x="760" y="520" fill="#3a3632">Reply, as a separate figure</text><text x="1300" y="520" text-anchor="end" fill="#15130f" font-weight="600">500</text>
+  </g>
+  <text x="760" y="586" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">Sources: UniLink (2 May 2026) for all six;</text>
+  <text x="760" y="616" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">TypeCount (7 Sep 2026) for bio and reply.</text>
+
+  <text x="60" y="724" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">Figures are characters unless marked. Emoji count as UTF-8 bytes against the 500, per Meta.</text>
+</svg>

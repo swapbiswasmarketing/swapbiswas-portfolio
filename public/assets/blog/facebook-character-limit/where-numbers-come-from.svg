@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 770" width="1400" height="770">
+  <rect x="0" y="0" width="1400" height="770" fill="#f6f4ef"/>
+  <text x="40" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Where each Facebook character figure comes from</text>
+  <text x="40" y="108" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Read logged out on 5 November 2026: Meta's Graph API v27.0 and Facebook Help Center</text>
+
+  <rect x="30" y="140" width="430" height="560" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="485" y="140" width="430" height="560" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <rect x="940" y="140" width="430" height="560" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <g font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" letter-spacing="2" fill="#6a645c">
+    <text x="58" y="182">META'S OWN PAGES</text>
+    <text x="513" y="182">PRESS REPORTS</text>
+    <text x="968" y="182">GUIDES ONLY</text>
+  </g>
+  <g font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">
+    <text x="58" y="218">Published by Meta</text>
+    <text x="513" y="218">Dated news, not Meta</text>
+    <text x="968" y="218">No Meta page cited</text>
+  </g>
+  <line x1="58" y1="240" x2="432" y2="240" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="513" y1="240" x2="887" y2="240" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="968" y1="240" x2="1342" y2="240" stroke="#e4dfd6" stroke-width="1"/>
+
+  <g font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="30" font-weight="600" fill="#15130f">
+    <text x="58" y="286" fill="#b53b15">100</text>
+    <text x="58" y="356">5 minimum</text>
+    <text x="58" y="426">2 a month</text>
+    <text x="58" y="496">35 and 30</text>
+
+    <text x="513" y="286">63,206</text>
+    <text x="513" y="356">101</text>
+
+    <text x="968" y="286">155 or 255</text>
+    <text x="968" y="356">75</text>
+    <text x="968" y="426">8,000</text>
+    <text x="968" y="496">477 / 125</text>
+    <text x="968" y="566">2,000 / 8,000 / 63,206</text>
+    <text x="968" y="636">50</text>
+  </g>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">
+    <text x="58" y="314">Page Description (API)</text>
+    <text x="58" y="384">Username length</text>
+    <text x="58" y="454">Page posts or comments with links</text>
+    <text x="58" y="524">Carousel card cuts (title, text)</text>
+
+    <text x="513" y="314">Post: TechRadar, December 2011</text>
+    <text x="513" y="384">Bio: Adweek, June 2017</text>
+
+    <text x="968" y="314">Page Description</text>
+    <text x="968" y="384">Page name</text>
+    <text x="968" y="454">Comment</text>
+    <text x="968" y="524">See more, desktop / mobile</text>
+    <text x="968" y="594">Event description, three guides</text>
+    <text x="968" y="664">Username maximum</text>
+  </g>
+  <g font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="19" fill="#6a645c">
+    <text x="513" y="600">Guides still print both</text>
+    <text x="513" y="628">figures in 2026, with no</text>
+    <text x="513" y="656">link to a Meta page.</text>
+  </g>
+
+  <text x="40" y="740" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Figures as printed on each page. None was tested in the Facebook editor.</text>
+</svg>
