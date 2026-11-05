@@ -46,6 +46,8 @@ Google's India list has four sections: credit and debit cards, money transfer, N
 - **Availability can lag the list:** "certain payment methods may be temporarily unavailable while Google Ads reviews your account's eligibility to use them."
 - **A per-account check:** the page points to Google's [payment options tool](https://payments.google.com/paymentsinfofinder) "for a precise list of what's available for your country and currency".
 
+A promotion started from YouTube Studio also bills through a linked Google Ads account, so these methods apply there; the [guide to YouTube ads cost in India](/blog/youtube-ads-cost-in-india/) explains what each YouTube format charges for.
+
 ## Postpay vs Prepay: How Each Setting Charges You
 
 Google's [payment settings article](https://support.google.com/google-ads/answer/1704418?hl=en-IN) defines the settings this way, in the version shown for India:
@@ -80,7 +82,7 @@ The payment steps Google gives:
 3. Enter the amount: "The minimum prepayment amount is 500 INR, and the maximum is 100,000 INR per day."
 4. Select **Submit**, then verify the payment in your UPI app.
 
-Google says the balance "will typically update within 48 hours", that it emails you "when 30% of your funds are left", and that a slow UPI payment is "typically two to five working days". Each top-up is a payment you approve in your UPI app; the section has no wording on UPI AutoPay or a recurring mandate. Some subscriptions work the other way: [Canva offers UPI Autopay for recurring Pro and Pro Lite payments in India](/blog/canva-pro-price-in-india/), with a mandate you approve in your UPI app.
+Google says the balance "will typically update within 48 hours", that it emails you "when 30% of your funds are left", and that a slow UPI payment is "typically two to five working days". Each top-up is a payment you approve in your UPI app; the section has no wording on UPI AutoPay or a recurring mandate. Some subscriptions work the other way: [Canva offers UPI Autopay for recurring Pro and Pro Lite payments in India](/blog/canva-pro-price-in-india/), with a mandate you approve in your UPI app. Meta also takes UPI for Instagram and Facebook ads in India, but only if you choose it when the ad account is first set up, a rule covered in [what Instagram ads cost in India](/blog/instagram-ad-cost-india/).
 
 ## Google Ads UPI Not Showing? Check These First
 

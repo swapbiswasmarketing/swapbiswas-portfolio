@@ -57,6 +57,8 @@ Shorts do not help the first route. YouTube says qualified watch hours from Shor
 | | Views from ad campaigns |
 | | Image posts appearing in the Shorts feed |
 
+Paid reach sits outside these thresholds too: YouTube Help says subscribers and watch time from a YouTube Studio promotion do not count toward Partner Programme eligibility, and [what Promote and YouTube ads cost in India](/blog/youtube-ads-cost-in-india/) covers the budget side.
+
 ### Review, Rejection and Re-Applying
 
 - Meeting a threshold does not admit the channel by itself. Every channel goes through a standard review of the channel as a whole.
