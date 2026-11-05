@@ -97,7 +97,7 @@ The voice layer is where the strategic insight usually lives. Behavior tells you
 
 ### Layer 4: Revenue
 
-The accountability layer. Without it, journey analytics is interesting but not load-bearing.
+The accountability layer. Without it, journey analytics is interesting but nobody acts on it.
 
 - ARR by cohort
 - Pipeline velocity by stage
@@ -199,7 +199,7 @@ The two answers are often different. The first is where most teams focus. The se
 
 For each high-impact drop-off, design one experiment, ship it, measure the stage conversion rate. If it lifted, keep. If not, kill and move to the next.
 
-The teams that improve journeys fastest are not the teams with the best dashboards. They are the teams that run **two to four experiments per week** at known friction points.
+The teams that improve journeys fastest run **two to four experiments per week** at known friction points.
 
 ## What Journey Analytics Unlocks in Practice
 

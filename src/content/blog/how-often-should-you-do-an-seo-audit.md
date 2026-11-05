@@ -60,7 +60,7 @@ If you want a single master list of everything the deeper checks cover, keep a f
 
 ## The Monthly Monitoring Audit
 
-Think of this as vital signs. You are not diagnosing anything deep.
+This is a vital-signs check. You are not diagnosing anything deep.
 
 You are checking that nothing is bleeding. On a healthy site with monitoring already wired up, this takes 30 to 60 minutes a month, most of it reading dashboards rather than digging.
 

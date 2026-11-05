@@ -65,7 +65,7 @@ Click maps show where users click (desktop) or tap (mobile). Every click is reco
 
 **How to read a click map:**
 
-- **Look for click clusters on non-interactive elements.** If users click on images, headings, or plain text, they expect those elements to be links or buttons. These are called "dead clicks" and signal a UX problem. Contentsquare's research found that **[slow-loading or unresponsive content causes 53% of users to exit after viewing just a single page](https://contentsquare.com/press/2025-digital-experience-benchmarks/)** - and dead clicks are often the first sign of that friction
+- **Look for click clusters on non-interactive elements.** If users click on images, headings, or plain text, they expect those elements to be links or buttons. These are called "dead clicks" and signal a UX problem. Contentsquare's research found that **[slow-loading or unresponsive content causes 53% of users to exit after viewing just a single page](https://contentsquare.com/press/2025-digital-experience-benchmarks/)** - and dead clicks are often an early sign of that friction
 - **Check if your primary CTA gets the most clicks.** If navigation links or secondary elements get more clicks than your main CTA, your visual hierarchy needs work
 - **Compare desktop vs. mobile click maps.** Tap targets that work on desktop often fail on mobile because elements are too small or too close together
 
@@ -83,7 +83,7 @@ Do not read [LinkedIn's per-section profile impressions](/blog/linkedin-impressi
 
 ### Move/Hover Maps
 
-Move maps (also called hover maps or attention maps) track where users move their mouse cursor. Research suggests a moderate correlation between mouse position and eye gaze, making this a rough proxy for visual attention.
+Move maps (also called hover maps or attention maps) track where users move their mouse cursor. Mouse position and eye gaze are moderately correlated, which makes this a rough proxy for visual attention.
 
 **How to read a move map:**
 

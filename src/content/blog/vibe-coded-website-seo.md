@@ -34,7 +34,7 @@ Lovable has since changed its default. Per [Lovable's SEO documentation](https:/
 
 Lovable's Free plan publishes to lovable.app domains, and custom domains start on Pro; [Lovable Pro's price for buyers in India](/blog/lovable-ai-price-in-india/) differs between the web and the iPhone app.
 
-### Why AI Tools Default to Client-Side React
+### AI Tools Default to Client-Side React
 
 React, in its plain form, is a client-side rendering library. The server sends a near-empty HTML file with a single empty container, usually something like `<div id="root"></div>`, plus a large JavaScript bundle. The browser downloads that bundle, runs it, and only then builds the page you see.
 
@@ -134,7 +134,7 @@ If neither of the above fits, prerendering generates static HTML snapshots of yo
 
 Whichever route you take, the test is the same as before. Run URL Inspection again, view the rendered HTML, and confirm your content is there now.
 
-## Where This Fits in a Real SEO Strategy
+## Fitting This Into a Real SEO Strategy
 
 Solving the rendering problem is the price of entry, not the finish line. It gets your content into the index so everything else can matter: useful content, structure, and authority over time. The same holds as AI search reshapes results, which I cover in [AI and the future of SEO](/blog/ai-future-of-seo/) and the more tactical [AI SEO strategy](/blog/ai-seo-strategy/) piece. Even angles like a [structured llms.txt file](/blog/do-you-need-llms-txt/) assume one thing first: that your content is visible to crawlers at all.
 
