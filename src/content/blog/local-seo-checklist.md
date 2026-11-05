@@ -22,7 +22,7 @@ Three out of four consumers say they "always" or "regularly" read online reviews
 
 This **local SEO checklist** gives you 20 concrete steps to rank in the Google map pack, the block of three business listings that sits above the normal results. It is built for small businesses and solo marketers who do not have an agency budget. Work through it in order and you will cover every signal that local search actually rewards.
 
-![Local SEO checklist showing 20 steps across five areas](/assets/blog/local-seo-checklist/checklist.webp "Local SEO Checklist: 20 Steps to the Map Pack")
+<img src="/assets/blog/local-seo-checklist/checklist.webp" alt="Local SEO checklist showing 20 steps across five areas" title="Local SEO Checklist: 20 Steps to the Map Pack" width="1200" height="660" loading="lazy" decoding="async" />
 
 ## Why This Local SEO Checklist Starts With the Map Pack
 
@@ -58,7 +58,7 @@ Upload your storefront, interior, team, and product photos. Profiles with fresh,
 
 ### 6. Publish Google Posts regularly
 
-Publish a Google Post weekly with an offer, event, or update to keep the profile active in Google's eyes. Google retired the public Q&A section on Business Profiles in late 2025, so the way to "answer" customer questions now is to make sure your profile description, services, and attributes cover them in detail, since Google's AI features pull answers from that information.
+Publish a Google Post weekly with an offer, event, or update to keep the profile active in Google's eyes. Q&A has not been retired. As of 5 November 2026, Google's [Edit your Business Profile help page](https://support.google.com/business/answer/3039617?hl=en) says Q&A "is available only for select business categories and regions", that owners "can answer questions about their business in the Q&A section", and that "For verified US merchants, Google is piloting an enhanced Q&A experience" in which you answer attribute questions with "Yes," "No," or "Skip." If your profile shows a Q&A section, answer the questions there. Either way, make sure your profile description, services, and attributes cover common customer questions in detail.
 
 ## Section 2: NAP and Citations (Steps 7-10)
 
@@ -70,7 +70,7 @@ Citations are mentions of your business on other websites: directories, review p
 
 ### 8. Build core citations first
 
-Claim and complete your listings on the platforms that matter most: Apple Maps, Bing Places, Yelp, Facebook, and the major data aggregators (Data Axle, Foursquare, and TransUnion's Digital Business Profile, formerly Localeze). The aggregators feed your details to dozens of smaller directories downstream, so getting them right propagates clean data across the wider ecosystem.
+Claim and complete your listings on the platforms that matter most: Apple Maps, Bing Places, Yelp, Facebook, and the major data aggregators (Data Axle, Foursquare, and TransUnion's Digital Business Profile, formerly Localeze). The aggregators feed your details to dozens of smaller directories downstream, so getting them right propagates clean data across those directories.
 
 ### 9. Add industry and local citations
 
