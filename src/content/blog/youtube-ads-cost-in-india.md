@@ -3,8 +3,8 @@ title: "YouTube Ads Cost in India: What Google Bills, by Format"
 description: "YouTube ads cost in India has no Google rate card. See what each format is billed for, why rupee CPV and CPM estimates disagree, and what Studio Promote costs."
 publishDate: 2026-11-05
 category: [Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "How much do YouTube ads cost per view in India?"
     a: "Google publishes no rupee cost per view. You set a target CPV and pay for each TrueView view, which on a skippable in-stream ad means 30 seconds watched or an interaction. Agency estimates, read in November 2026: about ₹2 per view (₹2 to ₹3 for skippable ads) from Mega Digital (5 June 2026), and ₹0.50 to ₹3 from The Media Ant (page titled 2026)."

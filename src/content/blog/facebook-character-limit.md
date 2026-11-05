@@ -3,8 +3,8 @@ title: "Facebook Character Limit: What Meta States, Field by Field"
 description: "Guides put the Facebook character limit at 63,206 per post, yet no Meta page I read states it. Here is each field, Meta's own figure, and who prints the rest."
 publishDate: 2026-11-05
 category: [Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-5.webp
+img_alt: "Renaissance-style painting of a printing workshop with a wooden press, type cases and a red inked sheet"
 faqs:
   - q: "What is the Facebook post character limit?"
     a: "Guides print 63,206 characters, a figure TechRadar reported on 1 December 2011. Meta's Graph API Page Feed reference describes the post message as the main body of the post and states no maximum, as of 5 November 2026."

@@ -3,8 +3,8 @@ title: "Threads Character Limit: 500 Per Post, 10,000 Attached"
 description: "The Threads character limit is 500 per post and 10,000 in a text attachment. Here is each Threads field, its limit, and whether Meta or only a guide states it."
 publishDate: 2026-11-05
 category: [Marketing]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-6.webp
+img_alt: "Renaissance-style landscape of a mountain path climbing toward a monastery in morning light, a red cloak on the trail"
 faqs:
   - q: "What is the character limit on Threads?"
     a: "500 characters per post, per Meta's Threads API docs as of November 2026. A text-only post can also carry a text attachment of up to 10,000 characters and a link."

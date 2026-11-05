@@ -4,7 +4,7 @@ description: "The YouTube character limit is 100 for a title and 5,000 for a des
 publishDate: 2026-11-05
 category: [Marketing, Tools]
 img: /assets/stock-4.webp
-img_alt: "placeholder"
+img_alt: "Renaissance-style study of an orrery and geometric instruments on a scholar's table, a red thread tracing an orbit"
 faqs:
   - q: "What is the YouTube title character limit?"
     a: "100 characters. YouTube Help's Edit video settings page says video titles have a character limit of 100 characters, and the YouTube Data API reference gives the same 100, allowing any valid UTF-8 character except < and >, as of November 2026."

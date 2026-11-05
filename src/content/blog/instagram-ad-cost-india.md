@@ -3,8 +3,8 @@ title: "Instagram Ad Cost in India: Meta's Rules vs Agency Rates"
 description: "Instagram ad cost in India has no Meta rate card. What Meta does publish in November 2026: a 175% day cap, GST and 2% TDS, UPI rules, beside agency CPC estimates."
 publishDate: 2026-11-05
 category: [Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-1.webp
+img_alt: "Renaissance-style painting of a walled hill town at dawn with market stalls, a red banner rising above the square"
 faqs:
   - q: "How much does it cost to boost a post on Instagram in India?"
     a: "Meta sets no fixed boost price: you choose a daily budget and a duration when you boost, and Meta's help pages publish no rupee minimum. Boosting in the Instagram iOS app means paying with available funds through the App Store, where Meta says a 30% Apple service fee may apply in most regions, so Meta suggests instagram.com instead."

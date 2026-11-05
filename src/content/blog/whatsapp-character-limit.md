@@ -3,8 +3,8 @@ title: "WhatsApp Character Limit for Status: 700 or 139?"
 description: "The WhatsApp character limit by field: what Meta's developer docs state, like About 139 and message 4,096, and which figures, like status 700, only guides print."
 publishDate: 2026-11-05
 category: [Marketing, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-8.webp
+img_alt: "Renaissance-style study of an open library with globes and folios, a red bookmark in the open volume"
 faqs:
   - q: "Is the WhatsApp status limit 700 or 139 characters?"
     a: "700 is the text status figure that typecount.com and lettercounter.org print. 139 is the limit those two guides give the About field, and timelines.ai applies 139 to statuses instead. No WhatsApp or Meta page I could read on 5 November 2026 states a text status limit."

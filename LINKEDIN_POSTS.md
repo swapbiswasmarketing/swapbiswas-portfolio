@@ -4325,3 +4325,142 @@ https://swapbiswas.com/blog/instagram-hashtag-limit/?utm_source=linkedin&utm_med
 #Instagram #SocialMedia #ContentMarketing #Marketing
 
 ---
+
+### Instagram Ad Cost in India: Meta's Rules vs Agency Rates
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a merchant's writing desk with a small brass hand mirror lying face up beside a stack of copper coins, a leather ledger with blank ruled pages, a quill in an inkwell and a seven-day wooden peg calendar, a single vermilion red ribbon tied around the coin stack, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Search "Instagram ad cost in India" and you get rupee-per-click tables.
+None of them comes from Meta. Meta's help pages publish rules, not prices.
+
+- On a daily budget, Meta can spend up to 175% of it on one day and no more than 7 times it in a Sunday-to-Saturday week.
+- Ad accounts with India as the business country are billed in rupees by Meta India, with GST and TDS added whenever you are charged.
+- Meta's TDS page gives 2% for advertising; for card and local payments, the refund comes back as Meta ad credit.
+- UPI and Netbanking work only if you choose one when you first set up the ad account, with India as the country and INR as the currency.
+- Meta's minimum-budget page quotes US dollars only. Every rupee CPC figure in the guides is the publisher's own estimate.
+
+Did your first boost cost what you expected?
+
+https://swapbiswas.com/blog/instagram-ad-cost-india/?utm_source=linkedin&utm_medium=social&utm_campaign=instagram-ad-cost-india
+
+#InstagramAds #MetaAds #DigitalMarketing #MarketingBudget
+
+---
+
+### YouTube Ads Cost in India: What Google Bills, by Format
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a scholar's table with a brass hourglass half run through, a pocket sundial, a small stack of copper coins and an open leather ledger with blank ruled pages, a single vermilion red thread wound around the neck of the hourglass, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Two guides to YouTube ads cost in India put a skippable view at around Rs 2 and at Rs 0.50 to Rs 3.
+Per 1,000 impressions, their ranges do not even overlap.
+
+- Google bills a skippable in-stream view at 30 seconds watched, or on an interaction, whichever comes first.
+- A Shorts or in-feed ad bills at 10 seconds or a click.
+- Bumper and non-skippable ads are bought per 1,000 impressions and cannot earn a billed view at all.
+- Promote in YouTube Studio: Google's India playbook says results are possible from $5 USD and recommends at least $100 USD. No rupee figure is given.
+- Subscribers and watch time from Promote do not count toward YouTube Partner Programme eligibility.
+
+Which YouTube format would you buy first?
+
+https://swapbiswas.com/blog/youtube-ads-cost-in-india/?utm_source=linkedin&utm_medium=social&utm_campaign=youtube-ads-cost-in-india
+
+#YouTubeAds #VideoMarketing #DigitalMarketing #MarketingBudget
+
+---
+
+### Facebook Character Limit: What Meta States, Field by Field
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, an old printed broadsheet folded on a wooden desk beside a brass ruler laid along a long handwritten scroll that trails off the table edge, a magnifying glass resting on the broadsheet, soft window light, a single vermilion wax seal on the ruler, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Every Facebook character limit guide I read says a post can run to 63,206 characters.
+None of the four links a Meta page for it.
+
+- The 63,206 traces to a TechRadar report from 1 December 2011.
+- Meta's Graph API Page reference gives a Page's Description (the about field) a "Limit of 100 characters".
+- Guides print 155 or 255 for that same field.
+- The 101-character bio figure comes from a 2017 Adweek piece. No Meta page I read states it.
+- Meta's username guidelines give a 5-character minimum and no maximum.
+
+The rule I use: a limit is settled when the platform prints it. Everything else is a guide's number, and I label it that way.
+
+https://swapbiswas.com/blog/facebook-character-limit/?utm_source=linkedin&utm_medium=social&utm_campaign=facebook-character-limit
+
+#SocialMediaMarketing #ContentMarketing #Facebook #Copywriting
+
+---
+
+### Threads Character Limit: 500 Per Post, 10,000 Attached
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a short folded letter on a desk with a much longer rolled parchment tied beneath it by a thin cord, a wooden abacus beside them, a quill at rest, a single vermilion ribbon on the parchment, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+One headline said Threads raised its post limit from 500 to 10,000 characters.
+The post itself still stops at 500.
+
+- 500 characters per post, per Meta's Threads API overview (updated 22 December 2025).
+- The 10,000 is a text attachment, which Meta began rolling out on 4 September 2025. Its API docs allow one on text-only posts without a poll.
+- Emoji count as their UTF-8 bytes: a thumbs-up uses 4 of your 500.
+- Polls take 2 to 4 options of 1 to 25 characters each. A topic tag runs 1 to 50 characters.
+- The 150-character bio: none of the 10 Meta developer and newsroom pages I read prints it. Only guides do.
+
+Have you ever used the 10,000-character attachment, or do you still split long takes into a thread?
+
+https://swapbiswas.com/blog/threads-character-limit/?utm_source=linkedin&utm_medium=social&utm_campaign=threads-character-limit
+
+#SocialMediaMarketing #Threads #ContentStrategy #Copywriting
+
+---
+
+### WhatsApp Character Limit for Status: 700 or 139?
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, two small handwritten notes of different lengths pinned side by side to a wooden board, a pair of brass calipers measuring the longer note, an inkwell and quill below, a single vermilion thread linking the two notes, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Search for the WhatsApp status character limit and you get two answers: 700 and 139.
+No WhatsApp or Meta page I could read gives either one for a status.
+
+- About: 1 to 139 characters, per Meta's Business Profiles page. Business description: 512.
+- A text message sent through the Cloud API: 4,096 characters. One guide prints 1,600.
+- Image or video caption: 1,024, a figure the guides and Meta agree on.
+- Groups API: a subject of 128 characters, a description of 2,048.
+- The consumer app's status, message and group-name limits come only from guides.
+
+If a status runs long, post a photo and put the words in the caption.
+
+https://swapbiswas.com/blog/whatsapp-character-limit/?utm_source=linkedin&utm_medium=social&utm_campaign=whatsapp-character-limit
+
+#WhatsAppMarketing #WhatsAppBusiness #SocialMediaMarketing #Copywriting
+
+---
+
+### YouTube Character Limit: Every Field, and Who States It
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a brass balance scale on a wooden desk with a small stack of thin paper slips in one pan and a single thick bound ledger in the other, a quill and inkwell beside it, soft side light, a single vermilion ribbon tied around the ledger, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+YouTube Help gives a video description 5,000 characters. YouTube's Data API reference says 5,000 bytes.
+In English those are the same. In Hindi they are not.
+
+- A Devanagari, Bengali or Tamil letter is 3 bytes in UTF-8. 1,666 of them come to 4,998 bytes; one more and you are over.
+- 5,000 Hindi characters, the figure Help gives, come to 15,000 bytes: three times the API's cap.
+- Title: 100 characters, on both the Help page and the API reference.
+- Tags: 500 in total, and the commas count. A tag with a space is counted as if wrapped in quotation marks, and those count too.
+- Hashtags: add more than 60 and YouTube ignores every one.
+- Comment, playlist and Shorts title figures come only from guides. The 10,000-character comment limit is a guide's number.
+
+If you write descriptions in an Indian language, do you count bytes or characters?
+
+https://swapbiswas.com/blog/youtube-character-limit/?utm_source=linkedin&utm_medium=social&utm_campaign=youtube-character-limit
+
+#YouTubeMarketing #ContentMarketing #VideoMarketing #Localization
+
+---
