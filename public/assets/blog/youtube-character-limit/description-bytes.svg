@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <rect x="0" y="0" width="1400" height="800" fill="#f6f4ef"/>
+  <text x="70" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">How many characters fit in a 5,000-byte YouTube description</text>
+  <text x="70" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="23" fill="#6a645c">YouTube Help says 5,000 characters. The Data API says 5,000 bytes. One code point per character below.</text>
+
+  <rect x="70" y="150" width="1260" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="195" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">English</text>
+  <text x="100" y="232" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">1 BYTE EACH (A-Z, 0-9, SPACE)</text>
+  <rect x="480" y="182" width="700" height="44" rx="6" fill="#15130f"/>
+  <text x="1200" y="214" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">5,000</text>
+
+  <rect x="70" y="280" width="1260" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="325" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Latin e with acute accent</text>
+  <text x="100" y="362" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">2 BYTES EACH (U+00E9)</text>
+  <rect x="480" y="312" width="350" height="44" rx="6" fill="#6a645c"/>
+  <text x="850" y="344" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">2,500</text>
+
+  <rect x="70" y="410" width="1260" height="110" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="455" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Hindi, Bengali, Tamil</text>
+  <text x="100" y="492" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#8f2e0f">3 BYTES EACH, RUPEE SIGN TOO</text>
+  <rect x="480" y="442" width="233" height="44" rx="6" fill="#b53b15"/>
+  <text x="733" y="474" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">1,666</text>
+
+  <rect x="70" y="540" width="1260" height="110" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="100" y="585" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Rocket emoji</text>
+  <text x="100" y="622" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">4 BYTES EACH (U+1F680)</text>
+  <rect x="480" y="572" width="175" height="44" rx="6" fill="#6a645c"/>
+  <text x="675" y="604" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="28" font-weight="600" fill="#15130f">1,250</text>
+
+  <text x="70" y="702" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Arithmetic: 5,000 divided by UTF-8 bytes per code point, from Node's Buffer.byteLength.</text>
+  <text x="70" y="736" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Not a YouTube Studio test. Figures from YouTube Help and the Data API reference, November 2026.</text>
+</svg>

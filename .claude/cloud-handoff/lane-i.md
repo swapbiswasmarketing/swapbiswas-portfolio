@@ -108,6 +108,46 @@ If a status runs long, post a photo and put the words in the caption.
 
 **Nano Banana image prompt (1200x628):** Renaissance-style still life, warm paper background #f6f4ef, muted earth tones, two small handwritten notes of different lengths pinned side by side to a wooden board, a pair of brass calipers measuring the longer note, an inkwell and quill below, one vermilion thread linking the two notes as the only accent, no text in the image, 1200x628.
 
+## Batch 2 (publishDate 2026-11-05)
+
+### youtube-character-limit
+- Primary keyword: youtube character limit (variants: youtube title character limit, youtube description character limit, youtube tags character limit, youtube comment character limit, youtube channel description character limit)
+- Verdict: LONGTAIL_ONLY (no valid sub-DR-40 article in the top 5; #1 influencermarketinghub.com, est. DR 70+, updated 5 Nov 2026)
+- Realistic: 5-30 visits/month (US/global, #6-10). Top-3 upside: 100-400/month, discounted because "100 characters" is answered zero-click.
+- Proof page: none valid in the top 5. utilhq.pages.dev (#5, "UtilHQ Team", tool site) fails the named-owner test.
+- Refresh: 2026-02-05. Re-fetch Help 57404 ("Edit video settings": title 100, description 5,000 characters), the hashtags Help page 6390658 (60), and the Data API v3 videos/channels references (description "maximum length of 5000 bytes", tags 500, channel title 30, description 1000, keywords 500; all "Last updated 2026-11-03 UTC"). The Data API URLs now 301 to developers.google.com/youtube/data/reference/rest/v3/<resource>.
+- Footprint: `| youtube-character-limit | reference table by field: YouTube Help vs Data API vs guides + byte worked example | problem-led (5,000 characters in Help vs 5,000 bytes in the API, for Hindi) | prose | synthesized |`
+- Review ledger: status=new, review_due=2026-11-26
+- First-hand question: Do you have access to any YouTube channel you can test on (not an employer channel)? If so, paste a description of 1,700 Devanagari characters (about 5,100 UTF-8 bytes) into YouTube Studio's description box and note what the counter shows and whether it saves. The answer belongs in "YouTube Description Character Limit: Characters in Help, Bytes in the API".
+- Hosts edited: x-character-limit (hub down-link, same paragraph as the batch-1 down-links), youtube-post-image-size (after the poll/quiz image line), instagram-hashtag-limit (end of "Do Hashtags Still Help Reach" section).
+
+### LinkedIn draft (batch 2)
+
+#### [DRAFTED] YouTube gives a description 5,000 characters. Its API counts 5,000 bytes.
+
+YouTube's Help page says a video description can run to 5,000 characters. YouTube's own Data API reference says 5,000 bytes. In English those are the same. In Hindi they are not.
+
+The arithmetic (UTF-8, checked 5 November 2026):
+
+- An English letter is 1 byte, so 5,000 fit either way.
+- A Devanagari, Bengali or Tamil letter is 3 bytes. 1,666 of them come to 4,998 bytes. One more and you are over.
+- 5,000 Hindi characters, the figure Help gives, come to 15,000 bytes: three times the API's cap.
+
+The rest of the field-by-field picture:
+
+- Title: 100 characters, on both the Help page and the API reference.
+- Tags: 500 in total, and the commas count. A tag with a space gets quotes, which count too.
+- Hashtags: add more than 60 and YouTube ignores every one.
+- Comment limit, playlist title, Shorts title: no YouTube page I read gives one. The 10,000 you see is a guide's number.
+
+If you write descriptions in an Indian language, count bytes, not characters.
+
+🔗 https://swapbiswas.com/blog/youtube-character-limit/?utm_source=linkedin&utm_medium=social&utm_campaign=youtube-character-limit
+
+#YouTubeMarketing #ContentMarketing #VideoMarketing #Localization #MarketingOps
+
+**Nano Banana image prompt (1200x628):** Renaissance-style still life, warm paper background #f6f4ef, muted earth tones, a brass balance scale on a wooden desk with a small stack of thin paper slips in one pan and a single thick bound ledger in the other, a quill and inkwell beside it, one vermilion ribbon tied around the ledger as the only accent, soft side light, no text in the image, 1200x628.
+
 ## Rejected (gated, not written)
 - instagram character limit (I01): DROP. replug.io (#1, edited 13 Oct 2026) already publishes the "Help Center and Meta docs vs not published" table with sources. Head query answered zero-click; DR 55-90 top 5. Realistic 5-40 at #8-15.
 - facebook ad character limit / meta ads primary text (I07): DROP. Meta's Ads Guide gives only per-placement "Text Recommendations". socialrails.com already publishes the recommended-vs-maximum debunk. Realistic 2-10.

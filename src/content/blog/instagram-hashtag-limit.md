@@ -112,7 +112,7 @@ With five slots, the choice of tags matters more than the count. A rule I would 
 | 4 | A campaign or event tag you own or join | Your launch or event hashtag |
 | 5 | Optional: a brand tag, or leave it empty | #yourbrand |
 
-The example tags are illustrations, not tags I have tracked. Skip broad tags such as #explore or #reels, the examples Business Today's report gives of the broad terms Instagram discourages.
+The example tags are illustrations, not tags I have tracked. Skip broad tags such as #explore or #reels, the examples Business Today's report gives of the broad terms Instagram discourages. Other platforms draw the line elsewhere: YouTube's Help page ignores every hashtag on a video that carries more than 60, as set out in [the YouTube hashtag and tag limits](/blog/youtube-character-limit/).
 
 ## Pages That Still Print an Old Number
 

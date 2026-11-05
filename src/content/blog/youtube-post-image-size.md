@@ -127,7 +127,7 @@ The [Computer version of Create a post](https://support.google.com/youtube/answe
 | Scheduling | A date, time and time zone; the iPhone page says scheduling, rich editing and expiration "are not yet available on Android tablets or iPads" |
 | Posts per day | "We limit how many posts a channel can create in a 24-hour period"; after a "limit reached" error, "try again in 24 hours". No number is given |
 
-Poll and quiz images get no pixel size on any of these pages either. Threads polls are tighter: Meta's API allows 2 to 4 options of 1 to 25 characters each, per [the Threads post and poll limits](/blog/threads-character-limit/).
+Poll and quiz images get no pixel size on any of these pages either. Threads polls are tighter: Meta's API allows 2 to 4 options of 1 to 25 characters each, per [the Threads post and poll limits](/blog/threads-character-limit/). Video titles, descriptions and tags have their own limits, set out with their sources in [what YouTube states for each character limit](/blog/youtube-character-limit/).
 
 ## Where Post Images Show and Who Can Post
 
