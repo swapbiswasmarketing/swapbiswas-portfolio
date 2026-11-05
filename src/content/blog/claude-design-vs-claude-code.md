@@ -124,6 +124,8 @@ Lovable also builds without the canvas. Its docs say "You describe what you want
 | A campaign page on a host from the send-to list, such as Vercel or Netlify | That host, from Claude Design's Export menu |
 | An app you want the builder to host and run | Lovable or Replit |
 
+If you are deciding between those two, [Replit vs Lovable by project type](/blog/replit-vs-lovable/) compares what each entry plan meters.
+
 If you pick Replit from that table and pay from India, [my guide to Replit Core's price at each checkout](/blog/replit-price-in-india/) shows when Apple's India App Store costs less than replit.com and when it costs more.
 
 If your site runs on a platform from Claude Design's send-to list, such as Wix, HubSpot or Adobe Experience Manager, check what its send-to delivers before you plan a Claude Code handoff. The same rendered-HTML check from step 6 applies whichever builder takes the handoff.
