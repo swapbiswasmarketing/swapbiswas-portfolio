@@ -1100,6 +1100,14 @@
 		],
 		"hash": "7f4c2b56c9becaef"
 	},
+	"/assets/blog/facebook-character-limit/where-numbers-come-from.webp": {
+		"w": 1200,
+		"h": 660,
+		"v": [
+			660
+		],
+		"hash": "88ffc39bbfa2b561"
+	},
 	"/assets/blog/faq-schema/faq-rich-results-timeline.webp": {
 		"w": 1200,
 		"h": 669,
@@ -2623,6 +2631,14 @@
 		],
 		"hash": "a130ad939215a38e"
 	},
+	"/assets/blog/threads-character-limit/who-states-threads-limits.webp": {
+		"w": 1200,
+		"h": 651,
+		"v": [
+			660
+		],
+		"hash": "a8a3dfe561209865"
+	},
 	"/assets/blog/top-down-vs-bottom-up-market-sizing/one-market-two-ways.webp": {
 		"w": 1200,
 		"h": 763,
@@ -2881,6 +2897,14 @@
 			660
 		],
 		"hash": "0803db83298b96df"
+	},
+	"/assets/blog/whatsapp-character-limit/who-publishes-whatsapp-limits.webp": {
+		"w": 1200,
+		"h": 703,
+		"v": [
+			660
+		],
+		"hash": "d2034905526813ee"
 	},
 	"/assets/blog/white-paper-vs-case-study/buyer-question-map.webp": {
 		"w": 1200,

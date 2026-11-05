@@ -50,7 +50,7 @@ There is no official Open Graph image size, because the protocol sets none. Ever
 - **YouTube post images:** an image uploaded to a YouTube Post is not an og:image either; YouTube's Help page sets a 16 MB limit and suggests 1:1 with no pixel size, as [the YouTube post image size breakdown](/blog/youtube-post-image-size/) shows.
 - **X:** the old Cards pages on developer.x.com now redirect to the docs.x.com overview, and none of the 1,121 URLs in the docs.x.com sitemap is a Cards page. Three third-party guides I checked give three different answers: [Moda](https://moda.app/resources/sizes/twitter-card) recommends 1200 x 675 and calls 2:1 the official ratio, [Screenhance](https://screenhance.com/blog/twitter-card-dimensions-2026) gives 1200 x 628 at 1.91:1, and [og-image.org](https://og-image.org/docs/platforms/twitter) gives 1200 x 630 at 1.91:1. [The docs.x.com pages I checked](https://docs.x.com/overview), which show what X ships rather than a spec, declare a 1200 x 630 twitter:image on a summary_large_image card, and the file measures 1200 x 630. The text of the post that carries the card has its own budget, and [how X counts a link and the copy around it](/blog/x-character-limit/) is in a separate post.
 - **Slack:** its link-expanding bot looks for "oEmbed and Twitter Card / Open Graph tags", fetches the image "to check validity" and caches responses "for around 30 minutes".
-- **WhatsApp:** its page also says the head holding the tags "must appear within the first 300KB of the HTML", and that not meeting its requirements "may risk the link to be not previewed".
+- **WhatsApp:** its page also says the head holding the tags "must appear within the first 300KB of the HTML", and that not meeting its requirements "may risk the link to be not previewed". The text sent with a shared link has its own caps, and [the WhatsApp message and caption limits in Meta's docs](/blog/whatsapp-character-limit/) are set out in a separate post.
 
 ## Does an OG Image Affect SEO?
 
@@ -106,7 +106,7 @@ None of the platform pages I checked says yes or no to WebP for og:image, so for
 This site's cards are WebP. A live request for one card on 2 October 2026 came back as `Content-Type: image/webp`, at the same 49,892 bytes as the file in the build output. If you ship WebP too, preview the URL in each platform's own tool before a launch post goes out:
 
 - On LinkedIn that tool is the [Post Inspector](https://www.linkedin.com/post-inspector/), which LinkedIn describes as a way to "Get insights into how your content shows up on LinkedIn".
-- On Facebook it is the Sharing Debugger, which Meta's image page recommends for pre-caching and for tracing errors.
+- On Facebook it is the Sharing Debugger, which Meta's image page recommends for pre-caching and for tracing errors. The words in a Facebook post or Page field have their own caps, and [what Meta states for each Facebook character limit](/blog/facebook-character-limit/) is covered separately.
 - On WhatsApp, the link-preview page says to type the link into a message without sending it, then recheck the requirements if no preview appears above the composer "after 10 seconds" or the preview is not "in the expected large size".
 
 ## The Open Graph Tags That Carry Size and Alt Text
