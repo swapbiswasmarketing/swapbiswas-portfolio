@@ -116,7 +116,7 @@ The example tags are illustrations, not tags I have tracked. Skip broad tags suc
 
 ## Pages That Still Print an Old Number
 
-Several pages still print a number other than 5, because they were written before 18 December 2025 or describe a different limit. As each page showed it on 4 November 2026:
+Several pages still print a number other than 5, because they were written before 18 December 2025 or describe a different limit. As each page showed it on 4 November 2026 (the Ads Guide row on 5 November):
 
 | Page | Number it prints | Date on the page | Why it differs |
 |---|---|---|---|
@@ -124,6 +124,9 @@ Several pages still print a number other than 5, because they were written befor
 | PiunikaWeb, three-hashtag experiment | 3 in a test, 30 in the Help Center | 21 November 2025 | Reports the test and the Help Center as they stood then |
 | Meta's IG User Media reference | 30 per API-published caption | Updated 28 September 2026 | A developer page that still lists 30 |
 | Meta's Hashtag Search guide | 30 unique per 7 days | Updated 17 August 2026 | An API lookup quota, not a caption rule |
+| Meta's Ads Guide, Instagram Feed image ads | 30 per ad | Read 5 November 2026 | An ad-spec page, listed under "Text Recommendations" |
+
+The ad row is the newest finding. Meta's [Ads Guide page for Instagram Feed image ads](https://www.facebook.com/business/ads-guide/update/image/instagram-feed), as of 5 November 2026, lists "Maximum Number of Hashtags: 30" under Text Recommendations, beside 125 characters of primary text and a 40-character headline. It is the only hashtag figure on that page, and it covers paid placements, so it is no reason to put more than 5 in an organic caption.
 
 The test I use for a platform limit is the one I applied to [LinkedIn's 220-character headline limit](/blog/linkedin-headline-character-limit/): the number counts when the platform's own page prints it. Instagram's 5 passes that test through the @creators post; I found no Instagram page behind the 3.
 
