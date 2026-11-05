@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 790" width="1400" height="790">
+  <rect x="0" y="0" width="1400" height="790" fill="#f6f4ef"/>
+
+  <text x="40" y="70" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">Rupee CPC for Instagram ads in India, by source</text>
+  <text x="40" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Each bar is the range printed on that page, read on 5 November 2026. Meta's help pages give no rupee CPC.</text>
+
+  <rect x="40" y="150" width="1320" height="530" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+
+  <line x1="540" y1="172" x2="540" y2="628" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="690" y1="172" x2="690" y2="628" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="840" y1="172" x2="840" y2="628" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="990" y1="172" x2="990" y2="628" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="1140" y1="172" x2="1140" y2="628" stroke="#e4dfd6" stroke-width="1"/>
+
+  <line x1="64" y1="241" x2="1336" y2="241" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="64" y1="307" x2="1336" y2="307" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="64" y1="373" x2="1336" y2="373" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="64" y1="439" x2="1336" y2="439" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="64" y1="505" x2="1336" y2="505" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="64" y1="571" x2="1336" y2="571" stroke="#e4dfd6" stroke-width="1"/>
+
+  <text x="64" y="200" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">upGrowth</text>
+  <text x="64" y="226" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">its estimate, September 2026</text>
+  <rect x="552" y="196" width="153" height="18" rx="9" fill="#15130f"/>
+  <text x="717" y="212" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rs 4 to Rs 55</text>
+
+  <text x="64" y="266" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Young Urban Project</text>
+  <text x="64" y="292" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">FAQ answer, April 2025</text>
+  <rect x="541" y="262" width="9" height="18" rx="4" fill="#15130f"/>
+  <text x="562" y="278" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rs 0.45 to Rs 3</text>
+
+  <text x="64" y="332" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Young Urban Project</text>
+  <text x="64" y="358" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">USD table converted, April 2025</text>
+  <rect x="645" y="328" width="75" height="18" rx="9" fill="#15130f"/>
+  <text x="732" y="344" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rs 35 to Rs 60</text>
+
+  <text x="64" y="398" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Young Urban Project</text>
+  <text x="64" y="424" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">"broader ranges", April 2025</text>
+  <rect x="541" y="394" width="599" height="18" rx="9" fill="#15130f"/>
+  <text x="1152" y="410" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rs 0.5 to Rs 200</text>
+
+  <text x="64" y="464" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Boss Wallah</text>
+  <text x="64" y="490" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">"average" for 2026, page of Aug 2025</text>
+  <rect x="546" y="460" width="12" height="18" rx="6" fill="#15130f"/>
+  <text x="570" y="476" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rs 2 to Rs 6</text>
+
+  <text x="64" y="530" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Boss Wallah</text>
+  <text x="64" y="556" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Instagram vs Facebook FAQ, same page</text>
+  <rect x="641" y="526" width="337" height="18" rx="9" fill="#15130f"/>
+  <text x="990" y="542" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Rs 33.75 to Rs 145.98</text>
+
+  <text x="64" y="596" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#15130f">Meta</text>
+  <text x="64" y="622" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="18" fill="#6a645c">Business Help Centre</text>
+  <text x="552" y="608" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600" fill="#b53b15">No rupee CPC on the Meta pages cited</text>
+
+  <text x="540" y="660" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">Rs 0</text>
+  <text x="690" y="660" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">Rs 50</text>
+  <text x="840" y="660" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">Rs 100</text>
+  <text x="990" y="660" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">Rs 150</text>
+  <text x="1140" y="660" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">Rs 200</text>
+  <text x="1336" y="660" text-anchor="end" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" fill="#6a645c">PER CLICK</text>
+
+  <text x="40" y="724" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Ranges as each page prints them; none is Meta's figure. Young Urban Project says its converted</text>
+  <text x="40" y="754" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">table uses an average exchange rate of about Rs 82-85 per US dollar.</text>
+</svg>

@@ -153,6 +153,7 @@ Decision rules from Meta's own feature lists:
 - If the only goal is a badge on a personal Facebook profile, Facebook Verified is free where Meta has rolled it out.
 - For a two-app bundle at the top of the range, budget for the standard rate, since Meta's post says the introductory price ends after 12 months.
 - A monthly subscription nobody reviews is the cost I argue against in [my case for a five-tool marketing stack](/blog/marketing-tools-you-need/). Put a review date on Meta Verified the day you subscribe.
+- Paid reach is a separate bill: Meta Verified's feature lists cover the badge, support and protection, while ad spend has no Meta rupee price list, as [Instagram ad cost in India](/blog/instagram-ad-cost-india/) sets out.
 
 ## Before You Pay for Meta Verified in India
 

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880" width="1400" height="880">
+  <rect x="0" y="0" width="1400" height="880" fill="#f6f4ef"/>
+
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" letter-spacing="-0.76" fill="#15130f">When a YouTube ad becomes billable</text>
+  <text x="60" y="110" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">What Google bills for, by format. Google Ads Help (en-IN), read 5 November 2026</text>
+
+  <text x="500" y="160" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">0 s</text>
+  <text x="640" y="160" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">5 s</text>
+  <text x="780" y="160" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">10 s</text>
+  <text x="1340" y="160" text-anchor="middle" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">30 s</text>
+
+  <rect x="60" y="175" width="410" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="217" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Skippable in-stream</text>
+  <text x="84" y="252" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#b53b15">CPV BIDDING</text>
+  <rect x="486" y="175" width="868" height="104" rx="12" fill="#f3dcd2" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="500" y1="210" x2="1340" y2="210" stroke="#e4dfd6" stroke-width="6"/>
+  <line x1="500" y1="210" x2="1340" y2="210" stroke="#b53b15" stroke-width="4"/>
+  <circle cx="1331" cy="210" r="9" fill="#b53b15"/>
+  <text x="506" y="258" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#15130f">Billed at 30 s (or the end, if shorter) or on an interaction</text>
+
+  <rect x="60" y="293" width="410" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="335" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">In-feed video</text>
+  <text x="84" y="370" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">CPV BIDDING</text>
+  <rect x="486" y="293" width="868" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="500" y1="328" x2="1340" y2="328" stroke="#eeebe4" stroke-width="6"/>
+  <line x1="509" y1="328" x2="780" y2="328" stroke="#15130f" stroke-width="4"/>
+  <circle cx="509" cy="328" r="9" fill="#15130f"/>
+  <circle cx="780" cy="328" r="9" fill="#15130f"/>
+  <text x="506" y="376" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Billed on a thumbnail click, or after 10 s of autoplay</text>
+
+  <rect x="60" y="411" width="410" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="453" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">YouTube Shorts ads</text>
+  <text x="84" y="488" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">CPV OR TARGET CPM</text>
+  <rect x="486" y="411" width="868" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="500" y1="446" x2="1340" y2="446" stroke="#eeebe4" stroke-width="6"/>
+  <line x1="500" y1="446" x2="780" y2="446" stroke="#15130f" stroke-width="4"/>
+  <circle cx="780" cy="446" r="9" fill="#15130f"/>
+  <text x="506" y="494" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">CPV: 10 s, a CTA click, a like, comment or share. Target CPM: per impression</text>
+
+  <rect x="60" y="529" width="410" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="571" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Bumper (6 s)</text>
+  <text x="84" y="606" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">TARGET CPM</text>
+  <rect x="486" y="529" width="868" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="500" y1="564" x2="1340" y2="564" stroke="#eeebe4" stroke-width="6"/>
+  <line x1="509" y1="564" x2="668" y2="564" stroke="#15130f" stroke-width="4"/>
+  <circle cx="509" cy="564" r="9" fill="#15130f"/>
+  <text x="506" y="612" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Paid per impression. Not eligible for TrueView views</text>
+
+  <rect x="60" y="647" width="410" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="689" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="25" font-weight="600" fill="#15130f">Non-skippable in-stream</text>
+  <text x="84" y="724" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="18" font-weight="500" fill="#6a645c">TARGET CPM</text>
+  <rect x="486" y="647" width="868" height="104" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <line x1="500" y1="682" x2="1340" y2="682" stroke="#eeebe4" stroke-width="6"/>
+  <line x1="509" y1="682" x2="1340" y2="682" stroke="#15130f" stroke-width="4"/>
+  <circle cx="509" cy="682" r="9" fill="#15130f"/>
+  <text x="506" y="730" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Paid per impression, up to 60 s long. Not eligible for TrueView views</text>
+
+  <rect x="60" y="771" width="1294" height="64" rx="12" fill="#eeebe4" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="84" y="811" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Masthead: reserved only, at a fixed CPM plus targeting upcharges, or cost per hour. One country per campaign</text>
+</svg>

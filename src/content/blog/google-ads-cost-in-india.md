@@ -103,13 +103,13 @@ The 30.4x figure assumes a campaign that runs the whole month on one budget. Goo
 | Ad schedule runs only some days | The monthly limit stays 30.4x, and Google paces to reach it regardless of how many days are scheduled | A weekday-only ₹500 campaign in November 2026 (21 weekdays) can still bill ₹15,200, about ₹724 per weekday, inside the ₹1,000 daily limit |
 | You change the campaign end date | Counted as a budget change for the monthly maximum | Re-check the month's limit after any end-date edit |
 
-The ad-schedule row matters for small Indian businesses that only want ads during office hours or on weekdays: switching days off does not shrink the month's maximum, it concentrates the same 30.4x into fewer days.
+The ad-schedule row matters for small Indian businesses that only want ads during office hours or on weekdays: switching days off does not shrink the month's maximum, it concentrates the same 30.4x into fewer days. Meta paces Instagram and Facebook ads on a weekly clock instead, capping a day at 175% of the daily budget and a Sunday-to-Saturday week at 7 times it, as [the guide to Instagram ad cost in India](/blog/instagram-ad-cost-india/) shows in rupees.
 
 ### Campaign Total Budgets Work Differently
 
 A campaign total budget sets one amount for a fixed run instead of a daily average. Google's [About campaign total budgets page](https://support.google.com/google-ads/answer/10486938?hl=en-IN) and the budget-changes page describe it this way, as of November 2026:
 
-- It suits a time-bound event of 3 to 90 days on Search, Shopping and Performance Max (Demand Gen and YouTube can run up to a year).
+- It suits a time-bound event of 3 to 90 days on Search, Shopping and Performance Max (Demand Gen and YouTube can run up to a year). What each YouTube format is billed for, from a 30-second view to a bumper impression, is in this [breakdown of YouTube ads cost in India](/blog/youtube-ads-cost-in-india/).
 - There is no daily spending limit, and "you will never be charged more than your total budget". The budget-changes page calls it "a hard cap for the total duration of the campaign".
 - Google re-paces spend daily to use the remaining budget over the remaining days, so a ₹10,000 total over 10 days starts near ₹1,000 a day on my arithmetic and moves from there.
 - It is available only when you create a new campaign; an existing campaign cannot switch from an average daily budget.
