@@ -116,6 +116,8 @@ These messages point at a key that has taken over:
 - `Your ANTHROPIC_API_KEY belongs to a disabled organization`, from an old key that still overrides your login
 - A connector you added at claude.ai missing from `/mcp`, which the MCP docs say to check with `/status`
 
+If requests through a proxy or gateway fail with `API Error: 502 Bad Gateway` or another error page, [the gateway section of the Claude 500 error guide](/blog/claude-internal-server-error/) separates those from a 500 inside Anthropic's API.
+
 ## How to Make Claude Code Use Your Subscription Instead of an API Key
 
 1. **Decline the key in interactive sessions.** In the CLI, turn off "Use custom API key" in `/config`. Runs with `claude -p` still use the key.

@@ -142,7 +142,7 @@ On Lovable vs v0: both appear on Claude Design's send-to list, so if your design
 
 ## Switching Between Lovable and Bolt
 
-Moving a project from Lovable to Bolt has a documented route. Bolt's help center has an [Import from Lovable](https://support.bolt.new/integrations/lovable-import) page: sync the Lovable project to GitHub, then import that repository into Bolt. Lovable's plan docs list Git sync with GitHub, GitLab and Bitbucket on every plan, Free included.
+Moving a project from Lovable to Bolt has a documented route. Bolt's help center has an [Import from Lovable](https://support.bolt.new/integrations/lovable-import) page: sync the Lovable project to GitHub, then import that repository into Bolt. Lovable's plan docs list Git sync with GitHub, GitLab and Bitbucket on every plan, Free included. Replit is the other common move, and its Import app from Lovable route is covered in [Replit vs Lovable](/blog/replit-vs-lovable/).
 
 Before you switch, check what happens to the balance you leave behind:
 

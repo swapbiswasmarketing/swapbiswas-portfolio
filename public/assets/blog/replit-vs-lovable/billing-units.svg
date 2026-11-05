@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" width="1200" height="660">
+  <rect width="1200" height="660" fill="#f6f4ef"/>
+  <text x="60" y="68" font-family="'Bricolage Grotesque', 'Inter', 'Segoe UI', Arial, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.5">What one entry plan meters: Lovable Pro vs Replit Core</text>
+  <text x="60" y="104" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="22" fill="#6a645c">From each vendor's pricing page and billing docs, November 2026. Prices and limits change.</text>
+
+  <rect x="60" y="140" width="510" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="186" font-family="'JetBrains Mono', 'Consolas', 'Courier New', monospace" font-size="17" font-weight="500" fill="#6a645c" letter-spacing="2">LOVABLE PRO, $25 A MONTH</text>
+  <text x="90" y="232" font-family="'Bricolage Grotesque', 'Inter', 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="600" fill="#15130f">One credit balance</text>
+  <text x="90" y="268" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">100 monthly credits</text>
+  <text x="90" y="300" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">+ 5 build credits a day</text>
+  <text x="90" y="332" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">+ 20 Cloud credits, 4 AI credits</text>
+  <line x1="90" y1="362" x2="540" y2="362" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="400" font-family="'JetBrains Mono', 'Consolas', 'Courier New', monospace" font-size="18" font-weight="500" fill="#6a645c">SPENT ON</text>
+  <text x="90" y="438" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">Building (Plan Mode: 1 credit a message)</text>
+  <text x="90" y="470" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">Hosting the app on Lovable Cloud</text>
+  <text x="90" y="502" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">AI features inside the app</text>
+  <text x="90" y="550" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="19" fill="#6a645c">Unused monthly credits expire after 2 months</text>
+
+  <rect x="630" y="140" width="510" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="660" y="186" font-family="'JetBrains Mono', 'Consolas', 'Courier New', monospace" font-size="17" font-weight="500" fill="#6a645c" letter-spacing="2">REPLIT CORE, $20 A MONTH</text>
+  <text x="660" y="232" font-family="'Bricolage Grotesque', 'Inter', 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="600" fill="#15130f">Two allowances</text>
+  <text x="660" y="268" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">Free Mode: up to 30 hours of chat</text>
+  <text x="660" y="300" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">and up to 60 projects</text>
+  <text x="660" y="332" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">+ $20 towards paid models</text>
+  <line x1="660" y1="362" x2="1110" y2="362" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="660" y="400" font-family="'JetBrains Mono', 'Consolas', 'Courier New', monospace" font-size="18" font-weight="500" fill="#6a645c">CREDITS SPENT ON</text>
+  <text x="660" y="438" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">Paid Agent work, priced by effort</text>
+  <text x="660" y="470" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">Published apps, storage, databases</text>
+  <text x="660" y="502" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" fill="#3a3632">Then pay-as-you-go</text>
+  <text x="660" y="550" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="19" fill="#b53b15" font-weight="600">Replit asks before a paid action starts</text>
+
+  <text x="60" y="626" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="19" fill="#6a645c">Sources: lovable.dev/pricing, docs.lovable.dev subscription plans, replit.com/pricing, docs.replit.com AI billing</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720">
+  <rect x="0" y="0" width="1400" height="720" fill="#f6f4ef"/>
+  <text x="60" y="72" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="38" font-weight="600" fill="#15130f" letter-spacing="-0.02em">Where the 500 hit decides what Claude Code did</text>
+  <text x="60" y="112" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="22" fill="#6a645c">Anthropic's Claude Code error reference, as of November 2026</text>
+
+  <rect x="60" y="150" width="390" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#6a645c" letter-spacing="0.12em">STAGE 1</text>
+  <text x="90" y="238" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">Before any output</text>
+  <text x="90" y="270" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">has streamed</text>
+  <line x1="90" y1="298" x2="420" y2="298" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="90" y="340" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Retried with backoff,</text>
+  <text x="90" y="372" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">up to 10 times by default</text>
+  <text x="90" y="420" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">You see the 500 only after</text>
+  <text x="90" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">those retries fail</text>
+  <text x="90" y="530" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">Send again</text>
+
+  <line x1="452" y1="370" x2="490" y2="370" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="490,363 504,370 490,377" fill="#15130f"/>
+
+  <rect x="505" y="150" width="390" height="440" rx="12" fill="#ffffff" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="535" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#6a645c" letter-spacing="0.12em">STAGE 2</text>
+  <text x="535" y="238" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">After thinking, before</text>
+  <text x="535" y="270" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">any text or tool call</text>
+  <line x1="535" y1="298" x2="865" y2="298" stroke="#e4dfd6" stroke-width="1"/>
+  <text x="535" y="340" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Retried up to two times</text>
+  <text x="535" y="372" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">on v2.1.284 or later</text>
+  <text x="535" y="420" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Older versions ended the</text>
+  <text x="535" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">turn with the error</text>
+  <text x="535" y="530" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#15130f">Send again or update</text>
+
+  <line x1="897" y1="370" x2="935" y2="370" stroke="#15130f" stroke-width="2.5"/>
+  <polygon points="935,363 949,370 935,377" fill="#15130f"/>
+
+  <rect x="950" y="150" width="390" height="440" rx="12" fill="#f3dcd2" stroke="#b53b15" stroke-width="1.5"/>
+  <text x="980" y="196" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="17" font-weight="500" fill="#b53b15" letter-spacing="0.12em">STAGE 3</text>
+  <text x="980" y="238" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">After a text block</text>
+  <text x="980" y="270" font-family="Bricolage Grotesque, Segoe UI, system-ui, sans-serif" font-size="26" font-weight="600" fill="#15130f">or a tool call</text>
+  <line x1="980" y1="298" x2="1310" y2="298" stroke="#b53b15" stroke-width="1"/>
+  <text x="980" y="340" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Not re-run: a re-send could</text>
+  <text x="980" y="372" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">run the same tools twice</text>
+  <text x="980" y="420" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">Completed output is kept</text>
+  <text x="980" y="452" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#3a3632">(v2.1.199 or later)</text>
+  <text x="980" y="530" font-family="JetBrains Mono, Cascadia Mono, Consolas, monospace" font-size="19" font-weight="500" fill="#b53b15">Read it, reply continue</text>
+
+  <text x="60" y="650" font-family="Inter, Segoe UI, system-ui, sans-serif" font-size="20" fill="#6a645c">Stage 3 shows: API Error: Server error mid-response. The response above may be incomplete.</text>
+</svg>

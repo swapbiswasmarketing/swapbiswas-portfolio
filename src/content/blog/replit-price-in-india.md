@@ -22,7 +22,7 @@ Replit Core costs the same in Apple's India App Store as on replit.com when a US
 
 [RBI's reference rate](https://www.rbi.org.in/scripts/ReferenceRateArchive.aspx) for 9 October 2026 was ₹96.6149 to the dollar, between the two. At that rate, before any card fee, the web is the cheaper checkout if no tax is added and the App Store is cheaper if 18% is, and Replit's [pricing page](https://replit.com/pricing) leaves the tax line open with a footnote: "*Prices are subject to tax depending on your location."
 
-Replit is one of the app builders I use, and I read its price as a floor. Core buys $20 of monthly credits and a Free Mode allowance, and Agent work past both is billed as you go, up to any usage limit you set. I would pick the checkout by its tax line, then set that limit before the first paid run.
+Replit is one of the app builders I use, and I read its price as a floor. Core buys $20 of monthly credits and a Free Mode allowance, and Agent work past both is billed as you go, up to any usage limit you set. I would pick the checkout by its tax line, then set that limit before the first paid run. If you are still choosing between builders, [my Replit vs Lovable comparison](/blog/replit-vs-lovable/) starts from the project you are shipping.
 
 As of 10 October 2026, the Replit Core price in India is $20 a month on replit.com, or $18 a month billed annually, before any tax. Apple's India App Store lists Core at ₹1,999, plus a ₹22,900 item, probably yearly. Google Play India shows one range: ₹2,150.00 to ₹24,200.00 per item.
 

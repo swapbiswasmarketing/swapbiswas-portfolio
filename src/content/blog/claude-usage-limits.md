@@ -46,6 +46,8 @@ Claude Code prints a different line for each limit, per Anthropic's [Claude Code
 | `API Error: Server is temporarily limiting requests (not your usage limit)` | A short server-side throttle | Wait briefly and retry | Not needed |
 | `Context limit reached` | One conversation's context window, a separate limit | `/compact` or `/clear`, compared in [what each one keeps](/blog/claude-code-compact-vs-clear/) | Not needed |
 
+A `500 Internal server error` is a different message again: an unexpected failure inside Anthropic's API rather than a limit, covered in [my Claude internal server error guide](/blog/claude-internal-server-error/).
+
 The same reference says the session and weekly limits "are shared across all models, so switching models doesn't restore access." Usage also "counts against the session and weekly allowances at the same time", and a single heavy burst, such as "a large workflow fanout", can use up the weekly limit before the session window resets.
 
 In the Claude app on the web or in Desktop, Settings > Usage tells you which limit is full: on Pro, Max, Team and seat-based Enterprise plans it has progress bars for the current session and the weekly limits, for all models and for Fable where your plan includes it ([usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)).
