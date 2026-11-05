@@ -4464,3 +4464,45 @@ https://swapbiswas.com/blog/youtube-character-limit/?utm_source=linkedin&utm_med
 #YouTubeMarketing #ContentMarketing #VideoMarketing #Localization
 
 ---
+
+### Claude Internal Server Error: When It Hit Decides the Fix
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a clockmaker's bench with an open pocket watch showing its gears, a pair of brass tweezers, a small cracked hourglass beside a folded letter, a quill in an inkwell, a single vermilion red ribbon tied to the watch chain, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Anthropic's error reference says a Claude internal server error is an unexpected failure inside its API, not caused by your prompt, settings or account.
+What to do next depends on when in the turn it hit.
+
+- Before any output: Claude Code has already retried, up to 10 times by default. Check status.claude.com, wait a minute, send again.
+- After thinking, before any text or tool call: v2.1.284 or later retries up to two times. Send again; on an older build, update first.
+- After a text block or tool call: "Server error mid-response". Claude Code does not re-run the request, because a re-send could run the same tool calls twice. Read what remains, then reply continue.
+- A 502 Bad Gateway from a proxy or gateway you configured points at that gateway, not at Anthropic.
+
+https://swapbiswas.com/blog/claude-internal-server-error/?utm_source=linkedin&utm_medium=social&utm_campaign=claude-internal-server-error
+
+#ClaudeCode #DeveloperTools #AIForMarketers #BuildInPublic
+
+---
+
+### Replit vs Lovable: Start From What You Are Shipping
+**Status:** [DRAFTED]
+
+**Image prompt (Nano Banana):**
+> Renaissance-style still life, warm paper background #f6f4ef, a workshop table with two different wooden toolboxes side by side, one holding drafting tools and the other small gears and keys, a rolled architectural plan tied with twine, a brass compass, a single vermilion red tag hanging from one toolbox handle, muted earth tones, one red accent only, no people, no text. 1200x628 aspect ratio.
+
+Replit vs Lovable gets easier once you name what you are shipping.
+The vendors' own pages sort four kinds of marketing project:
+
+- A campaign or landing page: Lovable. One credit balance covers building, hosting on Lovable Cloud and AI features.
+- A small web app the team shares: Lovable. Workspaces have unlimited members on every plan, with no per-seat price.
+- An MVP with sign-ups, logins and stored data: Replit. Its comparison page says every project includes a pre-configured database, and Replit Auth is built in.
+- An internal tool or automation: Replit, which says you can build these "in any programming language without setup".
+
+What is the next thing you plan to ship with a builder?
+
+https://swapbiswas.com/blog/replit-vs-lovable/?utm_source=linkedin&utm_medium=social&utm_campaign=replit-vs-lovable
+
+#NoCode #VibeCoding #AIForMarketers #BuildInPublic
+
+---

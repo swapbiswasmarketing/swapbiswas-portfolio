@@ -3,8 +3,8 @@ title: "Claude Internal Server Error: What a 500 Means and the Fix"
 description: "A Claude internal server error is a failure inside Anthropic's API. What Claude Code already retried, what it kept, and your next step depend on when the 500 hit."
 publishDate: 2026-11-05
 category: [AI, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-7.webp
+img_alt: "Renaissance-style still life of sealed letters, a quill and an open ledger by a window, one red wax seal"
 faqs:
   - q: "What does API Error: 500 Internal server error mean in Claude Code?"
     a: "Anthropic's error reference says a 5xx from the API is an unexpected failure inside the API and is not caused by your prompt, settings or account. Check status.claude.com, wait a minute and send your message again; run /feedback if it persists with no posted incident."

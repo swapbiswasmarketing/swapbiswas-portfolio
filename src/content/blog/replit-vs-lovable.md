@@ -3,8 +3,8 @@ title: "Replit vs Lovable: Which App Builder Fits a Marketer?"
 description: "Replit vs Lovable for a marketer who does not code: a decision table by project type, what each entry plan meters, and what the free plans let you publish."
 publishDate: 2026-11-05
 category: [AI, Tools]
-img: /assets/stock-4.webp
-img_alt: "placeholder"
+img: /assets/stock-3.webp
+img_alt: "Renaissance-style landscape with a lighthouse tower on a cliff guiding ships, one ship with a red sail"
 faqs:
   - q: "Is Replit better than Lovable?"
     a: "Neither wins outright. Lovable bills one credit balance for building, hosting and in-app AI, which suits a campaign site or a small web app. Replit pitches a built-in database, Replit Auth and any programming language, which suits an app with logins and back-end work."
